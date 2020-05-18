@@ -2,10 +2,10 @@
 ![Version](https://img.shields.io/github/package-json/v/ozgurg/vergihesaplayici.com)
 
 # vergihesaplayici.com
-[vergihesaplayici.com](https://vergihesaplayici.com/) 'un kaynak kodudur.
+[vergihesaplayici.com](https://vergihesaplayici.com/)'un kaynak kodudur.
 
 ## Nereden çıktı bu fikir?
-[teknoseyir.com](https://teknoseyir.com/) 'daki [@temp](https://teknoseyir.com/u/temp) 'in [Telefon Fiyatı Hesapla v2](https://teknoseyir.com/blog/telefon-fiyati-hesapla-v2) adlı masaüstü yazılımına kendi yorumumu katarak Vue ile yazma kararı aldım ve neden diğer hesaplamaları da -şu anda 1 tane olsa da- eklemeyeyim diye düşündüm. Ortaya vergihesaplayici.com çıktı. 
+[teknoseyir.com](https://teknoseyir.com/)'daki [@temp](https://teknoseyir.com/u/temp)'in [Telefon Fiyatı Hesapla v2](https://teknoseyir.com/blog/telefon-fiyati-hesapla-v2) adlı masaüstü yazılımına kendi yorumumu katarak Vue ile yazma kararı aldım ve neden diğer hesaplamaları da -şu anda 1 tane olsa da- eklemeyeyim diye düşündüm. Ortaya vergihesaplayici.com çıktı. 
 
 ## Kurulum
 `npm install`
@@ -34,8 +34,8 @@ E2E testleri
 `npm run test:e2e`
 
 ## Kaputun altı
-- [algoliasearch](https://www.npmjs.com/package/algoliasearch): [Algolia](https://www.algolia.com/) 'yı veri tabanı gibi kullanıyorum.
-- [buefy](https://www.npmjs.com/package/buefy): [Bulma](https://github.com/jgthms/bulma) 'nın Vue için genişletilmiş hali.
+- [algoliasearch](https://www.npmjs.com/package/algoliasearch): [Algolia](https://www.algolia.com/)'yı veri tabanı gibi kullanıyorum.
+- [buefy](https://www.npmjs.com/package/buefy): [Bulma](https://github.com/jgthms/bulma)'nın Vue için genişletilmiş hali.
 - [clipboard](https://www.npmjs.com/package/clipboard): Paylaşma URL'sini kopyalama işlevi.
 - [debounce](https://www.npmjs.com/package/debounce): Aramayı geciktirme.
 - [js-base64](https://www.npmjs.com/package/js-base64): Hesaplamayı paylaşırken data'yı base64 ile encode ve decode ediyorum.
