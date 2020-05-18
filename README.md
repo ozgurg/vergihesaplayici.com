@@ -59,7 +59,7 @@ E2E testleri
 - [ ] Oyun Konsolu Vergisi Hesaplayıcı eklenecek.
 
 ## Logo
-Namechap Free Logo Maker ile oluşturdum. Detayları ve kaynak dosyaları /logo altından görebilirsiniz.
+[Namechap Free Logo Maker](https://www.namecheap.com/logo-maker/) ile oluşturdum. Detayları ve kaynak dosyaları /logo altından görebilirsiniz.
 
 ## Lisans
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
