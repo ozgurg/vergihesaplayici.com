@@ -1,0 +1,50 @@
+name: "vergihesaplayici.com"
+
+on:
+  push:
+    branches: master
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+        - name: "[SET UP] Checkout repo"
+          uses: actions/checkout@master
+
+        - name: "[SET UP] Set up Node"
+          uses: actions/setup-node@master
+
+        - name: "[SET UP] Install dependencies"
+          run: npm install
+
+
+        - name: "[QUALITY] Linting"
+          run: npm run lint
+
+        - name: "[QUALITY] Run unit tests"
+          run: npm run test:unit
+
+        - name: "[QUALITY] Run E2E tests"
+          uses: cypress-io/github-action@v1
+          with:
+            start: npm run serve
+            wait-on: ${{ secrets.VUE_APP_BASE_URL }}
+            config-file: cypress.json
+          env:  
+            CYPRESS_BASE_URL: ${{ secrets.VUE_APP_BASE_URL }}
+
+
+        - name: "[DEPLOY] Build for production"
+          run: npm run build
+          env:
+            VUE_APP_ALGOLIA_API_KEY: ${{ secrets.VUE_APP_ALGOLIA_API_KEY }}
+            VUE_APP_ALGOLIA_APP_ID: ${{ secrets.VUE_APP_ALGOLIA_APP_ID }}
+            VUE_APP_ALGOLIA_INDEX_NAME: ${{ secrets.VUE_APP_ALGOLIA_INDEX_NAME }}
+            VUE_APP_BASE_URL: ${{ secrets.VUE_APP_BASE_URL }}
+
+        - name: "[DEPLOY] Deploy to Firebase"
+          uses: w9jds/firebase-action@master
+          with:
+            args: deploy --only hosting
+          env:
+            FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
