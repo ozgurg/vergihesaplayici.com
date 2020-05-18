@@ -28,10 +28,10 @@ jobs:
           uses: cypress-io/github-action@v1
           with:
             start: npm run serve
-            wait-on: ${{ secrets.VUE_APP_BASE_URL }}
+            wait-on: http://localhost:8080
             config-file: cypress.json
           env:  
-            CYPRESS_BASE_URL: ${{ secrets.VUE_APP_BASE_URL }}
+            CYPRESS_BASE_URL: http://localhost:8080
 
 
         - name: "[DEPLOY] Build for production"
