@@ -37,8 +37,8 @@ E2E testleri
 - [algoliasearch](https://www.npmjs.com/package/algoliasearch): [Algolia](https://www.algolia.com/)'yı veri tabanı gibi kullanıyorum.
 - [buefy](https://www.npmjs.com/package/buefy): [Bulma](https://github.com/jgthms/bulma)'nın Vue için genişletilmiş hali.
 - [clipboard](https://www.npmjs.com/package/clipboard): Paylaşma URL'sini kopyalama işlevi.
-- [debounce](https://www.npmjs.com/package/debounce): Aramayı geciktirme.
-- [js-base64](https://www.npmjs.com/package/js-base64): Hesaplamayı paylaşırken data'yı base64 ile encode ve decode ediyorum.
+- [debounce](https://www.npmjs.com/package/debounce): Aramayı geciktirmek için kullanıyorum.
+- [js-base64](https://www.npmjs.com/package/js-base64): Hesaplamayı paylaşırken data'yı Base64 ile encode ve decode ediyorum.
 - [vue-lazyload](https://www.npmjs.com/package/vue-lazyload): Aslında buna çok gerek yok. Arama sonuçlarındaki telefon fotoğraflarını "yavaş" yüklemeyi sağlıyor.
 - [vue-meta](https://www.npmjs.com/package/vue-meta): Meta etiketlerini daha kolay ayarlamamı sağlıyor.
 - [register-service-worker](https://www.npmjs.com/package/register-service-worker)
