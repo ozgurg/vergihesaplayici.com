@@ -90,7 +90,7 @@
 				<b-select data-cy="form.registration"
 						  v-model="form.registration"
 						  expanded="">
-					<option :value="Constants.Enums.REGISTRATION_IMPORT">İthalat yoluyla kayıtlı</option>
+					<option :value="Constants.Enums.REGISTRATION_IMPORT">İthalat yoluyla kayıtlı (Resmi)</option>
 					<option :value="Constants.Enums.REGISTRATION_PASSPORT">Pasaport yoluyla kayıtlı</option>
 				</b-select>
 			</b-field>
