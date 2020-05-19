@@ -20,9 +20,19 @@ jobs:
 
         - name: "[QUALITY] Linting"
           run: npm run lint
+          env:
+            VUE_APP_ALGOLIA_API_KEY: ${{ secrets.VUE_APP_ALGOLIA_API_KEY }}
+            VUE_APP_ALGOLIA_APP_ID: ${{ secrets.VUE_APP_ALGOLIA_APP_ID }}
+            VUE_APP_ALGOLIA_INDEX_NAME: ${{ secrets.VUE_APP_ALGOLIA_INDEX_NAME }}
+            VUE_APP_BASE_URL: ${{ secrets.VUE_APP_BASE_URL }}
 
         - name: "[QUALITY] Run unit tests"
           run: npm run test:unit
+          env:
+            VUE_APP_ALGOLIA_API_KEY: ${{ secrets.VUE_APP_ALGOLIA_API_KEY }}
+            VUE_APP_ALGOLIA_APP_ID: ${{ secrets.VUE_APP_ALGOLIA_APP_ID }}
+            VUE_APP_ALGOLIA_INDEX_NAME: ${{ secrets.VUE_APP_ALGOLIA_INDEX_NAME }}
+            VUE_APP_BASE_URL: ${{ secrets.VUE_APP_BASE_URL }}
 
         - name: "[QUALITY] Run E2E tests"
           uses: cypress-io/github-action@v1
@@ -32,6 +42,10 @@ jobs:
             config-file: cypress.json
           env:  
             CYPRESS_BASE_URL: http://localhost:8080
+            VUE_APP_ALGOLIA_API_KEY: ${{ secrets.VUE_APP_ALGOLIA_API_KEY }}
+            VUE_APP_ALGOLIA_APP_ID: ${{ secrets.VUE_APP_ALGOLIA_APP_ID }}
+            VUE_APP_ALGOLIA_INDEX_NAME: ${{ secrets.VUE_APP_ALGOLIA_INDEX_NAME }}
+            VUE_APP_BASE_URL: ${{ secrets.VUE_APP_BASE_URL }}
 
 
         - name: "[DEPLOY] Build for production"
