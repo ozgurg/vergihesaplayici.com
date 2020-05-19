@@ -456,8 +456,6 @@ export default {
 				vm.phoneSearch.phonePrices = {};
 				vm.form.phonePrice = "";
 			}
-
-			vm.form.phoneSearch = "asa";
 		},
 		phoneSearch_search: debounce(function(name) {
 			const vm = this;
