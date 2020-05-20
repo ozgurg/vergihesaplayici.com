@@ -452,7 +452,7 @@ export default {
 
 			if (phone) {
 				if (!Object.keys(phone.prices).includes(vm.form.currency)) {
-					vm.form.currency = vm.Constants.DefaultCurrency;
+					vm.form.currency = Object.keys(phone.prices)[0];
 				}
 
 				vm.phoneSearch.phonePrices = phone.prices;
