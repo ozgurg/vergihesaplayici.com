@@ -51,8 +51,13 @@ export default {
 
 		return {
 			title: vm.$route.meta.title,
-			description: vm.$route.meta.desc,
-			titleTemplate: Vue.prototype.VueMetaTemplate
+			titleTemplate: Vue.prototype.VueMetaTemplate,
+			meta: [
+				{name: "description", content: vm.$route.meta.desc},
+				{property: "og:title", content: Vue.prototype.VueMetaTemplate.replace("%s", vm.$route.meta.title)},
+				{property: "og:description", content: vm.$route.meta.desc},
+				{property: "og:type", content: "website"}
+			]
 		};
 	}
 };
