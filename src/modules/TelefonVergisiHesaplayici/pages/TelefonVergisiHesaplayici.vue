@@ -466,6 +466,7 @@ export default {
 			}
 
 			vm.phoneSearch.isLoading = true;
+			vm.phoneSearch.phoneList = [];
 
 			algolia.search(name)
 				.then(({hits}) => {
