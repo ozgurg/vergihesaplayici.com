@@ -97,108 +97,113 @@
 
 
 			<template v-if="results.meta.showResults">
-				<div id="results">
-					<hr />
+				<hr />
 
-					<b-field horizontal=""
+				<b-message size="is-small">
+					Telefonların ülkeye giriş fiyatını bilmediğimiz için sonuçlar yurt dışı fiyatlarına göredir ve bu yüzden son derece tahminidir.
+					<br />
+					Gerçek satış fiyatı daha düşük olabilir.
+				</b-message>
+
+				<b-field horizontal=""
+						 expanded=""
+						 label="Vergisiz fiyat">
+					<b-input :value="currencyFormat(results.taxFreePrice, 'TRY')"
 							 expanded=""
-							 label="Vergisiz fiyat">
-						<b-input :value="currencyFormat(results.taxFreePrice, 'TRY')"
-								 expanded=""
-								 readonly=""
-								 data-cy="results.taxFreePrice"
-								 custom-class="is-static" />
-					</b-field>
+							 readonly=""
+							 data-cy="results.taxFreePrice"
+							 custom-class="is-static" />
+				</b-field>
 
-					<template v-if="form.registration === Constants.Enums.REGISTRATION_IMPORT">
-						<b-field :label="`Kültür Bakanlığı (%${Constants.TaxRates.ministryOfCulture})`"
-								 horizontal=""
-								 expanded="">
-							<b-input :value="currencyFormat(results.ministryOfCultureFee, 'TRY')"
-									 expanded=""
-									 readonly=""
-									 data-cy="results.ministryOfCultureFee"
-									 custom-class="is-static" />
-						</b-field>
-
-						<b-field :label="`TRT Bandrolü (%${Constants.TaxRates.trt})`"
-								 horizontal=""
-								 expanded="">
-							<b-input :value="currencyFormat(results.trtFee, 'TRY')"
-									 expanded=""
-									 readonly=""
-									 data-cy="results.trtFee"
-									 custom-class="is-static" />
-						</b-field>
-
-						<b-field :label="`ÖTV (%${Constants.TaxRates.sct})`"
-								 horizontal=""
-								 expanded="">
-							<b-input :value="currencyFormat(results.sctFree, 'TRY')"
-									 expanded=""
-									 readonly=""
-									 data-cy="results.sctFree"
-									 custom-class="is-static" />
-						</b-field>
-
-						<b-field :label="`KDV (%${Constants.TaxRates.vat})`"
-								 horizontal=""
-								 expanded="">
-							<b-input :value="currencyFormat(results.vatFee, 'TRY')"
-									 expanded=""
-									 readonly=""
-									 data-cy="results.vatFee"
-									 custom-class="is-static" />
-						</b-field>
-					</template>
-
-					<template v-else-if="form.registration === Constants.Enums.REGISTRATION_PASSPORT">
-						<b-field :message="exchangeRates.trtFeeInRegistrationByPassportInfo"
-								 :label="`TRT Bandrolü (${currencyFormat(20, 'EUR')})`"
-								 horizontal=""
-								 expanded="">
-							<b-input :value="currencyFormat(results.trtFee, 'TRY')"
-									 expanded=""
-									 readonly=""
-									 data-cy="results.trtFee"
-									 custom-class="is-static" />
-						</b-field>
-
-						<b-field horizontal=""
-								 expanded=""
-								 label="Kayıt ücreti">
-							<b-input :value="currencyFormat(results.registrationFee, 'TRY')"
-									 expanded=""
-									 readonly=""
-									 data-cy="results.registrationFee"
-									 custom-class="is-static" />
-						</b-field>
-					</template>
-
-					<b-field :label="`Toplam vergi (%${results.totalTaxRate})`"
+				<template v-if="form.registration === Constants.Enums.REGISTRATION_IMPORT">
+					<b-field :label="`Kültür Bakanlığı (%${Constants.TaxRates.ministryOfCulture})`"
 							 horizontal=""
 							 expanded="">
-						<b-input :value="currencyFormat(results.totalTaxFee, 'TRY')"
+						<b-input :value="currencyFormat(results.ministryOfCultureFee, 'TRY')"
 								 expanded=""
 								 readonly=""
-								 data-cy="results.totalTaxFee"
+								 data-cy="results.ministryOfCultureFee"
+								 custom-class="is-static" />
+					</b-field>
+
+					<b-field :label="`TRT Bandrolü (%${Constants.TaxRates.trt})`"
+							 horizontal=""
+							 expanded="">
+						<b-input :value="currencyFormat(results.trtFee, 'TRY')"
+								 expanded=""
+								 readonly=""
+								 data-cy="results.trtFee"
+								 custom-class="is-static" />
+					</b-field>
+
+					<b-field :label="`ÖTV (%${Constants.TaxRates.sct})`"
+							 horizontal=""
+							 expanded="">
+						<b-input :value="currencyFormat(results.sctFree, 'TRY')"
+								 expanded=""
+								 readonly=""
+								 data-cy="results.sctFree"
+								 custom-class="is-static" />
+					</b-field>
+
+					<b-field :label="`KDV (%${Constants.TaxRates.vat})`"
+							 horizontal=""
+							 expanded="">
+						<b-input :value="currencyFormat(results.vatFee, 'TRY')"
+								 expanded=""
+								 readonly=""
+								 data-cy="results.vatFee"
+								 custom-class="is-static" />
+					</b-field>
+				</template>
+
+				<template v-else-if="form.registration === Constants.Enums.REGISTRATION_PASSPORT">
+					<b-field :message="exchangeRates.trtFeeInRegistrationByPassportInfo"
+							 :label="`TRT Bandrolü (${currencyFormat(20, 'EUR')})`"
+							 horizontal=""
+							 expanded="">
+						<b-input :value="currencyFormat(results.trtFee, 'TRY')"
+								 expanded=""
+								 readonly=""
+								 data-cy="results.trtFee"
 								 custom-class="is-static" />
 					</b-field>
 
 					<b-field horizontal=""
 							 expanded=""
-							 label="Satış fiyatı">
-						<b-input :value="currencyFormat(results.salePrice, 'TRY')"
+							 label="Kayıt ücreti">
+						<b-input :value="currencyFormat(results.registrationFee, 'TRY')"
 								 expanded=""
 								 readonly=""
-								 data-cy="results.salePrice"
+								 data-cy="results.registrationFee"
 								 custom-class="is-static" />
 					</b-field>
-				</div>
+				</template>
+
+				<b-field :label="`Toplam vergi (%${results.totalTaxRate})`"
+						 horizontal=""
+						 expanded="">
+					<b-input :value="currencyFormat(results.totalTaxFee, 'TRY')"
+							 expanded=""
+							 readonly=""
+							 data-cy="results.totalTaxFee"
+							 custom-class="is-static" />
+				</b-field>
+
+				<b-field horizontal=""
+						 expanded=""
+						 label="Satış fiyatı">
+					<b-input :value="currencyFormat(results.salePrice, 'TRY')"
+							 expanded=""
+							 readonly=""
+							 data-cy="results.salePrice"
+							 custom-class="is-static" />
+				</b-field>
 
 				<b-field horizontal>
 					<div class="control">
-						<b-message size="is-small" type="is-info">
+						<b-message size="is-small"
+								   type="is-info">
 							Türkiye'de asgari ücretle çalışan birisi yemeden içmeden bu telefonu yaklaşık {{results.meta.minWageMonthCount}} ayda satın alabilir.
 						</b-message>
 
