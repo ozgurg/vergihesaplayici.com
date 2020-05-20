@@ -59,6 +59,7 @@ E2E testleri
 - [ ] Oyun Konsolu Vergisi Hesaplayıcı eklenecek.
 - [ ] .github/workflows/main.yml içinde "env" değerlerindeki kod tekrarı düzeltilecek.
 - [ ] Navbar dropdown'ı için active state'i üzerinde çalışılacak.
+- [ ] Eğer bir telefon, varsayılan para birimine ait bir fiyata sahip değilse arama sonucundan fiyatı kopyalama çalışmıyor. Örnek: Huawei P40 Pro / 256 GB
 
 ## Logo
 [Namechap Free Logo Maker](https://www.namecheap.com/logo-maker/) ile oluşturdum. Detayları ve kaynak dosyaları /logo altından görebilirsiniz.
