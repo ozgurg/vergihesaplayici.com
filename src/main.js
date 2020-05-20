@@ -6,6 +6,7 @@ import VueLazyload from "vue-lazyload";
 import router from "./_router";
 import store from "./_store";
 import "./_service-worker";
+import "./api/api.firebase";
 
 
 // Buefy
