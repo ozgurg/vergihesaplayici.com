@@ -14,7 +14,7 @@ const routes = [
 			"./modules/Index/pages/Index"
 		),
 		meta: {
-			title: "Ana Sayfa",
+			title: "Vergi Hesaplayıcı",
 			desc: "Türkiye'deki farklı ürün gruplarının yurt dışı fiyatlarına ne kadar vergi uygulandığı hesaplayın."
 		}
 	},
