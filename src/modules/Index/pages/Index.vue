@@ -25,7 +25,6 @@
 
 <script>
 import Hero from "../../Common/components/Hero";
-import Vue from "vue";
 
 
 export default {
