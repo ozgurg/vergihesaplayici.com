@@ -4,7 +4,7 @@ import Buefy from "buefy";
 import VueMeta from "vue-meta";
 import VueLazyload from "vue-lazyload";
 import router from "./_router";
-import store from "./_store";
+import store from "./store/_index";
 import "./_service-worker";
 import "./api/api.firebase";
 

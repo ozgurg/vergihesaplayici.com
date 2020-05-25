@@ -1,8 +1,8 @@
 export default {
-	isLoading(state, isLoading) {
+	SET_IS_LOADING(state, isLoading) {
 		state.isLoading = isLoading;
 	},
-	setRoutes(state, routes) {
+	SET_ROUTES(state, routes) {
 		state.routes = routes;
 	}
 };

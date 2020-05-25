@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import store from "./_store";
+import store from "./store/_index";
 
 
 Vue.use(VueRouter);
@@ -46,12 +46,14 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-	store.commit("isLoading", true);
+	store.dispatch("setIsLoading", true).then(() => {
+	});
 	next();
 });
 
 router.afterEach((to, from) => {
-	store.commit("isLoading", false);
+	store.dispatch("setIsLoading", false).then(() => {
+	});
 });
 
 
