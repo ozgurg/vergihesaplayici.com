@@ -30,6 +30,12 @@ const routes = [
 			desc: "Satın aldığınız bir telefonun satış fiyatına etki eden vergileri hesaplayın.",
 			icon: "cellphone"
 		}
+	},
+	{
+		path: "*",
+		beforeEnter(to, from, next) {
+			next({name: "home"});
+		}
 	}
 ];
 
