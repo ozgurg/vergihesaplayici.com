@@ -8,7 +8,7 @@
 					   :active.sync="exchangeRates.isLoading" />
 
 			<b-field horizontal=""
-					 message="Telefonun fiyatını bilmiyorsanız veri tabanında arayabilirsiniz."
+					 message="Telefonun fiyatını bilmiyorsanız veri tabanında arayabilirsiniz. Şu anda çok az telefon sisteme eklidir."
 					 label="Telefon">
 				<b-autocomplete
 						:data="phoneSearch.phoneList"
@@ -102,7 +102,7 @@
 				<b-message size="is-small">
 					Telefonların ülkeye giriş fiyatını bilmediğimiz için sonuçlar yurt dışı fiyatlarına göredir ve bu yüzden son derece tahminidir.
 					<br />
-					Gerçek satış fiyatı daha düşük olabilir.
+					Gerçek satış fiyatı farklı olabilir.
 				</b-message>
 
 				<b-field horizontal=""
