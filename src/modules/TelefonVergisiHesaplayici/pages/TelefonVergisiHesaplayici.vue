@@ -21,7 +21,7 @@
 						expanded=""
 						data-cy="form.phoneSearch"
 						v-model="form.phoneSearch"
-						field="title storage"
+						field="title options"
 						placeholder="En az 3 karakter girerek arayın">
 
 					<template slot-scope="props">
@@ -445,7 +445,7 @@ export default {
 			vm.results.meta.minWageMonthCount = (vm.results.salePrice / vm.Constants.Enums.MINIMUN_WAGE).toFixed(2);
 		},
 		phoneSearch_customFormatter(phone) {
-			return `${phone.title} / ${phone.storage} GB`;
+			return `${phone.title} / ${phone.options}`;
 		},
 		phoneSearch_phoneSelected(phone) {
 			const vm = this;
@@ -476,12 +476,12 @@ export default {
 			algolia.search(name)
 				.then(({hits}) => {
 					hits.forEach(hit => {
-						Object.keys(hit["prices"]).forEach(storage => {
+						Object.keys(hit["prices"]).forEach(options => {
 							vm.phoneSearch.phoneList.push({
 								title: hit["title"],
 								imageUrl: hit["imageUrl"],
-								storage: storage,
-								prices: hit["prices"][storage]
+								options,
+								prices: hit["prices"][options]
 							});
 						});
 					});
