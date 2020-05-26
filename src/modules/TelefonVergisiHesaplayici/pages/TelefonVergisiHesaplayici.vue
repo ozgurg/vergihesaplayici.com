@@ -543,8 +543,8 @@ export default {
 
 <style lang="scss" scoped="">
 	.autocomplete .dropdown-item .media .media-left img {
-		height: 42px;
-		width: 42px;
+		height: 56px;
+		width: 56px;
 		vertical-align: middle;
 		object-fit: contain;
 		background: #fff
