@@ -1,19 +1,11 @@
 [
   {
-    "title": "iPhone 11 Pro Max",
-    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/vergihesaplayici.appspot.com/o/TelefonVergisiHesaplayici%2Fphones%2Fiphone-11-pro.jpg?alt=media&token=c7471d9e-7913-4bf5-844f-16a9278a796e",
+    "title": "Telefon adı",
+    "imageUrl": "Fotoğraf bağlantısı",
     "prices": {
-      "64": {
+      "RAM + DEPOLAMA": {
         "USD": "1099",
         "EUR": "1249"
-      },
-      "256": {
-        "USD": "1249",
-        "EUR": "1419"
-      },
-      "512": {
-        "USD": "1449",
-        "EUR": "1649"
       }
     }
   }
