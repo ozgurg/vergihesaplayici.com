@@ -540,13 +540,3 @@ export default {
 	}
 };
 </script>
-
-<style lang="scss" scoped="">
-	.autocomplete .dropdown-item .media .media-left img {
-		height: 56px;
-		width: 56px;
-		vertical-align: middle;
-		object-fit: contain;
-		background: #fff
-	}
-</style>

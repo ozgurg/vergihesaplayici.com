@@ -60,9 +60,3 @@ export default {
 	}
 };
 </script>
-
-<style lang="scss" scoped="">
-	.subtitle {
-		margin: .5rem 0
-	}
-</style>

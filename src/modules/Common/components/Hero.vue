@@ -18,9 +18,3 @@ export default {
 	}
 };
 </script>
-
-<style lang="scss" scoped="">
-	.hero-body {
-		padding-top: 0
-	}
-</style>
