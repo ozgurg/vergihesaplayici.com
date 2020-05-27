@@ -60,6 +60,7 @@ E2E testleri
 - [ ] .github/workflows/main.yml içinde "env" değerlerindeki kod tekrarı düzeltilecek.
 - [ ] Navbar dropdown'ı için active state'i üzerinde çalışılacak.
 - [ ] Koyu mod
+- [ ] Hesaplamayı tersine çevirme (Satın alınan fiyatı girip vergileri hesaplama)
 
 ## Logo
 [Namechap Free Logo Maker](https://www.namecheap.com/logo-maker/) ile oluşturdum. Detayları ve kaynak dosyaları /logo altından görebilirsiniz.
