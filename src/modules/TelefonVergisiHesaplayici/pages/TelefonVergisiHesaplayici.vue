@@ -352,7 +352,7 @@ export default {
 				// TRT fee
 				addTrtFee() {
 					if (vm.form.registration === vm.Constants.Enums.REGISTRATION_IMPORT) {
-						vm.results.trtFee = (salePrice / 100) * vm.Constants.TaxRates.trt;
+						vm.results.trtFee = (taxFreePrice / 100) * vm.Constants.TaxRates.trt;
 					} else if (vm.form.registration === vm.Constants.Enums.REGISTRATION_PASSPORT) {
 						vm.results.trtFee = 20 * vm.exchangeRates.rates["EUR"];
 					}
