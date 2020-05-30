@@ -54,7 +54,6 @@ E2E testleri
 
 ## TODO
 - [ ] TelefonVergisiHesaplayici: Güncel telefonlar eklenecek.
-- [ ] TelefonVergisiHesaplayici: E2E testlerinde hesaplamayı doğrulamak için hesaplamayı yaptığım fonksiyonu kendi dosyasına taşıyıp E2E testlerinde kullanacağım.
 - [ ] Hesaplamayı paylaş özelliğinin kopyalama işlevinin kopyalayıp kopyalamadığının testi yazılacak.
 - [ ] Oyun Konsolu Vergisi Hesaplayıcı eklenecek.
 - [ ] .github/workflows/main.yml içinde "env" değerlerindeki kod tekrarı düzeltilecek.
