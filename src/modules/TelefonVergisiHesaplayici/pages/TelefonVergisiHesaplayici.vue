@@ -332,7 +332,7 @@ export default {
 					});
 			}
 		},
-		taxCalculator() { // TODO: This feature will be moved to its own file to use for E2E testing too.
+		taxCalculator() {
 			const vm = this;
 
 			const taxFreePrice = parseFloat(vm.form.phonePrice) * vm.exchangeRates.rates[vm.form.currency];
@@ -432,7 +432,7 @@ export default {
 					// Create rate information label
 					vm.exchangeRates.trtFeeInRegistrationByPassportInfo = vm.rateInfoLabel("EUR");
 
-					taxCalculator.addMinistryOfCultureFee().addTrtFee().addRegistrationFee();
+					taxCalculator.addTrtFee().addRegistrationFee();
 					break;
 			}
 
