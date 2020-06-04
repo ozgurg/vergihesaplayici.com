@@ -7,12 +7,11 @@ Vue.use(VueRouter);
 
 const routes = [
 	{
-		name: "home",
+		name: "index",
 		path: "/",
 		component: () => import(
 			/* webpackChunkName: "index" */
-			"./modules/Index/pages/Index"
-		),
+			"./modules/Index/Index"),
 		meta: {
 			title: "Vergi Hesaplayıcı",
 			desc: "Türkiye'deki farklı ürün gruplarının yurt dışı fiyatlarına ne kadar vergi uygulandığı hesaplayın."
@@ -22,9 +21,8 @@ const routes = [
 		name: "hesaplayicilar/telefon-vergisi-hesaplayici",
 		path: "/hesaplayicilar/telefon-vergisi-hesaplayici",
 		component: () => import(
-			/* webpackChunkName: "hesaplayicilar/telefon-vergisi-hesaplayici" */
-			"./modules/TelefonVergisiHesaplayici/pages/TelefonVergisiHesaplayici"
-		),
+			/* webpackChunkName: "telefon-vergisi-hesaplayici" */
+			"./modules/PhoneTaxCalculator/PhoneTaxCalculator"),
 		meta: {
 			title: "Telefon Vergisi Hesaplayıcı",
 			desc: "Satın aldığınız bir telefonun satış fiyatına etki eden vergileri hesaplayın.",
@@ -34,7 +32,7 @@ const routes = [
 	{
 		path: "*",
 		beforeEnter(to, from, next) {
-			next({name: "home"});
+			next({ name: "index" });
 		}
 	}
 ];
