@@ -85,13 +85,11 @@ describe("/hesaplayicilar/telefon-vergisi-hesaplayici", () => {
 					expect(val).equal("EUR");
 				});
 
-			cy.get(Elements["form.registration"])
+			return cy.get(Elements["form.registration"])
 				.invoke("val")
 				.then(val => {
 					expect(val).equal("import");
 				});
-
-			return true;
 		});
 	});
 });
