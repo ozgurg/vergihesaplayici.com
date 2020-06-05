@@ -4,5 +4,8 @@ export default {
 	},
 	SET_ROUTES(state, routes) {
 		state.routes = routes;
+	},
+	SET_EXCHANGE_RATE(state, { currency, rate }) {
+		state.exchangeRates[currency] = rate;
 	}
 };

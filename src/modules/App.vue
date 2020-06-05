@@ -1,25 +1,23 @@
 <template>
-	<div id="wrapper">
+	<main>
 		<b-loading v-if="$store.getters.isLoading"
 				   active="" />
 
 		<Header />
 
-		<main id="main">
-			<section class="section">
-				<div class="container">
-					<router-view />
-				</div>
-			</section>
-		</main>
+		<section class="section">
+			<div class="container">
+				<router-view />
+			</div>
+		</section>
 
 		<Footer />
-	</div>
+	</main>
 </template>
 
 <script>
-import Header from "./Common/components/Header";
-import Footer from "./Common/components/Footer";
+import Header from "./Common/Header";
+import Footer from "./Common/Footer";
 
 
 export default {

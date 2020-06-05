@@ -10,14 +10,8 @@ module.exports = {
 	rules: {
 		"no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
 		"no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
-		"quotes": [
-			"error",
-			"double"
-		],
-		"comma-dangle": [
-			"error",
-			"never"
-		],
+		"quotes": ["error", "double"],
+		"comma-dangle": ["error", "never"],
 		"indent": [
 			"error",
 			"tab",
@@ -40,20 +34,10 @@ module.exports = {
 				"allowIndentationTabs": true
 			}
 		],
-		"curly": [
-			"error",
-			"all"
-		],
-		"no-invalid-this": [
-			"off"
-		],
-		"eol-last": [
-			"error",
-			"never"
-		],
-		"max-len": [
-			"off"
-		],
+		"curly": ["error", "all"],
+		"no-invalid-this": ["off"],
+		"eol-last": ["error", "never"],
+		"max-len": ["off"],
 		"no-trailing-spaces": [
 			"error",
 			{
@@ -61,9 +45,9 @@ module.exports = {
 			}
 		],
 		"no-mixed-spaces-and-tabs": "off",
-		"arrow-parens": [
-			"error",
-			"as-needed"
-		]
+		"arrow-parens": ["error", "as-needed"],
+		"no-case-declarations": ["off"],
+		"require-jsdoc": ["off"],
+		"object-curly-spacing": ["error", "always"]
 	}
 };

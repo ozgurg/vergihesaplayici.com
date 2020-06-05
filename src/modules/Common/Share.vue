@@ -23,20 +23,22 @@
 
 <script>
 import ClipboardJS from "clipboard";
+import querystring from "querystring";
 
 
 export default {
 	name: "Share",
 	props: {
 		data: {
-			type: String,
+			type: Object,
 			required: true
 		}
 	},
 	computed: {
 		generateUrl() {
 			const vm = this;
-			return `${process.env.VUE_APP_BASE_URL}${vm.$route.path}?data=${vm.data}`;
+
+			return `${process.env.VUE_APP_BASE_URL}${vm.$route.path}?${querystring.stringify(vm.data)}`;
 		}
 	},
 	created() {

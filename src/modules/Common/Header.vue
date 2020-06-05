@@ -8,7 +8,7 @@
 				<img alt="Vergi Hesaplayıcı"
 					 draggable="false"
 					 height="32"
-					 src="./../../../assets/img/logo.svg"
+					 src="../../assets/img/logo.svg"
 					 width="200" />
 			</b-navbar-item>
 		</template>

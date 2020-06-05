@@ -1,31 +1,7 @@
 @import "buefy";
 
-body {
+html {
     background: #fafafa
-}
-
-.is-disable {
-    pointer-events: none;
-    opacity: .65
-}
-
-.is-vcentered {
-    align-items: center
-}
-
-#wrapper {
-    display: flex;
-    min-height: calc(100vh);
-    flex-direction: column
-}
-
-#main {
-    flex: 1
-}
-
-#footer {
-    height: 107px;
-    padding: 16px
 }
 
 .navbar-brand {
@@ -50,31 +26,14 @@ body {
     margin: 0 1.5rem
 }
 
-.autocomplete--algolia {
-    $inputDefPaddingRight: calc(0.625em - 1px);
-    $inputDefRightIconWidth: 2.25em;
-    $inputLogoWidth: 112px;
-    .control.is-loading .input {
-        background-image: url(../assets/img/logo-algolia.svg);
-        background-repeat: no-repeat;
-        background-position: center right calc(#{$inputDefPaddingRight} + #{$inputDefRightIconWidth});
-        background-size: #{$inputLogoWidth} 16px;
-        padding-right: calc((#{$inputDefPaddingRight} * 2) + #{$inputLogoWidth} + #{$inputDefRightIconWidth})
-    }
+.box--fixed-width {
+    width: 900px;
+    max-width: 100%;
+    margin: 0 auto
 }
 
-.box {
-    &--fixed-width {
-        width: 900px;
-        max-width: 100%;
-        margin: 0 auto
-    }
-}
-
-.dropdown-menu {
-    .dropdown-item {
-        padding-right: 1em
-    }
+.dropdown-menu .dropdown-item {
+    padding-right: 1em
 }
 
 @media screen and (min-width: 769px) {
@@ -85,14 +44,6 @@ body {
 
 .hero-body {
     padding-top: 0 !important
-}
-
-.autocomplete .dropdown-item .media .media-left img {
-    height: 56px;
-    width: 56px;
-    vertical-align: middle;
-    object-fit: contain;
-    background: #fff
 }
 
 .subtitle {

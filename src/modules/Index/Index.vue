@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<Hero :title="hero.title"
-			  :description="hero.desc" />
+		<Hero :title="$route.meta.title"
+			  :description="$route.meta.desc" />
 
 		<div class="columns is-mobile is-centered">
 			<div v-for="(route, index) in $store.getters.getRoutes.hesaplayicilar"
@@ -24,37 +24,18 @@
 </template>
 
 <script>
-import Hero from "../../Common/components/Hero";
-
-
 export default {
 	name: "Index",
-	components: {
-		Hero
-	},
-	data() {
-		return {
-			hero: {
-				title: "Vergi Hesaplayıcı",
-				desc: ""
-			}
-		};
-	},
-	created() {
-		const vm = this;
-
-		vm.hero.desc = vm.$route.meta.desc;
-	},
 	metaInfo() {
 		const vm = this;
 
 		return {
 			title: vm.$route.meta.title,
 			meta: [
-				{name: "description", content: vm.$route.meta.desc},
-				{property: "og:title", content: vm.$route.meta.title},
-				{property: "og:description", content: vm.$route.meta.desc},
-				{property: "og:type", content: "website"}
+				{ name: "description", content: vm.$route.meta.desc },
+				{ property: "og:title", content: vm.$route.meta.title },
+				{ property: "og:description", content: vm.$route.meta.desc },
+				{ property: "og:type", content: "website" }
 			]
 		};
 	}
