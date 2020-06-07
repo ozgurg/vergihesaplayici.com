@@ -1,5 +1,5 @@
 const Elements = {
-	"form.phonePrice": "[data-cy=\"form.phonePrice\"]",
+	"form.price": "[data-cy=\"form.price\"]",
 	"form.currency": "[data-cy=\"form.currency\"]",
 	"form.registration": "[data-cy=\"form.registration\"]",
 	"results.taxFreePrice": "[data-cy=\"results.taxFreePrice\"]",
@@ -19,7 +19,7 @@ describe("/hesaplayicilar/telefon-vergisi-hesaplayici", () => {
 		it("should shown correct elements", () => { // eslint-disable-line jest/expect-expect
 			cy.visit("/hesaplayicilar/telefon-vergisi-hesaplayici");
 
-			cy.get(Elements["form.phonePrice"])
+			cy.get(Elements["form.price"])
 				.type(SamplePrice.toString());
 
 			cy.get(Elements["form.currency"])
@@ -47,7 +47,7 @@ describe("/hesaplayicilar/telefon-vergisi-hesaplayici", () => {
 		it("should shown correct elements", () => { // eslint-disable-line jest/expect-expect
 			cy.visit("/hesaplayicilar/telefon-vergisi-hesaplayici");
 
-			cy.get(Elements["form.phonePrice"])
+			cy.get(Elements["form.price"])
 				.type(SamplePrice.toString());
 
 			cy.get(Elements["form.currency"])
@@ -71,9 +71,9 @@ describe("/hesaplayicilar/telefon-vergisi-hesaplayici", () => {
 
 	describe("Share", () => {
 		it("should pass correct data from query", () => {
-			cy.visit("/hesaplayicilar/telefon-vergisi-hesaplayici?phonePrice=1000&currency=EUR&registration=import");
+			cy.visit("/hesaplayicilar/telefon-vergisi-hesaplayici?price=1000&currency=EUR&registration=import");
 
-			cy.get(Elements["form.phonePrice"])
+			cy.get(Elements["form.price"])
 				.invoke("val")
 				.then(val => {
 					expect(val).equal("1000");

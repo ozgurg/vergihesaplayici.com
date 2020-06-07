@@ -8,12 +8,12 @@
 					 expanded=""
 					 label="Telefon fiyatı">
 				<b-field>
-					<b-input data-cy="form.phonePrice"
+					<b-input data-cy="form.price"
 							 min="1"
 							 expanded=""
 							 placeholder="Telefon fiyatı"
 							 step="1"
-							 v-model="form.phonePrice"
+							 v-model="form.price"
 							 type="number" />
 					<div class="control">
 						<b-select data-cy="form.currency"
@@ -174,7 +174,7 @@ export default {
 			Constants,
 			showResults: false,
 			form: {
-				phonePrice: "",
+				price: "",
 				currency: "TRY",
 				registration: Constants.RegistrationTypes.REGISTRATION_IMPORT
 			},
@@ -190,8 +190,8 @@ export default {
 
 		// Set data from query with validate them
 		if (vm.$route.query) {
-			if (vm.$route.query.phonePrice) {
-				vm.form.phonePrice = parseFloat(vm.$route.query.phonePrice);
+			if (vm.$route.query.price) {
+				vm.form.price = parseFloat(vm.$route.query.price);
 			}
 
 			if (vm.$route.query.currency && vm.$store.getters.getCurrencies.includes(vm.$route.query.currency)) {
@@ -208,13 +208,13 @@ export default {
 			const vm = this;
 
 			// Calculate and show results, only if possible
-			vm.showResults = vm.form.phonePrice > 0 && vm.form.currency && vm.form.registration;
+			vm.showResults = vm.form.price > 0 && vm.form.currency && vm.form.registration;
 			if (!vm.showResults) {
 				return;
 			}
 
 			// Calculate price
-			const price = parseFloat(vm.form.phonePrice) * vm.$store.getters.getExchangeRate(vm.form.currency);
+			const price = parseFloat(vm.form.price) * vm.$store.getters.getExchangeRate(vm.form.currency);
 
 			// Set mode by the chosen currency
 			const mode = vm.form.currency === "TRY" ? TaxCalc.MODE_CALCULATE_FROM_SALE_PRICE : TaxCalc.MODE_CALCULATE_FROM_BASE_PRICE;
