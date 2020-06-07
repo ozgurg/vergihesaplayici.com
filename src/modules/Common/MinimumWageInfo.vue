@@ -1,7 +1,7 @@
 <template>
 	<b-message size="is-small"
 			   type="is-info">
-		Türkiye'de asgari ücretle çalışan birisi yemeden içmeden bu telefonu yaklaşık {{minWageMonthCount}} ayda satın alabilir.
+		Türkiye'de asgari ücretle çalışan birisi yemeden içmeden bu ürünü yaklaşık {{minWageMonthCount}} ayda satın alabilir.
 	</b-message>
 </template>
 
