@@ -38,7 +38,6 @@ E2E testleri
 - [clipboard](https://www.npmjs.com/package/clipboard): Paylaşma URL'sini kopyalama işlevi.
 - [vue-meta](https://www.npmjs.com/package/vue-meta): Meta etiketlerini daha kolay ayarlamamı sağlıyor.
 - [Firebase Hosting](https://firebase.google.com/docs/hosting): Site burada barınıyor.
-- [Firebase Storage](https://firebase.google.com/docs/storage): Telefon fotoğrafları burada barınıyor.
 - [GitHub Actions](https://github.com/features/actions): Continuous Integration ile otomatik deploy ediyorum. (Teşekkürler [w9jds/firebase-action](https://github.com/w9jds/firebase-action))
 - [exchangeratesapi](https://github.com/exchangeratesapi/exchangeratesapi): Kurları buradan çekiyorum.
 - [register-service-worker](https://www.npmjs.com/package/register-service-worker)
