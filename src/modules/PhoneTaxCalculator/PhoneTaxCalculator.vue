@@ -160,6 +160,7 @@
 <script>
 import Vue from "vue";
 import PhoneTaxCalc from "../../calculators/PhoneTaxCalc";
+import TaxCalc from "../../calculators/TaxCalc";
 
 
 export default {
@@ -218,7 +219,7 @@ export default {
 			const price = parseFloat(vm.form.phonePrice) * vm.$store.getters.getExchangeRate(vm.form.currency);
 
 			// Set mode by the chosen currency
-			const mode = vm.form.currency === "TRY" ? PhoneTaxCalc.MODE_CALCULATE_FROM_SALE_PRICE : PhoneTaxCalc.MODE_CALCULATE_FROM_BASE_PRICE;
+			const mode = vm.form.currency === "TRY" ? TaxCalc.MODE_CALCULATE_FROM_SALE_PRICE : TaxCalc.MODE_CALCULATE_FROM_BASE_PRICE;
 
 			// Calculate tax
 			const calculator = new PhoneTaxCalc({
