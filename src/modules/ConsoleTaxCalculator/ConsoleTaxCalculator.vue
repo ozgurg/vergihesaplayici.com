@@ -6,12 +6,12 @@
 		<div class="box box--fixed-width is-relative">
 			<b-field horizontal=""
 					 expanded=""
-					 label="Telefon fiyatı">
+					 label="Konsol fiyatı">
 				<b-field>
 					<b-input data-cy="form.price"
 							 min="1"
 							 expanded=""
-							 placeholder="Telefon fiyatı"
+							 placeholder="Konsol fiyatı"
 							 step="1"
 							 v-model="form.price"
 							 type="number" />
@@ -25,17 +25,6 @@
 						</b-select>
 					</div>
 				</b-field>
-			</b-field>
-
-
-			<b-field horizontal=""
-					 label="Kayıt yolu">
-				<b-select data-cy="form.registration"
-						  v-model="form.registration"
-						  expanded="">
-					<option :value="Constants.RegistrationTypes.REGISTRATION_IMPORT">İthalat yoluyla kayıtlı (Resmi)</option>
-					<option :value="Constants.RegistrationTypes.REGISTRATION_PASSPORT">Pasaport yoluyla kayıtlı</option>
-				</b-select>
 			</b-field>
 
 			<hr />
@@ -60,69 +49,35 @@
 							 custom-class="is-static" />
 				</b-field>
 
-				<template v-if="form.registration === Constants.RegistrationTypes.REGISTRATION_IMPORT">
-					<b-field :label="`Kültür Bakanlığı (%${results.taxRates.ministryOfCulture})`"
-							 horizontal=""
-							 expanded="">
-						<b-input data-cy="results.ministryOfCultureFee"
-								 :value="currencyFormat(results.taxFees.ministryOfCulture, 'TRY')"
-								 expanded=""
-								 readonly=""
-								 custom-class="is-static" />
-					</b-field>
-
-					<b-field :label="`TRT Bandrolü (%${results.taxRates.trt})`"
-							 horizontal=""
-							 expanded="">
-						<b-input data-cy="results.trtFee"
-								 :value="currencyFormat(results.taxFees.trt, 'TRY')"
-								 expanded=""
-								 readonly=""
-								 custom-class="is-static" />
-					</b-field>
-
-					<b-field :label="`ÖTV (%${results.taxRates.sct})`"
-							 horizontal=""
-							 expanded="">
-						<b-input data-cy="results.sctFree"
-								 :value="currencyFormat(results.taxFees.sct, 'TRY')"
-								 expanded=""
-								 readonly=""
-								 custom-class="is-static" />
-					</b-field>
-
-					<b-field :label="`KDV (%${results.taxRates.vat})`"
-							 horizontal=""
-							 expanded="">
-						<b-input data-cy="results.vatFee"
-								 :value="currencyFormat(results.taxFees.vat, 'TRY')"
-								 expanded=""
-								 readonly=""
-								 custom-class="is-static" />
-					</b-field>
-				</template>
-
-				<template v-else-if="form.registration === Constants.RegistrationTypes.REGISTRATION_PASSPORT">
-					<b-field :label="`TRT Bandrolü (${currencyFormat(results.taxRates.trtPassport, 'EUR')})`"
-							 horizontal=""
-							 expanded="">
-						<b-input data-cy="results.trtFee"
-								 :value="currencyFormat(results.taxFees.trtPassport, 'TRY')"
-								 expanded=""
-								 readonly=""
-								 custom-class="is-static" />
-					</b-field>
-
-					<b-field horizontal=""
+				<b-field :label="`Gümrük (%${results.taxRates.custom})`"
+						 horizontal=""
+						 expanded="">
+					<b-input data-cy="results.trtFee"
+							 :value="currencyFormat(results.taxFees.custom, 'TRY')"
 							 expanded=""
-							 label="Kayıt ücreti">
-						<b-input data-cy="results.registrationFee"
-								 :value="currencyFormat(results.taxFees.registration, 'TRY')"
-								 expanded=""
-								 readonly=""
-								 custom-class="is-static" />
-					</b-field>
-				</template>
+							 readonly=""
+							 custom-class="is-static" />
+				</b-field>
+
+				<b-field :label="`ÖTV (%${results.taxRates.sct})`"
+						 horizontal=""
+						 expanded="">
+					<b-input data-cy="results.sctFree"
+							 :value="currencyFormat(results.taxFees.sct, 'TRY')"
+							 expanded=""
+							 readonly=""
+							 custom-class="is-static" />
+				</b-field>
+
+				<b-field :label="`KDV (%${results.taxRates.vat})`"
+						 horizontal=""
+						 expanded="">
+					<b-input data-cy="results.vatFee"
+							 :value="currencyFormat(results.taxFees.vat, 'TRY')"
+							 expanded=""
+							 readonly=""
+							 custom-class="is-static" />
+				</b-field>
 
 				<b-field :label="`Toplam vergi (%${results.taxRates.total})`"
 						 horizontal=""
@@ -157,26 +112,18 @@
 
 <script>
 import Vue from "vue";
-import PhoneTaxCalc from "../../calculators/PhoneTaxCalc";
+import ConsoleTaxCalc from "../../calculators/ConsoleTaxCalc";
 import TaxCalc from "../../calculators/TaxCalc";
 
 
 export default {
-	name: "PhoneTaxCalculator",
+	name: "ConsoleTaxCalculator",
 	data() {
-		const Constants = {
-			RegistrationTypes: {
-				REGISTRATION_IMPORT: PhoneTaxCalc.REGISTRATION_IMPORT,
-				REGISTRATION_PASSPORT: PhoneTaxCalc.REGISTRATION_PASSPORT
-			}
-		};
 		return {
-			Constants,
 			showResults: false,
 			form: {
 				price: "",
-				currency: "TRY",
-				registration: Constants.RegistrationTypes.REGISTRATION_IMPORT
+				currency: "TRY"
 			},
 			results: {
 				prices: {},
@@ -197,10 +144,6 @@ export default {
 			if (vm.$route.query.currency && vm.$store.getters.getCurrencies.includes(vm.$route.query.currency)) {
 				vm.form.currency = vm.$route.query.currency;
 			}
-
-			if (vm.$route.query.registration && Object.values(vm.Constants.RegistrationTypes).includes(vm.$route.query.registration)) {
-				vm.form.registration = vm.$route.query.registration;
-			}
 		}
 	},
 	methods: {
@@ -208,7 +151,7 @@ export default {
 			const vm = this;
 
 			// Calculate and show results, only if possible
-			vm.showResults = vm.form.price > 0 && vm.form.currency && vm.form.registration;
+			vm.showResults = vm.form.price > 0 && vm.form.currency;
 			if (!vm.showResults) {
 				return;
 			}
@@ -220,12 +163,9 @@ export default {
 			const mode = vm.form.currency === "TRY" ? TaxCalc.MODE_CALCULATE_FROM_SALE_PRICE : TaxCalc.MODE_CALCULATE_FROM_BASE_PRICE;
 
 			// Calculate tax
-			const calculator = new PhoneTaxCalc({
+			const calculator = new ConsoleTaxCalc({
 				price,
-				mode,
-				opts: {
-					registration: vm.form.registration
-				}
+				mode
 			}).calculate();
 
 			vm.results.prices = calculator.prices;
