@@ -214,13 +214,6 @@ export default {
 				return;
 			}
 
-			// Update required currencies
-			await vm.$store.dispatch("getExchangeRateFromApi", vm.form.currency);
-
-			if (vm.form.registration === vm.Constants.RegistrationTypes.REGISTRATION_PASSPORT && vm.form.currency !== "EUR") {
-				await vm.$store.dispatch("getExchangeRateFromApi", "EUR");
-			}
-
 			// Calculate price
 			const price = parseFloat(vm.form.phonePrice) * vm.$store.getters.getExchangeRate(vm.form.currency);
 
