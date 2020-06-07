@@ -30,6 +30,18 @@ const routes = [
 		}
 	},
 	{
+		name: "hesaplayicilar/konsol-vergisi-hesaplayici",
+		path: "/hesaplayicilar/konsol-vergisi-hesaplayici",
+		component: () => import(
+			/* webpackChunkName: "konsol-vergisi-hesaplayici" */
+			"./modules/ConsoleTaxCalculator/ConsoleTaxCalculator"),
+		meta: {
+			title: "Konsol Vergisi Hesaplayıcı",
+			desc: "Sadece eğlenmek istediğinizde ödemeniz gereken vergileri hesaplayın.",
+			icon: "gamepad"
+		}
+	},
+	{
 		path: "*",
 		beforeEnter(to, from, next) {
 			next({ name: "index" });
