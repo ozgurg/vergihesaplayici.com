@@ -3,6 +3,7 @@
 		<nav class="level is-mobile">
 			<ExchangeRateItem currency="USD" />
 			<ExchangeRateItem currency="EUR" />
+			<ExchangeRateItem currency="GBP" />
 		</nav>
 	</div>
 </template>
