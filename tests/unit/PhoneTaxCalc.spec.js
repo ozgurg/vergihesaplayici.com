@@ -5,7 +5,7 @@ import TaxCalc from "../../src/calculators/TaxCalc";
 
 // While testing, all currencies is 0
 describe("PhoneTaxCalc", () => {
-	it(`Mode: "${TaxCalc.MODE_CALCULATE_FROM_SALE_PRICE}" / Registration: "${TaxCalc.REGISTRATION_IMPORT}"`, () => {
+	it(`Price: 500, 1500, 5000 / Mode: "${TaxCalc.MODE_CALCULATE_FROM_SALE_PRICE}" / Registration: "${TaxCalc.REGISTRATION_IMPORT}"`, () => {
 		calculate([
 			{
 				price: 500,
@@ -28,7 +28,7 @@ describe("PhoneTaxCalc", () => {
 		]);
 	});
 
-	it(`Mode: "${TaxCalc.MODE_CALCULATE_FROM_BASE_PRICE}" / Registration: "${PhoneTaxCalc.REGISTRATION_IMPORT}"`, () => {
+	it(`Price: 500, 1500, 5000 / Mode: "${TaxCalc.MODE_CALCULATE_FROM_BASE_PRICE}" / Registration: "${PhoneTaxCalc.REGISTRATION_IMPORT}"`, () => {
 		calculate([
 			{
 				price: 500,
@@ -51,7 +51,7 @@ describe("PhoneTaxCalc", () => {
 		]);
 	});
 
-	it(`Mode: "${TaxCalc.MODE_CALCULATE_FROM_SALE_PRICE}" / Registration: "${PhoneTaxCalc.REGISTRATION_PASSPORT}"`, () => {
+	it(`Price: 500, 1500, 5000 / Mode: "${TaxCalc.MODE_CALCULATE_FROM_SALE_PRICE}" / Registration: "${PhoneTaxCalc.REGISTRATION_PASSPORT}"`, () => {
 		calculate([
 			{
 				price: 500,
@@ -74,7 +74,7 @@ describe("PhoneTaxCalc", () => {
 		]);
 	});
 
-	it(`Mode: "${TaxCalc.MODE_CALCULATE_FROM_BASE_PRICE}" / Registration: "${PhoneTaxCalc.REGISTRATION_PASSPORT}"`, () => {
+	it(`Price: 500, 1500, 5000 / Mode: "${TaxCalc.MODE_CALCULATE_FROM_BASE_PRICE}" / Registration: "${PhoneTaxCalc.REGISTRATION_PASSPORT}"`, () => {
 		calculate([
 			{
 				price: 500,
