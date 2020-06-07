@@ -49,7 +49,6 @@ E2E testleri
 
 ## TODO
 - [ ] Hesaplamayı paylaş özelliğinin kopyalama işlevinin kopyalayıp kopyalamadığının testi yazılacak.
-- [ ] Oyun Konsolu Vergisi Hesaplayıcı eklenecek.
 - [ ] .github/workflows/main.yml içinde "env" değerlerindeki kod tekrarı düzeltilecek.
 - [ ] Navbar dropdown'ı için active state'i üzerinde çalışılacak.
 - [ ] Koyu mod
