@@ -3,10 +3,10 @@
 		<Hero :title="$route.meta.title"
 			  :description="$route.meta.desc" />
 
-		<div class="columns is-mobile is-centered">
+		<div class="columns is-centered">
 			<div v-for="(route, index) in $store.getters.getRoutes.hesaplayicilar"
 				 :key="index"
-				 class="column is-4-desktop is-full-mobile has-text-centered">
+				 class="column is-4-desktop is-12-mobile has-text-centered">
 				<router-link :to="route.path"
 							 class="box">
 					<b-icon :icon="route.meta.icon"
