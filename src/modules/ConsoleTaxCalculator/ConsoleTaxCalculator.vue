@@ -27,6 +27,12 @@
 				</b-field>
 			</b-field>
 
+			<b-field horizontal=""
+					 expanded=""
+					 label="">
+				<b-checkbox v-model="form.calculateOctoberTax">1 Ekim 2020'den sonra düşecek gümrük vergisine göre hesapla (Düşer mi gerçekten?)</b-checkbox>
+			</b-field>
+
 			<hr />
 
 			<ExchangeRates />
@@ -123,7 +129,8 @@ export default {
 			showResults: false,
 			form: {
 				price: "",
-				currency: "TRY"
+				currency: "TRY",
+				calculateOctoberTax: false
 			},
 			results: {
 				prices: {},
@@ -165,7 +172,10 @@ export default {
 			// Calculate tax
 			const calculator = new ConsoleTaxCalc({
 				price,
-				mode
+				mode,
+				opts: {
+					calculateOctoberTax: vm.form.calculateOctoberTax
+				}
 			}).calculate();
 
 			vm.results.prices = calculator.prices;

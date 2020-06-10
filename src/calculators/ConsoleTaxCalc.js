@@ -16,6 +16,10 @@ class ConsoleTaxCalc extends TaxCalc {
 	};
 
 	_custom() {
+		if (this._opts.calculateOctoberTax) {
+			this._taxRates.custom = 20;
+		}
+
 		switch (this._mode) {
 			case TaxCalc.MODE_CALCULATE_FROM_BASE_PRICE:
 				this._taxFees.custom = this._calculateTaxFromTaxFreePrice(this._prices.salePrice, this._taxRates.custom);
