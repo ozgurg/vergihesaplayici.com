@@ -16,7 +16,7 @@ class ConsoleTaxCalc extends TaxCalc {
 	};
 
 	_custom() {
-		if (this._opts.calculateOctoberTax) {
+		if (this._opts && this._opts.calculateOctoberTax) {
 			this._taxRates.custom = 20;
 		}
 
