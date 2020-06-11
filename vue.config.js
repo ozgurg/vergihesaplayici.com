@@ -1,4 +1,5 @@
 const TerserPlugin = require("terser-webpack-plugin");
+const version = require("./package.json").version;
 
 
 module.exports = {
@@ -13,6 +14,8 @@ module.exports = {
 				})]
 			};
 		}
+
+		config.output.chunkFilename = `js/[id]-${version}.js`;
 	},
 	pwa: {
 		name: "Vergi Hesaplayıcı",
