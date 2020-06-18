@@ -5,8 +5,8 @@ on:
     branches: master
     paths-ignore:
       - "**.md"
-      - "sample-datas/*"
       - "logo"
+      - ".github/dependabot.yml"
 
 jobs:
   CI:
