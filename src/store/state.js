@@ -8,6 +8,7 @@ export default {
 		USD: 0,
 		EUR: 0,
 		GBP: 0,
-		INR: 0
+		INR: 0,
+		CNY: 0
 	}
 };

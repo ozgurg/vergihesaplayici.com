@@ -5,6 +5,7 @@
 			<ExchangeRateItem currency="EUR" />
 			<ExchangeRateItem currency="GBP" />
 			<ExchangeRateItem currency="INR" />
+			<ExchangeRateItem currency="CNY" />
 		</nav>
 	</div>
 </template>
