@@ -6,7 +6,8 @@ export default {
 	exchangeRates: {
 		TRY: 1,
 		USD: 0,
+		EUR: 0,
 		GBP: 0,
-		EUR: 0
+		INR: 0
 	}
 };
