@@ -52,6 +52,9 @@ E2E testleri
 - [ ] .github/workflows/main.yml içinde "env" değerlerindeki kod tekrarı düzeltilecek.
 - [ ] Navbar dropdown'ı için active state'i üzerinde çalışılacak.
 - [ ] Koyu mod
+- [ ] Paylaş özelliği ile kopyalanan bağlantıyla siteye ilk girildiğinde query string verisi gerekli alanlara uygulanmadığı için hesaplama çalışmıyor.
+- [ ] Telefon Vergisi Hesaplayıcı'ya gözetim belgesi var - yok seçeneği eklenecek.
+- [ ] (Devamlı) Yeni hesaplamalar eklenecek.
 
 ## Logo
 [Namechap Free Logo Maker](https://www.namecheap.com/logo-maker/) ile oluşturdum. Detayları ve kaynak dosyaları /logo altından görebilirsiniz.
