@@ -1,5 +1,5 @@
 <template>
-	<div class="level-item has-text-centered">
+	<div class="column is-half-mobile has-text-centered">
 		<div>
 			<p class="heading">1 {{currency}}</p>
 			<p v-if="!isLoading" class="subtitle">{{currencyFormat($store.getters.getExchangeRate(currency), "TRY")}}</p>
@@ -39,7 +39,13 @@ export default {
 </script>
 
 <style lang="scss" scoped="">
+	.subtitle {
+		margin: 0 !important
+	}
 	.b-skeleton {
-		margin: .5rem 0 !important
+	  	.b-skeleton-item {
+		  	vertical-align: middle;
+			display: inline-block
+		}
 	}
 </style>

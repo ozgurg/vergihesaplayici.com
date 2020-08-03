@@ -1,13 +1,13 @@
 <template>
-	<div>
-		<nav class="level is-mobile">
-			<ExchangeRateItem currency="USD" />
-			<ExchangeRateItem currency="EUR" />
-			<ExchangeRateItem currency="GBP" />
-			<ExchangeRateItem currency="INR" />
-			<ExchangeRateItem currency="CNY" />
-		</nav>
+  <div>
+	<div class="columns is-mobile">
+	  <ExchangeRateItem currency="USD" />
+	  <ExchangeRateItem currency="EUR" />
+	  <ExchangeRateItem currency="GBP" />
+	  <ExchangeRateItem currency="INR" />
+	  <ExchangeRateItem currency="CNY" />
 	</div>
+  </div>
 </template>
 
 <script>
@@ -21,3 +21,9 @@ export default {
 	}
 };
 </script>
+
+<style scoped="">
+.columns {
+	flex-wrap: wrap
+}
+</style>
