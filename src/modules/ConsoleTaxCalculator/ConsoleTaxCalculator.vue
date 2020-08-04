@@ -143,17 +143,15 @@ export default {
 		const vm = this;
 
 		// Set data from query with validate them
-		setTimeout(() => {
-			if (vm.$route.query) {
-				if (vm.$route.query.price) {
-					vm.form.price = parseFloat(vm.$route.query.price);
-				}
+		if (vm.$route.query) {
+		  if (vm.$route.query.price) {
+				vm.form.price = parseFloat(vm.$route.query.price);
+		  }
 
-				if (vm.$route.query.currency && vm.$store.getters.getCurrencies.includes(vm.$route.query.currency)) {
-					vm.form.currency = vm.$route.query.currency;
-				}
-			}
-		}, 200);
+		  if (vm.$route.query.currency && vm.$store.getters.getCurrencies.includes(vm.$route.query.currency)) {
+				vm.form.currency = vm.$route.query.currency;
+		  }
+		}
 	},
 	methods: {
 		calculate: async function() {
