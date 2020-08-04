@@ -5,6 +5,7 @@ const version = require("./package.json").version;
 module.exports = {
 	productionSourceMap: false,
 	filenameHashing: false,
+	lintOnSave: false,
 	configureWebpack: config => {
 		if (process.env.NODE_ENV === "production") {
 			config.optimization = {
