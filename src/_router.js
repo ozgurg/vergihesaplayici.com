@@ -14,7 +14,7 @@ const routes = [
 			"./modules/Index/Index"),
 		meta: {
 			title: "Vergi Hesaplayıcı",
-			desc: "Türkiye'deki farklı ürün gruplarının yurt dışı fiyatlarına ne kadar vergi uygulandığı hesaplayın."
+			desc: "Türkiye'deki farklı ürün gruplarının yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın."
 		}
 	},
 	{
