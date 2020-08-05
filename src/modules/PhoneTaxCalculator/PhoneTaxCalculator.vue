@@ -47,7 +47,7 @@
 
 				<b-message v-if="form.currency !== 'TRY'"
 						   size="is-small">
-					Ürünlerin ülkeye giriş fiyatını bilmediğimiz fiyatlar tahmidir. Gerçek satış fiyatı farklı olabilir ve muhtemelen daha az olacaktır.
+				  Ürünlerin ülkeye giriş fiyatını bilmediğimiz için gösterilen fiyatlar tahmidir. Gerçek satış fiyatı farklı olabilir ve muhtemelen daha az olacaktır.
 				</b-message>
 
 				<b-field horizontal=""
