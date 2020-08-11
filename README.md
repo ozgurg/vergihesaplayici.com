@@ -5,7 +5,7 @@
 [vergihesaplayici.com](https://vergihesaplayici.com/)'un kaynak kodudur.
 
 ## Nereden çıktı bu fikir?
-[teknoseyir.com](https://teknoseyir.com/)'daki [@temp](https://teknoseyir.com/u/temp)'in [Telefon Fiyatı Hesapla v2](https://teknoseyir.com/blog/telefon-fiyati-hesapla-v2) adlı masaüstü yazılımına kendi yorumumu katarak Vue ile yazma kararı aldım ve neden diğer hesaplamaları da -şu anda 1 tane olsa da- eklemeyeyim diye düşündüm. Ortaya vergihesaplayici.com çıktı. 
+[teknoseyir.com](https://teknoseyir.com/)'daki [@temp](https://teknoseyir.com/u/temp)'in [Telefon Fiyatı Hesapla v2](https://teknoseyir.com/blog/telefon-fiyati-hesapla-v2) adlı masaüstü yazılımına kendi yorumumu katarak Vue ile yazma kararı aldım ve neden diğer hesaplamaları da -şu anda 2 tane olsa da- eklemeyeyim diye düşündüm. Ortaya vergihesaplayici.com çıktı. 
 
 ## Kurulum
 `npm install`
