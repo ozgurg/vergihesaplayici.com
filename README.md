@@ -54,6 +54,7 @@ E2E testleri
 - [ ] Koyu mod
 - [ ] Paylaş özelliği ile kopyalanan bağlantıyla siteye ilk girildiğinde query string verisi gerekli alanlara uygulanmadığı için hesaplama çalışmıyor.
 - [ ] Telefon Vergisi Hesaplayıcı'ya gözetim belgesi var - yok seçeneği eklenecek.
+- [ ] Kurlar yüklendiğinde kurların boyutu placeholderdan farklı olduğu için 3-5 piksellik farka sebep oluyor. ([Bkz](https://i.hizliresim.com/dR8II9.gif))
 - [ ] (Devamlı) Yeni hesaplamalar eklenecek.
 
 ## Logo
