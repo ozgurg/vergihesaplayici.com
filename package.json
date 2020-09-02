@@ -26,7 +26,7 @@
         "not dead"
     ],
     "dependencies": {
-        "axios": "^0.19.2",
+        "axios": "^0.20.0",
         "buefy": "^0.8.20",
         "clipboard": "^2.0.6",
         "core-js": "^3.6.5",
