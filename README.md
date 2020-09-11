@@ -20,7 +20,6 @@ Build
 `npm run build`
 
 ## Linting
-Linting çok önem verdiğim bir konu ve bu yüzden birçok kural -sinir bozucu olsa da- çok sıkı.
 
 `npm run lint`
 
@@ -46,16 +45,6 @@ E2E testleri
 - [vue-router](https://www.npmjs.com/package/vue-router)
 - [axios](https://www.npmjs.com/package/axios)
 - [vuex](https://www.npmjs.com/package/vuex)
-
-## TODO
-- [ ] Hesaplamayı paylaş özelliğinin kopyalama işlevinin kopyalayıp kopyalamadığının testi yazılacak.
-- [ ] .github/workflows/main.yml içinde "env" değerlerindeki kod tekrarı düzeltilecek.
-- [ ] Navbar dropdown'ı için active state'i üzerinde çalışılacak.
-- [ ] Koyu mod
-- [ ] Paylaş özelliği ile kopyalanan bağlantıyla siteye ilk girildiğinde query string verisi gerekli alanlara uygulanmadığı için hesaplama çalışmıyor.
-- [ ] Telefon Vergisi Hesaplayıcı'ya gözetim belgesi var - yok seçeneği eklenecek.
-- [ ] Kurlar yüklendiğinde kurların boyutu placeholderdan farklı olduğu için 3-5 piksellik farka sebep oluyor. ([Bkz](https://i.hizliresim.com/dR8II9.gif))
-- [ ] (Devamlı) Yeni hesaplamalar eklenecek.
 
 ## Logo
 [Namechap Free Logo Maker](https://www.namecheap.com/logo-maker/) ile oluşturdum. Detayları ve kaynak dosyaları /logo altından görebilirsiniz.
