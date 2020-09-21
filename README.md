@@ -49,7 +49,7 @@ E2E testleri
 ## Logo
 [Namechap Free Logo Maker](https://www.namecheap.com/logo-maker/) ile oluşturdum. Detayları ve kaynak dosyaları /logo altından görebilirsiniz.
 
-# Katkı sağlama
+## Katkı sağlama
 Sitede büyük bir güncelleme yapacağım. Bu yüzden bir süreliğine kod için katkı vermeye kapalıdır. Varolan sürümde fark ettiğiniz hataları veya geliştirmeleri her zaman bildirebilirsiniz.
 
 ## Lisans
