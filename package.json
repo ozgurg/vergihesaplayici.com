@@ -30,7 +30,7 @@
         "buefy": "^0.8.20",
         "clipboard": "^2.0.6",
         "core-js": "^3.6.5",
-        "firebase": "^7.20.0",
+        "firebase": "^7.21.1",
         "register-service-worker": "^1.7.1",
         "vue": "^2.6.12",
         "vue-meta": "^2.4.0",
