@@ -42,11 +42,11 @@ export default {
 	],
 	plugins: [
 		{
-			src: "@/plugins/money-format.js",
+			src: "@/plugins/client/money-format.js",
 			mode: "client"
 		},
 		{
-			src: "@/plugins/vue-clipboard2.js",
+			src: "@/plugins/client/vue-clipboard2.js",
 			mode: "client"
 		}
 	],
