@@ -1,15 +1,22 @@
 import tr from "vuetify/es5/locale/tr";
 import colors from "vuetify/lib/util/colors";
 
+const Constants = {
+	BASE_URL: "https://vergihesaplayici.com",
+	PORT: 3000,
+	NAME: "Vergi Hesaplayıcı",
+	PRIMARY_COLOR: "#53BBAD"
+};
+
 export default {
 	target: "static",
 	components: true,
 	server: {
-		port: process.env.PORT
+		port: Constants.PORT
 	},
 	head: {
-		titleTemplate: `%s - ${process.env.NAME}`,
-		title: process.env.NAME,
+		titleTemplate: `%s - ${Constants.NAME}`,
+		title: Constants.NAME,
 		meta: [
 			{ charset: "UTF-8" },
 			{ name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -55,7 +62,7 @@ export default {
 		}
 	],
 	loading: {
-		color: process.env.PRIMARY_COLOR,
+		color: Constants.PRIMARY_COLOR,
 		failedColor: colors.red.base,
 		throttle: 600
 	},
@@ -63,7 +70,7 @@ export default {
 		extractCSS: true
 	},
 	sitemap: {
-		hostname: process.env.BASE_URL,
+		hostname: Constants.BASE_URL,
 		gzip: true,
 		defaults: {
 			changefreq: "monthly",
@@ -83,25 +90,25 @@ export default {
 			},
 			themes: {
 				dark: {
-					primary: process.env.PRIMARY_COLOR
+					primary: Constants.PRIMARY_COLOR
 				},
 				light: {
-					primary: process.env.PRIMARY_COLOR
+					primary: Constants.PRIMARY_COLOR
 				}
 			}
 		}
 	},
 	pwa: {
 		meta: {
-			theme_color: process.env.PRIMARY_COLOR
+			theme_color: Constants.PRIMARY_COLOR
 		},
 		manifest: {
-			name: process.env.NAME,
-			short_name: process.env.NAME,
+			name: Constants.NAME,
+			short_name: Constants.NAME,
 			lang: "tr"
 		}
 	},
 	env: {
-		BASE_URL: process.env.BASE_URL
+		BASE_URL: Constants.BASE_URL
 	}
 };
