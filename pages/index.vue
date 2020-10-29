@@ -28,6 +28,7 @@
 <script>
 import ositaIhemeMp4 from "@/assets/video/osita-iheme.mp4";
 import ositaIhemeWebm from "@/assets/video/osita-iheme.webm";
+import openGraphImage from "@/assets/img/open-graph/index.jpg";
 
 const meta = {
 	title: "Vergi Hesaplayıcı",
@@ -44,7 +45,8 @@ export default {
 			meta: [
 				{ hid: "title", name: "description", content: meta.title },
 				{ hid: "description", name: "description", content: meta.description },
-				{ hid: "og:description", name: "og:description", content: meta.description }
+				{ hid: "og:description", name: "og:description", content: meta.description },
+				{ hid: "og:image", name: "og:image", content: openGraphImage }
 			]
 		},
 		ositaIheme: {
