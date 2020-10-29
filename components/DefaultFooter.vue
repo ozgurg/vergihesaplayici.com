@@ -6,7 +6,7 @@
 			<v-col class="text-center"
 				   cols="12">
 				<p>vergihesaplayici.com,
-					<a href="https://github.com/ozgurg" rel="nofollow" target="_blank">@ozgurg</a> tarafından açık
+					<a href="https://github.com/ozgurg" rel="nofollow noopener noreferrer" target="_blank">@ozgurg</a> tarafından açık
 					kaynaklı olarak geliştirilmektedir.</p>
 				<Ghbtns />
 			</v-col>
