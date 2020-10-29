@@ -103,6 +103,7 @@
 <script>
 import BaseCalculator from "@/calculators/BaseCalculator";
 import PhoneTaxCalculator from "@/calculators/PhoneTaxCalculator";
+import openGraphImage from "@/assets/img/open-graph/phone-tax-calculator.jpg";
 
 const meta = {
 	title: "Telefon Vergisi Hesaplayıcı",
@@ -118,7 +119,8 @@ export default {
 			meta: [
 				{ hid: "title", name: "description", content: meta.title },
 				{ hid: "description", name: "description", content: meta.description },
-				{ hid: "og:description", name: "og:description", content: meta.description }
+				{ hid: "og:description", name: "og:description", content: meta.description },
+				{ hid: "og:image", name: "og:image", content: openGraphImage }
 			]
 		},
 		ui: {
