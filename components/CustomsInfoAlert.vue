@@ -1,0 +1,15 @@
+<template>
+	<v-alert v-bind="$attrs"
+			 dense=""
+			 text=""
+			 border="left"
+			 type="warning">Ürünlerin ülkeye giriş fiyatını bilmediğimiz için gösterilen fiyatlar tahminidir. Gerçek
+		satış fiyatı farklı olabilir ve muhtemelen daha az olacaktır.
+	</v-alert>
+</template>
+
+<script>
+export default {
+	name: "CustomsInfoAlert"
+};
+</script>

@@ -1,49 +1,53 @@
-name: "vergihesaplayici.com"
+name: CI
 
 on:
   push:
     branches: master
     paths-ignore:
       - "**.md"
-      - "logo"
       - ".github/dependabot.yml"
 
 jobs:
-  CI:
-    runs-on: ubuntu-latest
+  ci:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [14]
+
     steps:
-        - name: "[SET UP] Checkout repo"
-          uses: actions/checkout@master
+      - name: [SET UP] Checkout 🛎
+        uses: actions/checkout@master
 
-        - name: "[SET UP] Set up Node"
-          uses: actions/setup-node@master
+      - name: [SET UP] Setup node env 🏗
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: ${{ matrix.node }}
 
-        - name: "[SET UP] Install dependencies"
-          run: npm install
+      - name: [SET UP] Cache node_modules 📦
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
-
-        - name: "[QUALITY] Run unit tests"
-          run: npm run test:unit
-          env:
-            VUE_APP_BASE_URL: ${{ secrets.VUE_APP_BASE_URL }}
-
-        - name: "[QUALITY] Run E2E tests"
-          uses: cypress-io/github-action@v1
-          with:
-            start: npm run serve
-            wait-on: http://localhost:8080
-            config-file: cypress.json
-          env:
-            CYPRESS_BASE_URL: http://localhost:8080
-            VUE_APP_BASE_URL: ${{ secrets.VUE_APP_BASE_URL }}
+      - name: [SET UP] Install dependencies 👨🏻‍💻
+        run: npm ci
 
 
-        - name: "[DEPLOY] Build for production"
-          run: npm run build
-          env:
-            VUE_APP_BASE_URL: ${{ secrets.VUE_APP_BASE_URL }}
+      - name: [QUALITY] Run linter 👀
+        run: npm run lint
 
-        - name: "[DEPLOY] Deploy to Firebase"
+      - name: [QUALITY] Run unit tests 🧪
+        run: npm run test:unit
+
+
+      - name: "[DEPLOY] Build for production"
+          run: npm run generate
+
+      - name: "[DEPLOY] Deploy to Firebase"
           uses: w9jds/firebase-action@master
           with:
             args: deploy --only hosting

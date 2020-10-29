@@ -1,9 +1,14 @@
 module.exports = {
 	root: true,
 	env: {
+		browser: true,
 		node: true
 	},
-	extends: ["plugin:vue/essential", "eslint:recommended", "plugin:jest/recommended", "google"],
+	extends: [
+		"plugin:vue/essential",
+		"eslint:recommended",
+		"google"
+	],
 	parserOptions: {
 		parser: "babel-eslint"
 	},

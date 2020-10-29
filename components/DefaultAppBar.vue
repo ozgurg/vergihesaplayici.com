@@ -1,0 +1,23 @@
+<template>
+	<v-app-bar v-bind="$attrs"
+			   elevate-on-scroll="">
+		<v-app-bar-nav-icon v-if="$vuetify.breakpoint.mdAndDown"
+							@click="drawerState = !drawerState" />
+
+		<v-toolbar-title v-text="toolbarTitle" />
+	</v-app-bar>
+</template>
+
+<script>
+import { sync } from "vuex-pathify";
+
+export default {
+	name: "DefaultAppBar",
+	computed: {
+		...sync("ui", [
+			"drawerState",
+			"toolbarTitle"
+		])
+	}
+};
+</script>

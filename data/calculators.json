@@ -1,0 +1,14 @@
+[
+  {
+    "icon": "mdi-cellphone",
+    "title": "Telefon Vergisi",
+    "fullTitle": "Telefon Vergisi Hesaplayıcı",
+    "url": "/hesaplayicilar/telefon-vergisi-hesaplayici"
+  },
+  {
+    "icon": "mdi-gamepad",
+    "title": "Konsol Vergisi",
+    "fullTitle": "Konsol Vergisi Hesaplayıcı",
+    "url": "/hesaplayicilar/konsol-vergisi-hesaplayici"
+  }
+]

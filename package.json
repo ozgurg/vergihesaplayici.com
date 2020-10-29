@@ -1,60 +1,51 @@
 {
-    "name": "vergihesaplayici.com",
-    "license": "MIT",
-    "homepage": "https://vergihesaplayici.com/",
-    "version": "1.1.31",
-    "private": true,
-    "author": {
-        "email": "ozgurgorgulu54@gmail.com",
-        "name": "Özgür Görgülü",
-        "url": "https://github.com/ozgurg"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/ozgurg/vergihesaplayici.com"
-    },
-    "scripts": {
-        "serve": "vue-cli-service serve --open",
-        "build": "vue-cli-service build",
-        "lint": "vue-cli-service lint",
-        "test:unit": "vue-cli-service test:unit",
-        "test:e2e": "vue-cli-service test:e2e"
-    },
-    "browserslist": [
-        "> 1%",
-        "last 2 versions",
-        "not dead"
-    ],
-    "dependencies": {
-        "axios": "^0.20.0",
-        "buefy": "^0.8.20",
-        "clipboard": "^2.0.6",
-        "core-js": "^3.6.5",
-        "firebase": "^7.21.1",
-        "register-service-worker": "^1.7.1",
-        "vue": "^2.6.12",
-        "vue-meta": "^2.4.0",
-        "vue-router": "^3.4.5",
-        "vuex": "^3.5.1"
-    },
-    "devDependencies": {
-        "@vue/cli-plugin-babel": "^4.5.6",
-        "@vue/cli-plugin-e2e-cypress": "^4.5.6",
-        "@vue/cli-plugin-eslint": "^4.5.6",
-        "@vue/cli-plugin-pwa": "^4.5.6",
-        "@vue/cli-plugin-router": "^4.5.6",
-        "@vue/cli-plugin-unit-jest": "^4.5.6",
-        "@vue/cli-plugin-vuex": "^4.5.6",
-        "@vue/cli-service": "^4.5.6",
-        "@vue/test-utils": "^1.1.0",
-        "babel-eslint": "^10.1.0",
-        "eslint": "^7.10.0",
-        "eslint-config-google": "^0.14.0",
-        "eslint-plugin-jest": "^24.0.2",
-        "eslint-plugin-vue": "^7.0.0",
-        "node-sass": "^4.14.1",
-        "sass-loader": "^10.0.2",
-        "terser-webpack-plugin": "^4.2.2",
-        "vue-template-compiler": "^2.6.12"
-    }
+  "name": "vergihesaplayici.com",
+  "description": "vergihesaplayici.com, vergi hesaplar.",
+  "license": "MIT",
+  "homepage": "https://vergihesaplayici.com/",
+  "version": "2.0.0",
+  "private": true,
+  "author": {
+    "email": "ozgurgorgulu54@gmail.com",
+    "name": "Özgür Görgülü",
+    "url": "https://github.com/ozgurg"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ozgurg/vergihesaplayici.com"
+  },
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint": "npm run lint:js",
+    "test:unit": "vue-cli-service test:unit"
+  },
+  "dependencies": {
+    "@nuxtjs/pwa": "^3.2.2",
+    "axios": "^0.21.0",
+    "core-js": "^3.6.5",
+    "firebase": "^7.24.0",
+    "nuxt": "^2.14.7",
+    "vue-clipboard2": "^0.3.1",
+    "vuex": "^3.5.1",
+    "vuex-pathify": "^1.4.1"
+  },
+  "devDependencies": {
+    "@nuxt/types": "^2.14.7",
+    "@nuxtjs/eslint-config": "^4.0.0",
+    "@nuxtjs/eslint-module": "^3.0.0",
+    "@nuxtjs/sitemap": "^2.4.0",
+    "@nuxtjs/vuetify": "^1.11.2",
+    "@vue/cli-plugin-unit-jest": "^4.5.8",
+    "@vue/cli-service": "^4.5.8",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.12.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-nuxt": "^1.0.0"
+  }
 }
