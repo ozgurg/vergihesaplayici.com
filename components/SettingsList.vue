@@ -16,7 +16,8 @@
 			</template>
 		</v-list-item>
 
-		<v-list-item @click="toggleCenteredContent()">
+		<v-list-item v-if="!$vuetify.breakpoint.mdAndDown"
+					 @click="toggleCenteredContent()">
 			<template>
 				<v-list-item-action>
 					<v-checkbox :value="isCenteredContent"
