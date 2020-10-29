@@ -104,12 +104,22 @@
 import BaseCalculator from "@/calculators/BaseCalculator";
 import PhoneTaxCalculator from "@/calculators/PhoneTaxCalculator";
 
+const meta = {
+	title: "Telefon Vergisi Hesaplayıcı",
+	description: "Satın aldığınız bir telefonun satış fiyatına etki eden vergileri hesaplayın."
+};
+
 export default {
 	layout: "default/index",
 	name: "PhoneTaxCalculator",
 	data: () => ({
-		info: {
-			title: "Telefon Vergisi Hesaplayıcı"
+		head: {
+			title: meta.title,
+			meta: [
+				{ hid: "title", name: "description", content: meta.title },
+				{ hid: "description", name: "description", content: meta.description },
+				{ hid: "og:description", name: "og:description", content: meta.description }
+			]
 		},
 		ui: {
 			availableCurrencies: [],
@@ -217,14 +227,12 @@ export default {
 	},
 	head() {
 		const vm = this;
-		return {
-			title: vm.info.title
-		};
+		return vm.head;
 	},
 	mounted() {
 		const vm = this;
 
-		vm.$store.set("ui/toolbarTitle", vm.info.title);
+		vm.$store.set("ui/toolbarTitle", vm.head.title);
 
 		vm.ui.availableCurrencies = vm.$store.get("exchangeRates/availableCurrencies");
 

@@ -22,25 +22,33 @@
 <script>
 import ositaIheme from "@/assets/img/osita-iheme.gif";
 
+const meta = {
+	title: "Vergi Hesaplayıcı",
+	description: "Türkiye'deki farklı ürün gruplarının yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın."
+};
+
 export default {
 	layout: "default/index",
 	name: "Index",
 	data: () => ({
-		info: {
-			title: "Vergi Hesaplayıcı"
+		head: {
+			titleTemplate: null,
+			title: meta.title,
+			meta: [
+				{ hid: "title", name: "description", content: meta.title },
+				{ hid: "description", name: "description", content: meta.description },
+				{ hid: "og:description", name: "og:description", content: meta.description }
+			]
 		},
 		ositaIheme
 	}),
 	head() {
 		const vm = this;
-		return {
-			titleTemplate: null,
-			title: vm.info.title
-		};
+		return vm.head;
 	},
 	mounted() {
 		const vm = this;
-		vm.$store.set("ui/toolbarTitle", vm.info.title);
+		vm.$store.set("ui/toolbarTitle", vm.head.title);
 	}
 };
 </script>

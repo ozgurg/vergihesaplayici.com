@@ -51,7 +51,10 @@ export default {
 	head() {
 		const vm = this;
 		return {
-			title: vm.title
+			title: vm.title,
+			meta: [
+				{ hid: "title", name: "description", content: vm.title }
+			]
 		};
 	},
 	mounted() {
