@@ -4,11 +4,17 @@
 
 		<p class="mb-2">vergihesaplayici.com, vergi hesaplar.</p>
 
-		<v-img :src="ositaIheme"
-			   alt="Osita Iheme"
-			   draggable="false"
-			   height="290"
-			   width="400" />
+		<video autoplay=""
+			   loop=""
+			   muted=""
+			   playsinline=""
+			   width="400"
+			   height="400">
+			<source :src="ositaIheme.ositaIhemeWebm"
+					type="video/webm" />
+			<source :src="ositaIheme.ositaIhemeMp4"
+					type="video/mp4" />
+		</video>
 
 		<v-divider class="my-8" />
 
@@ -20,7 +26,8 @@
 </template>
 
 <script>
-import ositaIheme from "@/assets/img/osita-iheme.gif";
+import ositaIhemeMp4 from "@/assets/video/osita-iheme.mp4";
+import ositaIhemeWebm from "@/assets/video/osita-iheme.webm";
 
 const meta = {
 	title: "Vergi Hesaplayıcı",
@@ -40,7 +47,10 @@ export default {
 				{ hid: "og:description", name: "og:description", content: meta.description }
 			]
 		},
-		ositaIheme
+		ositaIheme: {
+			ositaIhemeMp4,
+			ositaIhemeWebm
+		}
 	}),
 	head() {
 		const vm = this;
