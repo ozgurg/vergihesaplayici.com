@@ -3,7 +3,9 @@
 ![Version](https://img.shields.io/github/package-json/v/ozgurg/vergihesaplayici.com)
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ozgurg/vergihesaplayici.com/master/.github/assets/banner.jpg" />
+  <a href="https://vergihesaplayici.com/">
+     <img src="https://raw.githubusercontent.com/ozgurg/vergihesaplayici.com/master/.github/assets/banner.jpg" />
+  </a>
 </p>
 
 [teknoseyir.com](https://teknoseyir.com/)'dan [@temp](https://teknoseyir.com/u/temp)'in [Telefon Fiyatı Hesapla v2](https://teknoseyir.com/blog/telefon-fiyati-hesapla-v2) adlı masaüstü yazılımını görünce farklı türde hesaplamaları da içerebilecek genel bir vergi hesaplayıcı yapmak üzerine alan adını satın alıp Nuxt.js ile webe taşıdım.
