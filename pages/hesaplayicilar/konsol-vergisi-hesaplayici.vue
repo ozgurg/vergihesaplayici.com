@@ -4,7 +4,7 @@
 						label="Konsol fiyatı">
 			<v-row dense="">
 				<v-col class="py-0"
-					   cols="9">
+					   cols="7" sm="9" md="9" lg="9" xl="9">
 					<v-text-field
 						v-model.number="form.price"
 						:prefix="getCurrencySign(form.currency)"
@@ -17,7 +17,7 @@
 				</v-col>
 
 				<v-col class="py-0"
-					   cols="3">
+					   cols="5" sm="3" md="3" lg="3" xl="3">
 					<v-select
 						v-model="form.currency"
 						:items="ui.availableCurrencies"
