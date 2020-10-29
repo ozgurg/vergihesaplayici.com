@@ -42,6 +42,10 @@ export default {
 	],
 	plugins: [
 		{
+			src: "@/plugins/client/firebase.js",
+			mode: "client"
+		},
+		{
 			src: "@/plugins/client/money-format.js",
 			mode: "client"
 		},
