@@ -14,7 +14,7 @@
     ],
     "headers": [
       {
-        "source": "**/*.@(jpg|jpeg|gif|png|svg|js|css|json)",
+        "source": "**/*.@(jpg|jpeg|gif|png|svg|js|css|json|mp4|webm)",
         "headers": [
           {
             "key": "Cache-Control",
@@ -23,7 +23,7 @@
         ]
       },
       {
-        "source": "/service-worker.js",
+        "source": "/sw.js",
         "headers": [
           {
             "key": "Cache-Control",
