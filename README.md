@@ -3,7 +3,7 @@
 ![Version](https://img.shields.io/github/package-json/v/ozgurg/vergihesaplayici.com)
 
 <p align="center">
-  <a href="https://vergihesaplayici.com/">
+  <a target="_blank" href="https://vergihesaplayici.com/">
      <img src="https://raw.githubusercontent.com/ozgurg/vergihesaplayici.com/master/.github/assets/banner.jpg" />
   </a>
 </p>
