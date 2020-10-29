@@ -7,6 +7,7 @@
 				v-for="(calculator, index) in calculators"
 				:key="index"
 				:to="calculator.url"
+				role="link"
 				link="">
 				<v-list-item-icon>
 					<v-icon v-text="calculator.icon" />
