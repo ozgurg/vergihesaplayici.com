@@ -31,4 +31,4 @@ Unit testler
 [Namechap Free Logo Maker](https://www.namecheap.com/logo-maker/) ile oluşturdum.
 
 ## Lisans
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/ozgurg/vergihesaplayici.com/blob/master/LICENSE)
