@@ -7,7 +7,7 @@ on:
       - "**.md"
       - ".github/dependabot.yml"
   schedule:
-    - cron: "35 8 * * 2
+    - cron: "35 8 * * 2"
 
 jobs:
   analyze:
