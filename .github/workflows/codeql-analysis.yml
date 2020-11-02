@@ -30,11 +30,6 @@ jobs:
         
     - name: Autobuild
       uses: github/codeql-action/autobuild@v1
-      
-    - name: Clean install dependencies and build
-      run: |
-        npm ci
-        npm run generate
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
