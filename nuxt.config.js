@@ -33,6 +33,11 @@ export default {
 		script: [
 			{
 				src: "https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.12.1/polyfill.min.js" // For IE 11
+			},
+			{ // Google AdSense
+				"src": "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+				"data-ad-client": "ca-pub-6690082691027190",
+				"async": ""
 			}
 		]
 	},
