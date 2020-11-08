@@ -14,7 +14,7 @@
     ],
     "headers": [
       {
-        "source": "/**",
+        "source": "/sw.js",
         "headers": [
           {
             "key": "Cache-Control",
@@ -22,8 +22,17 @@
           }
         ]
       },
-      {
-        "source": "/sw.js",
+	  {
+        "source": "/service-worker.js",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache, no-store, must-revalidate"
+          }
+        ]
+      },
+	  {
+        "source": "/index.html",
         "headers": [
           {
             "key": "Cache-Control",
