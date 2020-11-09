@@ -197,7 +197,7 @@ export default {
 		"ui.preset"() {
 			const vm = this;
 
-			vm.form.currency = "USD";
+			vm.form.currency = "EUR";
 			vm.form.price = vm.ui.presets[vm.ui.preset].price;
 		},
 		form: {
