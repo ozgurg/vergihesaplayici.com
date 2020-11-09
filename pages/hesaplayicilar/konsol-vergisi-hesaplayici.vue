@@ -109,7 +109,7 @@ export default {
 		form: {
 			currency: "USD",
 			price: "",
-			reducedCustomRatereducedCustomRate: false
+			reducedCustomRate: false
 		},
 		results: {
 			prices: {},
