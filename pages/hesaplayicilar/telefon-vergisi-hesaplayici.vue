@@ -119,6 +119,7 @@ export default {
 			meta: [
 				{ hid: "title", name: "description", content: meta.title },
 				{ hid: "description", name: "description", content: meta.description },
+				{ hid: "og:title", name: "og:title", content: meta.title },
 				{ hid: "og:description", name: "og:description", content: meta.description },
 				{ hid: "og:image", name: "og:image", content: openGraphImage }
 			]
