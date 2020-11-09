@@ -8,8 +8,8 @@
 			   loop=""
 			   muted=""
 			   playsinline=""
-			   width="400"
-			   height="400">
+			   width="300"
+			   height="300">
 			<source :src="ositaIheme.ositaIhemeWebm"
 					type="video/webm" />
 			<source :src="ositaIheme.ositaIhemeMp4"
