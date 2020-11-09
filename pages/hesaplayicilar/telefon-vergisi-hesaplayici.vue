@@ -1,5 +1,18 @@
 <template>
 	<div>
+		<HorizontalForm class="mb-3">
+			<v-chip-group
+				v-model="ui.preset"
+				column="">
+				<v-chip :key="index"
+						outlined=""
+						v-for="(preset, index) in ui.presets"
+						:value="index">
+					{{ preset.title }}
+				</v-chip>
+			</v-chip-group>
+		</HorizontalForm>
+
 		<HorizontalForm class="mb-3"
 						label="Telefon fiyatı">
 			<v-row dense="">
@@ -125,6 +138,13 @@ export default {
 			]
 		},
 		ui: {
+			presets: [
+				{ title: "iPhone 12 mini", price: 699 },
+				{ title: "iPhone 12", price: 799 },
+				{ title: "iPhone 12 Pro", price: 999 },
+				{ title: "iPhone 12 Pro Max", price: 1099 }
+			],
+			preset: null,
 			availableCurrencies: [],
 			registration: [
 				{ title: "İthalat yoluyla kayıtlı (Resmi)", value: PhoneTaxCalculator.Registration.Import },
@@ -210,6 +230,12 @@ export default {
 		}
 	},
 	watch: {
+		"ui.preset"() {
+			const vm = this;
+
+			vm.form.currency = "USD";
+			vm.form.price = vm.ui.presets[vm.ui.preset].price;
+		},
 		form: {
 			deep: true,
 			handler() {
