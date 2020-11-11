@@ -10,18 +10,14 @@
 			</v-col>
 		</v-row>
 
-		<small v-if="lastUpdate"
-			   class="ma-0 text--disabled d-flex justify-end">Son güncelleme: {{ lastUpdate }}</small>
+		<small class="ma-0 text--disabled d-flex justify-end font-italic">Günlük güncellenir</small>
 	</div>
 </template>
 
 <script>
-import { sync } from "vuex-pathify";
-
 export default {
 	name: "ExchangeRates",
 	computed: {
-		lastUpdate: sync("exchangeRates/lastUpdate"),
 		availableCurrencies() {
 			const vm = this;
 			return vm.$store.get("exchangeRates/availableCurrencies")

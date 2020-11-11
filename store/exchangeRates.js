@@ -2,7 +2,6 @@ import { make } from "vuex-pathify";
 import axios from "axios";
 
 export const state = () => ({
-	lastUpdate: null,
 	currencies: {
 		TRY: { sign: "₺", rate: 1, title: "Türk Lirası" },
 		USD: { sign: "$", rate: 0, title: "Amerikan Doları" },
@@ -15,7 +14,6 @@ export const state = () => ({
 });
 
 export const mutations = {
-	...make.mutations("lastUpdate"),
 	SET_EXCHANGE_RATE(state, { currency, rate }) {
 		state.currencies[currency]["rate"] = rate;
 	}
@@ -30,17 +28,6 @@ export const actions = {
 
 		await axios.get(`https://api.exchangeratesapi.io/latest?base=${currency}&symbols=TRY`)
 			.then(response => {
-				if (!state.lastUpdate) {
-					commit("SET_LAST_UPDATE",
-						new Date().toLocaleDateString("tr-TR",
-							{
-								hour: "2-digit",
-								minute: "2-digit",
-								second: "2-digit"
-							})
-					);
-				}
-
 				commit("SET_EXCHANGE_RATE", {
 					currency,
 					rate: response["data"]["rates"]["TRY"]
