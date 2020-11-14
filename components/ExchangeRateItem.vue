@@ -10,7 +10,7 @@
 				<v-card-subtitle v-text="currency"
 								 class="pb-0 pt-2" />
 
-				<v-card-title class="justify-center pt-0 pb-2">
+				<v-card-title class="justify-center pt-0 pb-2 px-0">
 					<div class="w-100 mx-auto">
 						<span v-if="isLoaded"
 							  v-text="$moneyFormat(exchangeRate.rate, 'TRY')"

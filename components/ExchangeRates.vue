@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="exchange-rates" :class="{'exchange-rates--mobile': $vuetify.breakpoint.xsOnly}">
 		<v-row v-bind="$attrs"
 			   dense="">
 			<v-col v-for="(currency, index) in availableCurrencies"
@@ -9,8 +9,6 @@
 				<ExchangeRateItem :currency="currency" />
 			</v-col>
 		</v-row>
-
-		<small class="ma-0 text--disabled d-flex justify-end font-italic">Günlük güncellenir</small>
 	</div>
 </template>
 
@@ -28,3 +26,22 @@ export default {
 	}
 };
 </script>
+
+<style lang="scss">
+.exchange-rates--mobile {
+	margin: 0 -24px;
+	.row {
+		display: block;
+		overflow-x: auto;
+		white-space: nowrap;
+		padding-left: 24px;
+		padding-right: 24px;
+		[class*=col-] {
+			flex: none;
+			display: inline-block;
+			vertical-align: top;
+			max-width: 33%
+		}
+	}
+}
+</style>
