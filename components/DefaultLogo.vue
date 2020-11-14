@@ -30,6 +30,9 @@ export default {
 	align-items: center;
 	flex-direction: row;
 	justify-content: center;
+	@media(max-width: 960px) {
+		height: 56px
+	}
 	&__img {
 		vertical-align: middle;
 		width: 190px;
