@@ -16,7 +16,7 @@
 			</template>
 		</v-list-item>
 
-		<v-list-item v-if="!$vuetify.breakpoint.mdAndDown"
+		<v-list-item v-if="$vuetify.breakpoint.smAndUp"
 					 @click="toggleCenteredContent()">
 			<template>
 				<v-list-item-action>
