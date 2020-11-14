@@ -20,14 +20,20 @@
 					:timeout="snackbar.timeout">
 			{{ snackbar.text }}
 		</v-snackbar>
+
+		<span class="version">{{ version }}</span>
 	</v-app>
 </template>
 
 <script>
 import { sync } from "vuex-pathify";
+import { version } from "./../package.json";
 
 export default {
 	name: "DefaultLayout",
+	data: () => ({
+		version
+	}),
 	computed: {
 		...sync("ui", [
 			"isCenteredContent",

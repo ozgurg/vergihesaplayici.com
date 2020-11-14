@@ -2,6 +2,20 @@ body {
     user-select: none
 }
 
+.version {
+    position: fixed;
+    z-index: 100;
+    right: 4px;
+    border-radius: 4px;
+    bottom: 4px;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 12px;
+    color: rgba(255, 255, 255, .5);
+    background: rgba(255, 255, 255, .1);
+    padding: 1px 2px 2px 2px;
+    line-height: 1
+}
+
 .main-content {
     padding: 32px 24px 96px;
     width: 820px;
