@@ -21,7 +21,6 @@
 					<v-text-field
 						v-model.number="form.price"
 						:prefix="getCurrencySign(form.currency)"
-						autofocus=""
 						dense=""
 						hide-details=""
 						outlined=""
