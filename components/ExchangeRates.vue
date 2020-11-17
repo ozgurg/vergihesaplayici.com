@@ -1,5 +1,5 @@
 <template>
-	<div class="exchange-rates" :class="{'exchange-rates--mobile': $vuetify.breakpoint.xsOnly}">
+	<div class="exchange-rates" :class="{'exchange-rates--mobile': isMobile}">
 		<v-row v-bind="$attrs"
 			   dense="">
 			<v-col v-for="(currency, index) in availableCurrencies"
@@ -15,6 +15,9 @@
 <script>
 export default {
 	name: "ExchangeRates",
+	data: () => ({
+		isMobile: false
+	}),
 	computed: {
 		availableCurrencies() {
 			const vm = this;
@@ -23,6 +26,20 @@ export default {
 					return currency !== "TRY";
 				});
 		}
+	},
+	methods: {
+		checkIfIsMobile() {
+			const vm = this;
+
+			vm.isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) && window.innerWidth < 992;
+		}
+	},
+	mounted() {
+		const vm = this;
+
+		vm.checkIfIsMobile();
+
+		window.addEventListener("resize", vm.checkIfIsMobile);
 	}
 };
 </script>
