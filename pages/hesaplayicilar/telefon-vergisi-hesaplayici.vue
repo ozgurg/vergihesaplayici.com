@@ -134,7 +134,11 @@ export default {
 				{ hid: "description", name: "description", content: meta.description },
 				{ hid: "og:title", name: "og:title", content: meta.title },
 				{ hid: "og:description", name: "og:description", content: meta.description },
-				{ hid: "og:image", name: "og:image", content: openGraphImage }
+				{ hid: "og:image", name: "og:image", content: openGraphImage },
+				{ name: "twitter:card", content: "summary" },
+				{ name: "twitter:site", content: "@ozgurg0" },
+				{ name: "twitter:creator", content: "@ozgurg0" },
+				{ name: "twitter:image", content: openGraphImage }
 			]
 		},
 		ui: {
