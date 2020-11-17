@@ -21,7 +21,7 @@
 			{{ snackbar.text }}
 		</v-snackbar>
 
-		<span class="version">{{ version }}</span>
+		<span class="version">v{{ version }}</span>
 	</v-app>
 </template>
 
