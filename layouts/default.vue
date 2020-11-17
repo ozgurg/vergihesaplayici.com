@@ -15,7 +15,7 @@
 			</div>
 		</v-main>
 
-		<v-snackbar v-if="snackbar.isVisible"
+		<v-snackbar v-show="snackbar.isVisible"
 					v-model="snackbar.isVisible"
 					:timeout="snackbar.timeout">
 			{{ snackbar.text }}

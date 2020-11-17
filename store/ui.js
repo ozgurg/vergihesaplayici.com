@@ -5,7 +5,7 @@ export const state = () => ({
 	isCenteredContent: false,
 	toolbarTitle: process.env.npm_package_name,
 	snackbar: {
-		timeout: 1000,
+		timeout: 2000,
 		isVisible: false,
 		text: null
 	}
