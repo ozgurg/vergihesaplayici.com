@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import { sync } from "vuex-pathify";
+import {sync} from "vuex-pathify";
 
 export default {
 	name: "SettingsList",
@@ -58,6 +58,8 @@ export default {
 			if (vm.matchMediaChangeListener !== null) {
 				vm.matchMedia.removeEventListener("change", vm.matchMediaChangeListener);
 			}
+
+			document.querySelector("html").setAttribute("data-dark-mode", vm.$vuetify.theme.dark);
 		},
 		applyDarkThemeSetting() {
 			const vm = this;
@@ -77,6 +79,8 @@ export default {
 				// Apply the user made his/her own decision
 				vm.$vuetify.theme.dark = localStorage.getItem("isDarkThemeEnabled") === "true";
 			}
+
+			document.querySelector("html").setAttribute("data-dark-mode", vm.$vuetify.theme.dark);
 		},
 		toggleCenteredContent() {
 			const vm = this;
