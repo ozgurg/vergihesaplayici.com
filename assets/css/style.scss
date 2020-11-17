@@ -64,3 +64,16 @@ video {
     height: auto;
     max-width: 100%
 }
+
+.price-row {
+    &__price-col {
+        display: flex;
+        width: 100%;
+        flex-grow: 1;
+        max-width: 100%
+    }
+    &__currency-col {
+        flex: 0 0 100px;
+        max-width: 100px
+    }
+}

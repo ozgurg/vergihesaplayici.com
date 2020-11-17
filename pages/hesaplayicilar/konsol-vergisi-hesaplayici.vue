@@ -15,8 +15,9 @@
 
 		<HorizontalForm class="mb-3"
 						label="Konsol fiyatı">
-			<v-row dense="">
-				<v-col class="py-0"
+			<v-row dense=""
+				   class="price-row">
+				<v-col class="py-0 price-row__price-col"
 					   cols="7" sm="9" md="9" lg="9" xl="9">
 					<v-text-field
 						v-model.number="form.price"
@@ -28,8 +29,7 @@
 						type="number" />
 				</v-col>
 
-				<v-col class="py-0"
-					   cols="5" sm="3" md="3" lg="3" xl="3">
+				<v-col class="py-0 price-row__currency-col">
 					<v-select
 						v-model="form.currency"
 						:items="ui.availableCurrencies"
