@@ -15,10 +15,12 @@
 			<SettingsList shaped=""
 						  subheader="Ayarlar" />
 
-			<v-divider />
+			<template v-if="$route.name !== 'index'">
+				<v-divider />
 
-			<AppsFromDeveloperList shaped=""
-								   subheader="Geliştiriciden Uygulamalar" />
+				<AppsFromDeveloperList shaped=""
+									   subheader="Geliştiriciden Uygulamalar" />
+			</template>
 		</div>
 
 		<DefaultFooter class="mt-8" />
@@ -32,6 +34,10 @@ export default {
 	name: "DefaultDrawer",
 	computed: {
 		drawerState: sync("ui/drawerState")
+	},
+	mounted() {
+		const vm = this;
+		console.log();
 	}
 };
 </script>
