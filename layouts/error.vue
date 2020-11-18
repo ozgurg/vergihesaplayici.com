@@ -2,26 +2,18 @@
 	<div>
 		<h2 v-text="errorDescription"
 			class="mb-4" />
-		<v-card class="d-flex align-center pa-10"
-				outlined="">
-			<v-img :src="notFound404"
-				   alt="Vergi Hesaplayıcı Logo"
-				   draggable="false"
-				   height="auto"
-				   width="400" />
-		</v-card>
+
+		<v-alert dense=""
+				 text=""
+				 border="left"
+				 type="error">{{error.message}}</v-alert>
 	</div>
 </template>
 
 <script>
-import notFound404 from "@/assets/img/not-found-404.svg";
-
 export default {
 	layout: "default/index",
 	name: "NotFound404",
-	data: () => ({
-		notFound404
-	}),
 	props: {
 		error: {
 			type: Object,
