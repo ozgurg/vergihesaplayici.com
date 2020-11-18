@@ -233,6 +233,23 @@ export default {
 		vm.ui.availableCurrencies = vm.$store.get("exchangeRates/availableCurrencies");
 
 		vm.handleQuery();
+
+		vm.$store.set("ui/breadcrumbs", [
+			{
+				text: "Ana Sayfa",
+				disabled: false,
+				href: process.env.BASE_URL
+			},
+			{
+				text: "Hesaplayıcılar",
+				disabled: true
+			},
+			{
+				text: meta.title,
+				disabled: false,
+				href: `${process.env.BASE_URL}${vm.$route.path}`
+			}
+		]);
 	}
 };
 </script>

@@ -34,10 +34,6 @@ export default {
 	name: "DefaultDrawer",
 	computed: {
 		drawerState: sync("ui/drawerState")
-	},
-	mounted() {
-		const vm = this;
-		console.log();
 	}
 };
 </script>

@@ -8,7 +8,8 @@ export const state = () => ({
 		timeout: 2000,
 		isVisible: false,
 		text: null
-	}
+	},
+	breadcrumbs: []
 });
 
 export const mutations = make.mutations(state);
