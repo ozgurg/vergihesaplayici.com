@@ -22,6 +22,13 @@
 		<v-card outlined="">
 			<CalculatorList show-full-title="" />
 		</v-card>
+
+		<v-divider class="my-8" />
+
+		<h4 class="mb-2">Geliştiriciden Uygulamalar</h4>
+		<v-card outlined="">
+			<AppsFromDeveloperList />
+		</v-card>
 	</div>
 </template>
 
