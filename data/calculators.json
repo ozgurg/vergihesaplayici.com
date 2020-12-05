@@ -3,12 +3,14 @@
     "icon": "mdi-cellphone",
     "title": "Telefon Vergisi",
     "fullTitle": "Telefon Vergisi Hesaplayıcı",
-    "url": "/hesaplayicilar/telefon-vergisi-hesaplayici"
+    "url": "/hesaplayicilar/telefon-vergisi-hesaplayici",
+    "description": "Satın aldığınız bir telefonun satış fiyatına etki eden vergileri hesaplayın"
   },
   {
     "icon": "mdi-gamepad",
     "title": "Konsol Vergisi",
     "fullTitle": "Konsol Vergisi Hesaplayıcı",
-    "url": "/hesaplayicilar/konsol-vergisi-hesaplayici"
+    "url": "/hesaplayicilar/konsol-vergisi-hesaplayici",
+    "description": "Sadece eğlenmek istediğinizde ödemeniz gereken vergileri hesaplayın"
   }
 ]

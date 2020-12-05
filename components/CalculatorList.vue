@@ -18,6 +18,9 @@
 									   v-text="calculator.fullTitle" />
 					<v-list-item-title v-else
 									   v-text="calculator.title" />
+
+					<v-list-item-subtitle v-if="showDescription"
+										  v-text="calculator.description" />
 				</v-list-item-content>
 			</v-list-item>
 		</v-list-item-group>
@@ -37,6 +40,10 @@ export default {
 			type: String
 		},
 		showFullTitle: {
+			type: Boolean,
+			default: false
+		},
+		showDescription: {
 			type: Boolean,
 			default: false
 		}

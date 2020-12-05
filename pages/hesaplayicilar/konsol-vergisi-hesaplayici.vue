@@ -237,17 +237,15 @@ export default {
 		vm.$store.set("ui/breadcrumbs", [
 			{
 				text: "Ana Sayfa",
-				disabled: false,
-				href: process.env.BASE_URL
+				to: "/"
 			},
 			{
 				text: "Hesaplayıcılar",
-				disabled: true
+				to: "/hesaplayicilar"
 			},
 			{
 				text: meta.title,
-				disabled: false,
-				href: `${process.env.BASE_URL}${vm.$route.path}`
+				to: vm.$route.path
 			}
 		]);
 	}

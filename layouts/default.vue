@@ -9,7 +9,16 @@
 				 class="main-content">
 				<v-breadcrumbs
 					v-if="$store.get('ui/breadcrumbs')"
-					:items="$store.get('ui/breadcrumbs')" />
+					:items="$store.get('ui/breadcrumbs')">
+					<template v-slot:item="{ item }">
+						<v-breadcrumbs-item
+							active-class=""
+							nuxt=""
+							:to="item.to">
+							{{ item.text }}
+						</v-breadcrumbs-item>
+					</template>
+				</v-breadcrumbs>
 
 				<ExchangeRates />
 
