@@ -43,15 +43,6 @@ body {
     flex-direction: column
 }
 
-.page-enter-active, .page-leave-active {
-    will-change: opacity;
-    transition: opacity .225s cubic-bezier(.25, .8, .25, 1)
-}
-
-.page-enter, .page-leave-active {
-    opacity: 0
-}
-
 .v-input--checkbox {
     padding-top: 0;
     .v-input__slot {
