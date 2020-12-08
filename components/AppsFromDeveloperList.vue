@@ -8,6 +8,7 @@
 			:href="app.url"
 			dense=""
 			link=""
+			role="listitem"
 			rel="nofollow noopener noreferrer"
 			target="_blank">
 			<v-list-item-icon>
