@@ -20,10 +20,6 @@
 					</template>
 				</v-breadcrumbs>
 
-				<ExchangeRates />
-
-				<v-divider class="my-6" />
-
 				<Nuxt />
 			</div>
 		</v-main>

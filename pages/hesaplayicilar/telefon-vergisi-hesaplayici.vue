@@ -1,5 +1,9 @@
 <template>
 	<div>
+		<ExchangeRates />
+
+		<v-divider class="my-6" />
+
 		<HorizontalForm class="mb-3">
 			<v-chip-group
 				v-model="ui.preset"
