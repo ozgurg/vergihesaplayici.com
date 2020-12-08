@@ -1,5 +1,6 @@
 <template>
-	<v-list v-bind="$attrs">
+	<v-list v-bind="$attrs"
+			role="list">
 		<v-subheader v-if="subheader"
 					 v-text="subheader" />
 		<v-list-item
