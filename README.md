@@ -1,6 +1,8 @@
 
-[![Actions Status](https://github.com/ozgurg/vergihesaplayici.com/workflows/vergihesaplayici.com/badge.svg)](https://github.com/ozgurg/vergihesaplayici.com/actions)
+![Actions Status](https://github.com/ozgurg/vergihesaplayici.com/workflows/vergihesaplayici.com/badge.svg)
 ![Version](https://img.shields.io/github/package-json/v/ozgurg/vergihesaplayici.com)
+![Uptime](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/ozgurg/upptime/master/api/vergi-hesaplayici/uptime.json)
+![Uptime](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/ozgurg/upptime/master/api/vergi-hesaplayici/response-time.json)
 
 <p align="center">
   <a target="_blank" href="https://vergihesaplayici.com/">
