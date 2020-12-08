@@ -9,7 +9,8 @@
 						   :href="facebookShareUrl"
 						   link=""
 						   rel="nofollow noopener noreferrer"
-						   target="_blank">
+						   target="_blank"
+						   aria-label="Facebook'ta paylaş">
 						<v-icon color="#1877f2">mdi-facebook</v-icon>
 					</v-btn>
 				</template>
@@ -23,7 +24,8 @@
 						   :href="twitterShareUrl"
 						   link=""
 						   rel="nofollow noopener noreferrer"
-						   target="_blank">
+						   target="_blank"
+						   aria-label="Twitter'ta paylaş">
 						<v-icon color="#00acee">mdi-twitter</v-icon>
 					</v-btn>
 				</template>
@@ -37,7 +39,8 @@
 						   :href="whatsAppShareUrl"
 						   link=""
 						   rel="nofollow noopener noreferrer"
-						   target="_blank">
+						   target="_blank"
+						   aria-label="WhatsApp ile gönder">
 						<v-icon color="#25d366">mdi-whatsapp</v-icon>
 					</v-btn>
 				</template>
@@ -48,7 +51,8 @@
 				<template v-slot:activator="{ on, attrs }">
 					<v-btn v-bind="attrs"
 						   v-on="on"
-						   @click="copy(url)">
+						   @click="copy(url)"
+						   aria-label="Sayfa bağlantısını kopyala">
 						<v-icon color="primary">mdi-link</v-icon>
 					</v-btn>
 				</template>
