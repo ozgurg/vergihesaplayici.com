@@ -2,7 +2,8 @@
 	<v-app-bar v-bind="$attrs"
 			   elevate-on-scroll="">
 		<v-app-bar-nav-icon v-if="$vuetify.breakpoint.mdAndDown"
-							@click="drawerState = !drawerState" />
+							@click="drawerState = !drawerState"
+							aria-label="Menüyü aç" />
 
 		<v-toolbar-title v-text="toolbarTitle" />
 	</v-app-bar>
