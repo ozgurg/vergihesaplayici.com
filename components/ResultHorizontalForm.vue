@@ -8,7 +8,8 @@
 			dense=""
 			hide-details=""
 			outlined=""
-			readonly="" />
+			readonly=""
+			:aria-label="label" />
 	</HorizontalForm>
 </template>
 

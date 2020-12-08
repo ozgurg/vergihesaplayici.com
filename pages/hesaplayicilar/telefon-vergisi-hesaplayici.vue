@@ -26,7 +26,8 @@
 						hide-details=""
 						outlined=""
 						step="any"
-						type="number" />
+						type="number"
+						aria-label="Telefon fiyatı" />
 				</v-col>
 
 				<v-col class="py-0 price-row__currency-col">
@@ -35,7 +36,8 @@
 						:items="ui.availableCurrencies"
 						dense=""
 						hide-details=""
-						outlined="" />
+						outlined=""
+						aria-label="Para birimi" />
 				</v-col>
 			</v-row>
 		</HorizontalForm>
@@ -49,7 +51,8 @@
 				hide-details=""
 				item-text="title"
 				item-value="value"
-				outlined="" />
+				outlined=""
+				aria-label="Kayıt yolu" />
 		</HorizontalForm>
 
 		<template v-if="showResults">
