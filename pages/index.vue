@@ -18,7 +18,7 @@
 
 		<v-divider class="my-8" />
 
-		<h3 class="mb-2">Hesaplayıcılar</h3>
+		<h2 class="mb-2">Hesaplayıcılar</h2>
 		<v-card outlined="">
 			<CalculatorList show-full-title=""
 							show-description="" />
@@ -26,7 +26,7 @@
 
 		<v-divider class="my-8" />
 
-		<h4 class="mb-2">Geliştiriciden Uygulamalar</h4>
+		<h3 class="mb-2">Geliştiriciden Uygulamalar</h3>
 		<v-card outlined="">
 			<AppsFromDeveloperList />
 		</v-card>
