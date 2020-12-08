@@ -6,12 +6,13 @@
 			<template>
 				<v-list-item-action>
 					<v-checkbox v-model="$vuetify.theme.dark"
+								aria-labelledby="darkTheme"
 								hide-details=""
 								readonly="" />
 				</v-list-item-action>
 
 				<v-list-item-content>
-					<v-list-item-title>Koyu tema</v-list-item-title>
+					<v-list-item-title id="darkTheme">Koyu tema</v-list-item-title>
 				</v-list-item-content>
 			</template>
 		</v-list-item>
@@ -21,12 +22,13 @@
 			<template>
 				<v-list-item-action>
 					<v-checkbox :value="isCenteredContent"
+								aria-labelledby="isCenteredContent"
 								hide-details=""
 								readonly="" />
 				</v-list-item-action>
 
 				<v-list-item-content>
-					<v-list-item-title>İçeriği ortala</v-list-item-title>
+					<v-list-item-title id="isCenteredContent">İçeriği ortala</v-list-item-title>
 				</v-list-item-content>
 			</template>
 		</v-list-item>
