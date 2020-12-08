@@ -72,3 +72,10 @@ video {
     padding-left: 0 !important;
     padding-right: 0
 }
+
+.v-input--is-readonly {
+    pointer-events: none;
+    .v-input__append-inner {
+        pointer-events: all
+    }
+}
