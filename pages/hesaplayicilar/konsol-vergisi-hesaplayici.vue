@@ -238,7 +238,9 @@ export default {
 
 		vm.ui.availableCurrencies = vm.$store.get("exchangeRates/availableCurrencies");
 
-		vm.handleQuery();
+		vm.$nextTick(() => {
+			vm.handleQuery();
+		});
 
 		vm.$store.set("ui/breadcrumbs", [
 			{
