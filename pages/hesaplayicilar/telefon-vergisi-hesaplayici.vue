@@ -1,5 +1,9 @@
 <template>
 	<div>
+		<ExchangeRates />
+
+		<v-divider class="my-6" />
+
 		<HorizontalForm class="mb-3">
 			<v-chip-group
 				v-model="ui.preset"
@@ -271,7 +275,9 @@ export default {
 
 		vm.ui.availableCurrencies = vm.$store.get("exchangeRates/availableCurrencies");
 
-		vm.handleQuery();
+		vm.$nextTick(() => {
+			vm.handleQuery();
+		});
 
 		vm.$store.set("ui/breadcrumbs", [
 			{
