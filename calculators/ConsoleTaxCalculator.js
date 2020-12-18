@@ -109,7 +109,7 @@ class ConsoleTaxCalculator extends BaseCalculator {
 	}
 
 	/**
-	 * Calculates and returns total tax fee by the registration type
+	 * Calculates and returns total tax fee
 	 *
 	 * @return {number}
 	 * @private
