@@ -23,6 +23,8 @@
 			</template>
 		</div>
 
+		<A index="1" />
+
 		<DefaultFooter class="mt-8" />
 	</v-navigation-drawer>
 </template>
