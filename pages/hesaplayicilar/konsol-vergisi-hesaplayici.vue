@@ -1,5 +1,9 @@
 <template>
 	<div>
+		<div class="mb-3">
+			<A />
+		</div>
+
 		<ExchangeRates />
 
 		<v-divider class="my-6" />

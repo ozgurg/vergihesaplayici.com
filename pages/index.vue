@@ -1,5 +1,9 @@
 <template>
 	<div>
+		<div class="mb-3">
+			<A />
+		</div>
+
 		<h1 class="mb-2 primary--text">Vergi Hesaplayıcı</h1>
 
 		<p class="mb-2">vergihesaplayici.com, vergi hesaplar.</p>

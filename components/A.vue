@@ -1,7 +1,14 @@
 <template>
-	<div class="text-center">
-		<iframe :class="className"
-				:src="src"
+	<div>
+		<iframe v-if="!$vuetify.breakpoint.mobile"
+				class="a-0"
+				src="/a/0.html"
+				width="100%"
+				height="100%"></iframe>
+
+		<iframe v-else
+				class="a-1"
+				src="/a/1.html"
 				width="100%"
 				height="100%"></iframe>
 	</div>
@@ -9,19 +16,6 @@
 
 <script>
 export default {
-	name: "A",
-	props: {
-		index: {
-			required: true
-		}
-	},
-	computed: {
-		className() {
-			return `a-${this.index}`;
-		},
-		src() {
-			return `/a/${this.index}.html`;
-		}
-	}
+	name: "A"
 };
 </script>

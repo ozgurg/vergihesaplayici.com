@@ -7,10 +7,6 @@
 		<v-main>
 			<div :class="{'mx-auto': isCenteredContent}"
 				 class="main-content">
-				<A v-if="!$vuetify.breakpoint.mobile"
-				   index="0" />
-				<A v-else
-				   index="2" />
 
 				<v-breadcrumbs
 					v-if="$store.get('ui/breadcrumbs')"
