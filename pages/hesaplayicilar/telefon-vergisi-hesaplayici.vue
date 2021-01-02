@@ -177,13 +177,10 @@ export default {
 		calculate() {
 			const vm = this;
 
-			// Calculate price
 			const price = parseFloat(vm.form.price) * vm.getExchangeRate(vm.form.currency);
 
-			// Calculation mode
 			const mode = BaseCalculator.getModeByCurrency(vm.form.currency);
 
-			// Calculate
 			const calculator = new PhoneTaxCalculator(
 				vm.$store.get("exchangeRates/currencies"),
 				price,
