@@ -241,12 +241,6 @@ export default {
 		}
 	},
 	watch: {
-		"ui.preset"() {
-			const vm = this;
-
-			vm.form.currency = "USD";
-			vm.form.price = vm.ui.presets[vm.ui.preset].price;
-		},
 		form: {
 			deep: true,
 			handler() {
@@ -260,6 +254,12 @@ export default {
 
 				vm.$router.push({ query: vm.form });
 			}
+		},
+		"ui.preset"() {
+			const vm = this;
+
+			vm.form.currency = "USD";
+			vm.form.price = vm.ui.presets[vm.ui.preset].price;
 		}
 	},
 	head() {
