@@ -15,7 +15,8 @@
 		<HorizontalForm class="mb-3">
 			<v-chip-group
 				v-model="ui.preset"
-				column="">
+				:show-arrows="$vuetify.breakpoint.mdAndDown"
+				:column="!$vuetify.breakpoint.mdAndDown">
 				<v-chip :key="index"
 				        v-for="(preset, index) in ui.presets"
 				        :value="index"
