@@ -14,9 +14,9 @@
 			   playsinline=""
 			   width="300"
 			   height="300">
-			<source :src="ositaIheme.ositaIhemeWebm"
+			<source :src="ositaIheme.webm"
 					type="video/webm" />
-			<source :src="ositaIheme.ositaIhemeMp4"
+			<source :src="ositaIheme.mp4"
 					type="video/mp4" />
 		</video>
 
@@ -64,8 +64,8 @@ export default {
 			]
 		},
 		ositaIheme: {
-			ositaIhemeMp4,
-			ositaIhemeWebm
+			mp4: ositaIhemeMp4,
+			webm: ositaIhemeWebm
 		}
 	}),
 	head() {
