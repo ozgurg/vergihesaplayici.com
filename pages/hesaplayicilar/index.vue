@@ -46,14 +46,8 @@ export default {
 		vm.$store.set("ui/toolbarTitle", vm.head.title);
 
 		vm.$store.set("ui/breadcrumbs", [
-			{
-				text: "Ana Sayfa",
-				to: "/"
-			},
-			{
-				text: "Hesaplayıcılar",
-				to: "/hesaplayicilar"
-			}
+			{ text: "Ana Sayfa", to: "/" },
+			{ text: "Hesaplayıcılar", to: "/hesaplayicilar" }
 		]);
 	}
 };
