@@ -58,11 +58,10 @@
 		<v-divider class="my-10" />
 
 		<v-tabs v-model="ui.tab"
-		        centered=""
 		        background-color="transparent"
 		        class="mb-4"
 		        fixed-tabs="">
-			<v-tab :disabled="!showResults">Hesaplama Sonuçları</v-tab>
+			<v-tab :disabled="!showResults">Sonuçlar</v-tab>
 			<v-tab>Yorumlar</v-tab>
 		</v-tabs>
 
