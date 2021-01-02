@@ -32,27 +32,6 @@ class PhoneTaxCalculator extends BaseCalculator {
 	};
 
 	/**
-	 * @return {{trtPassport: number, total: number, sct: number, trt: number, vat: number, registration: number, ministryOfCulture: number}}
-	 */
-	get taxFees() {
-		return this._taxFees;
-	}
-
-	/**
-	 * @return {{trtPassport: number, total: number, sct: number, trt: number, vat: number, ministryOfCulture: number}}
-	 */
-	get taxRates() {
-		return this._taxRates;
-	}
-
-	/**
-	 * @return {{salePrice: number, basePrice: number}}
-	 */
-	get prices() {
-		return this._prices;
-	}
-
-	/**
 	 * Calculates ministry of culture fee
 	 * Turkish: Kültür Bakanlığı
 	 *

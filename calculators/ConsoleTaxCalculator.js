@@ -22,27 +22,6 @@ class ConsoleTaxCalculator extends BaseCalculator {
 	};
 
 	/**
-	 * @return {{total: number, sct: number, custom: number, vat: number}}
-	 */
-	get taxFees() {
-		return this._taxFees;
-	}
-
-	/**
-	 * @return {{total: number, sct: number, custom: number, vat: number}}
-	 */
-	get taxRates() {
-		return this._taxRates;
-	}
-
-	/**
-	 * @return {{salePrice: number, basePrice: number}}
-	 */
-	get prices() {
-		return this._prices;
-	}
-
-	/**
 	 * Calculates custom fee
 	 * Turkish: Gümrük Vergisi
 	 *

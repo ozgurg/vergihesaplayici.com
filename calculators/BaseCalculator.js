@@ -4,7 +4,7 @@ class BaseCalculator {
 		FromSalePrice: "fromSalePrice"
 	};
 
-	_exchangeRates = {}
+	_exchangeRates = {};
 	_prices = {
 		basePrice: 0, // Tax free price
 		salePrice: 0 // Tax added price
@@ -83,6 +83,18 @@ class BaseCalculator {
 		return currency === "TRY" ?
 			BaseCalculator.CalculationMode.FromSalePrice :
 			BaseCalculator.CalculationMode.FromBasePrice;
+	}
+
+	get taxFees() {
+		return this._taxFees;
+	}
+
+	get taxRates() {
+		return this._taxRates;
+	}
+
+	get prices() {
+		return this._prices;
 	}
 }
 
