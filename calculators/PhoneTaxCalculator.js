@@ -16,7 +16,7 @@ class PhoneTaxCalculator extends BaseCalculator {
 		sct: 0, // TRY
 		vat: 0, // TRY
 		trtPassport: 0, // TRY
-		registration: 1838 // TRY
+		registration: 2006.20 // TRY
 	};
 
 	/**
