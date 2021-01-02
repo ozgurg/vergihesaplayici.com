@@ -19,7 +19,8 @@
 				<v-chip :key="index"
 				        v-for="(preset, index) in ui.presets"
 				        :value="index"
-				        outlined="">
+				        outlined=""
+				        small="">
 					{{ preset.title }}
 				</v-chip>
 			</v-chip-group>
