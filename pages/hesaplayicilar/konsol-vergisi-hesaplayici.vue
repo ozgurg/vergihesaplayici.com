@@ -121,10 +121,10 @@ export default {
 		},
 		ui: {
 			presets: [
-				{ title: "Xbox Series S", price: 299 },
-				{ title: "Xbox Series X", price: 499 },
-				{ title: "PlayStation 5 Digital Edition", price: 399 },
-				{ title: "PlayStation 5", price: 499 }
+				{ title: "Xbox Series S (512GB)", price: 299 },
+				{ title: "Xbox Series X (1TB)", price: 499 },
+				{ title: "PlayStation 5 Digital Edition (825GB)", price: 399 },
+				{ title: "PlayStation 5 (825GB)", price: 499 }
 			],
 			preset: null,
 			availableCurrencies: []
