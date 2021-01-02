@@ -154,7 +154,7 @@ export default {
 
 			const price = parseFloat(vm.form.price) * vm.getExchangeRate(vm.form.currency);
 
-			const mode = BaseCalculator.getModeByCurrency(vm.form.currency);
+			const mode = BaseCalculator.getCalculationModeByCurrency(vm.form.currency);
 
 			const calculator = new ConsoleTaxCalculator(
 				vm.$store.get("exchangeRates/currencies"),
