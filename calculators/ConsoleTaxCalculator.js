@@ -16,7 +16,7 @@ class ConsoleTaxCalculator extends BaseCalculator {
 	 */
 	_taxRates = {
 		total: 0, // Percent
-		custom: 50, // Percent
+		custom: 20, // Percent
 		sct: 20, // Percent
 		vat: 18 // Percent
 	};
@@ -44,17 +44,11 @@ class ConsoleTaxCalculator extends BaseCalculator {
 
 	/**
 	 * Calculates custom fee
-	 * We hope this will be reduced to 20% end of the 2020
-	 * With "reducedCustomRate" option, the reduced rate can be calculated in advance
 	 * Turkish: Gümrük Vergisi
 	 *
 	 * @private
 	 */
 	_custom() {
-		if (this._options && this._options["reducedCustomRate"]) {
-			this._taxRates.custom = 20;
-		}
-
 		switch (this._mode) {
 			case BaseCalculator.CalculationMode.FromBasePrice:
 				this._taxFees.custom = this.calculateTaxFromTaxFreePrice(this._prices.salePrice, this._taxRates.custom);

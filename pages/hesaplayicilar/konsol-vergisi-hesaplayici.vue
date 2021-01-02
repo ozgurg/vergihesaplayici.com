@@ -50,14 +50,6 @@
 			</v-row>
 		</HorizontalForm>
 
-		<HorizontalForm class="mb-3">
-			<v-checkbox
-				v-model="form.reducedCustomRate"
-				hide-details=""
-				class="ma-0"
-				label="2020 sonunda düşecek olan gümrük vergisine göre hesapla" />
-		</HorizontalForm>
-
 		<template v-if="showResults">
 			<v-divider class="my-6" />
 
@@ -142,8 +134,7 @@ export default {
 		},
 		form: {
 			currency: "USD",
-			price: "",
-			reducedCustomRate: false
+			price: ""
 		},
 		results: {
 			prices: {},
@@ -165,10 +156,7 @@ export default {
 			const calculator = new ConsoleTaxCalculator(
 				vm.$store.get("exchangeRates/currencies"),
 				price,
-				mode,
-				{
-					reducedCustomRate: vm.form.reducedCustomRate
-				}
+				mode
 			).calculate();
 
 			vm.results.prices = calculator.prices;
