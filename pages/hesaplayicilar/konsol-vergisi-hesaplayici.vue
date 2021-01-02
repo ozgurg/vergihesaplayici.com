@@ -171,18 +171,18 @@ export default {
 		handleQuery() {
 			const vm = this;
 
-			setTimeout(() => {
-				const query = vm.$route.query;
-				if (query) {
-					if (query.price) {
-						vm.form.price = query.price;
-					}
+			const query = vm.$route.query;
+			if (!query) {
+				return;
+			}
 
-					if (query.currency && vm.ui.availableCurrencies.includes(query.currency)) {
-						vm.form.currency = query.currency;
-					}
-				}
-			}, 100);
+			if (query.price) {
+				vm.form.price = query.price;
+			}
+
+			if (query.currency && vm.ui.availableCurrencies.includes(query.currency)) {
+				vm.form.currency = query.currency;
+			}
 		}
 	},
 	computed: {
@@ -228,7 +228,7 @@ export default {
 		vm.ui.availableCurrencies = vm.$store.get("exchangeRates/availableCurrencies");
 
 		vm.$nextTick(() => {
-			vm.handleQuery();
+			setTimeout(() => vm.handleQuery(), 100);
 		});
 
 		vm.$store.set("ui/breadcrumbs", [
