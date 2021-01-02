@@ -252,15 +252,12 @@ export default {
 			handler() {
 				const vm = this;
 
-				// Calculate and show results, only if possible
 				if (!vm.showResults) {
 					return;
 				}
 
-				// Calculate :)
 				vm.calculate();
 
-				// Update the query with form data
 				vm.$router.push({ query: vm.form });
 			}
 		}
