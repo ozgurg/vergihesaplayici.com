@@ -6,27 +6,27 @@
 
 		<ExchangeRates />
 
-		<v-divider class="my-6" />
+		<v-divider class="my-10" />
 
 		<HorizontalForm class="mb-3">
 			<v-chip-group
 				v-model="ui.preset"
 				column="">
 				<v-chip :key="index"
-						outlined=""
-						v-for="(preset, index) in ui.presets"
-						:value="index">
+				        v-for="(preset, index) in ui.presets"
+				        :value="index"
+				        outlined="">
 					{{ preset.title }}
 				</v-chip>
 			</v-chip-group>
 		</HorizontalForm>
 
 		<HorizontalForm class="mb-3"
-						label="Konsol fiyatı">
+		                label="Konsol fiyatı">
 			<v-row dense=""
-				   class="price-row">
+			       class="price-row">
 				<v-col class="py-0 price-row__price-col"
-					   cols="7" sm="9" md="9" lg="9" xl="9">
+				       cols="7" sm="9" md="9" lg="9" xl="9">
 					<v-text-field
 						v-model.number="form.price"
 						:prefix="getCurrencySign(form.currency)"
@@ -50,9 +50,18 @@
 			</v-row>
 		</HorizontalForm>
 
-		<template v-if="showResults">
-			<v-divider class="my-6" />
+		<v-divider class="my-10" />
 
+		<v-tabs v-model="ui.tab"
+		        centered=""
+		        background-color="transparent"
+		        class="mb-4"
+		        fixed-tabs="">
+			<v-tab :disabled="!showResults">Hesaplama Sonuçları</v-tab>
+			<v-tab>Yorumlar</v-tab>
+		</v-tabs>
+
+		<template v-if="ui.tab === 0 && showResults">
 			<CustomsInfoAlert v-if="form.currency !== 'TRY'" />
 
 			<HorizontalForm class="mb-2">
@@ -60,28 +69,28 @@
 			</HorizontalForm>
 
 			<ResultHorizontalForm :value="$moneyFormat(results.prices.basePrice, 'TRY')"
-								  class="mb-3"
-								  label="Vergisiz fiyat" />
+			                      class="mb-3"
+			                      label="Vergisiz fiyat" />
 
 			<ResultHorizontalForm :label="`Gümrük vergisi (%${results.taxRates.custom})`"
-								  :value="$moneyFormat(results.taxFees.custom, 'TRY')"
-								  class="mb-3" />
+			                      :value="$moneyFormat(results.taxFees.custom, 'TRY')"
+			                      class="mb-3" />
 
 			<ResultHorizontalForm :label="`ÖTV (%${results.taxRates.sct})`"
-								  :value="$moneyFormat(results.taxFees.sct, 'TRY')"
-								  class="mb-3" />
+			                      :value="$moneyFormat(results.taxFees.sct, 'TRY')"
+			                      class="mb-3" />
 
 			<ResultHorizontalForm :label="`KDV (%${results.taxRates.vat})`"
-								  :value="$moneyFormat(results.taxFees.vat, 'TRY')"
-								  class="mb-3" />
+			                      :value="$moneyFormat(results.taxFees.vat, 'TRY')"
+			                      class="mb-3" />
 
 			<ResultHorizontalForm :label="`Toplam vergi (%${results.taxRates.total})`"
-								  :value="$moneyFormat(results.taxFees.total, 'TRY')"
-								  class="mb-3" />
+			                      :value="$moneyFormat(results.taxFees.total, 'TRY')"
+			                      class="mb-3" />
 
 			<ResultHorizontalForm :value="$moneyFormat(results.prices.salePrice, 'TRY')"
-								  class="mb-3"
-								  label="Tahmini satış fiyatı" />
+			                      class="mb-3"
+			                      label="Tahmini satış fiyatı" />
 
 			<HorizontalForm class="mb-6">
 				<MinimumWageAlert :price="results.prices.salePrice" />
@@ -91,6 +100,8 @@
 				<Share :data="form" />
 			</HorizontalForm>
 		</template>
+
+		<Disqus v-show="ui.tab === 1" />
 	</div>
 </template>
 
@@ -98,7 +109,7 @@
 import BaseCalculator from "@/calculators/BaseCalculator";
 import ConsoleTaxCalculator from "@/calculators/ConsoleTaxCalculator";
 import openGraphImage from "@/assets/img/open-graph/console-tax-calculator.jpg";
-import { ConsoleTaxCalculator as meta } from "./../../data/calculators.js";
+import { ConsoleTaxCalculator as meta } from "@/data/calculators.js";
 
 export default {
 	layout: "default/index",
@@ -123,7 +134,8 @@ export default {
 				{ title: "PlayStation 5 (825GB)", price: 499 }
 			],
 			preset: null,
-			availableCurrencies: []
+			availableCurrencies: [],
+			tab: 1
 		},
 		form: {
 			currency: "USD",
@@ -195,6 +207,9 @@ export default {
 				}
 
 				vm.calculate();
+
+				// Show results tab when calculated
+				vm.ui.tab = 0;
 
 				vm.$router.push({ query: vm.form });
 			}

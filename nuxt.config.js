@@ -52,18 +52,10 @@ export default {
 		"@/assets/css/style.scss"
 	],
 	plugins: [
-		{
-			src: "@/plugins/client/firebase.js",
-			mode: "client"
-		},
-		{
-			src: "@/plugins/client/money-format.js",
-			mode: "client"
-		},
-		{
-			src: "@/plugins/client/vue-clipboard2.js",
-			mode: "client"
-		}
+		{ src: "@/plugins/client/firebase.js", mode: "client" },
+		{ src: "@/plugins/client/money-format.js", mode: "client" },
+		{ src: "@/plugins/client/vue-clipboard2.js", mode: "client" },
+		{ src: "@/plugins/client/vue-disqus.js", mode: "client" }
 	],
 	loading: {
 		color: Constants.PRIMARY_COLOR,

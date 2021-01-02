@@ -1,14 +1,14 @@
 <template>
 	<v-list v-bind="$attrs">
 		<v-subheader v-if="subheader"
-					 v-text="subheader" />
+		             v-text="subheader" />
 		<v-list-item @click="toggleDarkTheme()">
 			<template>
 				<v-list-item-action>
 					<v-checkbox v-model="$vuetify.theme.dark"
-								aria-labelledby="darkTheme"
-								hide-details=""
-								readonly="" />
+					            aria-labelledby="darkTheme"
+					            hide-details=""
+					            readonly="" />
 				</v-list-item-action>
 
 				<v-list-item-content>
@@ -18,13 +18,13 @@
 		</v-list-item>
 
 		<v-list-item v-if="$vuetify.breakpoint.smAndUp"
-					 @click="toggleCenteredContent()">
+		             @click="toggleCenteredContent()">
 			<template>
 				<v-list-item-action>
 					<v-checkbox :value="isCenteredContent"
-								aria-labelledby="isCenteredContent"
-								hide-details=""
-								readonly="" />
+					            aria-labelledby="isCenteredContent"
+					            hide-details=""
+					            readonly="" />
 				</v-list-item-action>
 
 				<v-list-item-content>
@@ -62,6 +62,9 @@ export default {
 			}
 
 			document.querySelector("html").setAttribute("data-dark-mode", vm.$vuetify.theme.dark);
+
+			// Update Disqus theme as well
+			setTimeout(() => vm.$disqus.reset(), 0);
 		},
 		applyDarkThemeSetting() {
 			const vm = this;

@@ -6,27 +6,27 @@
 
 		<ExchangeRates />
 
-		<v-divider class="my-6" />
+		<v-divider class="my-10" />
 
 		<HorizontalForm class="mb-3">
 			<v-chip-group
 				v-model="ui.preset"
 				column="">
 				<v-chip :key="index"
-						outlined=""
-						v-for="(preset, index) in ui.presets"
-						:value="index">
+				        v-for="(preset, index) in ui.presets"
+				        :value="index"
+				        outlined="">
 					{{ preset.title }}
 				</v-chip>
 			</v-chip-group>
 		</HorizontalForm>
 
 		<HorizontalForm class="mb-3"
-						label="Telefon fiyatı">
+		                label="Telefon fiyatı">
 			<v-row dense=""
-				   class="price-row">
+			       class="price-row">
 				<v-col class="py-0 price-row__price-col"
-					   cols="7" sm="9" md="9" lg="9" xl="9">
+				       cols="7" sm="9" md="9" lg="9" xl="9">
 					<v-text-field
 						v-model.number="form.price"
 						:prefix="getCurrencySign(form.currency)"
@@ -51,7 +51,7 @@
 		</HorizontalForm>
 
 		<HorizontalForm class="mb-3"
-						label="Kayıt yolu">
+		                label="Kayıt yolu">
 			<v-select
 				v-model="form.registration"
 				:items="ui.registration"
@@ -63,54 +63,59 @@
 				aria-label="Kayıt yolu" />
 		</HorizontalForm>
 
-		<template v-if="showResults">
-			<v-divider class="my-6" />
+		<v-divider class="my-10" />
 
+		<v-tabs v-model="ui.tab"
+		        centered=""
+		        background-color="transparent"
+		        class="mb-4"
+		        fixed-tabs="">
+			<v-tab :disabled="!showResults">Hesaplama Sonuçları</v-tab>
+			<v-tab>Yorumlar</v-tab>
+		</v-tabs>
+
+		<template v-if="ui.tab === 0 && showResults">
 			<CustomsInfoAlert v-if="form.currency !== 'TRY'" />
 
-			<HorizontalForm class="mb-2">
-				<h3>Hesaplama Sonuçları</h3>
-			</HorizontalForm>
-
 			<ResultHorizontalForm :value="$moneyFormat(results.prices.basePrice, 'TRY')"
-								  class="mb-3"
-								  label="Vergisiz fiyat" />
+			                      class="mb-3"
+			                      label="Vergisiz fiyat" />
 
 			<template v-if="registrationIsImport">
 				<ResultHorizontalForm :label="`Kültür Bakanlığı (%${results.taxRates.ministryOfCulture})`"
-									  :value="$moneyFormat(results.taxFees.ministryOfCulture, 'TRY')"
-									  class="mb-3" />
+				                      :value="$moneyFormat(results.taxFees.ministryOfCulture, 'TRY')"
+				                      class="mb-3" />
 
 				<ResultHorizontalForm :label="`TRT bandrolü (%${results.taxRates.trt})`"
-									  :value="$moneyFormat(results.taxFees.trt, 'TRY')"
-									  class="mb-3" />
+				                      :value="$moneyFormat(results.taxFees.trt, 'TRY')"
+				                      class="mb-3" />
 
 				<ResultHorizontalForm :label="`ÖTV (%${results.taxRates.sct})`"
-									  :value="$moneyFormat(results.taxFees.sct, 'TRY')"
-									  class="mb-3" />
+				                      :value="$moneyFormat(results.taxFees.sct, 'TRY')"
+				                      class="mb-3" />
 
 				<ResultHorizontalForm :label="`KDV (%${results.taxRates.vat})`"
-									  :value="$moneyFormat(results.taxFees.vat, 'TRY')"
-									  class="mb-3" />
+				                      :value="$moneyFormat(results.taxFees.vat, 'TRY')"
+				                      class="mb-3" />
 			</template>
 
-			<template v-else-if="registrationIsPassport">
+			<template v-else>
 				<ResultHorizontalForm :label="`TRT bandrolü (${$moneyFormat(results.taxRates.trtPassport, 'EUR')})`"
-									  :value="$moneyFormat(results.taxFees.trtPassport, 'TRY')"
-									  class="mb-3" />
+				                      :value="$moneyFormat(results.taxFees.trtPassport, 'TRY')"
+				                      class="mb-3" />
 
 				<ResultHorizontalForm :value="$moneyFormat(results.taxFees.registration, 'TRY')"
-									  class="mb-3"
-									  label="Kayıt ücreti" />
+				                      class="mb-3"
+				                      label="Kayıt ücreti" />
 			</template>
 
 			<ResultHorizontalForm :label="`Toplam vergi (%${results.taxRates.total})`"
-								  :value="$moneyFormat(results.taxFees.total, 'TRY')"
-								  class="mb-3" />
+			                      :value="$moneyFormat(results.taxFees.total, 'TRY')"
+			                      class="mb-3" />
 
 			<ResultHorizontalForm :value="$moneyFormat(results.prices.salePrice, 'TRY')"
-								  class="mb-3"
-								  label="Tahmini satış fiyatı" />
+			                      class="mb-3"
+			                      label="Tahmini satış fiyatı" />
 
 			<HorizontalForm class="mb-6">
 				<MinimumWageAlert :price="results.prices.salePrice" />
@@ -120,6 +125,8 @@
 				<Share :data="form" />
 			</HorizontalForm>
 		</template>
+
+		<Disqus v-show="ui.tab === 1" />
 	</div>
 </template>
 
@@ -127,7 +134,7 @@
 import BaseCalculator from "@/calculators/BaseCalculator";
 import PhoneTaxCalculator from "@/calculators/PhoneTaxCalculator";
 import openGraphImage from "@/assets/img/open-graph/phone-tax-calculator.jpg";
-import { PhoneTaxCalculator as meta } from "./../../data/calculators.js";
+import { PhoneTaxCalculator as meta } from "@/data/calculators.js";
 
 export default {
 	layout: "default/index",
@@ -156,7 +163,8 @@ export default {
 			registration: [
 				{ title: "İthalat yoluyla kayıtlı (Resmi)", value: PhoneTaxCalculator.Registration.Import },
 				{ title: "Pasaport yoluyla kayıtlı", value: PhoneTaxCalculator.Registration.Passport }
-			]
+			],
+			tab: 1
 		},
 		form: {
 			currency: "USD",
@@ -192,11 +200,11 @@ export default {
 		},
 		getExchangeRate(currency) {
 			const vm = this;
-			return vm.$store.get(`exchangeRates/currencies@${currency}`)["rate"];
+			return vm.$store.get(`exchangeRates/currencies@${currency}.rate`);
 		},
 		getCurrencySign(currency) {
 			const vm = this;
-			return vm.$store.get(`exchangeRates/currencies@${currency}`)["sign"];
+			return vm.$store.get(`exchangeRates/currencies@${currency}.sign`);
 		},
 		handleQuery() {
 			const vm = this;
@@ -227,10 +235,6 @@ export default {
 		registrationIsImport() {
 			const vm = this;
 			return vm.form.registration === PhoneTaxCalculator.Registration.Import;
-		},
-		registrationIsPassport() {
-			const vm = this;
-			return vm.form.registration === PhoneTaxCalculator.Registration.Passport;
 		}
 	},
 	watch: {
@@ -244,6 +248,9 @@ export default {
 				}
 
 				vm.calculate();
+
+				// Show results tab when calculated
+				vm.ui.tab = 0;
 
 				vm.$router.push({ query: vm.form });
 			}
