@@ -150,10 +150,10 @@ export default {
 		},
 		ui: {
 			presets: [
-				{ title: "iPhone 12 mini", price: 699 },
-				{ title: "iPhone 12", price: 799 },
-				{ title: "iPhone 12 Pro", price: 999 },
-				{ title: "iPhone 12 Pro Max", price: 1099 }
+				{ title: "iPhone 12 mini (64GB)", price: 699 },
+				{ title: "iPhone 12 (64GB)", price: 799 },
+				{ title: "iPhone 12 Pro (128GB)", price: 999 },
+				{ title: "iPhone 12 Pro Max (128GB)", price: 1099 }
 			],
 			preset: null,
 			availableCurrencies: [],
