@@ -80,7 +80,7 @@ video {
     }
 }
 
-iframe {
+iframe.a {
     max-width: 100%;
     padding: 0;
     border: 0;
@@ -90,11 +90,11 @@ iframe {
     background: rgba(0, 0, 0, .5);
     display: inline-block;
     margin: 0;
-    &.a-0 {
+    &--0 {
         width: 728px;
         height: 90px
     }
-    &.a-1 {
+    &--1 {
         width: 336px;
         height: 280px
     }
