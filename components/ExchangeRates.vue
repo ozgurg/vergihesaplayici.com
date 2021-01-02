@@ -57,7 +57,7 @@ export default {
 			flex: none;
 			display: inline-block;
 			vertical-align: top;
-			max-width: 33%
+			max-width: 150px
 		}
 	}
 }
