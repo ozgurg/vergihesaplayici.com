@@ -8,6 +8,10 @@
 
 		<v-divider class="my-10" />
 
+		<HorizontalForm class="mb-6">
+			<h1 class="primary--text">{{ head.title }}</h1>
+		</HorizontalForm>
+
 		<HorizontalForm class="mb-3">
 			<v-chip-group
 				v-model="ui.preset"
