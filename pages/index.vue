@@ -14,9 +14,9 @@
 			   playsinline=""
 			   width="300"
 			   height="300">
-			<source :src="ositaIheme.ositaIhemeWebm"
+			<source :src="ositaIheme.webm"
 					type="video/webm" />
-			<source :src="ositaIheme.ositaIhemeMp4"
+			<source :src="ositaIheme.mp4"
 					type="video/mp4" />
 		</video>
 
@@ -24,8 +24,7 @@
 
 		<h2 class="mb-2">Hesaplayıcılar</h2>
 		<v-card outlined="">
-			<CalculatorList show-full-title=""
-							show-description="" />
+			<CalculatorList show-description="" />
 		</v-card>
 
 		<v-divider class="my-8" />
@@ -60,15 +59,12 @@ export default {
 				{ hid: "og:title", name: "og:title", content: meta.title },
 				{ hid: "og:description", name: "og:description", content: meta.description },
 				{ hid: "og:image", name: "og:image", content: openGraphImage },
-				{ name: "twitter:card", content: "summary" },
-				{ name: "twitter:site", content: "@ozgurg0" },
-				{ name: "twitter:creator", content: "@ozgurg0" },
 				{ name: "twitter:image", content: openGraphImage }
 			]
 		},
 		ositaIheme: {
-			ositaIhemeMp4,
-			ositaIhemeWebm
+			mp4: ositaIhemeMp4,
+			webm: ositaIhemeWebm
 		}
 	}),
 	head() {

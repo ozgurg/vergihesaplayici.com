@@ -23,6 +23,9 @@ export default {
 			{ name: "robots", content: "index, follow" },
 			{ name: "format-detection", content: "telephone=no" },
 			{ name: "msapplication-tap-highlight", content: "no" },
+			{ name: "twitter:card", content: "summary" },
+			{ name: "twitter:site", content: "@ozgurg0" },
+			{ name: "twitter:creator", content: "@ozgurg0" },
 			{ "http-equiv": "X-UA-Compatible", "content": "ie=edge" },
 			{ hid: "description", name: "description", content: "vergihesaplayici.com, vergi hesaplar." }
 		],
@@ -45,21 +48,14 @@ export default {
 		"@nuxtjs/sitemap"
 	],
 	css: [
+		"@/assets/css/vuetify-customization.scss",
 		"@/assets/css/style.scss"
 	],
 	plugins: [
-		{
-			src: "@/plugins/client/firebase.js",
-			mode: "client"
-		},
-		{
-			src: "@/plugins/client/money-format.js",
-			mode: "client"
-		},
-		{
-			src: "@/plugins/client/vue-clipboard2.js",
-			mode: "client"
-		}
+		{ src: "@/plugins/client/firebase.js", mode: "client" },
+		{ src: "@/plugins/client/money-format.js", mode: "client" },
+		{ src: "@/plugins/client/vue-clipboard2.js", mode: "client" },
+		{ src: "@/plugins/client/vue-disqus.js", mode: "client" }
 	],
 	loading: {
 		color: Constants.PRIMARY_COLOR,

@@ -4,24 +4,25 @@ class BaseCalculator {
 		FromSalePrice: "fromSalePrice"
 	};
 
-	_exchangeRates = {}
+	_exchangeRates = {};
 	_prices = {
 		basePrice: 0, // Tax free price
 		salePrice: 0 // Tax added price
 	};
+	_mode = null;
+	_options = {};
+
 	_taxFees = {};
 	_taxRates = {};
-	_options = {};
 
 	/**
 	 * @param {object} exchangeRates
 	 * @param {number} price
 	 * @param {string} mode
-	 * @param {object} options - Calculator options for specific cases
+	 * @param {object} options - Options for specific cases
 	 */
 	constructor(exchangeRates, price, mode, options = {}) {
 		this._exchangeRates = exchangeRates;
-
 		this._prices.basePrice = price;
 		this._prices.salePrice = price;
 		this._mode = mode;
@@ -58,6 +59,7 @@ class BaseCalculator {
 
 	/**
 	 * Normalize calculation results to make them more readable for humans
+	 *
 	 * @protected
 	 */
 	formatResults() {
@@ -83,6 +85,18 @@ class BaseCalculator {
 		return currency === "TRY" ?
 			BaseCalculator.CalculationMode.FromSalePrice :
 			BaseCalculator.CalculationMode.FromBasePrice;
+	}
+
+	get taxFees() {
+		return this._taxFees;
+	}
+
+	get taxRates() {
+		return this._taxRates;
+	}
+
+	get prices() {
+		return this._prices;
 	}
 }
 

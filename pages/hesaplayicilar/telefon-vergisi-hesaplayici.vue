@@ -6,27 +6,32 @@
 
 		<ExchangeRates />
 
-		<v-divider class="my-6" />
+		<v-divider class="my-10" />
+
+		<HorizontalForm class="mb-6">
+			<h1 class="primary--text">{{ head.title }}</h1>
+		</HorizontalForm>
 
 		<HorizontalForm class="mb-3">
 			<v-chip-group
 				v-model="ui.preset"
 				column="">
 				<v-chip :key="index"
-						outlined=""
-						v-for="(preset, index) in ui.presets"
-						:value="index">
+				        v-for="(preset, index) in ui.presets"
+				        :value="index"
+				        outlined=""
+				        small="">
 					{{ preset.title }}
 				</v-chip>
 			</v-chip-group>
 		</HorizontalForm>
 
 		<HorizontalForm class="mb-3"
-						label="Telefon fiyatı">
+		                label="Telefon fiyatı">
 			<v-row dense=""
-				   class="price-row">
+			       class="price-row">
 				<v-col class="py-0 price-row__price-col"
-					   cols="7" sm="9" md="9" lg="9" xl="9">
+				       cols="7" sm="9" md="9" lg="9" xl="9">
 					<v-text-field
 						v-model.number="form.price"
 						:prefix="getCurrencySign(form.currency)"
@@ -51,7 +56,7 @@
 		</HorizontalForm>
 
 		<HorizontalForm class="mb-3"
-						label="Kayıt yolu">
+		                label="Kayıt yolu">
 			<v-select
 				v-model="form.registration"
 				:items="ui.registration"
@@ -63,54 +68,59 @@
 				aria-label="Kayıt yolu" />
 		</HorizontalForm>
 
-		<template v-if="showResults">
-			<v-divider class="my-6" />
+		<v-divider class="my-10" />
 
+		<v-tabs v-model="ui.tab"
+		        centered=""
+		        background-color="transparent"
+		        class="mb-4"
+		        fixed-tabs="">
+			<v-tab :disabled="!showResults">Hesaplama Sonuçları</v-tab>
+			<v-tab>Yorumlar</v-tab>
+		</v-tabs>
+
+		<template v-if="ui.tab === 0 && showResults">
 			<CustomsInfoAlert v-if="form.currency !== 'TRY'" />
 
-			<HorizontalForm class="mb-2">
-				<h3>Hesaplama Sonuçları</h3>
-			</HorizontalForm>
-
 			<ResultHorizontalForm :value="$moneyFormat(results.prices.basePrice, 'TRY')"
-								  class="mb-3"
-								  label="Vergisiz fiyat" />
+			                      class="mb-3"
+			                      label="Vergisiz fiyat" />
 
 			<template v-if="registrationIsImport">
 				<ResultHorizontalForm :label="`Kültür Bakanlığı (%${results.taxRates.ministryOfCulture})`"
-									  :value="$moneyFormat(results.taxFees.ministryOfCulture, 'TRY')"
-									  class="mb-3" />
+				                      :value="$moneyFormat(results.taxFees.ministryOfCulture, 'TRY')"
+				                      class="mb-3" />
 
-				<ResultHorizontalForm :label="`TRT Bandrolü (%${results.taxRates.trt})`"
-									  :value="$moneyFormat(results.taxFees.trt, 'TRY')"
-									  class="mb-3" />
+				<ResultHorizontalForm :label="`TRT bandrolü (%${results.taxRates.trt})`"
+				                      :value="$moneyFormat(results.taxFees.trt, 'TRY')"
+				                      class="mb-3" />
 
 				<ResultHorizontalForm :label="`ÖTV (%${results.taxRates.sct})`"
-									  :value="$moneyFormat(results.taxFees.sct, 'TRY')"
-									  class="mb-3" />
+				                      :value="$moneyFormat(results.taxFees.sct, 'TRY')"
+				                      class="mb-3" />
 
 				<ResultHorizontalForm :label="`KDV (%${results.taxRates.vat})`"
-									  :value="$moneyFormat(results.taxFees.vat, 'TRY')"
-									  class="mb-3" />
+				                      :value="$moneyFormat(results.taxFees.vat, 'TRY')"
+				                      class="mb-3" />
 			</template>
 
-			<template v-else-if="registrationIsPassport">
-				<ResultHorizontalForm :label="`TRT Bandrolü (${$moneyFormat(results.taxRates.trtPassport, 'EUR')})`"
-									  :value="$moneyFormat(results.taxFees.trtPassport, 'TRY')"
-									  class="mb-3" />
+			<template v-else>
+				<ResultHorizontalForm :label="`TRT bandrolü (${$moneyFormat(results.taxRates.trtPassport, 'EUR')})`"
+				                      :value="$moneyFormat(results.taxFees.trtPassport, 'TRY')"
+				                      class="mb-3" />
 
 				<ResultHorizontalForm :value="$moneyFormat(results.taxFees.registration, 'TRY')"
-									  class="mb-3"
-									  label="Kayıt ücreti" />
+				                      class="mb-3"
+				                      label="Kayıt ücreti" />
 			</template>
 
 			<ResultHorizontalForm :label="`Toplam vergi (%${results.taxRates.total})`"
-								  :value="$moneyFormat(results.taxFees.total, 'TRY')"
-								  class="mb-3" />
+			                      :value="$moneyFormat(results.taxFees.total, 'TRY')"
+			                      class="mb-3" />
 
 			<ResultHorizontalForm :value="$moneyFormat(results.prices.salePrice, 'TRY')"
-								  class="mb-3"
-								  label="Tahmini satış fiyatı" />
+			                      class="mb-3"
+			                      label="Tahmini satış fiyatı" />
 
 			<HorizontalForm class="mb-6">
 				<MinimumWageAlert :price="results.prices.salePrice" />
@@ -120,6 +130,8 @@
 				<Share :data="form" />
 			</HorizontalForm>
 		</template>
+
+		<Disqus v-show="ui.tab === 1" />
 	</div>
 </template>
 
@@ -127,11 +139,7 @@
 import BaseCalculator from "@/calculators/BaseCalculator";
 import PhoneTaxCalculator from "@/calculators/PhoneTaxCalculator";
 import openGraphImage from "@/assets/img/open-graph/phone-tax-calculator.jpg";
-
-const meta = {
-	title: "Telefon Vergisi Hesaplayıcı",
-	description: "Satın aldığınız bir telefonun satış fiyatına etki eden vergileri hesaplayın."
-};
+import { PhoneTaxCalculator as meta } from "@/data/calculators.js";
 
 export default {
 	layout: "default/index",
@@ -145,25 +153,23 @@ export default {
 				{ hid: "og:title", name: "og:title", content: meta.title },
 				{ hid: "og:description", name: "og:description", content: meta.description },
 				{ hid: "og:image", name: "og:image", content: openGraphImage },
-				{ name: "twitter:card", content: "summary" },
-				{ name: "twitter:site", content: "@ozgurg0" },
-				{ name: "twitter:creator", content: "@ozgurg0" },
 				{ name: "twitter:image", content: openGraphImage }
 			]
 		},
 		ui: {
 			presets: [
-				{ title: "iPhone 12 mini", price: 699 },
-				{ title: "iPhone 12", price: 799 },
-				{ title: "iPhone 12 Pro", price: 999 },
-				{ title: "iPhone 12 Pro Max", price: 1099 }
+				{ title: "iPhone 12 mini (64GB)", price: 699 },
+				{ title: "iPhone 12 (64GB)", price: 799 },
+				{ title: "iPhone 12 Pro (128GB)", price: 999 },
+				{ title: "iPhone 12 Pro Max (128GB)", price: 1099 }
 			],
 			preset: null,
 			availableCurrencies: [],
 			registration: [
 				{ title: "İthalat yoluyla kayıtlı (Resmi)", value: PhoneTaxCalculator.Registration.Import },
 				{ title: "Pasaport yoluyla kayıtlı", value: PhoneTaxCalculator.Registration.Passport }
-			]
+			],
+			tab: 1
 		},
 		form: {
 			currency: "USD",
@@ -180,13 +186,10 @@ export default {
 		calculate() {
 			const vm = this;
 
-			// Calculate price
 			const price = parseFloat(vm.form.price) * vm.getExchangeRate(vm.form.currency);
 
-			// Calculation mode
 			const mode = BaseCalculator.getModeByCurrency(vm.form.currency);
 
-			// Calculate
 			const calculator = new PhoneTaxCalculator(
 				vm.$store.get("exchangeRates/currencies"),
 				price,
@@ -202,31 +205,31 @@ export default {
 		},
 		getExchangeRate(currency) {
 			const vm = this;
-			return vm.$store.get(`exchangeRates/currencies@${currency}`)["rate"];
+			return vm.$store.get(`exchangeRates/currencies@${currency}.rate`);
 		},
 		getCurrencySign(currency) {
 			const vm = this;
-			return vm.$store.get(`exchangeRates/currencies@${currency}`)["sign"];
+			return vm.$store.get(`exchangeRates/currencies@${currency}.sign`);
 		},
 		handleQuery() {
 			const vm = this;
 
-			setTimeout(() => {
-				const query = vm.$route.query;
-				if (query) {
-					if (query.price) {
-						vm.form.price = query.price;
-					}
+			const query = vm.$route.query;
+			if (!query) {
+				return;
+			}
 
-					if (query.currency && vm.ui.availableCurrencies.includes(query.currency)) {
-						vm.form.currency = query.currency;
-					}
+			if (query.price) {
+				vm.form.price = query.price;
+			}
 
-					if (query.registration && vm.ui.registration.some(object => object.value === query.registration)) {
-						vm.form.registration = query.registration;
-					}
-				}
-			}, 100);
+			if (query.currency && vm.ui.availableCurrencies.includes(query.currency)) {
+				vm.form.currency = query.currency;
+			}
+
+			if (query.registration && vm.ui.registration.some(object => object.value === query.registration)) {
+				vm.form.registration = query.registration;
+			}
 		}
 	},
 	computed: {
@@ -237,35 +240,31 @@ export default {
 		registrationIsImport() {
 			const vm = this;
 			return vm.form.registration === PhoneTaxCalculator.Registration.Import;
-		},
-		registrationIsPassport() {
-			const vm = this;
-			return vm.form.registration === PhoneTaxCalculator.Registration.Passport;
 		}
 	},
 	watch: {
-		"ui.preset"() {
-			const vm = this;
-
-			vm.form.currency = "USD";
-			vm.form.price = vm.ui.presets[vm.ui.preset].price;
-		},
 		form: {
 			deep: true,
 			handler() {
 				const vm = this;
 
-				// Calculate and show results, only if possible
 				if (!vm.showResults) {
 					return;
 				}
 
-				// Calculate :)
 				vm.calculate();
 
-				// Update the query with form data
+				// Show results tab when calculated
+				vm.ui.tab = 0;
+
 				vm.$router.push({ query: vm.form });
 			}
+		},
+		"ui.preset"() {
+			const vm = this;
+
+			vm.form.currency = "USD";
+			vm.form.price = vm.ui.presets[vm.ui.preset].price;
 		}
 	},
 	head() {
@@ -280,22 +279,13 @@ export default {
 		vm.ui.availableCurrencies = vm.$store.get("exchangeRates/availableCurrencies");
 
 		vm.$nextTick(() => {
-			vm.handleQuery();
+			setTimeout(() => vm.handleQuery(), 100);
 		});
 
 		vm.$store.set("ui/breadcrumbs", [
-			{
-				text: "Ana Sayfa",
-				to: "/"
-			},
-			{
-				text: "Hesaplayıcılar",
-				to: "/hesaplayicilar"
-			},
-			{
-				text: meta.title,
-				to: vm.$route.path
-			}
+			{ text: "Ana Sayfa", to: "/" },
+			{ text: "Hesaplayıcılar", to: "/hesaplayicilar" },
+			{ text: meta.title, to: vm.$route.path }
 		]);
 	}
 };

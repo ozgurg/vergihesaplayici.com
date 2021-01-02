@@ -7,8 +7,7 @@
 		<h1 class="mb-2 primary--text">Tüm Hesaplayıcılar</h1>
 
 		<v-card outlined="">
-			<CalculatorList show-full-title=""
-							show-description="" />
+			<CalculatorList show-description="" />
 		</v-card>
 	</div>
 </template>
@@ -32,9 +31,6 @@ export default {
 				{ hid: "og:title", name: "og:title", content: meta.title },
 				{ hid: "og:description", name: "og:description", content: meta.description },
 				{ hid: "og:image", name: "og:image", content: openGraphImage },
-				{ name: "twitter:card", content: "summary" },
-				{ name: "twitter:site", content: "@ozgurg0" },
-				{ name: "twitter:creator", content: "@ozgurg0" },
 				{ name: "twitter:image", content: openGraphImage }
 			]
 		}
@@ -49,14 +45,8 @@ export default {
 		vm.$store.set("ui/toolbarTitle", vm.head.title);
 
 		vm.$store.set("ui/breadcrumbs", [
-			{
-				text: "Ana Sayfa",
-				to: "/"
-			},
-			{
-				text: "Hesaplayıcılar",
-				to: "/hesaplayicilar"
-			}
+			{ text: "Ana Sayfa", to: "/" },
+			{ text: "Hesaplayıcılar", to: "/hesaplayicilar" }
 		]);
 	}
 };

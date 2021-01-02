@@ -8,8 +8,7 @@ export const state = () => ({
 		EUR: { sign: "€", rate: 0, title: "Euro" },
 		GBP: { sign: "£", rate: 0, title: "İngiliz Poundu" },
 		INR: { sign: "₹", rate: 0, title: "Hindistan Rupisi" },
-		CNY: { sign: "¥", rate: 0, title: "Çin Yuanı" },
-		JPY: { sign: "¥", rate: 0, title: "Japon Yeni" }
+		CNY: { sign: "¥", rate: 0, title: "Çin Yuanı" }
 	}
 });
 

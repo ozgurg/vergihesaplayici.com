@@ -14,8 +14,8 @@
 			</v-list-item-icon>
 
 			<v-list-item-content>
-				<v-list-item-title v-if="showFullTitle"
-								   v-text="calculator.fullTitle" />
+				<v-list-item-title v-if="showShortTitle"
+								   v-text="calculator.shortTitle" />
 				<v-list-item-title v-else
 								   v-text="calculator.title" />
 
@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import calculators from "@/data/calculators.json";
+import calculators from "@/data/calculators.js";
 
 export default {
 	name: "CalculatorList",
@@ -38,7 +38,7 @@ export default {
 		subheader: {
 			type: String
 		},
-		showFullTitle: {
+		showShortTitle: {
 			type: Boolean,
 			default: false
 		},

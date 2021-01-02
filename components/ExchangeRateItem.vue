@@ -1,34 +1,25 @@
 <template>
-	<v-tooltip v-bind="$attrs"
-			   :disabled="!isLoaded"
-			   bottom="">
-		<template v-slot:activator="{ on, attrs }">
-			<v-card v-bind="attrs"
-					v-on="on"
-					class="text-center"
-					outlined="">
-				<v-card-subtitle v-text="currency"
-								 class="pb-0 pt-2" />
+	<v-card v-bind="$attrs"
+			class="text-center"
+			outlined="">
+		<v-card-subtitle v-text="$store.get(`exchangeRates/currencies@${currency}.title`)"
+						 class="pb-0 pt-2" />
 
-				<v-card-title class="justify-center pt-0 pb-2 px-0">
-					<div class="w-100 mx-auto">
-						<span v-if="isLoaded"
-							  v-text="$moneyFormat(exchangeRate.rate, 'TRY')"
-							  class="d-block" />
+		<v-card-title class="justify-center pt-0 pb-2 px-0">
+			<div class="w-100 mx-auto">
+				<span v-if="isLoaded"
+					  v-text="$moneyFormat(exchangeRate.rate, 'TRY')"
+					  class="d-block" />
 
-						<v-skeleton-loader
-							v-else
-							class="mx-auto"
-							max-height="32"
-							max-width="64"
-							type="image" />
-					</div>
-				</v-card-title>
-			</v-card>
-		</template>
-
-		<span v-text="exchangeRate.title" />
-	</v-tooltip>
+				<v-skeleton-loader
+					v-else
+					class="mx-auto"
+					max-height="32"
+					max-width="64"
+					type="image" />
+			</div>
+		</v-card-title>
+	</v-card>
 </template>
 
 <script>

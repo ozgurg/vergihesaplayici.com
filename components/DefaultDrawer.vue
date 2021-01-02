@@ -8,6 +8,7 @@
 
 		<div class="mb-auto">
 			<CalculatorList shaped=""
+							show-short-title=""
 							subheader="Hesaplayıcılar" />
 
 			<v-divider />
