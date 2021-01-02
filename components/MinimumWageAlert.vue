@@ -9,7 +9,7 @@
 </template>
 
 <script>
-const MINIMUM_WAGE = 2324.70;
+const MINIMUM_WAGE = 2825.90;
 
 export default {
 	name: "MinimumWageAlert",
