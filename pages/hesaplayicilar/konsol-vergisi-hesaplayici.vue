@@ -69,10 +69,6 @@
 		<template v-if="ui.tab === 0 && showResults">
 			<CustomsInfoAlert v-if="form.currency !== 'TRY'" />
 
-			<HorizontalForm class="mb-2">
-				<h3>Hesaplama Sonuçları</h3>
-			</HorizontalForm>
-
 			<ResultHorizontalForm :value="$moneyFormat(results.prices.basePrice, 'TRY')"
 			                      class="mb-3"
 			                      label="Vergisiz fiyat" />
