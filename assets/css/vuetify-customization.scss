@@ -1,7 +1,3 @@
-.theme--light.v-app-bar.v-toolbar.v-sheet {
-    background: #fff !important
-}
-
 .v-navigation-drawer__content {
     display: flex;
     flex-direction: column
@@ -23,5 +19,26 @@
     pointer-events: none;
     .v-input__append-inner {
         pointer-events: all
+    }
+}
+
+.theme--light {
+    &.v-app-bar.v-toolbar.v-sheet {
+        background: #fff !important
+    }
+    .v-label {
+        color: #000
+    }
+    .v-input--checkbox.v-input--is-disabled .v-label {
+        color: #00000042
+    }
+}
+
+.theme--dark {
+    .v-label {
+        color: #fff
+    }
+    .v-input--checkbox.v-input--is-disabled .v-label {
+        color: #ffffff4d
     }
 }
