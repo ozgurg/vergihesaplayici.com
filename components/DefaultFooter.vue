@@ -1,8 +1,8 @@
 <template>
 	<v-footer v-bind="$attrs"
-			  class="d-flex justify-center text-center pa-2"
+			  class="d-flex justify-center text-center pa-4"
 			  padless="">
-		<div class="caption mb-3">vergihesaplayici.com,
+		<div class="mb-4">vergihesaplayici.com,
 			<a href="https://github.com/ozgurg" rel="nofollow noopener noreferrer" target="_blank">@ozgurg</a>
 			tarafından açık
 			kaynaklı olarak geliştirilmektedir
