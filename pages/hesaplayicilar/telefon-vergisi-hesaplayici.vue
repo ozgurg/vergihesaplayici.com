@@ -81,7 +81,7 @@
 									  :value="$moneyFormat(results.taxFees.ministryOfCulture, 'TRY')"
 									  class="mb-3" />
 
-				<ResultHorizontalForm :label="`TRT Bandrolü (%${results.taxRates.trt})`"
+				<ResultHorizontalForm :label="`TRT bandrolü (%${results.taxRates.trt})`"
 									  :value="$moneyFormat(results.taxFees.trt, 'TRY')"
 									  class="mb-3" />
 
@@ -95,7 +95,7 @@
 			</template>
 
 			<template v-else-if="registrationIsPassport">
-				<ResultHorizontalForm :label="`TRT Bandrolü (${$moneyFormat(results.taxRates.trtPassport, 'EUR')})`"
+				<ResultHorizontalForm :label="`TRT bandrolü (${$moneyFormat(results.taxRates.trtPassport, 'EUR')})`"
 									  :value="$moneyFormat(results.taxFees.trtPassport, 'TRY')"
 									  class="mb-3" />
 
