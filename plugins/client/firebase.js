@@ -1,5 +1,6 @@
 import firebase from "firebase/app";
 import "firebase/analytics";
+import "firebase/performance";
 
 if (process.env.NODE_ENV === "production") {
 	// These are not sensitive
@@ -15,6 +16,7 @@ if (process.env.NODE_ENV === "production") {
 	});
 
 	firebase.analytics();
+	firebase.performance();
 }
 
 export default firebase;
