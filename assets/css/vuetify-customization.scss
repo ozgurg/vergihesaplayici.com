@@ -1,0 +1,27 @@
+.theme--light.v-app-bar.v-toolbar.v-sheet {
+    background: #fff !important
+}
+
+.v-navigation-drawer__content {
+    display: flex;
+    flex-direction: column
+}
+
+.v-input--checkbox {
+    padding-top: 0;
+    .v-input__slot {
+        margin-bottom: 0
+    }
+}
+
+.v-breadcrumbs {
+    padding-left: 0 !important;
+    padding-right: 0
+}
+
+.v-input--is-readonly {
+    pointer-events: none;
+    .v-input__append-inner {
+        pointer-events: all
+    }
+}

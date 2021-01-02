@@ -11,6 +11,15 @@ body {
     user-select: none
 }
 
+video {
+    height: auto;
+    max-width: 100%
+}
+
+.w-100 {
+    width: 100%
+}
+
 .version {
     position: fixed;
     z-index: 100;
@@ -30,31 +39,6 @@ body {
     max-width: 100%
 }
 
-.theme--light.v-app-bar.v-toolbar.v-sheet {
-    background: #fff !important
-}
-
-.w-100 {
-    width: 100%
-}
-
-.v-navigation-drawer__content {
-    display: flex;
-    flex-direction: column
-}
-
-.v-input--checkbox {
-    padding-top: 0;
-    .v-input__slot {
-        margin-bottom: 0
-    }
-}
-
-video {
-    height: auto;
-    max-width: 100%
-}
-
 .price-row {
     &__price-col {
         display: flex;
@@ -65,18 +49,6 @@ video {
     &__currency-col {
         flex: 0 0 100px;
         max-width: 100px
-    }
-}
-
-.v-breadcrumbs {
-    padding-left: 0 !important;
-    padding-right: 0
-}
-
-.v-input--is-readonly {
-    pointer-events: none;
-    .v-input__append-inner {
-        pointer-events: all
     }
 }
 

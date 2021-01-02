@@ -48,6 +48,7 @@ export default {
 		"@nuxtjs/sitemap"
 	],
 	css: [
+		"@/assets/css/vuetify-customization.scss",
 		"@/assets/css/style.scss"
 	],
 	plugins: [
