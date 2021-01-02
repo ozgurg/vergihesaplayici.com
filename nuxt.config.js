@@ -23,6 +23,9 @@ export default {
 			{ name: "robots", content: "index, follow" },
 			{ name: "format-detection", content: "telephone=no" },
 			{ name: "msapplication-tap-highlight", content: "no" },
+			{ name: "twitter:card", content: "summary" },
+			{ name: "twitter:site", content: "@ozgurg0" },
+			{ name: "twitter:creator", content: "@ozgurg0" },
 			{ "http-equiv": "X-UA-Compatible", "content": "ie=edge" },
 			{ hid: "description", name: "description", content: "vergihesaplayici.com, vergi hesaplar." }
 		],
