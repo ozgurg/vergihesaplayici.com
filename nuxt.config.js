@@ -45,7 +45,14 @@ export default {
 	],
 	modules: [
 		"@nuxtjs/pwa",
-		"@nuxtjs/sitemap"
+		"@nuxtjs/sitemap",
+		[
+			"nuxt-canonical",
+			{
+				baseUrl: Constants.BASE_URL,
+				trailingSlashes: false
+			}
+		]
 	],
 	css: [
 		"@/assets/css/vuetify-customization.scss",

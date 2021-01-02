@@ -8,14 +8,11 @@
 
 		<v-divider class="my-10" />
 
-		<HorizontalForm class="mb-6">
-			<h1 class="primary--text">{{ head.title }}</h1>
-		</HorizontalForm>
-
 		<HorizontalForm class="mb-3">
 			<v-chip-group
 				v-model="ui.preset"
-				column="">
+				:show-arrows="$vuetify.breakpoint.mdAndDown"
+				:column="!$vuetify.breakpoint.mdAndDown">
 				<v-chip :key="index"
 				        v-for="(preset, index) in ui.presets"
 				        :value="index"
@@ -71,11 +68,10 @@
 		<v-divider class="my-10" />
 
 		<v-tabs v-model="ui.tab"
-		        centered=""
 		        background-color="transparent"
 		        class="mb-4"
 		        fixed-tabs="">
-			<v-tab :disabled="!showResults">Hesaplama Sonuçları</v-tab>
+			<v-tab :disabled="!showResults">Sonuçlar</v-tab>
 			<v-tab>Yorumlar</v-tab>
 		</v-tabs>
 
@@ -188,7 +184,7 @@ export default {
 
 			const price = parseFloat(vm.form.price) * vm.getExchangeRate(vm.form.currency);
 
-			const mode = BaseCalculator.getModeByCurrency(vm.form.currency);
+			const mode = BaseCalculator.getCalculationModeByCurrency(vm.form.currency);
 
 			const calculator = new PhoneTaxCalculator(
 				vm.$store.get("exchangeRates/currencies"),
