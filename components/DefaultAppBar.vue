@@ -1,6 +1,7 @@
 <template>
 	<v-app-bar v-bind="$attrs"
-			   elevate-on-scroll="">
+	           hide-on-scroll=""
+	           elevation="0">
 		<v-app-bar-nav-icon v-if="$vuetify.breakpoint.mdAndDown"
 							@click="drawerState = !drawerState"
 							aria-label="Menüyü aç" />
