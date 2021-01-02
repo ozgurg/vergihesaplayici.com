@@ -98,11 +98,7 @@
 import BaseCalculator from "@/calculators/BaseCalculator";
 import ConsoleTaxCalculator from "@/calculators/ConsoleTaxCalculator";
 import openGraphImage from "@/assets/img/open-graph/console-tax-calculator.jpg";
-
-const meta = {
-	title: "Konsol Vergisi Hesaplayıcı",
-	description: "Sadece eğlenmek istediğinizde ödemeniz gereken vergileri hesaplayın."
-};
+import { ConsoleTaxCalculator as meta } from "./../../data/calculators.js";
 
 export default {
 	layout: "default/index",

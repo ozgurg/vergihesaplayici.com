@@ -127,11 +127,7 @@
 import BaseCalculator from "@/calculators/BaseCalculator";
 import PhoneTaxCalculator from "@/calculators/PhoneTaxCalculator";
 import openGraphImage from "@/assets/img/open-graph/phone-tax-calculator.jpg";
-
-const meta = {
-	title: "Telefon Vergisi Hesaplayıcı",
-	description: "Satın aldığınız bir telefonun satış fiyatına etki eden vergileri hesaplayın."
-};
+import { PhoneTaxCalculator as meta } from "./../../data/calculators.js";
 
 export default {
 	layout: "default/index",

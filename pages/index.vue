@@ -24,8 +24,7 @@
 
 		<h2 class="mb-2">Hesaplayıcılar</h2>
 		<v-card outlined="">
-			<CalculatorList show-full-title=""
-							show-description="" />
+			<CalculatorList show-description="" />
 		</v-card>
 
 		<v-divider class="my-8" />

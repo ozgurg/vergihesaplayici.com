@@ -7,8 +7,7 @@
 		<h1 class="mb-2 primary--text">Tüm Hesaplayıcılar</h1>
 
 		<v-card outlined="">
-			<CalculatorList show-full-title=""
-							show-description="" />
+			<CalculatorList show-description="" />
 		</v-card>
 	</div>
 </template>
