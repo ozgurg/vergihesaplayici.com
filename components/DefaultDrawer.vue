@@ -13,9 +13,6 @@
 
 			<v-divider />
 
-			<SettingsList shaped=""
-						  subheader="Ayarlar" />
-
 			<template v-if="$route.name !== 'index'">
 				<v-divider />
 

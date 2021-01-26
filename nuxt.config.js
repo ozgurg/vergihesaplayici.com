@@ -94,9 +94,6 @@ export default {
 			themes: {
 				dark: {
 					primary: Constants.PRIMARY_COLOR
-				},
-				light: {
-					primary: Constants.PRIMARY_COLOR
 				}
 			}
 		}

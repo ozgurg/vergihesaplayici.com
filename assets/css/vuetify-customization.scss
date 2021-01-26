@@ -26,23 +26,9 @@
     }
 }
 
-.theme--light {
-    &.v-app-bar.v-toolbar.v-sheet {
-        background: #fff !important
-    }
-    .v-label {
-        color: #000
-    }
-    .v-input--checkbox.v-input--is-disabled .v-label {
-        color: #00000042
-    }
+.v-label {
+    color: #fff
 }
-
-.theme--dark {
-    .v-label {
-        color: #fff
-    }
-    .v-input--checkbox.v-input--is-disabled .v-label {
-        color: #ffffff4d
-    }
+.v-input--checkbox.v-input--is-disabled .v-label {
+    color: #ffffff4d
 }

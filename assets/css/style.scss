@@ -1,13 +1,5 @@
-html {
-    &[data-dark-mode="true"] body {
-        background: #121212
-    }
-    &[data-dark-mode="false"] body {
-        background: #fff
-    }
-}
-
 body {
+    background: #121212;
     user-select: none
 }
 
