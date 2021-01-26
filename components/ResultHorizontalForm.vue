@@ -2,7 +2,7 @@
 	<HorizontalForm v-bind="$attrs"
 					:label="label">
 		<v-text-field
-			append-icon="mdi-content-copy"
+			:append-icon="appendIcon"
 			:value="value"
 			@click:append="copy(value)"
 			dense=""
@@ -16,6 +16,9 @@
 <script>
 export default {
 	name: "ResultHorizontalForm",
+	data: () => ({
+		isCopied: false
+	}),
 	props: {
 		label: {
 			type: String
@@ -28,14 +31,19 @@ export default {
 		copy(text) {
 			const vm = this;
 
-			vm.$copyText(text);
-
-			vm.$store.set("ui/snackbar@isVisible", true);
-			vm.$store.set("ui/snackbar@text", "Panoya kopyalandı.");
+			vm.isCopied = true;
 
 			setTimeout(() => {
-				vm.$store.set("ui/snackbar@isVisible", false);
-			}, vm.$store.get("ui/snackbar@timeout"));
+				vm.isCopied = false;
+			}, 1000);
+
+			vm.$copyText(text);
+		}
+	},
+	computed: {
+		appendIcon() {
+			const vm = this;
+			return vm.isCopied ? "mdi-check" : "mdi-content-copy";
 		}
 	}
 };

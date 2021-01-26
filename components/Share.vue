@@ -2,62 +2,35 @@
 	<div v-bind="$attrs">
 		<h3 class="mb-2">Paylaş</h3>
 		<v-btn-toggle>
-			<v-tooltip bottom="">
-				<template v-slot:activator="{ on, attrs }">
-					<v-btn v-bind="attrs"
-						   v-on="on"
-						   :href="facebookShareUrl"
-						   link=""
-						   rel="nofollow noopener noreferrer"
-						   target="_blank"
-						   aria-label="Facebook'ta paylaş">
-						<v-icon color="#1877f2">mdi-facebook</v-icon>
-					</v-btn>
-				</template>
-				<span>Facebook'ta paylaş</span>
-			</v-tooltip>
+			<v-btn :href="facebookShareUrl"
+				   link=""
+				   rel="nofollow noopener noreferrer"
+				   target="_blank"
+				   title="Facebook'ta paylaş">
+				<v-icon color="#1877f2">mdi-facebook</v-icon>
+			</v-btn>
 
-			<v-tooltip bottom="">
-				<template v-slot:activator="{ on, attrs }">
-					<v-btn v-bind="attrs"
-						   v-on="on"
-						   :href="twitterShareUrl"
-						   link=""
-						   rel="nofollow noopener noreferrer"
-						   target="_blank"
-						   aria-label="Twitter'ta paylaş">
-						<v-icon color="#00acee">mdi-twitter</v-icon>
-					</v-btn>
-				</template>
-				<span>Twitter'ta paylaş</span>
-			</v-tooltip>
+			<v-btn :href="twitterShareUrl"
+				   link=""
+				   rel="nofollow noopener noreferrer"
+				   target="_blank"
+				   title="Twitter'ta paylaş">
+				<v-icon color="#00acee">mdi-twitter</v-icon>
+			</v-btn>
 
-			<v-tooltip bottom="">
-				<template v-slot:activator="{ on, attrs }">
-					<v-btn v-bind="attrs"
-						   v-on="on"
-						   :href="whatsAppShareUrl"
-						   link=""
-						   rel="nofollow noopener noreferrer"
-						   target="_blank"
-						   aria-label="WhatsApp ile gönder">
-						<v-icon color="#25d366">mdi-whatsapp</v-icon>
-					</v-btn>
-				</template>
-				<span>WhatsApp ile gönder</span>
-			</v-tooltip>
+			<v-btn :href="whatsAppShareUrl"
+				   link=""
+				   rel="nofollow noopener noreferrer"
+				   target="_blank"
+				   title="WhatsApp ile gönder">
+				<v-icon color="#25d366">mdi-whatsapp</v-icon>
+			</v-btn>
 
-			<v-tooltip bottom="">
-				<template v-slot:activator="{ on, attrs }">
-					<v-btn v-bind="attrs"
-						   v-on="on"
-						   @click="copy(url)"
-						   aria-label="Sayfa bağlantısını kopyala">
-						<v-icon color="primary">mdi-link</v-icon>
-					</v-btn>
-				</template>
-				<span>Sayfa bağlantısını kopyala</span>
-			</v-tooltip>
+			<v-btn @click="copy(url)"
+				   title="Sayfa bağlantısını kopyala">
+				<v-icon v-if="!isUrlCopied" color="primary">mdi-link</v-icon>
+				<v-icon v-else color="primary">mdi-check</v-icon>
+			</v-btn>
 		</v-btn-toggle>
 	</div>
 </template>
@@ -67,6 +40,9 @@ import querystring from "querystring";
 
 export default {
 	name: "Share",
+	data: () => ({
+		isUrlCopied: false
+	}),
 	props: {
 		data: {
 			type: Object,
@@ -77,14 +53,13 @@ export default {
 		copy(text) {
 			const vm = this;
 
-			vm.$copyText(text);
-
-			vm.$store.set("ui/snackbar@isVisible", true);
-			vm.$store.set("ui/snackbar@text", "Panoya kopyalandı.");
+			vm.isUrlCopied = true;
 
 			setTimeout(() => {
-				vm.$store.set("ui/snackbar@isVisible", false);
-			}, vm.$store.get("ui/snackbar@timeout"));
+				vm.isUrlCopied = false;
+			}, 1000);
+
+			vm.$copyText(text);
 		}
 	},
 	computed: {
