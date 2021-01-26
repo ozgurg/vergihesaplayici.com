@@ -1,7 +1,8 @@
 <template>
 	<v-chip-group
 		:column="true"
-		v-model="preset">
+		:value="value"
+		@change="$emit('input', $event)">
 		<v-chip :key="index"
 				v-for="(preset, index) in presets"
 				:value="index"
@@ -14,19 +15,14 @@
 <script>
 export default {
 	name: "Presets",
-	data: () => ({
-		preset: false
-	}),
 	props: {
+		value: {
+			type: Number,
+			request: true
+		},
 		presets: {
 			type: Array,
 			required: true
-		}
-	},
-	watch: {
-		preset() {
-			const vm = this;
-			vm.$emit("input", vm.preset);
 		}
 	}
 };
