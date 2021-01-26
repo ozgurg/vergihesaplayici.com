@@ -58,8 +58,18 @@
 		        background-color="transparent"
 		        class="mb-4"
 		        fixed-tabs="">
-			<v-tab :disabled="!showResults">Sonuçlar</v-tab>
-			<v-tab>Yorumlar</v-tab>
+			<v-tab :disabled="!showResults">
+				<v-icon left="">
+					mdi-format-list-bulleted-type
+				</v-icon>
+				Sonuçlar
+			</v-tab>
+			<v-tab>
+				<v-icon left="">
+					mdi-comment-multiple-outline
+				</v-icon>
+				Yorumlar
+			</v-tab>
 		</v-tabs>
 
 		<template v-if="ui.tab === 0 && showResults">
