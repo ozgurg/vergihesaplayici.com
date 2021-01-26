@@ -9,16 +9,8 @@
 		<v-divider class="my-10" />
 
 		<HorizontalForm class="mb-3">
-			<v-chip-group
-				:column="true"
-				v-model="ui.preset">
-				<v-chip :key="index"
-						v-for="(preset, index) in ui.presets"
-						:value="index"
-						outlined="">
-					{{ preset.title }}
-				</v-chip>
-			</v-chip-group>
+			<Presets v-model="ui.preset"
+					 :presets="ui.presets" />
 		</HorizontalForm>
 
 		<HorizontalForm class="mb-3"
@@ -122,8 +114,10 @@ import BaseCalculator from "@/calculators/BaseCalculator";
 import ConsoleTaxCalculator from "@/calculators/ConsoleTaxCalculator";
 import openGraphImage from "@/assets/img/open-graph/console-tax-calculator.jpg";
 import { ConsoleTaxCalculator as meta } from "@/data/calculators.js";
+import Presets from "../../components/calculators/Presets";
 
 export default {
+	components: { Presets },
 	layout: "default/index",
 	name: "ConsoleTaxCalculator",
 	data: () => ({

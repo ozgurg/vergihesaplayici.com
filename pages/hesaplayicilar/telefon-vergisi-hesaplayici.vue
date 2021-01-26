@@ -9,16 +9,8 @@
 		<v-divider class="my-10" />
 
 		<HorizontalForm class="mb-3">
-			<v-chip-group
-				:column="true"
-				v-model="ui.preset">
-				<v-chip :key="index"
-						v-for="(preset, index) in ui.presets"
-						:value="index"
-						outlined="">
-					{{ preset.title }}
-				</v-chip>
-			</v-chip-group>
+			<Presets v-model="ui.preset"
+					 :presets="ui.presets" />
 		</HorizontalForm>
 
 		<HorizontalForm class="mb-3"
