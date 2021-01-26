@@ -108,7 +108,7 @@
 			</HorizontalForm>
 		</template>
 
-		<Disqus v-show="ui.tab === 1" />
+		<Comments v-show="ui.tab === 1" />
 	</div>
 </template>
 
