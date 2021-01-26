@@ -11,7 +11,7 @@
 						subheader="Hesaplayıcılar"
 						class="mb-auto"/>
 
-		<AppsFromDeveloperList shaped="" />
+		<AppsFromDeveloperList shaped="" aria-label="Geliştiriciden Uygulamalar" />
 
 		<DefaultFooter />
 	</v-navigation-drawer>
