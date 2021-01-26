@@ -14,21 +14,21 @@
 				:show-arrows="$vuetify.breakpoint.mdAndDown"
 				:column="!$vuetify.breakpoint.mdAndDown">
 				<v-chip :key="index"
-				        v-for="(preset, index) in ui.presets"
-				        :value="index"
-				        outlined=""
-				        small="">
+						v-for="(preset, index) in ui.presets"
+						:value="index"
+						outlined=""
+						small="">
 					{{ preset.title }}
 				</v-chip>
 			</v-chip-group>
 		</HorizontalForm>
 
 		<HorizontalForm class="mb-3"
-		                label="Konsol fiyatı">
+						label="Konsol fiyatı">
 			<v-row dense=""
-			       class="price-row">
+				   class="price-row">
 				<v-col class="py-0 price-row__price-col"
-				       cols="7" sm="9" md="9" lg="9" xl="9">
+					   cols="7" sm="9" md="9" lg="9" xl="9">
 					<v-text-field
 						v-model.number="form.price"
 						:prefix="getCurrencySign(form.currency)"
@@ -54,40 +54,51 @@
 
 		<v-divider class="my-10" />
 
-		<v-tabs v-model="ui.tab"
-		        background-color="transparent"
-		        class="mb-4"
-		        fixed-tabs="">
-			<v-tab :disabled="!showResults">Sonuçlar</v-tab>
-			<v-tab>Yorumlar</v-tab>
-		</v-tabs>
+		<HorizontalForm class="mb-4">
+			<v-tabs v-model="ui.tab"
+					background-color="transparent"
+					fixed-tabs="">
+				<v-tab :disabled="!showResults">
+					<v-icon left="">
+						mdi-format-list-bulleted-type
+					</v-icon>
+					Sonuçlar
+				</v-tab>
+				<v-tab>
+					<v-icon left="">
+						mdi-comment-multiple-outline
+					</v-icon>
+					Yorumlar
+				</v-tab>
+			</v-tabs>
+		</HorizontalForm>
 
 		<template v-if="ui.tab === 0 && showResults">
 			<CustomsInfoAlert v-if="form.currency !== 'TRY'" />
 
 			<ResultHorizontalForm :value="$moneyFormat(results.prices.basePrice, 'TRY')"
-			                      class="mb-3"
-			                      label="Vergisiz fiyat" />
+								  class="mb-3"
+								  label="Vergisiz fiyat" />
 
 			<ResultHorizontalForm :label="`Gümrük vergisi (%${results.taxRates.custom})`"
-			                      :value="$moneyFormat(results.taxFees.custom, 'TRY')"
-			                      class="mb-3" />
+								  :value="$moneyFormat(results.taxFees.custom, 'TRY')"
+								  class="mb-3" />
 
 			<ResultHorizontalForm :label="`ÖTV (%${results.taxRates.sct})`"
-			                      :value="$moneyFormat(results.taxFees.sct, 'TRY')"
-			                      class="mb-3" />
+								  :value="$moneyFormat(results.taxFees.sct, 'TRY')"
+								  class="mb-3" />
 
 			<ResultHorizontalForm :label="`KDV (%${results.taxRates.vat})`"
-			                      :value="$moneyFormat(results.taxFees.vat, 'TRY')"
-			                      class="mb-3" />
+								  :value="$moneyFormat(results.taxFees.vat, 'TRY')"
+								  class="mb-3" />
 
 			<ResultHorizontalForm :label="`Toplam vergi (%${results.taxRates.total})`"
-			                      :value="$moneyFormat(results.taxFees.total, 'TRY')"
-			                      class="mb-3" />
+								  :value="$moneyFormat(results.taxFees.total, 'TRY')"
+								  class="mb-3" />
 
 			<ResultHorizontalForm :value="$moneyFormat(results.prices.salePrice, 'TRY')"
-			                      class="mb-3"
-			                      label="Tahmini satış fiyatı" />
+								  class="mb-3"
+								  label="Tahmini satış fiyatı" />
 
 			<HorizontalForm class="mb-6">
 				<MinimumWageAlert :price="results.prices.salePrice" />
@@ -98,7 +109,7 @@
 			</HorizontalForm>
 		</template>
 
-		<Disqus v-show="ui.tab === 1" />
+		<Comments v-show="ui.tab === 1" />
 	</div>
 </template>
 

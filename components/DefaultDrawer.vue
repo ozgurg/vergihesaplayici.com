@@ -6,25 +6,14 @@
 			<DefaultLogo />
 		</template>
 
-		<div class="mb-auto">
-			<CalculatorList shaped=""
-							show-short-title=""
-							subheader="Hesaplayıcılar" />
+		<CalculatorList shaped=""
+						show-short-title=""
+						subheader="Hesaplayıcılar"
+						class="mb-auto"/>
 
-			<v-divider />
+		<AppsFromDeveloperList shaped="" />
 
-			<SettingsList shaped=""
-						  subheader="Ayarlar" />
-
-			<template v-if="$route.name !== 'index'">
-				<v-divider />
-
-				<AppsFromDeveloperList shaped=""
-									   subheader="Geliştiriciden Uygulamalar" />
-			</template>
-		</div>
-
-		<DefaultFooter class="mt-8" />
+		<DefaultFooter />
 	</v-navigation-drawer>
 </template>
 

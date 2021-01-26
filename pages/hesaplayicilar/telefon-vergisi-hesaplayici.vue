@@ -67,13 +67,24 @@
 
 		<v-divider class="my-10" />
 
-		<v-tabs v-model="ui.tab"
-		        background-color="transparent"
-		        class="mb-4"
-		        fixed-tabs="">
-			<v-tab :disabled="!showResults">Sonuçlar</v-tab>
-			<v-tab>Yorumlar</v-tab>
-		</v-tabs>
+		<HorizontalForm class="mb-4">
+			<v-tabs v-model="ui.tab"
+					background-color="transparent"
+					fixed-tabs="">
+				<v-tab :disabled="!showResults">
+					<v-icon left="">
+						mdi-format-list-bulleted-type
+					</v-icon>
+					Sonuçlar
+				</v-tab>
+				<v-tab>
+					<v-icon left="">
+						mdi-comment-multiple-outline
+					</v-icon>
+					Yorumlar
+				</v-tab>
+			</v-tabs>
+		</HorizontalForm>
 
 		<template v-if="ui.tab === 0 && showResults">
 			<CustomsInfoAlert v-if="form.currency !== 'TRY'" />
@@ -127,7 +138,7 @@
 			</HorizontalForm>
 		</template>
 
-		<Disqus v-show="ui.tab === 1" />
+		<Comments v-show="ui.tab === 1" />
 	</div>
 </template>
 

@@ -2,7 +2,6 @@ import { make } from "vuex-pathify";
 
 export const state = () => ({
 	drawerState: null,
-	isCenteredContent: false,
 	toolbarTitle: process.env.npm_package_name,
 	snackbar: {
 		timeout: 2000,

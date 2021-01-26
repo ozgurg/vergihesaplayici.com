@@ -5,9 +5,7 @@
 		<DefaultAppBar app="" />
 
 		<v-main>
-			<div :class="{'mx-auto': isCenteredContent}"
-				 class="main-content">
-
+			<div class="main-content">
 				<v-breadcrumbs
 					v-if="$store.get('ui/breadcrumbs')"
 					:items="$store.get('ui/breadcrumbs')">
@@ -46,7 +44,6 @@ export default {
 	}),
 	computed: {
 		...sync("ui", [
-			"isCenteredContent",
 			"snackbar"
 		])
 	}
