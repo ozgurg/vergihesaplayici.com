@@ -10,14 +10,12 @@
 
 		<HorizontalForm class="mb-3">
 			<v-chip-group
-				v-model="ui.preset"
-				:show-arrows="$vuetify.breakpoint.mdAndDown"
-				:column="!$vuetify.breakpoint.mdAndDown">
+				:column="true"
+				v-model="ui.preset">
 				<v-chip :key="index"
 						v-for="(preset, index) in ui.presets"
 						:value="index"
-						outlined=""
-						small="">
+						outlined="">
 					{{ preset.title }}
 				</v-chip>
 			</v-chip-group>
