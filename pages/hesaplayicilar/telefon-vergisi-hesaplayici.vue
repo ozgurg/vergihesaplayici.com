@@ -31,13 +31,7 @@
 				</v-col>
 
 				<v-col class="py-0 price-row__currency-col">
-					<v-select
-						v-model="form.currency"
-						:items="ui.availableCurrencies"
-						dense=""
-						hide-details=""
-						outlined=""
-						aria-label="Para birimi" />
+					<CurrencySelector v-model="form.currency" />
 				</v-col>
 			</v-row>
 		</HorizontalForm>
