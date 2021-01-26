@@ -73,43 +73,49 @@
 			</v-tabs>
 		</HorizontalForm>
 
-		<template v-if="ui.tab === 0 && showResults">
-			<CustomsInfoAlert v-if="form.currency !== 'TRY'" />
+		<v-tabs-items v-model="ui.tab">
+			<v-tab-item>
+				<template v-if="showResults">
+					<CustomsInfoAlert v-if="form.currency !== 'TRY'" />
 
-			<ResultHorizontalForm :value="$moneyFormat(results.prices.basePrice, 'TRY')"
-								  class="mb-3"
-								  label="Vergisiz fiyat" />
+					<ResultHorizontalForm :value="$moneyFormat(results.prices.basePrice, 'TRY')"
+										  class="mb-3"
+										  label="Vergisiz fiyat" />
 
-			<ResultHorizontalForm :label="`Gümrük vergisi (%${results.taxRates.custom})`"
-								  :value="$moneyFormat(results.taxFees.custom, 'TRY')"
-								  class="mb-3" />
+					<ResultHorizontalForm :label="`Gümrük vergisi (%${results.taxRates.custom})`"
+										  :value="$moneyFormat(results.taxFees.custom, 'TRY')"
+										  class="mb-3" />
 
-			<ResultHorizontalForm :label="`ÖTV (%${results.taxRates.sct})`"
-								  :value="$moneyFormat(results.taxFees.sct, 'TRY')"
-								  class="mb-3" />
+					<ResultHorizontalForm :label="`ÖTV (%${results.taxRates.sct})`"
+										  :value="$moneyFormat(results.taxFees.sct, 'TRY')"
+										  class="mb-3" />
 
-			<ResultHorizontalForm :label="`KDV (%${results.taxRates.vat})`"
-								  :value="$moneyFormat(results.taxFees.vat, 'TRY')"
-								  class="mb-3" />
+					<ResultHorizontalForm :label="`KDV (%${results.taxRates.vat})`"
+										  :value="$moneyFormat(results.taxFees.vat, 'TRY')"
+										  class="mb-3" />
 
-			<ResultHorizontalForm :label="`Toplam vergi (%${results.taxRates.total})`"
-								  :value="$moneyFormat(results.taxFees.total, 'TRY')"
-								  class="mb-3" />
+					<ResultHorizontalForm :label="`Toplam vergi (%${results.taxRates.total})`"
+										  :value="$moneyFormat(results.taxFees.total, 'TRY')"
+										  class="mb-3" />
 
-			<ResultHorizontalForm :value="$moneyFormat(results.prices.salePrice, 'TRY')"
-								  class="mb-3"
-								  label="Tahmini satış fiyatı" />
+					<ResultHorizontalForm :value="$moneyFormat(results.prices.salePrice, 'TRY')"
+										  class="mb-3"
+										  label="Tahmini satış fiyatı" />
 
-			<HorizontalForm class="mb-6">
-				<MinimumWageAlert :price="results.prices.salePrice" />
-			</HorizontalForm>
+					<HorizontalForm class="mb-6">
+						<MinimumWageAlert :price="results.prices.salePrice" />
+					</HorizontalForm>
 
-			<HorizontalForm>
-				<Share :data="form" />
-			</HorizontalForm>
-		</template>
+					<HorizontalForm>
+						<Share :data="form" />
+					</HorizontalForm>
+				</template>
+			</v-tab-item>
 
-		<Comments v-show="ui.tab === 1" />
+			<v-tab-item>
+				<Comments />
+			</v-tab-item>
+		</v-tabs-items>
 	</div>
 </template>
 
