@@ -13,12 +13,8 @@
 
 			<v-divider />
 
-			<template v-if="$route.name !== 'index'">
-				<v-divider />
-
-				<AppsFromDeveloperList shaped=""
-									   subheader="Geliştiriciden Uygulamalar" />
-			</template>
+			<AppsFromDeveloperList shaped=""
+								   subheader="Geliştiriciden Uygulamalar" />
 		</div>
 
 		<DefaultFooter class="mt-8" />
