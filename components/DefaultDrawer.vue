@@ -6,18 +6,14 @@
 			<DefaultLogo />
 		</template>
 
-		<div class="mb-auto">
-			<CalculatorList shaped=""
-							show-short-title=""
-							subheader="Hesaplayıcılar" />
+		<CalculatorList shaped=""
+						show-short-title=""
+						subheader="Hesaplayıcılar"
+						class="mb-auto"/>
 
-			<v-divider />
+		<AppsFromDeveloperList shaped="" />
 
-			<AppsFromDeveloperList shaped=""
-								   subheader="Geliştiriciden Uygulamalar" />
-		</div>
-
-		<DefaultFooter class="mt-8" />
+		<DefaultFooter />
 	</v-navigation-drawer>
 </template>
 
