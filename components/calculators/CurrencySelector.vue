@@ -18,7 +18,7 @@ export default {
 	props: {
 		value: {
 			type: String,
-			request: true
+			required: true
 		}
 	},
 	mounted() {

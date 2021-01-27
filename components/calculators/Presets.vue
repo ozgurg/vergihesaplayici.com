@@ -18,7 +18,7 @@ export default {
 	props: {
 		value: {
 			type: Number,
-			request: true
+			required: true
 		},
 		presets: {
 			type: Array,
