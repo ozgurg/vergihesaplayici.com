@@ -16,8 +16,7 @@
 			</v-tabs>
 		</HorizontalForm>
 
-		<v-tabs-items :value="value"
-					  @change="$emit('input', $event)">
+		<v-tabs-items :value="value">
 			<v-tab-item>
 				<slot />
 			</v-tab-item>
