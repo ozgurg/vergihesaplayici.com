@@ -34,8 +34,8 @@
     color: #ffffff4d
 }
 
-.theme--dark.v-tabs-items {
-    background: 0
+.v-tabs-items {
+    background: 0 !important
 }
 
 .v-chip--active:before, .v-item--active:before {
