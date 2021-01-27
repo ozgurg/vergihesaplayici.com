@@ -208,7 +208,7 @@ export default {
 	computed: {
 		showResults() {
 			const vm = this;
-			return vm.form.price > 0 && vm.form.currency && vm.form.registration;
+			return vm.form.price > 0 && vm.form.currency !== "" && vm.form.registration !== "";
 		},
 		registrationIsImport() {
 			const vm = this;

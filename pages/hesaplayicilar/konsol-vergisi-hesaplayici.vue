@@ -168,7 +168,7 @@ export default {
 	computed: {
 		showResults() {
 			const vm = this;
-			return vm.form.price > 0 && vm.form.currency;
+			return vm.form.price > 0 && vm.form.currency !== "";
 		}
 	},
 	watch: {
