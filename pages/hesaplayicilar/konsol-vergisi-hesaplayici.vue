@@ -41,7 +41,8 @@
 		<ResultTabs v-model="ui.tab"
 					:show-results="showResults">
 			<template v-if="showResults">
-				<CustomsInfoAlert v-if="form.currency !== 'TRY'" />
+				<CalculatedFromSalePriceAlert v-if="form.currency === 'TRY'" />
+				<CustomsInfoAlert v-else />
 
 				<ResultHorizontalForm :value="$moneyFormat(results.prices.basePrice, 'TRY')"
 									  class="mb-3"
@@ -85,9 +86,10 @@ import ConsoleTaxCalculator from "@/calculators/ConsoleTaxCalculator";
 import openGraphImage from "@/assets/img/open-graph/console-tax-calculator.jpg";
 import { ConsoleTaxCalculator as meta } from "@/data/calculators.js";
 import Presets from "../../components/calculators/Presets";
+import CalculatedFromSalePriceAlert from "../../components/calculators/CalculatedFromSalePriceAlert";
 
 export default {
-	components: { Presets },
+	components: { CalculatedFromSalePriceAlert, Presets },
 	layout: "default/index",
 	name: "ConsoleTaxCalculator",
 	data: () => ({

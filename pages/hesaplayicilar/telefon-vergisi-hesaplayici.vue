@@ -54,7 +54,8 @@
 		<ResultTabs v-model="ui.tab"
 					:show-results="showResults">
 			<template v-if="showResults">
-				<CustomsInfoAlert v-if="form.currency !== 'TRY'" />
+				<CalculatedFromSalePriceAlert v-if="form.currency === 'TRY'" />
+				<CustomsInfoAlert v-else />
 
 				<ResultHorizontalForm :value="$moneyFormat(results.prices.basePrice, 'TRY')"
 									  class="mb-3"
