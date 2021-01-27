@@ -196,7 +196,7 @@ export default {
 				vm.form.price = parseFloat(query.price);
 			}
 
-			if (query.currency && vm.ui.availableCurrencies.includes(query.currency)) {
+			if (query.currency && vm.$store.get("exchangeRates/availableCurrencies").includes(query.currency)) {
 				vm.form.currency = query.currency;
 			}
 

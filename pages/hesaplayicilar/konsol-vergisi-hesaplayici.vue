@@ -110,7 +110,6 @@ export default {
 				{ title: "PlayStation 5 (825GB)", price: 499 }
 			],
 			preset: -1,
-			availableCurrencies: [],
 			tab: 1
 		},
 		form: {
@@ -161,7 +160,7 @@ export default {
 				vm.form.price = parseFloat(query.price);
 			}
 
-			if (query.currency && vm.ui.availableCurrencies.includes(query.currency)) {
+			if (query.currency && vm.$store.get("exchangeRates/availableCurrencies").includes(query.currency)) {
 				vm.form.currency = query.currency;
 			}
 		}
@@ -205,8 +204,6 @@ export default {
 		const vm = this;
 
 		vm.$store.set("ui/toolbarTitle", vm.head.title);
-
-		vm.ui.availableCurrencies = vm.$store.get("exchangeRates/availableCurrencies");
 
 		vm.$nextTick(() => {
 			setTimeout(() => vm.handleQuery(), 100);
