@@ -9,26 +9,16 @@
 		<v-divider class="my-10" />
 
 		<HorizontalForm class="mb-3">
-			<v-chip-group
-				v-model="ui.preset"
-				:show-arrows="$vuetify.breakpoint.mdAndDown"
-				:column="!$vuetify.breakpoint.mdAndDown">
-				<v-chip :key="index"
-				        v-for="(preset, index) in ui.presets"
-				        :value="index"
-				        outlined=""
-				        small="">
-					{{ preset.title }}
-				</v-chip>
-			</v-chip-group>
+			<Presets v-model="ui.preset"
+					 :presets="ui.presets" />
 		</HorizontalForm>
 
 		<HorizontalForm class="mb-3"
-		                label="Telefon fiyatı">
+						label="Telefon fiyatı">
 			<v-row dense=""
-			       class="price-row">
+				   class="price-row">
 				<v-col class="py-0 price-row__price-col"
-				       cols="7" sm="9" md="9" lg="9" xl="9">
+					   cols="7" sm="9" md="9" lg="9" xl="9">
 					<v-text-field
 						v-model.number="form.price"
 						:prefix="getCurrencySign(form.currency)"
@@ -41,19 +31,13 @@
 				</v-col>
 
 				<v-col class="py-0 price-row__currency-col">
-					<v-select
-						v-model="form.currency"
-						:items="ui.availableCurrencies"
-						dense=""
-						hide-details=""
-						outlined=""
-						aria-label="Para birimi" />
+					<CurrencySelector v-model="form.currency" />
 				</v-col>
 			</v-row>
 		</HorizontalForm>
 
 		<HorizontalForm class="mb-3"
-		                label="Kayıt yolu">
+						label="Kayıt yolu">
 			<v-select
 				v-model="form.registration"
 				:items="ui.registration"
@@ -67,78 +51,61 @@
 
 		<v-divider class="my-10" />
 
-		<HorizontalForm class="mb-4">
-			<v-tabs v-model="ui.tab"
-					background-color="transparent"
-					fixed-tabs="">
-				<v-tab :disabled="!showResults">
-					<v-icon left="">
-						mdi-format-list-bulleted-type
-					</v-icon>
-					Sonuçlar
-				</v-tab>
-				<v-tab>
-					<v-icon left="">
-						mdi-comment-multiple-outline
-					</v-icon>
-					Yorumlar
-				</v-tab>
-			</v-tabs>
-		</HorizontalForm>
+		<ResultTabs v-model="ui.tab"
+					:show-results="showResults">
+			<template v-if="showResults">
+				<CalculatedFromSalePriceAlert v-if="form.currency === 'TRY'" />
+				<CustomsInfoAlert v-else />
 
-		<template v-if="ui.tab === 0 && showResults">
-			<CustomsInfoAlert v-if="form.currency !== 'TRY'" />
+				<ResultHorizontalForm :value="$moneyFormat(results.prices.basePrice, 'TRY')"
+									  class="mb-3"
+									  label="Vergisiz fiyat" />
 
-			<ResultHorizontalForm :value="$moneyFormat(results.prices.basePrice, 'TRY')"
-			                      class="mb-3"
-			                      label="Vergisiz fiyat" />
+				<template v-if="registrationIsImport">
+					<ResultHorizontalForm :label="`Kültür Bakanlığı (%${results.taxRates.ministryOfCulture})`"
+										  :value="$moneyFormat(results.taxFees.ministryOfCulture, 'TRY')"
+										  class="mb-3" />
 
-			<template v-if="registrationIsImport">
-				<ResultHorizontalForm :label="`Kültür Bakanlığı (%${results.taxRates.ministryOfCulture})`"
-				                      :value="$moneyFormat(results.taxFees.ministryOfCulture, 'TRY')"
-				                      class="mb-3" />
+					<ResultHorizontalForm :label="`TRT bandrolü (%${results.taxRates.trt})`"
+										  :value="$moneyFormat(results.taxFees.trt, 'TRY')"
+										  class="mb-3" />
 
-				<ResultHorizontalForm :label="`TRT bandrolü (%${results.taxRates.trt})`"
-				                      :value="$moneyFormat(results.taxFees.trt, 'TRY')"
-				                      class="mb-3" />
+					<ResultHorizontalForm :label="`ÖTV (%${results.taxRates.sct})`"
+										  :value="$moneyFormat(results.taxFees.sct, 'TRY')"
+										  class="mb-3" />
 
-				<ResultHorizontalForm :label="`ÖTV (%${results.taxRates.sct})`"
-				                      :value="$moneyFormat(results.taxFees.sct, 'TRY')"
-				                      class="mb-3" />
+					<ResultHorizontalForm :label="`KDV (%${results.taxRates.vat})`"
+										  :value="$moneyFormat(results.taxFees.vat, 'TRY')"
+										  class="mb-3" />
+				</template>
 
-				<ResultHorizontalForm :label="`KDV (%${results.taxRates.vat})`"
-				                      :value="$moneyFormat(results.taxFees.vat, 'TRY')"
-				                      class="mb-3" />
+				<template v-else>
+					<ResultHorizontalForm :label="`TRT bandrolü (${$moneyFormat(results.taxRates.trtPassport, 'EUR')})`"
+										  :value="$moneyFormat(results.taxFees.trtPassport, 'TRY')"
+										  class="mb-3" />
+
+					<ResultHorizontalForm :value="$moneyFormat(results.taxFees.registration, 'TRY')"
+										  class="mb-3"
+										  label="Kayıt ücreti" />
+				</template>
+
+				<ResultHorizontalForm :label="`Toplam vergi (%${results.taxRates.total})`"
+									  :value="$moneyFormat(results.taxFees.total, 'TRY')"
+									  class="mb-3" />
+
+				<ResultHorizontalForm :value="$moneyFormat(results.prices.salePrice, 'TRY')"
+									  class="mb-3"
+									  label="Tahmini satış fiyatı" />
+
+				<HorizontalForm class="mb-6">
+					<MinimumWageAlert :price="results.prices.salePrice" />
+				</HorizontalForm>
+
+				<HorizontalForm>
+					<Share :data="form" />
+				</HorizontalForm>
 			</template>
-
-			<template v-else>
-				<ResultHorizontalForm :label="`TRT bandrolü (${$moneyFormat(results.taxRates.trtPassport, 'EUR')})`"
-				                      :value="$moneyFormat(results.taxFees.trtPassport, 'TRY')"
-				                      class="mb-3" />
-
-				<ResultHorizontalForm :value="$moneyFormat(results.taxFees.registration, 'TRY')"
-				                      class="mb-3"
-				                      label="Kayıt ücreti" />
-			</template>
-
-			<ResultHorizontalForm :label="`Toplam vergi (%${results.taxRates.total})`"
-			                      :value="$moneyFormat(results.taxFees.total, 'TRY')"
-			                      class="mb-3" />
-
-			<ResultHorizontalForm :value="$moneyFormat(results.prices.salePrice, 'TRY')"
-			                      class="mb-3"
-			                      label="Tahmini satış fiyatı" />
-
-			<HorizontalForm class="mb-6">
-				<MinimumWageAlert :price="results.prices.salePrice" />
-			</HorizontalForm>
-
-			<HorizontalForm>
-				<Share :data="form" />
-			</HorizontalForm>
-		</template>
-
-		<Comments v-show="ui.tab === 1" />
+		</ResultTabs>
 	</div>
 </template>
 
@@ -170,7 +137,7 @@ export default {
 				{ title: "iPhone 12 Pro (128GB)", price: 999 },
 				{ title: "iPhone 12 Pro Max (128GB)", price: 1099 }
 			],
-			preset: null,
+			preset: -1,
 			availableCurrencies: [],
 			registration: [
 				{ title: "İthalat yoluyla kayıtlı (Resmi)", value: PhoneTaxCalculator.Registration.Import },
@@ -227,10 +194,10 @@ export default {
 			}
 
 			if (query.price) {
-				vm.form.price = query.price;
+				vm.form.price = parseFloat(query.price);
 			}
 
-			if (query.currency && vm.ui.availableCurrencies.includes(query.currency)) {
+			if (query.currency && vm.$store.get("exchangeRates/availableCurrencies").includes(query.currency)) {
 				vm.form.currency = query.currency;
 			}
 
@@ -242,7 +209,7 @@ export default {
 	computed: {
 		showResults() {
 			const vm = this;
-			return vm.form.price > 0 && vm.form.currency && vm.form.registration;
+			return vm.form.price > 0 && vm.form.currency !== "" && vm.form.registration !== "";
 		},
 		registrationIsImport() {
 			const vm = this;

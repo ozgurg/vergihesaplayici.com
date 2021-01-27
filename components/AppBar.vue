@@ -1,6 +1,5 @@
 <template>
 	<v-app-bar v-bind="$attrs"
-	           :hide-on-scroll="$vuetify.breakpoint.mdAndDown"
 	           elevation="0">
 		<v-app-bar-nav-icon v-if="$vuetify.breakpoint.mdAndDown"
 		                    @click="drawerState = !drawerState"
@@ -14,7 +13,7 @@
 import { sync } from "vuex-pathify";
 
 export default {
-	name: "DefaultAppBar",
+	name: "AppBar",
 	computed: {
 		...sync("ui", [
 			"drawerState",

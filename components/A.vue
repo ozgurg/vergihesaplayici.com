@@ -1,12 +1,14 @@
 <template>
 	<div>
 		<iframe v-if="!$vuetify.breakpoint.mobile"
+				title="Harçlık :)"
 				class="a a--0"
 				src="/a/0.html"
 				width="100%"
 				height="100%"></iframe>
 
 		<iframe v-else
+				title="Harçlık :)"
 				class="a a--1"
 				src="/a/1.html"
 				width="100%"

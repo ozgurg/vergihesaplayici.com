@@ -15,7 +15,7 @@
 import logo from "@/assets/img/logo.svg";
 
 export default {
-	name: "DefaultLogo",
+	name: "Logo",
 	data: () => ({
 		logo
 	})

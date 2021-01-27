@@ -16,7 +16,7 @@
     white-space: nowrap;
     padding-left: 0 !important;
     padding-right: 0;
-   -webkit-overflow-scrolling: touch
+    -webkit-overflow-scrolling: touch
 }
 
 .v-input--is-readonly {
@@ -29,6 +29,15 @@
 .v-label {
     color: #fff
 }
+
 .v-input--checkbox.v-input--is-disabled .v-label {
     color: #ffffff4d
+}
+
+.theme--dark.v-tabs-items {
+    background: 0
+}
+
+.v-chip--active:before, .v-item--active:before {
+    opacity: 0 !important
 }

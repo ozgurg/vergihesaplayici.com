@@ -3,7 +3,7 @@
 		v-bind="$attrs"
 		v-model="drawerState">
 		<template v-slot:prepend>
-			<DefaultLogo />
+			<Logo />
 		</template>
 
 		<CalculatorList shaped=""
@@ -11,9 +11,9 @@
 						subheader="Hesaplayıcılar"
 						class="mb-auto"/>
 
-		<AppsFromDeveloperList shaped="" />
+		<AppsFromDeveloperList shaped="" aria-label="Geliştiriciden Uygulamalar" />
 
-		<DefaultFooter />
+		<Footer />
 	</v-navigation-drawer>
 </template>
 
@@ -21,7 +21,7 @@
 import { sync } from "vuex-pathify";
 
 export default {
-	name: "DefaultDrawer",
+	name: "Drawer",
 	computed: {
 		drawerState: sync("ui/drawerState")
 	}

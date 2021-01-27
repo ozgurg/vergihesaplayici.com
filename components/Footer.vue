@@ -13,6 +13,6 @@
 
 <script>
 export default {
-	name: "DefaultFooter"
+	name: "Footer"
 };
 </script>
