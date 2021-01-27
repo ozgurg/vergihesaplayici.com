@@ -193,7 +193,7 @@ export default {
 			}
 
 			if (query.price) {
-				vm.form.price = query.price;
+				vm.form.price = parseFloat(query.price);
 			}
 
 			if (query.currency && vm.ui.availableCurrencies.includes(query.currency)) {
