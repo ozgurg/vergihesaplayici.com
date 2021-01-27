@@ -13,7 +13,7 @@
 import { sync } from "vuex-pathify";
 
 export default {
-	name: "DefaultAppBar",
+	name: "AppBar",
 	computed: {
 		...sync("ui", [
 			"drawerState",

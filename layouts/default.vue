@@ -1,8 +1,8 @@
 <template>
 	<v-app>
-		<DefaultDrawer app="" />
+		<Drawer app="" />
 
-		<DefaultAppBar app="" />
+		<AppBar app="" />
 
 		<v-main>
 			<div class="main-content">
