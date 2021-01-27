@@ -136,7 +136,7 @@ export default {
 				{ title: "iPhone 12 Pro (128GB)", price: 999 },
 				{ title: "iPhone 12 Pro Max (128GB)", price: 1099 }
 			],
-			preset: null,
+			preset: -1,
 			availableCurrencies: [],
 			registration: [
 				{ title: "İthalat yoluyla kayıtlı (Resmi)", value: PhoneTaxCalculator.Registration.Import },
