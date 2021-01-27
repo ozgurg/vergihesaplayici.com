@@ -37,3 +37,7 @@
 .theme--dark.v-tabs-items {
     background: 0
 }
+
+.v-chip--active:before, .v-item--active:before {
+    opacity: 0 !important
+}
