@@ -3,12 +3,11 @@ import axios from "axios";
 
 export const state = () => ({
 	currencies: {
-		TRY: { sign: "₺", rate: 1, title: "Türk Lirası" },
-		USD: { sign: "$", rate: 0, title: "Amerikan Doları" },
-		EUR: { sign: "€", rate: 0, title: "Euro" },
-		GBP: { sign: "£", rate: 0, title: "İngiliz Poundu" },
-		INR: { sign: "₹", rate: 0, title: "Hindistan Rupisi" },
-		CNY: { sign: "¥", rate: 0, title: "Çin Yuanı" }
+		TRY: { sign: "₺", rate: 1, title: "TRY" },
+		USD: { sign: "$", rate: 0, title: "USD" },
+		EUR: { sign: "€", rate: 0, title: "EUR" },
+		INR: { sign: "₹", rate: 0, title: "INR" },
+		CNY: { sign: "¥", rate: 0, title: "CNY" }
 	}
 });
 

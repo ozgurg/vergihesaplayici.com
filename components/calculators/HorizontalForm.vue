@@ -25,7 +25,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped="">
+<style lang="scss">
 .horizontal-form {
 	@media(min-width: 992px) {
 		display: flex;
@@ -33,11 +33,13 @@ export default {
 		flex-direction: row
 	}
 	&__label-cell {
+		padding-bottom: 4px;
 		@media(min-width: 992px) {
-			flex: 0 0 220px;
-			max-width: 220px;
+			padding-bottom: 0;
+			flex: 0 0 200px;
+			max-width: 200px;
 			display: flex;
-			padding-right: 16px
+			padding-right: 12px
 		}
 	}
 	&__content-cell {
@@ -52,9 +54,7 @@ export default {
 		width: 100%;
 		display: block;
 		text-align: left;
-		margin-bottom: .25rem;
 		@media(min-width: 992px) {
-			margin-bottom: 0;
 			text-align: right
 		}
 	}

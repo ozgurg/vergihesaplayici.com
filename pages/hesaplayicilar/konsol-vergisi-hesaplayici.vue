@@ -1,20 +1,13 @@
 <template>
 	<div>
-		<div class="mb-3">
-			<A />
-		</div>
+		<A />
 
-		<ExchangeRates />
-
-		<v-divider class="my-10" />
-
-		<HorizontalForm class="mb-3">
+		<HorizontalForm class="mb-5">
 			<Presets v-model="ui.preset"
 					 :presets="ui.presets" />
 		</HorizontalForm>
 
-		<HorizontalForm class="mb-3"
-						label="Konsol fiyatı">
+		<HorizontalForm label="Konsol fiyatı">
 			<v-row dense=""
 				   class="price-row">
 				<v-col class="py-0 price-row__price-col"
@@ -36,36 +29,35 @@
 			</v-row>
 		</HorizontalForm>
 
-		<v-divider class="my-10" />
-
-		<ResultTabs v-model="ui.tab"
+		<ResultTabs class="mt-10"
+					v-model="ui.tab"
 					:show-results="showResults">
 			<template v-if="showResults">
 				<CalculatedFromSalePriceAlert v-if="form.currency === 'TRY'" />
 				<CustomsInfoAlert v-else />
 
 				<ResultHorizontalForm :value="$moneyFormat(results.prices.basePrice, 'TRY')"
-									  class="mb-3"
+									  class="mb-5"
 									  label="Vergisiz fiyat" />
 
 				<ResultHorizontalForm :label="`Gümrük vergisi (%${results.taxRates.custom})`"
 									  :value="$moneyFormat(results.taxFees.custom, 'TRY')"
-									  class="mb-3" />
+									  class="mb-5" />
 
 				<ResultHorizontalForm :label="`ÖTV (%${results.taxRates.sct})`"
 									  :value="$moneyFormat(results.taxFees.sct, 'TRY')"
-									  class="mb-3" />
+									  class="mb-5" />
 
 				<ResultHorizontalForm :label="`KDV (%${results.taxRates.vat})`"
 									  :value="$moneyFormat(results.taxFees.vat, 'TRY')"
-									  class="mb-3" />
+									  class="mb-5" />
 
 				<ResultHorizontalForm :label="`Toplam vergi (%${results.taxRates.total})`"
 									  :value="$moneyFormat(results.taxFees.total, 'TRY')"
-									  class="mb-3" />
+									  class="mb-5" />
 
 				<ResultHorizontalForm :value="$moneyFormat(results.prices.salePrice, 'TRY')"
-									  class="mb-3"
+									  class="mb-5"
 									  label="Tahmini satış fiyatı" />
 
 				<HorizontalForm class="mb-6">

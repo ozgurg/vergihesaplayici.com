@@ -26,9 +26,12 @@ video {
 }
 
 .main-content {
-    padding: 32px 24px 96px;
     width: 820px;
-    max-width: 100%
+    max-width: 100%;
+    padding: 16px;
+    @media(min-width: 768px) {
+        padding: 32px
+    }
 }
 
 .price-row {

@@ -1,19 +1,13 @@
 <template>
 	<div>
-		<div class="mb-3">
-			<A />
-		</div>
+		<A />
 
-		<ExchangeRates />
-
-		<v-divider class="my-10" />
-
-		<HorizontalForm class="mb-3">
+		<HorizontalForm class="mb-5">
 			<Presets v-model="ui.preset"
 					 :presets="ui.presets" />
 		</HorizontalForm>
 
-		<HorizontalForm class="mb-3"
+		<HorizontalForm class="mb-5"
 						label="Telefon fiyatı">
 			<v-row dense=""
 				   class="price-row">
@@ -36,7 +30,7 @@
 			</v-row>
 		</HorizontalForm>
 
-		<HorizontalForm class="mb-3"
+		<HorizontalForm class="mb-5"
 						label="Kayıt yolu">
 			<v-select
 				v-model="form.registration"
@@ -49,52 +43,51 @@
 				aria-label="Kayıt yolu" />
 		</HorizontalForm>
 
-		<v-divider class="my-10" />
-
-		<ResultTabs v-model="ui.tab"
+		<ResultTabs class="mt-10"
+					v-model="ui.tab"
 					:show-results="showResults">
 			<template v-if="showResults">
 				<CalculatedFromSalePriceAlert v-if="form.currency === 'TRY'" />
 				<CustomsInfoAlert v-else />
 
 				<ResultHorizontalForm :value="$moneyFormat(results.prices.basePrice, 'TRY')"
-									  class="mb-3"
+									  class="mb-5"
 									  label="Vergisiz fiyat" />
 
 				<template v-if="registrationIsImport">
 					<ResultHorizontalForm :label="`Kültür Bakanlığı (%${results.taxRates.ministryOfCulture})`"
 										  :value="$moneyFormat(results.taxFees.ministryOfCulture, 'TRY')"
-										  class="mb-3" />
+										  class="mb-5" />
 
 					<ResultHorizontalForm :label="`TRT bandrolü (%${results.taxRates.trt})`"
 										  :value="$moneyFormat(results.taxFees.trt, 'TRY')"
-										  class="mb-3" />
+										  class="mb-5" />
 
 					<ResultHorizontalForm :label="`ÖTV (%${results.taxRates.sct})`"
 										  :value="$moneyFormat(results.taxFees.sct, 'TRY')"
-										  class="mb-3" />
+										  class="mb-5" />
 
 					<ResultHorizontalForm :label="`KDV (%${results.taxRates.vat})`"
 										  :value="$moneyFormat(results.taxFees.vat, 'TRY')"
-										  class="mb-3" />
+										  class="mb-5" />
 				</template>
 
 				<template v-else>
 					<ResultHorizontalForm :label="`TRT bandrolü (${$moneyFormat(results.taxRates.trtPassport, 'EUR')})`"
 										  :value="$moneyFormat(results.taxFees.trtPassport, 'TRY')"
-										  class="mb-3" />
+										  class="mb-5" />
 
 					<ResultHorizontalForm :value="$moneyFormat(results.taxFees.registration, 'TRY')"
-										  class="mb-3"
+										  class="mb-5"
 										  label="Kayıt ücreti" />
 				</template>
 
 				<ResultHorizontalForm :label="`Toplam vergi (%${results.taxRates.total})`"
 									  :value="$moneyFormat(results.taxFees.total, 'TRY')"
-									  class="mb-3" />
+									  class="mb-5" />
 
 				<ResultHorizontalForm :value="$moneyFormat(results.prices.salePrice, 'TRY')"
-									  class="mb-3"
+									  class="mb-5"
 									  label="Tahmini satış fiyatı" />
 
 				<HorizontalForm class="mb-6">

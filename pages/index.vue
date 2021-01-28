@@ -1,12 +1,10 @@
 <template>
 	<div>
-		<div class="mb-3">
-			<A />
-		</div>
+		<A />
 
 		<h1 class="mb-2 primary--text">Vergi Hesaplayıcı</h1>
 
-		<p class="mb-2">vergihesaplayici.com, vergi hesaplar.</p>
+		<p class="mb-4">vergihesaplayici.com, vergi hesaplar.</p>
 
 		<video autoplay=""
 			   loop=""
@@ -23,9 +21,7 @@
 		<v-divider class="my-8" />
 
 		<h2 class="mb-2">Hesaplayıcılar</h2>
-		<v-card outlined="">
-			<CalculatorList show-description="" />
-		</v-card>
+		<CalculatorGrid />
 	</div>
 </template>
 
