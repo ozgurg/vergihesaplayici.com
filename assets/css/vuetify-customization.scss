@@ -41,3 +41,12 @@
 .v-chip--active:before, .v-item--active:before {
     opacity: 0 !important
 }
+
+// Hide arrow on the left from the tabs and disable scroll by ugly way. There is no build-in props for disabling it in Vuetify currently
+.v-slide-group__prev--disabled {
+    display: none !important
+}
+
+.v-tabs-bar__content {
+    transform: none !important
+}
