@@ -37,7 +37,7 @@ export default {
 				return "Böyle bir sayfa yok, çıkar onu aklından";
 			}
 
-			return "Bir şey oldu –Microsoft";
+			return "Bir şey oldu";
 		}
 	},
 	head() {
