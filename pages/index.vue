@@ -6,17 +6,22 @@
 
 		<p class="mb-4">vergihesaplayici.com, vergi hesaplar.</p>
 
-		<video autoplay=""
-			   loop=""
-			   muted=""
-			   playsinline=""
-			   width="300"
-			   height="300">
-			<source :src="ositaIheme.webm"
-					type="video/webm" />
-			<source :src="ositaIheme.mp4"
-					type="video/mp4" />
-		</video>
+		<a href="https://youtu.be/zsCpGUDZ85w?t=55"
+		   rel="nofollow noopener noreferrer"
+		   target="_blank">
+			<video autoplay=""
+				   loop=""
+				   muted=""
+				   playsinline=""
+				   width="300"
+				   height="300">
+				<source :src="ositaIheme.webm"
+						type="video/webm" />
+				<source :src="ositaIheme.mp4"
+						type="video/mp4" />
+			</video>
+		</a>
+		<div class="caption">Osita Iheme</div>
 
 		<v-divider class="my-8" />
 
