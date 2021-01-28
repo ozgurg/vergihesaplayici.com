@@ -48,7 +48,7 @@ export default {
 			if (vm.showResults) {
 				setTimeout(() => {
 					vm.$refs["resultTab"].scrollIntoView(true);
-				}, 0);
+				}, 100);
 			}
 		}
 	}
