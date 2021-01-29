@@ -59,7 +59,7 @@ export default {
 .result-tab {
 	position: sticky;
 	background: #121212;
-	z-index: 100;
+	z-index: 5;
 	top: 56px;
 	@media(min-width: 960px) {
 		top: 64px
