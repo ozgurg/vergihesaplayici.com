@@ -8,6 +8,7 @@
 
 		<a href="https://youtu.be/zsCpGUDZ85w?t=55"
 		   rel="nofollow noopener noreferrer"
+		   title="Osita Iheme"
 		   target="_blank">
 			<video autoplay=""
 				   loop=""
