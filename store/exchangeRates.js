@@ -24,7 +24,7 @@ export const actions = {
 			return;
 		}
 
-		await axios.get(`https://api.ratesapi.io/api/latest?base=${currency}&symbols=TRY`)
+		await axios.get(`https://api.exchangerate.host/latest?base=${currency}&symbols=TRY`)
 			.then(response => {
 				commit("SET_EXCHANGE_RATE", {
 					currency,
