@@ -12,9 +12,7 @@
                     <v-breadcrumbs-item
                         active-class=""
                         nuxt=""
-                        :to="item.to">
-                        {{ item.text }}
-                    </v-breadcrumbs-item>
+                        :to="item.to">{{ item.text }}</v-breadcrumbs-item>
                 </template>
             </v-breadcrumbs>
 

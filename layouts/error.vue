@@ -1,7 +1,6 @@
 <template>
 	<div>
-		<h2 v-text="errorDescription"
-			class="mb-4" />
+		<h2 class="mb-4">{{ errorDescription }}</h2>
 
 		<v-alert dense=""
 				 text=""

@@ -9,8 +9,7 @@
 					link=""
 					class="pa-8">
 				<v-icon class="primary--text"
-						size="64"
-						v-text="calculator.icon" />
+						size="64">{{ calculator.icon }}</v-icon>
 
 				<h3 class="text-h6 mt-4 mb-2 text--primary">{{ calculator.title }}</h3>
 

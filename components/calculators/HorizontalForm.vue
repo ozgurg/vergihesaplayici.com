@@ -4,8 +4,7 @@
 		<div class="horizontal-form__label-cell">
 			<label v-if="label"
 				   v-bind="$attrs"
-				   v-text="label"
-				   class="horizontal-form__label" />
+				   class="horizontal-form__label">{{ label }}</label>
 		</div>
 
 		<div class="horizontal-form__content-cell">

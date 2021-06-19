@@ -19,7 +19,7 @@
 			</v-list-item-icon>
 
 			<v-list-item-content>
-				<v-list-item-title v-text="app.title" />
+				<v-list-item-title>{{ app.title }}</v-list-item-title>
 			</v-list-item-content>
 		</v-list-item>
 	</v-list>

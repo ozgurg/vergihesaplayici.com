@@ -5,7 +5,7 @@
 		                    @click="drawerState = !drawerState"
 		                    aria-label="Menüyü aç" />
 
-		<v-toolbar-title v-text="toolbarTitle" />
+		<v-toolbar-title>{{ toolbarTitle }}</v-toolbar-title>
 	</v-app-bar>
 </template>
 
