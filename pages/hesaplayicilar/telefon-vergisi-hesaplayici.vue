@@ -1,7 +1,5 @@
 <template>
 	<div>
-		<A />
-
         <AppHeader>{{ head.title }}</AppHeader>
 
         <InnerContainer>
