@@ -25,15 +25,6 @@ video {
     padding: 3px 4px
 }
 
-.main-content {
-    width: 820px;
-    max-width: 100%;
-    padding: 16px;
-    @media(min-width: 768px) {
-        padding: 32px
-    }
-}
-
 .price-row {
     &__price-col {
         display: flex;
