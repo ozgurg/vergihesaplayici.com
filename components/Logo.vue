@@ -15,10 +15,10 @@
 import logo from "@/assets/img/logo.svg";
 
 export default {
-	name: "Logo",
-	data: () => ({
-		logo
-	})
+    name: "Logo",
+    data: () => ({
+        logo
+    })
 };
 </script>
 

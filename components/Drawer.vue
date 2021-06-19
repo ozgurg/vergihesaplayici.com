@@ -32,9 +32,9 @@
 import { sync } from "vuex-pathify";
 
 export default {
-	name: "Drawer",
-	computed: {
-		drawerState: sync("ui/drawerState")
-	}
+    name: "Drawer",
+    computed: {
+        drawerState: sync("ui/drawerState")
+    }
 };
 </script>

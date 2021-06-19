@@ -11,15 +11,15 @@
 
 <script>
 export default {
-	name: "ExchangeRates",
-	computed: {
-		availableCurrencies() {
-			const vm = this;
-			return vm.$store.get("exchangeRates/availableCurrencies")
-				.filter(currency => {
-					return currency !== "TRY";
-				});
-		}
-	}
+    name: "ExchangeRates",
+    computed: {
+        availableCurrencies() {
+            const vm = this;
+            return vm.$store.get("exchangeRates/availableCurrencies")
+                .filter(currency => {
+                    return currency !== "TRY";
+                });
+        }
+    }
 };
 </script>

@@ -12,18 +12,18 @@
 const MINIMUM_WAGE = 2825.90;
 
 export default {
-	name: "MinimumWageAlert",
-	props: {
-		price: {
-			type: Number,
-			required: true
-		}
-	},
-	computed: {
-		minimumWageMonthCount() {
-			const vm = this;
-			return (vm.price / MINIMUM_WAGE).toFixed(2);
-		}
-	}
+    name: "MinimumWageAlert",
+    props: {
+        price: {
+            type: Number,
+            required: true
+        }
+    },
+    computed: {
+        minimumWageMonthCount() {
+            const vm = this;
+            return (vm.price / MINIMUM_WAGE).toFixed(2);
+        }
+    }
 };
 </script>

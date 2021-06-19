@@ -29,19 +29,19 @@
 import apps from "@/data/apps.json";
 
 export default {
-	name: "AppsFromDeveloperList",
-	data: () => ({
-		apps
-	}),
-	props: {
-		subheader: {
-			type: String
-		}
-	},
-	methods: {
-		getIcon(path) {
-			return require(`@/assets/img/apps/${path}`);
-		}
-	}
+    name: "AppsFromDeveloperList",
+    data: () => ({
+        apps
+    }),
+    props: {
+        subheader: {
+            type: String
+        }
+    },
+    methods: {
+        getIcon(path) {
+            return require(`@/assets/img/apps/${path}`);
+        }
+    }
 };
 </script>

@@ -24,25 +24,25 @@
 
 <script>
 export default {
-	name: "ExchangeRateItem",
-	data: () => ({
-		isLoaded: false,
-		exchangeRate: {}
-	}),
-	props: {
-		currency: {
-			type: String,
-			required: true
-		}
-	},
-	mounted() {
-		const vm = this;
-		vm.$store.dispatch("exchangeRates/loadExchangeRateFromApi", vm.currency)
-			.then(() => {
-				vm.exchangeRate = vm.$store.get(`exchangeRates/currencies@${vm.currency}`);
-				vm.isLoaded = true;
-			});
-	}
+    name: "ExchangeRateItem",
+    data: () => ({
+        isLoaded: false,
+        exchangeRate: {}
+    }),
+    props: {
+        currency: {
+            type: String,
+            required: true
+        }
+    },
+    mounted() {
+        const vm = this;
+        vm.$store.dispatch("exchangeRates/loadExchangeRateFromApi", vm.currency)
+            .then(() => {
+                vm.exchangeRate = vm.$store.get(`exchangeRates/currencies@${vm.currency}`);
+                vm.isLoaded = true;
+            });
+    }
 };
 </script>
 

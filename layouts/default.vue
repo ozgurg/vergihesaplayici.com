@@ -29,9 +29,9 @@
 import { version } from "./../package.json";
 
 export default {
-	name: "DefaultLayout",
-	data: () => ({
-		version
-	})
+    name: "DefaultLayout",
+    data: () => ({
+        version
+    })
 };
 </script>

@@ -12,6 +12,6 @@
 
 <script>
 export default {
-	name: "CustomsInfoAlert"
+    name: "CustomsInfoAlert"
 };
 </script>

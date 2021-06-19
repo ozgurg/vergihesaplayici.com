@@ -15,36 +15,36 @@
 
 <script>
 export default {
-	name: "ResultHorizontalForm",
-	data: () => ({
-		isCopied: false
-	}),
-	props: {
-		label: {
-			type: String
-		},
-		value: {
-			type: String
-		}
-	},
-	methods: {
-		copy(text) {
-			const vm = this;
+    name: "ResultHorizontalForm",
+    data: () => ({
+        isCopied: false
+    }),
+    props: {
+        label: {
+            type: String
+        },
+        value: {
+            type: String
+        }
+    },
+    methods: {
+        copy(text) {
+            const vm = this;
 
-			vm.isCopied = true;
+            vm.isCopied = true;
 
-			setTimeout(() => {
-				vm.isCopied = false;
-			}, 1000);
+            setTimeout(() => {
+                vm.isCopied = false;
+            }, 1000);
 
-			vm.$copyText(text);
-		}
-	},
-	computed: {
-		appendIcon() {
-			const vm = this;
-			return vm.isCopied ? "mdi-check" : "mdi-content-copy";
-		}
-	}
+            vm.$copyText(text);
+        }
+    },
+    computed: {
+        appendIcon() {
+            const vm = this;
+            return vm.isCopied ? "mdi-check" : "mdi-content-copy";
+        }
+    }
 };
 </script>

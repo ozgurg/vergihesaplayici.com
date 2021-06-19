@@ -30,28 +30,28 @@
 
 <script>
 export default {
-	name: "ResultTabs",
-	props: {
-		value: {
-			type: Number,
-			required: true
-		},
-		showResults: {
-			type: Boolean,
-			default: false
-		}
-	},
-	watch: {
-		showResults() {
-			const vm = this;
+    name: "ResultTabs",
+    props: {
+        value: {
+            type: Number,
+            required: true
+        },
+        showResults: {
+            type: Boolean,
+            default: false
+        }
+    },
+    watch: {
+        showResults() {
+            const vm = this;
 
-			if (vm.showResults) {
-				setTimeout(() => {
-					vm.$refs["resultTab"].scrollIntoView(true);
-				}, 100);
-			}
-		}
-	}
+            if (vm.showResults) {
+                setTimeout(() => {
+                    vm.$refs["resultTab"].scrollIntoView(true);
+                }, 100);
+            }
+        }
+    }
 };
 </script>
 

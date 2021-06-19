@@ -16,12 +16,12 @@
 
 <script>
 export default {
-	name: "HorizontalForm",
-	props: {
-		label: {
-			type: String
-		}
-	}
+    name: "HorizontalForm",
+    props: {
+        label: {
+            type: String
+        }
+    }
 };
 </script>
 

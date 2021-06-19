@@ -30,22 +30,22 @@
 import calculators from "@/data/calculators.js";
 
 export default {
-	name: "CalculatorList",
-	data: () => ({
-		calculators
-	}),
-	props: {
-		subheader: {
-			type: String
-		},
-		showShortTitle: {
-			type: Boolean,
-			default: false
-		},
-		showDescription: {
-			type: Boolean,
-			default: false
-		}
-	}
+    name: "CalculatorList",
+    data: () => ({
+        calculators
+    }),
+    props: {
+        subheader: {
+            type: String
+        },
+        showShortTitle: {
+            type: Boolean,
+            default: false
+        },
+        showDescription: {
+            type: Boolean,
+            default: false
+        }
+    }
 };
 </script>

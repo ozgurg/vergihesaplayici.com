@@ -9,7 +9,7 @@
 
 <script>
 export default {
-	name: "Ghbtns"
+    name: "Ghbtns"
 };
 </script>
 

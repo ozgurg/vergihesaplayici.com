@@ -39,46 +39,46 @@
 import querystring from "querystring";
 
 export default {
-	name: "Share",
-	data: () => ({
-		isUrlCopied: false
-	}),
-	props: {
-		data: {
-			type: Object,
-			required: true
-		}
-	},
-	methods: {
-		copy(text) {
-			const vm = this;
+    name: "Share",
+    data: () => ({
+        isUrlCopied: false
+    }),
+    props: {
+        data: {
+            type: Object,
+            required: true
+        }
+    },
+    methods: {
+        copy(text) {
+            const vm = this;
 
-			vm.isUrlCopied = true;
+            vm.isUrlCopied = true;
 
-			setTimeout(() => {
-				vm.isUrlCopied = false;
-			}, 1000);
+            setTimeout(() => {
+                vm.isUrlCopied = false;
+            }, 1000);
 
-			vm.$copyText(text);
-		}
-	},
-	computed: {
-		url() {
-			const vm = this;
-			return `${process.env.BASE_URL}${vm.$route.path}?${querystring.stringify(vm.data)}`;
-		},
-		facebookShareUrl() {
-			const vm = this;
-			return `https://www.facebook.com/sharer/sharer.php?u=${vm.url}`;
-		},
-		twitterShareUrl() {
-			const vm = this;
-			return `https://twitter.com/intent/tweet?url=${vm.url}`;
-		},
-		whatsAppShareUrl() {
-			const vm = this;
-			return `https://wa.me/?text=${vm.url}`;
-		}
-	}
+            vm.$copyText(text);
+        }
+    },
+    computed: {
+        url() {
+            const vm = this;
+            return `${process.env.BASE_URL}${vm.$route.path}?${querystring.stringify(vm.data)}`;
+        },
+        facebookShareUrl() {
+            const vm = this;
+            return `https://www.facebook.com/sharer/sharer.php?u=${vm.url}`;
+        },
+        twitterShareUrl() {
+            const vm = this;
+            return `https://twitter.com/intent/tweet?url=${vm.url}`;
+        },
+        whatsAppShareUrl() {
+            const vm = this;
+            return `https://wa.me/?text=${vm.url}`;
+        }
+    }
 };
 </script>

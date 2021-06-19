@@ -11,19 +11,19 @@
 
 <script>
 export default {
-	name: "CurrencySelector",
-	data: () => ({
-		currencies: []
-	}),
-	props: {
-		value: {
-			type: String,
-			required: true
-		}
-	},
-	mounted() {
-		const vm = this;
-		vm.currencies = vm.$store.get("exchangeRates/availableCurrencies");
-	}
+    name: "CurrencySelector",
+    data: () => ({
+        currencies: []
+    }),
+    props: {
+        value: {
+            type: String,
+            required: true
+        }
+    },
+    mounted() {
+        const vm = this;
+        vm.currencies = vm.$store.get("exchangeRates/availableCurrencies");
+    }
 };
 </script>

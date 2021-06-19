@@ -13,12 +13,12 @@
 import { sync } from "vuex-pathify";
 
 export default {
-	name: "AppBar",
-	computed: {
-		...sync("ui", [
-			"drawerState",
-			"toolbarTitle"
-		])
-	}
+    name: "AppBar",
+    computed: {
+        ...sync("ui", [
+            "drawerState",
+            "toolbarTitle"
+        ])
+    }
 };
 </script>

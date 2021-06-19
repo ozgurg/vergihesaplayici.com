@@ -14,16 +14,16 @@
 
 <script>
 export default {
-	name: "Presets",
-	props: {
-		value: {
-			type: Number,
-			required: true
-		},
-		presets: {
-			type: Array,
-			required: true
-		}
-	}
+    name: "Presets",
+    props: {
+        value: {
+            type: Number,
+            required: true
+        },
+        presets: {
+            type: Array,
+            required: true
+        }
+    }
 };
 </script>
