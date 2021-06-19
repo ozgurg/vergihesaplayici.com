@@ -1,30 +1,37 @@
 <template>
 	<v-app>
-        <Drawer app=""/>
+        <Drawer app="" />
 
-        <AppBar app=""/>
+        <AppBar app="" />
 
         <Main>
             <v-breadcrumbs
-                v-if="$store.get('ui/breadcrumbs')"
-                :items="$store.get('ui/breadcrumbs')">
+                v-if="breadcrumbs"
+                :items="breadcrumbs">
                 <template v-slot:item="{ item }">
                     <v-breadcrumbs-item
+                        :to="item.to"
                         active-class=""
-                        nuxt=""
-                        :to="item.to">{{ item.text }}</v-breadcrumbs-item>
+                        nuxt="">
+                        {{ item.text }}
+                    </v-breadcrumbs-item>
                 </template>
             </v-breadcrumbs>
 
-            <Nuxt/>
+            <Nuxt />
         </Main>
 
-        <Version/>
+        <Version />
     </v-app>
 </template>
 
 <script>
+import { get } from "vuex-pathify";
+
 export default {
-    name: "DefaultLayout"
+    name: "DefaultLayout",
+    computed: {
+        breadcrumbs: get("ui/breadcrumbs")
+    }
 };
 </script>

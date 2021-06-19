@@ -5,20 +5,24 @@
         <InnerContainer>
             <p class="mb-4">vergihesaplayici.com, vergi hesaplar.</p>
 
-            <a href="https://youtu.be/zsCpGUDZ85w?t=55"
-               rel="nofollow noopener noreferrer"
-               title="Osita Iheme"
-               target="_blank">
-                <video autoplay=""
-                       loop=""
-                       muted=""
-                       playsinline=""
-                       width="300"
-                       height="300">
-                    <source :src="ositaIheme.webm"
-                            type="video/webm" />
-                    <source :src="ositaIheme.mp4"
-                            type="video/mp4" />
+            <a
+                href="https://youtu.be/zsCpGUDZ85w?t=55"
+                rel="nofollow noopener noreferrer"
+                title="Osita Iheme"
+                target="_blank">
+                <video
+                    autoplay=""
+                    loop=""
+                    muted=""
+                    playsinline=""
+                    width="300"
+                    height="300">
+                    <source
+                        :src="ositaIheme.webm"
+                        type="video/webm" />
+                    <source
+                        :src="ositaIheme.mp4"
+                        type="video/mp4" />
                 </video>
             </a>
             <div class="caption">Osita Iheme</div>

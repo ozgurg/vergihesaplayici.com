@@ -1,12 +1,15 @@
 <template>
 	<div>
-		<h2 class="mb-4">{{ errorDescription }}</h2>
+        <h2 class="mb-4">{{ errorDescription }}</h2>
 
-		<v-alert dense=""
-				 text=""
-				 border="left"
-				 type="error">{{error.message}}</v-alert>
-	</div>
+        <v-alert
+            dense=""
+            text=""
+            border="left"
+            type="error">
+            {{ error.message }}
+        </v-alert>
+    </div>
 </template>
 
 <script>
@@ -27,7 +30,7 @@ export default {
                 return "Sayfa Bulunamadı";
             }
 
-            return "Bir Şey Oldu";
+            return "Bir şey oldu";
         },
         errorDescription() {
             const vm = this;

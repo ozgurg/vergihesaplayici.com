@@ -4,16 +4,22 @@
 
         <InnerContainer>
             <HorizontalForm class="mb-5">
-                <Presets v-model="ui.preset"
-                         :presets="ui.presets" />
+                <Presets
+                    v-model="ui.preset"
+                    :presets="ui.presets" />
             </HorizontalForm>
 
             <HorizontalForm class="mb-5"
                             label="Telefon fiyatı">
                 <v-row dense=""
                        class="price-row">
-                    <v-col class="py-0 price-row__price-col"
-                           cols="7" sm="9" md="9" lg="9" xl="9">
+                    <v-col
+                        class="py-0 price-row__price-col"
+                        cols="7"
+                        sm="9"
+                        md="9"
+                        lg="9"
+                        xl="9">
                         <v-text-field
                             v-model.number="form.price"
                             :prefix="getCurrencySign(form.currency)"
@@ -44,52 +50,62 @@
                     aria-label="Kayıt yolu" />
             </HorizontalForm>
 
-            <ResultTabs class="mt-10"
-                        v-model="ui.tab"
-                        :show-results="showResults">
+            <ResultTabs
+                v-model="ui.tab"
+                :show-results="showResults"
+                class="mt-10">
                 <template v-if="showResults">
                     <CalculatedFromSalePriceAlert v-if="form.currency === 'TRY'" />
                     <CustomsInfoAlert v-else />
 
-                    <ResultHorizontalForm :value="$moneyFormat(results.prices.basePrice, 'TRY')"
-                                          class="mb-5"
-                                          label="Vergisiz fiyat" />
+                    <ResultHorizontalForm
+                        :value="$moneyFormat(results.prices.basePrice, 'TRY')"
+                        class="mb-5"
+                        label="Vergisiz fiyat" />
 
                     <template v-if="registrationIsImport">
-                        <ResultHorizontalForm :label="`Kültür Bakanlığı (%${results.taxRates.ministryOfCulture})`"
-                                              :value="$moneyFormat(results.taxFees.ministryOfCulture, 'TRY')"
-                                              class="mb-5" />
+                        <ResultHorizontalForm
+                            :label="`Kültür Bakanlığı (%${results.taxRates.ministryOfCulture})`"
+                            :value="$moneyFormat(results.taxFees.ministryOfCulture, 'TRY')"
+                            class="mb-5" />
 
-                        <ResultHorizontalForm :label="`TRT bandrolü (%${results.taxRates.trt})`"
-                                              :value="$moneyFormat(results.taxFees.trt, 'TRY')"
-                                              class="mb-5" />
+                        <ResultHorizontalForm
+                            :label="`TRT bandrolü (%${results.taxRates.trt})`"
+                            :value="$moneyFormat(results.taxFees.trt, 'TRY')"
+                            class="mb-5" />
 
-                        <ResultHorizontalForm :label="`ÖTV (%${results.taxRates.sct})`"
-                                              :value="$moneyFormat(results.taxFees.sct, 'TRY')"
-                                              class="mb-5" />
+                        <ResultHorizontalForm
+                            :label="`ÖTV (%${results.taxRates.sct})`"
+                            :value="$moneyFormat(results.taxFees.sct, 'TRY')"
+                            class="mb-5" />
 
-                        <ResultHorizontalForm :label="`KDV (%${results.taxRates.vat})`"
-                                              :value="$moneyFormat(results.taxFees.vat, 'TRY')"
-                                              class="mb-5" />
+                        <ResultHorizontalForm
+                            :label="`KDV (%${results.taxRates.vat})`"
+                            :value="$moneyFormat(results.taxFees.vat, 'TRY')"
+                            class="mb-5" />
                     </template>
 
                     <template v-else>
-                        <ResultHorizontalForm :label="`TRT bandrolü (${$moneyFormat(results.taxRates.trtPassport, 'EUR')})`"
-                                              :value="$moneyFormat(results.taxFees.trtPassport, 'TRY')"
-                                              class="mb-5" />
+                        <ResultHorizontalForm
+                            :label="`TRT bandrolü (${$moneyFormat(results.taxRates.trtPassport, 'EUR')})`"
+                            :value="$moneyFormat(results.taxFees.trtPassport, 'TRY')"
+                            class="mb-5" />
 
-                        <ResultHorizontalForm :value="$moneyFormat(results.taxFees.registration, 'TRY')"
-                                              class="mb-5"
-                                              label="Kayıt ücreti" />
+                        <ResultHorizontalForm
+                            :value="$moneyFormat(results.taxFees.registration, 'TRY')"
+                            class="mb-5"
+                            label="Kayıt ücreti" />
                     </template>
 
-                    <ResultHorizontalForm :label="`Toplam vergi (%${results.taxRates.total})`"
-                                          :value="$moneyFormat(results.taxFees.total, 'TRY')"
-                                          class="mb-5" />
+                    <ResultHorizontalForm
+                        :label="`Toplam vergi (%${results.taxRates.total})`"
+                        :value="$moneyFormat(results.taxFees.total, 'TRY')"
+                        class="mb-5" />
 
-                    <ResultHorizontalForm :value="$moneyFormat(results.prices.salePrice, 'TRY')"
-                                          class="mb-5"
-                                          label="Tahmini satış fiyatı" />
+                    <ResultHorizontalForm
+                        :value="$moneyFormat(results.prices.salePrice, 'TRY')"
+                        class="mb-5"
+                        label="Tahmini satış fiyatı" />
 
                     <HorizontalForm class="mb-6">
                         <MinimumWageAlert :price="results.prices.salePrice" />
@@ -163,9 +179,7 @@ export default {
                 vm.$store.get("exchangeRates/currencies"),
                 price,
                 mode,
-                {
-                    registration: vm.form.registration
-                }
+                { registration: vm.form.registration }
             ).calculate();
 
             vm.results.prices = calculator.prices;
