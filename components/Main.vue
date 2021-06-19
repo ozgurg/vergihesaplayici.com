@@ -5,3 +5,9 @@
         </v-container>
     </v-main>
 </template>
+
+<script>
+export default {
+    name: "Main"
+};
+</script>
