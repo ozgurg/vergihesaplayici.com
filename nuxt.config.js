@@ -1,22 +1,24 @@
 import tr from "vuetify/es5/locale/tr";
 import colors from "vuetify/lib/util/colors";
 
-const Constants = {
-	BASE_URL: "https://vergihesaplayici.com",
-	PORT: 3000,
-	NAME: "Vergi Hesaplayıcı",
-	PRIMARY_COLOR: "#53BBAD"
+const Config = {
+	baseUrl: "https://vergihesaplayici.com",
+	host: "192.168.1.3",
+	port: 3000,
+	name: "Vergi Hesaplayıcı",
+	primaryColor: "#53BBAD"
 };
 
 export default {
 	target: "static",
 	components: true,
 	server: {
-		port: Constants.PORT
+		host: Config.host,
+		port: Config.port
 	},
 	head: {
-		titleTemplate: `%s - ${Constants.NAME}`,
-		title: Constants.NAME,
+		titleTemplate: `%s - ${Config.name}`,
+		title: Config.name,
 		meta: [
 			{ charset: "UTF-8" },
 			{ name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -34,9 +36,7 @@ export default {
 			{ rel: "dns-prefetch", href: "https://firebaseinstallations.googleapis.com" }
 		],
 		script: [
-			{
-				src: "https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.12.1/polyfill.min.js" // For IE 11
-			}
+			{ src: "https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.12.1/polyfill.min.js" } // For IE 11
 		]
 	},
 	buildModules: [
@@ -49,11 +49,17 @@ export default {
 		[
 			"nuxt-canonical",
 			{
-				baseUrl: Constants.BASE_URL,
+				baseUrl: Config.baseUrl,
 				trailingSlashes: false
 			}
 		]
 	],
+	env: {
+		baseUrl: Config.baseUrl
+	},
+	build: {
+		extractCSS: true
+	},
 	css: [
 		"@/assets/css/vuetify-customization.scss",
 		"@/assets/css/style.scss"
@@ -65,21 +71,9 @@ export default {
 		{ src: "@/plugins/client/vue-disqus.js", mode: "client" }
 	],
 	loading: {
-		color: Constants.PRIMARY_COLOR,
+		color: Config.primaryColor,
 		failedColor: colors.red.base,
 		throttle: 600
-	},
-	build: {
-		extractCSS: true
-	},
-	sitemap: {
-		hostname: Constants.BASE_URL,
-		gzip: true,
-		defaults: {
-			changefreq: "monthly",
-			priority: 1,
-			lastmod: new Date()
-		}
 	},
 	vuetify: {
 		lang: {
@@ -93,22 +87,28 @@ export default {
 			},
 			themes: {
 				dark: {
-					primary: Constants.PRIMARY_COLOR
+					primary: Config.primaryColor
 				}
 			}
 		}
 	},
-	pwa: {
-		meta: {
-			theme_color: Constants.PRIMARY_COLOR
-		},
-		manifest: {
-			name: Constants.NAME,
-			short_name: Constants.NAME,
-			lang: "tr"
+	sitemap: {
+		hostname: Config.baseUrl,
+		gzip: true,
+		defaults: {
+			changefreq: "monthly",
+			priority: 1,
+			lastmod: new Date()
 		}
 	},
-	env: {
-		BASE_URL: Constants.BASE_URL
+	pwa: {
+		meta: {
+			theme_color: Config.primaryColor
+		},
+		manifest: {
+			name: Config.name,
+			short_name: Config.name,
+			lang: "tr"
+		}
 	}
 };
