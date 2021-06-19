@@ -1,20 +1,21 @@
 <template>
 	<div ref="resultTab">
 		<HorizontalForm class="result-tab mb-4">
-			<v-tabs :value="value"
-					@change="$emit('input', $event)"
-					background-color="transparent"
-					fixed-tabs="">
-				<v-tab :disabled="!showResults">
-					<v-icon left="">mdi-format-list-bulleted-type</v-icon>
-					Sonuçlar
-				</v-tab>
-				<v-tab>
-					<v-icon left="">mdi-comment-multiple-outline</v-icon>
-					Yorumlar
-				</v-tab>
-			</v-tabs>
-		</HorizontalForm>
+            <v-tabs
+                :value="value"
+                @change="$emit('input', $event)"
+                background-color="transparent"
+                fixed-tabs="">
+                <v-tab :disabled="!showResults">
+                    <v-icon left="">mdi-format-list-bulleted-type</v-icon>
+                    Sonuçlar
+                </v-tab>
+                <v-tab>
+                    <v-icon left="">mdi-comment-multiple-outline</v-icon>
+                    Yorumlar
+                </v-tab>
+            </v-tabs>
+        </HorizontalForm>
 
 		<v-tabs-items :value="value">
 			<v-tab-item>

@@ -1,15 +1,16 @@
 <template>
 	<v-chip-group
-		:column="true"
-		:value="value"
-		@change="$emit('input', $event)">
-		<v-chip :key="index"
-				v-for="(preset, index) in presets"
-				:value="index"
-				outlined="">
-			{{ preset.title }}
-		</v-chip>
-	</v-chip-group>
+        :value="value"
+        @change="$emit('input', $event)"
+        column="">
+        <v-chip
+            v-for="(preset, index) in presets"
+            :key="index"
+            :value="index"
+            outlined="">
+            {{ preset.title }}
+        </v-chip>
+    </v-chip-group>
 </template>
 
 <script>

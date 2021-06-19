@@ -1,25 +1,27 @@
 <template>
-	<v-list v-bind="$attrs"
-			role="list">
-		<v-subheader v-if="subheader">{{ subheader }}</v-subheader>
-		<v-list-item
-			v-for="(calculator, index) in calculators"
-			:key="index"
-			:to="calculator.url"
-			role="listitem"
-			link="">
-			<v-list-item-icon>
-				<v-icon>{{ calculator.icon }}</v-icon>
-			</v-list-item-icon>
+    <v-list
+        v-bind="$attrs"
+        role="list">
+        <v-subheader v-if="subheader">{{ subheader }}</v-subheader>
 
-			<v-list-item-content>
-				<v-list-item-title v-if="showShortTitle">{{ calculator.shortTitle }}</v-list-item-title>
-				<v-list-item-title v-else>{{ calculator.title }}</v-list-item-title>
+        <v-list-item
+            v-for="(calculator, index) in calculators"
+            :key="index"
+            :to="calculator.url"
+            role="listitem"
+            link="">
+            <v-list-item-icon>
+                <v-icon>{{ calculator.icon }}</v-icon>
+            </v-list-item-icon>
 
-				<v-list-item-subtitle v-if="showDescription">{{ calculator.description }}</v-list-item-subtitle>
-			</v-list-item-content>
-		</v-list-item>
-	</v-list>
+            <v-list-item-content>
+                <v-list-item-title v-if="showShortTitle">
+                    {{ showShortTitle ? calculator.shortTitle : calculator.title }}
+                </v-list-item-title>
+                <v-list-item-subtitle v-if="showDescription">{{ calculator.description }}</v-list-item-subtitle>
+            </v-list-item-content>
+        </v-list-item>
+    </v-list>
 </template>
 
 <script>

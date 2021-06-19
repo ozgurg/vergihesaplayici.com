@@ -1,29 +1,27 @@
 <template>
 	<v-select
-		:value="value"
-		@change="$emit('input', $event)"
-		:items="currencies"
-		dense=""
-		hide-details=""
-		outlined=""
-		aria-label="Para birimi" />
+        :value="value"
+        :items="currencies"
+        @change="$emit('input', $event)"
+        dense=""
+        hide-details=""
+        outlined=""
+        aria-label="Para birimi" />
 </template>
 
 <script>
+import { get } from "vuex-pathify";
+
 export default {
     name: "CurrencySelector",
-    data: () => ({
-        currencies: []
-    }),
     props: {
         value: {
             type: String,
             required: true
         }
     },
-    mounted() {
-        const vm = this;
-        vm.currencies = vm.$store.get("exchangeRates/availableCurrencies");
+    computed: {
+        currencies: get("exchangeRates/availableCurrencies")
     }
 };
 </script>

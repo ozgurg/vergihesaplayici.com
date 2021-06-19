@@ -1,37 +1,41 @@
 <template>
 	<div v-bind="$attrs">
-		<h3 class="mb-2">Paylaş</h3>
-		<v-btn-toggle>
-			<v-btn :href="facebookShareUrl"
-				   link=""
-				   rel="nofollow noopener noreferrer"
-				   target="_blank"
-				   title="Facebook'ta paylaş">
-				<v-icon color="#1877f2">mdi-facebook</v-icon>
-			</v-btn>
+        <h3 class="mb-2">Paylaş</h3>
 
-			<v-btn :href="twitterShareUrl"
-				   link=""
-				   rel="nofollow noopener noreferrer"
-				   target="_blank"
-				   title="Twitter'ta paylaş">
-				<v-icon color="#00acee">mdi-twitter</v-icon>
-			</v-btn>
+        <v-btn-toggle>
+            <v-btn
+                :href="facebookShareUrl"
+                link=""
+                rel="nofollow noopener noreferrer"
+                target="_blank"
+                title="Facebook'ta paylaş">
+                <v-icon color="#1877f2">mdi-facebook</v-icon>
+            </v-btn>
 
-			<v-btn :href="whatsAppShareUrl"
-				   link=""
-				   rel="nofollow noopener noreferrer"
-				   target="_blank"
-				   title="WhatsApp ile gönder">
-				<v-icon color="#25d366">mdi-whatsapp</v-icon>
-			</v-btn>
+            <v-btn
+                :href="twitterShareUrl"
+                link=""
+                rel="nofollow noopener noreferrer"
+                target="_blank"
+                title="Twitter'ta paylaş">
+                <v-icon color="#00acee">mdi-twitter</v-icon>
+            </v-btn>
 
-			<v-btn @click="copy(url)"
-				   title="Sayfa bağlantısını kopyala">
-				<v-icon v-if="!isUrlCopied" color="primary">mdi-link</v-icon>
-				<v-icon v-else color="primary">mdi-check</v-icon>
-			</v-btn>
-		</v-btn-toggle>
+            <v-btn
+                :href="whatsAppShareUrl"
+                link=""
+                rel="nofollow noopener noreferrer"
+                target="_blank"
+                title="WhatsApp ile gönder">
+                <v-icon color="#25d366">mdi-whatsapp</v-icon>
+            </v-btn>
+
+            <v-btn
+                @click="copy(url)"
+                title="Sayfa bağlantısını kopyala">
+                <v-icon color="primary">{{ isUrlCopied ? "mdi-check" : "mdi-link" }}</v-icon>
+            </v-btn>
+        </v-btn-toggle>
 	</div>
 </template>
 

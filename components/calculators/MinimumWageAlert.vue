@@ -1,11 +1,12 @@
 <template>
-	<v-alert v-bind="$attrs"
-			 dense=""
-			 text=""
-			 border="left"
-			 type="info">Türkiye'de asgari ücretle çalışan birisi yemeden içmeden bu ürünü yaklaşık
-		<b>{{ minimumWageMonthCount }}</b> ayda satın alabilir.
-	</v-alert>
+    <v-alert
+        v-bind="$attrs"
+        dense=""
+        text=""
+        border="left"
+        type="info">
+        Türkiye'de asgari ücretle çalışan birisi yemeden içmeden bu ürünü yaklaşık <b>{{ minimumWageMonthCount }}</b> ayda satın alabilir.
+    </v-alert>
 </template>
 
 <script>

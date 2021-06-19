@@ -1,31 +1,32 @@
 <template>
 	<v-navigation-drawer
-		v-bind="$attrs"
-		v-model="drawerState">
-		<template v-slot:prepend>
-			<Logo />
-		</template>
+        v-bind="$attrs"
+        v-model="drawerState">
+        <template v-slot:prepend>
+            <Logo />
+        </template>
 
-		<CalculatorList shaped=""
-						show-short-title=""
-						subheader="Hesaplayıcılar"
-		/>
+        <CalculatorList
+            shaped=""
+            show-short-title=""
+            subheader="Hesaplayıcılar" />
 
-		<v-divider />
+        <v-divider />
 
-		<v-list class="mb-auto">
-			<v-subheader>Kurlar</v-subheader>
-			<v-list-item>
-				<ExchangeRates />
-			</v-list-item>
-		</v-list>
+        <v-list class="mb-auto">
+            <v-subheader>Kurlar</v-subheader>
+            <v-list-item>
+                <ExchangeRates />
+            </v-list-item>
+        </v-list>
 
-		<AppsFromDeveloperList class="mt-8"
-							   shaped=""
-							   aria-label="Geliştiriciden Uygulamalar" />
+        <AppsFromDeveloperList
+            class="mt-8"
+            shaped=""
+            aria-label="Geliştiriciden Uygulamalar" />
 
-		<Footer />
-	</v-navigation-drawer>
+        <Footer />
+    </v-navigation-drawer>
 </template>
 
 <script>

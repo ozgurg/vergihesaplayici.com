@@ -1,16 +1,17 @@
 <template>
-	<HorizontalForm v-bind="$attrs"
-					:label="label">
-		<v-text-field
-			:append-icon="appendIcon"
-			:value="value"
-			@click:append="copy(value)"
-			dense=""
-			hide-details=""
-			outlined=""
-			readonly=""
-			:aria-label="label" />
-	</HorizontalForm>
+    <HorizontalForm
+        v-bind="$attrs"
+        :label="label">
+        <v-text-field
+            :value="value"
+            :append-icon="appendIcon"
+            :aria-label="label"
+            @click:append="copy(value)"
+            dense=""
+            hide-details=""
+            outlined=""
+            readonly="" />
+    </HorizontalForm>
 </template>
 
 <script>

@@ -1,16 +1,19 @@
 <template>
-	<div v-bind="$attrs"
-		 class="horizontal-form">
-		<div class="horizontal-form__label-cell">
-			<label v-if="label"
-				   v-bind="$attrs"
-				   class="horizontal-form__label">{{ label }}</label>
-		</div>
+    <div
+        v-bind="$attrs"
+        class="horizontal-form">
+        <div class="horizontal-form__label-cell">
+            <label
+                v-if="label"
+                class="horizontal-form__label">
+                {{ label }}
+            </label>
+        </div>
 
-		<div class="horizontal-form__content-cell">
-			<slot />
-		</div>
-	</div>
+        <div class="horizontal-form__content-cell">
+            <slot />
+        </div>
+    </div>
 </template>
 
 <script>
