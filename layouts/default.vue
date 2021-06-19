@@ -21,17 +21,12 @@
             <Nuxt/>
         </Main>
 
-        <span class="version">v{{ version }}</span>
+        <Version/>
     </v-app>
 </template>
 
 <script>
-import { version } from "./../package.json";
-
 export default {
-    name: "DefaultLayout",
-    data: () => ({
-        version
-    })
+    name: "DefaultLayout"
 };
 </script>
