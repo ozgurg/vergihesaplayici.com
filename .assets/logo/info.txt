@@ -1,14 +1,18 @@
 
 Hope you enjoy your new logo, here are the people that
 made your beautiful logo happen :)
-font name: Marta_Regular
-font link: https://www.behance.net/gallery/7434601/Marta-Font
-font author: Michael Chereda
-font author site: https://www.behance.net/mchereda
+font name: Ubuntu-R
+font link: https://fonts.google.com/specimen/Ubuntu
+font author: Dalton Maag
+font author site: http://www.daltonmaag.com/
 
 
-icon designer: KΛPKLΛM
-icon designer link: /kapklam
+icon designer: Stefan Parnarov
+icon designer link: /sapi
         
-{"bg":"#366164","icon":"#53BBAD","font":"#53BBAD","slogan":"#67cfc1"}
+
+fontColor: {"hex":"#88DF95"}
+bgColor: {"hex":"#01252C"}
+iconColor: {"hex":"#88DF95"}
+
       

@@ -6,7 +6,7 @@ const Config = {
     host: "192.168.1.3",
     port: 3000,
     name: "Vergi Hesaplayıcı",
-    primaryColor: "#53BBAD"
+    primaryColor: "#88DF95"
 };
 
 export default {

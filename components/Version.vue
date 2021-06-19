@@ -22,7 +22,7 @@ export default {
     bottom: 4px;
     font-size: 10px;
     color: #000;
-    background: #53BBAD;
+    background: #88DF95;
     line-height: 1;
     padding: 3px 4px
 }
