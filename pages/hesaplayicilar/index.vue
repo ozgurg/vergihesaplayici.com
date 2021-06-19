@@ -2,9 +2,11 @@
 	<div>
 		<A />
 
-		<h1 class="mb-2 primary--text">Tüm Hesaplayıcılar</h1>
+        <AppHeader>{{ head.title }}</AppHeader>
 
-		<CalculatorGrid />
+        <InnerContainer>
+            <CalculatorGrid />
+        </InnerContainer>
 	</div>
 </template>
 

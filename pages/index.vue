@@ -1,33 +1,33 @@
 <template>
 	<div>
-		<A />
+        <AppHeader>Vergi Hesaplayıcı</AppHeader>
 
-		<h1 class="mb-2 primary--text">Vergi Hesaplayıcı</h1>
+        <InnerContainer>
+            <p class="mb-4">vergihesaplayici.com, vergi hesaplar.</p>
 
-		<p class="mb-4">vergihesaplayici.com, vergi hesaplar.</p>
+            <a href="https://youtu.be/zsCpGUDZ85w?t=55"
+               rel="nofollow noopener noreferrer"
+               title="Osita Iheme"
+               target="_blank">
+                <video autoplay=""
+                       loop=""
+                       muted=""
+                       playsinline=""
+                       width="300"
+                       height="300">
+                    <source :src="ositaIheme.webm"
+                            type="video/webm" />
+                    <source :src="ositaIheme.mp4"
+                            type="video/mp4" />
+                </video>
+            </a>
+            <div class="caption">Osita Iheme</div>
 
-		<a href="https://youtu.be/zsCpGUDZ85w?t=55"
-		   rel="nofollow noopener noreferrer"
-		   title="Osita Iheme"
-		   target="_blank">
-			<video autoplay=""
-				   loop=""
-				   muted=""
-				   playsinline=""
-				   width="300"
-				   height="300">
-				<source :src="ositaIheme.webm"
-						type="video/webm" />
-				<source :src="ositaIheme.mp4"
-						type="video/mp4" />
-			</video>
-		</a>
-		<div class="caption">Osita Iheme</div>
+            <v-divider class="my-8" />
 
-		<v-divider class="my-8" />
-
-		<h2 class="mb-2">Hesaplayıcılar</h2>
-		<CalculatorGrid />
+            <h2 class="mb-2">Hesaplayıcılar</h2>
+            <CalculatorGrid />
+        </InnerContainer>
 	</div>
 </template>
 

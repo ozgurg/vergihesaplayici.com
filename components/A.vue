@@ -13,8 +13,6 @@
 				src="/a/1.html"
 				width="100%"
 				height="100%"></iframe>
-
-		<v-divider class="my-10" />
 	</div>
 </template>
 
