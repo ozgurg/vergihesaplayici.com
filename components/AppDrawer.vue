@@ -29,7 +29,7 @@
 
         <v-divider />
 
-        <Footer />
+        <AppDrawerFooter />
     </v-navigation-drawer>
 </template>
 
