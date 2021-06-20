@@ -1,5 +1,8 @@
 <template>
-    <v-tooltip right="">
+    <v-tooltip
+        v-model="isTooltipShown"
+        allow-overflow=""
+        bottom="">
         <template v-slot:activator="{ on, attrs }">
             <v-btn
                 v-bind="attrs"
@@ -17,6 +20,7 @@ export default {
     name: "CalculatorShareCopyButton",
     data: () => ({
         copiedTimeout: null,
+        isTooltipShown: false,
         isCopied: false
     }),
     props: {
@@ -30,6 +34,7 @@ export default {
 
             vm.$copyText(text);
 
+            vm.isTooltipShown = true;
             vm.isCopied = true;
 
             if (vm.copiedTimeout !== null) {
@@ -37,6 +42,7 @@ export default {
             }
 
             vm.copiedTimeout = setTimeout(() => {
+                vm.isTooltipShown = false;
                 vm.isCopied = false;
             }, 1000);
         }
