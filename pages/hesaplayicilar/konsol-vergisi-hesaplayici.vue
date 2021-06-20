@@ -26,7 +26,7 @@
                 </v-text-field>
             </CalculatorHorizontalForm>
 
-            <ResultTabs
+            <CalculatorResultTabs
                 v-model="ui.tab"
                 :show-results="showResults"
                 class="mt-10">
@@ -72,7 +72,7 @@
                         <CalculatorShare :data="form" />
                     </CalculatorHorizontalForm>
                 </template>
-            </ResultTabs>
+            </CalculatorResultTabs>
         </InnerContainer>
 	</div>
 </template>

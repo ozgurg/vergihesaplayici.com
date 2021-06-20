@@ -33,7 +33,7 @@
 
 <script>
 export default {
-    name: "ResultTabs",
+    name: "CalculatorResultTabs",
     props: {
         value: {
             type: Number,
