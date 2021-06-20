@@ -10,7 +10,8 @@
             <v-card
                 :to="calculator.url"
                 link=""
-                class="pa-8">
+                class="pa-8"
+                elevation="0">
                 <v-icon
                     class="primary--text"
                     size="64">
