@@ -102,7 +102,7 @@
                     </HorizontalForm>
 
                     <HorizontalForm>
-                        <Share :data="form" />
+                        <CalculatorShare :data="form" />
                     </HorizontalForm>
                 </template>
             </ResultTabs>

@@ -43,7 +43,7 @@
 import querystring from "querystring";
 
 export default {
-    name: "Share",
+    name: "CalculatorShare",
     data: () => ({
         isUrlCopied: false
     }),
