@@ -5,7 +5,7 @@
         class="ghbtns"
         height="20"
         src="https://ghbtns.com/github-btn.html?user=ozgurg&repo=vergihesaplayici.com&type=star&count=true"
-        width="78"></iframe>
+        width="84"></iframe>
 </template>
 
 <script>
@@ -20,7 +20,7 @@ export default {
 	border: 0;
 	padding: 0;
 	margin: 0;
-	width: 78px;
+	width: 84px;
 	height: 20px;
 	display: inline-block
 }
