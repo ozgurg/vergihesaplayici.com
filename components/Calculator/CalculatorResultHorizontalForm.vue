@@ -4,22 +4,21 @@
         :label="label">
         <v-text-field
             :value="value"
-            :append-icon="appendIcon"
             :aria-label="label"
-            @click:append="copy(value)"
             dense=""
             hide-details=""
             outlined=""
-            readonly="" />
+            readonly="">
+            <template slot="append">
+                <CalculatorResultHorizontalFormCopyButton :value="value" />
+            </template>
+        </v-text-field>
     </CalculatorHorizontalForm>
 </template>
 
 <script>
 export default {
     name: "CalculatorResultHorizontalForm",
-    data: () => ({
-        isCopied: false
-    }),
     props: {
         label: {
             type: String
@@ -27,25 +26,16 @@ export default {
         value: {
             type: String
         }
-    },
-    methods: {
-        copy(text) {
-            const vm = this;
-
-            vm.isCopied = true;
-
-            setTimeout(() => {
-                vm.isCopied = false;
-            }, 1000);
-
-            vm.$copyText(text);
-        }
-    },
-    computed: {
-        appendIcon() {
-            const vm = this;
-            return vm.isCopied ? "mdi-check" : "mdi-content-copy";
-        }
     }
 };
 </script>
+
+<style scoped="">
+/deep/ .v-input__append-inner {
+    margin-top: 2px !important
+}
+
+/deep/ .v-input__slot {
+    padding-right: 4px !important
+}
+</style>
