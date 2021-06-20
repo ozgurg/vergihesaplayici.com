@@ -31,7 +31,7 @@
                 :show-results="showResults"
                 class="mt-10">
                 <template v-if="showResults">
-                    <CalculatedFromSalePriceAlert v-if="form.currency === 'TRY'" />
+                    <CalculatorCalculatedFromSalePriceAlert v-if="form.currency === 'TRY'" />
                     <CalculatorCustomsInfoAlert v-else />
 
                     <CalculatorResultHorizontalForm

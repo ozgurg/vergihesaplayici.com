@@ -13,6 +13,6 @@
 
 <script>
 export default {
-    name: "CalculatedFromSalePriceAlert"
+    name: "CalculatorCalculatedFromSalePriceAlert"
 };
 </script>
