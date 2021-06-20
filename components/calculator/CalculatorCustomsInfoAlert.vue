@@ -13,6 +13,6 @@
 
 <script>
 export default {
-    name: "CustomsInfoAlert"
+    name: "CalculatorCustomsInfoAlert"
 };
 </script>

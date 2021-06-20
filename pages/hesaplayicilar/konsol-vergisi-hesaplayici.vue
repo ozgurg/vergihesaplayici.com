@@ -32,7 +32,7 @@
                 class="mt-10">
                 <template v-if="showResults">
                     <CalculatedFromSalePriceAlert v-if="form.currency === 'TRY'" />
-                    <CustomsInfoAlert v-else />
+                    <CalculatorCustomsInfoAlert v-else />
 
                     <CalculatorResultHorizontalForm
                         :value="$moneyFormat(results.prices.basePrice, 'TRY')"
