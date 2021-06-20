@@ -2,7 +2,7 @@
     <div
         v-bind="$attrs"
         ref="resultTab">
-        <HorizontalForm class="result-tab mb-4">
+        <CalculatorHorizontalForm class="result-tab mb-4">
             <v-tabs
                 :value="value"
                 @change="$emit('input', $event)"
@@ -17,7 +17,7 @@
                     Yorumlar
                 </v-tab>
             </v-tabs>
-        </HorizontalForm>
+        </CalculatorHorizontalForm>
 
 		<v-tabs-items :value="value">
 			<v-tab-item>

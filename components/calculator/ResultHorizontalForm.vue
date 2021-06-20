@@ -1,5 +1,5 @@
 <template>
-    <HorizontalForm
+    <CalculatorHorizontalForm
         v-bind="$attrs"
         :label="label">
         <v-text-field
@@ -11,7 +11,7 @@
             hide-details=""
             outlined=""
             readonly="" />
-    </HorizontalForm>
+    </CalculatorHorizontalForm>
 </template>
 
 <script>

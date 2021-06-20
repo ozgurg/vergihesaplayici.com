@@ -3,13 +3,13 @@
         <AppHeader>{{ head.title }}</AppHeader>
 
         <InnerContainer>
-            <HorizontalForm class="mb-5">
+            <CalculatorHorizontalForm class="mb-5">
                 <Presets
                     v-model="ui.preset"
                     :presets="ui.presets" />
-            </HorizontalForm>
+            </CalculatorHorizontalForm>
 
-            <HorizontalForm class="mb-5"
+            <CalculatorHorizontalForm class="mb-5"
                             label="Telefon fiyatı">
 
                 <v-text-field
@@ -26,9 +26,9 @@
                             style="width:128px" />
                     </template>
                 </v-text-field>
-            </HorizontalForm>
+            </CalculatorHorizontalForm>
 
-            <HorizontalForm class="mb-5"
+            <CalculatorHorizontalForm class="mb-5"
                             label="Kayıt yolu">
                 <v-select
                     v-model="form.registration"
@@ -38,7 +38,7 @@
                     item-value="value"
                     outlined=""
                     aria-label="Kayıt yolu" />
-            </HorizontalForm>
+            </CalculatorHorizontalForm>
 
             <ResultTabs
                 v-model="ui.tab"
@@ -97,13 +97,13 @@
                         class="mb-5"
                         label="Tahmini satış fiyatı" />
 
-                    <HorizontalForm class="mb-6">
+                    <CalculatorHorizontalForm class="mb-6">
                         <MinimumWageAlert :price="results.prices.salePrice" />
-                    </HorizontalForm>
+                    </CalculatorHorizontalForm>
 
-                    <HorizontalForm>
+                    <CalculatorHorizontalForm>
                         <CalculatorShare :data="form" />
-                    </HorizontalForm>
+                    </CalculatorHorizontalForm>
                 </template>
             </ResultTabs>
         </InnerContainer>
