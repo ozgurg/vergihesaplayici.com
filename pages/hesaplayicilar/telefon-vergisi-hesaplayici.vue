@@ -43,6 +43,7 @@
             <CalculatorResultTabs
                 v-model="ui.tab"
                 :show-results="showResults"
+                ref="resultTabs"
                 class="mt-10">
                 <template v-if="showResults">
                     <CalculatorCalculatedFromSalePriceAlert v-if="form.currency === 'TRY'" />
@@ -219,7 +220,9 @@ export default {
             handler() {
                 const vm = this;
 
-                if (!vm.showResults) return;
+                if (!vm.showResults) {
+                    return;
+                }
 
                 vm.calculate();
 
@@ -227,6 +230,11 @@ export default {
                 vm.ui.tab = 0;
 
                 vm.$router.push({ query: vm.form });
+
+                vm.$vuetify.goTo(vm.$refs["resultTabs"], {
+                    easing: "easeInQuad",
+                    duration: 375
+                });
             }
         },
         "ui.preset"() {

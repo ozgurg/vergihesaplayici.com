@@ -1,7 +1,6 @@
 <template>
     <div
-        v-bind="$attrs"
-        ref="resultTab">
+        v-bind="$attrs">
         <CalculatorHorizontalForm class="result-tab mb-4">
             <v-tabs
                 :value="value"
@@ -48,17 +47,6 @@ export default {
         emit(value) {
             const vm = this;
             vm.$emit("input", value);
-        }
-    },
-    watch: {
-        showResults() {
-            const vm = this;
-
-            if (vm.showResults) {
-                setTimeout(() => {
-                    vm.$refs["resultTab"].scrollIntoView(true);
-                }, 100);
-            }
         }
     }
 };
