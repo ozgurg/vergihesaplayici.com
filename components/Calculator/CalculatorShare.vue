@@ -30,11 +30,7 @@
                 <v-icon color="#25d366">mdi-whatsapp</v-icon>
             </v-btn>
 
-            <v-btn
-                @click="copy(url)"
-                title="Sayfa bağlantısını kopyala">
-                <v-icon color="primary">{{ isUrlCopied ? "mdi-check" : "mdi-link" }}</v-icon>
-            </v-btn>
+            <CalculatorShareCopyButton :value="url" />
         </v-btn-toggle>
 	</div>
 </template>
@@ -44,26 +40,10 @@ import querystring from "querystring";
 
 export default {
     name: "CalculatorShare",
-    data: () => ({
-        isUrlCopied: false
-    }),
     props: {
         data: {
             type: Object,
             required: true
-        }
-    },
-    methods: {
-        copy(text) {
-            const vm = this;
-
-            vm.isUrlCopied = true;
-
-            setTimeout(() => {
-                vm.isUrlCopied = false;
-            }, 1000);
-
-            vm.$copyText(text);
         }
     },
     computed: {
