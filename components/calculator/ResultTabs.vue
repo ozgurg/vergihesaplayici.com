@@ -25,7 +25,7 @@
 			</v-tab-item>
 
 			<v-tab-item>
-				<Comments />
+				<CalculatorComments />
 			</v-tab-item>
 		</v-tabs-items>
 	</div>

@@ -4,6 +4,6 @@
 
 <script>
 export default {
-    name: "Comments"
+    name: "CalculatorComments"
 };
 </script>
