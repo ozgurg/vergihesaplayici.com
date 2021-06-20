@@ -55,7 +55,7 @@ export default {
         ]
     ],
     env: {
-        baseUrl: Config.baseUrl
+        BASE_URL: Config.baseUrl
     },
     build: {
         extractCSS: true
