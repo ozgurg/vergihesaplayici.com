@@ -14,7 +14,7 @@
             <Nuxt />
         </Main>
 
-        <Version />
+        <AppVersion />
     </v-app>
 </template>
 
