@@ -18,6 +18,7 @@
                     hide-details=""
                     outlined=""
                     step="any"
+                    min="1"
                     type="number"
                     aria-label="Telefon fiyatı">
                     <template slot="append-outer">

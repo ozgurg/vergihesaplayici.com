@@ -16,6 +16,7 @@
                     hide-details=""
                     outlined=""
                     step="any"
+                    min="1"
                     type="number"
                     aria-label="Konsol fiyatı">
                     <template slot="append-outer">
