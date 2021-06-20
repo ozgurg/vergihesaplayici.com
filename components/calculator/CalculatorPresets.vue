@@ -2,7 +2,7 @@
 	<v-chip-group
         v-bind="$attrs"
         :value="value"
-        @change="$emit('input', $event)"
+        @change="emit($event)"
         column="">
         <v-chip
             v-for="(preset, index) in presets"
@@ -25,6 +25,12 @@ export default {
         presets: {
             type: Array,
             required: true
+        }
+    },
+    methods: {
+        emit(value) {
+            const vm = this;
+            vm.$emit("input", value);
         }
     }
 };

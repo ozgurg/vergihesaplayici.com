@@ -2,9 +2,7 @@
     <v-card
         v-bind="$attrs"
         class="text-center">
-        <v-card-subtitle class="pb-0 pt-2">
-            {{ $store.get(`exchangeRates/currencies@${currency}.title`) }}
-        </v-card-subtitle>
+        <v-card-subtitle class="pb-0 pt-2">{{ currencyTitle }}</v-card-subtitle>
 
         <v-card-title class="justify-center pt-0 pb-2 px-0">
             <div class="w-100 mx-auto">
@@ -36,6 +34,12 @@ export default {
         currency: {
             type: String,
             required: true
+        }
+    },
+    computed: {
+        currencyTitle() {
+            const vm = this;
+            return vm.$store.get(`exchangeRates/currencies@${vm.currency}.title`);
         }
     },
     mounted() {

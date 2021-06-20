@@ -1,7 +1,7 @@
 <template>
     <v-main v-bind="$attrs">
         <v-container
-            :class="{'my-4': $vuetify.breakpoint.mobile, 'my-16': !$vuetify.breakpoint.mobile}"
+            :class="containerGutterClass"
             class="px-4 px-sm-6 px-md-8">
             <slot />
         </v-container>
@@ -10,6 +10,12 @@
 
 <script>
 export default {
-    name: "Main"
+    name: "Main",
+    computed: {
+        containerGutterClass() {
+            const vm = this;
+            return vm.$vuetify.breakpoint.mobile ? "my-4" : "my-16";
+        }
+    }
 };
 </script>

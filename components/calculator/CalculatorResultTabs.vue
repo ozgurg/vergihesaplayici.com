@@ -5,7 +5,7 @@
         <CalculatorHorizontalForm class="result-tab mb-4">
             <v-tabs
                 :value="value"
-                @change="$emit('input', $event)"
+                @change="emit($event)"
                 background-color="transparent"
                 fixed-tabs="">
                 <v-tab :disabled="!showResults">
@@ -42,6 +42,12 @@ export default {
         showResults: {
             type: Boolean,
             default: false
+        }
+    },
+    methods: {
+        emit(value) {
+            const vm = this;
+            vm.$emit("input", value);
         }
     },
     watch: {

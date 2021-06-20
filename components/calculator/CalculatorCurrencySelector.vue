@@ -3,7 +3,7 @@
         v-bind="$attrs"
         :value="value"
         :items="currencies"
-        @change="$emit('input', $event)"
+        @change="emit($event)"
         hide-details=""
         outlined=""
         aria-label="Para birimi" />
@@ -18,6 +18,12 @@ export default {
         value: {
             type: String,
             required: true
+        }
+    },
+    methods: {
+        emit(value) {
+            const vm = this;
+            vm.$emit("input", value);
         }
     },
     computed: {
