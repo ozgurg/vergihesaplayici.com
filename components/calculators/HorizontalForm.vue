@@ -55,10 +55,7 @@ export default {
 	&__label {
 		width: 100%;
 		display: block;
-		text-align: left;
-		@media(min-width: 992px) {
-			text-align: right
-		}
+		text-align: left
 	}
 }
 </style>
