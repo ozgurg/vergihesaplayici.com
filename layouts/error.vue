@@ -1,57 +1,56 @@
 <template>
 	<div>
-		<h2 v-text="errorDescription"
-			class="mb-4" />
+        <AppHeader>{{ title }}</AppHeader>
 
-		<v-alert dense=""
-				 text=""
-				 border="left"
-				 type="error">{{error.message}}</v-alert>
-	</div>
+        <v-alert
+            border="left"
+            type="error">
+            {{ message }}
+        </v-alert>
+    </div>
 </template>
 
 <script>
 export default {
-	layout: "default/index",
-	name: "NotFound404",
-	props: {
-		error: {
-			type: Object,
-			default: null
-		}
-	},
-	computed: {
-		title() {
-			const vm = this;
+    name: "ErrorLayout",
+    props: {
+        error: {
+            type: Object,
+            default: null
+        }
+    },
+    computed: {
+        title() {
+            const vm = this;
 
-			if (vm.error.statusCode === 404) {
-				return "Sayfa Bulunamadı";
-			}
+            if (vm.error.statusCode === 404) {
+                return "Sayfa bulunamadı";
+            }
 
-			return "Bir Şey Oldu";
-		},
-		errorDescription() {
-			const vm = this;
+            return "Bir şey oldu";
+        },
+        message() {
+            const vm = this;
 
-			if (vm.error.statusCode === 404) {
-				return "Böyle bir sayfa yok, çıkar onu aklından";
-			}
+            if (vm.error.statusCode === 404) {
+                return "Böyle bir sayfa yok, çıkar onu aklından";
+            }
 
-			return "Bir şey oldu";
-		}
-	},
-	head() {
-		const vm = this;
-		return {
-			title: vm.title,
-			meta: [
-				{ hid: "title", name: "description", content: vm.title }
-			]
-		};
-	},
-	mounted() {
-		const vm = this;
-		vm.$store.set("ui/toolbarTitle", vm.title);
-	}
+            return vm.error.message;
+        }
+    },
+    head() {
+        const vm = this;
+        return {
+            title: vm.title,
+            meta: [
+                { hid: "title", name: "title", content: vm.title }
+            ]
+        };
+    },
+    mounted() {
+        const vm = this;
+        vm.$store.set("ui/breadcrumbs", []);
+    }
 };
 </script>

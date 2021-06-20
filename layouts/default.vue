@@ -1,39 +1,30 @@
 <template>
 	<v-app>
-		<Drawer app="" />
+        <AppDrawer app="" />
 
-		<AppBar app="" />
+        <AppBar
+            v-if="$vuetify.breakpoint.mobile"
+            app="" />
 
-		<v-main>
-			<div class="main-content">
-				<v-breadcrumbs
-					v-if="$store.get('ui/breadcrumbs')"
-					:items="$store.get('ui/breadcrumbs')">
-					<template v-slot:item="{ item }">
-						<v-breadcrumbs-item
-							active-class=""
-							nuxt=""
-							:to="item.to">
-							{{ item.text }}
-						</v-breadcrumbs-item>
-					</template>
-				</v-breadcrumbs>
+        <Main>
+            <AppBreadcrumbs
+                v-if="breadcrumbs"
+                :items="breadcrumbs" />
 
-				<Nuxt />
-			</div>
-		</v-main>
+            <Nuxt />
+        </Main>
 
-		<span class="version">v{{ version }}</span>
-	</v-app>
+        <AppVersion />
+    </v-app>
 </template>
 
 <script>
-import { version } from "./../package.json";
+import { get } from "vuex-pathify";
 
 export default {
-	name: "DefaultLayout",
-	data: () => ({
-		version
-	})
+    name: "DefaultLayout",
+    computed: {
+        breadcrumbs: get("ui/breadcrumbs")
+    }
 };
 </script>
