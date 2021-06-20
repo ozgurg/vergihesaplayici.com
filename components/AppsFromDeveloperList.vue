@@ -28,12 +28,26 @@
 </template>
 
 <script>
-import apps from "@/data/apps.json";
-
 export default {
     name: "AppsFromDeveloperList",
     data: () => ({
-        apps
+        apps: [
+            {
+                icon: "double-tap-to-lock.png",
+                title: "Double Tap To Lock",
+                url: "https://dttl.page.link/store"
+            },
+            {
+                icon: "instadownloader.png",
+                title: "InstaDownloader",
+                url: "https://instadownloader.page.link/store"
+            },
+            {
+                icon: "rebootify.png",
+                title: "Rebootify",
+                url: "https://rebootify.page.link/store"
+            }
+        ]
     }),
     props: {
         subheader: {
