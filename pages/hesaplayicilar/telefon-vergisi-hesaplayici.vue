@@ -24,7 +24,7 @@
                     <template slot="append-outer">
                         <CalculatorCurrencySelector
                             v-model="form.currency"
-                            style="width:128px" />
+                            style="width:110px" />
                     </template>
                 </v-text-field>
             </CalculatorHorizontalForm>
