@@ -1,6 +1,6 @@
 <template>
 	<v-app>
-        <Drawer app="" />
+        <AppDrawer app="" />
 
         <AppBar
             v-if="$vuetify.breakpoint.mobile"
