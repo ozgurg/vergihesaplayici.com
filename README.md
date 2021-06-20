@@ -32,4 +32,4 @@ Unit testler
 [Namechap Free Logo Maker](https://www.namecheap.com/logo-maker/) ile oluşturdum.
 
 ## Lisans
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-%2353BBAD.svg)](https://github.com/ozgurg/vergihesaplayici.com/blob/master/LICENSE)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-%2388DF95.svg)](https://github.com/ozgurg/vergihesaplayici.com/blob/master/LICENSE)
