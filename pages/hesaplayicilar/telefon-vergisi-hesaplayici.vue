@@ -188,9 +188,7 @@ export default {
             const vm = this;
 
             const query = vm.$route.query;
-            if (!query) {
-                return;
-            }
+            if (!query) return;
 
             if (query.price) {
                 vm.form.price = parseFloat(query.price);
@@ -221,9 +219,7 @@ export default {
             handler() {
                 const vm = this;
 
-                if (!vm.showResults) {
-                    return;
-                }
+                if (!vm.showResults) return;
 
                 vm.calculate();
 

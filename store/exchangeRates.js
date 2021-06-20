@@ -20,9 +20,7 @@ export const mutations = {
 export const actions = {
     // ...make.actions(state),
     async loadExchangeRateFromApi({ state, commit }, currency) {
-        if (currency === "TRY" || state.currencies[currency]["rate"] > 0) {
-            return;
-        }
+        if (currency === "TRY" || state.currencies[currency]["rate"] > 0) return;
 
         await axios.get(`https://api.exchangerate.host/latest?base=${currency}&symbols=TRY`)
             .then(response => {
