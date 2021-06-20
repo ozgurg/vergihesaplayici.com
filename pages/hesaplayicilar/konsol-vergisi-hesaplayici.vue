@@ -158,6 +158,21 @@ export default {
             if (query.currency && vm.$store.get("exchangeRates/availableCurrencies").includes(query.currency)) {
                 vm.form.currency = query.currency;
             }
+        },
+        setBreadcrumbs() {
+            const vm = this;
+            vm.$store.set("ui/breadcrumbs", [
+                { text: "Ana Sayfa", to: "/" },
+                { text: "Hesaplayıcılar", to: "/hesaplayicilar" },
+                { text: meta.title, to: vm.$route.path }
+            ]);
+        },
+        scrollToResultTabs() {
+            const vm = this;
+            vm.$vuetify.goTo(vm.$refs["resultTabs"], {
+                easing: "easeInQuad",
+                duration: 375
+            });
         }
     },
     computed: {
@@ -172,9 +187,7 @@ export default {
             handler() {
                 const vm = this;
 
-                if (!vm.showResults) {
-                    return;
-                }
+                if (!vm.showResults) return;
 
                 vm.calculate();
 
@@ -183,10 +196,7 @@ export default {
 
                 vm.$router.push({ query: vm.form });
 
-                vm.$vuetify.goTo(vm.$refs["resultTabs"], {
-                    easing: "easeInQuad",
-                    duration: 375
-                });
+                vm.scrollToResultTabs();
             }
         },
         "ui.preset"() {
@@ -207,11 +217,7 @@ export default {
             setTimeout(() => vm.handleQuery(), 100);
         });
 
-        vm.$store.set("ui/breadcrumbs", [
-            { text: "Ana Sayfa", to: "/" },
-            { text: "Hesaplayıcılar", to: "/hesaplayicilar" },
-            { text: meta.title, to: vm.$route.path }
-        ]);
+        vm.setBreadcrumbs();
     }
 };
 </script>

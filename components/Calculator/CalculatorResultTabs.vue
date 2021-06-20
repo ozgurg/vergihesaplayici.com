@@ -19,14 +19,14 @@
         </CalculatorHorizontalForm>
 
 		<v-tabs-items :value="value">
-			<v-tab-item>
-				<slot />
-			</v-tab-item>
+            <v-tab-item :transition="false">
+                <slot />
+            </v-tab-item>
 
-			<v-tab-item>
-				<CalculatorComments />
-			</v-tab-item>
-		</v-tabs-items>
+            <v-tab-item :transition="false">
+                <CalculatorComments />
+            </v-tab-item>
+        </v-tabs-items>
 	</div>
 </template>
 

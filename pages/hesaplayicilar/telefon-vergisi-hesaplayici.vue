@@ -140,7 +140,6 @@ export default {
                 { title: "iPhone 12 Pro Max (128GB)", price: 1099 }
             ],
             preset: -1,
-            availableCurrencies: [],
             registration: [
                 { title: "İthalat yoluyla kayıtlı (Resmi)", value: PhoneTaxCalculator.Registration.Import },
                 { title: "Pasaport yoluyla kayıtlı", value: PhoneTaxCalculator.Registration.Passport }
@@ -202,6 +201,21 @@ export default {
             if (query.registration && vm.ui.registration.some(object => object.value === query.registration)) {
                 vm.form.registration = query.registration;
             }
+        },
+        setBreadcrumbs() {
+            const vm = this;
+            vm.$store.set("ui/breadcrumbs", [
+                { text: "Ana Sayfa", to: "/" },
+                { text: "Hesaplayıcılar", to: "/hesaplayicilar" },
+                { text: meta.title, to: vm.$route.path }
+            ]);
+        },
+        scrollToResultTabs() {
+            const vm = this;
+            vm.$vuetify.goTo(vm.$refs["resultTabs"], {
+                easing: "easeInQuad",
+                duration: 375
+            });
         }
     },
     computed: {
@@ -220,9 +234,7 @@ export default {
             handler() {
                 const vm = this;
 
-                if (!vm.showResults) {
-                    return;
-                }
+                if (!vm.showResults) return;
 
                 vm.calculate();
 
@@ -231,10 +243,7 @@ export default {
 
                 vm.$router.push({ query: vm.form });
 
-                vm.$vuetify.goTo(vm.$refs["resultTabs"], {
-                    easing: "easeInQuad",
-                    duration: 375
-                });
+                vm.scrollToResultTabs();
             }
         },
         "ui.preset"() {
@@ -251,17 +260,11 @@ export default {
     mounted() {
         const vm = this;
 
-        vm.ui.availableCurrencies = vm.$store.get("exchangeRates/availableCurrencies");
-
         vm.$nextTick(() => {
             setTimeout(() => vm.handleQuery(), 100);
         });
 
-        vm.$store.set("ui/breadcrumbs", [
-            { text: "Ana Sayfa", to: "/" },
-            { text: "Hesaplayıcılar", to: "/hesaplayicilar" },
-            { text: meta.title, to: vm.$route.path }
-        ]);
+        vm.setBreadcrumbs();
     }
 };
 </script>
