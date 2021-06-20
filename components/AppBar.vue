@@ -8,7 +8,7 @@
         <v-app-bar-nav-icon @click="drawerState = !drawerState" />
 
         <div class="w-100 d-flex justify-center">
-            <Logo style="margin-left:-48px" />
+            <AppDrawerLogo style="margin-left:-48px" />
         </div>
     </v-app-bar>
 </template>

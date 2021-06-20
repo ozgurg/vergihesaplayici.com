@@ -16,7 +16,7 @@
 import logo from "@/assets/img/logo.svg";
 
 export default {
-    name: "Logo",
+    name: "AppDrawerLogo",
     data: () => ({
         logo
     })

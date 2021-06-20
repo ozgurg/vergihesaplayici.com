@@ -5,7 +5,7 @@
         :color="color"
         floating="">
         <template v-slot:prepend>
-            <Logo />
+            <AppDrawerLogo />
         </template>
 
         <CalculatorList
