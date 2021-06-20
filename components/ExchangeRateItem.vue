@@ -1,7 +1,8 @@
 <template>
     <v-card
         v-bind="$attrs"
-        class="text-center">
+        class="text-center"
+        elevation="0">
         <v-card-subtitle class="pb-0 pt-2">{{ currencyTitle }}</v-card-subtitle>
 
         <v-card-title class="justify-center pt-0 pb-2 px-0">
