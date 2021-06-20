@@ -24,11 +24,11 @@
 		"test:unit": "vue-cli-service test:unit"
 	},
 	"dependencies": {
-		"@nuxtjs/pwa": "^3.3.4",
+		"@nuxtjs/pwa": "^3.3.5",
 		"axios": "^0.21.1",
-		"core-js": "^3.8.3",
-		"firebase": "^8.2.4",
-		"nuxt": "^2.14.12",
+		"core-js": "^3.14.0",
+		"firebase": "^8.6.8",
+		"nuxt": "^2.15.7",
 		"nuxt-canonical": "^1.0.6",
 		"vue-clipboard2": "^0.3.1",
 		"vue-disqus": "^4.0.1",
@@ -36,17 +36,17 @@
 		"vuex-pathify": "^1.4.5"
 	},
 	"devDependencies": {
-		"@babel/plugin-proposal-class-properties": "^7.12.1",
-		"@nuxt/types": "^2.14.12",
-		"@nuxtjs/eslint-config": "^5.0.0",
+		"@babel/plugin-proposal-class-properties": "^7.14.5",
+		"@nuxt/types": "^2.15.7",
+		"@nuxtjs/eslint-config": "^6.0.1",
 		"@nuxtjs/eslint-module": "^3.0.2",
 		"@nuxtjs/sitemap": "^2.4.0",
-		"@nuxtjs/vuetify": "^1.11.3",
-		"@vue/cli-plugin-unit-jest": "^4.5.11",
-		"@vue/cli-service": "^4.5.11",
+		"@nuxtjs/vuetify": "^1.12.1",
+		"@vue/cli-plugin-unit-jest": "^4.5.13",
+		"@vue/cli-service": "^4.5.13",
 		"babel-core": "^6.26.3",
 		"babel-eslint": "^10.1.0",
-		"eslint": "^7.18.0",
+		"eslint": "^7.29.0",
 		"eslint-config-google": "^0.14.0",
 		"eslint-plugin-nuxt": "^2.0.0"
 	}
