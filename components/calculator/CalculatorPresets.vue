@@ -16,7 +16,7 @@
 
 <script>
 export default {
-    name: "Presets",
+    name: "CalculatorPresets",
     props: {
         value: {
             type: Number,

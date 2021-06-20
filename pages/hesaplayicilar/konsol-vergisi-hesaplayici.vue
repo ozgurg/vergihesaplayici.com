@@ -4,7 +4,7 @@
 
         <InnerContainer>
             <CalculatorHorizontalForm class="mb-5">
-                <Presets
+                <CalculatorPresets
                     v-model="ui.preset"
                     :presets="ui.presets" />
             </CalculatorHorizontalForm>
