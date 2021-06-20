@@ -90,6 +90,11 @@ export default {
                     primary: Config.primaryColor
                 }
             }
+        },
+        defaultAssets: {
+            font: {
+                family: "Ubuntu"
+            }
         }
     },
     sitemap: {
