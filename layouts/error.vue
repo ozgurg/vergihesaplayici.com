@@ -50,10 +50,6 @@ export default {
                 { hid: "title", name: "description", content: vm.title }
             ]
         };
-    },
-    mounted() {
-        const vm = this;
-        vm.$store.set("ui/toolbarTitle", vm.title);
     }
 };
 </script>

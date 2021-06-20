@@ -210,8 +210,6 @@ export default {
     mounted() {
         const vm = this;
 
-        vm.$store.set("ui/toolbarTitle", vm.head.title);
-
         vm.$nextTick(() => {
             setTimeout(() => vm.handleQuery(), 100);
         });

@@ -257,8 +257,6 @@ export default {
     mounted() {
         const vm = this;
 
-        vm.$store.set("ui/toolbarTitle", vm.head.title);
-
         vm.ui.availableCurrencies = vm.$store.get("exchangeRates/availableCurrencies");
 
         vm.$nextTick(() => {

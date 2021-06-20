@@ -1,7 +1,9 @@
 <template>
 	<v-navigation-drawer
         v-bind="$attrs"
-        v-model="drawerState">
+        v-model="drawerState"
+        :color="color"
+        floating="">
         <template v-slot:prepend>
             <Logo />
         </template>
@@ -25,6 +27,8 @@
             shaped=""
             aria-label="Geliştiriciden Uygulamalar" />
 
+        <v-divider />
+
         <Footer />
     </v-navigation-drawer>
 </template>
@@ -35,7 +39,11 @@ import { sync } from "vuex-pathify";
 export default {
     name: "Drawer",
     computed: {
-        drawerState: sync("ui/drawerState")
+        drawerState: sync("ui/drawerState"),
+        color() {
+            const vm = this;
+            return vm.$vuetify.theme.dark ? "#272727" : undefined;
+        }
     }
 };
 </script>

@@ -46,9 +46,6 @@ export default {
     },
     mounted() {
         const vm = this;
-
-        vm.$store.set("ui/toolbarTitle", vm.head.title);
-
         vm.$store.set("ui/breadcrumbs", []);
     }
 };

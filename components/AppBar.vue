@@ -1,13 +1,17 @@
 <template>
     <v-app-bar
         v-bind="$attrs"
-        elevation="0">
-        <v-app-bar-nav-icon
-            v-if="$vuetify.breakpoint.mdAndDown"
-            @click="drawerState = !drawerState"
-            aria-label="Menüyü aç" />
+        :color="color"
+        elevation="0"
+        flat=""
+        class="v-bar--underline">
+        <template v-if="$vuetify.breakpoint.mobile">
+            <v-app-bar-nav-icon @click="drawerState = !drawerState" />
 
-        <v-toolbar-title>{{ toolbarTitle }}</v-toolbar-title>
+            <div class="w-100 d-flex justify-center">
+                <Logo style="margin-left:-48px" />
+            </div>
+        </template>
     </v-app-bar>
 </template>
 
@@ -18,7 +22,10 @@ export default {
     name: "AppBar",
     computed: {
         drawerState: sync("ui/drawerState"),
-        toolbarTitle: sync("ui/toolbarTitle")
+        color() {
+            const vm = this;
+            return vm.$vuetify.theme.dark ? undefined : "white";
+        }
     }
 };
 </script>
