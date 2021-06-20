@@ -15,10 +15,7 @@
             </v-list-item-icon>
 
             <v-list-item-content>
-                <v-list-item-title v-if="showShortTitle">
-                    {{ showShortTitle ? calculator.shortTitle : calculator.title }}
-                </v-list-item-title>
-                <v-list-item-subtitle v-if="showDescription">{{ calculator.description }}</v-list-item-subtitle>
+                <v-list-item-title>{{ calculator.shortTitle }}</v-list-item-title>
             </v-list-item-content>
         </v-list-item>
     </v-list>
@@ -35,14 +32,6 @@ export default {
     props: {
         subheader: {
             type: String
-        },
-        showShortTitle: {
-            type: Boolean,
-            default: false
-        },
-        showDescription: {
-            type: Boolean,
-            default: false
         }
     }
 };
