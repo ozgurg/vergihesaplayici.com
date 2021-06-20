@@ -7,18 +7,9 @@
             app="" />
 
         <Main>
-            <v-breadcrumbs
+            <AppBreadcrumbs
                 v-if="breadcrumbs"
-                :items="breadcrumbs">
-                <template v-slot:item="{ item }">
-                    <v-breadcrumbs-item
-                        :to="item.to"
-                        active-class=""
-                        nuxt="">
-                        {{ item.text }}
-                    </v-breadcrumbs-item>
-                </template>
-            </v-breadcrumbs>
+                :items="breadcrumbs" />
 
             <Nuxt />
         </Main>
