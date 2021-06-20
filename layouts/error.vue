@@ -1,21 +1,18 @@
 <template>
 	<div>
-        <h2 class="mb-4">{{ errorDescription }}</h2>
+        <AppHeader>{{ title }}</AppHeader>
 
         <v-alert
-            dense=""
-            text=""
             border="left"
             type="error">
-            {{ error.message }}
+            {{ message }}
         </v-alert>
     </div>
 </template>
 
 <script>
 export default {
-    layout: "default/index",
-    name: "NotFound404",
+    name: "ErrorLayout",
     props: {
         error: {
             type: Object,
@@ -27,19 +24,19 @@ export default {
             const vm = this;
 
             if (vm.error.statusCode === 404) {
-                return "Sayfa Bulunamadı";
+                return "Sayfa bulunamadı";
             }
 
             return "Bir şey oldu";
         },
-        errorDescription() {
+        message() {
             const vm = this;
 
             if (vm.error.statusCode === 404) {
                 return "Böyle bir sayfa yok, çıkar onu aklından";
             }
 
-            return "Bir şey oldu";
+            return vm.error.message;
         }
     },
     head() {
@@ -47,9 +44,13 @@ export default {
         return {
             title: vm.title,
             meta: [
-                { hid: "title", name: "description", content: vm.title }
+                { hid: "title", name: "title", content: vm.title }
             ]
         };
+    },
+    mounted() {
+        const vm = this;
+        vm.$store.set("ui/breadcrumbs", []);
     }
 };
 </script>
