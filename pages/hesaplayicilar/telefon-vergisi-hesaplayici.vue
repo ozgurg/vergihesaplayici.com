@@ -9,9 +9,9 @@
                     :presets="ui.presets" />
             </CalculatorHorizontalForm>
 
-            <CalculatorHorizontalForm class="mb-5"
-                            label="Telefon fiyatı">
-
+            <CalculatorHorizontalForm
+                class="mb-5"
+                label="Telefon fiyatı">
                 <v-text-field
                     v-model.number="form.price"
                     :prefix="getCurrencySign(form.currency)"
@@ -29,8 +29,9 @@
                 </v-text-field>
             </CalculatorHorizontalForm>
 
-            <CalculatorHorizontalForm class="mb-5"
-                            label="Kayıt yolu">
+            <CalculatorHorizontalForm
+                class="mb-5"
+                label="Kayıt yolu">
                 <v-select
                     v-model="form.registration"
                     :items="ui.registration"
