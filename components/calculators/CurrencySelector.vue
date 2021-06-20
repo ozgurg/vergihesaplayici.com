@@ -4,7 +4,6 @@
         :value="value"
         :items="currencies"
         @change="$emit('input', $event)"
-        dense=""
         hide-details=""
         outlined=""
         aria-label="Para birimi" />

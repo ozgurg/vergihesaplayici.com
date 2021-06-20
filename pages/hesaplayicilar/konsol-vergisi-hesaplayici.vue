@@ -13,7 +13,6 @@
                 <v-text-field
                     v-model.number="form.price"
                     :prefix="getCurrencySign(form.currency)"
-                    dense=""
                     hide-details=""
                     outlined=""
                     step="any"
@@ -22,7 +21,7 @@
                     <template slot="append-outer">
                         <CurrencySelector
                             v-model="form.currency"
-                            style="width:96px" />
+                            style="width:128px" />
                     </template>
                 </v-text-field>
             </HorizontalForm>
