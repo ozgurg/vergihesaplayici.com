@@ -37,19 +37,25 @@ export default {
             required: true
         }
     },
+    methods: {
+        async load() {
+            const vm = this;
+
+            await vm.$store.dispatch("exchangeRates/loadExchangeRateFromApi", vm.currency);
+
+            vm.exchangeRate = vm.$store.get(`exchangeRates/currencies@${vm.currency}`);
+            vm.isLoaded = true;
+        }
+    },
     computed: {
         currencyTitle() {
             const vm = this;
             return vm.$store.get(`exchangeRates/currencies@${vm.currency}.title`);
         }
     },
-    mounted() {
+    async mounted() {
         const vm = this;
-        vm.$store.dispatch("exchangeRates/loadExchangeRateFromApi", vm.currency)
-            .then(() => {
-                vm.exchangeRate = vm.$store.get(`exchangeRates/currencies@${vm.currency}`);
-                vm.isLoaded = true;
-            });
+        vm.load();
     }
 };
 </script>

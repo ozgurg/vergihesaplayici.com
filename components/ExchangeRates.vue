@@ -3,7 +3,7 @@
         v-bind="$attrs"
         dense="">
         <v-col
-            v-for="(currency, index) in availableCurrencies"
+            v-for="(currency, index) in currencies"
             :key="index"
             cols="6">
             <ExchangeRateItem :currency="currency" />
@@ -15,7 +15,7 @@
 export default {
     name: "ExchangeRates",
     computed: {
-        availableCurrencies() {
+        currencies() {
             const vm = this;
             return vm.$store.get("exchangeRates/availableCurrencies").filter(currency => currency !== "TRY");
         }
