@@ -1,8 +1,7 @@
 <template>
     <v-card
         v-bind="$attrs"
-        class="text-center"
-        outlined="">
+        class="text-center">
         <v-card-subtitle class="pb-0 pt-2">
             {{ $store.get(`exchangeRates/currencies@${currency}.title`) }}
         </v-card-subtitle>
