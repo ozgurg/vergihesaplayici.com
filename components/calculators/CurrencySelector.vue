@@ -1,5 +1,6 @@
 <template>
 	<v-select
+        v-bind="$attrs"
         :value="value"
         :items="currencies"
         @change="$emit('input', $event)"

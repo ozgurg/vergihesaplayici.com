@@ -1,5 +1,9 @@
 <template>
-    <span class="version">v{{ version }}</span>
+    <span
+        v-bind="$attrs"
+        class="version">
+        v{{ version }}
+    </span>
 </template>
 
 <script>

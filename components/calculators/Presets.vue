@@ -1,5 +1,6 @@
 <template>
 	<v-chip-group
+        v-bind="$attrs"
         :value="value"
         @change="$emit('input', $event)"
         column="">

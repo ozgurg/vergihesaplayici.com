@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-bind="$attrs">
         <a
             href="https://youtu.be/zsCpGUDZ85w?t=55"
             rel="nofollow noopener noreferrer"

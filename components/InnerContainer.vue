@@ -1,5 +1,7 @@
 <template>
-    <div class="inner-container">
+    <div
+        v-bind="$attrs"
+        class="inner-container">
         <slot />
     </div>
 </template>
