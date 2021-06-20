@@ -2,7 +2,9 @@
 	<v-app>
         <Drawer app="" />
 
-        <AppBar app="" />
+        <AppBar
+            v-if="$vuetify.breakpoint.mobile"
+            app="" />
 
         <Main>
             <v-breadcrumbs
