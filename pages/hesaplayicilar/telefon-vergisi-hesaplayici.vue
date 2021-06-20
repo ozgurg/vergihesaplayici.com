@@ -11,30 +11,22 @@
 
             <HorizontalForm class="mb-5"
                             label="Telefon fiyatı">
-                <v-row dense=""
-                       class="price-row">
-                    <v-col
-                        class="py-0 price-row__price-col"
-                        cols="7"
-                        sm="9"
-                        md="9"
-                        lg="9"
-                        xl="9">
-                        <v-text-field
-                            v-model.number="form.price"
-                            :prefix="getCurrencySign(form.currency)"
-                            dense=""
-                            hide-details=""
-                            outlined=""
-                            step="any"
-                            type="number"
-                            aria-label="Telefon fiyatı" />
-                    </v-col>
 
-                    <v-col class="py-0 price-row__currency-col">
-                        <CurrencySelector v-model="form.currency" />
-                    </v-col>
-                </v-row>
+                <v-text-field
+                    v-model.number="form.price"
+                    :prefix="getCurrencySign(form.currency)"
+                    dense=""
+                    hide-details=""
+                    outlined=""
+                    step="any"
+                    type="number"
+                    aria-label="Telefon fiyatı">
+                    <template slot="append-outer">
+                        <CurrencySelector
+                            v-model="form.currency"
+                            style="width:96px" />
+                    </template>
+                </v-text-field>
             </HorizontalForm>
 
             <HorizontalForm class="mb-5"
