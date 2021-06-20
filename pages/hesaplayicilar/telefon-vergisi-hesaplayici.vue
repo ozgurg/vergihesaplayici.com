@@ -98,7 +98,7 @@
                         label="Tahmini satış fiyatı" />
 
                     <CalculatorHorizontalForm class="mb-6">
-                        <MinimumWageAlert :price="results.prices.salePrice" />
+                        <CalculatorMinimumWageAlert :price="results.prices.salePrice" />
                     </CalculatorHorizontalForm>
 
                     <CalculatorHorizontalForm>

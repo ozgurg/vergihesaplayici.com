@@ -13,7 +13,7 @@
 const MINIMUM_WAGE = 2825.90;
 
 export default {
-    name: "MinimumWageAlert",
+    name: "CalculatorMinimumWageAlert",
     props: {
         price: {
             type: Number,
