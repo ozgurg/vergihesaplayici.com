@@ -3,6 +3,7 @@
         v-bind="$attrs"
         v-model="drawerState"
         :color="color"
+        width="300"
         floating="">
         <template v-slot:prepend>
             <AppDrawerLogo />

@@ -1,5 +1,13 @@
 const calculators = {};
 
+calculators["VatCalculator"] = {
+    "icon": "mdi-label-percent",
+    "shortTitle": "Katma Değer Vergisi (KDV)",
+    "title": "Katma Değer Vergisi (KDV) Hesaplayıcı",
+    "url": "/hesaplayicilar/kdv-hesaplayici",
+    "description": "Namıdiğer her şeyin vergisini dahil ve hariç olarak hesaplayın."
+};
+
 calculators["ConsoleTaxCalculator"] = {
     "icon": "mdi-gamepad",
     "shortTitle": "Konsol Vergisi",
