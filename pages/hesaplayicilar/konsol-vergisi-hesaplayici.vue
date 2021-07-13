@@ -12,7 +12,7 @@
             <CalculatorHorizontalForm label="Konsol fiyatı">
                 <v-text-field
                     v-model.number="form.price"
-                    :prefix="getCurrencySign(form.currency)"
+                    :prefix="getCurrency(form.currency)['sign']"
                     hide-details=""
                     outlined=""
                     step="any"
@@ -124,7 +124,7 @@ export default {
         calculate() {
             const vm = this;
 
-            const price = parseFloat(vm.form.price) * vm.getExchangeRate(vm.form.currency);
+            const price = parseFloat(vm.form.price) * vm.getCurrency(vm.form.currency)["rate"];
 
             const mode = BaseCalculator.getCalculationModeByCurrency(vm.form.currency);
 
@@ -138,13 +138,9 @@ export default {
             vm.results.taxFees = calculator.taxFees;
             vm.results.taxRates = calculator.taxRates;
         },
-        getExchangeRate(currency) {
+        getCurrency(currency) {
             const vm = this;
-            return vm.$store.get(`exchangeRates/currencies@${currency}`)["rate"];
-        },
-        getCurrencySign(currency) {
-            const vm = this;
-            return vm.$store.get(`exchangeRates/currencies@${currency}`)["sign"];
+            return vm.$store.get(`exchangeRates/currencies@${currency}`);
         },
         handleQuery() {
             const vm = this;
