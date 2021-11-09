@@ -135,11 +135,11 @@ export default {
         },
         ui: {
             presets: [
-                { title: "iPhone 13 mini (128GB)", price: 699 },
-                { title: "iPhone 13 (128GB)", price: 799 },
-                { title: "iPhone 13 Pro (128GB)", price: 999 },
-                { title: "iPhone 13 Pro Max (128GB)", price: 1099 },
-                { title: "iPhone 13 Pro Max (1TB)", price: 1599 }
+                { title: "iPhone 13 mini (128GB)", price: 699, currency: "USD" },
+                { title: "iPhone 13 (128GB)", price: 799, currency: "USD" },
+                { title: "iPhone 13 Pro (128GB)", price: 999, currency: "USD" },
+                { title: "iPhone 13 Pro Max (128GB)", price: 1099, currency: "USD" },
+                { title: "iPhone 13 Pro Max (1TB)", price: 1599, currency: "USD" }
             ],
             preset: -1,
             registration: [
@@ -247,8 +247,10 @@ export default {
         "ui.preset"() {
             const vm = this;
 
-            vm.form.currency = "USD";
-            vm.form.price = vm.ui.presets[vm.ui.preset].price;
+            const preset = vm.ui.presets[vm.ui.preset];
+
+            vm.form.currency = preset.currency;
+            vm.form.price = preset.price;
         }
     },
     head() {

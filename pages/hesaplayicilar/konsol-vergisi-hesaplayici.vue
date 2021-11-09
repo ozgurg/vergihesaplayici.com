@@ -101,10 +101,10 @@ export default {
         },
         ui: {
             presets: [
-                { title: "Xbox Series S (512GB)", price: 299 },
-                { title: "Xbox Series X (1TB)", price: 499 },
-                { title: "PlayStation 5 Digital Edition (825GB)", price: 399 },
-                { title: "PlayStation 5 (825GB)", price: 499 }
+                { title: "Xbox Series S (512GB)", price: 299, currency: "EUR" },
+                { title: "Xbox Series X (1TB)", price: 499, currency: "EUR" },
+                { title: "PlayStation 5 Digital Edition (825GB)", price: 399, currency: "EUR" },
+                { title: "PlayStation 5 (825GB)", price: 499, currency: "EUR" }
             ],
             preset: -1,
             tab: 1
@@ -197,8 +197,10 @@ export default {
         "ui.preset"() {
             const vm = this;
 
-            vm.form.currency = "EUR";
-            vm.form.price = vm.ui.presets[vm.ui.preset].price;
+            const preset = vm.ui.presets[vm.ui.preset];
+
+            vm.form.currency = preset.currency;
+            vm.form.price = preset.price;
         }
     },
     head() {
