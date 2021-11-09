@@ -17,7 +17,7 @@ export default {
     computed: {
         currencies() {
             const vm = this;
-            return vm.$store.get("exchangeRates/availableCurrencies").filter(currency => currency !== "TRY");
+            return vm.$store.get("exchange-rates/availableCurrencies").filter(currency => currency !== "TRY");
         }
     }
 };

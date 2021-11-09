@@ -1,5 +1,5 @@
 import ConsoleTaxCalculator from "@/calculators/ConsoleTaxCalculator";
-import { state } from "@/store/exchangeRates";
+import { state } from "@/store/exchange-rates";
 
 describe("ConsoleTaxCalculator", () => {
     it(`Prices: 300, 400, 500 / Calculation mode: "${ConsoleTaxCalculator.CalculationMode.FromSalePrice}"`, () => {

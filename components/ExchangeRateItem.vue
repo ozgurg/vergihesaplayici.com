@@ -41,16 +41,16 @@ export default {
         async load() {
             const vm = this;
 
-            await vm.$store.dispatch("exchangeRates/loadExchangeRateFromApi", vm.currency);
+            await vm.$store.dispatch("exchange-rates/loadExchangeRateFromApi", vm.currency);
 
-            vm.exchangeRate = vm.$store.get(`exchangeRates/currencies@${vm.currency}`);
+            vm.exchangeRate = vm.$store.get(`exchange-rates/currencies@${vm.currency}`);
             vm.isLoaded = true;
         }
     },
     computed: {
         currencyTitle() {
             const vm = this;
-            return vm.$store.get(`exchangeRates/currencies@${vm.currency}.title`);
+            return vm.$store.get(`exchange-rates/currencies@${vm.currency}.title`);
         }
     },
     async mounted() {

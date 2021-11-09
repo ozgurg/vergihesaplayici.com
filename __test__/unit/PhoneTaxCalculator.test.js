@@ -1,5 +1,5 @@
 import PhoneTaxCalculator from "@/calculators/PhoneTaxCalculator";
-import { state } from "@/store/exchangeRates";
+import { state } from "@/store/exchange-rates";
 
 describe("PhoneTaxCalculator", () => {
     it(`Prices: 500, 1500, 5000 / Calculation mode: "${PhoneTaxCalculator.CalculationMode.FromSalePrice}" / Registration: "${PhoneTaxCalculator.Registration.Import}"`, () => {

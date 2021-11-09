@@ -167,7 +167,7 @@ export default {
 
             const phoneTaxCalculator = new PhoneTaxCalculator({
                 price,
-                exchangeRates: vm.$store.get("exchangeRates/currencies"),
+                exchangeRates: vm.$store.get("exchange-rates/currencies"),
                 calculationMode: PhoneTaxCalculator.getCalculationModeByCurrency(vm.form.currency)
             }, {
                 registration: vm.form.registration
@@ -180,7 +180,7 @@ export default {
         },
         getCurrency(currency) {
             const vm = this;
-            return vm.$store.get(`exchangeRates/currencies@${currency}`);
+            return vm.$store.get(`exchange-rates/currencies@${currency}`);
         },
         handleQuery() {
             const vm = this;
@@ -192,7 +192,7 @@ export default {
                 vm.form.price = parseFloat(query.price);
             }
 
-            if (query.currency && vm.$store.get("exchangeRates/availableCurrencies").includes(query.currency)) {
+            if (query.currency && vm.$store.get("exchange-rates/availableCurrencies").includes(query.currency)) {
                 vm.form.currency = query.currency;
             }
 

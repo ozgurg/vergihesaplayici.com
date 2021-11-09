@@ -27,7 +27,7 @@ export default {
         }
     },
     computed: {
-        currencies: get("exchangeRates/availableCurrencies")
+        currencies: get("exchange-rates/availableCurrencies")
     }
 };
 </script>
