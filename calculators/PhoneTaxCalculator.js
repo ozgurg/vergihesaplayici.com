@@ -1,213 +1,230 @@
-import BaseCalculator from "./BaseCalculator";
+import BaseMultiCurrencyTaxCalculator from "@/calculators/BaseMultiCurrencyTaxCalculator";
 
-class PhoneTaxCalculator extends BaseCalculator {
+/**
+ * @class
+ * @extends {BaseMultiCurrencyTaxCalculator}
+ */
+class PhoneTaxCalculator extends BaseMultiCurrencyTaxCalculator {
+    /**
+     * @static
+     * @type {{Passport: string, Import: string}}
+     */
     static Registration = {
-    	Import: "import",
-    	Passport: "passport"
+        Import: "import",
+        Passport: "passport"
+    };
+
+    /**
+     * @protected
+     * @type {{trtPassport: number, total: number, sct: number, trt: number, vat: number, registration: number, ministryOfCulture: number}}
+     */
+    taxFees = {
+        total: 0, // TRY
+        ministryOfCulture: 0, // TRY
+        trt: 0, // TRY
+        sct: 0, // TRY
+        vat: 0, // TRY
+        trtPassport: 0, // TRY
+        registration: 2006.20 // TRY
+    };
+
+    /**
+     * @protected
+     * @type {{trtPassport: number, total: number, sct: number, trt: number, vat: number, ministryOfCulture: number}}
+     */
+    taxRates = {
+        total: 0, // Percent
+        ministryOfCulture: 1, // Percent
+        trt: 10, // Percent
+        sct: 0, // Percent but varies by the price. See getSctRateByPrice
+        vat: 18, // Percent
+        trtPassport: 20 // EUR
     };
 
     /**
      * @private
+     * @type {Registration}
      */
-    _taxFees = {
-    	total: 0, // TRY
-    	ministryOfCulture: 0, // TRY
-    	trt: 0, // TRY
-    	sct: 0, // TRY
-    	vat: 0, // TRY
-    	trtPassport: 0, // TRY
-    	registration: 2006.20 // TRY
-    };
+    registration = null;
 
     /**
-     * @private
+     * @param {object} params
+     * @param {Registration} registration
      */
-    _taxRates = {
-    	total: 0, // Percent
-    	ministryOfCulture: 1, // Percent
-    	trt: 10, // Percent
-    	sct: 0, // Percent but varies by the price. Checkout: _getSctRate
-    	vat: 18, // Percent
-    	trtPassport: 20 // EUR
-    };
+    constructor(params, { registration }) {
+        super(params);
 
-    /**
-     * TR: Kültür Bakanlığı
-     *
-     * @private
-     */
-    _ministryOfCultureFee() {
-    	switch (this._mode) {
-    		case BaseCalculator.CalculationMode.FromBasePrice:
-    			this._taxFees.ministryOfCulture = this.calculateTaxFromTaxFreePrice(this._prices.salePrice, this._taxRates.ministryOfCulture);
-    			this._prices.salePrice += this._taxFees.ministryOfCulture;
-    			break;
-
-    		case BaseCalculator.CalculationMode.FromSalePrice:
-    			this._taxFees.ministryOfCulture = this.calculateTaxFromTaxAddedPrice(this._prices.basePrice, this._taxRates.ministryOfCulture);
-    			this._prices.basePrice -= this._taxFees.ministryOfCulture;
-    			break;
-    	}
+        this.registration = registration;
     }
 
     /**
-     * TR: TRT bandrolü (Registration.Import)
-     *
      * @private
      */
-    _trtImportFee() {
-    	switch (this._mode) {
-    		case BaseCalculator.CalculationMode.FromBasePrice:
-    			this._taxFees.trt = this.calculateTaxFromTaxFreePrice(this._prices.salePrice, this._taxRates.trt);
-    			this._prices.salePrice += this._taxFees.trt;
-    			break;
+    ministryOfCultureFee() {
+        switch (this.calculationMode) {
+            case BaseMultiCurrencyTaxCalculator.CalculationMode.FromBasePrice:
+                this.taxFees.ministryOfCulture = this.calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.ministryOfCulture);
+                this.prices.salePrice += this.taxFees.ministryOfCulture;
+                break;
 
-    		case BaseCalculator.CalculationMode.FromSalePrice:
-    			this._taxFees.trt = this.calculateTaxFromTaxAddedPrice(this._prices.basePrice, this._taxRates.trt);
-    			this._prices.basePrice -= this._taxFees.trt;
-    			break;
-    	}
+            case BaseMultiCurrencyTaxCalculator.CalculationMode.FromSalePrice:
+                this.taxFees.ministryOfCulture = this.calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.ministryOfCulture);
+                this.prices.basePrice -= this.taxFees.ministryOfCulture;
+                break;
+        }
     }
 
     /**
-     * TR: TRT bandrolü (Registration.Passport)
-     *
      * @private
      */
-    _trtPassportFee() {
-    	this._taxFees.trtPassport = this._taxRates.trtPassport * this._exchangeRates["EUR"]["rate"];
+    trtImportFee() {
+        switch (this.calculationMode) {
+            case BaseMultiCurrencyTaxCalculator.CalculationMode.FromBasePrice:
+                this.taxFees.trt = this.calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.trt);
+                this.prices.salePrice += this.taxFees.trt;
+                break;
 
-    	switch (this._mode) {
-    		case BaseCalculator.CalculationMode.FromBasePrice:
-    			this._prices.salePrice += this._taxFees.trtPassport;
-    			break;
-
-    		case BaseCalculator.CalculationMode.FromSalePrice:
-    			this._prices.basePrice -= this._taxFees.trtPassport;
-    			break;
-    	}
+            case BaseMultiCurrencyTaxCalculator.CalculationMode.FromSalePrice:
+                this.taxFees.trt = this.calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.trt);
+                this.prices.basePrice -= this.taxFees.trt;
+                break;
+        }
     }
 
     /**
-     * TR: Özel Tüketim Vergisi (ÖTV)
-     *
      * @private
      */
-    _sctFee() {
-    	switch (this._mode) {
-    		case BaseCalculator.CalculationMode.FromBasePrice:
-    			this._taxRates.sct = this._getSctRate(this._prices.salePrice);
-    			this._taxFees.sct = this.calculateTaxFromTaxFreePrice(this._prices.salePrice, this._taxRates.sct);
-    			this._prices.salePrice += this._taxFees.sct;
-    			break;
+    trtPassportFee() {
+        this.taxFees.trtPassport = this.taxRates.trtPassport * this.exchangeRates["EUR"]["rate"];
 
-    		case BaseCalculator.CalculationMode.FromSalePrice:
-    			this._taxRates.sct = this._getSctRate(this._prices.basePrice);
-    			this._taxFees.sct = this.calculateTaxFromTaxAddedPrice(this._prices.basePrice, this._taxRates.sct);
-    			this._prices.basePrice -= this._taxFees.sct;
-    			break;
-    	}
+        switch (this.calculationMode) {
+            case BaseMultiCurrencyTaxCalculator.CalculationMode.FromBasePrice:
+                this.prices.salePrice += this.taxFees.trtPassport;
+                break;
+
+            case BaseMultiCurrencyTaxCalculator.CalculationMode.FromSalePrice:
+                this.prices.basePrice -= this.taxFees.trtPassport;
+                break;
+        }
     }
 
     /**
-     * TR: Katma Değer Vergisi (KDV)
-     *
      * @private
      */
-    _vatFee() {
-    	switch (this._mode) {
-    		case BaseCalculator.CalculationMode.FromBasePrice:
-    			this._taxFees.vat = this.calculateTaxFromTaxFreePrice(this._prices.salePrice, this._taxRates.vat);
-    			this._prices.salePrice += this._taxFees.vat;
-    			break;
+    sctFee() {
+        switch (this.calculationMode) {
+            case BaseMultiCurrencyTaxCalculator.CalculationMode.FromBasePrice:
+                this.taxRates.sct = this.getSctRateByPrice(this.prices.salePrice);
+                this.taxFees.sct = this.calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.sct);
+                this.prices.salePrice += this.taxFees.sct;
+                break;
 
-    		case BaseCalculator.CalculationMode.FromSalePrice:
-    			this._taxFees.vat = this.calculateTaxFromTaxAddedPrice(this._prices.basePrice, this._taxRates.vat);
-    			this._prices.basePrice -= this._taxFees.vat;
-    			break;
-    	}
+            case BaseMultiCurrencyTaxCalculator.CalculationMode.FromSalePrice:
+                this.taxRates.sct = this.getSctRateByPrice(this.prices.basePrice);
+                this.taxFees.sct = this.calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.sct);
+                this.prices.basePrice -= this.taxFees.sct;
+                break;
+        }
     }
 
     /**
-     * TR: Kayıt ücreti
-     *
      * @private
      */
-    _registrationFee() {
-    	switch (this._mode) {
-    		case BaseCalculator.CalculationMode.FromBasePrice:
-    			this._prices.salePrice += this._taxFees.registration;
-    			break;
+    vatFee() {
+        switch (this.calculationMode) {
+            case BaseMultiCurrencyTaxCalculator.CalculationMode.FromBasePrice:
+                this.taxFees.vat = this.calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.vat);
+                this.prices.salePrice += this.taxFees.vat;
+                break;
 
-    		case BaseCalculator.CalculationMode.FromSalePrice:
-    			this._prices.basePrice -= this._taxFees.registration;
-    			break;
-    	}
+            case BaseMultiCurrencyTaxCalculator.CalculationMode.FromSalePrice:
+                this.taxFees.vat = this.calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.vat);
+                this.prices.basePrice -= this.taxFees.vat;
+                break;
+        }
     }
 
     /**
-     * @param {Number} price
-     * @return {Number}
      * @private
      */
-    _getSctRate(price) {
-    	if (price <= 640) {
-    		return 25;
-    	} else if (price >= 640 && price <= 1500) {
-    		return 40;
-    	} else if (price > 1500) {
-    		return 50;
-    	}
+    registrationFee() {
+        switch (this.calculationMode) {
+            case BaseMultiCurrencyTaxCalculator.CalculationMode.FromBasePrice:
+                this.prices.salePrice += this.taxFees.registration;
+                break;
+
+            case BaseMultiCurrencyTaxCalculator.CalculationMode.FromSalePrice:
+                this.prices.basePrice -= this.taxFees.registration;
+                break;
+        }
     }
 
     /**
+     * @private
+     * @param {float} price
      * @return {number}
-     * @private
      */
-    _calculateTotalTaxFee() {
-    	if (this._options.registration === PhoneTaxCalculator.Registration.Import) {
-    		return this._taxFees.ministryOfCulture + this._taxFees.trt + this._taxFees.sct + this._taxFees.vat;
-    	} else if (this._options.registration === PhoneTaxCalculator.Registration.Passport) {
-    		return this._taxFees.trtPassport + this._taxFees.registration;
-    	}
+    getSctRateByPrice(price) {
+        if (price <= 640) {
+            return 25;
+        } else if (price >= 640 && price <= 1500) {
+            return 40;
+        } else if (price > 1500) {
+            return 50;
+        }
     }
 
     /**
+     * @protected
+     * @override
+     * @return {number}
+     */
+    calculateTotalTaxFee() {
+        if (this.registration === PhoneTaxCalculator.Registration.Import) {
+            return this.taxFees.ministryOfCulture + this.taxFees.trt + this.taxFees.sct + this.taxFees.vat;
+        } else if (this.registration === PhoneTaxCalculator.Registration.Passport) {
+            return this.taxFees.trtPassport + this.taxFees.registration;
+        }
+    }
+
+    /**
+     * @protected
+     * @override
+     * @return {number}
+     */
+    calculateTotalTaxRate() {
+        return ((this.taxFees.total / this.prices.basePrice) * 100);
+    }
+
+    /**
+     * @public
+     * @override
      * @return {PhoneTaxCalculator}
      */
     calculate() {
-    	switch (this._options.registration) {
-    		case PhoneTaxCalculator.Registration.Import:
-    			if (this._mode === BaseCalculator.CalculationMode.FromBasePrice) {
-    				this._ministryOfCultureFee();
-    				this._trtImportFee();
-    				this._sctFee();
-    				this._vatFee();
-    			} else if (this._mode === BaseCalculator.CalculationMode.FromSalePrice) {
-    				this._vatFee();
-    				this._sctFee();
-    				this._trtImportFee();
-    				this._ministryOfCultureFee();
-    			}
-    			break;
+        if (this.registration === PhoneTaxCalculator.Registration.Import) {
+            if (this.calculationMode === BaseMultiCurrencyTaxCalculator.CalculationMode.FromBasePrice) {
+                this.ministryOfCultureFee();
+                this.trtImportFee();
+                this.sctFee();
+                this.vatFee();
+            } else if (this.calculationMode === BaseMultiCurrencyTaxCalculator.CalculationMode.FromSalePrice) {
+                this.vatFee();
+                this.sctFee();
+                this.trtImportFee();
+                this.ministryOfCultureFee();
+            }
+        } else if (this.registration === PhoneTaxCalculator.Registration.Passport) {
+            if (this.calculationMode === BaseMultiCurrencyTaxCalculator.CalculationMode.FromBasePrice) {
+                this.trtPassportFee();
+                this.registrationFee();
+            } else if (this.calculationMode === BaseMultiCurrencyTaxCalculator.CalculationMode.FromSalePrice) {
+                this.registrationFee();
+                this.trtPassportFee();
+            }
+        }
 
-    		case PhoneTaxCalculator.Registration.Passport:
-    			if (this._mode === BaseCalculator.CalculationMode.FromBasePrice) {
-    				this._trtPassportFee();
-    				this._registrationFee();
-    			} else if (this._mode === BaseCalculator.CalculationMode.FromSalePrice) {
-    				this._registrationFee();
-    				this._trtPassportFee();
-    			}
-    			break;
-    	}
-
-    	this._taxFees.total = this._calculateTotalTaxFee();
-    	this._taxRates.total = this.calculateTotalTaxRate();
-
-    	this.normalizeResults();
-
-    	return this;
+        return this;
     }
 }
 

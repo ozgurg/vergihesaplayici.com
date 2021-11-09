@@ -80,10 +80,9 @@
 </template>
 
 <script>
-import BaseCalculator from "@/calculators/BaseCalculator";
 import ConsoleTaxCalculator from "@/calculators/ConsoleTaxCalculator";
-import openGraphImage from "@/assets/img/open-graph/console-tax-calculator.jpg";
 import { ConsoleTaxCalculator as meta } from "@/data/calculators.js";
+import openGraphImage from "@/assets/img/open-graph/console-tax-calculator.jpg";
 
 export default {
     layout: "default/index",
@@ -126,17 +125,16 @@ export default {
 
             const price = parseFloat(vm.form.price) * vm.getCurrency(vm.form.currency)["rate"];
 
-            const mode = BaseCalculator.getCalculationModeByCurrency(vm.form.currency);
-
-            const calculator = new ConsoleTaxCalculator(
-                vm.$store.get("exchangeRates/currencies"),
+            const consoleTaxCalculator = new ConsoleTaxCalculator({
                 price,
-                mode
-            ).calculate();
+                exchangeRates: vm.$store.get("exchangeRates/currencies"),
+                calculationMode: ConsoleTaxCalculator.getCalculationModeByCurrency(vm.form.currency)
+            });
+            const results = consoleTaxCalculator.calculate().results();
 
-            vm.results.prices = calculator.prices;
-            vm.results.taxFees = calculator.taxFees;
-            vm.results.taxRates = calculator.taxRates;
+            vm.results.prices = results.prices;
+            vm.results.taxFees = results.taxFees;
+            vm.results.taxRates = results.taxRates;
         },
         getCurrency(currency) {
             const vm = this;
