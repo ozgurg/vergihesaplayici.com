@@ -1,10 +1,12 @@
-import firebase from "firebase/app";
-import "firebase/analytics";
-import "firebase/performance";
+import { initializeApp } from "firebase/app";
+import { initializeAnalytics } from "firebase/analytics";
+import { initializePerformance } from "firebase/performance";
+
+let firebaseApp = null;
 
 if (process.env.NODE_ENV === "production") {
     // These are not sensitive
-    firebase.initializeApp({
+    firebaseApp = initializeApp({
         apiKey: "AIzaSyD6VJhwtSsEpkLx2a-WsnhfU1rjUKz2DtA",
         authDomain: "vergihesaplayici.firebaseapp.com",
         databaseURL: "https://vergihesaplayici.firebaseio.com",
@@ -15,8 +17,9 @@ if (process.env.NODE_ENV === "production") {
         measurementId: "G-2HW9TT5V7E"
     });
 
-    firebase.analytics();
-    firebase.performance();
+    initializeAnalytics(firebaseApp);
+
+    initializePerformance(firebaseApp);
 }
 
-export default firebase;
+export default firebaseApp;
