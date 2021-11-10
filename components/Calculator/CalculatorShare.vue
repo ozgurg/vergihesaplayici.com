@@ -39,7 +39,6 @@
 import querystring from "querystring";
 
 export default {
-    name: "CalculatorShare",
     props: {
         data: {
             type: Object,

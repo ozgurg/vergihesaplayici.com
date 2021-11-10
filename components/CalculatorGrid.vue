@@ -30,7 +30,6 @@
 import calculators from "@/data/calculators.js";
 
 export default {
-    name: "CalculatorGrid",
     data: () => ({
         calculators
     })

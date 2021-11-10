@@ -26,7 +26,6 @@ import { VatCalculator as meta } from "@/data/calculators.js";
 
 export default {
     layout: "default/index",
-    name: "VatCalculator",
     data: () => ({
         head: {
             title: meta.title,

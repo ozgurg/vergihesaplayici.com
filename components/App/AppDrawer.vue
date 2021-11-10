@@ -37,7 +37,6 @@
 import { sync } from "vuex-pathify";
 
 export default {
-    name: "AppDrawer",
     computed: {
         drawerState: sync("ui/drawerState"),
         color() {

@@ -29,7 +29,6 @@ import mp4 from "@/assets/video/osita-iheme.mp4";
 import webm from "@/assets/video/osita-iheme.webm";
 
 export default {
-    name: "OsitaIheme",
     data: () => ({
         mp4,
         webm

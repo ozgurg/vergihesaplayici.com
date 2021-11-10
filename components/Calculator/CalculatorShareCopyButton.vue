@@ -17,7 +17,6 @@
 
 <script>
 export default {
-    name: "CalculatorShareCopyButton",
     data: () => ({
         copiedTimeout: null,
         isTooltipShown: false,

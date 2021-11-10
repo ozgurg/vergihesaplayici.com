@@ -17,7 +17,6 @@
 import { sync } from "vuex-pathify";
 
 export default {
-    name: "AppBar",
     methods: {
         toggleDrawer() {
             const vm = this;

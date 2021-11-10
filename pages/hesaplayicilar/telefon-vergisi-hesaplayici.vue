@@ -120,7 +120,6 @@ import openGraphImage from "@/assets/img/open-graph/phone-tax-calculator.jpg";
 
 export default {
     layout: "default/index",
-    name: "PhoneTaxCalculator",
     data: () => ({
         head: {
             title: meta.title,

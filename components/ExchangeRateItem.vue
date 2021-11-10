@@ -26,7 +26,6 @@
 
 <script>
 export default {
-    name: "ExchangeRateItem",
     data: () => ({
         isLoaded: false,
         exchangeRate: {}

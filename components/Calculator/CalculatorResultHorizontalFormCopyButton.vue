@@ -19,7 +19,6 @@
 
 <script>
 export default {
-    name: "CalculatorResultHorizontalFormCopyButton",
     data: () => ({
         copiedTimeout: null,
         isTooltipShown: false,

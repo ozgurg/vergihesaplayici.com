@@ -18,7 +18,6 @@
 
 <script>
 export default {
-    name: "CalculatorResultHorizontalForm",
     props: {
         label: {
             type: String
@@ -34,7 +33,6 @@ export default {
 /deep/ .v-input__append-inner {
     margin-top: 2px !important
 }
-
 /deep/ .v-input__slot {
     padding-right: 4px !important
 }

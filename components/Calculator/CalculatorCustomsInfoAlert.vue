@@ -10,9 +10,3 @@
         Gerçek satış fiyatı farklı olabilir ve muhtemelen daha az olacaktır.
     </v-alert>
 </template>
-
-<script>
-export default {
-    name: "CalculatorCustomsInfoAlert"
-};
-</script>

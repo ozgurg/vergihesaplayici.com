@@ -10,7 +10,6 @@
 import { version } from "./../../package.json";
 
 export default {
-    name: "AppVersion",
     data: () => ({
         version
     })

@@ -86,7 +86,6 @@ import openGraphImage from "@/assets/img/open-graph/console-tax-calculator.jpg";
 
 export default {
     layout: "default/index",
-    name: "ConsoleTaxCalculator",
     data: () => ({
         head: {
             title: meta.title,

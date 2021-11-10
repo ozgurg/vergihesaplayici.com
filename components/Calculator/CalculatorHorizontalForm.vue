@@ -18,7 +18,6 @@
 
 <script>
 export default {
-    name: "CalculatorHorizontalForm",
     props: {
         label: {
             type: String

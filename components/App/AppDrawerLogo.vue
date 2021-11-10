@@ -16,7 +16,6 @@
 import logo from "@/assets/img/logo.svg";
 
 export default {
-    name: "AppDrawerLogo",
     data: () => ({
         logo
     })
@@ -34,7 +33,6 @@ export default {
     @media(max-width: 960px) {
         height: 56px
     }
-
     img {
         vertical-align: middle;
         width: 190px;
