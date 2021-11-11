@@ -15,7 +15,14 @@
             </v-list-item-icon>
 
             <v-list-item-content>
-                <v-list-item-title>{{ calculator.shortTitle }}</v-list-item-title>
+                <template v-if="calculator.initialsTitle">
+                    <v-list-item-title>{{ calculator.initialsTitle }}</v-list-item-title>
+                    <v-list-item-subtitle>{{ calculator.subtitle }}</v-list-item-subtitle>
+                </template>
+
+                <template v-else>
+                    <v-list-item-title>{{ calculator.subtitle }}</v-list-item-title>
+                </template>
             </v-list-item-content>
         </v-list-item>
     </v-list>

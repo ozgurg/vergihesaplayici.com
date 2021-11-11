@@ -1,22 +1,23 @@
 const calculators = {
     VatCalculator: {
         icon: "mdi-label-percent",
-        shortTitle: "Katma Değer Vergisi (KDV)",
-        title: "Katma Değer Vergisi (KDV) Hesaplayıcı",
+        initialsTitle: "KDV",
+        title: "KDV (Katma Değer Vergisi) Hesaplayıcı",
+        subtitle: "Katma Değer Vergisi",
         url: "/hesaplayicilar/kdv-hesaplayici",
         description: "Namıdiğer her şeyin vergisini dahil ve hariç olarak hesaplayın."
     },
     ConsoleTaxCalculator: {
         icon: "mdi-gamepad",
-        shortTitle: "Konsol Vergisi",
         title: "Konsol Vergisi Hesaplayıcı",
+        subtitle: "Konsol Vergisi",
         url: "/hesaplayicilar/konsol-vergisi-hesaplayici",
         description: "Sadece eğlenmek istediğinizde ödemeniz gereken vergileri hesaplayın."
     },
     PhoneTaxCalculator: {
         icon: "mdi-cellphone",
-        shortTitle: "Telefon Vergisi",
         title: "Telefon Vergisi Hesaplayıcı",
+        subtitle: "Telefon Vergisi",
         url: "/hesaplayicilar/telefon-vergisi-hesaplayici",
         description: "Satın aldığınız bir telefonun satış fiyatına etki eden vergileri hesaplayın."
     }
