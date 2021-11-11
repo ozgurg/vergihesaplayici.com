@@ -4,23 +4,13 @@
         class="logo"
         to="/">
         <img
-            :src="logo"
+            :src="require('@/assets/img/logo.svg')"
             alt="Vergi Hesaplayıcı Logo"
             draggable="false"
             height="30"
             width="190" />
     </nuxt-link>
 </template>
-
-<script>
-import logo from "@/assets/img/logo.svg";
-
-export default {
-    data: () => ({
-        logo
-    })
-};
-</script>
 
 <style lang="scss" scoped="">
 .logo {
