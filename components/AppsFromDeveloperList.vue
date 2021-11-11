@@ -48,11 +48,6 @@ export default {
                 url: "https://rebootify.page.link/store"
             }
         ]
-    }),
-    props: {
-        subheader: {
-            type: String
-        }
-    }
+    })
 };
 </script>
