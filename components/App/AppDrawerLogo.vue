@@ -14,15 +14,15 @@
 
 <style lang="scss" scoped="">
 .logo {
-    height: 64px;
+    height: 56px;
     padding: 0 16px;
-    background: #ffffff1f;
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: center;
-    @media(max-width: 960px) {
-        height: 56px
+    @media(min-width: 960px) {
+        height: 64px;
+        background: #ffffff1f
     }
     img {
         vertical-align: middle;
