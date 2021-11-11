@@ -1,17 +1,15 @@
 <template>
-	<v-chip-group
+    <div
         v-bind="$attrs"
-        :value="value"
-        @change="emit($event)"
-        column="">
+        class="chips">
         <v-chip
             v-for="(preset, index) in presets"
             :key="index"
-            :value="index"
+            @click="emit(index)"
             outlined="">
             {{ preset.title }}
         </v-chip>
-    </v-chip-group>
+    </div>
 </template>
 
 <script>
@@ -34,3 +32,13 @@ export default {
     }
 };
 </script>
+
+<style scoped="">
+.chips {
+    margin: -4px
+}
+
+/deep/ .v-chip {
+    margin: 4px
+}
+</style>
