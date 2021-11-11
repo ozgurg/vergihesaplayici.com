@@ -15,6 +15,7 @@
                 <img
                     :alt="app.title"
                     :src="require(`@/assets/img/apps/${app.icon}`)"
+                    loading="lazy"
                     draggable="false"
                     height="24"
                     width="24" />
