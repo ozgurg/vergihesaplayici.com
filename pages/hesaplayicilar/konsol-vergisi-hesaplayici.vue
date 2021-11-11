@@ -36,32 +36,32 @@
                     <CalculatorCalculatedFromSalePriceAlert v-if="form.currency === 'TRY'" />
                     <CalculatorCustomsInfoAlert v-else />
 
-                    <CalculatorResultHorizontalForm
+                    <CalculatorResultFormRow
                         :value="$moneyFormat(results.prices.basePrice, 'TRY')"
                         class="mb-5"
                         label="Vergisiz fiyat" />
 
-                    <CalculatorResultHorizontalForm
+                    <CalculatorResultFormRow
                         :label="`Gümrük vergisi (%${results.taxRates.custom})`"
                         :value="$moneyFormat(results.taxFees.custom, 'TRY')"
                         class="mb-5" />
 
-                    <CalculatorResultHorizontalForm
+                    <CalculatorResultFormRow
                         :label="`ÖTV (%${results.taxRates.sct})`"
                         :value="$moneyFormat(results.taxFees.sct, 'TRY')"
                         class="mb-5" />
 
-                    <CalculatorResultHorizontalForm
+                    <CalculatorResultFormRow
                         :label="`KDV (%${results.taxRates.vat})`"
                         :value="$moneyFormat(results.taxFees.vat, 'TRY')"
                         class="mb-5" />
 
-                    <CalculatorResultHorizontalForm
+                    <CalculatorResultFormRow
                         :label="`Toplam vergi (%${results.taxRates.total})`"
                         :value="$moneyFormat(results.taxFees.total, 'TRY')"
                         class="mb-5" />
 
-                    <CalculatorResultHorizontalForm
+                    <CalculatorResultFormRow
                         :value="$moneyFormat(results.prices.salePrice, 'TRY')"
                         class="mb-5"
                         label="Tahmini satış fiyatı" />

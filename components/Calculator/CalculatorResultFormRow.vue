@@ -10,7 +10,7 @@
             outlined=""
             readonly="">
             <template slot="append">
-                <CalculatorResultHorizontalFormCopyButton :value="value" />
+                <CalculatorResultFormRowCopyButton :value="value" />
             </template>
         </v-text-field>
     </CalculatorFormRow>

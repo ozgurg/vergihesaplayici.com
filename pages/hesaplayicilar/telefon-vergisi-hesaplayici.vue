@@ -51,51 +51,51 @@
                     <CalculatorCalculatedFromSalePriceAlert v-if="form.currency === 'TRY'" />
                     <CalculatorCustomsInfoAlert v-else />
 
-                    <CalculatorResultHorizontalForm
+                    <CalculatorResultFormRow
                         :value="$moneyFormat(results.prices.basePrice, 'TRY')"
                         class="mb-5"
                         label="Vergisiz fiyat" />
 
                     <template v-if="registrationIsImport">
-                        <CalculatorResultHorizontalForm
+                        <CalculatorResultFormRow
                             :label="`Kültür Bakanlığı (%${results.taxRates.ministryOfCulture})`"
                             :value="$moneyFormat(results.taxFees.ministryOfCulture, 'TRY')"
                             class="mb-5" />
 
-                        <CalculatorResultHorizontalForm
+                        <CalculatorResultFormRow
                             :label="`TRT bandrolü (%${results.taxRates.trt})`"
                             :value="$moneyFormat(results.taxFees.trt, 'TRY')"
                             class="mb-5" />
 
-                        <CalculatorResultHorizontalForm
+                        <CalculatorResultFormRow
                             :label="`ÖTV (%${results.taxRates.sct})`"
                             :value="$moneyFormat(results.taxFees.sct, 'TRY')"
                             class="mb-5" />
 
-                        <CalculatorResultHorizontalForm
+                        <CalculatorResultFormRow
                             :label="`KDV (%${results.taxRates.vat})`"
                             :value="$moneyFormat(results.taxFees.vat, 'TRY')"
                             class="mb-5" />
                     </template>
 
                     <template v-else>
-                        <CalculatorResultHorizontalForm
+                        <CalculatorResultFormRow
                             :label="`TRT bandrolü (${$moneyFormat(results.taxRates.trtPassport, 'EUR')})`"
                             :value="$moneyFormat(results.taxFees.trtPassport, 'TRY')"
                             class="mb-5" />
 
-                        <CalculatorResultHorizontalForm
+                        <CalculatorResultFormRow
                             :value="$moneyFormat(results.taxFees.registration, 'TRY')"
                             class="mb-5"
                             label="Kayıt ücreti" />
                     </template>
 
-                    <CalculatorResultHorizontalForm
+                    <CalculatorResultFormRow
                         :label="`Toplam vergi (%${results.taxRates.total})`"
                         :value="$moneyFormat(results.taxFees.total, 'TRY')"
                         class="mb-5" />
 
-                    <CalculatorResultHorizontalForm
+                    <CalculatorResultFormRow
                         :value="$moneyFormat(results.prices.salePrice, 'TRY')"
                         class="mb-5"
                         label="Tahmini satış fiyatı" />
