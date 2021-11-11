@@ -16,6 +16,7 @@
 .logo {
     height: 64px;
     padding: 0 16px;
+    background: #ffffff1f;
     display: flex;
     align-items: center;
     flex-direction: row;
