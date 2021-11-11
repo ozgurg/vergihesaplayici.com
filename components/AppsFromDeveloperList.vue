@@ -14,7 +14,7 @@
             <v-list-item-icon>
                 <img
                     :alt="app.title"
-                    :src="getIcon(app.icon)"
+                    :src="require(`@/assets/img/apps/${app.icon}`)"
                     draggable="false"
                     height="24"
                     width="24" />
@@ -51,11 +51,6 @@ export default {
     props: {
         subheader: {
             type: String
-        }
-    },
-    methods: {
-        getIcon(path) {
-            return require(`@/assets/img/apps/${path}`);
         }
     }
 };
