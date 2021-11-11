@@ -7,7 +7,7 @@
             :src="require('@/assets/img/logo.svg')"
             alt="Vergi Hesaplayıcı Logo"
             draggable="false"
-            height="30"
+            height="25"
             width="190" />
     </nuxt-link>
 </template>
