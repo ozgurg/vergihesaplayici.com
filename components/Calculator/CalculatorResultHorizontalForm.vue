@@ -1,5 +1,5 @@
 <template>
-    <CalculatorHorizontalForm
+    <CalculatorFormRow
         v-bind="$attrs"
         :label="label">
         <v-text-field
@@ -13,7 +13,7 @@
                 <CalculatorResultHorizontalFormCopyButton :value="value" />
             </template>
         </v-text-field>
-    </CalculatorHorizontalForm>
+    </CalculatorFormRow>
 </template>
 
 <script>

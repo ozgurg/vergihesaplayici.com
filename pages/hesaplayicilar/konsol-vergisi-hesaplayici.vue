@@ -3,13 +3,13 @@
         <AppHeader>{{ head.title }}</AppHeader>
 
         <InnerContainer>
-            <CalculatorHorizontalForm class="mb-5">
+            <CalculatorFormRow class="mb-5">
                 <CalculatorPresets
                     v-model="ui.preset"
                     :presets="ui.presets" />
-            </CalculatorHorizontalForm>
+            </CalculatorFormRow>
 
-            <CalculatorHorizontalForm label="Konsol fiyatı">
+            <CalculatorFormRow label="Konsol fiyatı">
                 <v-text-field
                     v-model.number="form.price"
                     :prefix="getCurrency(form.currency)['sign']"
@@ -25,7 +25,7 @@
                             style="width:110px" />
                     </template>
                 </v-text-field>
-            </CalculatorHorizontalForm>
+            </CalculatorFormRow>
 
             <CalculatorResultTabs
                 v-model="ui.tab"
@@ -66,13 +66,13 @@
                         class="mb-5"
                         label="Tahmini satış fiyatı" />
 
-                    <CalculatorHorizontalForm class="mb-6">
+                    <CalculatorFormRow class="mb-6">
                         <CalculatorMinimumWageAlert :price="results.prices.salePrice" />
-                    </CalculatorHorizontalForm>
+                    </CalculatorFormRow>
 
-                    <CalculatorHorizontalForm>
+                    <CalculatorFormRow>
                         <CalculatorShare :data="form" />
-                    </CalculatorHorizontalForm>
+                    </CalculatorFormRow>
                 </template>
             </CalculatorResultTabs>
         </InnerContainer>

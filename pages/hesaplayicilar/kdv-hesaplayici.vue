@@ -3,9 +3,9 @@
         <AppHeader>{{ head.title }}</AppHeader>
 
         <InnerContainer>
-            <CalculatorHorizontalForm label="// TODO">
+            <CalculatorFormRow label="// TODO">
                 // TODO
-            </CalculatorHorizontalForm>
+            </CalculatorFormRow>
 
             <CalculatorResultTabs
                 v-model="ui.tab"
