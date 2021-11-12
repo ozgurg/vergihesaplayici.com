@@ -3,7 +3,7 @@
         v-bind="$attrs"
         class="text-center"
         elevation="0">
-        <v-card-subtitle class="pb-0 pt-2">{{ currencyTitle }}</v-card-subtitle>
+        <v-card-subtitle class="pb-0 pt-2">{{ currency }}</v-card-subtitle>
 
         <v-card-title class="justify-center pt-0 pb-2 px-0">
             <div class="mx-auto">
@@ -40,21 +40,16 @@ export default {
         async load() {
             const vm = this;
 
-            await vm.$store.dispatch("exchange-rates/loadExchangeRateFromApi", vm.currency);
+            vm.isLoaded = false;
 
-            vm.exchangeRate = vm.$store.get(`exchange-rates/currencies@${vm.currency}`);
+            vm.exchangeRate = await vm.$store.dispatch("exchange-rates/loadExchangeRateFromApi", vm.currency);
+
             vm.isLoaded = true;
-        }
-    },
-    computed: {
-        currencyTitle() {
-            const vm = this;
-            return vm.$store.get(`exchange-rates/currencies@${vm.currency}.title`);
         }
     },
     async mounted() {
         const vm = this;
-        vm.load();
+        await vm.load();
     }
 };
 </script>

@@ -1,12 +1,10 @@
-import { make } from "vuex-pathify";
-
 export const state = () => ({
     currencies: {
-        TRY: { sign: "₺", rate: 1, title: "TRY" },
-        USD: { sign: "$", rate: 0, title: "USD" },
-        EUR: { sign: "€", rate: 0, title: "EUR" },
-        INR: { sign: "₹", rate: 0, title: "INR" },
-        CNY: { sign: "¥", rate: 0, title: "CNY" }
+        TRY: { sign: "₺", rate: 1 },
+        USD: { sign: "$", rate: 0 },
+        EUR: { sign: "€", rate: 0 },
+        INR: { sign: "₹", rate: 0 },
+        CNY: { sign: "¥", rate: 0 }
     }
 });
 
@@ -17,7 +15,6 @@ export const mutations = {
 };
 
 export const actions = {
-    // ...make.actions(state),
     async loadExchangeRateFromApi({ state, commit }, currency) {
         if (currency === "TRY" || state.currencies[currency]["rate"] > 0) return;
 
@@ -29,11 +26,12 @@ export const actions = {
                     rate: response["rates"]["TRY"]
                 });
             });
+
+        return state.currencies[currency];
     }
 };
 
 export const getters = {
-    ...make.getters(state),
     availableCurrencies(state) {
         return Object.keys(state.currencies);
     }
