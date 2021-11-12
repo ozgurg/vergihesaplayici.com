@@ -54,6 +54,28 @@
                 <span>WhatsApp ile gönder</span>
             </v-tooltip>
 
+            <v-tooltip
+                allow-overflow=""
+                bottom="">
+                <template v-slot:activator="{ on, attrs }">
+                    <v-btn
+                        v-bind="attrs"
+                        v-on="on"
+                        :href="telegramShareUrl"
+                        link=""
+                        rel="nofollow noopener noreferrer"
+                        target="_blank">
+                        <img
+                            :src="require('@/assets/img/ic-telegram.svg')"
+                            width="24"
+                            height="24"
+                            loading="lazy"
+                            alt="Telegram ile gönder" />
+                    </v-btn>
+                </template>
+                <span>Telegram ile gönder</span>
+            </v-tooltip>
+
             <CalculatorShareCopyButton :value="url" />
         </v-btn-toggle>
 	</div>
@@ -85,6 +107,10 @@ export default {
         whatsAppShareUrl() {
             const vm = this;
             return `https://wa.me/?text=${vm.url}`;
+        },
+        telegramShareUrl() {
+            const vm = this;
+            return `https://telegram.me/share/url?url=${vm.url}&text=${document.title}`;
         }
     }
 };
