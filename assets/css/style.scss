@@ -2,6 +2,11 @@ body {
     user-select: none
 }
 
+video {
+    height: auto;
+    max-width: 100%
+}
+
 .v-navigation-drawer__content {
     display: flex;
     flex-direction: column

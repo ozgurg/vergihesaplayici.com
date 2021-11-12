@@ -58,9 +58,3 @@ export default {
     }
 };
 </script>
-
-<style lang="scss" scoped="">
-span {
-	line-height: 32px
-}
-</style>
