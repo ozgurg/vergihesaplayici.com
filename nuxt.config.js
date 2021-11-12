@@ -1,24 +1,16 @@
 import tr from "vuetify/es5/locale/tr";
 import colors from "vuetify/lib/util/colors";
 
-const Config = {
-    baseUrl: "https://vergihesaplayici.com",
-    host: "192.168.1.3",
-    port: 3000,
-    name: "Vergi Hesaplayıcı",
-    primaryColor: "#88DF95"
-};
-
 export default {
     target: "static",
     components: true,
     server: {
-        host: Config.host,
-        port: Config.port
+        host: process.env.HOST,
+        port: process.env.PORT
     },
     head: {
-        titleTemplate: `%s - ${Config.name}`,
-        title: Config.name,
+        titleTemplate: `%s - ${process.env.APP_NAME}`,
+        title: process.env.APP_NAME,
         meta: [
             { charset: "UTF-8" },
             { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -26,8 +18,8 @@ export default {
             { name: "format-detection", content: "telephone=no" },
             { name: "msapplication-tap-highlight", content: "no" },
             { name: "twitter:card", content: "summary" },
-            { name: "twitter:site", content: "@ozgurg0" },
-            { name: "twitter:creator", content: "@ozgurg0" },
+            { name: "twitter:site", content: process.env.APP_TWITTER_USERNAME },
+            { name: "twitter:creator", content: process.env.APP_TWITTER_USERNAME },
             { "http-equiv": "X-UA-Compatible", "content": "ie=edge" },
             { hid: "description", name: "description", content: "vergihesaplayici.com, vergi hesaplar." }
         ],
@@ -40,6 +32,7 @@ export default {
         ]
     },
     buildModules: [
+        "@nuxtjs/dotenv",
         "@nuxtjs/eslint-module",
         "@nuxtjs/vuetify"
     ],
@@ -49,14 +42,11 @@ export default {
         [
             "nuxt-canonical",
             {
-                baseUrl: Config.baseUrl,
+                baseUrl: process.env.APP_URL,
                 trailingSlashes: false
             }
         ]
     ],
-    env: {
-        BASE_URL: Config.baseUrl
-    },
     build: {
         extractCSS: true
     },
@@ -71,7 +61,7 @@ export default {
         { src: "@/plugins/client/vue-disqus.js", mode: "client" }
     ],
     loading: {
-        color: Config.primaryColor,
+        color: process.env.APP_PRIMARY_COLOR,
         failedColor: colors.red.base,
         throttle: 600
     },
@@ -87,7 +77,7 @@ export default {
             },
             themes: {
                 dark: {
-                    primary: Config.primaryColor
+                    primary: process.env.APP_PRIMARY_COLOR
                 }
             }
         },
@@ -98,7 +88,7 @@ export default {
         }
     },
     sitemap: {
-        hostname: Config.baseUrl,
+        hostname: process.env.APP_URL,
         gzip: true,
         defaults: {
             changefreq: "monthly",
@@ -108,11 +98,11 @@ export default {
     },
     pwa: {
         meta: {
-            theme_color: Config.primaryColor
+            theme_color: process.env.APP_PRIMARY_COLOR
         },
         manifest: {
-            name: Config.name,
-            short_name: Config.name,
+            name: process.env.APP_NAME,
+            short_name: process.env.APP_NAME,
             lang: "tr"
         }
     }

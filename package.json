@@ -39,6 +39,7 @@
 	"devDependencies": {
 		"@babel/plugin-proposal-class-properties": "^7.14.5",
 		"@nuxt/types": "^2.15.7",
+		"@nuxtjs/dotenv": "^1.4.1",
 		"@nuxtjs/eslint-config": "^6.0.1",
 		"@nuxtjs/eslint-module": "^3.0.2",
 		"@vue/cli-plugin-unit-jest": "^4.5.13",

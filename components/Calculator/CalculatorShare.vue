@@ -48,7 +48,7 @@ export default {
     computed: {
         url() {
             const vm = this;
-            return `${process.env.BASE_URL}${vm.$route.path}?${querystring.stringify(vm.data)}`;
+            return `${process.env.APP_URL}${vm.$route.path}?${querystring.stringify(vm.data)}`;
         },
         facebookShareUrl() {
             const vm = this;
