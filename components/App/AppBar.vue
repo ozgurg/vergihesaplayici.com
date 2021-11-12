@@ -7,7 +7,7 @@
         class="v-bar--underline">
         <v-app-bar-nav-icon @click="toggleDrawer()" />
 
-        <div class="w-100 d-flex justify-center">
+        <div class="d-flex justify-center flex-grow-1">
             <AppDrawerLogo style="margin-left:-48px" />
         </div>
     </v-app-bar>

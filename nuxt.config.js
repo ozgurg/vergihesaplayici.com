@@ -51,7 +51,6 @@ export default {
         extractCSS: true
     },
     css: [
-        "@/assets/css/vuetify-customization.scss",
         "@/assets/css/style.scss"
     ],
     plugins: [
