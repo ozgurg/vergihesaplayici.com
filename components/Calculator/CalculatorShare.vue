@@ -65,3 +65,10 @@ export default {
     }
 };
 </script>
+
+<style scoped="">
+/* Remove active background from the buttons */
+/deep/ .v-btn--active::before {
+    content: none
+}
+</style>

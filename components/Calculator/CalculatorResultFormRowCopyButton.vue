@@ -2,18 +2,17 @@
     <v-tooltip
         v-model="isTooltipShown"
         allow-overflow=""
-        bottom="">
+        right="">
         <template v-slot:activator="{ on, attrs }">
             <v-btn
                 v-bind="attrs"
                 v-on="on"
                 @click="copy(value)"
-                :color="color"
                 icon="">
-                <v-icon>{{ icon }}</v-icon>
+                <v-icon :color="color">{{ icon }}</v-icon>
             </v-btn>
         </template>
-        <span>{{ title }}</span>
+        <span>Sonucu kopyala</span>
     </v-tooltip>
 </template>
 
@@ -35,7 +34,7 @@ export default {
 
             vm.$copyText(text);
 
-            vm.isTooltipShown = true;
+            vm.isTooltipShown = false;
             vm.isCopied = true;
 
             if (vm.copiedTimeout !== null) {
@@ -43,19 +42,14 @@ export default {
             }
 
             vm.copiedTimeout = setTimeout(() => {
-                vm.isTooltipShown = false;
                 vm.isCopied = false;
             }, 1000);
         }
     },
     computed: {
-        title() {
-            const vm = this;
-            return vm.isCopied ? "Kopyalandı!" : "Kopyala";
-        },
         icon() {
             const vm = this;
-            return vm.isCopied ? "mdi-clipboard-check" : "mdi-clipboard-outline";
+            return vm.isCopied ? "mdi-check" : "mdi-content-copy";
         },
         color() {
             const vm = this;

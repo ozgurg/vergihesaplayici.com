@@ -8,10 +8,10 @@
                 v-bind="attrs"
                 v-on="on"
                 @click="copy(value)">
-                <v-icon color="primary">{{ icon }}</v-icon>
+                <v-icon :color="color">{{ icon }}</v-icon>
             </v-btn>
         </template>
-        <span>{{ title }}</span>
+        <span>Sayfa bağlantısını kopyala</span>
     </v-tooltip>
 </template>
 
@@ -33,7 +33,7 @@ export default {
 
             vm.$copyText(text);
 
-            vm.isTooltipShown = true;
+            vm.isTooltipShown = false;
             vm.isCopied = true;
 
             if (vm.copiedTimeout !== null) {
@@ -41,19 +41,18 @@ export default {
             }
 
             vm.copiedTimeout = setTimeout(() => {
-                vm.isTooltipShown = false;
                 vm.isCopied = false;
             }, 1000);
         }
     },
     computed: {
-        title() {
-            const vm = this;
-            return vm.isCopied ? "Kopyalandı!" : "Sayfa bağlantısını kopyala";
-        },
         icon() {
             const vm = this;
-            return vm.isCopied ? "mdi-check" : "mdi-link";
+            return vm.isCopied ? "mdi-check" : "mdi-content-copy";
+        },
+        color() {
+            const vm = this;
+            return vm.isCopied ? "white" : "grey lighten-1";
         }
     }
 };
