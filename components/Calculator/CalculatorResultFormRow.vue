@@ -10,7 +10,7 @@
             outlined=""
             readonly="">
             <template slot="append">
-                <CalculatorResultFormRowCopyButton :value="value" />
+                <CopyButton :value="value" />
             </template>
         </v-text-field>
     </CalculatorFormRow>
@@ -31,10 +31,12 @@ export default {
 
 <style scoped="">
 /deep/ .v-input__append-inner {
-    margin-top: 2px !important
+    padding-left: 12px !important;
+    margin-top: auto !important;
+    margin-bottom: auto !important
 }
 
 /deep/ .v-input__slot {
-    padding-right: 4px !important
+    padding-right: 0 !important
 }
 </style>
