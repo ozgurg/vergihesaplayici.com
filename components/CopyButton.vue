@@ -3,6 +3,7 @@
         v-bind="$attrs"
         v-ripple="false"
         @click="copy(value)"
+        :class="{'pointer-events-none': isCopied}"
         plain=""
         text=""
         tile="">
