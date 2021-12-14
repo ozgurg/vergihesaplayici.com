@@ -2,10 +2,10 @@
     <v-btn
         v-bind="$attrs"
         v-ripple="false"
-        plain
-        text
-        tile
-        @click="copy(value)">
+        @click="copy(value)"
+        plain=""
+        text=""
+        tile="">
         {{ text }}
     </v-btn>
 </template>
