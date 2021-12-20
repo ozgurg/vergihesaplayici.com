@@ -20,13 +20,20 @@ export default {
     props: {
         value: {
             type: String
+        },
+        containerId: {
+            type: String
         }
     },
     methods: {
         copy(text) {
             const vm = this;
 
-            vm.$copyText(text);
+            if (vm.containerId !== undefined) {
+                vm.$copyText(text, document.getElementById(vm.containerId));
+            } else {
+                vm.$copyText(text);
+            }
 
             vm.isCopied = true;
 
