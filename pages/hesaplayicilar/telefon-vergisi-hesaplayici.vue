@@ -104,7 +104,18 @@
                     </CalculatorFormRow>
 
                     <CalculatorFormRow>
-                        <CalculatorShare :data="form" />
+                        <v-btn
+                            @click="ui.isShareDialogShown = true"
+                            outlined=""
+                            color="primary"
+                            large="">
+                            <v-icon left="">mdi-share</v-icon>
+                            Paylaş...
+                        </v-btn>
+
+                        <CalculatorShareDialog
+                            v-model="ui.isShareDialogShown"
+                            :data="form" />
                     </CalculatorFormRow>
                 </template>
             </CalculatorResultTabs>
@@ -144,7 +155,8 @@ export default {
                 { title: "İthalat yoluyla kayıtlı (Resmi)", value: PhoneTaxCalculator.Registration.Import },
                 { title: "Pasaport yoluyla kayıtlı", value: PhoneTaxCalculator.Registration.Passport }
             ],
-            tab: 1
+            tab: 1,
+            isShareDialogShown: false
         },
         form: {
             currency: "USD",

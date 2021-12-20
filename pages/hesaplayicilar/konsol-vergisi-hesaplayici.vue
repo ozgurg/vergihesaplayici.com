@@ -70,7 +70,18 @@
                     </CalculatorFormRow>
 
                     <CalculatorFormRow>
-                        <CalculatorShare :data="form" />
+                        <v-btn
+                            @click="ui.isShareDialogShown = true"
+                            outlined=""
+                            color="primary"
+                            large="">
+                            <v-icon left="">mdi-share</v-icon>
+                            Paylaş...
+                        </v-btn>
+
+                        <CalculatorShareDialog
+                            v-model="ui.isShareDialogShown"
+                            :data="form" />
                     </CalculatorFormRow>
                 </template>
             </CalculatorResultTabs>
@@ -105,7 +116,8 @@ export default {
                 { title: "PlayStation 5 (825GB)", price: 499, currency: "EUR" }
             ],
             preset: -1,
-            tab: 1
+            tab: 1,
+            isShareDialogShown: false
         },
         form: {
             currency: "USD",
