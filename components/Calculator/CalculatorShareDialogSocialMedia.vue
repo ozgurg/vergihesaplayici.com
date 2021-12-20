@@ -4,7 +4,7 @@
             <v-col
                 v-for="(item, key) in items"
                 :key="key"
-                cols="6"
+                cols="4"
                 sm="2">
                 <v-tooltip bottom="">
                     <template v-slot:activator="{ on, attrs }">
@@ -19,7 +19,7 @@
                             block=""
                             elevation="0"
                             rounded=""
-                            x-large="">
+                            large="">
                             <template v-if="item.icon.endsWith('.svg')">
                                 <img
                                     :src="require(`@/assets/img/${item.icon}`)"
