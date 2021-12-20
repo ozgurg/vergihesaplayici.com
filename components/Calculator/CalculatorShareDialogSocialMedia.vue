@@ -18,7 +18,7 @@
                             target="_blank"
                             block=""
                             elevation="0"
-                            class="rounded-pill"
+                            rounded=""
                             x-large="">
                             <template v-if="item.icon.endsWith('.svg')">
                                 <img
@@ -47,7 +47,7 @@
                     light=""
                     block=""
                     elevation="0"
-                    class="rounded-pill"
+                    rounded=""
                     large="">
                     Diğer...
                 </v-btn>
