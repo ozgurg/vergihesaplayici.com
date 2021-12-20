@@ -37,6 +37,21 @@
                     <span>{{ item.title }}</span>
                 </v-tooltip>
             </v-col>
+
+            <v-col
+                v-if="isWebShareApiSupported"
+                cols="12">
+                <v-btn
+                    @click="share()"
+                    color="white"
+                    light=""
+                    block=""
+                    elevation="0"
+                    class="rounded-pill"
+                    large="">
+                    Diğer...
+                </v-btn>
+            </v-col>
         </v-row>
 
         <v-checkbox
@@ -57,6 +72,17 @@ export default {
         data: {
             type: Object,
             required: true
+        }
+    },
+    methods: {
+        share() {
+            const vm = this;
+
+            navigator.share({
+                title: document.title,
+                text: document.title,
+                url: vm.url
+            }).then().catch();
         }
     },
     computed: {
@@ -109,6 +135,9 @@ export default {
                     icon: "mdi-email"
                 }
             ];
+        },
+        isWebShareApiSupported() {
+            return navigator.share;
         }
     }
 };
