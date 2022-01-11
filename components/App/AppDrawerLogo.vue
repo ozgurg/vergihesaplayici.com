@@ -21,8 +21,7 @@
     flex-direction: row;
     justify-content: center;
     @media(min-width: 960px) {
-        height: 64px;
-        background: #ffffff1f
+        height: 64px
     }
     img {
         vertical-align: middle;
