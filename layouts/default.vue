@@ -13,8 +13,6 @@
 
             <Nuxt />
         </Main>
-
-        <AppVersion />
     </v-app>
 </template>
 
