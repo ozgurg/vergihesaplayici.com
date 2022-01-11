@@ -24,12 +24,12 @@
                                 <img
                                     :src="require(`@/assets/img/${item.icon}`)"
                                     :alt="item.title"
-                                    width="28"
-                                    height="28"
+                                    width="24"
+                                    height="24"
                                     loading="lazy" />
                             </template>
                             <template v-else>
-                                <v-icon size="28">{{ item.icon }}</v-icon>
+                                <v-icon size="24">{{ item.icon }}</v-icon>
                             </template>
                         </v-btn>
                     </template>
