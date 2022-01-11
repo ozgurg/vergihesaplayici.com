@@ -10,7 +10,7 @@
 </template>
 
 <script>
-const MINIMUM_WAGE = 2825.90;
+const MINIMUM_WAGE = 4253.40; // Source: https://www.csgb.gov.tr/asgari-ucret/asgari-ucret-2022/
 
 export default {
     props: {
