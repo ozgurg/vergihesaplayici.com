@@ -1,9 +1,11 @@
 <template>
     <div class="pa-8">
-        <v-row class="mb-2">
+        <v-row class="mb-2 ma-n2"
+               no-gutters="">
             <v-col
                 v-for="(item, key) in items"
                 :key="key"
+                class="pa-2"
                 cols="4"
                 sm="2">
                 <v-tooltip bottom="">
@@ -40,7 +42,8 @@
 
             <v-col
                 v-if="isWebShareApiSupported"
-                cols="12">
+                cols="12"
+                class="pa-2">
                 <v-btn
                     @click="share()"
                     color="white"
@@ -54,10 +57,12 @@
             </v-col>
         </v-row>
 
-        <v-checkbox
-            v-model="includeCalculatorParams"
-            hide-details=""
-            label="Hesaplayıcı parametrelerini dahil et" />
+        <div class="mt-6">
+            <v-checkbox
+                v-model="includeCalculatorParams"
+                hide-details=""
+                label="Hesaplayıcı parametrelerini dahil et" />
+        </div>
     </div>
 </template>
 
