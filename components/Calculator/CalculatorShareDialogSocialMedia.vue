@@ -137,7 +137,7 @@ export default {
                 {
                     url: `mailto:?subject=${document.title}&body=${vm.url}`,
                     title: "E-posta gönder",
-                    color: "#ffb300",
+                    color: "#ecb064",
                     icon: "mdi-email"
                 }
             ];
