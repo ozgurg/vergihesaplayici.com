@@ -1,7 +1,5 @@
 <template>
-    <div
-        id="calculatorShareDialogCopyUrl"
-        class="pa-8">
+    <div id="calculatorShareDialogCopyUrl">
         <v-text-field
             :value="url"
             hide-details=""

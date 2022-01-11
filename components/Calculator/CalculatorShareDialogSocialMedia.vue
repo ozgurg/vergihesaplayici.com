@@ -1,7 +1,8 @@
 <template>
-    <div class="pa-8">
-        <v-row class="mb-2 ma-n2"
-               no-gutters="">
+    <div>
+        <v-row
+            class="mb-2 ma-n2"
+            no-gutters="">
             <v-col
                 v-for="(item, key) in items"
                 :key="key"

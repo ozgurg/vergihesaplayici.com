@@ -7,7 +7,9 @@
         @click:outside="close()"
         width="700">
         <v-card>
-            <v-toolbar flat="">
+            <v-toolbar
+                class="px-2"
+                flat="">
                 <v-toolbar-title class="text-center">Paylaş</v-toolbar-title>
 
                 <v-spacer />
@@ -17,47 +19,72 @@
                     icon="">
                     <v-icon>mdi-close</v-icon>
                 </v-btn>
-
-                <template v-slot:extension>
-                    <v-tabs
-                        v-model="currentTab"
-                        grow="">
-                        <v-tab>
-                            <v-icon left="">mdi-link</v-icon>
-                            Bağlantı
-                        </v-tab>
-
-                        <v-tab>
-                            <v-icon left="">mdi-cellphone-screenshot</v-icon>
-                            Ekran görüntüsü
-                        </v-tab>
-
-                        <v-tab>
-                            <v-icon left="">mdi-share-variant</v-icon>
-                            Sosyal medya
-                        </v-tab>
-                    </v-tabs>
-                </template>
             </v-toolbar>
 
-            <v-tabs-items v-model="currentTab">
-                <v-tab-item>
-                    <CalculatorShareDialogUrl :data="data" />
-                </v-tab-item>
+            <v-expansion-panels
+                :value="0"
+                tile=""
+                accordion=""
+                focusable="">
+                <v-expansion-panel>
+                    <v-expansion-panel-header>
+                        <div class="d-flex align-center">
+                            <v-icon
+                                class="mr-4"
+                                left="">
+                                mdi-link
+                            </v-icon>
+                            Bağlantı
+                        </div>
+                    </v-expansion-panel-header>
+                    <v-expansion-panel-content>
+                        <div class="pl-2 pr-2 pt-8 pb-4">
+                            <CalculatorShareDialogUrl :data="data" />
+                        </div>
+                    </v-expansion-panel-content>
+                </v-expansion-panel>
 
-                <v-tab-item class="pa-8">
-                    <v-alert
-                        color="info"
-                        text=""
-                        class="ma-0">
-                        Yakında 😉
-                    </v-alert>
-                </v-tab-item>
+                <v-expansion-panel>
+                    <v-expansion-panel-header>
+                        <div class="d-flex align-center">
+                            <v-icon
+                                class="mr-4"
+                                left="">
+                                mdi-cellphone-screenshot
+                            </v-icon>
+                            Ekran görüntüsü
+                        </div>
+                    </v-expansion-panel-header>
+                    <v-expansion-panel-content>
+                        <div class="pl-2 pr-2 pt-8 pb-4">
+                            <v-alert
+                                color="info"
+                                text=""
+                                class="ma-0">
+                                Yakında 😉
+                            </v-alert>
+                        </div>
+                    </v-expansion-panel-content>
+                </v-expansion-panel>
 
-                <v-tab-item>
-                    <CalculatorShareDialogSocialMedia :data="data" />
-                </v-tab-item>
-            </v-tabs-items>
+                <v-expansion-panel>
+                    <v-expansion-panel-header>
+                        <div class="d-flex align-center">
+                            <v-icon
+                                class="mr-4"
+                                left="">
+                                mdi-share-variant
+                            </v-icon>
+                            Sosyal medya
+                        </div>
+                    </v-expansion-panel-header>
+                    <v-expansion-panel-content>
+                        <div class="pl-2 pr-2 pt-8 pb-4">
+                            <CalculatorShareDialogSocialMedia :data="data" />
+                        </div>
+                    </v-expansion-panel-content>
+                </v-expansion-panel>
+            </v-expansion-panels>
         </v-card>
     </v-dialog>
 </template>
