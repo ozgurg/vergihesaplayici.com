@@ -79,11 +79,6 @@ export default {
                     primary: process.env.APP_PRIMARY_COLOR
                 }
             }
-        },
-        defaultAssets: {
-            font: {
-                family: "Ubuntu"
-            }
         }
     },
     sitemap: {
