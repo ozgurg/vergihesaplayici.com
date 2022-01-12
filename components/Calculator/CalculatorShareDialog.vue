@@ -44,25 +44,20 @@
                     </v-expansion-panel-content>
                 </v-expansion-panel>
 
-                <v-expansion-panel>
+                <v-expansion-panel disabled="">
                     <v-expansion-panel-header>
                         <div class="d-flex align-center">
                             <v-icon
+                                disabled=""
                                 class="mr-4"
                                 left="">
                                 mdi-cellphone-screenshot
                             </v-icon>
-                            Ekran görüntüsü
+                            Ekran görüntüsü (Yakında 😉)
                         </div>
                     </v-expansion-panel-header>
                     <v-expansion-panel-content>
                         <div class="pl-2 pr-2 pt-8 pb-4">
-                            <v-alert
-                                color="info"
-                                text=""
-                                class="ma-0">
-                                Yakında 😉
-                            </v-alert>
                         </div>
                     </v-expansion-panel-content>
                 </v-expansion-panel>
