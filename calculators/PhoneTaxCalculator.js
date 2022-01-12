@@ -25,7 +25,7 @@ class PhoneTaxCalculator extends BaseMultiCurrencyTaxCalculator {
         sct: 0, // TRY
         vat: 0, // TRY
         trtPassport: 0, // TRY
-        registration: 2006.20 // TRY
+        registration: 2732.4 // TRY Source: https://www.turmob.org.tr/arsiv/mbs/resmigazete/31696-4-4.pdf
     };
 
     /**

@@ -30,9 +30,9 @@ describe("PhoneTaxCalculator", () => {
         calculate(
             PhoneTaxCalculator.CalculationMode.FromSalePrice,
             [
-                { price: 500, expectedPrice: -1506.20 },
-                { price: 1500, expectedPrice: -506.20 },
-                { price: 5000, expectedPrice: 2993.80 }
+                { price: 500, expectedPrice: -2232.4 },
+                { price: 1500, expectedPrice: -1232.4 },
+                { price: 5000, expectedPrice: 2267.6 }
             ],
             PhoneTaxCalculator.Registration.Passport
         );
@@ -42,9 +42,9 @@ describe("PhoneTaxCalculator", () => {
         calculate(
             PhoneTaxCalculator.CalculationMode.FromBasePrice,
             [
-                { price: 500, expectedPrice: 2506.20 },
-                { price: 1500, expectedPrice: 3506.20 },
-                { price: 5000, expectedPrice: 7006.20 }
+                { price: 500, expectedPrice: 3232.4 },
+                { price: 1500, expectedPrice: 4232.4 },
+                { price: 5000, expectedPrice: 7732.4 }
             ],
             PhoneTaxCalculator.Registration.Passport
         );
