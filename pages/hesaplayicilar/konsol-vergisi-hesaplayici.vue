@@ -113,7 +113,8 @@ export default {
                 { title: "Xbox Series S (512GB)", price: 299, currency: "EUR" },
                 { title: "Xbox Series X (1TB)", price: 499, currency: "EUR" },
                 { title: "PlayStation 5 Digital Edition (825GB)", price: 399, currency: "EUR" },
-                { title: "PlayStation 5 (825GB)", price: 499, currency: "EUR" }
+                { title: "PlayStation 5 (825GB)", price: 499, currency: "EUR" },
+                { title: "Nintendo Switch OLED (64GB)", price: 349.99, currency: "USD" } // Source: https://en.wikipedia.org/wiki/Nintendo_Switch#cite_note-polygon_oled_announce-178
             ],
             preset: -1,
             tab: 1,
