@@ -7,7 +7,7 @@ describe("ConsoleTaxCalculator", () => {
             ConsoleTaxCalculator.CalculationMode.FromSalePrice,
             [
                 { price: 300, expectedPrice: 176.56 },
-                { price: 400, expectedPrice: 235.40 },
+                { price: 400, expectedPrice: 235.4 },
                 { price: 500, expectedPrice: 294.26 }
             ]
         );
@@ -19,7 +19,7 @@ describe("ConsoleTaxCalculator", () => {
             [
                 { price: 300, expectedPrice: 509.76 },
                 { price: 400, expectedPrice: 679.68 },
-                { price: 500, expectedPrice: 849.60 }
+                { price: 500, expectedPrice: 849.6 }
             ]
         );
     });

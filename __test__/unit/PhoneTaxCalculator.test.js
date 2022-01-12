@@ -19,7 +19,7 @@ describe("PhoneTaxCalculator", () => {
             PhoneTaxCalculator.CalculationMode.FromBasePrice,
             [
                 { price: 500, expectedPrice: 819.37 },
-                { price: 1500, expectedPrice: 2949.70 },
+                { price: 1500, expectedPrice: 2949.7 },
                 { price: 5000, expectedPrice: 9832.35 }
             ],
             PhoneTaxCalculator.Registration.Import
