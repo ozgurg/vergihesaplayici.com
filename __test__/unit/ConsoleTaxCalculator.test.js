@@ -1,58 +1,52 @@
-/* eslint-disable no-undef */
+import ConsoleTaxCalculator from "@/calculators/ConsoleTaxCalculator";
+import { state } from "@/store/exchange-rates";
 
-import BaseCalculator from "../../calculators/BaseCalculator";
-import ConsoleTaxCalculator from "../../calculators/ConsoleTaxCalculator";
-import { state } from "../../store/exchangeRates";
-
-/**
- * No need to fetch latest exchange rates from the API
- * Expected prices are calculated as if exchange rates were 1
- */
 describe("ConsoleTaxCalculator", () => {
-    it(`Prices: 300, 400, 500 / Mode: "${BaseCalculator.CalculationMode.FromSalePrice}"`, () => {
+    it(`Prices: 300, 400, 500 / Calculation mode: "${ConsoleTaxCalculator.CalculationMode.FromSalePrice}"`, () => {
         calculate(
-            BaseCalculator.CalculationMode.FromSalePrice,
+            ConsoleTaxCalculator.CalculationMode.FromSalePrice,
             [
-                { price: 300, expectedPrice: 176.55 },
-                { price: 400, expectedPrice: 235.40 },
+                { price: 300, expectedPrice: 176.56 },
+                { price: 400, expectedPrice: 235.4 },
                 { price: 500, expectedPrice: 294.26 }
             ]
         );
     });
 
-    it(`Prices: 300, 400, 500 / Mode: "${BaseCalculator.CalculationMode.FromBasePrice}"`, () => {
+    it(`Prices: 300, 400, 500 / Calculation mode: "${ConsoleTaxCalculator.CalculationMode.FromBasePrice}"`, () => {
         calculate(
-            BaseCalculator.CalculationMode.FromBasePrice,
+            ConsoleTaxCalculator.CalculationMode.FromBasePrice,
             [
                 { price: 300, expectedPrice: 509.76 },
                 { price: 400, expectedPrice: 679.68 },
-                { price: 500, expectedPrice: 849.60 }
+                { price: 500, expectedPrice: 849.6 }
             ]
         );
     });
 });
 
 /**
- * @param {string} mode
+ * @param {ConsoleTaxCalculator.CalculationMode} calculationMode
  * @param {array} prices
  */
-function calculate(mode, prices) {
+function calculate(calculationMode, prices) {
     for (const { price, expectedPrice } of prices) {
-        const calculator = new ConsoleTaxCalculator(
-            state().currencies,
+        const consoleTaxCalculator = new ConsoleTaxCalculator({
             price,
-            mode
-        ).calculate();
+            exchangeRates: state().currencies,
+            calculationMode
+        });
+        const results = consoleTaxCalculator.calculate().results();
 
-        switch (mode) {
-            case BaseCalculator.CalculationMode.FromSalePrice:
-                expect(calculator.prices.basePrice).toBe(expectedPrice);
-                expect(calculator.prices.salePrice).toBe(price);
+        switch (calculationMode) {
+            case ConsoleTaxCalculator.CalculationMode.FromSalePrice:
+                expect(results.prices.basePrice).toBe(expectedPrice);
+                expect(results.prices.salePrice).toBe(price);
                 break;
 
-            case BaseCalculator.CalculationMode.FromBasePrice:
-                expect(calculator.prices.basePrice).toBe(price);
-                expect(calculator.prices.salePrice).toBe(expectedPrice);
+            case ConsoleTaxCalculator.CalculationMode.FromBasePrice:
+                expect(results.prices.basePrice).toBe(price);
+                expect(results.prices.salePrice).toBe(expectedPrice);
                 break;
         }
     }

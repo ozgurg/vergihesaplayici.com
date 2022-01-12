@@ -10,7 +10,6 @@
 
 <script>
 export default {
-    name: "Main",
     computed: {
         containerGutterClass() {
             const vm = this;

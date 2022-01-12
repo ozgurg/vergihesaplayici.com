@@ -1,5 +1,5 @@
 <template>
-    <CalculatorHorizontalForm
+    <CalculatorFormRow
         v-bind="$attrs"
         :label="label">
         <v-text-field
@@ -10,15 +10,14 @@
             outlined=""
             readonly="">
             <template slot="append">
-                <CalculatorResultHorizontalFormCopyButton :value="value" />
+                <CopyButton :value="value" />
             </template>
         </v-text-field>
-    </CalculatorHorizontalForm>
+    </CalculatorFormRow>
 </template>
 
 <script>
 export default {
-    name: "CalculatorResultHorizontalForm",
     props: {
         label: {
             type: String
@@ -32,10 +31,12 @@ export default {
 
 <style scoped="">
 /deep/ .v-input__append-inner {
-    margin-top: 2px !important
+    padding-left: 12px !important;
+    margin-top: auto !important;
+    margin-bottom: auto !important
 }
 
 /deep/ .v-input__slot {
-    padding-right: 4px !important
+    padding-right: 0 !important
 }
 </style>

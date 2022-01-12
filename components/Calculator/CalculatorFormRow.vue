@@ -1,16 +1,12 @@
 <template>
     <div
         v-bind="$attrs"
-        class="horizontal-form">
-        <div class="horizontal-form__label-cell">
-            <label
-                v-if="label"
-                class="horizontal-form__label">
-                {{ label }}
-            </label>
+        class="form-row">
+        <div class="form-row__label">
+            <label v-if="label">{{ label }}</label>
         </div>
 
-        <div class="horizontal-form__content-cell">
+        <div class="form-row__content">
             <slot />
         </div>
     </div>
@@ -18,7 +14,6 @@
 
 <script>
 export default {
-    name: "CalculatorHorizontalForm",
     props: {
         label: {
             type: String
@@ -28,13 +23,13 @@ export default {
 </script>
 
 <style lang="scss">
-.horizontal-form {
+.form-row {
 	@media(min-width: 992px) {
 		display: flex;
 		align-items: center;
 		flex-direction: row
 	}
-	&__label-cell {
+	&__label {
 		padding-bottom: 4px;
 		@media(min-width: 992px) {
 			padding-bottom: 0;
@@ -43,19 +38,19 @@ export default {
 			display: flex;
 			padding-right: 12px
 		}
+        label {
+            width: 100%;
+            display: block;
+            text-align: left
+        }
 	}
-	&__content-cell {
+	&__content {
 		@media(min-width: 992px) {
 			display: flex;
 			width: 100%;
 			flex-grow: 1;
 			max-width: 100%
 		}
-	}
-	&__label {
-		width: 100%;
-		display: block;
-		text-align: left
 	}
 }
 </style>

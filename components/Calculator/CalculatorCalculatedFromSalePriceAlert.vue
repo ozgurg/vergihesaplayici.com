@@ -10,9 +10,3 @@
         Vergiler olmasaydı tahminen ne kadar ödeyeceğinizi "Vergisiz fiyat" alanından görebilirsiniz.
     </v-alert>
 </template>
-
-<script>
-export default {
-    name: "CalculatorCalculatedFromSalePriceAlert"
-};
-</script>

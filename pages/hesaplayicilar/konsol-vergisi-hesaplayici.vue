@@ -3,16 +3,16 @@
         <AppHeader>{{ head.title }}</AppHeader>
 
         <InnerContainer>
-            <CalculatorHorizontalForm class="mb-5">
+            <CalculatorFormRow class="mb-5">
                 <CalculatorPresets
                     v-model="ui.preset"
                     :presets="ui.presets" />
-            </CalculatorHorizontalForm>
+            </CalculatorFormRow>
 
-            <CalculatorHorizontalForm label="Konsol fiyatı">
+            <CalculatorFormRow label="Konsol fiyatı">
                 <v-text-field
                     v-model.number="form.price"
-                    :prefix="getCurrencySign(form.currency)"
+                    :prefix="getCurrency(form.currency)['sign']"
                     hide-details=""
                     outlined=""
                     step="any"
@@ -25,54 +25,64 @@
                             style="width:110px" />
                     </template>
                 </v-text-field>
-            </CalculatorHorizontalForm>
+            </CalculatorFormRow>
 
             <CalculatorResultTabs
                 v-model="ui.tab"
                 :show-results="showResults"
-                ref="resultTabs"
                 class="mt-10">
                 <template v-if="showResults">
                     <CalculatorCalculatedFromSalePriceAlert v-if="form.currency === 'TRY'" />
                     <CalculatorCustomsInfoAlert v-else />
 
-                    <CalculatorResultHorizontalForm
+                    <CalculatorResultFormRow
                         :value="$moneyFormat(results.prices.basePrice, 'TRY')"
                         class="mb-5"
                         label="Vergisiz fiyat" />
 
-                    <CalculatorResultHorizontalForm
+                    <CalculatorResultFormRow
                         :label="`Gümrük vergisi (%${results.taxRates.custom})`"
                         :value="$moneyFormat(results.taxFees.custom, 'TRY')"
                         class="mb-5" />
 
-                    <CalculatorResultHorizontalForm
+                    <CalculatorResultFormRow
                         :label="`ÖTV (%${results.taxRates.sct})`"
                         :value="$moneyFormat(results.taxFees.sct, 'TRY')"
                         class="mb-5" />
 
-                    <CalculatorResultHorizontalForm
+                    <CalculatorResultFormRow
                         :label="`KDV (%${results.taxRates.vat})`"
                         :value="$moneyFormat(results.taxFees.vat, 'TRY')"
                         class="mb-5" />
 
-                    <CalculatorResultHorizontalForm
+                    <CalculatorResultFormRow
                         :label="`Toplam vergi (%${results.taxRates.total})`"
                         :value="$moneyFormat(results.taxFees.total, 'TRY')"
                         class="mb-5" />
 
-                    <CalculatorResultHorizontalForm
+                    <CalculatorResultFormRow
                         :value="$moneyFormat(results.prices.salePrice, 'TRY')"
                         class="mb-5"
                         label="Tahmini satış fiyatı" />
 
-                    <CalculatorHorizontalForm class="mb-6">
+                    <CalculatorFormRow class="mb-6">
                         <CalculatorMinimumWageAlert :price="results.prices.salePrice" />
-                    </CalculatorHorizontalForm>
+                    </CalculatorFormRow>
 
-                    <CalculatorHorizontalForm>
-                        <CalculatorShare :data="form" />
-                    </CalculatorHorizontalForm>
+                    <CalculatorFormRow>
+                        <v-btn
+                            @click="ui.isShareDialogShown = true"
+                            outlined=""
+                            color="primary"
+                            large="">
+                            <v-icon left="">mdi-share</v-icon>
+                            Paylaş...
+                        </v-btn>
+
+                        <CalculatorShareDialog
+                            v-model="ui.isShareDialogShown"
+                            :data="form" />
+                    </CalculatorFormRow>
                 </template>
             </CalculatorResultTabs>
         </InnerContainer>
@@ -80,14 +90,12 @@
 </template>
 
 <script>
-import BaseCalculator from "@/calculators/BaseCalculator";
 import ConsoleTaxCalculator from "@/calculators/ConsoleTaxCalculator";
-import openGraphImage from "@/assets/img/open-graph/console-tax-calculator.jpg";
 import { ConsoleTaxCalculator as meta } from "@/data/calculators.js";
+import openGraphImage from "@/assets/img/open-graph/console-tax-calculator.jpg";
 
 export default {
     layout: "default/index",
-    name: "ConsoleTaxCalculator",
     data: () => ({
         head: {
             title: meta.title,
@@ -102,13 +110,15 @@ export default {
         },
         ui: {
             presets: [
-                { title: "Xbox Series S (512GB)", price: 299 },
-                { title: "Xbox Series X (1TB)", price: 499 },
-                { title: "PlayStation 5 Digital Edition (825GB)", price: 399 },
-                { title: "PlayStation 5 (825GB)", price: 499 }
+                { title: "Xbox Series S (512GB)", price: 299, currency: "EUR" },
+                { title: "Xbox Series X (1TB)", price: 499, currency: "EUR" },
+                { title: "PlayStation 5 Digital Edition (825GB)", price: 399, currency: "EUR" },
+                { title: "PlayStation 5 (825GB)", price: 499, currency: "EUR" },
+                { title: "Nintendo Switch OLED (64GB)", price: 349.99, currency: "USD" } // Source: https://en.wikipedia.org/wiki/Nintendo_Switch#cite_note-polygon_oled_announce-178
             ],
             preset: -1,
-            tab: 1
+            tab: 1,
+            isShareDialogShown: false
         },
         form: {
             currency: "USD",
@@ -124,27 +134,22 @@ export default {
         calculate() {
             const vm = this;
 
-            const price = parseFloat(vm.form.price) * vm.getExchangeRate(vm.form.currency);
+            const price = parseFloat(vm.form.price) * vm.getCurrency(vm.form.currency)["rate"];
 
-            const mode = BaseCalculator.getCalculationModeByCurrency(vm.form.currency);
-
-            const calculator = new ConsoleTaxCalculator(
-                vm.$store.get("exchangeRates/currencies"),
+            const consoleTaxCalculator = new ConsoleTaxCalculator({
                 price,
-                mode
-            ).calculate();
+                exchangeRates: vm.$store.get("exchange-rates/currencies"),
+                calculationMode: ConsoleTaxCalculator.getCalculationModeByCurrency(vm.form.currency)
+            });
+            const results = consoleTaxCalculator.calculate().results();
 
-            vm.results.prices = calculator.prices;
-            vm.results.taxFees = calculator.taxFees;
-            vm.results.taxRates = calculator.taxRates;
+            vm.results.prices = results.prices;
+            vm.results.taxFees = results.taxFees;
+            vm.results.taxRates = results.taxRates;
         },
-        getExchangeRate(currency) {
+        getCurrency(currency) {
             const vm = this;
-            return vm.$store.get(`exchangeRates/currencies@${currency}`)["rate"];
-        },
-        getCurrencySign(currency) {
-            const vm = this;
-            return vm.$store.get(`exchangeRates/currencies@${currency}`)["sign"];
+            return vm.$store.get(`exchange-rates/currencies@${currency}`);
         },
         handleQuery() {
             const vm = this;
@@ -156,7 +161,7 @@ export default {
                 vm.form.price = parseFloat(query.price);
             }
 
-            if (query.currency && vm.$store.get("exchangeRates/availableCurrencies").includes(query.currency)) {
+            if (query.currency && vm.$store.get("exchange-rates/availableCurrencies").includes(query.currency)) {
                 vm.form.currency = query.currency;
             }
         },
@@ -167,13 +172,6 @@ export default {
                 { text: "Hesaplayıcılar", to: "/hesaplayicilar" },
                 { text: meta.title, to: vm.$route.path }
             ]);
-        },
-        scrollToResultTabs() {
-            const vm = this;
-            vm.$vuetify.goTo(vm.$refs["resultTabs"], {
-                easing: "easeInQuad",
-                duration: 375
-            });
         }
     },
     computed: {
@@ -196,15 +194,15 @@ export default {
                 vm.ui.tab = 0;
 
                 vm.$router.push({ query: vm.form });
-
-                vm.scrollToResultTabs();
             }
         },
         "ui.preset"() {
             const vm = this;
 
-            vm.form.currency = "EUR";
-            vm.form.price = vm.ui.presets[vm.ui.preset].price;
+            const preset = vm.ui.presets[vm.ui.preset];
+
+            vm.form.currency = preset.currency;
+            vm.form.price = preset.price;
         }
     },
     head() {

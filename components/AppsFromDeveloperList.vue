@@ -14,7 +14,8 @@
             <v-list-item-icon>
                 <img
                     :alt="app.title"
-                    :src="getIcon(app.icon)"
+                    :src="require(`@/assets/img/apps/${app.icon}`)"
+                    loading="lazy"
                     draggable="false"
                     height="24"
                     width="24" />
@@ -29,7 +30,6 @@
 
 <script>
 export default {
-    name: "AppsFromDeveloperList",
     data: () => ({
         apps: [
             {
@@ -48,16 +48,6 @@ export default {
                 url: "https://rebootify.page.link/store"
             }
         ]
-    }),
-    props: {
-        subheader: {
-            type: String
-        }
-    },
-    methods: {
-        getIcon(path) {
-            return require(`@/assets/img/apps/${path}`);
-        }
-    }
+    })
 };
 </script>

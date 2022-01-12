@@ -13,7 +13,6 @@
 
 <script>
 export default {
-    name: "AppBreadcrumbs",
     props: {
         items: {
             type: Array,

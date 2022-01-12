@@ -13,10 +13,10 @@
                 width="300"
                 height="300">
                 <source
-                    :src="webm"
+                    :src="require('@/assets/video/osita-iheme.webm')"
                     type="video/webm" />
                 <source
-                    :src="mp4"
+                    :src="require('@/assets/video/osita-iheme.mp4')"
                     type="video/mp4" />
             </video>
         </a>
@@ -24,22 +24,3 @@
     </div>
 </template>
 
-<script>
-import mp4 from "@/assets/video/osita-iheme.mp4";
-import webm from "@/assets/video/osita-iheme.webm";
-
-export default {
-    name: "OsitaIheme",
-    data: () => ({
-        mp4,
-        webm
-    })
-};
-</script>
-
-<style lang="scss" scoped="">
-video {
-    height: auto;
-    max-width: 100%
-}
-</style>

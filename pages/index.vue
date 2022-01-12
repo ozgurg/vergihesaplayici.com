@@ -25,7 +25,6 @@ const meta = {
 
 export default {
     layout: "default/index",
-    name: "Index",
     data: () => ({
         head: {
             titleTemplate: null,

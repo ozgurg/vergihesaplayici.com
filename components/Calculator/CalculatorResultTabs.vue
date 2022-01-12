@@ -1,7 +1,7 @@
 <template>
     <div
         v-bind="$attrs">
-        <CalculatorHorizontalForm class="result-tab mb-4">
+        <CalculatorFormRow class="result-tab mb-4">
             <v-tabs
                 :value="value"
                 @change="emit($event)"
@@ -16,7 +16,7 @@
                     Yorumlar
                 </v-tab>
             </v-tabs>
-        </CalculatorHorizontalForm>
+        </CalculatorFormRow>
 
 		<v-tabs-items :value="value">
             <v-tab-item :transition="false">
@@ -32,7 +32,6 @@
 
 <script>
 export default {
-    name: "CalculatorResultTabs",
     props: {
         value: {
             type: Number,

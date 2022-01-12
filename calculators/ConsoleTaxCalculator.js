@@ -1,111 +1,118 @@
-import BaseCalculator from "./BaseCalculator";
+import BaseMultiCurrencyTaxCalculator from "@/calculators/BaseMultiCurrencyTaxCalculator";
 
-class ConsoleTaxCalculator extends BaseCalculator {
+/**
+ * @class
+ * @extends {BaseMultiCurrencyTaxCalculator}
+ */
+class ConsoleTaxCalculator extends BaseMultiCurrencyTaxCalculator {
     /**
-     * @private
+     * @protected
+     * @type {{total: number, sct: number, custom: number, vat: number}}
      */
-    _taxFees = {
-    	total: 0, // TRY
-    	custom: 0, // TRY
-    	sct: 0, // TRY
-    	vat: 0 // TRY
+    taxFees = {
+        total: 0, // TRY
+        custom: 0, // TRY
+        sct: 0, // TRY
+        vat: 0 // TRY
+    };
+
+    /**
+     * @protected
+     * @type {{total: number, sct: number, custom: number, vat: number}}
+     */
+    taxRates = {
+        total: 0, // Percent
+        custom: 20, // Percent
+        sct: 20, // Percent
+        vat: 18 // Percent
     };
 
     /**
      * @private
      */
-    _taxRates = {
-    	total: 0, // Percent
-    	custom: 20, // Percent
-    	sct: 20, // Percent
-    	vat: 18 // Percent
-    };
+    customFee() {
+        switch (this.calculationMode) {
+            case BaseMultiCurrencyTaxCalculator.CalculationMode.FromBasePrice:
+                this.taxFees.custom = this.calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.custom);
+                this.prices.salePrice += this.taxFees.custom;
+                break;
 
-    /**
-     * TR: Gümrük vergisi
-     *
-     * @private
-     */
-    _customFee() {
-    	switch (this._mode) {
-    		case BaseCalculator.CalculationMode.FromBasePrice:
-    			this._taxFees.custom = this.calculateTaxFromTaxFreePrice(this._prices.salePrice, this._taxRates.custom);
-    			this._prices.salePrice += this._taxFees.custom;
-    			break;
-
-    		case BaseCalculator.CalculationMode.FromSalePrice:
-    			this._taxFees.custom = this.calculateTaxFromTaxAddedPrice(this._prices.basePrice, this._taxRates.custom);
-    			this._prices.basePrice -= this._taxFees.custom;
-    			break;
-    	}
+            case BaseMultiCurrencyTaxCalculator.CalculationMode.FromSalePrice:
+                this.taxFees.custom = this.calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.custom);
+                this.prices.basePrice -= this.taxFees.custom;
+                break;
+        }
     }
 
     /**
-     * TR: Özel Tüketim Vergisi (ÖTV)
-     *
      * @private
      */
-    _sctFee() {
-    	switch (this._mode) {
-    		case BaseCalculator.CalculationMode.FromBasePrice:
-    			this._taxFees.sct = this.calculateTaxFromTaxFreePrice(this._prices.salePrice, this._taxRates.sct);
-    			this._prices.salePrice += this._taxFees.sct;
-    			break;
+    sctFee() {
+        switch (this.calculationMode) {
+            case BaseMultiCurrencyTaxCalculator.CalculationMode.FromBasePrice:
+                this.taxFees.sct = this.calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.sct);
+                this.prices.salePrice += this.taxFees.sct;
+                break;
 
-    		case BaseCalculator.CalculationMode.FromSalePrice:
-    			this._taxFees.sct = this.calculateTaxFromTaxAddedPrice(this._prices.basePrice, this._taxRates.sct);
-    			this._prices.basePrice -= this._taxFees.sct;
-    			break;
-    	}
+            case BaseMultiCurrencyTaxCalculator.CalculationMode.FromSalePrice:
+                this.taxFees.sct = this.calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.sct);
+                this.prices.basePrice -= this.taxFees.sct;
+                break;
+        }
     }
 
     /**
-     * TR: Katma Değer Vergisi (KDV)
-     *
      * @private
      */
-    _vatFee() {
-    	switch (this._mode) {
-    		case BaseCalculator.CalculationMode.FromBasePrice:
-    			this._taxFees.vat = this.calculateTaxFromTaxFreePrice(this._prices.salePrice, this._taxRates.vat);
-    			this._prices.salePrice += this._taxFees.vat;
-    			break;
+    vatFee() {
+        switch (this.calculationMode) {
+            case BaseMultiCurrencyTaxCalculator.CalculationMode.FromBasePrice:
+                this.taxFees.vat = this.calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.vat);
+                this.prices.salePrice += this.taxFees.vat;
+                break;
 
-    		case BaseCalculator.CalculationMode.FromSalePrice:
-    			this._taxFees.vat = this.calculateTaxFromTaxAddedPrice(this._prices.basePrice, this._taxRates.vat);
-    			this._prices.basePrice -= this._taxFees.vat;
-    			break;
-    	}
+            case BaseMultiCurrencyTaxCalculator.CalculationMode.FromSalePrice:
+                this.taxFees.vat = this.calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.vat);
+                this.prices.basePrice -= this.taxFees.vat;
+                break;
+        }
     }
 
     /**
+     * @protected
+     * @override
      * @return {number}
-     * @private
      */
-    _calculateTotalTaxFee() {
-    	return this._taxFees.custom + this._taxFees.sct + this._taxFees.vat;
+    calculateTotalTaxFee() {
+        return this.taxFees.custom + this.taxFees.sct + this.taxFees.vat;
     }
 
     /**
+     * @protected
+     * @override
+     * @return {number}
+     */
+    calculateTotalTaxRate() {
+        return ((this.taxFees.total / this.prices.basePrice) * 100);
+    }
+
+    /**
+     * @public
+     * @override
      * @return {ConsoleTaxCalculator}
      */
     calculate() {
-    	if (this._mode === BaseCalculator.CalculationMode.FromBasePrice) {
-    		this._customFee();
-    		this._sctFee();
-    		this._vatFee();
-    	} else if (this._mode === BaseCalculator.CalculationMode.FromSalePrice) {
-    		this._vatFee();
-    		this._sctFee();
-    		this._customFee();
-    	}
+        if (this.calculationMode === BaseMultiCurrencyTaxCalculator.CalculationMode.FromBasePrice) {
+            this.customFee();
+            this.sctFee();
+            this.vatFee();
+        } else if (this.calculationMode === BaseMultiCurrencyTaxCalculator.CalculationMode.FromSalePrice) {
+            this.vatFee();
+            this.sctFee();
+            this.customFee();
+        }
 
-    	this._taxFees.total = this._calculateTotalTaxFee();
-    	this._taxRates.total = this.calculateTotalTaxRate();
-
-    	this.normalizeResults();
-
-    	return this;
+        return this;
     }
 }
 

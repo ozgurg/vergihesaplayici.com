@@ -3,10 +3,10 @@
         v-bind="$attrs"
         class="text-center"
         elevation="0">
-        <v-card-subtitle class="pb-0 pt-2">{{ currencyTitle }}</v-card-subtitle>
+        <v-card-subtitle class="pb-0 pt-2">{{ currency }}</v-card-subtitle>
 
         <v-card-title class="justify-center pt-0 pb-2 px-0">
-            <div class="w-100 mx-auto">
+            <div class="mx-auto">
 				<span
                     v-if="isLoaded"
                     class="d-block">
@@ -26,7 +26,6 @@
 
 <script>
 export default {
-    name: "ExchangeRateItem",
     data: () => ({
         isLoaded: false,
         exchangeRate: {}
@@ -41,27 +40,16 @@ export default {
         async load() {
             const vm = this;
 
-            await vm.$store.dispatch("exchangeRates/loadExchangeRateFromApi", vm.currency);
+            vm.isLoaded = false;
 
-            vm.exchangeRate = vm.$store.get(`exchangeRates/currencies@${vm.currency}`);
+            vm.exchangeRate = await vm.$store.dispatch("exchange-rates/loadExchangeRateFromApi", vm.currency);
+
             vm.isLoaded = true;
-        }
-    },
-    computed: {
-        currencyTitle() {
-            const vm = this;
-            return vm.$store.get(`exchangeRates/currencies@${vm.currency}.title`);
         }
     },
     async mounted() {
         const vm = this;
-        vm.load();
+        await vm.load();
     }
 };
 </script>
-
-<style lang="scss" scoped="">
-span {
-	line-height: 32px
-}
-</style>

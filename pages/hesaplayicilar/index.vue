@@ -17,7 +17,6 @@ const meta = {
 };
 
 export default {
-    name: "Calculators",
     data: () => ({
         head: {
             title: meta.title,

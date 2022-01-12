@@ -8,12 +8,6 @@
         width="84"></iframe>
 </template>
 
-<script>
-export default {
-    name: "Ghbtns"
-};
-</script>
-
 <style lang="scss" scoped="">
 .ghbtns {
 	overflow: hidden;

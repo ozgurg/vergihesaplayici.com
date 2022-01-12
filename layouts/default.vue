@@ -13,8 +13,6 @@
 
             <Nuxt />
         </Main>
-
-        <AppVersion />
     </v-app>
 </template>
 
@@ -22,7 +20,6 @@
 import { get } from "vuex-pathify";
 
 export default {
-    name: "DefaultLayout",
     computed: {
         breadcrumbs: get("ui/breadcrumbs")
     }

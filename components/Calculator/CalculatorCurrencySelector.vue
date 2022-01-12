@@ -13,7 +13,6 @@
 import { get } from "vuex-pathify";
 
 export default {
-    name: "CalculatorCurrencySelector",
     props: {
         value: {
             type: String,
@@ -27,7 +26,7 @@ export default {
         }
     },
     computed: {
-        currencies: get("exchangeRates/availableCurrencies")
+        currencies: get("exchange-rates/availableCurrencies")
     }
 };
 </script>

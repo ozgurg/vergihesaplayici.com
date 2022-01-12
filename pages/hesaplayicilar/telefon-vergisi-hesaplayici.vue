@@ -3,18 +3,18 @@
         <AppHeader>{{ head.title }}</AppHeader>
 
         <InnerContainer>
-            <CalculatorHorizontalForm class="mb-5">
+            <CalculatorFormRow class="mb-5">
                 <CalculatorPresets
                     v-model="ui.preset"
                     :presets="ui.presets" />
-            </CalculatorHorizontalForm>
+            </CalculatorFormRow>
 
-            <CalculatorHorizontalForm class="mb-5"
-                            label="Telefon fiyatı">
-
+            <CalculatorFormRow
+                class="mb-5"
+                label="Telefon fiyatı">
                 <v-text-field
                     v-model.number="form.price"
-                    :prefix="getCurrencySign(form.currency)"
+                    :prefix="getCurrency(form.currency)['sign']"
                     hide-details=""
                     outlined=""
                     step="any"
@@ -27,10 +27,11 @@
                             style="width:110px" />
                     </template>
                 </v-text-field>
-            </CalculatorHorizontalForm>
+            </CalculatorFormRow>
 
-            <CalculatorHorizontalForm class="mb-5"
-                            label="Kayıt yolu">
+            <CalculatorFormRow
+                class="mb-5"
+                label="Kayıt yolu">
                 <v-select
                     v-model="form.registration"
                     :items="ui.registration"
@@ -39,73 +40,83 @@
                     item-value="value"
                     outlined=""
                     aria-label="Kayıt yolu" />
-            </CalculatorHorizontalForm>
+            </CalculatorFormRow>
 
             <CalculatorResultTabs
                 v-model="ui.tab"
                 :show-results="showResults"
-                ref="resultTabs"
                 class="mt-10">
                 <template v-if="showResults">
                     <CalculatorCalculatedFromSalePriceAlert v-if="form.currency === 'TRY'" />
                     <CalculatorCustomsInfoAlert v-else />
 
-                    <CalculatorResultHorizontalForm
+                    <CalculatorResultFormRow
                         :value="$moneyFormat(results.prices.basePrice, 'TRY')"
                         class="mb-5"
                         label="Vergisiz fiyat" />
 
                     <template v-if="registrationIsImport">
-                        <CalculatorResultHorizontalForm
+                        <CalculatorResultFormRow
                             :label="`Kültür Bakanlığı (%${results.taxRates.ministryOfCulture})`"
                             :value="$moneyFormat(results.taxFees.ministryOfCulture, 'TRY')"
                             class="mb-5" />
 
-                        <CalculatorResultHorizontalForm
+                        <CalculatorResultFormRow
                             :label="`TRT bandrolü (%${results.taxRates.trt})`"
                             :value="$moneyFormat(results.taxFees.trt, 'TRY')"
                             class="mb-5" />
 
-                        <CalculatorResultHorizontalForm
+                        <CalculatorResultFormRow
                             :label="`ÖTV (%${results.taxRates.sct})`"
                             :value="$moneyFormat(results.taxFees.sct, 'TRY')"
                             class="mb-5" />
 
-                        <CalculatorResultHorizontalForm
+                        <CalculatorResultFormRow
                             :label="`KDV (%${results.taxRates.vat})`"
                             :value="$moneyFormat(results.taxFees.vat, 'TRY')"
                             class="mb-5" />
                     </template>
 
                     <template v-else>
-                        <CalculatorResultHorizontalForm
+                        <CalculatorResultFormRow
                             :label="`TRT bandrolü (${$moneyFormat(results.taxRates.trtPassport, 'EUR')})`"
                             :value="$moneyFormat(results.taxFees.trtPassport, 'TRY')"
                             class="mb-5" />
 
-                        <CalculatorResultHorizontalForm
+                        <CalculatorResultFormRow
                             :value="$moneyFormat(results.taxFees.registration, 'TRY')"
                             class="mb-5"
                             label="Kayıt ücreti" />
                     </template>
 
-                    <CalculatorResultHorizontalForm
+                    <CalculatorResultFormRow
                         :label="`Toplam vergi (%${results.taxRates.total})`"
                         :value="$moneyFormat(results.taxFees.total, 'TRY')"
                         class="mb-5" />
 
-                    <CalculatorResultHorizontalForm
+                    <CalculatorResultFormRow
                         :value="$moneyFormat(results.prices.salePrice, 'TRY')"
                         class="mb-5"
                         label="Tahmini satış fiyatı" />
 
-                    <CalculatorHorizontalForm class="mb-6">
+                    <CalculatorFormRow class="mb-6">
                         <CalculatorMinimumWageAlert :price="results.prices.salePrice" />
-                    </CalculatorHorizontalForm>
+                    </CalculatorFormRow>
 
-                    <CalculatorHorizontalForm>
-                        <CalculatorShare :data="form" />
-                    </CalculatorHorizontalForm>
+                    <CalculatorFormRow>
+                        <v-btn
+                            @click="ui.isShareDialogShown = true"
+                            outlined=""
+                            color="primary"
+                            large="">
+                            <v-icon left="">mdi-share</v-icon>
+                            Paylaş...
+                        </v-btn>
+
+                        <CalculatorShareDialog
+                            v-model="ui.isShareDialogShown"
+                            :data="form" />
+                    </CalculatorFormRow>
                 </template>
             </CalculatorResultTabs>
         </InnerContainer>
@@ -113,14 +124,12 @@
 </template>
 
 <script>
-import BaseCalculator from "@/calculators/BaseCalculator";
 import PhoneTaxCalculator from "@/calculators/PhoneTaxCalculator";
-import openGraphImage from "@/assets/img/open-graph/phone-tax-calculator.jpg";
 import { PhoneTaxCalculator as meta } from "@/data/calculators.js";
+import openGraphImage from "@/assets/img/open-graph/phone-tax-calculator.jpg";
 
 export default {
     layout: "default/index",
-    name: "PhoneTaxCalculator",
     data: () => ({
         head: {
             title: meta.title,
@@ -135,17 +144,20 @@ export default {
         },
         ui: {
             presets: [
-                { title: "iPhone 12 mini (64GB)", price: 699 },
-                { title: "iPhone 12 (64GB)", price: 799 },
-                { title: "iPhone 12 Pro (128GB)", price: 999 },
-                { title: "iPhone 12 Pro Max (128GB)", price: 1099 }
+                { title: "iPhone SE (64GB)", price: 399, currency: "USD" },
+                { title: "iPhone 13 mini (128GB)", price: 699, currency: "USD" },
+                { title: "iPhone 13 (128GB)", price: 799, currency: "USD" },
+                { title: "iPhone 13 Pro (128GB)", price: 999, currency: "USD" },
+                { title: "iPhone 13 Pro Max (128GB)", price: 1099, currency: "USD" },
+                { title: "iPhone 13 Pro Max (1TB)", price: 1599, currency: "USD" }
             ],
             preset: -1,
             registration: [
                 { title: "İthalat yoluyla kayıtlı (Resmi)", value: PhoneTaxCalculator.Registration.Import },
                 { title: "Pasaport yoluyla kayıtlı", value: PhoneTaxCalculator.Registration.Passport }
             ],
-            tab: 1
+            tab: 1,
+            isShareDialogShown: false
         },
         form: {
             currency: "USD",
@@ -162,28 +174,24 @@ export default {
         calculate() {
             const vm = this;
 
-            const price = parseFloat(vm.form.price) * vm.getExchangeRate(vm.form.currency);
+            const price = parseFloat(vm.form.price) * vm.getCurrency(vm.form.currency)["rate"];
 
-            const mode = BaseCalculator.getCalculationModeByCurrency(vm.form.currency);
-
-            const calculator = new PhoneTaxCalculator(
-                vm.$store.get("exchangeRates/currencies"),
+            const phoneTaxCalculator = new PhoneTaxCalculator({
                 price,
-                mode,
-                { registration: vm.form.registration }
-            ).calculate();
+                exchangeRates: vm.$store.get("exchange-rates/currencies"),
+                calculationMode: PhoneTaxCalculator.getCalculationModeByCurrency(vm.form.currency)
+            }, {
+                registration: vm.form.registration
+            });
+            const results = phoneTaxCalculator.calculate().results();
 
-            vm.results.prices = calculator.prices;
-            vm.results.taxFees = calculator.taxFees;
-            vm.results.taxRates = calculator.taxRates;
+            vm.results.prices = results.prices;
+            vm.results.taxFees = results.taxFees;
+            vm.results.taxRates = results.taxRates;
         },
-        getExchangeRate(currency) {
+        getCurrency(currency) {
             const vm = this;
-            return vm.$store.get(`exchangeRates/currencies@${currency}.rate`);
-        },
-        getCurrencySign(currency) {
-            const vm = this;
-            return vm.$store.get(`exchangeRates/currencies@${currency}.sign`);
+            return vm.$store.get(`exchange-rates/currencies@${currency}`);
         },
         handleQuery() {
             const vm = this;
@@ -195,7 +203,7 @@ export default {
                 vm.form.price = parseFloat(query.price);
             }
 
-            if (query.currency && vm.$store.get("exchangeRates/availableCurrencies").includes(query.currency)) {
+            if (query.currency && vm.$store.get("exchange-rates/availableCurrencies").includes(query.currency)) {
                 vm.form.currency = query.currency;
             }
 
@@ -210,13 +218,6 @@ export default {
                 { text: "Hesaplayıcılar", to: "/hesaplayicilar" },
                 { text: meta.title, to: vm.$route.path }
             ]);
-        },
-        scrollToResultTabs() {
-            const vm = this;
-            vm.$vuetify.goTo(vm.$refs["resultTabs"], {
-                easing: "easeInQuad",
-                duration: 375
-            });
         }
     },
     computed: {
@@ -243,15 +244,15 @@ export default {
                 vm.ui.tab = 0;
 
                 vm.$router.push({ query: vm.form });
-
-                vm.scrollToResultTabs();
             }
         },
         "ui.preset"() {
             const vm = this;
 
-            vm.form.currency = "USD";
-            vm.form.price = vm.ui.presets[vm.ui.preset].price;
+            const preset = vm.ui.presets[vm.ui.preset];
+
+            vm.form.currency = preset.currency;
+            vm.form.price = preset.price;
         }
     },
     head() {
