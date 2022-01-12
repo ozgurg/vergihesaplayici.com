@@ -144,6 +144,7 @@ export default {
         },
         ui: {
             presets: [
+                { title: "iPhone SE (64GB)", price: 399, currency: "USD" },
                 { title: "iPhone 13 mini (128GB)", price: 699, currency: "USD" },
                 { title: "iPhone 13 (128GB)", price: 799, currency: "USD" },
                 { title: "iPhone 13 Pro (128GB)", price: 999, currency: "USD" },
