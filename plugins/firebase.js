@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { initializeAnalytics } from "firebase/analytics";
 import { initializePerformance } from "firebase/performance";
+import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
 
 let firebaseApp = null;
 
@@ -19,6 +20,11 @@ if (process.env.NODE_ENV === "production") {
     initializeAnalytics(firebaseApp);
 
     initializePerformance(firebaseApp);
+
+    initializeAppCheck(firebaseApp, {
+        provider: new ReCaptchaV3Provider(process.env.RECAPTCHA_V3_PUBLIC_KEY),
+        isTokenAutoRefreshEnabled: true
+    });
 }
 
 export default firebaseApp;
