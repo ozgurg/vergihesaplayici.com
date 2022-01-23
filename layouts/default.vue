@@ -7,9 +7,7 @@
             app="" />
 
         <Main>
-            <AppBreadcrumbs
-                v-if="breadcrumbs"
-                :items="breadcrumbs" />
+            <AppBreadcrumbs v-if="shouldRenderBreadcrumbs" />
 
             <Nuxt />
         </Main>
@@ -17,11 +15,12 @@
 </template>
 
 <script>
-import { get } from "vuex-pathify";
-
 export default {
     computed: {
-        breadcrumbs: get("ui/breadcrumbs")
+        shouldRenderBreadcrumbs() {
+            const vm = this;
+            return vm.$route.path !== "/" && vm.$route.name !== null;
+        }
     }
 };
 </script>

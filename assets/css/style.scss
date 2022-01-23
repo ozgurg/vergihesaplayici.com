@@ -12,15 +12,6 @@ video {
     flex-direction: column
 }
 
-.v-breadcrumbs {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-    padding-left: 0 !important;
-    padding-right: 0;
-    -webkit-overflow-scrolling: touch
-}
-
 .v-input--is-readonly {
     pointer-events: none;
     .v-input__append-inner {

@@ -1,6 +1,6 @@
 <template>
 	<div>
-        <AppHeader>Vergi Hesaplayıcı</AppHeader>
+        <AppHeader class="mt-16">Vergi Hesaplayıcı</AppHeader>
 
         <InnerContainer>
             <p class="mb-4">vergihesaplayici.com, vergi hesaplar.</p>
@@ -42,10 +42,6 @@ export default {
     head() {
         const vm = this;
         return vm.head;
-    },
-    mounted() {
-        const vm = this;
-        vm.$store.set("ui/breadcrumbs", []);
     }
 };
 </script>

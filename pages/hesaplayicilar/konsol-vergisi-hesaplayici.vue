@@ -164,14 +164,6 @@ export default {
             if (query.currency && vm.$store.get("exchange-rates/availableCurrencies").includes(query.currency)) {
                 vm.form.currency = query.currency;
             }
-        },
-        setBreadcrumbs() {
-            const vm = this;
-            vm.$store.set("ui/breadcrumbs", [
-                { text: "Ana Sayfa", to: "/" },
-                { text: "Hesaplayıcılar", to: "/hesaplayicilar" },
-                { text: meta.title, to: vm.$route.path }
-            ]);
         }
     },
     computed: {
@@ -215,8 +207,6 @@ export default {
         vm.$nextTick(() => {
             setTimeout(() => vm.handleQuery(), 100);
         });
-
-        vm.setBreadcrumbs();
     }
 };
 </script>

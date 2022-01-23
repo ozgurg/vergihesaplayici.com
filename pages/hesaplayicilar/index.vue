@@ -33,13 +33,6 @@ export default {
     head() {
         const vm = this;
         return vm.head;
-    },
-    mounted() {
-        const vm = this;
-        vm.$store.set("ui/breadcrumbs", [
-            { text: "Ana Sayfa", to: "/" },
-            { text: "Hesaplayıcılar", to: "/hesaplayicilar" }
-        ]);
     }
 };
 </script>
