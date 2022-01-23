@@ -1,22 +1,21 @@
 <template>
     <v-card
         v-bind="$attrs"
-        class="text-center">
-        <v-card-subtitle class="pb-0 pt-2">{{ currency }}</v-card-subtitle>
+        outlined=""
+        class="px-5 py-4"
+        flat="">
+        <v-card-subtitle class="pa-0 ma-0 mb-1">{{ currency }}</v-card-subtitle>
 
-        <div
+        <v-skeleton-loader
             v-if="isLoading"
-            class="pb-4">
-            <v-skeleton-loader
-                class="mx-auto mb-0"
-                max-height="24"
-                max-width="64"
-                type="image" />
-        </div>
+            class="mx-auto mb-0"
+            max-height="32"
+            width="100%"
+            type="image" />
 
         <v-card-title
             v-else
-            class="justify-center pt-0 pb-2 px-0">
+            class="pa-0 ma-0">
             <template v-if="exchangeRate !== null">
                 {{ $moneyFormat(exchangeRate.rate, "TRY") }}
             </template>
