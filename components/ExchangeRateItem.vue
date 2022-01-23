@@ -62,7 +62,7 @@ export default {
                     // To disable default error behavior
                 });
 
-            vm.isLoading = false;
+            setTimeout(() => vm.isLoading = false, 100);
         }
     },
     async mounted() {
