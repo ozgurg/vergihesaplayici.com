@@ -2,11 +2,6 @@ body {
     user-select: none
 }
 
-.v-navigation-drawer__content {
-    display: flex;
-    flex-direction: column
-}
-
 .v-input--is-readonly {
     pointer-events: none;
     .v-input__append-inner {
