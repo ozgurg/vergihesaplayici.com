@@ -20,8 +20,7 @@ export default {
             { name: "twitter:card", content: "summary" },
             { name: "twitter:site", content: process.env.APP_TWITTER_USERNAME },
             { name: "twitter:creator", content: process.env.APP_TWITTER_USERNAME },
-            { "http-equiv": "X-UA-Compatible", "content": "ie=edge" },
-            { hid: "description", name: "description", content: "vergihesaplayici.com, vergi hesaplar." }
+            { "http-equiv": "X-UA-Compatible", "content": "ie=edge" }
         ],
         link: [
             { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
