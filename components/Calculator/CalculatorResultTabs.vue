@@ -62,3 +62,9 @@ export default {
 	}
 }
 </style>
+
+<style scoped="">
+/deep/ .v-tabs-items {
+    background: 0 !important
+}
+</style>
