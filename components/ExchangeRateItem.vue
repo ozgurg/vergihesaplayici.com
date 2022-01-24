@@ -1,24 +1,37 @@
 <template>
     <v-card
         v-bind="$attrs"
-        class="text-center"
-        elevation="0">
-        <v-card-subtitle class="pb-0 pt-2">{{ currency }}</v-card-subtitle>
+        outlined=""
+        class="px-5 py-4"
+        flat="">
+        <v-card-subtitle class="pa-0 ma-0 mb-1">{{ currency }}</v-card-subtitle>
 
-        <v-card-title class="justify-center pt-0 pb-2 px-0">
-            <div class="mx-auto">
-				<span
-                    v-if="isLoaded"
-                    class="d-block">
-                    {{ $moneyFormat(exchangeRate.rate, "TRY") }}
-                </span>
+        <v-skeleton-loader
+            v-if="isLoading"
+            class="mx-auto mb-0"
+            max-height="32"
+            width="100%"
+            type="image" />
 
-                <v-skeleton-loader
-                    v-else
-                    class="mx-auto"
-                    max-height="32"
-                    max-width="64"
-                    type="image" />
+        <v-card-title
+            v-else
+            class="pa-0 ma-0">
+            <template v-if="exchangeRate !== null">
+                {{ $moneyFormat(exchangeRate.rate, "TRY") }}
+            </template>
+
+            <div v-else>
+                <v-tooltip bottom="">
+                    <template v-slot:activator="{ on, attrs }">
+                        <v-icon
+                            v-bind="attrs"
+                            v-on="on"
+                            color="red">
+                            mdi-alert
+                        </v-icon>
+                    </template>
+                    <span>Kur yüklenirken bir hata oluştu</span>
+                </v-tooltip>
             </div>
         </v-card-title>
     </v-card>
@@ -27,8 +40,8 @@
 <script>
 export default {
     data: () => ({
-        isLoaded: false,
-        exchangeRate: {}
+        isLoading: false,
+        exchangeRate: null
     }),
     props: {
         currency: {
@@ -40,11 +53,16 @@ export default {
         async load() {
             const vm = this;
 
-            vm.isLoaded = false;
+            vm.isLoading = true;
 
-            vm.exchangeRate = await vm.$store.dispatch("exchange-rates/loadExchangeRateFromApi", vm.currency);
+            await vm.$store.dispatch("exchange-rates/loadExchangeRateFromApi", vm.currency)
+                .then(exchangeRate => {
+                    vm.exchangeRate = exchangeRate;
+                }).catch(() => {
+                    // To disable default error behavior
+                });
 
-            vm.isLoaded = true;
+            setTimeout(() => vm.isLoading = false, 100);
         }
     },
     async mounted() {

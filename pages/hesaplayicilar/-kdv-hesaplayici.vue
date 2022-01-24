@@ -62,14 +62,6 @@ export default {
             if (query.price) {
                 vm.form.price = parseFloat(query.price);
             }
-        },
-        setBreadcrumbs() {
-            const vm = this;
-            vm.$store.set("ui/breadcrumbs", [
-                { text: "Ana Sayfa", to: "/" },
-                { text: "Hesaplayıcılar", to: "/hesaplayicilar" },
-                { text: meta.title, to: vm.$route.path }
-            ]);
         }
     },
     computed: {
@@ -105,8 +97,6 @@ export default {
         vm.$nextTick(() => {
             setTimeout(() => vm.handleQuery(), 100);
         });
-
-        vm.setBreadcrumbs();
     }
 };
 </script>

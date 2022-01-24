@@ -2,5 +2,5 @@ import Vue from "vue";
 import VueDisqus from "vue-disqus";
 
 Vue.use(VueDisqus, {
-    shortname: "vergihesaplayici"
+    shortname: process.env.DISQUS_SHORTNAME
 });

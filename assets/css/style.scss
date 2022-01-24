@@ -2,34 +2,11 @@ body {
     user-select: none
 }
 
-video {
-    height: auto;
-    max-width: 100%
-}
-
-.v-navigation-drawer__content {
-    display: flex;
-    flex-direction: column
-}
-
-.v-breadcrumbs {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-    padding-left: 0 !important;
-    padding-right: 0;
-    -webkit-overflow-scrolling: touch
-}
-
 .v-input--is-readonly {
     pointer-events: none;
     .v-input__append-inner {
         pointer-events: all
     }
-}
-
-.v-tabs-items {
-    background: 0 !important
 }
 
 .pointer-events-none {

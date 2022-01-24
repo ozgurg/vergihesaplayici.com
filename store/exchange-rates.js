@@ -18,16 +18,14 @@ export const actions = {
     async loadExchangeRateFromApi({ state, commit }, currency) {
         if (currency === "TRY" || state.currencies[currency]["rate"] > 0) return;
 
-        await fetch(`https://api.exchangerate.host/latest?base=${currency}&symbols=TRY`)
+        return await fetch(`https://api.exchangerate.host/latest?base=${currency}&symbols=TRY`)
             .then(response => response.json())
             .then(response => {
                 commit("SET_EXCHANGE_RATE", {
                     currency,
                     rate: response["rates"]["TRY"]
                 });
-            });
-
-        return state.currencies[currency];
+            }).then(() => state.currencies[currency]);
     }
 };
 

@@ -1,8 +1,7 @@
 import { make } from "vuex-pathify";
 
 export const state = () => ({
-    drawerState: null,
-    breadcrumbs: []
+    drawerState: null
 });
 
 export const mutations = make.mutations(state);

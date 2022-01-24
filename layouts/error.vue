@@ -46,10 +46,6 @@ export default {
                 { hid: "title", name: "title", content: vm.title }
             ]
         };
-    },
-    mounted() {
-        const vm = this;
-        vm.$store.set("ui/breadcrumbs", []);
     }
 };
 </script>
