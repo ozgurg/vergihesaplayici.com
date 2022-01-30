@@ -35,35 +35,13 @@
                     <CalculatorCalculatedFromSalePriceAlert v-if="form.currency === 'TRY'" />
                     <CalculatorCustomsInfoAlert v-else />
 
-                    <CalculatorResultFormRow
-                        :value="$moneyFormat(results.prices.basePrice, 'TRY')"
-                        class="mb-5"
-                        label="Vergisiz fiyat" />
-
-                    <CalculatorResultFormRow
-                        :label="`Gümrük vergisi (%${results.taxRates.custom})`"
-                        :value="$moneyFormat(results.taxFees.custom, 'TRY')"
-                        class="mb-5" />
-
-                    <CalculatorResultFormRow
-                        :label="`ÖTV (%${results.taxRates.sct})`"
-                        :value="$moneyFormat(results.taxFees.sct, 'TRY')"
-                        class="mb-5" />
-
-                    <CalculatorResultFormRow
-                        :label="`KDV (%${results.taxRates.vat})`"
-                        :value="$moneyFormat(results.taxFees.vat, 'TRY')"
-                        class="mb-5" />
-
-                    <CalculatorResultFormRow
-                        :label="`Toplam vergi (%${results.taxRates.total})`"
-                        :value="$moneyFormat(results.taxFees.total, 'TRY')"
-                        class="mb-5" />
-
-                    <CalculatorResultFormRow
-                        :value="$moneyFormat(results.prices.salePrice, 'TRY')"
-                        class="mb-5"
-                        label="Tahmini satış fiyatı" />
+                    <template v-for="(item, index) in resultList">
+                        <CalculatorResultFormRow
+                            :value="item.value"
+                            :label="item.key"
+                            :key="index"
+                            class="mb-5" />
+                    </template>
 
                     <CalculatorFormRow class="mb-6">
                         <CalculatorMinimumWageAlert :price="results.prices.salePrice" />
@@ -81,7 +59,9 @@
 
                         <CalculatorShareDialog
                             v-model="ui.isShareDialogShown"
-                            :data="form" />
+                            :screenshot-data="screenshotData"
+                            :form-data="form"
+                            :title="head.title" />
                     </CalculatorFormRow>
                 </template>
             </CalculatorResultTabs>
@@ -167,6 +147,48 @@ export default {
         }
     },
     computed: {
+        resultList() {
+            const vm = this;
+            return [
+                {
+                    key: "Vergisiz fiyat",
+                    value: vm.$moneyFormat(vm.results.prices.basePrice, "TRY")
+                },
+                {
+                    key: `Gümrük vergisi (%${vm.results.taxRates.custom})`,
+                    value: vm.$moneyFormat(vm.results.taxFees.custom, "TRY")
+                },
+                {
+                    key: `ÖTV (%${vm.results.taxRates.sct})`,
+                    value: vm.$moneyFormat(vm.results.taxFees.sct, "TRY")
+                },
+                {
+                    key: `KDV (%${vm.results.taxRates.vat})`,
+                    value: vm.$moneyFormat(vm.results.taxFees.vat, "TRY")
+                },
+                {
+                    key: `Toplam vergi (%${vm.results.taxRates.total})`,
+                    value: vm.$moneyFormat(vm.results.taxFees.total, "TRY")
+                },
+                {
+                    key: "Tahmini satış fiyatı",
+                    value: vm.$moneyFormat(vm.results.prices.salePrice, "TRY")
+                }
+            ];
+        },
+        screenshotData() {
+            const vm = this;
+
+            return {
+                output: vm.resultList,
+                input: [
+                    {
+                        key: "Konsol fiyatı",
+                        value: vm.$moneyFormat(vm.form.price, vm.form.currency)
+                    }
+                ]
+            };
+        },
         showResults() {
             const vm = this;
             return vm.form.price > 0 && vm.form.currency !== "";

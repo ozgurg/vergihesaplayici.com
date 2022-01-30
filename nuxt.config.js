@@ -47,7 +47,9 @@ export default {
         ]
     ],
     build: {
-        extractCSS: true
+        extractCSS: {
+            ignoreOrder: true
+        }
     },
     css: [
         "@/assets/css/style.scss"
@@ -56,7 +58,8 @@ export default {
         { src: "@/plugins/firebase.js", mode: "client" },
         { src: "@/plugins/money-format.js", mode: "client" },
         { src: "@/plugins/vue-clipboard2.js", mode: "client" },
-        { src: "@/plugins/vue-disqus.js", mode: "client" }
+        { src: "@/plugins/vue-disqus.js", mode: "client" },
+        { src: "@/plugins/vue-html2canvas.js", mode: "client" }
     ],
     loading: {
         color: process.env.APP_PRIMARY_COLOR,
@@ -64,6 +67,12 @@ export default {
         throttle: 600
     },
     vuetify: {
+        treeShake: true,
+        defaultAssets: {
+            font: {
+                family: "Rubik"
+            }
+        },
         lang: {
             locales: { tr },
             current: "tr"
