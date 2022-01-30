@@ -39,25 +39,27 @@
                     </v-expansion-panel-header>
                     <v-expansion-panel-content>
                         <div class="pl-2 pr-2 pt-8 pb-4">
-                            <CalculatorShareDialogUrl :data="data" />
+                            <CalculatorShareDialogUrl :data="formData" />
                         </div>
                     </v-expansion-panel-content>
                 </v-expansion-panel>
 
-                <v-expansion-panel disabled="">
+                <v-expansion-panel>
                     <v-expansion-panel-header>
                         <div class="d-flex align-center">
                             <v-icon
-                                disabled=""
                                 class="mr-4"
                                 left="">
                                 mdi-cellphone-screenshot
                             </v-icon>
-                            Ekran görüntüsü (Yakında 😉)
+                            Ekran görüntüsü
                         </div>
                     </v-expansion-panel-header>
                     <v-expansion-panel-content>
                         <div class="pl-2 pr-2 pt-8 pb-4">
+                            <CalculatorShareDialogScreenshot
+                                :data="screenshotData"
+                                :title="title" />
                         </div>
                     </v-expansion-panel-content>
                 </v-expansion-panel>
@@ -75,7 +77,7 @@
                     </v-expansion-panel-header>
                     <v-expansion-panel-content>
                         <div class="pl-2 pr-2 pt-8 pb-4">
-                            <CalculatorShareDialogSocialMedia :data="data" />
+                            <CalculatorShareDialogSocialMedia :data="formData" />
                         </div>
                     </v-expansion-panel-content>
                 </v-expansion-panel>
@@ -93,8 +95,16 @@ export default {
         value: {
             type: Boolean
         },
-        data: {
+        formData: {
             type: Object,
+            required: true
+        },
+        screenshotData: {
+            type: Object,
+            required: true
+        },
+        title: {
+            type: String,
             required: true
         }
     },

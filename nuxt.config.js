@@ -56,7 +56,8 @@ export default {
         { src: "@/plugins/firebase.js", mode: "client" },
         { src: "@/plugins/money-format.js", mode: "client" },
         { src: "@/plugins/vue-clipboard2.js", mode: "client" },
-        { src: "@/plugins/vue-disqus.js", mode: "client" }
+        { src: "@/plugins/vue-disqus.js", mode: "client" },
+        { src: "@/plugins/vue-html2canvas.js", mode: "client" }
     ],
     loading: {
         color: process.env.APP_PRIMARY_COLOR,

@@ -50,54 +50,13 @@
                     <CalculatorCalculatedFromSalePriceAlert v-if="form.currency === 'TRY'" />
                     <CalculatorCustomsInfoAlert v-else />
 
-                    <CalculatorResultFormRow
-                        :value="$moneyFormat(results.prices.basePrice, 'TRY')"
-                        class="mb-5"
-                        label="Vergisiz fiyat" />
-
-                    <template v-if="registrationIsImport">
+                    <template v-for="(item, index) in resultList">
                         <CalculatorResultFormRow
-                            :label="`Kültür Bakanlığı (%${results.taxRates.ministryOfCulture})`"
-                            :value="$moneyFormat(results.taxFees.ministryOfCulture, 'TRY')"
-                            class="mb-5" />
-
-                        <CalculatorResultFormRow
-                            :label="`TRT bandrolü (%${results.taxRates.trt})`"
-                            :value="$moneyFormat(results.taxFees.trt, 'TRY')"
-                            class="mb-5" />
-
-                        <CalculatorResultFormRow
-                            :label="`ÖTV (%${results.taxRates.sct})`"
-                            :value="$moneyFormat(results.taxFees.sct, 'TRY')"
-                            class="mb-5" />
-
-                        <CalculatorResultFormRow
-                            :label="`KDV (%${results.taxRates.vat})`"
-                            :value="$moneyFormat(results.taxFees.vat, 'TRY')"
+                            :value="item.value"
+                            :label="item.key"
+                            :key="index"
                             class="mb-5" />
                     </template>
-
-                    <template v-else>
-                        <CalculatorResultFormRow
-                            :label="`TRT bandrolü (${$moneyFormat(results.taxRates.trtPassport, 'EUR')})`"
-                            :value="$moneyFormat(results.taxFees.trtPassport, 'TRY')"
-                            class="mb-5" />
-
-                        <CalculatorResultFormRow
-                            :value="$moneyFormat(results.taxFees.registration, 'TRY')"
-                            class="mb-5"
-                            label="Kayıt ücreti" />
-                    </template>
-
-                    <CalculatorResultFormRow
-                        :label="`Toplam vergi (%${results.taxRates.total})`"
-                        :value="$moneyFormat(results.taxFees.total, 'TRY')"
-                        class="mb-5" />
-
-                    <CalculatorResultFormRow
-                        :value="$moneyFormat(results.prices.salePrice, 'TRY')"
-                        class="mb-5"
-                        label="Tahmini satış fiyatı" />
 
                     <CalculatorFormRow class="mb-6">
                         <CalculatorMinimumWageAlert :price="results.prices.salePrice" />
@@ -115,7 +74,9 @@
 
                         <CalculatorShareDialog
                             v-model="ui.isShareDialogShown"
-                            :data="form" />
+                            :screenshot-data="screenshotData"
+                            :form-data="form"
+                            :title="head.title" />
                     </CalculatorFormRow>
                 </template>
             </CalculatorResultTabs>
@@ -213,6 +174,72 @@ export default {
         }
     },
     computed: {
+        resultList() {
+            const vm = this;
+            return [
+                {
+                    key: "Vergisiz fiyat",
+                    value: vm.$moneyFormat(vm.results.prices.basePrice, "TRY")
+                },
+                ...(() => {
+                    if (vm.registrationIsImport) {
+                        return [
+                            {
+                                key: `Kültür Bakanlığı (%${vm.results.taxRates.ministryOfCulture})`,
+                                value: vm.$moneyFormat(vm.results.taxFees.ministryOfCulture, "TRY")
+                            },
+                            {
+                                key: `TRT bandrolü (%${vm.results.taxRates.trt})`,
+                                value: vm.$moneyFormat(vm.results.taxFees.trt, "TRY")
+                            },
+                            {
+                                key: `ÖTV (%${vm.results.taxRates.sct})`,
+                                value: vm.$moneyFormat(vm.results.taxFees.sct, "TRY")
+                            },
+                            {
+                                key: `KDV (%${vm.results.taxRates.vat})`,
+                                value: vm.$moneyFormat(vm.results.taxFees.vat, "TRY")
+                            }
+                        ];
+                    } else {
+                        return [
+                            {
+                                key: `TRT bandrolü (${vm.$moneyFormat(vm.results.taxRates.trtPassport, "EUR")})`,
+                                value: vm.$moneyFormat(vm.results.taxFees.trtPassport, "TRY")
+                            },
+                            {
+                                key: "Kayıt ücreti",
+                                value: vm.$moneyFormat(vm.results.taxFees.registration, "TRY")
+                            }
+                        ];
+                    }
+                })(),
+                {
+                    key: `Toplam vergi (%${vm.results.taxRates.total})`,
+                    value: vm.$moneyFormat(vm.results.taxFees.total, "TRY")
+                },
+                {
+                    key: "Tahmini satış fiyatı",
+                    value: vm.$moneyFormat(vm.results.prices.salePrice, "TRY")
+                }
+            ];
+        },
+        screenshotData() {
+            const vm = this;
+            return {
+                output: vm.resultList,
+                input: [
+                    {
+                        key: "Telefon fiyatı",
+                        value: vm.$moneyFormat(vm.form.price, vm.form.currency)
+                    },
+                    {
+                        key: "Kayıt yolu",
+                        value: vm.ui.registration.find(item => item.value === vm.form.registration).title
+                    }
+                ]
+            };
+        },
         showResults() {
             const vm = this;
             return vm.form.price > 0 && vm.form.currency !== "" && vm.form.registration !== "";
