@@ -5,16 +5,16 @@ module.exports = {
         node: true
     },
     extends: [
-        "plugin:vue/essential",
-        "eslint:recommended",
-        "plugin:jest/recommended",
+        "@nuxtjs",
+        "plugin:nuxt/recommended",
         "google"
     ],
     parserOptions: {
-        parser: "babel-eslint"
+        parser: "@babel/eslint-parser",
+        requireConfigFile: false
     },
     rules: {
-        "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
+        /* "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
         "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
         "quotes": ["error", "double"],
         "comma-dangle": ["error", "never"],
@@ -54,6 +54,6 @@ module.exports = {
         "arrow-parens": ["error", "as-needed"],
         "no-case-declarations": ["off"],
         "require-jsdoc": ["off"],
-        "object-curly-spacing": ["error", "always"]
+        "object-curly-spacing": ["error", "always"] */
     }
 };
