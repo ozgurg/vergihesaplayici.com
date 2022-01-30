@@ -47,7 +47,9 @@ export default {
         ]
     ],
     build: {
-        extractCSS: true
+        extractCSS: {
+            ignoreOrder: true
+        }
     },
     css: [
         "@/assets/css/style.scss"
@@ -65,6 +67,12 @@ export default {
         throttle: 600
     },
     vuetify: {
+        treeShake: true,
+        defaultAssets: {
+            font: {
+                family: "Rubik"
+            }
+        },
         lang: {
             locales: { tr },
             current: "tr"
