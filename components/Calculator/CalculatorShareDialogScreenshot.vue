@@ -152,51 +152,63 @@ export default {
 
             vm.isLoading = true;
 
-            const screenshot = await vm.captureScreenshot();
+            try {
+                const screenshot = await vm.captureScreenshot();
 
-            await navigator.permissions.query({
-                name: "clipboard-write",
-                allowWithoutGesture: false
-            });
+                await navigator.permissions.query({
+                    name: "clipboard-write",
+                    allowWithoutGesture: false
+                });
 
-            const screenshotToBlog = await fetch(screenshot).then(response => response.blob());
+                const screenshotToBlog = await fetch(screenshot).then(response => response.blob());
 
-            await window.navigator.clipboard.write([
-                new window.ClipboardItem({
-                    "image/png": screenshotToBlog
-                })
-            ]);
+                await window.navigator.clipboard.write([
+                    new window.ClipboardItem({
+                        "image/png": screenshotToBlog
+                    })
+                ]);
 
-            setTimeout(() => {
-                vm.isLoading = false;
-
-                vm.isCopied = true;
                 setTimeout(() => {
-                    vm.isCopied = false;
-                }, 1500);
-            }, 375);
+                    vm.isLoading = false;
+
+                    vm.isCopied = true;
+                    setTimeout(() => {
+                        vm.isCopied = false;
+                    }, 1500);
+                }, 375);
+            } catch (e) {
+                alert("Kullandığınız tarayıcı bu özelliği desteklemiyor.");
+
+                vm.isLoading = false;
+            }
         },
         async download() {
             const vm = this;
 
             vm.isLoading = true;
 
-            const screenshot = await vm.captureScreenshot();
+            try {
+                const screenshot = await vm.captureScreenshot();
 
-            await new JsFileDownloader({
-                url: screenshot,
-                contentType: "image/png",
-                nameCallback: () => `vergihesaplayici-${vm.date.getTime()}.png`
-            });
+                await new JsFileDownloader({
+                    url: screenshot,
+                    contentType: "image/png",
+                    nameCallback: () => `vergihesaplayici-${vm.date.getTime()}.png`
+                });
 
-            setTimeout(() => {
-                vm.isLoading = false;
-
-                vm.isDownloaded = true;
                 setTimeout(() => {
-                    vm.isDownloaded = false;
-                }, 1500);
-            }, 375);
+                    vm.isLoading = false;
+
+                    vm.isDownloaded = true;
+                    setTimeout(() => {
+                        vm.isDownloaded = false;
+                    }, 1500);
+                }, 375);
+            } catch (e) {
+                alert("Kullandığınız tarayıcı bu özelliği desteklemiyor.");
+
+                vm.isLoading = false;
+            }
         }
     }
 };
@@ -210,11 +222,13 @@ export default {
     padding: 1px;
     pointer-events: none;
     background: #fff;
+
     &__header {
         text-transform: uppercase;
         font-weight: 500;
         letter-spacing: 2px
     }
+
     &__success-text {
         // Same as button
         font-size: .875rem;
