@@ -1,10 +1,13 @@
+
+> ### Attention
+> vergihesaplayici.com is designed entirely for Turkey. That's why some terms may sound unfamiliar to you.
+
+&nbsp;
+
 [![Actions Status](https://github.com/ozgurg/vergihesaplayici.com/workflows/vergihesaplayici.com/badge.svg)](https://github.com/ozgurg/vergihesaplayici.com/actions)
 ![Version](https://img.shields.io/github/package-json/v/ozgurg/vergihesaplayici.com)
 
 [![Banner](https://raw.githubusercontent.com/ozgurg/vergihesaplayici.com/master/.github/assets/banner.jpg)](https://vergihesaplayici.com)
-
-> ### Attention
-> vergihesaplayici.com is designed entirely for Turkey. That's why some terms may sound unfamiliar to you.
 
 vergihesaplayici.com, calculates taxes.
 
