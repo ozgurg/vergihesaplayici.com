@@ -80,14 +80,14 @@
                         v-if="isDownloaded || isCopied || isLoading"
                         :value="true"
                         absolute=""
-                        color="#1E1E1E"
                         opacity="1"
                         class="rounded"
                         style="width:100%">
                         <v-alert
                             color="primary"
-                            class="pa-0 d-flex align-center flex-row justify-center w-100 h-100"
-                            outlined="">
+                            text=""
+                            outlined=""
+                            class="pa-0 d-flex align-center flex-row justify-center w-100 h-100">
                             <v-progress-circular
                                 v-if="isLoading"
                                 indeterminate=""
@@ -97,12 +97,14 @@
 
                             <template v-else>
                                 <div class="text-uppercase d-flex align-center">
-                                    <v-icon left color="primary">
+                                    <v-icon
+                                        left=""
+                                        color="primary">
                                         mdi-check
                                     </v-icon>
 
-                                    <span v-if="isDownloaded">İndirildi</span>
-                                    <span v-else-if="isCopied">Kopyalandı</span>
+                                    <span v-if="isDownloaded" class="screenshot__success-text">İndirildi</span>
+                                    <span v-else-if="isCopied" class="screenshot__success-text">Kopyalandı</span>
                                 </div>
                             </template>
                         </v-alert>
@@ -212,6 +214,11 @@ export default {
         text-transform: uppercase;
         font-weight: 500;
         letter-spacing: 2px
+    }
+    &__success-text {
+        // Same as button
+        font-size: .875rem;
+        font-weight: 500
     }
 }
 </style>
