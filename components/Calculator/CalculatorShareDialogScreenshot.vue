@@ -6,7 +6,7 @@
             <v-simple-table>
                 <tbody>
                 <tr>
-                    <td class="screenshot__header primary text-center" colspan="2">
+                    <td class="screenshot__header primary text-center">
                         <span class="screenshot__header">{{ title }}</span>
                     </td>
                 </tr>
@@ -14,16 +14,20 @@
                 <template v-for="item in data.input">
                     <tr :key="item.key">
                         <td class="py-2">
-                            {{ item.key }}
-                        </td>
-                        <td class="py-2 text-right">
-                            {{ item.value }}
+                            <div class="d-flex justify-space-between align-center">
+                                <div>
+                                    {{ item.key }}
+                                </div>
+                                <div class="text-end ps-4">
+                                    {{ item.value }}
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 </template>
 
                 <tr>
-                    <td class="text-uppercase grey darken-3 text-center" colspan="2">
+                    <td class="text-uppercase grey darken-3 text-center">
                         Sonuçlar
                     </td>
                 </tr>
@@ -31,16 +35,20 @@
                 <template v-for="item in data.output">
                     <tr :key="item.key">
                         <td class="py-2">
-                            {{ item.key }}
-                        </td>
-                        <td class="py-2 text-right">
-                            {{ item.value }}
+                            <div class="d-flex justify-space-between align-center">
+                                <div>
+                                    {{ item.key }}
+                                </div>
+                                <div class="text-end ps-4">
+                                    {{ item.value }}
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 </template>
 
                 <tr>
-                    <td colspan="2" class="text-center grey--text text--lighten-1 pa-2">
+                    <td class="text-center grey--text text--lighten-1 pa-2">
                         <div><b>vergihesaplayici.com v{{ version }}</b></div>
                         <div>{{ date.toLocaleString("tr-TR") }}</div>
                     </td>
