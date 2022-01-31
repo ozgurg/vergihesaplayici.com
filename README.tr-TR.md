@@ -1,7 +1,7 @@
 [![Actions Status](https://github.com/ozgurg/vergihesaplayici.com/workflows/vergihesaplayici.com/badge.svg)](https://github.com/ozgurg/vergihesaplayici.com/actions)
 ![Version](https://img.shields.io/github/package-json/v/ozgurg/vergihesaplayici.com)
 
-[![Banner](https://raw.githubusercontent.com/ozgurg/vergihesaplayici.com/master/.github/assets/banner.jpg)](https://vergihesaplayici.com/)
+[![Banner](https://raw.githubusercontent.com/ozgurg/vergihesaplayici.com/master/.github/assets/banner.jpg)](https://vergihesaplayici.com)
 
 vergihesaplayici.com, vergi hesaplar.
 
@@ -22,7 +22,7 @@ npm install
 ## Çalıştırma
 
 ``` sh
-# Development (http://localhost:3000/ adresinde erişilebilir olacak)
+# Development (http://localhost:3000 adresinde erişilebilir olacak)
 npm run dev
 
 # Build
@@ -36,10 +36,10 @@ npm run lint
 ```
 
 ## Logo
-[Namechap Free Logo Maker](https://www.namecheap.com/logo-maker/) ile oluşturdum.
+[Namechap Free Logo Maker](https://www.namecheap.com/logo-maker) ile oluşturdum.
 
 ## Bunlara da bakmak isteyebilirsiniz
-- https://telefonvergim.cf/
+- https://telefonvergim.cf
 
 ## Lisans
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-%2388DF95.svg)](https://github.com/ozgurg/vergihesaplayici.com/blob/master/LICENSE)
