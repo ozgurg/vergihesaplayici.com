@@ -48,13 +48,34 @@
                 </template>
 
                 <tr>
-                    <td class="text-center pt-2 pb-2 px-1">
-                        <div class="white--text font-weight-bold mb-2">
-                            vergihesaplayici.com v{{ version }}
+                    <td
+                        class="text-center pa-2"
+                        style="border-top:2px solid #fff">
+                        <v-row no-gutters>
+                            <v-col
+                                v-for="(currency, index) in currencies"
+                                :key="index">
+                                <CalculatorShareDialogScreenshotExchangeRateItem :currency="currency" />
+                            </v-col>
+                        </v-row>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="text-center py-2 caption">
+                        <div class="grey--text text--lighten-1 mb-1">
+                            {{ date.toLocaleString("tr-TR") }}
                         </div>
 
-                        <div class="grey--text caption">
-                            {{ date.toLocaleString("tr-TR") }}
+                        <div class="d-flex align-center justify-center flex-row white--text font-weight-bold">
+                            <img
+                                :src="require('@/assets/img/logo-screenshot.png')"
+                                class="me-2"
+                                alt="Vergi Hesaplayıcı Logo"
+                                draggable="false"
+                                height="18"
+                                width="136" />
+                            <span>v{{ version }}</span>
                         </div>
                     </td>
                 </tr>
@@ -227,6 +248,12 @@ export default {
                 vm.isLoading = false;
             }
         }
+    },
+    computed: {
+        currencies() {
+            const vm = this;
+            return vm.$store.get("exchange-rates/availableCurrencies").filter(currency => currency !== "TRY");
+        }
     }
 };
 </script>
@@ -236,7 +263,7 @@ export default {
     position: relative;
     width: 342px;
     margin: 0 auto;
-    padding: 1px;
+    padding: 2px;
     pointer-events: none;
     background: #fff;
 
