@@ -6,7 +6,7 @@
             <v-simple-table>
                 <tbody>
                 <tr>
-                    <td class="screenshot__header primary black--text text-center" colspan="2">
+                    <td class="screenshot__header primary text-center" colspan="2">
                         <span class="screenshot__header">{{ title }}</span>
                     </td>
                 </tr>
@@ -222,9 +222,10 @@ export default {
     background: #fff;
 
     &__header {
-        text-transform: uppercase;
-        font-weight: 500;
-        letter-spacing: 2px
+        letter-spacing: -.25px;
+        color: #00262C;
+        font-size: 19px;
+        font-weight: 500
     }
 
     &__success-text {
