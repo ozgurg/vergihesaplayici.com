@@ -12,8 +12,8 @@
                         </td>
                     </tr>
 
-                    <template v-for="(item, index) in data.input">
-                        <tr :key="index">
+                    <template v-for="item in data.input">
+                        <tr :key="item.key">
                             <td class="py-2">
                                 {{ item.key }}
                             </td>
@@ -29,8 +29,8 @@
                         </td>
                     </tr>
 
-                    <template v-for="(item, index) in data.output">
-                        <tr :key="index">
+                    <template v-for="item in data.output">
+                        <tr :key="item.key">
                             <td class="py-2">
                                 {{ item.key }}
                             </td>
