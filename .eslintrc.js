@@ -14,15 +14,34 @@ module.exports = {
         requireConfigFile: false
     },
     rules: {
-        /* "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
+        "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
         "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
         "quotes": ["error", "double"],
         "comma-dangle": ["error", "never"],
+        "semi": ["error", "always"],
         "indent": [
             "error",
             4,
             {
                 "SwitchCase": 1
+            }
+        ],
+        "no-tabs": [
+            "error",
+            {
+                "allowIndentationTabs": true
+            }
+        ],
+        "no-mixed-spaces-and-tabs": ["error", "smart-tabs"],
+        "arrow-parens": ["error", "as-needed"],
+        "max-len": ["off"],
+        "object-curly-spacing": ["error", "always"],
+        "curly": ["error", "multi-line"],
+        "eol-last": ["error", "always"],
+        "no-trailing-spaces": [
+            "error",
+            {
+                "skipBlankLines": true
             }
         ],
         "vue/script-indent": [
@@ -34,26 +53,51 @@ module.exports = {
                 "ignores": []
             }
         ],
-        "no-tabs": [
-            "error",
-            {
-                "allowIndentationTabs": true
-            }
+        "vue/html-indent": [
+            "off",
+            8
         ],
-        "curly": ["error", "multi-line"],
-        "no-invalid-this": ["off"],
-        "eol-last": ["error", "always"],
-        "max-len": ["off"],
-        "no-trailing-spaces": [
-            "error",
-            {
-                "skipBlankLines": true
+        "vue/order-in-components": ["error", {
+            "order": [
+                "el",
+                "name",
+                "layout",
+                "data",
+                "methods",
+                "computed",
+                "watch",
+                "head",
+                "mounted"
+            ]
+        }],
+        "vue/attributes-order": ["error", {
+            "order": [
+                "DEFINITION",
+                "CONDITIONALS",
+                "LIST_RENDERING",
+                "RENDER_MODIFIERS",
+                "OTHER_DIRECTIVES",
+                "SLOT",
+                "UNIQUE",
+                "CONTENT",
+                "TWO_WAY_BINDING",
+                "EVENTS",
+                "GLOBAL",
+                "OTHER_ATTR"
+            ]
+        }],
+        "vue/singleline-html-element-content-newline": ["error"],
+        "vue/html-closing-bracket-newline": ["error", {
+            "singleline": "never",
+            "multiline": "never"
+        }],
+        "vue/html-self-closing": ["error", {
+            "html": {
+                "void": "always",
+                "normal": "always",
+                "component": "always"
             }
-        ],
-        "no-mixed-spaces-and-tabs": "off",
-        "arrow-parens": ["error", "as-needed"],
-        "no-case-declarations": ["off"],
-        "require-jsdoc": ["off"],
-        "object-curly-spacing": ["error", "always"] */
+        }],
+        "vue/multi-word-component-names": "off"
     }
 };
