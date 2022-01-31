@@ -20,7 +20,9 @@
                     type="video/mp4" />
             </video>
         </a>
-        <div class="caption">Osita Iheme</div>
+        <div class="caption">
+            Osita Iheme
+        </div>
     </div>
 </template>
 

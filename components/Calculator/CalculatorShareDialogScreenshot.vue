@@ -1,43 +1,51 @@
 <template>
     <div>
-        <div class="screenshot" ref="table">
+        <div
+            ref="table"
+            class="screenshot">
             <v-simple-table>
-                <template v-slot:default>
-                    <tbody>
-                    <tr>
-                        <td class="screenshot__header primary black--text text-center" colspan="2">
-                            <span class="screenshot__header">{{ title }}</span>
+                <tbody>
+                <tr>
+                    <td class="screenshot__header primary black--text text-center" colspan="2">
+                        <span class="screenshot__header">{{ title }}</span>
+                    </td>
+                </tr>
+
+                <template v-for="item in data.input">
+                    <tr :key="item.key">
+                        <td class="py-2">
+                            {{ item.key }}
+                        </td>
+                        <td class="py-2 text-right">
+                            {{ item.value }}
                         </td>
                     </tr>
-
-                    <template v-for="(item, index) in data.input">
-                        <tr :key="index">
-                            <td class="py-2">{{ item.key }}</td>
-                            <td class="py-2 text-right">{{ item.value }}</td>
-                        </tr>
-                    </template>
-
-                    <tr>
-                        <td class="text-uppercase grey darken-3 text-center" colspan="2">
-                            Sonuçlar
-                        </td>
-                    </tr>
-
-                    <template v-for="(item, index) in data.output">
-                        <tr :key="index">
-                            <td class="py-2">{{ item.key }}</td>
-                            <td class="py-2 text-right">{{ item.value }}</td>
-                        </tr>
-                    </template>
-
-                    <tr>
-                        <td colspan="2" class="text-center grey--text text--lighten-1 pa-2">
-                            <div><b>vergihesaplayici.com v{{ version }}</b></div>
-                            <div>{{ date.toLocaleString("tr-TR") }}</div>
-                        </td>
-                    </tr>
-                    </tbody>
                 </template>
+
+                <tr>
+                    <td class="text-uppercase grey darken-3 text-center" colspan="2">
+                        Sonuçlar
+                    </td>
+                </tr>
+
+                <template v-for="item in data.output">
+                    <tr :key="item.key">
+                        <td class="py-2">
+                            {{ item.key }}
+                        </td>
+                        <td class="py-2 text-right">
+                            {{ item.value }}
+                        </td>
+                    </tr>
+                </template>
+
+                <tr>
+                    <td colspan="2" class="text-center grey--text text--lighten-1 pa-2">
+                        <div><b>vergihesaplayici.com v{{ version }}</b></div>
+                        <div>{{ date.toLocaleString("tr-TR") }}</div>
+                    </td>
+                </tr>
+                </tbody>
             </v-simple-table>
         </div>
 
@@ -49,7 +57,9 @@
                     @click="download()"
                     outlined=""
                     color="primary">
-                    <v-icon left="">mdi-download</v-icon>
+                    <v-icon left="">
+                        mdi-download
+                    </v-icon>
                     İndir
                 </v-btn>
 
@@ -57,7 +67,9 @@
                     @click="copy()"
                     outlined=""
                     color="primary">
-                    <v-icon left="">mdi-content-copy</v-icon>
+                    <v-icon left="">
+                        mdi-content-copy
+                    </v-icon>
                     Kopyala
                 </v-btn>
 
@@ -66,14 +78,14 @@
                         v-if="isDownloaded || isCopied || isLoading"
                         :value="true"
                         absolute=""
-                        color="#1E1E1E"
                         opacity="1"
                         class="rounded"
                         style="width:100%">
                         <v-alert
                             color="primary"
-                            class="pa-0 d-flex align-center flex-row justify-center w-100 h-100"
-                            outlined="">
+                            text=""
+                            outlined=""
+                            class="pa-0 d-flex align-center flex-row justify-center w-100 h-100">
                             <v-progress-circular
                                 v-if="isLoading"
                                 indeterminate=""
@@ -83,9 +95,14 @@
 
                             <template v-else>
                                 <div class="text-uppercase d-flex align-center">
-                                    <v-icon left color="primary">mdi-check</v-icon>
-                                    <span v-if="isDownloaded">İndirildi</span>
-                                    <span v-else-if="isCopied">Kopyalandı</span>
+                                    <v-icon
+                                        left=""
+                                        color="primary">
+                                        mdi-check
+                                    </v-icon>
+
+                                    <span v-if="isDownloaded" class="screenshot__success-text">İndirildi</span>
+                                    <span v-else-if="isCopied" class="screenshot__success-text">Kopyalandı</span>
                                 </div>
                             </template>
                         </v-alert>
@@ -97,8 +114,8 @@
 </template>
 
 <script>
-import { version } from "@/package.json";
 import JsFileDownloader from "js-file-downloader";
+import { version } from "@/package.json";
 
 export default {
     data: () => ({
@@ -133,47 +150,63 @@ export default {
 
             vm.isLoading = true;
 
-            const screenshot = await vm.captureScreenshot();
+            try {
+                const screenshot = await vm.captureScreenshot();
 
-            await navigator.permissions.query({
-                name: "clipboard-write",
-                allowWithoutGesture: false
-            });
+                await navigator.permissions.query({
+                    name: "clipboard-write",
+                    allowWithoutGesture: false
+                });
 
-            const screenshotToBlog = await fetch(screenshot).then(response => response.blob());
+                const screenshotToBlog = await fetch(screenshot).then(response => response.blob());
 
-            await window.navigator.clipboard.write([
-                new window.ClipboardItem({
-                    "image/png": screenshotToBlog
-                })
-            ]);
+                await window.navigator.clipboard.write([
+                    new window.ClipboardItem({
+                        "image/png": screenshotToBlog
+                    })
+                ]);
 
-            setTimeout(() => {
+                setTimeout(() => {
+                    vm.isLoading = false;
+
+                    vm.isCopied = true;
+                    setTimeout(() => {
+                        vm.isCopied = false;
+                    }, 1500);
+                }, 375);
+            } catch (e) {
+                alert("Kullandığınız tarayıcı bu özelliği desteklemiyor.");
+
                 vm.isLoading = false;
-
-                vm.isCopied = true;
-                setTimeout(() => vm.isCopied = false, 1500);
-            }, 375);
+            }
         },
         async download() {
             const vm = this;
 
             vm.isLoading = true;
 
-            const screenshot = await vm.captureScreenshot();
+            try {
+                const screenshot = await vm.captureScreenshot();
 
-            await new JsFileDownloader({
-                url: screenshot,
-                contentType: "image/png",
-                nameCallback: () => `vergihesaplayici-${vm.date.getTime()}.png`
-            });
+                await new JsFileDownloader({
+                    url: screenshot,
+                    contentType: "image/png",
+                    nameCallback: () => `vergihesaplayici-${vm.date.getTime()}.png`
+                });
 
-            setTimeout(() => {
+                setTimeout(() => {
+                    vm.isLoading = false;
+
+                    vm.isDownloaded = true;
+                    setTimeout(() => {
+                        vm.isDownloaded = false;
+                    }, 1500);
+                }, 375);
+            } catch (e) {
+                alert("Kullandığınız tarayıcı bu özelliği desteklemiyor.");
+
                 vm.isLoading = false;
-
-                vm.isDownloaded = true;
-                setTimeout(() => vm.isDownloaded = false, 1500);
-            }, 375);
+            }
         }
     }
 };
@@ -187,10 +220,17 @@ export default {
     padding: 1px;
     pointer-events: none;
     background: #fff;
+
     &__header {
         text-transform: uppercase;
         font-weight: 500;
         letter-spacing: 2px
+    }
+
+    &__success-text {
+        // Same as button
+        font-size: .875rem;
+        font-weight: 500
     }
 }
 </style>

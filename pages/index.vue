@@ -1,15 +1,21 @@
 <template>
 	<div>
-        <AppHeader class="mt-16">Vergi Hesaplayıcı</AppHeader>
+        <AppHeader class="mt-16">
+            Vergi Hesaplayıcı
+        </AppHeader>
 
         <InnerContainer>
-            <p class="mb-4">vergihesaplayici.com, vergi hesaplar.</p>
+            <p class="mb-4">
+                vergihesaplayici.com, vergi hesaplar.
+            </p>
 
             <OsitaIheme />
 
             <v-divider class="my-8" />
 
-            <h2 class="mb-2">Hesaplayıcılar</h2>
+            <h2 class="mb-2">
+                Hesaplayıcılar
+            </h2>
             <CalculatorGrid />
         </InnerContainer>
 	</div>

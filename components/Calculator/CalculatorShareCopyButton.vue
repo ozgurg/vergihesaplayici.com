@@ -3,12 +3,14 @@
         v-model="isTooltipShown"
         allow-overflow=""
         bottom="">
-        <template v-slot:activator="{ on, attrs }">
+        <template #activator="{ on, attrs }">
             <v-btn
-                v-bind="attrs"
+                @click="copy(value)"
                 v-on="on"
-                @click="copy(value)">
-                <v-icon :color="color">{{ icon }}</v-icon>
+                v-bind="attrs">
+                <v-icon :color="color">
+                    {{ icon }}
+                </v-icon>
             </v-btn>
         </template>
         <span>Sayfa bağlantısını kopyala</span>
@@ -24,7 +26,8 @@ export default {
     }),
     props: {
         value: {
-            type: String
+            type: String,
+            default: null
         }
     },
     methods: {

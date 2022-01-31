@@ -20,10 +20,12 @@
 export default {
     props: {
         label: {
-            type: String
+            type: String,
+            default: null
         },
         value: {
-            type: String
+            type: String,
+            default: null
         }
     }
 };

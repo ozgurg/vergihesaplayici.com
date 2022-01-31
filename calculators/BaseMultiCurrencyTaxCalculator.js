@@ -38,7 +38,7 @@ class BaseMultiCurrencyTaxCalculator extends BaseTaxCalculator {
      * @type {object}
      */
     prices = {
-        basePrice: 0, // Tax free price
+        basePrice: 0, // Tax-free price
         salePrice: 0 // Tax added price
     };
 

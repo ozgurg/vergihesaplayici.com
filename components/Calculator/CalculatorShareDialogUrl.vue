@@ -5,7 +5,7 @@
             hide-details=""
             outlined=""
             readonly="">
-            <template slot="append">
+            <template #append>
                 <CopyButton
                     :value="url"
                     container-id="calculatorShareDialogCopyUrl" />
@@ -32,7 +32,8 @@ export default {
             required: true
         },
         container: {
-            type: String
+            type: String,
+            default: null
         }
     },
     computed: {

@@ -37,9 +37,9 @@
 
                     <template v-for="(item, index) in resultList">
                         <CalculatorResultFormRow
+                            :key="index"
                             :value="item.value"
                             :label="item.key"
-                            :key="index"
                             class="mb-5" />
                     </template>
 
@@ -53,7 +53,9 @@
                             outlined=""
                             color="primary"
                             large="">
-                            <v-icon left="">mdi-share</v-icon>
+                            <v-icon left="">
+                                mdi-share
+                            </v-icon>
                             Paylaş...
                         </v-btn>
 
@@ -114,7 +116,7 @@ export default {
         calculate() {
             const vm = this;
 
-            const price = parseFloat(vm.form.price) * vm.getCurrency(vm.form.currency)["rate"];
+            const price = parseFloat(vm.form.price) * vm.getCurrency(vm.form.currency).rate;
 
             const consoleTaxCalculator = new ConsoleTaxCalculator({
                 price,

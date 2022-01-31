@@ -95,7 +95,7 @@ class PhoneTaxCalculator extends BaseMultiCurrencyTaxCalculator {
      * @private
      */
     trtPassportFee() {
-        this.taxFees.trtPassport = this.taxRates.trtPassport * this.exchangeRates["EUR"]["rate"];
+        this.taxFees.trtPassport = this.taxRates.trtPassport * this.exchangeRates.EUR.rate;
 
         switch (this.calculationMode) {
             case BaseMultiCurrencyTaxCalculator.CalculationMode.FromBasePrice:

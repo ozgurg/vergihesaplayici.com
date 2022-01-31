@@ -1,8 +1,8 @@
 <template>
     <v-btn
-        v-bind="$attrs"
         v-ripple="false"
         @click="copy(value)"
+        v-bind="$attrs"
         :class="{'pointer-events-none': isCopied}"
         plain=""
         text=""
@@ -19,17 +19,19 @@ export default {
     }),
     props: {
         value: {
-            type: String
+            type: String,
+            default: null
         },
         containerId: {
-            type: String
+            type: String,
+            default: null
         }
     },
     methods: {
         copy(text) {
             const vm = this;
 
-            if (vm.containerId !== undefined) {
+            if (vm.containerId !== null) {
                 vm.$copyText(text, document.getElementById(vm.containerId));
             } else {
                 vm.$copyText(text);
