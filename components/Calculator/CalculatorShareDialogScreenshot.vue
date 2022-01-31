@@ -188,9 +188,13 @@ export default {
                     }, 1500);
                 }, 375);
             } catch (e) {
-                alert("Kullandığınız tarayıcı bu özelliği desteklemiyor.");
+                console.error(e);
 
-                vm.isLoading = false;
+                if (confirm("Kullandığınız tarayıcı bu özelliği desteklemiyor. Kopyalamak yerine indirmek ister misiniz")) {
+                    await vm.download();
+                } else {
+                    vm.isLoading = false;
+                }
             }
         },
         async download() {
@@ -216,7 +220,9 @@ export default {
                     }, 1500);
                 }, 375);
             } catch (e) {
-                alert("Kullandığınız tarayıcı bu özelliği desteklemiyor.");
+                console.error(e);
+
+                alert("Bir hata oluştu.");
 
                 vm.isLoading = false;
             }
