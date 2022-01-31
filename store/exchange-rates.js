@@ -16,7 +16,11 @@ export const mutations = {
 
 export const actions = {
     async loadExchangeRateFromApi({ state, commit }, currency) {
-        if (currency === "TRY" || state.currencies[currency].rate > 0) return;
+        if (currency === "TRY") return;
+
+        if (state.currencies[currency].rate > 0) {
+            return state.currencies[currency];
+        }
 
         return await fetch(`https://api.exchangerate.host/latest?base=${currency}&symbols=TRY`)
             .then(response => response.json())

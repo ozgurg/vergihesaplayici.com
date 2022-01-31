@@ -6,7 +6,7 @@
             <v-simple-table>
                 <tbody>
                 <tr>
-                    <td class="screenshot__header primary text-center" colspan="2">
+                    <td class="screenshot__header primary text-center">
                         <span class="screenshot__header">{{ title }}</span>
                     </td>
                 </tr>
@@ -14,16 +14,20 @@
                 <template v-for="item in data.input">
                     <tr :key="item.key">
                         <td class="py-2">
-                            {{ item.key }}
-                        </td>
-                        <td class="py-2 text-right">
-                            {{ item.value }}
+                            <div class="d-flex justify-space-between align-center">
+                                <div>
+                                    {{ item.key }}
+                                </div>
+                                <div class="text-end ps-4">
+                                    {{ item.value }}
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 </template>
 
                 <tr>
-                    <td class="text-uppercase grey darken-3 text-center" colspan="2">
+                    <td class="text-uppercase grey darken-3 text-center">
                         Sonuçlar
                     </td>
                 </tr>
@@ -31,18 +35,48 @@
                 <template v-for="item in data.output">
                     <tr :key="item.key">
                         <td class="py-2">
-                            {{ item.key }}
-                        </td>
-                        <td class="py-2 text-right">
-                            {{ item.value }}
+                            <div class="d-flex justify-space-between align-center">
+                                <div>
+                                    {{ item.key }}
+                                </div>
+                                <div class="text-end ps-4">
+                                    {{ item.value }}
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 </template>
 
                 <tr>
-                    <td colspan="2" class="text-center grey--text text--lighten-1 pa-2">
-                        <div><b>vergihesaplayici.com v{{ version }}</b></div>
-                        <div>{{ date.toLocaleString("tr-TR") }}</div>
+                    <td
+                        class="text-center pa-2"
+                        style="border-top:2px solid #fff">
+                        <v-row no-gutters>
+                            <v-col
+                                v-for="(currency, index) in currencies"
+                                :key="index">
+                                <CalculatorShareDialogScreenshotExchangeRateItem :currency="currency" />
+                            </v-col>
+                        </v-row>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="text-center py-2 caption">
+                        <div class="grey--text text--lighten-1 mb-1">
+                            {{ date.toLocaleString("tr-TR") }}
+                        </div>
+
+                        <div class="d-flex align-center justify-center flex-row white--text font-weight-bold">
+                            <img
+                                :src="require('@/assets/img/logo-screenshot.png')"
+                                class="me-2"
+                                alt="Vergi Hesaplayıcı Logo"
+                                draggable="false"
+                                height="18"
+                                width="136" />
+                            <span>v{{ version }}</span>
+                        </div>
                     </td>
                 </tr>
                 </tbody>
@@ -175,9 +209,13 @@ export default {
                     }, 1500);
                 }, 375);
             } catch (e) {
-                alert("Kullandığınız tarayıcı bu özelliği desteklemiyor.");
+                console.error(e);
 
-                vm.isLoading = false;
+                if (confirm("Kullandığınız tarayıcı bu özelliği desteklemiyor. Kopyalamak yerine indirmek ister misiniz")) {
+                    await vm.download();
+                } else {
+                    vm.isLoading = false;
+                }
             }
         },
         async download() {
@@ -203,10 +241,18 @@ export default {
                     }, 1500);
                 }, 375);
             } catch (e) {
-                alert("Kullandığınız tarayıcı bu özelliği desteklemiyor.");
+                console.error(e);
+
+                alert("Bir hata oluştu.");
 
                 vm.isLoading = false;
             }
+        }
+    },
+    computed: {
+        currencies() {
+            const vm = this;
+            return vm.$store.get("exchange-rates/availableCurrencies").filter(currency => currency !== "TRY");
         }
     }
 };
@@ -217,7 +263,7 @@ export default {
     position: relative;
     width: 342px;
     margin: 0 auto;
-    padding: 1px;
+    padding: 2px;
     pointer-events: none;
     background: #fff;
 
