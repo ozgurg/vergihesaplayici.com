@@ -18,9 +18,13 @@
                     {{ calculator.icon }}
                 </v-icon>
 
-                <h3 class="text-h6 mt-4 mb-2 text--primary">{{ calculator.title }}</h3>
+                <h3 class="text-h6 mt-4 mb-2 text--primary">
+                    {{ calculator.title }}
+                </h3>
 
-                <p class="text-subtitle-2 mb-0 text--secondary">{{ calculator.description }}</p>
+                <p class="text-subtitle-2 mb-0 text--secondary">
+                    {{ calculator.description }}
+                </p>
             </v-card>
         </v-col>
     </v-row>

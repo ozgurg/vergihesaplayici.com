@@ -4,7 +4,9 @@
         outlined=""
         class="px-5 py-4"
         flat="">
-        <v-card-subtitle class="pa-0 ma-0 mb-1">{{ currency }}</v-card-subtitle>
+        <v-card-subtitle class="pa-0 ma-0 mb-1">
+            {{ currency }}
+        </v-card-subtitle>
 
         <v-skeleton-loader
             v-if="isLoading"
@@ -22,10 +24,10 @@
 
             <div v-else>
                 <v-tooltip bottom="">
-                    <template v-slot:activator="{ on, attrs }">
+                    <template #activator="{ on, attrs }">
                         <v-icon
-                            v-bind="attrs"
                             v-on="on"
+                            v-bind="attrs"
                             color="red">
                             mdi-alert
                         </v-icon>
@@ -62,7 +64,9 @@ export default {
                     // To disable default error behavior
                 });
 
-            setTimeout(() => vm.isLoading = false, 100);
+            setTimeout(() => {
+                vm.isLoading = false;
+            }, 100);
         }
     },
     async mounted() {

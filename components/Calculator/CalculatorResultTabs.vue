@@ -1,18 +1,21 @@
 <template>
-    <div
-        v-bind="$attrs">
+    <div v-bind="$attrs">
         <CalculatorFormRow class="result-tab mb-4">
             <v-tabs
-                :value="value"
                 @change="emit($event)"
+                :value="value"
                 background-color="transparent"
                 fixed-tabs="">
                 <v-tab :disabled="!showResults">
-                    <v-icon left="">mdi-format-list-bulleted-type</v-icon>
+                    <v-icon left="">
+                        mdi-format-list-bulleted-type
+                    </v-icon>
                     Sonuçlar
                 </v-tab>
                 <v-tab>
-                    <v-icon left="">mdi-comment-multiple-outline</v-icon>
+                    <v-icon left="">
+                        mdi-comment-multiple-outline
+                    </v-icon>
                     Yorumlar
                 </v-tab>
             </v-tabs>

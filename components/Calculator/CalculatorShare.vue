@@ -1,20 +1,24 @@
 <template>
 	<div v-bind="$attrs">
-        <h3 class="mb-2">Paylaş</h3>
+        <h3 class="mb-2">
+            Paylaş
+        </h3>
 
         <v-btn-toggle>
             <v-tooltip
                 allow-overflow=""
                 bottom="">
-                <template v-slot:activator="{ on, attrs }">
+                <template #activator="{ on, attrs }">
                     <v-btn
-                        v-bind="attrs"
                         v-on="on"
+                        v-bind="attrs"
                         :href="facebookShareUrl"
                         link=""
                         rel="nofollow noopener noreferrer"
                         target="_blank">
-                        <v-icon color="#1877f2">mdi-facebook</v-icon>
+                        <v-icon color="#1877f2">
+                            mdi-facebook
+                        </v-icon>
                     </v-btn>
                 </template>
                 <span>Facebook'ta paylaş</span>
@@ -23,15 +27,17 @@
             <v-tooltip
                 allow-overflow=""
                 bottom="">
-                <template v-slot:activator="{ on, attrs }">
+                <template #activator="{ on, attrs }">
                     <v-btn
-                        v-bind="attrs"
                         v-on="on"
+                        v-bind="attrs"
                         :href="twitterShareUrl"
                         link=""
                         rel="nofollow noopener noreferrer"
                         target="_blank">
-                        <v-icon color="#00acee">mdi-twitter</v-icon>
+                        <v-icon color="#00acee">
+                            mdi-twitter
+                        </v-icon>
                     </v-btn>
                 </template>
                 <span>Twitter'ta paylaş</span>
@@ -40,15 +46,17 @@
             <v-tooltip
                 allow-overflow=""
                 bottom="">
-                <template v-slot:activator="{ on, attrs }">
+                <template #activator="{ on, attrs }">
                     <v-btn
-                        v-bind="attrs"
                         v-on="on"
+                        v-bind="attrs"
                         :href="whatsAppShareUrl"
                         link=""
                         rel="nofollow noopener noreferrer"
                         target="_blank">
-                        <v-icon color="#25d366">mdi-whatsapp</v-icon>
+                        <v-icon color="#25d366">
+                            mdi-whatsapp
+                        </v-icon>
                     </v-btn>
                 </template>
                 <span>WhatsApp ile gönder</span>
@@ -57,10 +65,10 @@
             <v-tooltip
                 allow-overflow=""
                 bottom="">
-                <template v-slot:activator="{ on, attrs }">
+                <template #activator="{ on, attrs }">
                     <v-btn
-                        v-bind="attrs"
                         v-on="on"
+                        v-bind="attrs"
                         :href="telegramShareUrl"
                         link=""
                         rel="nofollow noopener noreferrer"

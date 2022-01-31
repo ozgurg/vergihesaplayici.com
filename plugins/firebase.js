@@ -1,3 +1,4 @@
+/* eslint-disable import/no-mutable-exports */
 import { initializeApp } from "firebase/app";
 import { initializeAnalytics } from "firebase/analytics";
 import { initializePerformance } from "firebase/performance";

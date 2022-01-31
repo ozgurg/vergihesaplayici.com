@@ -1,9 +1,9 @@
 <template>
 	<v-select
+        @change="emit($event)"
         v-bind="$attrs"
         :value="value"
         :items="currencies"
-        @change="emit($event)"
         hide-details=""
         outlined=""
         aria-label="Para birimi" />

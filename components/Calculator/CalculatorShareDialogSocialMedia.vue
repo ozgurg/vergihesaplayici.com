@@ -10,10 +10,10 @@
                 cols="4"
                 sm="2">
                 <v-tooltip bottom="">
-                    <template v-slot:activator="{ on, attrs }">
+                    <template #activator="{ on, attrs }">
                         <v-btn
-                            v-bind="attrs"
                             v-on="on"
+                            v-bind="attrs"
                             :href="item.url"
                             :color="item.color"
                             link=""
@@ -32,7 +32,9 @@
                                     loading="lazy" />
                             </template>
                             <template v-else>
-                                <v-icon size="24">{{ item.icon }}</v-icon>
+                                <v-icon size="24">
+                                    {{ item.icon }}
+                                </v-icon>
                             </template>
                         </v-btn>
                     </template>

@@ -2,7 +2,7 @@
     <v-breadcrumbs
         v-if="items.length > 0"
         :items="items">
-        <template v-slot:item="{ item }">
+        <template #item="{ item }">
             <v-breadcrumbs-item
                 :to="item.to"
                 active-class=""

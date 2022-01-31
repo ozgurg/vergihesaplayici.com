@@ -1,8 +1,10 @@
 <template>
     <div>
-        <div class="screenshot" ref="table">
+        <div
+            ref="table"
+            class="screenshot">
             <v-simple-table>
-                <template v-slot:default>
+                <template #default>
                     <tbody>
                     <tr>
                         <td class="screenshot__header primary black--text text-center" colspan="2">
@@ -12,8 +14,12 @@
 
                     <template v-for="(item, index) in data.input">
                         <tr :key="index">
-                            <td class="py-2">{{ item.key }}</td>
-                            <td class="py-2 text-right">{{ item.value }}</td>
+                            <td class="py-2">
+                                {{ item.key }}
+                            </td>
+                            <td class="py-2 text-right">
+                                {{ item.value }}
+                            </td>
                         </tr>
                     </template>
 
@@ -25,8 +31,12 @@
 
                     <template v-for="(item, index) in data.output">
                         <tr :key="index">
-                            <td class="py-2">{{ item.key }}</td>
-                            <td class="py-2 text-right">{{ item.value }}</td>
+                            <td class="py-2">
+                                {{ item.key }}
+                            </td>
+                            <td class="py-2 text-right">
+                                {{ item.value }}
+                            </td>
                         </tr>
                     </template>
 
@@ -49,7 +59,9 @@
                     @click="download()"
                     outlined=""
                     color="primary">
-                    <v-icon left="">mdi-download</v-icon>
+                    <v-icon left="">
+                        mdi-download
+                    </v-icon>
                     İndir
                 </v-btn>
 
@@ -57,7 +69,9 @@
                     @click="copy()"
                     outlined=""
                     color="primary">
-                    <v-icon left="">mdi-content-copy</v-icon>
+                    <v-icon left="">
+                        mdi-content-copy
+                    </v-icon>
                     Kopyala
                 </v-btn>
 
@@ -83,7 +97,10 @@
 
                             <template v-else>
                                 <div class="text-uppercase d-flex align-center">
-                                    <v-icon left color="primary">mdi-check</v-icon>
+                                    <v-icon left color="primary">
+                                        mdi-check
+                                    </v-icon>
+
                                     <span v-if="isDownloaded">İndirildi</span>
                                     <span v-else-if="isCopied">Kopyalandı</span>
                                 </div>
@@ -97,8 +114,8 @@
 </template>
 
 <script>
-import { version } from "@/package.json";
 import JsFileDownloader from "js-file-downloader";
+import { version } from "@/package.json";
 
 export default {
     data: () => ({
@@ -152,7 +169,9 @@ export default {
                 vm.isLoading = false;
 
                 vm.isCopied = true;
-                setTimeout(() => vm.isCopied = false, 1500);
+                setTimeout(() => {
+                    vm.isCopied = false;
+                }, 1500);
             }, 375);
         },
         async download() {
@@ -172,7 +191,9 @@ export default {
                 vm.isLoading = false;
 
                 vm.isDownloaded = true;
-                setTimeout(() => vm.isDownloaded = false, 1500);
+                setTimeout(() => {
+                    vm.isDownloaded = false;
+                }, 1500);
             }, 375);
         }
     }

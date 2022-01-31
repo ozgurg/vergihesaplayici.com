@@ -2,7 +2,9 @@
     <v-list
         v-bind="$attrs"
         role="list">
-        <v-subheader v-if="subheader">{{ subheader }}</v-subheader>
+        <v-subheader v-if="subheader">
+            {{ subheader }}
+        </v-subheader>
 
         <v-list-item
             v-for="(calculator, index) in calculators"
@@ -37,7 +39,8 @@ export default {
     }),
     props: {
         subheader: {
-            type: String
+            type: String,
+            default: null
         }
     }
 };

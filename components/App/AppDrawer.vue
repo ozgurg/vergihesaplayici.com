@@ -4,7 +4,7 @@
         v-model="drawerState"
         :color="color"
         floating="">
-        <template v-slot:prepend>
+        <template #prepend>
             <AppDrawerLogo />
         </template>
 

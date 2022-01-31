@@ -1,16 +1,18 @@
 <template>
     <v-dialog
+        @click:outside="close()"
+        @close="close()"
         :value="value"
         overlay-color="#000"
         overlay-opacity=".75"
-        @close="close()"
-        @click:outside="close()"
         width="700">
         <v-card>
             <v-toolbar
                 class="px-2"
                 flat="">
-                <v-toolbar-title class="text-center">Paylaş</v-toolbar-title>
+                <v-toolbar-title class="text-center">
+                    Paylaş
+                </v-toolbar-title>
 
                 <v-spacer />
 
