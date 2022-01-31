@@ -4,50 +4,48 @@
             ref="table"
             class="screenshot">
             <v-simple-table>
-                <template #default>
-                    <tbody>
-                    <tr>
-                        <td class="screenshot__header primary black--text text-center" colspan="2">
-                            <span class="screenshot__header">{{ title }}</span>
+                <tbody>
+                <tr>
+                    <td class="screenshot__header primary black--text text-center" colspan="2">
+                        <span class="screenshot__header">{{ title }}</span>
+                    </td>
+                </tr>
+
+                <template v-for="item in data.input">
+                    <tr :key="item.key">
+                        <td class="py-2">
+                            {{ item.key }}
+                        </td>
+                        <td class="py-2 text-right">
+                            {{ item.value }}
                         </td>
                     </tr>
-
-                    <template v-for="item in data.input">
-                        <tr :key="item.key">
-                            <td class="py-2">
-                                {{ item.key }}
-                            </td>
-                            <td class="py-2 text-right">
-                                {{ item.value }}
-                            </td>
-                        </tr>
-                    </template>
-
-                    <tr>
-                        <td class="text-uppercase grey darken-3 text-center" colspan="2">
-                            Sonuçlar
-                        </td>
-                    </tr>
-
-                    <template v-for="item in data.output">
-                        <tr :key="item.key">
-                            <td class="py-2">
-                                {{ item.key }}
-                            </td>
-                            <td class="py-2 text-right">
-                                {{ item.value }}
-                            </td>
-                        </tr>
-                    </template>
-
-                    <tr>
-                        <td colspan="2" class="text-center grey--text text--lighten-1 pa-2">
-                            <div><b>vergihesaplayici.com v{{ version }}</b></div>
-                            <div>{{ date.toLocaleString("tr-TR") }}</div>
-                        </td>
-                    </tr>
-                    </tbody>
                 </template>
+
+                <tr>
+                    <td class="text-uppercase grey darken-3 text-center" colspan="2">
+                        Sonuçlar
+                    </td>
+                </tr>
+
+                <template v-for="item in data.output">
+                    <tr :key="item.key">
+                        <td class="py-2">
+                            {{ item.key }}
+                        </td>
+                        <td class="py-2 text-right">
+                            {{ item.value }}
+                        </td>
+                    </tr>
+                </template>
+
+                <tr>
+                    <td colspan="2" class="text-center grey--text text--lighten-1 pa-2">
+                        <div><b>vergihesaplayici.com v{{ version }}</b></div>
+                        <div>{{ date.toLocaleString("tr-TR") }}</div>
+                    </td>
+                </tr>
+                </tbody>
             </v-simple-table>
         </div>
 
