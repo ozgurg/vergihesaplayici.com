@@ -48,9 +48,14 @@
                 </template>
 
                 <tr>
-                    <td class="text-center grey--text text--lighten-1 pa-2">
-                        <div><b>vergihesaplayici.com v{{ version }}</b></div>
-                        <div>{{ date.toLocaleString("tr-TR") }}</div>
+                    <td class="text-center pt-2 pb-2 px-1">
+                        <div class="white--text font-weight-bold mb-2">
+                            vergihesaplayici.com v{{ version }}
+                        </div>
+
+                        <div class="grey--text caption">
+                            {{ date.toLocaleString("tr-TR") }}
+                        </div>
                     </td>
                 </tr>
                 </tbody>
