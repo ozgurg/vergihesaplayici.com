@@ -9,6 +9,8 @@
 
 [![Banner](https://raw.githubusercontent.com/ozgurg/vergihesaplayici.com/master/.github/assets/banner.jpg)](https://vergihesaplayici.com)
 
+> Türkçe: https://github.com/ozgurg/vergihesaplayici.com/blob/master/README.tr-TR.md
+
 vergihesaplayici.com, calculates taxes.
 
 When I saw [@temp](https://teknoseyir.com/u/temp)'s desktop software called [Telefon Fiyatı Hesapla v2](https://teknoseyir.com/blog/telefon-fiyati-hesapla-v2) from [teknoseyir.com](https://teknoseyir.com), I bought the domain name and moved it to the web with Nuxt.js to make a general tax calculator that could include different types of calculations.
