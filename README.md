@@ -1,35 +1,53 @@
+
+> ### Attention
+> vergihesaplayici.com is designed entirely for Turkey. That's why some terms may sound unfamiliar to you.
+
+&nbsp;
+
 [![Actions Status](https://github.com/ozgurg/vergihesaplayici.com/workflows/vergihesaplayici.com/badge.svg)](https://github.com/ozgurg/vergihesaplayici.com/actions)
 ![Version](https://img.shields.io/github/package-json/v/ozgurg/vergihesaplayici.com)
 
-<p align="center">
-  <a target="_blank" href="https://vergihesaplayici.com/">
-     <img src="https://raw.githubusercontent.com/ozgurg/vergihesaplayici.com/master/.github/assets/banner.jpg" />
-  </a>
-</p>
+[![Banner](https://raw.githubusercontent.com/ozgurg/vergihesaplayici.com/master/.github/assets/banner.jpg)](https://vergihesaplayici.com)
 
-vergihesaplayici.com, vergi hesaplar.
+> Türkçe: https://github.com/ozgurg/vergihesaplayici.com/blob/master/README.tr-TR.md
 
-[teknoseyir.com](https://teknoseyir.com/)'dan [@temp](https://teknoseyir.com/u/temp)'in [Telefon Fiyatı Hesapla v2](https://teknoseyir.com/blog/telefon-fiyati-hesapla-v2) adlı masaüstü yazılımını görünce farklı türde hesaplamaları da içerebilecek genel bir vergi hesaplayıcı yapmak üzerine alan adını satın alıp Nuxt.js ile webe taşıdım.
+vergihesaplayici.com, calculates taxes.
 
-## Kurulum
+When I saw [@temp](https://teknoseyir.com/u/temp)'s desktop software called [Telefon Fiyatı Hesapla v2](https://teknoseyir.com/blog/telefon-fiyati-hesapla-v2) from [teknoseyir.com](https://teknoseyir.com), I bought the domain name and moved it to the web with Nuxt.js to make a general tax calculator that could include different types of calculations.
 
-    npm install
+## Installation
+``` sh
+# Download the project
+git clone https://github.com/ozgurg/vergihesaplayici.com.git
 
-## Çalıştırma
-Development
+# Enter the folder
+cd vergihesaplayici.com
 
-    npm run dev
+# Install dependencies
+npm install
+```
 
-Build
+## Starting
 
-    npm run generate
+``` sh
+# Development (It will be accessible at http://localhost:3000)
+npm run dev
 
-Unit testler
+# Build
+npm run generate
 
-    npm run test:unit
+# Unit tests
+npm run test:unit
+
+# Linting
+npm run lint
+```
 
 ## Logo
-[Namechap Free Logo Maker](https://www.namecheap.com/logo-maker/) ile oluşturdum.
+I created with [Namechap Free Logo Maker](https://www.namecheap.com/logo-maker).
 
-## Lisans
+## You may also want to look at these
+- https://telefonvergim.cf
+
+## License
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-%2388DF95.svg)](https://github.com/ozgurg/vergihesaplayici.com/blob/master/LICENSE)
