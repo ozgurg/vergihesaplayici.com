@@ -28,6 +28,7 @@
 
             <v-expansion-panels
                 :value="0"
+                flat=""
                 tile=""
                 accordion=""
                 focusable="">
@@ -47,6 +48,8 @@
                             <CalculatorShareDialogUrl :data="formData" />
                         </div>
                     </v-expansion-panel-content>
+
+                    <v-divider />
                 </v-expansion-panel>
 
                 <v-expansion-panel>
@@ -67,6 +70,8 @@
                                 :title="title" />
                         </div>
                     </v-expansion-panel-content>
+
+                    <v-divider />
                 </v-expansion-panel>
 
                 <v-expansion-panel>
