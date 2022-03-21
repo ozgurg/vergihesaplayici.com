@@ -3,12 +3,15 @@
         @click:outside="close()"
         @close="close()"
         :value="value"
+        :hide-overlay="$vuetify.breakpoint.smAndDown"
+        :fullscreen="$vuetify.breakpoint.smAndDown"
+        :transition="$vuetify.breakpoint.smAndDown ? 'dialog-bottom-transition' : 'dialog-transition'"
         overlay-color="#000"
         overlay-opacity=".75"
         width="700">
         <v-card>
             <v-toolbar
-                class="px-2"
+                class="dialog-toolbar px-2"
                 flat="">
                 <v-toolbar-title class="text-center">
                     Paylaş
@@ -25,6 +28,7 @@
 
             <v-expansion-panels
                 :value="0"
+                flat=""
                 tile=""
                 accordion=""
                 focusable="">
@@ -44,6 +48,8 @@
                             <CalculatorShareDialogUrl :data="formData" />
                         </div>
                     </v-expansion-panel-content>
+
+                    <v-divider />
                 </v-expansion-panel>
 
                 <v-expansion-panel>
@@ -64,6 +70,8 @@
                                 :title="title" />
                         </div>
                     </v-expansion-panel-content>
+
+                    <v-divider />
                 </v-expansion-panel>
 
                 <v-expansion-panel>
@@ -118,3 +126,11 @@ export default {
     }
 };
 </script>
+
+<style scoped="">
+.dialog-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 50
+}
+</style>

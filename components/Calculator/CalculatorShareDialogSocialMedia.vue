@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-row
-            class="mb-2 ma-n2"
+            class="mb-2 ma-n2 d-flex justify-center"
             no-gutters="">
             <v-col
                 v-for="(item, key) in items"
@@ -45,18 +45,29 @@
 
             <v-col
                 v-if="isWebShareApiSupported"
+                class="pa-2"
                 cols="12"
-                class="pa-2">
-                <v-btn
-                    @click="share()"
-                    color="white"
-                    light=""
-                    block=""
-                    elevation="0"
-                    rounded=""
-                    large="">
-                    Diğer...
-                </v-btn>
+                sm="2">
+                <v-tooltip bottom="">
+                    <template #activator="{ on, attrs }">
+                        <v-btn
+                            @click="share()"
+                            v-on="on"
+                            v-bind="attrs"
+                            color="white"
+                            light=""
+                            block=""
+                            elevation="0"
+                            rounded=""
+                            large="">
+                            <v-icon size="24">
+                                mdi-export-variant
+                            </v-icon>
+                        </v-btn>
+                    </template>
+
+                    <span>Diğer</span>
+                </v-tooltip>
             </v-col>
         </v-row>
 
