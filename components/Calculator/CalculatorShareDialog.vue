@@ -11,7 +11,7 @@
         width="700">
         <v-card>
             <v-toolbar
-                class="px-2"
+                class="dialog-toolbar px-2"
                 flat="">
                 <v-toolbar-title class="text-center">
                     Paylaş
@@ -126,3 +126,11 @@ export default {
     }
 };
 </script>
+
+<style scoped="">
+.dialog-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 50
+}
+</style>
