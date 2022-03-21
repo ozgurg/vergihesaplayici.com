@@ -3,6 +3,9 @@
         @click:outside="close()"
         @close="close()"
         :value="value"
+        :hide-overlay="$vuetify.breakpoint.smAndDown"
+        :fullscreen="$vuetify.breakpoint.smAndDown"
+        :transition="$vuetify.breakpoint.smAndDown ? 'dialog-bottom-transition' : 'dialog-transition'"
         overlay-color="#000"
         overlay-opacity=".75"
         width="700">
