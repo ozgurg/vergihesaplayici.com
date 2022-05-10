@@ -204,7 +204,11 @@ export default {
         matchingPresets() {
             const vm = this;
             return vm.ui.presets
-                .filter(preset => preset.price === vm.form.price && preset.currency === vm.form.currency)
+                .filter(preset => {
+                    const presetPrice = parseInt(preset.price);
+                    return (presetPrice === vm.form.price || (vm.form.price >= presetPrice && vm.form.price <= presetPrice + 1)) &&
+                        preset.currency === vm.form.currency;
+                })
                 .reduce((previous, preset) => [...previous, preset.id], []);
         }
     },
