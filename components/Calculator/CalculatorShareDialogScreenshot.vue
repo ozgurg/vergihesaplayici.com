@@ -5,11 +5,29 @@
             class="screenshot">
             <v-simple-table>
                 <tbody>
-                <tr>
-                    <td class="screenshot__header primary text-center">
-                        <span class="screenshot__header">{{ title }}</span>
-                    </td>
-                </tr>
+                <template v-if="presetTitle">
+                    <tr>
+                        <td class="screenshot__title text-uppercase text-center">
+                            {{ title }}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="screenshot__header primary text-center py-2">
+                            <!-- eslint-disable vue/no-v-html -->
+                            <span
+                                v-html="presetTitle"
+                                class="screenshot__header" />
+                        </td>
+                    </tr>
+                </template>
+                <template v-else>
+                    <tr>
+                        <td class="screenshot__header primary text-center py-2">
+                            <span class="screenshot__header">{{ title }}</span>
+                        </td>
+                    </tr>
+                </template>
 
                 <template v-for="item in data.input">
                     <tr :key="item.key">
@@ -167,6 +185,10 @@ export default {
         title: {
             type: String,
             required: true
+        },
+        matchingPresets: {
+            type: Array,
+            default: () => []
         }
     },
     methods: {
@@ -253,6 +275,12 @@ export default {
         currencies() {
             const vm = this;
             return vm.$store.get("exchange-rates/availableCurrencies").filter(currency => currency !== "TRY");
+        },
+        presetTitle() {
+            const vm = this;
+            return vm.matchingPresets !== undefined && vm.matchingPresets ?
+                vm.matchingPresets.reduce((previous, preset) => [...previous, preset.title], []).join("<br />") :
+                false;
         }
     }
 };
@@ -267,10 +295,14 @@ export default {
     pointer-events: none;
     background: #fff;
 
+    &__title {
+        background: #00262C
+    }
+
     &__header {
-        letter-spacing: -.25px;
         color: #00262C;
-        font-size: 19px;
+        line-height: 24px;
+        font-size: 16px;
         font-weight: 500
     }
 

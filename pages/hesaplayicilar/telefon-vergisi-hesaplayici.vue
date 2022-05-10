@@ -6,7 +6,7 @@
             <CalculatorFormRow class="mb-5">
                 <CalculatorPresets
                     @click="choosePreset($event)"
-                    :value="matchingPresets"
+                    :value="matchingPresetIds"
                     :presets="ui.presets" />
             </CalculatorFormRow>
 
@@ -79,7 +79,8 @@
                             v-model="ui.isShareDialogShown"
                             :screenshot-data="screenshotData"
                             :form-data="form"
-                            :title="head.title" />
+                            :title="head.title"
+                            :matching-presets="matchingPresets" />
                     </CalculatorFormRow>
                 </template>
             </CalculatorResultTabs>
@@ -263,8 +264,11 @@ export default {
                     const presetPrice = parseInt(preset.price);
                     return (presetPrice === vm.form.price || (vm.form.price >= presetPrice && vm.form.price <= presetPrice + 1)) &&
                         preset.currency === vm.form.currency;
-                })
-                .reduce((previous, preset) => [...previous, preset.id], []);
+                });
+        },
+        matchingPresetIds() {
+            const vm = this;
+            return vm.matchingPresets.reduce((previous, preset) => [...previous, preset.id], []);
         }
     },
     watch: {
