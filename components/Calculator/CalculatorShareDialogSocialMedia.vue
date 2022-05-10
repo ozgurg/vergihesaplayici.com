@@ -24,12 +24,8 @@
                             rounded=""
                             large="">
                             <template v-if="item.icon.endsWith('.svg')">
-                                <img
-                                    :src="require(`@/assets/img/${item.icon}`)"
-                                    :alt="item.title"
-                                    width="24"
-                                    height="24"
-                                    loading="lazy" />
+                                <!-- eslint-disable vue/no-v-html -->
+                                <div v-html="require(`@/assets/img/${item.icon}?raw`)" />
                             </template>
                             <template v-else>
                                 <v-icon size="24">
@@ -161,3 +157,11 @@ export default {
     }
 };
 </script>
+
+<style scoped>
+/deep/ svg {
+    vertical-align: middle;
+    width: 24px;
+    height: 24px
+}
+</style>
