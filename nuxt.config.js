@@ -33,7 +33,8 @@ export default {
     buildModules: [
         "@nuxtjs/dotenv",
         "@nuxtjs/eslint-module",
-        "@nuxtjs/vuetify"
+        "@nuxtjs/vuetify",
+        "@nuxtjs/svg"
     ],
     modules: [
         "@nuxtjs/pwa",

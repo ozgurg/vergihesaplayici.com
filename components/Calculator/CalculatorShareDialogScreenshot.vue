@@ -67,10 +67,10 @@
                             {{ date.toLocaleString("tr-TR") }}
                         </div>
 
-                        <div class="d-flex align-center justify-center flex-row white--text font-weight-bold">
+                        <div class="d-flex align-center justify-center flex-row primary--text">
                             <img
                                 :src="require('@/assets/img/logo-screenshot.png')"
-                                class="me-2"
+                                class="me-1"
                                 alt="Vergi Hesaplayıcı Logo"
                                 draggable="false"
                                 height="18"
