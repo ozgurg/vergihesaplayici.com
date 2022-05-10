@@ -6,11 +6,12 @@
             v-for="(preset, index) in presets"
             :key="index"
             top="">
-            <template v-slot:activator="{ on, attrs }">
+            <template #activator="{ on, attrs }">
                 <v-chip
-                    @click="emit(index)"
+                    @click="choosePreset(preset)"
                     v-on="on"
                     v-bind="attrs"
+                    :class="{'primary--text primary': value.includes(preset.id)}"
                     outlined="">
                     {{ preset.title }}
                 </v-chip>
@@ -24,7 +25,7 @@
 export default {
     props: {
         value: {
-            type: Number,
+            type: Array,
             required: true
         },
         presets: {
@@ -33,9 +34,9 @@ export default {
         }
     },
     methods: {
-        emit(value) {
+        choosePreset(preset) {
             const vm = this;
-            vm.$emit("input", value);
+            vm.$emit("click", preset);
         }
     }
 };
