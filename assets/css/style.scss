@@ -6,13 +6,6 @@ body {
     user-select: none
 }
 
-.v-input--is-readonly {
-    pointer-events: none;
-    .v-input__append-inner {
-        pointer-events: all
-    }
-}
-
 .pointer-events-none {
     pointer-events: none
 }
@@ -27,4 +20,29 @@ body {
 
 .position-relative {
     position: relative
+}
+
+
+// Vuetify customization
+.v-input--is-readonly {
+    pointer-events: none;
+    .v-input__append-inner {
+        pointer-events: all
+    }
+}
+
+.v-btn {
+    &:not(.v-btn--round) {
+        text-transform: unset;
+        letter-spacing: 0;
+        border-radius: 8px !important
+    }
+}
+
+.v-text-field--outlined, .v-text-field--solo {
+    border-radius: 8px !important
+}
+
+.v-sheet {
+    border-radius: 8px !important
 }
