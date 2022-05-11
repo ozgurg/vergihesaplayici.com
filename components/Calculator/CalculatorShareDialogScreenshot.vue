@@ -5,29 +5,30 @@
             class="screenshot">
             <v-simple-table>
                 <tbody>
-                <template v-if="presetTitle">
-                    <tr>
-                        <td class="screenshot__title text-uppercase text-center">
-                            {{ title }}
-                        </td>
-                    </tr>
+                <tr>
+                    <td class="screenshot__title text-uppercase text-center">
+                        {{ title }}
+                    </td>
+                </tr>
 
-                    <tr>
-                        <td class="screenshot__header primary text-center py-2">
+                <tr>
+                    <td
+                        v-ripple=""
+                        @click="changeTitle"
+                        title="Başlığı değiştir"
+                        role="button"
+                        class="screenshot__header primary text-center py-2 pointer-events-all">
+                        <template v-if="hasTitle">
                             <!-- eslint-disable vue/no-v-html -->
                             <span
-                                v-html="presetTitle"
+                                v-html="actualTitle"
                                 class="screenshot__header" />
-                        </td>
-                    </tr>
-                </template>
-                <template v-else>
-                    <tr>
-                        <td class="screenshot__header primary text-center py-2">
-                            <span class="screenshot__header">{{ title }}</span>
-                        </td>
-                    </tr>
-                </template>
+                        </template>
+                        <template v-else>
+                            <i class="screenshot__header font-weight-thin">Başlıksız</i>
+                        </template>
+                    </td>
+                </tr>
 
                 <template v-for="item in data.input">
                     <tr :key="item.key">
@@ -175,7 +176,9 @@ export default {
         date: new Date(),
         isLoading: false,
         isDownloaded: false,
-        isCopied: false
+        isCopied: false,
+        customTitle: null,
+        hasTitle: true
     }),
     props: {
         data: {
@@ -192,6 +195,17 @@ export default {
         }
     },
     methods: {
+        changeTitle() {
+            const vm = this;
+
+            const customTitle = prompt("Başlıği değiştirin", vm.actualTitle);
+            if (customTitle) {
+                vm.customTitle = customTitle;
+                vm.hasTitle = true;
+            } else {
+                vm.hasTitle = false;
+            }
+        },
         async captureScreenshot() {
             const vm = this;
             return await vm.$html2canvas(vm.$refs.table, {
@@ -281,7 +295,15 @@ export default {
             return vm.matchingPresets !== undefined && vm.matchingPresets ?
                 vm.matchingPresets.reduce((previous, preset) => [...previous, preset.title], []).join("<br />") :
                 false;
+        },
+        actualTitle() {
+            const vm = this;
+            return vm.customTitle ? vm.customTitle : vm.presetTitle;
         }
+    },
+    mounted() {
+        const vm = this;
+        vm.hasTitle = vm.actualTitle;
     }
 };
 </script>
