@@ -18,8 +18,8 @@ export default {
             { name: "format-detection", content: "telephone=no" },
             { name: "msapplication-tap-highlight", content: "no" },
             { name: "twitter:card", content: "summary" },
-            { name: "twitter:site", content: process.env.APP_TWITTER_USERNAME },
-            { name: "twitter:creator", content: process.env.APP_TWITTER_USERNAME },
+            { name: "twitter:site", content: "@ozgurg0" },
+            { name: "twitter:creator", content: "@ozgurg0" },
             { "http-equiv": "X-UA-Compatible", "content": "ie=edge" }
         ],
         link: [
