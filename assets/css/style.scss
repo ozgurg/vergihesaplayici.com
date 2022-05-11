@@ -24,6 +24,8 @@ body {
 
 
 // Vuetify customization
+$radius: 12px;
+
 .v-input--is-readonly {
     pointer-events: none;
     .v-input__append-inner {
@@ -32,17 +34,17 @@ body {
 }
 
 .v-btn {
-    &:not(.v-btn--rounded) {
+    &:not(.v-btn--round):not(.v-btn--rounded) {
         text-transform: unset;
         letter-spacing: 0;
-        border-radius: 8px !important
+        border-radius: $radius !important
     }
 }
 
 .v-text-field--outlined, .v-text-field--solo {
-    border-radius: 8px !important
+    border-radius: $radius !important
 }
 
-.v-sheet {
-    border-radius: 8px !important
+.v-card.v-sheet:not(.v-toolbar) {
+    border-radius: $radius !important
 }
