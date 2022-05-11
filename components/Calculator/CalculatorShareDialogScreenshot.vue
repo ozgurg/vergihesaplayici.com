@@ -264,6 +264,8 @@ export default {
 
                 await new JsFileDownloader({
                     url: screenshot,
+                    forceDesktopMode: true,
+                    nativeFallbackOnError: true,
                     contentType: "image/png",
                     nameCallback: () => `vergihesaplayici-${vm.date.getTime()}.png`
                 });
