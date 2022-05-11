@@ -2,13 +2,22 @@
     <div
         v-bind="$attrs"
         class="chips">
-        <v-chip
+        <v-tooltip
             v-for="(preset, index) in presets"
             :key="index"
-            @click="emit(index)"
-            outlined="">
-            {{ preset.title }}
-        </v-chip>
+            top="">
+            <template #activator="{ on, attrs }">
+                <v-chip
+                    @click="choosePreset(preset)"
+                    v-on="on"
+                    v-bind="attrs"
+                    :class="{'primary--text primary': value.includes(preset.id)}"
+                    outlined="">
+                    {{ preset.title }}
+                </v-chip>
+            </template>
+            <span>{{ $moneyFormat(preset.price, preset.currency) }}</span>
+        </v-tooltip>
     </div>
 </template>
 
@@ -16,7 +25,7 @@
 export default {
     props: {
         value: {
-            type: Number,
+            type: Array,
             required: true
         },
         presets: {
@@ -25,9 +34,9 @@ export default {
         }
     },
     methods: {
-        emit(value) {
+        choosePreset(preset) {
             const vm = this;
-            vm.$emit("input", value);
+            vm.$emit("click", preset);
         }
     }
 };

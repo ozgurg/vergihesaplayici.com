@@ -5,7 +5,8 @@
         <InnerContainer>
             <CalculatorFormRow class="mb-5">
                 <CalculatorPresets
-                    v-model="ui.preset"
+                    @click="choosePreset($event)"
+                    :value="matchingPresetIds"
                     :presets="ui.presets" />
             </CalculatorFormRow>
 
@@ -78,7 +79,8 @@
                             v-model="ui.isShareDialogShown"
                             :screenshot-data="screenshotData"
                             :form-data="form"
-                            :title="head.title" />
+                            :title="head.title"
+                            :matching-presets="matchingPresets" />
                     </CalculatorFormRow>
                 </template>
             </CalculatorResultTabs>
@@ -107,14 +109,13 @@ export default {
         },
         ui: {
             presets: [
-                { title: "iPhone SE (64GB)", price: 399, currency: "USD" },
-                { title: "iPhone 13 mini (128GB)", price: 699, currency: "USD" },
-                { title: "iPhone 13 (128GB)", price: 799, currency: "USD" },
-                { title: "iPhone 13 Pro (128GB)", price: 999, currency: "USD" },
-                { title: "iPhone 13 Pro Max (128GB)", price: 1099, currency: "USD" },
-                { title: "iPhone 13 Pro Max (1TB)", price: 1599, currency: "USD" }
+                { id: 1, title: "iPhone SE (64GB)", price: 399, currency: "USD" },
+                { id: 2, title: "iPhone 13 mini (128GB)", price: 699, currency: "USD" },
+                { id: 3, title: "iPhone 13 (128GB)", price: 799, currency: "USD" },
+                { id: 4, title: "iPhone 13 Pro (128GB)", price: 999, currency: "USD" },
+                { id: 5, title: "iPhone 13 Pro Max (128GB)", price: 1099, currency: "USD" },
+                { id: 6, title: "iPhone 13 Pro Max (1TB)", price: 1599, currency: "USD" }
             ],
-            preset: -1,
             registration: [
                 { title: "İthalat yoluyla kayıtlı (Resmi)", value: PhoneTaxCalculator.Registration.Import },
                 { title: "Pasaport yoluyla kayıtlı", value: PhoneTaxCalculator.Registration.Passport }
@@ -173,6 +174,12 @@ export default {
             if (query.registration && vm.ui.registration.some(object => object.value === query.registration)) {
                 vm.form.registration = query.registration;
             }
+        },
+        choosePreset(preset) {
+            const vm = this;
+
+            vm.form.currency = preset.currency;
+            vm.form.price = preset.price;
         }
     },
     computed: {
@@ -249,6 +256,19 @@ export default {
         registrationIsImport() {
             const vm = this;
             return vm.form.registration === PhoneTaxCalculator.Registration.Import;
+        },
+        matchingPresets() {
+            const vm = this;
+            return vm.ui.presets
+                .filter(preset => {
+                    const presetPrice = parseInt(preset.price);
+                    return (presetPrice === vm.form.price || (vm.form.price >= presetPrice && vm.form.price <= presetPrice + 1)) &&
+                        preset.currency === vm.form.currency;
+                });
+        },
+        matchingPresetIds() {
+            const vm = this;
+            return vm.matchingPresets.reduce((previous, preset) => [...previous, preset.id], []);
         }
     },
     watch: {
@@ -266,14 +286,6 @@ export default {
 
                 vm.$router.push({ query: vm.form });
             }
-        },
-        "ui.preset"() {
-            const vm = this;
-
-            const preset = vm.ui.presets[vm.ui.preset];
-
-            vm.form.currency = preset.currency;
-            vm.form.price = preset.price;
         }
     },
     head() {

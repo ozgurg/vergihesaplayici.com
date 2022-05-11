@@ -1,7 +1,7 @@
 <template>
     <div v-bind="$attrs">
         <a
-            href="https://youtu.be/zsCpGUDZ85w?t=55"
+            href="https://youtu.be/LPrhPC-L5Go?t=5"
             rel="nofollow noopener noreferrer"
             title="Osita Iheme"
             target="_blank">

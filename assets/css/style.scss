@@ -6,15 +6,12 @@ body {
     user-select: none
 }
 
-.v-input--is-readonly {
-    pointer-events: none;
-    .v-input__append-inner {
-        pointer-events: all
-    }
-}
-
 .pointer-events-none {
     pointer-events: none
+}
+
+.pointer-events-all {
+    pointer-events: all
 }
 
 .h-100 {
@@ -23,4 +20,31 @@ body {
 
 .position-relative {
     position: relative
+}
+
+
+// Vuetify customization
+$radius: 12px;
+
+.v-input--is-readonly {
+    pointer-events: none;
+    .v-input__append-inner {
+        pointer-events: all
+    }
+}
+
+.v-btn {
+    &:not(.v-btn--round):not(.v-btn--rounded) {
+        text-transform: unset;
+        letter-spacing: 0;
+        border-radius: $radius !important
+    }
+}
+
+.v-text-field--outlined, .v-text-field--solo {
+    border-radius: $radius !important
+}
+
+.v-card.v-sheet:not(.v-toolbar) {
+    border-radius: $radius !important
 }

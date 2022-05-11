@@ -3,7 +3,6 @@
         @click:outside="close()"
         @close="close()"
         :value="value"
-        :hide-overlay="$vuetify.breakpoint.smAndDown"
         :fullscreen="$vuetify.breakpoint.smAndDown"
         :transition="$vuetify.breakpoint.smAndDown ? 'dialog-bottom-transition' : 'dialog-transition'"
         overlay-color="#000"
@@ -67,7 +66,8 @@
                         <div class="pl-2 pr-2 pt-8 pb-4">
                             <CalculatorShareDialogScreenshot
                                 :data="screenshotData"
-                                :title="title" />
+                                :title="title"
+                                :matching-presets="matchingPresets" />
                         </div>
                     </v-expansion-panel-content>
 
@@ -116,6 +116,10 @@ export default {
         title: {
             type: String,
             required: true
+        },
+        matchingPresets: {
+            type: Array,
+            default: () => []
         }
     },
     methods: {

@@ -6,8 +6,27 @@
             <v-simple-table>
                 <tbody>
                 <tr>
-                    <td class="screenshot__header primary text-center">
-                        <span class="screenshot__header">{{ title }}</span>
+                    <td class="screenshot__title text-uppercase text-center">
+                        {{ title }}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td
+                        v-ripple=""
+                        @click="changeTitle"
+                        title="Başlığı değiştir"
+                        role="button"
+                        class="screenshot__header primary text-center py-2 pointer-events-all">
+                        <template v-if="hasTitle">
+                            <!-- eslint-disable vue/no-v-html -->
+                            <span
+                                v-html="actualTitle"
+                                class="screenshot__header" />
+                        </template>
+                        <template v-else>
+                            <i class="screenshot__header font-weight-thin">Başlıksız</i>
+                        </template>
                     </td>
                 </tr>
 
@@ -128,7 +147,7 @@
                                 color="primary" />
 
                             <template v-else>
-                                <div class="text-uppercase d-flex align-center">
+                                <div class="d-flex align-center">
                                     <v-icon
                                         left=""
                                         color="primary">
@@ -157,7 +176,9 @@ export default {
         date: new Date(),
         isLoading: false,
         isDownloaded: false,
-        isCopied: false
+        isCopied: false,
+        customTitle: null,
+        hasTitle: true
     }),
     props: {
         data: {
@@ -167,9 +188,24 @@ export default {
         title: {
             type: String,
             required: true
+        },
+        matchingPresets: {
+            type: Array,
+            default: () => []
         }
     },
     methods: {
+        changeTitle() {
+            const vm = this;
+
+            const customTitle = prompt("Başlıği değiştirin", vm.actualTitle);
+            if (customTitle) {
+                vm.customTitle = customTitle;
+                vm.hasTitle = true;
+            } else {
+                vm.hasTitle = false;
+            }
+        },
         async captureScreenshot() {
             const vm = this;
             return await vm.$html2canvas(vm.$refs.table, {
@@ -228,6 +264,8 @@ export default {
 
                 await new JsFileDownloader({
                     url: screenshot,
+                    forceDesktopMode: true,
+                    nativeFallbackOnError: true,
                     contentType: "image/png",
                     nameCallback: () => `vergihesaplayici-${vm.date.getTime()}.png`
                 });
@@ -253,7 +291,21 @@ export default {
         currencies() {
             const vm = this;
             return vm.$store.get("exchange-rates/availableCurrencies").filter(currency => currency !== "TRY");
+        },
+        presetTitle() {
+            const vm = this;
+            return vm.matchingPresets !== undefined && vm.matchingPresets ?
+                vm.matchingPresets.reduce((previous, preset) => [...previous, preset.title], []).join("<br />") :
+                false;
+        },
+        actualTitle() {
+            const vm = this;
+            return vm.customTitle ? vm.customTitle : vm.presetTitle;
         }
+    },
+    mounted() {
+        const vm = this;
+        vm.hasTitle = vm.actualTitle;
     }
 };
 </script>
@@ -262,22 +314,28 @@ export default {
 .screenshot {
     position: relative;
     width: 342px;
+    min-width: 300px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 2px;
     pointer-events: none;
     background: #fff;
 
+    &__title {
+        background: #00262C
+    }
+
     &__header {
-        letter-spacing: -.25px;
         color: #00262C;
-        font-size: 19px;
+        line-height: 24px;
+        font-size: 16px;
         font-weight: 500
     }
 
     &__success-text {
         // Same as button
         font-size: .875rem;
-        font-weight: 500
+        border-radius: 12px
     }
 }
 </style>

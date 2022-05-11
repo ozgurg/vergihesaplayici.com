@@ -18,8 +18,8 @@ export default {
             { name: "format-detection", content: "telephone=no" },
             { name: "msapplication-tap-highlight", content: "no" },
             { name: "twitter:card", content: "summary" },
-            { name: "twitter:site", content: process.env.APP_TWITTER_USERNAME },
-            { name: "twitter:creator", content: process.env.APP_TWITTER_USERNAME },
+            { name: "twitter:site", content: "@ozgurg0" },
+            { name: "twitter:creator", content: "@ozgurg0" },
             { "http-equiv": "X-UA-Compatible", "content": "ie=edge" }
         ],
         link: [
@@ -85,7 +85,8 @@ export default {
             },
             themes: {
                 dark: {
-                    primary: process.env.APP_PRIMARY_COLOR
+                    primary: process.env.APP_PRIMARY_COLOR,
+                    secondary: process.env.APP_SECONDARY_COLOR
                 }
             }
         }

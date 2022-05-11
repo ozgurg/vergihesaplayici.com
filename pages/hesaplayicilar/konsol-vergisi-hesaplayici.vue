@@ -5,7 +5,8 @@
         <InnerContainer>
             <CalculatorFormRow class="mb-5">
                 <CalculatorPresets
-                    v-model="ui.preset"
+                    @click="choosePreset($event)"
+                    :value="matchingPresetIds"
                     :presets="ui.presets" />
             </CalculatorFormRow>
 
@@ -63,7 +64,8 @@
                             v-model="ui.isShareDialogShown"
                             :screenshot-data="screenshotData"
                             :form-data="form"
-                            :title="head.title" />
+                            :title="head.title"
+                            :matching-presets="matchingPresets" />
                     </CalculatorFormRow>
                 </template>
             </CalculatorResultTabs>
@@ -92,13 +94,12 @@ export default {
         },
         ui: {
             presets: [
-                { title: "Xbox Series S (512GB)", price: 299, currency: "EUR" },
-                { title: "Xbox Series X (1TB)", price: 499, currency: "EUR" },
-                { title: "PlayStation 5 Digital Edition (825GB)", price: 399, currency: "EUR" },
-                { title: "PlayStation 5 (825GB)", price: 499, currency: "EUR" },
-                { title: "Nintendo Switch OLED (64GB)", price: 349.99, currency: "USD" } // Source: https://en.wikipedia.org/wiki/Nintendo_Switch#cite_note-polygon_oled_announce-178
+                { id: 1, title: "Xbox Series S (512GB)", price: 299, currency: "EUR" },
+                { id: 2, title: "Xbox Series X (1TB)", price: 499, currency: "EUR" },
+                { id: 3, title: "PlayStation 5 Digital Edition (825GB)", price: 399, currency: "EUR" },
+                { id: 4, title: "PlayStation 5 (825GB)", price: 499, currency: "EUR" },
+                { id: 5, title: "Nintendo Switch OLED (64GB)", price: 349.99, currency: "USD" } // Source: https://en.wikipedia.org/wiki/Nintendo_Switch#cite_note-polygon_oled_announce-178
             ],
-            preset: -1,
             tab: 1,
             isShareDialogShown: false
         },
@@ -146,6 +147,12 @@ export default {
             if (query.currency && vm.$store.get("exchange-rates/availableCurrencies").includes(query.currency)) {
                 vm.form.currency = query.currency;
             }
+        },
+        choosePreset(preset) {
+            const vm = this;
+
+            vm.form.currency = preset.currency;
+            vm.form.price = preset.price;
         }
     },
     computed: {
@@ -194,6 +201,19 @@ export default {
         showResults() {
             const vm = this;
             return vm.form.price > 0 && vm.form.currency !== "";
+        },
+        matchingPresets() {
+            const vm = this;
+            return vm.ui.presets
+                .filter(preset => {
+                    const presetPrice = parseInt(preset.price);
+                    return (presetPrice === vm.form.price || (vm.form.price >= presetPrice && vm.form.price <= presetPrice + 1)) &&
+                        preset.currency === vm.form.currency;
+                });
+        },
+        matchingPresetIds() {
+            const vm = this;
+            return vm.matchingPresets.reduce((previous, preset) => [...previous, preset.id], []);
         }
     },
     watch: {
@@ -211,14 +231,6 @@ export default {
 
                 vm.$router.push({ query: vm.form });
             }
-        },
-        "ui.preset"() {
-            const vm = this;
-
-            const preset = vm.ui.presets[vm.ui.preset];
-
-            vm.form.currency = preset.currency;
-            vm.form.price = preset.price;
         }
     },
     head() {
