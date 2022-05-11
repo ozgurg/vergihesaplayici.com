@@ -147,7 +147,7 @@
                                 color="primary" />
 
                             <template v-else>
-                                <div class="text-uppercase d-flex align-center">
+                                <div class="d-flex align-center">
                                     <v-icon
                                         left=""
                                         color="primary">
@@ -331,7 +331,7 @@ export default {
     &__success-text {
         // Same as button
         font-size: .875rem;
-        font-weight: 500
+        border-radius: 12px
     }
 }
 </style>
