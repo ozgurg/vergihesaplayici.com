@@ -314,6 +314,8 @@ export default {
 .screenshot {
     position: relative;
     width: 342px;
+    min-width: 300px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 2px;
     pointer-events: none;
