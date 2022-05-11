@@ -32,7 +32,7 @@ body {
 }
 
 .v-btn {
-    &:not(.v-btn--round) {
+    &:not(.v-btn--rounded) {
         text-transform: unset;
         letter-spacing: 0;
         border-radius: 8px !important
