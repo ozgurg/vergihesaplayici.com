@@ -85,7 +85,8 @@ export default {
             },
             themes: {
                 dark: {
-                    primary: process.env.APP_PRIMARY_COLOR
+                    primary: process.env.APP_PRIMARY_COLOR,
+                    secondary: process.env.APP_SECONDARY_COLOR
                 }
             }
         }
