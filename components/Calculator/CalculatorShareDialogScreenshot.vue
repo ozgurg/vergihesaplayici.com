@@ -198,7 +198,7 @@ export default {
         changeTitle() {
             const vm = this;
 
-            const customTitle = prompt("Başlıği değiştirin", vm.actualTitle);
+            const customTitle = prompt("Başlığı değiştirin", vm.actualTitle);
             if (customTitle) {
                 vm.customTitle = customTitle;
                 vm.hasTitle = true;
