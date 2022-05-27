@@ -6,9 +6,9 @@ describe("PhoneTaxCalculator", () => {
         calculate(
             PhoneTaxCalculator.CalculationMode.FromSalePrice,
             [
-                { price: 500, expectedPrice: 305.11 },
-                { price: 1500, expectedPrice: 817.28 },
-                { price: 5000, expectedPrice: 2542.62 }
+                { price: 500, expectedPrice: 299.66 },
+                { price: 1500, expectedPrice: 802.68 },
+                { price: 5000, expectedPrice: 2497.23 }
             ],
             PhoneTaxCalculator.Registration.Import
         );
@@ -18,9 +18,9 @@ describe("PhoneTaxCalculator", () => {
         calculate(
             PhoneTaxCalculator.CalculationMode.FromBasePrice,
             [
-                { price: 500, expectedPrice: 819.37 },
-                { price: 1500, expectedPrice: 2949.7 },
-                { price: 5000, expectedPrice: 9832.35 }
+                { price: 500, expectedPrice: 834.26 },
+                { price: 1500, expectedPrice: 3003.34 },
+                { price: 5000, expectedPrice: 10011.12 }
             ],
             PhoneTaxCalculator.Registration.Import
         );

@@ -35,7 +35,7 @@ class PhoneTaxCalculator extends BaseMultiCurrencyTaxCalculator {
     taxRates = {
         total: 0, // Percent
         ministryOfCulture: 1, // Percent
-        trt: 10, // Percent
+        trt: 12, // Percent
         sct: 0, // Percent but varies by the price. See getSctRateByPrice
         vat: 18, // Percent
         trtPassport: 20 // EUR
