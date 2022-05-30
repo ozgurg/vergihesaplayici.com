@@ -3,6 +3,7 @@
     <nuxt-link
         v-html="logo"
         v-bind="$attrs"
+        aria-label="Ana sayfaya git"
         class="logo"
         to="/" />
 </template>
