@@ -45,6 +45,7 @@ export default {
         ]
     ],
     build: {
+        indicator: false,
         extractCSS: {
             ignoreOrder: true
         }
@@ -106,5 +107,25 @@ export default {
             short_name: process.env.APP_NAME,
             lang: "tr"
         }
+    },
+
+    // Disable unused Nuxt features
+    loadingIndicator: false,
+    fetch: {
+        client: false,
+        server: false
+    },
+    features: {
+        middleware: false,
+        transitions: false,
+        deprecations: false,
+        validate: false,
+        asyncData: false,
+        fetch: false,
+        clientOnline: false,
+        clientPrefetch: false,
+        clientUseUrl: true,
+        componentAliases: false,
+        componentClientOnly: false
     }
 };
