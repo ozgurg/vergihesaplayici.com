@@ -7,7 +7,7 @@
 [![Actions Status](https://github.com/ozgurg/vergihesaplayici.com/workflows/vergihesaplayici.com/badge.svg)](https://github.com/ozgurg/vergihesaplayici.com/actions)
 ![Version](https://img.shields.io/github/package-json/v/ozgurg/vergihesaplayici.com)
 
-[![Banner](https://raw.githubusercontent.com/ozgurg/vergihesaplayici.com/master/.github/assets/banner.jpg)](https://vergihesaplayici.com)
+[![Banner](https://raw.githubusercontent.com/ozgurg/vergihesaplayici.com/master/.assets/banner.jpg)](https://vergihesaplayici.com)
 
 > Türkçe: https://github.com/ozgurg/vergihesaplayici.com/blob/master/README.tr-TR.md
 

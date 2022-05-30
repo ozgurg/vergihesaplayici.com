@@ -55,7 +55,7 @@
                             color="primary"
                             large="">
                             <v-icon left="">
-                                mdi-share
+                                {{ icons.mdiShare }}
                             </v-icon>
                             Paylaş...
                         </v-btn>
@@ -74,6 +74,7 @@
 </template>
 
 <script>
+import { mdiShare } from "@mdi/js";
 import ConsoleTaxCalculator from "@/calculators/ConsoleTaxCalculator";
 import { ConsoleTaxCalculator as meta } from "@/data/calculators.js";
 import openGraphImage from "@/assets/img/open-graph/console-tax-calculator.jpg";
@@ -81,6 +82,9 @@ import openGraphImage from "@/assets/img/open-graph/console-tax-calculator.jpg";
 export default {
     layout: "default/index",
     data: () => ({
+        icons: {
+            mdiShare
+        },
         head: {
             title: meta.title,
             meta: [

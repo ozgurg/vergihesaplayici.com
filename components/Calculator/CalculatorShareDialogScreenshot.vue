@@ -111,7 +111,7 @@
                     outlined=""
                     color="primary">
                     <v-icon left="">
-                        mdi-download
+                        {{ icons.mdiDownload }}
                     </v-icon>
                     İndir
                 </v-btn>
@@ -121,7 +121,7 @@
                     outlined=""
                     color="primary">
                     <v-icon left="">
-                        mdi-content-copy
+                        {{ icons.mdiContentCopy }}
                     </v-icon>
                     Kopyala
                 </v-btn>
@@ -131,9 +131,7 @@
                         v-if="isDownloaded || isCopied || isLoading"
                         :value="true"
                         absolute=""
-                        opacity="1"
-                        class="rounded"
-                        style="width:100%">
+                        opacity="1">
                         <v-alert
                             color="primary"
                             text=""
@@ -151,7 +149,7 @@
                                     <v-icon
                                         left=""
                                         color="primary">
-                                        mdi-check
+                                        {{ icons.mdiCheck }}
                                     </v-icon>
 
                                     <span v-if="isDownloaded" class="screenshot__success-text">İndirildi</span>
@@ -167,11 +165,17 @@
 </template>
 
 <script>
+import { mdiCheck, mdiContentCopy, mdiDownload } from "@mdi/js";
 import JsFileDownloader from "js-file-downloader";
 import { version } from "@/package.json";
 
 export default {
     data: () => ({
+        icons: {
+            mdiContentCopy,
+            mdiDownload,
+            mdiCheck
+        },
         version,
         date: new Date(),
         isLoading: false,
@@ -334,8 +338,7 @@ export default {
 
     &__success-text {
         // Same as button
-        font-size: .875rem;
-        border-radius: 12px
+        font-size: .875rem
     }
 }
 </style>
@@ -344,5 +347,9 @@ export default {
 /deep/ .v-overlay__content {
     width: 100%;
     height: 100%
+}
+
+/deep/ .v-alert {
+    border-radius: 12px
 }
 </style>

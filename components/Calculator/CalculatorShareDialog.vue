@@ -21,7 +21,7 @@
                 <v-btn
                     @click="close()"
                     icon="">
-                    <v-icon>mdi-close</v-icon>
+                    <v-icon>{{ icons.mdiClose }}</v-icon>
                 </v-btn>
             </v-toolbar>
 
@@ -37,7 +37,7 @@
                             <v-icon
                                 class="mr-4"
                                 left="">
-                                mdi-link
+                                {{ icons.mdiLink }}
                             </v-icon>
                             Bağlantı
                         </div>
@@ -57,7 +57,7 @@
                             <v-icon
                                 class="mr-4"
                                 left="">
-                                mdi-cellphone-screenshot
+                                {{ icons.mdiCellphoneScreenshot }}
                             </v-icon>
                             Ekran görüntüsü
                         </div>
@@ -80,7 +80,7 @@
                             <v-icon
                                 class="mr-4"
                                 left="">
-                                mdi-share-variant
+                                {{ icons.mdiShareVariant }}
                             </v-icon>
                             Sosyal medya
                         </div>
@@ -97,8 +97,16 @@
 </template>
 
 <script>
+import { mdiCellphoneScreenshot, mdiClose, mdiLink, mdiShareVariant } from "@mdi/js";
+
 export default {
     data: () => ({
+        icons: {
+            mdiClose,
+            mdiLink,
+            mdiCellphoneScreenshot,
+            mdiShareVariant
+        },
         currentTab: 0
     }),
     props: {
