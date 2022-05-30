@@ -1,10 +1,12 @@
+const moneyFormat = (price, currency) => {
+    return new Intl.NumberFormat("tr-TR",
+        {
+            style: "currency",
+            currency,
+            minimumFractionDigits: 2
+        }).format(price);
+};
+
 export default (context, inject) => {
-    inject("moneyFormat", (price, currency, minimumFractionDigits = 2) => {
-        return new Intl.NumberFormat("tr-TR",
-            {
-                style: "currency",
-                currency,
-                minimumFractionDigits
-            }).format(price);
-    });
+    inject("moneyFormat", moneyFormat);
 };
