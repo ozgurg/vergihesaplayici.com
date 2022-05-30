@@ -25,9 +25,6 @@ export default {
         link: [
             { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
             { rel: "dns-prefetch", href: "https://firebaseinstallations.googleapis.com" }
-        ],
-        script: [
-            { src: "https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.12.1/polyfill.min.js" } // For IE 11
         ]
     },
     buildModules: [
