@@ -131,9 +131,7 @@
                         v-if="isDownloaded || isCopied || isLoading"
                         :value="true"
                         absolute=""
-                        opacity="1"
-                        class="rounded"
-                        style="width:100%">
+                        opacity="1">
                         <v-alert
                             color="primary"
                             text=""
@@ -340,8 +338,7 @@ export default {
 
     &__success-text {
         // Same as button
-        font-size: .875rem;
-        border-radius: 12px
+        font-size: .875rem
     }
 }
 </style>
@@ -350,5 +347,9 @@ export default {
 /deep/ .v-overlay__content {
     width: 100%;
     height: 100%
+}
+
+/deep/ .v-alert {
+    border-radius: 12px
 }
 </style>
