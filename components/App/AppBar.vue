@@ -5,7 +5,9 @@
         elevation="0"
         flat=""
         class="v-bar--underline">
-        <v-app-bar-nav-icon @click="toggleDrawer()" />
+        <v-app-bar-nav-icon
+            @click="toggleDrawer()"
+            aria-label="Menüyü aç" />
 
         <div class="d-flex justify-center flex-grow-1">
             <AppDrawerLogo style="margin-left:-48px" />
