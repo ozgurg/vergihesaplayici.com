@@ -18,8 +18,14 @@
 </template>
 
 <script>
+import { mdiCheck, mdiContentCopy } from "@mdi/js";
+
 export default {
     data: () => ({
+        icons: {
+            mdiCheck,
+            mdiContentCopy
+        },
         copiedTimeout: null,
         isTooltipShown: false,
         isCopied: false
@@ -51,7 +57,7 @@ export default {
     computed: {
         icon() {
             const vm = this;
-            return vm.isCopied ? "mdi-check" : "mdi-content-copy";
+            return vm.isCopied ? mdiCheck : mdiContentCopy;
         },
         color() {
             const vm = this;

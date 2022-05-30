@@ -57,7 +57,7 @@
                             rounded=""
                             large="">
                             <v-icon size="24">
-                                mdi-export-variant
+                                {{ icons.mdiExportVariant }}
                             </v-icon>
                         </v-btn>
                     </template>
@@ -78,9 +78,18 @@
 
 <script>
 import querystring from "querystring";
+import { mdiEmail, mdiExportVariant, mdiFacebook, mdiReddit, mdiTwitter, mdiWhatsapp } from "@mdi/js";
 
 export default {
     data: () => ({
+        icons: {
+            mdiExportVariant,
+            mdiFacebook,
+            mdiTwitter,
+            mdiWhatsapp,
+            mdiReddit,
+            mdiEmail
+        },
         includeCalculatorParams: true
     }),
     props: {
@@ -117,19 +126,19 @@ export default {
                     url: `https://www.facebook.com/sharer/sharer.php?u=${vm.url}`,
                     title: "Facebook'ta paylaş",
                     color: "#1877f2",
-                    icon: "mdi-facebook"
+                    icon: vm.icons.mdiFacebook
                 },
                 {
                     url: `https://twitter.com/intent/tweet?url=${vm.url}`,
                     title: "Twitter'da paylaş",
                     color: "#00acee",
-                    icon: "mdi-twitter"
+                    icon: vm.icons.mdiTwitter
                 },
                 {
                     url: `https://wa.me/?text=${vm.url}`,
                     title: "WhatsApp ile gönder",
                     color: "#25d366",
-                    icon: "mdi-whatsapp"
+                    icon: vm.icons.mdiWhatsapp
                 },
                 {
                     url: `https://telegram.me/share/url?url=${vm.url}&text=${document.title}`,
@@ -141,13 +150,13 @@ export default {
                     url: `https://www.reddit.com/submit?url=${vm.url}`,
                     title: "Reddit'te paylaş",
                     color: "#FF5700",
-                    icon: "mdi-reddit"
+                    icon: vm.icons.mdiReddit
                 },
                 {
                     url: `mailto:?subject=${document.title}&body=${vm.url}`,
                     title: "E-posta gönder",
                     color: "#ecb064",
-                    icon: "mdi-email"
+                    icon: vm.icons.mdiEmail
                 }
             ];
         },

@@ -72,13 +72,15 @@ export default {
         defaultAssets: {
             font: {
                 family: "Rubik"
-            }
+            },
+            icons: false
         },
         lang: {
             locales: { tr },
             current: "tr"
         },
         theme: {
+            defaultAssets: false,
             dark: true,
             options: {
                 variations: false
@@ -89,6 +91,9 @@ export default {
                     secondary: process.env.APP_SECONDARY_COLOR
                 }
             }
+        },
+        icons: {
+            iconfont: "mdiSvg"
         }
     },
     sitemap: {

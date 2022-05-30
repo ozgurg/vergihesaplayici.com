@@ -70,7 +70,7 @@
                             color="primary"
                             large="">
                             <v-icon left="">
-                                mdi-share
+                                {{ icons.mdiShare }}
                             </v-icon>
                             Paylaş...
                         </v-btn>
@@ -89,6 +89,7 @@
 </template>
 
 <script>
+import { mdiShare } from "@mdi/js";
 import PhoneTaxCalculator from "@/calculators/PhoneTaxCalculator";
 import { PhoneTaxCalculator as meta } from "@/data/calculators.js";
 import openGraphImage from "@/assets/img/open-graph/phone-tax-calculator.jpg";
@@ -96,6 +97,9 @@ import openGraphImage from "@/assets/img/open-graph/phone-tax-calculator.jpg";
 export default {
     layout: "default/index",
     data: () => ({
+        icons: {
+            mdiShare
+        },
         head: {
             title: meta.title,
             meta: [

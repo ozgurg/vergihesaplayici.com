@@ -111,7 +111,7 @@
                     outlined=""
                     color="primary">
                     <v-icon left="">
-                        mdi-download
+                        {{ icons.mdiDownload }}
                     </v-icon>
                     İndir
                 </v-btn>
@@ -121,7 +121,7 @@
                     outlined=""
                     color="primary">
                     <v-icon left="">
-                        mdi-content-copy
+                        {{ icons.mdiContentCopy }}
                     </v-icon>
                     Kopyala
                 </v-btn>
@@ -151,7 +151,7 @@
                                     <v-icon
                                         left=""
                                         color="primary">
-                                        mdi-check
+                                        {{ icons.mdiCheck }}
                                     </v-icon>
 
                                     <span v-if="isDownloaded" class="screenshot__success-text">İndirildi</span>
@@ -167,11 +167,17 @@
 </template>
 
 <script>
+import { mdiCheck, mdiContentCopy, mdiDownload } from "@mdi/js";
 import JsFileDownloader from "js-file-downloader";
 import { version } from "@/package.json";
 
 export default {
     data: () => ({
+        icons: {
+            mdiContentCopy,
+            mdiDownload,
+            mdiCheck
+        },
         version,
         date: new Date(),
         isLoading: false,

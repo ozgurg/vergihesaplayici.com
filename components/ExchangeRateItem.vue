@@ -29,7 +29,7 @@
                             v-on="on"
                             v-bind="attrs"
                             color="red">
-                            mdi-alert
+                            {{ icons.mdiAlert }}
                         </v-icon>
                     </template>
                     <span>Kur yüklenirken bir hata oluştu</span>
@@ -40,8 +40,13 @@
 </template>
 
 <script>
+import { mdiAlert } from "@mdi/js";
+
 export default {
     data: () => ({
+        icons: {
+            mdiAlert
+        },
         isLoading: false,
         exchangeRate: null
     }),

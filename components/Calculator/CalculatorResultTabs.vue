@@ -8,13 +8,13 @@
                 fixed-tabs="">
                 <v-tab :disabled="!showResults">
                     <v-icon left="">
-                        mdi-format-list-bulleted-type
+                        {{ icons.mdiFormatListBulletedType }}
                     </v-icon>
                     Sonuçlar
                 </v-tab>
                 <v-tab>
                     <v-icon left="">
-                        mdi-comment-multiple-outline
+                        {{ icons.mdiCommentMultipleOutline }}
                     </v-icon>
                     Yorumlar
                 </v-tab>
@@ -34,7 +34,15 @@
 </template>
 
 <script>
+import { mdiCommentMultipleOutline, mdiFormatListBulletedType } from "@mdi/js";
+
 export default {
+    data: () => ({
+        icons: {
+            mdiFormatListBulletedType,
+            mdiCommentMultipleOutline
+        }
+    }),
     props: {
         value: {
             type: Number,
