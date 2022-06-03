@@ -2,8 +2,7 @@
     <v-card
         v-bind="$attrs"
         outlined=""
-        class="px-5 py-4"
-        flat="">
+        class="px-5 py-4">
         <v-card-subtitle class="pa-0 ma-0 mb-1">
             {{ currency }}
         </v-card-subtitle>
