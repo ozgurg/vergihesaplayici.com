@@ -1,4 +1,3 @@
-/* eslint-disable */
 import moneyFormat from "@/utils/money-format";
 
 describe("utils/money-format", () => {
