@@ -11,7 +11,7 @@
                 :to="calculator.url"
                 link=""
                 class="pa-8"
-                elevation="0">
+                elevation="4">
                 <v-icon
                     class="primary--text"
                     size="64">
