@@ -4,22 +4,22 @@
  */
 class BaseTaxCalculator {
     /**
-     * @protected
-     * @param {float} taxFreePrice
-     * @param {float} taxRate
+     * @static
+     * @param {number} taxFreePrice
+     * @param {number} taxRate
      * @return {number}
      */
-    calculateTaxFromTaxFreePrice(taxFreePrice, taxRate) {
+    static calculateTaxFromTaxFreePrice(taxFreePrice, taxRate) {
         return parseFloat(((taxFreePrice / 100) * taxRate).toFixed(2));
     }
 
     /**
-     * @protected
-     * @param {float} taxAddedPrice
-     * @param {float} taxRate
+     * @static
+     * @param {number} taxAddedPrice
+     * @param {number} taxRate
      * @return {number}
      */
-    calculateTaxFromTaxAddedPrice(taxAddedPrice, taxRate) {
+    static calculateTaxFromTaxAddedPrice(taxAddedPrice, taxRate) {
         return parseFloat((taxAddedPrice / (1 + (100 / taxRate))).toFixed(2));
     }
 }
