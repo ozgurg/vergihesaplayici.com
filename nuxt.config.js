@@ -57,7 +57,7 @@ export default {
     ],
     plugins: [
         { src: "@/plugins/firebase.js", mode: "client" },
-        { src: "@/plugins/money-format.js", mode: "client" },
+        { src: "@/plugins/money-format.js" }, // mode: "client" causes "_vm.$moneyFormat is not a function" error
         { src: "@/plugins/vue-clipboard2.js", mode: "client" },
         { src: "@/plugins/vue-disqus.js", mode: "client" },
         { src: "@/plugins/vue-html2canvas.js", mode: "client" }
