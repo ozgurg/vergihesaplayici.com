@@ -1,3 +1,4 @@
+/* eslint-disable */
 import PhoneTaxCalculator from "@/calculators/PhoneTaxCalculator";
 import { state } from "@/store/exchange-rates";
 

@@ -1,5 +1,5 @@
 <template>
-    <!-- eslint-disable vue/no-v-html -->
+    <!-- eslint-disable vue/no-v-text-v-html-on-component -->
     <nuxt-link
         v-html="logo"
         v-bind="$attrs"
