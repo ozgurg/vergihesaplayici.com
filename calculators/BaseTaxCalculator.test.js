@@ -1,6 +1,6 @@
 import BaseTaxCalculator from "@/calculators/BaseTaxCalculator";
 
-describe("BaseTaxCalculator", () => {
+describe("calculators/BaseTaxCalculator", () => {
     // Normally, BaseTaxCalculator is an abstract class
     const baseTaxCalculator = new BaseTaxCalculator();
 
