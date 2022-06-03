@@ -45,6 +45,6 @@ $radius: 12px;
     border-radius: $radius !important
 }
 
-.v-card.v-sheet:not(.v-toolbar) {
+.v-sheet.v-card:not(.v-card--flat) {
     border-radius: $radius !important
 }
