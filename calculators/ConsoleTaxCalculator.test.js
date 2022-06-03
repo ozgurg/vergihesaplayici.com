@@ -1,3 +1,4 @@
+/* eslint-disable */
 import ConsoleTaxCalculator from "@/calculators/ConsoleTaxCalculator";
 import { state } from "@/store/exchange-rates";
 

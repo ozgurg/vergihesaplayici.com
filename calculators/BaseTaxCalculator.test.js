@@ -1,3 +1,4 @@
+/* eslint-disable */
 import BaseTaxCalculator from "@/calculators/BaseTaxCalculator";
 
 describe("BaseTaxCalculator", () => {
