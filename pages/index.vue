@@ -1,6 +1,6 @@
 <template>
 	<div>
-        <AppHeader class="mt-16">
+        <AppHeader>
             Vergi Hesaplayıcı
         </AppHeader>
 
