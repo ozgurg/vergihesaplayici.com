@@ -8,7 +8,7 @@
         overlay-color="#000"
         overlay-opacity=".75"
         width="700">
-        <v-card>
+        <v-card :flat="$vuetify.breakpoint.smAndDown">
             <v-toolbar
                 class="dialog-toolbar px-2"
                 flat="">
