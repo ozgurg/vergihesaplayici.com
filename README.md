@@ -37,7 +37,7 @@ npm run dev
 npm run generate
 
 # Unit tests
-npm run test:unit
+npm run test
 
 # Linting
 npm run lint
