@@ -3,7 +3,7 @@
     "description": "vergihesaplayici.com, vergi hesaplar.",
     "license": "MIT",
     "homepage": "https://vergihesaplayici.com/",
-    "version": "4.13.0",
+    "version": "4.14.0",
     "private": true,
     "author": {
         "email": "ozgurgorgulu54@gmail.com",
@@ -21,7 +21,8 @@
         "generate": "nuxt generate",
         "lint:js": "eslint --ext \".js,.vue\"",
         "lint": "npm run lint:js",
-        "test": "jest"
+        "test": "jest",
+        "test:coverage": "jest --coverage"
     },
     "dependencies": {
         "core-js": "^3.22.8",
