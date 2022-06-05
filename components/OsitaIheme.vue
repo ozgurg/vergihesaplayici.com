@@ -13,9 +13,6 @@
                 width="300"
                 height="300">
                 <source
-                    :src="require('@/assets/video/osita-iheme.webm')"
-                    type="video/webm" />
-                <source
                     :src="require('@/assets/video/osita-iheme.mp4')"
                     type="video/mp4" />
             </video>
