@@ -1,3 +1,5 @@
+import fetchExchangeRate from "@/utils/fetch-exchange-rate";
+
 export const state = () => ({
     currencies: {
         TRY: { sign: "₺", rate: 1 },
@@ -22,14 +24,14 @@ export const actions = {
             return state.currencies[currency];
         }
 
-        return await fetch(`https://api.exchangerate.host/latest?base=${currency}&symbols=TRY`)
-            .then(response => response.json())
-            .then(response => {
+        return await fetchExchangeRate(currency, "TRY")
+            .then(rate => {
                 commit("SET_EXCHANGE_RATE", {
                     currency,
-                    rate: response.rates.TRY
+                    rate
                 });
-            }).then(() => state.currencies[currency]);
+                return state.currencies[currency];
+            });
     }
 };
 
