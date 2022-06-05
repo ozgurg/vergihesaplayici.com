@@ -79,6 +79,14 @@
 <script>
 import { mdiEmail, mdiExportVariant, mdiFacebook, mdiReddit, mdiTwitter, mdiWhatsapp } from "@mdi/js";
 import createShareUrlOfCalculator from "@/utils/create-share-url-of-calculator";
+import {
+    createEmailShareUrl,
+    createFacebookShareUrl,
+    createRedditShareUrl,
+    createTelegramShareUrl,
+    createTwitterShareUrl,
+    createWhatsAppShareUrl
+} from "@/utils/create-social-media-share-url";
 
 export default {
     data: () => ({
@@ -125,37 +133,37 @@ export default {
             const vm = this;
             return [
                 {
-                    url: `https://www.facebook.com/sharer/sharer.php?u=${vm.url}`,
+                    url: createFacebookShareUrl(vm.url, document.title),
                     title: "Facebook'ta paylaş",
                     color: "#1877f2",
                     icon: vm.icons.mdiFacebook
                 },
                 {
-                    url: `https://twitter.com/intent/tweet?url=${vm.url}`,
+                    url: createTwitterShareUrl(vm.url, document.title),
                     title: "Twitter'da paylaş",
                     color: "#00acee",
                     icon: vm.icons.mdiTwitter
                 },
                 {
-                    url: `https://wa.me/?text=${vm.url}`,
+                    url: createWhatsAppShareUrl(vm.url, document.title),
                     title: "WhatsApp ile gönder",
                     color: "#25d366",
                     icon: vm.icons.mdiWhatsapp
                 },
                 {
-                    url: `https://telegram.me/share/url?url=${vm.url}&text=${document.title}`,
+                    url: createTelegramShareUrl(vm.url, document.title),
                     title: "Telegram ile gönder",
                     color: "#26A5E4",
                     icon: "ic-telegram.svg"
                 },
                 {
-                    url: `https://www.reddit.com/submit?url=${vm.url}`,
+                    url: createRedditShareUrl(vm.url, document.title),
                     title: "Reddit'te paylaş",
                     color: "#FF5700",
                     icon: vm.icons.mdiReddit
                 },
                 {
-                    url: `mailto:?subject=${document.title}&body=${vm.url}`,
+                    url: createEmailShareUrl(vm.url, document.title),
                     title: "E-posta gönder",
                     color: "#ecb064",
                     icon: vm.icons.mdiEmail
