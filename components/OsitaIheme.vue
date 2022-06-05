@@ -25,10 +25,3 @@
         </div>
     </div>
 </template>
-
-<style scoped="">
-video {
-    height: auto;
-    max-width: 100%
-}
-</style>
