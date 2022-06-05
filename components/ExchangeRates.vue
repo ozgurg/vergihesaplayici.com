@@ -12,11 +12,12 @@
 </template>
 
 <script>
-import { get } from "vuex-pathify";
-
 export default {
     computed: {
-        currencies: get("exchange-rates/availableCurrenciesExceptTRY")
+        currencies() {
+            const vm = this;
+            return vm.$store.getters["exchange-rates/availableCurrenciesExceptTRY"];
+        }
     }
 };
 </script>
