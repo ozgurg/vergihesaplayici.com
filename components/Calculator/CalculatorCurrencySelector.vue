@@ -10,8 +10,6 @@
 </template>
 
 <script>
-import { get } from "vuex-pathify";
-
 export default {
     props: {
         value: {
@@ -26,7 +24,10 @@ export default {
         }
     },
     computed: {
-        currencies: get("exchange-rates/availableCurrencies")
+        currencies() {
+            const vm = this;
+            return vm.$store.getters["exchange-rates/availableCurrencies"];
+        }
     }
 };
 </script>
