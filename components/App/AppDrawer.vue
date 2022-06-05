@@ -8,7 +8,7 @@
             <AppDrawerLogo />
         </template>
 
-        <CalculatorList
+        <AppDrawerCalculatorList
             shaped=""
             subheader="Hesaplayıcılar" />
 

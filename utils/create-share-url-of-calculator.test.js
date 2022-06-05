@@ -15,7 +15,8 @@ describe("utils/create-share-url-of-calculator", () => {
                 calculatorPath
             },
             params,
-            true);
+            true
+        );
         expect(url).toBe("https://vergihesaplayici.com/calculator?price=100&currency=USD");
     });
 
@@ -26,7 +27,8 @@ describe("utils/create-share-url-of-calculator", () => {
                 calculatorPath
             },
             params,
-            false);
+            false
+        );
         expect(url).toBe("https://vergihesaplayici.com/calculator");
     });
 });

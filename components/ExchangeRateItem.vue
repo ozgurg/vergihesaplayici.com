@@ -9,7 +9,7 @@
 
         <v-skeleton-loader
             v-if="isLoading"
-            class="mx-auto mb-0"
+            class="mx-auto mb-0 rounded"
             max-height="32"
             width="100%"
             type="image" />
