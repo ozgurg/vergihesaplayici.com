@@ -92,5 +92,10 @@ describe("store/exchange-rates", () => {
             const availableCurrencies = store.getters.availableCurrencies(state);
             expect(availableCurrencies).toStrictEqual(["TRY", "USD", "EUR"]);
         });
+
+        it("[availableCurrenciesExceptTRY] should return list of available currencies except TRY as an array", () => {
+            const availableCurrenciesExceptTRY = store.getters.availableCurrenciesExceptTRY(state);
+            expect(availableCurrenciesExceptTRY).toStrictEqual(["USD", "EUR"]);
+        });
     });
 });

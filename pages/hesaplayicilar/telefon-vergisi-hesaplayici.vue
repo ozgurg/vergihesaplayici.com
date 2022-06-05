@@ -45,19 +45,18 @@
 
             <CalculatorResultTabs
                 v-model="ui.tab"
-                :show-results="showResults"
+                :show-results="shouldShowResults"
                 class="mt-10">
-                <template v-if="showResults">
+                <template v-if="shouldShowResults">
                     <CalculatorCalculatedFromSalePriceAlert v-if="form.currency === 'TRY'" />
                     <CalculatorCustomsInfoAlert v-else />
 
-                    <template v-for="(item, index) in resultList">
-                        <CalculatorResultFormRow
-                            :key="index"
-                            :value="item.value"
-                            :label="item.key"
-                            class="mb-5" />
-                    </template>
+                    <CalculatorResultFormRow
+                        v-for="(item, index) in resultList"
+                        :key="index"
+                        :value="item.value"
+                        :label="item.key"
+                        class="mb-5" />
 
                     <CalculatorFormRow class="mb-6">
                         <CalculatorMinimumWageAlert :price="results.prices.salePrice" />
@@ -93,6 +92,7 @@ import { mdiShare } from "@mdi/js";
 import PhoneTaxCalculator from "@/calculators/PhoneTaxCalculator";
 import { PhoneTaxCalculator as meta } from "@/data/calculators.js";
 import openGraphImage from "@/assets/img/open-graph/phone-tax-calculator.jpg";
+import isCurrencyAvailable from "@/utils/is-currency-available";
 
 export default {
     layout: "default/index",
@@ -171,7 +171,7 @@ export default {
                 vm.form.price = parseFloat(query.price);
             }
 
-            if (query.currency && vm.$store.get("exchange-rates/availableCurrencies").includes(query.currency)) {
+            if (query.currency && isCurrencyAvailable(query.currency, vm.$store.get("exchange-rates/availableCurrencies"))) {
                 vm.form.currency = query.currency;
             }
 
@@ -253,7 +253,7 @@ export default {
                 ]
             };
         },
-        showResults() {
+        shouldShowResults() {
             const vm = this;
             return vm.form.price > 0 && vm.form.currency !== "" && vm.form.registration !== "";
         },
@@ -281,7 +281,7 @@ export default {
             handler() {
                 const vm = this;
 
-                if (!vm.showResults) return;
+                if (!vm.shouldShowResults) return;
 
                 vm.calculate();
 

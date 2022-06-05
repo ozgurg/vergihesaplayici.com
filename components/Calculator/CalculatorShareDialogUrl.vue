@@ -13,18 +13,18 @@
         </v-text-field>
 
         <v-checkbox
-            v-model="includeCalculatorParams"
+            v-model="willIncludeParams"
             hide-details=""
             label="Hesaplayıcı parametrelerini dahil et" />
     </div>
 </template>
 
 <script>
-import querystring from "querystring";
+import createShareUrlOfCalculator from "@/utils/create-share-url-of-calculator";
 
 export default {
     data: () => ({
-        includeCalculatorParams: true
+        willIncludeParams: true
     }),
     props: {
         data: {
@@ -39,12 +39,14 @@ export default {
     computed: {
         url() {
             const vm = this;
-
-            if (vm.includeCalculatorParams) {
-                return `${process.env.APP_URL}${vm.$route.path}?${querystring.stringify(vm.data)}`;
-            }
-
-            return `${process.env.APP_URL}${vm.$route.path}`;
+            return createShareUrlOfCalculator(
+                {
+                    baseUrl: process.env.APP_URL,
+                    calculatorPath: vm.$route.path
+                },
+                vm.data,
+                vm.willIncludeParams
+            );
         }
     }
 };

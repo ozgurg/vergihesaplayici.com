@@ -36,6 +36,9 @@ export const actions = {
 export const getters = {
     availableCurrencies(state) {
         return Object.keys(state.currencies);
+    },
+    availableCurrenciesExceptTRY(state) {
+        return Object.keys(state.currencies).filter(currency => currency !== "TRY");
     }
 };
 
