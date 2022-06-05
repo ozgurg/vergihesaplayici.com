@@ -17,6 +17,7 @@
                     :src="require(`@/assets/img/apps/${app.icon}`)"
                     loading="lazy"
                     draggable="false"
+                    decoding="async"
                     height="24"
                     width="24" />
             </v-list-item-icon>
