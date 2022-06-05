@@ -45,9 +45,9 @@
 
             <CalculatorResultTabs
                 v-model="ui.tab"
-                :show-results="showResults"
+                :show-results="shouldShowResults"
                 class="mt-10">
-                <template v-if="showResults">
+                <template v-if="shouldShowResults">
                     <CalculatorCalculatedFromSalePriceAlert v-if="form.currency === 'TRY'" />
                     <CalculatorCustomsInfoAlert v-else />
 
@@ -252,7 +252,7 @@ export default {
                 ]
             };
         },
-        showResults() {
+        shouldShowResults() {
             const vm = this;
             return vm.form.price > 0 && vm.form.currency !== "" && vm.form.registration !== "";
         },
@@ -280,7 +280,7 @@ export default {
             handler() {
                 const vm = this;
 
-                if (!vm.showResults) return;
+                if (!vm.shouldShowResults) return;
 
                 vm.calculate();
 
