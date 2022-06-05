@@ -92,6 +92,7 @@ import { mdiShare } from "@mdi/js";
 import PhoneTaxCalculator from "@/calculators/PhoneTaxCalculator";
 import { PhoneTaxCalculator as meta } from "@/data/calculators.js";
 import openGraphImage from "@/assets/img/open-graph/phone-tax-calculator.jpg";
+import isCurrencyAvailable from "@/utils/is-currency-available";
 
 export default {
     layout: "default/index",
@@ -170,7 +171,7 @@ export default {
                 vm.form.price = parseFloat(query.price);
             }
 
-            if (query.currency && vm.$store.get("exchange-rates/availableCurrencies").includes(query.currency)) {
+            if (query.currency && isCurrencyAvailable(query.currency, vm.$store.get("exchange-rates/availableCurrencies"))) {
                 vm.form.currency = query.currency;
             }
 
