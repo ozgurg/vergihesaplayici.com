@@ -3,7 +3,7 @@ import { matchers } from "jest-json-schema";
 
 expect.extend(matchers);
 
-// This can be done TypeScript 😁
+// This can be done with TypeScript 😁
 describe("data/android-apps", () => {
     const schema = {
         properties: {
