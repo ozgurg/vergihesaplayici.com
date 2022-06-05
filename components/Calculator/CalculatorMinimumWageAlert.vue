@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import calculateMinimumWageMonthCount from "@/utils/calculate-minimum-wage-month-count";
+
 const MINIMUM_WAGE = 4253.40; // Source: https://www.csgb.gov.tr/asgari-ucret/asgari-ucret-2022/
 
 export default {
@@ -22,7 +24,7 @@ export default {
     computed: {
         minimumWageMonthCount() {
             const vm = this;
-            return (vm.price / MINIMUM_WAGE).toFixed(2);
+            return calculateMinimumWageMonthCount(vm.price, MINIMUM_WAGE);
         }
     }
 };
