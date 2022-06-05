@@ -51,13 +51,12 @@
                     <CalculatorCalculatedFromSalePriceAlert v-if="form.currency === 'TRY'" />
                     <CalculatorCustomsInfoAlert v-else />
 
-                    <template v-for="(item, index) in resultList">
-                        <CalculatorResultFormRow
-                            :key="index"
-                            :value="item.value"
-                            :label="item.key"
-                            class="mb-5" />
-                    </template>
+                    <CalculatorResultFormRow
+                        v-for="(item, index) in resultList"
+                        :key="index"
+                        :value="item.value"
+                        :label="item.key"
+                        class="mb-5" />
 
                     <CalculatorFormRow class="mb-6">
                         <CalculatorMinimumWageAlert :price="results.prices.salePrice" />
