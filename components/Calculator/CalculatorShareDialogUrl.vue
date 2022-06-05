@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import querystring from "querystring";
+import objectToQueryString from "@/utils/object-to-query-string";
 
 export default {
     data: () => ({
@@ -41,7 +41,7 @@ export default {
             const vm = this;
 
             if (vm.includeCalculatorParams) {
-                return `${process.env.APP_URL}${vm.$route.path}?${querystring.stringify(vm.data)}`;
+                return `${process.env.APP_URL}${vm.$route.path}?${objectToQueryString(vm.data)}`;
             }
 
             return `${process.env.APP_URL}${vm.$route.path}`;
