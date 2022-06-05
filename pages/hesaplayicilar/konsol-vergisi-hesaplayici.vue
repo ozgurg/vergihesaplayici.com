@@ -20,7 +20,7 @@
                     min="1"
                     type="number"
                     aria-label="Konsol fiyatı">
-                    <template slot="append-outer">
+                    <template #append-outer>
                         <CalculatorCurrencySelector
                             v-model="form.currency"
                             style="width:110px" />

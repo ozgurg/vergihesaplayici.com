@@ -9,7 +9,7 @@
             hide-details=""
             outlined=""
             readonly="">
-            <template slot="append">
+            <template #append>
                 <CopyButton :value="value" />
             </template>
         </v-text-field>
