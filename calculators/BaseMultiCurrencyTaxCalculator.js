@@ -1,4 +1,5 @@
 import BaseTaxCalculator from "@/calculators/BaseTaxCalculator";
+import { normalizePrice } from "@/utils/normalize-price";
 
 /**
  * @abstract
@@ -102,15 +103,15 @@ class BaseMultiCurrencyTaxCalculator extends BaseTaxCalculator {
      */
     normalizeResults() {
         for (const [key, value] of Object.entries(this.prices)) {
-            this.prices[key] = parseFloat(value.toFixed(2));
+            this.prices[key] = normalizePrice(value);
         }
 
         for (const [key, value] of Object.entries(this.taxFees)) {
-            this.taxFees[key] = parseFloat(value.toFixed(2));
+            this.taxFees[key] = normalizePrice(value);
         }
 
         for (const [key, value] of Object.entries(this.taxRates)) {
-            this.taxRates[key] = parseFloat(value.toFixed(2));
+            this.taxRates[key] = normalizePrice(value);
         }
     }
 
