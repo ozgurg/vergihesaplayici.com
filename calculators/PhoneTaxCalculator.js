@@ -1,4 +1,5 @@
 import BaseMultiCurrencyTaxCalculator from "@/calculators/BaseMultiCurrencyTaxCalculator";
+import { calculateTaxFromTaxAddedPrice, calculateTaxFromTaxFreePrice } from "~/utils/calculate-tax";
 
 /**
  * @class
@@ -63,12 +64,12 @@ class PhoneTaxCalculator extends BaseMultiCurrencyTaxCalculator {
     ministryOfCultureFee() {
         switch (this.calculationMode) {
             case BaseMultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice:
-                this.taxFees.ministryOfCulture = this.constructor.calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.ministryOfCulture);
+                this.taxFees.ministryOfCulture = calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.ministryOfCulture);
                 this.prices.salePrice += this.taxFees.ministryOfCulture;
                 break;
 
             case BaseMultiCurrencyTaxCalculator.CalculationMode.SalePriceToBasePrice:
-                this.taxFees.ministryOfCulture = this.constructor.calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.ministryOfCulture);
+                this.taxFees.ministryOfCulture = calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.ministryOfCulture);
                 this.prices.basePrice -= this.taxFees.ministryOfCulture;
                 break;
         }
@@ -80,12 +81,12 @@ class PhoneTaxCalculator extends BaseMultiCurrencyTaxCalculator {
     trtImportFee() {
         switch (this.calculationMode) {
             case BaseMultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice:
-                this.taxFees.trt = this.constructor.calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.trt);
+                this.taxFees.trt = calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.trt);
                 this.prices.salePrice += this.taxFees.trt;
                 break;
 
             case BaseMultiCurrencyTaxCalculator.CalculationMode.SalePriceToBasePrice:
-                this.taxFees.trt = this.constructor.calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.trt);
+                this.taxFees.trt = calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.trt);
                 this.prices.basePrice -= this.taxFees.trt;
                 break;
         }
@@ -115,13 +116,13 @@ class PhoneTaxCalculator extends BaseMultiCurrencyTaxCalculator {
         switch (this.calculationMode) {
             case BaseMultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice:
                 this.taxRates.sct = this.getSctRateByPrice(this.prices.salePrice);
-                this.taxFees.sct = this.constructor.calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.sct);
+                this.taxFees.sct = calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.sct);
                 this.prices.salePrice += this.taxFees.sct;
                 break;
 
             case BaseMultiCurrencyTaxCalculator.CalculationMode.SalePriceToBasePrice:
                 this.taxRates.sct = this.getSctRateByPrice(this.prices.basePrice);
-                this.taxFees.sct = this.constructor.calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.sct);
+                this.taxFees.sct = calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.sct);
                 this.prices.basePrice -= this.taxFees.sct;
                 break;
         }
@@ -133,12 +134,12 @@ class PhoneTaxCalculator extends BaseMultiCurrencyTaxCalculator {
     vatFee() {
         switch (this.calculationMode) {
             case BaseMultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice:
-                this.taxFees.vat = this.constructor.calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.vat);
+                this.taxFees.vat = calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.vat);
                 this.prices.salePrice += this.taxFees.vat;
                 break;
 
             case BaseMultiCurrencyTaxCalculator.CalculationMode.SalePriceToBasePrice:
-                this.taxFees.vat = this.constructor.calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.vat);
+                this.taxFees.vat = calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.vat);
                 this.prices.basePrice -= this.taxFees.vat;
                 break;
         }
