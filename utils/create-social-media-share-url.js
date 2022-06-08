@@ -25,8 +25,6 @@ const createSocialMediaShareUrl = (site, url, title) => {
         case "email":
             return `mailto:?subject=${title}&body=${url}`;
     }
-
-    throw new Error(`Unknown social media site: ${site}`);
 };
 
 export {
