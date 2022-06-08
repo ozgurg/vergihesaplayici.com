@@ -5,6 +5,16 @@ import {
     calculateTotalTaxRate
 } from "~/utils/calculate-tax";
 
+const getSctRateByPrice = price => {
+    if (price <= 640) {
+        return 25;
+    } else if (price > 640 && price < 1500) {
+        return 40;
+    } else if (price >= 1500) {
+        return 50;
+    }
+};
+
 /**
  * @class
  * @extends {BaseMultiCurrencyTaxCalculator}
@@ -119,13 +129,13 @@ class PhoneTaxCalculator extends BaseMultiCurrencyTaxCalculator {
     sctFee() {
         switch (this.calculationMode) {
             case BaseMultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice:
-                this.taxRates.sct = this.getSctRateByPrice(this.prices.salePrice);
+                this.taxRates.sct = getSctRateByPrice(this.prices.salePrice);
                 this.taxFees.sct = calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.sct);
                 this.prices.salePrice += this.taxFees.sct;
                 break;
 
             case BaseMultiCurrencyTaxCalculator.CalculationMode.SalePriceToBasePrice:
-                this.taxRates.sct = this.getSctRateByPrice(this.prices.basePrice);
+                this.taxRates.sct = getSctRateByPrice(this.prices.basePrice);
                 this.taxFees.sct = calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.sct);
                 this.prices.basePrice -= this.taxFees.sct;
                 break;
@@ -161,21 +171,6 @@ class PhoneTaxCalculator extends BaseMultiCurrencyTaxCalculator {
             case BaseMultiCurrencyTaxCalculator.CalculationMode.SalePriceToBasePrice:
                 this.prices.basePrice -= this.taxFees.registration;
                 break;
-        }
-    }
-
-    /**
-     * @private
-     * @param {float} price
-     * @return {number}
-     */
-    getSctRateByPrice(price) {
-        if (price <= 640) {
-            return 25;
-        } else if (price >= 640 && price <= 1500) {
-            return 40;
-        } else if (price > 1500) {
-            return 50;
         }
     }
 
@@ -234,3 +229,7 @@ class PhoneTaxCalculator extends BaseMultiCurrencyTaxCalculator {
 }
 
 export default PhoneTaxCalculator;
+
+export {
+    getSctRateByPrice
+};
