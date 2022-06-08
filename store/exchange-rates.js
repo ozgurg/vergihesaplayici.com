@@ -1,4 +1,4 @@
-import fetchExchangeRate from "@/utils/fetch-exchange-rate";
+import { fetchExchangeRate } from "@/utils/fetch-exchange-rate";
 
 export const state = () => ({
     currencies: {

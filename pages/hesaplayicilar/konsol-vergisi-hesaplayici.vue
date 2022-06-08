@@ -77,7 +77,7 @@ import { mdiShare } from "@mdi/js";
 import ConsoleTaxCalculator from "@/calculators/ConsoleTaxCalculator";
 import { ConsoleTaxCalculator as meta } from "@/data/calculators.js";
 import openGraphImage from "@/assets/img/open-graph/console-tax-calculator.jpg";
-import isCurrencyAvailable from "@/utils/is-currency-available";
+import { isCurrencyAvailable } from "@/utils/is-currency-available";
 
 export default {
     layout: "default/index",

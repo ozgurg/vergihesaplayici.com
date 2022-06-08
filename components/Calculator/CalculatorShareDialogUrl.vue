@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import createShareUrlOfCalculator from "@/utils/create-share-url-of-calculator";
+import { createShareUrlOfCalculator } from "@/utils/create-share-url-of-calculator";
 
 export default {
     data: () => ({

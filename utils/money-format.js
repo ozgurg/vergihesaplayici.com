@@ -7,4 +7,6 @@ const moneyFormat = (price, currency) => {
     return formatter.format(price);
 };
 
-export default moneyFormat;
+export {
+    moneyFormat
+};

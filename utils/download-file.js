@@ -10,4 +10,6 @@ const downloadFile = (url, name) => {
     });
 };
 
-export default downloadFile;
+export {
+    downloadFile
+};

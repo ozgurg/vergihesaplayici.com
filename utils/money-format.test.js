@@ -1,4 +1,4 @@
-import moneyFormat from "@/utils/money-format";
+import { moneyFormat } from "@/utils/money-format";
 
 describe("utils/money-format", () => {
     it("should format 100 TRY correctly", () => {
