@@ -119,7 +119,7 @@ class BaseMultiCurrencyTaxCalculator extends BaseTaxCalculator {
      * @abstract
      */
     calculateTotalTaxFee() {
-        throw new Error("calculateTotalTaxFee() not implemented");
+        throw new Error("Not implemented");
     }
 
     /**
@@ -127,7 +127,7 @@ class BaseMultiCurrencyTaxCalculator extends BaseTaxCalculator {
      * @abstract
      */
     calculateTotalTaxRate() {
-        throw new Error("calculateTotalTaxRate() not implemented");
+        throw new Error("Not implemented");
     }
 
     /**
@@ -135,7 +135,7 @@ class BaseMultiCurrencyTaxCalculator extends BaseTaxCalculator {
      * @abstract
      */
     calculate() {
-        throw new Error("calculate() not implemented");
+        throw new Error("Not implemented");
     }
 }
 
