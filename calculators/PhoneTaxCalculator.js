@@ -1,5 +1,9 @@
 import BaseMultiCurrencyTaxCalculator from "@/calculators/BaseMultiCurrencyTaxCalculator";
-import { calculateTaxFromTaxAddedPrice, calculateTaxFromTaxFreePrice } from "~/utils/calculate-tax";
+import {
+    calculateTaxFromTaxAddedPrice,
+    calculateTaxFromTaxFreePrice,
+    calculateTotalTaxRate
+} from "~/utils/calculate-tax";
 
 /**
  * @class
@@ -194,7 +198,7 @@ class PhoneTaxCalculator extends BaseMultiCurrencyTaxCalculator {
      * @return {number}
      */
     calculateTotalTaxRate() {
-        return ((this.taxFees.total / this.prices.basePrice) * 100);
+        return calculateTotalTaxRate(this.taxFees.total, this.prices.basePrice);
     }
 
     /**
