@@ -8,11 +8,11 @@ import BaseTaxCalculator from "@/calculators/BaseTaxCalculator";
 class BaseMultiCurrencyTaxCalculator extends BaseTaxCalculator {
     /**
      * @static
-     * @type {{FromBasePrice: string, FromSalePrice: string}}
+     * @type {{BasePriceToSalePrice: string, SalePriceToBasePrice: string}}
      */
     static CalculationMode = {
-        FromBasePrice: "CALCULATION_MODE_FROM_BASE_PRICE",
-        FromSalePrice: "CALCULATION_MODE_FROM_SALE_PRICE"
+        BasePriceToSalePrice: "CALCULATION_MODE_FROM_BASE_PRICE",
+        SalePriceToBasePrice: "CALCULATION_MODE_FROM_SALE_PRICE"
     };
 
     /**
@@ -76,8 +76,8 @@ class BaseMultiCurrencyTaxCalculator extends BaseTaxCalculator {
      */
     static getCalculationModeByCurrency(currency) {
         return currency === "TRY" ?
-            this.CalculationMode.FromSalePrice :
-            this.CalculationMode.FromBasePrice;
+            this.CalculationMode.SalePriceToBasePrice :
+            this.CalculationMode.BasePriceToSalePrice;
     }
 
     /**
