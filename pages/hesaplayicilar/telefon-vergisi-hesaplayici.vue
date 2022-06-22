@@ -93,6 +93,7 @@ import PhoneTaxCalculator from "@/calculators/PhoneTaxCalculator";
 import { PhoneTaxCalculator as meta } from "@/data/calculators.js";
 import openGraphImage from "@/assets/img/open-graph/phone-tax-calculator.jpg";
 import { isCurrencyAvailable } from "@/utils/is-currency-available";
+import { findMatchingPresets } from "@/utils/find-matching-presets";
 
 export default {
     layout: "default/index",
@@ -263,12 +264,10 @@ export default {
         },
         matchingPresets() {
             const vm = this;
-            return vm.ui.presets
-                .filter(preset => {
-                    const presetPrice = parseInt(preset.price);
-                    return (presetPrice === vm.form.price || (vm.form.price >= presetPrice && vm.form.price <= presetPrice + 1)) &&
-                        preset.currency === vm.form.currency;
-                });
+            return findMatchingPresets(vm.ui.presets, preset => {
+                return (preset.price === vm.form.price || (vm.form.price >= preset.price && vm.form.price <= preset.price + 1)) &&
+                    preset.currency === vm.form.currency;
+            });
         },
         matchingPresetIds() {
             const vm = this;
