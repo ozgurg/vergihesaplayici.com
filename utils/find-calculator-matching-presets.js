@@ -11,6 +11,11 @@ const findCalculatorMatchingPresets = (presets, {
     });
 };
 
+const createCalculatorMatchingPresetIds = matchingPresets => {
+    return matchingPresets.reduce((previous, preset) => [...previous, preset.id], []);
+};
+
 export {
-    findCalculatorMatchingPresets
+    findCalculatorMatchingPresets,
+    createCalculatorMatchingPresetIds
 };

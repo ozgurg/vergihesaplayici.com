@@ -78,7 +78,10 @@ import ConsoleTaxCalculator from "@/calculators/ConsoleTaxCalculator";
 import { ConsoleTaxCalculator as meta } from "@/data/calculators.js";
 import openGraphImage from "@/assets/img/open-graph/console-tax-calculator.jpg";
 import { isCurrencyAvailable } from "@/utils/is-currency-available";
-import { findCalculatorMatchingPresets } from "@/utils/find-calculator-matching-presets";
+import {
+    createCalculatorMatchingPresetIds,
+    findCalculatorMatchingPresets
+} from "@/utils/find-calculator-matching-presets";
 
 export default {
     layout: "default/index",
@@ -216,7 +219,7 @@ export default {
         },
         matchingPresetIds() {
             const vm = this;
-            return vm.matchingPresets.reduce((previous, preset) => [...previous, preset.id], []);
+            return createCalculatorMatchingPresetIds(vm.matchingPresets);
         }
     },
     watch: {

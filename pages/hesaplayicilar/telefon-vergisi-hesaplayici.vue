@@ -93,7 +93,10 @@ import PhoneTaxCalculator from "@/calculators/PhoneTaxCalculator";
 import { PhoneTaxCalculator as meta } from "@/data/calculators.js";
 import openGraphImage from "@/assets/img/open-graph/phone-tax-calculator.jpg";
 import { isCurrencyAvailable } from "@/utils/is-currency-available";
-import { findCalculatorMatchingPresets } from "@/utils/find-calculator-matching-presets";
+import {
+    createCalculatorMatchingPresetIds,
+    findCalculatorMatchingPresets
+} from "@/utils/find-calculator-matching-presets";
 
 export default {
     layout: "default/index",
@@ -271,7 +274,7 @@ export default {
         },
         matchingPresetIds() {
             const vm = this;
-            return vm.matchingPresets.reduce((previous, preset) => [...previous, preset.id], []);
+            return createCalculatorMatchingPresetIds(vm.matchingPresets);
         }
     },
     watch: {
