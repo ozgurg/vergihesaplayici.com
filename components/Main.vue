@@ -2,7 +2,7 @@
     <v-main v-bind="$attrs">
         <v-container
             :class="containerGutterClass"
-            class="px-4 px-sm-6 px-md-8">
+            class="px-4 px-sm-6 px-md-10">
             <slot />
         </v-container>
     </v-main>
