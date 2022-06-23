@@ -1,4 +1,4 @@
-import objectToQueryString from "@/utils/object-to-query-string";
+import { objectToQueryString } from "@/utils/object-to-query-string";
 
 const createShareUrlOfCalculator = ({
     baseUrl,
@@ -8,4 +8,6 @@ const createShareUrlOfCalculator = ({
     return willIncludeParams ? `${urlWithCalculatorPath}?${objectToQueryString(params)}` : urlWithCalculatorPath;
 };
 
-export default createShareUrlOfCalculator;
+export {
+    createShareUrlOfCalculator
+};

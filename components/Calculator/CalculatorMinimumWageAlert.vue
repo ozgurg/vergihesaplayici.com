@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import calculateMinimumWageMonthCount from "@/utils/calculate-minimum-wage-month-count";
+import { calculateMinimumWageMonthCount } from "@/utils/calculate-minimum-wage-month-count";
 
 export default {
     props: {

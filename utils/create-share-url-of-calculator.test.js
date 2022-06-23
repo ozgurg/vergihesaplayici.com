@@ -1,4 +1,4 @@
-import createShareUrlOfCalculator from "@/utils/create-share-url-of-calculator";
+import { createShareUrlOfCalculator } from "@/utils/create-share-url-of-calculator";
 
 describe("utils/create-share-url-of-calculator", () => {
     const baseUrl = "https://vergihesaplayici.com";

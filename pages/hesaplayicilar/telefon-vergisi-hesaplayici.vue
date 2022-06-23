@@ -92,7 +92,11 @@ import { mdiShare } from "@mdi/js";
 import PhoneTaxCalculator from "@/calculators/PhoneTaxCalculator";
 import { PhoneTaxCalculator as meta } from "@/data/calculators.js";
 import openGraphImage from "@/assets/img/open-graph/phone-tax-calculator.jpg";
-import isCurrencyAvailable from "@/utils/is-currency-available";
+import { isCurrencyAvailable } from "@/utils/is-currency-available";
+import {
+    createCalculatorMatchingPresetIds,
+    findCalculatorMatchingPresets
+} from "@/utils/find-calculator-matching-presets";
 
 export default {
     layout: "default/index",
@@ -263,16 +267,14 @@ export default {
         },
         matchingPresets() {
             const vm = this;
-            return vm.ui.presets
-                .filter(preset => {
-                    const presetPrice = parseInt(preset.price);
-                    return (presetPrice === vm.form.price || (vm.form.price >= presetPrice && vm.form.price <= presetPrice + 1)) &&
-                        preset.currency === vm.form.currency;
-                });
+            return findCalculatorMatchingPresets(vm.ui.presets, {
+                price: vm.form.price,
+                currency: vm.form.currency
+            });
         },
         matchingPresetIds() {
             const vm = this;
-            return vm.matchingPresets.reduce((previous, preset) => [...previous, preset.id], []);
+            return createCalculatorMatchingPresetIds(vm.matchingPresets);
         }
     },
     watch: {

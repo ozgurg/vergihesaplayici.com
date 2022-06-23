@@ -166,8 +166,8 @@
 
 <script>
 import { mdiCheck, mdiContentCopy, mdiDownload } from "@mdi/js";
-import JsFileDownloader from "js-file-downloader";
 import { version } from "@/package.json";
+import { downloadFile } from "@/utils/download-file";
 
 export default {
     data: () => ({
@@ -265,14 +265,9 @@ export default {
 
             try {
                 const screenshot = await vm.captureScreenshot();
+                const fileName = `vergihesaplayici-${vm.date.getTime()}.png`;
 
-                await new JsFileDownloader({
-                    url: screenshot,
-                    forceDesktopMode: true,
-                    nativeFallbackOnError: true,
-                    contentType: "image/png",
-                    nameCallback: () => `vergihesaplayici-${vm.date.getTime()}.png`
-                });
+                await downloadFile(screenshot, () => fileName);
 
                 setTimeout(() => {
                     vm.isLoading = false;

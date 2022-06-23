@@ -1,4 +1,5 @@
 import BaseTaxCalculator from "@/calculators/BaseTaxCalculator";
+import { normalizePrice } from "@/utils/normalize-price";
 
 /**
  * @abstract
@@ -8,11 +9,11 @@ import BaseTaxCalculator from "@/calculators/BaseTaxCalculator";
 class BaseMultiCurrencyTaxCalculator extends BaseTaxCalculator {
     /**
      * @static
-     * @type {{FromBasePrice: string, FromSalePrice: string}}
+     * @type {{BasePriceToSalePrice: string, SalePriceToBasePrice: string}}
      */
     static CalculationMode = {
-        FromBasePrice: "CALCULATION_MODE_FROM_BASE_PRICE",
-        FromSalePrice: "CALCULATION_MODE_FROM_SALE_PRICE"
+        BasePriceToSalePrice: "CALCULATION_MODE_FROM_BASE_PRICE",
+        SalePriceToBasePrice: "CALCULATION_MODE_FROM_SALE_PRICE"
     };
 
     /**
@@ -76,8 +77,8 @@ class BaseMultiCurrencyTaxCalculator extends BaseTaxCalculator {
      */
     static getCalculationModeByCurrency(currency) {
         return currency === "TRY" ?
-            this.CalculationMode.FromSalePrice :
-            this.CalculationMode.FromBasePrice;
+            this.CalculationMode.SalePriceToBasePrice :
+            this.CalculationMode.BasePriceToSalePrice;
     }
 
     /**
@@ -102,15 +103,15 @@ class BaseMultiCurrencyTaxCalculator extends BaseTaxCalculator {
      */
     normalizeResults() {
         for (const [key, value] of Object.entries(this.prices)) {
-            this.prices[key] = parseFloat(value.toFixed(2));
+            this.prices[key] = normalizePrice(value);
         }
 
         for (const [key, value] of Object.entries(this.taxFees)) {
-            this.taxFees[key] = parseFloat(value.toFixed(2));
+            this.taxFees[key] = normalizePrice(value);
         }
 
         for (const [key, value] of Object.entries(this.taxRates)) {
-            this.taxRates[key] = parseFloat(value.toFixed(2));
+            this.taxRates[key] = normalizePrice(value);
         }
     }
 
@@ -119,7 +120,7 @@ class BaseMultiCurrencyTaxCalculator extends BaseTaxCalculator {
      * @abstract
      */
     calculateTotalTaxFee() {
-        throw new Error("calculateTotalTaxFee() not implemented");
+        throw new Error("Not implemented");
     }
 
     /**
@@ -127,7 +128,7 @@ class BaseMultiCurrencyTaxCalculator extends BaseTaxCalculator {
      * @abstract
      */
     calculateTotalTaxRate() {
-        throw new Error("calculateTotalTaxRate() not implemented");
+        throw new Error("Not implemented");
     }
 
     /**
@@ -135,7 +136,7 @@ class BaseMultiCurrencyTaxCalculator extends BaseTaxCalculator {
      * @abstract
      */
     calculate() {
-        throw new Error("calculate() not implemented");
+        throw new Error("Not implemented");
     }
 }
 

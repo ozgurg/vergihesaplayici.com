@@ -5,4 +5,6 @@ const fetchExchangeRate = async (from, to) => {
         .then(response => response.rates[to]);
 };
 
-export default fetchExchangeRate;
+export {
+    fetchExchangeRate
+};
