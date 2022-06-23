@@ -3,7 +3,7 @@ import {
     calculateTaxFromTaxAddedPrice,
     calculateTaxFromTaxFreePrice,
     calculateTotalTaxRate
-} from "~/utils/calculate-tax";
+} from "@/utils/calculate-tax";
 
 const getSctRateByPrice = price => {
     if (price <= 640) {
