@@ -21,7 +21,7 @@
         "generate": "nuxt generate",
         "lint:js": "eslint --ext \".js,.vue\"",
         "lint": "npm run lint:js",
-        "test": "jest",
+        "test": "jest --verbose",
         "test:coverage": "jest --coverage"
     },
     "dependencies": {
