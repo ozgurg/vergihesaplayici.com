@@ -292,6 +292,15 @@ export default {
 
                 vm.$router.push({ query: vm.form });
             }
+        },
+        "form.price"() {
+            const vm = this;
+
+            if (vm.form.price >= 999999) {
+                vm.$nextTick(() => {
+                    vm.form.price = 999999;
+                });
+            }
         }
     },
     head() {
