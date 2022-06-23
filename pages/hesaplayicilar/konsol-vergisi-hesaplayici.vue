@@ -78,7 +78,7 @@ import ConsoleTaxCalculator from "@/calculators/ConsoleTaxCalculator";
 import { ConsoleTaxCalculator as meta } from "@/data/calculators.js";
 import openGraphImage from "@/assets/img/open-graph/console-tax-calculator.jpg";
 import { isCurrencyAvailable } from "@/utils/is-currency-available";
-import { findMatchingPresets } from "@/utils/find-matching-presets";
+import { findCalculatorMatchingPresets } from "@/utils/find-calculator-matching-presets";
 
 export default {
     layout: "default/index",
@@ -209,9 +209,9 @@ export default {
         },
         matchingPresets() {
             const vm = this;
-            return findMatchingPresets(vm.ui.presets, preset => {
-                return (preset.price === vm.form.price || (vm.form.price >= preset.price && vm.form.price <= preset.price + 1)) &&
-                    preset.currency === vm.form.currency;
+            return findCalculatorMatchingPresets(vm.ui.presets, {
+                price: vm.form.price,
+                currency: vm.form.currency
             });
         },
         matchingPresetIds() {
