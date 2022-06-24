@@ -11,6 +11,7 @@
                     @click="choosePreset(preset)"
                     v-on="on"
                     v-bind="attrs"
+                    role="button"
                     :class="{'primary--text primary': value.includes(preset.id)}"
                     outlined="">
                     {{ preset.title }}
