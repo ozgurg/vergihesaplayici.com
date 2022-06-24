@@ -13,20 +13,58 @@ export default {
         title: process.env.APP_NAME,
         meta: [
             { charset: "UTF-8" },
-            { name: "viewport", content: "width=device-width, initial-scale=1" },
-            { name: "robots", content: "index, follow" },
-            { name: "format-detection", content: "telephone=no" },
-            { name: "msapplication-tap-highlight", content: "no" },
-            { name: "twitter:card", content: "summary" },
-            { name: "twitter:site", content: "@ozgurg0" },
-            { name: "twitter:creator", content: "@ozgurg0" },
-            { "http-equiv": "X-UA-Compatible", "content": "ie=edge" }
+            {
+                name: "viewport",
+                content: "width=device-width, initial-scale=1"
+            },
+            {
+                name: "robots",
+                content: "index, follow"
+            },
+            {
+                name: "format-detection",
+                content: "telephone=no"
+            },
+            {
+                name: "msapplication-tap-highlight",
+                content: "no"
+            },
+            {
+                name: "twitter:card",
+                content: "summary"
+            },
+            {
+                name: "twitter:site",
+                content: "@ozgurg0"
+            },
+            {
+                name: "twitter:creator",
+                content: "@ozgurg0"
+            },
+            {
+                "http-equiv": "X-UA-Compatible",
+                "content": "ie=edge"
+            }
         ],
         link: [
-            { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-            { rel: "dns-prefetch", href: "https://firebaseinstallations.googleapis.com" },
-            { rel: "preconnect", href: "https://fonts.googleapis.com" },
-            { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" }
+            {
+                rel: "icon",
+                type: "image/x-icon",
+                href: "/favicon.ico"
+            },
+            {
+                rel: "dns-prefetch",
+                href: "https://firebaseinstallations.googleapis.com"
+            },
+            {
+                rel: "preconnect",
+                href: "https://fonts.googleapis.com"
+            },
+            {
+                rel: "preconnect",
+                href: "https://fonts.gstatic.com",
+                crossorigin: ""
+            }
         ]
     },
     buildModules: [
@@ -46,6 +84,9 @@ export default {
             }
         ]
     ],
+    router: {
+        trailingSlash: false
+    },
     build: {
         indicator: false,
         extractCSS: {
@@ -56,11 +97,23 @@ export default {
         "@/assets/css/style.scss"
     ],
     plugins: [
-        { src: "@/plugins/firebase.js", mode: "client" },
+        {
+            src: "@/plugins/firebase.js",
+            mode: "client"
+        },
         { src: "@/plugins/money-format.js" }, // mode: "client" causes "_vm.$moneyFormat is not a function" error
-        { src: "@/plugins/vue-clipboard2.js", mode: "client" },
-        { src: "@/plugins/vue-disqus.js", mode: "client" },
-        { src: "@/plugins/vue-html2canvas.js", mode: "client" }
+        {
+            src: "@/plugins/vue-clipboard2.js",
+            mode: "client"
+        },
+        {
+            src: "@/plugins/vue-disqus.js",
+            mode: "client"
+        },
+        {
+            src: "@/plugins/vue-html2canvas.js",
+            mode: "client"
+        }
     ],
     loading: {
         color: process.env.APP_PRIMARY_COLOR,
