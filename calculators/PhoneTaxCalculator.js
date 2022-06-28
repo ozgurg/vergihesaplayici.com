@@ -16,7 +16,7 @@ const getSctRateByPrice = price => {
 };
 
 /**
- * @class
+ * @class PhoneTaxCalculator
  * @extends {BaseMultiCurrencyTaxCalculator}
  */
 class PhoneTaxCalculator extends BaseMultiCurrencyTaxCalculator {
