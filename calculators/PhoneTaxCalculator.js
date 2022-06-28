@@ -5,6 +5,10 @@ import {
     calculateTotalTaxRate
 } from "@/utils/calculate-tax";
 
+/**
+ * @param {number} price
+ * @return {number}
+ */
 const getSctRateByPrice = price => {
     if (price <= 640) {
         return 25;
