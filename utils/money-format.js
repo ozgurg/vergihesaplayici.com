@@ -1,3 +1,8 @@
+/**
+ * @param {string} price
+ * @param {string} currency
+ * @return {string}
+ */
 const moneyFormat = (price, currency) => {
     const formatter = new Intl.NumberFormat("tr-TR", {
         style: "currency",
