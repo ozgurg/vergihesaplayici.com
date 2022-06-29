@@ -6,7 +6,7 @@ import {
 } from "@/utils/calculate-tax";
 
 /**
- * @class
+ * @class ConsoleTaxCalculator
  * @extends {BaseMultiCurrencyTaxCalculator}
  */
 class ConsoleTaxCalculator extends BaseMultiCurrencyTaxCalculator {

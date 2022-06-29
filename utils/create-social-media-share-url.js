@@ -5,6 +5,12 @@ const createTelegramShareUrl = (url, title) => createSocialMediaShareUrl("telegr
 const createRedditShareUrl = (url, title) => createSocialMediaShareUrl("reddit", url, title);
 const createEmailShareUrl = (url, title) => createSocialMediaShareUrl("email", url, title);
 
+/**
+ * @param {string} site
+ * @param {string} url
+ * @param {string} title
+ * @return {string}
+ */
 const createSocialMediaShareUrl = (site, url, title) => {
     switch (site) {
         case "facebook":

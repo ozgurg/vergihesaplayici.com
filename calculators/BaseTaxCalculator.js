@@ -1,6 +1,6 @@
 /**
  * @abstract
- * @class
+ * @class BaseTaxCalculator
  */
 class BaseTaxCalculator {
 }

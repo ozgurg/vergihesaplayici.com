@@ -3,7 +3,7 @@ import { normalizePrice } from "@/utils/normalize-price";
 
 /**
  * @abstract
- * @class
+ * @class BaseMultiCurrencyTaxCalculator
  * @extends {BaseTaxCalculator}
  */
 class BaseMultiCurrencyTaxCalculator extends BaseTaxCalculator {

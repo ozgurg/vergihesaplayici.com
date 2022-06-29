@@ -15,13 +15,10 @@
 
 <script>
 import calculators from "@/data/calculators";
+import { buildBreadcrumbsFromPath } from "@/utils/build-breadcrumbs-from-path.js";
 
 export default {
     computed: {
-        /**
-         * Taken from https://dev.to/lukeocodes/breadcrumbs-in-nuxt-5f2m with some improvements (@lukeocodes)
-         * @return {[{to: string, title: string}]}
-         */
         items() {
             const vm = this;
 
@@ -31,33 +28,13 @@ export default {
                 "telefon-vergisi-hesaplayici": calculators.PhoneTaxCalculator.title
             };
 
-            const fullPath = vm.$route.fullPath;
-            const params = fullPath.startsWith("/") ? fullPath.substring(1).split("/") : fullPath.split("/");
-
-            const breadcrumbs = [
+            return [
                 {
-                    to: "/",
-                    title: "Ana Sayfa"
-                }
+                    title: "Ana Sayfa",
+                    to: "/"
+                },
+                ...buildBreadcrumbsFromPath(vm.$route.path, part => routeTitles[part])
             ];
-
-            let path = "";
-            params.forEach(param => {
-                // Remove query string
-                param = param.split("?")[0];
-                path = `${path}/${param}`;
-
-                const route = vm.$router.match(path);
-
-                if (route.name !== null && route.path !== "/") {
-                    breadcrumbs.push({
-                        to: path,
-                        title: routeTitles[param] !== undefined ? routeTitles[param] : param
-                    });
-                }
-            });
-
-            return breadcrumbs;
         }
     }
 };
