@@ -1,3 +1,7 @@
+/**
+ * @param {string} path
+ * @return {[string]}
+ */
 const parseUrlParts = path => {
     return path
         // .replace(/^\/|\/$/g, "") // Remove leading and trailing slashes (https://regexr.com/6opbs)
