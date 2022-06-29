@@ -22,7 +22,9 @@
         "lint:js": "eslint --ext \".js,.vue\"",
         "lint": "npm run lint:js",
         "test": "jest --verbose",
-        "test:coverage": "jest --coverage"
+        "test:coverage": "jest --coverage",
+        "lint-staged": "lint-staged",
+        "prepare": "husky install"
     },
     "dependencies": {
         "core-js": "^3.23.2",
@@ -57,10 +59,17 @@
         "eslint-config-google": "^0.14.0",
         "eslint-plugin-nuxt": "^3.2.0",
         "eslint-plugin-vue": "^9.1.1",
+        "husky": "^8.0.1",
         "jest": "^28.1.1",
         "jest-json-schema": "^6.1.0",
+        "lint-staged": "^13.0.3",
         "nuxt-canonical": "^1.0.6",
         "vue-jest": "^3.0.7",
         "webpack": "^4.46.0"
+    },
+    "lint-staged": {
+        "*.{js,vue}": [
+            "eslint"
+        ]
     }
 }
