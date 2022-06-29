@@ -3,7 +3,7 @@
     "description": "vergihesaplayici.com, vergi hesaplar.",
     "license": "MIT",
     "homepage": "https://vergihesaplayici.com/",
-    "version": "4.17.5",
+    "version": "4.18.0",
     "private": true,
     "author": {
         "email": "ozgurgorgulu54@gmail.com",
@@ -19,27 +19,29 @@
         "build": "nuxt build",
         "start": "nuxt start",
         "generate": "nuxt generate",
-        "lint:js": "eslint --ext \".js,.vue\"",
-        "lint": "npm run lint:js",
+        "lint:fix": "eslint --fix --ext \".js,.vue\" .",
+        "lint": "eslint --ext \".js,.vue\" .",
         "test": "jest --verbose",
-        "test:coverage": "jest --coverage"
+        "test:coverage": "jest --coverage",
+        "lint-staged": "lint-staged",
+        "prepare": "husky install"
     },
     "dependencies": {
-        "core-js": "^3.23.2",
-        "firebase": "^9.8.3",
+        "core-js": "^3.23.3",
+        "firebase": "^9.8.4",
         "js-file-downloader": "^1.1.24",
         "nuxt": "^2.15.8",
         "vue": "^2.6.14",
         "vue-clipboard2": "^0.3.3",
         "vue-disqus": "^4.0.1",
         "vue-html2canvas": "^0.0.4",
-        "vuetify": "^2.6.6",
+        "vuetify": "^2.6.7",
         "vuex": "^3.6.2",
         "vuex-pathify": "^1.5.1"
     },
     "devDependencies": {
         "@babel/eslint-parser": "^7.18.2",
-        "@mdi/js": "^6.7.96",
+        "@mdi/js": "^6.8.96",
         "@nuxt/types": "^2.15.8",
         "@nuxtjs/dotenv": "^1.4.1",
         "@nuxtjs/eslint-config": "^10.0.0",
@@ -52,15 +54,22 @@
         "@types/jest-json-schema": "^6.1.1",
         "@vue/test-utils": "^1.3.0",
         "babel-core": "^6.26.3",
-        "babel-jest": "^28.1.1",
+        "babel-jest": "^28.1.2",
         "eslint": "^8.18.0",
         "eslint-config-google": "^0.14.0",
         "eslint-plugin-nuxt": "^3.2.0",
         "eslint-plugin-vue": "^9.1.1",
-        "jest": "^28.1.1",
+        "husky": "^8.0.1",
+        "jest": "^28.1.2",
         "jest-json-schema": "^6.1.0",
+        "lint-staged": "^13.0.3",
         "nuxt-canonical": "^1.0.6",
         "vue-jest": "^3.0.7",
         "webpack": "^4.46.0"
+    },
+    "lint-staged": {
+        "*.{js,vue}": [
+            "eslint"
+        ]
     }
 }
