@@ -1,5 +1,6 @@
 <template>
     <a
+        v-bind="$attrs"
         href="https://youtu.be/LPrhPC-L5Go?t=5"
         rel="nofollow noopener noreferrer"
         title="Osita Iheme"
