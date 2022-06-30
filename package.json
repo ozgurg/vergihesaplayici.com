@@ -22,7 +22,7 @@
         "lint:fix": "eslint --fix --ext \".js,.vue\" .",
         "lint": "eslint --ext \".js,.vue\" .",
         "test": "jest --verbose",
-        "test:coverage": "jest --coverage",
+        "test:coverage": "npm run test -- --coverage",
         "lint-staged": "lint-staged",
         "prepare": "husky install"
     },
