@@ -1,6 +1,7 @@
 <template>
     <v-breadcrumbs
         v-if="items.length > 0"
+        v-bind="$attrs"
         :items="items">
         <template #item="{ item }">
             <v-breadcrumbs-item
