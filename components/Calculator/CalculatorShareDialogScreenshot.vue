@@ -168,6 +168,7 @@
 import { mdiCheck, mdiContentCopy, mdiDownload } from "@mdi/js";
 import { version } from "@/package.json";
 import { downloadFile } from "@/utils/download-file";
+import { dataUrlToBlob } from "@/utils/data-url-to-blob.js";
 
 export default {
     data: () => ({
@@ -232,11 +233,11 @@ export default {
                     allowWithoutGesture: false
                 });
 
-                const screenshotToBlog = await fetch(screenshot).then(response => response.blob());
+                const screenshotToBlob = await dataUrlToBlob(screenshot);
 
                 await window.navigator.clipboard.write([
                     new window.ClipboardItem({
-                        "image/png": screenshotToBlog
+                        "image/png": screenshotToBlob
                     })
                 ]);
 
