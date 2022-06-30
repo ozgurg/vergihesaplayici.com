@@ -1,3 +1,5 @@
 # Service worker
 sw.*
+
+# Test files
 *.test.js
