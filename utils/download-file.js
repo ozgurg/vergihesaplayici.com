@@ -2,16 +2,16 @@ import JsFileDownloader from "js-file-downloader";
 
 /**
  * @param {string} url
- * @param {string} name
+ * @param {function(fileName: string)} nameCallback
  * @return {Promise<void>}
  */
-const downloadFile = (url, name) => {
+const downloadFile = (url, nameCallback) => {
     return new JsFileDownloader({
         url,
         forceDesktopMode: true,
         nativeFallbackOnError: true,
         contentType: "image/png",
-        nameCallback: name
+        nameCallback
     });
 };
 
