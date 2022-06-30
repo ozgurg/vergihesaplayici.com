@@ -17,7 +17,7 @@ const buildBreadcrumbsFromPath = (path, titleMatcher) => {
 
         breadcrumbs.push({
             title: titleMatcher(part),
-            to: fullPath
+            to: `${fullPath}/`
         });
     });
 

@@ -13,7 +13,7 @@ describe("utils/build-breadcrumbs-from-path", () => {
         expect(buildBreadcrumbsFromPath(path1, titleMatcher)).toEqual([
             {
                 title: "Hesaplayıcılar",
-                to: "/hesaplayicilar"
+                to: "/hesaplayicilar/"
             }
         ]);
 
@@ -21,11 +21,11 @@ describe("utils/build-breadcrumbs-from-path", () => {
         expect(buildBreadcrumbsFromPath(path2, titleMatcher)).toEqual([
             {
                 title: "Hesaplayıcılar",
-                to: "/hesaplayicilar"
+                to: "/hesaplayicilar/"
             },
             {
                 title: "Konsol Vergisi Hesaplayici",
-                to: "/hesaplayicilar/konsol-vergisi-hesaplayici"
+                to: "/hesaplayicilar/konsol-vergisi-hesaplayici/"
             }
         ]);
     });
