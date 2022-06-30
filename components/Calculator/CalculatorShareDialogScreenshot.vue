@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-bind="$attrs">
         <div
             ref="table"
             class="screenshot">

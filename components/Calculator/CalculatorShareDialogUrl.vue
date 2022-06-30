@@ -1,5 +1,7 @@
 <template>
-    <div id="calculatorShareDialogCopyUrl">
+    <div
+        v-bind="$attrs"
+        id="calculatorShareDialogCopyUrl">
         <v-text-field
             :value="url"
             hide-details=""

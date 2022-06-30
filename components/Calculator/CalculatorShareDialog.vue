@@ -2,6 +2,7 @@
     <v-dialog
         @click:outside="close()"
         @close="close()"
+        v-bind="$attrs"
         :value="value"
         :fullscreen="$vuetify.breakpoint.smAndDown"
         :transition="$vuetify.breakpoint.smAndDown ? 'dialog-bottom-transition' : 'dialog-transition'"
