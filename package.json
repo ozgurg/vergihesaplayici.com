@@ -19,7 +19,7 @@
         "build": "nuxt build",
         "start": "nuxt start",
         "generate": "nuxt generate",
-        "lint:fix": "eslint --fix --ext \".js,.vue\" .",
+        "lint:fix": "npm run lint -- --fix",
         "lint": "eslint --ext \".js,.vue\" .",
         "test": "jest --verbose",
         "test:coverage": "npm run test -- --coverage",
