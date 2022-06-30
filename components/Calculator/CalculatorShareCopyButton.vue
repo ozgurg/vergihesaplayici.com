@@ -1,5 +1,6 @@
 <template>
     <v-tooltip
+        v-bind="$attrs"
         v-model="isTooltipShown"
         allow-overflow=""
         bottom="">

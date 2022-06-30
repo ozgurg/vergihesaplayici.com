@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-bind="$attrs">
         <v-row
             class="mb-2 ma-n2 d-flex justify-center"
             no-gutters="">

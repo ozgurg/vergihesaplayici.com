@@ -5,7 +5,7 @@ import { mdiCellphone, mdiGamepad } from "@mdi/js";
     initialsTitle: "KDV",
     title: "KDV (Katma Değer Vergisi) Hesaplayıcı",
     subtitle: "Katma Değer Vergisi",
-    url: "/hesaplayicilar/kdv-hesaplayici",
+    url: "/hesaplayicilar/kdv-hesaplayici/",
     description: "Namıdiğer her şeyin vergisini dahil ve hariç olarak hesaplayın."
 }; */
 
@@ -13,7 +13,7 @@ const ConsoleTaxCalculator = {
     icon: mdiGamepad,
     title: "Konsol Vergisi Hesaplayıcı",
     subtitle: "Konsol Vergisi",
-    url: "/hesaplayicilar/konsol-vergisi-hesaplayici",
+    url: "/hesaplayicilar/konsol-vergisi-hesaplayici/",
     description: "Sadece eğlenmek istediğinizde ödemeniz gereken vergileri hesaplayın."
 };
 
@@ -21,7 +21,7 @@ const PhoneTaxCalculator = {
     icon: mdiCellphone,
     title: "Telefon Vergisi Hesaplayıcı",
     subtitle: "Telefon Vergisi",
-    url: "/hesaplayicilar/telefon-vergisi-hesaplayici",
+    url: "/hesaplayicilar/telefon-vergisi-hesaplayici/",
     description: "Satın aldığınız bir telefonun satış fiyatına etki eden vergileri hesaplayın."
 };
 

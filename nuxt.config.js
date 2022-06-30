@@ -80,12 +80,12 @@ export default {
             "nuxt-canonical",
             {
                 baseUrl: process.env.APP_URL,
-                trailingSlashes: false
+                trailingSlashes: true
             }
         ]
     ],
     router: {
-        trailingSlash: false
+        trailingSlash: true
     },
     build: {
         indicator: false,

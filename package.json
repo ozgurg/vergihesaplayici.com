@@ -3,7 +3,7 @@
     "description": "vergihesaplayici.com, vergi hesaplar.",
     "license": "MIT",
     "homepage": "https://vergihesaplayici.com/",
-    "version": "4.18.0",
+    "version": "4.19.0",
     "private": true,
     "author": {
         "email": "ozgurgorgulu54@gmail.com",
@@ -52,7 +52,6 @@
         "@nuxtjs/vuetify": "^1.12.3",
         "@types/jest": "^28.1.3",
         "@types/jest-json-schema": "^6.1.1",
-        "@vue/test-utils": "^1.3.0",
         "babel-core": "^6.26.3",
         "babel-jest": "^28.1.2",
         "eslint": "^8.18.0",
@@ -64,12 +63,18 @@
         "jest-json-schema": "^6.1.0",
         "lint-staged": "^13.0.3",
         "nuxt-canonical": "^1.0.6",
-        "vue-jest": "^3.0.7",
         "webpack": "^4.46.0"
     },
     "lint-staged": {
         "*.{js,vue}": [
             "eslint"
         ]
-    }
+    },
+    "keywords": [
+        "website",
+        "firebase",
+        "vue",
+        "nuxtjs",
+        "tax-calculator"
+    ]
 }

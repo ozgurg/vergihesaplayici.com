@@ -9,9 +9,7 @@
             <AppDrawerLogo />
         </template>
 
-        <AppDrawerCalculatorList
-            shaped=""
-            subheader="Hesaplayıcılar" />
+        <AppDrawerCalculatorList shaped="" />
 
         <v-divider />
 

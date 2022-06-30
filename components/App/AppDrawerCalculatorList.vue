@@ -2,8 +2,8 @@
     <v-list
         v-bind="$attrs"
         role="list">
-        <v-subheader v-if="subheader">
-            {{ subheader }}
+        <v-subheader>
+            Hesaplayıcılar
         </v-subheader>
 
         <v-list-item
@@ -29,12 +29,6 @@ import calculators from "@/data/calculators.js";
 export default {
     data: () => ({
         calculators
-    }),
-    props: {
-        subheader: {
-            type: String,
-            default: null
-        }
-    }
+    })
 };
 </script>

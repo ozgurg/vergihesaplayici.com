@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-bind="$attrs">
         <div class="grey--text caption">
             {{ currency }}
         </div>
