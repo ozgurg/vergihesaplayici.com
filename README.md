@@ -1,4 +1,3 @@
-
 > ### Attention
 > vergihesaplayici.com is designed entirely for Turkey. Some terms may sound unfamiliar to you.
 
@@ -14,6 +13,7 @@ vergihesaplayici.com, calculates taxes.
 When I saw [@temp](https://teknoseyir.com/u/temp)'s desktop software called [Telefon Fiyatı Hesapla v2](https://teknoseyir.com/blog/telefon-fiyati-hesapla-v2) from [teknoseyir.com](https://teknoseyir.com), I bought the domain name and moved it to the web with Nuxt.js to make a general tax calculator that could include different types of calculations.
 
 ## Installation
+
 ``` sh
 git clone https://github.com/ozgurg/vergihesaplayici.com.git
 cd vergihesaplayici.com
@@ -37,7 +37,9 @@ npm run lint
 ```
 
 ## You may also want to look at this
+
 - https://telefonvergim.cf
 
 ## License
+
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-%2388DF95.svg)](https://github.com/ozgurg/vergihesaplayici.com/blob/master/LICENSE)

@@ -169,6 +169,7 @@ import { mdiCheck, mdiContentCopy, mdiDownload } from "@mdi/js";
 import { version } from "@/package.json";
 import { downloadFile } from "@/utils/download-file";
 import { dataUrlToBlob } from "@/utils/data-url-to-blob.js";
+import { createCalculatorMatchingPresetTitles } from "~/utils/find-calculator-matching-presets.js";
 
 export default {
     data: () => ({
@@ -220,26 +221,31 @@ export default {
                 type: "dataURL"
             });
         },
+        async requestClipboardPermission() {
+            return await navigator.permissions.query({
+                name: "clipboard-write",
+                allowWithoutGesture: false
+            });
+        },
+        async copyScreenshotToClipboard(screenshot) {
+            return await navigator.clipboard.write([
+                new window.ClipboardItem({
+                    "image/png": screenshot
+                })
+            ]);
+        },
         async copy() {
             const vm = this;
 
             vm.isLoading = true;
 
             try {
+                await vm.requestClipboardPermission();
+
                 const screenshot = await vm.captureScreenshot();
-
-                await navigator.permissions.query({
-                    name: "clipboard-write",
-                    allowWithoutGesture: false
-                });
-
                 const screenshotToBlob = await dataUrlToBlob(screenshot);
 
-                await window.navigator.clipboard.write([
-                    new window.ClipboardItem({
-                        "image/png": screenshotToBlob
-                    })
-                ]);
+                await vm.copyScreenshotToClipboard(screenshotToBlob);
 
                 setTimeout(() => {
                     vm.isLoading = false;
@@ -249,9 +255,7 @@ export default {
                         vm.isCopied = false;
                     }, 1500);
                 }, 375);
-            } catch (e) {
-                console.error(e);
-
+            } catch {
                 if (confirm("Kullandığınız tarayıcı bu özelliği desteklemiyor. Kopyalamak yerine indirmek ister misiniz")) {
                     await vm.download();
                 } else {
@@ -278,9 +282,7 @@ export default {
                         vm.isDownloaded = false;
                     }, 1500);
                 }, 375);
-            } catch (e) {
-                console.error(e);
-
+            } catch {
                 alert("Bir hata oluştu.");
 
                 vm.isLoading = false;
@@ -294,9 +296,7 @@ export default {
         },
         presetTitle() {
             const vm = this;
-            return vm.matchingPresets !== undefined && vm.matchingPresets ?
-                vm.matchingPresets.reduce((previous, preset) => [...previous, preset.title], []).join("<br />") :
-                false;
+            return vm.matchingPresets !== undefined ? createCalculatorMatchingPresetTitles(vm.matchingPresets).join("<br />") : false;
         },
         actualTitle() {
             const vm = this;
