@@ -1,5 +1,6 @@
 import {
     createCalculatorMatchingPresetIds,
+    createCalculatorMatchingPresetTitles,
     findCalculatorMatchingPresets
 } from "@/utils/find-calculator-matching-presets";
 
@@ -93,6 +94,22 @@ describe("utils/find-calculator-matching-presets", () => {
 
             const matchingPresetIds = createCalculatorMatchingPresetIds(matchingPresets);
             expect(matchingPresetIds).toStrictEqual([1, 5, 10]);
+        });
+    });
+
+    describe("createCalculatorMatchingPresetTitles", () => {
+        it("should return matching preset titles as an array", () => {
+            const matchingPresets = [
+                {
+                    title: "Preset 1"
+                },
+                {
+                    title: "Preset 2"
+                }
+            ];
+
+            const matchingPresetTitles = createCalculatorMatchingPresetTitles(matchingPresets);
+            expect(matchingPresetTitles).toStrictEqual(["Preset 1", "Preset 2"]);
         });
     });
 });

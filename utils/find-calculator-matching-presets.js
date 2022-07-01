@@ -25,7 +25,16 @@ const createCalculatorMatchingPresetIds = matchingPresets => {
     return matchingPresets.reduce((previous, preset) => ([...previous, preset.id]), []);
 };
 
+/**
+ * @param {[{id, title, price, currency}]} matchingPresets
+ * @return {[string]}
+ */
+const createCalculatorMatchingPresetTitles = matchingPresets => {
+    return matchingPresets.reduce((previous, preset) => ([...previous, preset.title]), []);
+};
+
 export {
     findCalculatorMatchingPresets,
-    createCalculatorMatchingPresetIds
+    createCalculatorMatchingPresetIds,
+    createCalculatorMatchingPresetTitles
 };
