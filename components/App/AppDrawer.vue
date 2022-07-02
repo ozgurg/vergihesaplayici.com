@@ -3,6 +3,7 @@
         v-bind="$attrs"
         v-model="drawerState"
         :color="color"
+        :permanent="$vuetify.breakpoint.mdAndUp"
         width="275"
         floating="">
         <template #prepend>
