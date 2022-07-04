@@ -5,7 +5,7 @@
         text=""
         border="left"
         type="info">
-        Türkiye'de asgari ücretle çalışan birisi yemeden içmeden bu ürünü yaklaşık <b>{{ minimumWageMonthCount }}</b> ayda satın alabilir.
+        Türkiye'de asgari ücretle çalışan birisi yemeden içmeden bu ürünü <b>{{ minimumWageMonthCount }}</b> ayda satın alabilir.
     </v-alert>
 </template>
 

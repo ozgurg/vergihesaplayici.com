@@ -3,7 +3,7 @@
         <AppDrawer app="" />
 
         <AppBar
-            v-if="$vuetify.breakpoint.mobile"
+            v-if="$vuetify.breakpoint.smAndDown"
             app="" />
 
         <Main>
