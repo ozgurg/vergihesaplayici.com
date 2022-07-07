@@ -29,4 +29,14 @@ describe("utils/build-breadcrumbs-from-path", () => {
             }
         ]);
     });
+
+    it("should not include unknown items", () => {
+        const path = "/hesaplayicilar/im-unknown/";
+        expect(buildBreadcrumbsFromPath(path, titleMatcher)).toEqual([
+            {
+                title: "Hesaplayıcılar",
+                to: "/hesaplayicilar/"
+            }
+        ]);
+    });
 });
