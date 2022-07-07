@@ -15,10 +15,15 @@ const buildBreadcrumbsFromPath = (path, titleMatcher) => {
     parseUrlParts(path).forEach(part => {
         fullPath = `${fullPath}/${part}`;
 
-        breadcrumbs.push({
-            title: titleMatcher(part),
-            to: `${fullPath}/`
-        });
+        const title = titleMatcher(part);
+        const to = `${fullPath}/`;
+
+        if (title) {
+            breadcrumbs.push({
+                title,
+                to
+            });
+        }
     });
 
     return breadcrumbs;
