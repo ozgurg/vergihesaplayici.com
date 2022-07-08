@@ -4,6 +4,7 @@ import colors from "vuetify/lib/util/colors";
 export default {
     target: "static",
     components: true,
+    generate: { fallback: "404.html" },
     server: {
         host: process.env.HOST,
         port: process.env.PORT
