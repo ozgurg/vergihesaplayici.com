@@ -1,4 +1,4 @@
-import { getFullUrl } from "~/utils/get-full-url.js";
+import { getFullUrl } from "@/utils/get-full-url.js";
 
 describe("utils/get-full-url", () => {
     global.process = {

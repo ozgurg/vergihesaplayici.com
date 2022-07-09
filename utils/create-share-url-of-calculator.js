@@ -1,5 +1,5 @@
 import { objectToQueryString } from "@/utils/object-to-query-string";
-import { getFullUrl } from "~/utils/get-full-url.js";
+import { getFullUrl } from "@/utils/get-full-url.js";
 
 /**
  * @param {string} calculatorPath
