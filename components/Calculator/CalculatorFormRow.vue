@@ -31,18 +31,21 @@ export default {
 		flex-direction: row
 	}
 	&__label {
-		padding-bottom: 4px;
+		padding-bottom: 8px;
 		@media(min-width: 992px) {
 			padding-bottom: 0;
 			flex: 0 0 200px;
 			max-width: 200px;
 			display: flex;
-			padding-right: 12px
+			padding-right: 20px
 		}
         label {
             width: 100%;
             display: block;
-            text-align: left
+            text-align: left;
+            @media(min-width: 992px) {
+                text-align: right
+            }
         }
 	}
 	&__content {

@@ -67,9 +67,9 @@ export default {
 	position: sticky;
 	background: #121212;
 	z-index: 5;
-	top: 56px;
+	top: 56px; // 56px = toolbar height
 	@media(min-width: 960px) {
-		top: 64px
+		top: 0
 	}
 }
 </style>
