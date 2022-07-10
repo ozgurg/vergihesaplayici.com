@@ -40,7 +40,7 @@ class MultiCurrencyTaxCalculator extends TaxCalculator {
      */
     prices = {
         basePrice: 0, // Tax-free price
-        salePrice: 0 // Tax added price
+        salePrice: 0 // Tax-added price
     };
 
     /**

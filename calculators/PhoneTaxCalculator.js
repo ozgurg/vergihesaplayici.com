@@ -44,7 +44,7 @@ class PhoneTaxCalculator extends MultiCurrencyTaxCalculator {
         sct: 0, // TRY
         vat: 0, // TRY
         trtPassport: 0, // TRY
-        registration: 2732.4 // TRY Source: https://www.turmob.org.tr/arsiv/mbs/resmigazete/31696-4-4.pdf
+        registration: 2732.4 // TRY
     };
 
     /**
@@ -55,7 +55,7 @@ class PhoneTaxCalculator extends MultiCurrencyTaxCalculator {
         total: 0, // Percent
         ministryOfCulture: 1, // Percent
         trt: 12, // Percent
-        sct: 0, // Percent but varies by the price. See getSctRateByPrice
+        sct: 0, /** Percent but varies by the price. See {@link getSctRateByPrice} **/
         vat: 18, // Percent
         trtPassport: 20 // EUR
     };
