@@ -149,14 +149,14 @@ export default {
 
             const price = parseFloat(vm.form.price) * vm.getCurrency(vm.form.currency).rate;
 
-            const phoneTaxCalculator = new PhoneTaxCalculator({
+            const calculator = new PhoneTaxCalculator({
                 price,
                 exchangeRates: vm.$store.get("exchange-rates/currencies"),
                 mode: getModeByCurrency(vm.form.currency)
             }, {
                 registration: vm.form.registration
             });
-            const results = phoneTaxCalculator.calculate().results();
+            const results = calculator.calculate().results();
 
             vm.results.prices = results.prices;
             vm.results.taxFees = results.taxFees;

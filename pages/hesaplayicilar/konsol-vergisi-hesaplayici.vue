@@ -128,12 +128,12 @@ export default {
 
             const price = parseFloat(vm.form.price) * vm.getCurrency(vm.form.currency).rate;
 
-            const consoleTaxCalculator = new ConsoleTaxCalculator({
+            const calculator = new ConsoleTaxCalculator({
                 price,
                 exchangeRates: vm.$store.get("exchange-rates/currencies"),
                 mode: getModeByCurrency(vm.form.currency)
             });
-            const results = consoleTaxCalculator.calculate().results();
+            const results = calculator.calculate().results();
 
             vm.results.prices = results.prices;
             vm.results.taxFees = results.taxFees;
