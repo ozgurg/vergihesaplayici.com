@@ -1,6 +1,6 @@
 import PhoneTaxCalculator, { getSctRateByPrice, Registration } from "@/calculators/PhoneTaxCalculator";
 import { state } from "@/store/exchange-rates";
-import { Mode } from "~/calculators/MultiCurrencyTaxCalculator.js";
+import { Mode } from "@/calculators/MultiCurrencyTaxCalculator.js";
 
 describe("calculators/PhoneTaxCalculator", () => {
     describe("getSctRateByPrice", () => {

@@ -1,6 +1,6 @@
 import ConsoleTaxCalculator from "@/calculators/ConsoleTaxCalculator";
 import { state } from "@/store/exchange-rates";
-import { Mode } from "~/calculators/MultiCurrencyTaxCalculator.js";
+import { Mode } from "@/calculators/MultiCurrencyTaxCalculator.js";
 
 describe("calculators/ConsoleTaxCalculator", () => {
     it(`Prices: 300, 400, 500 / Calculation mode: "${Mode.SalePriceToBasePrice}"`, () => {
