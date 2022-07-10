@@ -3,15 +3,19 @@
         <AppHeader>{{ head.title }}</AppHeader>
 
         <InnerContainer>
-            <CalculatorFormRow class="mb-5">
+            <CalculatorFormRow class="mb-4">
                 <CalculatorPresets
                     @click="choosePreset($event)"
                     :value="matchingPresetIds"
-                    :presets="ui.presets" />
+                    :presets="ui.presets">
+                    <template #tooltip="{preset}">
+                        {{ $moneyFormat(preset.form.price, preset.form.currency) }}
+                    </template>
+                </CalculatorPresets>
             </CalculatorFormRow>
 
             <CalculatorFormRow
-                class="mb-5"
+                class="mb-10"
                 label="Telefon fiyatı">
                 <v-text-field
                     v-model.number="form.price"
@@ -30,17 +34,17 @@
                 </v-text-field>
             </CalculatorFormRow>
 
-            <CalculatorFormRow
-                class="mb-5"
-                label="Kayıt yolu">
-                <v-select
+            <CalculatorFormRow label="Kayıt yolu">
+                <v-radio-group
                     v-model="form.registration"
-                    :items="ui.registration"
                     hide-details=""
-                    item-text="title"
-                    item-value="value"
-                    outlined=""
-                    aria-label="Kayıt yolu" />
+                    class="pa-0 ma-0">
+                    <v-radio
+                        v-for="item in ui.registration"
+                        :key="item.value"
+                        :label="item.title"
+                        :value="item.value" />
+                </v-radio-group>
             </CalculatorFormRow>
 
             <CalculatorResultTabs
@@ -63,16 +67,18 @@
                     </CalculatorFormRow>
 
                     <CalculatorFormRow>
-                        <v-btn
-                            @click="ui.isShareDialogShown = true"
-                            outlined=""
-                            color="primary"
-                            large="">
-                            <v-icon left="">
-                                {{ icons.mdiShare }}
-                            </v-icon>
-                            Paylaş...
-                        </v-btn>
+                        <div>
+                            <v-btn
+                                @click="ui.isShareDialogShown = true"
+                                outlined=""
+                                color="primary"
+                                large="">
+                                <v-icon left="">
+                                    {{ icons.mdiShare }}
+                                </v-icon>
+                                Paylaş...
+                            </v-btn>
+                        </div>
 
                         <CalculatorShareDialog
                             v-model="ui.isShareDialogShown"
@@ -118,12 +124,12 @@ export default {
         },
         ui: {
             presets: [
-                { id: 1, title: "iPhone SE 2022 (64GB)", price: 429, currency: "USD" },
-                { id: 2, title: "iPhone 13 mini (128GB)", price: 699, currency: "USD" },
-                { id: 3, title: "iPhone 13 (128GB)", price: 799, currency: "USD" },
-                { id: 4, title: "iPhone 13 Pro (128GB)", price: 999, currency: "USD" },
-                { id: 5, title: "iPhone 13 Pro Max (128GB)", price: 1099, currency: "USD" },
-                { id: 6, title: "iPhone 13 Pro Max (1TB)", price: 1599, currency: "USD" }
+                { id: 1, title: "iPhone SE 2022 (64GB)", form: { price: 429, currency: "USD" } },
+                { id: 2, title: "iPhone 13 mini (128GB)", form: { price: 699, currency: "USD" } },
+                { id: 3, title: "iPhone 13 (128GB)", form: { price: 799, currency: "USD" } },
+                { id: 4, title: "iPhone 13 Pro (128GB)", form: { price: 999, currency: "USD" } },
+                { id: 5, title: "iPhone 13 Pro Max (128GB)", form: { price: 1099, currency: "USD" } },
+                { id: 6, title: "iPhone 13 Pro Max (1TB)", form: { price: 1599, currency: "USD" } }
             ],
             registration: [
                 { title: "İthalat yoluyla kayıtlı (Resmi)", value: Registration.Import },
@@ -186,9 +192,7 @@ export default {
         },
         choosePreset(preset) {
             const vm = this;
-
-            vm.form.currency = preset.currency;
-            vm.form.price = preset.price;
+            Object.assign(vm.form, preset.form);
         }
     },
     computed: {

@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import calculators from "@/data/calculators.js";
+import * as calculators from "@/data/calculators.js";
 
 export default {
     data: () => ({
