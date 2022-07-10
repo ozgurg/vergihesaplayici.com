@@ -18,6 +18,9 @@ describe("utils/find-calculator-matching-presets", () => {
             },
             {
                 form: { price: 999, currency: "TRY" }
+            },
+            {
+                form: { price: 349.99, currency: "TRY" }
             }
         ];
 
@@ -48,12 +51,12 @@ describe("utils/find-calculator-matching-presets", () => {
 
         it("should return matching presets and those priced over 1", () => {
             const matchingPresets1 = findCalculatorMatchingPresets(presets, {
-                price: 999,
+                price: 350,
                 currency: "TRY"
             });
             expect(matchingPresets1).toStrictEqual([
                 {
-                    form: { price: 999, currency: "TRY" }
+                    form: { price: 349.99, currency: "TRY" }
                 }
             ]);
 
@@ -66,6 +69,14 @@ describe("utils/find-calculator-matching-presets", () => {
                     form: { price: 999, currency: "TRY" }
                 }
             ]);
+        });
+
+        it("should return no matching presets if price over 1", () => {
+            const matchingPresets = findCalculatorMatchingPresets(presets, {
+                price: 350.99,
+                currency: "TRY"
+            });
+            expect(matchingPresets).toStrictEqual([]);
         });
     });
 

@@ -11,7 +11,10 @@ const findCalculatorMatchingPresets = (presets, {
     return presets.filter(preset => {
         const isPriceMatching = preset.form.price === price;
         const isCurrencyMatching = preset.form.currency === currency;
-        const isPriceThresholdMatching = (preset.form.price + 1) === price;
+
+        // We want it to match even if `price` is 350 and `preset.form.price` is 349.99
+        // But not 350.99. So that's why we used `parseInt` before adding `1`
+        const isPriceThresholdMatching = price > preset.form.price && price <= parseInt(preset.form.price) + 1;
 
         return (isPriceMatching || isPriceThresholdMatching) && isCurrencyMatching;
     });
