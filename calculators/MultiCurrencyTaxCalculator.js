@@ -102,17 +102,15 @@ class MultiCurrencyTaxCalculator extends TaxCalculator {
      * @private
      */
     normalizeResults() {
-        for (const [key, value] of Object.entries(this.prices)) {
-            this.prices[key] = normalizePrice(value);
-        }
-
-        for (const [key, value] of Object.entries(this.taxFees)) {
-            this.taxFees[key] = normalizePrice(value);
-        }
-
-        for (const [key, value] of Object.entries(this.taxRates)) {
-            this.taxRates[key] = normalizePrice(value);
-        }
+        [
+            this.prices,
+            this.taxFees,
+            this.taxRates
+        ].forEach(property => {
+            for (const [key, value] of Object.entries(property)) {
+                property[key] = normalizePrice(value);
+            }
+        });
     }
 
     /**
