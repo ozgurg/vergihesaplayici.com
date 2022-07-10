@@ -1,4 +1,4 @@
-import PhoneTaxCalculator, { getSctRateByPrice } from "@/calculators/PhoneTaxCalculator";
+import PhoneTaxCalculator, { getSctRateByPrice, Registration } from "@/calculators/PhoneTaxCalculator";
 import { state } from "@/store/exchange-rates";
 import { Mode } from "~/calculators/MultiCurrencyTaxCalculator.js";
 
@@ -25,7 +25,7 @@ describe("calculators/PhoneTaxCalculator", () => {
     });
 
     describe("PhoneTaxCalculator", () => {
-        it(`Prices: 500, 1500, 5000 / Calculation mode: "${Mode.SalePriceToBasePrice}" / Registration: "${PhoneTaxCalculator.Registration.Import}"`, () => {
+        it(`Prices: 500, 1500, 5000 / Calculation mode: "${Mode.SalePriceToBasePrice}" / Registration: "${Registration.Import}"`, () => {
             calculate(
                 Mode.SalePriceToBasePrice,
                 [
@@ -33,11 +33,11 @@ describe("calculators/PhoneTaxCalculator", () => {
                     { price: 1500, expectedPrice: 802.68 },
                     { price: 5000, expectedPrice: 2497.23 }
                 ],
-                PhoneTaxCalculator.Registration.Import
+                Registration.Import
             );
         });
 
-        it(`Prices: 500, 1500, 5000 / Calculation mode: "${Mode.BasePriceToSalePrice}" / Registration: "${PhoneTaxCalculator.Registration.Import}"`, () => {
+        it(`Prices: 500, 1500, 5000 / Calculation mode: "${Mode.BasePriceToSalePrice}" / Registration: "${Registration.Import}"`, () => {
             calculate(
                 Mode.BasePriceToSalePrice,
                 [
@@ -45,11 +45,11 @@ describe("calculators/PhoneTaxCalculator", () => {
                     { price: 1500, expectedPrice: 3003.34 },
                     { price: 5000, expectedPrice: 10011.12 }
                 ],
-                PhoneTaxCalculator.Registration.Import
+                Registration.Import
             );
         });
 
-        it(`Prices: 500, 1500, 5000 / Calculation mode: "${Mode.SalePriceToBasePrice}" / Registration: "${PhoneTaxCalculator.Registration.Passport}"`, () => {
+        it(`Prices: 500, 1500, 5000 / Calculation mode: "${Mode.SalePriceToBasePrice}" / Registration: "${Registration.Passport}"`, () => {
             calculate(
                 Mode.SalePriceToBasePrice,
                 [
@@ -57,11 +57,11 @@ describe("calculators/PhoneTaxCalculator", () => {
                     { price: 1500, expectedPrice: -1232.4 },
                     { price: 5000, expectedPrice: 2267.6 }
                 ],
-                PhoneTaxCalculator.Registration.Passport
+                Registration.Passport
             );
         });
 
-        it(`Prices: 500, 1500, 5000 / Calculation mode: "${Mode.BasePriceToSalePrice}" / Registration: "${PhoneTaxCalculator.Registration.Passport}"`, () => {
+        it(`Prices: 500, 1500, 5000 / Calculation mode: "${Mode.BasePriceToSalePrice}" / Registration: "${Registration.Passport}"`, () => {
             calculate(
                 Mode.BasePriceToSalePrice,
                 [
@@ -69,7 +69,7 @@ describe("calculators/PhoneTaxCalculator", () => {
                     { price: 1500, expectedPrice: 4232.4 },
                     { price: 5000, expectedPrice: 7732.4 }
                 ],
-                PhoneTaxCalculator.Registration.Passport
+                Registration.Passport
             );
         });
     });
@@ -78,7 +78,7 @@ describe("calculators/PhoneTaxCalculator", () => {
 /**
  * @param {Mode} mode
  * @param {array} prices
- * @param {PhoneTaxCalculator.Registration} registration
+ * @param {Registration} registration
  */
 function calculate(mode, prices, registration) {
     for (const { price, expectedPrice } of prices) {

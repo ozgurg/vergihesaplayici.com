@@ -20,19 +20,20 @@ const getSctRateByPrice = price => {
 };
 
 /**
+ * @readonly
+ * @typedef {string} Registration
+ * @type {{Passport: string, Import: string}}
+ */
+const Registration = {
+    Import: "import",
+    Passport: "passport"
+};
+
+/**
  * @class PhoneTaxCalculator
  * @extends {MultiCurrencyTaxCalculator}
  */
 class PhoneTaxCalculator extends MultiCurrencyTaxCalculator {
-    /**
-     * @static
-     * @type {{Passport: string, Import: string}}
-     */
-    static Registration = {
-        Import: "import",
-        Passport: "passport"
-    };
-
     /**
      * @protected
      * @type {{trtPassport: number, total: number, sct: number, trt: number, vat: number, registration: number, ministryOfCulture: number}}
@@ -64,7 +65,7 @@ class PhoneTaxCalculator extends MultiCurrencyTaxCalculator {
      * @private
      * @type {Registration}
      */
-    registration = null;
+    registration;
 
     /**
      * @param {object} params
@@ -184,9 +185,9 @@ class PhoneTaxCalculator extends MultiCurrencyTaxCalculator {
      * @return {number}
      */
     calculateTotalTaxFee() {
-        if (this.registration === PhoneTaxCalculator.Registration.Import) {
+        if (this.registration === Registration.Import) {
             return this.taxFees.ministryOfCulture + this.taxFees.trt + this.taxFees.sct + this.taxFees.vat;
-        } else if (this.registration === PhoneTaxCalculator.Registration.Passport) {
+        } else if (this.registration === Registration.Passport) {
             return this.taxFees.trtPassport + this.taxFees.registration;
         }
     }
@@ -206,7 +207,7 @@ class PhoneTaxCalculator extends MultiCurrencyTaxCalculator {
      * @return {PhoneTaxCalculator}
      */
     calculate() {
-        if (this.registration === PhoneTaxCalculator.Registration.Import) {
+        if (this.registration === Registration.Import) {
             const functionsToCall = [
                 this.ministryOfCultureFee,
                 this.trtImportFee,
@@ -223,7 +224,7 @@ class PhoneTaxCalculator extends MultiCurrencyTaxCalculator {
                     this.callInReverseOrder(functionsToCall);
                     break;
             }
-        } else if (this.registration === PhoneTaxCalculator.Registration.Passport) {
+        } else if (this.registration === Registration.Passport) {
             const functionsToCall = [
                 this.trtPassportFee,
                 this.registrationFee
@@ -247,5 +248,6 @@ class PhoneTaxCalculator extends MultiCurrencyTaxCalculator {
 export default PhoneTaxCalculator;
 
 export {
-    getSctRateByPrice
+    getSctRateByPrice,
+    Registration
 };
