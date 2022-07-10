@@ -1,6 +1,6 @@
 import MultiCurrencyTaxCalculator from "@/calculators/BaseMultiCurrencyTaxCalculator";
 
-describe("calculators/BaseMultiCurrencyTaxCalculator", () => {
+describe("calculators/MultiCurrencyTaxCalculator", () => {
     it("should return 'SalePriceToBasePrice' if currency is TRY", () => {
         const currency = "TRY";
         expect(MultiCurrencyTaxCalculator.getCalculationModeByCurrency(currency))
