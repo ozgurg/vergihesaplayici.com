@@ -1,8 +1,8 @@
 /**
  * @abstract
- * @class BaseTaxCalculator
+ * @class TaxCalculator
  */
-class BaseTaxCalculator {
+class TaxCalculator {
     /**
      * @protected
      * @param {function[]}functionsToCall
@@ -20,4 +20,4 @@ class BaseTaxCalculator {
     }
 }
 
-export default BaseTaxCalculator;
+export default TaxCalculator;

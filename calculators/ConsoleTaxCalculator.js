@@ -1,4 +1,4 @@
-import BaseMultiCurrencyTaxCalculator from "@/calculators/BaseMultiCurrencyTaxCalculator";
+import MultiCurrencyTaxCalculator from "@/calculators/BaseMultiCurrencyTaxCalculator";
 import {
     calculateTaxFromTaxAddedPrice,
     calculateTaxFromTaxFreePrice,
@@ -7,9 +7,9 @@ import {
 
 /**
  * @class ConsoleTaxCalculator
- * @extends {BaseMultiCurrencyTaxCalculator}
+ * @extends {MultiCurrencyTaxCalculator}
  */
-class ConsoleTaxCalculator extends BaseMultiCurrencyTaxCalculator {
+class ConsoleTaxCalculator extends MultiCurrencyTaxCalculator {
     /**
      * @protected
      * @type {{total: number, sct: number, custom: number, vat: number}}
@@ -37,12 +37,12 @@ class ConsoleTaxCalculator extends BaseMultiCurrencyTaxCalculator {
      */
     customFee() {
         switch (this.calculationMode) {
-            case BaseMultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice:
+            case MultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice:
                 this.taxFees.custom = calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.custom);
                 this.prices.salePrice += this.taxFees.custom;
                 break;
 
-            case BaseMultiCurrencyTaxCalculator.CalculationMode.SalePriceToBasePrice:
+            case MultiCurrencyTaxCalculator.CalculationMode.SalePriceToBasePrice:
                 this.taxFees.custom = calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.custom);
                 this.prices.basePrice -= this.taxFees.custom;
                 break;
@@ -54,12 +54,12 @@ class ConsoleTaxCalculator extends BaseMultiCurrencyTaxCalculator {
      */
     sctFee() {
         switch (this.calculationMode) {
-            case BaseMultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice:
+            case MultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice:
                 this.taxFees.sct = calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.sct);
                 this.prices.salePrice += this.taxFees.sct;
                 break;
 
-            case BaseMultiCurrencyTaxCalculator.CalculationMode.SalePriceToBasePrice:
+            case MultiCurrencyTaxCalculator.CalculationMode.SalePriceToBasePrice:
                 this.taxFees.sct = calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.sct);
                 this.prices.basePrice -= this.taxFees.sct;
                 break;
@@ -71,12 +71,12 @@ class ConsoleTaxCalculator extends BaseMultiCurrencyTaxCalculator {
      */
     vatFee() {
         switch (this.calculationMode) {
-            case BaseMultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice:
+            case MultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice:
                 this.taxFees.vat = calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.vat);
                 this.prices.salePrice += this.taxFees.vat;
                 break;
 
-            case BaseMultiCurrencyTaxCalculator.CalculationMode.SalePriceToBasePrice:
+            case MultiCurrencyTaxCalculator.CalculationMode.SalePriceToBasePrice:
                 this.taxFees.vat = calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.vat);
                 this.prices.basePrice -= this.taxFees.vat;
                 break;
@@ -113,9 +113,9 @@ class ConsoleTaxCalculator extends BaseMultiCurrencyTaxCalculator {
             this.vatFee
         ];
 
-        if (this.calculationMode === BaseMultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice) {
+        if (this.calculationMode === MultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice) {
             this.callInOrder(functionsToCall);
-        } else if (this.calculationMode === BaseMultiCurrencyTaxCalculator.CalculationMode.SalePriceToBasePrice) {
+        } else if (this.calculationMode === MultiCurrencyTaxCalculator.CalculationMode.SalePriceToBasePrice) {
             this.callInReverseOrder(functionsToCall);
         }
 

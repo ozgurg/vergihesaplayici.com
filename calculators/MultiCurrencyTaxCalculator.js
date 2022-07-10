@@ -1,12 +1,12 @@
-import BaseTaxCalculator from "@/calculators/BaseTaxCalculator";
+import TaxCalculator from "@/calculators/BaseTaxCalculator";
 import { normalizePrice } from "@/utils/normalize-price";
 
 /**
  * @abstract
- * @class BaseMultiCurrencyTaxCalculator
- * @extends {BaseTaxCalculator}
+ * @class MultiCurrencyTaxCalculator
+ * @extends {TaxCalculator}
  */
-class BaseMultiCurrencyTaxCalculator extends BaseTaxCalculator {
+class MultiCurrencyTaxCalculator extends TaxCalculator {
     /**
      * @static
      * @type {{BasePriceToSalePrice: string, SalePriceToBasePrice: string}}
@@ -140,4 +140,4 @@ class BaseMultiCurrencyTaxCalculator extends BaseTaxCalculator {
     }
 }
 
-export default BaseMultiCurrencyTaxCalculator;
+export default MultiCurrencyTaxCalculator;

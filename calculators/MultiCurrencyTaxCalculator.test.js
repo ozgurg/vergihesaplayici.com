@@ -1,26 +1,26 @@
-import BaseMultiCurrencyTaxCalculator from "@/calculators/BaseMultiCurrencyTaxCalculator";
+import MultiCurrencyTaxCalculator from "@/calculators/BaseMultiCurrencyTaxCalculator";
 
 describe("calculators/BaseMultiCurrencyTaxCalculator", () => {
     it("should return 'SalePriceToBasePrice' if currency is TRY", () => {
         const currency = "TRY";
-        expect(BaseMultiCurrencyTaxCalculator.getCalculationModeByCurrency(currency))
-            .toEqual(BaseMultiCurrencyTaxCalculator.CalculationMode.SalePriceToBasePrice);
+        expect(MultiCurrencyTaxCalculator.getCalculationModeByCurrency(currency))
+            .toEqual(MultiCurrencyTaxCalculator.CalculationMode.SalePriceToBasePrice);
     });
 
     it("should return 'BasePriceToSalePrice' if currency is USD", () => {
         const currency = "USD";
-        expect(BaseMultiCurrencyTaxCalculator.getCalculationModeByCurrency(currency))
-            .toEqual(BaseMultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice);
+        expect(MultiCurrencyTaxCalculator.getCalculationModeByCurrency(currency))
+            .toEqual(MultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice);
     });
 
     it("should throw error if methods are not implemented", () => {
-        class MockMultiCurrencyTaxCalculator extends BaseMultiCurrencyTaxCalculator {
+        class MockMultiCurrencyTaxCalculator extends MultiCurrencyTaxCalculator {
         }
 
         const calculator = new MockMultiCurrencyTaxCalculator({
             price: 0,
             exchangeRates: {},
-            calculationMode: BaseMultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice
+            calculationMode: MultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice
         });
 
         expect(() => calculator.calculateTotalTaxFee()).toThrowError("Not implemented");
