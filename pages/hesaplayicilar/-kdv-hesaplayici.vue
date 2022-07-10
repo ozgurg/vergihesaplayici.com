@@ -3,8 +3,29 @@
         <AppHeader>{{ head.title }}</AppHeader>
 
         <InnerContainer>
-            <CalculatorFormRow label="// TODO">
-                // TODO
+            <CalculatorFormRow
+                class="mb-5"
+                :label="priceLabel">
+                <v-text-field
+                    v-model.number="form.price"
+                    hide-details=""
+                    outlined=""
+                    step="any"
+                    min="1"
+                    type="number"
+                    aria-label="Fiyat" />
+            </CalculatorFormRow>
+
+            <CalculatorFormRow class="mb-5">
+                <v-radio-group v-model.number="form.mode">
+                    <v-radio
+                        label="KDV hariç fiyattan KDV dahil fiyatı hesapla"
+                        :value="1" />
+
+                    <v-radio
+                        label="KDV dahil fiyattan KDV hariç fiyatı hesapla"
+                        :value="2" />
+                </v-radio-group>
             </CalculatorFormRow>
 
             <CalculatorResultTabs
@@ -41,7 +62,8 @@ export default {
             tab: 1
         },
         form: {
-            price: ""
+            price: "",
+            mode: 1
         },
         results: {
             prices: {},
@@ -65,6 +87,13 @@ export default {
         }
     },
     computed: {
+        priceLabel() {
+            const vm = this;
+            return {
+                1: "KDV dahil fiyat",
+                2: "KDV hariç fiyat"
+            }[vm.form.mode];
+        },
         showResults() {
             const vm = this;
             return vm.form.price > 0;
