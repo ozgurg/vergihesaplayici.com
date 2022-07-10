@@ -3,29 +3,50 @@
         <AppHeader>{{ head.title }}</AppHeader>
 
         <InnerContainer>
+            <CalculatorFormRow class="mb-10" label="Hesaplama modu">
+                <v-radio-group
+                    v-model="form.mode"
+                    hide-details=""
+                    class="pa-0 ma-0">
+                    <v-radio
+                        v-for="item in ui.mode"
+                        :key="item.value"
+                        :label="item.title"
+                        :value="item.value" />
+                </v-radio-group>
+            </CalculatorFormRow>
+
             <CalculatorFormRow
-                class="mb-5"
+                class="mb-10"
                 :label="priceLabel">
                 <v-text-field
                     v-model.number="form.price"
+                    :aria-label="priceLabel"
                     hide-details=""
                     outlined=""
                     step="any"
                     min="1"
-                    type="number"
-                    aria-label="Fiyat" />
+                    type="number" />
             </CalculatorFormRow>
 
-            <CalculatorFormRow class="mb-5">
-                <v-radio-group v-model.number="form.mode">
-                    <v-radio
-                        label="KDV hariç fiyattan KDV dahil fiyatı hesapla"
-                        :value="1" />
+            <CalculatorFormRow class="mb-4">
+                <CalculatorPresets
+                    @click="choosePreset($event)"
+                    :value="matchingPresetIds"
+                    :presets="ui.presets" />
+            </CalculatorFormRow>
 
-                    <v-radio
-                        label="KDV dahil fiyattan KDV hariç fiyatı hesapla"
-                        :value="2" />
-                </v-radio-group>
+            <CalculatorFormRow
+                label="KDV oranı">
+                <v-text-field
+                    v-model.number="form.rate"
+                    prefix="%"
+                    hide-details=""
+                    outlined=""
+                    step="1"
+                    min="1"
+                    type="number"
+                    aria-label="KDV oranı" />
             </CalculatorFormRow>
 
             <CalculatorResultTabs
@@ -43,6 +64,10 @@
 <script>
 import openGraphImage from "@/assets/img/open-graph/vat-calculator.jpg";
 import { VatCalculator as meta } from "@/data/calculators.js";
+import VatCalculator, { Mode } from "~/calculators/VatCalculator.js";
+import {
+    createCalculatorMatchingPresetIds
+} from "~/utils/find-calculator-matching-presets.js";
 
 export default {
     layout: "default/index",
@@ -59,11 +84,21 @@ export default {
             ]
         },
         ui: {
-            tab: 1
+            tab: 1,
+            presets: [
+                { id: 1, title: "Yüzde 1", form: { rate: 1 } },
+                { id: 2, title: "Yüzde 8", form: { rate: 8 } },
+                { id: 3, title: "Yüzde 18", form: { rate: 18 } }
+            ],
+            mode: [
+                { title: "KDV hariç fiyattan KDV dahil fiyatı hesapla", value: Mode.TaxFreePriceToTaxAddedPrice },
+                { title: "KDV dahil fiyattan KDV hariç fiyatı hesapla", value: Mode.TaxAddedPriceToTaxFreePrice }
+            ]
         },
         form: {
-            price: "",
-            mode: 1
+            price: null,
+            rate: 18,
+            mode: Mode.TaxFreePriceToTaxAddedPrice
         },
         results: {
             prices: {},
@@ -73,7 +108,13 @@ export default {
     }),
     methods: {
         calculate() {
-            // TODO
+            const vm = this;
+
+            const calculator = new VatCalculator({
+                price: vm.form.price,
+                mode: vm.mode
+            });
+            calculator.calculate();
         },
         handleQuery() {
             const vm = this;
@@ -84,19 +125,35 @@ export default {
             if (query.price) {
                 vm.form.price = parseFloat(query.price);
             }
+
+            if (query.mode && vm.ui.mode.some(object => object.value === query.mode)) {
+                vm.form.mode = query.mode;
+            }
+        },
+        choosePreset(preset) {
+            const vm = this;
+            Object.assign(vm.form, preset.form);
         }
     },
     computed: {
         priceLabel() {
             const vm = this;
             return {
-                1: "KDV dahil fiyat",
-                2: "KDV hariç fiyat"
+                [Mode.TaxFreePriceToTaxAddedPrice]: "KDV hariç fiyat",
+                [Mode.TaxAddedPriceToTaxFreePrice]: "KDV dahil fiyat"
             }[vm.form.mode];
         },
         showResults() {
             const vm = this;
             return vm.form.price > 0;
+        },
+        matchingPresets() {
+            const vm = this;
+            return vm.ui.presets.filter(preset => preset.form.rate === vm.form.rate);
+        },
+        matchingPresetIds() {
+            const vm = this;
+            return createCalculatorMatchingPresetIds(vm.matchingPresets);
         }
     },
     watch: {
