@@ -25,11 +25,6 @@ const PhoneTaxCalculator = {
     description: "Satın aldığınız bir telefonun satış fiyatına etki eden vergileri hesaplayın."
 };
 
-export default {
-    ConsoleTaxCalculator,
-    PhoneTaxCalculator
-};
-
 export {
     ConsoleTaxCalculator,
     PhoneTaxCalculator
