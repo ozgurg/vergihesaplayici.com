@@ -1,5 +1,3 @@
-// noinspection JSUnresolvedFunction
-
 import TaxCalculator from "@/calculators/TaxCalculator.js";
 import { toHaveBeenCalledBefore } from "jest-extended";
 
