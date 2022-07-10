@@ -58,7 +58,7 @@ class MultiCurrencyTaxCalculator extends TaxCalculator {
 
     /**
      * @constructor
-     * @param {float} price
+     * @param {number} price
      * @param {object} exchangeRates
      * @param {Mode} mode
      */

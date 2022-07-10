@@ -1,4 +1,4 @@
-// noinspection JSUnresolvedFunction
+// noinspection JSUnresolvedFunction,JSClosureCompilerSyntax
 
 import MultiCurrencyTaxCalculator, { Mode } from "@/calculators/MultiCurrencyTaxCalculator";
 
