@@ -2,20 +2,21 @@ import TaxCalculator from "@/calculators/TaxCalculator";
 import { normalizePrice } from "@/utils/normalize-price";
 
 /**
+ * @readonly
+ * @typedef {string} Mode
+ * @type {{BasePriceToSalePrice: string, SalePriceToBasePrice: string}}
+ */
+const Mode = {
+    BasePriceToSalePrice: "MODE_BASE_PRICE_TO_SALE_PRICE",
+    SalePriceToBasePrice: "MODE_SALE_PRICE_TO_BASE_PRICE"
+};
+
+/**
  * @abstract
  * @class MultiCurrencyTaxCalculator
  * @extends {TaxCalculator}
  */
 class MultiCurrencyTaxCalculator extends TaxCalculator {
-    /**
-     * @static
-     * @type {{BasePriceToSalePrice: string, SalePriceToBasePrice: string}}
-     */
-    static Mode = {
-        BasePriceToSalePrice: "MODE_BASE_PRICE_TO_SALE_PRICE",
-        SalePriceToBasePrice: "MODE_SALE_PRICE_TO_BASE_PRICE"
-    };
-
     /**
      * @protected
      * @abstract
@@ -53,7 +54,7 @@ class MultiCurrencyTaxCalculator extends TaxCalculator {
      * @protected
      * @type {Mode}
      */
-    mode = null;
+    mode;
 
     /**
      * @constructor
@@ -77,8 +78,8 @@ class MultiCurrencyTaxCalculator extends TaxCalculator {
      */
     static getModeByCurrency(currency) {
         return currency === "TRY" ?
-            this.Mode.SalePriceToBasePrice :
-            this.Mode.BasePriceToSalePrice;
+            Mode.SalePriceToBasePrice :
+            Mode.BasePriceToSalePrice;
     }
 
     /**
@@ -139,3 +140,7 @@ class MultiCurrencyTaxCalculator extends TaxCalculator {
 }
 
 export default MultiCurrencyTaxCalculator;
+
+export {
+    Mode
+};

@@ -1,4 +1,4 @@
-import MultiCurrencyTaxCalculator from "@/calculators/MultiCurrencyTaxCalculator";
+import MultiCurrencyTaxCalculator, { Mode } from "@/calculators/MultiCurrencyTaxCalculator";
 import {
     calculateTaxFromTaxAddedPrice,
     calculateTaxFromTaxFreePrice,
@@ -37,12 +37,12 @@ class ConsoleTaxCalculator extends MultiCurrencyTaxCalculator {
      */
     customFee() {
         switch (this.mode) {
-            case MultiCurrencyTaxCalculator.Mode.BasePriceToSalePrice:
+            case Mode.BasePriceToSalePrice:
                 this.taxFees.custom = calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.custom);
                 this.prices.salePrice += this.taxFees.custom;
                 break;
 
-            case MultiCurrencyTaxCalculator.Mode.SalePriceToBasePrice:
+            case Mode.SalePriceToBasePrice:
                 this.taxFees.custom = calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.custom);
                 this.prices.basePrice -= this.taxFees.custom;
                 break;
@@ -54,12 +54,12 @@ class ConsoleTaxCalculator extends MultiCurrencyTaxCalculator {
      */
     sctFee() {
         switch (this.mode) {
-            case MultiCurrencyTaxCalculator.Mode.BasePriceToSalePrice:
+            case Mode.BasePriceToSalePrice:
                 this.taxFees.sct = calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.sct);
                 this.prices.salePrice += this.taxFees.sct;
                 break;
 
-            case MultiCurrencyTaxCalculator.Mode.SalePriceToBasePrice:
+            case Mode.SalePriceToBasePrice:
                 this.taxFees.sct = calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.sct);
                 this.prices.basePrice -= this.taxFees.sct;
                 break;
@@ -71,12 +71,12 @@ class ConsoleTaxCalculator extends MultiCurrencyTaxCalculator {
      */
     vatFee() {
         switch (this.mode) {
-            case MultiCurrencyTaxCalculator.Mode.BasePriceToSalePrice:
+            case Mode.BasePriceToSalePrice:
                 this.taxFees.vat = calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.vat);
                 this.prices.salePrice += this.taxFees.vat;
                 break;
 
-            case MultiCurrencyTaxCalculator.Mode.SalePriceToBasePrice:
+            case Mode.SalePriceToBasePrice:
                 this.taxFees.vat = calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.vat);
                 this.prices.basePrice -= this.taxFees.vat;
                 break;
@@ -114,11 +114,11 @@ class ConsoleTaxCalculator extends MultiCurrencyTaxCalculator {
         ];
 
         switch (this.mode) {
-            case MultiCurrencyTaxCalculator.Mode.BasePriceToSalePrice:
+            case Mode.BasePriceToSalePrice:
                 this.callInOrder(functionsToCall);
                 break;
 
-            case MultiCurrencyTaxCalculator.Mode.SalePriceToBasePrice:
+            case Mode.SalePriceToBasePrice:
                 this.callInReverseOrder(functionsToCall);
                 break;
         }

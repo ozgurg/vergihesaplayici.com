@@ -1,5 +1,6 @@
 import PhoneTaxCalculator, { getSctRateByPrice } from "@/calculators/PhoneTaxCalculator";
 import { state } from "@/store/exchange-rates";
+import { Mode } from "~/calculators/MultiCurrencyTaxCalculator.js";
 
 describe("calculators/PhoneTaxCalculator", () => {
     describe("getSctRateByPrice", () => {
@@ -24,9 +25,9 @@ describe("calculators/PhoneTaxCalculator", () => {
     });
 
     describe("PhoneTaxCalculator", () => {
-        it(`Prices: 500, 1500, 5000 / Calculation mode: "${PhoneTaxCalculator.Mode.SalePriceToBasePrice}" / Registration: "${PhoneTaxCalculator.Registration.Import}"`, () => {
+        it(`Prices: 500, 1500, 5000 / Calculation mode: "${Mode.SalePriceToBasePrice}" / Registration: "${PhoneTaxCalculator.Registration.Import}"`, () => {
             calculate(
-                PhoneTaxCalculator.Mode.SalePriceToBasePrice,
+                Mode.SalePriceToBasePrice,
                 [
                     { price: 500, expectedPrice: 299.66 },
                     { price: 1500, expectedPrice: 802.68 },
@@ -36,9 +37,9 @@ describe("calculators/PhoneTaxCalculator", () => {
             );
         });
 
-        it(`Prices: 500, 1500, 5000 / Calculation mode: "${PhoneTaxCalculator.Mode.BasePriceToSalePrice}" / Registration: "${PhoneTaxCalculator.Registration.Import}"`, () => {
+        it(`Prices: 500, 1500, 5000 / Calculation mode: "${Mode.BasePriceToSalePrice}" / Registration: "${PhoneTaxCalculator.Registration.Import}"`, () => {
             calculate(
-                PhoneTaxCalculator.Mode.BasePriceToSalePrice,
+                Mode.BasePriceToSalePrice,
                 [
                     { price: 500, expectedPrice: 834.26 },
                     { price: 1500, expectedPrice: 3003.34 },
@@ -48,9 +49,9 @@ describe("calculators/PhoneTaxCalculator", () => {
             );
         });
 
-        it(`Prices: 500, 1500, 5000 / Calculation mode: "${PhoneTaxCalculator.Mode.SalePriceToBasePrice}" / Registration: "${PhoneTaxCalculator.Registration.Passport}"`, () => {
+        it(`Prices: 500, 1500, 5000 / Calculation mode: "${Mode.SalePriceToBasePrice}" / Registration: "${PhoneTaxCalculator.Registration.Passport}"`, () => {
             calculate(
-                PhoneTaxCalculator.Mode.SalePriceToBasePrice,
+                Mode.SalePriceToBasePrice,
                 [
                     { price: 500, expectedPrice: -2232.4 },
                     { price: 1500, expectedPrice: -1232.4 },
@@ -60,9 +61,9 @@ describe("calculators/PhoneTaxCalculator", () => {
             );
         });
 
-        it(`Prices: 500, 1500, 5000 / Calculation mode: "${PhoneTaxCalculator.Mode.BasePriceToSalePrice}" / Registration: "${PhoneTaxCalculator.Registration.Passport}"`, () => {
+        it(`Prices: 500, 1500, 5000 / Calculation mode: "${Mode.BasePriceToSalePrice}" / Registration: "${PhoneTaxCalculator.Registration.Passport}"`, () => {
             calculate(
-                PhoneTaxCalculator.Mode.BasePriceToSalePrice,
+                Mode.BasePriceToSalePrice,
                 [
                     { price: 500, expectedPrice: 3232.4 },
                     { price: 1500, expectedPrice: 4232.4 },
@@ -75,7 +76,7 @@ describe("calculators/PhoneTaxCalculator", () => {
 });
 
 /**
- * @param {PhoneTaxCalculator.Mode} mode
+ * @param {Mode} mode
  * @param {array} prices
  * @param {PhoneTaxCalculator.Registration} registration
  */
@@ -89,12 +90,12 @@ function calculate(mode, prices, registration) {
         const results = phoneTaxCalculator.calculate().results();
 
         switch (mode) {
-            case PhoneTaxCalculator.Mode.SalePriceToBasePrice:
+            case Mode.SalePriceToBasePrice:
                 expect(results.prices.basePrice).toBe(expectedPrice);
                 expect(results.prices.salePrice).toBe(price);
                 break;
 
-            case PhoneTaxCalculator.Mode.BasePriceToSalePrice:
+            case Mode.BasePriceToSalePrice:
                 expect(results.prices.basePrice).toBe(price);
                 expect(results.prices.salePrice).toBe(expectedPrice);
                 break;
