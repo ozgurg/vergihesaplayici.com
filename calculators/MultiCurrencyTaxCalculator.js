@@ -12,6 +12,16 @@ const Mode = {
 };
 
 /**
+ * @param {string} currency
+ * @return {Mode}
+ */
+const getModeByCurrency = currency => {
+    return currency === "TRY" ?
+        Mode.SalePriceToBasePrice :
+        Mode.BasePriceToSalePrice;
+};
+
+/**
  * @abstract
  * @class MultiCurrencyTaxCalculator
  * @extends {TaxCalculator}
@@ -69,17 +79,6 @@ class MultiCurrencyTaxCalculator extends TaxCalculator {
         this.prices.salePrice = price;
         this.exchangeRates = exchangeRates;
         this.mode = mode;
-    }
-
-    /**
-     * @static
-     * @param {string} currency
-     * @return {Mode}
-     */
-    static getModeByCurrency(currency) {
-        return currency === "TRY" ?
-            Mode.SalePriceToBasePrice :
-            Mode.BasePriceToSalePrice;
     }
 
     /**
@@ -142,5 +141,6 @@ class MultiCurrencyTaxCalculator extends TaxCalculator {
 export default MultiCurrencyTaxCalculator;
 
 export {
-    Mode
+    Mode,
+    getModeByCurrency
 };

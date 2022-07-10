@@ -97,6 +97,7 @@ import {
     createCalculatorMatchingPresetIds,
     findCalculatorMatchingPresets
 } from "@/utils/find-calculator-matching-presets";
+import { getModeByCurrency } from "@/calculators/MultiCurrencyTaxCalculator.js";
 
 export default {
     layout: "default/index",
@@ -151,7 +152,7 @@ export default {
             const phoneTaxCalculator = new PhoneTaxCalculator({
                 price,
                 exchangeRates: vm.$store.get("exchange-rates/currencies"),
-                mode: PhoneTaxCalculator.getModeByCurrency(vm.form.currency)
+                mode: getModeByCurrency(vm.form.currency)
             }, {
                 registration: vm.form.registration
             });
