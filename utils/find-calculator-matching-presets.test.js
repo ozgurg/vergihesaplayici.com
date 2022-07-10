@@ -8,20 +8,16 @@ describe("utils/find-calculator-matching-presets", () => {
     describe("findCalculatorMatchingPresets", () => {
         const presets = [
             {
-                price: 100,
-                currency: "TRY"
+                form: { price: 100, currency: "TRY" }
             },
             {
-                price: 100,
-                currency: "TRY"
+                form: { price: 100, currency: "TRY" }
             },
             {
-                price: 500,
-                currency: "EUR"
+                form: { price: 500, currency: "EUR" }
             },
             {
-                price: 999,
-                currency: "TRY"
+                form: { price: 999, currency: "TRY" }
             }
         ];
 
@@ -32,12 +28,10 @@ describe("utils/find-calculator-matching-presets", () => {
             });
             expect(matchingPresets1).toStrictEqual([
                 {
-                    price: 100,
-                    currency: "TRY"
+                    form: { price: 100, currency: "TRY" }
                 },
                 {
-                    price: 100,
-                    currency: "TRY"
+                    form: { price: 100, currency: "TRY" }
                 }
             ]);
 
@@ -47,8 +41,7 @@ describe("utils/find-calculator-matching-presets", () => {
             });
             expect(matchingPresets2).toStrictEqual([
                 {
-                    price: 500,
-                    currency: "EUR"
+                    form: { price: 500, currency: "EUR" }
                 }
             ]);
         });
@@ -60,8 +53,7 @@ describe("utils/find-calculator-matching-presets", () => {
             });
             expect(matchingPresets1).toStrictEqual([
                 {
-                    price: 999,
-                    currency: "TRY"
+                    form: { price: 999, currency: "TRY" }
                 }
             ]);
 
@@ -71,8 +63,7 @@ describe("utils/find-calculator-matching-presets", () => {
             });
             expect(matchingPresets2).toStrictEqual([
                 {
-                    price: 999,
-                    currency: "TRY"
+                    form: { price: 999, currency: "TRY" }
                 }
             ]);
         });

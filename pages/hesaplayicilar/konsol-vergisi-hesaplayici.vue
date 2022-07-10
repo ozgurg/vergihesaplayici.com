@@ -7,7 +7,11 @@
                 <CalculatorPresets
                     @click="choosePreset($event)"
                     :value="matchingPresetIds"
-                    :presets="ui.presets" />
+                    :presets="ui.presets">
+                    <template #tooltip="{preset}">
+                        {{ $moneyFormat(preset.form.price, preset.form.currency) }}
+                    </template>
+                </CalculatorPresets>
             </CalculatorFormRow>
 
             <CalculatorFormRow label="Konsol fiyatı">
@@ -103,11 +107,11 @@ export default {
         },
         ui: {
             presets: [
-                { id: 1, title: "Xbox Series S (512GB)", price: 299, currency: "EUR" },
-                { id: 2, title: "Xbox Series X (1TB)", price: 499, currency: "EUR" },
-                { id: 3, title: "PlayStation 5 Digital Edition (825GB)", price: 399, currency: "EUR" },
-                { id: 4, title: "PlayStation 5 (825GB)", price: 499, currency: "EUR" },
-                { id: 5, title: "Nintendo Switch OLED (64GB)", price: 349.99, currency: "USD" } // Source: https://en.wikipedia.org/wiki/Nintendo_Switch#cite_note-polygon_oled_announce-178
+                { id: 1, title: "Xbox Series S (512GB)", form: { price: 299, currency: "EUR" } },
+                { id: 2, title: "Xbox Series X (1TB)", form: { price: 499, currency: "EUR" } },
+                { id: 3, title: "PlayStation 5 Digital Edition (825GB)", form: { price: 399, currency: "EUR" } },
+                { id: 4, title: "PlayStation 5 (825GB)", form: { price: 499, currency: "EUR" } },
+                { id: 5, title: "Nintendo Switch OLED (64GB)", form: { price: 349.99, currency: "USD" } } // Source: https://en.wikipedia.org/wiki/Nintendo_Switch#cite_note-polygon_oled_announce-178
             ],
             tab: 1,
             isShareDialogShown: false
@@ -159,9 +163,7 @@ export default {
         },
         choosePreset(preset) {
             const vm = this;
-
-            vm.form.currency = preset.currency;
-            vm.form.price = preset.price;
+            Object.assign(vm.form, preset.form);
         }
     },
     computed: {

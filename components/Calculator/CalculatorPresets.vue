@@ -1,24 +1,42 @@
 <template>
+    <!-- TODO: Make v-chip one -->
     <div
         v-bind="$attrs"
         class="chips">
-        <v-tooltip
-            v-for="(preset, index) in presets"
-            :key="index"
-            top="">
-            <template #activator="{ on, attrs }">
+        <template v-for="(preset, index) in presets">
+            <template v-if="$scopedSlots.tooltip">
+                <v-tooltip
+                    :key="index"
+                    top="">
+                    <template #activator="{ on, attrs }">
+                        <v-chip
+                            @click="choosePreset(preset)"
+                            v-on="on"
+                            v-bind="attrs"
+                            role="button"
+                            :class="{'primary--text primary': value.includes(preset.id)}"
+                            outlined="">
+                            {{ preset.title }}
+                        </v-chip>
+                    </template>
+                    <div>
+                        <slot
+                            name="tooltip"
+                            :preset="preset" />
+                    </div>
+                </v-tooltip>
+            </template>
+            <template v-else>
                 <v-chip
+                    :key="index"
                     @click="choosePreset(preset)"
-                    v-on="on"
-                    v-bind="attrs"
                     role="button"
                     :class="{'primary--text primary': value.includes(preset.id)}"
                     outlined="">
                     {{ preset.title }}
                 </v-chip>
             </template>
-            <span>{{ $moneyFormat(preset.price, preset.currency) }}</span>
-        </v-tooltip>
+        </template>
     </div>
 </template>
 
