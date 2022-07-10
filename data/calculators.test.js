@@ -1,4 +1,4 @@
-import calculators from "@/data/calculators";
+import * as calculators from "@/data/calculators";
 import { matchers } from "jest-json-schema";
 
 expect.extend(matchers);
