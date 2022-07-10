@@ -7,8 +7,8 @@ import { normalizePrice } from "@/utils/normalize-price";
  * @type {{BasePriceToSalePrice: string, SalePriceToBasePrice: string}}
  */
 const Mode = {
-    BasePriceToSalePrice: "MODE_BASE_PRICE_TO_SALE_PRICE",
-    SalePriceToBasePrice: "MODE_SALE_PRICE_TO_BASE_PRICE"
+    BasePriceToSalePrice: "basePriceToSalePrice",
+    SalePriceToBasePrice: "balePriceToBasePrice"
 };
 
 /**
