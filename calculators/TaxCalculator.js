@@ -1,11 +1,11 @@
 /**
  * @abstract
- * @class BaseTaxCalculator
+ * @class TaxCalculator
  */
-class BaseTaxCalculator {
+class TaxCalculator {
     /**
      * @protected
-     * @param {function[]}functionsToCall
+     * @param {function[]} functionsToCall
      */
     callInOrder(functionsToCall) {
         functionsToCall.forEach(func => func.call(this));
@@ -13,11 +13,11 @@ class BaseTaxCalculator {
 
     /**
      * @protected
-     * @param {function[]}functionsToCall
+     * @param {function[]} functionsToCall
      */
     callInReverseOrder(functionsToCall) {
         functionsToCall.reverse().forEach(func => func.call(this));
     }
 }
 
-export default BaseTaxCalculator;
+export default TaxCalculator;
