@@ -35,14 +35,16 @@
             </CalculatorFormRow>
 
             <CalculatorFormRow label="Kayıt yolu">
-                <v-select
+                <v-radio-group
                     v-model="form.registration"
-                    :items="ui.registration"
                     hide-details=""
-                    item-text="title"
-                    item-value="value"
-                    outlined=""
-                    aria-label="Kayıt yolu" />
+                    class="pa-0 ma-0">
+                    <v-radio
+                        v-for="item in ui.registration"
+                        :key="item.value"
+                        :label="item.title"
+                        :value="item.value" />
+                </v-radio-group>
             </CalculatorFormRow>
 
             <CalculatorResultTabs
