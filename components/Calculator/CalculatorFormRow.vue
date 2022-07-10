@@ -51,6 +51,7 @@ export default {
 	&__content {
 		@media(min-width: 992px) {
 			display: flex;
+            flex-direction: column;
 			width: 100%;
 			flex-grow: 1;
 			max-width: 100%
