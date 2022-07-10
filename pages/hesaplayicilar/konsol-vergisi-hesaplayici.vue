@@ -3,7 +3,7 @@
         <AppHeader>{{ head.title }}</AppHeader>
 
         <InnerContainer>
-            <CalculatorFormRow class="mb-5">
+            <CalculatorFormRow class="mb-4">
                 <CalculatorPresets
                     @click="choosePreset($event)"
                     :value="matchingPresetIds"

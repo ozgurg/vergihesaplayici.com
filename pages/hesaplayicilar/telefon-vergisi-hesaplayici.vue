@@ -3,7 +3,7 @@
         <AppHeader>{{ head.title }}</AppHeader>
 
         <InnerContainer>
-            <CalculatorFormRow class="mb-5">
+            <CalculatorFormRow class="mb-4">
                 <CalculatorPresets
                     @click="choosePreset($event)"
                     :value="matchingPresetIds"
@@ -15,7 +15,7 @@
             </CalculatorFormRow>
 
             <CalculatorFormRow
-                class="mb-8"
+                class="mb-10"
                 label="Telefon fiyatı">
                 <v-text-field
                     v-model.number="form.price"
