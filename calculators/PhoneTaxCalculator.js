@@ -214,10 +214,14 @@ class PhoneTaxCalculator extends MultiCurrencyTaxCalculator {
                 this.vatFee
             ];
 
-            if (this.mode === MultiCurrencyTaxCalculator.Mode.BasePriceToSalePrice) {
-                this.callInOrder(functionsToCall);
-            } else if (this.mode === MultiCurrencyTaxCalculator.Mode.SalePriceToBasePrice) {
-                this.callInReverseOrder(functionsToCall);
+            switch (this.mode) {
+                case MultiCurrencyTaxCalculator.Mode.BasePriceToSalePrice:
+                    this.callInOrder(functionsToCall);
+                    break;
+
+                case MultiCurrencyTaxCalculator.Mode.SalePriceToBasePrice:
+                    this.callInReverseOrder(functionsToCall);
+                    break;
             }
         } else if (this.registration === PhoneTaxCalculator.Registration.Passport) {
             const functionsToCall = [
@@ -225,10 +229,14 @@ class PhoneTaxCalculator extends MultiCurrencyTaxCalculator {
                 this.registrationFee
             ];
 
-            if (this.mode === MultiCurrencyTaxCalculator.Mode.BasePriceToSalePrice) {
-                this.callInOrder(functionsToCall);
-            } else if (this.mode === MultiCurrencyTaxCalculator.Mode.SalePriceToBasePrice) {
-                this.callInReverseOrder(functionsToCall);
+            switch (this.mode) {
+                case MultiCurrencyTaxCalculator.Mode.BasePriceToSalePrice:
+                    this.callInOrder(functionsToCall);
+                    break;
+
+                case MultiCurrencyTaxCalculator.Mode.SalePriceToBasePrice:
+                    this.callInReverseOrder(functionsToCall);
+                    break;
             }
         }
 

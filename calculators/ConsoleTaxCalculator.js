@@ -113,10 +113,14 @@ class ConsoleTaxCalculator extends MultiCurrencyTaxCalculator {
             this.vatFee
         ];
 
-        if (this.mode === MultiCurrencyTaxCalculator.Mode.BasePriceToSalePrice) {
-            this.callInOrder(functionsToCall);
-        } else if (this.mode === MultiCurrencyTaxCalculator.Mode.SalePriceToBasePrice) {
-            this.callInReverseOrder(functionsToCall);
+        switch (this.mode) {
+            case MultiCurrencyTaxCalculator.Mode.BasePriceToSalePrice:
+                this.callInOrder(functionsToCall);
+                break;
+
+            case MultiCurrencyTaxCalculator.Mode.SalePriceToBasePrice:
+                this.callInReverseOrder(functionsToCall);
+                break;
         }
 
         return this;
