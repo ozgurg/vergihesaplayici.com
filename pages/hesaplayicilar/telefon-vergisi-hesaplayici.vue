@@ -89,7 +89,7 @@
 
 <script>
 import { mdiShare } from "@mdi/js";
-import PhoneTaxCalculator from "@/calculators/PhoneTaxCalculator";
+import PhoneTaxCalculator, { Registration } from "@/calculators/PhoneTaxCalculator";
 import { PhoneTaxCalculator as meta } from "@/data/calculators.js";
 import openGraphImage from "@/assets/img/open-graph/phone-tax-calculator.jpg";
 import { isCurrencyAvailable } from "@/utils/is-currency-available";
@@ -97,6 +97,7 @@ import {
     createCalculatorMatchingPresetIds,
     findCalculatorMatchingPresets
 } from "@/utils/find-calculator-matching-presets";
+import { getModeByCurrency } from "@/calculators/MultiCurrencyTaxCalculator.js";
 
 export default {
     layout: "default/index",
@@ -125,8 +126,8 @@ export default {
                 { id: 6, title: "iPhone 13 Pro Max (1TB)", price: 1599, currency: "USD" }
             ],
             registration: [
-                { title: "İthalat yoluyla kayıtlı (Resmi)", value: PhoneTaxCalculator.Registration.Import },
-                { title: "Pasaport yoluyla kayıtlı", value: PhoneTaxCalculator.Registration.Passport }
+                { title: "İthalat yoluyla kayıtlı (Resmi)", value: Registration.Import },
+                { title: "Pasaport yoluyla kayıtlı", value: Registration.Passport }
             ],
             tab: 1,
             isShareDialogShown: false
@@ -134,7 +135,7 @@ export default {
         form: {
             currency: "USD",
             price: "",
-            registration: PhoneTaxCalculator.Registration.Import
+            registration: Registration.Import
         },
         results: {
             prices: {},
@@ -148,14 +149,14 @@ export default {
 
             const price = parseFloat(vm.form.price) * vm.getCurrency(vm.form.currency).rate;
 
-            const phoneTaxCalculator = new PhoneTaxCalculator({
+            const calculator = new PhoneTaxCalculator({
                 price,
                 exchangeRates: vm.$store.get("exchange-rates/currencies"),
-                calculationMode: PhoneTaxCalculator.getCalculationModeByCurrency(vm.form.currency)
+                mode: getModeByCurrency(vm.form.currency)
             }, {
                 registration: vm.form.registration
             });
-            const results = phoneTaxCalculator.calculate().results();
+            const results = calculator.calculate().results();
 
             vm.results.prices = results.prices;
             vm.results.taxFees = results.taxFees;
@@ -263,7 +264,7 @@ export default {
         },
         registrationIsImport() {
             const vm = this;
-            return vm.form.registration === PhoneTaxCalculator.Registration.Import;
+            return vm.form.registration === Registration.Import;
         },
         matchingPresets() {
             const vm = this;

@@ -82,6 +82,7 @@ import {
     createCalculatorMatchingPresetIds,
     findCalculatorMatchingPresets
 } from "@/utils/find-calculator-matching-presets";
+import { getModeByCurrency } from "@/calculators/MultiCurrencyTaxCalculator.js";
 
 export default {
     layout: "default/index",
@@ -127,12 +128,12 @@ export default {
 
             const price = parseFloat(vm.form.price) * vm.getCurrency(vm.form.currency).rate;
 
-            const consoleTaxCalculator = new ConsoleTaxCalculator({
+            const calculator = new ConsoleTaxCalculator({
                 price,
                 exchangeRates: vm.$store.get("exchange-rates/currencies"),
-                calculationMode: ConsoleTaxCalculator.getCalculationModeByCurrency(vm.form.currency)
+                mode: getModeByCurrency(vm.form.currency)
             });
-            const results = consoleTaxCalculator.calculate().results();
+            const results = calculator.calculate().results();
 
             vm.results.prices = results.prices;
             vm.results.taxFees = results.taxFees;

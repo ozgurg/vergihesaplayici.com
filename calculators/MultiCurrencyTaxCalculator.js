@@ -2,20 +2,31 @@ import TaxCalculator from "@/calculators/TaxCalculator";
 import { normalizePrice } from "@/utils/normalize-price";
 
 /**
+ * @readonly
+ * @typedef {string} Mode
+ * @type {{BasePriceToSalePrice: string, SalePriceToBasePrice: string}}
+ */
+const Mode = {
+    BasePriceToSalePrice: "MODE_BASE_PRICE_TO_SALE_PRICE",
+    SalePriceToBasePrice: "MODE_SALE_PRICE_TO_BASE_PRICE"
+};
+
+/**
+ * @param {string} currency
+ * @return {Mode}
+ */
+const getModeByCurrency = currency => {
+    return currency === "TRY" ?
+        Mode.SalePriceToBasePrice :
+        Mode.BasePriceToSalePrice;
+};
+
+/**
  * @abstract
  * @class MultiCurrencyTaxCalculator
  * @extends {TaxCalculator}
  */
 class MultiCurrencyTaxCalculator extends TaxCalculator {
-    /**
-     * @static
-     * @type {{BasePriceToSalePrice: string, SalePriceToBasePrice: string}}
-     */
-    static CalculationMode = {
-        BasePriceToSalePrice: "CALCULATION_MODE_FROM_BASE_PRICE",
-        SalePriceToBasePrice: "CALCULATION_MODE_FROM_SALE_PRICE"
-    };
-
     /**
      * @protected
      * @abstract
@@ -40,7 +51,7 @@ class MultiCurrencyTaxCalculator extends TaxCalculator {
      */
     prices = {
         basePrice: 0, // Tax-free price
-        salePrice: 0 // Tax added price
+        salePrice: 0 // Tax-added price
     };
 
     /**
@@ -51,34 +62,23 @@ class MultiCurrencyTaxCalculator extends TaxCalculator {
 
     /**
      * @protected
-     * @type {CalculationMode}
+     * @type {Mode}
      */
-    calculationMode = null;
+    mode;
 
     /**
      * @constructor
-     * @param {float} price
+     * @param {number} price
      * @param {object} exchangeRates
-     * @param {CalculationMode} calculationMode
+     * @param {Mode} mode
      */
-    constructor({ price, exchangeRates, calculationMode }) {
+    constructor({ price, exchangeRates, mode }) {
         super();
 
         this.prices.basePrice = price;
         this.prices.salePrice = price;
         this.exchangeRates = exchangeRates;
-        this.calculationMode = calculationMode;
-    }
-
-    /**
-     * @static
-     * @param {string} currency
-     * @return {CalculationMode}
-     */
-    static getCalculationModeByCurrency(currency) {
-        return currency === "TRY" ?
-            this.CalculationMode.SalePriceToBasePrice :
-            this.CalculationMode.BasePriceToSalePrice;
+        this.mode = mode;
     }
 
     /**
@@ -102,17 +102,15 @@ class MultiCurrencyTaxCalculator extends TaxCalculator {
      * @private
      */
     normalizeResults() {
-        for (const [key, value] of Object.entries(this.prices)) {
-            this.prices[key] = normalizePrice(value);
-        }
-
-        for (const [key, value] of Object.entries(this.taxFees)) {
-            this.taxFees[key] = normalizePrice(value);
-        }
-
-        for (const [key, value] of Object.entries(this.taxRates)) {
-            this.taxRates[key] = normalizePrice(value);
-        }
+        [
+            this.prices,
+            this.taxFees,
+            this.taxRates
+        ].forEach(property => {
+            for (const [key, value] of Object.entries(property)) {
+                property[key] = normalizePrice(value);
+            }
+        });
     }
 
     /**
@@ -141,3 +139,8 @@ class MultiCurrencyTaxCalculator extends TaxCalculator {
 }
 
 export default MultiCurrencyTaxCalculator;
+
+export {
+    Mode,
+    getModeByCurrency
+};

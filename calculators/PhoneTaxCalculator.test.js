@@ -1,5 +1,6 @@
-import PhoneTaxCalculator, { getSctRateByPrice } from "@/calculators/PhoneTaxCalculator";
+import PhoneTaxCalculator, { getSctRateByPrice, Registration } from "@/calculators/PhoneTaxCalculator";
 import { state } from "@/store/exchange-rates";
+import { Mode } from "@/calculators/MultiCurrencyTaxCalculator.js";
 
 describe("calculators/PhoneTaxCalculator", () => {
     describe("getSctRateByPrice", () => {
@@ -24,77 +25,77 @@ describe("calculators/PhoneTaxCalculator", () => {
     });
 
     describe("PhoneTaxCalculator", () => {
-        it(`Prices: 500, 1500, 5000 / Calculation mode: "${PhoneTaxCalculator.CalculationMode.SalePriceToBasePrice}" / Registration: "${PhoneTaxCalculator.Registration.Import}"`, () => {
+        it(`Prices: 500, 1500, 5000 / Calculation mode: "${Mode.SalePriceToBasePrice}" / Registration: "${Registration.Import}"`, () => {
             calculate(
-                PhoneTaxCalculator.CalculationMode.SalePriceToBasePrice,
+                Mode.SalePriceToBasePrice,
                 [
                     { price: 500, expectedPrice: 299.66 },
                     { price: 1500, expectedPrice: 802.68 },
                     { price: 5000, expectedPrice: 2497.23 }
                 ],
-                PhoneTaxCalculator.Registration.Import
+                Registration.Import
             );
         });
 
-        it(`Prices: 500, 1500, 5000 / Calculation mode: "${PhoneTaxCalculator.CalculationMode.BasePriceToSalePrice}" / Registration: "${PhoneTaxCalculator.Registration.Import}"`, () => {
+        it(`Prices: 500, 1500, 5000 / Calculation mode: "${Mode.BasePriceToSalePrice}" / Registration: "${Registration.Import}"`, () => {
             calculate(
-                PhoneTaxCalculator.CalculationMode.BasePriceToSalePrice,
+                Mode.BasePriceToSalePrice,
                 [
                     { price: 500, expectedPrice: 834.26 },
                     { price: 1500, expectedPrice: 3003.34 },
                     { price: 5000, expectedPrice: 10011.12 }
                 ],
-                PhoneTaxCalculator.Registration.Import
+                Registration.Import
             );
         });
 
-        it(`Prices: 500, 1500, 5000 / Calculation mode: "${PhoneTaxCalculator.CalculationMode.SalePriceToBasePrice}" / Registration: "${PhoneTaxCalculator.Registration.Passport}"`, () => {
+        it(`Prices: 500, 1500, 5000 / Calculation mode: "${Mode.SalePriceToBasePrice}" / Registration: "${Registration.Passport}"`, () => {
             calculate(
-                PhoneTaxCalculator.CalculationMode.SalePriceToBasePrice,
+                Mode.SalePriceToBasePrice,
                 [
                     { price: 500, expectedPrice: -2232.4 },
                     { price: 1500, expectedPrice: -1232.4 },
                     { price: 5000, expectedPrice: 2267.6 }
                 ],
-                PhoneTaxCalculator.Registration.Passport
+                Registration.Passport
             );
         });
 
-        it(`Prices: 500, 1500, 5000 / Calculation mode: "${PhoneTaxCalculator.CalculationMode.BasePriceToSalePrice}" / Registration: "${PhoneTaxCalculator.Registration.Passport}"`, () => {
+        it(`Prices: 500, 1500, 5000 / Calculation mode: "${Mode.BasePriceToSalePrice}" / Registration: "${Registration.Passport}"`, () => {
             calculate(
-                PhoneTaxCalculator.CalculationMode.BasePriceToSalePrice,
+                Mode.BasePriceToSalePrice,
                 [
                     { price: 500, expectedPrice: 3232.4 },
                     { price: 1500, expectedPrice: 4232.4 },
                     { price: 5000, expectedPrice: 7732.4 }
                 ],
-                PhoneTaxCalculator.Registration.Passport
+                Registration.Passport
             );
         });
     });
 });
 
 /**
- * @param {PhoneTaxCalculator.CalculationMode} calculationMode
+ * @param {Mode} mode
  * @param {array} prices
- * @param {PhoneTaxCalculator.Registration} registration
+ * @param {Registration} registration
  */
-function calculate(calculationMode, prices, registration) {
+function calculate(mode, prices, registration) {
     for (const { price, expectedPrice } of prices) {
         const phoneTaxCalculator = new PhoneTaxCalculator({
             price,
             exchangeRates: state().currencies,
-            calculationMode
+            mode
         }, { registration });
         const results = phoneTaxCalculator.calculate().results();
 
-        switch (calculationMode) {
-            case PhoneTaxCalculator.CalculationMode.SalePriceToBasePrice:
+        switch (mode) {
+            case Mode.SalePriceToBasePrice:
                 expect(results.prices.basePrice).toBe(expectedPrice);
                 expect(results.prices.salePrice).toBe(price);
                 break;
 
-            case PhoneTaxCalculator.CalculationMode.BasePriceToSalePrice:
+            case Mode.BasePriceToSalePrice:
                 expect(results.prices.basePrice).toBe(price);
                 expect(results.prices.salePrice).toBe(expectedPrice);
                 break;
