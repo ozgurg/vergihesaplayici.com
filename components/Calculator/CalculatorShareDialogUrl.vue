@@ -42,10 +42,7 @@ export default {
         url() {
             const vm = this;
             return createShareUrlOfCalculator(
-                {
-                    baseUrl: process.env.APP_URL,
-                    calculatorPath: vm.$route.path
-                },
+                vm.$route.path,
                 vm.data,
                 vm.willIncludeParams
             );

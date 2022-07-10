@@ -1,7 +1,12 @@
 import { createShareUrlOfCalculator } from "@/utils/create-share-url-of-calculator";
 
 describe("utils/create-share-url-of-calculator", () => {
-    const baseUrl = "https://vergihesaplayici.com";
+    global.process = {
+        env: {
+            APP_URL: "https://vergihesaplayici.com"
+        }
+    };
+
     const calculatorPath = "/calculator";
     const params = {
         price: 100,
@@ -10,10 +15,7 @@ describe("utils/create-share-url-of-calculator", () => {
 
     it("should return a share URL of calculator with its params", () => {
         const url = createShareUrlOfCalculator(
-            {
-                baseUrl,
-                calculatorPath
-            },
+            calculatorPath,
             params,
             true
         );
@@ -22,10 +24,7 @@ describe("utils/create-share-url-of-calculator", () => {
 
     it("should return a share URL of calculator without its params", () => {
         const url = createShareUrlOfCalculator(
-            {
-                baseUrl,
-                calculatorPath
-            },
+            calculatorPath,
             params,
             false
         );

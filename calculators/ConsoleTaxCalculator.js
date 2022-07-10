@@ -107,14 +107,16 @@ class ConsoleTaxCalculator extends BaseMultiCurrencyTaxCalculator {
      * @return {ConsoleTaxCalculator}
      */
     calculate() {
+        const functionsToCall = [
+            this.customFee,
+            this.sctFee,
+            this.vatFee
+        ];
+
         if (this.calculationMode === BaseMultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice) {
-            this.customFee();
-            this.sctFee();
-            this.vatFee();
+            this.callInOrder(functionsToCall);
         } else if (this.calculationMode === BaseMultiCurrencyTaxCalculator.CalculationMode.SalePriceToBasePrice) {
-            this.vatFee();
-            this.sctFee();
-            this.customFee();
+            this.callInReverseOrder(functionsToCall);
         }
 
         return this;

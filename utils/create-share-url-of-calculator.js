@@ -1,16 +1,14 @@
 import { objectToQueryString } from "@/utils/object-to-query-string";
+import { getFullUrl } from "@/utils/get-full-url.js";
 
 /**
- * @param {{baseUrl: string, calculatorPath: string}} calculator
+ * @param {string} calculatorPath
  * @param {object} params
  * @param {boolean} willIncludeParams
  * @return {string}
  */
-const createShareUrlOfCalculator = ({
-    baseUrl,
-    calculatorPath
-}, params, willIncludeParams) => {
-    const urlWithCalculatorPath = `${baseUrl}${calculatorPath}`;
+const createShareUrlOfCalculator = (calculatorPath, params, willIncludeParams) => {
+    const urlWithCalculatorPath = getFullUrl(calculatorPath);
     return willIncludeParams ? `${urlWithCalculatorPath}?${objectToQueryString(params)}` : urlWithCalculatorPath;
 };
 

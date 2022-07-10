@@ -207,24 +207,28 @@ class PhoneTaxCalculator extends BaseMultiCurrencyTaxCalculator {
      */
     calculate() {
         if (this.registration === PhoneTaxCalculator.Registration.Import) {
+            const functionsToCall = [
+                this.ministryOfCultureFee,
+                this.trtImportFee,
+                this.sctFee,
+                this.vatFee
+            ];
+
             if (this.calculationMode === BaseMultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice) {
-                this.ministryOfCultureFee();
-                this.trtImportFee();
-                this.sctFee();
-                this.vatFee();
+                this.callInOrder(functionsToCall);
             } else if (this.calculationMode === BaseMultiCurrencyTaxCalculator.CalculationMode.SalePriceToBasePrice) {
-                this.vatFee();
-                this.sctFee();
-                this.trtImportFee();
-                this.ministryOfCultureFee();
+                this.callInReverseOrder(functionsToCall);
             }
         } else if (this.registration === PhoneTaxCalculator.Registration.Passport) {
+            const functionsToCall = [
+                this.trtPassportFee,
+                this.registrationFee
+            ];
+
             if (this.calculationMode === BaseMultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice) {
-                this.trtPassportFee();
-                this.registrationFee();
+                this.callInOrder(functionsToCall);
             } else if (this.calculationMode === BaseMultiCurrencyTaxCalculator.CalculationMode.SalePriceToBasePrice) {
-                this.registrationFee();
-                this.trtPassportFee();
+                this.callInReverseOrder(functionsToCall);
             }
         }
 
