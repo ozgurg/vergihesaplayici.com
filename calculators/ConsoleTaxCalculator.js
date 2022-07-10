@@ -1,4 +1,4 @@
-import MultiCurrencyTaxCalculator from "@/calculators/BaseMultiCurrencyTaxCalculator";
+import MultiCurrencyTaxCalculator from "@/calculators/MultiCurrencyTaxCalculator";
 import {
     calculateTaxFromTaxAddedPrice,
     calculateTaxFromTaxFreePrice,

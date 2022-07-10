@@ -1,4 +1,4 @@
-import MultiCurrencyTaxCalculator from "@/calculators/BaseMultiCurrencyTaxCalculator";
+import MultiCurrencyTaxCalculator from "@/calculators/MultiCurrencyTaxCalculator";
 
 describe("calculators/MultiCurrencyTaxCalculator", () => {
     it("should return 'SalePriceToBasePrice' if currency is TRY", () => {

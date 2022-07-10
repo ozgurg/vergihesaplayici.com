@@ -1,4 +1,4 @@
-import TaxCalculator from "@/calculators/BaseTaxCalculator";
+import TaxCalculator from "@/calculators/TaxCalculator";
 import { normalizePrice } from "@/utils/normalize-price";
 
 /**
