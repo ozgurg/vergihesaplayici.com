@@ -5,7 +5,7 @@
 class TaxCalculator {
     /**
      * @protected
-     * @param {function[]}functionsToCall
+     * @param {function[]} functionsToCall
      */
     callInOrder(functionsToCall) {
         functionsToCall.forEach(func => func.call(this));
@@ -13,7 +13,7 @@ class TaxCalculator {
 
     /**
      * @protected
-     * @param {function[]}functionsToCall
+     * @param {function[]} functionsToCall
      */
     callInReverseOrder(functionsToCall) {
         functionsToCall.reverse().forEach(func => func.call(this));
