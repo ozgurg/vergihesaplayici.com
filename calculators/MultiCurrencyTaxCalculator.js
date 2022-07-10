@@ -12,8 +12,8 @@ class MultiCurrencyTaxCalculator extends TaxCalculator {
      * @type {{BasePriceToSalePrice: string, SalePriceToBasePrice: string}}
      */
     static Mode = {
-        BasePriceToSalePrice: "CALCULATION_MODE_FROM_BASE_PRICE",
-        SalePriceToBasePrice: "CALCULATION_MODE_FROM_SALE_PRICE"
+        BasePriceToSalePrice: "MODE_BASE_PRICE_TO_SALE_PRICE",
+        SalePriceToBasePrice: "MODE_SALE_PRICE_TO_BASE_PRICE"
     };
 
     /**
