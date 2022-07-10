@@ -1,3 +1,5 @@
+// noinspection JSUnresolvedFunction
+
 import MultiCurrencyTaxCalculator from "@/calculators/MultiCurrencyTaxCalculator";
 
 describe("calculators/MultiCurrencyTaxCalculator", () => {
