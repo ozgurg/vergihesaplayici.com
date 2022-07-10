@@ -2,9 +2,9 @@ import ConsoleTaxCalculator from "@/calculators/ConsoleTaxCalculator";
 import { state } from "@/store/exchange-rates";
 
 describe("calculators/ConsoleTaxCalculator", () => {
-    it(`Prices: 300, 400, 500 / Calculation mode: "${ConsoleTaxCalculator.CalculationMode.SalePriceToBasePrice}"`, () => {
+    it(`Prices: 300, 400, 500 / Calculation mode: "${ConsoleTaxCalculator.Mode.SalePriceToBasePrice}"`, () => {
         calculate(
-            ConsoleTaxCalculator.CalculationMode.SalePriceToBasePrice,
+            ConsoleTaxCalculator.Mode.SalePriceToBasePrice,
             [
                 { price: 300, expectedPrice: 176.56 },
                 { price: 400, expectedPrice: 235.4 },
@@ -13,9 +13,9 @@ describe("calculators/ConsoleTaxCalculator", () => {
         );
     });
 
-    it(`Prices: 300, 400, 500 / Calculation mode: "${ConsoleTaxCalculator.CalculationMode.BasePriceToSalePrice}"`, () => {
+    it(`Prices: 300, 400, 500 / Calculation mode: "${ConsoleTaxCalculator.Mode.BasePriceToSalePrice}"`, () => {
         calculate(
-            ConsoleTaxCalculator.CalculationMode.BasePriceToSalePrice,
+            ConsoleTaxCalculator.Mode.BasePriceToSalePrice,
             [
                 { price: 300, expectedPrice: 509.76 },
                 { price: 400, expectedPrice: 679.68 },
@@ -26,25 +26,25 @@ describe("calculators/ConsoleTaxCalculator", () => {
 });
 
 /**
- * @param {ConsoleTaxCalculator.CalculationMode} calculationMode
+ * @param {ConsoleTaxCalculator.Mode} mode
  * @param {array} prices
  */
-function calculate(calculationMode, prices) {
+function calculate(mode, prices) {
     for (const { price, expectedPrice } of prices) {
         const consoleTaxCalculator = new ConsoleTaxCalculator({
             price,
             exchangeRates: state().currencies,
-            calculationMode
+            mode
         });
         const results = consoleTaxCalculator.calculate().results();
 
-        switch (calculationMode) {
-            case ConsoleTaxCalculator.CalculationMode.SalePriceToBasePrice:
+        switch (mode) {
+            case ConsoleTaxCalculator.Mode.SalePriceToBasePrice:
                 expect(results.prices.basePrice).toBe(expectedPrice);
                 expect(results.prices.salePrice).toBe(price);
                 break;
 
-            case ConsoleTaxCalculator.CalculationMode.BasePriceToSalePrice:
+            case ConsoleTaxCalculator.Mode.BasePriceToSalePrice:
                 expect(results.prices.basePrice).toBe(price);
                 expect(results.prices.salePrice).toBe(expectedPrice);
                 break;

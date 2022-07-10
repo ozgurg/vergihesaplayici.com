@@ -5,14 +5,14 @@ import MultiCurrencyTaxCalculator from "@/calculators/MultiCurrencyTaxCalculator
 describe("calculators/MultiCurrencyTaxCalculator", () => {
     it("should return 'SalePriceToBasePrice' if currency is TRY", () => {
         const currency = "TRY";
-        expect(MultiCurrencyTaxCalculator.getCalculationModeByCurrency(currency))
-            .toEqual(MultiCurrencyTaxCalculator.CalculationMode.SalePriceToBasePrice);
+        expect(MultiCurrencyTaxCalculator.getModeByCurrency(currency))
+            .toEqual(MultiCurrencyTaxCalculator.Mode.SalePriceToBasePrice);
     });
 
     it("should return 'BasePriceToSalePrice' if currency is USD", () => {
         const currency = "USD";
-        expect(MultiCurrencyTaxCalculator.getCalculationModeByCurrency(currency))
-            .toEqual(MultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice);
+        expect(MultiCurrencyTaxCalculator.getModeByCurrency(currency))
+            .toEqual(MultiCurrencyTaxCalculator.Mode.BasePriceToSalePrice);
     });
 
     it("should throw error if methods are not implemented", () => {
@@ -22,7 +22,7 @@ describe("calculators/MultiCurrencyTaxCalculator", () => {
         const calculator = new MockMultiCurrencyTaxCalculator({
             price: 0,
             exchangeRates: {},
-            calculationMode: MultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice
+            mode: MultiCurrencyTaxCalculator.Mode.BasePriceToSalePrice
         });
 
         expect(() => calculator.calculateTotalTaxFee()).toThrowError("Not implemented");

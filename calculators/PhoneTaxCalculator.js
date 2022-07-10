@@ -80,13 +80,13 @@ class PhoneTaxCalculator extends MultiCurrencyTaxCalculator {
      * @private
      */
     ministryOfCultureFee() {
-        switch (this.calculationMode) {
-            case MultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice:
+        switch (this.mode) {
+            case MultiCurrencyTaxCalculator.Mode.BasePriceToSalePrice:
                 this.taxFees.ministryOfCulture = calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.ministryOfCulture);
                 this.prices.salePrice += this.taxFees.ministryOfCulture;
                 break;
 
-            case MultiCurrencyTaxCalculator.CalculationMode.SalePriceToBasePrice:
+            case MultiCurrencyTaxCalculator.Mode.SalePriceToBasePrice:
                 this.taxFees.ministryOfCulture = calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.ministryOfCulture);
                 this.prices.basePrice -= this.taxFees.ministryOfCulture;
                 break;
@@ -97,13 +97,13 @@ class PhoneTaxCalculator extends MultiCurrencyTaxCalculator {
      * @private
      */
     trtImportFee() {
-        switch (this.calculationMode) {
-            case MultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice:
+        switch (this.mode) {
+            case MultiCurrencyTaxCalculator.Mode.BasePriceToSalePrice:
                 this.taxFees.trt = calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.trt);
                 this.prices.salePrice += this.taxFees.trt;
                 break;
 
-            case MultiCurrencyTaxCalculator.CalculationMode.SalePriceToBasePrice:
+            case MultiCurrencyTaxCalculator.Mode.SalePriceToBasePrice:
                 this.taxFees.trt = calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.trt);
                 this.prices.basePrice -= this.taxFees.trt;
                 break;
@@ -116,12 +116,12 @@ class PhoneTaxCalculator extends MultiCurrencyTaxCalculator {
     trtPassportFee() {
         this.taxFees.trtPassport = this.taxRates.trtPassport * this.exchangeRates.EUR.rate;
 
-        switch (this.calculationMode) {
-            case MultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice:
+        switch (this.mode) {
+            case MultiCurrencyTaxCalculator.Mode.BasePriceToSalePrice:
                 this.prices.salePrice += this.taxFees.trtPassport;
                 break;
 
-            case MultiCurrencyTaxCalculator.CalculationMode.SalePriceToBasePrice:
+            case MultiCurrencyTaxCalculator.Mode.SalePriceToBasePrice:
                 this.prices.basePrice -= this.taxFees.trtPassport;
                 break;
         }
@@ -131,14 +131,14 @@ class PhoneTaxCalculator extends MultiCurrencyTaxCalculator {
      * @private
      */
     sctFee() {
-        switch (this.calculationMode) {
-            case MultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice:
+        switch (this.mode) {
+            case MultiCurrencyTaxCalculator.Mode.BasePriceToSalePrice:
                 this.taxRates.sct = getSctRateByPrice(this.prices.salePrice);
                 this.taxFees.sct = calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.sct);
                 this.prices.salePrice += this.taxFees.sct;
                 break;
 
-            case MultiCurrencyTaxCalculator.CalculationMode.SalePriceToBasePrice:
+            case MultiCurrencyTaxCalculator.Mode.SalePriceToBasePrice:
                 this.taxRates.sct = getSctRateByPrice(this.prices.basePrice);
                 this.taxFees.sct = calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.sct);
                 this.prices.basePrice -= this.taxFees.sct;
@@ -150,13 +150,13 @@ class PhoneTaxCalculator extends MultiCurrencyTaxCalculator {
      * @private
      */
     vatFee() {
-        switch (this.calculationMode) {
-            case MultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice:
+        switch (this.mode) {
+            case MultiCurrencyTaxCalculator.Mode.BasePriceToSalePrice:
                 this.taxFees.vat = calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.vat);
                 this.prices.salePrice += this.taxFees.vat;
                 break;
 
-            case MultiCurrencyTaxCalculator.CalculationMode.SalePriceToBasePrice:
+            case MultiCurrencyTaxCalculator.Mode.SalePriceToBasePrice:
                 this.taxFees.vat = calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.vat);
                 this.prices.basePrice -= this.taxFees.vat;
                 break;
@@ -167,12 +167,12 @@ class PhoneTaxCalculator extends MultiCurrencyTaxCalculator {
      * @private
      */
     registrationFee() {
-        switch (this.calculationMode) {
-            case MultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice:
+        switch (this.mode) {
+            case MultiCurrencyTaxCalculator.Mode.BasePriceToSalePrice:
                 this.prices.salePrice += this.taxFees.registration;
                 break;
 
-            case MultiCurrencyTaxCalculator.CalculationMode.SalePriceToBasePrice:
+            case MultiCurrencyTaxCalculator.Mode.SalePriceToBasePrice:
                 this.prices.basePrice -= this.taxFees.registration;
                 break;
         }
@@ -214,9 +214,9 @@ class PhoneTaxCalculator extends MultiCurrencyTaxCalculator {
                 this.vatFee
             ];
 
-            if (this.calculationMode === MultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice) {
+            if (this.mode === MultiCurrencyTaxCalculator.Mode.BasePriceToSalePrice) {
                 this.callInOrder(functionsToCall);
-            } else if (this.calculationMode === MultiCurrencyTaxCalculator.CalculationMode.SalePriceToBasePrice) {
+            } else if (this.mode === MultiCurrencyTaxCalculator.Mode.SalePriceToBasePrice) {
                 this.callInReverseOrder(functionsToCall);
             }
         } else if (this.registration === PhoneTaxCalculator.Registration.Passport) {
@@ -225,9 +225,9 @@ class PhoneTaxCalculator extends MultiCurrencyTaxCalculator {
                 this.registrationFee
             ];
 
-            if (this.calculationMode === MultiCurrencyTaxCalculator.CalculationMode.BasePriceToSalePrice) {
+            if (this.mode === MultiCurrencyTaxCalculator.Mode.BasePriceToSalePrice) {
                 this.callInOrder(functionsToCall);
-            } else if (this.calculationMode === MultiCurrencyTaxCalculator.CalculationMode.SalePriceToBasePrice) {
+            } else if (this.mode === MultiCurrencyTaxCalculator.Mode.SalePriceToBasePrice) {
                 this.callInReverseOrder(functionsToCall);
             }
         }

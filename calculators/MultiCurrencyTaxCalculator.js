@@ -11,7 +11,7 @@ class MultiCurrencyTaxCalculator extends TaxCalculator {
      * @static
      * @type {{BasePriceToSalePrice: string, SalePriceToBasePrice: string}}
      */
-    static CalculationMode = {
+    static Mode = {
         BasePriceToSalePrice: "CALCULATION_MODE_FROM_BASE_PRICE",
         SalePriceToBasePrice: "CALCULATION_MODE_FROM_SALE_PRICE"
     };
@@ -51,34 +51,34 @@ class MultiCurrencyTaxCalculator extends TaxCalculator {
 
     /**
      * @protected
-     * @type {CalculationMode}
+     * @type {Mode}
      */
-    calculationMode = null;
+    mode = null;
 
     /**
      * @constructor
      * @param {float} price
      * @param {object} exchangeRates
-     * @param {CalculationMode} calculationMode
+     * @param {Mode} mode
      */
-    constructor({ price, exchangeRates, calculationMode }) {
+    constructor({ price, exchangeRates, mode }) {
         super();
 
         this.prices.basePrice = price;
         this.prices.salePrice = price;
         this.exchangeRates = exchangeRates;
-        this.calculationMode = calculationMode;
+        this.mode = mode;
     }
 
     /**
      * @static
      * @param {string} currency
-     * @return {CalculationMode}
+     * @return {Mode}
      */
-    static getCalculationModeByCurrency(currency) {
+    static getModeByCurrency(currency) {
         return currency === "TRY" ?
-            this.CalculationMode.SalePriceToBasePrice :
-            this.CalculationMode.BasePriceToSalePrice;
+            this.Mode.SalePriceToBasePrice :
+            this.Mode.BasePriceToSalePrice;
     }
 
     /**

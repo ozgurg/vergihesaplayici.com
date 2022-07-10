@@ -130,7 +130,7 @@ export default {
             const consoleTaxCalculator = new ConsoleTaxCalculator({
                 price,
                 exchangeRates: vm.$store.get("exchange-rates/currencies"),
-                calculationMode: ConsoleTaxCalculator.getCalculationModeByCurrency(vm.form.currency)
+                mode: ConsoleTaxCalculator.getModeByCurrency(vm.form.currency)
             });
             const results = consoleTaxCalculator.calculate().results();
 
