@@ -52,16 +52,18 @@
                     </CalculatorFormRow>
 
                     <CalculatorFormRow>
-                        <v-btn
-                            @click="ui.isShareDialogShown = true"
-                            outlined=""
-                            color="primary"
-                            large="">
-                            <v-icon left="">
-                                {{ icons.mdiShare }}
-                            </v-icon>
-                            Paylaş...
-                        </v-btn>
+                        <div>
+                            <v-btn
+                                @click="ui.isShareDialogShown = true"
+                                outlined=""
+                                color="primary"
+                                large="">
+                                <v-icon left="">
+                                    {{ icons.mdiShare }}
+                                </v-icon>
+                                Paylaş...
+                            </v-btn>
+                        </div>
 
                         <CalculatorShareDialog
                             v-model="ui.isShareDialogShown"
