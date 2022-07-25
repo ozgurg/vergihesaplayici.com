@@ -36,7 +36,7 @@ const Registration = {
 class PhoneTaxCalculator extends MultiCurrencyTaxCalculator {
     /**
      * @protected
-     * @type {{trtPassport: number, total: number, sct: number, trt: number, vat: number, registration: number, ministryOfCulture: number}}
+     * @type {Object<string, number>}
      */
     taxFees = {
         total: 0, // TRY
@@ -50,7 +50,7 @@ class PhoneTaxCalculator extends MultiCurrencyTaxCalculator {
 
     /**
      * @protected
-     * @type {{trtPassport: number, total: number, sct: number, trt: number, vat: number, ministryOfCulture: number}}
+     * @type {Object<string, number>}
      */
     taxRates = {
         total: 0, // Percent
@@ -69,7 +69,8 @@ class PhoneTaxCalculator extends MultiCurrencyTaxCalculator {
 
     /**
      * @param {object} params
-     * @param {Registration} registration
+     * @param {object} options
+     * @param {Registration} options.registration
      */
     constructor(params, { registration }) {
         super(params);

@@ -12,7 +12,7 @@ import {
 class ConsoleTaxCalculator extends MultiCurrencyTaxCalculator {
     /**
      * @protected
-     * @type {{total: number, sct: number, custom: number, vat: number}}
+     * @type {Object<string, number>}
      */
     taxFees = {
         total: 0, // TRY
@@ -23,7 +23,7 @@ class ConsoleTaxCalculator extends MultiCurrencyTaxCalculator {
 
     /**
      * @protected
-     * @type {{total: number, sct: number, custom: number, vat: number}}
+     * @type {Object<string, number>}
      */
     taxRates = {
         total: 0, // Percent
