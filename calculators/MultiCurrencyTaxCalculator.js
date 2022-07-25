@@ -13,7 +13,7 @@ const Mode = {
 
 /**
  * @param {string} currency
- * @return {Mode}
+ * @returns {Mode}
  */
 const getModeByCurrency = currency => {
     return currency === "TRY" ?
@@ -24,13 +24,13 @@ const getModeByCurrency = currency => {
 /**
  * @abstract
  * @class MultiCurrencyTaxCalculator
- * @extends {TaxCalculator}
+ * @augments TaxCalculator
  */
 class MultiCurrencyTaxCalculator extends TaxCalculator {
     /**
      * @protected
      * @abstract
-     * @type {object}
+     * @type {Object<string, number>}
      */
     taxFees = {
         total: 0
@@ -39,7 +39,7 @@ class MultiCurrencyTaxCalculator extends TaxCalculator {
     /**
      * @protected
      * @abstract
-     * @type {object}
+     * @type {Object<string, number>}
      */
     taxRates = {
         total: 0
@@ -47,7 +47,7 @@ class MultiCurrencyTaxCalculator extends TaxCalculator {
 
     /**
      * @protected
-     * @type {object}
+     * @type {Object<string, number>}
      */
     prices = {
         basePrice: 0, // Tax-free price
@@ -56,7 +56,7 @@ class MultiCurrencyTaxCalculator extends TaxCalculator {
 
     /**
      * @protected
-     * @type {object}
+     * @type {Object<string, string<Object<string, *>>>}
      */
     exchangeRates = {};
 
@@ -67,10 +67,10 @@ class MultiCurrencyTaxCalculator extends TaxCalculator {
     mode;
 
     /**
-     * @constructor
-     * @param {number} price
-     * @param {object} exchangeRates
-     * @param {Mode} mode
+     * @param {object} options
+     * @param {number} options.price
+     * @param {Object<string, string<Object<string, *>>>} options.exchangeRates
+     * @param {Mode} options.mode
      */
     constructor({ price, exchangeRates, mode }) {
         super();
@@ -83,7 +83,7 @@ class MultiCurrencyTaxCalculator extends TaxCalculator {
 
     /**
      * @public
-     * @return {{taxRates: object, prices: object, taxFees: object}}
+     * @returns {Object<string, Object<string, number>>}
      */
     results() {
         this.taxFees.total = this.calculateTotalTaxFee();

@@ -9,7 +9,7 @@ const createEmailShareUrl = (url, title) => createSocialMediaShareUrl("email", u
  * @param {string} site
  * @param {string} url
  * @param {string} title
- * @return {string}
+ * @returns {string}
  */
 const createSocialMediaShareUrl = (site, url, title) => {
     switch (site) {

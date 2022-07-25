@@ -1,7 +1,7 @@
 /**
  * @param {string} currency
- * @param {[string]} availableCurrencies
- * @return {boolean}
+ * @param {string[]} availableCurrencies
+ * @returns {boolean}
  */
 const isCurrencyAvailable = (currency, availableCurrencies) => {
     return availableCurrencies.includes(currency);

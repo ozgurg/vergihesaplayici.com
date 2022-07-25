@@ -1,6 +1,6 @@
 /**
  * @param {string} dataUrl
- * @return {Promise<Blob>}
+ * @returns {Promise<Blob>}
  */
 const dataUrlToBlob = dataUrl => {
     return fetch(dataUrl).then(response => response.blob());

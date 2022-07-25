@@ -2,8 +2,8 @@ import JsFileDownloader from "js-file-downloader";
 
 /**
  * @param {string} url
- * @param {function(fileName: string)} nameCallback
- * @return {Promise<void>}
+ * @param {function(string): string} nameCallback
+ * @returns {Promise<void>}
  */
 const downloadFile = (url, nameCallback) => {
     return new JsFileDownloader({
