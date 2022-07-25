@@ -13,7 +13,7 @@ const Mode = {
 
 /**
  * @param {string} currency
- * @return {Mode}
+ * @returns {Mode}
  */
 const getModeByCurrency = currency => {
     return currency === "TRY" ?
@@ -24,7 +24,7 @@ const getModeByCurrency = currency => {
 /**
  * @abstract
  * @class MultiCurrencyTaxCalculator
- * @extends {TaxCalculator}
+ * @augments TaxCalculator
  */
 class MultiCurrencyTaxCalculator extends TaxCalculator {
     /**
@@ -67,10 +67,10 @@ class MultiCurrencyTaxCalculator extends TaxCalculator {
     mode;
 
     /**
-     * @constructor
-     * @param {number} price
-     * @param {object} exchangeRates
-     * @param {Mode} mode
+     * @param {object} options
+     * @param {number} options.price
+     * @param {object} options.exchangeRates
+     * @param {Mode} options.mode
      */
     constructor({ price, exchangeRates, mode }) {
         super();
@@ -83,7 +83,7 @@ class MultiCurrencyTaxCalculator extends TaxCalculator {
 
     /**
      * @public
-     * @return {{taxRates: object, prices: object, taxFees: object}}
+     * @returns {{taxRates: object, prices: object, taxFees: object}}
      */
     results() {
         this.taxFees.total = this.calculateTotalTaxFee();

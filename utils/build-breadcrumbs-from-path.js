@@ -1,11 +1,11 @@
 import { parseUrlParts } from "@/utils/parse-url-parts.js";
 
 /**
- * It's not cover parameterized URLs
+ * It's not cover parameterized URLs.
  *
  * @param {string} path
- * @param {function(part: string)} titleMatcher
- * @return {[{title: string, to: string}]}
+ * @param {function(string): string} titleMatcher
+ * @returns {{title: string, to: string}[]}
  */
 const buildBreadcrumbsFromPath = (path, titleMatcher) => {
     const breadcrumbs = [];

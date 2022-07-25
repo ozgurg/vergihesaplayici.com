@@ -1,6 +1,6 @@
 /**
  * @param {string} path
- * @return {[string]}
+ * @returns {string[]}
  */
 const parseUrlParts = path => {
     return path

@@ -7,7 +7,7 @@ import {
 
 /**
  * @class ConsoleTaxCalculator
- * @extends {MultiCurrencyTaxCalculator}
+ * @augments MultiCurrencyTaxCalculator
  */
 class ConsoleTaxCalculator extends MultiCurrencyTaxCalculator {
     /**
@@ -86,7 +86,7 @@ class ConsoleTaxCalculator extends MultiCurrencyTaxCalculator {
     /**
      * @protected
      * @override
-     * @return {number}
+     * @returns {number}
      */
     calculateTotalTaxFee() {
         return this.taxFees.custom + this.taxFees.sct + this.taxFees.vat;
@@ -95,7 +95,7 @@ class ConsoleTaxCalculator extends MultiCurrencyTaxCalculator {
     /**
      * @protected
      * @override
-     * @return {number}
+     * @returns {number}
      */
     calculateTotalTaxRate() {
         return calculateTotalTaxRate(this.taxFees.total, this.prices.basePrice);
@@ -104,7 +104,7 @@ class ConsoleTaxCalculator extends MultiCurrencyTaxCalculator {
     /**
      * @public
      * @override
-     * @return {ConsoleTaxCalculator}
+     * @returns {ConsoleTaxCalculator}
      */
     calculate() {
         const functionsToCall = [

@@ -1,8 +1,9 @@
 /**
- * @param {[{id: number, title: string, form: {price: number, currency: string}}]} presets
- * @param {number} price
- * @param {string} currency
- * @return {[{id: number, title: string, price: number, currency: string}]}
+ * @param {{id: number, title: string, form: {price: number, currency: string}}[]} presets
+ * @param {object} options
+ * @param {number} options.price
+ * @param {string} options.currency
+ * @returns {{id: number, title: string, price: number, currency: string}[]}
  */
 const findCalculatorMatchingPresets = (presets, {
     price,
@@ -21,16 +22,16 @@ const findCalculatorMatchingPresets = (presets, {
 };
 
 /**
- * @param {[{id: number, title: string, form: {price, currency}}]} matchingPresets
- * @return {[number]}
+ * @param {{id: number, title: string, form: {price, currency}}[]} matchingPresets
+ * @returns {number[]}
  */
 const createCalculatorMatchingPresetIds = matchingPresets => {
     return matchingPresets.reduce((previous, preset) => ([...previous, preset.id]), []);
 };
 
 /**
- * @param {[{id: number, title: string, form: {price, currency}}]} matchingPresets
- * @return {[string]}
+ * @param {{id: number, title: string, form: {price, currency}}[]} matchingPresets
+ * @returns {string[]}
  */
 const createCalculatorMatchingPresetTitles = matchingPresets => {
     return matchingPresets.reduce((previous, preset) => ([...previous, preset.title]), []);
