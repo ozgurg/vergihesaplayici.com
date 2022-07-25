@@ -51,10 +51,15 @@
 
             <CalculatorResultTabs
                 v-model="ui.tab"
-                :show-results="showResults"
+                :show-results="shouldShowResults"
                 class="mt-10">
-                <template v-if="showResults">
-                    // TODO
+                <template v-if="shouldShowResults">
+                    <CalculatorResultFormRow
+                        v-for="(item, index) in resultList"
+                        :key="index"
+                        :value="item.value"
+                        :label="item.key"
+                        class="mb-5" />
                 </template>
             </CalculatorResultTabs>
         </InnerContainer>
@@ -64,7 +69,7 @@
 <script>
 import openGraphImage from "@/assets/img/open-graph/vat-calculator.jpg";
 import { VatCalculator as meta } from "@/data/calculators.js";
-import VatCalculator, { Mode } from "~/calculators/VatCalculator.js";
+import VatCalculator, { Mode } from "@/calculators/VatCalculator.js";
 import {
     createCalculatorMatchingPresetIds
 } from "~/utils/find-calculator-matching-presets.js";
@@ -114,7 +119,11 @@ export default {
                 price: vm.form.price,
                 mode: vm.mode
             });
-            calculator.calculate();
+            const results = calculator.calculate().results();
+
+            vm.results.prices = results.prices;
+            vm.results.taxFees = results.taxFees;
+            vm.results.taxRates = results.taxRates;
         },
         handleQuery() {
             const vm = this;
@@ -136,6 +145,15 @@ export default {
         }
     },
     computed: {
+        resultList() {
+            const vm = this;
+            return [
+                {
+                    key: vm.priceLabel,
+                    value: vm.$moneyFormat(vm.form.price, "TRY")
+                }
+            ];
+        },
         priceLabel() {
             const vm = this;
             return {
@@ -143,7 +161,7 @@ export default {
                 [Mode.TaxAddedPriceToTaxFreePrice]: "KDV dahil fiyat"
             }[vm.form.mode];
         },
-        showResults() {
+        shouldShowResults() {
             const vm = this;
             return vm.form.price > 0;
         },
@@ -162,7 +180,7 @@ export default {
             handler() {
                 const vm = this;
 
-                if (!vm.showResults) return;
+                if (!vm.shouldShowResults) return;
 
                 vm.calculate();
 
