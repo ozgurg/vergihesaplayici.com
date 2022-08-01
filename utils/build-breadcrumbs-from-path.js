@@ -1,8 +1,7 @@
 import { parseUrlParts } from "@/utils/parse-url-parts.js";
 
 /**
- * It's not cover parameterized URLs.
- *
+ * @description It's not cover parameterized URLs
  * @param {string} path
  * @param {function(string): string} titleMatcher
  * @returns {{title: string, to: string}[]}
