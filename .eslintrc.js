@@ -127,7 +127,7 @@ module.exports = {
         "jsdoc/no-undefined-types": 1,
         "jsdoc/require-asterisk-prefix": 1,
         "jsdoc/require-description": 0,
-        "jsdoc/require-description-complete-sentence": 1,
+        "jsdoc/require-description-complete-sentence": 0,
         "jsdoc/require-example": 0,
         "jsdoc/require-file-overview": 0,
         "jsdoc/require-hyphen-before-param-description": 1,
