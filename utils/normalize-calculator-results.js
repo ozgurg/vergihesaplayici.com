@@ -1,4 +1,4 @@
-import { normalizePrice } from "@/utils/normalize-price.js";
+import { normalizePrice } from "@/utils/formatter.js";
 
 /**
  * @param {Object<string, Object<string, number|null>>} results

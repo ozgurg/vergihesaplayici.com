@@ -104,7 +104,7 @@ import {
     findCalculatorMatchingPresets
 } from "@/utils/find-calculator-matching-presets";
 import PhoneTaxCalculator from "@/calculators/PhoneTaxCalculator.js";
-import { moneyFormat } from "@/utils/money-format.js";
+import { moneyFormat } from "@/utils/formatter.js";
 
 export default {
     layout: "default/index",

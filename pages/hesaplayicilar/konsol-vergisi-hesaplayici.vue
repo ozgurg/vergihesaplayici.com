@@ -88,7 +88,7 @@ import {
     createCalculatorMatchingPresetIds,
     findCalculatorMatchingPresets
 } from "@/utils/find-calculator-matching-presets";
-import { moneyFormat } from "@/utils/money-format.js";
+import { moneyFormat } from "@/utils/formatter.js";
 
 export default {
     layout: "default/index",
