@@ -1,15 +1,11 @@
-import MultiCurrencyTaxCalculator, { Mode } from "@/calculators/MultiCurrencyTaxCalculator";
-import {
-    calculateTaxFromTaxAddedPrice,
-    calculateTaxFromTaxFreePrice,
-    calculateTotalTaxRate
-} from "@/utils/calculate-tax";
+import { calculateTaxFromTaxAddedPrice, calculateTaxFromTaxFreePrice, calculateTotalTaxRate } from "@/utils/calculate-tax.js";
+import { normalizeCalculatorResults } from "@/utils/normalize-calculator-results.js";
 
 /**
  * @param {number} price
  * @returns {number}
  */
-const getSctRateByPrice = price => {
+const getSpecialConsumptionTaxRateByPrice = price => {
     if (price <= 640) {
         return 25;
     } else if (price > 640 && price < 1500) {
@@ -20,8 +16,7 @@ const getSctRateByPrice = price => {
 };
 
 /**
- * @readonly
- * @typedef {string} Registration
+ * @typedef Registration
  * @type {{Passport: string, Import: string}}
  */
 const Registration = {
@@ -30,225 +25,182 @@ const Registration = {
 };
 
 /**
- * @class PhoneTaxCalculator
- * @augments MultiCurrencyTaxCalculator
+ * `null` values will be assigned while calculating
+ * TRT: Turkish Radio and Television Corporation (@link https://en.wikipedia.org/wiki/Turkish_Radio_and_Television_Corporation)
  */
-class PhoneTaxCalculator extends MultiCurrencyTaxCalculator {
+class PhoneTaxCalculator {
     /**
-     * @protected
-     * @type {Object<string, number>}
+     * @type {Object<string, number|null>}
      */
-    taxFees = {
-        total: 0, // TRY
-        ministryOfCulture: 0, // TRY
-        trt: 0, // TRY
-        sct: 0, // TRY
-        vat: 0, // TRY
-        trtPassport: 0, // TRY
-        registration: 2732.4 // TRY
+    #taxFees = {
+        total: null,
+        ministryOfCulture: null, // TRY | Turkish: Kültür Bakanlığı
+        trtImport: null, // TRY | Turkish: İthalat yoluyla kayıtlı: TRT bandrolü
+        specialConsumptionTax: null, // TRY | Turkish: Özel Tüketim Vergisi (ÖTV)
+        valueAddedTax: null, // TRY | Turkish: Katma Değer Vergisi (KDV)
+        trtPassport: null, // TRY | Turkish: Pasaport yoluyla kayıtlı: TRT bandrolü
+        registration: 2732.4 // TRY | Turkish: Pasaport yoluyla kayıtlı: Kayıt ücreti
     };
 
     /**
-     * @protected
-     * @type {Object<string, number>}
+     * @type {Object<string, number|null>}
      */
-    taxRates = {
-        total: 0, // Percent
-        ministryOfCulture: 1, // Percent
-        trt: 12, // Percent
-        sct: 0, /** Percent but varies by the price. See {@link getSctRateByPrice}. */
-        vat: 18, // Percent
-        trtPassport: 20 // EUR
+    #taxRates = {
+        total: null,
+        ministryOfCulture: 1, // Percentage of previous price | Turkish: Kültür Bakanlığı
+        trtImport: 12, // Percentage of previous price | Turkish: İthalat yoluyla kayıtlı: TRT bandrolü
+        specialConsumptionTax: null, // Percentage of previous price. Varies by the price (See @link getSpecialConsumptionTaxRateByPrice) | Turkish: Özel Tüketim Vergisi (ÖTV)
+        valueAddedTax: 18, // Percentage of previous price | Turkish: Katma Değer Vergisi (KDV)
+        trtPassport: 20 // EUR | Turkish: Pasaport yoluyla kayıtlı: TRT bandrolü
     };
 
     /**
-     * @private
-     * @type {Registration}
+     * @type {Object<string, number|null>}
      */
-    registration;
+    #prices = {
+        taxFree: null,
+        taxAdded: null
+    };
+
+    #price;
+    #registration;
+    #eurToTryCurrency;
+    #calculateFromTaxAddedPrice;
 
     /**
      * @param {object} params
+     * @param {number} params.price
+     * @param {Registration} params.registration
+     * @param {number} params.eurToTryCurrency
      * @param {object} options
-     * @param {Registration} options.registration
+     * @param {boolean} options.calculateFromTaxAddedPrice
      */
-    constructor(params, { registration }) {
-        super(params);
+    constructor({ price, registration, eurToTryCurrency }, { calculateFromTaxAddedPrice = false } = {}) {
+        this.#price = price;
+        this.#registration = registration;
+        this.#eurToTryCurrency = eurToTryCurrency;
+        this.#calculateFromTaxAddedPrice = calculateFromTaxAddedPrice;
 
-        this.registration = registration;
-    }
-
-    /**
-     * @private
-     */
-    ministryOfCultureFee() {
-        switch (this.mode) {
-            case Mode.BasePriceToSalePrice:
-                this.taxFees.ministryOfCulture = calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.ministryOfCulture);
-                this.prices.salePrice += this.taxFees.ministryOfCulture;
-                break;
-
-            case Mode.SalePriceToBasePrice:
-                this.taxFees.ministryOfCulture = calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.ministryOfCulture);
-                this.prices.basePrice -= this.taxFees.ministryOfCulture;
-                break;
+        if (this.#calculateFromTaxAddedPrice) {
+            this.#prices.taxAdded = price;
+        } else {
+            this.#prices.taxFree = price;
         }
     }
 
     /**
      * @private
+     * @param {number} price
      */
-    trtImportFee() {
-        switch (this.mode) {
-            case Mode.BasePriceToSalePrice:
-                this.taxFees.trt = calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.trt);
-                this.prices.salePrice += this.taxFees.trt;
-                break;
-
-            case Mode.SalePriceToBasePrice:
-                this.taxFees.trt = calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.trt);
-                this.prices.basePrice -= this.taxFees.trt;
-                break;
-        }
+    #doCalculation(price) {
+        this.#calculateFromTaxAddedPrice ? this.#price -= price : this.#price += price;
     }
 
     /**
      * @private
-     */
-    trtPassportFee() {
-        this.taxFees.trtPassport = this.taxRates.trtPassport * this.exchangeRates.EUR.rate;
-
-        switch (this.mode) {
-            case Mode.BasePriceToSalePrice:
-                this.prices.salePrice += this.taxFees.trtPassport;
-                break;
-
-            case Mode.SalePriceToBasePrice:
-                this.prices.basePrice -= this.taxFees.trtPassport;
-                break;
-        }
-    }
-
-    /**
-     * @private
-     */
-    sctFee() {
-        switch (this.mode) {
-            case Mode.BasePriceToSalePrice:
-                this.taxRates.sct = getSctRateByPrice(this.prices.salePrice);
-                this.taxFees.sct = calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.sct);
-                this.prices.salePrice += this.taxFees.sct;
-                break;
-
-            case Mode.SalePriceToBasePrice:
-                this.taxRates.sct = getSctRateByPrice(this.prices.basePrice);
-                this.taxFees.sct = calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.sct);
-                this.prices.basePrice -= this.taxFees.sct;
-                break;
-        }
-    }
-
-    /**
-     * @private
-     */
-    vatFee() {
-        switch (this.mode) {
-            case Mode.BasePriceToSalePrice:
-                this.taxFees.vat = calculateTaxFromTaxFreePrice(this.prices.salePrice, this.taxRates.vat);
-                this.prices.salePrice += this.taxFees.vat;
-                break;
-
-            case Mode.SalePriceToBasePrice:
-                this.taxFees.vat = calculateTaxFromTaxAddedPrice(this.prices.basePrice, this.taxRates.vat);
-                this.prices.basePrice -= this.taxFees.vat;
-                break;
-        }
-    }
-
-    /**
-     * @private
-     */
-    registrationFee() {
-        switch (this.mode) {
-            case Mode.BasePriceToSalePrice:
-                this.prices.salePrice += this.taxFees.registration;
-                break;
-
-            case Mode.SalePriceToBasePrice:
-                this.prices.basePrice -= this.taxFees.registration;
-                break;
-        }
-    }
-
-    /**
-     * @protected
-     * @override
+     * @param {Object<string, number|null>} taxFees
      * @returns {number}
      */
-    calculateTotalTaxFee() {
-        if (this.registration === Registration.Import) {
-            return this.taxFees.ministryOfCulture + this.taxFees.trt + this.taxFees.sct + this.taxFees.vat;
-        } else if (this.registration === Registration.Passport) {
-            return this.taxFees.trtPassport + this.taxFees.registration;
+    #calculateTotalTaxFee(taxFees) {
+        if (this.#registration === Registration.Import) {
+            return taxFees.ministryOfCulture + taxFees.trtImport + taxFees.specialConsumptionTax + taxFees.valueAddedTax;
+        } else if (this.#registration === Registration.Passport) {
+            return taxFees.trtPassport + taxFees.registration;
         }
     }
 
     /**
-     * @protected
-     * @override
+     * @param {number} price
+     * @param {number} rate
      * @returns {number}
      */
-    calculateTotalTaxRate() {
-        return calculateTotalTaxRate(this.taxFees.total, this.prices.basePrice);
+    #calculateTax(price, rate) {
+        return this.#calculateFromTaxAddedPrice ? calculateTaxFromTaxAddedPrice(price, rate) : calculateTaxFromTaxFreePrice(price, rate);
+    }
+
+    /**
+     * @private
+     */
+    #_ministryOfCulture() {
+        this.#taxFees.ministryOfCulture = this.#calculateTax(this.#price, this.#taxRates.ministryOfCulture);
+        this.#doCalculation(this.#taxFees.ministryOfCulture);
+    }
+
+    /**
+     * @private
+     */
+    #_trtImport() {
+        this.#taxFees.trtImport = this.#calculateTax(this.#price, this.#taxRates.trtImport);
+        this.#doCalculation(this.#taxFees.trtImport);
+    }
+
+    /**
+     * @private
+     */
+    #_specialConsumptionTax() {
+        this.#taxRates.specialConsumptionTax = getSpecialConsumptionTaxRateByPrice(this.#price);
+        this.#taxFees.specialConsumptionTax = this.#calculateTax(this.#price, this.#taxRates.specialConsumptionTax);
+        this.#doCalculation(this.#taxFees.specialConsumptionTax);
+    }
+
+    /**
+     * @private
+     */
+    #_valueAddedTax() {
+        this.#taxFees.valueAddedTax = this.#calculateTax(this.#price, this.#taxRates.valueAddedTax);
+        this.#doCalculation(this.#taxFees.valueAddedTax);
+    }
+
+    /**
+     * @private
+     */
+    #_trtPassport() {
+        this.#taxFees.trtPassport = this.#taxRates.trtPassport * this.#eurToTryCurrency;
+        this.#doCalculation(this.#taxFees.trtPassport);
+    }
+
+    /**
+     * @private
+     */
+    #_registration() {
+        this.#doCalculation(this.#taxFees.registration);
     }
 
     /**
      * @public
-     * @override
-     * @returns {PhoneTaxCalculator}
+     * @returns {Object<string, Object<string, number|null>>}
      */
     calculate() {
-        if (this.registration === Registration.Import) {
-            const functionsToCall = [
-                this.ministryOfCultureFee,
-                this.trtImportFee,
-                this.sctFee,
-                this.vatFee
-            ];
-
-            switch (this.mode) {
-                case Mode.BasePriceToSalePrice:
-                    this.callInOrder(functionsToCall);
-                    break;
-
-                case Mode.SalePriceToBasePrice:
-                    this.callInReverseOrder(functionsToCall);
-                    break;
-            }
-        } else if (this.registration === Registration.Passport) {
-            const functionsToCall = [
-                this.trtPassportFee,
-                this.registrationFee
-            ];
-
-            switch (this.mode) {
-                case Mode.BasePriceToSalePrice:
-                    this.callInOrder(functionsToCall);
-                    break;
-
-                case Mode.SalePriceToBasePrice:
-                    this.callInReverseOrder(functionsToCall);
-                    break;
-            }
+        if (this.#registration === Registration.Import) {
+            this.#_ministryOfCulture();
+            this.#_trtImport();
+            this.#_specialConsumptionTax();
+            this.#_valueAddedTax();
+        } else if (this.#registration === Registration.Passport) {
+            this.#_trtPassport();
+            this.#_registration();
         }
 
-        return this;
+        if (this.#calculateFromTaxAddedPrice) {
+            this.#prices.taxFree = this.#price;
+        } else {
+            this.#prices.taxAdded = this.#price;
+        }
+
+        this.#taxFees.total = this.#calculateTotalTaxFee(this.#taxFees);
+        this.#taxRates.total = calculateTotalTaxRate(this.#taxFees.total, this.#prices.taxFree);
+
+        return normalizeCalculatorResults({
+            taxFees: this.#taxFees,
+            taxRates: this.#taxRates,
+            prices: this.#prices
+        });
     }
 }
 
 export default PhoneTaxCalculator;
 
 export {
-    getSctRateByPrice,
+    getSpecialConsumptionTaxRateByPrice,
     Registration
 };

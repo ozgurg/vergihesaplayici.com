@@ -63,7 +63,7 @@
                         class="mb-5" />
 
                     <CalculatorFormRow class="mb-6">
-                        <CalculatorMinimumWageAlert :price="results.prices.salePrice" />
+                        <CalculatorMinimumWageAlert :price="results.prices.taxAdded" />
                     </CalculatorFormRow>
 
                     <CalculatorFormRow>
@@ -95,7 +95,7 @@
 
 <script>
 import { mdiShare } from "@mdi/js";
-import PhoneTaxCalculator, { Registration } from "@/calculators/PhoneTaxCalculator";
+import { Registration } from "@/calculators/PhoneTaxCalculator";
 import { PhoneTaxCalculator as meta } from "@/data/calculators.js";
 import openGraphImage from "@/assets/img/open-graph/phone-tax-calculator.jpg";
 import { isCurrencyAvailable } from "@/utils/is-currency-available";
@@ -103,7 +103,8 @@ import {
     createCalculatorMatchingPresetIds,
     findCalculatorMatchingPresets
 } from "@/utils/find-calculator-matching-presets";
-import { getModeByCurrency } from "@/calculators/MultiCurrencyTaxCalculator.js";
+import PhoneTaxCalculator from "@/calculators/PhoneTaxCalculator.js";
+import { moneyFormat } from "@/utils/money-format.js";
 
 export default {
     layout: "default/index",
@@ -143,11 +144,7 @@ export default {
             price: "",
             registration: Registration.Import
         },
-        results: {
-            prices: {},
-            taxFees: {},
-            taxRates: {}
-        }
+        results: {}
     }),
     methods: {
         calculate() {
@@ -157,16 +154,13 @@ export default {
 
             const calculator = new PhoneTaxCalculator({
                 price,
-                exchangeRates: vm.$store.get("exchange-rates/currencies"),
-                mode: getModeByCurrency(vm.form.currency)
+                registration: vm.form.registration,
+                eurToTryCurrency: vm.$store.get("exchange-rates/currencies.EUR.rate")
             }, {
-                registration: vm.form.registration
+                calculateFromTaxAddedPrice: vm.form.currency === "TRY"
             });
-            const results = calculator.calculate().results();
 
-            vm.results.prices = results.prices;
-            vm.results.taxFees = results.taxFees;
-            vm.results.taxRates = results.taxRates;
+            vm.results = calculator.calculate();
         },
         getCurrency(currency) {
             const vm = this;
@@ -201,48 +195,48 @@ export default {
             return [
                 {
                     key: "Vergisiz fiyat",
-                    value: vm.$moneyFormat(vm.results.prices.basePrice, "TRY")
+                    value: moneyFormat(vm.results.prices.taxFree, "TRY")
                 },
                 ...(() => {
                     if (vm.registrationIsImport) {
                         return [
                             {
                                 key: `Kültür Bakanlığı (%${vm.results.taxRates.ministryOfCulture})`,
-                                value: vm.$moneyFormat(vm.results.taxFees.ministryOfCulture, "TRY")
+                                value: moneyFormat(vm.results.taxFees.ministryOfCulture, "TRY")
                             },
                             {
-                                key: `TRT bandrolü (%${vm.results.taxRates.trt})`,
-                                value: vm.$moneyFormat(vm.results.taxFees.trt, "TRY")
+                                key: `TRT bandrolü (%${vm.results.taxRates.trtImport})`,
+                                value: moneyFormat(vm.results.taxFees.trtImport, "TRY")
                             },
                             {
-                                key: `ÖTV (%${vm.results.taxRates.sct})`,
-                                value: vm.$moneyFormat(vm.results.taxFees.sct, "TRY")
+                                key: `ÖTV (%${vm.results.taxRates.specialConsumptionTax})`,
+                                value: moneyFormat(vm.results.taxFees.specialConsumptionTax, "TRY")
                             },
                             {
-                                key: `KDV (%${vm.results.taxRates.vat})`,
-                                value: vm.$moneyFormat(vm.results.taxFees.vat, "TRY")
+                                key: `KDV (%${vm.results.taxRates.valueAddedTax})`,
+                                value: moneyFormat(vm.results.taxFees.valueAddedTax, "TRY")
                             }
                         ];
                     } else {
                         return [
                             {
-                                key: `TRT bandrolü (${vm.$moneyFormat(vm.results.taxRates.trtPassport, "EUR")})`,
-                                value: vm.$moneyFormat(vm.results.taxFees.trtPassport, "TRY")
+                                key: `TRT bandrolü (${moneyFormat(vm.results.taxRates.trtPassport, "EUR")})`,
+                                value: moneyFormat(vm.results.taxFees.trtPassport, "TRY")
                             },
                             {
                                 key: "Kayıt ücreti",
-                                value: vm.$moneyFormat(vm.results.taxFees.registration, "TRY")
+                                value: moneyFormat(vm.results.taxFees.registration, "TRY")
                             }
                         ];
                     }
                 })(),
                 {
                     key: `Toplam vergi (%${vm.results.taxRates.total})`,
-                    value: vm.$moneyFormat(vm.results.taxFees.total, "TRY")
+                    value: moneyFormat(vm.results.taxFees.total, "TRY")
                 },
                 {
                     key: "Tahmini satış fiyatı",
-                    value: vm.$moneyFormat(vm.results.prices.salePrice, "TRY")
+                    value: moneyFormat(vm.results.prices.taxAdded, "TRY")
                 }
             ];
         },
@@ -253,7 +247,7 @@ export default {
                 input: [
                     {
                         key: "Telefon fiyatı",
-                        value: vm.$moneyFormat(vm.form.price, vm.form.currency)
+                        value: moneyFormat(vm.form.price, vm.form.currency)
                     },
                     {
                         key: "Kayıt yolu",

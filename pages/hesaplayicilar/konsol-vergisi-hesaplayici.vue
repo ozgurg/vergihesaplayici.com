@@ -48,7 +48,7 @@
                         class="mb-5" />
 
                     <CalculatorFormRow class="mb-6">
-                        <CalculatorMinimumWageAlert :price="results.prices.salePrice" />
+                        <CalculatorMinimumWageAlert :price="results.prices.taxAdded" />
                     </CalculatorFormRow>
 
                     <CalculatorFormRow>
@@ -88,7 +88,7 @@ import {
     createCalculatorMatchingPresetIds,
     findCalculatorMatchingPresets
 } from "@/utils/find-calculator-matching-presets";
-import { getModeByCurrency } from "@/calculators/MultiCurrencyTaxCalculator.js";
+import { moneyFormat } from "@/utils/money-format.js";
 
 export default {
     layout: "default/index",
@@ -122,11 +122,7 @@ export default {
             currency: "USD",
             price: ""
         },
-        results: {
-            prices: {},
-            taxFees: {},
-            taxRates: {}
-        }
+        results: {}
     }),
     methods: {
         calculate() {
@@ -135,15 +131,12 @@ export default {
             const price = parseFloat(vm.form.price) * vm.getCurrency(vm.form.currency).rate;
 
             const calculator = new ConsoleTaxCalculator({
-                price,
-                exchangeRates: vm.$store.get("exchange-rates/currencies"),
-                mode: getModeByCurrency(vm.form.currency)
+                price
+            }, {
+                calculateFromTaxAddedPrice: vm.form.currency === "TRY"
             });
-            const results = calculator.calculate().results();
 
-            vm.results.prices = results.prices;
-            vm.results.taxFees = results.taxFees;
-            vm.results.taxRates = results.taxRates;
+            vm.results = calculator.calculate();
         },
         getCurrency(currency) {
             const vm = this;
@@ -174,27 +167,27 @@ export default {
             return [
                 {
                     key: "Vergisiz fiyat",
-                    value: vm.$moneyFormat(vm.results.prices.basePrice, "TRY")
+                    value: moneyFormat(vm.results.prices.taxFree, "TRY")
                 },
                 {
-                    key: `Gümrük vergisi (%${vm.results.taxRates.custom})`,
-                    value: vm.$moneyFormat(vm.results.taxFees.custom, "TRY")
+                    key: `Gümrük vergisi (%${vm.results.taxRates.customTax})`,
+                    value: moneyFormat(vm.results.taxFees.customTax, "TRY")
                 },
                 {
-                    key: `ÖTV (%${vm.results.taxRates.sct})`,
-                    value: vm.$moneyFormat(vm.results.taxFees.sct, "TRY")
+                    key: `ÖTV (%${vm.results.taxRates.specialConsumptionTax})`,
+                    value: moneyFormat(vm.results.taxFees.specialConsumptionTax, "TRY")
                 },
                 {
-                    key: `KDV (%${vm.results.taxRates.vat})`,
-                    value: vm.$moneyFormat(vm.results.taxFees.vat, "TRY")
+                    key: `KDV (%${vm.results.taxRates.valueAddedTax})`,
+                    value: moneyFormat(vm.results.taxFees.valueAddedTax, "TRY")
                 },
                 {
                     key: `Toplam vergi (%${vm.results.taxRates.total})`,
-                    value: vm.$moneyFormat(vm.results.taxFees.total, "TRY")
+                    value: moneyFormat(vm.results.taxFees.total, "TRY")
                 },
                 {
                     key: "Tahmini satış fiyatı",
-                    value: vm.$moneyFormat(vm.results.prices.salePrice, "TRY")
+                    value: moneyFormat(vm.results.prices.taxAdded, "TRY")
                 }
             ];
         },
@@ -206,7 +199,7 @@ export default {
                 input: [
                     {
                         key: "Konsol fiyatı",
-                        value: vm.$moneyFormat(vm.form.price, vm.form.currency)
+                        value: moneyFormat(vm.form.price, vm.form.currency)
                     }
                 ]
             };
