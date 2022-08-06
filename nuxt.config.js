@@ -102,7 +102,6 @@ export default {
             src: "@/plugins/firebase.js",
             mode: "client"
         },
-        { src: "@/plugins/money-format.js" }, // mode: "client" causes "_vm.$moneyFormat is not a function" error
         {
             src: "@/plugins/vue-clipboard2.js",
             mode: "client"

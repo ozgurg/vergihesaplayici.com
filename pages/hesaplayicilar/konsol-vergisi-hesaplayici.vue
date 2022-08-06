@@ -9,7 +9,7 @@
                     :value="matchingPresetIds"
                     :presets="ui.presets">
                     <template #tooltip="{preset}">
-                        {{ $moneyFormat(preset.form.price, preset.form.currency) }}
+                        {{ moneyFormat(preset.form.price, preset.form.currency) }}
                     </template>
                 </CalculatorPresets>
             </CalculatorFormRow>
@@ -125,6 +125,7 @@ export default {
         results: {}
     }),
     methods: {
+        moneyFormat,
         calculate() {
             const vm = this;
 
