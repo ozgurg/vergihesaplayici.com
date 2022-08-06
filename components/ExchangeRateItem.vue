@@ -18,7 +18,7 @@
             v-else
             class="pa-0 ma-0">
             <template v-if="exchangeRate !== null">
-                {{ $moneyFormat(exchangeRate.rate, "TRY") }}
+                {{ moneyFormat(exchangeRate.rate, "TRY") }}
             </template>
 
             <div v-else>
@@ -40,6 +40,7 @@
 
 <script>
 import { mdiAlert } from "@mdi/js";
+import { moneyFormat } from "@/utils/formatter.js";
 
 export default {
     data: () => ({
@@ -56,6 +57,7 @@ export default {
         }
     },
     methods: {
+        moneyFormat,
         async load() {
             const vm = this;
 

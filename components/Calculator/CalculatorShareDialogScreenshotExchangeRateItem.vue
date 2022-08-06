@@ -15,12 +15,14 @@
         <div
             v-else
             class="pa-0 ma-0 grey--text text--lighten-1">
-            {{ $moneyFormat(exchangeRate.rate, "TRY") }}
+            {{ moneyFormat(exchangeRate.rate, "TRY") }}
         </div>
     </div>
 </template>
 
 <script>
+import { moneyFormat } from "@/utils/formatter.js";
+
 export default {
     data: () => ({
         isLoading: false,
@@ -33,6 +35,7 @@ export default {
         }
     },
     methods: {
+        moneyFormat,
         async load() {
             const vm = this;
 
