@@ -60,6 +60,28 @@
                         :value="item.value"
                         :label="item.key"
                         class="mb-5" />
+
+                    <CalculatorFormRow>
+                        <div>
+                            <v-btn
+                                @click="ui.isShareDialogShown = true"
+                                outlined=""
+                                color="primary"
+                                large="">
+                                <v-icon left="">
+                                    {{ icons.mdiShare }}
+                                </v-icon>
+                                Paylaş...
+                            </v-btn>
+                        </div>
+
+                        <CalculatorShareDialog
+                            v-model="ui.isShareDialogShown"
+                            :screenshot-data="screenshotData"
+                            :form-data="form"
+                            :title="head.title"
+                            :matching-presets="matchingPresets" />
+                    </CalculatorFormRow>
                 </template>
             </CalculatorResultTabs>
         </InnerContainer>
@@ -67,16 +89,19 @@
 </template>
 
 <script>
+import { mdiShare } from "@mdi/js";
 import openGraphImage from "@/assets/img/open-graph/vat-calculator.jpg";
 import { VatCalculator as meta } from "@/data/calculators.js";
 import VatCalculator, { Mode } from "@/calculators/VatCalculator.js";
-import {
-    createCalculatorMatchingPresetIds
-} from "~/utils/find-calculator-matching-presets.js";
+import { createCalculatorMatchingPresetIds } from "~/utils/find-calculator-matching-presets.js";
+import { numberFormat } from "@/utils/formatter.js";
 
 export default {
     layout: "default/index",
     data: () => ({
+        icons: {
+            mdiShare
+        },
         head: {
             title: meta.title,
             meta: [
@@ -90,6 +115,7 @@ export default {
         },
         ui: {
             tab: 1,
+            isShareDialogShown: false,
             presets: [
                 { id: 1, title: "Yüzde 1", form: { rate: 1 } },
                 { id: 2, title: "Yüzde 8", form: { rate: 8 } },
@@ -105,11 +131,7 @@ export default {
             rate: 18,
             mode: Mode.TaxFreePriceToTaxAddedPrice
         },
-        results: {
-            prices: {},
-            taxFees: {},
-            taxRates: {}
-        }
+        results: {}
     }),
     methods: {
         calculate() {
@@ -117,13 +139,11 @@ export default {
 
             const calculator = new VatCalculator({
                 price: vm.form.price,
-                mode: vm.mode
+                rate: vm.form.rate,
+                mode: vm.form.mode
             });
-            const results = calculator.calculate().results();
 
-            vm.results.prices = results.prices;
-            vm.results.taxFees = results.taxFees;
-            vm.results.taxRates = results.taxRates;
+            vm.results = calculator.calculate();
         },
         handleQuery() {
             const vm = this;
@@ -149,17 +169,26 @@ export default {
             const vm = this;
             return [
                 {
-                    key: vm.priceLabel,
-                    value: vm.$moneyFormat(vm.form.price, "TRY")
+                    key: "KDV hariç fiyat",
+                    value: numberFormat(vm.results.prices.taxFree)
+                },
+                {
+                    key: `KDV (%${vm.results.taxRates.valueAddedTax})`,
+                    value: numberFormat(vm.results.taxFees.valueAddedTax)
+                },
+                {
+                    key: "KDV dahil fiyat",
+                    value: numberFormat(vm.results.prices.taxAdded)
                 }
             ];
         },
-        priceLabel() {
+        screenshotData() {
             const vm = this;
+
             return {
-                [Mode.TaxFreePriceToTaxAddedPrice]: "KDV hariç fiyat",
-                [Mode.TaxAddedPriceToTaxFreePrice]: "KDV dahil fiyat"
-            }[vm.form.mode];
+                output: vm.resultList,
+                input: []
+            };
         },
         shouldShowResults() {
             const vm = this;
@@ -172,6 +201,13 @@ export default {
         matchingPresetIds() {
             const vm = this;
             return createCalculatorMatchingPresetIds(vm.matchingPresets);
+        },
+        priceLabel() {
+            const vm = this;
+            return {
+                [Mode.TaxFreePriceToTaxAddedPrice]: "KDV hariç fiyat",
+                [Mode.TaxAddedPriceToTaxFreePrice]: "KDV dahil fiyat"
+            }[vm.form.mode];
         }
     },
     watch: {
