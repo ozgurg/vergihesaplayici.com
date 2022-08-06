@@ -156,7 +156,7 @@ export default {
             const calculator = new PhoneTaxCalculator({
                 price,
                 registration: vm.form.registration,
-                eurToTryCurrency: vm.$store.get("exchange-rates/currencies.EUR.rate")
+                eurToTryCurrency: vm.$store.get("exchange-rates/currencies").EUR.rate
             }, {
                 calculateFromTaxAddedPrice: vm.form.currency === "TRY"
             });
