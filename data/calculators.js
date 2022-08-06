@@ -1,13 +1,13 @@
-import { mdiCellphone, mdiGamepad } from "@mdi/js";
+import { mdiCellphone, mdiGamepad, mdiLabelPercent } from "@mdi/js";
 
-/* const VatCalculator = {
+const VatCalculator = {
     icon: mdiLabelPercent,
     initialsTitle: "KDV",
     title: "KDV (Katma Değer Vergisi) Hesaplayıcı",
     subtitle: "Katma Değer Vergisi",
     url: "/hesaplayicilar/kdv-hesaplayici/",
-    description: "Namıdiğer her şeyin vergisini dahil ve hariç olarak hesaplayın."
-}; */
+    description: "Namıdiğer her şeyin vergisini hariç ve dahil olarak hesaplayın."
+};
 
 const ConsoleTaxCalculator = {
     icon: mdiGamepad,
@@ -26,6 +26,7 @@ const PhoneTaxCalculator = {
 };
 
 export {
+    VatCalculator,
     ConsoleTaxCalculator,
     PhoneTaxCalculator
 };

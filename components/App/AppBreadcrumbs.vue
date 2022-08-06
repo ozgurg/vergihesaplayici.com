@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { ConsoleTaxCalculator, PhoneTaxCalculator } from "@/data/calculators";
+import { ConsoleTaxCalculator, PhoneTaxCalculator, VatCalculator } from "@/data/calculators";
 import { buildBreadcrumbsFromPath } from "@/utils/build-breadcrumbs-from-path.js";
 
 export default {
@@ -26,7 +26,8 @@ export default {
             const routeTitles = {
                 "hesaplayicilar": "Hesaplayıcılar",
                 "konsol-vergisi-hesaplayici": ConsoleTaxCalculator.title,
-                "telefon-vergisi-hesaplayici": PhoneTaxCalculator.title
+                "telefon-vergisi-hesaplayici": PhoneTaxCalculator.title,
+                "kdv-hesaplayici": VatCalculator.title
             };
 
             return [

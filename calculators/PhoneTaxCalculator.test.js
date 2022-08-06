@@ -1,104 +1,132 @@
-import PhoneTaxCalculator, { getSctRateByPrice, Registration } from "@/calculators/PhoneTaxCalculator";
-import { state } from "@/store/exchange-rates";
-import { Mode } from "@/calculators/MultiCurrencyTaxCalculator.js";
+import PhoneTaxCalculator, { getSpecialConsumptionTaxRateByPrice, Registration } from "@/calculators/PhoneTaxCalculator";
 
 describe("calculators/PhoneTaxCalculator", () => {
-    describe("getSctRateByPrice", () => {
+    describe("getSpecialConsumptionTaxRateByPrice", () => {
         it("should return 25 if price is less than or equal to 640", () => {
-            expect(getSctRateByPrice(639)).toBe(25);
-            expect(getSctRateByPrice(640)).toBe(25);
-            expect(getSctRateByPrice(641)).not.toBe(25);
+            expect(getSpecialConsumptionTaxRateByPrice(639)).toBe(25);
+            expect(getSpecialConsumptionTaxRateByPrice(640)).toBe(25);
+            expect(getSpecialConsumptionTaxRateByPrice(641)).not.toBe(25);
         });
 
         it("should return 40 if price between 640 and 1500", () => {
-            expect(getSctRateByPrice(640)).not.toBe(40);
-            expect(getSctRateByPrice(641)).toBe(40);
-            expect(getSctRateByPrice(1499)).toBe(40);
-            expect(getSctRateByPrice(1500)).not.toBe(40);
+            expect(getSpecialConsumptionTaxRateByPrice(640)).not.toBe(40);
+            expect(getSpecialConsumptionTaxRateByPrice(641)).toBe(40);
+            expect(getSpecialConsumptionTaxRateByPrice(1499)).toBe(40);
+            expect(getSpecialConsumptionTaxRateByPrice(1500)).not.toBe(40);
         });
 
         it("should return 50 if price is greater than or equal to 1500", () => {
-            expect(getSctRateByPrice(1499)).not.toBe(50);
-            expect(getSctRateByPrice(1500)).toBe(50);
-            expect(getSctRateByPrice(1501)).toBe(50);
+            expect(getSpecialConsumptionTaxRateByPrice(1499)).not.toBe(50);
+            expect(getSpecialConsumptionTaxRateByPrice(1500)).toBe(50);
+            expect(getSpecialConsumptionTaxRateByPrice(1501)).toBe(50);
         });
     });
 
     describe("PhoneTaxCalculator", () => {
-        it(`Prices: 500, 1500, 5000 / Calculation mode: "${Mode.SalePriceToBasePrice}" / Registration: "${Registration.Import}"`, () => {
-            calculate(
-                Mode.SalePriceToBasePrice,
-                [
-                    { price: 500, expectedPrice: 299.66 },
-                    { price: 1500, expectedPrice: 802.68 },
-                    { price: 5000, expectedPrice: 2497.23 }
-                ],
-                Registration.Import
-            );
+        describe(`Registration: "${Registration.Import}"`, () => {
+            it(`should correctly calculate phone tax if params are: price: [500, 1500, 5000] / calculateFromTaxAddedPrice: ${false}`, () => {
+                calculate({
+                    registration: Registration.Import,
+                    calculateFromTaxAddedPrice: false,
+                    prices: [
+                        {
+                            price: 500,
+                            expected: { taxFree: 500, taxAdded: 834.26 }
+                        },
+                        {
+                            price: 1500,
+                            expected: { taxFree: 1500, taxAdded: 3003.34 }
+                        },
+                        {
+                            price: 5000,
+                            expected: { taxFree: 5000, taxAdded: 10011.12 }
+                        }
+                    ]
+                });
+            });
+
+            it(`should correctly calculate phone tax if params are: price: [500, 1500, 5000] / calculateFromTaxAddedPrice: ${true}`, () => {
+                calculate({
+                    registration: Registration.Import,
+                    calculateFromTaxAddedPrice: true,
+                    prices: [
+                        {
+                            price: 500,
+                            expected: { taxFree: 299.67, taxAdded: 500 }
+                        },
+                        {
+                            price: 1500,
+                            expected: { taxFree: 802.68, taxAdded: 1500 }
+                        },
+                        {
+                            price: 5000,
+                            expected: { taxFree: 2497.23, taxAdded: 5000 }
+                        }
+                    ]
+                });
+            });
         });
 
-        it(`Prices: 500, 1500, 5000 / Calculation mode: "${Mode.BasePriceToSalePrice}" / Registration: "${Registration.Import}"`, () => {
-            calculate(
-                Mode.BasePriceToSalePrice,
-                [
-                    { price: 500, expectedPrice: 834.26 },
-                    { price: 1500, expectedPrice: 3003.34 },
-                    { price: 5000, expectedPrice: 10011.12 }
-                ],
-                Registration.Import
-            );
-        });
+        describe(`Registration: "${Registration.Passport}"`, () => {
+            it(`should correctly calculate phone tax if params are: price: [500, 1500, 5000] / calculateFromTaxAddedPrice: ${false}`, () => {
+                calculate({
+                    registration: Registration.Passport,
+                    calculateFromTaxAddedPrice: false,
+                    prices: [
+                        {
+                            price: 500,
+                            expected: { taxFree: 500, taxAdded: 3252.4 }
+                        },
+                        {
+                            price: 1500,
+                            expected: { taxFree: 1500, taxAdded: 4252.4 }
+                        },
+                        {
+                            price: 5000,
+                            expected: { taxFree: 5000, taxAdded: 7752.4 }
+                        }
+                    ]
+                });
+            });
 
-        it(`Prices: 500, 1500, 5000 / Calculation mode: "${Mode.SalePriceToBasePrice}" / Registration: "${Registration.Passport}"`, () => {
-            calculate(
-                Mode.SalePriceToBasePrice,
-                [
-                    { price: 500, expectedPrice: -2232.4 },
-                    { price: 1500, expectedPrice: -1232.4 },
-                    { price: 5000, expectedPrice: 2267.6 }
-                ],
-                Registration.Passport
-            );
-        });
-
-        it(`Prices: 500, 1500, 5000 / Calculation mode: "${Mode.BasePriceToSalePrice}" / Registration: "${Registration.Passport}"`, () => {
-            calculate(
-                Mode.BasePriceToSalePrice,
-                [
-                    { price: 500, expectedPrice: 3232.4 },
-                    { price: 1500, expectedPrice: 4232.4 },
-                    { price: 5000, expectedPrice: 7732.4 }
-                ],
-                Registration.Passport
-            );
+            it(`should correctly calculate phone tax if params are: price: [500, 1500, 5000] / calculateFromTaxAddedPrice: ${true}`, () => {
+                calculate({
+                    registration: Registration.Passport,
+                    calculateFromTaxAddedPrice: true,
+                    prices: [
+                        {
+                            price: 500,
+                            expected: { taxFree: -2252.4, taxAdded: 500 }
+                        },
+                        {
+                            price: 1500,
+                            expected: { taxFree: -1252.4, taxAdded: 1500 }
+                        },
+                        {
+                            price: 5000,
+                            expected: { taxFree: 2247.6, taxAdded: 5000 }
+                        }
+                    ]
+                });
+            });
         });
     });
 });
 
-/**
- * @param {Mode} mode
- * @param {array} prices
- * @param {Registration} registration
- */
-function calculate(mode, prices, registration) {
-    for (const { price, expectedPrice } of prices) {
-        const phoneTaxCalculator = new PhoneTaxCalculator({
+function calculate({ prices, registration, calculateFromTaxAddedPrice }) {
+    for (const { price, expected } of prices) {
+        const calculator = new PhoneTaxCalculator({
             price,
-            exchangeRates: state().currencies,
-            mode
-        }, { registration });
-        const results = phoneTaxCalculator.calculate().results();
+            registration,
+            eurToTryCurrency: 1
+        }, {
+            calculateFromTaxAddedPrice
+        });
+        const results = calculator.calculate();
 
-        switch (mode) {
-            case Mode.SalePriceToBasePrice:
-                expect(results.prices.basePrice).toBe(expectedPrice);
-                expect(results.prices.salePrice).toBe(price);
-                break;
-
-            case Mode.BasePriceToSalePrice:
-                expect(results.prices.basePrice).toBe(price);
-                expect(results.prices.salePrice).toBe(expectedPrice);
-                break;
-        }
+        // We can test other properties for more accuracy,
+        // but for now it's enough to test the tax-free and tax-free prices.
+        expect(results.prices.taxFree).toBe(expected.taxFree);
+        expect(results.prices.taxAdded).toBe(expected.taxAdded);
     }
 }
