@@ -129,10 +129,8 @@ export default {
         calculate() {
             const vm = this;
 
-            const price = parseFloat(vm.form.price) * vm.selectedCurrency.rate;
-
             const calculator = new ConsoleTaxCalculator({
-                price
+                price: vm.priceMultipliedExchangeRate
             }, {
                 calculateFromTaxAddedPrice: vm.form.currency === "TRY"
             });
@@ -219,6 +217,10 @@ export default {
         selectedCurrency() {
             const vm = this;
             return vm.$store.get("exchange-rates/currencies")[vm.form.currency];
+        },
+        priceMultipliedExchangeRate() {
+            const vm = this;
+            return vm.form.price * vm.selectedCurrency.rate;
         }
     },
     watch: {

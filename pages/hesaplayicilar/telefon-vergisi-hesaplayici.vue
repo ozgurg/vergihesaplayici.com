@@ -151,10 +151,8 @@ export default {
         calculate() {
             const vm = this;
 
-            const price = parseFloat(vm.form.price) * vm.selectedCurrency.rate;
-
             const calculator = new PhoneTaxCalculator({
-                price,
+                price: vm.priceMultipliedExchangeRate,
                 registration: vm.form.registration,
                 eurToTryCurrency: vm.$store.get("exchange-rates/currencies").EUR.rate
             }, {
@@ -271,6 +269,10 @@ export default {
         selectedCurrency() {
             const vm = this;
             return vm.$store.get("exchange-rates/currencies")[vm.form.currency];
+        },
+        priceMultipliedExchangeRate() {
+            const vm = this;
+            return vm.form.price * vm.selectedCurrency.rate;
         }
     },
     watch: {
