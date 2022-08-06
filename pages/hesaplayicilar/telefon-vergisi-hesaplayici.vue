@@ -199,7 +199,7 @@ export default {
                     value: moneyFormat(vm.results.prices.taxFree, "TRY")
                 },
                 ...(() => {
-                    if (vm.registrationIsImport) {
+                    if (vm.form.registration === Registration.Import) {
                         return [
                             {
                                 key: `Kültür Bakanlığı (%${vm.results.taxRates.ministryOfCulture})`,
@@ -260,10 +260,6 @@ export default {
         shouldShowResults() {
             const vm = this;
             return vm.form.price > 0 && vm.form.currency !== "" && vm.form.registration !== "";
-        },
-        registrationIsImport() {
-            const vm = this;
-            return vm.form.registration === Registration.Import;
         },
         matchingPresets() {
             const vm = this;
