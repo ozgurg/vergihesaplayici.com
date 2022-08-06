@@ -19,7 +19,7 @@
                 label="Telefon fiyatı">
                 <v-text-field
                     v-model.number="form.price"
-                    :prefix="getCurrency(form.currency)['sign']"
+                    :prefix="selectedCurrency.sign"
                     hide-details=""
                     outlined=""
                     step="any"
@@ -151,21 +151,15 @@ export default {
         calculate() {
             const vm = this;
 
-            const price = parseFloat(vm.form.price) * vm.getCurrency(vm.form.currency).rate;
-
             const calculator = new PhoneTaxCalculator({
-                price,
+                price: vm.priceMultipliedExchangeRate,
                 registration: vm.form.registration,
-                eurToTryCurrency: vm.$store.get("exchange-rates/currencies.EUR.rate")
+                eurToTryCurrency: vm.$store.get("exchange-rates/currencies").EUR.rate
             }, {
                 calculateFromTaxAddedPrice: vm.form.currency === "TRY"
             });
 
             vm.results = calculator.calculate();
-        },
-        getCurrency(currency) {
-            const vm = this;
-            return vm.$store.get(`exchange-rates/currencies@${currency}`);
         },
         handleQuery() {
             const vm = this;
@@ -271,6 +265,14 @@ export default {
         matchingPresetIds() {
             const vm = this;
             return createCalculatorMatchingPresetIds(vm.matchingPresets);
+        },
+        selectedCurrency() {
+            const vm = this;
+            return vm.$store.get("exchange-rates/currencies")[vm.form.currency];
+        },
+        priceMultipliedExchangeRate() {
+            const vm = this;
+            return vm.form.price * vm.selectedCurrency.rate;
         }
     },
     watch: {
