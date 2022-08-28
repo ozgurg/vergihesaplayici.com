@@ -7,7 +7,7 @@ const normalizePrice = price => {
 };
 
 /**
- * @param {string|number} price
+ * @param {string | number} price
  * @param {string} currency
  * @returns {string}
  */

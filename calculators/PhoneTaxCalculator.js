@@ -30,7 +30,7 @@ const Registration = {
  */
 class PhoneTaxCalculator {
     /**
-     * @type {Object<string, number|null>}
+     * @type {Object<string, number | null>}
      */
     #taxFees = {
         total: null,
@@ -43,7 +43,7 @@ class PhoneTaxCalculator {
     };
 
     /**
-     * @type {Object<string, number|null>}
+     * @type {Object<string, number | null>}
      */
     #taxRates = {
         total: null,
@@ -55,7 +55,7 @@ class PhoneTaxCalculator {
     };
 
     /**
-     * @type {Object<string, number|null>}
+     * @type {Object<string, number | null>}
      */
     #prices = {
         taxFree: null,
@@ -98,7 +98,7 @@ class PhoneTaxCalculator {
 
     /**
      * @private
-     * @param {Object<string, number|null>} taxFees
+     * @param {Object<string, number | null>} taxFees
      * @returns {number}
      */
     #calculateTotalTaxFee(taxFees) {
@@ -168,7 +168,7 @@ class PhoneTaxCalculator {
 
     /**
      * @public
-     * @returns {Object<string, Object<string, number|null>>}
+     * @returns {Object<string, Object<string, number | null>>}
      */
     calculate() {
         if (this.#registration === Registration.Import) {
