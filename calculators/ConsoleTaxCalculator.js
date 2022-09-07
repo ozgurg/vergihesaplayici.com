@@ -6,7 +6,7 @@ import { normalizeCalculatorResults } from "@/utils/normalize-calculator-results
  */
 class ConsoleTaxCalculator {
     /**
-     * @type {Object<string, number|null>}
+     * @type {Object<string, number | null>}
      */
     #taxFees = {
         total: null,
@@ -16,7 +16,7 @@ class ConsoleTaxCalculator {
     };
 
     /**
-     * @type {Object<string, number|null>}
+     * @type {Object<string, number | null>}
      */
     #taxRates = {
         total: null,
@@ -26,7 +26,7 @@ class ConsoleTaxCalculator {
     };
 
     /**
-     * @type {Object<string, number|null>}
+     * @type {Object<string, number | null>}
      */
     #prices = {
         taxFree: null,
@@ -63,7 +63,7 @@ class ConsoleTaxCalculator {
 
     /**
      * @private
-     * @param {Object<string, number|null>} taxFees
+     * @param {Object<string, number | null>} taxFees
      * @returns {number}
      */
     #calculateTotalTaxFee(taxFees) {
@@ -105,7 +105,7 @@ class ConsoleTaxCalculator {
 
     /**
      * @public
-     * @returns {Object<string, Object<string, number|null>>}
+     * @returns {Object<string, Object<string, number | null>>}
      */
     calculate() {
         this.#_customTax();

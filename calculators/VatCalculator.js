@@ -15,7 +15,7 @@ const Mode = {
  */
 class VatCalculator {
     /**
-     * @type {Object<string, number|null>}
+     * @type {Object<string, number | null>}
      */
     #taxFees = {
         total: null,
@@ -23,7 +23,7 @@ class VatCalculator {
     };
 
     /**
-     * @type {Object<string, number|null>}
+     * @type {Object<string, number | null>}
      */
     #taxRates = {
         total: null,
@@ -31,7 +31,7 @@ class VatCalculator {
     };
 
     /**
-     * @type {Object<string, number|null>}
+     * @type {Object<string, number | null>}
      */
     #prices = {
         taxFree: null,
@@ -61,7 +61,7 @@ class VatCalculator {
     }
 
     /**
-     * @returns {Object<string, Object<string, number|null>>}
+     * @returns {Object<string, Object<string, number | null>>}
      */
     calculate() {
         this.#taxRates.valueAddedTax = this.#rate;
