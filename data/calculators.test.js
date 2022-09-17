@@ -11,7 +11,8 @@ describe("data/calculators", () => {
             title: { type: "string" },
             subtitle: { type: "string" },
             url: { type: "string" },
-            description: { type: "string" }
+            description: { type: "string" },
+            presets: { type: "object" }
         },
         required: ["icon", "title", "subtitle", "url", "description"]
     };
