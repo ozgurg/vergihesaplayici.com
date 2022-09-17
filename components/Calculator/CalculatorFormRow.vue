@@ -61,7 +61,7 @@ export default {
 </style>
 
 <style scoped="">
-/deep/ .v-input__append-outer {
+:deep(.v-input__append-outer) {
     margin-top: 0 !important
 }
 </style>

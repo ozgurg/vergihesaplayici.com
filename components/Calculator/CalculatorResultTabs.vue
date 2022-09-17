@@ -75,11 +75,11 @@ export default {
 </style>
 
 <style scoped="">
-/deep/ .v-tabs-items {
+:deep(.v-tabs-items) {
     background: 0 !important
 }
 
-/deep/ .v-tab.v-tab--disabled, /deep/ .v-tab.v-tab--disabled .v-icon {
+:deep(.v-tab.v-tab--disabled), :deep(.v-tab.v-tab--disabled .v-icon) {
     color: #fff !important
 }
 </style>

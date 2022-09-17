@@ -34,7 +34,7 @@ export default {
     }
 }
 
-/deep/ svg {
+:deep(svg) {
     width: 190px;
     height: auto
 }

@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style scoped="">
-/deep/ .v-navigation-drawer__content {
+:deep(.v-navigation-drawer__content) {
     display: flex;
     flex-direction: column
 }

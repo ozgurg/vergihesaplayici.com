@@ -66,7 +66,7 @@ export default {
     margin: -4px
 }
 
-/deep/ .v-chip {
+:deep(.v-chip) {
     margin: 4px
 }
 </style>

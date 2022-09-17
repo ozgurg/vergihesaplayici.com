@@ -340,12 +340,12 @@ export default {
 </style>
 
 <style scoped="">
-/deep/ .v-overlay__content {
+:deep(.v-overlay__content) {
     width: 100%;
     height: 100%
 }
 
-/deep/ .v-alert {
+:deep(.v-alert) {
     border-radius: 12px
 }
 </style>
