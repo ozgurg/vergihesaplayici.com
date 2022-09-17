@@ -1,15 +1,10 @@
 {
     "name": "vergihesaplayici.com",
+    "version": "5.1.0",
     "description": "vergihesaplayici.com, vergi hesaplar.",
     "license": "MIT",
     "homepage": "https://vergihesaplayici.com/",
-    "version": "5.1.0",
     "private": true,
-    "author": {
-        "email": "ozgurgorgulu54@gmail.com",
-        "name": "Özgür Görgülü",
-        "url": "https://github.com/ozgurg"
-    },
     "repository": {
         "type": "git",
         "url": "https://github.com/ozgurg/vergihesaplayici.com"
@@ -26,6 +21,18 @@
         "lint-staged": "lint-staged",
         "prepare": "husky install"
     },
+    "author": {
+        "email": "ozgurgorgulu54@gmail.com",
+        "name": "Özgür Görgülü",
+        "url": "https://github.com/ozgurg"
+    },
+    "keywords": [
+        "website",
+        "firebase",
+        "vue",
+        "nuxtjs",
+        "tax-calculator"
+    ],
     "dependencies": {
         "core-js": "^3.25.1",
         "firebase": "^9.10.0",
@@ -71,12 +78,5 @@
         "*.{js,vue}": [
             "eslint"
         ]
-    },
-    "keywords": [
-        "website",
-        "firebase",
-        "vue",
-        "nuxtjs",
-        "tax-calculator"
-    ]
+    }
 }
