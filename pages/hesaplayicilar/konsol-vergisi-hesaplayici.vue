@@ -81,7 +81,7 @@
 <script>
 import { mdiShare } from "@mdi/js";
 import ConsoleTaxCalculator from "@/calculators/ConsoleTaxCalculator";
-import { ConsoleTaxCalculator as meta } from "@/data/calculators.js";
+import { ConsoleTaxCalculator as calculator } from "@/data/calculators.js";
 import openGraphImage from "@/assets/img/open-graph/console-tax-calculator.jpg";
 import { isCurrencyAvailable } from "@/utils/is-currency-available";
 import {
@@ -97,18 +97,18 @@ export default {
             mdiShare
         },
         head: {
-            title: meta.title,
+            title: calculator.title,
             meta: [
-                { hid: "title", name: "title", content: meta.title },
-                { hid: "description", name: "description", content: meta.description },
-                { hid: "og:title", name: "og:title", content: meta.title },
-                { hid: "og:description", name: "og:description", content: meta.description },
+                { hid: "title", name: "title", content: calculator.title },
+                { hid: "description", name: "description", content: calculator.description },
+                { hid: "og:title", name: "og:title", content: calculator.title },
+                { hid: "og:description", name: "og:description", content: calculator.description },
                 { hid: "og:image", name: "og:image", content: openGraphImage },
                 { name: "twitter:image", content: openGraphImage }
             ]
         },
         ui: {
-            presets: meta.presets,
+            presets: calculator.presets,
             tab: 1,
             isShareDialogShown: false
         },
