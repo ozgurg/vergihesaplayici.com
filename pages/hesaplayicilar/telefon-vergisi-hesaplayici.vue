@@ -96,7 +96,7 @@
 <script>
 import { mdiShare } from "@mdi/js";
 import { Registration } from "@/calculators/PhoneTaxCalculator";
-import { PhoneTaxCalculator as meta } from "@/data/calculators.js";
+import { PhoneTaxCalculator as calculator } from "@/data/calculators.js";
 import openGraphImage from "@/assets/img/open-graph/phone-tax-calculator.jpg";
 import { isCurrencyAvailable } from "@/utils/is-currency-available";
 import {
@@ -113,24 +113,18 @@ export default {
             mdiShare
         },
         head: {
-            title: meta.title,
+            title: calculator.title,
             meta: [
-                { hid: "title", name: "title", content: meta.title },
-                { hid: "description", name: "description", content: meta.description },
-                { hid: "og:title", name: "og:title", content: meta.title },
-                { hid: "og:description", name: "og:description", content: meta.description },
+                { hid: "title", name: "title", content: calculator.title },
+                { hid: "description", name: "description", content: calculator.description },
+                { hid: "og:title", name: "og:title", content: calculator.title },
+                { hid: "og:description", name: "og:description", content: calculator.description },
                 { hid: "og:image", name: "og:image", content: openGraphImage },
                 { name: "twitter:image", content: openGraphImage }
             ]
         },
         ui: {
-            presets: [
-                { id: 1, title: "iPhone SE 2022 (64GB)", form: { price: 429, currency: "USD" } },
-                { id: 2, title: "iPhone 14 (128GB)", form: { price: 799, currency: "USD" } },
-                { id: 3, title: "iPhone 14 Plus (128GB)", form: { price: 899, currency: "USD" } },
-                { id: 4, title: "iPhone 14 Pro (128GB)", form: { price: 999, currency: "USD" } },
-                { id: 5, title: "iPhone 14 Pro Max (1TB)", form: { price: 1599, currency: "USD" } }
-            ],
+            presets: calculator.presets,
             registration: [
                 { title: "İthalat yoluyla kayıtlı (Resmi)", value: Registration.Import },
                 { title: "Pasaport yoluyla kayıtlı", value: Registration.Passport }

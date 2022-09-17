@@ -175,7 +175,7 @@ export default {
 </script>
 
 <style scoped>
-/deep/ svg {
+:deep(svg) {
     vertical-align: middle;
     width: 24px;
     height: 24px

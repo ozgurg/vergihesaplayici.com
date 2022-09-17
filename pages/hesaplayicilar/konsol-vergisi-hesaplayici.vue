@@ -81,7 +81,7 @@
 <script>
 import { mdiShare } from "@mdi/js";
 import ConsoleTaxCalculator from "@/calculators/ConsoleTaxCalculator";
-import { ConsoleTaxCalculator as meta } from "@/data/calculators.js";
+import { ConsoleTaxCalculator as calculator } from "@/data/calculators.js";
 import openGraphImage from "@/assets/img/open-graph/console-tax-calculator.jpg";
 import { isCurrencyAvailable } from "@/utils/is-currency-available";
 import {
@@ -97,26 +97,18 @@ export default {
             mdiShare
         },
         head: {
-            title: meta.title,
+            title: calculator.title,
             meta: [
-                { hid: "title", name: "title", content: meta.title },
-                { hid: "description", name: "description", content: meta.description },
-                { hid: "og:title", name: "og:title", content: meta.title },
-                { hid: "og:description", name: "og:description", content: meta.description },
+                { hid: "title", name: "title", content: calculator.title },
+                { hid: "description", name: "description", content: calculator.description },
+                { hid: "og:title", name: "og:title", content: calculator.title },
+                { hid: "og:description", name: "og:description", content: calculator.description },
                 { hid: "og:image", name: "og:image", content: openGraphImage },
                 { name: "twitter:image", content: openGraphImage }
             ]
         },
         ui: {
-            // PS5: https://blog.playstation.com/2022/08/25/ps5-price-to-increase-in-select-markets-due-to-global-economic-environment-including-high-inflation-rates/
-            // Nintendo Switch: https://en.wikipedia.org/wiki/Nintendo_Switch#cite_note-polygon_oled_announce-178
-            presets: [
-                { id: 1, title: "Xbox Series S (512GB)", form: { price: 299, currency: "EUR" } },
-                { id: 2, title: "Xbox Series X (1TB)", form: { price: 499, currency: "EUR" } },
-                { id: 3, title: "PlayStation 5 Digital Edition (825GB)", form: { price: 449.99, currency: "EUR" } },
-                { id: 4, title: "PlayStation 5 (825GB)", form: { price: 549.99, currency: "EUR" } },
-                { id: 5, title: "Nintendo Switch OLED (64GB)", form: { price: 349.99, currency: "USD" } }
-            ],
+            presets: calculator.presets,
             tab: 1,
             isShareDialogShown: false
         },
