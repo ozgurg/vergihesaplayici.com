@@ -2,8 +2,8 @@
 	<v-navigation-drawer
         v-bind="$attrs"
         v-model="drawerState"
-        :color="color"
         :permanent="$vuetify.breakpoint.mdAndUp"
+        color="#272727"
         width="275"
         floating="">
         <template #prepend>
@@ -37,11 +37,7 @@ import { sync } from "vuex-pathify";
 
 export default {
     computed: {
-        drawerState: sync("ui/drawerState"),
-        color() {
-            const vm = this;
-            return vm.$vuetify.theme.dark ? "#272727" : undefined;
-        }
+        drawerState: sync("ui/drawerState")
     }
 };
 </script>

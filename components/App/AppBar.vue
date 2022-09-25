@@ -1,7 +1,6 @@
 <template>
     <v-app-bar
         v-bind="$attrs"
-        :color="color"
         elevation="0"
         flat=""
         class="v-bar--underline">
@@ -26,11 +25,7 @@ export default {
         }
     },
     computed: {
-        drawerState: sync("ui/drawerState"),
-        color() {
-            const vm = this;
-            return vm.$vuetify.theme.dark ? undefined : "white";
-        }
+        drawerState: sync("ui/drawerState")
     }
 };
 </script>
