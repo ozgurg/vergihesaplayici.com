@@ -141,7 +141,7 @@ export default {
                 vm.form.price = parseFloat(query.price);
             }
 
-            if (query.currency && isCurrencyAvailable(query.currency, vm.$store.get("exchange-rates/availableCurrencies"))) {
+            if (query.currency && isCurrencyAvailable(query.currency, vm.$store.getters["exchange-rates/availableCurrencies"])) {
                 vm.form.currency = query.currency;
             }
         },
@@ -210,7 +210,7 @@ export default {
         },
         selectedCurrency() {
             const vm = this;
-            return vm.$store.get("exchange-rates/currencies")[vm.form.currency];
+            return vm.$store.getters["exchange-rates/currencies"][vm.form.currency];
         },
         priceMultipliedExchangeRate() {
             const vm = this;
