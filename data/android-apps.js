@@ -5,11 +5,6 @@ const androidApps = [
         url: "https://dttl.page.link/store"
     },
     {
-        icon: "instadownloader.png",
-        title: "InstaDownloader",
-        url: "https://instadownloader.page.link/store"
-    },
-    {
         icon: "rebootify.png",
         title: "Rebootify",
         url: "https://rebootify.page.link/store"
