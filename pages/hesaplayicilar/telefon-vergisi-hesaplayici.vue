@@ -147,7 +147,7 @@ export default {
             const calculator = new PhoneTaxCalculator({
                 price: vm.priceMultipliedExchangeRate,
                 registration: vm.form.registration,
-                eurToTryCurrency: vm.$store.get("exchange-rates/currencies").EUR.rate
+                eurToTryCurrency: vm.$store.getters["exchange-rates/currencies"].EUR.rate
             }, {
                 calculateFromTaxAddedPrice: vm.form.currency === "TRY"
             });
@@ -164,7 +164,7 @@ export default {
                 vm.form.price = parseFloat(query.price);
             }
 
-            if (query.currency && isCurrencyAvailable(query.currency, vm.$store.get("exchange-rates/availableCurrencies"))) {
+            if (query.currency && isCurrencyAvailable(query.currency, vm.$store.getters["exchange-rates/availableCurrencies"])) {
                 vm.form.currency = query.currency;
             }
 
@@ -261,7 +261,7 @@ export default {
         },
         selectedCurrency() {
             const vm = this;
-            return vm.$store.get("exchange-rates/currencies")[vm.form.currency];
+            return vm.$store.getters["exchange-rates/currencies"][vm.form.currency];
         },
         priceMultipliedExchangeRate() {
             const vm = this;

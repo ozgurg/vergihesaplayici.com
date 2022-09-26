@@ -10,6 +10,18 @@ export const state = () => ({
     }
 });
 
+export const getters = {
+    currencies(state) {
+        return state.currencies;
+    },
+    availableCurrencies(state) {
+        return Object.keys(state.currencies);
+    },
+    availableCurrenciesExceptTRY(state) {
+        return Object.keys(state.currencies).filter(currency => currency !== "TRY");
+    }
+};
+
 export const mutations = {
     SET_EXCHANGE_RATE(state, { currency, rate }) {
         state.currencies[currency].rate = rate;
@@ -35,19 +47,10 @@ export const actions = {
     }
 };
 
-export const getters = {
-    availableCurrencies(state) {
-        return Object.keys(state.currencies);
-    },
-    availableCurrenciesExceptTRY(state) {
-        return Object.keys(state.currencies).filter(currency => currency !== "TRY");
-    }
-};
-
 export default {
     namespaced: true,
     state,
+    getters,
     mutations,
-    actions,
-    getters
+    actions
 };
