@@ -43,8 +43,7 @@
         "vue-disqus": "^4.0.1",
         "vue-html2canvas": "^0.0.4",
         "vuetify": "^2.6.10",
-        "vuex": "^3.6.2",
-        "vuex-pathify": "^1.5.1"
+        "vuex": "^3.6.2"
     },
     "devDependencies": {
         "@babel/eslint-parser": "^7.19.1",

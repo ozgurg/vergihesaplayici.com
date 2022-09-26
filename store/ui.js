@@ -1,16 +1,35 @@
-import { make } from "vuex-pathify";
-
 export const state = () => ({
-    drawerState: null
+    drawerState: null // "null" makes the initial state closed
 });
 
-export const mutations = make.mutations(state);
+export const getters = {
+    isDrawerOpen(state) {
+        return state.drawerState === true;
+    }
+};
 
-export const actions = make.actions(state);
+export const mutations = {
+    toggleDrawer(state) {
+        state.drawerState = !state.drawerState;
+    },
+    setDrawerState(state, value) {
+        state.drawerState = value;
+    }
+};
+
+export const actions = {
+    toggleDrawer({ commit }) {
+        commit("toggleDrawer");
+    },
+    setDrawerState({ commit }, value) {
+        commit("setDrawerState", value);
+    }
+};
 
 export default {
     namespaced: true,
     state,
+    getters,
     mutations,
     actions
 };

@@ -15,17 +15,12 @@
 </template>
 
 <script>
-import { sync } from "vuex-pathify";
-
 export default {
     methods: {
         toggleDrawer() {
             const vm = this;
-            vm.drawerState = !vm.drawerState;
+            vm.$store.dispatch("ui/toggleDrawer");
         }
-    },
-    computed: {
-        drawerState: sync("ui/drawerState")
     }
 };
 </script>
