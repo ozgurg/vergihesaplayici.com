@@ -9,20 +9,20 @@ export const getters = {
 };
 
 export const mutations = {
-    toggleDrawer(state) {
+    TOGGLE_DRAWER(state) {
         state.drawerState = !state.drawerState;
     },
-    setDrawerState(state, value) {
+    SET_DRAWER_STATE(state, value) {
         state.drawerState = value;
     }
 };
 
 export const actions = {
     toggleDrawer({ commit }) {
-        commit("toggleDrawer");
+        commit("TOGGLE_DRAWER");
     },
     setDrawerState({ commit }, value) {
-        commit("setDrawerState", value);
+        commit("SET_DRAWER_STATE", value);
     }
 };
 

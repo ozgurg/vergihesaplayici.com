@@ -24,19 +24,19 @@ describe("store/ui", () => {
     });
 
     describe("mutations", () => {
-        it("[toggleDrawer] should toggle 'drawerState' value", () => {
-            store.mutations.toggleDrawer(state);
+        it("[TOGGLE_DRAWER] should toggle 'drawerState' value", () => {
+            store.mutations.TOGGLE_DRAWER(state);
             expect(state.drawerState).toBe(true);
 
-            store.mutations.toggleDrawer(state);
+            store.mutations.TOGGLE_DRAWER(state);
             expect(state.drawerState).toBe(false);
         });
 
-        it("[setDrawerState] should set 'drawerState'", () => {
-            store.mutations.setDrawerState(state, true);
+        it("[SET_DRAWER_STATE] should set 'drawerState'", () => {
+            store.mutations.SET_DRAWER_STATE(state, true);
             expect(state.drawerState).toBe(true);
 
-            store.mutations.setDrawerState(state, false);
+            store.mutations.SET_DRAWER_STATE(state, false);
             expect(state.drawerState).toBe(false);
         });
     });
