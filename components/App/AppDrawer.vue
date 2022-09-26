@@ -1,9 +1,9 @@
 <template>
 	<v-navigation-drawer
         v-bind="$attrs"
-        v-model="drawerState"
-        :color="color"
+        v-model="isDrawerOpen"
         :permanent="$vuetify.breakpoint.mdAndUp"
+        color="#272727"
         width="275"
         floating="">
         <template #prepend>
@@ -33,14 +33,17 @@
 </template>
 
 <script>
-import { sync } from "vuex-pathify";
-
 export default {
     computed: {
-        drawerState: sync("ui/drawerState"),
-        color() {
-            const vm = this;
-            return vm.$vuetify.theme.dark ? "#272727" : undefined;
+        isDrawerOpen: {
+            get() {
+                const vm = this;
+                return vm.$store.getters["ui/isDrawerOpen"];
+            },
+            set(value) {
+                const vm = this;
+                vm.$store.dispatch("ui/setDrawerState", value);
+            }
         }
     }
 };
