@@ -1,6 +1,6 @@
 {
     "name": "vergihesaplayici.com",
-    "version": "5.2.1",
+    "version": "5.2.2",
     "description": "vergihesaplayici.com, vergi hesaplar.",
     "license": "MIT",
     "homepage": "https://vergihesaplayici.com/",
@@ -34,7 +34,7 @@
         "tax-calculator"
     ],
     "dependencies": {
-        "core-js": "^3.25.2",
+        "core-js": "^3.25.3",
         "firebase": "^9.10.0",
         "js-file-downloader": "^1.1.24",
         "nuxt": "^2.15.8",
