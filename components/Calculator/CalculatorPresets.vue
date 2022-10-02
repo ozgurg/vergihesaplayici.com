@@ -3,10 +3,10 @@
     <div
         v-bind="$attrs"
         class="chips">
-        <template v-for="(preset, index) in presets">
+        <template v-for="preset in presets">
             <template v-if="$scopedSlots.tooltip">
                 <v-tooltip
-                    :key="index"
+                    :key="preset.id"
                     top="">
                     <template #activator="{ on, attrs }">
                         <v-chip
@@ -28,7 +28,7 @@
             </template>
             <template v-else>
                 <v-chip
-                    :key="index"
+                    :key="preset.id"
                     @click="choosePreset(preset)"
                     role="button"
                     :class="{'primary--text primary': value.includes(preset.id)}"
