@@ -1,5 +1,6 @@
 <template>
     <v-col
+        v-bind="$attrs"
         cols="12"
         lg="6">
         <v-card
