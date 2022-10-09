@@ -1,14 +1,14 @@
 <template>
     <iframe
         v-bind="$attrs"
-        title="GitHub yıldız sayısı"
+        title="Projenin GitHub'taki yıldız sayısı"
         class="vh-github-button"
         height="20"
         width="84"
         src="https://ghbtns.com/github-btn.html?user=ozgurg&repo=vergihesaplayici.com&type=star&count=true" />
 </template>
 
-<style scoped="">
+<style>
 .vh-github-button {
     overflow: hidden;
     border: 0;
