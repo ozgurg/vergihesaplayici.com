@@ -10,18 +10,20 @@
             <AppDrawerLogo />
         </template>
 
-        <CalculatorList
-            title="Hesaplayıcılar"
-            shaped="" />
+        <div class="d-flex flex-column h-100">
+            <CalculatorList
+                title="Hesaplayıcılar"
+                shaped="" />
 
-        <v-list class="mb-auto">
-            <v-subheader>Döviz kurları</v-subheader>
-            <v-list-item>
-                <ExchangeRateGrid />
-            </v-list-item>
-        </v-list>
+            <v-list class="mb-auto">
+                <v-subheader>Döviz kurları</v-subheader>
+                <v-list-item>
+                    <ExchangeRateGrid />
+                </v-list-item>
+            </v-list>
 
-        <AppDrawerFooter />
+            <AppDrawerFooter class="mt-3" />
+        </div>
     </v-navigation-drawer>
 </template>
 
@@ -41,10 +43,3 @@ export default {
     }
 };
 </script>
-
-<style scoped="">
-:deep(.v-navigation-drawer__content) {
-    display: flex;
-    flex-direction: column
-}
-</style>
