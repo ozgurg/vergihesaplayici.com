@@ -1,6 +1,7 @@
 <template>
     <a
         v-bind="$attrs"
+        class="rounded overflow-hidden d-inline-flex"
         href="https://youtu.be/LPrhPC-L5Go?t=5"
         rel="nofollow noopener noreferrer"
         title="Osita Iheme"
