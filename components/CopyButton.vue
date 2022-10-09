@@ -1,7 +1,7 @@
 <template>
     <v-btn
         v-ripple="false"
-        @click="copy(value)"
+        @click="copy()"
         v-bind="$attrs"
         :class="{'pointer-events-none': isCopied}"
         plain=""
@@ -18,9 +18,9 @@ export default {
         isCopied: false
     }),
     props: {
-        value: {
+        valueToCopy: {
             type: String,
-            default: null
+            required: true
         },
         containerId: {
             type: String,
@@ -28,24 +28,29 @@ export default {
         }
     },
     methods: {
-        copy(text) {
+        copy() {
             const vm = this;
 
-            if (vm.containerId !== null) {
-                vm.$copyText(text, document.getElementById(vm.containerId));
-            } else {
-                vm.$copyText(text);
-            }
-
-            vm.isCopied = true;
+            vm._copyText();
 
             if (vm.copiedTimeout !== null) {
                 clearTimeout(vm.copiedTimeout);
             }
 
+            vm.isCopied = true;
+
             vm.copiedTimeout = setTimeout(() => {
                 vm.isCopied = false;
             }, 1000);
+        },
+        _copyText() {
+            const vm = this;
+
+            if (vm.containerId !== null) {
+                vm.$copyText(vm.valueToCopy, document.getElementById(vm.containerId));
+            } else {
+                vm.$copyText(vm.valueToCopy);
+            }
         }
     },
     computed: {

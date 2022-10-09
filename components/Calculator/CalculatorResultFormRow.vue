@@ -10,7 +10,7 @@
             outlined=""
             readonly="">
             <template #append>
-                <CopyButton :value="value" />
+                <CopyButton :value-to-copy="value" />
             </template>
         </v-text-field>
     </FormRow>

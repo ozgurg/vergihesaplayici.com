@@ -9,7 +9,7 @@
             readonly="">
             <template #append>
                 <CopyButton
-                    :value="url"
+                    :value-to-copy="url"
                     container-id="calculatorShareDialogCopyUrl" />
             </template>
         </v-text-field>
