@@ -55,7 +55,7 @@ export default {
     },
     methods: {
         moneyFormat,
-        async load() {
+        async _load() {
             const vm = this;
 
             vm.isLoading = true;
@@ -72,7 +72,7 @@ export default {
     },
     async mounted() {
         const vm = this;
-        await vm.load();
+        await vm._load();
     }
 };
 </script>
