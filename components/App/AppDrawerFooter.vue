@@ -11,7 +11,7 @@
             tarafından açık kaynaklı olarak geliştirilmektedir
         </div>
 
-        <GitHubButton />
+        <GitHubStarButton />
     </footer>
 </template>
 
