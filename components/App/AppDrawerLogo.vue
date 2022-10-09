@@ -18,22 +18,21 @@ export default {
 };
 </script>
 
-<style scoped="">
+<style lang="scss" scoped="">
 .logo {
-    height: 56px;
     padding: 0 16px;
     display: flex;
     align-items: center;
     flex-direction: row;
-    justify-content: center
-}
-
-@media(min-width: 960px) {
-    .logo {
+    justify-content: center;
+    height: 56px;
+    @media(min-width: 960px) {
         height: 64px
     }
 }
+</style>
 
+<style scoped="">
 :deep(svg) {
     width: 190px;
     height: auto
