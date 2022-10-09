@@ -65,11 +65,11 @@ module.exports = {
                 "el",
                 "name",
                 "layout",
+                "head",
                 "data",
                 "methods",
                 "computed",
                 "watch",
-                "head",
                 "mounted"
             ]
         }],

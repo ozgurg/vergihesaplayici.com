@@ -99,6 +99,9 @@ import { numberFormat } from "@/utils/formatter.js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
 
 export default {
+    head() {
+        return this.head;
+    },
     data: () => ({
         icons: {
             mdiShare
@@ -239,10 +242,6 @@ export default {
                 vm.$router.push({ query: vm.form });
             }
         }
-    },
-    head() {
-        const vm = this;
-        return vm.head;
     },
     mounted() {
         const vm = this;

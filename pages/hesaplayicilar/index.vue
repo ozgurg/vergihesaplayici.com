@@ -19,6 +19,9 @@ const meta = {
 };
 
 export default {
+    head() {
+        return this.head;
+    },
     data: () => ({
         head: {
             ...buildHeadTags({
@@ -27,10 +30,6 @@ export default {
                 ogImageName: "ana-sayfa.jpg"
             })
         }
-    }),
-    head() {
-        const vm = this;
-        return vm.head;
-    }
+    })
 };
 </script>
