@@ -1,13 +1,13 @@
 <template>
     <div
         v-bind="$attrs"
-        class="inner-container">
+        class="vh-inner-container">
         <slot />
     </div>
 </template>
 
-<style lang="scss">
-.inner-container {
+<style>
+.vh-inner-container {
     max-width: 900px
 }
 </style>
