@@ -98,7 +98,7 @@
 import { mdiShare } from "@mdi/js";
 import { Registration } from "@/calculators/PhoneTaxCalculator";
 import { PhoneTaxCalculator as calculator } from "@/data/calculators.js";
-import openGraphImage from "@/assets/img/open-graph/phone-tax-calculator.jpg";
+import openGraphImage from "@/assets/img/og/phone-tax-calculator.jpg";
 import { isCurrencyAvailable } from "@/utils/is-currency-available";
 import {
     createCalculatorMatchingPresetIds,

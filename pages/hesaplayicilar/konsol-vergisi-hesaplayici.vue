@@ -83,7 +83,7 @@
 import { mdiShare } from "@mdi/js";
 import ConsoleTaxCalculator from "@/calculators/ConsoleTaxCalculator";
 import { ConsoleTaxCalculator as calculator } from "@/data/calculators.js";
-import openGraphImage from "@/assets/img/open-graph/console-tax-calculator.jpg";
+import openGraphImage from "@/assets/img/og/console-tax-calculator.jpg";
 import { isCurrencyAvailable } from "@/utils/is-currency-available";
 import {
     createCalculatorMatchingPresetIds,
