@@ -1,12 +1,14 @@
 <template>
     <div
         v-bind="$attrs"
-        class="form-row">
-        <div class="form-row__label">
-            <label v-if="label">{{ label }}</label>
+        class="vh-form-row row align-center no-gutters flex-column flex-lg-row">
+        <div class="vh-form-row__label-col col">
+            <label v-if="label">
+                {{ label }}
+            </label>
         </div>
 
-        <div class="form-row__content">
+        <div class="col">
             <slot />
         </div>
     </div>
@@ -24,39 +26,18 @@ export default {
 </script>
 
 <style lang="scss">
-.form-row {
-	@media(min-width: 992px) {
-		display: flex;
-		align-items: center;
-		flex-direction: row
-	}
-	&__label {
-		padding-bottom: 8px;
-		@media(min-width: 992px) {
-			padding-bottom: 0;
-			flex: 0 0 200px;
-			max-width: 200px;
-			display: flex;
-			padding-right: 20px
-		}
-        label {
-            width: 100%;
-            display: block;
-            text-align: left;
-            @media(min-width: 992px) {
-                text-align: right
-            }
+.vh-form-row {
+    gap: 8px;
+    @media(min-width: 1264px) {
+        gap: 24px
+    }
+    &__label-col {
+        @media(min-width: 1264px) {
+            text-align: right;
+            flex: 0 0 200px;
+            max-width: 200px
         }
-	}
-	&__content {
-		@media(min-width: 992px) {
-			display: flex;
-            flex-direction: column;
-			width: 100%;
-			flex-grow: 1;
-			max-width: 100%
-		}
-	}
+    }
 }
 </style>
 
