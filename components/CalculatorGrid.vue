@@ -3,17 +3,14 @@
         v-bind="$attrs"
         dense="">
         <!-- TODO: Replace "index" with something sensible -->
-        <v-col
-            v-for="(_calculator, index) in calculators"
-            :key="index"
-            cols="12"
-            lg="6">
-            <CalculatorCard
+        <template v-for="(_calculator, index) in calculators">
+            <CalculatorGridItem
+                :key="index"
                 :url="_calculator.url"
                 :icon="_calculator.icon"
                 :title="_calculator.title"
                 :description="_calculator.description" />
-        </v-col>
+        </template>
     </v-row>
 </template>
 
