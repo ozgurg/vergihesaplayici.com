@@ -2,11 +2,11 @@
     <v-row
         v-bind="$attrs"
         dense="">
-        <template v-for="currencyCode in currencies">
+        <template v-for="_currencyCode in currencies">
             <v-col
-                :key="currencyCode"
+                :key="_currencyCode"
                 cols="6">
-                <ExchangeRateCard :currency-code="currencyCode" />
+                <ExchangeRateCard :currency-code="_currencyCode" />
             </v-col>
         </template>
     </v-row>
