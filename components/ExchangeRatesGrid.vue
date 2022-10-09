@@ -6,7 +6,7 @@
             <v-col
                 :key="currencyCode"
                 cols="6">
-                <ExchangeRateItem :currency-code="currencyCode" />
+                <ExchangeRateCard :currency-code="currencyCode" />
             </v-col>
         </template>
     </v-row>
