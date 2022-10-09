@@ -10,7 +10,7 @@
             <AppDrawerLogo />
         </template>
 
-        <CalculatorsList
+        <CalculatorList
             title="Hesaplayıcılar"
             shaped="" />
 
