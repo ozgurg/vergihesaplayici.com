@@ -1,28 +1,28 @@
 <template>
-	<div>
+    <div>
         <AppHeader>
             Vergi Hesaplayıcı
         </AppHeader>
 
         <InnerContainer>
-            <p class="mb-4">
+            <p class="mb-10 text-subtitle-1">
                 vergihesaplayici.com, vergi hesaplar.
             </p>
 
             <OsitaIhemeVideo />
 
-            <v-divider class="my-8" />
+            <v-divider class="my-15" />
 
-            <h2 class="mb-2">
+            <h2 class="mb-4">
                 Hesaplayıcılar
             </h2>
             <CalculatorGrid />
         </InnerContainer>
-	</div>
+    </div>
 </template>
 
 <script>
-import openGraphImage from "@/assets/img/og/ana-sayfa.jpg";
+import { buildHeadTags } from "@/utils/build-head-tags.js";
 
 const meta = {
     title: "Vergi Hesaplayıcı",
@@ -30,19 +30,14 @@ const meta = {
 };
 
 export default {
-    layout: "default/index",
     data: () => ({
         head: {
             titleTemplate: null,
-            title: meta.title,
-            meta: [
-                { hid: "title", name: "title", content: meta.title },
-                { hid: "description", name: "description", content: meta.description },
-                { hid: "og:title", name: "og:title", content: meta.title },
-                { hid: "og:description", name: "og:description", content: meta.description },
-                { hid: "og:image", name: "og:image", content: openGraphImage },
-                { name: "twitter:image", content: openGraphImage }
-            ]
+            ...buildHeadTags({
+                title: meta.title,
+                description: meta.description,
+                ogImageName: "ana-sayfa.jpg"
+            })
         }
     }),
     head() {

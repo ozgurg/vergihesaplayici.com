@@ -92,40 +92,51 @@
 
 <script>
 import { mdiShare } from "@mdi/js";
-import openGraphImage from "@/assets/img/og/kdv-hesaplayici.jpg";
-import { VatCalculator as meta } from "@/data/calculators.js";
+import { VatCalculator as calculator } from "@/data/calculators.js";
 import VatCalculator, { Mode } from "@/calculators/VatCalculator.js";
-import { createCalculatorMatchingPresetIds } from "~/utils/find-calculator-matching-presets.js";
+import { createCalculatorMatchingPresetIds } from "@/utils/find-calculator-matching-presets.js";
 import { numberFormat } from "@/utils/formatter.js";
+import { buildHeadTags } from "@/utils/build-head-tags.js";
 
 export default {
-    layout: "default/index",
     data: () => ({
         icons: {
             mdiShare
         },
-        head: {
-            title: meta.title,
-            meta: [
-                { hid: "title", name: "title", content: meta.title },
-                { hid: "description", name: "description", content: meta.description },
-                { hid: "og:title", name: "og:title", content: meta.title },
-                { hid: "og:description", name: "og:description", content: meta.description },
-                { hid: "og:image", name: "og:image", content: openGraphImage },
-                { name: "twitter:image", content: openGraphImage }
-            ]
-        },
+        head: buildHeadTags({
+            title: calculator.title,
+            description: calculator.description,
+            ogImageName: "kdv-hesaplayici.jpg"
+        }),
         ui: {
             tab: 1,
             isShareDialogShown: false,
             presets: [
-                { id: 1, title: "Yüzde 1", form: { rate: 1 } },
-                { id: 2, title: "Yüzde 8", form: { rate: 8 } },
-                { id: 3, title: "Yüzde 18", form: { rate: 18 } }
+                {
+                    id: 1,
+                    title: "Yüzde 1",
+                    form: { rate: 1 }
+                },
+                {
+                    id: 2,
+                    title: "Yüzde 8",
+                    form: { rate: 8 }
+                },
+                {
+                    id: 3,
+                    title: "Yüzde 18",
+                    form: { rate: 18 }
+                }
             ],
             mode: [
-                { title: "KDV hariç fiyattan KDV dahil fiyatı hesapla", value: Mode.TaxFreePriceToTaxAddedPrice },
-                { title: "KDV dahil fiyattan KDV hariç fiyatı hesapla", value: Mode.TaxAddedPriceToTaxFreePrice }
+                {
+                    title: "KDV hariç fiyattan KDV dahil fiyatı hesapla",
+                    value: Mode.TaxFreePriceToTaxAddedPrice
+                },
+                {
+                    title: "KDV dahil fiyattan KDV hariç fiyatı hesapla",
+                    value: Mode.TaxAddedPriceToTaxFreePrice
+                }
             ]
         },
         form: {

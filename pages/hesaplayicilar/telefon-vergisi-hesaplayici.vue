@@ -1,5 +1,5 @@
 <template>
-	<div>
+    <div>
         <AppHeader>{{ head.title }}</AppHeader>
 
         <InnerContainer>
@@ -91,14 +91,13 @@
                 </template>
             </CalculatorResultTabs>
         </InnerContainer>
-	</div>
+    </div>
 </template>
 
 <script>
 import { mdiShare } from "@mdi/js";
 import { Registration } from "@/calculators/PhoneTaxCalculator";
 import { PhoneTaxCalculator as calculator } from "@/data/calculators.js";
-import openGraphImage from "@/assets/img/og/telefon-vergisi-hesaplayici.jpg";
 import { isCurrencyAvailable } from "@/utils/is-currency-available";
 import {
     createCalculatorMatchingPresetIds,
@@ -106,29 +105,29 @@ import {
 } from "@/utils/find-calculator-matching-presets";
 import PhoneTaxCalculator from "@/calculators/PhoneTaxCalculator.js";
 import { moneyFormat } from "@/utils/formatter.js";
+import { buildHeadTags } from "@/utils/build-head-tags.js";
 
 export default {
-    layout: "default/index",
     data: () => ({
         icons: {
             mdiShare
         },
-        head: {
+        head: buildHeadTags({
             title: calculator.title,
-            meta: [
-                { hid: "title", name: "title", content: calculator.title },
-                { hid: "description", name: "description", content: calculator.description },
-                { hid: "og:title", name: "og:title", content: calculator.title },
-                { hid: "og:description", name: "og:description", content: calculator.description },
-                { hid: "og:image", name: "og:image", content: openGraphImage },
-                { name: "twitter:image", content: openGraphImage }
-            ]
-        },
+            description: calculator.description,
+            ogImageName: "telefon-vergisi-hesaplayici.jpg"
+        }),
         ui: {
             presets: calculator.presets,
             registration: [
-                { title: "İthalat yoluyla kayıtlı (Resmi)", value: Registration.Import },
-                { title: "Pasaport yoluyla kayıtlı", value: Registration.Passport }
+                {
+                    title: "İthalat yoluyla kayıtlı (Resmi)",
+                    value: Registration.Import
+                },
+                {
+                    title: "Pasaport yoluyla kayıtlı",
+                    value: Registration.Passport
+                }
             ],
             tab: 1,
             isShareDialogShown: false

@@ -1,15 +1,17 @@
 <template>
-	<div>
-        <AppHeader>{{ head.title }}</AppHeader>
+    <div>
+        <AppHeader>
+            {{ head.title }}
+        </AppHeader>
 
         <InnerContainer>
             <CalculatorGrid />
         </InnerContainer>
-	</div>
+    </div>
 </template>
 
 <script>
-import openGraphImage from "@/assets/img/og/ana-sayfa.jpg";
+import { buildHeadTags } from "@/utils/build-head-tags.js";
 
 const meta = {
     title: "Tüm Hesaplayıcılar",
@@ -19,15 +21,11 @@ const meta = {
 export default {
     data: () => ({
         head: {
-            title: meta.title,
-            meta: [
-                { hid: "title", name: "title", content: meta.title },
-                { hid: "description", name: "description", content: meta.description },
-                { hid: "og:title", name: "og:title", content: meta.title },
-                { hid: "og:description", name: "og:description", content: meta.description },
-                { hid: "og:image", name: "og:image", content: openGraphImage },
-                { name: "twitter:image", content: openGraphImage }
-            ]
+            ...buildHeadTags({
+                title: meta.title,
+                description: meta.description,
+                ogImageName: "ana-sayfa.jpg"
+            })
         }
     }),
     head() {

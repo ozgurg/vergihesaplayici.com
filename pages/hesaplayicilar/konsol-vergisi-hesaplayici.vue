@@ -1,5 +1,5 @@
 <template>
-	<div>
+    <div>
         <AppHeader>{{ head.title }}</AppHeader>
 
         <InnerContainer>
@@ -76,38 +76,31 @@
                 </template>
             </CalculatorResultTabs>
         </InnerContainer>
-	</div>
+    </div>
 </template>
 
 <script>
 import { mdiShare } from "@mdi/js";
 import ConsoleTaxCalculator from "@/calculators/ConsoleTaxCalculator";
 import { ConsoleTaxCalculator as calculator } from "@/data/calculators.js";
-import openGraphImage from "@/assets/img/og/konsol-vergisi-hesaplayici.jpg";
 import { isCurrencyAvailable } from "@/utils/is-currency-available";
 import {
     createCalculatorMatchingPresetIds,
     findCalculatorMatchingPresets
 } from "@/utils/find-calculator-matching-presets";
 import { moneyFormat } from "@/utils/formatter.js";
+import { buildHeadTags } from "@/utils/build-head-tags.js";
 
 export default {
-    layout: "default/index",
     data: () => ({
         icons: {
             mdiShare
         },
-        head: {
+        head: buildHeadTags({
             title: calculator.title,
-            meta: [
-                { hid: "title", name: "title", content: calculator.title },
-                { hid: "description", name: "description", content: calculator.description },
-                { hid: "og:title", name: "og:title", content: calculator.title },
-                { hid: "og:description", name: "og:description", content: calculator.description },
-                { hid: "og:image", name: "og:image", content: openGraphImage },
-                { name: "twitter:image", content: openGraphImage }
-            ]
-        },
+            description: calculator.description,
+            ogImageName: "konsol-vergisi-hesaplayici.jpg"
+        }),
         ui: {
             presets: calculator.presets,
             tab: 1,
