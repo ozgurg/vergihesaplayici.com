@@ -4,54 +4,51 @@
         elevation="0"
         class="px-4 py-3">
         <v-card-subtitle class="pa-0 ma-0 mb-1">
-            1 {{ currency }} =
+            1 {{ currencyCode }} =
         </v-card-subtitle>
 
-        <v-skeleton-loader
-            v-if="isLoading"
-            class="mx-auto mb-0 rounded"
-            max-height="32"
-            width="100%"
-            type="image" />
-
-        <v-card-title
-            v-else
-            class="pa-0 ma-0">
-            <template v-if="exchangeRate !== null">
-                {{ moneyFormat(exchangeRate.rate, "TRY") }}
-            </template>
-
-            <div v-else>
-                <v-tooltip bottom="">
-                    <template #activator="{ on, attrs }">
-                        <v-icon
-                            v-on="on"
-                            v-bind="attrs"
-                            color="red">
-                            {{ icons.mdiAlert }}
+        <template v-if="isLoading">
+            <v-skeleton-loader
+                class="mb-0 rounded w-100"
+                max-height="32"
+                width="100%"
+                type="image" />
+        </template>
+        <template v-else>
+            <v-card-title class="pa-0 ma-0">
+                <template v-if="exchangeRate">
+                    {{ moneyFormat(exchangeRate.rate, "TRY") }}
+                </template>
+                <template v-else>
+                    <!--
+                    Wrapping with "div" makes height same as "v-skeleton loader".
+                    This prevents layout shifting.
+                    -->
+                    <div>
+                        <v-icon color="red">
+                            {{ icons.mdiAlertCircle }}
                         </v-icon>
-                    </template>
-                    <span>Kur yüklenirken bir hata oluştu</span>
-                </v-tooltip>
-            </div>
-        </v-card-title>
+                    </div>
+                </template>
+            </v-card-title>
+        </template>
     </v-card>
 </template>
 
 <script>
-import { mdiAlert } from "@mdi/js";
+import { mdiAlertCircle } from "@mdi/js";
 import { moneyFormat } from "@/utils/formatter.js";
 
 export default {
     data: () => ({
         icons: {
-            mdiAlert
+            mdiAlertCircle
         },
-        isLoading: false,
+        isLoading: true,
         exchangeRate: null
     }),
     props: {
-        currency: {
+        currencyCode: {
             type: String,
             required: true
         }
@@ -63,16 +60,14 @@ export default {
 
             vm.isLoading = true;
 
-            await vm.$store.dispatch("exchange-rates/loadExchangeRateFromApi", vm.currency)
+            await vm.$store.dispatch("exchange-rates/loadExchangeRateFromApi", vm.currencyCode)
                 .then(exchangeRate => {
                     vm.exchangeRate = exchangeRate;
                 }).catch(() => {
                     // To disable default error behavior
                 });
 
-            setTimeout(() => {
-                vm.isLoading = false;
-            }, 100);
+            vm.isLoading = false;
         }
     },
     async mounted() {
