@@ -2,7 +2,7 @@
     <!-- TODO: Make v-chip one -->
     <div
         v-bind="$attrs"
-        class="chips">
+        class="vh-presets">
         <template v-for="preset in presets">
             <template v-if="$scopedSlots.tooltip">
                 <v-tooltip
@@ -62,11 +62,9 @@ export default {
 </script>
 
 <style scoped="">
-.chips {
-    margin: -4px
-}
-
-:deep(.v-chip) {
-    margin: 4px
+.vh-presets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px
 }
 </style>

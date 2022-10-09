@@ -1,6 +1,6 @@
 <template>
     <div v-bind="$attrs">
-        <CalculatorFormRow class="result-tab mb-4">
+        <FormRow class="result-tab mb-4">
             <v-tabs
                 @change="emit($event)"
                 :value="value"
@@ -19,7 +19,7 @@
                     Yorumlar
                 </v-tab>
             </v-tabs>
-        </CalculatorFormRow>
+        </FormRow>
 
 		<v-tabs-items :value="value">
             <v-tab-item :transition="false">

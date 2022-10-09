@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import openGraphImage from "@/assets/img/open-graph/index.jpg";
+import openGraphImage from "@/assets/img/og/ana-sayfa.jpg";
 
 const meta = {
     title: "Vergi Hesaplayıcı",

@@ -3,7 +3,7 @@
         <AppHeader>{{ head.title }}</AppHeader>
 
         <InnerContainer>
-            <CalculatorFormRow class="mb-4">
+            <FormRow class="mb-4">
                 <CalculatorPresets
                     @click="choosePreset($event)"
                     :value="matchingPresetIds"
@@ -12,9 +12,9 @@
                         {{ moneyFormat(preset.form.price, preset.form.currency) }}
                     </template>
                 </CalculatorPresets>
-            </CalculatorFormRow>
+            </FormRow>
 
-            <CalculatorFormRow
+            <FormRow
                 class="mb-10"
                 label="Telefon fiyatı">
                 <v-text-field
@@ -33,9 +33,9 @@
                             style="width:110px" />
                     </template>
                 </v-text-field>
-            </CalculatorFormRow>
+            </FormRow>
 
-            <CalculatorFormRow label="Kayıt yolu">
+            <FormRow label="Kayıt yolu">
                 <v-radio-group
                     v-model="form.registration"
                     hide-details=""
@@ -46,7 +46,7 @@
                         :label="item.title"
                         :value="item.value" />
                 </v-radio-group>
-            </CalculatorFormRow>
+            </FormRow>
 
             <CalculatorResultTabs
                 v-model="ui.tab"
@@ -63,11 +63,11 @@
                         :label="item.key"
                         class="mb-5" />
 
-                    <CalculatorFormRow class="mb-6">
+                    <FormRow class="mb-6">
                         <CalculatorMinimumWageAlert :price="results.prices.taxAdded" />
-                    </CalculatorFormRow>
+                    </FormRow>
 
-                    <CalculatorFormRow>
+                    <FormRow>
                         <div>
                             <v-btn
                                 @click="ui.isShareDialogShown = true"
@@ -87,7 +87,7 @@
                             :form-data="form"
                             :title="head.title"
                             :matching-presets="matchingPresets" />
-                    </CalculatorFormRow>
+                    </FormRow>
                 </template>
             </CalculatorResultTabs>
         </InnerContainer>
@@ -98,7 +98,7 @@
 import { mdiShare } from "@mdi/js";
 import { Registration } from "@/calculators/PhoneTaxCalculator";
 import { PhoneTaxCalculator as calculator } from "@/data/calculators.js";
-import openGraphImage from "@/assets/img/open-graph/phone-tax-calculator.jpg";
+import openGraphImage from "@/assets/img/og/telefon-vergisi-hesaplayici.jpg";
 import { isCurrencyAvailable } from "@/utils/is-currency-available";
 import {
     createCalculatorMatchingPresetIds,
