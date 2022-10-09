@@ -3,7 +3,7 @@
         <AppHeader>{{ head.title }}</AppHeader>
 
         <InnerContainer>
-            <CalculatorFormRow class="mb-10" label="Hesaplama modu">
+            <FormRow class="mb-10" label="Hesaplama modu">
                 <v-radio-group
                     v-model="form.mode"
                     hide-details=""
@@ -14,9 +14,9 @@
                         :label="item.title"
                         :value="item.value" />
                 </v-radio-group>
-            </CalculatorFormRow>
+            </FormRow>
 
-            <CalculatorFormRow
+            <FormRow
                 class="mb-10"
                 :label="priceLabel">
                 <v-text-field
@@ -28,16 +28,16 @@
                     step="any"
                     min="1"
                     type="number" />
-            </CalculatorFormRow>
+            </FormRow>
 
-            <CalculatorFormRow class="mb-4">
+            <FormRow class="mb-4">
                 <CalculatorPresets
                     @click="choosePreset($event)"
                     :value="matchingPresetIds"
                     :presets="ui.presets" />
-            </CalculatorFormRow>
+            </FormRow>
 
-            <CalculatorFormRow
+            <FormRow
                 label="KDV oranı">
                 <v-text-field
                     v-model.number="form.rate"
@@ -49,7 +49,7 @@
                     min="1"
                     type="number"
                     aria-label="KDV oranı" />
-            </CalculatorFormRow>
+            </FormRow>
 
             <CalculatorResultTabs
                 v-model="ui.tab"
@@ -63,7 +63,7 @@
                         :label="item.key"
                         class="mb-5" />
 
-                    <CalculatorFormRow>
+                    <FormRow>
                         <div>
                             <v-btn
                                 @click="ui.isShareDialogShown = true"
@@ -83,7 +83,7 @@
                             :form-data="form"
                             :title="head.title"
                             :matching-presets="matchingPresets" />
-                    </CalculatorFormRow>
+                    </FormRow>
                 </template>
             </CalculatorResultTabs>
         </InnerContainer>

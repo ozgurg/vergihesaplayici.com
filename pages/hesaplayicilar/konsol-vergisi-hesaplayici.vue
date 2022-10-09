@@ -3,7 +3,7 @@
         <AppHeader>{{ head.title }}</AppHeader>
 
         <InnerContainer>
-            <CalculatorFormRow class="mb-4">
+            <FormRow class="mb-4">
                 <CalculatorPresets
                     @click="choosePreset($event)"
                     :value="matchingPresetIds"
@@ -12,9 +12,9 @@
                         {{ moneyFormat(preset.form.price, preset.form.currency) }}
                     </template>
                 </CalculatorPresets>
-            </CalculatorFormRow>
+            </FormRow>
 
-            <CalculatorFormRow label="Konsol fiyatı">
+            <FormRow label="Konsol fiyatı">
                 <v-text-field
                     v-model.number="form.price"
                     :prefix="selectedCurrency.sign"
@@ -31,7 +31,7 @@
                             style="width:110px" />
                     </template>
                 </v-text-field>
-            </CalculatorFormRow>
+            </FormRow>
 
             <CalculatorResultTabs
                 v-model="ui.tab"
@@ -48,11 +48,11 @@
                         :label="item.key"
                         class="mb-5" />
 
-                    <CalculatorFormRow class="mb-6">
+                    <FormRow class="mb-6">
                         <CalculatorMinimumWageAlert :price="results.prices.taxAdded" />
-                    </CalculatorFormRow>
+                    </FormRow>
 
-                    <CalculatorFormRow>
+                    <FormRow>
                         <div>
                             <v-btn
                                 @click="ui.isShareDialogShown = true"
@@ -72,7 +72,7 @@
                             :form-data="form"
                             :title="head.title"
                             :matching-presets="matchingPresets" />
-                    </CalculatorFormRow>
+                    </FormRow>
                 </template>
             </CalculatorResultTabs>
         </InnerContainer>
