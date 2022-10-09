@@ -7,7 +7,7 @@
             v-for="(_calculator, index) in calculators"
             :key="index"
             cols="12"
-            md="6">
+            lg="6">
             <CalculatorCard
                 :url="_calculator.url"
                 :icon="_calculator.icon"
