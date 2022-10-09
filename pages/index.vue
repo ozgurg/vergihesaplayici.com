@@ -16,7 +16,7 @@
             <h2 class="mb-2">
                 Hesaplayıcılar
             </h2>
-            <CalculatorsGrid />
+            <CalculatorGrid />
         </InnerContainer>
 	</div>
 </template>
