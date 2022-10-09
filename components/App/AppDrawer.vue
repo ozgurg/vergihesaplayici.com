@@ -17,7 +17,7 @@
         <v-list class="mb-auto">
             <v-subheader>Döviz kurları</v-subheader>
             <v-list-item>
-                <ExchangeRatesGrid />
+                <ExchangeRateGrid />
             </v-list-item>
         </v-list>
 

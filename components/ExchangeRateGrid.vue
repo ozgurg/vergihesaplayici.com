@@ -3,11 +3,9 @@
         v-bind="$attrs"
         dense="">
         <template v-for="_currencyCode in currencies">
-            <v-col
+            <ExchangeRateGridItem
                 :key="_currencyCode"
-                cols="6">
-                <ExchangeRateCard :currency-code="_currencyCode" />
-            </v-col>
+                :currency-code="_currencyCode" />
         </template>
     </v-row>
 </template>
