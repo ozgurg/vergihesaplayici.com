@@ -1,5 +1,5 @@
 <template>
-	<div>
+    <div>
         <AppHeader>{{ title }}</AppHeader>
 
         <v-alert
@@ -12,6 +12,19 @@
 
 <script>
 export default {
+    head() {
+        const vm = this;
+        return {
+            title: vm.title,
+            meta: [
+                {
+                    hid: "title",
+                    name: "title",
+                    content: vm.title
+                }
+            ]
+        };
+    },
     props: {
         error: {
             type: Object,
@@ -37,15 +50,6 @@ export default {
 
             return vm.error.message;
         }
-    },
-    head() {
-        const vm = this;
-        return {
-            title: vm.title,
-            meta: [
-                { hid: "title", name: "title", content: vm.title }
-            ]
-        };
     }
 };
 </script>
