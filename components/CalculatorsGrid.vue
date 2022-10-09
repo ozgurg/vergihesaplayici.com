@@ -8,25 +8,11 @@
             :key="index"
             cols="12"
             md="6">
-            <v-card
-                :to="_calculator.url"
-                link=""
-                outlined=""
-                class="pa-8 d-flex flex-column justify-space-between h-100">
-                <v-icon
-                    class="primary--text"
-                    size="64">
-                    {{ _calculator.icon }}
-                </v-icon>
-
-                <h2 class="text-h6 mt-4 mb-2 text--primary h-100">
-                    {{ _calculator.title }}
-                </h2>
-
-                <p class="text-subtitle-2 mb-0 text--secondary">
-                    {{ _calculator.description }}
-                </p>
-            </v-card>
+            <CalculatorCard
+                :url="_calculator.url"
+                :icon="_calculator.icon"
+                :title="_calculator.title"
+                :description="_calculator.description" />
         </v-col>
     </v-row>
 </template>
