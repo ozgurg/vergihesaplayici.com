@@ -10,15 +10,15 @@
             <v-card
                 :to="calculator.url"
                 link=""
-                class="pa-8 overflow-hidden"
-                elevation="4">
+                outlined=""
+                class="pa-8 d-flex flex-column justify-space-between h-100">
                 <v-icon
                     class="primary--text"
                     size="64">
                     {{ calculator.icon }}
                 </v-icon>
 
-                <h2 class="text-h6 mt-4 mb-2 text--primary">
+                <h2 class="text-h6 mt-4 mb-2 text--primary h-100">
                     {{ calculator.title }}
                 </h2>
 
