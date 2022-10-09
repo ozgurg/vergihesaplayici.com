@@ -3,9 +3,9 @@
         v-bind="$attrs"
         class="vh-form-row row align-center no-gutters flex-column flex-lg-row">
         <div class="vh-form-row__label-col col">
-            <label v-if="label">
-                {{ label }}
-            </label>
+            <template v-if="label">
+                <label>{{ label }}</label>
+            </template>
         </div>
 
         <div class="col">
