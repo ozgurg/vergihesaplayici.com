@@ -1,5 +1,5 @@
 <template>
-	<v-navigation-drawer
+    <v-navigation-drawer
         v-bind="$attrs"
         v-model="isDrawerOpen"
         :permanent="$vuetify.breakpoint.mdAndUp"
@@ -12,21 +12,12 @@
 
         <AppDrawerCalculatorList shaped="" />
 
-        <v-divider />
-
         <v-list class="mb-auto">
-            <v-subheader>Kurlar</v-subheader>
+            <v-subheader>Döviz kurları</v-subheader>
             <v-list-item>
                 <ExchangeRates />
             </v-list-item>
         </v-list>
-
-        <AppsFromDeveloperList
-            class="mt-8"
-            shaped=""
-            aria-label="Geliştiriciden Uygulamalar" />
-
-        <v-divider />
 
         <AppDrawerFooter />
     </v-navigation-drawer>
