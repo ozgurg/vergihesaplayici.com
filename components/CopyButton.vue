@@ -3,17 +3,33 @@
         v-ripple="false"
         @click="copy()"
         v-bind="$attrs"
-        :class="{'pointer-events-none': isCopied}"
-        plain=""
-        text=""
-        tile="">
-        {{ text }}
+        class="vh-copy-button ps-3 pe-4"
+        :class="{'vh-copy-button--copied': isCopied}"
+        :aria-label="titleByCopyState"
+        plain="">
+        <span class="vh-copy-button__icon-1">
+            <v-icon size="20">
+                {{ icons.mdiContentCopy }}
+            </v-icon>
+        </span>
+
+        <span class="vh-copy-button__icon-2">
+            <v-icon size="24">
+                {{ icons.mdiCheck }}
+            </v-icon>
+        </span>
     </v-btn>
 </template>
 
 <script>
+import { mdiCheck, mdiContentCopy } from "@mdi/js";
+
 export default {
     data: () => ({
+        icons: {
+            mdiCheck,
+            mdiContentCopy
+        },
         copiedTimeout: null,
         isCopied: false
     }),
@@ -31,7 +47,10 @@ export default {
         copy() {
             const vm = this;
 
-            vm._copyText();
+            // Prevent multiple copying
+            if (vm.isCopied) return;
+
+            vm._copyValue();
 
             if (vm.copiedTimeout !== null) {
                 clearTimeout(vm.copiedTimeout);
@@ -41,9 +60,9 @@ export default {
 
             vm.copiedTimeout = setTimeout(() => {
                 vm.isCopied = false;
-            }, 1000);
+            }, 1225); // 1000 + $transition-duration
         },
-        _copyText() {
+        _copyValue() {
             const vm = this;
 
             if (vm.containerId !== null) {
@@ -54,10 +73,52 @@ export default {
         }
     },
     computed: {
-        text() {
+        titleByCopyState() {
             const vm = this;
             return vm.isCopied ? "Kopyalandı" : "Kopyala";
         }
     }
 };
 </script>
+
+<style lang="scss" scoped="">
+$transition-duration: .225s;
+$transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+
+.vh-copy-button {
+    $self: &;
+    &.v-btn { // Override Vuetify's value
+        min-width: unset !important
+    }
+    &--copied {
+        // TODO: Make icon white
+        #{$self}__icon-1 {
+            opacity: 0
+        }
+        #{$self}__icon-2 {
+            opacity: 1
+        }
+    }
+    &__icon-2 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+        color: #fff !important;
+        opacity: 0
+    }
+    &__icon-1, &__icon-2 {
+        transition: opacity $transition-duration $transition-timing-function;
+        @media (prefers-reduced-motion) {
+            transition: none
+        }
+    }
+}
+</style>

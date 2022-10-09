@@ -10,6 +10,9 @@
             outlined=""
             readonly="">
             <template #append>
+                <div class="py-2">
+                    <v-divider vertical="" />
+                </div>
                 <CopyButton :value-to-copy="value" />
             </template>
         </v-text-field>
