@@ -9,7 +9,7 @@
                 vergihesaplayici.com, vergi hesaplar.
             </p>
 
-            <OsitaIheme />
+            <OsitaIhemeVideo />
 
             <v-divider class="my-8" />
 
