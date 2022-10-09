@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import openGraphImage from "@/assets/img/og/index.jpg";
+import openGraphImage from "@/assets/img/og/ana-sayfa.jpg";
 
 const meta = {
     title: "Tüm Hesaplayıcılar",

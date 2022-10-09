@@ -92,7 +92,7 @@
 
 <script>
 import { mdiShare } from "@mdi/js";
-import openGraphImage from "@/assets/img/og/vat-calculator.jpg";
+import openGraphImage from "@/assets/img/og/kdv-hesaplayici.jpg";
 import { VatCalculator as meta } from "@/data/calculators.js";
 import VatCalculator, { Mode } from "@/calculators/VatCalculator.js";
 import { createCalculatorMatchingPresetIds } from "~/utils/find-calculator-matching-presets.js";
