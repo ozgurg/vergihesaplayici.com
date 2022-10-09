@@ -4,7 +4,6 @@
         lg="6">
         <v-card
             :to="url"
-            link=""
             outlined=""
             class="pa-8 d-flex flex-column justify-space-between h-100">
             <v-icon
