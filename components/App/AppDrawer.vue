@@ -10,7 +10,9 @@
             <AppDrawerLogo />
         </template>
 
-        <AppDrawerCalculatorList shaped="" />
+        <CalculatorsList
+            title="Hesaplayıcılar"
+            shaped="" />
 
         <v-list class="mb-auto">
             <v-subheader>Döviz kurları</v-subheader>
