@@ -3,7 +3,7 @@
         <AppHeader>{{ head.title }}</AppHeader>
 
         <InnerContainer>
-            <CalculatorGrid />
+            <CalculatorsGrid />
         </InnerContainer>
 	</div>
 </template>
