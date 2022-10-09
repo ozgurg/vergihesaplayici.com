@@ -5,6 +5,7 @@
         :value="value"
         :items="currencies"
         hide-details=""
+        filled=""
         outlined=""
         aria-label="Para birimi" />
 </template>

@@ -19,6 +19,7 @@
                     v-model.number="form.price"
                     :prefix="selectedCurrency.sign"
                     hide-details=""
+                    filled=""
                     outlined=""
                     step="any"
                     min="1"
