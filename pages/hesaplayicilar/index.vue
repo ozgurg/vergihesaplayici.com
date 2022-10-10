@@ -23,13 +23,11 @@ export default {
         return this.head;
     },
     data: () => ({
-        head: {
-            ...buildHeadTags({
-                title: meta.title,
-                description: meta.description,
-                ogImageName: "ana-sayfa.jpg"
-            })
-        }
+        head: buildHeadTags({
+            title: meta.title,
+            description: meta.description,
+            ogImageName: "ana-sayfa.jpg"
+        })
     })
 };
 </script>
