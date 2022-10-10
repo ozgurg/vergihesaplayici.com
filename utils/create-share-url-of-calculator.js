@@ -4,12 +4,12 @@ import { getFullUrl } from "@/utils/get-full-url.js";
 /**
  * @param {string} calculatorPath
  * @param {object} params
- * @param {boolean} willIncludeParams
+ * @param {boolean} includeParams
  * @returns {string}
  */
-const createShareUrlOfCalculator = (calculatorPath, params, willIncludeParams) => {
+const createShareUrlOfCalculator = (calculatorPath, params, includeParams) => {
     const urlWithCalculatorPath = getFullUrl(calculatorPath);
-    return willIncludeParams ? `${urlWithCalculatorPath}?${objectToQueryString(params)}` : urlWithCalculatorPath;
+    return includeParams ? `${urlWithCalculatorPath}?${objectToQueryString(params)}` : urlWithCalculatorPath;
 };
 
 export {

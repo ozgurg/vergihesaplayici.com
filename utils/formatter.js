@@ -2,9 +2,7 @@
  * @param {number} price
  * @returns {number}
  */
-const normalizePrice = price => {
-    return parseFloat(price.toFixed(2));
-};
+const normalizePrice = price => parseFloat(price.toFixed(2));
 
 /**
  * @param {string | number} price
