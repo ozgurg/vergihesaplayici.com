@@ -5,7 +5,7 @@
         text=""
         type="warning">
         Ürünlerin ülkeye giriş fiyatını bilmediğimiz için yurtdışı satış fiyatından tahmini olarak
-        hesaplanmıştır. Türkiye'deki satış fiyatı muhtemelen daha az olacaktır.
+        hesaplanmıştır.<br />Türkiye'deki satış fiyatı muhtemelen daha az olacaktır.
     </v-alert>
 </template>
 
