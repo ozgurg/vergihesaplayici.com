@@ -1,8 +1,7 @@
 <template>
     <v-app-bar
         v-bind="$attrs"
-        elevation="0"
-        flat="">
+        elevation="0">
         <v-app-bar-nav-icon
             @click="toggleDrawer()"
             aria-label="Menüyü aç" />
