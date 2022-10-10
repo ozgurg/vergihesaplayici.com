@@ -3,8 +3,8 @@
     <nuxt-link
         v-html="logo"
         v-bind="$attrs"
+        class="vh-logo"
         aria-label="Ana sayfaya git"
-        class="logo"
         to="/" />
 </template>
 
@@ -18,9 +18,9 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped="">
-.logo {
-    padding: 0 16px;
+<style lang="scss">
+.vh-logo {
+    padding: 0 1rem;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -29,12 +29,9 @@ export default {
     @media(min-width: 960px) {
         height: 64px
     }
-}
-</style>
-
-<style scoped="">
-:deep(svg) {
-    width: 190px;
-    height: auto
+    svg {
+        width: 192px;
+        height: auto
+    }
 }
 </style>
