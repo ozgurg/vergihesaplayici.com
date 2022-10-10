@@ -2,8 +2,7 @@
     <v-app-bar
         v-bind="$attrs"
         elevation="0"
-        flat=""
-        class="v-bar--underline">
+        flat="">
         <v-app-bar-nav-icon
             @click="toggleDrawer()"
             aria-label="Menüyü aç" />
