@@ -1,12 +1,25 @@
 <template>
     <v-alert
         v-bind="$attrs"
-        dense=""
+        :icon="icon"
         text=""
-        border="left"
         type="warning">
-        Para birimi TRY olduğu için hesaplama satış fiyatı üzerinden yapıldı.
-        <br />
-        Vergiler olmasaydı tahminen ne kadar ödeyeceğinizi "Vergisiz fiyat" alanından görebilirsiniz.
+        Para birimi TRY olduğu için tersten hesaplama yapıldı.
     </v-alert>
 </template>
+
+<script>
+import { mdiBackupRestore } from "@mdi/js";
+
+export default {
+    data: () => ({
+        icon: mdiBackupRestore
+    })
+};
+</script>
+
+<style scoped="">
+:deep(.v-alert__icon) {
+    align-self: center
+}
+</style>
