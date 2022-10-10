@@ -17,38 +17,3 @@ body {
 .position-relative {
     position: relative
 }
-
-
-// Vuetify customization
-$radius: 12px;
-
-.v-input--is-readonly {
-    pointer-events: none;
-    .v-input__append-inner {
-        pointer-events: all
-    }
-}
-
-.v-btn {
-    &:not(.v-btn--round):not(.v-btn--rounded) {
-        text-transform: unset;
-        letter-spacing: 0;
-        border-radius: $radius !important
-    }
-}
-
-.v-text-field--outlined, .v-text-field--solo {
-    border-radius: $radius !important
-}
-
-.v-sheet.v-card:not(.v-card--flat) {
-    border-radius: $radius !important
-}
-
-.v-alert:not(.v-sheet--tile) {
-    border-radius: $radius !important
-}
-
-.v-alert__icon {
-    align-self: center
-}

@@ -1,0 +1,15 @@
+$border-radius-root: 12px;
+
+$btn-letter-spacing: 0;
+$btn-text-transform: unset;
+
+.v-alert__icon {
+    align-self: center
+}
+
+.v-input--is-readonly {
+    pointer-events: none;
+    .v-input__append-inner {
+        pointer-events: all
+    }
+}

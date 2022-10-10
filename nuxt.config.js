@@ -121,6 +121,7 @@ export default {
         throttle: 600
     },
     vuetify: {
+        customVariables: ["@/assets/scss/vuetify-customization.scss"],
         treeShake: true,
         defaultAssets: {
             font: {
