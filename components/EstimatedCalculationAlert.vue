@@ -18,9 +18,3 @@ export default {
     })
 };
 </script>
-
-<style scoped="">
-:deep(.v-alert__icon) {
-    align-self: center
-}
-</style>
