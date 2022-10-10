@@ -27,7 +27,7 @@
             </v-tab-item>
 
             <v-tab-item :transition="false">
-                <CalculatorComments />
+                <DisqusComments />
             </v-tab-item>
         </v-tabs-items>
     </div>
