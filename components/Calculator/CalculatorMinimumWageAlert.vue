@@ -1,9 +1,8 @@
 <template>
     <v-alert
         v-bind="$attrs"
-        dense=""
+        :icon="icon"
         text=""
-        border="left"
         type="info">
         Türkiye'de asgari ücretle ({{ minimumWageFormatted }}) çalışan birisi yemeden içmeden bu ürünü
         <b>{{ minimumWageMonthCount }}</b> ayda satın alabilir.
@@ -11,11 +10,13 @@
 </template>
 
 <script>
+import { mdiCreditCardClock } from "@mdi/js";
 import { calculateMinimumWageMonthCount } from "@/utils/calculate-minimum-wage-month-count";
 import { moneyFormat } from "@/utils/formatter.js";
 
 export default {
     data: () => ({
+        icon: mdiCreditCardClock,
         minimumWage: process.env.MINIMUM_WAGE
     }),
     props: {
@@ -39,3 +40,9 @@ export default {
     }
 };
 </script>
+
+<style scoped="">
+:deep(.v-alert__icon) {
+    align-self: center
+}
+</style>
