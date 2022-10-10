@@ -7,7 +7,7 @@
             aria-label="Menüyü aç" />
 
         <div class="d-flex justify-center flex-grow-1">
-            <AppDrawerLogo style="margin-left:-48px" />
+            <AppBarLogo />
         </div>
     </v-app-bar>
 </template>
