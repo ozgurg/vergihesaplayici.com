@@ -1,6 +1,6 @@
 <template>
     <div>
-        <AppHeader>{{ head.title }}</AppHeader>
+        <PageTitle>{{ head.title }}</PageTitle>
 
         <InnerContainer>
             <FormRow class="mb-10" label="Hesaplama modu">

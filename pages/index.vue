@@ -1,8 +1,8 @@
 <template>
     <div>
-        <AppHeader>
+        <PageTitle>
             Vergi Hesaplayıcı
-        </AppHeader>
+        </PageTitle>
 
         <InnerContainer>
             <p class="mb-10 text-subtitle-1">

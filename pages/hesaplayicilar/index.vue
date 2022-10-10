@@ -1,8 +1,8 @@
 <template>
     <div>
-        <AppHeader>
+        <PageTitle>
             {{ head.title }}
-        </AppHeader>
+        </PageTitle>
 
         <InnerContainer>
             <CalculatorGrid />

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <AppHeader>{{ title }}</AppHeader>
+        <PageTitle>{{ title }}</PageTitle>
 
         <v-alert
             border="left"
