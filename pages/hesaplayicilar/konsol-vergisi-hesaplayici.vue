@@ -49,7 +49,7 @@
                         class="mb-5" />
 
                     <FormRow class="mb-6">
-                        <CalculatorMinimumWageAlert :price="results.prices.taxAdded" />
+                        <MinimumWageAlert :price="results.prices.taxAdded" />
                     </FormRow>
 
                     <FormRow>
