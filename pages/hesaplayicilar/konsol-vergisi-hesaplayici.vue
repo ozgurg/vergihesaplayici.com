@@ -38,7 +38,7 @@
                 :show-results="shouldShowResults"
                 class="mt-10">
                 <template v-if="shouldShowResults">
-                    <CalculatorCalculatedFromSalePriceAlert v-if="form.currency === 'TRY'" />
+                    <ReverseCalculationAlert v-if="form.currency === 'TRY'" />
                     <EstimatedCalculationAlert v-else />
 
                     <CalculatorResultFormRow
