@@ -2,7 +2,7 @@ import {
     createCalculatorMatchingPresetIds,
     createCalculatorMatchingPresetTitles,
     findCalculatorMatchingPresets
-} from "@/utils/find-calculator-matching-presets";
+} from "@/utils/find-calculator-matching-presets.js";
 
 describe("utils/find-calculator-matching-presets", () => {
     describe("findCalculatorMatchingPresets", () => {

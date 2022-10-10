@@ -167,7 +167,7 @@
 <script>
 import { mdiCheck, mdiContentCopy, mdiDownload } from "@mdi/js";
 import { version } from "@/package.json";
-import { downloadFile } from "@/utils/download-file";
+import { downloadFile } from "@/utils/download-file.js";
 import { dataUrlToBlob } from "@/utils/data-url-to-blob.js";
 import { createCalculatorMatchingPresetTitles } from "@/utils/find-calculator-matching-presets.js";
 

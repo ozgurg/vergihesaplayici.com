@@ -1,4 +1,4 @@
-import { objectToQueryString } from "@/utils/object-to-query-string";
+import { objectToQueryString } from "@/utils/object-to-query-string.js";
 import { getFullUrl } from "@/utils/get-full-url.js";
 
 /**

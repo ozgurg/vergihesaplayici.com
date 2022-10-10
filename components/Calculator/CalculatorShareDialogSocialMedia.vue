@@ -78,7 +78,7 @@
 
 <script>
 import { mdiEmail, mdiExportVariant, mdiFacebook, mdiReddit, mdiTwitter, mdiWhatsapp } from "@mdi/js";
-import { createShareUrlOfCalculator } from "@/utils/create-share-url-of-calculator";
+import { createShareUrlOfCalculator } from "@/utils/create-share-url-of-calculator.js";
 import {
     createEmailShareUrl,
     createFacebookShareUrl,
@@ -86,7 +86,7 @@ import {
     createTelegramShareUrl,
     createTwitterShareUrl,
     createWhatsAppShareUrl
-} from "@/utils/create-social-media-share-url";
+} from "@/utils/create-social-media-share-url.js";
 
 export default {
     data: () => ({

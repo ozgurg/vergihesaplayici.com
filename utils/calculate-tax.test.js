@@ -2,7 +2,7 @@ import {
     calculateTaxFromTaxAddedPrice,
     calculateTaxFromTaxFreePrice,
     calculateTotalTaxRate
-} from "@/utils/calculate-tax";
+} from "@/utils/calculate-tax.js";
 
 describe("utils/calculate-tax", () => {
     describe("calculateTaxFromTaxAddedPrice", () => {

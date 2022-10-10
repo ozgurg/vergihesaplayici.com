@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { ConsoleTaxCalculator, PhoneTaxCalculator, VatCalculator } from "@/data/calculators";
+import { ConsoleTaxCalculator, PhoneTaxCalculator, VatCalculator } from "@/data/calculators.js";
 import { buildBreadcrumbsFromPath } from "@/utils/build-breadcrumbs-from-path.js";
 
 export default {

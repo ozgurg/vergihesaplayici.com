@@ -5,7 +5,7 @@ import {
     createTelegramShareUrl,
     createTwitterShareUrl,
     createWhatsAppShareUrl
-} from "@/utils/create-social-media-share-url";
+} from "@/utils/create-social-media-share-url.js";
 
 describe("utils/create-social-media-share-url", () => {
     const url = "https://vergihesaplayici.com";

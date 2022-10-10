@@ -1,4 +1,4 @@
-import { objectToQueryString } from "@/utils/object-to-query-string";
+import { objectToQueryString } from "@/utils/object-to-query-string.js";
 
 describe("utils/object-to-query-string", () => {
     const object = {

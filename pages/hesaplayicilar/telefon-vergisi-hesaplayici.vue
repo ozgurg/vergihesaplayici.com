@@ -96,14 +96,13 @@
 
 <script>
 import { mdiShare } from "@mdi/js";
-import { Registration } from "@/calculators/PhoneTaxCalculator";
+import PhoneTaxCalculator, { Registration } from "@/calculators/PhoneTaxCalculator.js";
 import { PhoneTaxCalculator as calculator } from "@/data/calculators.js";
-import { isCurrencyAvailable } from "@/utils/is-currency-available";
+import { isCurrencyAvailable } from "@/utils/is-currency-available.js";
 import {
     createCalculatorMatchingPresetIds,
     findCalculatorMatchingPresets
-} from "@/utils/find-calculator-matching-presets";
-import PhoneTaxCalculator from "@/calculators/PhoneTaxCalculator.js";
+} from "@/utils/find-calculator-matching-presets.js";
 import { moneyFormat } from "@/utils/formatter.js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
 

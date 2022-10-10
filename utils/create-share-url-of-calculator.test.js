@@ -1,4 +1,4 @@
-import { createShareUrlOfCalculator } from "@/utils/create-share-url-of-calculator";
+import { createShareUrlOfCalculator } from "@/utils/create-share-url-of-calculator.js";
 
 describe("utils/create-share-url-of-calculator", () => {
     global.process = {

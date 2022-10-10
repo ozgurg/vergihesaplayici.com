@@ -1,4 +1,4 @@
-import { isCurrencyAvailable } from "@/utils/is-currency-available";
+import { isCurrencyAvailable } from "@/utils/is-currency-available.js";
 
 describe("utils/is-currency-available", () => {
     const availableCurrencies = ["TRY", "USD", "EUR"];

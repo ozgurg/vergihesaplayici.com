@@ -1,4 +1,4 @@
-import store from "@/store/ui";
+import store from "@/store/ui.js";
 
 describe("store/ui", () => {
     let state = {};

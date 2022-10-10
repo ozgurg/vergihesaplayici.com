@@ -1,4 +1,4 @@
-import PhoneTaxCalculator, { getSpecialConsumptionTaxRateByPrice, Registration } from "@/calculators/PhoneTaxCalculator";
+import PhoneTaxCalculator, { getSpecialConsumptionTaxRateByPrice, Registration } from "@/calculators/PhoneTaxCalculator.js";
 
 describe("calculators/PhoneTaxCalculator", () => {
     describe("getSpecialConsumptionTaxRateByPrice", () => {

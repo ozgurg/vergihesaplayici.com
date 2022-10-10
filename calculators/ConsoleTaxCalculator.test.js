@@ -1,4 +1,4 @@
-import ConsoleTaxCalculator from "@/calculators/ConsoleTaxCalculator";
+import ConsoleTaxCalculator from "@/calculators/ConsoleTaxCalculator.js";
 
 describe("calculators/ConsoleTaxCalculator", () => {
     it(`should correctly calculate console tax if params are: price: [300, 400, 500] / calculateFromTaxAddedPrice: ${false}`, () => {

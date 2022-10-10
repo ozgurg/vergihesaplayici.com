@@ -11,7 +11,7 @@
 
 <script>
 import { mdiCreditCardClock } from "@mdi/js";
-import { calculateMinimumWageMonthCount } from "@/utils/calculate-minimum-wage-month-count";
+import { calculateMinimumWageMonthCount } from "@/utils/calculate-minimum-wage-month-count.js";
 import { moneyFormat } from "@/utils/formatter.js";
 
 export default {
