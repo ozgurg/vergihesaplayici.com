@@ -39,7 +39,7 @@
                 class="mt-10">
                 <template v-if="shouldShowResults">
                     <CalculatorCalculatedFromSalePriceAlert v-if="form.currency === 'TRY'" />
-                    <CalculatorCustomsInfoAlert v-else />
+                    <EstimatedCalculationAlert v-else />
 
                     <CalculatorResultFormRow
                         v-for="(item, index) in resultList"
