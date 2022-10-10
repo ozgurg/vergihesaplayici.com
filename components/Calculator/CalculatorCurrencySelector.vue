@@ -1,5 +1,5 @@
 <template>
-	<v-select
+    <v-select
         @change="emit($event)"
         v-bind="$attrs"
         :value="value"

@@ -21,7 +21,7 @@
             </v-tabs>
         </FormRow>
 
-		<v-tabs-items :value="value">
+        <v-tabs-items :value="value">
             <v-tab-item :transition="false">
                 <slot />
             </v-tab-item>
@@ -30,7 +30,7 @@
                 <CalculatorComments />
             </v-tab-item>
         </v-tabs-items>
-	</div>
+    </div>
 </template>
 
 <script>
@@ -64,13 +64,13 @@ export default {
 
 <style lang="scss" scoped="">
 .result-tab {
-	position: sticky;
-	background: #121212;
-	z-index: 5;
-	top: 56px; // 56px = toolbar height
-	@media(min-width: 960px) {
-		top: 0
-	}
+    position: sticky;
+    background: #121212;
+    z-index: 5;
+    top: 56px; // 56px = toolbar height
+    @media(min-width: 960px) {
+        top: 0
+    }
 }
 </style>
 

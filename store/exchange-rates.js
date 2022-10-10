@@ -2,11 +2,26 @@ import { fetchExchangeRate } from "@/utils/fetch-exchange-rate.js";
 
 export const state = () => ({
     currencies: {
-        TRY: { sign: "₺", rate: 1 },
-        USD: { sign: "$", rate: 0 },
-        EUR: { sign: "€", rate: 0 },
-        INR: { sign: "₹", rate: 0 },
-        CNY: { sign: "¥", rate: 0 }
+        TRY: {
+            sign: "₺",
+            rate: 1
+        },
+        USD: {
+            sign: "$",
+            rate: 0
+        },
+        EUR: {
+            sign: "€",
+            rate: 0
+        },
+        INR: {
+            sign: "₹",
+            rate: 0
+        },
+        CNY: {
+            sign: "¥",
+            rate: 0
+        }
     }
 });
 

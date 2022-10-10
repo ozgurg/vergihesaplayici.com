@@ -1,4 +1,8 @@
-import { calculateTaxFromTaxAddedPrice, calculateTaxFromTaxFreePrice, calculateTotalTaxRate } from "@/utils/calculate-tax.js";
+import {
+    calculateTaxFromTaxAddedPrice,
+    calculateTaxFromTaxFreePrice,
+    calculateTotalTaxRate
+} from "@/utils/calculate-tax.js";
 import { normalizeCalculatorResults } from "@/utils/normalize-calculator-results.js";
 
 /**
