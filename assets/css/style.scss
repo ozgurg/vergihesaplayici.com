@@ -44,3 +44,7 @@ $radius: 12px;
 .v-sheet.v-card:not(.v-card--flat) {
     border-radius: $radius !important
 }
+
+.v-alert:not(.v-sheet--tile) {
+    border-radius: $radius !important
+}
