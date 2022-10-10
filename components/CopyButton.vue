@@ -3,9 +3,9 @@
         v-ripple="false"
         @click="copy()"
         v-bind="$attrs"
-        class="vh-copy-button ps-3 pe-4"
         :class="{'vh-copy-button--copied': isCopied}"
         :aria-label="titleByCopyState"
+        class="vh-copy-button ps-3 pe-4"
         plain="">
         <span class="vh-copy-button__icon-1">
             <v-icon size="20">
@@ -60,7 +60,7 @@ export default {
 
             vm.copiedTimeout = setTimeout(() => {
                 vm.isCopied = false;
-            }, 1225); // 1000 + $transition-duration
+            }, 1375); // 1000 + $transition-duration
         },
         _copyValue() {
             const vm = this;
@@ -82,7 +82,7 @@ export default {
 </script>
 
 <style lang="scss" scoped="">
-$transition-duration: .225s;
+$transition-duration: .375s;
 $transition-timing-function: cubic-bezier(.4, 0, .2, 1);
 
 .vh-copy-button {

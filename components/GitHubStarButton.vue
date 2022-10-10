@@ -1,7 +1,8 @@
 <template>
-    <div class="vh-github-button grey darken-3 pa-2 rounded d-inline-block">
+    <div
+        v-bind="$attrs"
+        class="vh-github-button grey darken-3 pa-2 rounded d-inline-block">
         <iframe
-            v-bind="$attrs"
             title="Projenin GitHub'taki yıldız sayısı"
             height="20"
             width="84"
