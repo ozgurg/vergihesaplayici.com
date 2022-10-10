@@ -87,7 +87,7 @@ $transition-timing-function: cubic-bezier(.4, 0, .2, 1);
 
 .vh-copy-button {
     $self: &;
-    &.v-btn { // Override Vuetify's value
+    &.v-btn {
         min-width: unset !important
     }
     &--copied {

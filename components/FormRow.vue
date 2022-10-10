@@ -40,11 +40,8 @@ export default {
             max-width: 200px
         }
     }
-}
-</style>
-
-<style scoped="">
-:deep(.v-input__append-outer) {
-    margin-top: 0 !important
+    .v-input__append-outer {
+        margin-top: 0 !important
+    }
 }
 </style>

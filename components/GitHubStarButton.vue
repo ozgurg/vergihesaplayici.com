@@ -10,16 +10,14 @@
     </div>
 </template>
 
-<style lang="scss">
-.vh-github-button {
-    iframe {
-        overflow: hidden;
-        border: 0;
-        padding: 0;
-        margin: 0;
-        display: block;
-        width: 84px;
-        height: 20px
-    }
+<style>
+.vh-github-button iframe {
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    display: block;
+    width: 84px;
+    height: 20px
 }
 </style>
