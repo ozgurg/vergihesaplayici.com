@@ -95,7 +95,7 @@ export default {
         }
     },
     css: [
-        "@/assets/css/style.scss"
+        "@/assets/scss/style.scss"
     ],
     plugins: [
         {
