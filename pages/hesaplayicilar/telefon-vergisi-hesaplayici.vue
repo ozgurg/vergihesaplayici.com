@@ -28,7 +28,7 @@
                     type="number"
                     aria-label="Telefon fiyatı">
                     <template #append-outer>
-                        <CalculatorCurrencySelector
+                        <CurrencySelector
                             v-model="form.currency"
                             style="width:110px" />
                     </template>
