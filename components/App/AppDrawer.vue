@@ -22,7 +22,7 @@
                 </v-list-item>
             </v-list>
 
-            <AppDrawerFooter class="mt-3" />
+            <AppDrawerFooter class="mt-15" />
         </div>
     </v-navigation-drawer>
 </template>
@@ -43,3 +43,34 @@ export default {
     }
 };
 </script>
+
+<style lang="scss">
+$drawerSelector: ".v-navigation-drawer";
+
+html:has(#{$drawerSelector}--open) {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    &, *:not(#{$drawerSelector} *) {
+        overflow: hidden !important
+    }
+    body {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        overflow: hidden
+    }
+}
+
+#{$drawerSelector} {
+    height: 100% !important
+}
+</style>
