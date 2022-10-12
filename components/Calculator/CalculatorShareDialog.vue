@@ -4,28 +4,27 @@
         @close="close()"
         v-bind="$attrs"
         :value="value"
-        :fullscreen="$vuetify.breakpoint.smAndDown"
-        :transition="$vuetify.breakpoint.smAndDown ? 'dialog-bottom-transition' : 'dialog-transition'"
-        overlay-color="#000"
-        overlay-opacity=".75"
+        content-class="vh-dialog"
+        :fullscreen="$vuetify.breakpoint.mdAndDown"
+        :transition="$vuetify.breakpoint.mdAndDown ? 'dialog-bottom-transition' : 'dialog-transition'"
         width="700">
-        <v-card :flat="$vuetify.breakpoint.smAndDown">
-            <v-toolbar
-                class="dialog-toolbar px-2"
-                flat="">
-                <v-toolbar-title class="text-center">
-                    Paylaş
-                </v-toolbar-title>
+        <v-toolbar
+            class="px-2"
+            elevation="0">
+            <v-toolbar-title class="text-center">
+                Paylaş
+            </v-toolbar-title>
 
-                <v-spacer />
+            <v-spacer />
 
-                <v-btn
-                    @click="close()"
-                    icon="">
-                    <v-icon>{{ icons.mdiClose }}</v-icon>
-                </v-btn>
-            </v-toolbar>
+            <v-btn
+                @click="close()"
+                icon="">
+                <v-icon>{{ icons.mdiClose }}</v-icon>
+            </v-btn>
+        </v-toolbar>
 
+        <div class="vh-dialog__content py-10">
             <v-expansion-panels
                 :value="0"
                 flat=""
@@ -93,7 +92,7 @@
                     </v-expansion-panel-content>
                 </v-expansion-panel>
             </v-expansion-panels>
-        </v-card>
+        </div>
     </v-dialog>
 </template>
 
@@ -139,11 +138,3 @@ export default {
     }
 };
 </script>
-
-<style scoped="">
-.dialog-toolbar {
-    position: sticky;
-    top: 0;
-    z-index: 50
-}
-</style>
