@@ -3,7 +3,7 @@
     <nuxt-link
         v-html="logo"
         v-bind="$attrs"
-        class="vh-logo"
+        class="vh-drawer-logo"
         aria-label="Ana sayfaya git"
         to="/" />
 </template>
@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="scss">
-.vh-logo {
+.vh-drawer-logo {
     padding: 0 1rem;
     display: flex;
     align-items: center;
