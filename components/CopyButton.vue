@@ -82,8 +82,8 @@ export default {
 </script>
 
 <style lang="scss" scoped="">
-$transition-duration: .375s;
-$transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+$vh_transitionDuration: .375s;
+$vh_transitionTimingFunction: cubic-bezier(.4, 0, .2, 1);
 
 .vh-copy-button {
     $self: &;
@@ -115,7 +115,7 @@ $transition-timing-function: cubic-bezier(.4, 0, .2, 1);
         opacity: 0
     }
     &__icon-1, &__icon-2 {
-        transition: opacity $transition-duration $transition-timing-function;
+        transition: opacity $vh_transitionDuration $vh_transitionTimingFunction;
         @media (prefers-reduced-motion) {
             transition: none
         }
