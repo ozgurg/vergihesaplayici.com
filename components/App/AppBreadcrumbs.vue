@@ -16,7 +16,7 @@
         <template #item="{ item }">
             <v-breadcrumbs-item
                 :to="item.to"
-                exact=""
+                exact-path=""
                 nuxt="">
                 {{ item.title }}
             </v-breadcrumbs-item>
