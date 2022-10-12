@@ -50,6 +50,14 @@ export default {
         findItemPosition(item) {
             const vm = this;
             return vm.items.findIndex(_item => _item.to === item.to) + 1;
+        },
+        _scrollToEnd() {
+            const vm = this;
+            setTimeout(() => {
+                // Start at the end
+                const breadcrumbs = vm.$refs.breadcrumbs.$el;
+                breadcrumbs.scrollLeft = breadcrumbs.scrollWidth;
+            }, 0);
         }
     },
     computed: {
@@ -72,13 +80,15 @@ export default {
             ];
         }
     },
+    watch: {
+        "$route"() { // Using "immediate: true" breaks the app
+            const vm = this;
+            vm._scrollToEnd();
+        }
+    },
     mounted() {
         const vm = this;
-        setTimeout(() => {
-            // Start at the end
-            const breadcrumbs = vm.$refs.breadcrumbs.$el;
-            breadcrumbs.scrollLeft = breadcrumbs.scrollWidth;
-        }, 0);
+        vm._scrollToEnd();
     }
 };
 </script>
