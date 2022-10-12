@@ -2,11 +2,21 @@
     <v-breadcrumbs
         v-if="items.length > 0"
         v-bind="$attrs"
+        ref="breadcrumbs"
+        class="vh-breadcrumbs mb-3 pb-3 px-0"
         :items="items">
+        <template #divider>
+            <v-icon
+                color="grey lighten-2"
+                size="16">
+                {{ dividerIcon }}
+            </v-icon>
+        </template>
+
         <template #item="{ item }">
             <v-breadcrumbs-item
                 :to="item.to"
-                active-class=""
+                exact=""
                 nuxt="">
                 {{ item.title }}
             </v-breadcrumbs-item>
@@ -15,10 +25,14 @@
 </template>
 
 <script>
+import { mdiChevronRight } from "@mdi/js";
 import { ConsoleTaxCalculator, PhoneTaxCalculator, VatCalculator } from "@/data/calculators.js";
 import { buildBreadcrumbsFromPath } from "@/utils/build-breadcrumbs-from-path.js";
 
 export default {
+    data: () => ({
+        dividerIcon: mdiChevronRight
+    }),
     computed: {
         items() {
             const vm = this;
@@ -38,17 +52,29 @@ export default {
                 ...buildBreadcrumbsFromPath(vm.$route.path, part => routeTitles[part])
             ];
         }
+    },
+    mounted() {
+        const vm = this;
+        setTimeout(() => {
+            // Start at the end
+            const breadcrumbs = vm.$refs.breadcrumbs.$el;
+            breadcrumbs.scrollLeft = breadcrumbs.scrollWidth;
+        }, 0);
     }
 };
 </script>
 
-<style scoped="">
-.v-breadcrumbs {
-    display: block;
-    overflow-x: auto;
+<style lang="scss">
+.vh-breadcrumbs {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
     white-space: nowrap;
-    padding-left: 0 !important;
-    padding-right: 0;
-    -webkit-overflow-scrolling: touch
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    li {
+        scroll-snap-align: center
+    }
 }
 </style>
