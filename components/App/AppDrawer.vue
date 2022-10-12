@@ -45,9 +45,9 @@ export default {
 </script>
 
 <style lang="scss">
-$drawerSelector: ".v-navigation-drawer";
+$drawerSelector: "v-navigation-drawer";
 
-html:has(#{$drawerSelector}--open) {
+html:has(.#{$drawerSelector}--open.#{$drawerSelector}--is-mobile) {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -55,7 +55,7 @@ html:has(#{$drawerSelector}--open) {
     left: 0;
     right: 0;
     top: 0;
-    &, *:not(#{$drawerSelector} *) {
+    &, *:not(.#{$drawerSelector} *) {
         overflow: hidden !important
     }
     body {
@@ -70,7 +70,7 @@ html:has(#{$drawerSelector}--open) {
     }
 }
 
-#{$drawerSelector} {
+.#{$drawerSelector} {
     height: 100% !important
 }
 </style>
