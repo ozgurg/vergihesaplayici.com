@@ -3,8 +3,10 @@
         v-if="items.length > 0"
         v-bind="$attrs"
         ref="breadcrumbs"
+        :items="items"
         class="vh-breadcrumbs mb-3 pb-3 px-0"
-        :items="items">
+        itemscope=""
+        itemtype="https://schema.org/BreadcrumbList">
         <template #divider>
             <v-icon
                 color="grey lighten-2"
@@ -17,8 +19,16 @@
             <v-breadcrumbs-item
                 :to="item.to"
                 exact-path=""
+                itemprop="itemListElement"
+                itemscope=""
+                itemtype="https://schema.org/ListItem"
                 nuxt="">
-                {{ item.title }}
+                <span itemprop="name">
+                    {{ item.title }}
+                </span>
+                <meta
+                    :content="findItemPosition(item)"
+                    itemprop="position" />
             </v-breadcrumbs-item>
         </template>
     </v-breadcrumbs>
@@ -33,6 +43,15 @@ export default {
     data: () => ({
         dividerIcon: mdiChevronRight
     }),
+    methods: {
+        // We need position of item for itemprop="position",
+        // but, Vuetify currently doesn't give the index with #item slot.
+        // So, we need to manually find the position of the item.
+        findItemPosition(item) {
+            const vm = this;
+            return vm.items.findIndex(_item => _item.to === item.to) + 1;
+        }
+    },
     computed: {
         items() {
             const vm = this;
