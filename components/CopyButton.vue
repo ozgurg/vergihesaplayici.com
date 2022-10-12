@@ -5,7 +5,7 @@
         v-bind="$attrs"
         :class="{'vh-copy-button--copied': isCopied}"
         :aria-label="titleByCopyState"
-        class="vh-copy-button ps-3 pe-4"
+        class="vh-copy-button ps-4 pe-1"
         plain="">
         <span class="vh-copy-button__icon-1">
             <v-icon size="20">

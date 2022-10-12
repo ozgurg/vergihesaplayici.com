@@ -60,8 +60,4 @@ export default {
     margin-top: auto !important;
     margin-bottom: auto !important
 }
-
-:deep(.v-input__slot) {
-    padding-right: 0 !important
-}
 </style>
