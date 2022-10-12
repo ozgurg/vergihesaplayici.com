@@ -23,6 +23,7 @@
                     outlined=""
                     step="any"
                     min="1"
+                    inputmode="decimal"
                     type="number"
                     aria-label="Konsol fiyatı">
                     <template #append-outer>

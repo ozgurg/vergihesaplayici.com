@@ -27,6 +27,7 @@
                     outlined=""
                     step="any"
                     min="1"
+                    inputmode="decimal"
                     type="number" />
             </FormRow>
 
@@ -47,6 +48,7 @@
                     outlined=""
                     step="1"
                     min="1"
+                    inputmode="decimal"
                     type="number"
                     aria-label="KDV oranı" />
             </FormRow>

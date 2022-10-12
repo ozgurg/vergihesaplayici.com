@@ -25,6 +25,7 @@
                     outlined=""
                     step="any"
                     min="1"
+                    inputmode="decimal"
                     type="number"
                     aria-label="Telefon fiyatı">
                     <template #append-outer>
