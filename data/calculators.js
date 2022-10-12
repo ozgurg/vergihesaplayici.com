@@ -1,7 +1,7 @@
-import { mdiCellphone, mdiGamepad, mdiLabelPercent } from "@mdi/js";
+import { mdiCellphone, mdiController, mdiBrightnessPercent } from "@mdi/js";
 
 const VatCalculator = {
-    icon: mdiLabelPercent,
+    icon: mdiBrightnessPercent,
     initialsTitle: "KDV",
     title: "KDV (Katma Değer Vergisi) Hesaplayıcı",
     subtitle: "Katma Değer Vergisi",
@@ -10,7 +10,7 @@ const VatCalculator = {
 };
 
 const ConsoleTaxCalculator = {
-    icon: mdiGamepad,
+    icon: mdiController,
     title: "Konsol Vergisi Hesaplayıcı",
     subtitle: "Konsol Vergisi",
     url: "/hesaplayicilar/konsol-vergisi-hesaplayici/",
