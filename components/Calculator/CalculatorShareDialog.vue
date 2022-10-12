@@ -73,24 +73,6 @@
 
                     <v-divider />
                 </v-expansion-panel>
-
-                <v-expansion-panel>
-                    <v-expansion-panel-header>
-                        <div class="d-flex align-center">
-                            <v-icon
-                                class="mr-4"
-                                left="">
-                                {{ icons.mdiShareVariant }}
-                            </v-icon>
-                            Sosyal medya
-                        </div>
-                    </v-expansion-panel-header>
-                    <v-expansion-panel-content>
-                        <div class="pl-2 pr-2 pt-8 pb-4">
-                            <CalculatorShareDialogSocialMedia :data="formData" />
-                        </div>
-                    </v-expansion-panel-content>
-                </v-expansion-panel>
             </v-expansion-panels>
         </div>
     </v-dialog>
