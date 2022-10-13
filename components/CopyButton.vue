@@ -83,8 +83,7 @@ export default {
 </script>
 
 <style lang="scss" scoped="">
-$vh_transitionDuration: .375s;
-$vh_transitionTimingFunction: cubic-bezier(.4, 0, .2, 1);
+@import "~vuetify/src/styles/styles.sass";
 
 .vh-copy-button {
     $self: &;
@@ -116,7 +115,7 @@ $vh_transitionTimingFunction: cubic-bezier(.4, 0, .2, 1);
         opacity: 0
     }
     &__icon-1, &__icon-2 {
-        transition: opacity $vh_transitionDuration $vh_transitionTimingFunction;
+        transition: $primary-transition;
         @media (prefers-reduced-motion) {
             transition: none
         }
