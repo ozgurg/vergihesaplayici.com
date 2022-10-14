@@ -2,15 +2,23 @@ $border-radius-root: 12px;
 
 $btn-letter-spacing: 0;
 $btn-text-transform: unset;
+
 $tabs-item-max-width: 50%;
+$tabs-item-letter-spacing: .0892857143em / 4;
+$tab-disabled-opacity: 1;
 
 .v-alert__icon {
     align-self: center
 }
 
 .v-input--is-readonly {
-    pointer-events: none;
-    .v-input__append-inner {
-        pointer-events: all
-    }
+    pointer-events: none
+}
+
+.v-input__append-inner {
+    pointer-events: all
+}
+
+.v-tab {
+    text-transform: unset
 }
