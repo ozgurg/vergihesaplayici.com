@@ -34,15 +34,15 @@ describe("calculators/PhoneTaxCalculator", () => {
                     prices: [
                         {
                             price: 500,
-                            expected: { taxFree: 500, taxAdded: 834.26 }
+                            expected: { taxFree: 500, taxAdded: 834.3 }
                         },
                         {
                             price: 1500,
-                            expected: { taxFree: 1500, taxAdded: 3003.34 }
+                            expected: { taxFree: 1500, taxAdded: 3003.3 }
                         },
                         {
                             price: 5000,
-                            expected: { taxFree: 5000, taxAdded: 10011.12 }
+                            expected: { taxFree: 5000, taxAdded: 10011.1 }
                         }
                     ]
                 });
@@ -55,15 +55,15 @@ describe("calculators/PhoneTaxCalculator", () => {
                     prices: [
                         {
                             price: 500,
-                            expected: { taxFree: 299.67, taxAdded: 500 }
+                            expected: { taxFree: 299.7, taxAdded: 500 }
                         },
                         {
                             price: 1500,
-                            expected: { taxFree: 802.68, taxAdded: 1500 }
+                            expected: { taxFree: 802.6, taxAdded: 1500 }
                         },
                         {
                             price: 5000,
-                            expected: { taxFree: 2497.23, taxAdded: 5000 }
+                            expected: { taxFree: 2497.2, taxAdded: 5000 }
                         }
                     ]
                 });

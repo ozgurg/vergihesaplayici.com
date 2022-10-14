@@ -3,12 +3,12 @@ import { moneyFormat, normalizePrice, numberFormat } from "@/utils/formatter.js"
 describe("utils/formatter", () => {
     describe("normalizePrice", () => {
         it("should return a valid formatted price", () => {
-            expect(normalizePrice(1.23)).toEqual(1.23);
-            expect(normalizePrice(1.2345)).toEqual(1.23);
-            expect(normalizePrice(1.234567)).toEqual(1.23);
-            expect(normalizePrice(1.2345678)).toEqual(1.23);
-            expect(normalizePrice(1.23456789)).toEqual(1.23);
-            expect(normalizePrice(1.234567890)).toEqual(1.23);
+            expect(normalizePrice(1.23)).toEqual(1.2);
+            expect(normalizePrice(1.2345)).toEqual(1.2);
+            expect(normalizePrice(1.234567)).toEqual(1.2);
+            expect(normalizePrice(1.2345678)).toEqual(1.2);
+            expect(normalizePrice(1.23456789)).toEqual(1.2);
+            expect(normalizePrice(1.234567890)).toEqual(1.2);
         });
     });
 

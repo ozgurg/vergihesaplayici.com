@@ -31,17 +31,17 @@ describe("calculators/VatCalculator", () => {
                 {
                     price: 100,
                     rate: 15,
-                    expected: { taxFree: 86.96, taxAdded: 100 }
+                    expected: { taxFree: 87, taxAdded: 100 }
                 },
                 {
                     price: 250,
                     rate: 18,
-                    expected: { taxFree: 211.86, taxAdded: 250 }
+                    expected: { taxFree: 211.9, taxAdded: 250 }
                 },
                 {
                     price: 448,
                     rate: 25,
-                    expected: { taxFree: 358.40, taxAdded: 448 }
+                    expected: { taxFree: 358.4, taxAdded: 448 }
                 }
             ]
         });

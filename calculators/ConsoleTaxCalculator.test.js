@@ -7,11 +7,11 @@ describe("calculators/ConsoleTaxCalculator", () => {
             prices: [
                 {
                     price: 300,
-                    expected: { taxFree: 300, taxAdded: 509.76 }
+                    expected: { taxFree: 300, taxAdded: 509.8 }
                 },
                 {
                     price: 400,
-                    expected: { taxFree: 400, taxAdded: 679.68 }
+                    expected: { taxFree: 400, taxAdded: 679.7 }
                 },
                 {
                     price: 500,
@@ -27,15 +27,15 @@ describe("calculators/ConsoleTaxCalculator", () => {
             prices: [
                 {
                     price: 300,
-                    expected: { taxFree: 176.55, taxAdded: 300 }
+                    expected: { taxFree: 176.5, taxAdded: 300 }
                 },
                 {
                     price: 400,
-                    expected: { taxFree: 235.41, taxAdded: 400 }
+                    expected: { taxFree: 235.3, taxAdded: 400 }
                 },
                 {
                     price: 500,
-                    expected: { taxFree: 294.25, taxAdded: 500 }
+                    expected: { taxFree: 294.2, taxAdded: 500 }
                 }
             ]
         });
