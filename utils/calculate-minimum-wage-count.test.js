@@ -1,9 +1,9 @@
 import {
     calculateMinimumWageDayCount,
     calculateMinimumWageMonthCount
-} from "@/utils/calculate-minimum-wage-month-count.js";
+} from "@/utils/calculate-minimum-wage-count.js";
 
-describe("utils/calculate-minimum-wage-month-count", () => {
+describe("utils/calculate-minimum-wage-count", () => {
     const minimumWage = 5_000;
 
     describe("calculateMinimumWageMonthCount", () => {
