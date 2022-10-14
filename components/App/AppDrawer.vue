@@ -22,7 +22,9 @@
                 </v-list-item>
             </v-list>
 
-            <AppDrawerFooter class="mt-15" />
+            <AppDrawerFooter
+                v-if="$vuetify.breakpoint.mdAndUp"
+                class="mt-15" />
         </div>
     </v-navigation-drawer>
 </template>
