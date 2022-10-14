@@ -1,10 +1,10 @@
 /**
  * @param {number} price
- * @param {number} minimumMage
+ * @param {number} minimumWage
  * @returns {string}
  */
-const calculateMinimumWageMonthCount = (price, minimumMage) => {
-    return (price / minimumMage).toFixed(1);
+const calculateMinimumWageMonthCount = (price, minimumWage) => {
+    return (price / minimumWage).toFixed(1);
 };
 
 /**
