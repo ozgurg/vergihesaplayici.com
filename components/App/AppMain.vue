@@ -2,7 +2,7 @@
     <v-main v-bind="$attrs">
         <v-container
             :class="containerClassByBreakpoint"
-            class="px-4 px-sm-6 px-md-10">
+            class="px-6 px-sm-8 px-md-10">
             <slot />
         </v-container>
     </v-main>
