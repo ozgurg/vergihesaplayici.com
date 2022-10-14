@@ -1,6 +1,9 @@
 <template>
     <div v-bind="$attrs">
-        <FormRow class="result-tab mb-4">
+        <FormRow
+            ref="resultTabs"
+            :class="{'vh-result-tabs--stuck': isStuck}"
+            class="vh-result-tabs mb-4">
             <v-tabs
                 @change="emit($event)"
                 :value="value"
@@ -10,18 +13,20 @@
                     <v-icon left="">
                         {{ icons.mdiFormatListBulletedType }}
                     </v-icon>
-                    Sonuçlar
+                    <span>Sonuçlar</span>
                 </v-tab>
                 <v-tab>
                     <v-icon left="">
                         {{ icons.mdiCommentMultipleOutline }}
                     </v-icon>
-                    Yorumlar
+                    <span>Yorumlar</span>
                 </v-tab>
             </v-tabs>
         </FormRow>
 
-        <v-tabs-items :value="value">
+        <v-tabs-items
+            :value="value"
+            touchless="">
             <v-tab-item :transition="false">
                 <slot />
             </v-tab-item>
@@ -41,7 +46,9 @@ export default {
         icons: {
             mdiFormatListBulletedType,
             mdiCommentMultipleOutline
-        }
+        },
+        isStuck: false,
+        scrollListener: null
     }),
     props: {
         value: {
@@ -57,19 +64,55 @@ export default {
         emit(value) {
             const vm = this;
             vm.$emit("input", value);
+        },
+        _initScrollListener() {
+            const vm = this;
+
+            // I'm not using debounce or throttle here.
+            // Because on iOS elastic scrolling makes it behave weird.
+            // Maybe it's checked too often, but it's not "that much" important for now.
+            vm.scrollListener = () => {
+                vm.isStuck = vm.$refs.resultTabs.$el.offsetTop <= window.scrollY;
+            };
+
+            document.addEventListener("scroll", vm.scrollListener, { passive: true });
         }
+    },
+    mounted() {
+        const vm = this;
+
+        // TODO: Do the same behavior using IntersectionObserver if possible
+        vm._initScrollListener();
+    },
+    destroyed() {
+        const vm = this;
+        document.removeEventListener("scroll", vm.scrollListener);
     }
 };
 </script>
 
 <style lang="scss" scoped="">
-.result-tab {
-    position: sticky;
-    background: #121212;
-    z-index: 5;
-    top: 56px; // 56px = toolbar height
-    @media(min-width: 960px) {
-        top: 0
+@import "~vuetify/src/styles/styles.sass";
+
+.vh-result-tabs {
+    background: #121212; // Fallback color while the transition is playing/running/working? (What we called it? 🙂)
+    @media(max-width: 959.98px) {
+        position: sticky;
+        z-index: 5; // Same as .v-app-bar.v-app-bar--fixed
+        transition: $secondary-transition;
+        top: 56px; // AppBar height
+    }
+    &--stuck {
+        background: map-get($material-dark-elevation-colors, "4");
+
+        // Negative of AppMain v-container .px-6
+        margin-left: -24px;
+        margin-right: -24px;
+        @media (min-width: 600px) {
+            // Negative of AppMain v-container .px-sm-8
+            margin-left: -32px;
+            margin-right: -32px
+        }
     }
 }
 </style>
@@ -79,7 +122,14 @@ export default {
     background: 0 !important
 }
 
-:deep(.v-tab.v-tab--disabled), :deep(.v-tab.v-tab--disabled .v-icon) {
-    color: #fff !important
+/*
+We set negative margin for .vh-result-tabs when its stuck,
+and then the transition of .v-tabs-slider-wrapper works and makes it look swinging.
+I didn't like this behavior, so I removed the transition.
+*/
+@media (max-width: 960px) {
+    :deep(.v-tabs-slider-wrapper) {
+        transition: none !important
+    }
 }
 </style>
