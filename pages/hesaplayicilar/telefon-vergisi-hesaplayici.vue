@@ -1,5 +1,7 @@
 <template>
     <div>
+        <AppBreadcrumbs :items="breadcrumbItems" />
+
         <PageTitle>{{ head.title }}</PageTitle>
 
         <InnerContainer>
@@ -269,6 +271,18 @@ export default {
         priceMultipliedExchangeRate() {
             const vm = this;
             return vm.form.price * vm.selectedCurrency.rate;
+        },
+        breadcrumbItems() {
+            return [
+                {
+                    title: "Hesaplayıcılar",
+                    to: "/hesaplayicilar/"
+                },
+                {
+                    title: calculator.title,
+                    to: calculator.url
+                }
+            ];
         }
     },
     watch: {

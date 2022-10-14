@@ -3,7 +3,7 @@
         v-if="items.length > 0"
         v-bind="$attrs"
         ref="breadcrumbs"
-        :items="items"
+        :items="normalizedItems"
         class="vh-breadcrumbs mb-3 pb-3 px-0"
         itemscope=""
         itemtype="https://schema.org/BreadcrumbList">
@@ -27,7 +27,7 @@
                     {{ item.title }}
                 </span>
                 <meta
-                    :content="findItemPosition(item)"
+                    :content="item.position"
                     itemprop="position" />
             </v-breadcrumbs-item>
         </template>
@@ -36,21 +36,18 @@
 
 <script>
 import { mdiChevronRight } from "@mdi/js";
-import { ConsoleTaxCalculator, PhoneTaxCalculator, VatCalculator } from "@/data/calculators.js";
-import { buildBreadcrumbsFromPath } from "@/utils/build-breadcrumbs-from-path.js";
 
 export default {
     data: () => ({
         dividerIcon: mdiChevronRight
     }),
+    props: {
+        items: {
+            type: Array,
+            required: true
+        }
+    },
     methods: {
-        // We need position of item for itemprop="position",
-        // but, Vuetify currently doesn't give the index with #item slot.
-        // So, we need to manually find the position of the item.
-        findItemPosition(item) {
-            const vm = this;
-            return vm.items.findIndex(_item => _item.to === item.to) + 1;
-        },
         _scrollToEnd() {
             const vm = this;
             setTimeout(() => {
@@ -61,23 +58,18 @@ export default {
         }
     },
     computed: {
-        items() {
+        normalizedItems() {
             const vm = this;
-
-            const routeTitles = {
-                "hesaplayicilar": "Hesaplayıcılar",
-                "konsol-vergisi-hesaplayici": ConsoleTaxCalculator.title,
-                "telefon-vergisi-hesaplayici": PhoneTaxCalculator.title,
-                "kdv-hesaplayici": VatCalculator.title
-            };
-
             return [
                 {
                     title: "Ana Sayfa",
                     to: "/"
                 },
-                ...buildBreadcrumbsFromPath(vm.$route.path, part => routeTitles[part])
-            ];
+                ...vm.items
+            ].map((item, index) => ({
+                ...item,
+                position: ++index
+            }));
         }
     },
     watch: {

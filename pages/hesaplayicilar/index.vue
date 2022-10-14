@@ -1,5 +1,7 @@
 <template>
     <div>
+        <AppBreadcrumbs :items="breadcrumbItems" />
+
         <PageTitle>
             {{ head.title }}
         </PageTitle>
@@ -28,6 +30,16 @@ export default {
             description: meta.description,
             ogImageName: "ana-sayfa.jpg"
         })
-    })
+    }),
+    computed: {
+        breadcrumbItems() {
+            return [
+                {
+                    title: "Hesaplayıcılar",
+                    to: "/hesaplayicilar/"
+                }
+            ];
+        }
+    }
 };
 </script>

@@ -1,5 +1,7 @@
 <template>
     <div>
+        <AppBreadcrumbs :items="breadcrumbItems" />
+
         <PageTitle>{{ head.title }}</PageTitle>
 
         <InnerContainer>
@@ -226,6 +228,18 @@ export default {
                 [Mode.TaxFreePriceToTaxAddedPrice]: "KDV hariç fiyat",
                 [Mode.TaxAddedPriceToTaxFreePrice]: "KDV dahil fiyat"
             }[vm.form.mode];
+        },
+        breadcrumbItems() {
+            return [
+                {
+                    title: "Hesaplayıcılar",
+                    to: "/hesaplayicilar/"
+                },
+                {
+                    title: calculator.title,
+                    to: calculator.url
+                }
+            ];
         }
     },
     watch: {

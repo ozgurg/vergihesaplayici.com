@@ -7,8 +7,6 @@
             app="" />
 
         <AppMain>
-            <AppBreadcrumbs />
-
             <Nuxt />
         </AppMain>
     </v-app>
