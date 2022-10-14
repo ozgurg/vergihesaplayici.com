@@ -1,9 +1,12 @@
 <template>
     <div>
-        <v-row>
+        <v-row
+            no-gutters=""
+            class="mx-n2 my-n3">
             <template v-for="_item in items">
                 <v-col
                     :key="_item.title"
+                    class="px-2 py-3"
                     cols="4"
                     sm="2">
                     <v-btn
