@@ -4,20 +4,27 @@
         :icon="icon"
         text=""
         type="info">
-        Türkiye'de asgari ücretle ({{ minimumWageFormatted }}) çalışan birisi yemeden içmeden bu ürünü
-        <b>{{ minimumWageMonthCount }}</b> ayda satın alabilir.
+        <template v-if="minimumWageMonthCount < 1">
+            Türkiye'de asgari ücretle ({{ minimumWageFormatted }}) çalışan birisi yemeden içmeden bu ürünü
+            <b>{{ minimumWageDayCount }}</b> günlük maaş satın alabilir.
+        </template>
+        <template v-else>
+            Türkiye'de asgari ücretle ({{ minimumWageFormatted }}) çalışan birisi yemeden içmeden bu ürünü
+            <b>{{ minimumWageMonthCount }}</b> aylık maaş ile satın alabilir.
+        </template>
     </v-alert>
 </template>
 
 <script>
 import { mdiCreditCardClock } from "@mdi/js";
-import { calculateMinimumWageMonthCount } from "@/utils/calculate-minimum-wage-month-count.js";
+import { calculateMinimumWageDayCount, calculateMinimumWageMonthCount } from "@/utils/calculate-minimum-wage-count.js";
 import { moneyFormat } from "@/utils/formatter.js";
+
+const minimumWage = process.env.MINIMUM_WAGE;
 
 export default {
     data: () => ({
-        icon: mdiCreditCardClock,
-        minimumWage: process.env.MINIMUM_WAGE
+        icon: mdiCreditCardClock
     }),
     props: {
         price: {
@@ -25,17 +32,17 @@ export default {
             required: true
         }
     },
-    methods: {
-        moneyFormat
-    },
     computed: {
         minimumWageFormatted() {
+            return moneyFormat(minimumWage, "TRY");
+        },
+        minimumWageDayCount() {
             const vm = this;
-            return vm.moneyFormat(vm.minimumWage, "TRY");
+            return calculateMinimumWageDayCount(vm.price, minimumWage);
         },
         minimumWageMonthCount() {
             const vm = this;
-            return calculateMinimumWageMonthCount(vm.price, vm.minimumWage);
+            return calculateMinimumWageMonthCount(vm.price, minimumWage);
         }
     }
 };
