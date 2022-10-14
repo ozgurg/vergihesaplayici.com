@@ -4,7 +4,7 @@
  * @returns {string}
  */
 const calculateMinimumWageMonthCount = (price, minimumMage) => {
-    return (price / minimumMage).toFixed(2);
+    return (price / minimumMage).toFixed(1);
 };
 
 export {
