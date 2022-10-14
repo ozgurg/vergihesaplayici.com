@@ -6,7 +6,7 @@ $vh_dialogSelector: "vh-dialog";
     display: flex;
     flex-direction: column;
     background: map-get($material-dark-elevation-colors, "1");
-    .v-toolbar {
+    &__header {
         flex: 0
     }
     &__content {
