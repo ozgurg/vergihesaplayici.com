@@ -1,5 +1,5 @@
 <template>
-    <v-main v-bind="$attrs">
+    <v-main>
         <v-container
             :class="containerClassByBreakpoint"
             class="px-6 px-sm-8 px-md-10">

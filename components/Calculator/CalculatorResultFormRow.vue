@@ -1,7 +1,5 @@
 <template>
-    <FormRow
-        v-bind="$attrs"
-        :label="label">
+    <FormRow :label="label">
         <v-text-field
             :value="value"
             :aria-label="label"

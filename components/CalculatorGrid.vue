@@ -1,7 +1,5 @@
 <template>
-    <v-row
-        v-bind="$attrs"
-        dense="">
+    <v-row dense="">
         <!-- TODO: Replace "index" with something sensible -->
         <template v-for="(_calculator, index) in calculators">
             <CalculatorGridItem

@@ -1,7 +1,5 @@
 <template>
-    <v-col
-        v-bind="$attrs"
-        cols="6">
+    <v-col cols="6">
         <v-card
             elevation="0"
             class="px-4 py-3">

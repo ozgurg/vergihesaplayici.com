@@ -1,6 +1,6 @@
 <template>
     <v-app-bar
-        v-bind="$attrs"
+        app=""
         elevation="0">
         <v-app-bar-nav-icon
             aria-label="Menüyü aç"

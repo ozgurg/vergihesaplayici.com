@@ -1,7 +1,5 @@
 <template>
-    <v-list-item
-        v-bind="$attrs"
-        :to="url">
+    <v-list-item :to="url">
         <v-list-item-icon>
             <v-icon>
                 {{ icon }}

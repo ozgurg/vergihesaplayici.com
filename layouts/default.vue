@@ -1,10 +1,8 @@
 <template>
     <v-app>
-        <AppDrawer app="" />
+        <AppDrawer />
 
-        <AppBar
-            v-if="$vuetify.breakpoint.smAndDown"
-            app="" />
+        <AppBar v-if="$vuetify.breakpoint.smAndDown" />
 
         <AppMain>
             <Nuxt />

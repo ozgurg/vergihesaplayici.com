@@ -1,7 +1,5 @@
 <template>
-    <footer
-        v-bind="$attrs"
-        class="d-flex align-center flex-column text-center pb-4 pt-5 px-4 grey darken-4">
+    <footer class="d-flex align-center flex-column text-center pb-4 pt-5 px-4 grey darken-4">
         <div class="mb-1 text-subtitle-2">
             vergihesaplayici.com v{{ version }}
         </div>

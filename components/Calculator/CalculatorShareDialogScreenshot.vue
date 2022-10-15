@@ -1,7 +1,5 @@
 <template>
-    <div
-        v-bind="$attrs"
-        class="text-center">
+    <div class="text-center">
         <div class="position-relative d-inline-block mb-4">
             <v-btn
                 outlined=""

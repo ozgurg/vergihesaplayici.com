@@ -1,5 +1,5 @@
 <template>
-    <div v-bind="$attrs">
+    <div>
         <FormRow
             ref="resultTabs"
             :class="{'vh-result-tabs--stuck': isStuck}"

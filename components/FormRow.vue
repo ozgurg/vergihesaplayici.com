@@ -1,7 +1,5 @@
 <template>
-    <div
-        v-bind="$attrs"
-        class="vh-form-row row align-center no-gutters flex-column flex-lg-row">
+    <div class="vh-form-row row align-center no-gutters flex-column flex-lg-row">
         <div class="vh-form-row__label-col col">
             <template v-if="label">
                 <label>

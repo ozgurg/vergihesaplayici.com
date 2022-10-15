@@ -1,7 +1,7 @@
 <template>
     <v-navigation-drawer
-        v-bind="$attrs"
         v-model="isDrawerOpen"
+        app=""
         :permanent="$vuetify.breakpoint.mdAndUp"
         color="#272727"
         width="275"

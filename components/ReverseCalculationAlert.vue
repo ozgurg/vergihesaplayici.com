@@ -1,6 +1,5 @@
 <template>
     <v-alert
-        v-bind="$attrs"
         :icon="icon"
         text=""
         type="warning">

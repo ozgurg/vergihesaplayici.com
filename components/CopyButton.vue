@@ -1,7 +1,6 @@
 <template>
     <v-btn
         v-ripple="false"
-        v-bind="$attrs"
         :class="{'vh-copy-button--copied': isCopied}"
         :aria-label="titleByCopyState"
         title="Kopyala"

@@ -1,7 +1,6 @@
 <template>
     <a
         v-ripple=""
-        v-bind="$attrs"
         class="d-inline-flex"
         href="https://youtu.be/LPrhPC-L5Go?t=5"
         rel="nofollow noopener noreferrer"

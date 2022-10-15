@@ -1,5 +1,5 @@
 <template>
-    <div v-bind="$attrs">
+    <div>
         <div class="grey--text caption">
             1 {{ currencyCode }} =
         </div>

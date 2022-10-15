@@ -1,6 +1,5 @@
 <template>
     <v-dialog
-        v-bind="$attrs"
         :value="value"
         content-class="vh-dialog"
         :fullscreen="$vuetify.breakpoint.mdAndDown"

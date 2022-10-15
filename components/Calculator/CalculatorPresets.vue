@@ -1,8 +1,6 @@
 <template>
     <!-- TODO: Make v-chip one -->
-    <div
-        v-bind="$attrs"
-        class="vh-presets">
+    <div class="vh-presets">
         <template v-for="preset in presets">
             <template v-if="$scopedSlots.tooltip">
                 <v-tooltip

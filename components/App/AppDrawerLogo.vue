@@ -1,7 +1,6 @@
 <template>
     <!-- eslint-disable vue/no-v-text-v-html-on-component vue/no-v-html -->
     <nuxt-link
-        v-bind="$attrs"
         class="vh-drawer-logo"
         aria-label="Ana sayfaya git"
         to="/"

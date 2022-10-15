@@ -1,7 +1,5 @@
 <template>
-    <Disqus
-        v-bind="$attrs"
-        :url="url" />
+    <Disqus :url="url" />
 </template>
 
 <script>

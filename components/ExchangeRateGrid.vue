@@ -1,7 +1,5 @@
 <template>
-    <v-row
-        v-bind="$attrs"
-        dense="">
+    <v-row dense="">
         <template v-for="_currencyCode in currencies">
             <ExchangeRateGridItem
                 :key="_currencyCode"

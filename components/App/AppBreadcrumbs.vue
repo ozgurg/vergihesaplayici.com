@@ -1,7 +1,6 @@
 <template>
     <v-breadcrumbs
         v-if="items.length > 0"
-        v-bind="$attrs"
         ref="breadcrumbs"
         :items="normalizedItems"
         class="vh-breadcrumbs mb-3 pb-3 px-0"
