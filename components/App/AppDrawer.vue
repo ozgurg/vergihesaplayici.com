@@ -4,7 +4,7 @@
         app=""
         :permanent="$vuetify.breakpoint.mdAndUp"
         color="#272727"
-        width="275"
+        width="265"
         floating="">
         <template #prepend>
             <AppDrawerLogo />
@@ -47,32 +47,29 @@ export default {
 </script>
 
 <style lang="scss">
-$vh_drawerSelector: "v-navigation-drawer";
+@media(max-width: 959.98px) {
+    $vh_drawerSelector: "v-navigation-drawer";
 
-html:has(.#{$vh_drawerSelector}--open.#{$vh_drawerSelector}--is-mobile) {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    &, *:not(.#{$vh_drawerSelector} *) {
-        overflow: hidden !important
-    }
-    body {
-        position: absolute;
+    html:has(.#{$vh_drawerSelector}--open) {
+        position: fixed;
         width: 100%;
         height: 100%;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        top: 0;
-        overflow: hidden
+        inset: 0;
+        &, *:not(.#{$vh_drawerSelector} *) {
+            // FIXME: This is causing the parts under the overlay to look weird
+            overflow: hidden !important
+        }
+        body {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            inset: 0;
+            overflow: hidden
+        }
     }
-}
 
-.#{$vh_drawerSelector} {
-    height: 100% !important
+    .#{$vh_drawerSelector} {
+        height: 100% !important
+    }
 }
 </style>
