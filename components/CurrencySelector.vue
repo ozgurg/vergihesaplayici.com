@@ -1,7 +1,7 @@
 <template>
     <v-select
         :value="value"
-        :items="currencies"
+        :items="currencyCodes"
         hide-details=""
         filled=""
         outlined=""
@@ -24,7 +24,7 @@ export default {
         }
     },
     computed: {
-        currencies() {
+        currencyCodes() {
             const vm = this;
             return vm.$store.getters["exchange-rates/availableCurrencies"];
         }
