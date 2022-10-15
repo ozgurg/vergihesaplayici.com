@@ -59,9 +59,11 @@ export default {
             await vm.$store.dispatch("exchange-rates/loadExchangeRateFromApi", vm.currencyCode)
                 .then(exchangeRate => {
                     vm.exchangeRate = exchangeRate;
-                }).catch(() => {
+                })
+                .catch(() => {
                     // To disable default error behavior
-                }).finally(() => {
+                })
+                .finally(() => {
                     vm.isLoading = false;
                 });
         }
