@@ -33,13 +33,6 @@
                     type="number" />
             </FormRow>
 
-            <FormRow class="mb-4">
-                <CalculatorPresets
-                    @click="choosePreset($event)"
-                    :value="matchingPresetIds"
-                    :presets="ui.presets" />
-            </FormRow>
-
             <FormRow
                 label="KDV oranı">
                 <v-text-field
@@ -53,6 +46,13 @@
                     inputmode="decimal"
                     type="number"
                     aria-label="KDV oranı" />
+            </FormRow>
+
+            <FormRow class="mt-4">
+                <CalculatorPresets
+                    @click="choosePreset($event)"
+                    :value="matchingPresetIds"
+                    :presets="ui.presets" />
             </FormRow>
 
             <CalculatorResultTabs
