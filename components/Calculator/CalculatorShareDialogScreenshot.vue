@@ -1,12 +1,75 @@
 <template>
-    <div v-bind="$attrs">
+    <div
+        v-bind="$attrs"
+        class="text-center">
+        <div class="position-relative d-inline-block mb-4">
+            <v-btn
+                @click="download()"
+                outlined=""
+                color="primary">
+                <v-icon left="">
+                    {{ icons.mdiDownload }}
+                </v-icon>
+                <span>İndir</span>
+            </v-btn>
+
+            <v-btn
+                @click="copy()"
+                outlined=""
+                color="primary">
+                <v-icon left="">
+                    {{ icons.mdiContentCopy }}
+                </v-icon>
+                <span>Kopyala</span>
+            </v-btn>
+
+            <v-fade-transition>
+                <v-overlay
+                    v-if="isDownloaded || isCopied || isLoading"
+                    :value="true"
+                    absolute=""
+                    opacity="1">
+                    <v-alert
+                        color="primary"
+                        text=""
+                        outlined=""
+                        class="pa-0 d-flex align-center flex-row justify-center w-100 h-100">
+                        <template v-if="isLoading">
+                            <v-progress-circular
+                                indeterminate=""
+                                size="20"
+                                width="2"
+                                color="primary" />
+                        </template>
+                        <template v-else>
+                            <v-icon
+                                left=""
+                                size="18"
+                                class="me-2 ms-n2"
+                                color="primary">
+                                {{ icons.mdiCheck }}
+                            </v-icon>
+                            <div class="success-text">
+                                <template v-if="isDownloaded">
+                                    İndirildi
+                                </template>
+                                <template v-else-if="isCopied">
+                                    Kopyalandı
+                                </template>
+                            </div>
+                        </template>
+                    </v-alert>
+                </v-overlay>
+            </v-fade-transition>
+        </div>
+
         <div
             ref="table"
             class="screenshot">
-            <v-simple-table>
+            <v-simple-table class="rounded-0">
                 <tbody>
                 <tr>
-                    <td class="screenshot__title text-uppercase text-center">
+                    <td class="screenshot__title py-1 text-center">
                         {{ title }}
                     </td>
                 </tr>
@@ -32,7 +95,7 @@
 
                 <template v-for="item in data.input">
                     <tr :key="item.key">
-                        <td class="py-2">
+                        <td class="py-3">
                             <div class="d-flex justify-space-between align-center">
                                 <div>
                                     {{ item.key }}
@@ -46,14 +109,14 @@
                 </template>
 
                 <tr>
-                    <td class="text-uppercase grey darken-3 text-center">
+                    <td class="text-uppercase grey darken-3 text-center py-3">
                         Sonuçlar
                     </td>
                 </tr>
 
                 <template v-for="item in data.output">
                     <tr :key="item.key">
-                        <td class="py-2">
+                        <td class="py-3">
                             <div class="d-flex justify-space-between align-center">
                                 <div>
                                     {{ item.key }}
@@ -68,13 +131,13 @@
 
                 <tr>
                     <td
-                        class="text-center pa-2"
-                        style="border-top:2px solid #fff">
+                        class="text-center pt-2 pb-1"
+                        style="border-top:1px solid #fff">
                         <v-row no-gutters>
                             <v-col
-                                v-for="(currency, index) in currencies"
-                                :key="index">
-                                <CalculatorShareDialogScreenshotExchangeRateItem :currency="currency" />
+                                v-for="_currencyCode in currencies"
+                                :key="_currencyCode">
+                                <CalculatorShareDialogScreenshotExchangeRateItem :currency-code="_currencyCode" />
                             </v-col>
                         </v-row>
                     </td>
@@ -82,7 +145,7 @@
 
                 <tr>
                     <td class="text-center py-2 caption">
-                        <div class="grey--text text--lighten-1 mb-1">
+                        <div class="grey--text text--lighten-1">
                             {{ date.toLocaleString("tr-TR") }}
                         </div>
 
@@ -90,76 +153,17 @@
                             <img
                                 :src="require('@/assets/img/logo-screenshot.png')"
                                 class="me-1"
+                                loading="lazy"
+                                decoding="async"
                                 alt="Vergi Hesaplayıcı Logo"
-                                draggable="false"
-                                height="18"
-                                width="136" />
+                                width="136"
+                                height="18" />
                             <span>v{{ version }}</span>
                         </div>
                     </td>
                 </tr>
                 </tbody>
             </v-simple-table>
-        </div>
-
-        <v-divider class="my-6" />
-
-        <div class="text-center">
-            <div class="position-relative d-inline-block">
-                <v-btn
-                    @click="download()"
-                    outlined=""
-                    color="primary">
-                    <v-icon left="">
-                        {{ icons.mdiDownload }}
-                    </v-icon>
-                    İndir
-                </v-btn>
-
-                <v-btn
-                    @click="copy()"
-                    outlined=""
-                    color="primary">
-                    <v-icon left="">
-                        {{ icons.mdiContentCopy }}
-                    </v-icon>
-                    Kopyala
-                </v-btn>
-
-                <v-fade-transition>
-                    <v-overlay
-                        v-if="isDownloaded || isCopied || isLoading"
-                        :value="true"
-                        absolute=""
-                        opacity="1">
-                        <v-alert
-                            color="primary"
-                            text=""
-                            outlined=""
-                            class="pa-0 d-flex align-center flex-row justify-center w-100 h-100">
-                            <v-progress-circular
-                                v-if="isLoading"
-                                indeterminate=""
-                                size="24"
-                                width="2"
-                                color="primary" />
-
-                            <template v-else>
-                                <div class="d-flex align-center">
-                                    <v-icon
-                                        left=""
-                                        color="primary">
-                                        {{ icons.mdiCheck }}
-                                    </v-icon>
-
-                                    <span v-if="isDownloaded" class="screenshot__success-text">İndirildi</span>
-                                    <span v-else-if="isCopied" class="screenshot__success-text">Kopyalandı</span>
-                                </div>
-                            </template>
-                        </v-alert>
-                    </v-overlay>
-                </v-fade-transition>
-            </div>
         </div>
     </div>
 </template>
@@ -216,7 +220,7 @@ export default {
             const vm = this;
             return await vm.$html2canvas(vm.$refs.table, {
                 logging: false,
-                width: 342,
+                width: 330,
                 backgroundColor: "#fff",
                 type: "dataURL"
             });
@@ -311,41 +315,49 @@ export default {
 </script>
 
 <style lang="scss" scoped="">
+@import "vuetify/src/components/VBtn/VBtn.sass";
+
 .screenshot {
     position: relative;
-    width: 342px;
-    min-width: 300px;
+    width: 330px;
+    min-width: 330px;
     max-width: 100%;
     margin: 0 auto;
-    padding: 2px;
+    padding: 1px;
     pointer-events: none;
     background: #fff;
-
     &__title {
         background: #00262C
     }
-
     &__header {
         color: #00262C;
         line-height: 24px;
         font-size: 16px;
         font-weight: 500
     }
-
-    &__success-text {
-        // Same as button
-        font-size: .875rem
+    td {
+        height: auto !important
     }
 }
-</style>
 
-<style scoped="">
+.success-text {
+    font-size: map-deep-get($btn-font-sizes, "default")
+}
+
+.position-relative {
+    position: relative
+}
+
+.pointer-events-all {
+    pointer-events: all
+}
+
 :deep(.v-overlay__content) {
     width: 100%;
     height: 100%
 }
 
 :deep(.v-alert) {
-    border-radius: 12px
+    border-radius: $btn-border-radius
 }
 </style>
