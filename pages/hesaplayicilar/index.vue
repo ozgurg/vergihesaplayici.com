@@ -36,7 +36,7 @@ export default {
             return [
                 {
                     title: "Hesaplayıcılar",
-                    to: "/hesaplayicilar/"
+                    url: "/hesaplayicilar/"
                 }
             ];
         }

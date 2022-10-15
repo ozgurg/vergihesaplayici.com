@@ -16,7 +16,7 @@
 
         <template #item="{ item }">
             <v-breadcrumbs-item
-                :to="item.to"
+                :to="item.url"
                 exact-path=""
                 itemprop="itemListElement"
                 itemscope=""
@@ -62,7 +62,7 @@ export default {
             return [
                 {
                     title: "Ana Sayfa",
-                    to: "/"
+                    url: "/"
                 },
                 ...vm.items
             ].map((item, index) => ({

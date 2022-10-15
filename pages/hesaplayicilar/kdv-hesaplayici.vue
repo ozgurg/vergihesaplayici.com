@@ -233,11 +233,11 @@ export default {
             return [
                 {
                     title: "Hesaplayıcılar",
-                    to: "/hesaplayicilar/"
+                    url: "/hesaplayicilar/"
                 },
                 {
                     title: calculator.title,
-                    to: calculator.url
+                    url: calculator.url
                 }
             ];
         }
