@@ -3,8 +3,8 @@
         :icon="icon"
         text=""
         type="warning">
-        Ürünlerin ülkeye giriş fiyatını bilmediğimiz için yurtdışı satış fiyatından tahmini olarak
-        hesaplanmıştır.<br />Türkiye'deki satış fiyatı muhtemelen daha az olacaktır.
+        Ürünlerin ülkeye giriş fiyatını bilmediğimiz için yurtdışı satış fiyatından tahmini olarak hesaplanmıştır.
+        Gerçek satış fiyatı çoğunlukla hesaplanandan daha azdır.
     </v-alert>
 </template>
 
