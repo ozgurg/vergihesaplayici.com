@@ -1,7 +1,5 @@
 <template>
-    <v-app-bar
-        app=""
-        elevation="0">
+    <v-app-bar app="">
         <v-app-bar-nav-icon
             aria-label="Menüyü aç"
             @click="toggleDrawer()" />
