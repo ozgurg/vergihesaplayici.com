@@ -81,7 +81,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped="">
+<style lang="scss">
 @import "~vuetify/src/styles/styles.sass";
 
 .vh-copy-button {
