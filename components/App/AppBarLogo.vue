@@ -2,8 +2,10 @@
     <AppLogo class="vh-app-bar-logo" />
 </template>
 
-<style>
+<style lang="scss">
+@import "~vuetify/src/components/VToolbar/_variables.scss";
+
 .vh-app-bar-logo {
-    margin-left: -48px /* .v-app-bar-nav-icon width */
+    margin-left: -$toolbar-btn-icon-size
 }
 </style>
