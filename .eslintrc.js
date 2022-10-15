@@ -17,6 +17,12 @@ module.exports = {
         requireConfigFile: false
     },
     rules: {
+        "no-cond-assign": "error",
+        "no-constant-condition": "error",
+        "no-unreachable": "error",
+        "no-unused-expressions": "error",
+        "no-constant-binary-expression": "error",
+        "no-sequences": "error",
         "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
         "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
         "quotes": ["error", "double"],
