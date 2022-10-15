@@ -1,4 +1,9 @@
 <template>
-    <!-- It's just an alias-->
-    <AppLogo />
+    <AppLogo class="vh-app-drawer-logo" />
 </template>
+
+<style>
+.vh-app-drawer-logo {
+    height: 64px
+}
+</style>

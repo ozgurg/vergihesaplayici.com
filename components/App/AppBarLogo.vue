@@ -6,6 +6,7 @@
 @import "~vuetify/src/components/VToolbar/_variables.scss";
 
 .vh-app-bar-logo {
+    height: 100%;
     margin-left: -$toolbar-btn-icon-size
 }
 </style>

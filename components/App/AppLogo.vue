@@ -21,7 +21,6 @@ export default {
 .vh-app-logo {
     display: flex;
     place-content: center;
-    height: 100%;
     svg {
         width: 192px;
         height: auto
