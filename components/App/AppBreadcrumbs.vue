@@ -1,32 +1,32 @@
 <template>
     <v-breadcrumbs
-        v-if="items.length > 0"
         ref="breadcrumbs"
-        :items="normalizedItems"
+        :items="positionAddedItems"
         class="vh-breadcrumbs mb-3 pb-3 px-0"
         itemscope=""
         itemtype="https://schema.org/BreadcrumbList">
         <template #divider>
             <v-icon
                 color="grey lighten-2"
-                size="16">
+                size="12">
                 {{ dividerIcon }}
             </v-icon>
         </template>
 
-        <template #item="{ item }">
+        <template #item="{ item: _item }">
             <v-breadcrumbs-item
-                :to="item.url"
+                :to="_item.url"
                 exact-path=""
+                ripple=""
                 itemprop="itemListElement"
                 itemscope=""
                 itemtype="https://schema.org/ListItem"
                 nuxt="">
                 <span itemprop="name">
-                    {{ item.title }}
+                    {{ _item.title }}
                 </span>
                 <meta
-                    :content="item.position"
+                    :content="_item.position"
                     itemprop="position" />
             </v-breadcrumbs-item>
         </template>
@@ -50,14 +50,13 @@ export default {
         _scrollToEnd() {
             const vm = this;
             setTimeout(() => {
-                // Start at the end
                 const breadcrumbs = vm.$refs.breadcrumbs.$el;
                 breadcrumbs.scrollLeft = breadcrumbs.scrollWidth;
             }, 0);
         }
     },
     computed: {
-        normalizedItems() {
+        positionAddedItems() {
             const vm = this;
             return [
                 {
@@ -93,8 +92,13 @@ export default {
     white-space: nowrap;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    margin: -6px -8px;
     li {
         scroll-snap-align: center
+    }
+    .v-breadcrumbs__item {
+        border-radius: 8px;
+        padding: 6px 8px
     }
 }
 </style>
