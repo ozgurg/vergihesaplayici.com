@@ -4,9 +4,9 @@
 
         <AppBar v-if="$vuetify.breakpoint.smAndDown" />
 
-        <AppMain>
+        <MainContainer>
             <Nuxt />
-        </AppMain>
+        </MainContainer>
 
         <!-- We use tag="div", because AppFooter is already <footer />-->
         <v-footer
