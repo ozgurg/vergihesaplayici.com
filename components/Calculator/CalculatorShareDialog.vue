@@ -1,13 +1,13 @@
 <template>
     <v-dialog
-        @click:outside="close()"
-        @close="close()"
         v-bind="$attrs"
         :value="value"
         content-class="vh-dialog"
         :fullscreen="$vuetify.breakpoint.mdAndDown"
         :transition="$vuetify.breakpoint.mdAndDown ? 'dialog-bottom-transition' : 'dialog-transition'"
-        width="700">
+        width="700"
+        @click:outside="close()"
+        @close="close()">
         <div class="vh-dialog__header">
             <v-toolbar
                 class="px-2"
@@ -19,8 +19,8 @@
                 <v-spacer />
 
                 <v-btn
-                    @click="close()"
-                    icon="">
+                    icon=""
+                    @click="close()">
                     <v-icon>{{ icons.mdiClose }}</v-icon>
                 </v-btn>
             </v-toolbar>

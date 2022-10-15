@@ -1,13 +1,13 @@
 <template>
     <v-btn
         v-ripple="false"
-        @click="copy()"
         v-bind="$attrs"
         :class="{'vh-copy-button--copied': isCopied}"
         :aria-label="titleByCopyState"
         title="Kopyala"
         class="vh-copy-button ps-4 pe-1"
-        plain="">
+        plain=""
+        @click="copy()">
         <span class="vh-copy-button__icon-1">
             <v-icon size="20">
                 {{ icons.mdiContentCopy }}

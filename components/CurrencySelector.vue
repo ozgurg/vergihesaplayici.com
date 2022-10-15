@@ -1,13 +1,13 @@
 <template>
     <v-select
-        @change="emit($event)"
         v-bind="$attrs"
         :value="value"
         :items="currencies"
         hide-details=""
         filled=""
         outlined=""
-        aria-label="Para birimi" />
+        aria-label="Para birimi"
+        @change="emit($event)" />
 </template>
 
 <script>

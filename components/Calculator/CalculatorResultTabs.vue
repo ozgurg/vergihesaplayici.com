@@ -5,10 +5,10 @@
             :class="{'vh-result-tabs--stuck': isStuck}"
             class="vh-result-tabs mb-4">
             <v-tabs
-                @change="emit($event)"
                 :value="value"
                 background-color="transparent"
-                fixed-tabs="">
+                fixed-tabs=""
+                @change="emit($event)">
                 <v-tab :disabled="!showResults">
                     <v-icon left="">
                         {{ icons.mdiFormatListBulletedType }}

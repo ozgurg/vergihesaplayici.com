@@ -4,9 +4,9 @@
         class="text-center">
         <div class="position-relative d-inline-block mb-4">
             <v-btn
-                @click="download()"
                 outlined=""
-                color="primary">
+                color="primary"
+                @click="download()">
                 <v-icon left="">
                     {{ icons.mdiDownload }}
                 </v-icon>
@@ -14,9 +14,9 @@
             </v-btn>
 
             <v-btn
-                @click="copy()"
                 outlined=""
-                color="primary">
+                color="primary"
+                @click="copy()">
                 <v-icon left="">
                     {{ icons.mdiContentCopy }}
                 </v-icon>
@@ -77,15 +77,15 @@
                 <tr>
                     <td
                         v-ripple=""
-                        @click="changeTitle"
                         title="Başlığı değiştir"
                         role="button"
-                        class="screenshot__header primary text-center py-2 pointer-events-all">
+                        class="screenshot__header primary text-center py-2 pointer-events-all"
+                        @click="changeTitle">
                         <template v-if="hasTitle">
                             <!-- eslint-disable vue/no-v-html -->
                             <span
-                                v-html="actualTitle"
-                                class="screenshot__header" />
+                                class="screenshot__header"
+                                v-html="actualTitle" />
                         </template>
                         <template v-else>
                             <i class="screenshot__header font-weight-thin">Başlıksız</i>

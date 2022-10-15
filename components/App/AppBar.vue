@@ -3,8 +3,8 @@
         v-bind="$attrs"
         elevation="0">
         <v-app-bar-nav-icon
-            @click="toggleDrawer()"
-            aria-label="Menüyü aç" />
+            aria-label="Menüyü aç"
+            @click="toggleDrawer()" />
 
         <div class="d-flex justify-center flex-grow-1">
             <AppBarLogo />

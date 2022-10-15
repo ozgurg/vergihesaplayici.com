@@ -82,18 +82,18 @@ module.exports = {
         "vue/attributes-order": ["error", {
             "order": [
                 "DEFINITION",
-                "CONDITIONALS",
                 "LIST_RENDERING",
+                "CONDITIONALS",
                 "RENDER_MODIFIERS",
-                "OTHER_DIRECTIVES",
-                "SLOT",
-                "UNIQUE",
-                "CONTENT",
-                "TWO_WAY_BINDING",
-                "EVENTS",
                 "GLOBAL",
-                "OTHER_ATTR"
-            ]
+                ["UNIQUE", "SLOT"],
+                "TWO_WAY_BINDING",
+                "OTHER_DIRECTIVES",
+                "OTHER_ATTR",
+                "EVENTS",
+                "CONTENT"
+            ],
+            "alphabetical": false
         }],
         "vue/singleline-html-element-content-newline": ["error"],
         "vue/html-closing-bracket-newline": ["error", {

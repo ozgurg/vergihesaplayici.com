@@ -1,11 +1,11 @@
 <template>
     <!-- eslint-disable vue/no-v-text-v-html-on-component vue/no-v-html -->
     <nuxt-link
-        v-html="logo"
         v-bind="$attrs"
         class="vh-drawer-logo"
         aria-label="Ana sayfaya git"
-        to="/" />
+        to="/"
+        v-html="logo" />
 </template>
 
 <script>

@@ -10,12 +10,12 @@
                     top="">
                     <template #activator="{ on, attrs }">
                         <v-chip
-                            @click="choosePreset(preset)"
-                            v-on="on"
                             v-bind="attrs"
                             role="button"
                             :class="{'primary--text primary': value.includes(preset.id)}"
-                            outlined="">
+                            outlined=""
+                            @click="choosePreset(preset)"
+                            v-on="on">
                             {{ preset.title }}
                         </v-chip>
                     </template>
@@ -29,10 +29,10 @@
             <template v-else>
                 <v-chip
                     :key="preset.id"
-                    @click="choosePreset(preset)"
                     role="button"
                     :class="{'primary--text primary': value.includes(preset.id)}"
-                    outlined="">
+                    outlined=""
+                    @click="choosePreset(preset)">
                     {{ preset.title }}
                 </v-chip>
             </template>

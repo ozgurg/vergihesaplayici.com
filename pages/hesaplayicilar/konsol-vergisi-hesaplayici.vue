@@ -7,9 +7,9 @@
         <InnerContainer>
             <FormRow class="mb-4">
                 <CalculatorPresets
-                    @click="choosePreset($event)"
                     :value="matchingPresetIds"
-                    :presets="ui.presets">
+                    :presets="ui.presets"
+                    @click="choosePreset($event)">
                     <template #tooltip="{preset}">
                         {{ moneyFormat(preset.form.price, preset.form.currency) }}
                     </template>
@@ -58,10 +58,10 @@
                     <FormRow>
                         <div>
                             <v-btn
-                                @click="ui.isShareDialogShown = true"
                                 outlined=""
                                 color="primary"
-                                large="">
+                                large=""
+                                @click="ui.isShareDialogShown = true">
                                 <v-icon left="">
                                     {{ icons.mdiShare }}
                                 </v-icon>
