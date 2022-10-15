@@ -1,61 +1,67 @@
 <template>
     <div v-bind="$attrs">
         <div class="grey--text caption">
-            {{ currency }}
+            1 {{ currencyCode }} =
         </div>
 
-        <v-skeleton-loader
-            v-if="isLoading || exchangeRate === null"
-            class="mx-auto mb-0"
-            max-height="21"
-            max-width="42"
-            width="100%"
-            type="image" />
-
-        <div
-            v-else
-            class="pa-0 ma-0 grey--text text--lighten-1">
-            {{ moneyFormat(exchangeRate.rate, "TRY") }}
-        </div>
+        <template v-if="isLoading">
+            <v-skeleton-loader
+                class="mx-auto mb-0"
+                max-height="21"
+                max-width="42"
+                width="100%"
+                type="image" />
+        </template>
+        <template v-else>
+            <div class="grey--text text--lighten-1">
+                <template v-if="exchangeRate">
+                    {{ moneyFormat(exchangeRate.rate, "TRY") }}
+                </template>
+                <template v-else>
+                    <v-icon
+                        color="red"
+                        size="20">
+                        {{ errorIcon }}
+                    </v-icon>
+                </template>
+            </div>
+        </template>
     </div>
 </template>
 
 <script>
+import { mdiAlertCircle } from "@mdi/js";
 import { moneyFormat } from "@/utils/formatter.js";
 
 export default {
     data: () => ({
-        isLoading: false,
+        errorIcon: mdiAlertCircle,
+        isLoading: true,
         exchangeRate: null
     }),
     props: {
-        currency: {
+        currencyCode: {
             type: String,
             required: true
         }
     },
     methods: {
         moneyFormat,
-        async load() {
+        async _load() {
             const vm = this;
-
-            vm.isLoading = true;
-
-            await vm.$store.dispatch("exchange-rates/loadExchangeRateFromApi", vm.currency)
+            await vm.$store.dispatch("exchange-rates/loadExchangeRateFromApi", vm.currencyCode)
                 .then(exchangeRate => {
                     vm.exchangeRate = exchangeRate;
                 }).catch(() => {
                     // To disable default error behavior
+                }).finally(() => {
+                    vm.isLoading = false;
                 });
-
-            setTimeout(() => {
-                vm.isLoading = false;
-            }, 100);
         }
     },
     async mounted() {
         const vm = this;
-        await vm.load();
+        await vm._load();
     }
 };
 </script>

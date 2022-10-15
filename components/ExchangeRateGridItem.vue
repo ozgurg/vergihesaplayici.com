@@ -58,17 +58,14 @@ export default {
         moneyFormat,
         async _load() {
             const vm = this;
-
-            vm.isLoading = true;
-
             await vm.$store.dispatch("exchange-rates/loadExchangeRateFromApi", vm.currencyCode)
                 .then(exchangeRate => {
                     vm.exchangeRate = exchangeRate;
                 }).catch(() => {
                     // To disable default error behavior
+                }).finally(() => {
+                    vm.isLoading = false;
                 });
-
-            vm.isLoading = false;
         }
     },
     async mounted() {
