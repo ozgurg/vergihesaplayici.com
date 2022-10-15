@@ -6,7 +6,7 @@
         <v-card
             :to="url"
             outlined=""
-            class="pa-8 d-flex flex-column justify-space-between h-100">
+            class="px-6 py-8 pa-sm-8 d-flex flex-column justify-space-between h-100">
             <v-icon
                 class="primary--text"
                 size="56">
