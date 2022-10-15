@@ -19,15 +19,9 @@ export default {
 
 <style lang="scss">
 .vh-drawer-logo {
-    padding: 0 1rem;
     display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: center;
-    height: 56px;
-    @media(min-width: 960px) {
-        height: 64px
-    }
+    place-content: center;
+    height: 100%;
     svg {
         width: 192px;
         height: auto
