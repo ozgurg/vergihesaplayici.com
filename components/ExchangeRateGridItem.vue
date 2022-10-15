@@ -28,7 +28,7 @@
                         -->
                         <div>
                             <v-icon color="red">
-                                {{ icons.mdiAlertCircle }}
+                                {{ errorIcon }}
                             </v-icon>
                         </div>
                     </template>
@@ -44,9 +44,7 @@ import { moneyFormat } from "@/utils/formatter.js";
 
 export default {
     data: () => ({
-        icons: {
-            mdiAlertCircle
-        },
+        errorIcon: mdiAlertCircle,
         isLoading: true,
         exchangeRate: null
     }),
