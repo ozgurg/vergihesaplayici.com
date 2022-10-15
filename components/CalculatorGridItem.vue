@@ -12,11 +12,11 @@
                 {{ icon }}
             </v-icon>
 
-            <h2 class="text-h6 mt-4 mb-2 text--primary h-100">
+            <h2 class="text-h6 mt-4 mb-3 text--primary h-100">
                 {{ title }}
             </h2>
 
-            <p class="text-subtitle-2 mb-0 text--secondary">
+            <p class="text-subtitle-2 ma-0 text--secondary">
                 {{ description }}
             </p>
         </v-card>

@@ -1,17 +1,16 @@
 <template>
     <v-list
         v-bind="$attrs"
-        :subheader="hasTitle">
-        <template v-if="hasTitle">
+        :subheader="hasSubheader">
+        <template v-if="hasSubheader">
             <v-subheader>
-                {{ title }}
+                {{ subheader }}
             </v-subheader>
         </template>
 
-        <!-- TODO: Replace "index" with something sensible -->
-        <template v-for="(_calculator, index) in calculators">
+        <template v-for="_calculator in calculators">
             <CalculatorListItem
-                :key="index"
+                :key="_calculator.title"
                 :url="_calculator.url"
                 :icon="_calculator.icon"
                 :title="_calculator.subtitle" />
@@ -27,15 +26,15 @@ export default {
         calculators
     }),
     props: {
-        title: {
+        subheader: {
             type: String,
             default: null
         }
     },
     computed: {
-        hasTitle() {
+        hasSubheader() {
             const vm = this;
-            return vm.title !== null;
+            return vm.subheader !== null;
         }
     }
 };

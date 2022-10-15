@@ -12,7 +12,7 @@
 
         <div class="d-flex flex-column h-100">
             <CalculatorList
-                title="Hesaplayıcılar"
+                subheader="Hesaplayıcılar"
                 shaped="" />
 
             <v-list class="mb-auto">
