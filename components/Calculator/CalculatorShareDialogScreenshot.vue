@@ -313,7 +313,7 @@ export default {
 </script>
 
 <style lang="scss" scoped="">
-@import "vuetify/src/components/VBtn/VBtn.sass";
+@import "~vuetify/src/components/VBtn/_variables.scss";
 
 .screenshot {
     position: relative;
