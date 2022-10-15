@@ -2,7 +2,7 @@
     <v-btn
         v-ripple="false"
         :class="{'vh-copy-button--copied': isCopied}"
-        :aria-label="titleByCopyState"
+        :aria-label="ariaLabel"
         title="Kopyala"
         class="vh-copy-button ps-4 pe-1"
         plain=""
@@ -60,7 +60,7 @@ export default {
 
             vm.copiedTimeout = setTimeout(() => {
                 vm.isCopied = false;
-            }, 1375); // 1000 + $transition-duration
+            }, 1300); // 1000 + transition-duration
         },
         _copyValue() {
             const vm = this;
@@ -73,7 +73,7 @@ export default {
         }
     },
     computed: {
-        titleByCopyState() {
+        ariaLabel() {
             const vm = this;
             return vm.isCopied ? "Kopyalandı" : "Kopyala";
         }
@@ -90,7 +90,10 @@ export default {
         min-width: unset !important
     }
     &--copied {
-        // TODO: Make icon white
+        // TODO: Make the icon white
+        .v-btn__content {
+            opacity: 1 !important;
+        }
         #{$self}__icon-1 {
             opacity: 0
         }
@@ -100,23 +103,16 @@ export default {
     }
     &__icon-2 {
         position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
+        inset: 0;
         width: 100%;
         height: 100%;
         display: flex;
-        align-items: center;
-        flex-direction: row;
-        justify-content: center;
-        color: #fff !important;
+        place-items: center;
         opacity: 0
     }
     &__icon-1, &__icon-2 {
-        transition: $primary-transition;
-        @media (prefers-reduced-motion) {
-            transition: none
+        @media (prefers-reduced-motion: no-preference) {
+            transition: $primary-transition
         }
     }
 }
