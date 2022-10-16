@@ -21,7 +21,7 @@
                     </template>
                     <template v-else>
                         <!--
-                        Wrapping with "div" makes height same as "v-skeleton loader".
+                        Wrapping with "div" makes height same as "v-skeleton-loader".
                         This prevents layout shifting.
                         -->
                         <div>
@@ -54,9 +54,9 @@ export default {
     },
     methods: {
         moneyFormat,
-        async _load() {
+        _load() {
             const vm = this;
-            await vm.$store.dispatch("exchange-rates/loadExchangeRateFromApi", vm.currencyCode)
+            vm.$store.dispatch("exchange-rates/loadExchangeRateFromApi", vm.currencyCode)
                 .then(exchangeRate => {
                     vm.exchangeRate = exchangeRate;
                 })
@@ -68,9 +68,9 @@ export default {
                 });
         }
     },
-    async mounted() {
+    mounted() {
         const vm = this;
-        await vm._load();
+        vm._load();
     }
 };
 </script>

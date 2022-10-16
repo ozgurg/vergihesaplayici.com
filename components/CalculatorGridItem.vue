@@ -16,7 +16,7 @@
                 {{ title }}
             </h2>
 
-            <p class="text-subtitle-2 ma-0 text--secondary">
+            <p class="text-subtitle-2 mb-0 text--secondary">
                 {{ description }}
             </p>
         </v-card>

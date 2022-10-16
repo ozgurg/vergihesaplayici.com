@@ -3,7 +3,7 @@
         :icon="icon"
         text=""
         type="warning">
-        Para birimi TRY olduğu için tersten hesaplama yapıldı.
+        Para birimi TRY olduğu için ters hesaplama yapıldı.
     </v-alert>
 </template>
 
