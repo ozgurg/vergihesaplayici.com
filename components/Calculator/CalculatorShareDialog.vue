@@ -2,7 +2,7 @@
     <v-dialog
         :value="value"
         :fullscreen="$vuetify.breakpoint.mdAndDown"
-        :transition="$vuetify.breakpoint.mdAndDown ? 'dialog-bottom-transition' : 'dialog-transition'"
+        :transition="transition"
         content-class="vh-dialog"
         overlay-color="#000"
         overlay-opacity=".75"
@@ -106,6 +106,14 @@ export default {
         close() {
             const vm = this;
             vm.$emit("input", false);
+        }
+    },
+    computed: {
+        transition() {
+            const vm = this;
+            return vm.$vuetify.breakpoint.mdAndDown ?
+                "dialog-bottom-transition" :
+                "dialog-transition";
         }
     }
 };
