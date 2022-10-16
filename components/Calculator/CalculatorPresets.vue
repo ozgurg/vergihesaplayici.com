@@ -1,37 +1,37 @@
 <template>
     <!-- TODO: Make v-chip one -->
     <div class="vh-presets">
-        <template v-for="preset in presets">
+        <template v-for="_preset in presets">
             <template v-if="$scopedSlots.tooltip">
                 <v-tooltip
-                    :key="preset.id"
+                    :key="_preset.id"
                     top="">
                     <template #activator="{ on, attrs }">
                         <v-chip
                             v-bind="attrs"
+                            :class="{'primary--text primary': value.includes(_preset.id)}"
                             role="button"
-                            :class="{'primary--text primary': value.includes(preset.id)}"
                             outlined=""
-                            @click="choosePreset(preset)"
+                            @click="choosePreset(_preset)"
                             v-on="on">
-                            {{ preset.title }}
+                            {{ _preset.title }}
                         </v-chip>
                     </template>
                     <div>
                         <slot
                             name="tooltip"
-                            :preset="preset" />
+                            :preset="_preset" />
                     </div>
                 </v-tooltip>
             </template>
             <template v-else>
                 <v-chip
-                    :key="preset.id"
+                    :key="_preset.id"
+                    :class="{'primary--text primary': value.includes(_preset.id)}"
                     role="button"
-                    :class="{'primary--text primary': value.includes(preset.id)}"
                     outlined=""
-                    @click="choosePreset(preset)">
-                    {{ preset.title }}
+                    @click="choosePreset(_preset)">
+                    {{ _preset.title }}
                 </v-chip>
             </template>
         </template>

@@ -24,9 +24,9 @@
                 </v-list-item>
             </v-list>
 
-            <AppDrawerFooter
-                v-if="$vuetify.breakpoint.mdAndUp"
-                class="mt-15" />
+            <template v-if="$vuetify.breakpoint.mdAndUp">
+                <AppDrawerFooter class="mt-15" />
+            </template>
         </div>
     </v-navigation-drawer>
 </template>

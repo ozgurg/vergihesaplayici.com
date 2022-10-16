@@ -1,9 +1,9 @@
 <template>
     <v-dialog
         :value="value"
-        content-class="vh-dialog"
         :fullscreen="$vuetify.breakpoint.mdAndDown"
         :transition="$vuetify.breakpoint.mdAndDown ? 'dialog-bottom-transition' : 'dialog-transition'"
+        content-class="vh-dialog"
         overlay-color="#000"
         overlay-opacity=".75"
         width="700"

@@ -22,42 +22,43 @@
             </v-btn>
 
             <v-fade-transition>
-                <v-overlay
-                    v-if="isDownloaded || isCopied || isLoading"
-                    :value="true"
-                    absolute=""
-                    opacity="1">
-                    <v-alert
-                        color="primary"
-                        text=""
-                        outlined=""
-                        class="pa-0 d-flex align-center flex-row justify-center w-100 h-100">
-                        <template v-if="isLoading">
-                            <v-progress-circular
-                                indeterminate=""
-                                size="20"
-                                width="2"
-                                color="primary" />
-                        </template>
-                        <template v-else>
-                            <v-icon
-                                left=""
-                                size="18"
-                                class="me-2 ms-n2"
-                                color="primary">
-                                {{ icons.mdiCheck }}
-                            </v-icon>
-                            <div class="success-text">
-                                <template v-if="isDownloaded">
-                                    İndirildi
-                                </template>
-                                <template v-else-if="isCopied">
-                                    Kopyalandı
-                                </template>
-                            </div>
-                        </template>
-                    </v-alert>
-                </v-overlay>
+                <template v-if="isDownloaded || isCopied || isLoading">
+                    <v-overlay
+                        :value="true"
+                        absolute=""
+                        opacity="1">
+                        <v-alert
+                            color="primary"
+                            text=""
+                            outlined=""
+                            class="pa-0 d-flex align-center flex-row justify-center w-100 h-100">
+                            <template v-if="isLoading">
+                                <v-progress-circular
+                                    indeterminate=""
+                                    size="20"
+                                    width="2"
+                                    color="primary" />
+                            </template>
+                            <template v-else>
+                                <v-icon
+                                    left=""
+                                    size="18"
+                                    class="me-2 ms-n2"
+                                    color="primary">
+                                    {{ icons.mdiCheck }}
+                                </v-icon>
+                                <div class="success-text">
+                                    <template v-if="isDownloaded">
+                                        İndirildi
+                                    </template>
+                                    <template v-else-if="isCopied">
+                                        Kopyalandı
+                                    </template>
+                                </div>
+                            </template>
+                        </v-alert>
+                    </v-overlay>
+                </template>
             </v-fade-transition>
         </div>
 
@@ -80,15 +81,15 @@
                     </tr>
                 </template>
 
-                <template v-for="item in data.input">
-                    <tr :key="item.key">
+                <template v-for="_item in data.input">
+                    <tr :key="_item.key">
                         <td class="py-3">
                             <div class="d-flex justify-space-between align-center">
                                 <div>
-                                    {{ item.key }}
+                                    {{ _item.key }}
                                 </div>
                                 <div class="text-end ps-4">
-                                    {{ item.value }}
+                                    {{ _item.value }}
                                 </div>
                             </div>
                         </td>
@@ -101,15 +102,15 @@
                     </td>
                 </tr>
 
-                <template v-for="item in data.output">
-                    <tr :key="item.key">
+                <template v-for="_item in data.output">
+                    <tr :key="_item.key">
                         <td class="py-3">
                             <div class="d-flex justify-space-between align-center">
                                 <div>
-                                    {{ item.key }}
+                                    {{ _item.key }}
                                 </div>
                                 <div class="text-end ps-4">
-                                    {{ item.value }}
+                                    {{ _item.value }}
                                 </div>
                             </div>
                         </td>
