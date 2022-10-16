@@ -1,17 +1,10 @@
 <template>
+    <!-- eslint-disable vue/no-v-text-v-html-on-component vue/no-v-html -->
     <v-alert
         :icon="icon"
         text=""
-        type="info">
-        <template v-if="minimumWageMonthCount < 1">
-            Türkiye'de asgari ücretle ({{ minimumWageFormatted }}) çalışan birisi yemeden içmeden bu ürünü
-            <b>{{ minimumWageDayCount }}</b> günlük maaşı ile satın alabilir.
-        </template>
-        <template v-else>
-            Türkiye'de asgari ücretle ({{ minimumWageFormatted }}) çalışan birisi yemeden içmeden bu ürünü
-            <b>{{ minimumWageMonthCount }}</b> aylık maaşı ile satın alabilir.
-        </template>
-    </v-alert>
+        type="info"
+        v-html="text" />
 </template>
 
 <script>
@@ -32,6 +25,15 @@ export default {
         }
     },
     computed: {
+        text() {
+            const vm = this;
+
+            if (vm.minimumWageMonthCount > 1) {
+                return `Türkiye'de asgari ücretle (${vm.minimumWageFormatted}) çalışan birisi yemeden içmeden bu ürünü <b>${vm.minimumWageMonthCount}</b> aylık maaşı ile satın alabilir.`;
+            }
+
+            return `Türkiye'de asgari ücretle (${vm.minimumWageFormatted}) çalışan birisi yemeden içmeden bu ürünü <b>${vm.minimumWageDayCount}</b> günlük maaşı ile satın alabilir.`;
+        },
         minimumWageFormatted() {
             return moneyFormat(minimumWage, "TRY");
         },
