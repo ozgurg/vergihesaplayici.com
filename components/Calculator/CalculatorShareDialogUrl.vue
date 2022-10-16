@@ -3,7 +3,7 @@
         <v-row
             no-gutters=""
             class="ma-n2 ma-lg-n3">
-            <template v-for="_item in items">
+            <template v-for="_item in socialMediaSharingItems">
                 <v-col
                     :key="_item.title"
                     class="pa-2 pa-lg-3"
@@ -100,7 +100,7 @@ export default {
                 vm.includeParams
             );
         },
-        items() {
+        socialMediaSharingItems() {
             const vm = this;
             return [
                 {
@@ -146,14 +146,14 @@ export default {
 </script>
 
 <style scoped="">
-/* For custom icons in social media sharing */
+/* Custom icons for social media sharing */
 :deep(svg) {
     vertical-align: middle;
     width: 28px;
     height: 28px
 }
 
-/* For copy button in URL sharing */
+/* Copy button for URL sharing */
 :deep(.v-input__append-inner) {
     padding-left: 12px !important;
     margin-top: auto !important;
