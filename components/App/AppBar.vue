@@ -4,9 +4,7 @@
             aria-label="Menüyü aç"
             @click="toggleDrawer()" />
 
-        <div class="d-flex justify-center flex-grow-1 h-100">
-            <AppBarLogo />
-        </div>
+        <AppBarLogo />
     </v-app-bar>
 </template>
 

@@ -1,5 +1,7 @@
 <template>
-    <AppLogo class="vh-app-bar-logo" />
+    <div class="d-flex justify-center flex-grow-1 h-100">
+        <AppLogo class="vh-app-bar-logo" />
+    </div>
 </template>
 
 <style lang="scss">

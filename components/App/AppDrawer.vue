@@ -1,8 +1,8 @@
 <template>
     <v-navigation-drawer
         v-model="isDrawerOpen"
-        app=""
         :permanent="$vuetify.breakpoint.mdAndUp"
+        app=""
         overlay-color="#000"
         overlay-opacity=".75"
         color="#272727"
