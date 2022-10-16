@@ -2,11 +2,11 @@
     <div>
         <v-row
             no-gutters=""
-            class="mx-n2 my-n3">
+            class="ma-n2 ma-lg-n3">
             <template v-for="_item in items">
                 <v-col
                     :key="_item.title"
-                    class="px-2 py-3"
+                    class="pa-2 pa-lg-3"
                     cols="4"
                     sm="2">
                     <v-btn
@@ -14,7 +14,9 @@
                         :color="_item.color"
                         :title="_item.title"
                         rel="nofollow noopener noreferrer"
+                        class="py-6"
                         target="_blank"
+                        elevation="0"
                         block=""
                         rounded=""
                         large="">
@@ -23,7 +25,7 @@
                             <div v-html="loadCustomIconAsHtml(_item)" />
                         </template>
                         <template v-else>
-                            <v-icon size="24">
+                            <v-icon size="28">
                                 {{ _item.icon }}
                             </v-icon>
                         </template>
@@ -34,7 +36,7 @@
 
         <div
             id="calculatorShareDialogCopyUrlContainer"
-            class="mt-6">
+            class="mt-8">
             <v-text-field
                 :value="url"
                 hide-details=""
@@ -54,7 +56,7 @@
         <v-checkbox
             v-model="includeParams"
             hide-details=""
-            class="mt-6"
+            class="mt-8"
             label="Hesaplayıcı parametrelerini dahil et" />
     </div>
 </template>
@@ -147,8 +149,8 @@ export default {
 /* For custom icons in social media sharing */
 :deep(svg) {
     vertical-align: middle;
-    width: 24px;
-    height: 24px
+    width: 28px;
+    height: 28px
 }
 
 /* For copy button in URL sharing */

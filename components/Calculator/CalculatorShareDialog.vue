@@ -20,7 +20,9 @@
                 <v-btn
                     icon=""
                     @click="close()">
-                    <v-icon>{{ icons.mdiClose }}</v-icon>
+                    <v-icon>
+                        {{ icons.mdiClose }}
+                    </v-icon>
                 </v-btn>
             </v-toolbar>
 
@@ -30,13 +32,13 @@
                 grow=""
                 background-color="transparent">
                 <v-tab>
-                    <v-icon left>
+                    <v-icon left="">
                         {{ icons.mdiLink }}
                     </v-icon>
                     <span>Bağlantı</span>
                 </v-tab>
                 <v-tab>
-                    <v-icon left>
+                    <v-icon left="">
                         {{ icons.mdiCellphoneScreenshot }}
                     </v-icon>
                     <span>Ekran görüntüsü</span>
@@ -45,20 +47,21 @@
         </div>
 
         <div class="vh-dialog__content">
-            <v-tabs-items
-                :value="currentTab"
-                touchless="">
-                <v-tab-item class="pa-5 pa-lg-8">
-                    <CalculatorShareDialogUrl :data="formData" />
-                </v-tab-item>
-
-                <v-tab-item class="pa-5 pa-lg-8">
+            <template v-if="currentTab === 0">
+                <div class="d-flex flex-column h-100">
+                    <div class="mt-auto px-6 py-10 pa-lg-8">
+                        <CalculatorShareDialogUrl :data="formData" />
+                    </div>
+                </div>
+            </template>
+            <template v-else-if="currentTab === 1">
+                <div class="px-6 py-10 pa-lg-8">
                     <CalculatorShareDialogScreenshot
                         :data="screenshotData"
                         :title="title"
                         :matching-presets="matchingPresets" />
-                </v-tab-item>
-            </v-tabs-items>
+                </div>
+            </template>
         </div>
     </v-dialog>
 </template>
