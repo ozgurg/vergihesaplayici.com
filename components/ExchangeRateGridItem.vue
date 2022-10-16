@@ -61,7 +61,7 @@ export default {
                     vm.exchangeRate = exchangeRate;
                 })
                 .catch(() => {
-                    // To disable default error behavior
+                    vm.exchangeRate = null;
                 })
                 .finally(() => {
                     vm.isLoading = false;
