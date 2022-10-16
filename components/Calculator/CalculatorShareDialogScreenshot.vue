@@ -173,9 +173,7 @@ export default {
         date: new Date(),
         isLoading: false,
         isDownloaded: false,
-        isCopied: false,
-        customTitle: null,
-        hasTitle: true
+        isCopied: false
     }),
     props: {
         data: {
