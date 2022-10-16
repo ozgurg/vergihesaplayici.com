@@ -30,8 +30,9 @@
 
             <v-tabs
                 v-model="currentTab"
+                :grow="$vuetify.breakpoint.mdAndDown"
+                :fixed-tabs="$vuetify.breakpoint.mdAndUp"
                 class="vh-share-tabs"
-                grow=""
                 background-color="transparent">
                 <v-tab>
                     <v-icon left="">
