@@ -38,7 +38,7 @@ export default {
             type: String,
             required: true
         },
-        containerId: {
+        containerSelector: {
             type: String,
             default: null
         }
@@ -65,8 +65,8 @@ export default {
         _copyValue() {
             const vm = this;
 
-            if (vm.containerId !== null) {
-                vm.$copyText(vm.valueToCopy, document.getElementById(vm.containerId));
+            if (vm.containerSelector !== null) {
+                vm.$copyText(vm.valueToCopy, document.querySelector(vm.containerSelector));
             } else {
                 vm.$copyText(vm.valueToCopy);
             }

@@ -33,7 +33,7 @@
         </v-row>
 
         <div
-            id="calculatorShareDialogCopyUrl"
+            id="calculatorShareDialogCopyUrlContainer"
             class="mt-6">
             <v-text-field
                 :value="url"
@@ -46,7 +46,7 @@
                     </div>
                     <CopyButton
                         :value-to-copy="url"
-                        container-id="calculatorShareDialogCopyUrl" />
+                        container-selector="#calculatorShareDialogCopyUrlContainer" />
                 </template>
             </v-text-field>
         </div>
