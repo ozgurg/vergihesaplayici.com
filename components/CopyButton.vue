@@ -86,14 +86,9 @@ export default {
 
 .vh-copy-button {
     $self: &;
-    &.v-btn {
-        min-width: unset !important
-    }
+    min-width: unset !important;
     &--copied {
         // TODO: Make the icon white
-        .v-btn__content {
-            opacity: 1 !important;
-        }
         #{$self}__icon-1 {
             opacity: 0
         }

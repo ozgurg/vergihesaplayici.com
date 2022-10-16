@@ -100,7 +100,7 @@ export default {
         position: sticky;
         z-index: 5; // Same as .v-app-bar.v-app-bar--fixed
         transition: $secondary-transition;
-        top: 56px; // AppBar height
+        top: 56px // AppBar height
     }
     &--stuck {
         @media(max-width: 959.98px) {

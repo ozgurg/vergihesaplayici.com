@@ -83,7 +83,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped="">
 .vh-breadcrumbs {
     display: flex;
     align-items: center;

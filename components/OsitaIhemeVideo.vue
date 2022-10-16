@@ -7,14 +7,14 @@
         target="_blank"
         title="Osita Iheme">
         <video
-            autoplay=""
             class="rounded"
+            width="300"
             height="300"
+            autoplay=""
             loop=""
             muted=""
             playsinline=""
-            preload="none"
-            width="300">
+            preload="none">
             <source
                 :src="require('@/assets/video/osita-iheme.mp4')"
                 type="video/mp4" />
