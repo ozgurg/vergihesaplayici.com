@@ -25,7 +25,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped="">
 .vh-form-row {
     gap: 6px;
     @media(min-width: 1264px) {
