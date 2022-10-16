@@ -47,21 +47,23 @@ export default {
     },
     methods: {
         moneyFormat,
-        async _load() {
+        _load() {
             const vm = this;
-            await vm.$store.dispatch("exchange-rates/loadExchangeRateFromApi", vm.currencyCode)
+            vm.$store.dispatch("exchange-rates/loadExchangeRateFromApi", vm.currencyCode)
                 .then(exchangeRate => {
                     vm.exchangeRate = exchangeRate;
-                }).catch(() => {
+                })
+                .catch(() => {
                     // To disable default error behavior
-                }).finally(() => {
+                })
+                .finally(() => {
                     vm.isLoading = false;
                 });
         }
     },
-    async mounted() {
+    mounted() {
         const vm = this;
-        await vm._load();
+        vm._load();
     }
 };
 </script>
