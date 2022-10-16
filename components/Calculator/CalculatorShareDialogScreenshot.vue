@@ -47,14 +47,14 @@
                                     color="primary">
                                     {{ icons.mdiCheck }}
                                 </v-icon>
-                                <div class="success-text">
+                                <span class="success-text">
                                     <template v-if="isDownloaded">
                                         İndirildi
                                     </template>
                                     <template v-else-if="isCopied">
                                         Kopyalandı
                                     </template>
-                                </div>
+                                </span>
                             </template>
                         </v-alert>
                     </v-overlay>
