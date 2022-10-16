@@ -106,11 +106,11 @@ export default {
         @media(max-width: 959.98px) {
             background: map-get($material-dark-elevation-colors, "4");
 
-            // Negative of AppMain v-container .px-6
+            // Negative of MainContainer v-container .px-6
             margin-left: -24px;
             margin-right: -24px;
             @media (min-width: 600px) {
-                // Negative of AppMain v-container .px-sm-8
+                // Negative of MainContainer v-container .px-sm-8
                 margin-left: -32px;
                 margin-right: -32px
             }
