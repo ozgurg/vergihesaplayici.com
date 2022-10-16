@@ -57,7 +57,7 @@
 
             <CalculatorResultTabs
                 v-model="ui.tab"
-                :show-results="shouldShowResults"
+                :should-show-results="shouldShowResults"
                 class="mt-10">
                 <template v-if="shouldShowResults">
                     <CalculatorResultFormRow

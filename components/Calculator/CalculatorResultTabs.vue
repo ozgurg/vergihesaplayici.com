@@ -9,7 +9,7 @@
                 background-color="transparent"
                 fixed-tabs=""
                 @change="emit($event)">
-                <v-tab :disabled="!showResults">
+                <v-tab :disabled="!shouldShowResults">
                     <v-icon left="">
                         {{ icons.mdiFormatListBulletedType }}
                     </v-icon>
@@ -55,7 +55,7 @@ export default {
             type: Number,
             required: true
         },
-        showResults: {
+        shouldShowResults: {
             type: Boolean,
             default: false
         }
