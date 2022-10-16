@@ -3,6 +3,8 @@
         v-model="isDrawerOpen"
         app=""
         :permanent="$vuetify.breakpoint.mdAndUp"
+        overlay-color="#000"
+        overlay-opacity=".75"
         color="#272727"
         width="265"
         floating="">

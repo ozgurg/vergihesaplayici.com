@@ -4,6 +4,8 @@
         content-class="vh-dialog"
         :fullscreen="$vuetify.breakpoint.mdAndDown"
         :transition="$vuetify.breakpoint.mdAndDown ? 'dialog-bottom-transition' : 'dialog-transition'"
+        overlay-color="#000"
+        overlay-opacity=".75"
         width="700"
         @click:outside="close()"
         @close="close()">
@@ -49,7 +51,7 @@
         <div class="vh-dialog__content">
             <template v-if="currentTab === 0">
                 <div class="d-flex flex-column h-100">
-                    <div class="mt-auto px-6 py-10 pa-lg-8">
+                    <div class="mt-auto py-10 px-6 py-lg-12 px-lg-8">
                         <CalculatorShareDialogUrl :data="formData" />
                     </div>
                 </div>
