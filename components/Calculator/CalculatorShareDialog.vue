@@ -69,15 +69,14 @@
 </template>
 
 <script>
-import { mdiCellphoneScreenshot, mdiClose, mdiLink, mdiShareVariant } from "@mdi/js";
+import { mdiCellphoneScreenshot, mdiClose, mdiLink } from "@mdi/js";
 
 export default {
     data: () => ({
         icons: {
             mdiClose,
             mdiLink,
-            mdiCellphoneScreenshot,
-            mdiShareVariant
+            mdiCellphoneScreenshot
         },
         currentTab: 0
     }),
