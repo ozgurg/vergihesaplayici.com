@@ -68,28 +68,17 @@
                 <tbody>
                 <tr>
                     <td class="screenshot__title py-1 text-center">
-                        {{ title }}
+                        {{ calculatorTitle }}
                     </td>
                 </tr>
 
-                <tr>
-                    <td
-                        v-ripple=""
-                        title="Başlığı değiştir"
-                        role="button"
-                        class="screenshot__header primary text-center py-2 pointer-events-all"
-                        @click="changeTitle">
-                        <template v-if="hasTitle">
-                            <!-- eslint-disable vue/no-v-html -->
-                            <span
-                                class="screenshot__header"
-                                v-html="actualTitle" />
-                        </template>
-                        <template v-else>
-                            <i class="screenshot__header font-weight-thin">Başlıksız</i>
-                        </template>
-                    </td>
-                </tr>
+                <template v-if="presetTitle">
+                    <tr>
+                        <td class="screenshot__header primary text-center py-2">
+                            {{ presetTitle }}
+                        </td>
+                    </tr>
+                </template>
 
                 <template v-for="item in data.input">
                     <tr :key="item.key">
@@ -171,7 +160,6 @@ import { mdiCheck, mdiContentCopy, mdiDownload } from "@mdi/js";
 import { version } from "@/package.json";
 import { downloadFile } from "@/utils/download-file.js";
 import { dataUrlToBlob } from "@/utils/data-url-to-blob.js";
-import { createCalculatorMatchingPresetTitles } from "@/utils/find-calculator-matching-presets.js";
 
 export default {
     data: () => ({
@@ -193,27 +181,16 @@ export default {
             type: Object,
             required: true
         },
-        title: {
+        calculatorTitle: {
             type: String,
             required: true
         },
-        matchingPresets: {
-            type: Array,
-            default: () => []
+        presetTitle: {
+            type: String,
+            default: null
         }
     },
     methods: {
-        changeTitle() {
-            const vm = this;
-
-            const customTitle = prompt("Başlığı değiştirin", vm.actualTitle);
-            if (customTitle) {
-                vm.customTitle = customTitle;
-                vm.hasTitle = true;
-            } else {
-                vm.hasTitle = false;
-            }
-        },
         async captureScreenshot() {
             const vm = this;
             return await vm.$html2canvas(vm.$refs.table, {
@@ -295,19 +272,7 @@ export default {
         currencies() {
             const vm = this;
             return vm.$store.getters["exchange-rates/availableCurrenciesExceptTRY"];
-        },
-        presetTitle() {
-            const vm = this;
-            return vm.matchingPresets !== undefined ? createCalculatorMatchingPresetTitles(vm.matchingPresets).join("<br />") : false;
-        },
-        actualTitle() {
-            const vm = this;
-            return vm.customTitle ? vm.customTitle : vm.presetTitle;
         }
-    },
-    mounted() {
-        const vm = this;
-        vm.hasTitle = vm.actualTitle;
     }
 };
 </script>

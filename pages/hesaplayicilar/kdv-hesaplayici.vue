@@ -85,8 +85,7 @@
                             v-model="ui.isShareDialogShown"
                             :screenshot-data="screenshotData"
                             :form-data="form"
-                            :title="head.title"
-                            :matching-presets="matchingPresets" />
+                            :calculator-title="head.title" />
                     </FormRow>
                 </template>
             </CalculatorResultTabs>

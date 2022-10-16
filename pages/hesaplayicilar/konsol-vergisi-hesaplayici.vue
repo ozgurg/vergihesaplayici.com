@@ -73,8 +73,8 @@
                             v-model="ui.isShareDialogShown"
                             :screenshot-data="screenshotData"
                             :form-data="form"
-                            :title="head.title"
-                            :matching-presets="matchingPresets" />
+                            :calculator-title="head.title"
+                            :preset-title="matchingPresetTitles" />
                     </FormRow>
                 </template>
             </CalculatorResultTabs>
@@ -88,7 +88,7 @@ import ConsoleTaxCalculator from "@/calculators/ConsoleTaxCalculator.js";
 import { ConsoleTaxCalculator as calculator } from "@/data/calculators.js";
 import { isCurrencyAvailable } from "@/utils/is-currency-available.js";
 import {
-    createCalculatorMatchingPresetIds,
+    createCalculatorMatchingPresetIds, createCalculatorMatchingPresetTitles,
     findCalculatorMatchingPresets
 } from "@/utils/find-calculator-matching-presets.js";
 import { moneyFormat } from "@/utils/formatter.js";
@@ -207,6 +207,10 @@ export default {
         matchingPresetIds() {
             const vm = this;
             return createCalculatorMatchingPresetIds(vm.matchingPresets);
+        },
+        matchingPresetTitles() {
+            const vm = this;
+            return createCalculatorMatchingPresetTitles(vm.matchingPresets).join(" / ");
         },
         selectedCurrency() {
             const vm = this;

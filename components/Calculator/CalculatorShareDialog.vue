@@ -58,8 +58,8 @@
                 <div class="px-6 py-10 pa-lg-8">
                     <CalculatorShareDialogScreenshot
                         :data="screenshotData"
-                        :title="title"
-                        :matching-presets="matchingPresets" />
+                        :calculator-title="calculatorTitle"
+                        :preset-title="presetTitle" />
                 </div>
             </template>
         </div>
@@ -91,13 +91,13 @@ export default {
             type: Object,
             required: true
         },
-        title: {
+        calculatorTitle: {
             type: String,
             required: true
         },
-        matchingPresets: {
-            type: Array,
-            default: () => []
+        presetTitle: {
+            type: String,
+            default: null
         }
     },
     methods: {
