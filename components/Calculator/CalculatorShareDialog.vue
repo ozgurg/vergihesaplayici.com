@@ -31,7 +31,7 @@
             <v-tabs
                 v-model="currentTab"
                 :grow="$vuetify.breakpoint.mdAndDown"
-                :fixed-tabs="$vuetify.breakpoint.mdAndUp"
+                :fixed-tabs="!$vuetify.breakpoint.mdAndDown"
                 class="vh-share-tabs"
                 background-color="transparent">
                 <v-tab>
@@ -58,11 +58,13 @@
                 </div>
             </template>
             <template v-else-if="currentTab === 1">
-                <div class="px-6 py-10 pa-lg-8">
-                    <CalculatorShareDialogScreenshot
-                        :data="screenshotData"
-                        :calculator-title="calculatorTitle"
-                        :preset-title="presetTitle" />
+                <div class="d-flex flex-column h-100">
+                    <div class="mt-auto py-10 py-lg-6 px-2">
+                        <CalculatorShareDialogScreenshot
+                            :data="screenshotData"
+                            :calculator-title="calculatorTitle"
+                            :preset-title="presetTitle" />
+                    </div>
                 </div>
             </template>
         </div>
