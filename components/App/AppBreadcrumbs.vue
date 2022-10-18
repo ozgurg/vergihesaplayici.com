@@ -96,9 +96,10 @@ export default {
     li {
         scroll-snap-align: center
     }
-    .v-breadcrumbs__item {
-        border-radius: 8px;
-        padding: 6px 8px
-    }
+}
+
+:deep(.v-breadcrumbs__item) {
+    border-radius: 8px;
+    padding: 6px 8px
 }
 </style>
