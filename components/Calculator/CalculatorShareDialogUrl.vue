@@ -18,8 +18,7 @@
                         target="_blank"
                         elevation="0"
                         block=""
-                        rounded=""
-                        large="">
+                        rounded="">
                         <template v-if="isCustomIcon(_item)">
                             <!-- eslint-disable vue/no-v-html -->
                             <div v-html="loadCustomIconAsHtml(_item)" />
@@ -44,8 +43,7 @@
                         class="py-6"
                         elevation="0"
                         block=""
-                        rounded=""
-                        large="">
+                        rounded="">
                         Diğer...
                     </v-btn>
                 </v-col>
