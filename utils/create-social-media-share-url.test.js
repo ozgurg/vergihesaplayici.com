@@ -1,5 +1,4 @@
 import {
-    createEmailShareUrl,
     createFacebookShareUrl,
     createRedditShareUrl,
     createTelegramShareUrl,
@@ -43,13 +42,6 @@ describe("utils/create-social-media-share-url", () => {
         it("should return a valid Reddit share URL", () => {
             const result = createRedditShareUrl(url, title);
             expect(result).toBe(`https://www.reddit.com/submit?url=${url}&title=${title}`);
-        });
-    });
-
-    describe("createEmailShareUrl", () => {
-        it("should return a valid e-mail share URL", () => {
-            const result = createEmailShareUrl(url, title);
-            expect(result).toBe(`mailto:?subject=${title}&body=${url}`);
         });
     });
 });

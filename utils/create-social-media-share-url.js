@@ -3,7 +3,6 @@ const createTwitterShareUrl = (url, title) => createSocialMediaShareUrl("twitter
 const createWhatsAppShareUrl = (url, title) => createSocialMediaShareUrl("whatsapp", url, title);
 const createTelegramShareUrl = (url, title) => createSocialMediaShareUrl("telegram", url, title);
 const createRedditShareUrl = (url, title) => createSocialMediaShareUrl("reddit", url, title);
-const createEmailShareUrl = (url, title) => createSocialMediaShareUrl("email", url, title);
 
 /**
  * @param {string} site
@@ -27,9 +26,6 @@ const createSocialMediaShareUrl = (site, url, title) => {
 
         case "reddit":
             return `https://www.reddit.com/submit?url=${url}&title=${title}`;
-
-        case "email":
-            return `mailto:?subject=${title}&body=${url}`;
     }
 };
 
@@ -38,6 +34,5 @@ export {
     createTwitterShareUrl,
     createWhatsAppShareUrl,
     createTelegramShareUrl,
-    createRedditShareUrl,
-    createEmailShareUrl
+    createRedditShareUrl
 };
