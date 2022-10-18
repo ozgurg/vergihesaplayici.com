@@ -127,11 +127,11 @@ export default {
             presets: calculator.presets,
             registration: [
                 {
-                    title: "İthalat yoluyla kayıtlı (Resmi)",
+                    title: "İthalat (Resmi)",
                     value: Registration.Import
                 },
                 {
-                    title: "Pasaport yoluyla kayıtlı",
+                    title: "Pasaport (Yurtdışından)",
                     value: Registration.Passport
                 }
             ],
