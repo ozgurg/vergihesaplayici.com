@@ -23,6 +23,23 @@
                     </template>
                 </v-btn>
 
+                <template v-if="isWebShareApiSupported">
+                    <v-btn
+                        :loading="isSharing"
+                        class="mb-3"
+                        outlined=""
+                        elevation="0"
+                        color="secondary"
+                        large=""
+                        width="128"
+                        @click="shareViaWebShareApi()">
+                        <v-icon left="">
+                            {{ icons.mdiExportVariant }}
+                        </v-icon>
+                        <span>Paylaş...</span>
+                    </v-btn>
+                </template>
+
                 <v-btn
                     :loading="isCopying"
                     outlined=""
@@ -141,7 +158,7 @@
 </template>
 
 <script>
-import { mdiCheck, mdiContentCopy, mdiDownload } from "@mdi/js";
+import { mdiCheck, mdiContentCopy, mdiDownload, mdiExportVariant } from "@mdi/js";
 import { version } from "@/package.json";
 import { downloadFile } from "@/utils/download-file.js";
 import { dataUrlToBlob } from "@/utils/data-url-to-blob.js";
@@ -151,7 +168,8 @@ export default {
         icons: {
             mdiContentCopy,
             mdiDownload,
-            mdiCheck
+            mdiCheck,
+            mdiExportVariant
         },
 
         date: new Date(),
@@ -159,6 +177,8 @@ export default {
 
         isDownloading: false,
         isDownloaded: false,
+
+        isSharing: false,
 
         isCopying: false,
         isCopied: false
@@ -198,6 +218,35 @@ export default {
                     vm.isDownloading = false;
                     vm.isDownloaded = false;
                 }, 1500);
+            }
+        },
+        async shareViaWebShareApi() {
+            const vm = this;
+
+            vm.isSharing = true;
+
+            try {
+                const screenshot = await vm._captureScreenshotOfTable();
+                const fileName = `vergihesaplayici-${vm.date.getTime()}.png`;
+                const screenshotToBlob = await dataUrlToBlob(screenshot);
+
+                const screenshotFile = new File(
+                    [screenshotToBlob],
+                    fileName,
+                    {
+                        type: "image/jpeg",
+                        lastModified: vm.date.getTime()
+                    }
+                );
+
+                await navigator.share({
+                    title: document.title,
+                    text: document.title,
+                    files: [screenshotFile]
+                });
+            } catch (error) {
+            } finally {
+                vm.isSharing = false;
             }
         },
         async copy() {
@@ -254,6 +303,9 @@ export default {
         }
     },
     computed: {
+        isWebShareApiSupported() {
+            return navigator.share;
+        },
         currencyCodes() {
             const vm = this;
             return vm.$store.getters["exchange-rates/availableCurrenciesExceptTRY"];
