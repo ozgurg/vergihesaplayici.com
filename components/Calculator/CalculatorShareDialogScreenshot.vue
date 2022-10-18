@@ -341,7 +341,7 @@ export default {
         background: rgba(0, 0, 0, .5);
         align-items: center;
         #{$self}:not(#{$self}--is-short) & {
-            @media (max-width: 960px) {
+            @media (max-width: 1264px) {
                 align-items: start;
                 padding-top: 128px
             }

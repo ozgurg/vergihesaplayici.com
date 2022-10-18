@@ -1,7 +1,7 @@
 <template>
     <v-dialog
         :value="value"
-        :fullscreen="$vuetify.breakpoint.mdAndDown"
+        :fullscreen="$vuetify.breakpoint.smAndDown"
         :transition="transition"
         content-class="vh-dialog"
         overlay-color="#000"
@@ -113,7 +113,7 @@ export default {
     computed: {
         transition() {
             const vm = this;
-            return vm.$vuetify.breakpoint.mdAndDown ?
+            return vm.$vuetify.breakpoint.smAndDown ?
                 "dialog-bottom-transition" :
                 "dialog-transition";
         }

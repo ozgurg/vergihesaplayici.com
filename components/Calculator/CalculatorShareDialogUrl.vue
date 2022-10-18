@@ -7,7 +7,7 @@
                 <v-col
                     :key="_item.title"
                     cols="4"
-                    lg="2"
+                    md="2"
                     class="pa-2 pa-lg-3">
                     <v-btn
                         :href="_item.url"
@@ -35,7 +35,7 @@
             <template v-if="isWebShareApiSupported">
                 <v-col
                     cols="4"
-                    lg="2"
+                    md="2"
                     class="pa-2 pa-lg-3"
                     @click="shareViaWebShareApi()">
                     <v-btn
