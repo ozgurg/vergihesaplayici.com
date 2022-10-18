@@ -2,13 +2,13 @@
     <div>
         <v-row
             no-gutters=""
-            class="ma-n2 ma-lg-n3">
+            class="ma-n2 ma-lg-n3 justify-center">
             <template v-for="_item in socialMediaSharingItems">
                 <v-col
                     :key="_item.title"
-                    class="pa-2 pa-lg-3"
                     cols="4"
-                    sm="2">
+                    lg="2"
+                    class="pa-2 pa-lg-3">
                     <v-btn
                         :href="_item.url"
                         :color="_item.color"
@@ -29,6 +29,24 @@
                                 {{ _item.icon }}
                             </v-icon>
                         </template>
+                    </v-btn>
+                </v-col>
+            </template>
+
+            <template v-if="isWebShareApiSupported">
+                <v-col
+                    cols="4"
+                    lg="2"
+                    class="pa-2 pa-lg-3"
+                    @click="shareViaWebShareApi()">
+                    <v-btn
+                        light=""
+                        class="py-6"
+                        elevation="0"
+                        block=""
+                        rounded=""
+                        large="">
+                        Diğer...
                     </v-btn>
                 </v-col>
             </template>
@@ -62,10 +80,9 @@
 </template>
 
 <script>
-import { mdiEmail, mdiFacebook, mdiReddit, mdiTwitter, mdiWhatsapp } from "@mdi/js";
+import { mdiFacebook, mdiReddit, mdiTwitter, mdiWhatsapp } from "@mdi/js";
 import { createShareUrlOfCalculator } from "@/utils/create-share-url-of-calculator.js";
 import {
-    createEmailShareUrl,
     createFacebookShareUrl,
     createRedditShareUrl,
     createTelegramShareUrl,
@@ -84,6 +101,17 @@ export default {
         }
     },
     methods: {
+        async shareViaWebShareApi() {
+            const vm = this;
+            try {
+                await navigator.share({
+                    title: document.title,
+                    text: document.title,
+                    url: vm.url
+                });
+            } catch {
+            }
+        },
         isCustomIcon(item) {
             return item.icon.endsWith(".svg");
         },
@@ -92,6 +120,9 @@ export default {
         }
     },
     computed: {
+        isWebShareApiSupported() {
+            return navigator.share;
+        },
         url() {
             const vm = this;
             return createShareUrlOfCalculator(
@@ -132,12 +163,6 @@ export default {
                     title: "Reddit'te paylaş",
                     color: "#FF5700",
                     icon: mdiReddit
-                },
-                {
-                    url: createEmailShareUrl(vm.url, document.title),
-                    title: "E-posta olarak gönder",
-                    color: "#ecb064",
-                    icon: mdiEmail
                 }
             ];
         }
