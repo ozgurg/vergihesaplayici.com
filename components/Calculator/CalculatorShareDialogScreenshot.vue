@@ -1,7 +1,9 @@
 <template>
-    <div class="screenshot">
-        <div class="screenshot__overlay d-flex align-center justify-center">
-            <div class="screenshot__actions primary d-inline-flex flex-column pa-6">
+    <div
+        class="screenshot"
+        :class="{'screenshot--is-short': isTableShort}">
+        <div class="screenshot__overlay d-flex justify-center">
+            <div class="screenshot__actions primary d-inline-flex flex-column flex-grow-0 pa-6">
                 <v-btn
                     :loading="isDownloading"
                     class="mb-3"
@@ -172,6 +174,8 @@ export default {
             mdiExportVariant
         },
 
+        isTableShort: false,
+
         date: new Date(),
         version,
 
@@ -310,12 +314,19 @@ export default {
             const vm = this;
             return vm.$store.getters["exchange-rates/availableCurrenciesExceptTRY"];
         }
+    },
+    mounted() {
+        const vm = this;
+        setTimeout(() => {
+            vm.isTableShort = vm.$refs.table.clientHeight < 400;
+        }, 0);
     }
 };
 </script>
 
 <style lang="scss" scoped="">
 .screenshot {
+    $self: &;
     position: relative;
     width: 300px;
     max-width: 100%;
@@ -327,7 +338,14 @@ export default {
         inset: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, .5)
+        background: rgba(0, 0, 0, .5);
+        align-items: center;
+        #{$self}:not(#{$self}--is-short) & {
+            @media (max-width: 960px) {
+                align-items: start;
+                padding-top: 128px
+            }
+        }
     }
     &__table {
         position: relative;
