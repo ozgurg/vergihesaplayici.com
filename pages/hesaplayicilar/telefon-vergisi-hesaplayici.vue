@@ -151,7 +151,11 @@ export default {
     }),
     methods: {
         moneyFormat,
-        calculate() {
+        choosePreset(preset) {
+            const vm = this;
+            Object.assign(vm.form, preset.form);
+        },
+        _calculate() {
             const vm = this;
 
             const calculator = new PhoneTaxCalculator({
@@ -164,7 +168,7 @@ export default {
 
             vm.results = calculator.calculate();
         },
-        handleQuery() {
+        _handleQuery() {
             const vm = this;
 
             const query = vm.$route.query;
@@ -181,10 +185,6 @@ export default {
             if (query.registration && vm.ui.registration.some(object => object.value === query.registration)) {
                 vm.form.registration = query.registration;
             }
-        },
-        choosePreset(preset) {
-            const vm = this;
-            Object.assign(vm.form, preset.form);
         }
     },
     computed: {
@@ -309,7 +309,7 @@ export default {
 
                 if (!vm.shouldShowResults) return;
 
-                vm.calculate();
+                vm._calculate();
 
                 // Show results tab when calculated
                 vm.ui.tab = 0;
@@ -331,7 +331,7 @@ export default {
         const vm = this;
 
         vm.$nextTick(() => {
-            setTimeout(() => vm.handleQuery(), 100);
+            setTimeout(() => vm._handleQuery(), 100);
         });
     }
 };

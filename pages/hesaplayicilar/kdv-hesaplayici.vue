@@ -153,7 +153,11 @@ export default {
         results: {}
     }),
     methods: {
-        calculate() {
+        choosePreset(preset) {
+            const vm = this;
+            Object.assign(vm.form, preset.form);
+        },
+        _calculate() {
             const vm = this;
 
             const calculator = new VatCalculator({
@@ -164,7 +168,7 @@ export default {
 
             vm.results = calculator.calculate();
         },
-        handleQuery() {
+        _handleQuery() {
             const vm = this;
 
             const query = vm.$route.query;
@@ -177,10 +181,6 @@ export default {
             if (query.mode && vm.ui.mode.some(object => object.value === query.mode)) {
                 vm.form.mode = query.mode;
             }
-        },
-        choosePreset(preset) {
-            const vm = this;
-            Object.assign(vm.form, preset.form);
         }
     },
     computed: {
@@ -256,7 +256,7 @@ export default {
 
                 if (!vm.shouldShowResults) return;
 
-                vm.calculate();
+                vm._calculate();
 
                 // Show results tab when calculated
                 vm.ui.tab = 0;
@@ -269,7 +269,7 @@ export default {
         const vm = this;
 
         vm.$nextTick(() => {
-            setTimeout(() => vm.handleQuery(), 100);
+            setTimeout(() => vm._handleQuery(), 100);
         });
     }
 };
