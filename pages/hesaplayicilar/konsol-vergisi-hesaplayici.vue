@@ -11,11 +11,7 @@
                 <CalculatorPresets
                     :value="matchingPresetIds"
                     :presets="ui.presets"
-                    @click="choosePreset($event)">
-                    <template #tooltip="{preset}">
-                        {{ moneyFormat(preset.form.price, preset.form.currency) }}
-                    </template>
-                </CalculatorPresets>
+                    @click="choosePreset($event)" />
             </FormRow>
 
             <FormRow label="Konsol fiyatı">
@@ -124,7 +120,6 @@ export default {
         results: {}
     }),
     methods: {
-        moneyFormat,
         choosePreset(preset) {
             const vm = this;
             Object.assign(vm.form, preset.form);
