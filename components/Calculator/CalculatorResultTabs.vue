@@ -24,17 +24,14 @@
             </v-tabs>
         </FormRow>
 
-        <v-tabs-items
-            :value="value"
-            touchless="">
-            <v-tab-item :transition="false">
-                <slot />
-            </v-tab-item>
+        <template v-if="value === 0">
+            <slot />
+        </template>
 
-            <v-tab-item :transition="false">
-                <DisqusComments />
-            </v-tab-item>
-        </v-tabs-items>
+        <!-- FIXME: Adding v-if directly to the component (or <template />) breaks the component. That's why it's wrapped with <div />. -->
+        <div v-if="value === 1">
+            <DisqusComments />
+        </div>
     </div>
 </template>
 
