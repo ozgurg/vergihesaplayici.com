@@ -2,7 +2,9 @@
     <div>
         <AppBreadcrumbs :items="breadcrumbItems" />
 
-        <PageTitle>{{ head.title }}</PageTitle>
+        <PageTitle>
+            {{ head.title }}
+        </PageTitle>
 
         <InnerContainer>
             <FormRow class="mb-4">
@@ -56,14 +58,18 @@
                 :should-show-results="shouldShowResults"
                 class="mt-10">
                 <template v-if="shouldShowResults">
-                    <ReverseCalculationAlert v-if="form.currency === 'TRY'" />
-                    <EstimatedCalculationAlert v-else />
+                    <template v-if="form.currency === 'TRY'">
+                        <ReverseCalculationAlert />
+                    </template>
+                    <template v-else>
+                        <EstimatedCalculationAlert />
+                    </template>
 
                     <CalculatorResultFormRow
-                        v-for="(item, index) in resultList"
-                        :key="index"
-                        :value="item.value"
-                        :label="item.key"
+                        v-for="_item in resultList"
+                        :key="_item.key"
+                        :value="_item.value"
+                        :label="_item.key"
                         class="mb-5" />
 
                     <FormRow class="mb-6">
@@ -71,18 +77,16 @@
                     </FormRow>
 
                     <FormRow>
-                        <div>
-                            <v-btn
-                                outlined=""
-                                color="primary"
-                                large=""
-                                @click="ui.isShareDialogShown = true">
-                                <v-icon left="">
-                                    {{ icons.mdiShare }}
-                                </v-icon>
-                                Paylaş...
-                            </v-btn>
-                        </div>
+                        <v-btn
+                            outlined=""
+                            color="primary"
+                            large=""
+                            @click="ui.isShareDialogShown = true">
+                            <v-icon left="">
+                                {{ icons.mdiShare }}
+                            </v-icon>
+                            Paylaş...
+                        </v-btn>
 
                         <CalculatorShareDialog
                             v-model="ui.isShareDialogShown"
@@ -291,6 +295,13 @@ export default {
         }
     },
     watch: {
+        shouldShowResults(current, previous) {
+            const vm = this;
+
+            if (!current && previous && vm.ui.tab === 0) {
+                vm.ui.tab = 1;
+            }
+        },
         form: {
             deep: true,
             handler() {
