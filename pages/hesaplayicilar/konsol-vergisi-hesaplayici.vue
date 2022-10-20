@@ -47,11 +47,8 @@
                         <EstimatedCalculationAlert />
                     </template>
 
-                    <CalculatorResultFormRow
-                        v-for="_item in resultList"
-                        :key="_item.key"
-                        :value="_item.value"
-                        :label="_item.key"
+                    <CalculatorResultList
+                        :items="resultList"
                         class="mb-5" />
 
                     <FormRow class="mb-6">

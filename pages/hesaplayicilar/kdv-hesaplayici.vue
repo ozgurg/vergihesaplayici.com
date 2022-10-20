@@ -61,11 +61,8 @@
                 v-model="ui.tab"
                 :should-show-results="shouldShowResults">
                 <template v-if="shouldShowResults">
-                    <CalculatorResultFormRow
-                        v-for="_item in resultList"
-                        :key="_item.key"
-                        :value="_item.value"
-                        :label="_item.key"
+                    <CalculatorResultList
+                        :items="resultList"
                         class="mb-5" />
 
                     <FormRow>

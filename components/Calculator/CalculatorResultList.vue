@@ -1,0 +1,28 @@
+<template>
+    <div class="vh-result-list">
+        <CalculatorResultFormRow
+            v-for="_item in items"
+            :key="_item.key"
+            :value="_item.value"
+            :label="_item.key" />
+    </div>
+</template>
+
+<script>
+export default {
+    props: {
+        items: {
+            type: Array,
+            required: true
+        }
+    }
+};
+</script>
+
+<style scoped="">
+.vh-result-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+</style>
