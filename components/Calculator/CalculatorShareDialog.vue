@@ -14,7 +14,7 @@
                 class="px-2"
                 elevation="0">
                 <v-toolbar-title class="text-center">
-                    Paylaş
+                    Sonuçları paylaş
                 </v-toolbar-title>
 
                 <v-spacer />
