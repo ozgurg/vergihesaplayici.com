@@ -61,7 +61,8 @@
                 <div class="d-flex flex-column h-100">
                     <div class="mt-auto py-10 py-lg-6 px-2">
                         <CalculatorShareDialogScreenshot
-                            :data="screenshotData"
+                            :input="screenshotInput"
+                            :output="screenshotOutput"
                             :calculator-title="calculatorTitle"
                             :preset-title="presetTitle" />
                     </div>
@@ -91,8 +92,12 @@ export default {
             type: Object,
             required: true
         },
-        screenshotData: {
-            type: Object,
+        screenshotInput: {
+            type: Array,
+            default: () => ([])
+        },
+        screenshotOutput: {
+            type: Array,
             required: true
         },
         calculatorTitle: {

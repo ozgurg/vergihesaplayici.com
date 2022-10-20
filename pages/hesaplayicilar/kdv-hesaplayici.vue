@@ -13,10 +13,10 @@
                     hide-details=""
                     class="pa-0 ma-0">
                     <v-radio
-                        v-for="item in ui.mode"
-                        :key="item.value"
-                        :label="item.title"
-                        :value="item.value" />
+                        v-for="_item in ui.mode"
+                        :key="_item.value"
+                        :label="_item.title"
+                        :value="_item.value" />
                 </v-radio-group>
             </FormRow>
 
@@ -67,8 +67,7 @@
 
                     <FormRow>
                         <CalculatorShareButton
-                            v-model="ui.isShareDialogShown"
-                            :screenshot-data="screenshotData"
+                            :screenshot-output="screenshotOutput"
                             :form-data="form"
                             :calculator-title="head.title" />
                     </FormRow>
@@ -97,7 +96,6 @@ export default {
         }),
         ui: {
             tab: 1,
-            isShareDialogShown: false,
             presets: [
                 {
                     id: 1,
@@ -182,13 +180,9 @@ export default {
                 }
             ];
         },
-        screenshotData() {
+        screenshotOutput() {
             const vm = this;
-
-            return {
-                output: vm.resultList,
-                input: []
-            };
+            return vm.resultList;
         },
         shouldShowResults() {
             const vm = this;

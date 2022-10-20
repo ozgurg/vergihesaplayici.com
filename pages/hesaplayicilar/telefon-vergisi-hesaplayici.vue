@@ -44,10 +44,10 @@
                     hide-details=""
                     class="pa-0 ma-0">
                     <v-radio
-                        v-for="item in ui.registration"
-                        :key="item.value"
-                        :label="item.title"
-                        :value="item.value" />
+                        v-for="_item in ui.registration"
+                        :key="_item.value"
+                        :label="_item.title"
+                        :value="_item.value" />
                 </v-radio-group>
             </FormRow>
 
@@ -72,7 +72,8 @@
 
                     <FormRow>
                         <CalculatorShareButton
-                            :screenshot-data="screenshotData"
+                            :screenshot-input="screenshotInput"
+                            :screenshot-output="screenshotOutput"
                             :form-data="form"
                             :calculator-title="head.title"
                             :preset-title="matchingPresetTitles" />
@@ -117,8 +118,7 @@ export default {
                     value: Registration.Passport
                 }
             ],
-            tab: 1,
-            isShareDialogShown: false
+            tab: 1
         },
         form: {
             currency: "USD",
@@ -215,21 +215,22 @@ export default {
                 }
             ];
         },
-        screenshotData() {
+        screenshotInput() {
             const vm = this;
-            return {
-                output: vm.resultList,
-                input: [
-                    {
-                        key: "Telefon fiyatı",
-                        value: moneyFormat(vm.form.price, vm.form.currency)
-                    },
-                    {
-                        key: "Kayıt yolu",
-                        value: vm.ui.registration.find(item => item.value === vm.form.registration).title
-                    }
-                ]
-            };
+            return [
+                {
+                    key: "Telefon fiyatı",
+                    value: moneyFormat(vm.form.price, vm.form.currency)
+                },
+                {
+                    key: "Kayıt yolu",
+                    value: vm.ui.registration.find(item => item.value === vm.form.registration).title
+                }
+            ];
+        },
+        screenshotOutput() {
+            const vm = this;
+            return vm.resultList;
         },
         shouldShowResults() {
             const vm = this;

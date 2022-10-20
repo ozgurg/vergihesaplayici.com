@@ -57,7 +57,8 @@
 
                     <FormRow>
                         <CalculatorShareButton
-                            :screenshot-data="screenshotData"
+                            :screenshot-input="screenshotInput"
+                            :screenshot-output="screenshotOutput"
                             :form-data="form"
                             :calculator-title="head.title"
                             :preset-title="matchingPresetTitles" />
@@ -92,8 +93,7 @@ export default {
         }),
         ui: {
             presets: calculator.presets,
-            tab: 1,
-            isShareDialogShown: false
+            tab: 1
         },
         form: {
             currency: "USD",
@@ -162,18 +162,18 @@ export default {
                 }
             ];
         },
-        screenshotData() {
+        screenshotInput() {
             const vm = this;
-
-            return {
-                output: vm.resultList,
-                input: [
-                    {
-                        key: "Konsol fiyatı",
-                        value: moneyFormat(vm.form.price, vm.form.currency)
-                    }
-                ]
-            };
+            return [
+                {
+                    key: "Konsol fiyatı",
+                    value: moneyFormat(vm.form.price, vm.form.currency)
+                }
+            ];
+        },
+        screenshotOutput() {
+            const vm = this;
+            return vm.resultList;
         },
         shouldShowResults() {
             const vm = this;

@@ -84,7 +84,7 @@
                     </tr>
                 </template>
 
-                <template v-for="_item in data.input">
+                <template v-for="_item in input">
                     <tr :key="_item.key">
                         <td class="py-3">
                             <div class="d-flex justify-space-between align-center">
@@ -99,7 +99,7 @@
                     </tr>
                 </template>
 
-                <template v-if="data.input.length > 0">
+                <template v-if="input.length > 0">
                     <tr>
                         <td class="text-uppercase text-center  caption grey darken-3 py-1">
                             Sonuçlar
@@ -107,7 +107,7 @@
                     </tr>
                 </template>
 
-                <template v-for="_item in data.output">
+                <template v-for="_item in output">
                     <tr :key="_item.key">
                         <td class="py-3">
                             <div class="d-flex justify-space-between align-center">
@@ -188,8 +188,12 @@ export default {
         isCopied: false
     }),
     props: {
-        data: {
-            type: Object,
+        input: {
+            type: Array,
+            default: () => ([])
+        },
+        output: {
+            type: Array,
             required: true
         },
         calculatorTitle: {
