@@ -1,6 +1,7 @@
 <template>
     <v-col cols="6">
         <v-card
+            color="grey darken-4"
             elevation="0"
             class="px-4 py-3">
             <v-card-subtitle class="pa-0 ma-0 mb-1">
