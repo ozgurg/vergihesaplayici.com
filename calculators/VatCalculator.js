@@ -6,8 +6,8 @@ import { calculateTaxFromTaxAddedPrice, calculateTaxFromTaxFreePrice } from "@/u
  * @type {{TaxAddedPriceToTaxFreePrice: string, TaxFreePriceToTaxAddedPrice: string}}
  */
 const Mode = {
-    TaxFreePriceToTaxAddedPrice: "taxFreePriceToTaxAddedPrice",
-    TaxAddedPriceToTaxFreePrice: "taxAddedPriceToTaxFreePrice"
+    TaxFreePriceToTaxAddedPrice: "tax-free-to-tax-added",
+    TaxAddedPriceToTaxFreePrice: "tax-added-to-tax-free"
 };
 
 /**
