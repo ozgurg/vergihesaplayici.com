@@ -63,7 +63,7 @@
                 <template v-if="shouldShowResults">
                     <CalculatorResultList
                         :items="resultList"
-                        class="mb-5" />
+                        class="mb-11" />
 
                     <FormRow>
                         <CalculatorShareButton
