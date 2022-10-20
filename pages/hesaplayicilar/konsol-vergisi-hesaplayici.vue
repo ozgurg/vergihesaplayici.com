@@ -51,11 +51,11 @@
                         :items="resultList"
                         class="mb-5" />
 
-                    <FormRow class="mb-6">
-                        <MinimumWageAlert :price="results.prices.taxAdded" />
-                    </FormRow>
-
                     <FormRow>
+                        <MinimumWageAlert
+                            :price="results.prices.taxAdded"
+                            class="mb-10" />
+
                         <CalculatorShareButton
                             :screenshot-input="screenshotInput"
                             :screenshot-output="screenshotOutput"
