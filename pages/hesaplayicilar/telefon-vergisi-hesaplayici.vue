@@ -7,7 +7,7 @@
         </PageTitle>
 
         <InnerContainer>
-            <FormRow class="mb-4">
+            <FormRow class="mb-5">
                 <CalculatorPresets
                     :value="matchingPresetIds"
                     :presets="ui.presets"
@@ -31,12 +31,14 @@
                     <template #append-outer>
                         <CurrencySelector
                             v-model="form.currency"
-                            style="width:110px" />
+                            style="width:96px" />
                     </template>
                 </v-text-field>
             </FormRow>
 
-            <FormRow label="Kayıt yolu">
+            <FormRow
+                class="mb-10"
+                label="Kayıt yolu">
                 <v-radio-group
                     v-model="form.registration"
                     hide-details=""
@@ -51,8 +53,7 @@
 
             <CalculatorResultTabs
                 v-model="ui.tab"
-                :should-show-results="shouldShowResults"
-                class="mt-10">
+                :should-show-results="shouldShowResults">
                 <template v-if="shouldShowResults">
                     <template v-if="form.currency === 'TRY'">
                         <ReverseCalculationAlert />

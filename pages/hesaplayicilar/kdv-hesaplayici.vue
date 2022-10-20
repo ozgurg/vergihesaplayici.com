@@ -50,7 +50,7 @@
                     aria-label="KDV oranı" />
             </FormRow>
 
-            <FormRow class="mt-4">
+            <FormRow class="mt-5 mb-10">
                 <CalculatorPresets
                     :value="matchingPresetIds"
                     :presets="ui.presets"
@@ -59,8 +59,7 @@
 
             <CalculatorResultTabs
                 v-model="ui.tab"
-                :should-show-results="shouldShowResults"
-                class="mt-10">
+                :should-show-results="shouldShowResults">
                 <template v-if="shouldShowResults">
                     <CalculatorResultFormRow
                         v-for="_item in resultList"

@@ -7,14 +7,16 @@
         </PageTitle>
 
         <InnerContainer>
-            <FormRow class="mb-4">
+            <FormRow class="mb-5">
                 <CalculatorPresets
                     :value="matchingPresetIds"
                     :presets="ui.presets"
                     @click="choosePreset($event)" />
             </FormRow>
 
-            <FormRow label="Konsol fiyatı">
+            <FormRow
+                class="mb-10"
+                label="Konsol fiyatı">
                 <v-text-field
                     v-model.number="form.price"
                     :prefix="selectedCurrency.sign"
@@ -29,15 +31,14 @@
                     <template #append-outer>
                         <CurrencySelector
                             v-model="form.currency"
-                            style="width:110px" />
+                            style="width:96px" />
                     </template>
                 </v-text-field>
             </FormRow>
 
             <CalculatorResultTabs
                 v-model="ui.tab"
-                :should-show-results="shouldShowResults"
-                class="mt-10">
+                :should-show-results="shouldShowResults">
                 <template v-if="shouldShowResults">
                     <template v-if="form.currency === 'TRY'">
                         <ReverseCalculationAlert />
