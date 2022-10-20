@@ -66,18 +66,7 @@
                         class="mb-5" />
 
                     <FormRow>
-                        <v-btn
-                            outlined=""
-                            color="primary"
-                            large=""
-                            @click="ui.isShareDialogShown = true">
-                            <v-icon left="">
-                                {{ icons.mdiShare }}
-                            </v-icon>
-                            Paylaş...
-                        </v-btn>
-
-                        <CalculatorShareDialog
+                        <CalculatorShareButton
                             v-model="ui.isShareDialogShown"
                             :screenshot-data="screenshotData"
                             :form-data="form"
@@ -90,7 +79,6 @@
 </template>
 
 <script>
-import { mdiShare } from "@mdi/js";
 import { VatCalculator as calculator } from "@/data/calculators.js";
 import VatCalculator, { Mode } from "@/calculators/VatCalculator.js";
 import { createCalculatorMatchingPresetIds } from "@/utils/find-calculator-matching-presets.js";
@@ -102,9 +90,6 @@ export default {
         return this.head;
     },
     data: () => ({
-        icons: {
-            mdiShare
-        },
         head: buildHeadTags({
             title: calculator.title,
             description: calculator.description,

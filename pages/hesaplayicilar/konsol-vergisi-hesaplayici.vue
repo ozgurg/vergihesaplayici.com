@@ -56,19 +56,7 @@
                     </FormRow>
 
                     <FormRow>
-                        <v-btn
-                            outlined=""
-                            color="primary"
-                            large=""
-                            @click="ui.isShareDialogShown = true">
-                            <v-icon left="">
-                                {{ icons.mdiShare }}
-                            </v-icon>
-                            Paylaş...
-                        </v-btn>
-
-                        <CalculatorShareDialog
-                            v-model="ui.isShareDialogShown"
+                        <CalculatorShareButton
                             :screenshot-data="screenshotData"
                             :form-data="form"
                             :calculator-title="head.title"
@@ -81,7 +69,6 @@
 </template>
 
 <script>
-import { mdiShare } from "@mdi/js";
 import ConsoleTaxCalculator from "@/calculators/ConsoleTaxCalculator.js";
 import { ConsoleTaxCalculator as calculator } from "@/data/calculators.js";
 import { isCurrencyAvailable } from "@/utils/is-currency-available.js";
@@ -98,9 +85,6 @@ export default {
         return this.head;
     },
     data: () => ({
-        icons: {
-            mdiShare
-        },
         head: buildHeadTags({
             title: calculator.title,
             description: calculator.description,
