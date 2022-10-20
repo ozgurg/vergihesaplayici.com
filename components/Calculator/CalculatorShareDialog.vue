@@ -53,7 +53,7 @@
             <template v-if="currentTab === 0">
                 <div class="d-flex flex-column h-100">
                     <div class="mt-auto py-10 px-6 py-lg-12 px-lg-8">
-                        <CalculatorShareDialogUrl :data="formData" />
+                        <CalculatorShareDialogUrl :form="form" />
                     </div>
                 </div>
             </template>
@@ -88,7 +88,7 @@ export default {
         value: {
             type: Boolean
         },
-        formData: {
+        form: {
             type: Object,
             required: true
         },

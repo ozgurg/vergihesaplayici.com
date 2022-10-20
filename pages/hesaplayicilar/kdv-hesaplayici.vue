@@ -68,7 +68,7 @@
                     <FormRow>
                         <CalculatorShareButton
                             :screenshot-output="screenshotOutput"
-                            :form-data="form"
+                            :form="form"
                             :calculator-title="head.title" />
                     </FormRow>
                 </template>

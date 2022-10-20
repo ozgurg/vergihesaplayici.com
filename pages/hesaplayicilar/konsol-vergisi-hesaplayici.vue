@@ -59,7 +59,7 @@
                         <CalculatorShareButton
                             :screenshot-input="screenshotInput"
                             :screenshot-output="screenshotOutput"
-                            :form-data="form"
+                            :form="form"
                             :calculator-title="head.title"
                             :preset-title="matchingPresetTitles" />
                     </FormRow>

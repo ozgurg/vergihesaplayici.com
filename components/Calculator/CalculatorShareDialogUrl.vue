@@ -93,7 +93,7 @@ export default {
         includeParams: true
     }),
     props: {
-        data: {
+        form: {
             type: Object,
             required: true
         }
@@ -125,7 +125,7 @@ export default {
             const vm = this;
             return createShareUrlOfCalculator(
                 vm.$route.path,
-                vm.data,
+                vm.form,
                 vm.includeParams
             );
         },
