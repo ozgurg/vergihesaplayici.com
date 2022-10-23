@@ -244,10 +244,7 @@ export default {
     },
     mounted() {
         const vm = this;
-
-        vm.$nextTick(() => {
-            setTimeout(() => vm._handleQuery(), 100);
-        });
+        vm.$nextTick(() => vm._handleQuery());
     }
 };
 </script>
