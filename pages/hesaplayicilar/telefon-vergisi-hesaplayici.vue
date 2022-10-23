@@ -92,6 +92,7 @@ import {
 } from "@/utils/find-calculator-matching-presets.js";
 import { moneyFormat } from "@/utils/formatter.js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
+import { shouldShowResults } from "@/utils/calculator/phone-tax-calculator.js";
 
 export default {
     head() {
@@ -164,6 +165,9 @@ export default {
         }
     },
     computed: {
+        shouldShowResults() {
+            return shouldShowResults(this.form);
+        },
         resultList() {
             const vm = this;
             return [
@@ -230,10 +234,6 @@ export default {
         screenshotOutput() {
             const vm = this;
             return vm.resultList;
-        },
-        shouldShowResults() {
-            const vm = this;
-            return vm.form.price > 0 && vm.form.currency !== "" && vm.form.registration !== "";
         },
         matchingPresets() {
             const vm = this;
