@@ -27,6 +27,8 @@ export default {
 
 <!-- Be careful while using "scoped" -->
 <style lang="scss">
+@import "~vuetify/src/components/VTextField/_variables.scss";
+
 .vh-form-row {
     gap: 6px;
     @media(min-width: 1264px) {
@@ -38,7 +40,7 @@ export default {
             flex: 0 0 200px;
             max-width: 200px;
             label {
-                height: min(56px, 100%);
+                height: min(#{$text-field-filled-full-width-outlined-slot-min-height}, 100%);
                 display: flex;
                 align-items: center;
                 justify-content: end
