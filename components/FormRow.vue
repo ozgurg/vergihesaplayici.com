@@ -1,5 +1,5 @@
 <template>
-    <div class="vh-form-row row no-gutters align-center flex-column flex-lg-row">
+    <div class="vh-form-row row no-gutters flex-column flex-lg-row">
         <div class="vh-form-row__label-col col">
             <template v-if="label">
                 <label>
@@ -36,7 +36,13 @@ export default {
         @media(min-width: 1264px) {
             text-align: right;
             flex: 0 0 200px;
-            max-width: 200px
+            max-width: 200px;
+            label {
+                height: min(56px, 100%);
+                display: flex;
+                align-items: center;
+                justify-content: end
+            }
         }
     }
     .v-input__append-outer {
