@@ -19,12 +19,12 @@
                 label="Telefon fiyatı">
                 <v-text-field
                     v-model.number="form.price"
+                    v-number=""
                     :prefix="selectedCurrency.sign"
                     hide-details=""
                     hide-spin-buttons=""
                     filled=""
                     outlined=""
-                    step="any"
                     min="1"
                     inputmode="decimal"
                     type="number"
@@ -284,15 +284,6 @@ export default {
                 vm.ui.tab = 0;
 
                 vm.$router.push({ query: vm.form });
-            }
-        },
-        "form.price"() {
-            const vm = this;
-
-            if (vm.form.price >= 999999) {
-                vm.$nextTick(() => {
-                    vm.form.price = 999999;
-                });
             }
         }
     },

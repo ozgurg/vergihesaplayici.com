@@ -25,12 +25,12 @@
                 :label="priceLabel">
                 <v-text-field
                     v-model.number="form.price"
+                    v-number=""
                     :aria-label="priceLabel"
                     hide-details=""
                     hide-spin-buttons=""
                     filled=""
                     outlined=""
-                    step="any"
                     min="1"
                     inputmode="decimal"
                     type="number" />
@@ -40,12 +40,12 @@
                 label="KDV oranı">
                 <v-text-field
                     v-model.number="form.rate"
+                    v-number=""
                     prefix="%"
                     hide-details=""
                     hide-spin-buttons=""
                     filled=""
                     outlined=""
-                    step="1"
                     min="1"
                     inputmode="decimal"
                     type="number"

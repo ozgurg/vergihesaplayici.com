@@ -113,6 +113,10 @@ export default {
         {
             src: "@/plugins/vue-html2canvas.js",
             mode: "client"
+        },
+        {
+            src: "@/plugins/number-directive.js",
+            mode: "client"
         }
     ],
     loading: {
