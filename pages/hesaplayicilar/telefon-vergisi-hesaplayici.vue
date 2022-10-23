@@ -39,16 +39,12 @@
             <FormRow
                 class="mb-10"
                 label="Kayıt yolu">
-                <v-radio-group
+                <RadioGrid
                     v-model="form.registration"
-                    hide-details=""
-                    class="pa-0 ma-0">
-                    <v-radio
-                        v-for="_item in ui.registration"
-                        :key="_item.value"
-                        :label="_item.title"
-                        :value="_item.value" />
-                </v-radio-group>
+                    :items="ui.registration"
+                    cols="6"
+                    md="5"
+                    lg="4" />
             </FormRow>
 
             <CalculatorResultTabs
@@ -110,11 +106,13 @@ export default {
             presets: calculator.presets,
             registration: [
                 {
-                    title: "İthalat (Resmi)",
+                    title: "İthalat ile",
+                    description: "İthalatçıların ithal edip sattığı ürünlerdir. \"Resmi\" olarak da bilinir.",
                     value: Registration.Import
                 },
                 {
-                    title: "Pasaport (Yurtdışından)",
+                    title: "Pasaport ile",
+                    description: "Yurt dışına giden kişinin yanında getirip kayıt ettirdiği ürünlerdir.",
                     value: Registration.Passport
                 }
             ],
