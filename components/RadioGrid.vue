@@ -12,14 +12,14 @@
                     :aria-selected="isItemActive(_item) ? 'true' : false"
                     role="button"
                     outlined=""
-                    class="vh-radio-grid__item d-flex flex-column py-5 px-4"
+                    class="vh-radio-grid__item d-flex flex-column pa-4"
                     @click="emit(_item.value)">
                     <div class="text-subtitle-1 font-weight-medium">
                         {{ _item.title }}
                     </div>
 
                     <template v-if="_item.description">
-                        <div class="text-caption opacity-75 mt-1">
+                        <div class="text-caption opacity-75">
                             {{ _item.description }}
                         </div>
                     </template>
