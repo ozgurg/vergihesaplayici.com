@@ -84,7 +84,6 @@
 <script>
 import PhoneTaxCalculator, { Registration } from "@/calculators/PhoneTaxCalculator.js";
 import { PhoneTaxCalculator as calculator } from "@/data/calculators.js";
-import { isCurrencyAvailable } from "@/utils/is-currency-available.js";
 import {
     createCalculatorMatchingPresetIds,
     createCalculatorMatchingPresetTitles,
@@ -92,7 +91,7 @@ import {
 } from "@/utils/find-calculator-matching-presets.js";
 import { moneyFormat } from "@/utils/formatter.js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
-import { shouldShowResults } from "@/utils/calculator/phone-tax-calculator.js";
+import { handleQuery, shouldShowResults } from "@/utils/calculator/phone-tax-calculator.js";
 
 export default {
     head() {
@@ -148,19 +147,12 @@ export default {
         _handleQuery() {
             const vm = this;
 
-            const query = vm.$route.query;
-            if (!query) return;
-
-            if (query.price) {
-                vm.form.price = parseFloat(query.price);
-            }
-
-            if (query.currency && isCurrencyAvailable(query.currency, vm.$store.getters["exchange-rates/availableCurrencies"])) {
-                vm.form.currency = query.currency;
-            }
-
-            if (query.registration && vm.ui.registration.some(object => object.value === query.registration)) {
-                vm.form.registration = query.registration;
+            const handledQuery = handleQuery(vm.$route.query, {
+                availableCurrencies: vm.$store.getters["exchange-rates/availableCurrencies"],
+                registration: vm.ui.registration
+            });
+            if (handledQuery) {
+                Object.assign(vm.form, handledQuery);
             }
         }
     },

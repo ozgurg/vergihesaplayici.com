@@ -1,8 +1,8 @@
-import { shouldShowResults } from "@/utils/calculator/phone-tax-calculator.js";
+import { handleQuery, shouldShowResults } from "@/utils/calculator/phone-tax-calculator.js";
 
 describe("utils/phone-tax-calculator", () => {
     describe("shouldShowResults", () => {
-        it("should 'true' true for valid form object", () => {
+        it("should return 'true' for valid form object", () => {
             expect(shouldShowResults({
                 price: 599,
                 currency: "TRY",
@@ -10,7 +10,7 @@ describe("utils/phone-tax-calculator", () => {
             })).toBe(true);
         });
 
-        it("should 'false' true for invalid form object", () => {
+        it("should return 'false' for invalid form object", () => {
             // All
             expect(shouldShowResults({})).toBe(false);
             expect(shouldShowResults({
@@ -32,6 +32,71 @@ describe("utils/phone-tax-calculator", () => {
             // registration
             expect(shouldShowResults({ registration: null })).toBe(false);
             expect(shouldShowResults({ registration: "" })).toBe(false);
+        });
+    });
+
+    describe("handleQuery", () => {
+        // TODO: Make it more robust
+
+        it("should return valid \"handled query\" for valid query object", () => {
+            const query = {
+                price: 599,
+                currency: "TRY",
+                registration: "import"
+            };
+            const requirements = {
+                availableCurrencies: ["TRY"],
+                registration: [
+                    { value: "import" }
+                ]
+            };
+            expect(handleQuery(query, requirements)).toStrictEqual(query);
+        });
+
+        it("should return valid \"handled query\" for invalid query object", () => {
+            const query1 = {
+                fiyat: 599,
+                paraBirimi: "TRY",
+                kayitYolu: "import"
+            };
+            const requirements1 = {
+                availableCurrencies: [],
+                registration: []
+            };
+            expect(handleQuery(query1, requirements1)).toStrictEqual({});
+
+            const query2 = {
+                price: "599.99" // String
+            };
+            const requirements2 = {
+                availableCurrencies: [],
+                registration: []
+            };
+            expect(handleQuery(query2, requirements2)).toStrictEqual({
+                price: 599.99 // Float
+            });
+        });
+
+        it("should return only valid properties", () => {
+            const query = {
+                price: 599, // Valid
+                currency: "ABC",
+                registration: "import", // Valid
+                property1: {},
+                property2: null,
+                property3: 0,
+                property4: "Hi"
+            };
+            const requirements = {
+                availableCurrencies: ["TRY"],
+                registration: [
+                    { value: "import" }
+                ]
+            };
+            expect(handleQuery(query, requirements)).toStrictEqual({
+                price: 599,
+                registration: "import"
+            });
         });
     });
 });
