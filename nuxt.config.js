@@ -98,26 +98,11 @@ export default {
         "@/assets/scss/style.scss"
     ],
     plugins: [
-        {
-            src: "@/plugins/firebase.js",
-            mode: "client"
-        },
-        {
-            src: "@/plugins/vue-clipboard2.js",
-            mode: "client"
-        },
-        {
-            src: "@/plugins/vue-disqus.js",
-            mode: "client"
-        },
-        {
-            src: "@/plugins/vue-html2canvas.js",
-            mode: "client"
-        },
-        {
-            src: "@/plugins/number-directive.js",
-            mode: "client"
-        }
+        "@/plugins/firebase.client.js",
+        "@/plugins/vue-clipboard2.client.js",
+        "@/plugins/vue-disqus.client.js",
+        "@/plugins/vue-html2canvas.client.js",
+        "@/plugins/number-directive.client.js"
     ],
     loading: {
         color: process.env.APP_PRIMARY_COLOR,

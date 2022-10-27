@@ -21,6 +21,7 @@ Vue.directive("number", {
     bind(element) {
         const input = element.querySelector("input");
 
+        // FIXME: Looks ugly
         const min = input.hasAttribute("min") ? parseFloat(input.getAttribute("min")) : -10_000_000_000_000_000_000;
         const max = input.hasAttribute("max") ? parseFloat(input.getAttribute("max")) : 10_000_000_000_000_000_000;
 
