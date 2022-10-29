@@ -6,7 +6,7 @@
         <v-card
             :to="url"
             outlined=""
-            class="px-6 py-8 pa-sm-8 d-flex flex-column justify-space-between align-start h-100">
+            class="px-6 py-8 pa-sm-8 d-flex flex-column justify-space-between align-start h-100 overflow-hidden">
             <div class="vh-calculator-grid__item__icon d-inline-block pa-5 rounded-pill">
                 <v-icon
                     class="primary--text"
