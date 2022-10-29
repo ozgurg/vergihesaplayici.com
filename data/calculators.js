@@ -2,7 +2,6 @@ import { mdiBrightnessPercent, mdiCellphone, mdiController } from "@mdi/js";
 
 const VatCalculator = {
     icon: mdiBrightnessPercent,
-    initialsTitle: "KDV",
     title: "KDV (Katma Değer Vergisi) Hesaplayıcı",
     subtitle: "Katma Değer Vergisi",
     url: "/hesaplayicilar/kdv-hesaplayici/",
