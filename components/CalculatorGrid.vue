@@ -6,7 +6,7 @@
                 :url="_calculator.url"
                 :icon="_calculator.icon"
                 :title="_calculator.title"
-                :description="_calculator.description" />
+                :summary="_calculator.summary" />
         </template>
     </v-row>
 </template>

@@ -12,9 +12,10 @@ describe("data/calculators", () => {
             subtitle: { type: "string" },
             url: { type: "string" },
             description: { type: "string" },
+            summary: { type: "string" },
             presets: { type: "object" }
         },
-        required: ["icon", "title", "subtitle", "url", "description"]
+        required: ["icon", "title", "subtitle", "url", "description", "summary"]
     };
 
     it("should match schema", () => {

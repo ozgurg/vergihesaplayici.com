@@ -16,9 +16,10 @@
                 {{ title }}
             </h2>
 
-            <p class="text-subtitle-2 mb-0 text--secondary">
-                {{ description }}
-            </p>
+            <!-- eslint-disable vue/no-v-text-v-html-on-component vue/no-v-html -->
+            <p
+                class="text-subtitle-2 mb-0 text--secondary"
+                v-html="summary" />
         </v-card>
     </v-col>
 </template>
@@ -38,7 +39,7 @@ export default {
             type: String,
             required: true
         },
-        description: {
+        summary: {
             type: String,
             required: true
         }
