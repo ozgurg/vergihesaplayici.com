@@ -7,17 +7,15 @@
         </PageTitle>
 
         <InnerContainer>
-            <FormRow class="mb-10" label="Hesaplama modu">
-                <v-radio-group
+            <FormRow
+                class="mb-10"
+                label="Hesaplama modu">
+                <RadioGrid
                     v-model="form.mode"
-                    hide-details=""
-                    class="pa-0 ma-0">
-                    <v-radio
-                        v-for="_item in ui.mode"
-                        :key="_item.value"
-                        :label="_item.title"
-                        :value="_item.value" />
-                </v-radio-group>
+                    :items="ui.mode"
+                    cols="6"
+                    md="6"
+                    lg="5" />
             </FormRow>
 
             <FormRow
