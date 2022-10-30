@@ -105,7 +105,7 @@ const KonsolVergisiHesaplayici = (() => {
 const KdvHesaplayici = (() => {
     const icon = mdiBrightnessPercent;
     const title = "KDV Hesaplayıcı";
-    const shortTitle = "KDV";
+    const shortTitle = "Katma Değer Vergisi";
     const description = "Namıdiğer her şeyin vergisini hariç ve dahil olarak hesaplayın.";
     const url = "/hesaplayicilar/kdv-hesaplayici/";
     const head = buildHeadTags({
