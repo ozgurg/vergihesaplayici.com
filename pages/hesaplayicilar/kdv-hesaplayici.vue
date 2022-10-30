@@ -37,6 +37,7 @@
             </FormRow>
 
             <FormRow
+                class="mb-10"
                 label="KDV oranı">
                 <v-text-field
                     v-model.number="form.rate"
@@ -50,13 +51,6 @@
                     inputmode="decimal"
                     type="number"
                     aria-label="KDV oranı" />
-            </FormRow>
-
-            <FormRow class="mt-5 mb-10">
-                <CalculatorPresets
-                    :value="matchingPresetIds"
-                    :presets="ui.presets"
-                    @click="choosePreset($event)" />
             </FormRow>
 
             <CalculatorResultTabs
@@ -81,7 +75,6 @@
 
 <script>
 import VatCalculator, { Mode } from "@/calculators/VatCalculator.js";
-import { createCalculatorMatchingPresetIds } from "@/utils/find-calculator-matching-presets.js";
 import { numberFormat } from "@/utils/formatter.js";
 import page, { modeOptions } from "@/data/pages/KdvHesaplayici.js";
 
@@ -93,23 +86,6 @@ export default {
         page,
         ui: {
             tab: 1,
-            presets: [
-                {
-                    id: 1,
-                    title: "Yüzde 1",
-                    form: { rate: 1 }
-                },
-                {
-                    id: 2,
-                    title: "Yüzde 8",
-                    form: { rate: 8 }
-                },
-                {
-                    id: 3,
-                    title: "Yüzde 18",
-                    form: { rate: 18 }
-                }
-            ],
             mode: modeOptions
         },
         form: {
@@ -120,10 +96,6 @@ export default {
         results: {}
     }),
     methods: {
-        choosePreset(preset) {
-            const vm = this;
-            Object.assign(vm.form, preset.form);
-        },
         _calculate() {
             const vm = this;
 
@@ -175,14 +147,6 @@ export default {
         shouldShowResults() {
             const vm = this;
             return vm.form.price > 0;
-        },
-        matchingPresets() {
-            const vm = this;
-            return vm.ui.presets.filter(preset => preset.form.rate === vm.form.rate);
-        },
-        matchingPresetIds() {
-            const vm = this;
-            return createCalculatorMatchingPresetIds(vm.matchingPresets);
         },
         priceLabel() {
             const vm = this;
