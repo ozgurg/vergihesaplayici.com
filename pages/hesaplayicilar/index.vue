@@ -13,14 +13,14 @@
 </template>
 
 <script>
+import page from "@/data/pages/Hesaplayicilar.js";
+
 export default {
     head() {
-        return this.page.head;
+        return page.head;
     },
-    data() {
-        return {
-            page: this.$page.Hesaplayicilar
-        };
-    }
+    data: () => ({
+        page
+    })
 };
 </script>

@@ -83,52 +83,51 @@
 import VatCalculator, { Mode } from "@/calculators/VatCalculator.js";
 import { createCalculatorMatchingPresetIds } from "@/utils/find-calculator-matching-presets.js";
 import { numberFormat } from "@/utils/formatter.js";
+import page from "@/data/pages/KdvHesaplayici.js";
 
 export default {
     head() {
-        return this.page.head;
+        return page.head;
     },
-    data() {
-        return {
-            page: this.$page.KdvHesaplayici,
-            ui: {
-                tab: 1,
-                presets: [
-                    {
-                        id: 1,
-                        title: "Yüzde 1",
-                        form: { rate: 1 }
-                    },
-                    {
-                        id: 2,
-                        title: "Yüzde 8",
-                        form: { rate: 8 }
-                    },
-                    {
-                        id: 3,
-                        title: "Yüzde 18",
-                        form: { rate: 18 }
-                    }
-                ],
-                mode: [
-                    {
-                        title: "KDV hariç fiyattan KDV dahil fiyatı hesapla",
-                        value: Mode.TaxFreePriceToTaxAddedPrice
-                    },
-                    {
-                        title: "KDV dahil fiyattan KDV hariç fiyatı hesapla",
-                        value: Mode.TaxAddedPriceToTaxFreePrice
-                    }
-                ]
-            },
-            form: {
-                price: null,
-                rate: 18,
-                mode: Mode.TaxFreePriceToTaxAddedPrice
-            },
-            results: {}
-        };
-    },
+    data: () => ({
+        page,
+        ui: {
+            tab: 1,
+            presets: [
+                {
+                    id: 1,
+                    title: "Yüzde 1",
+                    form: { rate: 1 }
+                },
+                {
+                    id: 2,
+                    title: "Yüzde 8",
+                    form: { rate: 8 }
+                },
+                {
+                    id: 3,
+                    title: "Yüzde 18",
+                    form: { rate: 18 }
+                }
+            ],
+            mode: [
+                {
+                    title: "KDV hariç fiyattan KDV dahil fiyatı hesapla",
+                    value: Mode.TaxFreePriceToTaxAddedPrice
+                },
+                {
+                    title: "KDV dahil fiyattan KDV hariç fiyatı hesapla",
+                    value: Mode.TaxAddedPriceToTaxFreePrice
+                }
+            ]
+        },
+        form: {
+            price: null,
+            rate: 18,
+            mode: Mode.TaxFreePriceToTaxAddedPrice
+        },
+        results: {}
+    }),
     methods: {
         choosePreset(preset) {
             const vm = this;
