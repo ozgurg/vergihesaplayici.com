@@ -1,6 +1,6 @@
 import { mdiCellphone } from "@mdi/js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
-import Hesaplayicilar from "@/data/pages/Hesaplayicilar.js";
+import { Hesaplayicilar } from "@/data/pages/Hesaplayicilar.js";
 import { Registration } from "@/calculators/PhoneTaxCalculator.js";
 
 const presets = [
@@ -24,7 +24,7 @@ const registrationOptions = [
     }
 ];
 
-export default (() => {
+const TelefonVergisiHesaplayici = (() => {
     const icon = mdiCellphone;
     const title = "Telefon Vergisi Hesaplayıcı";
     const shortTitle = "Telefon Vergisi";
@@ -55,5 +55,6 @@ export default (() => {
 
 export {
     presets,
-    registrationOptions
+    registrationOptions,
+    TelefonVergisiHesaplayici
 };

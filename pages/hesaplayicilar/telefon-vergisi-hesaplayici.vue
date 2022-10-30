@@ -82,14 +82,14 @@
 import PhoneTaxCalculator, { Registration } from "@/calculators/PhoneTaxCalculator.js";
 import { moneyFormat } from "@/utils/formatter.js";
 import { handleQuery, shouldShowResults } from "@/utils/calculator/phone-tax-calculator.js";
-import page, { presets, registrationOptions } from "@/data/pages/TelefonVergisiHesaplayici.js";
+import { presets, registrationOptions, TelefonVergisiHesaplayici } from "@/data/pages/TelefonVergisiHesaplayici.js";
 
 export default {
     head() {
-        return page.head;
+        return this.page.head;
     },
     data: () => ({
-        page,
+        page: TelefonVergisiHesaplayici,
         ui: {
             presets,
             registration: registrationOptions,

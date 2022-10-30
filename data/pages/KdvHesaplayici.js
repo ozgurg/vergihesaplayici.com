@@ -1,6 +1,6 @@
 import { mdiBrightnessPercent } from "@mdi/js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
-import Hesaplayicilar from "@/data/pages/Hesaplayicilar.js";
+import { Hesaplayicilar } from "@/data/pages/Hesaplayicilar.js";
 import { Mode } from "@/calculators/VatCalculator.js";
 
 const modeOptions = [
@@ -14,7 +14,7 @@ const modeOptions = [
     }
 ];
 
-export default (() => {
+const KdvHesaplayici = (() => {
     const icon = mdiBrightnessPercent;
     const title = "KDV Hesaplayıcı";
     const shortTitle = "Katma Değer Vergisi";
@@ -44,5 +44,6 @@ export default (() => {
 })();
 
 export {
-    modeOptions
+    modeOptions,
+    KdvHesaplayici
 };

@@ -71,14 +71,14 @@
 import ConsoleTaxCalculator from "@/calculators/ConsoleTaxCalculator.js";
 import { isCurrencyAvailable } from "@/utils/is-currency-available.js";
 import { moneyFormat } from "@/utils/formatter.js";
-import page, { presets } from "@/data/pages/KonsolVergisiHesaplayici.js";
+import { KonsolVergisiHesaplayici, presets } from "@/data/pages/KonsolVergisiHesaplayici.js";
 
 export default {
     head() {
-        return page.head;
+        return this.page.head;
     },
     data: () => ({
-        page,
+        page: KonsolVergisiHesaplayici,
         ui: {
             presets,
             tab: 1

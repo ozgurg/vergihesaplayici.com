@@ -76,14 +76,14 @@
 <script>
 import VatCalculator, { Mode } from "@/calculators/VatCalculator.js";
 import { numberFormat } from "@/utils/formatter.js";
-import page, { modeOptions } from "@/data/pages/KdvHesaplayici.js";
+import { KdvHesaplayici, modeOptions } from "@/data/pages/KdvHesaplayici.js";
 
 export default {
     head() {
-        return page.head;
+        return this.page.head;
     },
     data: () => ({
-        page,
+        page: KdvHesaplayici,
         ui: {
             tab: 1,
             mode: modeOptions

@@ -1,6 +1,6 @@
 import { buildHeadTags } from "@/utils/build-head-tags.js";
 
-export default (() => {
+const AnaSayfa = (() => {
     const title = "Vergi Hesaplayıcı";
     const description = "Türkiye'de telefon ve oyun konsolu gibi farklı ürün gruplarının yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.";
     const url = "/";
@@ -20,3 +20,7 @@ export default (() => {
         head
     };
 })();
+
+export {
+    AnaSayfa
+};

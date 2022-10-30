@@ -1,6 +1,6 @@
 import { mdiController } from "@mdi/js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
-import Hesaplayicilar from "@/data/pages/Hesaplayicilar.js";
+import { Hesaplayicilar } from "@/data/pages/Hesaplayicilar.js";
 
 const presets = [
     // PS5: https://blog.playstation.com/2022/08/25/ps5-price-to-increase-in-select-markets-due-to-global-economic-environment-including-high-inflation-rates/
@@ -12,7 +12,7 @@ const presets = [
     { id: 5, title: "Nintendo Switch OLED (64GB)", form: { price: 349.99, currency: "USD" } }
 ];
 
-export default (() => {
+const KonsolVergisiHesaplayici = (() => {
     const icon = mdiController;
     const title = "Konsol Vergisi Hesaplayıcı";
     const shortTitle = "Konsol Vergisi";
@@ -42,5 +42,6 @@ export default (() => {
 })();
 
 export {
-    presets
+    presets,
+    KonsolVergisiHesaplayici
 };

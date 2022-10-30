@@ -26,14 +26,14 @@
 </template>
 
 <script>
-import page from "@/data/pages/AnaSayfa.js";
+import { AnaSayfa } from "@/data/pages/AnaSayfa.js";
 
 export default {
     head() {
-        return page.head;
+        return this.page.head;
     },
     data: () => ({
-        page
+        page: AnaSayfa
     })
 };
 </script>
