@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import * as calculators from "@/data/calculators.js";
+import { calculators } from "@/plugins/page.js";
 
 export default {
     data: () => ({

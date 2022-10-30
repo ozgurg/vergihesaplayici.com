@@ -13,13 +13,13 @@
                 :key="_calculator.title"
                 :url="_calculator.url"
                 :icon="_calculator.icon"
-                :title="_calculator.subtitle" />
+                :title="_calculator.shortTitle" />
         </template>
     </v-list>
 </template>
 
 <script>
-import * as calculators from "@/data/calculators.js";
+import { calculators } from "@/plugins/page.js";
 
 export default {
     data: () => ({
