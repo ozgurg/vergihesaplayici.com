@@ -14,7 +14,11 @@
             <v-divider class="my-15" />
 
             <h2 class="mb-4">
-                Hesaplayıcılar
+                <nuxt-link
+                    :to="$page.Hesaplayicilar.url"
+                    class="text-decoration-none white--text">
+                    {{ $page.Hesaplayicilar.title }}
+                </nuxt-link>
             </h2>
             <CalculatorGrid />
         </InnerContainer>
