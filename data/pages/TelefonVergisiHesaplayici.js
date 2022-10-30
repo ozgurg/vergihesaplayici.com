@@ -1,6 +1,20 @@
 import { mdiCellphone } from "@mdi/js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
 import Hesaplayicilar from "@/data/pages/Hesaplayicilar.js";
+import { Registration } from "@/calculators/PhoneTaxCalculator.js";
+
+const registrationOptions = [
+    {
+        title: "İthalat ile",
+        description: "İthalatçıların ithal edip sattığı ürünlerdir. \"Resmi\" olarak da bilinir.",
+        value: Registration.Import
+    },
+    {
+        title: "Pasaport ile",
+        description: "Yurt dışına giden kişinin yanında getirip kayıt ettirdiği ürünlerdir.",
+        value: Registration.Passport
+    }
+];
 
 export default (() => {
     const icon = mdiCellphone;
@@ -30,3 +44,7 @@ export default (() => {
         summary
     };
 })();
+
+export {
+    registrationOptions
+};

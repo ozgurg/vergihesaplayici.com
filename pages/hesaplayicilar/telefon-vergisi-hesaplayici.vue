@@ -90,6 +90,7 @@ import {
 } from "@/utils/find-calculator-matching-presets.js";
 import { moneyFormat } from "@/utils/formatter.js";
 import { handleQuery, shouldShowResults } from "@/utils/calculator/phone-tax-calculator.js";
+import { registrationOptions } from "@/data/pages/TelefonVergisiHesaplayici.js";
 
 export default {
     head() {
@@ -106,18 +107,7 @@ export default {
                     { id: 4, title: "iPhone 14 Pro (128GB)", form: { price: 999, currency: "USD" } },
                     { id: 5, title: "iPhone 14 Pro Max (1TB)", form: { price: 1599, currency: "USD" } }
                 ],
-                registration: [
-                    {
-                        title: "İthalat ile",
-                        description: "İthalatçıların ithal edip sattığı ürünlerdir. \"Resmi\" olarak da bilinir.",
-                        value: Registration.Import
-                    },
-                    {
-                        title: "Pasaport ile",
-                        description: "Yurt dışına giden kişinin yanında getirip kayıt ettirdiği ürünlerdir.",
-                        value: Registration.Passport
-                    }
-                ],
+                registration: registrationOptions,
                 tab: 1
             },
             form: {
