@@ -8,10 +8,7 @@
 
         <InnerContainer>
             <FormRow class="mb-5">
-                <CalculatorPresets
-                    :value="matchingPresetIds"
-                    :presets="ui.presets"
-                    @click="choosePreset($event)" />
+                <CalculatorPresets :presets="ui.presets" />
             </FormRow>
 
             <FormRow
@@ -73,7 +70,7 @@
                             :screenshot-output="screenshotOutput"
                             :form="form"
                             :calculator-title="page.title"
-                            :preset-title="matchingPresetTitles" />
+                            :preset-title="[]" />
                     </FormRow>
                 </template>
             </CalculatorResultTabs>
@@ -83,11 +80,6 @@
 
 <script>
 import PhoneTaxCalculator, { Registration } from "@/calculators/PhoneTaxCalculator.js";
-import {
-    createCalculatorMatchingPresetIds,
-    createCalculatorMatchingPresetTitles,
-    findCalculatorMatchingPresets
-} from "@/utils/find-calculator-matching-presets.js";
 import { moneyFormat } from "@/utils/formatter.js";
 import { handleQuery, shouldShowResults } from "@/utils/calculator/phone-tax-calculator.js";
 import page, { presets, registrationOptions } from "@/data/pages/TelefonVergisiHesaplayici.js";
@@ -111,10 +103,6 @@ export default {
         results: {}
     }),
     methods: {
-        choosePreset(preset) {
-            const vm = this;
-            Object.assign(vm.form, preset.form);
-        },
         _calculate() {
             const vm = this;
 
@@ -210,21 +198,6 @@ export default {
         screenshotOutput() {
             const vm = this;
             return vm.resultList;
-        },
-        matchingPresets() {
-            const vm = this;
-            return findCalculatorMatchingPresets(vm.ui.presets, {
-                price: vm.form.price,
-                currency: vm.form.currency
-            });
-        },
-        matchingPresetIds() {
-            const vm = this;
-            return createCalculatorMatchingPresetIds(vm.matchingPresets);
-        },
-        matchingPresetTitles() {
-            const vm = this;
-            return createCalculatorMatchingPresetTitles(vm.matchingPresets).join(" / ");
         },
         selectedCurrency() {
             const vm = this;
