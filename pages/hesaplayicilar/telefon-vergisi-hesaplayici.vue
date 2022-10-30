@@ -83,7 +83,6 @@
 
 <script>
 import PhoneTaxCalculator, { Registration } from "@/calculators/PhoneTaxCalculator.js";
-import { PhoneTaxCalculator as calculator } from "@/data/calculators.js";
 import {
     createCalculatorMatchingPresetIds,
     createCalculatorMatchingPresetTitles,
@@ -100,7 +99,13 @@ export default {
         return {
             page: this.$page.TelefonVergisiHesaplayici,
             ui: {
-                presets: calculator.presets,
+                presets: [
+                    { id: 1, title: "iPhone SE 2022 (64GB)", form: { price: 429, currency: "USD" } },
+                    { id: 2, title: "iPhone 14 (128GB)", form: { price: 799, currency: "USD" } },
+                    { id: 3, title: "iPhone 14 Plus (128GB)", form: { price: 899, currency: "USD" } },
+                    { id: 4, title: "iPhone 14 Pro (128GB)", form: { price: 999, currency: "USD" } },
+                    { id: 5, title: "iPhone 14 Pro Max (1TB)", form: { price: 1599, currency: "USD" } }
+                ],
                 registration: [
                     {
                         title: "İthalat ile",
