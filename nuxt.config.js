@@ -102,7 +102,8 @@ export default {
         "@/plugins/vue-clipboard2.client.js",
         "@/plugins/vue-disqus.client.js",
         "@/plugins/vue-html2canvas.client.js",
-        "@/plugins/number-directive.client.js"
+        "@/plugins/number-directive.client.js",
+        "@/plugins/page.js"
     ],
     loading: {
         color: process.env.APP_PRIMARY_COLOR,

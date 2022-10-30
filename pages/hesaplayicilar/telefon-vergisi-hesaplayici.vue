@@ -1,9 +1,9 @@
 <template>
     <div>
-        <AppBreadcrumbs :items="breadcrumbItems" />
+        <AppBreadcrumbs :items="page.breadcrumbs" />
 
         <PageTitle>
-            {{ head.title }}
+            {{ page.title }}
         </PageTitle>
 
         <InnerContainer>
@@ -72,7 +72,7 @@
                             :screenshot-input="screenshotInput"
                             :screenshot-output="screenshotOutput"
                             :form="form"
-                            :calculator-title="head.title"
+                            :calculator-title="page.title"
                             :preset-title="matchingPresetTitles" />
                     </FormRow>
                 </template>
@@ -90,42 +90,39 @@ import {
     findCalculatorMatchingPresets
 } from "@/utils/find-calculator-matching-presets.js";
 import { moneyFormat } from "@/utils/formatter.js";
-import { buildHeadTags } from "@/utils/build-head-tags.js";
 import { handleQuery, shouldShowResults } from "@/utils/calculator/phone-tax-calculator.js";
 
 export default {
     head() {
-        return this.head;
+        return this.page.head;
     },
-    data: () => ({
-        head: buildHeadTags({
-            title: calculator.title,
-            description: calculator.description,
-            ogImageName: "telefon-vergisi-hesaplayici.jpg"
-        }),
-        ui: {
-            presets: calculator.presets,
-            registration: [
-                {
-                    title: "İthalat ile",
-                    description: "İthalatçıların ithal edip sattığı ürünlerdir. \"Resmi\" olarak da bilinir.",
-                    value: Registration.Import
-                },
-                {
-                    title: "Pasaport ile",
-                    description: "Yurt dışına giden kişinin yanında getirip kayıt ettirdiği ürünlerdir.",
-                    value: Registration.Passport
-                }
-            ],
-            tab: 1
-        },
-        form: {
-            currency: "USD",
-            price: "",
-            registration: Registration.Import
-        },
-        results: {}
-    }),
+    data() {
+        return {
+            page: this.$page.TelefonVergisiHesaplayici,
+            ui: {
+                presets: calculator.presets,
+                registration: [
+                    {
+                        title: "İthalat ile",
+                        description: "İthalatçıların ithal edip sattığı ürünlerdir. \"Resmi\" olarak da bilinir.",
+                        value: Registration.Import
+                    },
+                    {
+                        title: "Pasaport ile",
+                        description: "Yurt dışına giden kişinin yanında getirip kayıt ettirdiği ürünlerdir.",
+                        value: Registration.Passport
+                    }
+                ],
+                tab: 1
+            },
+            form: {
+                currency: "USD",
+                price: "",
+                registration: Registration.Import
+            },
+            results: {}
+        };
+    },
     methods: {
         choosePreset(preset) {
             const vm = this;
@@ -249,18 +246,6 @@ export default {
         priceMultipliedExchangeRate() {
             const vm = this;
             return vm.form.price * vm.selectedCurrency.rate;
-        },
-        breadcrumbItems() {
-            return [
-                {
-                    title: "Hesaplayıcılar",
-                    url: "/hesaplayicilar/"
-                },
-                {
-                    title: calculator.title,
-                    url: calculator.url
-                }
-            ];
         }
     },
     watch: {

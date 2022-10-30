@@ -1,9 +1,9 @@
 <template>
     <div>
-        <AppBreadcrumbs :items="breadcrumbItems" />
+        <AppBreadcrumbs :items="page.breadcrumbs" />
 
         <PageTitle>
-            {{ head.title }}
+            {{ page.title }}
         </PageTitle>
 
         <InnerContainer>
@@ -71,7 +71,7 @@
                         <CalculatorShareButton
                             :screenshot-output="screenshotOutput"
                             :form="form"
-                            :calculator-title="head.title" />
+                            :calculator-title="page.title" />
                     </FormRow>
                 </template>
             </CalculatorResultTabs>
@@ -80,59 +80,55 @@
 </template>
 
 <script>
-import { VatCalculator as calculator } from "@/data/calculators.js";
 import VatCalculator, { Mode } from "@/calculators/VatCalculator.js";
 import { createCalculatorMatchingPresetIds } from "@/utils/find-calculator-matching-presets.js";
 import { numberFormat } from "@/utils/formatter.js";
-import { buildHeadTags } from "@/utils/build-head-tags.js";
 
 export default {
     head() {
-        return this.head;
+        return this.page.head;
     },
-    data: () => ({
-        head: buildHeadTags({
-            title: calculator.title,
-            description: calculator.description,
-            ogImageName: "kdv-hesaplayici.jpg"
-        }),
-        ui: {
-            tab: 1,
-            presets: [
-                {
-                    id: 1,
-                    title: "Yüzde 1",
-                    form: { rate: 1 }
-                },
-                {
-                    id: 2,
-                    title: "Yüzde 8",
-                    form: { rate: 8 }
-                },
-                {
-                    id: 3,
-                    title: "Yüzde 18",
-                    form: { rate: 18 }
-                }
-            ],
-            mode: [
-                {
-                    title: "KDV hariç fiyattan KDV dahil fiyatı hesapla",
-                    value: Mode.TaxFreePriceToTaxAddedPrice
-                },
-                {
-                    title: "KDV dahil fiyattan KDV hariç fiyatı hesapla",
-                    value: Mode.TaxAddedPriceToTaxFreePrice
-                }
-            ]
-        },
-        form: {
-            price: null,
-            rate: 18,
-            mode: Mode.TaxFreePriceToTaxAddedPrice
-        },
-        results: {}
-    }),
+    data() {
+        return {
+            page: this.$page.KdvHesaplayici,
+            ui: {
+                tab: 1,
+                presets: [
+                    {
+                        id: 1,
+                        title: "Yüzde 1",
+                        form: { rate: 1 }
+                    },
+                    {
+                        id: 2,
+                        title: "Yüzde 8",
+                        form: { rate: 8 }
+                    },
+                    {
+                        id: 3,
+                        title: "Yüzde 18",
+                        form: { rate: 18 }
+                    }
+                ],
+                mode: [
+                    {
+                        title: "KDV hariç fiyattan KDV dahil fiyatı hesapla",
+                        value: Mode.TaxFreePriceToTaxAddedPrice
+                    },
+                    {
+                        title: "KDV dahil fiyattan KDV hariç fiyatı hesapla",
+                        value: Mode.TaxAddedPriceToTaxFreePrice
+                    }
+                ]
+            },
+            form: {
+                price: null,
+                rate: 18,
+                mode: Mode.TaxFreePriceToTaxAddedPrice
+            },
+            results: {}
+        };
+    },
     methods: {
         choosePreset(preset) {
             const vm = this;
@@ -204,18 +200,6 @@ export default {
                 [Mode.TaxFreePriceToTaxAddedPrice]: "KDV hariç fiyat",
                 [Mode.TaxAddedPriceToTaxFreePrice]: "KDV dahil fiyat"
             }[vm.form.mode];
-        },
-        breadcrumbItems() {
-            return [
-                {
-                    title: "Hesaplayıcılar",
-                    url: "/hesaplayicilar/"
-                },
-                {
-                    title: calculator.title,
-                    url: calculator.url
-                }
-            ];
         }
     },
     watch: {

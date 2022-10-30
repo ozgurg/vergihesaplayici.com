@@ -1,9 +1,9 @@
 <template>
     <div>
-        <AppBreadcrumbs :items="breadcrumbItems" />
+        <AppBreadcrumbs :items="page.breadcrumbs" />
 
         <PageTitle>
-            {{ head.title }}
+            {{ page.title }}
         </PageTitle>
 
         <InnerContainer>
@@ -13,33 +13,14 @@
 </template>
 
 <script>
-import { buildHeadTags } from "@/utils/build-head-tags.js";
-
-const meta = {
-    title: "Tüm Hesaplayıcılar",
-    description: "Türkiye'deki farklı ürün gruplarının yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın."
-};
-
 export default {
     head() {
-        return this.head;
+        return this.page.head;
     },
-    data: () => ({
-        head: buildHeadTags({
-            title: meta.title,
-            description: meta.description,
-            ogImageName: "ana-sayfa.jpg"
-        })
-    }),
-    computed: {
-        breadcrumbItems() {
-            return [
-                {
-                    title: "Hesaplayıcılar",
-                    url: "/hesaplayicilar/"
-                }
-            ];
-        }
+    data() {
+        return {
+            page: this.$page.Hesaplayicilar
+        };
     }
 };
 </script>

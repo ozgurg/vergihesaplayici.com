@@ -1,7 +1,7 @@
 <template>
     <div>
         <PageTitle>
-            Vergi Hesaplayıcı
+            {{ page.title }}
         </PageTitle>
 
         <InnerContainer>
@@ -22,26 +22,14 @@
 </template>
 
 <script>
-import { buildHeadTags } from "@/utils/build-head-tags.js";
-
-const meta = {
-    title: "Vergi Hesaplayıcı",
-    description: "Türkiye'deki farklı ürün gruplarının yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın."
-};
-
 export default {
     head() {
-        return this.head;
+        return this.page.head;
     },
-    data: () => ({
-        head: {
-            titleTemplate: null,
-            ...buildHeadTags({
-                title: meta.title,
-                description: meta.description,
-                ogImageName: "ana-sayfa.jpg"
-            })
-        }
-    })
+    data() {
+        return {
+            page: this.$page.AnaSayfa
+        };
+    }
 };
 </script>

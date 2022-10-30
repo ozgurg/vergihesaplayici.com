@@ -1,9 +1,9 @@
 <template>
     <div>
-        <AppBreadcrumbs :items="breadcrumbItems" />
+        <AppBreadcrumbs :items="page.breadcrumbs" />
 
         <PageTitle>
-            {{ head.title }}
+            {{ page.title }}
         </PageTitle>
 
         <InnerContainer>
@@ -61,7 +61,7 @@
                             :screenshot-input="screenshotInput"
                             :screenshot-output="screenshotOutput"
                             :form="form"
-                            :calculator-title="head.title"
+                            :calculator-title="page.title"
                             :preset-title="matchingPresetTitles" />
                     </FormRow>
                 </template>
@@ -80,28 +80,25 @@ import {
     findCalculatorMatchingPresets
 } from "@/utils/find-calculator-matching-presets.js";
 import { moneyFormat } from "@/utils/formatter.js";
-import { buildHeadTags } from "@/utils/build-head-tags.js";
 
 export default {
     head() {
-        return this.head;
+        return this.page.head;
     },
-    data: () => ({
-        head: buildHeadTags({
-            title: calculator.title,
-            description: calculator.description,
-            ogImageName: "konsol-vergisi-hesaplayici.jpg"
-        }),
-        ui: {
-            presets: calculator.presets,
-            tab: 1
-        },
-        form: {
-            currency: "USD",
-            price: ""
-        },
-        results: {}
-    }),
+    data() {
+        return {
+            page: this.$page.KonsolVergisiHesaplayici,
+            ui: {
+                presets: calculator.presets,
+                tab: 1
+            },
+            form: {
+                currency: "USD",
+                price: ""
+            },
+            results: {}
+        };
+    },
     methods: {
         choosePreset(preset) {
             const vm = this;
@@ -202,18 +199,6 @@ export default {
         priceMultipliedExchangeRate() {
             const vm = this;
             return vm.form.price * vm.selectedCurrency.rate;
-        },
-        breadcrumbItems() {
-            return [
-                {
-                    title: "Hesaplayıcılar",
-                    url: "/hesaplayicilar/"
-                },
-                {
-                    title: calculator.title,
-                    url: calculator.url
-                }
-            ];
         }
     },
     watch: {
