@@ -83,7 +83,7 @@
 import VatCalculator, { Mode } from "@/calculators/VatCalculator.js";
 import { createCalculatorMatchingPresetIds } from "@/utils/find-calculator-matching-presets.js";
 import { numberFormat } from "@/utils/formatter.js";
-import page from "@/data/pages/KdvHesaplayici.js";
+import page, { modeOptions } from "@/data/pages/KdvHesaplayici.js";
 
 export default {
     head() {
@@ -110,16 +110,7 @@ export default {
                     form: { rate: 18 }
                 }
             ],
-            mode: [
-                {
-                    title: "KDV hariç fiyattan KDV dahil fiyatı hesapla",
-                    value: Mode.TaxFreePriceToTaxAddedPrice
-                },
-                {
-                    title: "KDV dahil fiyattan KDV hariç fiyatı hesapla",
-                    value: Mode.TaxAddedPriceToTaxFreePrice
-                }
-            ]
+            mode: modeOptions
         },
         form: {
             price: null,

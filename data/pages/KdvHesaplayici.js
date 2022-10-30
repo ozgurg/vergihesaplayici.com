@@ -1,6 +1,18 @@
 import { mdiBrightnessPercent } from "@mdi/js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
 import Hesaplayicilar from "@/data/pages/Hesaplayicilar.js";
+import { Mode } from "@/calculators/VatCalculator.js";
+
+const modeOptions = [
+    {
+        title: "KDV hariç fiyattan KDV dahil fiyatı hesapla",
+        value: Mode.TaxFreePriceToTaxAddedPrice
+    },
+    {
+        title: "KDV dahil fiyattan KDV hariç fiyatı hesapla",
+        value: Mode.TaxAddedPriceToTaxFreePrice
+    }
+];
 
 export default (() => {
     const icon = mdiBrightnessPercent;
@@ -30,3 +42,7 @@ export default (() => {
         summary
     };
 })();
+
+export {
+    modeOptions
+};
