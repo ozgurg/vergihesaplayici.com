@@ -1,3 +1,4 @@
+import { mdiBrightnessPercent, mdiCellphone, mdiController } from "@mdi/js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
 
 const AnaSayfa = (() => {
@@ -44,6 +45,7 @@ const Hesaplayicilar = (() => {
 })();
 
 const TelefonVergisiHesaplayici = (() => {
+    const icon = mdiCellphone;
     const title = "Telefon Vergisi Hesaplayıcı";
     const shortTitle = "Telefon Vergisi";
     const description = "Satın aldığınız bir telefonun yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.";
@@ -60,6 +62,7 @@ const TelefonVergisiHesaplayici = (() => {
     const summary = "\"O ney vatandaş, bir tane de bana ver\"<br /><i>- Vergili Mıçı</i>";
 
     return {
+        icon,
         title,
         shortTitle,
         description,
@@ -71,6 +74,7 @@ const TelefonVergisiHesaplayici = (() => {
 })();
 
 const KonsolVergisiHesaplayici = (() => {
+    const icon = mdiController;
     const title = "Konsol Vergisi Hesaplayıcı";
     const shortTitle = "Konsol Vergisi";
     const description = "Satın aldığınız bir oyun konsolunun yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.";
@@ -87,6 +91,7 @@ const KonsolVergisiHesaplayici = (() => {
     const summary = "- Oyun oynamak hiç bu kadar vergili olmamıştı.<br />+ Meydan okuma kabul edildi.";
 
     return {
+        icon,
         title,
         shortTitle,
         description,
@@ -98,6 +103,7 @@ const KonsolVergisiHesaplayici = (() => {
 })();
 
 const KdvHesaplayici = (() => {
+    const icon = mdiBrightnessPercent;
     const title = "KDV Hesaplayıcı";
     const shortTitle = "KDV";
     const description = "Namıdiğer her şeyin vergisini hariç ve dahil olarak hesaplayın.";
@@ -114,6 +120,7 @@ const KdvHesaplayici = (() => {
     const summary = "\"Her şey değerlidir.\"<br /><i>- Katma Değer</i>";
 
     return {
+        icon,
         title,
         shortTitle,
         description,
@@ -124,12 +131,25 @@ const KdvHesaplayici = (() => {
     };
 })();
 
+const site = {
+    AnaSayfa,
+    Hesaplayicilar
+};
+
+const calculators = {
+    TelefonVergisiHesaplayici,
+    KonsolVergisiHesaplayici,
+    KdvHesaplayici
+};
+
 export default (_, inject) => {
     inject("page", {
-        AnaSayfa,
-        Hesaplayicilar,
-        TelefonVergisiHesaplayici,
-        KonsolVergisiHesaplayici,
-        KdvHesaplayici
+        ...site,
+        ...calculators
     });
+};
+
+export {
+    site,
+    calculators
 };
