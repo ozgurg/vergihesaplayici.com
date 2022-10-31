@@ -80,9 +80,14 @@
 
 <script>
 import PhoneTaxCalculator, { Registration } from "@/calculators/PhoneTaxCalculator.js";
-import { moneyFormat } from "@/utils/formatter.js";
-import { handleQuery, shouldShowResults } from "@/utils/calculator/phone-tax-calculator.js";
-import { presets, registrationOptions, TelefonVergisiHesaplayici } from "@/data/pages/TelefonVergisiHesaplayici.js";
+import {
+    buildResultList,
+    buildScreenshotInput,
+    handleQuery,
+    shouldShowResults
+} from "@/utils/calculator/phone-tax-calculator.js";
+import { registrationOptions, TelefonVergisiHesaplayici } from "@/data/pages/TelefonVergisiHesaplayici.js";
+import { presets } from "@/data/pages/TelefonVergisiHesaplayiciPreset.js";
 
 export default {
     head() {
@@ -130,70 +135,20 @@ export default {
     },
     computed: {
         shouldShowResults() {
-            return shouldShowResults(this.form);
+            const vm = this;
+            return shouldShowResults(vm.form);
         },
         resultList() {
             const vm = this;
-            return [
-                {
-                    key: "Vergisiz fiyat",
-                    value: moneyFormat(vm.results.prices.taxFree, "TRY")
-                },
-                ...(() => {
-                    if (vm.form.registration === Registration.Import) {
-                        return [
-                            {
-                                key: `Kültür Bakanlığı (%${vm.results.taxRates.ministryOfCulture})`,
-                                value: moneyFormat(vm.results.taxFees.ministryOfCulture, "TRY")
-                            },
-                            {
-                                key: `TRT bandrolü (%${vm.results.taxRates.trtImport})`,
-                                value: moneyFormat(vm.results.taxFees.trtImport, "TRY")
-                            },
-                            {
-                                key: `ÖTV (%${vm.results.taxRates.specialConsumptionTax})`,
-                                value: moneyFormat(vm.results.taxFees.specialConsumptionTax, "TRY")
-                            },
-                            {
-                                key: `KDV (%${vm.results.taxRates.valueAddedTax})`,
-                                value: moneyFormat(vm.results.taxFees.valueAddedTax, "TRY")
-                            }
-                        ];
-                    } else {
-                        return [
-                            {
-                                key: `TRT bandrolü (${moneyFormat(vm.results.taxRates.trtPassport, "EUR")})`,
-                                value: moneyFormat(vm.results.taxFees.trtPassport, "TRY")
-                            },
-                            {
-                                key: "Kayıt ücreti",
-                                value: moneyFormat(vm.results.taxFees.registration, "TRY")
-                            }
-                        ];
-                    }
-                })(),
-                {
-                    key: `Toplam vergi (%${vm.results.taxRates.total})`,
-                    value: moneyFormat(vm.results.taxFees.total, "TRY")
-                },
-                {
-                    key: "Tahmini satış fiyatı",
-                    value: moneyFormat(vm.results.prices.taxAdded, "TRY")
-                }
-            ];
+            return buildResultList(vm.results, vm.form.registration);
         },
         screenshotInput() {
             const vm = this;
-            return [
-                {
-                    key: "Telefon fiyatı",
-                    value: moneyFormat(vm.form.price, vm.form.currency)
-                },
-                {
-                    key: "Kayıt yolu",
-                    value: vm.ui.registration.find(item => item.value === vm.form.registration).title
-                }
-            ];
+            return buildScreenshotInput({
+                price: vm.form.price,
+                currency: vm.form.currency,
+                registrationTitle: vm.ui.registration.find(item => item.value === vm.form.registration).title
+            });
         },
         screenshotOutput() {
             const vm = this;
@@ -225,7 +180,6 @@ export default {
 
                 vm._calculate();
 
-                // Show results tab when calculated
                 vm.ui.tab = 0;
 
                 vm.$router.push({ query: vm.form });

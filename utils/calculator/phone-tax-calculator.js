@@ -1,4 +1,6 @@
 import { isCurrencyAvailable } from "@/utils/is-currency-available.js";
+import { moneyFormat } from "@/utils/formatter.js";
+import { Registration } from "@/calculators/PhoneTaxCalculator.js";
 
 /**
  * Decides whether to show the calculator results or not.
@@ -41,7 +43,72 @@ const handleQuery = (query, { availableCurrencies, registration }) => {
     return form;
 };
 
+const buildResultList = (results, registration) => {
+    return [
+        {
+            key: "Vergisiz fiyat",
+            value: moneyFormat(results.prices.taxFree, "TRY")
+        },
+        ...(() => {
+            if (registration === Registration.Import) {
+                return [
+                    {
+                        key: `Kültür Bakanlığı (%${results.taxRates.ministryOfCulture})`,
+                        value: moneyFormat(results.taxFees.ministryOfCulture, "TRY")
+                    },
+                    {
+                        key: `TRT bandrolü (%${results.taxRates.trtImport})`,
+                        value: moneyFormat(results.taxFees.trtImport, "TRY")
+                    },
+                    {
+                        key: `ÖTV (%${results.taxRates.specialConsumptionTax})`,
+                        value: moneyFormat(results.taxFees.specialConsumptionTax, "TRY")
+                    },
+                    {
+                        key: `KDV (%${results.taxRates.valueAddedTax})`,
+                        value: moneyFormat(results.taxFees.valueAddedTax, "TRY")
+                    }
+                ];
+            } else {
+                return [
+                    {
+                        key: `TRT bandrolü (${moneyFormat(results.taxRates.trtPassport, "EUR")})`,
+                        value: moneyFormat(results.taxFees.trtPassport, "TRY")
+                    },
+                    {
+                        key: "Kayıt ücreti",
+                        value: moneyFormat(results.taxFees.registration, "TRY")
+                    }
+                ];
+            }
+        })(),
+        {
+            key: `Toplam vergi (%${results.taxRates.total})`,
+            value: moneyFormat(results.taxFees.total, "TRY")
+        },
+        {
+            key: "Tahmini satış fiyatı",
+            value: moneyFormat(results.prices.taxAdded, "TRY")
+        }
+    ];
+};
+
+const buildScreenshotInput = ({ price, currency, registrationTitle }) => {
+    return [
+        {
+            key: "Telefon fiyatı",
+            value: moneyFormat(price, currency)
+        },
+        {
+            key: "Kayıt yolu",
+            value: registrationTitle
+        }
+    ];
+};
+
 export {
     shouldShowResults,
-    handleQuery
+    handleQuery,
+    buildResultList,
+    buildScreenshotInput
 };
