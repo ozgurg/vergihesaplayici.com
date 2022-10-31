@@ -3,7 +3,7 @@
         :icon="icon"
         text=""
         type="warning">
-        Ürünlerin ülkeye giriş fiyatını bilmediğimiz için yurtdışı satış fiyatından tahmini olarak hesaplanmıştır.
+        Ürünlerin ülkeye giriş fiyatını bilmediğimiz için yurt dışı satış fiyatından tahmini olarak hesaplanmıştır.
         Gerçek satış fiyatı çoğunlukla hesaplanandan daha azdır.
     </v-alert>
 </template>
