@@ -100,6 +100,7 @@ export default {
 
 :deep(.v-breadcrumbs__item) {
     border-radius: 8px;
-    padding: 6px 8px
+    padding: 6px 8px;
+    color: rgba(255, 255, 255, .8)
 }
 </style>
