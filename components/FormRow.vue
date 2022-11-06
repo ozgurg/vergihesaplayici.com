@@ -43,7 +43,7 @@ export default {
                 height: min(#{$text-field-filled-full-width-outlined-slot-min-height}, 100%);
                 display: flex;
                 align-items: center;
-                justify-content: end
+                justify-content: flex-end
             }
         }
     }
