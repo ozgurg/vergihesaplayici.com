@@ -14,9 +14,10 @@ const getSpecialConsumptionTaxRateByPrice = price => {
         return 25;
     } else if (price > 640 && price < 1500) {
         return 40;
-    } else if (price >= 1500) {
-        return 50;
     }
+
+    // price >= 1500
+    return 50;
 };
 
 /**
@@ -108,9 +109,10 @@ class Calculator {
     #calculateTotalTaxFee(taxFees) {
         if (this.#registration === Registration.Import) {
             return taxFees.ministryOfCulture + taxFees.trtImport + taxFees.specialConsumptionTax + taxFees.valueAddedTax;
-        } else if (this.#registration === Registration.Passport) {
-            return taxFees.trtPassport + taxFees.registration;
         }
+
+        // this.#registration === Registration.Passport
+        return taxFees.trtPassport + taxFees.registration;
     }
 
     /**
