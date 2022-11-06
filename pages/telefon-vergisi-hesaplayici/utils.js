@@ -1,6 +1,6 @@
+import { Registration } from "./Calculator.js";
 import { isCurrencyAvailable } from "@/utils/is-currency-available.js";
 import { moneyFormat } from "@/utils/formatter.js";
-import { Registration } from "@/calculators/PhoneTaxCalculator.js";
 
 /**
  * Decides whether to show the calculator results or not.

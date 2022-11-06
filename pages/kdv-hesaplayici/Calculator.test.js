@@ -1,6 +1,6 @@
-import VatCalculator, { Mode } from "@/calculators/VatCalculator.js";
+import Calculator, { Mode } from "./Calculator.js";
 
-describe("calculators/VatCalculator", () => {
+describe("kdv-hesaplayici/Calculator", () => {
     it(`should correctly calculate value added tax if params are: price-rate: [100-%15, 250-%18, 448-%25] / mode: ${Mode.TaxFreePriceToTaxAddedPrice}`, () => {
         calculate({
             mode: Mode.TaxFreePriceToTaxAddedPrice,
@@ -50,7 +50,7 @@ describe("calculators/VatCalculator", () => {
 
 function calculate({ inputs, mode }) {
     for (const { price, rate, expected } of inputs) {
-        const calculator = new VatCalculator({
+        const calculator = new Calculator({
             price,
             rate,
             mode

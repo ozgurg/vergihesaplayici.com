@@ -1,7 +1,7 @@
 import { mdiCellphone } from "@mdi/js";
+import { Registration } from "./Calculator.js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
-import { Hesaplayicilar } from "@/data/pages/Hesaplayicilar.js";
-import { Registration } from "@/calculators/PhoneTaxCalculator.js";
+import parentPage from "@/pages/hesaplayicilar/page.js";
 
 const presets = [
     { id: 1, title: "iPhone SE 2022 (64GB)", form: { price: 429, currency: "USD" } },
@@ -24,19 +24,19 @@ const registrationOptions = [
     }
 ];
 
-const TelefonVergisiHesaplayici = (() => {
+export default (() => {
     const icon = mdiCellphone;
     const title = "Telefon Vergisi Hesaplayıcı";
     const shortTitle = "Telefon Vergisi";
     const description = "Satın aldığınız bir telefonun yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.";
-    const url = "/hesaplayicilar/telefon-vergisi-hesaplayici/";
+    const url = "/telefon-vergisi-hesaplayici/";
     const head = buildHeadTags({
         title,
         description,
         ogImageName: "telefon-vergisi-hesaplayici.jpg"
     });
     const breadcrumbs = [
-        ...Hesaplayicilar.breadcrumbs,
+        ...parentPage.breadcrumbs,
         { title, url }
     ];
     const summary = "\"O ney vatandaş, bir tane de bana ver\"<br /><i>- Vergili Mıçı</i>";
@@ -55,6 +55,5 @@ const TelefonVergisiHesaplayici = (() => {
 
 export {
     presets,
-    registrationOptions,
-    TelefonVergisiHesaplayici
+    registrationOptions
 };

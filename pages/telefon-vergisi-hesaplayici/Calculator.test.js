@@ -1,9 +1,6 @@
-import PhoneTaxCalculator, {
-    getSpecialConsumptionTaxRateByPrice,
-    Registration
-} from "@/calculators/PhoneTaxCalculator.js";
+import Calculator, { getSpecialConsumptionTaxRateByPrice, Registration } from "./Calculator.js";
 
-describe("calculators/PhoneTaxCalculator", () => {
+describe("telefon-vergisi-hesaplayici/Calculator", () => {
     describe("getSpecialConsumptionTaxRateByPrice", () => {
         it("should return 25 if price is less than or equal to 640", () => {
             expect(getSpecialConsumptionTaxRateByPrice(639)).toBe(25);
@@ -118,7 +115,7 @@ describe("calculators/PhoneTaxCalculator", () => {
 
 function calculate({ prices, registration, calculateFromTaxAddedPrice }) {
     for (const { price, expected } of prices) {
-        const calculator = new PhoneTaxCalculator({
+        const calculator = new Calculator({
             price,
             registration,
             eurToTryCurrency: 1

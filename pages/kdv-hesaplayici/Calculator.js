@@ -13,7 +13,7 @@ const Mode = {
 /**
  * `null` values will be assigned while calculating
  */
-class VatCalculator {
+class Calculator {
     /**
      * @type {Object<string, number | null>}
      */
@@ -84,7 +84,7 @@ class VatCalculator {
     }
 }
 
-export default VatCalculator;
+export default Calculator;
 
 export {
     Mode

@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { calculators } from "@/plugins/page.js";
+import { calculators } from "@/data/calculator-list.js";
 
 export default {
     data: () => ({

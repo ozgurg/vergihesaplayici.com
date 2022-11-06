@@ -72,16 +72,16 @@
 </template>
 
 <script>
-import VatCalculator, { Mode } from "@/calculators/VatCalculator.js";
+import Calculator, { Mode } from "./Calculator.js";
+import page, { modeOptions } from "./page.js";
 import { numberFormat } from "@/utils/formatter.js";
-import { KdvHesaplayici, modeOptions } from "@/data/pages/KdvHesaplayici.js";
 
 export default {
     head() {
         return this.page.head;
     },
     data: () => ({
-        page: KdvHesaplayici,
+        page,
         ui: {
             tab: 1,
             mode: modeOptions
@@ -97,7 +97,7 @@ export default {
         _calculate() {
             const vm = this;
 
-            const calculator = new VatCalculator({
+            const calculator = new Calculator({
                 price: vm.form.price,
                 rate: vm.form.rate,
                 mode: vm.form.mode

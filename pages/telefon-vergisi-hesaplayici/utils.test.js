@@ -1,6 +1,6 @@
-import { handleQuery, shouldShowResults } from "@/utils/calculator/phone-tax-calculator.js";
+import { handleQuery, shouldShowResults } from "./utils.js";
 
-describe("utils/phone-tax-calculator", () => {
+describe("telefon-vergisi-hesaplayici/utils", () => {
     describe("shouldShowResults", () => {
         it("should return 'true' for valid form object", () => {
             expect(shouldShowResults({

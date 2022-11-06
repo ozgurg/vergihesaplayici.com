@@ -8,7 +8,7 @@ import { normalizeCalculatorResults } from "@/utils/normalize-calculator-results
 /**
  * `null` values will be assigned while calculating
  */
-class ConsoleTaxCalculator {
+class Calculator {
     /**
      * @type {Object<string, number | null>}
      */
@@ -133,4 +133,4 @@ class ConsoleTaxCalculator {
     }
 }
 
-export default ConsoleTaxCalculator;
+export default Calculator;

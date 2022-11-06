@@ -1,6 +1,6 @@
-import ConsoleTaxCalculator from "@/calculators/ConsoleTaxCalculator.js";
+import Calculator from "./Calculator.js";
 
-describe("calculators/ConsoleTaxCalculator", () => {
+describe("konsol-vergisi-hesaplayici/Calculator", () => {
     it(`should correctly calculate console tax if params are: price: [300, 400, 500] / calculateFromTaxAddedPrice: ${false}`, () => {
         calculate({
             calculateFromTaxAddedPrice: false,
@@ -44,7 +44,7 @@ describe("calculators/ConsoleTaxCalculator", () => {
 
 function calculate({ prices, calculateFromTaxAddedPrice }) {
     for (const { price, expected } of prices) {
-        const calculator = new ConsoleTaxCalculator({
+        const calculator = new Calculator({
             price
         }, {
             calculateFromTaxAddedPrice

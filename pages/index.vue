@@ -15,9 +15,9 @@
 
             <h2 class="mb-4">
                 <nuxt-link
-                    :to="$page.Hesaplayicilar.url"
+                    :to="Hesaplayicilar.url"
                     class="text-decoration-none white--text">
-                    {{ $page.Hesaplayicilar.title }}
+                    {{ Hesaplayicilar.title }}
                 </nuxt-link>
             </h2>
             <CalculatorGrid />
@@ -26,14 +26,16 @@
 </template>
 
 <script>
-import { AnaSayfa } from "@/data/pages/AnaSayfa.js";
+import page from "./page.js";
+import Hesaplayicilar from "@/pages/hesaplayicilar/page.js";
 
 export default {
     head() {
         return this.page.head;
     },
     data: () => ({
-        page: AnaSayfa
+        page,
+        Hesaplayicilar
     })
 };
 </script>

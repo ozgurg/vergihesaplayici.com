@@ -1,7 +1,7 @@
 import { mdiBrightnessPercent } from "@mdi/js";
+import { Mode } from "./Calculator.js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
-import { Hesaplayicilar } from "@/data/pages/Hesaplayicilar.js";
-import { Mode } from "@/calculators/VatCalculator.js";
+import parentPage from "@/pages/hesaplayicilar/page.js";
 
 const modeOptions = [
     {
@@ -14,19 +14,19 @@ const modeOptions = [
     }
 ];
 
-const KdvHesaplayici = (() => {
+export default (() => {
     const icon = mdiBrightnessPercent;
     const title = "KDV Hesaplayıcı";
     const shortTitle = "Katma Değer Vergisi";
     const description = "Namıdiğer her şeyin vergisini hariç ve dahil olarak hesaplayın.";
-    const url = "/hesaplayicilar/kdv-hesaplayici/";
+    const url = "/kdv-hesaplayici/";
     const head = buildHeadTags({
         title,
         description,
         ogImageName: "kdv-hesaplayici.jpg"
     });
     const breadcrumbs = [
-        ...Hesaplayicilar.breadcrumbs,
+        ...parentPage.breadcrumbs,
         { title, url }
     ];
     const summary = "\"Her şey değerlidir.\"<br /><i>- Katma Değer</i>";
@@ -44,6 +44,5 @@ const KdvHesaplayici = (() => {
 })();
 
 export {
-    modeOptions,
-    KdvHesaplayici
+    modeOptions
 };

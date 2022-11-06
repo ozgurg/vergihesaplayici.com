@@ -58,8 +58,7 @@
                             :screenshot-input="screenshotInput"
                             :screenshot-output="screenshotOutput"
                             :form="form"
-                            :calculator-title="page.title"
-                            :preset-title="[]" />
+                            :calculator-title="page.title" />
                     </FormRow>
                 </template>
             </CalculatorResultTabs>
@@ -68,17 +67,17 @@
 </template>
 
 <script>
-import ConsoleTaxCalculator from "@/calculators/ConsoleTaxCalculator.js";
+import Calculator from "./Calculator.js";
+import page, { presets } from "./page.js";
 import { isCurrencyAvailable } from "@/utils/is-currency-available.js";
 import { moneyFormat } from "@/utils/formatter.js";
-import { KonsolVergisiHesaplayici, presets } from "@/data/pages/KonsolVergisiHesaplayici.js";
 
 export default {
     head() {
         return this.page.head;
     },
     data: () => ({
-        page: KonsolVergisiHesaplayici,
+        page,
         ui: {
             presets,
             tab: 1
@@ -93,7 +92,7 @@ export default {
         _calculate() {
             const vm = this;
 
-            const calculator = new ConsoleTaxCalculator({
+            const calculator = new Calculator({
                 price: vm.priceMultipliedExchangeRate
             }, {
                 calculateFromTaxAddedPrice: vm.form.currency === "TRY"

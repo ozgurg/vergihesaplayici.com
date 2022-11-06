@@ -1,6 +1,6 @@
 import { mdiController } from "@mdi/js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
-import { Hesaplayicilar } from "@/data/pages/Hesaplayicilar.js";
+import parentPage from "@/pages/hesaplayicilar/page.js";
 
 const presets = [
     // PS5: https://blog.playstation.com/2022/08/25/ps5-price-to-increase-in-select-markets-due-to-global-economic-environment-including-high-inflation-rates/
@@ -12,19 +12,19 @@ const presets = [
     { id: 5, title: "Nintendo Switch OLED (64GB)", form: { price: 349.99, currency: "USD" } }
 ];
 
-const KonsolVergisiHesaplayici = (() => {
+export default (() => {
     const icon = mdiController;
     const title = "Konsol Vergisi Hesaplayıcı";
     const shortTitle = "Konsol Vergisi";
     const description = "Satın aldığınız bir oyun konsolunun yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.";
-    const url = "/hesaplayicilar/konsol-vergisi-hesaplayici/";
+    const url = "/konsol-vergisi-hesaplayici/";
     const head = buildHeadTags({
         title,
         description,
         ogImageName: "konsol-vergisi-hesaplayici.jpg"
     });
     const breadcrumbs = [
-        ...Hesaplayicilar.breadcrumbs,
+        ...parentPage.breadcrumbs,
         { title, url }
     ];
     const summary = "- Oyun oynamak hiç bu kadar vergili olmamıştı.<br />+ Meydan okuma kabul edildi.";
@@ -42,6 +42,5 @@ const KonsolVergisiHesaplayici = (() => {
 })();
 
 export {
-    presets,
-    KonsolVergisiHesaplayici
+    presets
 };

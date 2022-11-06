@@ -32,7 +32,7 @@ const Registration = {
  * `null` values will be assigned while calculating
  * TRT: Turkish Radio and Television Corporation (@link https://en.wikipedia.org/wiki/Turkish_Radio_and_Television_Corporation)
  */
-class PhoneTaxCalculator {
+class Calculator {
     /**
      * @type {Object<string, number | null>}
      */
@@ -202,7 +202,7 @@ class PhoneTaxCalculator {
     }
 }
 
-export default PhoneTaxCalculator;
+export default Calculator;
 
 export {
     getSpecialConsumptionTaxRateByPrice,

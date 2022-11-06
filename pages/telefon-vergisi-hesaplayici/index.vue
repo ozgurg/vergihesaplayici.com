@@ -69,8 +69,7 @@
                             :screenshot-input="screenshotInput"
                             :screenshot-output="screenshotOutput"
                             :form="form"
-                            :calculator-title="page.title"
-                            :preset-title="[]" />
+                            :calculator-title="page.title" />
                     </FormRow>
                 </template>
             </CalculatorResultTabs>
@@ -79,22 +78,16 @@
 </template>
 
 <script>
-import PhoneTaxCalculator, { Registration } from "@/calculators/PhoneTaxCalculator.js";
-import {
-    buildResultList,
-    buildScreenshotInput,
-    handleQuery,
-    shouldShowResults
-} from "@/utils/calculator/phone-tax-calculator.js";
-import { registrationOptions, TelefonVergisiHesaplayici } from "@/data/pages/TelefonVergisiHesaplayici.js";
-import { presets } from "@/data/pages/TelefonVergisiHesaplayiciPreset.js";
+import Calculator, { Registration } from "./Calculator.js";
+import { buildResultList, buildScreenshotInput, handleQuery, shouldShowResults } from "./utils.js";
+import page, { presets, registrationOptions } from "./page.js";
 
 export default {
     head() {
         return this.page.head;
     },
     data: () => ({
-        page: TelefonVergisiHesaplayici,
+        page,
         ui: {
             presets,
             registration: registrationOptions,
@@ -111,7 +104,7 @@ export default {
         _calculate() {
             const vm = this;
 
-            const calculator = new PhoneTaxCalculator({
+            const calculator = new Calculator({
                 price: vm.priceMultipliedExchangeRate,
                 registration: vm.form.registration,
                 eurToTryCurrency: vm.$store.getters["exchange-rates/currencies"].EUR.rate
