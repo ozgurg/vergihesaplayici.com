@@ -72,8 +72,8 @@
 </template>
 
 <script>
-import Calculator, { Mode } from "./Calculator.js";
-import page, { modeOptions } from "./page.js";
+import Calculator, { Mode } from "./kdv-hesaplayici.calculator.js";
+import page, { modeOptions } from "./kdv-hesaplayici.page.js";
 import { numberFormat } from "@/utils/formatter.js";
 
 export default {

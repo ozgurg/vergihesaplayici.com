@@ -78,10 +78,10 @@
 </template>
 
 <script>
-import Calculator, { Registration } from "./Calculator.js";
-import { buildResultList, buildScreenshotInput, handleQuery, shouldShowResults } from "./utils.js";
-import page, { registrationOptions } from "./page.js";
-import { presets } from "./_slug/page.js";
+import Calculator, { Registration } from "./telefon-vergisi-hesaplayici.calculator.js";
+import { buildResultList, buildScreenshotInput, handleQuery, shouldShowResults } from "./telefon-vergisi-hesaplayici.utils.js";
+import page, { registrationOptions } from "./telefon-vergisi-hesaplayici.page.js";
+import { presets } from "./_slug/telefon-vergisi-hesaplayici-slug.page.js";
 
 export default {
     head() {

@@ -67,8 +67,8 @@
 </template>
 
 <script>
-import Calculator from "./Calculator.js";
-import page, { presets } from "./page.js";
+import Calculator from "./konsol-vergisi-hesaplayici.calculator.js";
+import page, { presets } from "./konsol-vergisi-hesaplayici.page.js";
 import { isCurrencyAvailable } from "@/utils/is-currency-available.js";
 import { moneyFormat } from "@/utils/formatter.js";
 

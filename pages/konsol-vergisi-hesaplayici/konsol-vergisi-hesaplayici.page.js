@@ -1,6 +1,6 @@
 import { mdiController } from "@mdi/js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
-import parentPage from "@/pages/hesaplayicilar/page.js";
+import parentPage from "@/pages/hesaplayicilar/hesaplayicilar.page.js";
 
 const presets = [
     // PS5: https://blog.playstation.com/2022/08/25/ps5-price-to-increase-in-select-markets-due-to-global-economic-environment-including-high-inflation-rates/

@@ -1,4 +1,4 @@
-import Calculator, { Mode } from "./Calculator.js";
+import Calculator, { Mode } from "./kdv-hesaplayici.calculator.js";
 
 describe("kdv-hesaplayici/Calculator", () => {
     it(`should correctly calculate value added tax if params are: price-rate: [100-%15, 250-%18, 448-%25] / mode: ${Mode.TaxFreePriceToTaxAddedPrice}`, () => {

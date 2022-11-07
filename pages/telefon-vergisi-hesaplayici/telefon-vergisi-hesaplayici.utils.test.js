@@ -1,4 +1,4 @@
-import { handleQuery, shouldShowResults } from "./utils.js";
+import { handleQuery, shouldShowResults } from "./telefon-vergisi-hesaplayici.utils.js";
 
 describe("telefon-vergisi-hesaplayici/utils", () => {
     describe("shouldShowResults", () => {
