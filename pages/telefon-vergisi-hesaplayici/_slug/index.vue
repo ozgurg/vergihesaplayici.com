@@ -7,31 +7,14 @@
         </PageTitle>
 
         <InnerContainer>
-            <FormRow class="mb-5">
-                <CalculatorPresets :presets="ui.presets" />
-            </FormRow>
-
             <FormRow
                 class="mb-10"
-                label="Telefon fiyatı">
-                <v-text-field
-                    v-model.number="form.price"
-                    v-number=""
-                    :prefix="selectedCurrency.sign"
-                    hide-details=""
-                    hide-spin-buttons=""
-                    filled=""
-                    outlined=""
-                    min="1"
-                    inputmode="decimal"
-                    type="number"
-                    aria-label="Telefon fiyatı">
-                    <template #append-outer>
-                        <CurrencySelector
-                            v-model="form.currency"
-                            style="width:96px" />
-                    </template>
-                </v-text-field>
+                label="Kapasite">
+                <RadioGrid
+                    v-model="form.option"
+                    :items="ui.options"
+                    cols="4"
+                    lg="3" />
             </FormRow>
 
             <FormRow
@@ -78,27 +61,20 @@
 </template>
 
 <script>
-import Calculator, { Registration } from "./Calculator.js";
-import { buildResultList, buildScreenshotInput, handleQuery, shouldShowResults } from "./utils.js";
-import page, { registrationOptions } from "./page.js";
-import { presets } from "./_slug/page.js";
+import presetPage from "./page.js";
+import { registrationOptions } from "./../page.js";
+import { buildResultList, buildScreenshotInput, shouldShowResults } from "./../utils";
+import Calculator, { Registration } from "./../Calculator.js";
+import { moneyFormat } from "@/utils/formatter.js";
 
 export default {
     head() {
         return this.page.head;
     },
     data: () => ({
-        page,
-        ui: {
-            presets,
-            registration: registrationOptions,
-            tab: 1
-        },
-        form: {
-            currency: "USD",
-            price: "",
-            registration: Registration.Import
-        },
+        page: null,
+        ui: {},
+        form: {},
         results: {}
     }),
     methods: {
@@ -114,17 +90,6 @@ export default {
             });
 
             vm.results = calculator.calculate();
-        },
-        _handleQuery() {
-            const vm = this;
-
-            const handledQuery = handleQuery(vm.$route.query, {
-                availableCurrencies: vm.$store.getters["exchange-rates/availableCurrencies"],
-                registration: vm.ui.registration
-            });
-            if (handledQuery) {
-                Object.assign(vm.form, handledQuery);
-            }
         }
     },
     computed: {
@@ -158,31 +123,55 @@ export default {
         }
     },
     watch: {
-        shouldShowResults(current, previous) {
-            const vm = this;
-
-            if (!current && previous && vm.ui.tab === 0) {
-                vm.ui.tab = 1;
-            }
-        },
         form: {
             deep: true,
+            immediate: true,
             handler() {
                 const vm = this;
-
-                if (!vm.shouldShowResults) return;
-
                 vm._calculate();
-
-                vm.ui.tab = 0;
-
-                vm.$router.push({ query: vm.form });
             }
+        },
+        "form.option"() {
+            const vm = this;
+            Object.assign(vm.form, vm.form.option);
         }
     },
-    mounted() {
-        const vm = this;
-        vm.$nextTick(() => vm._handleQuery());
+    async asyncData({ store, error, params: { slug } }) {
+        // For correct calculation, we need to fetch the USD exchange rate.
+        // The result will be calculated during the build process and the calculation will be incorrect if the exchange rate changes.
+        // In the front-end, the exchange rate will be re-fetched and the calculation will be correct.
+        await store.dispatch("exchange-rates/loadExchangeRateFromApi", "USD");
+
+        const page = presetPage(slug);
+        if (!page) {
+            return error({ statusCode: 404 });
+        }
+
+        const options = page.preset.options.map(option => {
+            return {
+                title: option.title,
+                value: option.form,
+                description: moneyFormat(option.form.price, option.form.currency)
+            };
+        });
+
+        const form = {
+            option: page.preset.options[0].form,
+            currency: "USD",
+            price: "",
+            registration: Registration.Import,
+            ...page.preset.options[0].form
+        };
+
+        return {
+            page,
+            ui: {
+                options,
+                registration: registrationOptions,
+                tab: 0
+            },
+            form
+        };
     }
 };
 </script>

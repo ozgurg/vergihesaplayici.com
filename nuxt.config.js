@@ -162,15 +162,12 @@ export default {
     // Disable unused Nuxt features
     loadingIndicator: false,
     fetch: {
-        client: false,
-        server: false
+        client: false
     },
     features: {
         middleware: false,
-        transitions: false,
         deprecations: false,
         validate: false,
-        asyncData: false,
         fetch: false,
         clientOnline: false,
         clientPrefetch: false,
