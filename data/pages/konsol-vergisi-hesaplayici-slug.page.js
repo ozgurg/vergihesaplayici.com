@@ -1,6 +1,6 @@
 import { mdiController } from "@mdi/js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
-import KonsolVergisiHesaplayici from "@/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.page.js";
+import KonsolVergisiHesaplayici from "@/data/pages/konsol-vergisi-hesaplayici.page.js";
 
 const presets = [
     {

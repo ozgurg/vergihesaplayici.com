@@ -1,4 +1,4 @@
-import { Registration } from "./telefon-vergisi-hesaplayici.calculator.js";
+import { Registration } from "@/data/pages/telefon-vergisi-hesaplayici.calculator.js";
 import { isCurrencyAvailable } from "@/utils/is-currency-available.js";
 import { moneyFormat } from "@/utils/formatter.js";
 

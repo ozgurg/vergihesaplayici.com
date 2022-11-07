@@ -1,7 +1,7 @@
 import { mdiCellphone } from "@mdi/js";
-import { Registration } from "./telefon-vergisi-hesaplayici.calculator.js";
+import { Registration } from "@/data/pages/telefon-vergisi-hesaplayici.calculator.js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
-import parentPage from "@/pages/hesaplayicilar/hesaplayicilar.page.js";
+import parentPage from "@/data/pages/hesaplayicilar.page.js";
 
 const presets = [
     { id: 1, title: "iPhone SE 2022 (64GB)", form: { price: 429, currency: "USD" } },

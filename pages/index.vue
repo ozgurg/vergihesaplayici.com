@@ -26,8 +26,8 @@
 </template>
 
 <script>
-import page from "./ana-sayfa.page.js";
-import Hesaplayicilar from "@/pages/hesaplayicilar/hesaplayicilar.page.js";
+import page from "@/data/pages/ana-sayfa.page.js";
+import Hesaplayicilar from "@/data/pages/hesaplayicilar.page.js";
 
 export default {
     head() {

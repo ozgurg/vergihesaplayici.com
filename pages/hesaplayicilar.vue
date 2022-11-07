@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import page from "./hesaplayicilar.page.js";
+import page from "@/data/pages/hesaplayicilar.page.js";
 
 export default {
     head() {

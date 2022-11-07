@@ -61,10 +61,10 @@
 </template>
 
 <script>
-import presetPage from "./telefon-vergisi-hesaplayici-slug.page.js";
-import { registrationOptions } from "./../telefon-vergisi-hesaplayici.page.js";
-import { buildResultList, buildScreenshotInput, shouldShowResults } from "./../telefon-vergisi-hesaplayici.utils.js";
-import Calculator, { Registration } from "./../telefon-vergisi-hesaplayici.calculator.js";
+import presetPage from "@/data/pages/telefon-vergisi-hesaplayici-slug.page.js";
+import { registrationOptions } from "@/data/pages/telefon-vergisi-hesaplayici.page.js";
+import { buildResultList, buildScreenshotInput, shouldShowResults } from "@/data/pages/telefon-vergisi-hesaplayici.utils.js";
+import Calculator, { Registration } from "@/data/pages/telefon-vergisi-hesaplayici.calculator.js";
 import { moneyFormat } from "@/utils/formatter.js";
 
 export default {
