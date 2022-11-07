@@ -92,6 +92,22 @@ export default {
         indicator: false,
         extractCSS: {
             ignoreOrder: true
+        },
+        html: {
+            minify: {
+                // https://stackoverflow.com/a/64739284/7841581
+                collapseBooleanAttributes: true,
+                decodeEntities: true,
+                minifyCSS: true,
+                minifyJS: true,
+                processConditionalComments: true,
+                removeEmptyAttributes: true,
+                removeRedundantAttributes: true,
+                trimCustomFragments: true,
+                useShortDoctype: true,
+                preserveLineBreaks: false,
+                collapseWhitespace: true
+            }
         }
     },
     css: [
