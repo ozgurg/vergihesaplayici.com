@@ -9,6 +9,7 @@ const presets = [
         title: "iPhone SE (2022)",
         slug: "iphone-se-2022",
         url: buildUrl("iphone-se-2022"),
+        ogImageName: "telefon-vergisi-hesaplayici-iphone-se-2022.jpg",
         options: [
             {
                 title: "64GB",
@@ -28,6 +29,7 @@ const presets = [
         title: "iPhone 14",
         slug: "iphone-14",
         url: buildUrl("iphone-14"),
+        ogImageName: "telefon-vergisi-hesaplayici-iphone-14.jpg",
         options: [
             {
                 title: "128GB",
@@ -47,6 +49,7 @@ const presets = [
         title: "iPhone 14 Plus",
         slug: "iphone-14-plus",
         url: buildUrl("iphone-14-plus"),
+        ogImageName: "telefon-vergisi-hesaplayici-iphone-14-plus.jpg",
         options: [
             {
                 title: "128GB",
@@ -66,6 +69,7 @@ const presets = [
         title: "iPhone 14 Pro",
         slug: "iphone-14-pro",
         url: buildUrl("iphone-14-pro"),
+        ogImageName: "telefon-vergisi-hesaplayici-iphone-14-pro.jpg",
         options: [
             {
                 title: "128GB",
@@ -89,6 +93,7 @@ const presets = [
         title: "iPhone 14 Pro Max",
         slug: "iphone-14-pro-max",
         url: buildUrl("iphone-14-pro-max"),
+        ogImageName: "telefon-vergisi-hesaplayici-iphone-14-pro-max.jpg",
         options: [
             {
                 title: "128GB",
@@ -122,7 +127,7 @@ export default slug => {
     const head = buildHeadTags({
         title,
         description,
-        ogImageName: "telefon-vergisi-hesaplayici.jpg"
+        ogImageName: preset.ogImageName ?? "telefon-vergisi-hesaplayici.jpg"
     });
     const breadcrumbs = [
         ...TelefonVergisiHesaplayici.breadcrumbs,
