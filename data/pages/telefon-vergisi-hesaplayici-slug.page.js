@@ -7,6 +7,7 @@ const buildUrl = slug => `/telefon-vergisi-hesaplayici/${slug}/`;
 const presets = [
     {
         title: "iPhone SE (2022)",
+        description: "iPhone SE (2022)'nin yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
         slug: "iphone-se-2022",
         url: buildUrl("iphone-se-2022"),
         ogImageName: "telefon-vergisi-hesaplayici-iphone-se-2022.jpg",
@@ -27,6 +28,7 @@ const presets = [
     },
     {
         title: "iPhone 14",
+        description: "iPhone 14'ün yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
         slug: "iphone-14",
         url: buildUrl("iphone-14"),
         ogImageName: "telefon-vergisi-hesaplayici-iphone-14.jpg",
@@ -47,6 +49,7 @@ const presets = [
     },
     {
         title: "iPhone 14 Plus",
+        description: "iPhone 14 Plus'ın yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
         slug: "iphone-14-plus",
         url: buildUrl("iphone-14-plus"),
         ogImageName: "telefon-vergisi-hesaplayici-iphone-14-plus.jpg",
@@ -67,6 +70,7 @@ const presets = [
     },
     {
         title: "iPhone 14 Pro",
+        description: "iPhone 14 Pro'nun yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
         slug: "iphone-14-pro",
         url: buildUrl("iphone-14-pro"),
         ogImageName: "telefon-vergisi-hesaplayici-iphone-14-pro.jpg",
@@ -91,6 +95,7 @@ const presets = [
     },
     {
         title: "iPhone 14 Pro Max",
+        description: "iPhone 14 Pro Max'in yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
         slug: "iphone-14-pro-max",
         url: buildUrl("iphone-14-pro-max"),
         ogImageName: "telefon-vergisi-hesaplayici-iphone-14-pro-max.jpg",
@@ -123,7 +128,7 @@ export default slug => {
 
     const title = `${preset.title} vergisi ne kadar?`;
     const url = preset.url;
-    const description = "Satın aldığınız bir telefonun yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.";
+    const description = preset.description;
     const head = buildHeadTags({
         title,
         description,
@@ -136,6 +141,7 @@ export default slug => {
 
     return {
         title,
+        calculatorTitle: TelefonVergisiHesaplayici.title,
         url,
         description,
         head,

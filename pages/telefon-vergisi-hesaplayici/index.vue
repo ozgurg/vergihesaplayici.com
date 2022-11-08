@@ -80,7 +80,12 @@
 <script>
 import Calculator, { Registration } from "@/data/pages/telefon-vergisi-hesaplayici.calculator.js";
 import page, { registrationOptions } from "@/data/pages/telefon-vergisi-hesaplayici.page.js";
-import { buildResultList, buildScreenshotInput, handleQuery, shouldShowResults } from "@/data/pages/telefon-vergisi-hesaplayici.utils.js";
+import {
+    buildResultList,
+    buildScreenshotInput,
+    handleQuery,
+    shouldShowResults
+} from "@/data/pages/telefon-vergisi-hesaplayici.utils.js";
 import { presets } from "@/data/pages/telefon-vergisi-hesaplayici-slug.page.js";
 
 export default {
@@ -106,7 +111,7 @@ export default {
             const vm = this;
 
             const calculator = new Calculator({
-                price: vm.priceMultipliedExchangeRate,
+                price: vm.form.price * vm.selectedCurrency.rate,
                 registration: vm.form.registration,
                 eurToTryCurrency: vm.$store.getters["exchange-rates/currencies"].EUR.rate
             }, {
@@ -118,12 +123,12 @@ export default {
         _handleQuery() {
             const vm = this;
 
-            const handledQuery = handleQuery(vm.$route.query, {
+            const query = handleQuery(vm.$route.query, {
                 availableCurrencies: vm.$store.getters["exchange-rates/availableCurrencies"],
                 registration: vm.ui.registration
             });
-            if (handledQuery) {
-                Object.assign(vm.form, handledQuery);
+            if (query) {
+                Object.assign(vm.form, query);
             }
         }
     },
@@ -151,10 +156,6 @@ export default {
         selectedCurrency() {
             const vm = this;
             return vm.$store.getters["exchange-rates/currencies"][vm.form.currency];
-        },
-        priceMultipliedExchangeRate() {
-            const vm = this;
-            return vm.form.price * vm.selectedCurrency.rate;
         }
     },
     watch: {

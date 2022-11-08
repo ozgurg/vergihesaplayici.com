@@ -32,13 +32,6 @@
                 v-model="ui.tab"
                 :should-show-results="shouldShowResults">
                 <template v-if="shouldShowResults">
-                    <template v-if="form.currency === 'TRY'">
-                        <ReverseCalculationAlert />
-                    </template>
-                    <template v-else>
-                        <EstimatedCalculationAlert />
-                    </template>
-
                     <CalculatorResultList
                         :items="resultList"
                         class="mb-5" />
@@ -52,7 +45,8 @@
                             :screenshot-input="screenshotInput"
                             :screenshot-output="screenshotOutput"
                             :form="form"
-                            :calculator-title="page.title" />
+                            :calculator-title="page.calculatorTitle"
+                            :preset-title="page.preset.title" />
                     </FormRow>
                 </template>
             </CalculatorResultTabs>
@@ -61,9 +55,13 @@
 </template>
 
 <script>
-import presetPage from "@/data/pages/telefon-vergisi-hesaplayici-slug.page.js";
+import page from "@/data/pages/telefon-vergisi-hesaplayici-slug.page.js";
 import { registrationOptions } from "@/data/pages/telefon-vergisi-hesaplayici.page.js";
-import { buildResultList, buildScreenshotInput, shouldShowResults } from "@/data/pages/telefon-vergisi-hesaplayici.utils.js";
+import {
+    buildResultList,
+    buildScreenshotInput,
+    shouldShowResults
+} from "@/data/pages/telefon-vergisi-hesaplayici.utils.js";
 import Calculator, { Registration } from "@/data/pages/telefon-vergisi-hesaplayici.calculator.js";
 import { moneyFormat } from "@/utils/formatter.js";
 
@@ -73,6 +71,7 @@ export default {
     },
     data: () => ({
         page: null,
+        preset: null,
         ui: {},
         form: {},
         results: {}
@@ -82,7 +81,7 @@ export default {
             const vm = this;
 
             const calculator = new Calculator({
-                price: vm.priceMultipliedExchangeRate,
+                price: vm.form.price * vm.selectedCurrency.rate,
                 registration: vm.form.registration,
                 eurToTryCurrency: vm.$store.getters["exchange-rates/currencies"].EUR.rate
             }, {
@@ -116,10 +115,6 @@ export default {
         selectedCurrency() {
             const vm = this;
             return vm.$store.getters["exchange-rates/currencies"][vm.form.currency];
-        },
-        priceMultipliedExchangeRate() {
-            const vm = this;
-            return vm.form.price * vm.selectedCurrency.rate;
         }
     },
     watch: {
@@ -142,29 +137,27 @@ export default {
         // In the front-end, the exchange rate will be re-fetched and the calculation will be correct.
         await store.dispatch("exchange-rates/loadExchangeRateFromApi", "USD");
 
-        const page = presetPage(slug);
-        if (!page) {
+        const presetPage = page(slug);
+        if (!presetPage) {
             return error({ statusCode: 404 });
         }
 
-        const options = page.preset.options.map(option => {
-            return {
-                title: option.title,
-                value: option.form,
-                description: moneyFormat(option.form.price, option.form.currency)
-            };
-        });
+        const options = presetPage.preset.options.map(option => ({
+            title: option.title,
+            value: option.form,
+            description: moneyFormat(option.form.price, option.form.currency)
+        }));
 
         const form = {
-            option: page.preset.options[0].form,
+            option: presetPage.preset.options[0].form,
             currency: "USD",
             price: "",
             registration: Registration.Import,
-            ...page.preset.options[0].form
+            ...presetPage.preset.options[0].form
         };
 
         return {
-            page,
+            page: presetPage,
             ui: {
                 options,
                 registration: registrationOptions,
