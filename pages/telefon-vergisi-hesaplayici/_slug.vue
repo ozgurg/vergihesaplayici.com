@@ -132,15 +132,15 @@ export default {
         }
     },
     async asyncData({ store, error, params: { slug } }) {
-        // For correct calculation, we need to fetch the USD exchange rate.
-        // The result will be calculated during the build process and the calculation will be incorrect if the exchange rate changes.
-        // In the front-end, the exchange rate will be re-fetched and the calculation will be correct.
-        await store.dispatch("exchange-rates/loadExchangeRateFromApi", "USD");
-
         const presetPage = page(slug);
         if (!presetPage) {
             return error({ statusCode: 404 });
         }
+
+        // For correct calculation, we need to fetch the exchange rate of the preset.
+        // The result will be calculated during the build process and the calculation will be incorrect if the exchange rate changes.
+        // In the front-end, the exchange rate will be re-fetched and the calculation will be correct.
+        await store.dispatch("exchange-rates/loadExchangeRateFromApi", presetPage.preset.options[0].form.currency);
 
         const options = presetPage.preset.options.map(option => ({
             title: option.title,
