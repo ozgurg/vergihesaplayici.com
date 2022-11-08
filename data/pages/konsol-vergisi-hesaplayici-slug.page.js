@@ -32,14 +32,20 @@ const presets = [
         slug: "playstation-5",
         url: buildUrl("playstation-5"),
         options: [
-            // https://blog.playstation.com/2022/08/25/ps5-price-to-increase-in-select-markets-due-to-global-economic-environment-including-high-inflation-rates/
             {
+                // https://blog.playstation.com/2022/08/25/ps5-price-to-increase-in-select-markets-due-to-global-economic-environment-including-high-inflation-rates/
                 title: "Disksiz (825GB)",
                 form: { price: 449.99, currency: "EUR" }
             },
             {
+                // https://blog.playstation.com/2022/08/25/ps5-price-to-increase-in-select-markets-due-to-global-economic-environment-including-high-inflation-rates/
                 title: "Diskli (825GB)",
                 form: { price: 549.99, currency: "EUR" }
+            },
+            {
+                // https://blog.playstation.com/2022/11/02/playstation-vr2-launches-in-february-at-549-99/
+                title: "PlayStation VR2",
+                form: { price: 599.99, currency: "EUR" }
             }
         ]
     },
