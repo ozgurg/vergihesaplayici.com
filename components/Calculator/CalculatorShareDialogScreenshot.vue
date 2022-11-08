@@ -70,16 +70,23 @@
             class="screenshot__table">
             <v-simple-table dense="">
                 <tbody>
-                <tr>
-                    <td class="secondary text-caption text-center py-1">
-                        {{ calculatorTitle }}
-                    </td>
-                </tr>
-
                 <template v-if="presetTitle">
+                    <tr>
+                        <td class="secondary text-caption text-center py-1">
+                            {{ calculatorTitle }}
+                        </td>
+                    </tr>
+
                     <tr>
                         <td class="primary secondary--text text-center font-weight-medium text-body-1 py-2">
                             {{ presetTitle }}
+                        </td>
+                    </tr>
+                </template>
+                <template v-else>
+                    <tr>
+                        <td class="primary secondary--text text-center font-weight-medium text-body-1 py-2">
+                            {{ calculatorTitle }}
                         </td>
                     </tr>
                 </template>
