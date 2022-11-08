@@ -7,31 +7,14 @@
         </PageTitle>
 
         <InnerContainer>
-            <FormRow class="mb-5">
-                <CalculatorPresets :presets="ui.presets" />
-            </FormRow>
-
             <FormRow
                 class="mb-10"
-                label="Konsol fiyatı">
-                <v-text-field
-                    v-model.number="form.price"
-                    v-number=""
-                    :prefix="selectedCurrency.sign"
-                    hide-details=""
-                    hide-spin-buttons=""
-                    filled=""
-                    outlined=""
-                    min="1"
-                    inputmode="decimal"
-                    type="number"
-                    aria-label="Konsol fiyatı">
-                    <template #append-outer>
-                        <CurrencySelector
-                            v-model="form.currency"
-                            style="width:96px" />
-                    </template>
-                </v-text-field>
+                label="Model">
+                <RadioGrid
+                    v-model="form.option"
+                    :items="ui.options"
+                    cols="4"
+                    lg="3" />
             </FormRow>
 
             <CalculatorResultTabs
@@ -58,7 +41,8 @@
                             :screenshot-input="screenshotInput"
                             :screenshot-output="screenshotOutput"
                             :form="form"
-                            :calculator-title="page.title" />
+                            :calculator-title="page.calculatorTitle"
+                            :preset-title="page.preset.title" />
                     </FormRow>
                 </template>
             </CalculatorResultTabs>
@@ -67,30 +51,24 @@
 </template>
 
 <script>
-import Calculator from "@/data/pages/konsol-vergisi-hesaplayici.calculator.js";
-import page from "@/data/pages/konsol-vergisi-hesaplayici.page.js";
-import { isCurrencyAvailable } from "@/utils/is-currency-available.js";
-import { presets } from "@/data/pages/konsol-vergisi-hesaplayici-slug.page.js";
+import page from "@/data/pages/konsol-vergisi-hesaplayici-slug.page.js";
+import { moneyFormat } from "@/utils/formatter.js";
 import {
     buildResultList,
     buildScreenshotInput,
     shouldShowResults
 } from "@/data/pages/konsol-vergisi-hesaplayici.utils.js";
+import Calculator from "@/data/pages/konsol-vergisi-hesaplayici.calculator.js";
 
 export default {
     head() {
         return this.page.head;
     },
     data: () => ({
-        page,
-        ui: {
-            presets,
-            tab: 1
-        },
-        form: {
-            currency: "USD",
-            price: ""
-        },
+        page: null,
+        preset: null,
+        ui: {},
+        form: {},
         results: {}
     }),
     methods: {
@@ -104,20 +82,6 @@ export default {
             });
 
             vm.results = calculator.calculate();
-        },
-        _handleQuery() {
-            const vm = this;
-
-            const query = vm.$route.query;
-            if (!query) return;
-
-            if (query.price) {
-                vm.form.price = parseFloat(query.price);
-            }
-
-            if (query.currency && isCurrencyAvailable(query.currency, vm.$store.getters["exchange-rates/availableCurrencies"])) {
-                vm.form.currency = query.currency;
-            }
         }
     },
     computed: {
@@ -146,32 +110,51 @@ export default {
         }
     },
     watch: {
-        shouldShowResults(current, previous) {
-            const vm = this;
-
-            if (!current && previous && vm.ui.tab === 0) {
-                vm.ui.tab = 1;
-            }
-        },
         form: {
             deep: true,
+            immediate: true,
             handler() {
                 const vm = this;
-
-                if (!vm.shouldShowResults) return;
-
                 vm._calculate();
-
-                // Show results tab when calculated
-                vm.ui.tab = 0;
-
-                vm.$router.push({ query: vm.form });
             }
+        },
+        "form.option"() {
+            const vm = this;
+            Object.assign(vm.form, vm.form.option);
         }
     },
-    mounted() {
-        const vm = this;
-        vm.$nextTick(() => vm._handleQuery());
+    async asyncData({ store, error, params: { slug } }) {
+        const presetPage = page(slug);
+        if (!presetPage) {
+            return error({ statusCode: 404 });
+        }
+
+        // For correct calculation, we need to fetch the exchange rate of the preset.
+        // The result will be calculated during the build process and the calculation will be incorrect if the exchange rate changes.
+        // In the front-end, the exchange rate will be re-fetched and the calculation will be correct.
+        await store.dispatch("exchange-rates/loadExchangeRateFromApi", presetPage.preset.options[0].form.currency);
+
+        const options = presetPage.preset.options.map(option => ({
+            title: option.title,
+            value: option.form,
+            description: moneyFormat(option.form.price, option.form.currency)
+        }));
+
+        const form = {
+            option: presetPage.preset.options[0].form,
+            currency: "USD",
+            price: "",
+            ...presetPage.preset.options[0].form
+        };
+
+        return {
+            page: presetPage,
+            ui: {
+                options,
+                tab: 0
+            },
+            form
+        };
     }
 };
 </script>
