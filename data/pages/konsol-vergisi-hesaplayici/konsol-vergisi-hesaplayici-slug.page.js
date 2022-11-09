@@ -1,3 +1,4 @@
+import { mdiMicrosoftXbox, mdiNintendoSwitch, mdiSonyPlaystation } from "@mdi/js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
 import KonsolVergisiHesaplayici from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.page.js";
 import { findCalculatorPresetBySlug } from "@/utils/find-calculator-preset-by-slug.js";
@@ -9,6 +10,8 @@ const presets = [
         title: "Xbox Series S",
         slug: "xbox-series-s",
         url: buildUrl("xbox-series-s"),
+        icon: mdiMicrosoftXbox,
+        color: "#107C10",
         ogImageName: "konsol-vergisi-hesaplayici-xbox-series-s.jpg",
         pageTitle: "Xbox Series S'nin vergisi ne kadar?",
         pageDescription: "Satın aldığınız bir Xbox Series S'nin yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
@@ -23,6 +26,8 @@ const presets = [
         title: "Xbox Series X",
         slug: "xbox-series-x",
         url: buildUrl("xbox-series-x"),
+        icon: mdiMicrosoftXbox,
+        color: "#107C10",
         ogImageName: "konsol-vergisi-hesaplayici-xbox-series-x.jpg",
         pageTitle: "Xbox Series X'in vergisi ne kadar?",
         pageDescription: "Satın aldığınız bir Xbox Series X'in yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
@@ -37,6 +42,8 @@ const presets = [
         title: "PlayStation 5",
         slug: "playstation-5",
         url: buildUrl("playstation-5"),
+        icon: mdiSonyPlaystation,
+        color: "#00439C",
         ogImageName: "konsol-vergisi-hesaplayici-playstation-5.jpg",
         pageTitle: "PlayStation 5'in vergisi ne kadar?",
         pageDescription: "Satın aldığınız bir PlayStation 5'in yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
@@ -62,6 +69,8 @@ const presets = [
         title: "Nintendo Switch",
         slug: "nintendo-switch",
         url: buildUrl("nintendo-switch"),
+        icon: mdiNintendoSwitch,
+        color: "#e60012",
         ogImageName: "konsol-vergisi-hesaplayici-nintendo-switch.jpg",
         pageTitle: "Nintendo Switch'in vergisi ne kadar?",
         pageDescription: "Satın aldığınız bir Nintendo Switch'in yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",

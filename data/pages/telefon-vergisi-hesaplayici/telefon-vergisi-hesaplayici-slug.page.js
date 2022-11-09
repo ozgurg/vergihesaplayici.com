@@ -1,3 +1,4 @@
+import { mdiApple } from "@mdi/js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
 import TelefonVergisiHesaplayici from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.page.js";
 import { findCalculatorPresetBySlug } from "@/utils/find-calculator-preset-by-slug.js";
@@ -9,6 +10,8 @@ const presets = [
         title: "iPhone SE (2022)",
         slug: "iphone-se-2022",
         url: buildUrl("iphone-se-2022"),
+        icon: mdiApple,
+        color: "#555",
         ogImageName: "telefon-vergisi-hesaplayici-iphone-se-2022.jpg",
         pageTitle: "iPhone SE (2022)'nin vergisi ne kadar?",
         pageDescription: "iPhone SE (2022)'nin yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
@@ -31,6 +34,8 @@ const presets = [
         title: "iPhone 14",
         slug: "iphone-14",
         url: buildUrl("iphone-14"),
+        icon: mdiApple,
+        color: "#555",
         ogImageName: "telefon-vergisi-hesaplayici-iphone-14.jpg",
         pageTitle: "iPhone 14'ün vergisi ne kadar?",
         pageDescription: "iPhone 14'ün yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
@@ -53,6 +58,8 @@ const presets = [
         title: "iPhone 14 Plus",
         slug: "iphone-14-plus",
         url: buildUrl("iphone-14-plus"),
+        icon: mdiApple,
+        color: "#555",
         ogImageName: "telefon-vergisi-hesaplayici-iphone-14-plus.jpg",
         pageTitle: "iPhone 14 Plus'ın vergisi ne kadar?",
         pageDescription: "iPhone 14 Plus'ın yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
@@ -75,6 +82,8 @@ const presets = [
         title: "iPhone 14 Pro",
         slug: "iphone-14-pro",
         url: buildUrl("iphone-14-pro"),
+        icon: mdiApple,
+        color: "#555",
         ogImageName: "telefon-vergisi-hesaplayici-iphone-14-pro.jpg",
         pageTitle: "iPhone 14 Pro'nun vergisi ne kadar?",
         pageDescription: "iPhone 14 Pro'nun yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
@@ -101,6 +110,8 @@ const presets = [
         title: "iPhone 14 Pro Max",
         slug: "iphone-14-pro-max",
         url: buildUrl("iphone-14-pro-max"),
+        icon: mdiApple,
+        color: "#555",
         ogImageName: "telefon-vergisi-hesaplayici-iphone-14-pro-max.jpg",
         pageTitle: "iPhone 14 Pro Max'in vergisi ne kadar?",
         pageDescription: "iPhone 14 Pro Max'in yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
