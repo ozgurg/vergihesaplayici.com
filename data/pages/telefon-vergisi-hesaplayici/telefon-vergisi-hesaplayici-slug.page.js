@@ -7,14 +7,14 @@ const buildUrl = slug => `/telefon-vergisi-hesaplayici/${slug}/`;
 
 const presets = [
     {
-        title: "iPhone SE (2022)",
-        slug: "iphone-se-2022",
-        url: buildUrl("iphone-se-2022"),
+        title: "iPhone SE 3 (2022)",
+        slug: "iphone-se-3-2022",
+        url: buildUrl("iphone-se-3-2022"),
         icon: mdiApple,
         color: "#555",
         ogImageName: "telefon-vergisi-hesaplayici-iphone-se-2022.jpg",
-        pageTitle: "iPhone SE (2022)'nin vergisi ne kadar?",
-        pageDescription: "iPhone SE (2022)'nin yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
+        pageTitle: "iPhone SE 3 (2022)'ün vergisi ne kadar?",
+        pageDescription: "iPhone SE 3 (2022)'ün yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
         options: [
             {
                 title: "64GB",
