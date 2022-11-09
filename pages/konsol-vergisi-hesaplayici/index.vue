@@ -7,8 +7,18 @@
         </PageTitle>
 
         <InnerContainer>
-            <FormRow class="mb-5">
+            <FormRow>
+                <h3 class="mb-4">
+                    Oyun konsolları
+                </h3>
+
                 <CalculatorPresets :presets="ui.presets" />
+
+                <v-divider class="my-12" />
+
+                <h3 class="mb-4">
+                    Kendiniz hesaplayın
+                </h3>
             </FormRow>
 
             <FormRow
