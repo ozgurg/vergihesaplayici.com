@@ -61,7 +61,7 @@
 
                     <FormRow>
                         <CalculatorShareButton
-                            :screenshot-output="screenshotOutput"
+                            :screenshot-output="resultList"
                             :form="form"
                             :calculator-title="page.title" />
                     </FormRow>
@@ -87,7 +87,7 @@ export default {
             mode: modeOptions
         },
         form: {
-            price: null,
+            price: "",
             rate: 18,
             mode: Mode.TaxFreePriceToTaxAddedPrice
         },
@@ -121,6 +121,10 @@ export default {
         }
     },
     computed: {
+        shouldShowResults() {
+            const vm = this;
+            return vm.form.price > 0;
+        },
         resultList() {
             const vm = this;
             return [
@@ -137,14 +141,6 @@ export default {
                     value: numberFormat(vm.results.prices.taxAdded)
                 }
             ];
-        },
-        screenshotOutput() {
-            const vm = this;
-            return vm.resultList;
-        },
-        shouldShowResults() {
-            const vm = this;
-            return vm.form.price > 0;
         },
         priceLabel() {
             const vm = this;
@@ -171,7 +167,6 @@ export default {
 
                 vm._calculate();
 
-                // Show results tab when calculated
                 vm.ui.tab = 0;
 
                 vm.$router.push({ query: vm.form });

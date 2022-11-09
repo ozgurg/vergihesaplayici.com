@@ -43,7 +43,7 @@
 
                         <CalculatorShareButton
                             :screenshot-input="screenshotInput"
-                            :screenshot-output="screenshotOutput"
+                            :screenshot-output="resultList"
                             :form="form"
                             :calculator-title="page.calculatorTitle"
                             :preset-title="page.preset.title" />
@@ -94,6 +94,10 @@ export default {
         }
     },
     computed: {
+        selectedCurrency() {
+            const vm = this;
+            return vm.$store.getters["exchange-rates/currencies"][vm.form.currency];
+        },
         shouldShowResults() {
             const vm = this;
             return shouldShowResults(vm.form);
@@ -109,14 +113,6 @@ export default {
                 currency: vm.form.currency,
                 registrationTitle: vm.ui.registration.find(item => item.value === vm.form.registration).title
             });
-        },
-        screenshotOutput() {
-            const vm = this;
-            return vm.resultList;
-        },
-        selectedCurrency() {
-            const vm = this;
-            return vm.$store.getters["exchange-rates/currencies"][vm.form.currency];
         }
     },
     watch: {

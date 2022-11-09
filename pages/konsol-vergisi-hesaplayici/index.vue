@@ -56,7 +56,7 @@
 
                         <CalculatorShareButton
                             :screenshot-input="screenshotInput"
-                            :screenshot-output="screenshotOutput"
+                            :screenshot-output="resultList"
                             :form="form"
                             :calculator-title="page.title" />
                     </FormRow>
@@ -117,6 +117,10 @@ export default {
         }
     },
     computed: {
+        selectedCurrency() {
+            const vm = this;
+            return vm.$store.getters["exchange-rates/currencies"][vm.form.currency];
+        },
         shouldShowResults() {
             const vm = this;
             return shouldShowResults(vm.form);
@@ -131,14 +135,6 @@ export default {
                 price: vm.form.price,
                 currency: vm.form.currency
             });
-        },
-        screenshotOutput() {
-            const vm = this;
-            return vm.resultList;
-        },
-        selectedCurrency() {
-            const vm = this;
-            return vm.$store.getters["exchange-rates/currencies"][vm.form.currency];
         }
     },
     watch: {
@@ -158,7 +154,6 @@ export default {
 
                 vm._calculate();
 
-                // Show results tab when calculated
                 vm.ui.tab = 0;
 
                 vm.$router.push({ query: vm.form });
