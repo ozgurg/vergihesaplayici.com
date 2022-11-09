@@ -62,9 +62,7 @@ import {
     buildScreenshotInput,
     shouldShowResults
 } from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.utils.js";
-import Calculator, {
-    Registration
-} from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.calculator.js";
+import Calculator from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.calculator.js";
 import { moneyFormat } from "@/utils/formatter.js";
 
 export default {
@@ -150,7 +148,7 @@ export default {
             option: presetPage.preset.options[0].form,
             currency: "USD",
             price: "",
-            registration: Registration.Import,
+            registration: registrationOptions[0].value,
             ...presetPage.preset.options[0].form
         };
 

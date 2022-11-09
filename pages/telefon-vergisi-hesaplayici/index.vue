@@ -78,9 +78,7 @@
 </template>
 
 <script>
-import Calculator, {
-    Registration
-} from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.calculator.js";
+import Calculator from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.calculator.js";
 import page, {
     registrationOptions
 } from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.page.js";
@@ -106,7 +104,7 @@ export default {
         form: {
             currency: "USD",
             price: "",
-            registration: Registration.Import
+            registration: registrationOptions[0].value
         },
         results: {}
     }),
