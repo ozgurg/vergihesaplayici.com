@@ -10,6 +10,8 @@ const presets = [
         slug: "xbox-series-s",
         url: buildUrl("xbox-series-s"),
         ogImageName: "konsol-vergisi-hesaplayici-xbox-series-s.jpg",
+        pageTitle: "Xbox Series S'nin vergisi ne kadar?",
+        pageDescription: "Satın aldığınız bir Xbox Series S'nin yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
         options: [
             {
                 title: "512GB",
@@ -22,6 +24,8 @@ const presets = [
         slug: "xbox-series-x",
         url: buildUrl("xbox-series-x"),
         ogImageName: "konsol-vergisi-hesaplayici-xbox-series-x.jpg",
+        pageTitle: "Xbox Series X'in vergisi ne kadar?",
+        pageDescription: "Satın aldığınız bir Xbox Series X'in yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
         options: [
             {
                 title: "1TB",
@@ -34,6 +38,8 @@ const presets = [
         slug: "playstation-5",
         url: buildUrl("playstation-5"),
         ogImageName: "konsol-vergisi-hesaplayici-playstation-5.jpg",
+        pageTitle: "PlayStation 5'in vergisi ne kadar?",
+        pageDescription: "Satın aldığınız bir PlayStation 5'in yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
         options: [
             {
                 // https://blog.playstation.com/2022/08/25/ps5-price-to-increase-in-select-markets-due-to-global-economic-environment-including-high-inflation-rates/
@@ -57,6 +63,8 @@ const presets = [
         slug: "nintendo-switch",
         url: buildUrl("nintendo-switch"),
         ogImageName: "konsol-vergisi-hesaplayici-nintendo-switch.jpg",
+        pageTitle: "Nintendo Switch'in vergisi ne kadar?",
+        pageDescription: "Satın aldığınız bir Nintendo Switch'in yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
         options: [
             // https://www.nintendo.com/store/hardware/systems/
             {
@@ -81,9 +89,9 @@ export default slug => {
         return false;
     }
 
-    const title = `${preset.title} vergisi ne kadar?`;
+    const title = preset.pageTitle;
     const url = preset.url;
-    const description = "Satın aldığınız bir oyun konsolunun yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.";
+    const description = preset.pageDescription;
     const head = buildHeadTags({
         title,
         description,

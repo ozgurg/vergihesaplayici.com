@@ -7,10 +7,11 @@ const buildUrl = slug => `/telefon-vergisi-hesaplayici/${slug}/`;
 const presets = [
     {
         title: "iPhone SE (2022)",
-        description: "iPhone SE (2022)'nin yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
         slug: "iphone-se-2022",
         url: buildUrl("iphone-se-2022"),
         ogImageName: "telefon-vergisi-hesaplayici-iphone-se-2022.jpg",
+        pageTitle: "iPhone SE (2022)'nin vergisi ne kadar?",
+        pageDescription: "iPhone SE (2022)'nin yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
         options: [
             {
                 title: "64GB",
@@ -28,10 +29,11 @@ const presets = [
     },
     {
         title: "iPhone 14",
-        description: "iPhone 14'ün yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
         slug: "iphone-14",
         url: buildUrl("iphone-14"),
         ogImageName: "telefon-vergisi-hesaplayici-iphone-14.jpg",
+        pageTitle: "iPhone 14'ün vergisi ne kadar?",
+        pageDescription: "iPhone 14'ün yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
         options: [
             {
                 title: "128GB",
@@ -49,10 +51,11 @@ const presets = [
     },
     {
         title: "iPhone 14 Plus",
-        description: "iPhone 14 Plus'ın yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
         slug: "iphone-14-plus",
         url: buildUrl("iphone-14-plus"),
         ogImageName: "telefon-vergisi-hesaplayici-iphone-14-plus.jpg",
+        pageTitle: "iPhone 14 Plus'ın vergisi ne kadar?",
+        pageDescription: "iPhone 14 Plus'ın yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
         options: [
             {
                 title: "128GB",
@@ -70,10 +73,11 @@ const presets = [
     },
     {
         title: "iPhone 14 Pro",
-        description: "iPhone 14 Pro'nun yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
         slug: "iphone-14-pro",
         url: buildUrl("iphone-14-pro"),
         ogImageName: "telefon-vergisi-hesaplayici-iphone-14-pro.jpg",
+        pageTitle: "iPhone 14 Pro'nun vergisi ne kadar?",
+        pageDescription: "iPhone 14 Pro'nun yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
         options: [
             {
                 title: "128GB",
@@ -95,10 +99,11 @@ const presets = [
     },
     {
         title: "iPhone 14 Pro Max",
-        description: "iPhone 14 Pro Max'in yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
         slug: "iphone-14-pro-max",
         url: buildUrl("iphone-14-pro-max"),
         ogImageName: "telefon-vergisi-hesaplayici-iphone-14-pro-max.jpg",
+        pageTitle: "iPhone 14 Pro Max'in vergisi ne kadar?",
+        pageDescription: "iPhone 14 Pro Max'in yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
         options: [
             {
                 title: "128GB",
@@ -126,9 +131,9 @@ export default slug => {
         return false;
     }
 
-    const title = `${preset.title} vergisi ne kadar?`;
+    const title = preset.pageTitle;
     const url = preset.url;
-    const description = preset.description;
+    const description = preset.pageDescription;
     const head = buildHeadTags({
         title,
         description,
