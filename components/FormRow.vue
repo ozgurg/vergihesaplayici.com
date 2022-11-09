@@ -36,9 +36,10 @@ export default {
     }
     &__label-col {
         @media(min-width: 1264px) {
+            $width: 160px;
             text-align: right;
-            flex: 0 0 200px;
-            max-width: 200px;
+            flex: 0 0 $width;
+            max-width: $width;
             label {
                 height: min(#{$text-field-filled-full-width-outlined-slot-min-height}, 100%);
                 display: flex;
