@@ -9,6 +9,7 @@ const presets = [
         title: "Xbox Series S",
         slug: "xbox-series-s",
         url: buildUrl("xbox-series-s"),
+        ogImageName: "konsol-vergisi-hesaplayici-xbox-series-s.jpg",
         options: [
             {
                 title: "512GB",
@@ -20,6 +21,7 @@ const presets = [
         title: "Xbox Series X",
         slug: "xbox-series-x",
         url: buildUrl("xbox-series-x"),
+        ogImageName: "konsol-vergisi-hesaplayici-xbox-series-x.jpg",
         options: [
             {
                 title: "1TB",
@@ -31,6 +33,7 @@ const presets = [
         title: "PlayStation 5",
         slug: "playstation-5",
         url: buildUrl("playstation-5"),
+        ogImageName: "konsol-vergisi-hesaplayici-playstation-5.jpg",
         options: [
             {
                 // https://blog.playstation.com/2022/08/25/ps5-price-to-increase-in-select-markets-due-to-global-economic-environment-including-high-inflation-rates/
@@ -53,6 +56,7 @@ const presets = [
         title: "Nintendo Switch",
         slug: "nintendo-switch",
         url: buildUrl("nintendo-switch"),
+        ogImageName: "konsol-vergisi-hesaplayici-nintendo-switch.jpg",
         options: [
             // https://www.nintendo.com/store/hardware/systems/
             {
