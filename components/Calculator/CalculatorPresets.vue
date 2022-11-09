@@ -10,7 +10,7 @@
                     class="vh-presets__item__icon"
                     :style="{backgroundColor: _preset.color}">
                     <v-icon
-                        size="28"
+                        size="24"
                         color="#fff">
                         {{ _preset.icon }}
                     </v-icon>
@@ -43,9 +43,9 @@ export default {
         height: auto;
         padding-left: 0;
         &__icon {
-            margin-right: 12px;
+            margin-right: 10px;
             border-radius: 100%;
-            padding: 4px
+            padding: 6px
         }
     }
 }
