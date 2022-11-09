@@ -9,7 +9,7 @@
         <InnerContainer>
             <FormRow>
                 <h3 class="mb-4">
-                    Oyun konsolları
+                    Bir oyun konsolu seçin…
                 </h3>
 
                 <CalculatorPresets :presets="ui.presets" />
@@ -17,7 +17,7 @@
                 <v-divider class="my-12" />
 
                 <h3 class="mb-4">
-                    Kendiniz hesaplayın
+                    …veya kendiniz hesaplayın
                 </h3>
             </FormRow>
 
