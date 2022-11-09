@@ -36,7 +36,7 @@ export default {
     }
     &__label-col {
         @media(min-width: 1264px) {
-            $width: 160px;
+            $width: 164px; // Optimized for "Toplam vergi (%100)" label
             text-align: right;
             flex: 0 0 $width;
             max-width: $width;
