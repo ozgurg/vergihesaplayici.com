@@ -1,5 +1,5 @@
 import { buildHeadTags } from "@/utils/build-head-tags.js";
-import TelefonVergisiHesaplayici from "@/data/pages/telefon-vergisi-hesaplayici.page.js";
+import TelefonVergisiHesaplayici from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.page.js";
 import { findCalculatorPresetBySlug } from "@/utils/find-calculator-preset-by-slug.js";
 
 const buildUrl = slug => `/telefon-vergisi-hesaplayici/${slug}/`;

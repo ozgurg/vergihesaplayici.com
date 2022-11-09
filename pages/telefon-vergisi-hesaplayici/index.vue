@@ -78,15 +78,19 @@
 </template>
 
 <script>
-import Calculator, { Registration } from "@/data/pages/telefon-vergisi-hesaplayici.calculator.js";
-import page, { registrationOptions } from "@/data/pages/telefon-vergisi-hesaplayici.page.js";
+import Calculator, {
+    Registration
+} from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.calculator.js";
+import page, {
+    registrationOptions
+} from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.page.js";
 import {
     buildResultList,
     buildScreenshotInput,
     handleQuery,
     shouldShowResults
-} from "@/data/pages/telefon-vergisi-hesaplayici.utils.js";
-import { presets } from "@/data/pages/telefon-vergisi-hesaplayici-slug.page.js";
+} from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.utils.js";
+import { presets } from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici-slug.page.js";
 
 export default {
     head() {

@@ -67,15 +67,15 @@
 </template>
 
 <script>
-import Calculator from "@/data/pages/konsol-vergisi-hesaplayici.calculator.js";
-import page from "@/data/pages/konsol-vergisi-hesaplayici.page.js";
+import Calculator from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.calculator.js";
+import page from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.page.js";
 import { isCurrencyAvailable } from "@/utils/is-currency-available.js";
-import { presets } from "@/data/pages/konsol-vergisi-hesaplayici-slug.page.js";
+import { presets } from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici-slug.page.js";
 import {
     buildResultList,
     buildScreenshotInput,
     shouldShowResults
-} from "@/data/pages/konsol-vergisi-hesaplayici.utils.js";
+} from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.utils.js";
 
 export default {
     head() {

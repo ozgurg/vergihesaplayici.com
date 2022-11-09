@@ -1,5 +1,5 @@
 import { mdiBrightnessPercent } from "@mdi/js";
-import { Mode } from "@/data/pages/kdv-hesaplayici.calculator.js";
+import { Mode } from "@/data/pages/kdv-hesaplayici/kdv-hesaplayici.calculator.js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
 import parentPage from "@/data/pages/hesaplayicilar.page.js";
 

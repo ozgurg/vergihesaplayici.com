@@ -51,14 +51,14 @@
 </template>
 
 <script>
-import page from "@/data/pages/konsol-vergisi-hesaplayici-slug.page.js";
+import page from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici-slug.page.js";
 import { moneyFormat } from "@/utils/formatter.js";
 import {
     buildResultList,
     buildScreenshotInput,
     shouldShowResults
-} from "@/data/pages/konsol-vergisi-hesaplayici.utils.js";
-import Calculator from "@/data/pages/konsol-vergisi-hesaplayici.calculator.js";
+} from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.utils.js";
+import Calculator from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.calculator.js";
 
 export default {
     head() {

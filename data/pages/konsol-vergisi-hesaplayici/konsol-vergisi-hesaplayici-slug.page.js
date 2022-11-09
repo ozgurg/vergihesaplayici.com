@@ -1,5 +1,5 @@
 import { buildHeadTags } from "@/utils/build-head-tags.js";
-import KonsolVergisiHesaplayici from "@/data/pages/konsol-vergisi-hesaplayici.page.js";
+import KonsolVergisiHesaplayici from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.page.js";
 import { findCalculatorPresetBySlug } from "@/utils/find-calculator-preset-by-slug.js";
 
 const buildUrl = slug => `/konsol-vergisi-hesaplayici/${slug}/`;

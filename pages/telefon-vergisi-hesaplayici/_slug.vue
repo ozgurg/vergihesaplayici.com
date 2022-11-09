@@ -55,14 +55,16 @@
 </template>
 
 <script>
-import page from "@/data/pages/telefon-vergisi-hesaplayici-slug.page.js";
-import { registrationOptions } from "@/data/pages/telefon-vergisi-hesaplayici.page.js";
+import page from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici-slug.page.js";
+import { registrationOptions } from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.page.js";
 import {
     buildResultList,
     buildScreenshotInput,
     shouldShowResults
-} from "@/data/pages/telefon-vergisi-hesaplayici.utils.js";
-import Calculator, { Registration } from "@/data/pages/telefon-vergisi-hesaplayici.calculator.js";
+} from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.utils.js";
+import Calculator, {
+    Registration
+} from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.calculator.js";
 import { moneyFormat } from "@/utils/formatter.js";
 
 export default {
