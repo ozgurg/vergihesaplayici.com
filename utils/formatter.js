@@ -29,8 +29,21 @@ const numberFormat = number => {
     return formatter.format(number);
 };
 
+/**
+ * @param {Date} date
+ * @returns {string}
+ */
+const dateFormat = date => {
+    const formatter = new Intl.DateTimeFormat("tr-TR", {
+        dateStyle: "full",
+        timeStyle: "medium"
+    });
+    return formatter.format(date);
+};
+
 export {
     normalizePrice,
     moneyFormat,
-    numberFormat
+    numberFormat,
+    dateFormat
 };

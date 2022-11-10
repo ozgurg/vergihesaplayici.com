@@ -1,4 +1,4 @@
-import { moneyFormat, normalizePrice, numberFormat } from "@/utils/formatter.js";
+import { dateFormat, moneyFormat, normalizePrice, numberFormat } from "@/utils/formatter.js";
 
 describe("utils/formatter", () => {
     describe("normalizePrice", () => {
@@ -45,6 +45,12 @@ describe("utils/formatter", () => {
 
         it("should format 100.000.026 correctly", () => {
             expect(numberFormat(100_000_026)).toBe("100.000.026,00");
+        });
+    });
+
+    describe("dateFormat", () => {
+        it("should format date correctly", () => {
+            expect(dateFormat(new Date("Fri Nov 11 2022 02:41:24 GMT+0300 (GMT+03:00)"))).toBe("11 Kasım 2022 Cuma 02:41:24");
         });
     });
 });
