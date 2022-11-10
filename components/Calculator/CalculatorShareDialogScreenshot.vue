@@ -80,6 +80,11 @@
                     <tr>
                         <td class="primary secondary--text text-center font-weight-medium text-body-1 py-2">
                             {{ presetTitle }}
+                            <div
+                                v-if="presetOptionTitle"
+                                class="text-body-2">
+                                {{ presetOptionTitle }}
+                            </div>
                         </td>
                     </tr>
                 </template>
@@ -208,6 +213,10 @@ export default {
             required: true
         },
         presetTitle: {
+            type: String,
+            default: null
+        },
+        presetOptionTitle: {
             type: String,
             default: null
         }

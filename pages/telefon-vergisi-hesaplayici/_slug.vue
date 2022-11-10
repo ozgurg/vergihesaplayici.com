@@ -46,7 +46,8 @@
                             :screenshot-output="resultList"
                             :form="form"
                             :calculator-title="page.calculatorTitle"
-                            :preset-title="page.preset.title" />
+                            :preset-title="page.preset.title"
+                            :preset-option-title="form.option.title" />
                     </FormRow>
                 </template>
             </CalculatorResultTabs>
@@ -124,7 +125,7 @@ export default {
         },
         "form.option"() {
             const vm = this;
-            Object.assign(vm.form, vm.form.option);
+            Object.assign(vm.form, vm.form.option.form);
         }
     },
     async asyncData({ store, error, params: { slug } }) {
@@ -140,12 +141,12 @@ export default {
 
         const options = presetPage.preset.options.map(option => ({
             title: option.title,
-            value: option.form,
+            value: option,
             description: moneyFormat(option.form.price, option.form.currency)
         }));
 
         const form = {
-            option: presetPage.preset.options[0].form,
+            option: presetPage.preset.options[0],
             currency: "USD",
             price: "",
             registration: registrationOptions[0].value,

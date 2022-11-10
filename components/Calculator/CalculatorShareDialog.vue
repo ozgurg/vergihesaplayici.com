@@ -64,7 +64,8 @@
                             :input="screenshotInput"
                             :output="screenshotOutput"
                             :calculator-title="calculatorTitle"
-                            :preset-title="presetTitle" />
+                            :preset-title="presetTitle"
+                            :preset-option-title="presetOptionTitle" />
                     </div>
                 </div>
             </template>
@@ -105,6 +106,10 @@ export default {
             required: true
         },
         presetTitle: {
+            type: String,
+            default: null
+        },
+        presetOptionTitle: {
             type: String,
             default: null
         }
