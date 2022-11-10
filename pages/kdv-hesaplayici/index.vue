@@ -12,7 +12,7 @@
                 label="Hesaplama modu">
                 <RadioGrid
                     v-model="form.mode"
-                    :items="ui.mode"
+                    :items="ui.modeOptions"
                     cols="6"
                     md="6"
                     lg="5" />
@@ -84,7 +84,7 @@ export default {
         page,
         ui: {
             tab: 1,
-            mode: modeOptions
+            modeOptions
         },
         form: {
             price: "",
@@ -109,7 +109,7 @@ export default {
             const vm = this;
 
             const query = handleQuery(vm.$route.query, {
-                modeOptions: vm.ui.mode
+                modeOptions: vm.ui.modeOptions
             });
             if (query) {
                 Object.assign(vm.form, query);
