@@ -1,9 +1,9 @@
 /**
- * @param {object} head
- * @param {string} head.title
- * @param {string} head.description
- * @param {string} head.ogImageName
- * @returns {{title: string, meta: {hid?: string, name: string, content: *}[]}}
+ * @param {object} args
+ * @param {string} args.title
+ * @param {string} args.description
+ * @param {string} args.ogImageName
+ * @returns {{title: string, meta: {hid?: string, name: string, content: string|*}[]}}
  */
 const buildHeadTags = ({
     title,

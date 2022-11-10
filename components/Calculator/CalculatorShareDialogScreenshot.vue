@@ -231,7 +231,7 @@ export default {
             try {
                 const screenshot = await vm._captureScreenshotOfTable();
                 const fileName = `vergihesaplayici-${vm.date.getTime()}.png`;
-                await downloadFile(screenshot, () => fileName);
+                await downloadFile(screenshot, fileName);
             } catch {
                 alert("Ekran görüntüsü indirilemiyor.");
             } finally {

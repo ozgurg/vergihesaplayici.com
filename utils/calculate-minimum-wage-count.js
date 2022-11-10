@@ -1,19 +1,19 @@
 /**
  * @param {number} price
- * @param {number} minimumWage
+ * @param {number} minimumWagePerMonth
  * @returns {string}
  */
-const calculateMinimumWageMonthCount = (price, minimumWage) => {
-    return (price / minimumWage).toFixed(1);
+const calculateMinimumWageMonthCount = (price, minimumWagePerMonth) => {
+    return (price / minimumWagePerMonth).toFixed(1);
 };
 
 /**
  * @param {number} price
- * @param {number} minimumWage
+ * @param {number} minimumWagePerMonth
  * @returns {string}
  */
-const calculateMinimumWageDayCount = (price, minimumWage) => {
-    return ((price / minimumWage) * 30).toFixed(0);
+const calculateMinimumWageDayCount = (price, minimumWagePerMonth) => {
+    return ((price / minimumWagePerMonth) * 30).toFixed(0);
 };
 
 export {

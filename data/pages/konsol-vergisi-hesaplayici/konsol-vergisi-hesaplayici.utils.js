@@ -5,7 +5,7 @@ import { moneyFormat } from "@/utils/formatter.js";
  * Decides whether to show the calculator results or not.
  * It doesn't validate the inputs. They must be validated before it can be used.
  *
- * @param {Object<*, *>} form
+ * @param {Object<string, *>} form
  * @returns {boolean}
  */
 const shouldShowResults = form => {
@@ -14,7 +14,7 @@ const shouldShowResults = form => {
 };
 
 /**
- * @param {Object<*, *>} query
+ * @param {Object<string, *>} query
  * @param {object} requirements
  * @param {string[]} requirements.availableCurrencies
  * @returns {{price: number, currency: string}|void}
