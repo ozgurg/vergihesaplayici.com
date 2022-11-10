@@ -4,7 +4,9 @@ import colors from "vuetify/lib/util/colors";
 export default {
     target: "static",
     components: true,
-    generate: { fallback: "404.html" },
+    generate: {
+        fallback: "404.html"
+    },
     server: {
         host: process.env.HOST,
         port: process.env.PORT
@@ -23,6 +25,10 @@ export default {
                 content: "index, follow"
             },
             {
+                "http-equiv": "X-UA-Compatible",
+                "content": "ie=edge"
+            },
+            {
                 name: "format-detection",
                 content: "telephone=no"
             },
@@ -31,20 +37,12 @@ export default {
                 content: "no"
             },
             {
-                name: "twitter:card",
-                content: "summary"
-            },
-            {
                 name: "twitter:site",
                 content: "@ozgurg0"
             },
             {
                 name: "twitter:creator",
                 content: "@ozgurg0"
-            },
-            {
-                "http-equiv": "X-UA-Compatible",
-                "content": "ie=edge"
             }
         ],
         link: [
@@ -59,7 +57,8 @@ export default {
             },
             {
                 rel: "preconnect",
-                href: "https://fonts.googleapis.com"
+                href: "https://fonts.googleapis.com",
+                crossorigin: ""
             },
             {
                 rel: "preconnect",
@@ -126,13 +125,15 @@ export default {
         throttle: 600
     },
     vuetify: {
-        customVariables: ["@/assets/scss/vuetify-customization.scss"],
+        customVariables: [
+            "@/assets/scss/vuetify-customization.scss"
+        ],
         treeShake: true,
         defaultAssets: {
+            icons: false,
             font: {
                 family: "Rubik"
-            },
-            icons: false
+            }
         },
         lang: {
             locales: { tr },
