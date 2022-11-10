@@ -70,6 +70,7 @@
         </div>
 
         <v-checkbox
+            v-if="Object.entries($route.query).length > 0"
             v-model="includeParams"
             hide-details=""
             class="mt-8"
