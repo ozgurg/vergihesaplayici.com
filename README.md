@@ -43,6 +43,6 @@ opening a PR. Thanks in advance.
 
 [![License](https://img.shields.io/badge/License-GPLv3-%2388DF95.svg)](https://github.com/ozgurg/vergihesaplayici.com/blob/master/LICENSE)
 
-### Related projects
+## Related projects
 
 - [telefonvergim.cf](https://telefonvergim.cf/)
