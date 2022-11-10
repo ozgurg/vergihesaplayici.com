@@ -13,7 +13,7 @@ const presets = [
         icon: mdiApple,
         color: "#555",
         ogImageName: "telefon-vergisi-hesaplayici-iphone-se-2022.jpg",
-        pageTitle: "iPhone SE 3 (2022)'ün vergisi ne kadar?",
+        pageTitle: "iPhone SE 3'ün (2022) vergisi ne kadar?",
         pageDescription: "iPhone SE 3 (2022)'ün yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
         options: [
             {
