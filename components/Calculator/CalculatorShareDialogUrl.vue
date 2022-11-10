@@ -70,7 +70,7 @@
         </div>
 
         <v-checkbox
-            v-if="Object.entries($route.query).length > 0"
+            v-if="hasQuery"
             v-model="includeParams"
             hide-details=""
             class="mt-8"
@@ -119,6 +119,10 @@ export default {
         }
     },
     computed: {
+        hasQuery() {
+            const vm = this;
+            return Object.entries(vm.$route.query).length > 0;
+        },
         isWebShareApiSupported() {
             return navigator.share;
         },
@@ -127,7 +131,7 @@ export default {
             return createShareUrlOfCalculator(
                 vm.$route.path,
                 vm.form,
-                vm.includeParams
+                vm.includeParams && vm.hasQuery === true
             );
         },
         socialMediaSharingItems() {
