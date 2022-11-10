@@ -21,28 +21,28 @@ npm install
 # Start a development server
 npm run dev
 
-# Build
-npm run generate
-
 # Run unit tests
 npm run test
 
 # Linting
 npm run lint
+
+# Build
+npm run generate
 ```
 
 ## Contributing
 
-**Attention:** vergihesaplayici.com is designed entirely for Turkey. Some terms may sound unfamiliar to you.
+**Attention:** vergihesaplayici.com is completely designed for Turkey. Some terms may sound unfamiliar to you.
 
-There are no plans for how the development will go. According to my mind, I develop as I wish. You can open a PR for
-minor mistakes, but if you are offering a new feature or change, please open a new issue and express your opinion before
-opening a PR.
+I don't have a plan for how development will proceed. In my mind, I develop it the way I want. You can open a PR for
+minor bugs, but if you are introducing a new feature or change, please open a new issue and express your opinion before
+opening a PR. Thanks in advance.
 
 ## License
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-%2388DF95.svg)](https://github.com/ozgurg/vergihesaplayici.com/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/License-GPLv3-%2388DF95.svg)](https://github.com/ozgurg/vergihesaplayici.com/blob/master/LICENSE)
 
-### You may also want to look at this
+### Related projects
 
-- https://telefonvergim.cf
+- [telefonvergim.cf](https://telefonvergim.cf/)
