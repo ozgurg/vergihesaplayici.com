@@ -74,7 +74,7 @@
 <script>
 import Calculator, { Mode } from "@/data/pages/kdv-hesaplayici/kdv-hesaplayici.calculator.js";
 import page, { modeOptions } from "@/data/pages/kdv-hesaplayici/kdv-hesaplayici.page.js";
-import { numberFormat } from "@/utils/formatter.js";
+import { buildResultList, handleQuery, shouldShowResults } from "@/data/pages/kdv-hesaplayici/kdv-hesaplayici.utils.js";
 
 export default {
     head() {
@@ -108,39 +108,22 @@ export default {
         _handleQuery() {
             const vm = this;
 
-            const query = vm.$route.query;
-            if (!query) return;
-
-            if (query.price) {
-                vm.form.price = parseFloat(query.price);
-            }
-
-            if (query.mode && vm.ui.mode.some(object => object.value === query.mode)) {
-                vm.form.mode = query.mode;
+            const query = handleQuery(vm.$route.query, {
+                modeOptions: vm.ui.mode
+            });
+            if (query) {
+                Object.assign(vm.form, query);
             }
         }
     },
     computed: {
         shouldShowResults() {
             const vm = this;
-            return vm.form.price > 0;
+            return shouldShowResults(vm.form);
         },
         resultList() {
             const vm = this;
-            return [
-                {
-                    key: "KDV hariç fiyat",
-                    value: numberFormat(vm.results.prices.taxFree)
-                },
-                {
-                    key: `KDV (%${vm.results.taxRates.valueAddedTax})`,
-                    value: numberFormat(vm.results.taxFees.valueAddedTax)
-                },
-                {
-                    key: "KDV dahil fiyat",
-                    value: numberFormat(vm.results.prices.taxAdded)
-                }
-            ];
+            return buildResultList(vm.results);
         },
         priceLabel() {
             const vm = this;
