@@ -35,6 +35,10 @@ const handleQuery = (query, { availableCurrencies }) => {
     return form;
 };
 
+/**
+ * @param {Object<string, Object<string, number>>} results
+ * @returns {Object<{key: string, value: string}>[]}
+ */
 const buildResultList = results => {
     return [
         {
@@ -64,6 +68,12 @@ const buildResultList = results => {
     ];
 };
 
+/**
+ * @param {object} opts
+ * @param {number} opts.price
+ * @param {string} opts.currency
+ * @returns {Object<{key: string, value: string}>[]}
+ */
 const buildScreenshotInput = ({ price, currency }) => {
     return [
         {

@@ -43,6 +43,11 @@ const handleQuery = (query, { availableCurrencies, registration }) => {
     return form;
 };
 
+/**
+ * @param {Object<string, Object<string, number>>} results
+ * @param {Registration} registration
+ * @returns {Object<{key: string, value: string}>[]}
+ */
 const buildResultList = (results, registration) => {
     return [
         {
@@ -93,6 +98,13 @@ const buildResultList = (results, registration) => {
     ];
 };
 
+/**
+ * @param {object} opts
+ * @param {number} opts.price
+ * @param {string} opts.currency
+ * @param {string} opts.registrationTitle
+ * @returns {Object<{key: string, value: string}>[]}
+ */
 const buildScreenshotInput = ({ price, currency, registrationTitle }) => {
     return [
         {
