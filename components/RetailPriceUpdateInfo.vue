@@ -9,6 +9,8 @@
             Kaynak:
             <a
                 :href="sourceUrl"
+                target="_blank"
+                rel="nofollow noopener noreferrer"
                 class="grey--text text-decoration-underline">
                 {{ getDomainFromUrl(sourceUrl) }}
             </a>
