@@ -4,13 +4,13 @@
             <v-chip
                 :key="_preset.title"
                 :to="_preset.url"
-                class="h-auto ps-0"
+                class="h-auto ps-0 pe-4 rounded-bl-pill rounded-tl-pill rounded-pill"
                 outlined="">
                 <div
-                    class="rounded-pill pa-2 me-3"
+                    class="rounded-circle pa-2 me-2"
                     :style="{backgroundColor: _preset.color}">
                     <v-icon
-                        size="24"
+                        size="22"
                         color="#fff">
                         {{ _preset.icon }}
                     </v-icon>
