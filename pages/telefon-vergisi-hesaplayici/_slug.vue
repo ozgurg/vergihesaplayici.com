@@ -32,6 +32,8 @@
                 v-model="ui.tab"
                 :should-show-results="shouldShowResults">
                 <template v-if="shouldShowResults">
+                    <EstimatedCalculationAlert />
+
                     <CalculatorResultList
                         :items="resultList"
                         class="mb-4" />
