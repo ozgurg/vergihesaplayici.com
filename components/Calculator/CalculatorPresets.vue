@@ -1,13 +1,13 @@
 <template>
-    <div class="vh-presets d-flex flex-wrap gap-2">
+    <div class="d-flex flex-wrap gap-2">
         <template v-for="_preset in presets">
             <v-chip
                 :key="_preset.title"
                 :to="_preset.url"
-                class="vh-presets__item"
+                class="h-auto ps-0"
                 outlined="">
                 <div
-                    class="vh-presets__item__icon"
+                    class="rounded-pill pa-2 me-3"
                     :style="{backgroundColor: _preset.color}">
                     <v-icon
                         size="24"
@@ -33,17 +33,3 @@ export default {
     }
 };
 </script>
-
-<style scoped="" lang="scss">
-.vh-presets {
-    &__item {
-        height: auto;
-        padding-left: 0;
-        &__icon {
-            margin-right: 10px;
-            border-radius: 100%;
-            padding: 6px
-        }
-    }
-}
-</style>

@@ -10,6 +10,11 @@ body {
     height: 100%
 }
 
+// Remove this when Vuetify has the same utility class
+.h-auto {
+    height: auto !important
+}
+
 .gap-2 {
     gap: 8px
 }
