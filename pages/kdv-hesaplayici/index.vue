@@ -49,6 +49,18 @@
                     inputmode="decimal"
                     type="number"
                     aria-label="KDV oranı" />
+
+                <div class="d-flex flex-wrap gap-2 mt-4">
+                    <template v-for="_preset in ui.presets">
+                        <v-chip
+                            :key="_preset.title"
+                            :class="{'primary--text primary': isPresetActive(_preset)}"
+                            outlined=""
+                            @click="choosePreset(_preset)">
+                            {{ _preset.title }}
+                        </v-chip>
+                    </template>
+                </div>
             </FormRow>
 
             <CalculatorResultTabs
@@ -84,7 +96,12 @@ export default {
         page,
         ui: {
             tab: 1,
-            modeOptions
+            modeOptions,
+            presets: [
+                { title: "Yüzde 1", form: { rate: 1 } },
+                { title: "Yüzde 8", form: { rate: 8 } },
+                { title: "Yüzde 18", form: { rate: 18 } }
+            ]
         },
         form: {
             price: "",
@@ -94,6 +111,14 @@ export default {
         results: {}
     }),
     methods: {
+        isPresetActive(preset) {
+            const vm = this;
+            return preset.form.rate === vm.form.rate;
+        },
+        choosePreset(preset) {
+            const vm = this;
+            vm.form.rate = preset.form.rate;
+        },
         _calculate() {
             const vm = this;
 
