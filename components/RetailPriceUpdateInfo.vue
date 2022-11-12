@@ -1,11 +1,11 @@
 <template>
-    <div class="small caption grey--text d-flex flex-column flex-lg-row justify-lg-space-between">
-        <div class="text-start">
+    <div class="small caption grey--text">
+        <div>
             Son güncellenme tarihi:
             {{ dateFormat(lastUpdatedDate) }}
         </div>
 
-        <div class="text-start text-lg-end">
+        <div>
             Kaynak:
             <a
                 :href="sourceUrl"
