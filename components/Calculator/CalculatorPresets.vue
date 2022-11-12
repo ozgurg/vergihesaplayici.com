@@ -1,5 +1,5 @@
 <template>
-    <div class="vh-presets">
+    <div class="vh-presets d-flex flex-wrap gap-2">
         <template v-for="_preset in presets">
             <v-chip
                 :key="_preset.title"
@@ -36,9 +36,6 @@ export default {
 
 <style scoped="" lang="scss">
 .vh-presets {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
     &__item {
         height: auto;
         padding-left: 0;
