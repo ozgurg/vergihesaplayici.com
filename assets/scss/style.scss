@@ -6,17 +6,5 @@ body {
     user-select: none
 }
 
-.h-100 {
-    height: 100%
-}
-
-// Remove this when Vuetify has the same utility class
-.h-auto {
-    height: auto !important
-}
-
-.gap-2 {
-    gap: 8px
-}
-
-@import "./_dialog.scss";
+@import "_utilities.scss";
+@import "_dialog.scss";
