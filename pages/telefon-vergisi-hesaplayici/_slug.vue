@@ -34,13 +34,28 @@
                 <template v-if="shouldShowResults">
                     <CalculatorResultList
                         :items="resultList"
-                        class="mb-5" />
+                        class="mb-4" />
+
+                    <FormRow class="mb-10">
+                        <MinimumWageAlert :price="results.prices.taxAdded" />
+                    </FormRow>
+
+                    <div
+                        v-if="form.option.retailPrice"
+                        class="mb-10">
+                        <CalculatorResultFormRow
+                            :value="moneyFormat(form.option.retailPrice.value, 'TRY')"
+                            class="mb-2"
+                            label="Resmi satış fiyatı" />
+
+                        <FormRow>
+                            <RetailPriceUpdateInfo
+                                :last-updated-date="form.option.retailPrice.lastUpdatedDate"
+                                :source-url="form.option.retailPrice.sourceUrl" />
+                        </FormRow>
+                    </div>
 
                     <FormRow>
-                        <MinimumWageAlert
-                            :price="results.prices.taxAdded"
-                            class="mb-10" />
-
                         <CalculatorShareButton
                             :screenshot-input="screenshotInput"
                             :screenshot-output="resultList"
@@ -78,6 +93,7 @@ export default {
         results: {}
     }),
     methods: {
+        moneyFormat,
         _calculate() {
             const vm = this;
 

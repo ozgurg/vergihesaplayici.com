@@ -5,6 +5,8 @@ import { findCalculatorPresetBySlug } from "@/utils/find-calculator-preset-by-sl
 
 const buildUrl = slug => `/telefon-vergisi-hesaplayici/${slug}/`;
 
+const lastUpdatedDate = new Date("Sat Nov 12 2022 04:16:11 GMT+0300 (GMT+03:00)");
+
 const presets = [
     {
         title: "iPhone SE 3 (2022)",
@@ -18,15 +20,30 @@ const presets = [
         options: [
             {
                 title: "64GB",
-                form: { price: 429, currency: "USD" }
+                form: { price: 429, currency: "USD" },
+                retailPrice: {
+                    value: 16999,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-se"
+                }
             },
             {
                 title: "128GB",
-                form: { price: 479, currency: "USD" }
+                form: { price: 479, currency: "USD" },
+                retailPrice: {
+                    value: 18299,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-se"
+                }
             },
             {
                 title: "256GB",
-                form: { price: 579, currency: "USD" }
+                form: { price: 579, currency: "USD" },
+                retailPrice: {
+                    value: 20899,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-se"
+                }
             }
         ]
     },
@@ -42,15 +59,30 @@ const presets = [
         options: [
             {
                 title: "128GB",
-                form: { price: 799, currency: "USD" }
+                form: { price: 799, currency: "USD" },
+                retailPrice: {
+                    value: 30999,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
+                }
             },
             {
                 title: "256GB",
-                form: { price: 899, currency: "USD" }
+                form: { price: 899, currency: "USD" },
+                retailPrice: {
+                    value: 33599,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
+                }
             },
             {
                 title: "512GB",
-                form: { price: 1099, currency: "USD" }
+                form: { price: 1099, currency: "USD" },
+                retailPrice: {
+                    value: 38899,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
+                }
             }
         ]
     },
@@ -66,15 +98,30 @@ const presets = [
         options: [
             {
                 title: "128GB",
-                form: { price: 899, currency: "USD" }
+                form: { price: 899, currency: "USD" },
+                retailPrice: {
+                    value: 34999,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
+                }
             },
             {
                 title: "256GB",
-                form: { price: 999, currency: "USD" }
+                form: { price: 999, currency: "USD" },
+                retailPrice: {
+                    value: 37599,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
+                }
             },
             {
                 title: "512GB",
-                form: { price: 1199, currency: "USD" }
+                form: { price: 1199, currency: "USD" },
+                retailPrice: {
+                    value: 42899,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
+                }
             }
         ]
     },
@@ -90,19 +137,39 @@ const presets = [
         options: [
             {
                 title: "128GB",
-                form: { price: 999, currency: "USD" }
+                form: { price: 999, currency: "USD" },
+                retailPrice: {
+                    value: 39999,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14-pro"
+                }
             },
             {
                 title: "256GB",
-                form: { price: 1099, currency: "USD" }
+                form: { price: 1099, currency: "USD" },
+                retailPrice: {
+                    value: 42599,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14-pro"
+                }
             },
             {
                 title: "512GB",
-                form: { price: 1299, currency: "USD" }
+                form: { price: 1299, currency: "USD" },
+                retailPrice: {
+                    value: 47899,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14-pro"
+                }
             },
             {
                 title: "1TB",
-                form: { price: 1499, currency: "USD" }
+                form: { price: 1499, currency: "USD" },
+                retailPrice: {
+                    value: 53199,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14-pro"
+                }
             }
         ]
     },
@@ -118,19 +185,39 @@ const presets = [
         options: [
             {
                 title: "128GB",
-                form: { price: 1099, currency: "USD" }
+                form: { price: 1099, currency: "USD" },
+                retailPrice: {
+                    value: 43999,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14-pro"
+                }
             },
             {
                 title: "256GB",
-                form: { price: 1199, currency: "USD" }
+                form: { price: 1199, currency: "USD" },
+                retailPrice: {
+                    value: 46599,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14-pro"
+                }
             },
             {
                 title: "512GB",
-                form: { price: 1399, currency: "USD" }
+                form: { price: 1399, currency: "USD" },
+                retailPrice: {
+                    value: 51899,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14-pro"
+                }
             },
             {
                 title: "1TB",
-                form: { price: 1599, currency: "USD" }
+                form: { price: 1599, currency: "USD" },
+                retailPrice: {
+                    value: 57199,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14-pro"
+                }
             }
         ]
     }

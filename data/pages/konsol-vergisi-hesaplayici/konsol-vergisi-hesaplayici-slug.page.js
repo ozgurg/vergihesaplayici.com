@@ -5,6 +5,8 @@ import { findCalculatorPresetBySlug } from "@/utils/find-calculator-preset-by-sl
 
 const buildUrl = slug => `/konsol-vergisi-hesaplayici/${slug}/`;
 
+const lastUpdatedDate = new Date("Sat Nov 12 2022 04:16:11 GMT+0300 (GMT+03:00)");
+
 const presets = [
     {
         title: "Xbox Series S",
@@ -17,8 +19,14 @@ const presets = [
         pageDescription: "Satın aldığınız bir Xbox Series S'nin yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
         options: [
             {
+                // FIXME: Need official price
                 title: "512GB",
-                form: { price: 299, currency: "EUR" }
+                form: { price: 299, currency: "EUR" },
+                retailPrice: {
+                    value: 8999,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.turkcell.com.tr/pasaj/hobi-oyun/oyun-konsolu/xbox/microsoft-xbox-series-s-512-gb-ssd-oyun-konsolu"
+                }
             }
         ]
     },
@@ -33,8 +41,14 @@ const presets = [
         pageDescription: "Satın aldığınız bir Xbox Series X'in yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
         options: [
             {
+                // FIXME: Need official price
                 title: "1TB",
-                form: { price: 499, currency: "EUR" }
+                form: { price: 499, currency: "EUR" },
+                retailPrice: {
+                    value: 14999,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.turkcell.com.tr/pasaj/hobi-oyun/oyun-konsolu/xbox/microsoft-xbox-series-x-1-tb-ssd-oyun-konsolu"
+                }
             }
         ]
     },
@@ -51,12 +65,22 @@ const presets = [
             {
                 // https://blog.playstation.com/2022/08/25/ps5-price-to-increase-in-select-markets-due-to-global-economic-environment-including-high-inflation-rates/
                 title: "Disksiz (825GB)",
-                form: { price: 449.99, currency: "EUR" }
+                form: { price: 449.99, currency: "EUR" },
+                retailPrice: {
+                    value: 11199,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.donanimhaber.com/playstation-turkiye-den-ps5-in-fiyatiyla-ilgili-aciklama-geldi--152229"
+                }
             },
             {
                 // https://blog.playstation.com/2022/08/25/ps5-price-to-increase-in-select-markets-due-to-global-economic-environment-including-high-inflation-rates/
                 title: "Diskli (825GB)",
-                form: { price: 549.99, currency: "EUR" }
+                form: { price: 549.99, currency: "EUR" },
+                retailPrice: {
+                    value: 13199,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.donanimhaber.com/playstation-turkiye-den-ps5-in-fiyatiyla-ilgili-aciklama-geldi--152229"
+                }
             },
             {
                 // https://blog.playstation.com/2022/11/02/playstation-vr2-launches-in-february-at-549-99/
@@ -77,16 +101,34 @@ const presets = [
         options: [
             // https://www.nintendo.com/store/hardware/systems/
             {
+                // FIXME: Need official price
                 title: "Lite (32GB)",
-                form: { price: 199.99, currency: "USD" }
+                form: { price: 199.99, currency: "USD" },
+                retailPrice: {
+                    value: 5999,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.turkcell.com.tr/pasaj/hobi-oyun/oyun-konsolu/nintendo/switch-lite-konsol-nintendo"
+                }
             },
             {
+                // FIXME: Need official price
                 title: "Original (32GB)",
-                form: { price: 299, currency: "USD" }
+                form: { price: 299, currency: "USD" },
+                retailPrice: {
+                    value: 8999,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.turkcell.com.tr/pasaj/hobi-oyun/oyun-konsolu/nintendo/switch-konsol-nintendo"
+                }
             },
             {
+                // FIXME: Need official price
                 title: "OLED (64GB)",
-                form: { price: 349.99, currency: "USD" }
+                form: { price: 349.99, currency: "USD" },
+                retailPrice: {
+                    value: 11299,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.turkcell.com.tr/pasaj/hobi-oyun/oyun-konsolu/nintendo/switch-oled-konsol-nintendo"
+                }
             }
         ]
     }
