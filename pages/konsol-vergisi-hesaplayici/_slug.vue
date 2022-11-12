@@ -37,7 +37,7 @@
                         <CalculatorResultFormRow
                             :value="moneyFormat(form.option.retailPrice.value, 'TRY')"
                             class="mb-2"
-                            label="Resmi satış fiyatı" />
+                            label="Piyasa fiyatı" />
 
                         <FormRow>
                             <RetailPriceUpdateInfo
