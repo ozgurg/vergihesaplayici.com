@@ -11,7 +11,7 @@ const Mode = {
 };
 
 /**
- * `null` values will be assigned while calculating
+ * `null` values will be assigned while calculating.
  */
 class Calculator {
     /**

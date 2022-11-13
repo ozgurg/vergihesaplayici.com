@@ -6,7 +6,7 @@ import {
 import { normalizeCalculatorResults } from "@/utils/normalize-calculator-results.js";
 
 /**
- * `null` values will be assigned while calculating
+ * `null` values will be assigned while calculating.
  */
 class Calculator {
     /**

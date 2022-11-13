@@ -122,9 +122,9 @@ export default {
 }
 
 /*
-We set negative margin for .vh-result-tabs when its stuck,
+We set negative margin for .vh-result-tabs when it's stuck,
 and then the transition of .v-tabs-slider-wrapper works and makes it look swinging.
-I didn't like this behavior, so I removed the transition.
+I didn't like this behavior, so I disabled the transition.
 */
 @media(max-width: 959.98px) {
     :deep(.v-tabs-slider-wrapper) {

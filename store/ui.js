@@ -1,5 +1,5 @@
 export const state = () => ({
-    drawerState: null // "null" makes the initial state closed
+    drawerState: null // "null" makes the initial state closed.
 });
 
 export const getters = {
