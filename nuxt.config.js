@@ -72,6 +72,7 @@ export default {
         "@nuxtjs/vuetify",
         "@nuxtjs/svg",
         "@nuxtjs/pwa",
+        "@/modules/append-calculator-presets-to-sitemap.js", // Must be before "@nuxtjs/sitemap"
         "@nuxtjs/sitemap",
         [
             "nuxt-canonical",
@@ -157,8 +158,8 @@ export default {
         hostname: process.env.APP_URL,
         gzip: true,
         defaults: {
-            changefreq: "monthly",
-            priority: 1,
+            changefreq: "weekly",
+            priority: 1.0,
             lastmod: new Date()
         }
     },
