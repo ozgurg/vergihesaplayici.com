@@ -140,7 +140,7 @@
                             <v-col
                                 v-for="_currencyCode in currencyCodes"
                                 :key="_currencyCode">
-                                <CalculatorShareDialogScreenshotExchangeRateItem :currency-code="_currencyCode" />
+                                <CalculatorShareDialogScreenshotExchangeRateItem :currency-code="_currencyCode"/>
                             </v-col>
                         </v-row>
                     </td>
@@ -160,7 +160,7 @@
                                 decoding="async"
                                 alt="Logo"
                                 width="136"
-                                height="18" />
+                                height="18"/>
                             <span>v{{ version }}</span>
                         </div>
                     </td>
@@ -273,6 +273,9 @@ export default {
                 vm.isSharing = false;
             }
         },
+        // This feature requires https.
+        // So if you are running it on your local IP (Like http://192.168.*) it will not work.
+        // Do not try to look for the cause of the error like me. :)
         async copy() {
             const vm = this;
 
@@ -352,6 +355,7 @@ export default {
     max-width: 100%;
     margin: 0 auto;
     border: 4px solid rgba(255, 255, 255, .75);
+
     &__overlay {
         position: absolute;
         z-index: 2;
@@ -360,6 +364,7 @@ export default {
         height: 100%;
         background: rgba(0, 0, 0, .5);
         align-items: center;
+
         #{$self}:not(#{$self}--is-short) & {
             @media (max-width: 1263.98px) {
                 align-items: start;
@@ -367,18 +372,22 @@ export default {
             }
         }
     }
+
     &__table {
         position: relative;
         z-index: 1;
         padding: 2px;
         background: #fff;
+
         .v-data-table {
             border-radius: 0
         }
+
         &__footer {
             border-top: 2px solid #fff
         }
     }
+
     &__actions {
         border-radius: 36px
     }
