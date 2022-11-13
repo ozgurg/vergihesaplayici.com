@@ -34,7 +34,9 @@ describe("kdv-hesaplayici/utils", () => {
     });
 
     describe("handleQuery", () => {
-        // TODO: Make it more robust
+        it("should return 'undefined' if query is falsy", () => {
+            expect(handleQuery(null, {})).toBe(undefined);
+        });
 
         it("should return valid \"handled query\" for valid query object", () => {
             const query = {
