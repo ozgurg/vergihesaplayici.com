@@ -25,12 +25,12 @@
         </FormRow>
 
         <template v-if="value === 0">
-            <slot />
+            <slot/>
         </template>
 
         <!-- FIXME: Adding v-if directly to the component (or <template />) breaks the component. That's why it's wrapped with <div />. -->
         <div v-if="value === 1">
-            <DisqusComments />
+            <DisqusComments/>
         </div>
     </div>
 </template>
@@ -69,7 +69,9 @@ export default {
             // Because on iOS elastic scrolling makes it behave weird.
             // Maybe it's checked too often, but it's not "that much" important for now.
             vm.scrollListener = () => {
-                vm.isStuck = vm.$refs.resultTabs.$el.offsetTop <= window.scrollY;
+                const offsetTop = parseInt(vm.$refs.resultTabs.$el.offsetTop);
+                const scrollY = Math.round(window.scrollY);
+                vm.isStuck = offsetTop <= scrollY;
             };
 
             document.addEventListener("scroll", vm.scrollListener, { passive: true });
@@ -99,6 +101,7 @@ export default {
         transition: $secondary-transition;
         top: 56px // AppBar height
     }
+
     &--stuck {
         @media(max-width: 959.98px) {
             background: map-get($material-dark-elevation-colors, "4");
@@ -126,7 +129,7 @@ We set negative margin for .vh-result-tabs when it's stuck,
 and then the transition of .v-tabs-slider-wrapper works and makes it look swinging.
 I didn't like this behavior, so I disabled the transition.
 */
-@media(max-width: 959.98px) {
+@media (max-width: 959.98px) {
     :deep(.v-tabs-slider-wrapper) {
         transition: none !important
     }
