@@ -71,9 +71,7 @@ export default {
         "@nuxtjs/dotenv",
         "@nuxtjs/eslint-module",
         "@nuxtjs/vuetify",
-        "@nuxtjs/svg"
-    ],
-    modules: [
+        "@nuxtjs/svg",
         "@nuxtjs/pwa",
         "@nuxtjs/sitemap",
         [
