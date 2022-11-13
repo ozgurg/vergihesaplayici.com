@@ -1,5 +1,4 @@
 import tr from "vuetify/es5/locale/tr";
-import colors from "vuetify/lib/util/colors";
 
 export default {
     target: "static",
@@ -119,7 +118,7 @@ export default {
     ],
     loading: {
         color: process.env.APP_PRIMARY_COLOR,
-        failedColor: colors.red.base,
+        failedColor: "#f44336",
         throttle: 600
     },
     vuetify: {
