@@ -9,7 +9,8 @@ import { Mode } from "@/data/pages/kdv-hesaplayici/kdv-hesaplayici.calculator.js
  * @returns {boolean}
  */
 const shouldShowResults = form => {
-    return form.price > 0;
+    return form.price > 0 &&
+        form.rate > 0;
 };
 
 /**
@@ -23,12 +24,16 @@ const handleQuery = (query, { modeOptions }) => {
 
     if (!query) return;
 
+    if (query.mode && modeOptions.some(object => object.value === query.mode)) {
+        form.mode = query.mode;
+    }
+
     if (query.price && query.price > 0) {
         form.price = parseFloat(query.price);
     }
 
-    if (query.mode && modeOptions.some(object => object.value === query.mode)) {
-        form.mode = query.mode;
+    if (query.rate && query.rate > 0) {
+        form.rate = parseFloat(query.rate);
     }
 
     return form;
