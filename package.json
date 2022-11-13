@@ -14,6 +14,7 @@
         "build": "nuxt build",
         "start": "nuxt start",
         "generate": "nuxt generate",
+        "emulator:hosting": "npm run generate && firebase emulators:start --only hosting",
         "lint:fix": "npm run lint -- --fix",
         "lint": "eslint --ext \".js,.vue\" .",
         "test": "jest --verbose",

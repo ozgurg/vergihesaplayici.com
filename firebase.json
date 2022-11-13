@@ -59,5 +59,13 @@
                 "type": 301
             }
         ]
+    },
+    "emulators": {
+        "hosting": {
+            "port": 8080
+        },
+        "ui": {
+            "enabled": true
+        }
     }
 }
