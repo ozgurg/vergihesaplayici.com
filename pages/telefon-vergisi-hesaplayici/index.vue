@@ -8,17 +8,17 @@
 
         <InnerContainer>
             <FormRow>
-                <h3 class="mb-4">
+                <h2 class="text-h6 mb-4">
                     Bir telefon seçin…
-                </h3>
+                </h2>
 
                 <CalculatorPresets :presets="ui.presets" />
 
                 <v-divider class="my-12" />
 
-                <h3 class="mb-4">
+                <h2 class="text-h6 mb-4">
                     …veya kendiniz hesaplayın
-                </h3>
+                </h2>
             </FormRow>
 
             <FormRow
