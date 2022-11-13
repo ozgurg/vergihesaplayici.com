@@ -1,6 +1,7 @@
 <template>
     <v-row
         class="vh-radio-grid ma-n1"
+        role="radiogroup"
         no-gutters="">
         <template v-for="_item in items">
             <v-col
@@ -9,8 +10,8 @@
                 class="pa-1">
                 <v-card
                     :class="{'vh-radio-grid__item--active primary--text primary': isItemActive(_item)}"
-                    :aria-selected="isItemActive(_item) ? 'true' : false"
-                    role="button"
+                    role="radio"
+                    :aria-checked="isItemActive(_item) ? 'true' : 'false'"
                     outlined=""
                     class="vh-radio-grid__item d-flex flex-column pa-4"
                     @click="emit(_item.value)">
@@ -60,6 +61,7 @@ export default {
         overflow: hidden;
         height: 100%;
         background: 0 !important;
+
         &--active, &:hover {
             &::before {
                 opacity: .08
