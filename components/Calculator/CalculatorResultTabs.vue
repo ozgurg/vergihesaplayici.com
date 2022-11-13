@@ -25,12 +25,12 @@
         </FormRow>
 
         <template v-if="value === 0">
-            <slot/>
+            <slot />
         </template>
 
         <!-- FIXME: Adding v-if directly to the component (or <template />) breaks the component. That's why it's wrapped with <div />. -->
         <div v-if="value === 1">
-            <DisqusComments/>
+            <DisqusComments />
         </div>
     </div>
 </template>

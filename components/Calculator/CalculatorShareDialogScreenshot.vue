@@ -140,7 +140,7 @@
                             <v-col
                                 v-for="_currencyCode in currencyCodes"
                                 :key="_currencyCode">
-                                <CalculatorShareDialogScreenshotExchangeRateItem :currency-code="_currencyCode"/>
+                                <CalculatorShareDialogScreenshotExchangeRateItem :currency-code="_currencyCode" />
                             </v-col>
                         </v-row>
                     </td>
@@ -160,7 +160,7 @@
                                 decoding="async"
                                 alt="Logo"
                                 width="136"
-                                height="18"/>
+                                height="18" />
                             <span>v{{ version }}</span>
                         </div>
                     </td>
