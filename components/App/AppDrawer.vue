@@ -52,7 +52,9 @@ export default {
 </script>
 
 <style lang="scss">
-@media(max-width: 959.98px) {
+@import "~vuetify/src/styles/styles.sass";
+
+@media #{map-get($display-breakpoints, "sm-and-down")} {
     $vh_drawerSelector: "v-navigation-drawer";
 
     html:has(.#{$vh_drawerSelector}--open) {
@@ -60,10 +62,12 @@ export default {
         width: 100%;
         height: 100%;
         inset: 0;
+
         &, *:not(.#{$vh_drawerSelector} *) {
             // FIXME: This is causing the parts under the overlay to look weird
             overflow: hidden !important
         }
+
         body {
             position: absolute;
             width: 100%;

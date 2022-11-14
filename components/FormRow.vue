@@ -28,14 +28,16 @@ export default {
 <!-- Be careful while using "scoped" -->
 <style lang="scss">
 @import "~vuetify/src/components/VTextField/_variables.scss";
+@import "~vuetify/src/styles/styles.sass";
 
 .vh-form-row {
     gap: 6px;
-    @media(min-width: 1264px) {
+    @media #{map-get($display-breakpoints, "lg-and-up")} {
         gap: 24px
     }
+
     &__label-col {
-        @media(min-width: 1264px) {
+        @media #{map-get($display-breakpoints, "lg-and-up")} {
             $width: 170px; // Optimized for "TRT bandrolü (€20,00)" label
             text-align: right;
             flex: 0 0 $width;
@@ -48,6 +50,7 @@ export default {
             }
         }
     }
+
     .v-input__append-outer {
         margin-top: 0 !important
     }

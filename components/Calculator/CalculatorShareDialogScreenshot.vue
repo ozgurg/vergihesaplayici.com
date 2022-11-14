@@ -348,6 +348,8 @@ export default {
 </script>
 
 <style lang="scss" scoped="">
+@import "~vuetify/src/styles/styles.sass";
+
 .screenshot {
     $self: &;
     position: relative;
@@ -366,7 +368,7 @@ export default {
         align-items: center;
 
         #{$self}:not(#{$self}--is-short) & {
-            @media (max-width: 1263.98px) {
+            @media #{map-get($display-breakpoints, "md-and-down")} {
                 align-items: start;
                 padding-top: 128px
             }
