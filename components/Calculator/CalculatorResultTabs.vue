@@ -88,7 +88,7 @@ export default {
     background: #121212; // Fallback color while the transition is playing/running/working? (What we called it? 🙂)
     @media #{map-get($display-breakpoints, "sm-and-down")} {
         position: sticky;
-        z-index: 5; // Same as .v-app-bar.v-app-bar--fixed
+        z-index: 4; // z-index of .v-app-bar.v-app-bar--fixed - 1
         transition: $secondary-transition;
         top: 55px // 55px = top offset (AppBar height) - 1px
     }
