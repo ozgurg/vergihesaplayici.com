@@ -86,7 +86,7 @@ export default {
 
 .vh-result-tabs {
     background: #121212; // Fallback color while the transition is playing/running/working? (What we called it? 🙂)
-    @media(max-width: 959.98px) {
+    @media #{map-get($display-breakpoints, "sm-and-down")} {
         position: sticky;
         z-index: 5; // Same as .v-app-bar.v-app-bar--fixed
         transition: $secondary-transition;
@@ -94,16 +94,19 @@ export default {
     }
 
     &--stuck {
-        @media(max-width: 959.98px) {
+        @media #{map-get($display-breakpoints, "sm-and-down")} {
             background: map-get($material-dark-elevation-colors, "4");
 
+            $px6: $spacer * 6;
+            $px8: $spacer * 8;
+
             // Negative of MainContainer v-container .px-6
-            margin-left: -24px;
-            margin-right: -24px;
-            @media (min-width: 600px) {
+            margin-left: -$px6;
+            margin-right: -$px6;
+            @media #{map-get($display-breakpoints, "sm-and-up")} {
                 // Negative of MainContainer v-container .px-sm-8
-                margin-left: -32px;
-                margin-right: -32px
+                margin-left: -$px8;
+                margin-right: -$px8
             }
         }
     }
