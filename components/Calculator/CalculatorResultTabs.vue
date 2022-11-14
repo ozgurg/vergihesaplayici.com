@@ -1,7 +1,7 @@
 <template>
     <div>
         <FormRow
-            ref="resultTabs"
+            v-intersect="vIntersect"
             :class="{'vh-result-tabs--stuck': isStuck}"
             class="vh-result-tabs mb-4">
             <v-tabs
@@ -44,8 +44,7 @@ export default {
             mdiFormatListBulletedType,
             mdiCommentMultipleOutline
         },
-        isStuck: false,
-        scrollListener: null
+        isStuck: false
     }),
     props: {
         value: {
@@ -62,30 +61,22 @@ export default {
             const vm = this;
             vm.$emit("input", value);
         },
-        _initScrollListener() {
+        onIntersect(entries) {
             const vm = this;
-
-            // I'm not using debounce or throttle here.
-            // Because on iOS elastic scrolling makes it behave weird.
-            // Maybe it's checked too often, but it's not "that much" important for now.
-            vm.scrollListener = () => {
-                const offsetTop = parseInt(vm.$refs.resultTabs.$el.offsetTop);
-                const scrollY = Math.round(window.scrollY);
-                vm.isStuck = offsetTop <= scrollY;
-            };
-
-            document.addEventListener("scroll", vm.scrollListener, { passive: true });
+            vm.isStuck = !entries[0].isIntersecting;
         }
     },
-    mounted() {
-        const vm = this;
-
-        // TODO: Do the same behavior using IntersectionObserver if possible
-        vm._initScrollListener();
-    },
-    destroyed() {
-        const vm = this;
-        document.removeEventListener("scroll", vm.scrollListener);
+    computed: {
+        vIntersect() {
+            const vm = this;
+            return {
+                handler: vm.onIntersect,
+                options: {
+                    threshold: 1,
+                    rootMargin: "-56px 0px 100% 0px" // 56px = top offset (AppBar height) / 100% makes disable bottom
+                }
+            };
+        }
     }
 };
 </script>
@@ -99,7 +90,7 @@ export default {
         position: sticky;
         z-index: 5; // Same as .v-app-bar.v-app-bar--fixed
         transition: $secondary-transition;
-        top: 56px // AppBar height
+        top: 55px // 55px = top offset (AppBar height) - 1px
     }
 
     &--stuck {
