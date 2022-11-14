@@ -1,10 +1,11 @@
 import tr from "vuetify/es5/locale/tr";
-import colors from "vuetify/lib/util/colors";
 
 export default {
     target: "static",
     components: true,
-    generate: { fallback: "404.html" },
+    generate: {
+        fallback: "404.html"
+    },
     server: {
         host: process.env.HOST,
         port: process.env.PORT
@@ -23,6 +24,10 @@ export default {
                 content: "index, follow"
             },
             {
+                "http-equiv": "X-UA-Compatible",
+                "content": "ie=edge"
+            },
+            {
                 name: "format-detection",
                 content: "telephone=no"
             },
@@ -31,20 +36,12 @@ export default {
                 content: "no"
             },
             {
-                name: "twitter:card",
-                content: "summary"
-            },
-            {
                 name: "twitter:site",
                 content: "@ozgurg0"
             },
             {
                 name: "twitter:creator",
                 content: "@ozgurg0"
-            },
-            {
-                "http-equiv": "X-UA-Compatible",
-                "content": "ie=edge"
             }
         ],
         link: [
@@ -59,7 +56,8 @@ export default {
             },
             {
                 rel: "preconnect",
-                href: "https://fonts.googleapis.com"
+                href: "https://fonts.googleapis.com",
+                crossorigin: ""
             },
             {
                 rel: "preconnect",
@@ -72,10 +70,9 @@ export default {
         "@nuxtjs/dotenv",
         "@nuxtjs/eslint-module",
         "@nuxtjs/vuetify",
-        "@nuxtjs/svg"
-    ],
-    modules: [
+        "@nuxtjs/svg",
         "@nuxtjs/pwa",
+        "@/modules/append-calculator-presets-to-sitemap.js", // Must be before "@nuxtjs/sitemap"
         "@nuxtjs/sitemap",
         [
             "nuxt-canonical",
@@ -92,41 +89,49 @@ export default {
         indicator: false,
         extractCSS: {
             ignoreOrder: true
+        },
+        html: {
+            minify: {
+                // https://stackoverflow.com/a/64739284/7841581
+                collapseBooleanAttributes: true,
+                decodeEntities: true,
+                minifyCSS: true,
+                minifyJS: true,
+                processConditionalComments: true,
+                removeEmptyAttributes: true,
+                removeRedundantAttributes: true,
+                trimCustomFragments: true,
+                useShortDoctype: true,
+                preserveLineBreaks: false,
+                collapseWhitespace: true
+            }
         }
     },
     css: [
-        "@/assets/css/style.scss"
+        "@/assets/scss/style.scss"
     ],
     plugins: [
-        {
-            src: "@/plugins/firebase.js",
-            mode: "client"
-        },
-        {
-            src: "@/plugins/vue-clipboard2.js",
-            mode: "client"
-        },
-        {
-            src: "@/plugins/vue-disqus.js",
-            mode: "client"
-        },
-        {
-            src: "@/plugins/vue-html2canvas.js",
-            mode: "client"
-        }
+        "@/plugins/firebase.client.js",
+        "@/plugins/vue-clipboard2.client.js",
+        "@/plugins/vue-disqus.client.js",
+        "@/plugins/vue-html2canvas.client.js",
+        "@/plugins/number-directive.client.js"
     ],
     loading: {
         color: process.env.APP_PRIMARY_COLOR,
-        failedColor: colors.red.base,
+        failedColor: "#f44336",
         throttle: 600
     },
     vuetify: {
+        customVariables: [
+            "@/assets/scss/vuetify-customization.scss"
+        ],
         treeShake: true,
         defaultAssets: {
+            icons: false,
             font: {
                 family: "Rubik"
-            },
-            icons: false
+            }
         },
         lang: {
             locales: { tr },
@@ -153,8 +158,8 @@ export default {
         hostname: process.env.APP_URL,
         gzip: true,
         defaults: {
-            changefreq: "monthly",
-            priority: 1,
+            changefreq: "weekly",
+            priority: 1.0,
             lastmod: new Date()
         }
     },
@@ -172,15 +177,12 @@ export default {
     // Disable unused Nuxt features
     loadingIndicator: false,
     fetch: {
-        client: false,
-        server: false
+        client: false
     },
     features: {
         middleware: false,
-        transitions: false,
         deprecations: false,
         validate: false,
-        asyncData: false,
         fetch: false,
         clientOnline: false,
         clientPrefetch: false,

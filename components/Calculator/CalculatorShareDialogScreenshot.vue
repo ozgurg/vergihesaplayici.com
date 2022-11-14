@@ -1,44 +1,133 @@
 <template>
-    <div v-bind="$attrs">
+    <div
+        class="screenshot"
+        :class="{'screenshot--is-short': isTableShort}">
+        <div class="screenshot__overlay d-flex justify-center">
+            <div class="screenshot__actions primary d-inline-flex flex-column flex-grow-0 pa-6">
+                <v-btn
+                    :loading="isDownloading"
+                    class="mb-3"
+                    elevation="0"
+                    color="secondary"
+                    large=""
+                    width="128"
+                    @click="download()">
+                    <template v-if="isDownloaded">
+                        <v-icon size="24">
+                            {{ icons.mdiCheck }}
+                        </v-icon>
+                    </template>
+                    <template v-else>
+                        <v-icon left="">
+                            {{ icons.mdiDownload }}
+                        </v-icon>
+                        <span>İndir</span>
+                    </template>
+                </v-btn>
+
+                <template v-if="isWebShareApiSupported">
+                    <v-btn
+                        :loading="isSharing"
+                        class="mb-3"
+                        outlined=""
+                        elevation="0"
+                        color="secondary"
+                        large=""
+                        width="128"
+                        @click="shareViaWebShareApi()">
+                        <v-icon left="">
+                            {{ icons.mdiExportVariant }}
+                        </v-icon>
+                        <span>Paylaş...</span>
+                    </v-btn>
+                </template>
+
+                <v-btn
+                    :loading="isCopying"
+                    outlined=""
+                    elevation="0"
+                    color="secondary"
+                    large=""
+                    width="128"
+                    @click="copy()">
+                    <template v-if="isCopied">
+                        <v-icon size="24">
+                            {{ icons.mdiCheck }}
+                        </v-icon>
+                    </template>
+                    <template v-else>
+                        <v-icon left="">
+                            {{ icons.mdiContentCopy }}
+                        </v-icon>
+                        <span>Kopyala</span>
+                    </template>
+                </v-btn>
+            </div>
+        </div>
+
         <div
             ref="table"
-            class="screenshot">
-            <v-simple-table>
+            class="screenshot__table">
+            <v-simple-table dense="">
                 <tbody>
-                <tr>
-                    <td class="screenshot__title text-uppercase text-center">
-                        {{ title }}
-                    </td>
-                </tr>
+                <template v-if="presetTitle">
+                    <tr>
+                        <td class="secondary text-caption text-center py-1">
+                            {{ calculatorTitle }}
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td
-                        v-ripple=""
-                        @click="changeTitle"
-                        title="Başlığı değiştir"
-                        role="button"
-                        class="screenshot__header primary text-center py-2 pointer-events-all">
-                        <template v-if="hasTitle">
-                            <!-- eslint-disable vue/no-v-html -->
-                            <span
-                                v-html="actualTitle"
-                                class="screenshot__header" />
-                        </template>
-                        <template v-else>
-                            <i class="screenshot__header font-weight-thin">Başlıksız</i>
-                        </template>
-                    </td>
-                </tr>
+                    <tr>
+                        <td class="primary secondary--text text-center font-weight-medium text-body-1 py-2">
+                            {{ presetTitle }}
+                            <div
+                                v-if="presetOptionTitle"
+                                class="text-body-2">
+                                {{ presetOptionTitle }}
+                            </div>
+                        </td>
+                    </tr>
+                </template>
+                <template v-else>
+                    <tr>
+                        <td class="primary secondary--text text-center font-weight-medium text-body-1 py-2">
+                            {{ calculatorTitle }}
+                        </td>
+                    </tr>
+                </template>
 
-                <template v-for="item in data.input">
-                    <tr :key="item.key">
-                        <td class="py-2">
+                <template v-for="_item in input">
+                    <tr :key="_item.key">
+                        <td class="py-3">
                             <div class="d-flex justify-space-between align-center">
-                                <div>
-                                    {{ item.key }}
+                                <div class="text-left flex-grow-1 flex-shrink-0">
+                                    {{ _item.key }}
                                 </div>
-                                <div class="text-end ps-4">
-                                    {{ item.value }}
+                                <div class="text-right font-weight-medium ps-4">
+                                    {{ _item.value }}
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </template>
+
+                <template v-if="input.length > 0">
+                    <tr>
+                        <td class="text-uppercase text-center  caption grey darken-3 py-1">
+                            Sonuçlar
+                        </td>
+                    </tr>
+                </template>
+
+                <template v-for="_item in output">
+                    <tr :key="_item.key">
+                        <td class="py-3">
+                            <div class="d-flex justify-space-between align-center">
+                                <div class="text-left flex-grow-1 flex-shrink-0">
+                                    {{ _item.key }}
+                                </div>
+                                <div class="text-right font-weight-medium ps-4">
+                                    {{ _item.value }}
                                 </div>
                             </div>
                         </td>
@@ -46,54 +135,32 @@
                 </template>
 
                 <tr>
-                    <td class="text-uppercase grey darken-3 text-center">
-                        Sonuçlar
-                    </td>
-                </tr>
-
-                <template v-for="item in data.output">
-                    <tr :key="item.key">
-                        <td class="py-2">
-                            <div class="d-flex justify-space-between align-center">
-                                <div>
-                                    {{ item.key }}
-                                </div>
-                                <div class="text-end ps-4">
-                                    {{ item.value }}
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </template>
-
-                <tr>
-                    <td
-                        class="text-center pa-2"
-                        style="border-top:2px solid #fff">
-                        <v-row no-gutters>
+                    <td class="screenshot__table__footer text-center py-1">
+                        <v-row no-gutters="">
                             <v-col
-                                v-for="(currency, index) in currencies"
-                                :key="index">
-                                <CalculatorShareDialogScreenshotExchangeRateItem :currency="currency" />
+                                v-for="_currencyCode in currencyCodes"
+                                :key="_currencyCode">
+                                <CalculatorShareDialogScreenshotExchangeRateItem :currency-code="_currencyCode" />
                             </v-col>
                         </v-row>
                     </td>
                 </tr>
 
                 <tr>
-                    <td class="text-center py-2 caption">
-                        <div class="grey--text text--lighten-1 mb-1">
+                    <td class="text-center pt-1 pb-2">
+                        <div class="grey--text text--lighten-1 caption">
                             {{ date.toLocaleString("tr-TR") }}
                         </div>
 
-                        <div class="d-flex align-center justify-center flex-row primary--text">
+                        <div class="d-flex align-center justify-center flex-row primary--text caption">
                             <img
                                 :src="require('@/assets/img/logo-screenshot.png')"
                                 class="me-1"
-                                alt="Vergi Hesaplayıcı Logo"
-                                draggable="false"
-                                height="18"
-                                width="136" />
+                                loading="lazy"
+                                decoding="async"
+                                alt="Logo"
+                                width="136"
+                                height="18" />
                             <span>v{{ version }}</span>
                         </div>
                     </td>
@@ -101,251 +168,234 @@
                 </tbody>
             </v-simple-table>
         </div>
-
-        <v-divider class="my-6" />
-
-        <div class="text-center">
-            <div class="position-relative d-inline-block">
-                <v-btn
-                    @click="download()"
-                    outlined=""
-                    color="primary">
-                    <v-icon left="">
-                        {{ icons.mdiDownload }}
-                    </v-icon>
-                    İndir
-                </v-btn>
-
-                <v-btn
-                    @click="copy()"
-                    outlined=""
-                    color="primary">
-                    <v-icon left="">
-                        {{ icons.mdiContentCopy }}
-                    </v-icon>
-                    Kopyala
-                </v-btn>
-
-                <v-fade-transition>
-                    <v-overlay
-                        v-if="isDownloaded || isCopied || isLoading"
-                        :value="true"
-                        absolute=""
-                        opacity="1">
-                        <v-alert
-                            color="primary"
-                            text=""
-                            outlined=""
-                            class="pa-0 d-flex align-center flex-row justify-center w-100 h-100">
-                            <v-progress-circular
-                                v-if="isLoading"
-                                indeterminate=""
-                                size="24"
-                                width="2"
-                                color="primary" />
-
-                            <template v-else>
-                                <div class="d-flex align-center">
-                                    <v-icon
-                                        left=""
-                                        color="primary">
-                                        {{ icons.mdiCheck }}
-                                    </v-icon>
-
-                                    <span v-if="isDownloaded" class="screenshot__success-text">İndirildi</span>
-                                    <span v-else-if="isCopied" class="screenshot__success-text">Kopyalandı</span>
-                                </div>
-                            </template>
-                        </v-alert>
-                    </v-overlay>
-                </v-fade-transition>
-            </div>
-        </div>
     </div>
 </template>
 
 <script>
-import { mdiCheck, mdiContentCopy, mdiDownload } from "@mdi/js";
+import { mdiCheck, mdiContentCopy, mdiDownload, mdiExportVariant } from "@mdi/js";
 import { version } from "@/package.json";
-import { downloadFile } from "@/utils/download-file";
+import { downloadFile } from "@/utils/download-file.js";
 import { dataUrlToBlob } from "@/utils/data-url-to-blob.js";
-import { createCalculatorMatchingPresetTitles } from "@/utils/find-calculator-matching-presets.js";
 
 export default {
     data: () => ({
         icons: {
             mdiContentCopy,
             mdiDownload,
-            mdiCheck
+            mdiCheck,
+            mdiExportVariant
         },
-        version,
+
+        isTableShort: false,
+
         date: new Date(),
-        isLoading: false,
+        version,
+
+        isDownloading: false,
         isDownloaded: false,
-        isCopied: false,
-        customTitle: null,
-        hasTitle: true
+
+        isSharing: false,
+
+        isCopying: false,
+        isCopied: false
     }),
     props: {
-        data: {
-            type: Object,
+        input: {
+            type: Array,
+            default: () => ([])
+        },
+        output: {
+            type: Array,
             required: true
         },
-        title: {
+        calculatorTitle: {
             type: String,
             required: true
         },
-        matchingPresets: {
-            type: Array,
-            default: () => []
+        presetTitle: {
+            type: String,
+            default: null
+        },
+        presetOptionTitle: {
+            type: String,
+            default: null
         }
     },
     methods: {
-        changeTitle() {
+        async download() {
             const vm = this;
 
-            const customTitle = prompt("Başlığı değiştirin", vm.actualTitle);
-            if (customTitle) {
-                vm.customTitle = customTitle;
-                vm.hasTitle = true;
-            } else {
-                vm.hasTitle = false;
+            vm.isDownloading = true;
+            vm.isDownloaded = false;
+
+            try {
+                const screenshot = await vm._captureScreenshotOfTable();
+                const fileName = `vergihesaplayici-${vm.date.getTime()}.png`;
+                await downloadFile(screenshot, fileName);
+            } catch {
+                alert("Ekran görüntüsü indirilemiyor.");
+            } finally {
+                vm.isDownloading = false;
+                vm.isDownloaded = true;
+
+                setTimeout(() => {
+                    vm.isDownloading = false;
+                    vm.isDownloaded = false;
+                }, 1500);
             }
         },
-        async captureScreenshot() {
+        async shareViaWebShareApi() {
             const vm = this;
-            return await vm.$html2canvas(vm.$refs.table, {
+
+            vm.isSharing = true;
+
+            try {
+                const screenshot = await vm._captureScreenshotOfTable();
+                const fileName = `vergihesaplayici-${vm.date.getTime()}.png`;
+                const screenshotToBlob = await dataUrlToBlob(screenshot);
+
+                const screenshotFile = new File(
+                    [screenshotToBlob],
+                    fileName,
+                    {
+                        type: "image/jpeg",
+                        lastModified: vm.date.getTime()
+                    }
+                );
+
+                await navigator.share({
+                    title: document.title,
+                    text: document.title,
+                    files: [screenshotFile]
+                });
+            } catch (error) {
+            } finally {
+                vm.isSharing = false;
+            }
+        },
+        // This feature requires https.
+        // So if you are running it on your local IP (Like http://192.168.*) it will not work.
+        // Do not try to look for the cause of the error like me. :)
+        async copy() {
+            const vm = this;
+
+            vm.isCopying = true;
+            vm.isCopied = false;
+
+            try {
+                await vm._requestClipboardPermission();
+                const screenshot = await vm._captureScreenshotOfTable();
+                const screenshotToBlob = await dataUrlToBlob(screenshot);
+                await vm._copyScreenshotToClipboard(screenshotToBlob);
+
+                vm.isCopying = false;
+                vm.isCopied = true;
+
+                setTimeout(() => {
+                    vm.isCopying = false;
+                    vm.isCopied = false;
+                }, 1500);
+            } catch {
+                vm.isCopying = false;
+                vm.isCopied = false;
+
+                if (confirm("Ekran görüntüsü kopyalanamıyor. Kopyalamak yerine indirmek ister misiniz?")) {
+                    await vm.download();
+                }
+            }
+        },
+        _captureScreenshotOfTable() {
+            const vm = this;
+            return vm.$html2canvas(vm.$refs.table, {
+                width: vm.$refs.table.offsetWidth,
                 logging: false,
-                width: 342,
                 backgroundColor: "#fff",
                 type: "dataURL"
             });
         },
-        async requestClipboardPermission() {
-            return await navigator.permissions.query({
+        _requestClipboardPermission() {
+            return navigator.permissions.query({
                 name: "clipboard-write",
                 allowWithoutGesture: false
             });
         },
-        async copyScreenshotToClipboard(screenshot) {
-            return await navigator.clipboard.write([
+        _copyScreenshotToClipboard(screenshot) {
+            // "navigator.clipboard" requires HTTPS.
+            // Don't make the same mistake I did if you're running it on your local IP. :)
+            return navigator.clipboard.write([
                 new window.ClipboardItem({
                     "image/png": screenshot
                 })
             ]);
-        },
-        async copy() {
-            const vm = this;
-
-            vm.isLoading = true;
-
-            try {
-                await vm.requestClipboardPermission();
-
-                const screenshot = await vm.captureScreenshot();
-                const screenshotToBlob = await dataUrlToBlob(screenshot);
-
-                await vm.copyScreenshotToClipboard(screenshotToBlob);
-
-                setTimeout(() => {
-                    vm.isLoading = false;
-
-                    vm.isCopied = true;
-                    setTimeout(() => {
-                        vm.isCopied = false;
-                    }, 1500);
-                }, 375);
-            } catch {
-                if (confirm("Kullandığınız tarayıcı bu özelliği desteklemiyor. Kopyalamak yerine indirmek ister misiniz")) {
-                    await vm.download();
-                } else {
-                    vm.isLoading = false;
-                }
-            }
-        },
-        async download() {
-            const vm = this;
-
-            vm.isLoading = true;
-
-            try {
-                const screenshot = await vm.captureScreenshot();
-                const fileName = `vergihesaplayici-${vm.date.getTime()}.png`;
-
-                await downloadFile(screenshot, () => fileName);
-
-                setTimeout(() => {
-                    vm.isLoading = false;
-
-                    vm.isDownloaded = true;
-                    setTimeout(() => {
-                        vm.isDownloaded = false;
-                    }, 1500);
-                }, 375);
-            } catch {
-                alert("Bir hata oluştu.");
-
-                vm.isLoading = false;
-            }
         }
     },
     computed: {
-        currencies() {
+        isWebShareApiSupported() {
+            return navigator.share;
+        },
+        currencyCodes() {
             const vm = this;
             return vm.$store.getters["exchange-rates/availableCurrenciesExceptTRY"];
-        },
-        presetTitle() {
-            const vm = this;
-            return vm.matchingPresets !== undefined ? createCalculatorMatchingPresetTitles(vm.matchingPresets).join("<br />") : false;
-        },
-        actualTitle() {
-            const vm = this;
-            return vm.customTitle ? vm.customTitle : vm.presetTitle;
         }
     },
     mounted() {
         const vm = this;
-        vm.hasTitle = vm.actualTitle;
+        setTimeout(() => {
+            vm.isTableShort = vm.$refs.table.clientHeight < 400;
+        }, 0);
     }
 };
 </script>
 
 <style lang="scss" scoped="">
+@import "~vuetify/src/styles/styles.sass";
+
 .screenshot {
+    $self: &;
     position: relative;
-    width: 342px;
-    min-width: 300px;
+    width: 300px;
     max-width: 100%;
     margin: 0 auto;
-    padding: 2px;
-    pointer-events: none;
-    background: #fff;
+    border: 4px solid rgba(255, 255, 255, .75);
 
-    &__title {
-        background: #00262C
+    &__overlay {
+        position: absolute;
+        z-index: 2;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .5);
+        align-items: center;
+
+        #{$self}:not(#{$self}--is-short) & {
+            @media #{map-get($display-breakpoints, "md-and-down")} {
+                align-items: start;
+                padding-top: 128px
+            }
+        }
     }
 
-    &__header {
-        color: #00262C;
-        line-height: 24px;
-        font-size: 16px;
-        font-weight: 500
+    &__table {
+        position: relative;
+        z-index: 1;
+        padding: 2px;
+        background: #fff;
+
+        .v-data-table {
+            border-radius: 0
+        }
+
+        &__footer {
+            border-top: 2px solid #fff
+        }
     }
 
-    &__success-text {
-        // Same as button
-        font-size: .875rem
+    &__actions {
+        border-radius: 36px
     }
 }
-</style>
 
-<style scoped="">
-:deep(.v-overlay__content) {
-    width: 100%;
-    height: 100%
-}
-
-:deep(.v-alert) {
-    border-radius: 12px
+:deep(.v-icon) {
+    transition: none !important
 }
 </style>

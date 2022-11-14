@@ -1,37 +1,18 @@
 <template>
-    <v-row
-        v-bind="$attrs"
-        dense="">
-        <v-col
-            v-for="(calculator, index) in calculators"
-            :key="index"
-            cols="12"
-            md="6">
-            <v-card
-                :to="calculator.url"
-                link=""
-                class="pa-8 overflow-hidden"
-                elevation="4">
-                <v-icon
-                    class="primary--text"
-                    size="64">
-                    {{ calculator.icon }}
-                </v-icon>
-
-                <h2 class="text-h6 mt-4 mb-2 text--primary">
-                    {{ calculator.title }}
-                </h2>
-
-                <p class="text-subtitle-2 mb-0 text--secondary">
-                    {{ calculator.description }}
-                </p>
-            </v-card>
-        </v-col>
+    <v-row>
+        <template v-for="_calculator in calculators">
+            <CalculatorGridItem
+                :key="_calculator.title"
+                :url="_calculator.url"
+                :icon="_calculator.icon"
+                :title="_calculator.title"
+                :summary="_calculator.summary" />
+        </template>
     </v-row>
 </template>
 
 <script>
-import * as calculators from "@/data/calculators.js";
+import { calculators } from "@/data/calculator-list.js";
 
 export default {
     data: () => ({

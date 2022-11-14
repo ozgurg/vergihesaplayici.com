@@ -1,112 +1,87 @@
 <template>
     <v-dialog
-        @click:outside="close()"
-        @close="close()"
-        v-bind="$attrs"
         :value="value"
         :fullscreen="$vuetify.breakpoint.smAndDown"
-        :transition="$vuetify.breakpoint.smAndDown ? 'dialog-bottom-transition' : 'dialog-transition'"
+        :transition="transition"
+        content-class="vh-dialog"
         overlay-color="#000"
         overlay-opacity=".75"
-        width="700">
-        <v-card :flat="$vuetify.breakpoint.smAndDown">
+        width="700"
+        @click:outside="close()"
+        @close="close()">
+        <div class="vh-dialog__header">
             <v-toolbar
-                class="dialog-toolbar px-2"
-                flat="">
+                class="px-2"
+                elevation="0">
                 <v-toolbar-title class="text-center">
-                    Paylaş
+                    Sonuçları paylaş
                 </v-toolbar-title>
 
                 <v-spacer />
 
                 <v-btn
-                    @click="close()"
-                    icon="">
-                    <v-icon>{{ icons.mdiClose }}</v-icon>
+                    icon=""
+                    @click="close()">
+                    <v-icon>
+                        {{ icons.mdiClose }}
+                    </v-icon>
                 </v-btn>
             </v-toolbar>
 
-            <v-expansion-panels
-                :value="0"
-                flat=""
-                tile=""
-                accordion=""
-                focusable="">
-                <v-expansion-panel>
-                    <v-expansion-panel-header>
-                        <div class="d-flex align-center">
-                            <v-icon
-                                class="mr-4"
-                                left="">
-                                {{ icons.mdiLink }}
-                            </v-icon>
-                            Bağlantı
-                        </div>
-                    </v-expansion-panel-header>
-                    <v-expansion-panel-content>
-                        <div class="pl-2 pr-2 pt-8 pb-4">
-                            <CalculatorShareDialogUrl :data="formData" />
-                        </div>
-                    </v-expansion-panel-content>
+            <v-tabs
+                v-model="currentTab"
+                :grow="$vuetify.breakpoint.mdAndDown"
+                :fixed-tabs="!$vuetify.breakpoint.mdAndDown"
+                class="vh-share-tabs"
+                background-color="transparent">
+                <v-tab>
+                    <v-icon left="">
+                        {{ icons.mdiLink }}
+                    </v-icon>
+                    <span>Bağlantı</span>
+                </v-tab>
+                <v-tab>
+                    <v-icon left="">
+                        {{ icons.mdiCellphoneScreenshot }}
+                    </v-icon>
+                    <span>Ekran görüntüsü</span>
+                </v-tab>
+            </v-tabs>
+        </div>
 
-                    <v-divider />
-                </v-expansion-panel>
-
-                <v-expansion-panel>
-                    <v-expansion-panel-header>
-                        <div class="d-flex align-center">
-                            <v-icon
-                                class="mr-4"
-                                left="">
-                                {{ icons.mdiCellphoneScreenshot }}
-                            </v-icon>
-                            Ekran görüntüsü
-                        </div>
-                    </v-expansion-panel-header>
-                    <v-expansion-panel-content>
-                        <div class="pl-2 pr-2 pt-8 pb-4">
-                            <CalculatorShareDialogScreenshot
-                                :data="screenshotData"
-                                :title="title"
-                                :matching-presets="matchingPresets" />
-                        </div>
-                    </v-expansion-panel-content>
-
-                    <v-divider />
-                </v-expansion-panel>
-
-                <v-expansion-panel>
-                    <v-expansion-panel-header>
-                        <div class="d-flex align-center">
-                            <v-icon
-                                class="mr-4"
-                                left="">
-                                {{ icons.mdiShareVariant }}
-                            </v-icon>
-                            Sosyal medya
-                        </div>
-                    </v-expansion-panel-header>
-                    <v-expansion-panel-content>
-                        <div class="pl-2 pr-2 pt-8 pb-4">
-                            <CalculatorShareDialogSocialMedia :data="formData" />
-                        </div>
-                    </v-expansion-panel-content>
-                </v-expansion-panel>
-            </v-expansion-panels>
-        </v-card>
+        <div class="vh-dialog__content">
+            <template v-if="currentTab === 0">
+                <div class="d-flex flex-column h-100">
+                    <div class="mt-auto py-10 px-6 py-lg-12 px-lg-8">
+                        <CalculatorShareDialogUrl :form="form" />
+                    </div>
+                </div>
+            </template>
+            <template v-else-if="currentTab === 1">
+                <div class="d-flex flex-column h-100">
+                    <div class="mt-auto py-10 py-lg-6 px-2">
+                        <CalculatorShareDialogScreenshot
+                            :input="screenshotInput"
+                            :output="screenshotOutput"
+                            :calculator-title="calculatorTitle"
+                            :preset-title="presetTitle"
+                            :preset-option-title="presetOptionTitle" />
+                    </div>
+                </div>
+            </template>
+        </div>
     </v-dialog>
 </template>
 
 <script>
-import { mdiCellphoneScreenshot, mdiClose, mdiLink, mdiShareVariant } from "@mdi/js";
+import { mdiCellphoneScreenshot, mdiClose, mdiLink } from "@mdi/js";
 
 export default {
     data: () => ({
         icons: {
             mdiClose,
             mdiLink,
-            mdiCellphoneScreenshot,
-            mdiShareVariant
+            mdiCellphoneScreenshot
         },
         currentTab: 0
     }),
@@ -114,21 +89,29 @@ export default {
         value: {
             type: Boolean
         },
-        formData: {
+        form: {
             type: Object,
             required: true
         },
-        screenshotData: {
-            type: Object,
+        screenshotInput: {
+            type: Array,
+            default: () => ([])
+        },
+        screenshotOutput: {
+            type: Array,
             required: true
         },
-        title: {
+        calculatorTitle: {
             type: String,
             required: true
         },
-        matchingPresets: {
-            type: Array,
-            default: () => []
+        presetTitle: {
+            type: String,
+            default: null
+        },
+        presetOptionTitle: {
+            type: String,
+            default: null
         }
     },
     methods: {
@@ -136,14 +119,22 @@ export default {
             const vm = this;
             vm.$emit("input", false);
         }
+    },
+    computed: {
+        transition() {
+            const vm = this;
+            return vm.$vuetify.breakpoint.smAndDown ?
+                "dialog-bottom-transition" :
+                "dialog-transition";
+        }
     }
 };
 </script>
 
-<style scoped="">
-.dialog-toolbar {
-    position: sticky;
-    top: 0;
-    z-index: 50
+<style lang="scss" scoped="">
+@import "~vuetify/src/styles/styles.sass";
+
+.vh-share-tabs {
+    background: map-get($material-dark-elevation-colors, "4")
 }
 </style>

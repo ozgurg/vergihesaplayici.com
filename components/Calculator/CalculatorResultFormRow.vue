@@ -1,7 +1,5 @@
 <template>
-    <FormRow
-        v-bind="$attrs"
-        :label="label">
+    <FormRow :label="label">
         <v-text-field
             :value="value"
             :aria-label="label"
@@ -10,7 +8,10 @@
             outlined=""
             readonly="">
             <template #append>
-                <CopyButton :value="value" />
+                <div class="py-2">
+                    <v-divider vertical="" />
+                </div>
+                <CopyButton :value-to-copy="value" />
             </template>
         </v-text-field>
     </FormRow>
@@ -36,9 +37,5 @@ export default {
     padding-left: 12px !important;
     margin-top: auto !important;
     margin-bottom: auto !important
-}
-
-:deep(.v-input__slot) {
-    padding-right: 0 !important
 }
 </style>

@@ -1,0 +1,10 @@
+html, body {
+    background: #121212
+}
+
+body {
+    user-select: none
+}
+
+@import "_utilities.scss";
+@import "_dialog.scss";

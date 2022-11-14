@@ -1,53 +1,41 @@
 <template>
-	<div>
-        <AppHeader>
-            Vergi Hesaplayıcı
-        </AppHeader>
+    <div>
+        <PageTitle>
+            {{ page.title }}
+        </PageTitle>
 
         <InnerContainer>
-            <p class="mb-4">
+            <p class="mb-10 text-subtitle-1">
                 vergihesaplayici.com, vergi hesaplar.
             </p>
 
-            <OsitaIheme />
+            <OsitaIhemeVideo />
 
-            <v-divider class="my-8" />
+            <v-divider class="my-15" />
 
-            <h2 class="mb-2">
-                Hesaplayıcılar
+            <h2 class="mb-4">
+                <nuxt-link
+                    :to="Hesaplayicilar.url"
+                    class="text-decoration-none white--text">
+                    {{ Hesaplayicilar.title }}
+                </nuxt-link>
             </h2>
             <CalculatorGrid />
         </InnerContainer>
-	</div>
+    </div>
 </template>
 
 <script>
-import openGraphImage from "@/assets/img/og/ana-sayfa.jpg";
-
-const meta = {
-    title: "Vergi Hesaplayıcı",
-    description: "Türkiye'deki farklı ürün gruplarının yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın."
-};
+import page from "@/data/pages/ana-sayfa.page.js";
+import Hesaplayicilar from "@/data/pages/hesaplayicilar.page.js";
 
 export default {
-    layout: "default/index",
-    data: () => ({
-        head: {
-            titleTemplate: null,
-            title: meta.title,
-            meta: [
-                { hid: "title", name: "title", content: meta.title },
-                { hid: "description", name: "description", content: meta.description },
-                { hid: "og:title", name: "og:title", content: meta.title },
-                { hid: "og:description", name: "og:description", content: meta.description },
-                { hid: "og:image", name: "og:image", content: openGraphImage },
-                { name: "twitter:image", content: openGraphImage }
-            ]
-        }
-    }),
     head() {
-        const vm = this;
-        return vm.head;
-    }
+        return this.page.head;
+    },
+    data: () => ({
+        page,
+        Hesaplayicilar
+    })
 };
 </script>

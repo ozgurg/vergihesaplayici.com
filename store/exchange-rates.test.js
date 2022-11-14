@@ -88,6 +88,11 @@ describe("store/exchange-rates", () => {
     });
 
     describe("getters", () => {
+        it("[currencies] should return list of currencies as an array", () => {
+            const currencies = store.getters.currencies(state);
+            expect(currencies).toStrictEqual(state.currencies);
+        });
+
         it("[availableCurrencies] should return list of available currencies as an array", () => {
             const availableCurrencies = store.getters.availableCurrencies(state);
             expect(availableCurrencies).toStrictEqual(["TRY", "USD", "EUR"]);

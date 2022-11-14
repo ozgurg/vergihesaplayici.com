@@ -1,16 +1,10 @@
 <template>
-    <v-app-bar
-        v-bind="$attrs"
-        elevation="0"
-        flat=""
-        class="v-bar--underline">
+    <v-app-bar app="">
         <v-app-bar-nav-icon
-            @click="toggleDrawer()"
-            aria-label="Menüyü aç" />
+            aria-label="Menüyü aç"
+            @click="toggleDrawer()" />
 
-        <div class="d-flex justify-center flex-grow-1">
-            <AppDrawerLogo style="margin-left:-48px" />
-        </div>
+        <AppBarLogo />
     </v-app-bar>
 </template>
 

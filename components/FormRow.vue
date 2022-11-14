@@ -1,11 +1,11 @@
 <template>
-    <div
-        v-bind="$attrs"
-        class="vh-form-row row align-center no-gutters flex-column flex-lg-row">
+    <div class="vh-form-row row no-gutters flex-column flex-lg-row">
         <div class="vh-form-row__label-col col">
-            <label v-if="label">
-                {{ label }}
-            </label>
+            <template v-if="label">
+                <label>
+                    {{ label }}
+                </label>
+            </template>
         </div>
 
         <div class="col">
@@ -25,24 +25,34 @@ export default {
 };
 </script>
 
+<!-- Be careful while using "scoped" -->
 <style lang="scss">
+@import "~vuetify/src/components/VTextField/_variables.scss";
+@import "~vuetify/src/styles/styles.sass";
+
 .vh-form-row {
-    gap: 8px;
-    @media(min-width: 1264px) {
+    gap: 6px;
+    @media #{map-get($display-breakpoints, "lg-and-up")} {
         gap: 24px
     }
+
     &__label-col {
-        @media(min-width: 1264px) {
+        @media #{map-get($display-breakpoints, "lg-and-up")} {
+            $width: 170px; // Optimized for "TRT bandrolü (€20,00)" label
             text-align: right;
-            flex: 0 0 200px;
-            max-width: 200px
+            flex: 0 0 $width;
+            max-width: $width;
+            label {
+                height: min(#{$text-field-filled-full-width-outlined-slot-min-height}, 100%);
+                display: flex;
+                align-items: center;
+                justify-content: flex-end
+            }
         }
     }
-}
-</style>
 
-<style scoped="">
-:deep(.v-input__append-outer) {
-    margin-top: 0 !important
+    .v-input__append-outer {
+        margin-top: 0 !important
+    }
 }
 </style>

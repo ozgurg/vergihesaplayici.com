@@ -1,41 +1,24 @@
 <template>
-    <!-- TODO: Make v-chip one -->
-    <div
-        v-bind="$attrs"
-        class="vh-presets">
-        <template v-for="preset in presets">
-            <template v-if="$scopedSlots.tooltip">
-                <v-tooltip
-                    :key="preset.id"
-                    top="">
-                    <template #activator="{ on, attrs }">
-                        <v-chip
-                            @click="choosePreset(preset)"
-                            v-on="on"
-                            v-bind="attrs"
-                            role="button"
-                            :class="{'primary--text primary': value.includes(preset.id)}"
-                            outlined="">
-                            {{ preset.title }}
-                        </v-chip>
-                    </template>
-                    <div>
-                        <slot
-                            name="tooltip"
-                            :preset="preset" />
-                    </div>
-                </v-tooltip>
-            </template>
-            <template v-else>
-                <v-chip
-                    :key="preset.id"
-                    @click="choosePreset(preset)"
-                    role="button"
-                    :class="{'primary--text primary': value.includes(preset.id)}"
-                    outlined="">
-                    {{ preset.title }}
-                </v-chip>
-            </template>
+    <div class="d-flex flex-wrap gap-2">
+        <template v-for="_preset in presets">
+            <v-chip
+                :key="_preset.title"
+                :to="_preset.url"
+                class="h-auto ps-0 pe-4 rounded-bl-pill rounded-tl-pill rounded-pill"
+                outlined="">
+                <div
+                    class="rounded-circle pa-2 me-2"
+                    :style="{backgroundColor: _preset.color}">
+                    <v-icon
+                        size="22"
+                        color="#fff">
+                        {{ _preset.icon }}
+                    </v-icon>
+                </div>
+                <span>
+                    {{ _preset.title }}
+                </span>
+            </v-chip>
         </template>
     </div>
 </template>
@@ -43,28 +26,10 @@
 <script>
 export default {
     props: {
-        value: {
-            type: Array,
-            required: true
-        },
         presets: {
             type: Array,
             required: true
         }
-    },
-    methods: {
-        choosePreset(preset) {
-            const vm = this;
-            vm.$emit("click", preset);
-        }
     }
 };
 </script>
-
-<style scoped="">
-.vh-presets {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px
-}
-</style>

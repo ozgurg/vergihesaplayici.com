@@ -1,4 +1,4 @@
-import store from "@/store/ui";
+import store from "@/store/ui.js";
 
 describe("store/ui", () => {
     let state = {};
@@ -41,5 +41,30 @@ describe("store/ui", () => {
         });
     });
 
-    // TODO: Add tests for actions
+    describe("actions", () => {
+        let context = {};
+
+        beforeEach(() => {
+            context = {
+                state,
+                commit: jest.fn()
+            };
+        });
+
+        it("[toggleDrawer] should commit 'TOGGLE_DRAWER'", () => {
+            store.actions.toggleDrawer(context);
+
+            expect(context.commit).toHaveBeenCalledTimes(1);
+            expect(context.commit).toHaveBeenCalledWith("TOGGLE_DRAWER");
+        });
+
+        it("[setDrawerState] should commit 'SET_DRAWER_STATE' with given value", () => {
+            const value = true;
+
+            store.actions.setDrawerState(context, value);
+
+            expect(context.commit).toHaveBeenCalledTimes(1);
+            expect(context.commit).toHaveBeenCalledWith("SET_DRAWER_STATE", value);
+        });
+    });
 });

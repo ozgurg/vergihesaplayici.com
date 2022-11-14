@@ -1,6 +1,6 @@
 <template>
-	<div>
-        <AppHeader>{{ title }}</AppHeader>
+    <div>
+        <PageTitle>{{ title }}</PageTitle>
 
         <v-alert
             border="left"
@@ -12,6 +12,19 @@
 
 <script>
 export default {
+    head() {
+        const vm = this;
+        return {
+            title: vm.title,
+            meta: [
+                {
+                    hid: "title",
+                    name: "title",
+                    content: vm.title
+                }
+            ]
+        };
+    },
     props: {
         error: {
             type: Object,
@@ -37,15 +50,6 @@ export default {
 
             return vm.error.message;
         }
-    },
-    head() {
-        const vm = this;
-        return {
-            title: vm.title,
-            meta: [
-                { hid: "title", name: "title", content: vm.title }
-            ]
-        };
     }
 };
 </script>
