@@ -13,7 +13,8 @@
                 <RadioGrid
                     v-model="form.option"
                     :items="ui.options"
-                    cols="4"
+                    cols="6"
+                    sm="3"
                     lg="3" />
             </FormRow>
 

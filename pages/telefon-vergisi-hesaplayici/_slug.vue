@@ -13,7 +13,8 @@
                 <RadioGrid
                     v-model="form.option"
                     :items="ui.options"
-                    cols="4"
+                    cols="6"
+                    sm="3"
                     lg="3" />
             </FormRow>
 
@@ -23,9 +24,9 @@
                 <RadioGrid
                     v-model="form.registration"
                     :items="ui.registration"
-                    cols="6"
-                    md="5"
-                    lg="4" />
+                    cols="12"
+                    sm="5"
+                    md="4" />
             </FormRow>
 
             <CalculatorResultTabs
