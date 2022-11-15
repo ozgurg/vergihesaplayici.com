@@ -103,7 +103,7 @@ export default {
                 trimCustomFragments: true,
                 useShortDoctype: true,
                 preserveLineBreaks: false,
-                collapseWhitespace: false
+                collapseWhitespace: false // "true" makes v-main's padding-left twice the width of v-navigation-drawer when it's builded
             }
         }
     },
