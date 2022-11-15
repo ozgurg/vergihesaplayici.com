@@ -103,7 +103,7 @@ export default {
                 trimCustomFragments: true,
                 useShortDoctype: true,
                 preserveLineBreaks: false,
-                collapseWhitespace: true
+                collapseWhitespace: false
             }
         }
     },
