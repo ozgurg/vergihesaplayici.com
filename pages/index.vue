@@ -13,13 +13,11 @@
 
             <v-divider class="my-15" />
 
-            <h2 class="mb-4">
-                <nuxt-link
-                    :to="Hesaplayicilar.url"
-                    class="text-decoration-none white--text">
-                    {{ Hesaplayicilar.title }}
-                </nuxt-link>
-            </h2>
+            <PageSubtitle
+                :to="Hesaplayicilar.url"
+                class="mb-4">
+                {{ Hesaplayicilar.title }}
+            </PageSubtitle>
             <CalculatorGrid />
         </InnerContainer>
     </div>
