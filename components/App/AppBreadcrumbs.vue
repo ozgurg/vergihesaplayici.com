@@ -14,21 +14,25 @@
         </template>
 
         <template #item="{ item: _item }">
-            <v-breadcrumbs-item
-                :to="_item.url"
-                exact-path=""
-                ripple=""
+            <li
                 itemprop="itemListElement"
                 itemscope=""
-                itemtype="https://schema.org/ListItem"
-                nuxt="">
-                <span itemprop="name">
-                    {{ _item.title }}
-                </span>
-                <meta
-                    :content="_item.position"
-                    itemprop="position" />
-            </v-breadcrumbs-item>
+                itemtype="https://schema.org/ListItem">
+                <nuxt-link
+                    v-ripple=""
+                    :to="_item.url"
+                    itemprop="item"
+                    class="v-breadcrumbs__item"
+                    active-class="v-breadcrumbs__item--disabled"
+                    exact-path="">
+                    <span itemprop="name">
+                        {{ _item.title }}
+                    </span>
+                    <meta
+                        :content="_item.position"
+                        itemprop="position" />
+                </nuxt-link>
+            </li>
         </template>
     </v-breadcrumbs>
 </template>

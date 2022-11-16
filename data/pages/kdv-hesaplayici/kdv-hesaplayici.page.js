@@ -29,7 +29,7 @@ export default (() => {
         ...parentPage.breadcrumbs,
         { title, url }
     ];
-    const summary = "\"Her şey değerlidir.\"<br /><i>- Katma Değer</i>";
+    const summary = "\"Her şey değerlidir\"<br /><i>- Katma Değer</i>";
 
     return {
         icon,
