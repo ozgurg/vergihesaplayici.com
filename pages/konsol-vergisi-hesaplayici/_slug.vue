@@ -56,6 +56,14 @@
                             :preset-title="page.preset.title"
                             :preset-option-title="form.option.title" />
                     </FormRow>
+
+                    <v-divider class="my-12" />
+
+                    <h2 class="text-h6 mb-4">
+                        Diğer oyun konsolları
+                    </h2>
+
+                    <CalculatorPresets :presets="ui.presets" />
                 </template>
             </CalculatorResultTabs>
         </InnerContainer>
@@ -63,7 +71,7 @@
 </template>
 
 <script>
-import page from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici-slug.page.js";
+import page, { presets } from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici-slug.page.js";
 import { moneyFormat } from "@/utils/formatter.js";
 import {
     buildResultList,
@@ -132,7 +140,11 @@ export default {
             Object.assign(vm.form, vm.form.option.form);
         }
     },
-    async asyncData({ store, error, params: { slug } }) {
+    async asyncData({
+        store,
+        error,
+        params: { slug }
+    }) {
         const presetPage = page(slug);
         if (!presetPage) {
             return error({ statusCode: 404 });
@@ -156,10 +168,13 @@ export default {
             ...presetPage.preset.options[0].form
         };
 
+        const otherPresets = presets.filter(preset => preset.slug !== slug);
+
         return {
             page: presetPage,
             ui: {
                 options,
+                presets: otherPresets,
                 tab: 0
             },
             form
