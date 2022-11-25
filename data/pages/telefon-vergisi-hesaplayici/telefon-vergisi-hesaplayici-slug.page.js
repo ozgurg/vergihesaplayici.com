@@ -220,6 +220,45 @@ const presets = [
                 }
             }
         ]
+    },
+    {
+        title: "iPhone 13 mini",
+        slug: "iphone-13-mini",
+        url: buildUrl("iphone-13-mini"),
+        icon: mdiApple,
+        color: "#555",
+        ogImageName: "telefon-vergisi-hesaplayici-iphone-13-mini.jpg",
+        pageTitle: "iPhone 13 mini'nin vergisi ne kadar?",
+        pageDescription: "iPhone 13 mini'nin yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
+        options: [
+            {
+                title: "128GB",
+                form: { price: 599, currency: "USD" },
+                retailPrice: {
+                    value: 24999,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-13"
+                }
+            },
+            {
+                title: "256GB",
+                form: { price: 699, currency: "USD" },
+                retailPrice: {
+                    value: 27599,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-13"
+                }
+            },
+            {
+                title: "512GB",
+                form: { price: 899, currency: "USD" },
+                retailPrice: {
+                    value: 32899,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-13"
+                }
+            }
+        ]
     }
 ];
 
