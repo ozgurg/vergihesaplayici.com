@@ -16,7 +16,7 @@ const presets = [
         color: "#555",
         ogImageName: "telefon-vergisi-hesaplayici-iphone-se-2022.jpg",
         pageTitle: "iPhone SE 3'ün (2022) vergisi ne kadar?",
-        pageDescription: "iPhone SE 3 (2022)'ün yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
+        pageDescription: "iPhone SE 3 (2022)'ün vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
         options: [
             {
                 title: "64GB",
@@ -55,7 +55,7 @@ const presets = [
         color: "#555",
         ogImageName: "telefon-vergisi-hesaplayici-iphone-14.jpg",
         pageTitle: "iPhone 14'ün vergisi ne kadar?",
-        pageDescription: "iPhone 14'ün yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
+        pageDescription: "iPhone 14'ün vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
         options: [
             {
                 title: "128GB",
@@ -94,7 +94,7 @@ const presets = [
         color: "#555",
         ogImageName: "telefon-vergisi-hesaplayici-iphone-14-plus.jpg",
         pageTitle: "iPhone 14 Plus'ın vergisi ne kadar?",
-        pageDescription: "iPhone 14 Plus'ın yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
+        pageDescription: "iPhone 14 Plus'ın vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
         options: [
             {
                 title: "128GB",
@@ -133,7 +133,7 @@ const presets = [
         color: "#555",
         ogImageName: "telefon-vergisi-hesaplayici-iphone-14-pro.jpg",
         pageTitle: "iPhone 14 Pro'nun vergisi ne kadar?",
-        pageDescription: "iPhone 14 Pro'nun yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
+        pageDescription: "iPhone 14 Pro'nun vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
         options: [
             {
                 title: "128GB",
@@ -181,7 +181,7 @@ const presets = [
         color: "#555",
         ogImageName: "telefon-vergisi-hesaplayici-iphone-14-pro-max.jpg",
         pageTitle: "iPhone 14 Pro Max'in vergisi ne kadar?",
-        pageDescription: "iPhone 14 Pro Max'in yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
+        pageDescription: "iPhone 14 Pro Max'in vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
         options: [
             {
                 title: "128GB",
@@ -229,7 +229,7 @@ const presets = [
         color: "#555",
         ogImageName: "telefon-vergisi-hesaplayici-iphone-13-mini.jpg",
         pageTitle: "iPhone 13 mini'nin vergisi ne kadar?",
-        pageDescription: "iPhone 13 mini'nin yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
+        pageDescription: "iPhone 13 mini'nin vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
         options: [
             {
                 title: "128GB",
@@ -268,7 +268,7 @@ const presets = [
         color: "#555",
         ogImageName: "telefon-vergisi-hesaplayici-iphone-13.jpg",
         pageTitle: "iPhone 13'ün vergisi ne kadar?",
-        pageDescription: "iPhone 13'ün yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
+        pageDescription: "iPhone 13'ün vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
         options: [
             {
                 title: "128GB",
