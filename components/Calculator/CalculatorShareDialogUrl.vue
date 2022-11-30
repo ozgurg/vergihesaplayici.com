@@ -44,7 +44,7 @@
                         elevation="0"
                         block=""
                         rounded="">
-                        Diğer...
+                        Diğer…
                     </v-btn>
                 </v-col>
             </template>

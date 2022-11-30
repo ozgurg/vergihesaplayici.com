@@ -38,7 +38,7 @@
                         <v-icon left="">
                             {{ icons.mdiExportVariant }}
                         </v-icon>
-                        <span>Paylaş...</span>
+                        <span>Paylaş…</span>
                     </v-btn>
                 </template>
 
