@@ -8,7 +8,7 @@
             <v-icon left="">
                 {{ icon }}
             </v-icon>
-            <span>Sonuçları paylaş...</span>
+            <span>Sonuçları paylaş…</span>
         </v-btn>
 
         <CalculatorShareDialog

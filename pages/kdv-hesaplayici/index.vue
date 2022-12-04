@@ -14,8 +14,7 @@
                     v-model="form.mode"
                     :items="ui.modeOptions"
                     cols="6"
-                    md="6"
-                    lg="5" />
+                    md="5" />
             </FormRow>
 
             <FormRow
