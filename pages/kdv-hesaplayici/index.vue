@@ -24,6 +24,7 @@
                     v-model.number="form.price"
                     v-number=""
                     :aria-label="priceLabel"
+                    class="tabular-nums"
                     hide-details=""
                     hide-spin-buttons=""
                     filled=""

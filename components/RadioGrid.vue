@@ -24,6 +24,11 @@
                             {{ _item.description }}
                         </div>
                     </template>
+                    <template v-else-if="_item.price">
+                        <div class="text-caption opacity-75 tabular-nums">
+                            {{ _item.price }}
+                        </div>
+                    </template>
                 </v-card>
             </v-col>
         </template>
