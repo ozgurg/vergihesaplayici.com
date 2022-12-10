@@ -298,6 +298,45 @@ const presets = [
                 }
             }
         ]
+    },
+    {
+        title: "iPhone 12",
+        slug: "iphone-12",
+        url: buildUrl("iphone-12"),
+        icon: mdiApple,
+        color: "#555",
+        ogImageName: "telefon-vergisi-hesaplayici-iphone-12.jpg",
+        pageTitle: "iPhone 12'nin vergisi ne kadar?",
+        pageDescription: "iPhone 12'nin vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
+        options: [
+            {
+                title: "64GB",
+                form: { price: 599, currency: "USD" },
+                retailPrice: {
+                    value: 24999,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-12"
+                }
+            },
+            {
+                title: "128GB",
+                form: { price: 649, currency: "USD" },
+                retailPrice: {
+                    value: 26299,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-12"
+                }
+            },
+            {
+                title: "256GB",
+                form: { price: 749, currency: "USD" },
+                retailPrice: {
+                    value: 28899,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-12"
+                }
+            }
+        ]
     }
 ];
 
