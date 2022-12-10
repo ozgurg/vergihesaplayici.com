@@ -9,123 +9,6 @@ const lastUpdatedDate = new Date("Tue Nov 29 2022 22:05:01 GMT+0300 (GMT+03:00)"
 
 const presets = [
     {
-        title: "iPhone SE 3 (2022)",
-        slug: "iphone-se-3-2022",
-        url: buildUrl("iphone-se-3-2022"),
-        icon: mdiApple,
-        color: "#555",
-        ogImageName: "telefon-vergisi-hesaplayici-iphone-se-2022.jpg",
-        pageTitle: "iPhone SE 3'ün (2022) vergisi ne kadar?",
-        pageDescription: "iPhone SE 3 (2022)'ün vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
-        options: [
-            {
-                title: "64GB",
-                form: { price: 429, currency: "USD" },
-                retailPrice: {
-                    value: 16999,
-                    lastUpdatedDate,
-                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-se"
-                }
-            },
-            {
-                title: "128GB",
-                form: { price: 479, currency: "USD" },
-                retailPrice: {
-                    value: 18299,
-                    lastUpdatedDate,
-                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-se"
-                }
-            },
-            {
-                title: "256GB",
-                form: { price: 579, currency: "USD" },
-                retailPrice: {
-                    value: 20899,
-                    lastUpdatedDate,
-                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-se"
-                }
-            }
-        ]
-    },
-    {
-        title: "iPhone 14",
-        slug: "iphone-14",
-        url: buildUrl("iphone-14"),
-        icon: mdiApple,
-        color: "#555",
-        ogImageName: "telefon-vergisi-hesaplayici-iphone-14.jpg",
-        pageTitle: "iPhone 14'ün vergisi ne kadar?",
-        pageDescription: "iPhone 14'ün vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
-        options: [
-            {
-                title: "128GB",
-                form: { price: 799, currency: "USD" },
-                retailPrice: {
-                    value: 30999,
-                    lastUpdatedDate,
-                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
-                }
-            },
-            {
-                title: "256GB",
-                form: { price: 899, currency: "USD" },
-                retailPrice: {
-                    value: 33599,
-                    lastUpdatedDate,
-                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
-                }
-            },
-            {
-                title: "512GB",
-                form: { price: 1099, currency: "USD" },
-                retailPrice: {
-                    value: 38899,
-                    lastUpdatedDate,
-                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
-                }
-            }
-        ]
-    },
-    {
-        title: "iPhone 14 Plus",
-        slug: "iphone-14-plus",
-        url: buildUrl("iphone-14-plus"),
-        icon: mdiApple,
-        color: "#555",
-        ogImageName: "telefon-vergisi-hesaplayici-iphone-14-plus.jpg",
-        pageTitle: "iPhone 14 Plus'ın vergisi ne kadar?",
-        pageDescription: "iPhone 14 Plus'ın vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
-        options: [
-            {
-                title: "128GB",
-                form: { price: 899, currency: "USD" },
-                retailPrice: {
-                    value: 34999,
-                    lastUpdatedDate,
-                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
-                }
-            },
-            {
-                title: "256GB",
-                form: { price: 999, currency: "USD" },
-                retailPrice: {
-                    value: 37599,
-                    lastUpdatedDate,
-                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
-                }
-            },
-            {
-                title: "512GB",
-                form: { price: 1199, currency: "USD" },
-                retailPrice: {
-                    value: 42899,
-                    lastUpdatedDate,
-                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
-                }
-            }
-        ]
-    },
-    {
         title: "iPhone 14 Pro",
         slug: "iphone-14-pro",
         url: buildUrl("iphone-14-pro"),
@@ -222,6 +105,84 @@ const presets = [
         ]
     },
     {
+        title: "iPhone 14",
+        slug: "iphone-14",
+        url: buildUrl("iphone-14"),
+        icon: mdiApple,
+        color: "#555",
+        ogImageName: "telefon-vergisi-hesaplayici-iphone-14.jpg",
+        pageTitle: "iPhone 14'ün vergisi ne kadar?",
+        pageDescription: "iPhone 14'ün vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
+        options: [
+            {
+                title: "128GB",
+                form: { price: 799, currency: "USD" },
+                retailPrice: {
+                    value: 30999,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
+                }
+            },
+            {
+                title: "256GB",
+                form: { price: 899, currency: "USD" },
+                retailPrice: {
+                    value: 33599,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
+                }
+            },
+            {
+                title: "512GB",
+                form: { price: 1099, currency: "USD" },
+                retailPrice: {
+                    value: 38899,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
+                }
+            }
+        ]
+    },
+    {
+        title: "iPhone 14 Plus",
+        slug: "iphone-14-plus",
+        url: buildUrl("iphone-14-plus"),
+        icon: mdiApple,
+        color: "#555",
+        ogImageName: "telefon-vergisi-hesaplayici-iphone-14-plus.jpg",
+        pageTitle: "iPhone 14 Plus'ın vergisi ne kadar?",
+        pageDescription: "iPhone 14 Plus'ın vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
+        options: [
+            {
+                title: "128GB",
+                form: { price: 899, currency: "USD" },
+                retailPrice: {
+                    value: 34999,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
+                }
+            },
+            {
+                title: "256GB",
+                form: { price: 999, currency: "USD" },
+                retailPrice: {
+                    value: 37599,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
+                }
+            },
+            {
+                title: "512GB",
+                form: { price: 1199, currency: "USD" },
+                retailPrice: {
+                    value: 42899,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
+                }
+            }
+        ]
+    },
+    {
         title: "iPhone 13 mini",
         slug: "iphone-13-mini",
         url: buildUrl("iphone-13-mini"),
@@ -295,6 +256,45 @@ const presets = [
                     value: 35899,
                     lastUpdatedDate,
                     sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-13"
+                }
+            }
+        ]
+    },
+    {
+        title: "iPhone SE 3 (2022)",
+        slug: "iphone-se-3-2022",
+        url: buildUrl("iphone-se-3-2022"),
+        icon: mdiApple,
+        color: "#555",
+        ogImageName: "telefon-vergisi-hesaplayici-iphone-se-2022.jpg",
+        pageTitle: "iPhone SE 3'ün (2022) vergisi ne kadar?",
+        pageDescription: "iPhone SE 3 (2022)'ün vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
+        options: [
+            {
+                title: "64GB",
+                form: { price: 429, currency: "USD" },
+                retailPrice: {
+                    value: 16999,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-se"
+                }
+            },
+            {
+                title: "128GB",
+                form: { price: 479, currency: "USD" },
+                retailPrice: {
+                    value: 18299,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-se"
+                }
+            },
+            {
+                title: "256GB",
+                form: { price: 579, currency: "USD" },
+                retailPrice: {
+                    value: 20899,
+                    lastUpdatedDate,
+                    sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-se"
                 }
             }
         ]
