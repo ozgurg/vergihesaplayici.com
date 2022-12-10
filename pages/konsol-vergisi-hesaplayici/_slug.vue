@@ -158,7 +158,7 @@ export default {
         const options = presetPage.preset.options.map(option => ({
             title: option.title,
             value: option,
-            description: moneyFormat(option.form.price, option.form.currency)
+            price: moneyFormat(option.form.price, option.form.currency)
         }));
 
         const form = {

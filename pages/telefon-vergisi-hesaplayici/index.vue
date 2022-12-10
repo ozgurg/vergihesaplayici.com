@@ -28,6 +28,7 @@
                     v-model.number="form.price"
                     v-number=""
                     :prefix="selectedCurrency.sign"
+                    class="tabular-nums"
                     hide-details=""
                     hide-spin-buttons=""
                     filled=""

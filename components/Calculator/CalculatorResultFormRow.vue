@@ -4,6 +4,7 @@
             :value="value"
             :aria-label="label"
             dense=""
+            class="tabular-nums"
             hide-details=""
             outlined=""
             readonly="">
