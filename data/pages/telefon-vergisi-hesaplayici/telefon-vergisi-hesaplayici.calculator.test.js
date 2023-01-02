@@ -75,15 +75,15 @@ describe("telefon-vergisi-hesaplayici/Calculator", () => {
                     prices: [
                         {
                             price: 500,
-                            expected: { taxFree: 500, taxAdded: 3252.4 }
+                            expected: { taxFree: 500, taxAdded: 6611.3 }
                         },
                         {
                             price: 1500,
-                            expected: { taxFree: 1500, taxAdded: 4252.4 }
+                            expected: { taxFree: 1500, taxAdded: 7611.3 }
                         },
                         {
                             price: 5000,
-                            expected: { taxFree: 5000, taxAdded: 7752.4 }
+                            expected: { taxFree: 5000, taxAdded: 11111.3 }
                         }
                     ]
                 });
@@ -96,15 +96,15 @@ describe("telefon-vergisi-hesaplayici/Calculator", () => {
                     prices: [
                         {
                             price: 500,
-                            expected: { taxFree: -2252.4, taxAdded: 500 }
+                            expected: { taxFree: -5611.3, taxAdded: 500 }
                         },
                         {
                             price: 1500,
-                            expected: { taxFree: -1252.4, taxAdded: 1500 }
+                            expected: { taxFree: -4611.3, taxAdded: 1500 }
                         },
                         {
                             price: 5000,
-                            expected: { taxFree: 2247.6, taxAdded: 5000 }
+                            expected: { taxFree: -1111.3, taxAdded: 5000 }
                         }
                     ]
                 });

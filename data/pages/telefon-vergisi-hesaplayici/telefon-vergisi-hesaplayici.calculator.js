@@ -44,7 +44,7 @@ class Calculator {
         specialConsumptionTax: null, // TRY | Turkish: Özel Tüketim Vergisi (ÖTV)
         valueAddedTax: null, // TRY | Turkish: Katma Değer Vergisi (KDV)
         trtPassport: null, // TRY | Turkish: Pasaport yoluyla kayıtlı: TRT bandrolü
-        registration: 2732.4 // TRY | Turkish: Pasaport yoluyla kayıtlı: Kayıt ücreti
+        registration: 6091.30 // TRY | Turkish: Pasaport yoluyla kayıtlı: Kayıt ücreti
     };
 
     /**
