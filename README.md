@@ -35,7 +35,7 @@ npm run generate
 
 **Attention:** vergihesaplayici.com is completely designed for Turkey. Some terms may sound unfamiliar to you.
 
-I don't have a plan for how development will proceed. In my mind, I develop it the way I want. You can open a PR for
+I don't have a plan for how it will evolve. I develop it the way I want. You can open a PR for
 minor bugs, but if you are introducing a new feature or change, please open a new issue and express your opinion before
 opening a PR. Thanks in advance.
 
