@@ -1,4 +1,12 @@
+import fs from "fs";
+import path from "path";
 import tr from "vuetify/es5/locale/tr";
+
+let cspNonce = "";
+if (process.env.NODE_EV === "production") {
+    // create-csp-nonce-txt.js
+    cspNonce = fs.readFileSync(path.join(__dirname, "csp-nonce.txt"), "UTF8");
+}
 
 export default {
     target: "static",
@@ -86,6 +94,7 @@ export default {
         trailingSlash: true
     },
     build: {
+        publicPath: "/public/",
         indicator: false,
         extractCSS: {
             ignoreOrder: true
@@ -141,6 +150,7 @@ export default {
             defaultAssets: false,
             dark: true,
             options: {
+                cspNonce,
                 variations: false
             },
             themes: {
@@ -170,6 +180,9 @@ export default {
         manifest: {
             name: process.env.APP_NAME,
             short_name: process.env.APP_NAME,
+            description: "vergihesaplayici.com, vergi hesaplar.",
+            orientation: "portrait",
+            id: "/?standalone=true",
             lang: "tr"
         }
     },

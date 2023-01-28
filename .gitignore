@@ -91,3 +91,9 @@ sw.*
 
 # Firebase cache
 .firebase
+
+# create-csp-nonce-txt.js
+/csp-nonce.txt
+
+# create-firebase-json.js
+/firebase.json
