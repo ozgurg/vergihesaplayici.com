@@ -1,13 +1,18 @@
 <template>
     <v-col
-        class="vh-calculator-grid__item"
         cols="12"
         md="6">
         <v-card
             :to="url"
             outlined=""
-            class="px-5 py-7 pa-sm-8 d-flex flex-column justify-space-between align-start h-100 overflow-hidden">
-            <div class="vh-calculator-grid__item__icon d-inline-block pa-3 pa-lg-5 rounded-pill">
+            class="vh-calculator-grid__item px-5 py-7 pa-sm-8 d-flex flex-column justify-space-between align-start h-100 overflow-hidden">
+            <v-icon
+                class="vh-calculator-grid__item__bg-icon"
+                size="128">
+                {{ icon }}
+            </v-icon>
+
+            <div class="vh-calculator-grid__item__icon d-inline-block pa-3 pa-lg-5 rounded">
                 <v-icon
                     class="primary--text"
                     size="40">
@@ -51,7 +56,28 @@ export default {
 </script>
 
 <style lang="scss">
-.vh-calculator-grid__item__icon {
-    background: transparentize(#88DF95, .92)
+.vh-calculator-grid__item {
+    position: relative;
+
+    &__bg-icon {
+        position: absolute !important;
+        right: 0;
+        bottom: 0;
+        transform: translate(25%, 25%) rotate(-45deg);
+
+        svg {
+            fill: transparentize(#88DF95, .96)
+        }
+    }
+
+    &__icon {
+        background: transparentize(#88DF95, .92)
+    }
+
+    &:hover {
+        &::before {
+            opacity: .08
+        }
+    }
 }
 </style>
