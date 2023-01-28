@@ -5,8 +5,6 @@ import { findCalculatorPresetBySlug } from "@/utils/find-calculator-preset-by-sl
 
 const buildUrl = slug => `/konsol-vergisi-hesaplayici/${slug}/`;
 
-const lastUpdatedDate = new Date("Sat Nov 12 2022 04:16:11 GMT+0300 (GMT+03:00)");
-
 const presets = [
     {
         title: "Xbox Series S",
@@ -23,9 +21,9 @@ const presets = [
                 title: "512GB",
                 form: { price: 299, currency: "EUR" },
                 retailPrice: {
-                    value: 8999,
-                    lastUpdatedDate,
-                    sourceUrl: "https://www.turkcell.com.tr/pasaj/hobi-oyun/oyun-konsolu/xbox/microsoft-xbox-series-s-512-gb-ssd-oyun-konsolu"
+                    value: 9999,
+                    lastUpdatedDate: new Date("Sat Jan 28 2023 03:29:07 GMT+0300 (GMT+03:00)"),
+                    sourceUrl: "https://www.vatanbilgisayar.com/microsoft-xbox-series-s-oyun-konsolu.html"
                 }
             }
         ]
@@ -45,9 +43,9 @@ const presets = [
                 title: "1TB",
                 form: { price: 499, currency: "EUR" },
                 retailPrice: {
-                    value: 14999,
-                    lastUpdatedDate,
-                    sourceUrl: "https://www.turkcell.com.tr/pasaj/hobi-oyun/oyun-konsolu/xbox/microsoft-xbox-series-x-1-tb-ssd-oyun-konsolu"
+                    value: 18499,
+                    lastUpdatedDate: new Date("Sat Jan 28 2023 03:29:07 GMT+0300 (GMT+03:00)"),
+                    sourceUrl: "https://www.vatanbilgisayar.com/microsoft-xbox-series-x-oyun-konsolu.html"
                 }
             }
         ]
@@ -68,7 +66,7 @@ const presets = [
                 form: { price: 449.99, currency: "EUR" },
                 retailPrice: {
                     value: 11199,
-                    lastUpdatedDate,
+                    lastUpdatedDate: new Date("Sat Nov 12 2022 04:16:11 GMT+0300 (GMT+03:00)"),
                     sourceUrl: "https://www.donanimhaber.com/playstation-turkiye-den-ps5-in-fiyatiyla-ilgili-aciklama-geldi--152229"
                 }
             },
@@ -78,7 +76,7 @@ const presets = [
                 form: { price: 549.99, currency: "EUR" },
                 retailPrice: {
                     value: 13199,
-                    lastUpdatedDate,
+                    lastUpdatedDate: new Date("Sat Nov 12 2022 04:16:11 GMT+0300 (GMT+03:00)"),
                     sourceUrl: "https://www.donanimhaber.com/playstation-turkiye-den-ps5-in-fiyatiyla-ilgili-aciklama-geldi--152229"
                 }
             },
@@ -106,7 +104,7 @@ const presets = [
                 form: { price: 199.99, currency: "USD" },
                 retailPrice: {
                     value: 5999,
-                    lastUpdatedDate,
+                    lastUpdatedDate: new Date("Sat Nov 12 2022 04:16:11 GMT+0300 (GMT+03:00)"),
                     sourceUrl: "https://www.turkcell.com.tr/pasaj/hobi-oyun/oyun-konsolu/nintendo/switch-lite-konsol-nintendo"
                 }
             },
@@ -116,7 +114,7 @@ const presets = [
                 form: { price: 299, currency: "USD" },
                 retailPrice: {
                     value: 8999,
-                    lastUpdatedDate,
+                    lastUpdatedDate: new Date("Sat Nov 12 2022 04:16:11 GMT+0300 (GMT+03:00)"),
                     sourceUrl: "https://www.turkcell.com.tr/pasaj/hobi-oyun/oyun-konsolu/nintendo/switch-konsol-nintendo"
                 }
             },
@@ -126,7 +124,7 @@ const presets = [
                 form: { price: 349.99, currency: "USD" },
                 retailPrice: {
                     value: 11299,
-                    lastUpdatedDate,
+                    lastUpdatedDate: new Date("Sat Nov 12 2022 04:16:11 GMT+0300 (GMT+03:00)"),
                     sourceUrl: "https://www.turkcell.com.tr/pasaj/hobi-oyun/oyun-konsolu/nintendo/switch-oled-konsol-nintendo"
                 }
             }
