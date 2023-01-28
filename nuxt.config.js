@@ -94,6 +94,7 @@ export default {
         trailingSlash: true
     },
     build: {
+        publicPath: "/public/",
         indicator: false,
         extractCSS: {
             ignoreOrder: true
