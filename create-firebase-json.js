@@ -39,9 +39,17 @@ const firebaseJson = {
                     {
                         key: "Content-Security-Policy",
                         value: objectToCspHeader({
+                            "base-uri": [
+                                "'self'"
+                            ],
+                            "object-src": [
+                                "'none'"
+                            ],
                             "script-src": [
                                 "'self'",
                                 `'nonce-${cspNonce}'`,
+                                "'unsafe-inline'",
+                                // "'strict-dynamic'",
                                 "https://www.google.com/recaptcha/",
                                 "https://www.gstatic.com/recaptcha/",
                                 "https://www.googletagmanager.com",
