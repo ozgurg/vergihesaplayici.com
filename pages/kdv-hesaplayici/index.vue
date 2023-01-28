@@ -13,8 +13,7 @@
                 <RadioGrid
                     v-model="form.mode"
                     :items="ui.modeOptions"
-                    cols="6"
-                    md="5" />
+                    style="--vh-radio-grid-optimal-width:224px" />
             </FormRow>
 
             <FormRow

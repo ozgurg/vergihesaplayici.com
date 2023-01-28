@@ -12,10 +12,7 @@
                 label="Model">
                 <RadioGrid
                     v-model="form.option"
-                    :items="ui.options"
-                    cols="6"
-                    sm="3"
-                    lg="3" />
+                    :items="ui.options" />
             </FormRow>
 
             <CalculatorResultTabs

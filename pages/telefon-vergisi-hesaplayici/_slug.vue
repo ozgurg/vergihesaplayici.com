@@ -12,10 +12,7 @@
                 label="Kapasite">
                 <RadioGrid
                     v-model="form.option"
-                    :items="ui.options"
-                    cols="6"
-                    sm="3"
-                    lg="3" />
+                    :items="ui.options" />
             </FormRow>
 
             <FormRow
@@ -24,9 +21,7 @@
                 <RadioGrid
                     v-model="form.registration"
                     :items="ui.registration"
-                    cols="12"
-                    sm="5"
-                    md="4" />
+                    style="--vh-radio-grid-optimal-width:224px" />
             </FormRow>
 
             <CalculatorResultTabs

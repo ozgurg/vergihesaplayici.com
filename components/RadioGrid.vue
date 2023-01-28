@@ -1,38 +1,34 @@
 <template>
-    <v-row
-        class="vh-radio-grid ma-n1"
-        role="radiogroup"
-        no-gutters="">
+    <div
+        v-bind="$attrs"
+        class="vh-radio-grid"
+        role="radiogroup">
         <template v-for="_item in items">
-            <v-col
+            <v-card
                 :key="_item.title"
-                v-bind="$attrs"
-                class="pa-1">
-                <v-card
-                    :class="{'vh-radio-grid__item--active primary--text primary': isItemActive(_item)}"
-                    role="radio"
-                    :aria-checked="isItemActive(_item) ? 'true' : 'false'"
-                    outlined=""
-                    class="vh-radio-grid__item d-flex flex-column pa-4"
-                    @click="emit(_item.value)">
-                    <div class="text-subtitle-1 font-weight-medium">
-                        {{ _item.title }}
-                    </div>
+                :class="{'vh-radio-grid__item--active primary--text primary': isItemActive(_item)}"
+                role="radio"
+                :aria-checked="isItemActive(_item) ? 'true' : 'false'"
+                outlined=""
+                class="vh-radio-grid__item d-flex flex-column py-6 px-4"
+                @click="emit(_item.value)">
+                <div class="text-subtitle-1 font-weight-medium mb-auto">
+                    {{ _item.title }}
+                </div>
 
-                    <template v-if="_item.description">
-                        <div class="text-caption opacity-75">
-                            {{ _item.description }}
-                        </div>
-                    </template>
-                    <template v-else-if="_item.price">
-                        <div class="text-caption opacity-75 tabular-nums">
-                            {{ _item.price }}
-                        </div>
-                    </template>
-                </v-card>
-            </v-col>
+                <template v-if="_item.description">
+                    <div class="text-caption opacity-75">
+                        {{ _item.description }}
+                    </div>
+                </template>
+                <template v-else-if="_item.price">
+                    <div class="text-caption opacity-75 tabular-nums">
+                        {{ _item.price }}
+                    </div>
+                </template>
+            </v-card>
         </template>
-    </v-row>
+    </div>
 </template>
 
 <script>
@@ -62,6 +58,12 @@ export default {
 
 <style lang="scss" scoped="">
 .vh-radio-grid {
+    --vh-radio-grid-optimal-width: 144px;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(var(--vh-radio-grid-optimal-width), 1fr));
+    grid-auto-rows: 1fr;
+
     &__item {
         overflow: hidden;
         height: 100%;
