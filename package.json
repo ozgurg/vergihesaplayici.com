@@ -13,14 +13,15 @@
         "dev": "nuxt",
         "build": "nuxt build",
         "start": "nuxt start",
-        "generate": "nuxt generate",
+        "generate": "npm run prepare-csp-nonce && nuxt generate",
         "emulator:hosting": "npm run generate && firebase emulators:start --only hosting",
         "lint:fix": "npm run lint -- --fix",
         "lint": "eslint --ext \".js,.vue\" .",
         "test": "jest --verbose",
         "test:coverage": "npm run test -- --coverage",
         "lint-staged": "lint-staged",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "prepare-csp-nonce": "node create-csp-nonce-txt.js && node create-firebase-json.js"
     },
     "author": {
         "email": "ozgurgorgulu54@gmail.com",

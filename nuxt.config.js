@@ -1,4 +1,12 @@
+import fs from "fs";
+import path from "path";
 import tr from "vuetify/es5/locale/tr";
+
+let cspNonce = "";
+if (process.env.NODE_EV === "production") {
+    // create-csp-nonce-txt.js
+    cspNonce = fs.readFileSync(path.join(__dirname, "csp-nonce.txt"), "UTF8");
+}
 
 export default {
     target: "static",
@@ -141,6 +149,7 @@ export default {
             defaultAssets: false,
             dark: true,
             options: {
+                cspNonce,
                 variations: false
             },
             themes: {
