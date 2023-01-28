@@ -20,6 +20,7 @@ const firebaseJson = {
     hosting: {
         public: "./dist",
         trailingSlash: true,
+        cleanUrls: true,
         ignore: [
             "firebase.json",
             "**/.*",
