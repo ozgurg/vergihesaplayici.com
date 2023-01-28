@@ -8,8 +8,8 @@
         title="Osita Iheme">
         <video
             class="rounded"
-            width="300"
-            height="300"
+            width="250"
+            height="250"
             autoplay=""
             loop=""
             muted=""
