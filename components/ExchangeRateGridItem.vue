@@ -5,7 +5,7 @@
             elevation="0"
             class="px-4 py-3">
             <v-card-subtitle class="pa-0 ma-0 mb-1">
-                1 {{ currencyCode }} =
+                1 {{ currencyCode }}
             </v-card-subtitle>
 
             <template v-if="isLoading">

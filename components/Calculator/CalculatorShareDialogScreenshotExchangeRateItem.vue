@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="grey--text caption">
-            1 {{ currencyCode }} =
+            1 {{ currencyCode }}
         </div>
 
         <template v-if="isLoading">
