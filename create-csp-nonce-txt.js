@@ -9,7 +9,7 @@ const packageJson = require("./package.json");
 
 const dayOfCurrentMonth = new Date().getDate();
 const currentTimestamp = Date.now();
-const versionNumber = parseInt(packageJson.version.replaceAll(".", ""));
+const versionNumber = parseInt(packageJson.version.replace(/./g, ""));
 
 const multiplication = versionNumber * currentTimestamp * dayOfCurrentMonth;
 const cspNonce = multiplication.toString().split("").filter(letter => letter !== "0").reverse().join("");
