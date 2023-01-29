@@ -1,7 +1,7 @@
 <template>
     <v-col
         cols="12"
-        md="6">
+        sm="6">
         <v-card
             :to="url"
             outlined=""
