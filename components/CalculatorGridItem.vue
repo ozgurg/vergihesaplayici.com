@@ -1,5 +1,6 @@
 <template>
     <v-col
+        class="pa-2"
         cols="12"
         sm="6">
         <v-card

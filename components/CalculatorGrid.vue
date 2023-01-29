@@ -1,5 +1,7 @@
 <template>
-    <v-row>
+    <v-row
+        no-gutters=""
+        class="ma-n2">
         <template v-for="_calculator in calculators">
             <CalculatorGridItem
                 :key="_calculator.title"
