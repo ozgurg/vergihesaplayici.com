@@ -11,7 +11,7 @@
 
             <OsitaIhemeVideo />
 
-            <v-divider class="my-15" />
+            <v-divider class="my-12" />
 
             <PageSubtitle
                 :to="Hesaplayicilar.url"
