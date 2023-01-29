@@ -1,5 +1,5 @@
 <template>
-    <div class="vh-form-row row no-gutters flex-column flex-lg-row">
+    <div class="vh-form-row row no-gutters flex-column flex-sm-row">
         <div class="vh-form-row__label-col col">
             <template v-if="label">
                 <label>
@@ -32,12 +32,12 @@ export default {
 
 .vh-form-row {
     gap: 6px;
-    @media #{map-get($display-breakpoints, "lg-and-up")} {
+    @media #{map-get($display-breakpoints, "sm-and-up")} {
         gap: 24px
     }
 
     &__label-col {
-        @media #{map-get($display-breakpoints, "lg-and-up")} {
+        @media #{map-get($display-breakpoints, "sm-and-up")} {
             $width: 170px; // Optimized for "TRT bandrolü (€20,00)" label
             text-align: right;
             flex: 0 0 $width;
