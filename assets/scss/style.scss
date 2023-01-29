@@ -6,5 +6,15 @@ body {
     user-select: none
 }
 
+.page-enter-active,
+.page-leave-active {
+    transition: opacity .375s cubic-bezier(.25, .8, .25, 1)
+}
+
+.page-enter,
+.page-leave-to {
+    opacity: 0
+}
+
 @import "_utilities.scss";
 @import "_dialog.scss";
