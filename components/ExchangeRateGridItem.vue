@@ -3,10 +3,10 @@
         <v-card
             color="grey darken-4"
             elevation="0"
-            class="px-4 py-3">
-            <v-card-subtitle class="pa-0 ma-0 mb-1">
+            class="pa-4">
+            <div class="text-body-2 text--secondary mb-1">
                 {{ currencyCode }}
-            </v-card-subtitle>
+            </div>
 
             <template v-if="isLoading">
                 <v-skeleton-loader
@@ -16,7 +16,7 @@
                     type="image" />
             </template>
             <template v-else>
-                <v-card-title class="pa-0 ma-0 tabular-nums">
+                <vdiv class="text-body-1 tabular-nums font-weight-medium">
                     <template v-if="exchangeRate">
                         {{ moneyFormat(exchangeRate.rate, "TRY") }}
                     </template>
@@ -31,7 +31,7 @@
                             </v-icon>
                         </div>
                     </template>
-                </v-card-title>
+                </vdiv>
             </template>
         </v-card>
     </v-col>

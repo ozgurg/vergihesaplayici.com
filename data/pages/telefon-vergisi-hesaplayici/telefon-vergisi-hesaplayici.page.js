@@ -6,7 +6,7 @@ import parentPage from "@/data/pages/hesaplayicilar.page.js";
 const registrationOptions = [
     {
         title: "İthalat ile",
-        description: "İthalatçıların ithal edip sattığı ürünlerdir. Resmi olarak da bilinir.",
+        description: "İthalatçıların ithal edip sattığı ürünlerdir.",
         value: Registration.Import
     },
     {
