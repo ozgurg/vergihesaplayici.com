@@ -60,7 +60,7 @@ export default {
 .vh-radio-grid {
     --vh-radio-grid-optimal-width: 144px;
     display: grid;
-    grid-gap: 1rem;
+    grid-gap: .75rem;
     grid-template-columns: repeat(auto-fill, minmax(var(--vh-radio-grid-optimal-width), 1fr));
     grid-auto-rows: 1fr;
 
