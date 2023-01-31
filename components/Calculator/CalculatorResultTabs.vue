@@ -86,7 +86,7 @@ export default {
 
 .vh-result-tabs {
     background: #121212; // Fallback color while the transition is playing/running/working? (What we called it? 🙂)
-    @media #{map-get($display-breakpoints, "sm-and-down")} {
+    @media #{map-get($display-breakpoints, "xs-only")} {
         position: sticky;
         z-index: 4; // z-index of .v-app-bar.v-app-bar--fixed - 1
         transition: $secondary-transition;
@@ -94,7 +94,7 @@ export default {
     }
 
     &--stuck {
-        @media #{map-get($display-breakpoints, "sm-and-down")} {
+        @media #{map-get($display-breakpoints, "xs-only")} {
             background: map-get($material-dark-elevation-colors, "4");
 
             $px6: $spacer * 6;
@@ -103,7 +103,7 @@ export default {
             // Negative of MainContainer v-container .px-6
             margin-left: -$px6;
             margin-right: -$px6;
-            @media #{map-get($display-breakpoints, "sm-and-up")} {
+            @media #{map-get($display-breakpoints, "md-only")} {
                 // Negative of MainContainer v-container .px-sm-8
                 margin-left: -$px8;
                 margin-right: -$px8
@@ -121,7 +121,7 @@ We set negative margin for .vh-result-tabs when it's stuck,
 and then the transition of .v-tabs-slider-wrapper works and makes it look swinging.
 I didn't like this behavior, so I disabled the transition.
 */
-@media #{map-get($display-breakpoints, "sm-and-down")} {
+@media #{map-get($display-breakpoints, "xs-only")} {
     :deep(.v-tabs-slider-wrapper) {
         transition: none !important
     }
