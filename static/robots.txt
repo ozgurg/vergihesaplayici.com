@@ -1,4 +1,4 @@
 user-agent: *
 disallow: /*?
-disallow: /_nuxt
+disallow: /public
 disallow: /*.html$
