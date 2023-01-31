@@ -10,8 +10,9 @@
 
             <template v-if="isLoading">
                 <v-skeleton-loader
-                    class="mb-0 rounded w-100"
-                    max-height="32"
+                    class="mb-0"
+                    max-width="56"
+                    max-height="24"
                     width="100%"
                     type="image" />
             </template>
