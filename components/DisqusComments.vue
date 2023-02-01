@@ -2,7 +2,8 @@
     <Disqus
         :identifier="$route.path"
         :shortname="shortname"
-        :url="url" />
+        :url="url"
+        lang="tr" />
 </template>
 
 <script>
