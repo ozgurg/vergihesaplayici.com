@@ -3,17 +3,18 @@
         :icon="icon"
         text=""
         type="warning">
-        Ürünlerin ülkeye giriş fiyatını bilmediğimiz için yurt dışı satış fiyatından tahmini olarak hesaplanmıştır.
-        Gerçek satış fiyatı çoğunlukla hesaplanandan daha azdır.
+        Ürünlerin ülkeye giriş fiyatını bilmediğimiz için yurt dışı satış fiyatından hesaplanmıştır.
+        <br />
+        Piyasadaki satış fiyatı bu yüzden farklı olabilir.
     </v-alert>
 </template>
 
 <script>
-import { mdiNoteSearch } from "@mdi/js";
+import { mdiAlertDecagram } from "@mdi/js";
 
 export default {
     data: () => ({
-        icon: mdiNoteSearch
+        icon: mdiAlertDecagram
     })
 };
 </script>
