@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { isCustomIcon, loadCustomIconAsHtml } from "@/utils/load-custom-icon-as-html.js";
+import { isCustomIcon, loadCustomIconAsHtml } from "@/utils/custom-icon.js";
 
 export default {
     props: {
