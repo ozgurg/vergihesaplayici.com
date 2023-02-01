@@ -4,17 +4,15 @@
             <v-chip
                 :key="_preset.title"
                 :to="_preset.url"
-                class="h-auto ps-0 pe-4 rounded-bl-pill rounded-tl-pill rounded-pill"
+                pill=""
                 outlined="">
-                <div
-                    class="rounded-circle pa-2 me-2"
-                    :style="{backgroundColor: _preset.color}">
-                    <v-icon
-                        size="22"
-                        color="#fff">
+                <v-avatar
+                    :color=" _preset.color"
+                    left="">
+                    <v-icon size="24">
                         {{ _preset.icon }}
                     </v-icon>
-                </div>
+                </v-avatar>
                 <span>
                     {{ _preset.title }}
                 </span>
