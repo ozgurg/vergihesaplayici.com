@@ -1,6 +1,6 @@
 <template>
     <v-alert
-        :icon="icon"
+        :icon="false"
         text=""
         type="warning">
         Ürünlerin ülkeye giriş fiyatını bilmediğimiz için yurt dışı satış fiyatından hesaplanmıştır.
@@ -9,12 +9,3 @@
     </v-alert>
 </template>
 
-<script>
-import { mdiAlertDecagram } from "@mdi/js";
-
-export default {
-    data: () => ({
-        icon: mdiAlertDecagram
-    })
-};
-</script>

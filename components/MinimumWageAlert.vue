@@ -1,6 +1,6 @@
 <template>
     <v-alert
-        :icon="icon"
+        :icon="false"
         text=""
         type="info">
         <!-- eslint-disable vue/no-v-text-v-html-on-component vue/no-v-html -->
@@ -9,16 +9,12 @@
 </template>
 
 <script>
-import { mdiCreditCardClock } from "@mdi/js";
 import { calculateMinimumWageDayCount, calculateMinimumWageMonthCount } from "@/utils/calculate-minimum-wage-count.js";
 import { moneyFormat } from "@/utils/formatter.js";
 
 const minimumWage = process.env.MINIMUM_WAGE;
 
 export default {
-    data: () => ({
-        icon: mdiCreditCardClock
-    }),
     props: {
         price: {
             type: Number,
