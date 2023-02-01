@@ -29,6 +29,8 @@
 </template>
 
 <script>
+import { loadCustomIconAsHtml } from "@/utils/load-custom-icon-as-html.js";
+
 export default {
     props: {
         presets: {
@@ -41,7 +43,7 @@ export default {
             return item.icon.endsWith(".svg");
         },
         loadCustomIconAsHtml(item) {
-            return require(`@/assets/icon/${item.icon}?raw`);
+            return loadCustomIconAsHtml(item.icon);
         }
     }
 };
