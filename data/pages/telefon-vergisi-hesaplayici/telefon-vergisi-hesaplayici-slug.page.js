@@ -8,6 +8,7 @@ const buildUrl = slug => `/telefon-vergisi-hesaplayici/${slug}/`;
 const lastUpdatedDate = new Date("Sat Jan 28 2023 03:22:37 GMT+0300 (GMT+03:00)");
 
 const presets = [
+    // iPhone 14
     {
         title: "iPhone 14 Pro",
         slug: "iphone-14-pro",
@@ -182,6 +183,9 @@ const presets = [
             }
         ]
     },
+
+
+    // iPhone 13
     {
         title: "iPhone 13 mini",
         slug: "iphone-13-mini",
@@ -260,6 +264,9 @@ const presets = [
             }
         ]
     },
+
+
+    // iPhone SE
     {
         title: "iPhone SE 3 (2022)",
         slug: "iphone-se-3-2022",
@@ -299,6 +306,9 @@ const presets = [
             }
         ]
     },
+
+
+    // iPhone 12
     {
         title: "iPhone 12",
         slug: "iphone-12",
@@ -338,6 +348,9 @@ const presets = [
             }
         ]
     },
+
+
+    // Samsung Galaxy S23
     {
         title: "Samsung Galaxy S23",
         slug: "samsung-galaxy-s23",
@@ -349,12 +362,85 @@ const presets = [
         pageDescription: "Samsung Galaxy S23'ün vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
         options: [
             {
-                title: "128GB", // FIXME: Placeholder
-                form: { price: 100, currency: "USD" }, // FIXME: Placeholder
+                title: "128GB (8GB)",
+                form: { price: 799.99, currency: "USD" },
                 retailPrice: {
-                    value: 100, // FIXME: Placeholder
-                    lastUpdatedDate: new Date("Wed Feb 01 2023 18:59:13 GMT+0300 (GMT+03:00)"), // FIXME: Placeholder
-                    sourceUrl: "https://www.samsung.com/tr/smartphones/galaxy-s23/" // FIXME: Placeholder
+                    value: 24999,
+                    lastUpdatedDate: new Date("Wed Feb 01 2023 21:14:11 GMT+0300 (GMT+03:00)"),
+                    sourceUrl: "https://shop.samsung.com/tr/galaxy-s23/"
+                }
+            },
+            {
+                title: "256GB (8GB)",
+                form: { price: 859.99, currency: "USD" },
+                retailPrice: {
+                    value: 25999,
+                    lastUpdatedDate: new Date("Wed Feb 01 2023 21:14:11 GMT+0300 (GMT+03:00)"),
+                    sourceUrl: "https://shop.samsung.com/tr/galaxy-s23/"
+                }
+            }
+        ]
+    },
+    {
+        title: "Samsung Galaxy S23+",
+        slug: "samsung-galaxy-s23-plus",
+        url: buildUrl("samsung-galaxy-s23-plus"),
+        icon: "samsung.svg",
+        color: "#1428A0",
+        ogImageName: "telefon-vergisi-hesaplayici-samsung-galaxy-s23-plus.jpg",
+        pageTitle: "Samsung Galaxy S23+'ın vergisi ne kadar?",
+        pageDescription: "Samsung Galaxy S23+'ın vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
+        options: [
+            {
+                title: "256GB (8GB)",
+                form: { price: 999.99, currency: "USD" },
+                retailPrice: {
+                    value: 32999,
+                    lastUpdatedDate: new Date("Wed Feb 01 2023 21:14:11 GMT+0300 (GMT+03:00)"),
+                    sourceUrl: "https://shop.samsung.com/tr/galaxy-s23-plus/"
+                }
+            },
+            {
+                title: "512GB (8GB)",
+                form: { price: 1119.99, currency: "USD" }
+            }
+        ]
+    },
+    {
+        title: "Samsung Galaxy S23 Ultra",
+        slug: "samsung-galaxy-s23-ultra",
+        url: buildUrl("samsung-galaxy-s23-ultra"),
+        icon: "samsung.svg",
+        color: "#1428A0",
+        ogImageName: "telefon-vergisi-hesaplayici-samsung-galaxy-s23-ultra.jpg",
+        pageTitle: "Samsung Galaxy S23 Ultra'nın vergisi ne kadar?",
+        pageDescription: "Samsung Galaxy S23 Ultra'nın vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
+        options: [
+            {
+                title: "256GB (8GB)",
+                form: { price: 1199.99, currency: "USD" },
+                retailPrice: {
+                    value: 40999,
+                    lastUpdatedDate: new Date("Wed Feb 01 2023 21:14:11 GMT+0300 (GMT+03:00)"),
+                    sourceUrl: "https://shop.samsung.com/tr/galaxy-s23-ultra/"
+                }
+            },
+            {
+                title: "512GB (8GB)",
+                form: { price: 1379.99, currency: "USD" },
+                retailPrice: {
+                    value: 43999,
+                    lastUpdatedDate: new Date("Wed Feb 01 2023 21:14:11 GMT+0300 (GMT+03:00)"),
+                    sourceUrl: "https://shop.samsung.com/tr/galaxy-s23-ultra/"
+                }
+            },
+            {
+                title: "1TB (12GB)",
+                form: { price: 1619.99, currency: "USD" },
+                retailPrice: {
+                    value: 48999,
+                    lastUpdatedDate: new Date("Wed Feb 01 2023 21:14:11 GMT+0300 (GMT+03:00)"),
+                    sourceUrl: "https://shop.samsung.com/tr/galaxy-s23-ultra/"
                 }
             }
         ]
