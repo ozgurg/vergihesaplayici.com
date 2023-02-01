@@ -9,9 +9,16 @@
                 <v-avatar
                     :color=" _preset.color"
                     left="">
-                    <v-icon size="24">
-                        {{ _preset.icon }}
-                    </v-icon>
+                    <template v-if="isCustomIcon(_preset)">
+                        <!-- eslint-disable vue/no-v-html -->
+                        <!-- TODO: Needs refactor -->
+                        <span style="width:24px;height:24px" v-html="loadCustomIconAsHtml(_preset)" />
+                    </template>
+                    <template v-else>
+                        <v-icon size="24">
+                            {{ _preset.icon }}
+                        </v-icon>
+                    </template>
                 </v-avatar>
                 <span>
                     {{ _preset.title }}
@@ -27,6 +34,14 @@ export default {
         presets: {
             type: Array,
             required: true
+        }
+    },
+    methods: {
+        isCustomIcon(item) {
+            return item.icon.endsWith(".svg");
+        },
+        loadCustomIconAsHtml(item) {
+            return require(`@/assets/img/${item.icon}?raw`);
         }
     }
 };
