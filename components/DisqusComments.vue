@@ -1,5 +1,8 @@
 <template>
-    <Disqus :url="url" />
+    <Disqus
+        :identifier="$route.path"
+        :shortname="shortname"
+        :url="url" />
 </template>
 
 <script>
@@ -10,6 +13,9 @@ export default {
         url() {
             const vm = this;
             return getFullUrl(vm.$route.path);
+        },
+        shortname() {
+            return process.env.DISQUS_SHORTNAME;
         }
     }
 };
