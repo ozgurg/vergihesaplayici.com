@@ -62,7 +62,7 @@
                     <div class="py-2">
                         <v-divider vertical="" />
                     </div>
-                    <CopyButton
+                    <LazyCopyButton
                         :value-to-copy="url"
                         container-selector="#calculatorShareDialogCopyUrlContainer" />
                 </template>
@@ -88,6 +88,7 @@ import {
     createTwitterShareUrl,
     createWhatsAppShareUrl
 } from "@/utils/create-social-media-share-url.js";
+import { isCustomIcon, loadCustomIconAsHtml } from "@/utils/custom-icon.js";
 
 export default {
     data: () => ({
@@ -112,10 +113,10 @@ export default {
             }
         },
         isCustomIcon(item) {
-            return item.icon.endsWith(".svg");
+            return isCustomIcon(item.icon);
         },
         loadCustomIconAsHtml(item) {
-            return require(`@/assets/img/${item.icon}?raw`);
+            return loadCustomIconAsHtml(item.icon);
         }
     },
     computed: {
@@ -159,7 +160,7 @@ export default {
                     url: createTelegramShareUrl(vm.url, document.title),
                     title: "Telegram ile gönder",
                     color: "#26A5E4",
-                    icon: "ic-telegram.svg"
+                    icon: "telegram.svg"
                 },
                 {
                     url: createRedditShareUrl(vm.url, document.title),

@@ -19,7 +19,9 @@
                     <v-icon left="">
                         {{ icons.mdiCommentMultipleOutline }}
                     </v-icon>
-                    <span>Yorumlar</span>
+                    <span>
+                        <LazyDisqusCommentCount />
+                    </span>
                 </v-tab>
             </v-tabs>
         </FormRow>

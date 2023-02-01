@@ -10,7 +10,7 @@ const buildHeadTags = ({
     description,
     ogImageName
 }) => {
-    const ogImage = require(`@/assets/img/og/${ogImageName}`);
+    const ogImage = require(`@/assets/og/${ogImageName}`);
     return {
         title,
         meta: [

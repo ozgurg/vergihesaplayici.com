@@ -4,17 +4,22 @@
             <v-chip
                 :key="_preset.title"
                 :to="_preset.url"
-                class="h-auto ps-0 pe-4 rounded-bl-pill rounded-tl-pill rounded-pill"
+                pill=""
                 outlined="">
-                <div
-                    class="rounded-circle pa-2 me-2"
-                    :style="{backgroundColor: _preset.color}">
-                    <v-icon
-                        size="22"
-                        color="#fff">
-                        {{ _preset.icon }}
-                    </v-icon>
-                </div>
+                <v-avatar
+                    :color=" _preset.color"
+                    left="">
+                    <template v-if="isCustomIcon(_preset)">
+                        <!-- eslint-disable vue/no-v-html -->
+                        <!-- TODO: Needs refactor -->
+                        <span style="width:24px;height:24px" v-html="loadCustomIconAsHtml(_preset)" />
+                    </template>
+                    <template v-else>
+                        <v-icon size="24">
+                            {{ _preset.icon }}
+                        </v-icon>
+                    </template>
+                </v-avatar>
                 <span>
                     {{ _preset.title }}
                 </span>
@@ -24,11 +29,21 @@
 </template>
 
 <script>
+import { isCustomIcon, loadCustomIconAsHtml } from "@/utils/custom-icon.js";
+
 export default {
     props: {
         presets: {
             type: Array,
             required: true
+        }
+    },
+    methods: {
+        isCustomIcon(item) {
+            return isCustomIcon(item.icon);
+        },
+        loadCustomIconAsHtml(item) {
+            return loadCustomIconAsHtml(item.icon);
         }
     }
 };
