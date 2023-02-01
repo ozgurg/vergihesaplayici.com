@@ -58,12 +58,14 @@
                 v-model="ui.tab"
                 :should-show-results="shouldShowResults">
                 <template v-if="shouldShowResults">
-                    <template v-if="form.currency === 'TRY'">
-                        <ReverseCalculationAlert />
-                    </template>
-                    <template v-else>
-                        <EstimatedCalculationAlert />
-                    </template>
+                    <FormRow>
+                        <template v-if="form.currency === 'TRY'">
+                            <ReverseCalculationAlert />
+                        </template>
+                        <template v-else>
+                            <EstimatedCalculationAlert />
+                        </template>
+                    </FormRow>
 
                     <CalculatorResultList
                         :items="resultList"

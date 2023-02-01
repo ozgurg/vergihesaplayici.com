@@ -19,7 +19,9 @@
                 v-model="ui.tab"
                 :should-show-results="shouldShowResults">
                 <template v-if="shouldShowResults">
-                    <EstimatedCalculationAlert />
+                    <FormRow>
+                        <EstimatedCalculationAlert />
+                    </FormRow>
 
                     <CalculatorResultList
                         :items="resultList"
