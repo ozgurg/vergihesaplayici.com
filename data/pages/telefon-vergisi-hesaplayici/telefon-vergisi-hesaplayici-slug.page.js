@@ -337,6 +337,27 @@ const presets = [
                 }
             }
         ]
+    },
+    {
+        title: "Samsung Galaxy S23",
+        slug: "samsung-galaxy-s23",
+        url: buildUrl("samsung-galaxy-s23"),
+        icon: "ic-samsung.svg",
+        color: "#1428A0",
+        ogImageName: "telefon-vergisi-hesaplayici-samsung-galaxy-s23.jpg",
+        pageTitle: "Samsung Galaxy S23'ün vergisi ne kadar?",
+        pageDescription: "Samsung Galaxy S23'ün vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
+        options: [
+            {
+                title: "128GB", // FIXME: Placeholder
+                form: { price: 100, currency: "USD" }, // FIXME: Placeholder
+                retailPrice: {
+                    value: 100, // FIXME: Placeholder
+                    lastUpdatedDate: new Date("Wed Feb 01 2023 18:59:13 GMT+0300 (GMT+03:00)"), // FIXME: Placeholder
+                    sourceUrl: "https://www.samsung.com/tr/smartphones/galaxy-s23/" // FIXME: Placeholder
+                }
+            }
+        ]
     }
 ];
 
