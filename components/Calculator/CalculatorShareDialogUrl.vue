@@ -115,7 +115,7 @@ export default {
             return item.icon.endsWith(".svg");
         },
         loadCustomIconAsHtml(item) {
-            return require(`@/assets/img/${item.icon}?raw`);
+            return require(`@/assets/icon/${item.icon}?raw`);
         }
     },
     computed: {
@@ -159,7 +159,7 @@ export default {
                     url: createTelegramShareUrl(vm.url, document.title),
                     title: "Telegram ile gönder",
                     color: "#26A5E4",
-                    icon: "ic-telegram.svg"
+                    icon: "telegram.svg"
                 },
                 {
                     url: createRedditShareUrl(vm.url, document.title),

@@ -41,7 +41,7 @@ export default {
             return item.icon.endsWith(".svg");
         },
         loadCustomIconAsHtml(item) {
-            return require(`@/assets/img/${item.icon}?raw`);
+            return require(`@/assets/icon/${item.icon}?raw`);
         }
     }
 };

@@ -342,7 +342,7 @@ const presets = [
         title: "Samsung Galaxy S23",
         slug: "samsung-galaxy-s23",
         url: buildUrl("samsung-galaxy-s23"),
-        icon: "ic-samsung.svg",
+        icon: "samsung.svg",
         color: "#1428A0",
         ogImageName: "telefon-vergisi-hesaplayici-samsung-galaxy-s23.jpg",
         pageTitle: "Samsung Galaxy S23'ün vergisi ne kadar?",
