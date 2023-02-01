@@ -88,7 +88,7 @@ import {
     createTwitterShareUrl,
     createWhatsAppShareUrl
 } from "@/utils/create-social-media-share-url.js";
-import { loadCustomIconAsHtml } from "@/utils/load-custom-icon-as-html.js";
+import { isCustomIcon, loadCustomIconAsHtml } from "@/utils/load-custom-icon-as-html.js";
 
 export default {
     data: () => ({
@@ -113,7 +113,7 @@ export default {
             }
         },
         isCustomIcon(item) {
-            return item.icon.endsWith(".svg");
+            return isCustomIcon(item.icon);
         },
         loadCustomIconAsHtml(item) {
             return loadCustomIconAsHtml(item.icon);

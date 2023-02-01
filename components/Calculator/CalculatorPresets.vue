@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { loadCustomIconAsHtml } from "@/utils/load-custom-icon-as-html.js";
+import { isCustomIcon, loadCustomIconAsHtml } from "@/utils/load-custom-icon-as-html.js";
 
 export default {
     props: {
@@ -40,7 +40,7 @@ export default {
     },
     methods: {
         isCustomIcon(item) {
-            return item.icon.endsWith(".svg");
+            return isCustomIcon(item.icon);
         },
         loadCustomIconAsHtml(item) {
             return loadCustomIconAsHtml(item.icon);
