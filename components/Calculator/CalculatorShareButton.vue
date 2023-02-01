@@ -11,7 +11,7 @@
             <span>Sonuçları paylaş…</span>
         </v-btn>
 
-        <CalculatorShareDialog
+        <LazyCalculatorShareDialog
             v-model="isShareDialogShown"
             v-bind="$attrs" />
     </div>

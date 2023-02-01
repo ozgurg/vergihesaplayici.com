@@ -62,7 +62,7 @@
                     <div class="py-2">
                         <v-divider vertical="" />
                     </div>
-                    <CopyButton
+                    <LazyCopyButton
                         :value-to-copy="url"
                         container-selector="#calculatorShareDialogCopyUrlContainer" />
                 </template>
