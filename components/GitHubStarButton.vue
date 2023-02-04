@@ -3,8 +3,8 @@
         <iframe
             :src="src"
             title="Projenin GitHub'taki yıldız sayısı"
-            height="20"
-            width="84" />
+            width="83"
+            height="20" />
     </div>
 </template>
 
@@ -31,7 +31,7 @@ export default {
     padding: 0;
     margin: 0;
     display: block;
-    width: 81px;
+    width: 83px;
     height: 20px
 }
 </style>
