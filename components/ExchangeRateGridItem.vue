@@ -17,7 +17,7 @@
                     type="image" />
             </template>
             <template v-else>
-                <vdiv class="text-body-1 tabular-nums font-weight-medium">
+                <div class="text-body-1 tabular-nums font-weight-medium">
                     <template v-if="exchangeRate">
                         {{ moneyFormat(exchangeRate.rate, "TRY") }}
                     </template>
@@ -32,7 +32,7 @@
                             </v-icon>
                         </div>
                     </template>
-                </vdiv>
+                </div>
             </template>
         </v-card>
     </v-col>
