@@ -356,7 +356,6 @@ export default {
     width: 300px;
     max-width: 100%;
     margin: 0 auto;
-    border: 4px solid rgba(255, 255, 255, .75);
 
     &__overlay {
         position: absolute;
@@ -378,8 +377,7 @@ export default {
     &__table {
         position: relative;
         z-index: 1;
-        padding: 2px;
-        background: #fff;
+        border: 2px solid #fff;
 
         .v-data-table {
             border-radius: 0

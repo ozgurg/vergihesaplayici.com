@@ -3,7 +3,7 @@
  * @param {string} args.title
  * @param {string} args.description
  * @param {string} args.ogImageName
- * @returns {{title: string, meta: {hid?: string, name: string, content: string|*}[]}}
+ * @returns {{title: string, meta: {hid: string, name: string, content: string|*}[]}}
  */
 const buildHeadTags = ({
     title,

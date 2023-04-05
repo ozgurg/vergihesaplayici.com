@@ -60,7 +60,7 @@
             <template v-else-if="currentTab === 1">
                 <div class="d-flex flex-column h-100">
                     <div class="mt-auto py-10 py-lg-6 px-2">
-                        <LazyCalculatorShareDialogScreenshot
+                        <CalculatorShareDialogScreenshot
                             :input="screenshotInput"
                             :output="screenshotOutput"
                             :calculator-title="calculatorTitle"
