@@ -122,7 +122,6 @@ export default {
     plugins: [
         "@/plugins/firebase.client.js",
         "@/plugins/vue-clipboard2.client.js",
-        "@/plugins/vue-disqus.client.js",
         "@/plugins/vue-html2canvas.client.js",
         "@/plugins/number-directive.client.js"
     ],
