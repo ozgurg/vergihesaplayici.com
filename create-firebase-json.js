@@ -53,31 +53,23 @@ const firebaseJson = {
                                 "https://www.google.com/recaptcha/",
                                 "https://www.gstatic.com/recaptcha/",
                                 "https://www.googletagmanager.com",
-                                "c.disquscdn.com",
-                                "disqus.com",
-                                "vergihesaplayici.disqus.com",
                                 "https://cdn.jsdelivr.net"
                             ],
                             "frame-src": [
                                 "'self'",
                                 "https://www.google.com/recaptcha/",
                                 "https://recaptcha.google.com/recaptcha/",
-                                "https://ghbtns.com/",
-                                "disqus.com",
-                                "c.disquscdn.com"
+                                "https://ghbtns.com/"
                             ],
                             "img-src": [
                                 "'self'",
                                 "data:",
-                                "www.googletagmanager.com",
-                                "c.disquscdn.com",
-                                "referrer.disqus.com"
+                                "www.googletagmanager.com"
                             ],
                             /* "style-src": [
                                 "'self'",
                                 `'nonce-${cspNonce}'`,
-                                "fonts.googleapis.com",
-                                "c.disquscdn.com"
+                                "fonts.googleapis.com"
                             ], */
                             "font-src": [
                                 "fonts.gstatic.com"

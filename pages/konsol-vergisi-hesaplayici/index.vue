@@ -45,36 +45,32 @@
                 </v-text-field>
             </FormRow>
 
-            <CalculatorResultTabs
-                v-model="ui.tab"
-                :should-show-results="shouldShowResults">
-                <template v-if="shouldShowResults">
-                    <FormRow>
-                        <template v-if="form.currency === 'TRY'">
-                            <ReverseCalculationAlert />
-                        </template>
-                        <template v-else>
-                            <EstimatedCalculationAlert />
-                        </template>
-                    </FormRow>
+            <template v-if="shouldShowResults">
+                <FormRow>
+                    <template v-if="form.currency === 'TRY'">
+                        <ReverseCalculationAlert />
+                    </template>
+                    <template v-else>
+                        <EstimatedCalculationAlert />
+                    </template>
+                </FormRow>
 
-                    <CalculatorResultList
-                        :items="resultList"
-                        class="mb-5" />
+                <CalculatorResultList
+                    :items="resultList"
+                    class="mb-5" />
 
-                    <FormRow>
-                        <MinimumWageAlert
-                            :price="results.prices.taxAdded"
-                            class="mb-10" />
+                <FormRow>
+                    <MinimumWageAlert
+                        :price="results.prices.taxAdded"
+                        class="mb-10" />
 
-                        <CalculatorShareButton
-                            :screenshot-input="screenshotInput"
-                            :screenshot-output="resultList"
-                            :form="form"
-                            :calculator-title="page.title" />
-                    </FormRow>
-                </template>
-            </CalculatorResultTabs>
+                    <CalculatorShareButton
+                        :screenshot-input="screenshotInput"
+                        :screenshot-output="resultList"
+                        :form="form"
+                        :calculator-title="page.title" />
+                </FormRow>
+            </template>
         </InnerContainer>
     </div>
 </template>
@@ -97,8 +93,7 @@ export default {
     data: () => ({
         page,
         ui: {
-            presets,
-            tab: 1
+            presets
         },
         form: {
             currency: "USD",
@@ -151,13 +146,6 @@ export default {
         }
     },
     watch: {
-        shouldShowResults(current, previous) {
-            const vm = this;
-
-            if (!current && previous && vm.ui.tab === 0) {
-                vm.ui.tab = 1;
-            }
-        },
         form: {
             deep: true,
             handler() {
@@ -166,8 +154,6 @@ export default {
                 if (!vm.shouldShowResults) return;
 
                 vm._calculate();
-
-                vm.ui.tab = 0;
 
                 vm.$router.push({ query: vm.form });
             }

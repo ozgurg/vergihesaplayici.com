@@ -62,22 +62,18 @@
                 </div>
             </FormRow>
 
-            <CalculatorResultTabs
-                v-model="ui.tab"
-                :should-show-results="shouldShowResults">
-                <template v-if="shouldShowResults">
-                    <CalculatorResultList
-                        :items="resultList"
-                        class="mb-10" />
+            <template v-if="shouldShowResults">
+                <CalculatorResultList
+                    :items="resultList"
+                    class="mb-10" />
 
-                    <FormRow>
-                        <CalculatorShareButton
-                            :screenshot-output="resultList"
-                            :form="form"
-                            :calculator-title="page.title" />
-                    </FormRow>
-                </template>
-            </CalculatorResultTabs>
+                <FormRow>
+                    <CalculatorShareButton
+                        :screenshot-output="resultList"
+                        :form="form"
+                        :calculator-title="page.title" />
+                </FormRow>
+            </template>
         </InnerContainer>
     </div>
 </template>
@@ -94,7 +90,6 @@ export default {
     data: () => ({
         page,
         ui: {
-            tab: 1,
             modeOptions,
             presets: [
                 { title: "Yüzde 1", form: { rate: 1 } },
@@ -158,13 +153,6 @@ export default {
         }
     },
     watch: {
-        shouldShowResults(current, previous) {
-            const vm = this;
-
-            if (!current && previous && vm.ui.tab === 0) {
-                vm.ui.tab = 1;
-            }
-        },
         form: {
             deep: true,
             handler() {
@@ -173,8 +161,6 @@ export default {
                 if (!vm.shouldShowResults) return;
 
                 vm._calculate();
-
-                vm.ui.tab = 0;
 
                 vm.$router.push({ query: vm.form });
             }

@@ -24,56 +24,52 @@
                     style="--vh-radio-grid-optimal-width:224px" />
             </FormRow>
 
-            <CalculatorResultTabs
-                v-model="ui.tab"
-                :should-show-results="shouldShowResults">
-                <template v-if="shouldShowResults">
-                    <FormRow>
-                        <EstimatedCalculationAlert />
-                    </FormRow>
+            <template v-if="shouldShowResults">
+                <FormRow>
+                    <EstimatedCalculationAlert />
+                </FormRow>
 
-                    <CalculatorResultList
-                        :items="resultList"
-                        class="mb-4" />
+                <CalculatorResultList
+                    :items="resultList"
+                    class="mb-4" />
 
-                    <FormRow class="mb-10">
-                        <MinimumWageAlert :price="results.prices.taxAdded" />
-                    </FormRow>
+                <FormRow class="mb-10">
+                    <MinimumWageAlert :price="results.prices.taxAdded" />
+                </FormRow>
 
-                    <div
-                        v-if="form.option.retailPrice"
-                        class="mb-10">
-                        <CalculatorResultFormRow
-                            :value="moneyFormat(form.option.retailPrice.value, 'TRY')"
-                            class="mb-2"
-                            label="Piyasa fiyatı" />
-
-                        <FormRow>
-                            <RetailPriceUpdateInfo
-                                :last-updated-date="form.option.retailPrice.lastUpdatedDate"
-                                :source-url="form.option.retailPrice.sourceUrl" />
-                        </FormRow>
-                    </div>
+                <div
+                    v-if="form.option.retailPrice"
+                    class="mb-10">
+                    <CalculatorResultFormRow
+                        :value="moneyFormat(form.option.retailPrice.value, 'TRY')"
+                        class="mb-2"
+                        label="Piyasa fiyatı" />
 
                     <FormRow>
-                        <CalculatorShareButton
-                            :screenshot-input="screenshotInput"
-                            :screenshot-output="resultList"
-                            :form="form"
-                            :calculator-title="page.calculatorTitle"
-                            :preset-title="page.preset.title"
-                            :preset-option-title="form.option.title" />
+                        <RetailPriceUpdateInfo
+                            :last-updated-date="form.option.retailPrice.lastUpdatedDate"
+                            :source-url="form.option.retailPrice.sourceUrl" />
                     </FormRow>
+                </div>
 
-                    <v-divider class="my-12" />
+                <FormRow>
+                    <CalculatorShareButton
+                        :screenshot-input="screenshotInput"
+                        :screenshot-output="resultList"
+                        :form="form"
+                        :calculator-title="page.calculatorTitle"
+                        :preset-title="page.preset.title"
+                        :preset-option-title="form.option.title" />
+                </FormRow>
 
-                    <PageSubtitle class="mb-4">
-                        Diğer telefonlar
-                    </PageSubtitle>
+                <v-divider class="my-12" />
 
-                    <CalculatorPresets :presets="ui.presets" />
-                </template>
-            </CalculatorResultTabs>
+                <PageSubtitle class="mb-4">
+                    Diğer telefonlar
+                </PageSubtitle>
+
+                <CalculatorPresets :presets="ui.presets" />
+            </template>
         </InnerContainer>
     </div>
 </template>
@@ -188,8 +184,7 @@ export default {
             ui: {
                 options,
                 registration: registrationOptions,
-                presets: otherPresets,
-                tab: 0
+                presets: otherPresets
             },
             form
         };
