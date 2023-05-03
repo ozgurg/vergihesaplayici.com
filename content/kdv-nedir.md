@@ -1,5 +1,6 @@
 ---
 title: "KDV Nedir?"
+description: "KDV, "Katma Değer Vergisi"nin kısaltmasıdır ve genellikle mal ve hizmetlerin satışı üzerinden alınan bir vergi türüdür."
 ---
 
 KDV, "Katma Değer Vergisi"nin kısaltmasıdır ve genellikle mal ve hizmetlerin satışı üzerinden alınan bir vergi türüdür.

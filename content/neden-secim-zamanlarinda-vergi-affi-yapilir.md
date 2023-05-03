@@ -1,5 +1,6 @@
 ---
 title: "Neden Seçim Zamanlarında Vergi Affı Yapılır?"
+description: "Seçim dönemlerinde vergi affı yapılması, siyasi partilerin seçmenler üzerindeki etkisini artırmak ve seçimlerde oy kazanmak için bir strateji olarak kullanılabilmektedir."
 ---
 
 Seçim dönemlerinde vergi affı yapılması, siyasi partilerin seçmenler üzerindeki etkisini artırmak ve seçimlerde oy kazanmak için bir strateji olarak kullanılabilmektedir. Vergi affı, vergi borçlarını yapılandırmak veya silmek için geçici bir süreçtir. Bu süreçte, vergi borçlarının bir kısmı veya tamamı silinebilir veya taksitlendirilebilir.

@@ -1,5 +1,6 @@
 ---
 title: "TRT Bandrolü Nedir?"
+description: "TRT bandrolü, Türkiye Radyo ve Televizyon Kurumu'nun (TRT) belirli tüketim ürünleri için aldığı bir tür vergidir."
 ---
 
 TRT bandrolü, Türkiye Radyo ve Televizyon Kurumu'nun (TRT) belirli tüketim ürünleri için aldığı bir tür vergidir. Bu vergi, özellikle müzik ve film gibi medya ürünleri için alınır.

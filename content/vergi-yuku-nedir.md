@@ -1,5 +1,6 @@
 ---
 title: "Vergi Yükü Nedir?"
+description: "Vergi yükü, bir ülkedeki toplam vergi gelirinin milli gelir (GDP) içindeki oranıdır."
 ---
 
 Vergi yükü, bir ülkedeki toplam vergi gelirinin milli gelir (GDP) içindeki oranıdır. Bu oran, bir ülkedeki vergi sisteminin ne kadar ağır olduğunu ve vatandaşların gelirleri üzerindeki vergi baskısını gösterir. En yüksek vergi yüküne sahip ülkeler arasında aşağıdakiler sayılabilir:

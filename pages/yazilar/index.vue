@@ -5,28 +5,27 @@
         </PageTitle>
 
         <InnerContainer>
-            <v-list
-                outlined=""
-                rounded="">
+            <v-row>
                 <template v-for="_article in articles">
-                    <v-list-item
-                        :key="_article.url"
-                        :to="_article.url"
-                        link="">
-                        {{ _article.title }}
-                    </v-list-item>
+                    <v-col
+                        :key="_article.slug"
+                        cols="12"
+                        lg="6">
+                        <ArticleItem :article="_article" />
+                    </v-col>
                 </template>
-            </v-list>
+            </v-row>
         </InnerContainer>
     </div>
 </template>
 
 <script>
-import { articles } from "@/data/articles.js";
 
 export default {
-    data: () => ({
-        articles
-    })
+    async asyncData({ $content }) {
+        return {
+            articles: await $content("/").sortBy("createdAt", "desc").fetch()
+        };
+    }
 };
 </script>

@@ -1,5 +1,6 @@
 ---
 title: "Gümrük Vergisi Nedir?"
+description: "Gümrük vergisi, bir ülkenin sınırları içine giren veya çıkan mallara uygulanan bir vergidir."
 ---
 
 Gümrük vergisi, bir ülkenin sınırları içine giren veya çıkan mallara uygulanan bir vergidir. Bu vergi, ülkeler arasındaki ticareti düzenlemek ve korumak için alınır. Gümrük vergisi, ithal edilen veya ihrac edilen malların değerine, ağırlığına veya birim miktarına göre belirlenir.
