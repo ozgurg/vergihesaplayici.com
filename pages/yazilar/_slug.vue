@@ -31,6 +31,9 @@
 
 <script>
 export default {
+    head() {
+        return this.head;
+    },
     methods: {
         breadcrumbs() {
             const vm = this;
@@ -47,9 +50,15 @@ export default {
         }
     },
     async asyncData({ $content, params: { slug } }) {
+        const content = await $content(slug).fetch();
+
         return {
             articles: await $content("/").sortBy("createdAt", "desc").fetch(),
-            content: await $content(slug).fetch()
+            content,
+            head: {
+                title: content.title,
+                description: content.description
+            }
         };
     }
 };
