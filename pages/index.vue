@@ -37,6 +37,16 @@
                     </v-col>
                 </template>
             </v-row>
+            <v-divider class="my-5" />
+            <div class="text-right">
+                <v-btn
+                    to="/yazilar/"
+                    color="primary"
+                    text=""
+                    outlined="">
+                    Diğer garip yazıları bile okumak istiyorum
+                </v-btn>
+            </div>
         </InnerContainer>
     </div>
 </template>
@@ -55,7 +65,7 @@ export default {
     }),
     async asyncData({ $content }) {
         return {
-            articles: await $content("/").sortBy("createdAt", "desc").fetch()
+            articles: await $content("/").sortBy("createdAt", "desc").limit(4).fetch()
         };
     }
 };
