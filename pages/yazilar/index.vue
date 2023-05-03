@@ -1,5 +1,7 @@
 <template>
     <div>
+        <AppBreadcrumbs :items="breadcrumbs()" />
+
         <PageTitle>
             Yazılar
         </PageTitle>
@@ -20,8 +22,17 @@
 </template>
 
 <script>
-
 export default {
+    methods: {
+        breadcrumbs() {
+            return [
+                {
+                    title: "Yazılar",
+                    url: "/yazilar/"
+                }
+            ];
+        }
+    },
     async asyncData({ $content }) {
         return {
             articles: await $content("/").sortBy("createdAt", "desc").fetch()

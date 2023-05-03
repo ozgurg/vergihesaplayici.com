@@ -1,5 +1,7 @@
 <template>
     <div>
+        <AppBreadcrumbs :items="breadcrumbs()" />
+
         <PageTitle>
             {{ content.title }}
         </PageTitle>
@@ -29,6 +31,21 @@
 
 <script>
 export default {
+    methods: {
+        breadcrumbs() {
+            const vm = this;
+            return [
+                {
+                    title: "Yazılar",
+                    url: "/yazilar/"
+                },
+                {
+                    title: vm.content.title,
+                    url: `/yazilar${vm.content.path}/`
+                }
+            ];
+        }
+    },
     async asyncData({ $content, params: { slug } }) {
         return {
             articles: await $content("/").sortBy("createdAt", "desc").fetch(),
