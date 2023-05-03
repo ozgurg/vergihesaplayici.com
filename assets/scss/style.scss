@@ -21,5 +21,9 @@ video {
     opacity: 0
 }
 
+.nuxt-content {
+    line-height: 28px
+}
+
 @import "_utilities.scss";
 @import "_dialog.scss";
