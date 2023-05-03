@@ -38,7 +38,7 @@ export default {
     },
     methods: {
         url(article) {
-            return `/yazilar/${article.path}/`;
+            return `/yazilar${article.path}/`;
         }
     }
 };
