@@ -1,5 +1,6 @@
 ---
 title: "Vergiden Nasıl Kaçınılır?"
+description: "Vergi, bir devletin bütçesini finanse etmek için topladığı önemli bir gelir kaynağıdır."
 ---
 
 Vergi, bir devletin bütçesini finanse etmek için topladığı önemli bir gelir kaynağıdır. Vergi kaçırmak, yasa dışı bir eylemdir ve birçok ülkede cezai yaptırımlara tabidir. Bununla birlikte, vergi mükellefleri, vergi yükünü hafifletmek veya vergi ödemekten kaçınmak için meşru yollarla vergi planlaması yapabilirler. Aşağıda, meşru vergi planlaması yolları verilmiştir:

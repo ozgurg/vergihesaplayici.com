@@ -1,5 +1,6 @@
 ---
 title: "Vergi Ne Zaman Ortaya Çıkmıştır?"
+description: "Vergi, tarihin başlangıcından beri var olan bir olgudur ve insanların toplu olarak yaşamaya başlamalarıyla ortaya çıkmıştır."
 ---
 
 Vergi, tarihin başlangıcından beri var olan bir olgudur ve insanların toplu olarak yaşamaya başlamalarıyla ortaya çıkmıştır. İlk insanların avcı-toplayıcı olduğu dönemlerde bile, bireysel becerilerini bir araya getirerek toplumları oluşturmuşlardır. Toplumların büyümesi ve gelişmesi ile birlikte, vergiye ihtiyaç duyulmaya başlanmıştır. İnsanların ortak ihtiyaçlarını karşılamak, kamu hizmetleri sunmak, savunma gücü oluşturmak ve ülkenin refahını artırmak için vergi toplama yöntemleri geliştirilmiştir.

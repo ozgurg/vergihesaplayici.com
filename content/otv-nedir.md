@@ -1,5 +1,6 @@
 ---
 title: "ÖTV Nedir?"
+description: "ÖTV, Özel Tüketim Vergisi'nin kısaltmasıdır ve belirli tüketim ürünleri için alınan bir tür vergidir."
 ---
 
 ÖTV, Özel Tüketim Vergisi'nin kısaltmasıdır ve belirli tüketim ürünleri için alınan bir tür vergidir. Özellikle lüks tüketim ürünleri, alkollü içecekler, tütün ürünleri, otomobiller ve benzin gibi özel tüketim ürünleri için alınır.

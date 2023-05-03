@@ -1,5 +1,6 @@
 ---
 title: "KDV Nasıl Hesaplanır?"
+description: "KDV (Katma Değer Vergisi), bir mal veya hizmetin üretim ve satış aşamaları boyunca eklenen bir tür vergidir."
 ---
 
 KDV (Katma Değer Vergisi), bir mal veya hizmetin üretim ve satış aşamaları boyunca eklenen bir tür vergidir. KDV, genellikle ürünün son kullanıcısına satıldığı zaman alınır. KDV'nin hesaplanması için aşağıdaki adımlar izlenir:

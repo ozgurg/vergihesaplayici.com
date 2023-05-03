@@ -27,18 +27,26 @@
                 class="mb-4">
                 Bir takım yazılar
             </PageSubtitle>
-            <v-list
-                outlined=""
-                rounded="">
+            <v-row>
                 <template v-for="_article in articles">
-                    <v-list-item
-                        :key="_article.url"
-                        :to="_article.url"
-                        link="">
-                        {{ _article.title }}
-                    </v-list-item>
+                    <v-col
+                        :key="_article.slug"
+                        cols="12"
+                        lg="6">
+                        <ArticleItem :article="_article" />
+                    </v-col>
                 </template>
-            </v-list>
+            </v-row>
+            <v-divider class="my-5" />
+            <div class="text-right">
+                <v-btn
+                    to="/yazilar/"
+                    color="primary"
+                    text=""
+                    outlined="">
+                    Diğer garip yazıları bile okumak istiyorum
+                </v-btn>
+            </div>
         </InnerContainer>
     </div>
 </template>
@@ -46,7 +54,6 @@
 <script>
 import page from "@/data/pages/ana-sayfa.page.js";
 import Hesaplayicilar from "@/data/pages/hesaplayicilar.page.js";
-import { articles } from "@/data/articles.js";
 
 export default {
     head() {
@@ -54,8 +61,12 @@ export default {
     },
     data: () => ({
         page,
-        Hesaplayicilar,
-        articles
-    })
+        Hesaplayicilar
+    }),
+    async asyncData({ $content }) {
+        return {
+            articles: await $content("/").sortBy("createdAt", "desc").limit(4).fetch()
+        };
+    }
 };
 </script>

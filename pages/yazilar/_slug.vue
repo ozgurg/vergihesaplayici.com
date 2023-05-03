@@ -1,41 +1,54 @@
 <template>
     <div>
+        <AppBreadcrumbs :items="breadcrumbs()" />
+
         <PageTitle>
             {{ content.title }}
         </PageTitle>
 
-        <nuxt-content :document="content" />
+        <InnerContainer>
+            <nuxt-content :document="content" />
 
-        <v-divider class="my-12" />
+            <v-divider class="my-12" />
 
-        <PageSubtitle
-            class="mb-4">
-            Diğer yazılar
-        </PageSubtitle>
-        <v-list
-            outlined=""
-            rounded="">
-            <template v-for="_article in articles">
-                <v-list-item
-                    :key="_article.url"
-                    :to="_article.url"
-                    link="">
-                    {{ _article.title }}
-                </v-list-item>
-            </template>
-        </v-list>
+            <PageSubtitle
+                class="mb-4">
+                Diğer yazılar
+            </PageSubtitle>
+            <v-row>
+                <template v-for="_article in articles">
+                    <v-col
+                        :key="_article.slug"
+                        cols="12"
+                        lg="6">
+                        <ArticleItem :article="_article" />
+                    </v-col>
+                </template>
+            </v-row>
+        </InnerContainer>
     </div>
 </template>
 
 <script>
-import { articles } from "@/data/articles.js";
-
 export default {
-    data: () => ({
-        articles
-    }),
+    methods: {
+        breadcrumbs() {
+            const vm = this;
+            return [
+                {
+                    title: "Yazılar",
+                    url: "/yazilar/"
+                },
+                {
+                    title: vm.content.title,
+                    url: `/yazilar${vm.content.path}/`
+                }
+            ];
+        }
+    },
     async asyncData({ $content, params: { slug } }) {
         return {
+            articles: await $content("/").sortBy("createdAt", "desc").fetch(),
             content: await $content(slug).fetch()
         };
     }
