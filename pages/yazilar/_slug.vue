@@ -3,11 +3,11 @@
         <AppBreadcrumbs :items="breadcrumbs()" />
 
         <PageTitle>
-            {{ content.title }}
+            {{ article.title }}
         </PageTitle>
 
         <InnerContainer>
-            <nuxt-content :document="content" />
+            <nuxt-content :document="article" />
 
             <v-divider class="my-12" />
 
@@ -43,14 +43,14 @@ export default {
                     url: "/yazilar/"
                 },
                 {
-                    title: vm.content.title,
-                    url: `/yazilar${vm.content.path}/`
+                    title: vm.article.title,
+                    url: `/yazilar${vm.article.path}/`
                 }
             ];
         }
     },
     async asyncData({ $content, params: { slug } }) {
-        const content = await $content(slug).fetch();
+        const article = await $content(slug).fetch();
 
         const articles = await $content("/")
             .sortBy("createdAt", "desc")
@@ -61,10 +61,10 @@ export default {
 
         return {
             articles: filteredArticles,
-            content,
+            article,
             head: {
-                title: content.title,
-                description: content.description
+                title: article.title,
+                description: article.description
             }
         };
     }
