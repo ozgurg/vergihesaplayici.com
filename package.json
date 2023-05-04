@@ -1,6 +1,6 @@
 {
     "name": "vergihesaplayici.com",
-    "version": "6.13.1",
+    "version": "6.14.0",
     "description": "vergihesaplayici.com, vergi hesaplar.",
     "license": "MIT",
     "homepage": "https://vergihesaplayici.com/",
@@ -35,8 +35,8 @@
         "tax-calculator"
     ],
     "dependencies": {
-        "core-js": "^3.30.0",
-        "firebase": "^9.19.1",
+        "core-js": "^3.30.1",
+        "firebase": "^9.21.0",
         "js-file-downloader": "^1.1.24",
         "nuxt": "^2.15.8",
         "vue": "^2.6.14",
@@ -46,7 +46,7 @@
         "vuex": "^3.6.2"
     },
     "devDependencies": {
-        "@babel/eslint-parser": "^7.21.3",
+        "@babel/eslint-parser": "^7.21.8",
         "@mdi/js": "^7.2.96",
         "@nuxt/content": "^1.15.1",
         "@nuxt/types": "^2.15.8",
@@ -57,17 +57,17 @@
         "@nuxtjs/sitemap": "^2.4.0",
         "@nuxtjs/svg": "^0.4.0",
         "@nuxtjs/vuetify": "^1.12.3",
-        "@types/jest": "^29.5.0",
+        "@types/jest": "^29.5.1",
         "babel-core": "^6.26.3",
         "babel-jest": "^29.5.0",
         "eslint": "^8.37.0",
         "eslint-config-google": "^0.14.0",
-        "eslint-plugin-jsdoc": "^40.1.1",
+        "eslint-plugin-jsdoc": "^43.1.1",
         "eslint-plugin-nuxt": "^4.0.0",
-        "eslint-plugin-vue": "^9.10.0",
+        "eslint-plugin-vue": "^9.11.0",
         "husky": "^8.0.3",
         "jest": "^29.5.0",
-        "lint-staged": "^13.2.0",
+        "lint-staged": "^13.2.2",
         "nuxt-canonical": "^1.0.6",
         "webpack": "^4.46.0"
     },
