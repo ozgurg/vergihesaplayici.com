@@ -84,6 +84,7 @@ export default {
         "@nuxtjs/svg",
         "@nuxtjs/pwa",
         "@/modules/append-calculator-presets-to-sitemap.js", // Must be before "@nuxtjs/sitemap"
+        "@/modules/append-articles-to-sitemap.js", // Must be before "@nuxtjs/sitemap"
         "@nuxtjs/sitemap",
         [
             "nuxt-canonical",
