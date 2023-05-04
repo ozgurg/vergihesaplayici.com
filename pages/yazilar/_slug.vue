@@ -52,15 +52,14 @@ export default {
     async asyncData({ $content, params: { slug } }) {
         const article = await $content(slug).fetch();
 
-        const articles = await $content("/")
+        const otherArticles = await $content("/")
             .sortBy("createdAt", "desc")
             .limit(6)
+            .where({ slug: { $ne: slug } })
             .fetch();
 
-        const filteredArticles = Object.values(articles).filter(_article => _article.slug !== slug);
-
         return {
-            articles: filteredArticles,
+            articles: otherArticles,
             article,
             head: {
                 title: article.title,
