@@ -6,6 +6,14 @@
             {{ page.title }}
         </PageTitle>
 
+        <template v-if="$vuetify.breakpoint.lgAndUp">
+            <AdsterraBanner728x90 :order="0" class="d-flex mx-auto" />
+        </template>
+        <template v-else-if="$vuetify.breakpoint.mdAndDown">
+            <AdsterraBanner300x250 :order="0" class="d-flex mx-auto" />
+        </template>
+        <v-divider class="mt-4 mb-12" />
+
         <InnerContainer>
             <FormRow
                 class="mb-10"
@@ -62,6 +70,17 @@
                         :preset-option-title="form.option.title" />
                 </FormRow>
 
+                <FormRow>
+                    <v-divider class="mb-2 mt-12" />
+                    <template v-if="$vuetify.breakpoint.lgAndUp">
+                        <AdsterraBanner468x60 :order="1" class="d-flex mx-auto" />
+                    </template>
+                    <template v-else-if="$vuetify.breakpoint.mdAndDown">
+                        <AdsterraBanner320x50 :order="1" class="d-flex mx-auto" />
+                    </template>
+                    <v-divider class="mt-2 mb-12" />
+                </FormRow>
+
                 <v-divider class="my-12" />
 
                 <PageSubtitle class="mb-4">
@@ -70,6 +89,12 @@
 
                 <CalculatorPresets :presets="ui.presets" />
             </template>
+
+            <v-divider class="mb-2 mt-16" />
+            <AdsterraNative
+                :order="2"
+                ad-key="18d820d42a43bbb54b363d01dc952cf3"
+                class="mt-4" />
         </InnerContainer>
     </div>
 </template>
