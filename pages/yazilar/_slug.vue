@@ -7,9 +7,21 @@
         </PageTitle>
 
         <InnerContainer>
+            <template v-if="$vuetify.breakpoint.lgAndUp">
+                <AdsterraBanner728x90 :order="0" class="d-flex mx-auto" />
+            </template>
+            <template v-else-if="$vuetify.breakpoint.mdAndDown">
+                <AdsterraBanner300x250 :order="0" class="d-flex mx-auto" />
+            </template>
+            <v-divider class="mt-4 mb-12" />
+
             <nuxt-content :document="article" />
 
-            <v-divider class="my-12" />
+            <v-divider class="mb-2 mt-12" />
+            <AdsterraNative
+                :order="1"
+                ad-key="18d820d42a43bbb54b363d01dc952cf3" />
+            <v-divider class="mt-2 mb-12" />
 
             <PageSubtitle
                 class="mb-4">
@@ -25,6 +37,15 @@
                     </v-col>
                 </template>
             </v-row>
+
+            <v-divider class="mb-2 mt-12" />
+            <template v-if="$vuetify.breakpoint.lgAndUp">
+                <AdsterraBanner468x60 :order="2" class="d-flex mx-auto" />
+            </template>
+            <template v-else-if="$vuetify.breakpoint.mdAndDown">
+                <AdsterraBanner320x50 :order="2" class="d-flex mx-auto" />
+            </template>
+            <v-divider class="mt-2 mb-12" />
         </InnerContainer>
     </div>
 </template>

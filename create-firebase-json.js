@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 // create-csp-nonce-txt.js
-const cspNonce = fs.readFileSync(path.join(__dirname, "csp-nonce.txt"), "UTF8");
+// const cspNonce = fs.readFileSync(path.join(__dirname, "csp-nonce.txt"), "UTF8");
 
 const objectToCspHeader = object => {
     const cspHeader = [];
@@ -39,7 +39,8 @@ const firebaseJson = {
                     {
                         key: "Content-Security-Policy",
                         value: objectToCspHeader({
-                            "base-uri": [
+                            // Disabled for ads
+                            /* "base-uri": [
                                 "'self'"
                             ],
                             "object-src": [
@@ -66,14 +67,14 @@ const firebaseJson = {
                                 "data:",
                                 "www.googletagmanager.com"
                             ],
-                            /* "style-src": [
+                            "style-src": [
                                 "'self'",
                                 `'nonce-${cspNonce}'`,
                                 "fonts.googleapis.com"
-                            ], */
+                            ],
                             "font-src": [
                                 "fonts.gstatic.com"
-                            ]
+                            ] */
                         })
                     }
                 ]

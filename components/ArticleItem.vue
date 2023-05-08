@@ -2,7 +2,7 @@
     <v-card
         :to="url(article)"
         link=""
-        class="h-100 d-flex flex-column pa-3">
+        class="h-100 d-flex flex-column pa-3 overflow-hidden">
         <v-card-title>
             {{ article.title }}
         </v-card-title>
