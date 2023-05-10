@@ -1,5 +1,5 @@
 ---
-title: "Zirai Kazanç Vergisi Nedir?"
+title: "Zirai Kazanç Gelir Vergisi Nedir?"
 description: "Zirai kazanç vergisi, Türkiye'de faaliyet gösteren çiftçilerin elde ettikleri gelirler üzerinden ödedikleri bir vergidir"
 ---
 
