@@ -22,7 +22,52 @@ video {
 }
 
 .nuxt-content {
-    line-height: 28px
+    line-height: 28px;
+
+    table {
+        width: 100%;
+        border-spacing: 0;
+
+        th {
+            color: hsla(0, 0%, 100%, .7);
+            font-size: .875rem;
+            height: 48px;
+            padding: 0 16px
+        }
+
+        td {
+            font-size: .875rem;
+            height: 48px;
+            border-bottom: thin solid hsla(0, 0%, 100%, .12);
+            padding: 0 16px;
+            transition: height .2s cubic-bezier(.4, 0, .6, 1)
+        }
+    }
+
+    .vergi-turleri-table {
+        table {
+            th {
+                &:nth-child(1) {
+                    width: 96px;
+                    text-align: right
+                }
+
+                &:nth-child(2) {
+                    text-align: left
+                }
+            }
+
+            td {
+                &:nth-child(1) {
+                    text-align: right
+                }
+
+                &:nth-child(2) {
+                    text-align: left
+                }
+            }
+        }
+    }
 }
 
 @import "_utilities.scss";
