@@ -24,8 +24,8 @@ description: ""
 | 0021 | <nuxt-link to="/yazilar/banka-muameleleri-vergisi-nedir/">Banka Muameleleri Vergisi</nuxt-link>                     |
 | 0022 | <nuxt-link to="/yazilar/sigorta-muameleleri-vergisi-nedir/">Sigorta Muameleleri Vergisi</nuxt-link>                 |
 | 0027 | GELİR VERGİSİ GEÇİCİ VERGİ                                                                                          |
-| 0032 | GELİR GEÇİCİ VERGİ                                                                                                  |
-| 0033 | KURUM GEÇİCİ VERGİ                                                                                                  |
+| 0032 | <nuxt-link to="/yazilar/gelir-gecici-vergi-nedir/">Gelir Geçici Vergi</nuxt-link>                                   |
+| 0033 | <nuxt-link to="/yazilar/kurum-gecisi-vergi-nedir/">Kurum Geçici Vergi</nuxt-link>                                   |
 | 0040 | DAMGA VERGİSİ (BEYANNAMELİ DAMGA VERGİSİ MÜKELLEFİ)                                                                 |
 | 0046 | <nuxt-link to="/yazilar/akaryakit-tuketim-vergisi-nedir/">Akaryakıt Tüketim Vergisi</nuxt-link>                     |
 | 0048 | GELİR V. M.TALİH OYUNLARI ASGARİ VERGİ                                                                              |
@@ -35,7 +35,7 @@ description: ""
 | 0053 | KURUMLAR VERGİSİ KURUM GEÇİCİ VERGİ                                                                                 |
 | 0056 | OYUN KAĞITLARINDAN ALINAN EK VERGİ                                                                                  |
 | 0057 | RÖNTGEN FİLMLERİNDEN ALINAN EK VERGİ                                                                                |
-| 0060 | MÜLGA MADEN FONU                                                                                                    |
+| 0060 | <nuxt-link to="/yazilar/mulga-maden-fonu-nedir/">Mülga Maden Fonu</nuxt-link>                                       |
 | 0061 | KAYNAK KULLANIMI DESTEKLEME FONU KESİNTİSİ                                                                          |
 | 0062 | MÜLGA KOOPERATİFÇİLİK TANITMA VE EĞİTİM FONU                                                                        |
 | 0067 | G.V.K. GEÇİCİ 67/11 MADDESİNE GÖRE YAPILAN İHTİYARİ BEYAN                                                           |
