@@ -28,12 +28,12 @@ description: "Çok fazla olan vergi türleri kodlaryla bu sayfada bulunuyor"
 | 0033 | <nuxt-link to="/yazilar/kurum-gecici-vergi-nedir/">Kurum Geçici Vergi</nuxt-link>                                                                         |
 | 0040 | <nuxt-link to="/yazilar/damga-vergisi-beyannameli-damga-vergisi-mukellefi-nedir/">Damga Vergisi (Beyannameli Damga Vergisi Mükellefi)</nuxt-link>         |
 | 0046 | <nuxt-link to="/yazilar/akaryakit-tuketim-vergisi-nedir/">Akaryakıt Tüketim Vergisi</nuxt-link>                                                           |
-| 0048 | GELİR V. M.TALİH OYUNLARI ASGARİ VERGİ                                                                                                                    |
+| 0048 | <nuxt-link to="/yazilar/gelir-v-m-talih-oyunlari-asgari-vergi-nedir/">Gelir V. M. Talih Oyunları Asgari Vergi</nuxt-link>                                 |
 | 0049 | <nuxt-link to="/yazilar/her-turlu-ispirtolar-ve-fuzel-yagindan-alinan-ek-vergi-nedir/">Her Türlü İspirtolar ve Füzel Yağından Alınan Ek Vergi</nuxt-link> |
-| 0050 | KURUMLAR V. M.TALİH OYUNLARI ASGARİ VERGİ                                                                                                                 |
+| 0050 | <nuxt-link to="/yazilar/kurumlar-v-m-talih-oyunlari-asgari-vergi-nedir/">Kurumlar V. M. Talih Oyunları Asgari Vergi</nuxt-link>                           |
 | 0051 | DİĞER ÜCRETLER                                                                                                                                            |
 | 0053 | KURUMLAR VERGİSİ KURUM GEÇİCİ VERGİ                                                                                                                       |
-| 0056 | OYUN KAĞITLARINDAN ALINAN EK VERGİ                                                                                                                        |
+| 0056 | <nuxt-link to="/yazilar/oyun-kagitlarindan-alinan-ek-vergi-nedir/">Oyun Kağıtlarından Alınan Ek Vergi</nuxt-link>                                         |
 | 0057 | RÖNTGEN FİLMLERİNDEN ALINAN EK VERGİ                                                                                                                      |
 | 0060 | <nuxt-link to="/yazilar/mulga-maden-fonu-nedir/">Mülga Maden Fonu</nuxt-link>                                                                             |
 | 0061 | KAYNAK KULLANIMI DESTEKLEME FONU KESİNTİSİ                                                                                                                |
