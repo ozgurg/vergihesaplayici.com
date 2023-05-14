@@ -1,5 +1,5 @@
 ---
-title: "Gelir Vergisi Nedir?"
+title: "Gelir Vergisi (GMSI) Nedir?"
 description: "Gelir vergisi, bir ülkenin vergi sistemine göre, kişilerin ya da şirketlerin elde ettikleri gelirlerden ödedikleri vergidir"
 ---
 
