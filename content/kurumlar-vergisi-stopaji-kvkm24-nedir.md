@@ -1,5 +1,5 @@
 ---
-title: "Kurumlar Vergisi Stopajı Nedir? (KVKM24)"
+title: "Kurumlar Vergisi Stopajı (KVKM24) Nedir?"
 description: "*Kurumlar vergisi stopajı*, Türkiye'deki kurumların ödediği bir vergidir. KVKM24 olarak da bilinir"
 ---
 
