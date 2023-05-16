@@ -50,12 +50,12 @@ description: "Çok fazla olan vergi türleri kodlaryla bu sayfada bulunuyor"
 | 0093 | SAİR ŞARAP VE BİRALARA İLİŞKİN EK VERGİ                                                                                                                   |
 | 0094 | HER TÜRLÜ ALKOLSÜZ İÇECEKLERDEN ALINAN EK VERGİ                                                                                                           |
 | 1013 | EĞİTİM,GENÇLİK,SPOR VE SAĞLIK HİZMETLERİ VERGİSİ                                                                                                          |
-| 1018 | MAHSUPLARDAN KESİLEN DAMGA VERGİSİ                                                                                                                        |
+| 1018 | <nuxt-link to="/yazilar/mahsuplardan-kesilen-damga-vergisi-nedir/">Mahsuplardan Kesilen Damga Vergisi</nuxt-link>                                         |
 | 1020 | FON PAYI                                                                                                                                                  |
 | 1026 | 5254 SAYILI KANUNA GÖRE MUHTAÇ ÇİFTÇİLERE VERİLEN ÖDÜNÇ TOHUMLUKLARDAN HAZİNE ALACAĞINA DÖNÜŞENLER AİT FAİZ                                               |
 | 1027 | 2004/5682 SAYILI BKK İLE HAZİNE ALACĞINA DÖNÜŞEN TOHUMLUK KREDİLERİNE DÖNÜŞENLER AİT FAİZ                                                                 |
 | 1028 | 5335 SAYILI KANUNA GÖRE DESTEKLEME FİYAT İSTİKRAR FONUNA AİT FAİZ                                                                                         |
-| 1030 | PİŞMANLIK ZAMMI                                                                                                                                           |
+| 1030 | <nuxt-link to="/yazilar/pismanlik-zammi-nedir/">Pişmanlık Zammı</nuxt-link>                                                                               |
 | 1037 | TRAFİK MUAYENESİ PARA CEZALARI                                                                                                                            |
 | 1042 | E.KATKI PAYI                                                                                                                                              |
 | 1043 | ÖZEL İŞLEM VERGİSİ                                                                                                                                        |
@@ -67,7 +67,7 @@ description: "Çok fazla olan vergi türleri kodlaryla bu sayfada bulunuyor"
 | 1052 | 5335 SAYILI KANUNA GÖRE HAZİNE ALACAĞINA DÖNÜŞEN TOHUMLUK KREDİLERİNE AİT GEÇ ÖDEME ZAMMI                                                                 |
 | 1053 | 5736 SAYILI KANUN UYARINCA GEÇ ÖDEME ZAMMI                                                                                                                |
 | 1055 | DÜŞÜK OLAN DEĞERLEME TUTARI                                                                                                                               |
-| 1067 | VERGİ YARGI HARÇLARI                                                                                                                                      |
+| 1067 | <nuxt-link to="/yazilar/vergi-yargi-harclari-nedir/">Vergi Yargı Harçları</nuxt-link>                                                                     |
 | 1084 | GECİKME FAİZİ                                                                                                                                             |
 | 1085 | PARA CEZASI FAİZİ                                                                                                                                         |
 | 1086 | GECİKME ZAMMI                                                                                                                                             |
