@@ -1,15 +1,15 @@
 ---
 title: "Kurumlar Vergisi Stopajı (KVKM24) Nedir?"
-description: "*Kurumlar vergisi stopajı*, Türkiye'deki kurumların ödediği bir vergidir. KVKM24 olarak da bilinir"
+description: "Kurumlar vergisi stopajı, Türkiye'deki kurumların ödediği bir vergidir. KVKM24 olarak da bilinir"
 ---
 
-*Kurumlar vergisi stopajı*, Türkiye'deki kurumların ödediği bir vergidir. **KVKM24** olarak da bilinir. Bu vergi, Türkiye'deki kurumların elde ettikleri gelirler üzerinden ödedikleri bir vergidir.
+**Kurumlar vergisi stopajı**, Türkiye'deki kurumların ödediği bir vergidir. **KVKM24** olarak da bilinir. Bu vergi, Türkiye'deki kurumların elde ettikleri gelirler üzerinden ödedikleri bir vergidir.
 
 **KVKM24**, Türkiye'deki kurumların ödediği en önemli vergilerden biridir. Bu vergi, kurumların elde ettiği gelirler üzerinden alınır ve Türkiye'de kurulu olan tüm kurumların bu vergiyi ödemesi gerekmektedir. **KVKM24**, Türkiye'nin vergi gelirlerinin önemli bir bölümünü oluşturmaktadır.
 
-**KVKM24 vergisi**, kurumların elde ettiği gelirler üzerinden alınır. Kurumların elde ettiği gelirler, ticari faaliyetlerinden kaynaklanan *faiz*, *kira*, *ücret*, *hizmet*, *telif*, *gayrimenkul sermaye iradı*, *menkul sermaye iradı*, *değer artışı* gibi kalemlerdir. Kurumların bu kalemlerden elde ettikleri gelirler üzerinden belirli bir oranda vergi kesintisi yapılır.
+**KVKM24 vergisi**, kurumların elde ettiği gelirler üzerinden alınır. Kurumların elde ettiği gelirler, ticari faaliyetlerinden kaynaklanan **faiz**, **kira**, **ücret**, **hizmet**, **telif**, **gayrimenkul sermaye iradı**, **menkul sermaye iradı**, **değer artışı** gibi kalemlerdir. Kurumların bu kalemlerden elde ettikleri gelirler üzerinden belirli bir oranda vergi kesintisi yapılır.
 
-**KVKM24 vergisi**, kurumların ödediği bir *stopaj vergisi*dir. Stopaj vergisi, vergi yükümlüsü olan kişilerin elde ettiği gelirler üzerinden, vergi dairesi tarafından yapılan vergi kesintisidir. Kurumlar vergisi stopajı da, kurumların elde ettiği gelirler üzerinden yapılan bir stopaj vergisidir.
+**KVKM24 vergisi**, kurumların ödediği bir **stopaj vergisi**dir. Stopaj vergisi, vergi yükümlüsü olan kişilerin elde ettiği gelirler üzerinden, vergi dairesi tarafından yapılan vergi kesintisidir. Kurumlar vergisi stopajı da, kurumların elde ettiği gelirler üzerinden yapılan bir stopaj vergisidir.
 
 Kurumlar vergisi stopajı oranı, yıllık brüt gelirin **yüzde 20'si** oranındadır. Bu oran, Türkiye'deki tüm kurumlar için aynıdır. Yani, Türkiye'de kurulu olan tüm kurumlar, elde ettikleri gelirlerin yüzde 20'sini kurumlar vergisi stopajı olarak vergi dairesine ödemek zorundadır.
 
