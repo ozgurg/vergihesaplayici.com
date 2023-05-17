@@ -32,7 +32,7 @@ description: "Çok fazla olan vergi türleri kodlaryla bu sayfada bulunuyor"
 | 0049 | <nuxt-link to="/yazilar/her-turlu-ispirtolar-ve-fuzel-yagindan-alinan-ek-vergi-nedir/">Her Türlü İspirtolar ve Füzel Yağından Alınan Ek Vergi</nuxt-link> |
 | 0050 | <nuxt-link to="/yazilar/kurumlar-v-m-talih-oyunlari-asgari-vergi-nedir/">Kurumlar V. M. Talih Oyunları Asgari Vergi</nuxt-link>                           |
 | 0051 | DİĞER ÜCRETLER                                                                                                                                            |
-| 0053 | KURUMLAR VERGİSİ KURUM GEÇİCİ VERGİ                                                                                                                       |
+| 0053 | <nuxt-link to="/yazilar/kurumlar-vergisi-kurum-gecici-vergi-nedir/">Kurumlar Vergisi Kurum Geçici Vergi</nuxt-link>                                       |
 | 0056 | <nuxt-link to="/yazilar/oyun-kagitlarindan-alinan-ek-vergi-nedir/">Oyun Kağıtlarından Alınan Ek Vergi</nuxt-link>                                         |
 | 0057 | RÖNTGEN FİLMLERİNDEN ALINAN EK VERGİ                                                                                                                      |
 | 0060 | <nuxt-link to="/yazilar/mulga-maden-fonu-nedir/">Mülga Maden Fonu</nuxt-link>                                                                             |
@@ -42,13 +42,13 @@ description: "Çok fazla olan vergi türleri kodlaryla bu sayfada bulunuyor"
 | 0071 | PETROL VE DOĞALGAZ ÜRÜNLERİNE İLİŞKİN ÖZEL TÜKETİM VERGİSİ                                                                                                |
 | 0073 | KOLALI GAZOZ, ALKOLLÜ İÇEÇEKLER VE TÜTÜN MAMÜLLERİNE İLİŞKİN ÖZEL TÜKETİM VERGİSİ                                                                         |
 | 0074 | DAYANIKLI TÜKETİM VE DİĞER MALLARA İLİŞKİN ÖZEL TÜKETİM VERGİSİ                                                                                           |
-| 0075 | ALKOLLÜ İÇEÇEKLERE İLİŞKİN ÖZEL TÜKETİM VERGİSİ                                                                                                           |
-| 0076 | TÜTÜN MAMÜLLERİNE İLİŞKİN ÖZEL TÜKETİM VERGİSİ                                                                                                            |
+| 0075 | <nuxt-link to="/yazilar/alkollu-iceceklere-iliskin-ozel-tuketim-vergisi-nedir/">Alkollü İçeceklere İlişkin Özel Tüketim Vergisi</nuxt-link>               |
+| 0076 | <nuxt-link to="/yazilar/tutun-mamullerine-iliskin-ozel-tuketim-vergisi-nedir/">Tütün Mamüllerine İlişkin Özel Tüketim Vergisi</nuxt-link>                 |
 | 0077 | KOLALI GAZOZLARA İLİŞKİN ÖZEL TÜKETİM VERGİSİ                                                                                                             |
 | 0091 | TÜTÜN MAMÜLLERİNE İLİŞKİN EK VERGİ                                                                                                                        |
 | 0092 | HER TÜRLÜ ALKOLLÜ İÇKİLERE İLİŞKİN EK VERGİ                                                                                                               |
 | 0093 | SAİR ŞARAP VE BİRALARA İLİŞKİN EK VERGİ                                                                                                                   |
-| 0094 | HER TÜRLÜ ALKOLSÜZ İÇECEKLERDEN ALINAN EK VERGİ                                                                                                           |
+| 0094 | <nuxt-link to="/yazilar/her-turlu-alkolsuz-iceceklerden-alinan-ek-vergi-nedir/">Her Türlü Alkolsüz İçeceklerden Alınan Ek Vergi</nuxt-link>               |
 | 1013 | EĞİTİM,GENÇLİK,SPOR VE SAĞLIK HİZMETLERİ VERGİSİ                                                                                                          |
 | 1018 | <nuxt-link to="/yazilar/mahsuplardan-kesilen-damga-vergisi-nedir/">Mahsuplardan Kesilen Damga Vergisi</nuxt-link>                                         |
 | 1020 | FON PAYI                                                                                                                                                  |
@@ -60,9 +60,9 @@ description: "Çok fazla olan vergi türleri kodlaryla bu sayfada bulunuyor"
 | 1042 | E.KATKI PAYI                                                                                                                                              |
 | 1043 | ÖZEL İŞLEM VERGİSİ                                                                                                                                        |
 | 1046 | TEVKİFATTAN ALINAN DAMGA VERGİSİ                                                                                                                          |
-| 1047 | DAMGA VERGİSİ                                                                                                                                             |
+| 1047 | <nuxt-link to="/yazilar/damga-vergisi-nedir/">Damga Vergisi</nuxt-link>                                                                                   |
 | 1048 | 5035 SAYILI KANUNA GÖRE DAMGA VERGİSİ                                                                                                                     |
-| 1050 | VERGİ BARIŞI TEFE TUTARI                                                                                                                                  |
+| 1050 | <nuxt-link to="/yazilar/vergi-barisi-tefe-tutari-nedir/">Vergi Barışı Tefe Tutarı</nuxt-link>                                                             |
 | 1051 | VERGİ BARIŞI GEÇ ÖDEME ZAMMI                                                                                                                              |
 | 1052 | 5335 SAYILI KANUNA GÖRE HAZİNE ALACAĞINA DÖNÜŞEN TOHUMLUK KREDİLERİNE AİT GEÇ ÖDEME ZAMMI                                                                 |
 | 1053 | 5736 SAYILI KANUN UYARINCA GEÇ ÖDEME ZAMMI                                                                                                                |
