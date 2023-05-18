@@ -56,7 +56,7 @@ description: "Çok fazla olan vergi türleri kodlaryla bu sayfada bulunuyor"
 | 1027 | 2004/5682 SAYILI BKK İLE HAZİNE ALACĞINA DÖNÜŞEN TOHUMLUK KREDİLERİNE DÖNÜŞENLER AİT FAİZ                                                                 |
 | 1028 | 5335 SAYILI KANUNA GÖRE DESTEKLEME FİYAT İSTİKRAR FONUNA AİT FAİZ                                                                                         |
 | 1030 | <nuxt-link to="/yazilar/pismanlik-zammi-nedir/">Pişmanlık Zammı</nuxt-link>                                                                               |
-| 1037 | TRAFİK MUAYENESİ PARA CEZALARI                                                                                                                            |
+| 1037 | <nuxt-link to="/yazilar/trafik-muayenesi-para-cezalari-nedir/">Trafik Muayenesi Para Cezaları</nuxt-link>                                                 |
 | 1042 | E.KATKI PAYI                                                                                                                                              |
 | 1043 | ÖZEL İŞLEM VERGİSİ                                                                                                                                        |
 | 1046 | TEVKİFATTAN ALINAN DAMGA VERGİSİ                                                                                                                          |
