@@ -34,9 +34,9 @@ description: "Çok fazla olan vergi türleri kodlaryla bu sayfada bulunuyor"
 | 0051 | DİĞER ÜCRETLER                                                                                                                                            |
 | 0053 | <nuxt-link to="/yazilar/kurumlar-vergisi-kurum-gecici-vergi-nedir/">Kurumlar Vergisi Kurum Geçici Vergi</nuxt-link>                                       |
 | 0056 | <nuxt-link to="/yazilar/oyun-kagitlarindan-alinan-ek-vergi-nedir/">Oyun Kağıtlarından Alınan Ek Vergi</nuxt-link>                                         |
-| 0057 | RÖNTGEN FİLMLERİNDEN ALINAN EK VERGİ                                                                                                                      |
+| 0057 | <nuxt-link to="/yazilar/rontgen-filmlerinden-alinan-ek-vergi-nedir/">Röntgen Filmlerinden Alınan Ek Vergi</nuxt-link>                                     |
 | 0060 | <nuxt-link to="/yazilar/mulga-maden-fonu-nedir/">Mülga Maden Fonu</nuxt-link>                                                                             |
-| 0061 | KAYNAK KULLANIMI DESTEKLEME FONU KESİNTİSİ                                                                                                                |
+| 0061 | <nuxt-link to="/yazilar/kaynak-kullanimi-destekleme-fonu-kesintisi-nedir/">Kaynak Kullanımı Destekleme Fonu Kesintisi</nuxt-link>                         |
 | 0062 | MÜLGA KOOPERATİFÇİLİK TANITMA VE EĞİTİM FONU                                                                                                              |
 | 0067 | G.V.K. GEÇİCİ 67/11 MADDESİNE GÖRE YAPILAN İHTİYARİ BEYAN                                                                                                 |
 | 0071 | PETROL VE DOĞALGAZ ÜRÜNLERİNE İLİŞKİN ÖZEL TÜKETİM VERGİSİ                                                                                                |
@@ -47,9 +47,9 @@ description: "Çok fazla olan vergi türleri kodlaryla bu sayfada bulunuyor"
 | 0077 | KOLALI GAZOZLARA İLİŞKİN ÖZEL TÜKETİM VERGİSİ                                                                                                             |
 | 0091 | TÜTÜN MAMÜLLERİNE İLİŞKİN EK VERGİ                                                                                                                        |
 | 0092 | HER TÜRLÜ ALKOLLÜ İÇKİLERE İLİŞKİN EK VERGİ                                                                                                               |
-| 0093 | SAİR ŞARAP VE BİRALARA İLİŞKİN EK VERGİ                                                                                                                   |
+| 0093 | <nuxt-link to="/yazilar/sair-sarap-ve-biralara-iliskin-ek-vergi-nedir/">Sair Şarap ve Biralara İlişkin Ek Vergi</nuxt-link>                               |
 | 0094 | <nuxt-link to="/yazilar/her-turlu-alkolsuz-iceceklerden-alinan-ek-vergi-nedir/">Her Türlü Alkolsüz İçeceklerden Alınan Ek Vergi</nuxt-link>               |
-| 1013 | EĞİTİM,GENÇLİK,SPOR VE SAĞLIK HİZMETLERİ VERGİSİ                                                                                                          |
+| 1013 | <nuxt-link to="/yazilar/egitim-genclik-spor-ve-saglik-hizmetleri-vergisi-nedir/">Eğitim, Gençlik, Spor ve Sağlık Hizmetleri Vergisi</nuxt-link>           |
 | 1018 | <nuxt-link to="/yazilar/mahsuplardan-kesilen-damga-vergisi-nedir/">Mahsuplardan Kesilen Damga Vergisi</nuxt-link>                                         |
 | 1020 | FON PAYI                                                                                                                                                  |
 | 1026 | 5254 SAYILI KANUNA GÖRE MUHTAÇ ÇİFTÇİLERE VERİLEN ÖDÜNÇ TOHUMLUKLARDAN HAZİNE ALACAĞINA DÖNÜŞENLER AİT FAİZ                                               |
