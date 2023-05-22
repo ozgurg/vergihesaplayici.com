@@ -11,7 +11,7 @@ Türkiye'nin enerji sektörü, ekonomik büyüme ve kalkınma için hayati bir r
 **Kaynak Kullanımı Destekleme Fonu (KKDF)**, Türkiye'deki enerji sektöründeki dönüşümü finanse etmek ve enerji verimliliğini artırmak amacıyla oluşturulan bir fon sistemidir. KKDF, enerji tüketimine bağlı olarak işletmeler ve tüketiciler tarafından ödenen bir kesinti şeklinde uygulanmaktadır. Bu kesinti, elektrik, doğal gaz, akaryakıt gibi enerji kaynaklarının tüketimine dayalı olarak belirlenen bir oranda gerçekleştirilir.
 
 
-### KKDF Kesintisi:
+### KKDF Kesintisi
 
 **KKDF kesintisi**, Türkiye'deki enerji kullanıcılarından alınan bir vergi türüdür. Enerji sektöründeki tüketiciler, elektrik, doğal gaz ve akaryakıt gibi enerji kaynaklarını kullanırken, bu kaynakların tüketimi üzerinden belirli bir oranda KKDF kesintisi ödemektedirler. Bu kesinti, enerji tüketimine göre farklı oranlarda uygulanabilmektedir.
 
