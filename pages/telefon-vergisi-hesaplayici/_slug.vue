@@ -15,6 +15,14 @@
         <v-divider class="mt-4 mb-12" />
 
         <InnerContainer>
+            <template v-if="slug === 'apple-vision-pro'">
+                <v-alert
+                    class="mb-10"
+                    type="info">
+                    Bu ürünün hangi ürün kategorisinden vergilendirileceğini henüz bilmiyoruz. Bu sayfa sadece bilgi vermek amacıyla hazırlanmıştır.
+                </v-alert>
+            </template>
+
             <FormRow
                 class="mb-10"
                 label="Kapasite">
@@ -115,6 +123,7 @@ export default {
         return this.page.head;
     },
     data: () => ({
+        slug: null,
         page: null,
         preset: null,
         ui: {},
@@ -205,6 +214,7 @@ export default {
         const otherPresets = presets.filter(preset => preset.slug !== slug);
 
         return {
+            slug,
             page: presetPage,
             ui: {
                 options,
