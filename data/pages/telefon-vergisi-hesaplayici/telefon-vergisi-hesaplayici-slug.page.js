@@ -8,6 +8,24 @@ const buildUrl = slug => `/telefon-vergisi-hesaplayici/${slug}/`;
 const lastUpdatedDateIphone = new Date("Mon Jun 05 2023 22:45:31 GMT+0300 (GMT+03:00)");
 
 const presets = [
+    // Apple Vision Pro
+    {
+        title: "Apple Vision Pro",
+        slug: "apple-vision-pro",
+        url: buildUrl("apple-vision-pro"),
+        icon: mdiApple,
+        color: "#555",
+        ogImageName: "telefon-vergisi-hesaplayici-apple-vision-pro.jpg",
+        pageTitle: "Apple Vision Pro'nun vergisi ne kadar?",
+        pageDescription: "Apple Vision Pro'nun vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
+        options: [
+            {
+                title: "Standart",
+                form: { price: 3499, currency: "USD" }
+            }
+        ]
+    },
+
     // iPhone 14
     {
         title: "iPhone 14 Pro",
