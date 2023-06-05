@@ -1,4 +1,4 @@
-import { mdiMicrosoftXbox, mdiNintendoSwitch, mdiSonyPlaystation } from "@mdi/js";
+import { mdiApple, mdiMicrosoftXbox, mdiNintendoSwitch, mdiSonyPlaystation } from "@mdi/js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
 import KonsolVergisiHesaplayici from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.page.js";
 import { findCalculatorPresetBySlug } from "@/utils/find-calculator-preset-by-slug.js";
@@ -127,6 +127,22 @@ const presets = [
                     lastUpdatedDate: new Date("Sat Nov 12 2022 04:16:11 GMT+0300 (GMT+03:00)"),
                     sourceUrl: "https://www.turkcell.com.tr/pasaj/hobi-oyun/oyun-konsolu/nintendo/switch-oled-konsol-nintendo"
                 }
+            }
+        ]
+    },
+    {
+        title: "Apple Vision Pro",
+        slug: "apple-vision-pro",
+        url: buildUrl("apple-vision-pro"),
+        icon: mdiApple,
+        color: "#555",
+        ogImageName: "konsol-vergisi-hesaplayici-apple-vision-pro.jpg",
+        pageTitle: "Apple Vision Pro'nun vergisi ne kadar?",
+        pageDescription: "Apple Vision Pro'nun vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
+        options: [
+            {
+                title: "Standart",
+                form: { price: 3499, currency: "USD" }
             }
         ]
     }
