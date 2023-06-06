@@ -21,9 +21,9 @@ const presets = [
                 title: "512GB",
                 form: { price: 299, currency: "EUR" },
                 retailPrice: {
-                    value: 9999,
-                    lastUpdatedDate: new Date("Sat Jan 28 2023 03:29:07 GMT+0300 (GMT+03:00)"),
-                    sourceUrl: "https://www.vatanbilgisayar.com/microsoft-xbox-series-s-oyun-konsolu.html"
+                    value: 10499,
+                    lastUpdatedDate: new Date("Tue Jun 06 2023 22:55:14 GMT+0300 (GMT+03:00)"),
+                    sourceUrl: "https://www.overgameweb.com/xbox-series-s-512gb-konsol"
                 }
             }
         ]
@@ -43,8 +43,8 @@ const presets = [
                 title: "1TB",
                 form: { price: 499, currency: "EUR" },
                 retailPrice: {
-                    value: 18499,
-                    lastUpdatedDate: new Date("Sat Jan 28 2023 03:29:07 GMT+0300 (GMT+03:00)"),
+                    value: 18999,
+                    lastUpdatedDate: new Date("Tue Jun 06 2023 22:55:14 GMT+0300 (GMT+03:00)"),
                     sourceUrl: "https://www.vatanbilgisayar.com/microsoft-xbox-series-x-oyun-konsolu.html"
                 }
             }
@@ -61,29 +61,38 @@ const presets = [
         pageDescription: "Satın aldığınız bir PlayStation 5'in yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
         options: [
             {
+                // FIXME: Need official price
                 // https://blog.playstation.com/2022/08/25/ps5-price-to-increase-in-select-markets-due-to-global-economic-environment-including-high-inflation-rates/
                 title: "Disksiz (825GB)",
                 form: { price: 449.99, currency: "EUR" },
                 retailPrice: {
-                    value: 11199,
-                    lastUpdatedDate: new Date("Sat Nov 12 2022 04:16:11 GMT+0300 (GMT+03:00)"),
-                    sourceUrl: "https://www.donanimhaber.com/playstation-turkiye-den-ps5-in-fiyatiyla-ilgili-aciklama-geldi--152229"
+                    value: 19999,
+                    lastUpdatedDate: new Date("Tue Jun 06 2023 22:55:14 GMT+0300 (GMT+03:00)"),
+                    sourceUrl: "https://www.vatanbilgisayar.com/sony-playstation-5-digital-surum-oyun-konsolu.html"
                 }
             },
             {
+                // FIXME: Need official price
+                // FIXME: Need price without controller bundle
                 // https://blog.playstation.com/2022/08/25/ps5-price-to-increase-in-select-markets-due-to-global-economic-environment-including-high-inflation-rates/
                 title: "Diskli (825GB)",
                 form: { price: 549.99, currency: "EUR" },
                 retailPrice: {
-                    value: 13199,
-                    lastUpdatedDate: new Date("Sat Nov 12 2022 04:16:11 GMT+0300 (GMT+03:00)"),
-                    sourceUrl: "https://www.donanimhaber.com/playstation-turkiye-den-ps5-in-fiyatiyla-ilgili-aciklama-geldi--152229"
+                    value: 20499,
+                    lastUpdatedDate: new Date("Tue Jun 06 2023 22:55:14 GMT+0300 (GMT+03:00)"),
+                    sourceUrl: "https://www.overgameweb.com/playstation-5-diskli-dualsense-wireless-controller-bundle"
                 }
             },
             {
+                // FIXME: Need official price
                 // https://blog.playstation.com/2022/11/02/playstation-vr2-launches-in-february-at-549-99/
                 title: "PlayStation VR2",
-                form: { price: 599.99, currency: "EUR" }
+                form: { price: 599.99, currency: "EUR" },
+                retailPrice: {
+                    value: 19299,
+                    lastUpdatedDate: new Date("Tue Jun 06 2023 22:55:14 GMT+0300 (GMT+03:00)"),
+                    sourceUrl: "https://www.overgameweb.com/sony-playstation-vr2-sanal-gerceklik-gozlugu-ve-vr2-sense-charging-station"
+                }
             }
         ]
     },
@@ -103,9 +112,9 @@ const presets = [
                 title: "Lite (32GB)",
                 form: { price: 199.99, currency: "USD" },
                 retailPrice: {
-                    value: 5999,
-                    lastUpdatedDate: new Date("Sat Nov 12 2022 04:16:11 GMT+0300 (GMT+03:00)"),
-                    sourceUrl: "https://www.turkcell.com.tr/pasaj/hobi-oyun/oyun-konsolu/nintendo/switch-lite-konsol-nintendo"
+                    value: 7999,
+                    lastUpdatedDate: new Date("Tue Jun 06 2023 22:55:14 GMT+0300 (GMT+03:00)"),
+                    sourceUrl: "https://www.overgameweb.com/nintendo-switch-lite-konsol-turkuaz"
                 }
             },
             {
@@ -113,9 +122,9 @@ const presets = [
                 title: "Original (32GB)",
                 form: { price: 299, currency: "USD" },
                 retailPrice: {
-                    value: 8999,
-                    lastUpdatedDate: new Date("Sat Nov 12 2022 04:16:11 GMT+0300 (GMT+03:00)"),
-                    sourceUrl: "https://www.turkcell.com.tr/pasaj/hobi-oyun/oyun-konsolu/nintendo/switch-konsol-nintendo"
+                    value: 8499,
+                    lastUpdatedDate: new Date("Tue Jun 06 2023 22:55:14 GMT+0300 (GMT+03:00)"),
+                    sourceUrl: "https://www.overgameweb.com/nintendo-switch-konsol-gri-gelistirilmis-pil"
                 }
             },
             {
@@ -123,9 +132,9 @@ const presets = [
                 title: "OLED (64GB)",
                 form: { price: 349.99, currency: "USD" },
                 retailPrice: {
-                    value: 11299,
-                    lastUpdatedDate: new Date("Sat Nov 12 2022 04:16:11 GMT+0300 (GMT+03:00)"),
-                    sourceUrl: "https://www.turkcell.com.tr/pasaj/hobi-oyun/oyun-konsolu/nintendo/switch-oled-konsol-nintendo"
+                    value: 12999,
+                    lastUpdatedDate: new Date("Tue Jun 06 2023 22:55:14 GMT+0300 (GMT+03:00)"),
+                    sourceUrl: "https://www.overgameweb.com/nintendo-switch-konsol-oled-edition-neon"
                 }
             }
         ]
