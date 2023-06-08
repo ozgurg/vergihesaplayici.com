@@ -5,7 +5,7 @@ import { findCalculatorPresetBySlug } from "@/utils/find-calculator-preset-by-sl
 
 const buildUrl = slug => `/telefon-vergisi-hesaplayici/${slug}/`;
 
-const lastUpdatedDateIphone = new Date("Mon Jun 05 2023 22:45:31 GMT+0300 (GMT+03:00)");
+const lastUpdatedDateIphone = new Date("Thu Jun 08 2023 09:44:05 GMT+0300 (GMT+03:00)");
 const lastUpdatedDateSamsung = new Date("Tue Jun 06 2023 22:41:26 GMT+0300 (GMT+03:00)");
 
 const presets = [
@@ -42,7 +42,7 @@ const presets = [
                 title: "128GB",
                 form: { price: 999, currency: "USD" },
                 retailPrice: {
-                    value: 48999,
+                    value: 54999,
                     lastUpdatedDate: lastUpdatedDateIphone,
                     sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14-pro"
                 }
@@ -51,7 +51,7 @@ const presets = [
                 title: "256GB",
                 form: { price: 1099, currency: "USD" },
                 retailPrice: {
-                    value: 51999,
+                    value: 58499,
                     lastUpdatedDate: lastUpdatedDateIphone,
                     sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14-pro"
                 }
@@ -60,7 +60,7 @@ const presets = [
                 title: "512GB",
                 form: { price: 1299, currency: "USD" },
                 retailPrice: {
-                    value: 57999,
+                    value: 65499,
                     lastUpdatedDate: lastUpdatedDateIphone,
                     sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14-pro"
                 }
@@ -69,7 +69,7 @@ const presets = [
                 title: "1TB",
                 form: { price: 1499, currency: "USD" },
                 retailPrice: {
-                    value: 63999,
+                    value: 72499,
                     lastUpdatedDate: lastUpdatedDateIphone,
                     sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14-pro"
                 }
@@ -90,7 +90,7 @@ const presets = [
                 title: "128GB",
                 form: { price: 1099, currency: "USD" },
                 retailPrice: {
-                    value: 52999,
+                    value: 58999,
                     lastUpdatedDate: lastUpdatedDateIphone,
                     sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14-pro"
                 }
@@ -99,7 +99,7 @@ const presets = [
                 title: "256GB",
                 form: { price: 1199, currency: "USD" },
                 retailPrice: {
-                    value: 55999,
+                    value: 62499,
                     lastUpdatedDate: lastUpdatedDateIphone,
                     sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14-pro"
                 }
@@ -108,7 +108,7 @@ const presets = [
                 title: "512GB",
                 form: { price: 1399, currency: "USD" },
                 retailPrice: {
-                    value: 61999,
+                    value: 69499,
                     lastUpdatedDate: lastUpdatedDateIphone,
                     sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14-pro"
                 }
@@ -117,7 +117,7 @@ const presets = [
                 title: "1TB",
                 form: { price: 1599, currency: "USD" },
                 retailPrice: {
-                    value: 67999,
+                    value: 76499,
                     lastUpdatedDate: lastUpdatedDateIphone,
                     sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14-pro"
                 }
@@ -138,7 +138,7 @@ const presets = [
                 title: "128GB",
                 form: { price: 799, currency: "USD" },
                 retailPrice: {
-                    value: 37999,
+                    value: 42499,
                     lastUpdatedDate: lastUpdatedDateIphone,
                     sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
                 }
@@ -147,7 +147,7 @@ const presets = [
                 title: "256GB",
                 form: { price: 899, currency: "USD" },
                 retailPrice: {
-                    value: 40999,
+                    value: 45999,
                     lastUpdatedDate: lastUpdatedDateIphone,
                     sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
                 }
@@ -156,7 +156,7 @@ const presets = [
                 title: "512GB",
                 form: { price: 1099, currency: "USD" },
                 retailPrice: {
-                    value: 46999,
+                    value: 52999,
                     lastUpdatedDate: lastUpdatedDateIphone,
                     sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
                 }
@@ -177,7 +177,7 @@ const presets = [
                 title: "128GB",
                 form: { price: 899, currency: "USD" },
                 retailPrice: {
-                    value: 41999,
+                    value: 46999,
                     lastUpdatedDate: lastUpdatedDateIphone,
                     sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
                 }
@@ -186,7 +186,7 @@ const presets = [
                 title: "256GB",
                 form: { price: 999, currency: "USD" },
                 retailPrice: {
-                    value: 44999,
+                    value: 50499,
                     lastUpdatedDate: lastUpdatedDateIphone,
                     sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
                 }
@@ -195,7 +195,7 @@ const presets = [
                 title: "512GB",
                 form: { price: 1199, currency: "USD" },
                 retailPrice: {
-                    value: 50999,
+                    value: 57499,
                     lastUpdatedDate: lastUpdatedDateIphone,
                     sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
                 }
@@ -219,7 +219,7 @@ const presets = [
                 title: "128GB",
                 form: { price: 599, currency: "USD" },
                 retailPrice: {
-                    value: 28499,
+                    value: 31999,
                     lastUpdatedDate: lastUpdatedDateIphone,
                     sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-13"
                 }
@@ -228,7 +228,7 @@ const presets = [
                 title: "256GB",
                 form: { price: 699, currency: "USD" },
                 retailPrice: {
-                    value: 31499,
+                    value: 35499,
                     lastUpdatedDate: lastUpdatedDateIphone,
                     sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-13"
                 }
@@ -237,7 +237,7 @@ const presets = [
                 title: "512GB",
                 form: { price: 899, currency: "USD" },
                 retailPrice: {
-                    value: 37499,
+                    value: 42499,
                     lastUpdatedDate: lastUpdatedDateIphone,
                     sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-13"
                 }
@@ -258,7 +258,7 @@ const presets = [
                 title: "128GB",
                 form: { price: 699, currency: "USD" },
                 retailPrice: {
-                    value: 31999,
+                    value: 35999,
                     lastUpdatedDate: lastUpdatedDateIphone,
                     sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-13"
                 }
@@ -267,7 +267,7 @@ const presets = [
                 title: "256GB",
                 form: { price: 799, currency: "USD" },
                 retailPrice: {
-                    value: 34999,
+                    value: 39499,
                     lastUpdatedDate: lastUpdatedDateIphone,
                     sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-13"
                 }
@@ -276,7 +276,7 @@ const presets = [
                 title: "512GB",
                 form: { price: 999, currency: "USD" },
                 retailPrice: {
-                    value: 40999,
+                    value: 46499,
                     lastUpdatedDate: lastUpdatedDateIphone,
                     sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-13"
                 }
@@ -300,7 +300,7 @@ const presets = [
                 title: "64GB",
                 form: { price: 429, currency: "USD" },
                 retailPrice: {
-                    value: 19499,
+                    value: 21999,
                     lastUpdatedDate: lastUpdatedDateIphone,
                     sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-se"
                 }
@@ -309,7 +309,7 @@ const presets = [
                 title: "128GB",
                 form: { price: 479, currency: "USD" },
                 retailPrice: {
-                    value: 20999,
+                    value: 23699,
                     lastUpdatedDate: lastUpdatedDateIphone,
                     sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-se"
                 }
@@ -318,7 +318,7 @@ const presets = [
                 title: "256GB",
                 form: { price: 579, currency: "USD" },
                 retailPrice: {
-                    value: 23999,
+                    value: 27199,
                     lastUpdatedDate: lastUpdatedDateIphone,
                     sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-se"
                 }
@@ -342,7 +342,7 @@ const presets = [
                 title: "64GB",
                 form: { price: 599, currency: "USD" },
                 retailPrice: {
-                    value: 28499,
+                    value: 31999,
                     lastUpdatedDate: lastUpdatedDateIphone,
                     sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-12"
                 }
@@ -351,7 +351,7 @@ const presets = [
                 title: "128GB",
                 form: { price: 649, currency: "USD" },
                 retailPrice: {
-                    value: 29999,
+                    value: 33699,
                     lastUpdatedDate: lastUpdatedDateIphone,
                     sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-12"
                 }
@@ -360,7 +360,7 @@ const presets = [
                 title: "256GB",
                 form: { price: 749, currency: "USD" },
                 retailPrice: {
-                    value: 32999,
+                    value: 37199,
                     lastUpdatedDate: lastUpdatedDateIphone,
                     sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-12"
                 }
