@@ -25,6 +25,10 @@ const presets = [
                     lastUpdatedDate: new Date("Tue Jun 06 2023 22:55:14 GMT+0300 (GMT+03:00)"),
                     sourceUrl: "https://www.overgameweb.com/xbox-series-s-512gb-konsol"
                 }
+            },
+            {
+                title: "1TB",
+                form: { price: 349.99, currency: "EUR" }
             }
         ]
     },
