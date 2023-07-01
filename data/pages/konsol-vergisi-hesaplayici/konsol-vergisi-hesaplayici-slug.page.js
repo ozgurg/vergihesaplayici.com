@@ -21,8 +21,8 @@ const presets = [
                 title: "512GB",
                 form: { price: 299, currency: "EUR" },
                 retailPrice: {
-                    value: 10499,
-                    lastUpdatedDate: new Date("Tue Jun 06 2023 22:55:14 GMT+0300 (GMT+03:00)"),
+                    value: 11499,
+                    lastUpdatedDate: new Date("Sat Jul 01 2023 08:22:32 GMT+0300 (GMT+03:00)"),
                     sourceUrl: "https://www.overgameweb.com/xbox-series-s-512gb-konsol"
                 }
             },
@@ -70,8 +70,8 @@ const presets = [
                 title: "Disksiz (825GB)",
                 form: { price: 449.99, currency: "EUR" },
                 retailPrice: {
-                    value: 19999,
-                    lastUpdatedDate: new Date("Tue Jun 06 2023 22:55:14 GMT+0300 (GMT+03:00)"),
+                    value: 22999,
+                    lastUpdatedDate: new Date("Sat Jul 01 2023 08:22:32 GMT+0300 (GMT+03:00)"),
                     sourceUrl: "https://www.vatanbilgisayar.com/sony-playstation-5-digital-surum-oyun-konsolu.html"
                 }
             },
@@ -82,8 +82,8 @@ const presets = [
                 title: "Diskli (825GB)",
                 form: { price: 549.99, currency: "EUR" },
                 retailPrice: {
-                    value: 20499,
-                    lastUpdatedDate: new Date("Tue Jun 06 2023 22:55:14 GMT+0300 (GMT+03:00)"),
+                    value: 23999,
+                    lastUpdatedDate: new Date("Sat Jul 01 2023 08:22:32 GMT+0300 (GMT+03:00)"),
                     sourceUrl: "https://www.overgameweb.com/playstation-5-diskli-dualsense-wireless-controller-bundle"
                 }
             },
