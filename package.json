@@ -35,8 +35,8 @@
         "tax-calculator"
     ],
     "dependencies": {
-        "core-js": "^3.30.2",
-        "firebase": "^9.22.1",
+        "core-js": "^3.31.0",
+        "firebase": "^9.23.0",
         "js-file-downloader": "^1.1.25",
         "nuxt": "^2.15.8",
         "vue": "^2.6.14",
@@ -46,7 +46,7 @@
         "vuex": "^3.6.2"
     },
     "devDependencies": {
-        "@babel/eslint-parser": "^7.21.8",
+        "@babel/eslint-parser": "^7.22.5",
         "@mdi/js": "^7.2.96",
         "@nuxt/content": "^1.15.1",
         "@nuxt/types": "^2.15.8",
@@ -59,14 +59,14 @@
         "@nuxtjs/vuetify": "^1.12.3",
         "babel-core": "^6.26.3",
         "babel-jest": "^29.5.0",
-        "eslint": "^8.42.0",
+        "eslint": "^8.44.0",
         "eslint-config-google": "^0.14.0",
-        "eslint-plugin-jsdoc": "^46.2.4",
+        "eslint-plugin-jsdoc": "^46.4.3",
         "eslint-plugin-nuxt": "^4.0.0",
-        "eslint-plugin-vue": "^9.14.1",
+        "eslint-plugin-vue": "^9.15.1",
         "husky": "^8.0.3",
         "jest": "^29.5.0",
-        "lint-staged": "^13.2.2",
+        "lint-staged": "^13.2.3",
         "nuxt-canonical": "^1.0.6",
         "webpack": "^4.46.0"
     },
