@@ -2,22 +2,13 @@
     <v-card
         :to="url(article)"
         link=""
-        class="h-100 d-flex flex-column pa-3 overflow-hidden">
+        class="h-100 d-flex flex-column px-3 py-5 overflow-hidden">
         <v-card-title>
             {{ article.title }}
         </v-card-title>
-        <v-card-subtitle>
-            {{ article.createdAt }}
-        </v-card-subtitle>
         <v-card-text>
             {{ article.description }}…
         </v-card-text>
-        <v-card-actions>
-            <v-btn text="" outlined="">
-                <span>Devamını merak ettim</span>
-                <v-icon>{{ icons.mdiChevronRight }}</v-icon>
-            </v-btn>
-        </v-card-actions>
     </v-card>
 </template>
 
