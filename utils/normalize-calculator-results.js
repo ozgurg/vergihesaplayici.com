@@ -1,8 +1,8 @@
 import { normalizePrice } from "@/utils/formatter.js";
 
 /**
- * @param {Object<string, Object<string, number | null>>} results
- * @returns {Object<string, Object<string, number | null>>}
+ * @param {{[key: string]: {[key: string]: number|null}}} results
+ * @returns {{[key: string]: {[key: string]: number|null}}}
  */
 const normalizeCalculatorResults = results => {
     for (const [key1, value1] of Object.entries(results)) {

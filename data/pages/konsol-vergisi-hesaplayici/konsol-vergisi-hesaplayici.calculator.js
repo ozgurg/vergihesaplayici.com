@@ -10,7 +10,7 @@ import { normalizeCalculatorResults } from "@/utils/normalize-calculator-results
  */
 class Calculator {
     /**
-     * @type {Object<string, number | null>}
+     * @type {{[key: string]: number|null}}
      */
     #taxFees = {
         total: null,
@@ -20,7 +20,7 @@ class Calculator {
     };
 
     /**
-     * @type {Object<string, number | null>}
+     * @type {{[key: string]: number|null}}
      */
     #taxRates = {
         total: null,
@@ -30,7 +30,7 @@ class Calculator {
     };
 
     /**
-     * @type {Object<string, number | null>}
+     * @type {{[key: string]: number|null}}
      */
     #prices = {
         taxFree: null,
@@ -67,7 +67,7 @@ class Calculator {
 
     /**
      * @private
-     * @param {Object<string, number | null>} taxFees
+     * @param {{[key: string]: number|null}} taxFees
      * @returns {number}
      */
     #calculateTotalTaxFee(taxFees) {
@@ -109,7 +109,7 @@ class Calculator {
 
     /**
      * @public
-     * @returns {Object<string, Object<string, number | null>>}
+     * @returns {{[key: string]: {[key: string]: number|null}}}
      */
     calculate() {
         this.#_customTax();
