@@ -20,11 +20,11 @@
                     <v-col
                         :key="_article.slug"
                         cols="12"
-                        lg="6">
+                        lg="4">
                         <ArticleItem :article="_article" />
                     </v-col>
 
-                    <template v-if="index === 3">
+                    <template v-if="index === 2">
                         <v-col :key="_article.slug" cols="12">
                             <v-divider class="mb-2 mt-12" />
                             <AdsterraNative

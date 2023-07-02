@@ -32,7 +32,7 @@
                     <v-col
                         :key="_article.slug"
                         cols="12"
-                        lg="6">
+                        lg="4">
                         <ArticleItem :article="_article" />
                     </v-col>
                 </template>
