@@ -15,7 +15,7 @@ const Mode = {
  */
 class Calculator {
     /**
-     * @type {Object<string, number | null>}
+     * @type {{[key: string]: number|null}}
      */
     #taxFees = {
         total: null,
@@ -23,7 +23,7 @@ class Calculator {
     };
 
     /**
-     * @type {Object<string, number | null>}
+     * @type {{[key: string]: number|null}}
      */
     #taxRates = {
         total: null,
@@ -31,7 +31,7 @@ class Calculator {
     };
 
     /**
-     * @type {Object<string, number | null>}
+     * @type {{[key: string]: number|null}}
      */
     #prices = {
         taxFree: null,
@@ -61,7 +61,7 @@ class Calculator {
     }
 
     /**
-     * @returns {Object<string, Object<string, number | null>>}
+     * @returns {{[key: string]: {[key: string]: number|null}}}
      */
     calculate() {
         this.#taxRates.valueAddedTax = this.#rate;
