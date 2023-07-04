@@ -9,25 +9,6 @@ const lastUpdatedDateIphone = new Date("Sat Jul 01 2023 08:22:32 GMT+0300 (GMT+0
 const lastUpdatedDateSamsung = new Date("Sat Jul 01 2023 08:22:32 GMT+0300 (GMT+03:00)");
 
 const presets = [
-    // Apple Vision Pro
-    {
-        brand: "Apple",
-        title: "Apple Vision Pro",
-        slug: "apple-vision-pro",
-        url: buildUrl("apple-vision-pro"),
-        icon: mdiApple,
-        color: "#555",
-        ogImageName: "telefon-vergisi-hesaplayici-apple-vision-pro.jpg",
-        pageTitle: "Apple Vision Pro'nun vergisi ne kadar?",
-        pageDescription: "Apple Vision Pro'nun vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
-        options: [
-            {
-                title: "Standart",
-                form: { price: 3499, currency: "USD" }
-            }
-        ]
-    },
-
     // iPhone 14
     {
         brand: "Apple",
@@ -373,6 +354,25 @@ const presets = [
                     lastUpdatedDate: lastUpdatedDateIphone,
                     sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-12"
                 }
+            }
+        ]
+    },
+
+    // Apple Vision Pro
+    {
+        brand: "Apple",
+        title: "Apple Vision Pro",
+        slug: "apple-vision-pro",
+        url: buildUrl("apple-vision-pro"),
+        icon: mdiApple,
+        color: "#555",
+        ogImageName: "telefon-vergisi-hesaplayici-apple-vision-pro.jpg",
+        pageTitle: "Apple Vision Pro'nun vergisi ne kadar?",
+        pageDescription: "Apple Vision Pro'nun vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
+        options: [
+            {
+                title: "Standart",
+                form: { price: 3499, currency: "USD" }
             }
         ]
     },
