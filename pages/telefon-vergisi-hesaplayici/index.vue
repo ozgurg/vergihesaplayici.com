@@ -183,7 +183,7 @@ export default {
                 registrationTitle: vm.ui.registration.find(item => item.value === vm.form.registration).title
             });
         },
-        presetsGroupedByBrand() {
+        presetsGroupedByBrand() { // FIXME: Make it utility function and write unit test
             const vm = this;
 
             const output = {};
