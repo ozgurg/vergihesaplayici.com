@@ -9,26 +9,9 @@ const lastUpdatedDateIphone = new Date("Sat Jul 01 2023 08:22:32 GMT+0300 (GMT+0
 const lastUpdatedDateSamsung = new Date("Sat Jul 01 2023 08:22:32 GMT+0300 (GMT+03:00)");
 
 const presets = [
-    // Apple Vision Pro
-    {
-        title: "Apple Vision Pro",
-        slug: "apple-vision-pro",
-        url: buildUrl("apple-vision-pro"),
-        icon: mdiApple,
-        color: "#555",
-        ogImageName: "telefon-vergisi-hesaplayici-apple-vision-pro.jpg",
-        pageTitle: "Apple Vision Pro'nun vergisi ne kadar?",
-        pageDescription: "Apple Vision Pro'nun vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
-        options: [
-            {
-                title: "Standart",
-                form: { price: 3499, currency: "USD" }
-            }
-        ]
-    },
-
     // iPhone 14
     {
+        brand: "Apple",
         title: "iPhone 14 Pro",
         slug: "iphone-14-pro",
         url: buildUrl("iphone-14-pro"),
@@ -77,6 +60,7 @@ const presets = [
         ]
     },
     {
+        brand: "Apple",
         title: "iPhone 14 Pro Max",
         slug: "iphone-14-pro-max",
         url: buildUrl("iphone-14-pro-max"),
@@ -125,6 +109,7 @@ const presets = [
         ]
     },
     {
+        brand: "Apple",
         title: "iPhone 14",
         slug: "iphone-14",
         url: buildUrl("iphone-14"),
@@ -164,6 +149,7 @@ const presets = [
         ]
     },
     {
+        brand: "Apple",
         title: "iPhone 14 Plus",
         slug: "iphone-14-plus",
         url: buildUrl("iphone-14-plus"),
@@ -206,6 +192,7 @@ const presets = [
 
     // iPhone 13
     {
+        brand: "Apple",
         title: "iPhone 13 mini",
         slug: "iphone-13-mini",
         url: buildUrl("iphone-13-mini"),
@@ -245,6 +232,7 @@ const presets = [
         ]
     },
     {
+        brand: "Apple",
         title: "iPhone 13",
         slug: "iphone-13",
         url: buildUrl("iphone-13"),
@@ -287,6 +275,7 @@ const presets = [
 
     // iPhone SE
     {
+        brand: "Apple",
         title: "iPhone SE 3 (2022)",
         slug: "iphone-se-3-2022",
         url: buildUrl("iphone-se-3-2022"),
@@ -329,6 +318,7 @@ const presets = [
 
     // iPhone 12
     {
+        brand: "Apple",
         title: "iPhone 12",
         slug: "iphone-12",
         url: buildUrl("iphone-12"),
@@ -368,9 +358,29 @@ const presets = [
         ]
     },
 
+    // Apple Vision Pro
+    {
+        brand: "Apple",
+        title: "Apple Vision Pro",
+        slug: "apple-vision-pro",
+        url: buildUrl("apple-vision-pro"),
+        icon: mdiApple,
+        color: "#555",
+        ogImageName: "telefon-vergisi-hesaplayici-apple-vision-pro.jpg",
+        pageTitle: "Apple Vision Pro'nun vergisi ne kadar?",
+        pageDescription: "Apple Vision Pro'nun vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
+        options: [
+            {
+                title: "Standart",
+                form: { price: 3499, currency: "USD" }
+            }
+        ]
+    },
+
 
     // Samsung Galaxy S23
     {
+        brand: "Samsung",
         title: "Samsung Galaxy S23",
         slug: "samsung-galaxy-s23",
         url: buildUrl("samsung-galaxy-s23"),
@@ -401,6 +411,7 @@ const presets = [
         ]
     },
     {
+        brand: "Samsung",
         title: "Samsung Galaxy S23+",
         slug: "samsung-galaxy-s23-plus",
         url: buildUrl("samsung-galaxy-s23-plus"),
@@ -426,6 +437,7 @@ const presets = [
         ]
     },
     {
+        brand: "Samsung",
         title: "Samsung Galaxy S23 Ultra",
         slug: "samsung-galaxy-s23-ultra",
         url: buildUrl("samsung-galaxy-s23-ultra"),
