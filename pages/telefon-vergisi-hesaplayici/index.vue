@@ -16,16 +16,21 @@
 
         <InnerContainer>
             <FormRow>
-                <PageSubtitle class="mb-4">
-                    Bir telefon seçin…
-                </PageSubtitle>
-
-                <CalculatorPresets :presets="ui.presets" />
+                <div class="d-flex flex-column gap-16">
+                    <template v-for="_item in presetsGroupedByBrand">
+                        <div :key="_item.title">
+                            <PageSubtitle class="mb-2">
+                                {{ _item.title }}
+                            </PageSubtitle>
+                            <CalculatorPresets :presets="_item.presets" />
+                        </div>
+                    </template>
+                </div>
 
                 <v-divider class="my-12" />
 
                 <PageSubtitle class="mb-4">
-                    …veya kendiniz hesaplayın
+                    Kendiniz hesaplayın
                 </PageSubtitle>
             </FormRow>
 
@@ -177,6 +182,26 @@ export default {
                 currency: vm.form.currency,
                 registrationTitle: vm.ui.registration.find(item => item.value === vm.form.registration).title
             });
+        },
+        presetsGroupedByBrand() {
+            const vm = this;
+
+            const output = {};
+
+            vm.ui.presets.forEach(preset => {
+                const { brand, ...rest } = preset;
+                if (!output[brand]) {
+                    output[brand] = {
+                        title: brand,
+                        presets: []
+                    };
+                }
+                output[brand].presets.push({
+                    brand, ...rest
+                });
+            });
+
+            return Object.values(output);
         }
     },
     watch: {
