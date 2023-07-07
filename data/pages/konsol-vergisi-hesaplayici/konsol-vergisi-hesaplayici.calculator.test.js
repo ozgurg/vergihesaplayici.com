@@ -7,15 +7,15 @@ describe("konsol-vergisi-hesaplayici/Calculator", () => {
             prices: [
                 {
                     price: 300,
-                    expected: { taxFree: 300, taxAdded: 509.8 }
+                    expected: { taxFree: 300, taxAdded: 518.4 }
                 },
                 {
                     price: 400,
-                    expected: { taxFree: 400, taxAdded: 679.7 }
+                    expected: { taxFree: 400, taxAdded: 691.2 }
                 },
                 {
                     price: 500,
-                    expected: { taxFree: 500, taxAdded: 849.6 }
+                    expected: { taxFree: 500, taxAdded: 864 }
                 }
             ]
         });
@@ -27,15 +27,15 @@ describe("konsol-vergisi-hesaplayici/Calculator", () => {
             prices: [
                 {
                     price: 300,
-                    expected: { taxFree: 176.5, taxAdded: 300 }
+                    expected: { taxFree: 173.6, taxAdded: 300 }
                 },
                 {
                     price: 400,
-                    expected: { taxFree: 235.3, taxAdded: 400 }
+                    expected: { taxFree: 231.4, taxAdded: 400 }
                 },
                 {
                     price: 500,
-                    expected: { taxFree: 294.2, taxAdded: 500 }
+                    expected: { taxFree: 289.3, taxAdded: 500 }
                 }
             ]
         });

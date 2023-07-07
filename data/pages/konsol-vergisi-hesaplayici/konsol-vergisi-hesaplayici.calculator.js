@@ -26,7 +26,7 @@ class Calculator {
         total: null,
         customTax: 20, // Percentage of previous price | Turkish: Gümrük Vergisi
         specialConsumptionTax: 20, // Percentage of previous price | Turkish: Özel Tüketim Vergisi (ÖTV)
-        valueAddedTax: 18 // Percentage of previous price | Turkish: Katma Değer Vergisi (KDV)
+        valueAddedTax: 20 // Percentage of previous price | Turkish: Katma Değer Vergisi (KDV)
     };
 
     /**
