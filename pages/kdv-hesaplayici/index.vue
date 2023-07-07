@@ -112,8 +112,8 @@ export default {
             modeOptions,
             presets: [
                 { title: "Yüzde 1", form: { rate: 1 } },
-                { title: "Yüzde 8", form: { rate: 8 } },
-                { title: "Yüzde 18", form: { rate: 18 } }
+                { title: "Yüzde 10", form: { rate: 10 } },
+                { title: "Yüzde 20", form: { rate: 20 } }
             ]
         },
         form: {
