@@ -16,17 +16,17 @@
 
         <InnerContainer>
             <FormRow>
-                <PageSubtitle class="mb-4">
+                <Heading2 class="mb-4">
                     Bir oyun konsolu seçin…
-                </PageSubtitle>
+                </Heading2>
 
                 <CalculatorPresets :presets="ui.presets" />
 
                 <v-divider class="my-12" />
 
-                <PageSubtitle class="mb-4">
+                <Heading2 class="mb-4">
                     …veya kendiniz hesaplayın
-                </PageSubtitle>
+                </Heading2>
             </FormRow>
 
             <FormRow

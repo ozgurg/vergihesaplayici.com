@@ -23,10 +23,10 @@
                 ad-key="18d820d42a43bbb54b363d01dc952cf3" />
             <v-divider class="mt-2 mb-12" />
 
-            <PageSubtitle
+            <Heading2
                 class="mb-4">
                 Diğer yazılar
-            </PageSubtitle>
+            </Heading2>
             <v-row>
                 <template v-for="_article in articles">
                     <v-col

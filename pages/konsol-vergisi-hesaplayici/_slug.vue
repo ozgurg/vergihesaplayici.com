@@ -82,9 +82,9 @@
 
                 <v-divider class="my-12" />
 
-                <PageSubtitle class="mb-4">
+                <Heading2 class="mb-4">
                     Diğer oyun konsolları
-                </PageSubtitle>
+                </Heading2>
 
                 <CalculatorPresets :presets="ui.presets" />
             </template>

@@ -20,11 +20,11 @@
             </template>
             <v-divider class="mt-2 mb-12" />
 
-            <PageSubtitle
+            <Heading2
                 :to="Hesaplayicilar.url"
                 class="mb-4">
                 {{ Hesaplayicilar.title }}
-            </PageSubtitle>
+            </Heading2>
             <CalculatorGrid />
 
             <v-divider class="mb-2 mt-12" />
@@ -36,11 +36,11 @@
             </template>
             <v-divider class="mt-2 mb-12" />
 
-            <PageSubtitle
+            <Heading2
                 to="/yazilar/"
                 class="mb-4">
                 Bir takım yazılar
-            </PageSubtitle>
+            </Heading2>
             <v-row>
                 <template v-for="_article in articles">
                     <v-col

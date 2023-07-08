@@ -94,9 +94,9 @@
                 <div class="d-flex flex-column gap-16">
                     <template v-for="_item in presetsGroupedByBrand">
                         <div :key="_item.title">
-                            <PageSubtitle class="mb-2">
+                            <Heading2 class="mb-2">
                                 {{ _item.title }}
-                            </PageSubtitle>
+                            </Heading2>
                             <CalculatorPresets :presets="_item.presets" />
                         </div>
                     </template>
