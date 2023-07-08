@@ -108,6 +108,11 @@ const firebaseJson = {
             }
         ],
         redirects: [
+            {
+                source: "/konsol-vergisi-hesaplayici/apple-vision-pro/",
+                destination: "/telefon-vergisi-hesaplayici/apple-vision-pro/",
+                type: 301
+            }
         ]
     },
     emulators: {
