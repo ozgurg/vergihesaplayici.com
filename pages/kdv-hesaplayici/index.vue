@@ -120,7 +120,7 @@ export default {
         },
         form: {
             price: "",
-            rate: 18,
+            rate: 20,
             mode: Mode.TaxFreePriceToTaxAddedPrice
         },
         results: {}
