@@ -29,7 +29,6 @@
                         <v-col :key="_article.slug" cols="12">
                             <AdsterraNative
                                 :order="1"
-                                ad-key="18d820d42a43bbb54b363d01dc952cf3"
                                 class="my-12" />
                         </v-col>
                     </template>

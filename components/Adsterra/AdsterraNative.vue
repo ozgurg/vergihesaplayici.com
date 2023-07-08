@@ -16,7 +16,7 @@ export default {
         },
         adKey: {
             type: String,
-            required: true
+            default: "18d820d42a43bbb54b363d01dc952cf3"
         },
         nonce: {
             type: String,

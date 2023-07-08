@@ -20,7 +20,6 @@
 
             <AdsterraNative
                 :order="1"
-                ad-key="18d820d42a43bbb54b363d01dc952cf3"
                 class="my-12" />
 
             <Heading2

@@ -21,7 +21,6 @@
 
         <AdsterraNative
             :order="1"
-            ad-key="18d820d42a43bbb54b363d01dc952cf3"
             class="mt-16" />
     </div>
 </template>
