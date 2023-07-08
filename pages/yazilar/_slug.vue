@@ -6,22 +6,22 @@
             {{ article.title }}
         </Heading1>
 
-        <InnerContainer>
+        <div class="mb-12">
             <template v-if="$vuetify.breakpoint.lgAndUp">
-                <AdsterraBanner728x90 :order="0" class="d-flex mx-auto" />
+                <AdsterraBanner728x90 :order="0" />
             </template>
             <template v-else-if="$vuetify.breakpoint.mdAndDown">
-                <AdsterraBanner300x250 :order="0" class="d-flex mx-auto" />
+                <AdsterraBanner300x250 :order="0" />
             </template>
-            <v-divider class="mt-4 mb-12" />
+        </div>
 
+        <InnerContainer>
             <nuxt-content :document="article" />
 
-            <v-divider class="mb-2 mt-12" />
             <AdsterraNative
                 :order="1"
-                ad-key="18d820d42a43bbb54b363d01dc952cf3" />
-            <v-divider class="mt-2 mb-12" />
+                ad-key="18d820d42a43bbb54b363d01dc952cf3"
+                class="my-12" />
 
             <Heading2
                 class="mb-4">
@@ -37,16 +37,16 @@
                     </v-col>
                 </template>
             </v-row>
+        </InnerContainer>
 
-            <v-divider class="mb-2 mt-12" />
+        <div class="mt-16">
             <template v-if="$vuetify.breakpoint.lgAndUp">
-                <AdsterraBanner468x60 :order="2" class="d-flex mx-auto" />
+                <AdsterraBanner468x60 :order="2" />
             </template>
             <template v-else-if="$vuetify.breakpoint.mdAndDown">
-                <AdsterraBanner320x50 :order="2" class="d-flex mx-auto" />
+                <AdsterraBanner320x50 :order="2" />
             </template>
-            <v-divider class="mt-2 mb-12" />
-        </InnerContainer>
+        </div>
     </div>
 </template>
 

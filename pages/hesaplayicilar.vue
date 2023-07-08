@@ -6,26 +6,23 @@
             {{ page.title }}
         </Heading1>
 
+        <div class="mb-12">
+            <template v-if="$vuetify.breakpoint.lgAndUp">
+                <AdsterraBanner728x90 :order="0" />
+            </template>
+            <template v-else-if="$vuetify.breakpoint.mdAndDown">
+                <AdsterraBanner300x250 :order="0" />
+            </template>
+        </div>
+
         <InnerContainer>
-            <template v-if="$vuetify.breakpoint.lgAndUp">
-                <AdsterraBanner728x90 :order="0" class="d-flex mx-auto" />
-            </template>
-            <template v-else-if="$vuetify.breakpoint.mdAndDown">
-                <AdsterraBanner300x250 :order="0" class="d-flex mx-auto" />
-            </template>
-            <v-divider class="mt-4 mb-12" />
-
             <CalculatorGrid />
-
-            <v-divider class="mb-2 mt-12" />
-            <template v-if="$vuetify.breakpoint.lgAndUp">
-                <AdsterraBanner468x60 :order="1" class="d-flex mx-auto" />
-            </template>
-            <template v-else-if="$vuetify.breakpoint.mdAndDown">
-                <AdsterraBanner320x50 :order="1" class="d-flex mx-auto" />
-            </template>
-            <v-divider class="mt-2 mb-12" />
         </InnerContainer>
+
+        <AdsterraNative
+            :order="1"
+            ad-key="18d820d42a43bbb54b363d01dc952cf3"
+            class="mt-16" />
     </div>
 </template>
 

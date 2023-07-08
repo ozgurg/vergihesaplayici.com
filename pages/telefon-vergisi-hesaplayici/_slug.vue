@@ -6,13 +6,14 @@
             {{ page.title }}
         </Heading1>
 
-        <template v-if="$vuetify.breakpoint.lgAndUp">
-            <AdsterraBanner728x90 :order="0" class="d-flex mx-auto" />
-        </template>
-        <template v-else-if="$vuetify.breakpoint.mdAndDown">
-            <AdsterraBanner300x250 :order="0" class="d-flex mx-auto" />
-        </template>
-        <v-divider class="mt-4 mb-12" />
+        <div class="mb-12">
+            <template v-if="$vuetify.breakpoint.lgAndUp">
+                <AdsterraBanner728x90 :order="0" />
+            </template>
+            <template v-else-if="$vuetify.breakpoint.mdAndDown">
+                <AdsterraBanner300x250 :order="0" />
+            </template>
+        </div>
 
         <CalculatorInnerContainer>
             <template v-if="slug === 'apple-vision-pro'">
@@ -80,20 +81,9 @@
             </template>
         </CalculatorInnerContainer>
 
+        <v-divider class="my-16" />
+
         <InnerContainer>
-            <FormRow>
-                <v-divider class="mb-2 mt-12" />
-                <template v-if="$vuetify.breakpoint.lgAndUp">
-                    <AdsterraBanner468x60 :order="1" class="d-flex mx-auto" />
-                </template>
-                <template v-else-if="$vuetify.breakpoint.mdAndDown">
-                    <AdsterraBanner320x50 :order="1" class="d-flex mx-auto" />
-                </template>
-                <v-divider class="mt-2 mb-12" />
-            </FormRow>
-
-            <v-divider class="my-12" />
-
             <div class="d-flex flex-column gap-16">
                 <template v-for="_item in presetsGroupedByBrand">
                     <div :key="_item.title">
@@ -104,13 +94,21 @@
                     </div>
                 </template>
             </div>
+        </InnerContainer>
 
-            <v-divider class="mb-2 mt-16" />
+        <div class="mt-16">
+            <template v-if="$vuetify.breakpoint.lgAndUp">
+                <AdsterraBanner468x60 :order="1" />
+            </template>
+            <template v-else-if="$vuetify.breakpoint.mdAndDown">
+                <AdsterraBanner320x50 :order="1" />
+            </template>
+
             <AdsterraNative
                 :order="2"
                 ad-key="18d820d42a43bbb54b363d01dc952cf3"
-                class="mt-4" />
-        </InnerContainer>
+                class="mt-8" />
+        </div>
     </div>
 </template>
 
