@@ -17,6 +17,10 @@
 
         <InnerContainer>
             <FormRow>
+                <Heading2 class="mb-4">
+                    Hazır hesaplamalar
+                </Heading2>
+
                 <div class="d-flex flex-column gap-16">
                     <template v-for="_item in presetsGroupedByBrand">
                         <div :key="_item.title">
