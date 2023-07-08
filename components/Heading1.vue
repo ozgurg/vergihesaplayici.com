@@ -1,5 +1,5 @@
 <template>
-    <div class="mb-16">
+    <div class="mb-12">
         <h1 class="vh-heading-1 text-h4 text-lg-h3 mb-4 font-weight-bold">
             <slot />
         </h1>
