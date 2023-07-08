@@ -33,7 +33,9 @@
                     Kendiniz hesaplayın
                 </Heading2>
             </FormRow>
+        </InnerContainer>
 
+        <CalculatorInnerContainer>
             <FormRow
                 class="mb-10"
                 label="Telefon fiyatı">
@@ -85,7 +87,9 @@
                     <MinimumWageAlert
                         :price="results.prices.taxAdded"
                         class="mb-10" />
+                </FormRow>
 
+                <FormRow :is-horizontal="true">
                     <CalculatorShareButton
                         :screenshot-input="screenshotInput"
                         :screenshot-output="resultList"
@@ -93,7 +97,9 @@
                         :calculator-title="page.title" />
                 </FormRow>
             </template>
+        </CalculatorInnerContainer>
 
+        <InnerContainer>
             <FormRow>
                 <v-divider class="mb-2 mt-12" />
                 <template v-if="$vuetify.breakpoint.lgAndUp">

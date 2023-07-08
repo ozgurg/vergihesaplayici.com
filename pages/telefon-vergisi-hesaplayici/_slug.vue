@@ -14,7 +14,7 @@
         </template>
         <v-divider class="mt-4 mb-12" />
 
-        <InnerContainer>
+        <CalculatorInnerContainer>
             <template v-if="slug === 'apple-vision-pro'">
                 <v-alert
                     class="mb-10"
@@ -61,14 +61,14 @@
                         class="mb-2"
                         label="Piyasa fiyatı" />
 
-                    <FormRow>
+                    <FormRow :is-horizontal="true">
                         <RetailPriceUpdateInfo
                             :last-updated-date="form.option.retailPrice.lastUpdatedDate"
                             :source-url="form.option.retailPrice.sourceUrl" />
                     </FormRow>
                 </div>
 
-                <FormRow>
+                <FormRow :is-horizontal="true">
                     <CalculatorShareButton
                         :screenshot-input="screenshotInput"
                         :screenshot-output="resultList"
@@ -77,31 +77,33 @@
                         :preset-title="page.preset.title"
                         :preset-option-title="form.option.title" />
                 </FormRow>
-
-                <FormRow>
-                    <v-divider class="mb-2 mt-12" />
-                    <template v-if="$vuetify.breakpoint.lgAndUp">
-                        <AdsterraBanner468x60 :order="1" class="d-flex mx-auto" />
-                    </template>
-                    <template v-else-if="$vuetify.breakpoint.mdAndDown">
-                        <AdsterraBanner320x50 :order="1" class="d-flex mx-auto" />
-                    </template>
-                    <v-divider class="mt-2 mb-12" />
-                </FormRow>
-
-                <v-divider class="my-12" />
-
-                <div class="d-flex flex-column gap-16">
-                    <template v-for="_item in presetsGroupedByBrand">
-                        <div :key="_item.title">
-                            <Heading2 class="mb-2">
-                                {{ _item.title }}
-                            </Heading2>
-                            <CalculatorPresets :presets="_item.presets" />
-                        </div>
-                    </template>
-                </div>
             </template>
+        </CalculatorInnerContainer>
+
+        <InnerContainer>
+            <FormRow>
+                <v-divider class="mb-2 mt-12" />
+                <template v-if="$vuetify.breakpoint.lgAndUp">
+                    <AdsterraBanner468x60 :order="1" class="d-flex mx-auto" />
+                </template>
+                <template v-else-if="$vuetify.breakpoint.mdAndDown">
+                    <AdsterraBanner320x50 :order="1" class="d-flex mx-auto" />
+                </template>
+                <v-divider class="mt-2 mb-12" />
+            </FormRow>
+
+            <v-divider class="my-12" />
+
+            <div class="d-flex flex-column gap-16">
+                <template v-for="_item in presetsGroupedByBrand">
+                    <div :key="_item.title">
+                        <Heading2 class="mb-2">
+                            {{ _item.title }}
+                        </Heading2>
+                        <CalculatorPresets :presets="_item.presets" />
+                    </div>
+                </template>
+            </div>
 
             <v-divider class="mb-2 mt-16" />
             <AdsterraNative
