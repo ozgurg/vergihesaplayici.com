@@ -1,5 +1,7 @@
 <template>
-    <FormRow :label="label">
+    <FormRow
+        :label="label"
+        :is-horizontal="true">
         <v-text-field
             :value="value"
             :aria-label="label"
