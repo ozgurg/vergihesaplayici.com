@@ -2,19 +2,20 @@
     <div>
         <AppBreadcrumbs :items="page.breadcrumbs" />
 
-        <PageTitle>
+        <Heading1>
             {{ page.title }}
-        </PageTitle>
+        </Heading1>
 
-        <template v-if="$vuetify.breakpoint.lgAndUp">
-            <AdsterraBanner728x90 :order="0" class="d-flex mx-auto" />
-        </template>
-        <template v-else-if="$vuetify.breakpoint.mdAndDown">
-            <AdsterraBanner300x250 :order="0" class="d-flex mx-auto" />
-        </template>
-        <v-divider class="mt-4 mb-12" />
+        <div class="mb-12">
+            <template v-if="$vuetify.breakpoint.lgAndUp">
+                <AdsterraBanner728x90 :order="0" />
+            </template>
+            <template v-else-if="$vuetify.breakpoint.mdAndDown">
+                <AdsterraBanner300x250 :order="0" />
+            </template>
+        </div>
 
-        <InnerContainer>
+        <CalculatorInnerContainer>
             <template v-if="slug === 'apple-vision-pro'">
                 <v-alert
                     class="mb-10"
@@ -52,14 +53,14 @@
                         class="mb-2"
                         label="Piyasa fiyatı" />
 
-                    <FormRow>
+                    <FormRow :is-horizontal="true">
                         <RetailPriceUpdateInfo
                             :last-updated-date="form.option.retailPrice.lastUpdatedDate"
                             :source-url="form.option.retailPrice.sourceUrl" />
                     </FormRow>
                 </div>
 
-                <FormRow>
+                <FormRow :is-horizontal="true">
                     <CalculatorShareButton
                         :screenshot-input="screenshotInput"
                         :screenshot-output="resultList"
@@ -68,33 +69,30 @@
                         :preset-title="page.preset.title"
                         :preset-option-title="form.option.title" />
                 </FormRow>
+            </template>
+        </CalculatorInnerContainer>
 
-                <FormRow>
-                    <v-divider class="mb-2 mt-12" />
-                    <template v-if="$vuetify.breakpoint.lgAndUp">
-                        <AdsterraBanner468x60 :order="1" class="d-flex mx-auto" />
-                    </template>
-                    <template v-else-if="$vuetify.breakpoint.mdAndDown">
-                        <AdsterraBanner320x50 :order="1" class="d-flex mx-auto" />
-                    </template>
-                    <v-divider class="mt-2 mb-12" />
-                </FormRow>
+        <v-divider class="my-16" />
 
-                <v-divider class="my-12" />
+        <InnerContainer>
+            <Heading2 class="mb-4">
+                Diğer oyun konsolları
+            </Heading2>
+            <CalculatorPresets :presets="ui.presets" />
+        </InnerContainer>
 
-                <PageSubtitle class="mb-4">
-                    Diğer oyun konsolları
-                </PageSubtitle>
-
-                <CalculatorPresets :presets="ui.presets" />
+        <div class="mt-16">
+            <template v-if="$vuetify.breakpoint.lgAndUp">
+                <AdsterraBanner468x60 :order="1" />
+            </template>
+            <template v-else-if="$vuetify.breakpoint.mdAndDown">
+                <AdsterraBanner320x50 :order="1" />
             </template>
 
-            <v-divider class="mb-2 mt-16" />
             <AdsterraNative
                 :order="2"
-                ad-key="18d820d42a43bbb54b363d01dc952cf3"
-                class="mt-4" />
-        </InnerContainer>
+                class="mt-8" />
+        </div>
     </div>
 </template>
 

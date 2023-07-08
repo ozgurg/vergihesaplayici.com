@@ -2,30 +2,26 @@
     <div>
         <AppBreadcrumbs :items="page.breadcrumbs" />
 
-        <PageTitle>
+        <Heading1>
             {{ page.title }}
-        </PageTitle>
+        </Heading1>
+
+        <div class="mb-12">
+            <template v-if="$vuetify.breakpoint.lgAndUp">
+                <AdsterraBanner728x90 :order="0" />
+            </template>
+            <template v-else-if="$vuetify.breakpoint.mdAndDown">
+                <AdsterraBanner300x250 :order="0" />
+            </template>
+        </div>
 
         <InnerContainer>
-            <template v-if="$vuetify.breakpoint.lgAndUp">
-                <AdsterraBanner728x90 :order="0" class="d-flex mx-auto" />
-            </template>
-            <template v-else-if="$vuetify.breakpoint.mdAndDown">
-                <AdsterraBanner300x250 :order="0" class="d-flex mx-auto" />
-            </template>
-            <v-divider class="mt-4 mb-12" />
-
             <CalculatorGrid />
-
-            <v-divider class="mb-2 mt-12" />
-            <template v-if="$vuetify.breakpoint.lgAndUp">
-                <AdsterraBanner468x60 :order="1" class="d-flex mx-auto" />
-            </template>
-            <template v-else-if="$vuetify.breakpoint.mdAndDown">
-                <AdsterraBanner320x50 :order="1" class="d-flex mx-auto" />
-            </template>
-            <v-divider class="mt-2 mb-12" />
         </InnerContainer>
+
+        <AdsterraNative
+            :order="1"
+            class="mt-16" />
     </div>
 </template>
 

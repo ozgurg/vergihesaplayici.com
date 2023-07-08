@@ -2,33 +2,36 @@
     <div>
         <AppBreadcrumbs :items="page.breadcrumbs" />
 
-        <PageTitle>
+        <Heading1>
             {{ page.title }}
-        </PageTitle>
+        </Heading1>
 
-        <template v-if="$vuetify.breakpoint.lgAndUp">
-            <AdsterraBanner728x90 :order="0" class="d-flex mx-auto" />
-        </template>
-        <template v-else-if="$vuetify.breakpoint.mdAndDown">
-            <AdsterraBanner300x250 :order="0" class="d-flex mx-auto" />
-        </template>
-        <v-divider class="mt-4 mb-12" />
+        <div class="mb-12">
+            <template v-if="$vuetify.breakpoint.lgAndUp">
+                <AdsterraBanner728x90 :order="0" />
+            </template>
+            <template v-else-if="$vuetify.breakpoint.mdAndDown">
+                <AdsterraBanner300x250 :order="0" />
+            </template>
+        </div>
 
         <InnerContainer>
             <FormRow>
-                <PageSubtitle class="mb-4">
-                    Bir oyun konsolu seçin…
-                </PageSubtitle>
+                <Heading2 class="mb-4">
+                    Hazır hesaplamalar
+                </Heading2>
 
                 <CalculatorPresets :presets="ui.presets" />
 
                 <v-divider class="my-12" />
 
-                <PageSubtitle class="mb-4">
-                    …veya kendiniz hesaplayın
-                </PageSubtitle>
+                <Heading2 class="mb-4">
+                    Kendiniz hesaplayın
+                </Heading2>
             </FormRow>
+        </InnerContainer>
 
+        <CalculatorInnerContainer>
             <FormRow
                 class="mb-10"
                 label="Konsol fiyatı">
@@ -71,7 +74,9 @@
                     <MinimumWageAlert
                         :price="results.prices.taxAdded"
                         class="mb-10" />
+                </FormRow>
 
+                <FormRow :is-horizontal="true">
                     <CalculatorShareButton
                         :screenshot-input="screenshotInput"
                         :screenshot-output="resultList"
@@ -79,18 +84,20 @@
                         :calculator-title="page.title" />
                 </FormRow>
             </template>
+        </CalculatorInnerContainer>
 
-            <FormRow>
-                <v-divider class="mb-2 mt-12" />
-                <template v-if="$vuetify.breakpoint.lgAndUp">
-                    <AdsterraBanner468x60 :order="1" class="d-flex mx-auto" />
-                </template>
-                <template v-else-if="$vuetify.breakpoint.mdAndDown">
-                    <AdsterraBanner320x50 :order="1" class="d-flex mx-auto" />
-                </template>
-                <v-divider class="mt-2 mb-12" />
-            </FormRow>
-        </InnerContainer>
+        <div class="mt-16">
+            <template v-if="$vuetify.breakpoint.lgAndUp">
+                <AdsterraBanner468x60 :order="1" />
+            </template>
+            <template v-else-if="$vuetify.breakpoint.mdAndDown">
+                <AdsterraBanner320x50 :order="1" />
+            </template>
+
+            <AdsterraNative
+                :order="2"
+                class="mt-8" />
+        </div>
     </div>
 </template>
 

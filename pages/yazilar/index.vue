@@ -2,19 +2,20 @@
     <div>
         <AppBreadcrumbs :items="breadcrumbs()" />
 
-        <PageTitle>
+        <Heading1>
             Yazılar
-        </PageTitle>
+        </Heading1>
 
-        <InnerContainer>
+        <div class="mb-12">
             <template v-if="$vuetify.breakpoint.lgAndUp">
-                <AdsterraBanner728x90 :order="0" class="d-flex mx-auto" />
+                <AdsterraBanner728x90 :order="0" />
             </template>
             <template v-else-if="$vuetify.breakpoint.mdAndDown">
-                <AdsterraBanner300x250 :order="0" class="d-flex mx-auto" />
+                <AdsterraBanner300x250 :order="0" />
             </template>
-            <v-divider class="mt-4 mb-12" />
+        </div>
 
+        <InnerContainer>
             <v-row>
                 <template v-for="(_article, index) in articles">
                     <v-col
@@ -26,26 +27,23 @@
 
                     <template v-if="index === 2">
                         <v-col :key="_article.slug" cols="12">
-                            <v-divider class="mb-2 mt-12" />
                             <AdsterraNative
                                 :order="1"
-                                ad-key="18d820d42a43bbb54b363d01dc952cf3"
-                                class="mt-4" />
-                            <v-divider class="mt-2 mb-12" />
+                                class="my-12" />
                         </v-col>
                     </template>
                 </template>
             </v-row>
+        </InnerContainer>
 
-            <v-divider class="mb-2 mt-12" />
+        <div class="mt-16">
             <template v-if="$vuetify.breakpoint.lgAndUp">
-                <AdsterraBanner468x60 :order="2" class="d-flex mx-auto" />
+                <AdsterraBanner468x60 :order="2" />
             </template>
             <template v-else-if="$vuetify.breakpoint.mdAndDown">
-                <AdsterraBanner320x50 :order="2" class="d-flex mx-auto" />
+                <AdsterraBanner320x50 :order="2" />
             </template>
-            <v-divider class="mt-2 mb-12" />
-        </InnerContainer>
+        </div>
     </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-    <h2 class="text-h6">
+    <h2 class="text-h5 font-weight-bold">
         <template v-if="to">
             <nuxt-link
                 :to="to"

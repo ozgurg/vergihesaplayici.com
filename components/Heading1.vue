@@ -1,6 +1,6 @@
 <template>
-    <div class="mb-16">
-        <h1 class="page-title text-h4 text-lg-h3 mb-4 font-weight-bold">
+    <div class="mb-12">
+        <h1 class="vh-heading-1 text-h4 text-lg-h3 mb-4 font-weight-bold">
             <slot />
         </h1>
 
@@ -9,7 +9,7 @@
 </template>
 
 <style>
-.page-title {
+.vh-heading-1 {
     text-wrap: balance
 }
 </style>

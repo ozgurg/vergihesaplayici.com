@@ -142,7 +142,7 @@ export default {
         defaultAssets: {
             icons: false,
             font: {
-                family: "Rubik"
+                family: "Figtree"
             }
         },
         lang: {

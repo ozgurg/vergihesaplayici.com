@@ -2,26 +2,31 @@
     <div>
         <AppBreadcrumbs :items="page.breadcrumbs" />
 
-        <PageTitle>
+        <Heading1>
             {{ page.title }}
-        </PageTitle>
+        </Heading1>
 
-        <template v-if="$vuetify.breakpoint.lgAndUp">
-            <AdsterraBanner728x90 :order="0" class="d-flex mx-auto" />
-        </template>
-        <template v-else-if="$vuetify.breakpoint.mdAndDown">
-            <AdsterraBanner300x250 :order="0" class="d-flex mx-auto" />
-        </template>
-        <v-divider class="mt-4 mb-12" />
+        <div class="mb-12">
+            <template v-if="$vuetify.breakpoint.lgAndUp">
+                <AdsterraBanner728x90 :order="0" />
+            </template>
+            <template v-else-if="$vuetify.breakpoint.mdAndDown">
+                <AdsterraBanner300x250 :order="0" />
+            </template>
+        </div>
 
         <InnerContainer>
             <FormRow>
+                <Heading2 class="mb-4">
+                    Hazır hesaplamalar
+                </Heading2>
+
                 <div class="d-flex flex-column gap-16">
                     <template v-for="_item in presetsGroupedByBrand">
                         <div :key="_item.title">
-                            <PageSubtitle class="mb-2">
+                            <Heading3 class="mb-2">
                                 {{ _item.title }}
-                            </PageSubtitle>
+                            </Heading3>
                             <CalculatorPresets :presets="_item.presets" />
                         </div>
                     </template>
@@ -29,11 +34,13 @@
 
                 <v-divider class="my-12" />
 
-                <PageSubtitle class="mb-4">
+                <Heading2 class="mb-4">
                     Kendiniz hesaplayın
-                </PageSubtitle>
+                </Heading2>
             </FormRow>
+        </InnerContainer>
 
+        <CalculatorInnerContainer>
             <FormRow
                 class="mb-10"
                 label="Telefon fiyatı">
@@ -85,7 +92,9 @@
                     <MinimumWageAlert
                         :price="results.prices.taxAdded"
                         class="mb-10" />
+                </FormRow>
 
+                <FormRow :is-horizontal="true">
                     <CalculatorShareButton
                         :screenshot-input="screenshotInput"
                         :screenshot-output="resultList"
@@ -93,18 +102,20 @@
                         :calculator-title="page.title" />
                 </FormRow>
             </template>
+        </CalculatorInnerContainer>
 
-            <FormRow>
-                <v-divider class="mb-2 mt-12" />
-                <template v-if="$vuetify.breakpoint.lgAndUp">
-                    <AdsterraBanner468x60 :order="1" class="d-flex mx-auto" />
-                </template>
-                <template v-else-if="$vuetify.breakpoint.mdAndDown">
-                    <AdsterraBanner320x50 :order="1" class="d-flex mx-auto" />
-                </template>
-                <v-divider class="mt-2 mb-12" />
-            </FormRow>
-        </InnerContainer>
+        <div class="mt-16">
+            <template v-if="$vuetify.breakpoint.lgAndUp">
+                <AdsterraBanner468x60 :order="1" />
+            </template>
+            <template v-else-if="$vuetify.breakpoint.mdAndDown">
+                <AdsterraBanner320x50 :order="1" />
+            </template>
+
+            <AdsterraNative
+                :order="2"
+                class="mt-8" />
+        </div>
     </div>
 </template>
 

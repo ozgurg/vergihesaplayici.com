@@ -1,8 +1,8 @@
 <template>
     <div>
-        <PageTitle>
+        <Heading1>
             {{ page.title }}
-        </PageTitle>
+        </Heading1>
 
         <InnerContainer>
             <p class="mb-10 text-subtitle-1">
@@ -11,36 +11,36 @@
 
             <OsitaIhemeVideo />
 
-            <v-divider class="mb-2 mt-12" />
-            <template v-if="$vuetify.breakpoint.lgAndUp">
-                <AdsterraBanner728x90 :order="0" class="d-flex mx-auto" />
-            </template>
-            <template v-else-if="$vuetify.breakpoint.mdAndDown">
-                <AdsterraBanner300x250 :order="0" class="d-flex mx-auto" />
-            </template>
-            <v-divider class="mt-2 mb-12" />
+            <div class="my-12">
+                <template v-if="$vuetify.breakpoint.lgAndUp">
+                    <AdsterraBanner728x90 :order="0" />
+                </template>
+                <template v-else-if="$vuetify.breakpoint.mdAndDown">
+                    <AdsterraBanner300x250 :order="0" />
+                </template>
+            </div>
 
-            <PageSubtitle
+            <Heading2
                 :to="Hesaplayicilar.url"
                 class="mb-4">
                 {{ Hesaplayicilar.title }}
-            </PageSubtitle>
+            </Heading2>
             <CalculatorGrid />
 
-            <v-divider class="mb-2 mt-12" />
-            <template v-if="$vuetify.breakpoint.lgAndUp">
-                <AdsterraBanner468x60 :order="1" class="d-flex mx-auto" />
-            </template>
-            <template v-else-if="$vuetify.breakpoint.mdAndDown">
-                <AdsterraBanner320x50 :order="1" class="d-flex mx-auto" />
-            </template>
-            <v-divider class="mt-2 mb-12" />
+            <div class="my-12">
+                <template v-if="$vuetify.breakpoint.lgAndUp">
+                    <AdsterraBanner468x60 :order="1" />
+                </template>
+                <template v-else-if="$vuetify.breakpoint.mdAndDown">
+                    <AdsterraBanner320x50 :order="1" />
+                </template>
+            </div>
 
-            <PageSubtitle
+            <Heading2
                 to="/yazilar/"
                 class="mb-4">
                 Bir takım yazılar
-            </PageSubtitle>
+            </Heading2>
             <v-row>
                 <template v-for="_article in articles">
                     <v-col
@@ -52,6 +52,10 @@
                 </template>
             </v-row>
         </InnerContainer>
+
+        <AdsterraNative
+            :order="2"
+            class="mt-16" />
     </div>
 </template>
 
