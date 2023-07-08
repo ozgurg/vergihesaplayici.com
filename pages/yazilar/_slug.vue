@@ -2,9 +2,9 @@
     <div>
         <AppBreadcrumbs :items="breadcrumbs()" />
 
-        <PageTitle>
+        <Heading1>
             {{ article.title }}
-        </PageTitle>
+        </Heading1>
 
         <InnerContainer>
             <template v-if="$vuetify.breakpoint.lgAndUp">

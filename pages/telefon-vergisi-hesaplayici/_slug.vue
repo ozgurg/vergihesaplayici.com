@@ -2,9 +2,9 @@
     <div>
         <AppBreadcrumbs :items="page.breadcrumbs" />
 
-        <PageTitle>
+        <Heading1>
             {{ page.title }}
-        </PageTitle>
+        </Heading1>
 
         <template v-if="$vuetify.breakpoint.lgAndUp">
             <AdsterraBanner728x90 :order="0" class="d-flex mx-auto" />

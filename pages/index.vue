@@ -1,8 +1,8 @@
 <template>
     <div>
-        <PageTitle>
+        <Heading1>
             {{ page.title }}
-        </PageTitle>
+        </Heading1>
 
         <InnerContainer>
             <p class="mb-10 text-subtitle-1">
