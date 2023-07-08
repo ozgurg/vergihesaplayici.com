@@ -87,9 +87,9 @@
             <div class="d-flex flex-column gap-16">
                 <template v-for="_item in presetsGroupedByBrand">
                     <div :key="_item.title">
-                        <Heading2 class="mb-2">
+                        <Heading3 class="mb-2">
                             {{ _item.title }}
-                        </Heading2>
+                        </Heading3>
                         <CalculatorPresets :presets="_item.presets" />
                     </div>
                 </template>
