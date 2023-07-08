@@ -18,7 +18,7 @@
         <InnerContainer>
             <FormRow>
                 <Heading2 class="mb-4">
-                    Bir oyun konsolu seçin…
+                    Hazır hesaplamalar
                 </Heading2>
 
                 <CalculatorPresets :presets="ui.presets" />
@@ -26,7 +26,7 @@
                 <v-divider class="my-12" />
 
                 <Heading2 class="mb-4">
-                    …veya kendiniz hesaplayın
+                    Kendiniz hesaplayın
                 </Heading2>
             </FormRow>
         </InnerContainer>
