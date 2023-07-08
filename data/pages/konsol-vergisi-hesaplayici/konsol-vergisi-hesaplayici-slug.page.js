@@ -1,4 +1,4 @@
-import { mdiApple, mdiMicrosoftXbox, mdiNintendoSwitch, mdiSonyPlaystation } from "@mdi/js";
+import { mdiMicrosoftXbox, mdiNintendoSwitch, mdiSonyPlaystation } from "@mdi/js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
 import KonsolVergisiHesaplayici from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.page.js";
 import { findCalculatorPresetBySlug } from "@/utils/find-calculator-preset-by-slug.js";
@@ -140,22 +140,6 @@ const presets = [
                     lastUpdatedDate: new Date("Tue Jun 06 2023 22:55:14 GMT+0300 (GMT+03:00)"),
                     sourceUrl: "https://www.overgameweb.com/nintendo-switch-konsol-oled-edition-neon"
                 }
-            }
-        ]
-    },
-    {
-        title: "Apple Vision Pro",
-        slug: "apple-vision-pro",
-        url: buildUrl("apple-vision-pro"),
-        icon: mdiApple,
-        color: "#555",
-        ogImageName: "konsol-vergisi-hesaplayici-apple-vision-pro.jpg",
-        pageTitle: "Apple Vision Pro'nun vergisi ne kadar?",
-        pageDescription: "Apple Vision Pro'nun vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
-        options: [
-            {
-                title: "Standart",
-                form: { price: 3499, currency: "USD" }
             }
         ]
     }

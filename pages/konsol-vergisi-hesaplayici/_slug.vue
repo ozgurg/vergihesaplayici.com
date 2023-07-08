@@ -16,14 +16,6 @@
         </div>
 
         <CalculatorInnerContainer>
-            <template v-if="slug === 'apple-vision-pro'">
-                <v-alert
-                    class="mb-10"
-                    type="info">
-                    Bu ürünün hangi ürün kategorisinden vergilendirileceğini henüz bilmiyoruz. Bu sayfa sadece bilgi vermek amacıyla hazırlanmıştır.
-                </v-alert>
-            </template>
-
             <FormRow
                 class="mb-10"
                 label="Model">
