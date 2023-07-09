@@ -4,7 +4,7 @@
     </div>
 </template>
 
-<style scoped="">
+<style lang="scss" scoped="">
 .vh-inner-container {
     max-width: 900px
 }
