@@ -1,28 +1,41 @@
 <template>
-    <div class="small caption grey--text">
-        <div>
-            Son güncellenme tarihi:
-            {{ dateFormat(lastUpdatedDate) }}
-        </div>
-
-        <div>
-            Kaynak:
-            <a
+    <v-tooltip
+        right=""
+        max-width="240">
+        <template #activator="{ on, attrs }">
+            <v-btn
+                v-bind="attrs"
                 :href="sourceUrl"
                 target="_blank"
+                plain=""
                 rel="nofollow noopener noreferrer"
-                class="grey--text text-decoration-underline">
-                {{ getDomainFromUrl(sourceUrl) }}
-            </a>
-        </div>
-    </div>
+                class="mx-n3"
+                v-on="on">
+                {{ relativeFormattedDate }} güncellendi
+                <v-icon
+                    size="16"
+                    right="">
+                    {{ icons.mdiOpenInNew }}
+                </v-icon>
+            </v-btn>
+        </template>
+        <span>
+            Piyasa fiyatı <b>{{ formattedDate }}</b> tarihinde <b>{{ domain }}</b> adresinden alınmıştır. Şu anki fiyat farklı olabilir.
+        </span>
+    </v-tooltip>
 </template>
 
 <script>
-import { dateFormat } from "@/utils/formatter.js";
+import { mdiOpenInNew } from "@mdi/js";
+import { dateFormat, relativeDateFormat } from "@/utils/formatter.js";
 import { getDomainFromUrl } from "@/utils/get-domain-from-url.js";
 
 export default {
+    data: () => ({
+        icons: {
+            mdiOpenInNew
+        }
+    }),
     props: {
         lastUpdatedDate: {
             type: Date,
@@ -33,9 +46,19 @@ export default {
             required: true
         }
     },
-    methods: {
-        dateFormat,
-        getDomainFromUrl
+    computed: {
+        domain() {
+            const vm = this;
+            return getDomainFromUrl(vm.sourceUrl);
+        },
+        formattedDate() {
+            const vm = this;
+            return dateFormat(vm.lastUpdatedDate);
+        },
+        relativeFormattedDate() {
+            const vm = this;
+            return relativeDateFormat(vm.lastUpdatedDate);
+        }
     }
 };
 </script>

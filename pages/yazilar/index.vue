@@ -22,7 +22,7 @@
                         :key="_article.slug"
                         cols="12"
                         lg="4">
-                        <ArticleItem :article="_article" />
+                        <ArticleCardItem :article="_article" />
                     </v-col>
 
                     <template v-if="index === 2">

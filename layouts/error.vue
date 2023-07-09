@@ -1,14 +1,41 @@
 <template>
     <div>
         <Heading1>
-            {{ title }}
+            Hata falan mı oldu, bir şey oldu sanki…
         </Heading1>
 
-        <v-alert
-            border="left"
-            type="error">
-            {{ message }}
-        </v-alert>
+        <InnerContainer>
+            <Heading3 class="mb-8">
+                …ama bu aramızda kalabilir.
+            </Heading3>
+
+            <video
+                class="rounded"
+                width="250"
+                height="250"
+                autoplay=""
+                loop=""
+                muted=""
+                playsinline=""
+                preload="none">
+                <source
+                    :src="require('@/assets/video/kemal-sunal.mp4')"
+                    type="video/mp4" />
+            </video>
+
+            <v-divider class="my-16" />
+
+            <Heading3 class="mb-8">
+                Kalmasın diyorsan al bunu yay:
+            </Heading3>
+
+            <v-alert
+                :icon="false"
+                text=""
+                type="error">
+                {{ message }}
+            </v-alert>
+        </InnerContainer>
     </div>
 </template>
 
@@ -41,7 +68,7 @@ export default {
                 return "Sayfa bulunamadı";
             }
 
-            return "Bir şey oldu";
+            return "Bir hata oluştu";
         },
         message() {
             const vm = this;

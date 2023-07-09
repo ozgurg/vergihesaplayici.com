@@ -1,14 +1,12 @@
 <template>
-    <v-row
-        no-gutters=""
-        class="ma-n2">
+    <v-row>
         <template v-for="_calculator in calculators">
-            <CalculatorGridItem
+            <v-col
                 :key="_calculator.title"
-                :url="_calculator.url"
-                :icon="_calculator.icon"
-                :title="_calculator.title"
-                :summary="_calculator.summary" />
+                cols="12"
+                sm="6">
+                <CalculatorCardItem :calculator="_calculator" />
+            </v-col>
         </template>
     </v-row>
 </template>

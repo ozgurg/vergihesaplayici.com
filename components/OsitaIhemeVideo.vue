@@ -1,7 +1,7 @@
 <template>
     <a
         v-ripple=""
-        class="d-inline-flex"
+        class="d-inline-flex overflow-hidden"
         href="https://youtu.be/LPrhPC-L5Go?t=5"
         rel="nofollow noopener noreferrer"
         target="_blank"

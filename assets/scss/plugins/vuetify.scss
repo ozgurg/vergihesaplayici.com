@@ -1,27 +1,26 @@
-.v-alert__icon {
-    margin-top: 12px
+.v-input {
+    &--is-readonly {
+        pointer-events: none
+    }
+
+    &__append-inner {
+        pointer-events: all
+    }
 }
 
-.v-input--is-readonly {
-    pointer-events: none
-}
+.v-card {
+    height: 100%;
 
-.v-input__append-inner {
-    pointer-events: all
-}
+    &__title {
+        word-break: break-word
+    }
 
-.v-tab {
-    text-transform: unset
-}
-
-.v-card__title {
-    word-break: break-word
-}
-
-.v-card--link {
-    @include vh-real-hover {
-        &:hover::before {
-            opacity: $vh-card-hover-opacity
+    &--link {
+        overflow: hidden;
+        @include vh-real-hover {
+            &:hover::before {
+                opacity: $vh-card-hover-opacity
+            }
         }
     }
 }

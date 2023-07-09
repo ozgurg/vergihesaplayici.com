@@ -41,9 +41,22 @@ const dateFormat = date => {
     return formatter.format(date);
 };
 
+/**
+ * @param {Date} date
+ * @returns {string}
+ */
+const relativeDateFormat = date => {
+    const timeDifference = Date.now() - date.getTime();
+    const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+    const formatter = new Intl.RelativeTimeFormat("tr", { numeric: "auto" });
+    return formatter.format(-daysDifference, "day");
+};
+
 export {
     normalizePrice,
     moneyFormat,
     numberFormat,
-    dateFormat
+    dateFormat,
+    relativeDateFormat
 };
