@@ -87,15 +87,18 @@ export default {
 .vh-copy-button {
     $self: &;
     min-width: unset !important;
+
     &--copied {
         // TODO: Make the icon white
         #{$self}__icon-1 {
             opacity: 0
         }
+
         #{$self}__icon-2 {
             opacity: 1
         }
     }
+
     &__icon-2 {
         position: absolute;
         inset: 0;
@@ -105,6 +108,7 @@ export default {
         place-items: center;
         opacity: 0
     }
+
     &__icon-1, &__icon-2 {
         @media (prefers-reduced-motion: no-preference) {
             transition: $primary-transition

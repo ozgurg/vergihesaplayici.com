@@ -1,3 +1,9 @@
+@import "./_mixins.scss";
+@import "./_variables.scss";
+@import "./_utilities.scss";
+@import "./components/index.scss";
+@import "./plugins/index.scss";
+
 html, body {
     background: #121212
 }
@@ -10,66 +16,3 @@ video {
     max-width: 100%;
     height: auto
 }
-
-.page-enter-active,
-.page-leave-active {
-    transition: opacity .225s cubic-bezier(.25, .8, .25, 1)
-}
-
-.page-enter,
-.page-leave-to {
-    opacity: 0
-}
-
-.nuxt-content {
-    user-select: text;
-    line-height: 28px;
-
-    table {
-        width: 100%;
-        border-spacing: 0;
-
-        th {
-            color: hsla(0, 0%, 100%, .7);
-            font-size: .875rem;
-            height: 48px;
-            padding: 0 16px
-        }
-
-        td {
-            font-size: .875rem;
-            height: 48px;
-            border-bottom: thin solid hsla(0, 0%, 100%, .12);
-            padding: 0 16px;
-            transition: height .2s cubic-bezier(.4, 0, .6, 1)
-        }
-    }
-
-    .vergi-turleri-table {
-        table {
-            th {
-                &:nth-child(1) {
-                    width: 96px;
-                    text-align: right
-                }
-
-                &:nth-child(2) {
-                    text-align: left
-                }
-            }
-
-            td {
-                &:nth-child(1) {
-                    text-align: right
-                }
-
-                &:nth-child(2) {
-                    text-align: left
-                }
-            }
-        }
-    }
-}
-
-@import "_utilities.scss";
-@import "_dialog.scss";

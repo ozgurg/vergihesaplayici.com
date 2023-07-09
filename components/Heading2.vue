@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/assets/scss/mixins.scss";
+@import "~vuetify/src/styles/settings/_variables.scss";
 
 .vh-heading-2 {
     position: relative;
@@ -35,8 +35,9 @@ export default {
     a {
         color: inherit;
         @include vh-real-hover {
+            transition: color $secondary-transition;
             &:hover {
-                color: #88DF95
+                color: $vh-color-primary
             }
         }
     }
@@ -48,7 +49,7 @@ export default {
         height: 100%;
         width: .375rem;
         border-radius: .5rem;
-        background: #88DF95;
+        background: $vh-color-primary;
         pointer-events: none;
         content: ""
     }
