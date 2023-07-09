@@ -1,26 +1,19 @@
 <template>
     <v-card
         :to="url(article)"
-        link=""
-        class="h-100 d-flex flex-column px-3 py-5 overflow-hidden">
-        <v-card-title>
+        outlined=""
+        class="vh-article-item h-100 px-4 py-8 overflow-hidden">
+        <v-card-title class="pt-0">
             {{ article.title }}
         </v-card-title>
-        <v-card-text>
+        <v-card-text class="pb-0">
             {{ article.description }}…
         </v-card-text>
     </v-card>
 </template>
 
 <script>
-import { mdiChevronRight } from "@mdi/js";
-
 export default {
-    data: () => ({
-        icons: {
-            mdiChevronRight
-        }
-    }),
     props: {
         article: {
             type: Object,
