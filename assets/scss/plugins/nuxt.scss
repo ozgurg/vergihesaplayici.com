@@ -52,7 +52,7 @@
 // Nuxt page transition
 .page-enter-active,
 .page-leave-active {
-    transition: opacity $vh-duration-medium $vh-timing
+    transition: opacity $secondary-transition
 }
 
 .page-enter,
