@@ -30,7 +30,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped="">
 @import "~vuetify/src/styles/settings/_variables.scss";
 
 .vh-heading-2 {

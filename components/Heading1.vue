@@ -21,7 +21,7 @@ export default {
 };
 </script>
 
-<style scoped="">
+<style lang="scss" scoped="">
 .vh-heading-1 {
     text-wrap: balance
 }
