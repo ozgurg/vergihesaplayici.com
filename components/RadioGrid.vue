@@ -7,8 +7,8 @@
             <v-card
                 :key="_item.title"
                 :class="{'vh-radio-grid__item--active primary--text primary': isItemActive(_item)}"
-                role="radio"
                 :aria-checked="isItemActive(_item) ? 'true' : 'false'"
+                role="radio"
                 outlined=""
                 class="vh-radio-grid__item d-flex flex-column py-6 px-4"
                 @click="emit(_item.value)">
@@ -69,15 +69,15 @@ export default {
         height: 100%;
         background: 0 !important;
 
-        &--active, &:hover {
-            &::before {
-                opacity: .08
+        &--active::before {
+            opacity: $vh-card-hover-opacity
+        }
+
+        @include vh-real-hover {
+            &:hover::before {
+                opacity: $vh-card-hover-opacity
             }
         }
     }
-}
-
-.opacity-75 {
-    opacity: .75
 }
 </style>

@@ -20,9 +20,7 @@
                 </template>
             </div>
 
-            <Heading2
-                :to="Hesaplayicilar.url"
-                class="mb-4">
+            <Heading2 :to="Hesaplayicilar.url">
                 {{ Hesaplayicilar.title }}
             </Heading2>
             <CalculatorGrid />
@@ -36,9 +34,7 @@
                 </template>
             </div>
 
-            <Heading2
-                to="/yazilar/"
-                class="mb-4">
+            <Heading2 to="/yazilar/">
                 Bir takım yazılar
             </Heading2>
             <v-row>

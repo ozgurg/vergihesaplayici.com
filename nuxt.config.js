@@ -78,6 +78,7 @@ export default {
         "@nuxt/content"
     ],
     buildModules: [
+        "@nuxtjs/style-resources",
         "@nuxtjs/dotenv",
         "@nuxtjs/eslint-module",
         "@nuxtjs/vuetify",
@@ -123,6 +124,11 @@ export default {
     css: [
         "@/assets/scss/style.scss"
     ],
+    styleResources: {
+        scss: [
+            "@/assets/scss/style.scss"
+        ]
+    },
     plugins: [
         "@/plugins/firebase.client.js",
         "@/plugins/vue-clipboard2.client.js",
@@ -136,7 +142,7 @@ export default {
     },
     vuetify: {
         customVariables: [
-            "@/assets/scss/vuetify-customization.scss"
+            "@/assets/scss/vuetify-custom-variables.scss"
         ],
         treeShake: true,
         defaultAssets: {

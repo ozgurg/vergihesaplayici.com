@@ -6,16 +6,17 @@
         <v-card
             :to="url"
             outlined=""
-            class="vh-calculator-grid__item px-5 py-7 pa-sm-8 d-flex flex-column justify-space-between align-start h-100 overflow-hidden">
+            class="vh-calculator-grid-item px-5 py-7 pa-sm-8 d-flex flex-column justify-space-between align-start h-100 overflow-hidden">
             <v-icon
-                class="vh-calculator-grid__item__bg-icon"
+                color="primary"
+                class="vh-calculator-grid-item__bg-icon"
                 size="128">
                 {{ icon }}
             </v-icon>
 
-            <div class="vh-calculator-grid__item__icon d-inline-block pa-3 pa-lg-5 rounded">
+            <div class="vh-calculator-grid-item__icon d-inline-block pa-3 pa-lg-5 rounded">
                 <v-icon
-                    class="primary--text"
+                    color="primary"
                     size="40">
                     {{ icon }}
                 </v-icon>
@@ -56,29 +57,20 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.vh-calculator-grid__item {
+<style lang="scss" scoped="">
+.vh-calculator-grid-item {
     position: relative;
 
     &__bg-icon {
         position: absolute !important;
-        right: 0;
-        bottom: 0;
+        inset-inline-end: 0;
+        inset-block-end: 0;
         transform: translate(25%, 25%) rotate(-45deg);
-
-        svg {
-            fill: transparentize(#88DF95, .96)
-        }
+        opacity: .04
     }
 
     &__icon {
-        background: transparentize(#88DF95, .92)
-    }
-
-    &:hover {
-        &::before {
-            opacity: .08
-        }
+        background: rgba($vh-color-primary, .08)
     }
 }
 </style>

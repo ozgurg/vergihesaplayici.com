@@ -1,6 +1,8 @@
 <template>
     <div>
-        <Heading1>{{ title }}</Heading1>
+        <Heading1>
+            {{ title }}
+        </Heading1>
 
         <v-alert
             border="left"

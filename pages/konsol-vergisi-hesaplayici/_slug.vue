@@ -67,24 +67,23 @@
         <v-divider class="my-16" />
 
         <InnerContainer>
-            <Heading2 class="mb-4">
+            <Heading2>
                 Diğer oyun konsolları
             </Heading2>
             <CalculatorPresets :presets="ui.presets" />
         </InnerContainer>
 
-        <div class="mt-16">
-            <template v-if="$vuetify.breakpoint.lgAndUp">
-                <AdsterraBanner468x60 :order="1" />
-            </template>
-            <template v-else-if="$vuetify.breakpoint.mdAndDown">
-                <AdsterraBanner320x50 :order="1" />
-            </template>
+        <v-divider class="my-16" />
 
-            <AdsterraNative
-                :order="2"
-                class="mt-8" />
-        </div>
+        <template v-if="$vuetify.breakpoint.lgAndUp">
+            <AdsterraBanner468x60 :order="1" />
+        </template>
+        <template v-else-if="$vuetify.breakpoint.mdAndDown">
+            <AdsterraBanner320x50 :order="1" />
+        </template>
+        <AdsterraNative
+            :order="2"
+            class="mt-8" />
     </div>
 </template>
 
