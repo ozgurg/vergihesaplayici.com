@@ -36,14 +36,14 @@
             </v-row>
         </InnerContainer>
 
-        <div class="mt-16">
-            <template v-if="$vuetify.breakpoint.lgAndUp">
-                <AdsterraBanner468x60 :order="2" />
-            </template>
-            <template v-else-if="$vuetify.breakpoint.mdAndDown">
-                <AdsterraBanner320x50 :order="2" />
-            </template>
-        </div>
+        <v-divider class="my-16" />
+
+        <template v-if="$vuetify.breakpoint.lgAndUp">
+            <AdsterraBanner468x60 :order="2" />
+        </template>
+        <template v-else-if="$vuetify.breakpoint.mdAndDown">
+            <AdsterraBanner320x50 :order="2" />
+        </template>
     </div>
 </template>
 
