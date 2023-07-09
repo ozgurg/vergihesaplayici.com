@@ -1,0 +1,5 @@
+@mixin vh-real-hover {
+    @media (hover: hover) {
+        @content
+    }
+}
