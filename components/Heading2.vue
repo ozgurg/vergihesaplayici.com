@@ -1,5 +1,5 @@
 <template>
-    <h2 class="text-h5 font-weight-bold">
+    <h2 class="vh-heading-2 text-h5 font-weight-bold">
         <template v-if="to">
             <nuxt-link
                 :to="to"
@@ -23,3 +23,22 @@ export default {
     }
 };
 </script>
+
+<style lang="scss">
+.vh-heading-2 {
+    position: relative;
+    padding-inline-start: 1.125rem;
+
+    &::before {
+        position: absolute;
+        inset-inline-start: 0;
+        inset-block: 0;
+        height: 100%;
+        width: .375rem;
+        border-radius: .5rem;
+        background: #88DF95;
+        pointer-events: none;
+        content: ""
+    }
+}
+</style>
