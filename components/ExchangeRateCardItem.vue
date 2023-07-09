@@ -1,48 +1,45 @@
 <template>
     <v-card
-        color="grey darken-4"
         elevation="0"
         class="pa-4">
-        <div class="text-body-2 text--secondary mb-1">
+        <v-card-text class="pa-0">
             {{ currencyCode }}
-        </div>
+        </v-card-text>
 
         <template v-if="isLoading">
             <v-skeleton-loader
                 class="mb-0"
-                max-width="56"
-                max-height="24"
+                max-width="68"
+                max-height="32"
                 width="100%"
                 type="image" />
         </template>
         <template v-else>
-            <div class="text-body-1 tabular-nums font-weight-medium">
+            <v-card-title class="pa-0">
                 <template v-if="exchangeRate">
-                    {{ moneyFormat(exchangeRate.rate, "TRY") }}
+                    <span class="tabular-nums">
+                        {{ moneyFormat(exchangeRate.rate, "TRY") }}
+                    </span>
                 </template>
                 <template v-else>
                     <!--
                     Wrapping with "div" makes height same as "v-skeleton-loader".
                     This prevents layout shifting.
                     -->
-                    <div>
-                        <v-icon color="red">
-                            {{ errorIcon }}
-                        </v-icon>
+                    <div class="red--text">
+                        Hata 😊
                     </div>
                 </template>
-            </div>
+            </v-card-title>
         </template>
     </v-card>
 </template>
 
 <script>
-import { mdiAlertCircle } from "@mdi/js";
 import { moneyFormat } from "@/utils/formatter.js";
 
 export default {
     data: () => ({
-        errorIcon: mdiAlertCircle,
         isLoading: true,
         exchangeRate: null
     }),
@@ -64,7 +61,9 @@ export default {
                     vm.exchangeRate = null;
                 })
                 .finally(() => {
-                    vm.isLoading = false;
+                    setTimeout(() => {
+                        vm.isLoading = false;
+                    }, 195);
                 });
         }
     },
