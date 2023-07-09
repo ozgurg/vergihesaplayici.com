@@ -26,12 +26,12 @@ export default {
             const vm = this;
 
             if (vm.minimumWageMonthCount > 1) {
-                return `Türkiye'de asgari ücretle (${vm.minimumWageFormatted}) çalışan birisi yemeden içmeden bu ürünü <b>${vm.minimumWageMonthCount}</b> aylık maaşı ile satın alabilir.`;
+                return `Türkiye'de asgari ücretle (${vm.formattedMinimumWage}) çalışan birisi yemeden içmeden bu ürünü <span class="text-h6 font-weight-bold">${vm.minimumWageMonthCount}</span> aylık maaşı ile satın alabilir.`;
             }
 
-            return `Türkiye'de asgari ücretle (${vm.minimumWageFormatted}) çalışan birisi yemeden içmeden bu ürünü <b>${vm.minimumWageDayCount}</b> günlük maaşı ile satın alabilir.`;
+            return `Türkiye'de asgari ücretle (${vm.formattedMinimumWage}) çalışan birisi yemeden içmeden bu ürünü <span class="text-h6 font-weight-bold">${vm.minimumWageDayCount}</span> günlük maaşı ile satın alabilir.`;
         },
-        minimumWageFormatted() {
+        formattedMinimumWage() {
             return moneyFormat(minimumWage, "TRY");
         },
         minimumWageDayCount() {

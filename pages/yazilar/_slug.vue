@@ -25,16 +25,7 @@
             <Heading2>
                 Diğer yazılar
             </Heading2>
-            <v-row>
-                <template v-for="_article in articles">
-                    <v-col
-                        :key="_article.slug"
-                        cols="12"
-                        lg="4">
-                        <ArticleItem :article="_article" />
-                    </v-col>
-                </template>
-            </v-row>
+            <ArticleGrid :articles="articles" />
         </InnerContainer>
 
         <v-divider class="my-16" />
@@ -68,7 +59,10 @@ export default {
             ];
         }
     },
-    async asyncData({ $content, params: { slug } }) {
+    async asyncData({
+        $content,
+        params: { slug }
+    }) {
         const article = await $content(slug).fetch();
 
         const otherArticles = await $content("/")

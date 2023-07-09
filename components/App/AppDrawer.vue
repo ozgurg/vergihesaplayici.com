@@ -12,11 +12,11 @@
         </template>
 
         <div class="d-flex flex-column h-100">
-            <CalculatorList
-                subheader="Hesaplayıcılar"
-                shaped="" />
+            <CalculatorList />
 
-            <v-list class="mb-auto">
+            <v-list
+                class="mb-auto"
+                subheader="">
                 <v-subheader>Döviz kurları</v-subheader>
                 <v-list-item>
                     <ExchangeRateGrid />
@@ -59,15 +59,15 @@ export default {
 @import "~vuetify/src/styles/styles.sass";
 
 @media #{map-get($display-breakpoints, "sm-and-down")} {
-    $vh_drawerSelector: "v-navigation-drawer";
+    $vuetify-drawer-selector: ".v-navigation-drawer";
 
-    html:has(.#{$vh_drawerSelector}--open) {
+    html:has(#{$vuetify-drawer-selector}--open) {
         position: fixed;
         width: 100%;
         height: 100%;
         inset: 0;
 
-        &, *:not(.#{$vh_drawerSelector} *) {
+        &, *:not(#{$vuetify-drawer-selector} *) {
             // FIXME: This is causing the parts under the overlay to look weird
             overflow: hidden !important
         }
@@ -81,7 +81,7 @@ export default {
         }
     }
 
-    .#{$vh_drawerSelector} {
+    #{$vuetify-drawer-selector} {
         height: 100% !important
     }
 }

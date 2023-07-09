@@ -1,32 +1,22 @@
 <template>
-    <v-list-item :to="url">
+    <v-list-item :to="calculator.url">
         <v-list-item-icon>
             <v-icon>
-                {{ icon }}
+                {{ calculator.icon }}
             </v-icon>
         </v-list-item-icon>
 
-        <v-list-item-content>
-            <v-list-item-title>
-                {{ title }}
-            </v-list-item-title>
-        </v-list-item-content>
+        <v-list-item-title>
+            {{ calculator.shortTitle }}
+        </v-list-item-title>
     </v-list-item>
 </template>
 
 <script>
 export default {
     props: {
-        url: {
-            type: String,
-            required: true
-        },
-        icon: {
-            type: String,
-            required: true
-        },
-        title: {
-            type: String,
+        calculator: {
+            type: Object,
             required: true
         }
     }

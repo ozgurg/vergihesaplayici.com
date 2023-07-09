@@ -4,7 +4,7 @@
     </div>
 </template>
 
-<style>
+<style scoped="">
 .vh-inner-container {
     max-width: 900px
 }

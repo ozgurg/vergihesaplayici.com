@@ -1,5 +1,7 @@
 <template>
-    <h2 class="vh-heading-2 text-h5 font-weight-bold mb-6">
+    <component
+        :is="tag"
+        class="vh-heading-2 text-h5 font-weight-bold mb-6">
         <template v-if="to">
             <nuxt-link
                 :to="to"
@@ -10,7 +12,7 @@
         <template v-else>
             <slot />
         </template>
-    </h2>
+    </component>
 </template>
 
 <script>
@@ -19,6 +21,10 @@ export default {
         to: {
             type: String,
             default: null
+        },
+        tag: {
+            type: String,
+            default: "h2"
         }
     }
 };

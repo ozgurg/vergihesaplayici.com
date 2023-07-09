@@ -10,22 +10,22 @@
                 :aria-checked="isItemActive(_item) ? 'true' : 'false'"
                 role="radio"
                 outlined=""
-                class="vh-radio-grid__item d-flex flex-column py-6 px-4"
+                class="vh-radio-grid__item px-4 py-6"
                 @click="emit(_item.value)">
-                <div class="text-subtitle-1 font-weight-medium mb-auto">
+                <v-card-title class="text-subtitle-1 pa-0">
                     {{ _item.title }}
-                </div>
+                </v-card-title>
 
-                <template v-if="_item.description">
-                    <div class="text-caption opacity-75">
+                <v-card-text
+                    :class="{'primary--text opacity-75': isItemActive(_item)}"
+                    class="pa-0">
+                    <template v-if="_item.description">
                         {{ _item.description }}
-                    </div>
-                </template>
-                <template v-else-if="_item.price">
-                    <div class="text-caption opacity-75 tabular-nums">
-                        {{ _item.price }}
-                    </div>
-                </template>
+                    </template>
+                    <template v-else-if="_item.price">
+                        <span class="tabular-nums">{{ _item.price }}</span>
+                    </template>
+                </v-card-text>
             </v-card>
         </template>
     </div>
@@ -71,12 +71,6 @@ export default {
 
         &--active::before {
             opacity: $vh-card-hover-opacity
-        }
-
-        @include vh-real-hover {
-            &:hover::before {
-                opacity: $vh-card-hover-opacity
-            }
         }
     }
 }

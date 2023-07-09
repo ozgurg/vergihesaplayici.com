@@ -1,19 +1,16 @@
 <template>
     <v-list
         v-bind="$attrs"
-        :subheader="hasSubheader">
-        <template v-if="hasSubheader">
-            <v-subheader>
-                {{ subheader }}
-            </v-subheader>
-        </template>
+        subheader=""
+        shaped="">
+        <v-subheader>
+            Hesaplayıcılar
+        </v-subheader>
 
         <template v-for="_calculator in calculators">
             <CalculatorListItem
                 :key="_calculator.title"
-                :url="_calculator.url"
-                :icon="_calculator.icon"
-                :title="_calculator.shortTitle" />
+                :calculator="_calculator" />
         </template>
     </v-list>
 </template>
@@ -24,18 +21,6 @@ import { calculators } from "@/data/calculator-list.js";
 export default {
     data: () => ({
         calculators
-    }),
-    props: {
-        subheader: {
-            type: String,
-            default: null
-        }
-    },
-    computed: {
-        hasSubheader() {
-            const vm = this;
-            return vm.subheader !== null;
-        }
-    }
+    })
 };
 </script>
