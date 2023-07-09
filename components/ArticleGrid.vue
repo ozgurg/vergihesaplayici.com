@@ -4,7 +4,8 @@
             <v-col
                 :key="_article.title"
                 cols="12"
-                sm="4">
+                sm="6"
+                md="4">
                 <ArticleCardItem :article="_article" />
             </v-col>
         </template>
