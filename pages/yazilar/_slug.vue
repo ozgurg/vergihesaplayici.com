@@ -22,8 +22,7 @@
                 :order="1"
                 class="my-12" />
 
-            <Heading2
-                class="mb-4">
+            <Heading2>
                 Diğer yazılar
             </Heading2>
             <v-row>

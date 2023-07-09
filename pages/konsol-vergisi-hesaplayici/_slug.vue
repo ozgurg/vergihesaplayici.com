@@ -67,7 +67,7 @@
         <v-divider class="my-16" />
 
         <InnerContainer>
-            <Heading2 class="mb-4">
+            <Heading2>
                 Diğer oyun konsolları
             </Heading2>
             <CalculatorPresets :presets="ui.presets" />

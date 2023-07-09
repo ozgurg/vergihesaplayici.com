@@ -17,7 +17,7 @@
 
         <InnerContainer>
             <FormRow>
-                <Heading2 class="mb-4">
+                <Heading2>
                     Hazır hesaplamalar
                 </Heading2>
 
@@ -34,7 +34,7 @@
 
                 <v-divider class="my-12" />
 
-                <Heading2 class="mb-4">
+                <Heading2>
                     Kendiniz hesaplayın
                 </Heading2>
             </FormRow>
