@@ -70,8 +70,7 @@
                 label="Kayıt yolu">
                 <RadioGrid
                     v-model="form.registration"
-                    :items="ui.registration"
-                    style="--vh-radio-grid-optimal-width:224px" />
+                    :items="ui.registration" />
             </FormRow>
 
             <template v-if="shouldShowResults">
