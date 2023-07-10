@@ -1,7 +1,12 @@
 <template>
-    <div
-        ref="scriptContainer"
-        class="vh-ab" />
+    <div class="vh-ab">
+        <span class="vh-ab__caption text-caption text-uppercase">
+            Reklam
+        </span>
+        <div
+            ref="scriptContainer"
+            class="vh-ab__inner" />
+    </div>
 </template>
 
 <script>
@@ -95,16 +100,32 @@ export default {
 <style lang="scss" scoped="">
 @import "~vuetify/src/styles/styles.sass";
 
+$vh-ab-border-radius: .5rem;
+
 .vh-ab {
-    background: rgba(#fff, .05);
-    border-radius: .5rem;
-    overflow: hidden;
-    display: block;
+    position: relative;
+    display: flex;
+    flex-direction: column;
     width: v-bind(unitizedWidth);
-    height: v-bind(unitizedHeight);
     max-width: 100%;
     @media #{map-get($display-breakpoints, "sm-and-down")} {
         margin-inline: auto
+    }
+
+    &__caption {
+        background: rgba(#fff, .12);
+        display: inline-flex;
+        align-self: flex-end;
+        padding: .125rem .375rem;
+        border-radius: $vh-ab-border-radius $vh-ab-border-radius 0 0
+    }
+
+    &__inner {
+        background: rgba(#fff, .04);
+        border-radius: $vh-ab-border-radius 0 $vh-ab-border-radius $vh-ab-border-radius;
+        overflow: hidden;
+        width: 100%;
+        height: v-bind(unitizedHeight)
     }
 }
 </style>
