@@ -1,12 +1,11 @@
 <template>
     <div
         ref="scriptContainer"
-        :style="sizeStyle"
         class="vh-ab" />
 </template>
 
 <script>
-const LOAD_DELAY = 750;
+const LOAD_DELAY = 500;
 
 export default {
     props: {
@@ -63,9 +62,13 @@ export default {
         }
     },
     computed: {
-        sizeStyle() {
+        unitizedWidth() {
             const vm = this;
-            return `--_width:${vm.width}px;--_height:${vm.height}px`;
+            return `${vm.width}px`;
+        },
+        unitizedHeight() {
+            const vm = this;
+            return `${vm.height}px`;
         }
     },
     mounted() {
@@ -75,14 +78,14 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped="">
 .vh-ab {
-    background: rgba(255, 255, 255, .05);
+    background: rgba(#fff, .05);
     border-radius: .5rem;
     overflow: hidden;
     display: inline-block;
-    width: var(--_width, 0);
-    height: var(--_height, 0);
+    width: v-bind(unitizedWidth);
+    height: v-bind(unitizedHeight);
     max-width: 100%
 }
 </style>
