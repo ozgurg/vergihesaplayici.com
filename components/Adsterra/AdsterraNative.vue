@@ -1,12 +1,15 @@
 <template>
-    <div class="vh-an">
+    <div
+        ref="root"
+        class="vh-an">
         <div ref="scriptContainer" />
         <div :id="containerId" />
     </div>
 </template>
 
 <script>
-const LOAD_DELAY = 500;
+const LOAD_DELAY_IN_MS = 500;
+const RETRY_DELAY_IN_MS = 5000;
 
 export default {
     props: {
@@ -24,6 +27,10 @@ export default {
         }
     },
     methods: {
+        _isScriptsLoaded() {
+            const vm = this;
+            return vm.$refs.root.querySelector(`.${vm.containerId}__stand`) !== null;
+        },
         _initScripts() {
             const vm = this;
 
@@ -45,7 +52,16 @@ export default {
     },
     mounted() {
         const vm = this;
-        setTimeout(() => vm._initScripts(), LOAD_DELAY * vm.order);
+
+        setTimeout(() => {
+            vm._initScripts();
+
+            setTimeout(() => {
+                if (!vm._isScriptsLoaded()) {
+                    vm._initScripts();
+                }
+            }, RETRY_DELAY_IN_MS);
+        }, LOAD_DELAY_IN_MS * vm.order);
     }
 };
 </script>
