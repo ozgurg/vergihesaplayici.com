@@ -1,15 +1,17 @@
 <template>
     <div>
-        <Heading1 class="mt-12">
+        <Heading1 class="mt-lg-12">
             {{ page.title }}
         </Heading1>
 
         <InnerContainer>
-            <p class="mb-10 text-subtitle-1">
-                vergihesaplayici.com, vergi hesaplar.
-            </p>
+            <div class="text-center text-md-start">
+                <p class="mb-12 text-body-1">
+                    vergihesaplayici.com, vergi hesaplar.
+                </p>
 
-            <OsitaIhemeVideo />
+                <OsitaIhemeVideo />
+            </div>
 
             <div class="my-12">
                 <template v-if="$vuetify.breakpoint.lgAndUp">

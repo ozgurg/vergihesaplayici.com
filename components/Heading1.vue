@@ -2,7 +2,7 @@
     <div class="mb-12">
         <component
             :is="tag"
-            class="vh-heading-1 text-h4 text-lg-h3 mb-4 font-weight-bold">
+            class="vh-heading-1 text-h4 text-lg-h3 mb-4 font-weight-bold text-center text-md-start">
             <slot />
         </component>
 

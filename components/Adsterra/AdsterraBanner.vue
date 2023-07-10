@@ -93,13 +93,18 @@ export default {
 </script>
 
 <style lang="scss" scoped="">
+@import "~vuetify/src/styles/styles.sass";
+
 .vh-ab {
     background: rgba(#fff, .05);
     border-radius: .5rem;
     overflow: hidden;
-    display: inline-block;
+    display: block;
     width: v-bind(unitizedWidth);
     height: v-bind(unitizedHeight);
-    max-width: 100%
+    max-width: 100%;
+    @media #{map-get($display-breakpoints, "sm-and-down")} {
+        margin-inline: auto
+    }
 }
 </style>
