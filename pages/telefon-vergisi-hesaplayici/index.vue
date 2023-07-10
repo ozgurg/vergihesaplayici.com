@@ -32,7 +32,14 @@
                     </template>
                 </div>
 
-                <v-divider class="my-12" />
+                <div class="my-12">
+                    <template v-if="$vuetify.breakpoint.lgAndUp">
+                        <AdsterraBanner728x90 :order="1" />
+                    </template>
+                    <template v-else-if="$vuetify.breakpoint.mdAndDown">
+                        <AdsterraBanner300x250 :order="1" />
+                    </template>
+                </div>
 
                 <Heading2>
                     Kendiniz hesaplayın
@@ -103,23 +110,17 @@
             </template>
         </CalculatorInnerContainer>
 
-        <v-divider class="my-16" />
-
-        <template v-if="$vuetify.breakpoint.lgAndUp">
-            <AdsterraBanner468x60 :order="1" />
-        </template>
-        <template v-else-if="$vuetify.breakpoint.mdAndDown">
-            <AdsterraBanner320x50 :order="1" />
-        </template>
         <AdsterraNative
             :order="2"
-            class="mt-8" />
+            class="mt-16" />
     </div>
 </template>
 
 <script>
 import Calculator from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.calculator.js";
-import page, { registrationOptions } from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.page.js";
+import page, {
+    registrationOptions
+} from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.page.js";
 import {
     buildResultList,
     buildScreenshotInput,
@@ -198,7 +199,10 @@ export default {
             const output = {};
 
             vm.ui.presets.forEach(preset => {
-                const { brand, ...rest } = preset;
+                const {
+                    brand,
+                    ...rest
+                } = preset;
                 if (!output[brand]) {
                     output[brand] = {
                         title: brand,

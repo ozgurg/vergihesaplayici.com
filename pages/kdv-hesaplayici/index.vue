@@ -84,17 +84,9 @@
             </template>
         </CalculatorInnerContainer>
 
-        <v-divider class="my-16" />
-
-        <template v-if="$vuetify.breakpoint.lgAndUp">
-            <AdsterraBanner468x60 :order="1" />
-        </template>
-        <template v-else-if="$vuetify.breakpoint.mdAndDown">
-            <AdsterraBanner320x50 :order="1" />
-        </template>
         <AdsterraNative
-            :order="2"
-            class="mt-8" />
+            :order="1"
+            class="mt-16" />
     </div>
 </template>
 
@@ -112,9 +104,18 @@ export default {
         ui: {
             modeOptions,
             presets: [
-                { title: "Yüzde 1", form: { rate: 1 } },
-                { title: "Yüzde 10", form: { rate: 10 } },
-                { title: "Yüzde 20", form: { rate: 20 } }
+                {
+                    title: "Yüzde 1",
+                    form: { rate: 1 }
+                },
+                {
+                    title: "Yüzde 10",
+                    form: { rate: 10 }
+                },
+                {
+                    title: "Yüzde 20",
+                    form: { rate: 20 }
+                }
             ]
         },
         form: {

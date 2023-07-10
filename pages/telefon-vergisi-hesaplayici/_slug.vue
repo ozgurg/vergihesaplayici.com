@@ -20,7 +20,8 @@
                 <v-alert
                     class="mb-10"
                     type="info">
-                    Bu ürünün hangi ürün kategorisinden vergilendirileceğini henüz bilmiyoruz. Bu sayfa sadece bilgi vermek amacıyla hazırlanmıştır.
+                    Bu ürünün hangi ürün kategorisinden vergilendirileceğini henüz bilmiyoruz. Bu sayfa sadece bilgi
+                    vermek amacıyla hazırlanmıştır.
                 </v-alert>
             </template>
 
@@ -80,6 +81,15 @@
             </template>
         </CalculatorInnerContainer>
 
+        <div class="mt-12">
+            <template v-if="$vuetify.breakpoint.lgAndUp">
+                <AdsterraBanner728x90 :order="1" />
+            </template>
+            <template v-else-if="$vuetify.breakpoint.mdAndDown">
+                <AdsterraBanner300x250 :order="1" />
+            </template>
+        </div>
+
         <v-divider class="my-16" />
 
         <InnerContainer>
@@ -95,17 +105,9 @@
             </div>
         </InnerContainer>
 
-        <v-divider class="my-16" />
-
-        <template v-if="$vuetify.breakpoint.lgAndUp">
-            <AdsterraBanner468x60 :order="1" />
-        </template>
-        <template v-else-if="$vuetify.breakpoint.mdAndDown">
-            <AdsterraBanner320x50 :order="1" />
-        </template>
         <AdsterraNative
             :order="2"
-            class="mt-8" />
+            class="mt-16" />
     </div>
 </template>
 
@@ -175,7 +177,10 @@ export default {
             const output = {};
 
             vm.ui.presets.forEach(preset => {
-                const { brand, ...rest } = preset;
+                const {
+                    brand,
+                    ...rest
+                } = preset;
                 if (!output[brand]) {
                     output[brand] = {
                         title: brand,

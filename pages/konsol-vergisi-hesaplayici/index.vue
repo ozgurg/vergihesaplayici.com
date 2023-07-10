@@ -23,7 +23,14 @@
 
                 <CalculatorPresets :presets="ui.presets" />
 
-                <v-divider class="my-12" />
+                <div class="my-12">
+                    <template v-if="$vuetify.breakpoint.lgAndUp">
+                        <AdsterraBanner728x90 :order="1" />
+                    </template>
+                    <template v-else-if="$vuetify.breakpoint.mdAndDown">
+                        <AdsterraBanner300x250 :order="1" />
+                    </template>
+                </div>
 
                 <Heading2>
                     Kendiniz hesaplayın
@@ -86,17 +93,9 @@
             </template>
         </CalculatorInnerContainer>
 
-        <v-divider class="my-16" />
-
-        <template v-if="$vuetify.breakpoint.lgAndUp">
-            <AdsterraBanner468x60 :order="1" />
-        </template>
-        <template v-else-if="$vuetify.breakpoint.mdAndDown">
-            <AdsterraBanner320x50 :order="1" />
-        </template>
         <AdsterraNative
             :order="2"
-            class="mt-8" />
+            class="mt-16" />
     </div>
 </template>
 

@@ -29,22 +29,27 @@
 
             <div class="my-12">
                 <template v-if="$vuetify.breakpoint.lgAndUp">
-                    <AdsterraBanner468x60 :order="1" />
+                    <AdsterraBanner728x90 :order="1" />
                 </template>
                 <template v-else-if="$vuetify.breakpoint.mdAndDown">
-                    <AdsterraBanner320x50 :order="1" />
+                    <AdsterraBanner300x250 :order="1" />
                 </template>
             </div>
 
             <Heading2 to="/yazilar/">
-                Bir takım yazılar
+                Yazılar
             </Heading2>
             <ArticleGrid :articles="articles" />
-        </InnerContainer>
 
-        <AdsterraNative
-            :order="2"
-            class="mt-16" />
+            <div class="mt-16">
+                <template v-if="$vuetify.breakpoint.lgAndUp">
+                    <AdsterraBanner728x90 :order="2" />
+                </template>
+                <template v-else-if="$vuetify.breakpoint.mdAndDown">
+                    <AdsterraBanner300x250 :order="2" />
+                </template>
+            </div>
+        </InnerContainer>
     </div>
 </template>
 
