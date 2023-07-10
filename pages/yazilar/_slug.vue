@@ -28,14 +28,14 @@
             <ArticleGrid :articles="articles" />
         </InnerContainer>
 
-        <v-divider class="my-16" />
-
-        <template v-if="$vuetify.breakpoint.lgAndUp">
-            <AdsterraBanner468x60 :order="2" />
-        </template>
-        <template v-else-if="$vuetify.breakpoint.mdAndDown">
-            <AdsterraBanner320x50 :order="2" />
-        </template>
+        <div class="mt-16">
+            <template v-if="$vuetify.breakpoint.lgAndUp">
+                <AdsterraBanner728x90 :order="2" />
+            </template>
+            <template v-else-if="$vuetify.breakpoint.mdAndDown">
+                <AdsterraBanner300x250 :order="2" />
+            </template>
+        </div>
     </div>
 </template>
 

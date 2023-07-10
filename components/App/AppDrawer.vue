@@ -23,10 +23,6 @@
                 </v-list-item>
             </v-list>
 
-            <template v-if="$vuetify.breakpoint.lgAndUp">
-                <AdsterraBanner160x300 :order="2" class="d-flex mx-auto mt-3" />
-            </template>
-
             <template v-if="$vuetify.breakpoint.mdAndUp">
                 <AppDrawerFooter class="mt-15" />
             </template>

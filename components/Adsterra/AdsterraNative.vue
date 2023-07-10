@@ -1,12 +1,20 @@
 <template>
-    <div>
-        <div ref="scriptContainer" />
-        <div :id="containerId" />
+    <div
+        ref="root"
+        class="vh-an">
+        <span class="vh-an__caption text-caption text-uppercase">
+            Reklam
+        </span>
+        <div class="vh-an__inner">
+            <div ref="scriptContainer" />
+            <div :id="containerId" />
+        </div>
     </div>
 </template>
 
 <script>
-const LOAD_DELAY = 750;
+const LOAD_DELAY_IN_MS = 500;
+const RETRY_DELAY_IN_MS = 5000;
 
 export default {
     props: {
@@ -24,6 +32,10 @@ export default {
         }
     },
     methods: {
+        _isScriptsLoaded() {
+            const vm = this;
+            return vm.$refs.root.querySelector(`.${vm.containerId}__stand`) !== null;
+        },
         _initScripts() {
             const vm = this;
 
@@ -45,7 +57,45 @@ export default {
     },
     mounted() {
         const vm = this;
-        setTimeout(() => vm._initScripts(), LOAD_DELAY * vm.order);
+
+        setTimeout(() => {
+            vm._initScripts();
+
+            setTimeout(() => {
+                if (!vm._isScriptsLoaded()) {
+                    vm._initScripts();
+                }
+            }, RETRY_DELAY_IN_MS);
+        }, LOAD_DELAY_IN_MS * vm.order);
     }
 };
 </script>
+
+<style lang="scss" scoped="">
+$vh-an-border-radius: .5rem;
+
+.vh-an {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+
+    &__caption {
+        background: rgba(#fff, .12);
+        display: inline-flex;
+        align-self: flex-end;
+        padding: .125rem .375rem;
+        border-radius: $vh-an-border-radius $vh-an-border-radius 0 0
+    }
+
+    &__inner {
+        background: rgba(#fff, .04);
+        border-radius: $vh-an-border-radius 0 $vh-an-border-radius $vh-an-border-radius;
+        overflow: hidden;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        min-height: 274px
+    }
+}
+</style>

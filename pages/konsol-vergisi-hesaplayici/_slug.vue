@@ -64,6 +64,15 @@
             </template>
         </CalculatorInnerContainer>
 
+        <div class="mt-12">
+            <template v-if="$vuetify.breakpoint.lgAndUp">
+                <AdsterraBanner728x90 :order="1" />
+            </template>
+            <template v-else-if="$vuetify.breakpoint.mdAndDown">
+                <AdsterraBanner300x250 :order="1" />
+            </template>
+        </div>
+
         <v-divider class="my-16" />
 
         <InnerContainer>
@@ -73,17 +82,9 @@
             <CalculatorPresets :presets="ui.presets" />
         </InnerContainer>
 
-        <v-divider class="my-16" />
-
-        <template v-if="$vuetify.breakpoint.lgAndUp">
-            <AdsterraBanner468x60 :order="1" />
-        </template>
-        <template v-else-if="$vuetify.breakpoint.mdAndDown">
-            <AdsterraBanner320x50 :order="1" />
-        </template>
         <AdsterraNative
             :order="2"
-            class="mt-8" />
+            class="mt-16" />
     </div>
 </template>
 

@@ -1,12 +1,17 @@
 <template>
-    <div
-        ref="scriptContainer"
-        :style="sizeStyle"
-        class="vh-ab" />
+    <div class="vh-ab">
+        <span class="vh-ab__caption text-caption text-uppercase">
+            Reklam
+        </span>
+        <div
+            ref="scriptContainer"
+            class="vh-ab__inner" />
+    </div>
 </template>
 
 <script>
-const LOAD_DELAY = 750;
+const LOAD_DELAY_IN_MS = 500;
+const RETRY_DELAY_IN_MS = 5000;
 
 export default {
     props: {
@@ -36,6 +41,10 @@ export default {
         }
     },
     methods: {
+        _isScriptsLoaded() {
+            const vm = this;
+            return vm.$refs.scriptContainer.querySelector("iframe") !== null;
+        },
         _initScripts() {
             const vm = this;
 
@@ -63,26 +72,60 @@ export default {
         }
     },
     computed: {
-        sizeStyle() {
+        unitizedWidth() {
             const vm = this;
-            return `--_width:${vm.width}px;--_height:${vm.height}px`;
+            return `${vm.width}px`;
+        },
+        unitizedHeight() {
+            const vm = this;
+            return `${vm.height}px`;
         }
     },
     mounted() {
         const vm = this;
-        setTimeout(() => vm._initScripts(), LOAD_DELAY * vm.order);
+
+        setTimeout(() => {
+            vm._initScripts();
+
+            setTimeout(() => {
+                if (!vm._isScriptsLoaded()) {
+                    vm._initScripts();
+                }
+            }, RETRY_DELAY_IN_MS);
+        }, LOAD_DELAY_IN_MS * vm.order);
     }
 };
 </script>
 
-<style>
+<style lang="scss" scoped="">
+@import "~vuetify/src/styles/styles.sass";
+
+$vh-ab-border-radius: .5rem;
+
 .vh-ab {
-    background: rgba(255, 255, 255, .05);
-    border-radius: .5rem;
-    overflow: hidden;
-    display: inline-block;
-    width: var(--_width, 0);
-    height: var(--_height, 0);
-    max-width: 100%
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: v-bind(unitizedWidth);
+    max-width: 100%;
+    @media #{map-get($display-breakpoints, "sm-and-down")} {
+        margin-inline: auto
+    }
+
+    &__caption {
+        background: rgba(#fff, .12);
+        display: inline-flex;
+        align-self: flex-end;
+        padding: .125rem .375rem;
+        border-radius: $vh-ab-border-radius $vh-ab-border-radius 0 0
+    }
+
+    &__inner {
+        background: rgba(#fff, .04);
+        border-radius: $vh-ab-border-radius 0 $vh-ab-border-radius $vh-ab-border-radius;
+        overflow: hidden;
+        width: 100%;
+        height: v-bind(unitizedHeight)
+    }
 }
 </style>
