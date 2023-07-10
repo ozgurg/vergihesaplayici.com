@@ -2,7 +2,7 @@
     <v-card
         :to="calculator.url"
         outlined=""
-        class="vh-calculator-card-item px-4 py-6 px-lg-6 py-lg-8 flex-column justify-space-between align-start">
+        class="vh-calculator-card-item px-4 py-6 px-lg-6 py-lg-8">
         <div class="vh-calculator-card-item__icon d-inline-block pa-4 rounded-circle mb-4">
             <v-icon
                 color="primary"
@@ -21,7 +21,7 @@
             v-html="calculator.summary" />
 
         <v-icon
-            color="primary"
+            color="white"
             class="vh-calculator-card-item__bg-icon"
             size="128">
             {{ calculator.icon }}
@@ -44,16 +44,16 @@ export default {
 .vh-calculator-card-item {
     position: relative;
 
+    &__icon {
+        background: rgba($vh-color-primary, .08)
+    }
+
     &__bg-icon {
         position: absolute !important;
         inset-inline-end: 0;
         inset-block-end: 0;
-        transform: translate(25%, 25%) rotate(-45deg);
-        opacity: .04
-    }
-
-    &__icon {
-        background: rgba($vh-color-primary, .08)
+        transform: translate(30%, -10%) rotate(-15deg);
+        opacity: .05
     }
 }
 </style>

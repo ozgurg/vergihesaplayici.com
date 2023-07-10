@@ -1,11 +1,10 @@
 <template>
+    <!-- eslint-disable vue/no-v-text-v-html-on-component vue/no-v-html -->
     <v-alert
         :icon="false"
         text=""
-        type="info">
-        <!-- eslint-disable vue/no-v-text-v-html-on-component vue/no-v-html -->
-        <div v-html="text" />
-    </v-alert>
+        type="info"
+        v-html="text" />
 </template>
 
 <script>

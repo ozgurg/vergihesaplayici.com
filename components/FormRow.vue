@@ -40,10 +40,8 @@ export default {
 };
 </script>
 
-<!-- Be careful while using "scoped" -->
-<style lang="scss">
+<style lang="scss" scoped="">
 @import "~vuetify/src/components/VTextField/_variables.scss";
-@import "~vuetify/src/styles/styles.sass";
 
 .vh-form-row {
     $self: &;
@@ -68,7 +66,6 @@ export default {
     }
 
     &__label-col {
-        text-align: right;
         flex: 0 0 var(--vh-form-row-label-col-width);
         max-width: var(--vh-form-row-label-col-width);
 
@@ -80,8 +77,8 @@ export default {
         }
     }
 
-    .v-input__append-outer {
-        margin-top: 0 !important
+    :deep(.v-input__append-outer) {
+        margin-block-start: 0 !important
     }
 }
 </style>

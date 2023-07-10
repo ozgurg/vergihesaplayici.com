@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Heading1>
+        <Heading1 class="mt-12">
             {{ page.title }}
         </Heading1>
 

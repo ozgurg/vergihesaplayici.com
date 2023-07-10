@@ -1,20 +1,22 @@
 <template>
     <v-btn
-        v-ripple="false"
-        :class="{'vh-copy-button--copied': isCopied}"
+        :aria-checked="isCopied ? 'true' : 'false'"
         :aria-label="ariaLabel"
         title="Kopyala"
-        class="vh-copy-button ps-4 pe-1"
-        plain=""
+        class="vh-copy-button mx-n2"
+        icon=""
         @click="copy()">
         <span class="vh-copy-button__icon-1">
-            <v-icon size="20">
+            <v-icon
+                size="20"
+                class="grey--text lighten-3">
                 {{ icons.mdiContentCopy }}
             </v-icon>
         </span>
-
         <span class="vh-copy-button__icon-2">
-            <v-icon size="24">
+            <v-icon
+                size="24"
+                color="primary">
                 {{ icons.mdiCheck }}
             </v-icon>
         </span>
@@ -60,7 +62,7 @@ export default {
 
             vm.copiedTimeout = setTimeout(() => {
                 vm.isCopied = false;
-            }, 1300); // 1000 + transition-duration
+            }, 1300); // 1000 + $transition-duration
         },
         _copyValue() {
             const vm = this;
@@ -88,8 +90,7 @@ export default {
     $self: &;
     min-width: unset !important;
 
-    &--copied {
-        // TODO: Make the icon white
+    &[aria-checked="true"] {
         #{$self}__icon-1 {
             opacity: 0
         }
@@ -105,7 +106,9 @@ export default {
         width: 100%;
         height: 100%;
         display: flex;
-        place-items: center;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
         opacity: 0
     }
 

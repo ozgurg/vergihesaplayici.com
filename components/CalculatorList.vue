@@ -1,6 +1,5 @@
 <template>
     <v-list
-        v-bind="$attrs"
         subheader=""
         shaped="">
         <v-subheader>

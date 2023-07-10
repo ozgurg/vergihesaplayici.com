@@ -21,8 +21,7 @@
                 label="Hesaplama modu">
                 <RadioGrid
                     v-model="form.mode"
-                    :items="ui.modeOptions"
-                    style="--vh-radio-grid-optimal-width:224px" />
+                    :items="ui.modeOptions" />
             </FormRow>
 
             <FormRow
