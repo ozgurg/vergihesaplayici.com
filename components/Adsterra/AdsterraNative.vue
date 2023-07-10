@@ -1,12 +1,12 @@
 <template>
-    <div>
+    <div class="vh-an">
         <div ref="scriptContainer" />
         <div :id="containerId" />
     </div>
 </template>
 
 <script>
-const LOAD_DELAY = 750;
+const LOAD_DELAY = 500;
 
 export default {
     props: {
@@ -49,3 +49,13 @@ export default {
     }
 };
 </script>
+
+<style lang="scss" scoped="">
+.vh-an {
+    background: rgba(#fff, .05);
+    border-radius: .5rem;
+    overflow: hidden;
+    display: block;
+    max-width: 100%
+}
+</style>
