@@ -93,6 +93,9 @@
         <v-divider class="my-16" />
 
         <InnerContainer>
+            <Heading2>
+                Diğer telefonlar
+            </Heading2>
             <div class="d-flex flex-column gap-16">
                 <template v-for="_item in presetsGroupedByBrand">
                     <div :key="_item.title">
