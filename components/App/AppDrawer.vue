@@ -2,7 +2,7 @@
     <v-navigation-drawer
         v-model="isDrawerOpen"
         :permanent="$vuetify.breakpoint.mdAndUp"
-        :color="color"
+        color="#121212"
         app=""
         overlay-color="#000"
         overlay-opacity=".75"
@@ -47,10 +47,6 @@ export default {
                 const vm = this;
                 vm.$store.dispatch("ui/setDrawerState", value);
             }
-        },
-        color() {
-            const vm = this;
-            return vm.$vuetify.breakpoint.mdAndUp ? "#121212" : "#272727";
         }
     }
 };
