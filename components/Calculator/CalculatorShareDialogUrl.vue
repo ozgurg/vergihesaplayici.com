@@ -59,9 +59,9 @@
                 outlined=""
                 readonly="">
                 <template #append>
-                    <div class="py-2">
-                        <v-divider vertical="" />
-                    </div>
+                    <v-divider
+                        class="my-2 me-3"
+                        vertical="" />
                     <LazyCopyButton
                         :value-to-copy="url"
                         container-selector="#calculatorShareDialogCopyUrlContainer" />
