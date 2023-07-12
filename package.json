@@ -45,7 +45,7 @@
         "vuex": "3.6.2"
     },
     "devDependencies": {
-        "@babel/eslint-parser": "7.22.7",
+        "@babel/eslint-parser": "7.22.9",
         "@mdi/js": "7.2.96",
         "@nuxt/content": "1.15.1",
         "@nuxt/types": "2.17.0",
