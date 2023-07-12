@@ -6,7 +6,7 @@ import { findCalculatorPresetBySlug } from "@/utils/find-calculator-preset-by-sl
 const buildUrl = slug => `/telefon-vergisi-hesaplayici/${slug}/`;
 
 const lastUpdatedDateIphone = new Date("Mon Jul 10 2023 04:22:25 GMT+0300 (GMT+03:00)");
-const lastUpdatedDateSamsung = new Date("Sun Jul 09 2023 21:49:41 GMT+0300 (GMT+03:00)");
+const lastUpdatedDateSamsung = new Date("Wed Jul 12 2023 21:14:13 GMT+0300 (GMT+03:00)");
 
 const presets = [
     // iPhone 14
@@ -394,7 +394,7 @@ const presets = [
                 title: "128GB (8GB)",
                 form: { price: 799.99, currency: "USD" },
                 retailPrice: {
-                    value: 30999,
+                    value: 34999,
                     lastUpdatedDate: lastUpdatedDateSamsung,
                     sourceUrl: "https://shop.samsung.com/tr/galaxy-s23/"
                 }
@@ -403,7 +403,7 @@ const presets = [
                 title: "256GB (8GB)",
                 form: { price: 859.99, currency: "USD" },
                 retailPrice: {
-                    value: 32999,
+                    value: 36999,
                     lastUpdatedDate: lastUpdatedDateSamsung,
                     sourceUrl: "https://shop.samsung.com/tr/galaxy-s23/"
                 }
@@ -425,7 +425,7 @@ const presets = [
                 title: "256GB (8GB)",
                 form: { price: 999.99, currency: "USD" },
                 retailPrice: {
-                    value: 40999,
+                    value: 44999,
                     lastUpdatedDate: lastUpdatedDateSamsung,
                     sourceUrl: "https://shop.samsung.com/tr/galaxy-s23-plus/"
                 }
@@ -451,7 +451,7 @@ const presets = [
                 title: "256GB (8GB)",
                 form: { price: 1199.99, currency: "USD" },
                 retailPrice: {
-                    value: 51999,
+                    value: 57999,
                     lastUpdatedDate: lastUpdatedDateSamsung,
                     sourceUrl: "https://shop.samsung.com/tr/galaxy-s23-ultra/"
                 }
@@ -460,7 +460,7 @@ const presets = [
                 title: "512GB (8GB)",
                 form: { price: 1379.99, currency: "USD" },
                 retailPrice: {
-                    value: 54999,
+                    value: 60999,
                     lastUpdatedDate: lastUpdatedDateSamsung,
                     sourceUrl: "https://shop.samsung.com/tr/galaxy-s23-ultra/"
                 }
@@ -469,7 +469,7 @@ const presets = [
                 title: "1TB (12GB)",
                 form: { price: 1619.99, currency: "USD" },
                 retailPrice: {
-                    value: 59999,
+                    value: 65999,
                     lastUpdatedDate: lastUpdatedDateSamsung,
                     sourceUrl: "https://shop.samsung.com/tr/galaxy-s23-ultra/"
                 }
