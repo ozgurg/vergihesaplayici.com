@@ -475,6 +475,36 @@ const presets = [
                 }
             }
         ]
+    },
+    {
+        brand: "Samsung",
+        title: "Samsung Galaxy Z Fold4",
+        slug: "samsung-galaxy-z-fold4",
+        url: buildUrl("samsung-galaxy-z-fold4"),
+        icon: "samsung.svg",
+        color: "#1428A0",
+        ogImageName: "telefon-vergisi-hesaplayici-samsung-galaxy-z-fold4.jpg",
+        pageTitle: "Samsung Galaxy Z Fold4'ün vergisi ne kadar?",
+        pageDescription: "Samsung Galaxy Z Fold4'ün vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
+        options: [
+            {
+                title: "256GB",
+                form: { price: 1599.99, currency: "USD" },
+                retailPrice: {
+                    value: 50999,
+                    lastUpdatedDate: lastUpdatedDateSamsung,
+                    sourceUrl: "https://shop.samsung.com/tr/galaxy-z-fold4/"
+                }
+            },
+            {
+                title: "512GB",
+                form: { price: 1719.99, currency: "USD" }
+            },
+            {
+                title: "1TB",
+                form: { price: 1959.99, currency: "USD" }
+            }
+        ]
     }
 ];
 
