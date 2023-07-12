@@ -105,7 +105,7 @@ $vh-ab-border-radius: .5rem;
 .vh-ab {
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
     width: v-bind(unitizedWidth);
     max-width: 100%;
     @media #{map-get($display-breakpoints, "sm-and-down")} {

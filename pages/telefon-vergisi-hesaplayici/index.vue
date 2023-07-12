@@ -67,7 +67,7 @@
                     <template #append-outer>
                         <CurrencySelector
                             v-model="form.currency"
-                            style="width:96px" />
+                            style="width:6rem" />
                     </template>
                 </v-text-field>
             </FormRow>

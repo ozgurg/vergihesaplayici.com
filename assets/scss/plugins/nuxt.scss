@@ -1,53 +1,60 @@
 // @nuxt/content styling
 .nuxt-content {
     user-select: text;
-    line-height: 28px;
+    line-height: 2rem;
 
     table {
         width: 100%;
         border-spacing: 0;
 
-        th {
-            color: hsla(0, 0%, 100%, .7);
-            font-size: .875rem;
-            height: 48px;
-            padding: 0 16px
+        tbody tr {
+            &:nth-child(odd) {
+                background-color: rgba(#fff, .02)
+            }
+
+            @include vh-real-hover {
+                &:hover {
+                    background-color: rgba(#fff, .12)
+                }
+            }
         }
 
-        td {
+        th {
+            color: hsla(0, 0%, 100%, .7)
+        }
+
+        th, td {
+            vertical-align: middle;
             font-size: .875rem;
-            height: 48px;
-            border-bottom: thin solid hsla(0, 0%, 100%, .12);
-            padding: 0 16px;
-            transition: height .2s cubic-bezier(.4, 0, .6, 1)
+            height: 3rem;
+            padding: 0 1rem
         }
     }
 
-    .vergi-turleri-table {
-        table {
-            th {
-                &:nth-child(1) {
-                    width: 96px;
-                    text-align: right
-                }
-
-                &:nth-child(2) {
-                    text-align: left
-                }
+    .vergi-turleri-table table {
+        th {
+            &:nth-child(1) {
+                width: 96px;
+                text-align: end
             }
 
-            td {
-                &:nth-child(1) {
-                    text-align: right
-                }
+            &:nth-child(2) {
+                text-align: start
+            }
+        }
 
-                &:nth-child(2) {
-                    text-align: left
-                }
+        td {
+            &:nth-child(1) {
+                text-align: end
+            }
+
+            &:nth-child(2) {
+                text-align: start
             }
         }
     }
 }
+
 
 // Nuxt page transition
 .page-enter-active,

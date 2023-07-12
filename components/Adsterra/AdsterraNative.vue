@@ -77,7 +77,7 @@ $vh-an-border-radius: .5rem;
 .vh-an {
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
     max-width: 100%;
 
     &__caption {

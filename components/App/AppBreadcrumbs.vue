@@ -91,20 +91,21 @@ export default {
 .vh-breadcrumbs {
     display: flex;
     align-items: center;
-    flex-wrap: nowrap;
+    flex-flow: row nowrap;
     -webkit-overflow-scrolling: touch;
     white-space: nowrap;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    margin: -6px -8px;
+    margin: -.375rem -.5rem;
+
     li {
         scroll-snap-align: center
     }
 }
 
 :deep(.v-breadcrumbs__item) {
-    border-radius: 8px;
-    padding: 6px 8px;
-    color: rgba(255, 255, 255, .8)
+    border-radius: .5rem;
+    padding: .375rem .5rem;
+    color: rgba(#fff, .8)
 }
 </style>

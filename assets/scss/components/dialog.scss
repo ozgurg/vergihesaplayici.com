@@ -4,7 +4,7 @@ $vh-dialog-selector: ".vh-dialog";
 
 #{$vh-dialog-selector} {
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
     background: map-get($material-dark-elevation-colors, "1");
 
     &__header {
@@ -18,17 +18,14 @@ $vh-dialog-selector: ".vh-dialog";
     }
 }
 
-@media(max-width: 959.98px) {
+@media #{map-get($display-breakpoints, "sm-and-down")} {
     html:has(#{$vh-dialog-selector}.v-dialog--active) {
         position: fixed;
 
         &, body {
             width: 100%;
             height: 100%;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            top: 0;
+            inset: 0;
             overflow: hidden
         }
 

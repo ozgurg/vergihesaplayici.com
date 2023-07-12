@@ -107,7 +107,7 @@ export default {
         height: 100%;
         display: flex;
         align-items: center;
-        flex-direction: row;
+        flex-flow: column wrap;
         justify-content: center;
         opacity: 0
     }

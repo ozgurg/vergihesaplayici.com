@@ -37,8 +37,7 @@ export default {
 
 <style scoped="">
 :deep(.v-input__append-inner) {
-    padding-left: 12px !important;
-    margin-top: auto !important;
-    margin-bottom: auto !important
+    padding-inline-start: .75rem !important;
+    margin-block: auto !important
 }
 </style>

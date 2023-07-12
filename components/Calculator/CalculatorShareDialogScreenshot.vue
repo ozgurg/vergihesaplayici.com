@@ -100,10 +100,10 @@
                     <tr :key="_item.key">
                         <td class="py-3">
                             <div class="d-flex justify-space-between align-center">
-                                <div class="text-left flex-grow-1 flex-shrink-0">
+                                <div class="text-start flex-grow-1 flex-shrink-0">
                                     {{ _item.key }}
                                 </div>
-                                <div class="text-right font-weight-medium ps-4">
+                                <div class="text-end font-weight-medium ps-4">
                                     {{ _item.value }}
                                 </div>
                             </div>
@@ -123,10 +123,10 @@
                     <tr :key="_item.key">
                         <td class="py-3">
                             <div class="d-flex justify-space-between align-center">
-                                <div class="text-left flex-grow-1 flex-shrink-0">
+                                <div class="text-start flex-grow-1 flex-shrink-0">
                                     {{ _item.key }}
                                 </div>
-                                <div class="text-right font-weight-medium ps-4">
+                                <div class="text-end font-weight-medium ps-4">
                                     {{ _item.value }}
                                 </div>
                             </div>
@@ -363,7 +363,7 @@ export default {
         inset: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, .5);
+        background: rgba(#000, .5);
         align-items: center;
 
         #{$self}:not(#{$self}--is-short) & {
@@ -389,7 +389,7 @@ export default {
     }
 
     &__actions {
-        border-radius: 36px
+        border-radius: 2rem
     }
 }
 

@@ -12,7 +12,7 @@
                     <template v-if="isCustomIcon(_preset)">
                         <!-- eslint-disable vue/no-v-html -->
                         <!-- TODO: Needs refactor -->
-                        <span style="width:24px;height:24px" v-html="loadCustomIconAsHtml(_preset)" />
+                        <span style="width:1.5rem;height:1.5rem" v-html="loadCustomIconAsHtml(_preset)" />
                     </template>
                     <template v-else>
                         <v-icon size="24">
