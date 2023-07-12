@@ -16,7 +16,11 @@
         </div>
 
         <InnerContainer>
+            <ArticleDisclaimerAlert class="mb-12" />
+
             <nuxt-content :document="article" />
+
+            <ArticleDisclaimerAlert class="mt-12" />
 
             <AdsterraNative
                 :order="1"

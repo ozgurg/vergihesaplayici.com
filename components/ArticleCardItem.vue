@@ -33,6 +33,7 @@ export default {
 
 <style lang="scss" scoped="">
 .vh-article-card-item {
+    min-height: 192px;
     &__desc {
         @include vh-ellipsis-multiline(4)
     }

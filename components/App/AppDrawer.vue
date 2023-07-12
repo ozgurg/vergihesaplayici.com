@@ -2,13 +2,16 @@
     <v-navigation-drawer
         v-model="isDrawerOpen"
         :permanent="$vuetify.breakpoint.mdAndUp"
-        :color="color"
+        color="#121212"
         app=""
         overlay-color="#000"
         overlay-opacity=".75"
         width="265">
         <template #prepend>
-            <AppDrawerLogo />
+            <div class="px-4 py-4">
+                <AppLogo class="py-4" />
+            </div>
+            <v-divider class="mx-4 mb-2" />
         </template>
 
         <div class="d-flex flex-column h-100">
@@ -24,7 +27,9 @@
             </v-list>
 
             <template v-if="$vuetify.breakpoint.mdAndUp">
-                <AppDrawerFooter class="mt-15" />
+                <div class="pa-4">
+                    <AppDrawerFooter />
+                </div>
             </template>
         </div>
     </v-navigation-drawer>
@@ -42,10 +47,6 @@ export default {
                 const vm = this;
                 vm.$store.dispatch("ui/setDrawerState", value);
             }
-        },
-        color() {
-            const vm = this;
-            return vm.$vuetify.breakpoint.mdAndUp ? "#121212" : "#272727";
         }
     }
 };
