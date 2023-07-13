@@ -26,7 +26,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped="">
 @import "~vuetify/src/components/VToolbar/_variables.scss";
 
 .vh-app-bar {
