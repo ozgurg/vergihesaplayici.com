@@ -55,20 +55,18 @@ export default {
 <style lang="scss">
 @import "~vuetify/src/styles/styles.sass";
 
-@media #{map-get($display-breakpoints, "sm-and-down")} {
-    $vuetify-drawer-selector: ".v-navigation-drawer";
+$vuetify-drawer-selector: ".v-navigation-drawer";
 
+@media #{map-get($display-breakpoints, "sm-and-down")} {
     html:has(#{$vuetify-drawer-selector}--open) {
         position: fixed;
         width: 100%;
         height: 100%;
         inset: 0;
-
         &, *:not(#{$vuetify-drawer-selector} *) {
             // FIXME: This is causing the parts under the overlay to look weird
             overflow: hidden !important
         }
-
         body {
             position: absolute;
             width: 100%;
@@ -77,7 +75,6 @@ export default {
             overflow: hidden
         }
     }
-
     #{$vuetify-drawer-selector} {
         height: 100% !important
     }

@@ -67,42 +67,34 @@ $vh-radio-grid-optimal-width: 144px;
     grid-template-columns: var(--vh-radio-grid-columns);
     grid-gap: .75rem;
     grid-auto-rows: 1fr;
-
     &--1 {
         --vh-radio-grid-columns: repeat(auto-fill, minmax(#{$vh-radio-grid-optimal-width}, 1fr))
     }
-
     &--2 {
         --vh-radio-grid-columns: repeat(2, 1fr)
     }
-
     &--3 {
         --vh-radio-grid-columns: repeat(2, 1fr);
         @media #{map-get($display-breakpoints, "sm-and-up")} {
             --vh-radio-grid-columns: repeat(auto-fill, minmax(#{$vh-radio-grid-optimal-width}, 1fr))
         }
     }
-
     &--4 {
         --vh-radio-grid-columns: repeat(2, 1fr);
         @media #{map-get($display-breakpoints, "sm-and-up")} {
             --vh-radio-grid-columns: repeat(4, 1fr)
         }
     }
-
     &__item {
         $item: &;
         background: 0 !important;
-
         &[aria-checked="true"] {
             border-color: $vh-color-primary;
             background-color: $vh-color-primary;
             color: $vh-color-primary;
-
             &::before {
                 opacity: $vh-card-hover-opacity
             }
-
             #{$item}__desc {
                 color: rgba($vh-color-primary, .75)
             }

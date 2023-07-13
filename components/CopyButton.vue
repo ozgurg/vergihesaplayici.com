@@ -89,7 +89,6 @@ export default {
 .vh-copy-button {
     $self: &;
     min-width: unset !important;
-
     &[aria-checked="true"] {
         #{$self}__icon-1 {
             opacity: 0
@@ -99,7 +98,6 @@ export default {
             opacity: 1
         }
     }
-
     &__icon-2 {
         position: absolute;
         inset: 0;
@@ -111,7 +109,6 @@ export default {
         justify-content: center;
         opacity: 0
     }
-
     &__icon-1, &__icon-2 {
         @media (prefers-reduced-motion: no-preference) {
             transition: $primary-transition

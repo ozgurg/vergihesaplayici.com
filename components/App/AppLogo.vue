@@ -23,16 +23,14 @@ export default {
 <style lang="scss">
 .vh-app-logo {
     background-color: rgba($vh-color-primary, $vh-card-hover-opacity);
-
     svg {
         width: 192px;
         height: 25px
     }
-
     @include vh-real-hover {
         transition: background-color $secondary-transition;
         &:hover {
-            background-color: rgba($vh-color-primary, ($vh-card-hover-opacity * 2));
+            background-color: rgba($vh-color-primary, ($vh-card-hover-opacity * 2))
         }
     }
 }

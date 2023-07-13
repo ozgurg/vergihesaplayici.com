@@ -31,7 +31,6 @@ export default {
 
 .vh-app-bar {
     border-block-end: 1px solid rgba(#fff, .12) !important;
-
     &__logo {
         margin-inline-start: -$toolbar-btn-icon-size
     }

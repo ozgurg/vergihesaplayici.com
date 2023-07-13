@@ -356,7 +356,6 @@ export default {
     width: 300px;
     max-width: 100%;
     margin: 0 auto;
-
     &__overlay {
         position: absolute;
         z-index: 2;
@@ -365,7 +364,6 @@ export default {
         height: 100%;
         background: rgba(#000, .5);
         align-items: center;
-
         #{$self}:not(#{$self}--is-short) & {
             @media #{map-get($display-breakpoints, "md-and-down")} {
                 align-items: start;
@@ -373,21 +371,17 @@ export default {
             }
         }
     }
-
     &__table {
         position: relative;
         z-index: 1;
         border: 2px solid #fff;
-
         .v-data-table {
             border-radius: 0
         }
-
         &__footer {
             border-top: 2px solid #fff
         }
     }
-
     &__actions {
         border-radius: 2rem
     }

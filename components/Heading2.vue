@@ -37,7 +37,6 @@ export default {
     position: relative;
     padding-inline-start: 1.125rem;
     color: #fff;
-
     a {
         color: inherit;
         @include vh-real-hover {
@@ -47,7 +46,6 @@ export default {
             }
         }
     }
-
     &::before {
         position: absolute;
         inset-inline-start: 0;

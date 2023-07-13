@@ -43,11 +43,9 @@ export default {
 <style lang="scss" scoped="">
 .vh-calculator-card-item {
     position: relative;
-
     &__icon {
         background: rgba($vh-color-primary, .08)
     }
-
     &__bg-icon {
         position: absolute !important;
         inset-inline-end: 0;

@@ -46,29 +46,24 @@ export default {
 .vh-form-row {
     $self: &;
     gap: var(--vh-form-row-gap);
-
     &--vertical {
         --vh-form-row-gap: .5rem;
         --vh-form-row-label-col-width: 100%;
         --vh-form-row-label-justify-content: flex-start
     }
-
     &--horizontal {
         --vh-form-row-gap: .5rem;
         --vh-form-row-label-col-width: 100%;
         --vh-form-row-label-justify-content: flex-start;
-
         @media #{map-get($display-breakpoints, "sm-and-up")} {
             --vh-form-row-gap: 1.5rem;
             --vh-form-row-label-col-width: 170px; // Optimized for "TRT bandrolü (€20,00)" text
             --vh-form-row-label-justify-content: flex-end
         }
     }
-
     &__label-col {
         flex: 0 0 var(--vh-form-row-label-col-width);
         max-width: var(--vh-form-row-label-col-width);
-
         label {
             height: min(#{$text-field-filled-full-width-outlined-slot-min-height}, 100%);
             display: flex;
@@ -76,7 +71,6 @@ export default {
             justify-content: var(--vh-form-row-label-justify-content)
         }
     }
-
     :deep(.v-input__append-outer) {
         margin-block-start: 0 !important
     }

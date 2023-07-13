@@ -97,7 +97,6 @@ export default {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     margin: -.375rem -.5rem;
-
     li {
         scroll-snap-align: center
     }
