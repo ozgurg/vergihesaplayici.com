@@ -42,25 +42,26 @@
             <FormRow
                 class="mb-10"
                 label="Konsol fiyatı">
-                <v-text-field
-                    v-model.number="form.price"
-                    v-number=""
-                    :prefix="selectedCurrency.sign"
-                    class="tabular-nums"
-                    hide-details=""
-                    hide-spin-buttons=""
-                    filled=""
-                    outlined=""
-                    min="1"
-                    inputmode="decimal"
-                    type="number"
-                    aria-label="Konsol fiyatı">
-                    <template #append-outer>
-                        <CurrencySelector
-                            v-model="form.currency"
-                            style="width:6rem" />
-                    </template>
-                </v-text-field>
+                <v-row>
+                    <v-col cols="9">
+                        <v-text-field
+                            v-model.number="form.price"
+                            v-number=""
+                            :prefix="selectedCurrency.sign"
+                            class="tabular-nums"
+                            hide-details=""
+                            hide-spin-buttons=""
+                            filled=""
+                            outlined=""
+                            min="1"
+                            inputmode="decimal"
+                            type="number"
+                            aria-label="Konsol fiyatı" />
+                    </v-col>
+                    <v-col cols="3">
+                        <CurrencySelector v-model="form.currency" />
+                    </v-col>
+                </v-row>
             </FormRow>
 
             <template v-if="shouldShowResults">
