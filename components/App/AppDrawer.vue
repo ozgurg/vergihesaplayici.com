@@ -28,7 +28,7 @@
 
             <template v-if="$vuetify.breakpoint.mdAndUp">
                 <div class="pa-4">
-                    <AppDrawerFooter />
+                    <AppFooter />
                 </div>
             </template>
         </div>
