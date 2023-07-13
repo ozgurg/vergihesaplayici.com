@@ -367,7 +367,7 @@ export default {
         #{$self}:not(#{$self}--is-short) & {
             @media #{map-get($display-breakpoints, "md-and-down")} {
                 align-items: start;
-                padding-top: 128px
+                padding-block-start: 8rem
             }
         }
     }
@@ -379,7 +379,7 @@ export default {
             border-radius: 0
         }
         &__footer {
-            border-top: 2px solid #fff
+            border-block-start: 2px solid #fff
         }
     }
     &__actions {
