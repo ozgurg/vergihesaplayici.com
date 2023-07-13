@@ -2,27 +2,22 @@
 .nuxt-content {
     user-select: text;
     line-height: 2rem;
-
     table {
         width: 100%;
         border-spacing: 0;
-
         tbody tr {
             &:nth-child(odd) {
                 background-color: rgba(#fff, .02)
             }
-
             @include vh-real-hover {
                 &:hover {
                     background-color: rgba(#fff, .12)
                 }
             }
         }
-
         th {
-            color: hsla(0, 0%, 100%, .7)
+            color: hsla(0deg, 0%, 100%, .7)
         }
-
         th, td {
             vertical-align: middle;
             font-size: .875rem;
@@ -30,24 +25,20 @@
             padding: 0 1rem
         }
     }
-
     .vergi-turleri-table table {
         th {
             &:nth-child(1) {
                 width: 96px;
                 text-align: end
             }
-
             &:nth-child(2) {
                 text-align: start
             }
         }
-
         td {
             &:nth-child(1) {
                 text-align: end
             }
-
             &:nth-child(2) {
                 text-align: start
             }
