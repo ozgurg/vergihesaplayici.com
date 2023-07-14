@@ -6,14 +6,14 @@
         class="vh-copy-button mx-n2"
         icon=""
         @click="copy()">
-        <span class="vh-copy-button__icon-1">
+        <span class="vh-copy-button__copy-icon">
             <v-icon
                 size="20"
                 class="grey--text lighten-3">
                 {{ icons.mdiContentCopy }}
             </v-icon>
         </span>
-        <span class="vh-copy-button__icon-2">
+        <span class="vh-copy-button__check-icon">
             <v-icon
                 size="24"
                 color="primary">
@@ -62,7 +62,7 @@ export default {
 
             vm.copiedTimeout = setTimeout(() => {
                 vm.isCopied = false;
-            }, 1300); // 1000 + $transition-duration
+            }, 1200); // 1000 + $secondary-transition's duration
         },
         _copyValue() {
             const vm = this;
@@ -79,6 +79,10 @@ export default {
             const vm = this;
             return vm.isCopied ? "Kopyalandı" : "Kopyala";
         }
+    },
+    destroyed() {
+        const vm = this;
+        clearTimeout(vm.copiedTimeout);
     }
 };
 </script>
@@ -90,15 +94,14 @@ export default {
     $self: &;
     min-width: unset !important;
     &[aria-checked="true"] {
-        #{$self}__icon-1 {
+        #{$self}__copy-icon {
             opacity: 0
         }
-
-        #{$self}__icon-2 {
+        #{$self}__check-icon {
             opacity: 1
         }
     }
-    &__icon-2 {
+    &__check-icon {
         position: absolute;
         inset: 0;
         width: 100%;
@@ -109,10 +112,9 @@ export default {
         justify-content: center;
         opacity: 0
     }
-    &__icon-1, &__icon-2 {
-        @media (prefers-reduced-motion: no-preference) {
-            transition: $primary-transition
-        }
+    &__copy-icon,
+    &__check-icon {
+        transition: opacity $secondary-transition
     }
 }
 </style>
