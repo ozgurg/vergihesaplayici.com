@@ -43,7 +43,7 @@
                 class="mb-10"
                 label="Konsol fiyatı">
                 <v-row>
-                    <v-col cols="9">
+                    <v-col>
                         <v-text-field
                             v-model.number="form.price"
                             v-number=""
@@ -58,7 +58,9 @@
                             type="number"
                             aria-label="Konsol fiyatı" />
                     </v-col>
-                    <v-col cols="3">
+                    <v-col
+                        cols="4"
+                        md="3">
                         <CurrencySelector v-model="form.currency" />
                     </v-col>
                 </v-row>
