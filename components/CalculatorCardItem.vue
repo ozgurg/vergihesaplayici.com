@@ -51,7 +51,7 @@ export default {
         inset-inline-end: 0;
         inset-block-end: 0;
         transform: translate(30%, -10%) rotate(-15deg);
-        opacity: .05
+        opacity: .04
     }
 }
 </style>
