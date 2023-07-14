@@ -51,25 +51,26 @@
             <FormRow
                 class="mb-10"
                 label="Telefon fiyatı">
-                <v-text-field
-                    v-model.number="form.price"
-                    v-number=""
-                    :prefix="selectedCurrency.sign"
-                    class="tabular-nums"
-                    hide-details=""
-                    hide-spin-buttons=""
-                    filled=""
-                    outlined=""
-                    min="1"
-                    inputmode="decimal"
-                    type="number"
-                    aria-label="Telefon fiyatı">
-                    <template #append-outer>
-                        <CurrencySelector
-                            v-model="form.currency"
-                            style="width:96px" />
-                    </template>
-                </v-text-field>
+                <v-row>
+                    <v-col cols="9">
+                        <v-text-field
+                            v-model.number="form.price"
+                            v-number=""
+                            :prefix="selectedCurrency.sign"
+                            class="tabular-nums"
+                            hide-details=""
+                            hide-spin-buttons=""
+                            filled=""
+                            outlined=""
+                            min="1"
+                            inputmode="decimal"
+                            type="number"
+                            aria-label="Telefon fiyatı" />
+                    </v-col>
+                    <v-col cols="3">
+                        <CurrencySelector v-model="form.currency" />
+                    </v-col>
+                </v-row>
             </FormRow>
 
             <FormRow
@@ -100,7 +101,7 @@
                         class="mb-10" />
                 </FormRow>
 
-                <FormRow :is-horizontal="true">
+                <FormRow direction="horizontal">
                     <CalculatorShareButton
                         :screenshot-input="screenshotInput"
                         :screenshot-output="resultList"

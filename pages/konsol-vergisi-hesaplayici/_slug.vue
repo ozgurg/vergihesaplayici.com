@@ -45,14 +45,14 @@
                         class="mb-2"
                         label="Piyasa fiyatı" />
 
-                    <FormRow :is-horizontal="true">
+                    <FormRow direction="horizontal">
                         <RetailPriceUpdateInfo
                             :last-updated-date="form.option.retailPrice.lastUpdatedDate"
                             :source-url="form.option.retailPrice.sourceUrl" />
                     </FormRow>
                 </div>
 
-                <FormRow :is-horizontal="true">
+                <FormRow direction="horizontal">
                     <CalculatorShareButton
                         :screenshot-input="screenshotInput"
                         :screenshot-output="resultList"

@@ -59,9 +59,9 @@
                 outlined=""
                 readonly="">
                 <template #append>
-                    <div class="py-2">
-                        <v-divider vertical="" />
-                    </div>
+                    <v-divider
+                        class="my-2 me-3"
+                        vertical="" />
                     <LazyCopyButton
                         :value-to-copy="url"
                         container-selector="#calculatorShareDialogCopyUrlContainer" />
@@ -178,14 +178,13 @@ export default {
 /* Custom icons for social media sharing */
 :deep(svg) {
     vertical-align: middle;
-    width: 28px;
-    height: 28px
+    width: 1.75rem;
+    height: 1.75rem
 }
 
 /* Copy button for URL sharing */
 :deep(.v-input__append-inner) {
-    padding-left: 12px !important;
-    margin-top: auto !important;
-    margin-bottom: auto !important
+    padding-inline-start: .75rem !important;
+    margin-block: auto !important
 }
 </style>

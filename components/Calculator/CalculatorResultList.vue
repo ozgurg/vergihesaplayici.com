@@ -22,7 +22,7 @@ export default {
 <style scoped="">
 .vh-result-list {
     display: flex;
-    flex-direction: column;
-    gap: 20px
+    flex-flow: column wrap;
+    gap: 1.125rem
 }
 </style>

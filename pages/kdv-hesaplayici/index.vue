@@ -75,7 +75,7 @@
                     :items="resultList"
                     class="mb-10" />
 
-                <FormRow :is-horizontal="true">
+                <FormRow direction="horizontal">
                     <CalculatorShareButton
                         :screenshot-output="resultList"
                         :form="form"

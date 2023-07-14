@@ -77,9 +77,8 @@ $vh-an-border-radius: .5rem;
 .vh-an {
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
     max-width: 100%;
-
     &__caption {
         background: rgba(#fff, .12);
         display: inline-flex;
@@ -87,7 +86,6 @@ $vh-an-border-radius: .5rem;
         padding: .125rem .375rem;
         border-radius: $vh-an-border-radius $vh-an-border-radius 0 0
     }
-
     &__inner {
         background: rgba(#fff, .04);
         border-radius: $vh-an-border-radius 0 $vh-an-border-radius $vh-an-border-radius;

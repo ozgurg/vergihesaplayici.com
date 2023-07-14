@@ -100,10 +100,10 @@
                     <tr :key="_item.key">
                         <td class="py-3">
                             <div class="d-flex justify-space-between align-center">
-                                <div class="text-left flex-grow-1 flex-shrink-0">
+                                <div class="text-start flex-grow-1 flex-shrink-0">
                                     {{ _item.key }}
                                 </div>
-                                <div class="text-right font-weight-medium ps-4">
+                                <div class="text-end font-weight-medium ps-4">
                                     {{ _item.value }}
                                 </div>
                             </div>
@@ -123,10 +123,10 @@
                     <tr :key="_item.key">
                         <td class="py-3">
                             <div class="d-flex justify-space-between align-center">
-                                <div class="text-left flex-grow-1 flex-shrink-0">
+                                <div class="text-start flex-grow-1 flex-shrink-0">
                                     {{ _item.key }}
                                 </div>
-                                <div class="text-right font-weight-medium ps-4">
+                                <div class="text-end font-weight-medium ps-4">
                                     {{ _item.value }}
                                 </div>
                             </div>
@@ -356,40 +356,34 @@ export default {
     width: 300px;
     max-width: 100%;
     margin: 0 auto;
-
     &__overlay {
         position: absolute;
         z-index: 2;
         inset: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, .5);
+        background: rgba(#000, .5);
         align-items: center;
-
         #{$self}:not(#{$self}--is-short) & {
             @media #{map-get($display-breakpoints, "md-and-down")} {
                 align-items: start;
-                padding-top: 128px
+                padding-block-start: 8rem
             }
         }
     }
-
     &__table {
         position: relative;
         z-index: 1;
         border: 2px solid #fff;
-
         .v-data-table {
             border-radius: 0
         }
-
         &__footer {
-            border-top: 2px solid #fff
+            border-block-start: 2px solid #fff
         }
     }
-
     &__actions {
-        border-radius: 36px
+        border-radius: 2rem
     }
 }
 

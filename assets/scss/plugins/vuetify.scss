@@ -2,7 +2,6 @@
     &--is-readonly {
         pointer-events: none
     }
-
     &__append-inner {
         pointer-events: all
     }
@@ -10,11 +9,9 @@
 
 .v-card {
     height: 100%;
-
     &__title {
         word-break: break-word
     }
-
     &--link {
         overflow: hidden;
         @include vh-real-hover {

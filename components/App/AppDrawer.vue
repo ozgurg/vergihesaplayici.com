@@ -25,13 +25,15 @@
                     <ExchangeRateGrid />
                 </v-list-item>
             </v-list>
-
-            <template v-if="$vuetify.breakpoint.mdAndUp">
-                <div class="pa-4">
-                    <AppDrawerFooter />
-                </div>
-            </template>
         </div>
+
+        <template
+            v-if="$vuetify.breakpoint.mdAndUp"
+            #append>
+            <div class="pa-4">
+                <AppFooter />
+            </div>
+        </template>
     </v-navigation-drawer>
 </template>
 
@@ -52,23 +54,24 @@ export default {
 };
 </script>
 
+<!-- DO NOT make scoped -->
 <style lang="scss">
 @import "~vuetify/src/styles/styles.sass";
 
-@media #{map-get($display-breakpoints, "sm-and-down")} {
-    $vuetify-drawer-selector: ".v-navigation-drawer";
+// DO NOT replace with your own class name
+$vuetify-drawer-selector: ".v-navigation-drawer";
 
+@media #{map-get($display-breakpoints, "sm-and-down")} {
     html:has(#{$vuetify-drawer-selector}--open) {
         position: fixed;
         width: 100%;
         height: 100%;
         inset: 0;
-
-        &, *:not(#{$vuetify-drawer-selector} *) {
+        &,
+        *:not(#{$vuetify-drawer-selector} *) {
             // FIXME: This is causing the parts under the overlay to look weird
             overflow: hidden !important
         }
-
         body {
             position: absolute;
             width: 100%;
@@ -77,7 +80,6 @@ export default {
             overflow: hidden
         }
     }
-
     #{$vuetify-drawer-selector} {
         height: 100% !important
     }

@@ -26,12 +26,11 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped="">
 @import "~vuetify/src/components/VToolbar/_variables.scss";
 
 .vh-app-bar {
-    border-bottom: 1px solid rgba(#fff, .12) !important;
-
+    border-block-end: 1px solid rgba(#fff, .12) !important;
     &__logo {
         margin-inline-start: -$toolbar-btn-icon-size
     }

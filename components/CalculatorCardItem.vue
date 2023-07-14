@@ -43,17 +43,15 @@ export default {
 <style lang="scss" scoped="">
 .vh-calculator-card-item {
     position: relative;
-
     &__icon {
         background: rgba($vh-color-primary, .08)
     }
-
     &__bg-icon {
         position: absolute !important;
         inset-inline-end: 0;
         inset-block-end: 0;
         transform: translate(30%, -10%) rotate(-15deg);
-        opacity: .05
+        opacity: .04
     }
 }
 </style>

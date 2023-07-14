@@ -105,13 +105,12 @@ $vh-ab-border-radius: .5rem;
 .vh-ab {
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
     width: v-bind(unitizedWidth);
     max-width: 100%;
     @media #{map-get($display-breakpoints, "sm-and-down")} {
         margin-inline: auto
     }
-
     &__caption {
         background: rgba(#fff, .12);
         display: inline-flex;
@@ -119,7 +118,6 @@ $vh-ab-border-radius: .5rem;
         padding: .125rem .375rem;
         border-radius: $vh-ab-border-radius $vh-ab-border-radius 0 0
     }
-
     &__inner {
         background: rgba(#fff, .04);
         border-radius: $vh-ab-border-radius 0 $vh-ab-border-radius $vh-ab-border-radius;

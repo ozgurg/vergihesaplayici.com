@@ -1,5 +1,5 @@
 <template>
-    <!-- DO NOT use v-html with root element -->
+    <!-- DO NOT use v-html on root element -->
     <v-alert
         :icon="false"
         text=""
