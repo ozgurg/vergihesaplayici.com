@@ -90,13 +90,13 @@ $vh-radio-grid-optimal-width: 144px;
         background: 0 !important;
         &[aria-checked="true"] {
             border-color: $vh-color-primary;
-            background-color: $vh-color-primary;
+            background: $vh-color-primary;
             color: $vh-color-primary;
             &::before {
                 opacity: $vh-card-hover-opacity
             }
             #{$item}__desc {
-                color: rgba($vh-color-primary, .75)
+                color: rgba($vh-color-primary, .8)
             }
         }
     }
