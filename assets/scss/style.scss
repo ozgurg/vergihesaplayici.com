@@ -4,12 +4,21 @@
 @import "./components/_index.scss";
 @import "./plugins/_index.scss";
 
-html, body {
-    background: #121212
-}
-
-body {
-    user-select: none
+html {
+    color-scheme: dark;
+    scrollbar-gutter: stable;
+    scroll-behavior: unset;
+    &,
+    body {
+        background: #121212
+    }
+    body {
+        user-select: none;
+        overflow-x: hidden;
+        caret-color: $vh-color-primary;
+        accent-color: $vh-color-primary;
+        touch-action: manipulation
+    }
 }
 
 video {
