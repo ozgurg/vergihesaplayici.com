@@ -20,9 +20,10 @@ export default {
 };
 </script>
 
+<!-- DO NOT make scoped -->
 <style lang="scss">
 .vh-app-logo {
-    background-color: rgba($vh-color-primary, $vh-card-hover-opacity);
+    background: rgba($vh-color-primary, $vh-card-hover-opacity);
     svg {
         width: 192px;
         height: 25px
@@ -30,7 +31,7 @@ export default {
     @include vh-real-hover {
         transition: background-color $secondary-transition;
         &:hover {
-            background-color: rgba($vh-color-primary, ($vh-card-hover-opacity * 2))
+            background: rgba($vh-color-primary, $vh-card-hover-opacity * 2)
         }
     }
 }
