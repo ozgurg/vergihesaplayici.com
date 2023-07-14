@@ -2,7 +2,7 @@
     <v-breadcrumbs
         ref="breadcrumbs"
         :items="positionAddedItems"
-        class="vh-breadcrumbs mb-6 py-4 px-0"
+        class="vh-breadcrumbs mb-6 py-4 px-0 pa-md-0"
         itemscope=""
         itemtype="https://schema.org/BreadcrumbList">
         <template #divider>
