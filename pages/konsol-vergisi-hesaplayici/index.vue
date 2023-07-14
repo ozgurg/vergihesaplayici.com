@@ -84,7 +84,7 @@
                         class="mb-10" />
                 </FormRow>
 
-                <FormRow :is-horizontal="true">
+                <FormRow direction="horizontal">
                     <CalculatorShareButton
                         :screenshot-input="screenshotInput"
                         :screenshot-output="resultList"
