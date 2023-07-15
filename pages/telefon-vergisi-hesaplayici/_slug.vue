@@ -106,11 +106,11 @@
                     </div>
                 </template>
             </div>
-        </InnerContainer>
 
-        <AdsterraNative
-            :order="2"
-            class="mt-16" />
+            <AdsterraNative
+                :order="2"
+                class="mt-16" />
+        </InnerContainer>
     </div>
 </template>
 
