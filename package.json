@@ -67,6 +67,9 @@
         "lint-staged": "13.2.3",
         "nuxt-canonical": "1.0.6"
     },
+    "overrides": {
+        "webpack-dev-middleware": "5.0.0"
+    },
     "lint-staged": {
         "*.{js,vue}": [
             "eslint"
