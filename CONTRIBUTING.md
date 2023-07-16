@@ -1,3 +1,5 @@
+# Contributing
+
 **For non-Turkish contributors:** vergihesaplayici.com was established to calculate the tax in the Turkish tax system.
 Some terms and preferences in the code may seem unfamiliar to you.
 
