@@ -378,7 +378,7 @@ export default [
     // Samsung Galaxy S23
     {
         presetId: 10,
-        title: "128GB (8GB)",
+        title: "128GB",
         form: {
             price: 799.99,
             currency: "USD"
@@ -391,7 +391,7 @@ export default [
     },
     {
         presetId: 10,
-        title: "256GB (8GB)",
+        title: "256GB",
         form: {
             price: 859.99,
             currency: "USD"
@@ -407,7 +407,7 @@ export default [
     // Samsung Galaxy S23+
     {
         presetId: 11,
-        title: "256GB (8GB)",
+        title: "256GB",
         form: {
             price: 999.99,
             currency: "USD"
@@ -420,7 +420,7 @@ export default [
     },
     {
         presetId: 11,
-        title: "512GB (8GB)",
+        title: "512GB",
         form: {
             price: 1119.99,
             currency: "USD"
