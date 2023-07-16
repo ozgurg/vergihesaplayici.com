@@ -15,6 +15,18 @@ export default [
     },
     {
         id: 15,
+        brandId: 3,
+        title: "PlayStation VR2",
+        slug: "playstation-vr2",
+        releaseDate: new Date("2022-02-22"),
+        thumbnail: "konsol-vergisi-hesaplayici/img/sony-playstation-vr2.png",
+        url: buildUrl("playstation-vr2"),
+        ogImageName: "konsol-vergisi-hesaplayici-playstation-vr2.jpg",
+        pageTitle: "PlayStation V2'nin vergisi ne kadar?",
+        pageDescription: "Satın aldığınız bir PlayStation V2'nin yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın."
+    },
+    {
+        id: 16,
         brandId: 4,
         title: "Xbox Series S",
         slug: "xbox-series-s",
@@ -26,7 +38,7 @@ export default [
         pageDescription: "Satın aldığınız bir Xbox Series S'nin yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın."
     },
     {
-        id: 16,
+        id: 17,
         brandId: 4,
         title: "Xbox Series X",
         slug: "xbox-series-x",
@@ -38,7 +50,7 @@ export default [
         pageDescription: "Satın aldığınız bir Xbox Series X'in yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın."
     },
     {
-        id: 17,
+        id: 18,
         brandId: 5,
         title: "Nintendo Switch",
         slug: "nintendo-switch",

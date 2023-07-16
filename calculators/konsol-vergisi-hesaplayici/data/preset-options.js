@@ -31,11 +31,14 @@ export default [
             sourceUrl: "https://www.overgameweb.com/playstation-5-diskli-dualsense-wireless-controller-bundle"
         }
     },
+
+
+    // Sony PlayStation VR2
     {
         // FIXME: Need official price
         // https://blog.playstation.com/2022/11/02/playstation-vr2-launches-in-february-at-549-99/
-        presetId: 14,
-        title: "PlayStation VR2",
+        presetId: 15,
+        title: "Standart",
         form: {
             price: 599.99,
             currency: "EUR"
@@ -51,7 +54,7 @@ export default [
     // Microsoft Xbox Series S
     {
         // FIXME: Need official price
-        presetId: 15,
+        presetId: 16,
         title: "512GB",
         form: {
             price: 299,
@@ -64,7 +67,7 @@ export default [
         }
     },
     {
-        presetId: 15,
+        presetId: 16,
         title: "1TB",
         form: {
             price: 349.99,
@@ -76,7 +79,7 @@ export default [
     // Microsoft Xbox Series X
     {
         // FIXME: Need official price
-        presetId: 16,
+        presetId: 17,
         title: "1TB",
         form: {
             price: 499,
@@ -94,7 +97,7 @@ export default [
     // https://www.nintendo.com/store/hardware/systems/
     {
         // FIXME: Need official price
-        presetId: 17,
+        presetId: 18,
         title: "Lite (32GB)",
         form: {
             price: 199.99,
@@ -108,7 +111,7 @@ export default [
     },
     {
         // FIXME: Need official price
-        presetId: 17,
+        presetId: 18,
         title: "Original (32GB)",
         form: {
             price: 299,
@@ -122,7 +125,7 @@ export default [
     },
     {
         // FIXME: Need official price
-        presetId: 17,
+        presetId: 18,
         title: "OLED (64GB)",
         form: {
             price: 349.99,
