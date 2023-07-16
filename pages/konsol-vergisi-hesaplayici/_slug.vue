@@ -77,9 +77,17 @@
 
         <InnerContainer>
             <Heading2>
-                Diğer oyun konsolları
+                Diğer hesaplamalar
             </Heading2>
-            <CalculatorPresets :presets="ui.presets" />
+            <div class="d-flex flex-column gap-12">
+                <template v-for="_calculation in ui.calculations">
+                    <div :key="_calculation.brand.id">
+                        <CalculationPresets
+                            :presets="_calculation.presets"
+                            :brand="_calculation.brand" />
+                    </div>
+                </template>
+            </div>
 
             <AdsterraNative
                 :order="2"
@@ -89,7 +97,7 @@
 </template>
 
 <script>
-import page, { presets } from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici-slug.page.js";
+import page from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici-slug.page.js";
 import { moneyFormat } from "@/utils/formatter.js";
 import {
     buildResultList,
@@ -97,6 +105,7 @@ import {
     shouldShowResults
 } from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.utils.js";
 import Calculator from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.calculator.js";
+import { buildCalculations } from "@/calculators/konsol-vergisi-hesaplayici/utils.js";
 
 export default {
     head() {
@@ -187,14 +196,14 @@ export default {
             ...presetPage.preset.options[0].form
         };
 
-        const otherPresets = presets.filter(preset => preset.slug !== slug);
+        const otherCalculations = buildCalculations().filter(calculation => calculation.brand.id === presetPage.preset.brandId);
 
         return {
             slug,
             page: presetPage,
             ui: {
                 options,
-                presets: otherPresets
+                calculations: otherCalculations
             },
             form
         };
