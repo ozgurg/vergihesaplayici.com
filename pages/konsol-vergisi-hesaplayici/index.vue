@@ -20,8 +20,15 @@
                 <Heading2>
                     Hazır hesaplamalar
                 </Heading2>
-
-                <CalculatorPresets :presets="ui.presets" />
+                <div class="d-flex flex-column gap-12">
+                    <template v-for="_calculation in ui.calculations">
+                        <div :key="_calculation.brand.id">
+                            <CalculationPresets
+                                :presets="_calculation.presets"
+                                :brand="_calculation.brand" />
+                        </div>
+                    </template>
+                </div>
 
                 <div class="my-12">
                     <template v-if="$vuetify.breakpoint.lgAndUp">
@@ -107,13 +114,13 @@
 <script>
 import Calculator from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.calculator.js";
 import page from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.page.js";
-import { presets } from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici-slug.page.js";
 import {
     buildResultList,
     buildScreenshotInput,
     handleQuery,
     shouldShowResults
 } from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.utils.js";
+import { buildCalculations } from "@/calculators/konsol-vergisi-hesaplayici/utils.js";
 
 export default {
     head() {
@@ -122,7 +129,7 @@ export default {
     data: () => ({
         page,
         ui: {
-            presets
+            calculations: buildCalculations()
         },
         form: {
             currency: "USD",

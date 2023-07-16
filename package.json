@@ -1,6 +1,6 @@
 {
     "name": "vergihesaplayici.com",
-    "version": "6.47.0",
+    "version": "6.48.0",
     "description": "vergihesaplayici.com, vergi hesaplar.",
     "license": "MIT",
     "homepage": "https://vergihesaplayici.com/",
@@ -21,7 +21,8 @@
         "test:coverage": "npm run test -- --coverage",
         "lint-staged": "lint-staged",
         "prepare": "husky install",
-        "prepare-csp-nonce": "node create-csp-nonce-txt.js && node create-firebase-json.js"
+        "prepare-csp-nonce": "node create-csp-nonce-txt.js && node create-firebase-json.js",
+        "deploy": "firebase deploy --only hosting"
     },
     "author": {
         "email": "ozgurgorgulu54@gmail.com",
