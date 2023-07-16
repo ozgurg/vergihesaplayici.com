@@ -3,7 +3,7 @@ import KonsolVergisiHesaplayici from "@/data/pages/konsol-vergisi-hesaplayici/ko
 import { findCalculatorPresetBySlug } from "@/utils/find-calculator-preset-by-slug.js";
 
 import presets from "@/calculators/konsol-vergisi-hesaplayici/data/presets.js";
-import { findPresetOptionsByPresetId } from "@/calculators/konsol-vergisi-hesaplayici/utils.js";
+import { findPresetOptionsByPresetId, findBrandById } from "@/calculators/konsol-vergisi-hesaplayici/utils.js";
 import presetOptions from "@/calculators/konsol-vergisi-hesaplayici/data/preset-options.js";
 
 export default slug => {
@@ -11,6 +11,8 @@ export default slug => {
     if (!preset) {
         return false;
     }
+
+    const brand = findBrandById(preset.brandId);
 
     const title = preset.pageTitle;
     const url = preset.url;
@@ -22,7 +24,7 @@ export default slug => {
     });
     const breadcrumbs = [
         ...KonsolVergisiHesaplayici.breadcrumbs,
-        { title: preset.title, url }
+        { title: `${brand.title} ${preset.title}`, url }
     ];
 
     const options = findPresetOptionsByPresetId(preset.id, presetOptions);

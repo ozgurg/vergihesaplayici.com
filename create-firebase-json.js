@@ -112,6 +112,27 @@ const firebaseJson = {
                 source: "/konsol-vergisi-hesaplayici/apple-vision-pro/",
                 destination: "/telefon-vergisi-hesaplayici/apple-vision-pro/",
                 type: 301
+            },
+
+            {
+                source: "/konsol-vergisi-hesaplayici/playstation-5/",
+                destination: "/konsol-vergisi-hesaplayici/sony-playstation-5/",
+                type: 301
+            },
+            {
+                source: "/konsol-vergisi-hesaplayici/playstation-vr2/",
+                destination: "/konsol-vergisi-hesaplayici/sony-playstation-vr2/",
+                type: 301
+            },
+            {
+                source: "/konsol-vergisi-hesaplayici/xbox-series-s/",
+                destination: "/konsol-vergisi-hesaplayici/microsoft-xbox-series-s/",
+                type: 301
+            },
+            {
+                source: "/konsol-vergisi-hesaplayici/xbox-series-x/",
+                destination: "/konsol-vergisi-hesaplayici/microsoft-xbox-series-x/",
+                type: 301
             }
         ]
     },
