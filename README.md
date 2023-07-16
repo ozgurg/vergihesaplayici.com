@@ -33,16 +33,8 @@ npm run generate
 
 ## Contributing
 
-**Attention:** vergihesaplayici.com is completely designed for Turkey. Some terms may sound unfamiliar to you.
-
-I don't have a plan for how it will evolve. I develop it the way I want. You can open a PR for
-minor bugs, but if you are introducing a new feature or change, please open a new issue and express your opinion before
-opening a PR. Thanks in advance.
+See [CONTRIBUTING.md](https://github.com/ozgurg/vergihesaplayici.com/blob/main/CONTRIBUTING.md)
 
 ## License
 
-[![License](https://img.shields.io/badge/License-GPLv3-%2388DF95.svg)](https://github.com/ozgurg/vergihesaplayici.com/blob/master/LICENSE)
-
-## Related projects
-
-- [telefonvergim.cf](https://telefonvergim.cf/)
+[![License](https://img.shields.io/badge/License-GPLv3-%2388DF95.svg)](https://github.com/ozgurg/vergihesaplayici.com/blob/main/LICENSE)
