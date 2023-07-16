@@ -94,28 +94,27 @@
 
         <InnerContainer>
             <Heading2>
-                Diğer telefonlar
+                Diğer hesaplamalar
             </Heading2>
             <div class="d-flex flex-column gap-16">
-                <template v-for="_item in presetsGroupedByBrand">
-                    <div :key="_item.title">
-                        <Heading3 class="mb-2">
-                            {{ _item.title }}
-                        </Heading3>
-                        <CalculatorPresets :presets="_item.presets" />
+                <template v-for="_calculation in ui.calculations">
+                    <div :key="_calculation.brand.id">
+                        <CalculationPresets
+                            :presets="_calculation.presets"
+                            :brand="_calculation.brand" />
                     </div>
                 </template>
             </div>
-        </InnerContainer>
 
-        <AdsterraNative
-            :order="2"
-            class="mt-16" />
+            <AdsterraNative
+                :order="2"
+                class="mt-16" />
+        </InnerContainer>
     </div>
 </template>
 
 <script>
-import page, { presets } from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici-slug.page.js";
+import page from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici-slug.page.js";
 import { registrationOptions } from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.page.js";
 import {
     buildResultList,
@@ -124,6 +123,7 @@ import {
 } from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.utils.js";
 import Calculator from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.calculator.js";
 import { moneyFormat } from "@/utils/formatter.js";
+import { buildCalculations } from "@/calculators/telefon-vergisi-hesaplayici/utils.js";
 
 export default {
     head() {
@@ -173,29 +173,6 @@ export default {
                 currency: vm.form.currency,
                 registrationTitle: vm.ui.registration.find(item => item.value === vm.form.registration).title
             });
-        },
-        presetsGroupedByBrand() { // FIXME: Make it utility function and write unit test
-            const vm = this;
-
-            const output = {};
-
-            vm.ui.presets.forEach(preset => {
-                const {
-                    brand,
-                    ...rest
-                } = preset;
-                if (!output[brand]) {
-                    output[brand] = {
-                        title: brand,
-                        presets: []
-                    };
-                }
-                output[brand].presets.push({
-                    brand, ...rest
-                });
-            });
-
-            return Object.values(output);
         }
     },
     watch: {
@@ -241,15 +218,15 @@ export default {
             ...presetPage.preset.options[0].form
         };
 
-        const otherPresets = presets.filter(preset => preset.slug !== slug);
+        const otherCalculations = buildCalculations().filter(calculation => calculation.brand.id === presetPage.preset.brandId);
 
         return {
             slug,
             page: presetPage,
             ui: {
                 options,
-                registration: registrationOptions,
-                presets: otherPresets
+                calculations: otherCalculations,
+                registration: registrationOptions
             },
             form
         };

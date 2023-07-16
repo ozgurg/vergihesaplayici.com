@@ -96,9 +96,11 @@
             </template>
         </CalculatorInnerContainer>
 
-        <AdsterraNative
-            :order="2"
-            class="mt-16" />
+        <InnerContainer>
+            <AdsterraNative
+                :order="2"
+                class="mt-16" />
+        </InnerContainer>
     </div>
 </template>
 

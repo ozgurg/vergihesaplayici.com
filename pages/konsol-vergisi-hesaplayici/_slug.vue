@@ -80,11 +80,11 @@
                 Diğer oyun konsolları
             </Heading2>
             <CalculatorPresets :presets="ui.presets" />
-        </InnerContainer>
 
-        <AdsterraNative
-            :order="2"
-            class="mt-16" />
+            <AdsterraNative
+                :order="2"
+                class="mt-16" />
+        </InnerContainer>
     </div>
 </template>
 

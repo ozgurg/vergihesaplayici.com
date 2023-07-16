@@ -1,6 +1,6 @@
 {
     "name": "vergihesaplayici.com",
-    "version": "6.46.1",
+    "version": "6.47.0",
     "description": "vergihesaplayici.com, vergi hesaplar.",
     "license": "MIT",
     "homepage": "https://vergihesaplayici.com/",
@@ -66,6 +66,9 @@
         "jest": "29.6.1",
         "lint-staged": "13.2.3",
         "nuxt-canonical": "1.0.6"
+    },
+    "overrides": {
+        "webpack-dev-middleware": "5.0.0"
     },
     "lint-staged": {
         "*.{js,vue}": [

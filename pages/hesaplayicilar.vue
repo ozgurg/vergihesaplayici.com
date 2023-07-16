@@ -17,11 +17,11 @@
 
         <InnerContainer>
             <CalculatorGrid />
-        </InnerContainer>
 
-        <AdsterraNative
-            :order="1"
-            class="mt-16" />
+            <AdsterraNative
+                :order="1"
+                class="mt-16" />
+        </InnerContainer>
     </div>
 </template>
 

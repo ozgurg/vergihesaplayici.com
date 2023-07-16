@@ -84,9 +84,11 @@
             </template>
         </CalculatorInnerContainer>
 
-        <AdsterraNative
-            :order="1"
-            class="mt-16" />
+        <InnerContainer>
+            <AdsterraNative
+                :order="1"
+                class="mt-16" />
+        </InnerContainer>
     </div>
 </template>
 
