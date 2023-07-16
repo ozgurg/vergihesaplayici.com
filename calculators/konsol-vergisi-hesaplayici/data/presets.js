@@ -60,5 +60,17 @@ export default [
         ogImageName: "konsol-vergisi-hesaplayici-nintendo-switch.jpg",
         pageTitle: "Nintendo Switch'in vergisi ne kadar?",
         pageDescription: "Satın aldığınız bir Nintendo Switch'in yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın."
+    },
+    {
+        id: 19,
+        brandId: 5,
+        title: "Switch Lite",
+        slug: "nintendo-switch-lite",
+        releaseDate: new Date("2019-09-20"),
+        thumbnail: "konsol-vergisi-hesaplayici/img/nintendo-switch-lite.png",
+        url: buildUrl("nintendo-switch-lite"),
+        ogImageName: "konsol-vergisi-hesaplayici-nintendo-switch-lite.jpg",
+        pageTitle: "Nintendo Switch Lite'ın vergisi ne kadar?",
+        pageDescription: "Satın aldığınız bir Nintendo Switch Lite'ın yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın."
     }
 ];

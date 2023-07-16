@@ -93,22 +93,7 @@ export default [
     },
 
 
-    // Nintendo Switch
-    // https://www.nintendo.com/store/hardware/systems/
-    {
-        // FIXME: Need official price
-        presetId: 18,
-        title: "Lite (32GB)",
-        form: {
-            price: 199.99,
-            currency: "USD"
-        },
-        retailPrice: {
-            value: 8135,
-            lastUpdatedDate: new Date("Sun Jul 16 2023 16:31:44 GMT+0300 (GMT+03:00)"),
-            sourceUrl: "https://www.overgameweb.com/nintendo-switch-lite-konsol-turkuaz"
-        }
-    },
+    // Nintendo Switch (https://www.nintendo.com/store/hardware/systems/)
     {
         // FIXME: Need official price
         presetId: 18,
@@ -135,6 +120,23 @@ export default [
             value: 13219,
             lastUpdatedDate: new Date("Sun Jul 16 2023 16:31:44 GMT+0300 (GMT+03:00)"),
             sourceUrl: "https://www.overgameweb.com/nintendo-switch-konsol-oled-edition-neon"
+        }
+    },
+
+
+    // Nintendo Switch Lite (https://www.nintendo.com/store/hardware/systems/)
+    {
+        // FIXME: Need official price
+        presetId: 19,
+        title: "Lite",
+        form: {
+            price: 199.99,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 8135,
+            lastUpdatedDate: new Date("Sun Jul 16 2023 16:31:44 GMT+0300 (GMT+03:00)"),
+            sourceUrl: "https://www.overgameweb.com/nintendo-switch-lite-konsol-turkuaz"
         }
     }
 ];
