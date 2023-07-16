@@ -20,14 +20,12 @@
                 <Heading2>
                     Hazır hesaplamalar
                 </Heading2>
-
                 <div class="d-flex flex-column gap-16">
-                    <template v-for="_item in presetsGroupedByBrand">
-                        <div :key="_item.title">
-                            <Heading3 class="mb-2">
-                                {{ _item.title }}
-                            </Heading3>
-                            <CalculatorPresets :presets="_item.presets" />
+                    <template v-for="_calculation in ui.calculations">
+                        <div :key="_calculation.brand.id">
+                            <CalculationPresets
+                                :presets="_calculation.presets"
+                                :brand="_calculation.brand" />
                         </div>
                     </template>
                 </div>
@@ -132,7 +130,7 @@ import {
     handleQuery,
     shouldShowResults
 } from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.utils.js";
-import { presets } from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici-slug.page.js";
+import { buildCalculations } from "@/calculators/telefon-vergisi-hesaplayici/utils.js";
 
 export default {
     head() {
@@ -141,7 +139,7 @@ export default {
     data: () => ({
         page,
         ui: {
-            presets,
+            calculations: buildCalculations(),
             registration: registrationOptions
         },
         form: {
@@ -197,29 +195,6 @@ export default {
                 currency: vm.form.currency,
                 registrationTitle: vm.ui.registration.find(item => item.value === vm.form.registration).title
             });
-        },
-        presetsGroupedByBrand() { // FIXME: Make it utility function and write unit test
-            const vm = this;
-
-            const output = {};
-
-            vm.ui.presets.forEach(preset => {
-                const {
-                    brand,
-                    ...rest
-                } = preset;
-                if (!output[brand]) {
-                    output[brand] = {
-                        title: brand,
-                        presets: []
-                    };
-                }
-                output[brand].presets.push({
-                    brand, ...rest
-                });
-            });
-
-            return Object.values(output);
         }
     },
     watch: {
