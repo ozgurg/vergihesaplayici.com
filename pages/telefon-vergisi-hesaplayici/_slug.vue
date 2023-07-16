@@ -96,7 +96,7 @@
             <Heading2>
                 Diğer hesaplamalar
             </Heading2>
-            <div class="d-flex flex-column gap-16">
+            <div class="d-flex flex-column gap-12">
                 <template v-for="_calculation in ui.calculations">
                     <div :key="_calculation.brand.id">
                         <CalculationPresets
