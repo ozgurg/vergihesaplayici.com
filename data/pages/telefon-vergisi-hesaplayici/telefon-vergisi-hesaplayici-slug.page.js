@@ -3,7 +3,7 @@ import TelefonVergisiHesaplayici from "@/data/pages/telefon-vergisi-hesaplayici/
 import { findCalculatorPresetBySlug } from "@/utils/find-calculator-preset-by-slug.js";
 
 import presets from "@/calculators/telefon-vergisi-hesaplayici/data/presets.js";
-import { findPresetOptionsByPresetId } from "@/calculators/telefon-vergisi-hesaplayici/utils.js";
+import { findPresetOptionsByPresetId, findBrandById } from "@/calculators/telefon-vergisi-hesaplayici/utils.js";
 import presetOptions from "@/calculators/telefon-vergisi-hesaplayici/data/preset-options.js";
 
 export default slug => {
@@ -11,6 +11,8 @@ export default slug => {
     if (!preset) {
         return false;
     }
+
+    const brand = findBrandById(preset.brandId);
 
     const title = preset.pageTitle;
     const url = preset.url;
@@ -22,7 +24,7 @@ export default slug => {
     });
     const breadcrumbs = [
         ...TelefonVergisiHesaplayici.breadcrumbs,
-        { title: preset.title, url }
+        { title: `${brand.title} ${preset.title}`, url }
     ];
 
     const options = findPresetOptionsByPresetId(preset.id, presetOptions);
