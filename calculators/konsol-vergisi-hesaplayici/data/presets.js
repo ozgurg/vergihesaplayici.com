@@ -72,5 +72,17 @@ export default [
         ogImageName: "konsol-vergisi-hesaplayici-nintendo-switch-lite.jpg",
         pageTitle: "Nintendo Switch Lite'ın vergisi ne kadar?",
         pageDescription: "Satın aldığınız bir Nintendo Switch Lite'ın yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın."
+    },
+    {
+        id: 20,
+        brandId: 5,
+        title: "Switch OLED",
+        slug: "nintendo-switch-oled",
+        releaseDate: new Date("2021-10-08"),
+        thumbnail: "konsol-vergisi-hesaplayici/img/nintendo-switch-oled.png",
+        url: buildUrl("nintendo-switch-oled"),
+        ogImageName: "konsol-vergisi-hesaplayici-nintendo-switch-oled.jpg",
+        pageTitle: "Nintendo Switch OLED'in vergisi ne kadar?",
+        pageDescription: "Satın aldığınız bir Nintendo Switch OLED'in yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın."
     }
 ];

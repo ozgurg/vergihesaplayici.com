@@ -108,20 +108,6 @@ export default [
             sourceUrl: "https://www.overgameweb.com/nintendo-switch-konsol-gri-gelistirilmis-pil"
         }
     },
-    {
-        // FIXME: Need official price
-        presetId: 18,
-        title: "OLED (64GB)",
-        form: {
-            price: 349.99,
-            currency: "USD"
-        },
-        retailPrice: {
-            value: 13219,
-            lastUpdatedDate: new Date("Sun Jul 16 2023 16:31:44 GMT+0300 (GMT+03:00)"),
-            sourceUrl: "https://www.overgameweb.com/nintendo-switch-konsol-oled-edition-neon"
-        }
-    },
 
 
     // Nintendo Switch Lite (https://www.nintendo.com/store/hardware/systems/)
@@ -137,6 +123,23 @@ export default [
             value: 8135,
             lastUpdatedDate: new Date("Sun Jul 16 2023 16:31:44 GMT+0300 (GMT+03:00)"),
             sourceUrl: "https://www.overgameweb.com/nintendo-switch-lite-konsol-turkuaz"
+        }
+    },
+
+
+    // Nintendo Switch OLED (https://www.nintendo.com/store/hardware/systems/)
+    {
+        // FIXME: Need official price
+        presetId: 20,
+        title: "OLED",
+        form: {
+            price: 349.99,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 13219,
+            lastUpdatedDate: new Date("Sun Jul 16 2023 16:31:44 GMT+0300 (GMT+03:00)"),
+            sourceUrl: "https://www.overgameweb.com/nintendo-switch-konsol-oled-edition-neon"
         }
     }
 ];
