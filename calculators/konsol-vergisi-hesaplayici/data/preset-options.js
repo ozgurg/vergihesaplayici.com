@@ -10,8 +10,8 @@ export default [
             currency: "EUR"
         },
         retailPrice: {
-            value: 22999,
-            lastUpdatedDate: new Date("Sat Jul 01 2023 08:22:32 GMT+0300 (GMT+03:00)"),
+            value: 23399,
+            lastUpdatedDate: new Date("Sun Jul 16 2023 16:31:44 GMT+0300 (GMT+03:00)"),
             sourceUrl: "https://www.vatanbilgisayar.com/sony-playstation-5-digital-surum-oyun-konsolu.html"
         }
     },
@@ -41,8 +41,8 @@ export default [
             currency: "EUR"
         },
         retailPrice: {
-            value: 19299,
-            lastUpdatedDate: new Date("Tue Jun 06 2023 22:55:14 GMT+0300 (GMT+03:00)"),
+            value: 19626,
+            lastUpdatedDate: new Date("Sun Jul 16 2023 16:31:44 GMT+0300 (GMT+03:00)"),
             sourceUrl: "https://www.overgameweb.com/sony-playstation-vr2-sanal-gerceklik-gozlugu-ve-vr2-sense-charging-station"
         }
     },
@@ -58,8 +58,8 @@ export default [
             currency: "EUR"
         },
         retailPrice: {
-            value: 11499,
-            lastUpdatedDate: new Date("Sat Jul 01 2023 08:22:32 GMT+0300 (GMT+03:00)"),
+            value: 11694,
+            lastUpdatedDate: new Date("Sun Jul 16 2023 16:31:44 GMT+0300 (GMT+03:00)"),
             sourceUrl: "https://www.overgameweb.com/xbox-series-s-512gb-konsol"
         }
     },
@@ -101,8 +101,8 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 7999,
-            lastUpdatedDate: new Date("Tue Jun 06 2023 22:55:14 GMT+0300 (GMT+03:00)"),
+            value: 8135,
+            lastUpdatedDate: new Date("Sun Jul 16 2023 16:31:44 GMT+0300 (GMT+03:00)"),
             sourceUrl: "https://www.overgameweb.com/nintendo-switch-lite-konsol-turkuaz"
         }
     },
@@ -115,8 +115,8 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 8499,
-            lastUpdatedDate: new Date("Tue Jun 06 2023 22:55:14 GMT+0300 (GMT+03:00)"),
+            value: 8643,
+            lastUpdatedDate: new Date("Sun Jul 16 2023 16:31:44 GMT+0300 (GMT+03:00)"),
             sourceUrl: "https://www.overgameweb.com/nintendo-switch-konsol-gri-gelistirilmis-pil"
         }
     },
@@ -129,8 +129,8 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 12999,
-            lastUpdatedDate: new Date("Tue Jun 06 2023 22:55:14 GMT+0300 (GMT+03:00)"),
+            value: 13219,
+            lastUpdatedDate: new Date("Sun Jul 16 2023 16:31:44 GMT+0300 (GMT+03:00)"),
             sourceUrl: "https://www.overgameweb.com/nintendo-switch-konsol-oled-edition-neon"
         }
     }
