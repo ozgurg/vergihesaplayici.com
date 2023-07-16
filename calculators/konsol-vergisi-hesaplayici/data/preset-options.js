@@ -97,7 +97,7 @@ export default [
     {
         // FIXME: Need official price
         presetId: 18,
-        title: "Original (32GB)",
+        title: "32GB",
         form: {
             price: 299,
             currency: "USD"
@@ -114,7 +114,7 @@ export default [
     {
         // FIXME: Need official price
         presetId: 19,
-        title: "Lite",
+        title: "Lite (32GB)",
         form: {
             price: 199.99,
             currency: "USD"
@@ -131,7 +131,7 @@ export default [
     {
         // FIXME: Need official price
         presetId: 20,
-        title: "OLED",
+        title: "OLED (64GB)",
         form: {
             price: 349.99,
             currency: "USD"
