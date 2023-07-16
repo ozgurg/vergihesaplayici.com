@@ -304,7 +304,7 @@ description: "Çok fazla olan vergi türleri kodlaryla bu sayfada bulunuyor"
 | 9316 | 4054 SAYILI REKABET KANUNUNUN 55. MADDE KAPSAMINDA İPC                                                                                                                                                                |
 | 9317 | 5326 SAYILI KANUN UYARINCA CUMHURİYET SAVCILIKLARINCA VERİLEN İ.P.C.                                                                                                                                                  |
 | 9318 | 5326 SAYILI KANUN UYARINCA MAHKEMELER TARAFINDAN VERİLEN İ.P.C.                                                                                                                                                       |
-| 9341 | MERA FONU PARA CEZASI                                                                                                                                                                                                 |
+| 9341 | <nuxt-link to="/yazilar/mera-fonu-para-cezasi-nedir/">Mera Fonu Para Cezası</nuxt-link>                                                                                                                                                                                                 |
 | 9901 | ADİ ORTAKLIK MÜKELLEFİYETSİZ MÜKELLEF KAYDI İÇİN VERGİ KODU                                                                                                                                                           |
 
 </div>

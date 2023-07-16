@@ -133,6 +133,12 @@ const firebaseJson = {
                 source: "/konsol-vergisi-hesaplayici/xbox-series-x/",
                 destination: "/konsol-vergisi-hesaplayici/microsoft-xbox-series-x/",
                 type: 301
+            },
+
+            {
+                source: "/hesaplayicilar/kdv-hesaplayici",
+                destination: "/kdv-hesaplayici/",
+                type: 301
             }
         ]
     },

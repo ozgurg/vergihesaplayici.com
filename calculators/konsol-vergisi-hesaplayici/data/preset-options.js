@@ -93,11 +93,27 @@ export default [
     },
 
 
-    // Nintendo Switch
-    // https://www.nintendo.com/store/hardware/systems/
+    // Nintendo Switch (https://www.nintendo.com/store/hardware/systems/)
     {
         // FIXME: Need official price
         presetId: 18,
+        title: "32GB",
+        form: {
+            price: 299,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 8643,
+            lastUpdatedDate: new Date("Sun Jul 16 2023 16:31:44 GMT+0300 (GMT+03:00)"),
+            sourceUrl: "https://www.overgameweb.com/nintendo-switch-konsol-gri-gelistirilmis-pil"
+        }
+    },
+
+
+    // Nintendo Switch Lite (https://www.nintendo.com/store/hardware/systems/)
+    {
+        // FIXME: Need official price
+        presetId: 19,
         title: "Lite (32GB)",
         form: {
             price: 199.99,
@@ -109,23 +125,12 @@ export default [
             sourceUrl: "https://www.overgameweb.com/nintendo-switch-lite-konsol-turkuaz"
         }
     },
+
+
+    // Nintendo Switch OLED (https://www.nintendo.com/store/hardware/systems/)
     {
         // FIXME: Need official price
-        presetId: 18,
-        title: "Original (32GB)",
-        form: {
-            price: 299,
-            currency: "USD"
-        },
-        retailPrice: {
-            value: 8643,
-            lastUpdatedDate: new Date("Sun Jul 16 2023 16:31:44 GMT+0300 (GMT+03:00)"),
-            sourceUrl: "https://www.overgameweb.com/nintendo-switch-konsol-gri-gelistirilmis-pil"
-        }
-    },
-    {
-        // FIXME: Need official price
-        presetId: 18,
+        presetId: 20,
         title: "OLED (64GB)",
         form: {
             price: 349.99,
