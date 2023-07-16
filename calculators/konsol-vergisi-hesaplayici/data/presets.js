@@ -22,8 +22,8 @@ export default [
         thumbnail: "konsol-vergisi-hesaplayici/img/sony-playstation-vr2.png",
         url: buildUrl("playstation-vr2"),
         ogImageName: "konsol-vergisi-hesaplayici-playstation-vr2.jpg",
-        pageTitle: "PlayStation V2'nin vergisi ne kadar?",
-        pageDescription: "Satın aldığınız bir PlayStation V2'nin yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın."
+        pageTitle: "PlayStation VR2'nin vergisi ne kadar?",
+        pageDescription: "Satın aldığınız bir PlayStation VR2'nin yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın."
     },
     {
         id: 16,
