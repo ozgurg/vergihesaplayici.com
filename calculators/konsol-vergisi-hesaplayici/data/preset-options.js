@@ -4,7 +4,7 @@ export default [
         // FIXME: Need official price
         // https://blog.playstation.com/2022/08/25/ps5-price-to-increase-in-select-markets-due-to-global-economic-environment-including-high-inflation-rates/
         presetId: 14,
-        title: "Disksiz (825GB)",
+        title: "Disksiz",
         form: {
             price: 449.99,
             currency: "EUR"
@@ -20,7 +20,7 @@ export default [
         // FIXME: Need price without controller bundle
         // https://blog.playstation.com/2022/08/25/ps5-price-to-increase-in-select-markets-due-to-global-economic-environment-including-high-inflation-rates/
         presetId: 14,
-        title: "Diskli (825GB)",
+        title: "Diskli",
         form: {
             price: 549.99,
             currency: "EUR"
