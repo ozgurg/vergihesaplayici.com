@@ -148,5 +148,16 @@ export default [
         url: buildUrl("samsung-galaxy-z-fold4"),
         ogImageName: "telefon-vergisi-hesaplayici-samsung-galaxy-z-fold4.jpg",
         ...buildPageMeta("Samsung Galaxy Z Fold4'ün")
+    },
+    {
+        id: 14,
+        brandId: 2,
+        title: "Galaxy Z Flip4",
+        slug: "samsung-galaxy-z-flip4",
+        releaseDate: new Date("2022-10-26"),
+        thumbnail: "telefon-vergisi-hesaplayici/img/samsung-galaxy-z-flip4.png",
+        url: buildUrl("samsung-galaxy-z-flip4"),
+        ogImageName: "telefon-vergisi-hesaplayici-samsung-galaxy-z-flip4.jpg",
+        ...buildPageMeta("Samsung Galaxy Z Flip4'ün")
     }
 ];
