@@ -136,8 +136,39 @@ const firebaseJson = {
             },
 
             {
+                source: "/hesaplayicilar/telefon-vergisi-hesaplayici",
+                destination: "/telefon-vergisi-hesaplayici/",
+                type: 301
+            },
+            {
+                source: "/hesaplayicilar/konsol-vergisi-hesaplayici",
+                destination: "/konsol-vergisi-hesaplayici/",
+                type: 301
+            },
+            {
                 source: "/hesaplayicilar/kdv-hesaplayici",
                 destination: "/kdv-hesaplayici/",
+                type: 301
+            },
+            {
+                source: "/hesaplayicilar/telefon-vergisi-hesaplayici/",
+                destination: "/telefon-vergisi-hesaplayici/",
+                type: 301
+            },
+            {
+                source: "/hesaplayicilar/konsol-vergisi-hesaplayici/",
+                destination: "/konsol-vergisi-hesaplayici/",
+                type: 301
+            },
+            {
+                source: "/hesaplayicilar/kdv-hesaplayici/",
+                destination: "/kdv-hesaplayici/",
+                type: 301
+            },
+
+            {
+                source: "/yazilar/zirai-kazanc-vergisi-nedir/",
+                destination: "/yazilar/zirai-kazanc-gelir-vergisi-nedir/",
                 type: 301
             }
         ]
