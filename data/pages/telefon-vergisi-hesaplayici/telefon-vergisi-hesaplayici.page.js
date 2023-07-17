@@ -20,7 +20,7 @@ export default (() => {
     const icon = mdiCellphone;
     const title = "Telefon Vergisi Hesaplayıcı";
     const shortTitle = "Telefon Vergisi";
-    const description = "Satın aldığınız bir telefonun yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.";
+    const description = "Bir telefonun vergisini hesaplamak için başta ÖTV gibi tüm telefon vergilerini hesaplama yeteneğine sahip Telefon Vergisi Hesaplayıcı aracını kullanın. Vergilerin ne kadar uygulandığını ve vergisiz telefon fiyatını öğrenin. Yurt içi ve yurt dışı fiyatlarını karşılaştırın.";
     const url = "/telefon-vergisi-hesaplayici/";
     const head = buildHeadTags({
         title,
