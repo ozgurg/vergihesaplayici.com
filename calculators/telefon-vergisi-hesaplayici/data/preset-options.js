@@ -499,5 +499,37 @@ export default [
             price: 1959.99,
             currency: "USD"
         }
+    },
+
+
+    // Samsung Galaxy Z Flip4
+    {
+        presetId: 14,
+        title: "128GB",
+        form: {
+            price: 899.99,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 35999,
+            lastUpdatedDate: lastUpdatedDateSamsung,
+            sourceUrl: "https://shop.samsung.com/tr/galaxy-z-flip4/"
+        }
+    },
+    {
+        presetId: 14,
+        title: "256GB",
+        form: {
+            price: 1059.99,
+            currency: "USD"
+        }
+    },
+    {
+        presetId: 14,
+        title: "512GB",
+        form: {
+            price: 1179.99,
+            currency: "USD"
+        }
     }
 ];

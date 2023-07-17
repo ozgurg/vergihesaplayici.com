@@ -1,5 +1,10 @@
 const buildUrl = slug => `/telefon-vergisi-hesaplayici/${slug}/`;
 
+const buildPageMeta = phoneNameWithPossession => ({
+    pageTitle: `${phoneNameWithPossession} vergisi ne kadar?`,
+    pageDescription: `${phoneNameWithPossession} vergisini hesaplamak için başta ÖTV gibi tüm telefon vergilerini hesaplama yeteneğine sahip Telefon Vergisi Hesaplayıcı aracını kullanın. Vergilerin ne kadar uygulandığını ve vergisiz telefon fiyatını öğrenin. Yurt içi ve yurt dışı fiyatlarını karşılaştırın.`
+});
+
 export default [
     {
         id: 1,
@@ -10,8 +15,7 @@ export default [
         thumbnail: "telefon-vergisi-hesaplayici/img/apple-iphone-14-pro.png",
         url: buildUrl("iphone-14-pro"), // TODO: "apple-" prefix will be added
         ogImageName: "telefon-vergisi-hesaplayici-apple-iphone-14-pro.jpg",
-        pageTitle: "Apple iPhone 14 Pro'nun vergisi ne kadar?",
-        pageDescription: "Apple iPhone 14 Pro'nun vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın."
+        ...buildPageMeta("Apple iPhone 14 Pro'nun")
     },
     {
         id: 2,
@@ -22,8 +26,7 @@ export default [
         thumbnail: "telefon-vergisi-hesaplayici/img/apple-iphone-14-pro-max.png",
         url: buildUrl("iphone-14-pro-max"), // TODO: "apple-" prefix will be added
         ogImageName: "telefon-vergisi-hesaplayici-apple-iphone-14-pro-max.jpg",
-        pageTitle: "Apple iPhone 14 Pro Max'in vergisi ne kadar?",
-        pageDescription: "Apple iPhone 14 Pro Max'in vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın."
+        ...buildPageMeta("Apple iPhone 14 Pro Max'in")
     },
     {
         id: 3,
@@ -34,8 +37,7 @@ export default [
         thumbnail: "telefon-vergisi-hesaplayici/img/apple-iphone-14.png",
         url: buildUrl("iphone-14"), // TODO: "apple-" prefix will be added
         ogImageName: "telefon-vergisi-hesaplayici-apple-iphone-14.jpg",
-        pageTitle: "Apple iPhone 14'ün vergisi ne kadar?",
-        pageDescription: "Apple iPhone 14'ün vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın."
+        ...buildPageMeta("Apple iPhone 14'ün")
     },
     {
         id: 4,
@@ -46,8 +48,7 @@ export default [
         thumbnail: "telefon-vergisi-hesaplayici/img/apple-iphone-14-plus.png",
         url: buildUrl("iphone-14-plus"), // TODO: "apple-" prefix will be added
         ogImageName: "telefon-vergisi-hesaplayici-apple-iphone-14-plus.jpg",
-        pageTitle: "Apple iPhone 14 Plus'ın vergisi ne kadar?",
-        pageDescription: "Apple iPhone 14 Plus'ın vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın."
+        ...buildPageMeta("Apple iPhone 14 Plus'ın")
     },
     {
         id: 5,
@@ -58,8 +59,7 @@ export default [
         thumbnail: "telefon-vergisi-hesaplayici/img/apple-iphone-13-mini.png",
         url: buildUrl("iphone-13-mini"), // TODO: "apple-" prefix will be added
         ogImageName: "telefon-vergisi-hesaplayici-apple-iphone-13-mini.jpg",
-        pageTitle: "Apple iPhone 13 mini'nin vergisi ne kadar?",
-        pageDescription: "Apple iPhone 13 mini'nin vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın."
+        ...buildPageMeta("Apple iPhone 13 mini'nin")
     },
     {
         id: 6,
@@ -70,8 +70,7 @@ export default [
         thumbnail: "telefon-vergisi-hesaplayici/img/apple-iphone-13.png",
         url: buildUrl("iphone-13"), // TODO: "apple-" prefix will be added
         ogImageName: "telefon-vergisi-hesaplayici-apple-iphone-13.jpg",
-        pageTitle: "Apple iPhone 13'ün vergisi ne kadar?",
-        pageDescription: "Apple iPhone 13'ün vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın."
+        ...buildPageMeta("Apple iPhone 13'ün")
     },
     {
         id: 7,
@@ -82,8 +81,7 @@ export default [
         thumbnail: "telefon-vergisi-hesaplayici/img/apple-iphone-se-3-2022.png",
         url: buildUrl("iphone-se-3-2022"), // TODO: "apple-" prefix will be added
         ogImageName: "telefon-vergisi-hesaplayici-apple-iphone-se-2022.jpg",
-        pageTitle: "Apple iPhone SE 3'ün (2022) vergisi ne kadar?",
-        pageDescription: "Apple iPhone SE 3 (2022)'ün vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın."
+        ...buildPageMeta("Apple iPhone SE 3'ün (2022)")
     },
     {
         id: 8,
@@ -94,8 +92,7 @@ export default [
         thumbnail: "telefon-vergisi-hesaplayici/img/apple-iphone-12.png",
         url: buildUrl("iphone-12"), // TODO: "apple-" prefix will be added
         ogImageName: "telefon-vergisi-hesaplayici-apple-iphone-12.jpg",
-        pageTitle: "Apple iPhone 12'nin vergisi ne kadar?",
-        pageDescription: "Apple iPhone 12'nin vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın."
+        ...buildPageMeta("Apple iPhone 12'nin")
     },
     {
         id: 9,
@@ -106,8 +103,7 @@ export default [
         thumbnail: "telefon-vergisi-hesaplayici/img/apple-vision-pro.png",
         url: buildUrl("apple-vision-pro"),
         ogImageName: "telefon-vergisi-hesaplayici-apple-vision-pro.jpg",
-        pageTitle: "Apple Vision Pro'nun vergisi ne kadar?",
-        pageDescription: "Apple Vision Pro'nun vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın."
+        ...buildPageMeta("Apple Vision Pro'nun")
     },
     {
         id: 10,
@@ -118,8 +114,7 @@ export default [
         thumbnail: "telefon-vergisi-hesaplayici/img/samsung-galaxy-s23.png",
         url: buildUrl("samsung-galaxy-s23"),
         ogImageName: "telefon-vergisi-hesaplayici-samsung-galaxy-s23.jpg",
-        pageTitle: "Samsung Galaxy S23'ün vergisi ne kadar?",
-        pageDescription: "Samsung Galaxy S23'ün vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın."
+        ...buildPageMeta("Samsung Galaxy S23'ün")
     },
     {
         id: 11,
@@ -130,8 +125,7 @@ export default [
         thumbnail: "telefon-vergisi-hesaplayici/img/samsung-galaxy-s23-plus.png",
         url: buildUrl("samsung-galaxy-s23-plus"),
         ogImageName: "telefon-vergisi-hesaplayici-samsung-galaxy-s23-plus.jpg",
-        pageTitle: "Samsung Galaxy S23+'ın vergisi ne kadar?",
-        pageDescription: "Samsung Galaxy S23+'ın vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın."
+        ...buildPageMeta("Samsung Galaxy S23+'ın")
     },
     {
         id: 12,
@@ -142,8 +136,7 @@ export default [
         thumbnail: "telefon-vergisi-hesaplayici/img/samsung-galaxy-s23-ultra.png",
         url: buildUrl("samsung-galaxy-s23-ultra"),
         ogImageName: "telefon-vergisi-hesaplayici-samsung-galaxy-s23-ultra.jpg",
-        pageTitle: "Samsung Galaxy S23 Ultra'nın vergisi ne kadar?",
-        pageDescription: "Samsung Galaxy S23 Ultra'nın vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın."
+        ...buildPageMeta("Samsung Galaxy S23 Ultra'nın")
     },
     {
         id: 13,
@@ -154,7 +147,17 @@ export default [
         thumbnail: "telefon-vergisi-hesaplayici/img/samsung-galaxy-z-fold4.png",
         url: buildUrl("samsung-galaxy-z-fold4"),
         ogImageName: "telefon-vergisi-hesaplayici-samsung-galaxy-z-fold4.jpg",
-        pageTitle: "Samsung Galaxy Z Fold4'ün vergisi ne kadar?",
-        pageDescription: "Samsung Galaxy Z Fold4'ün vergili ve vergisiz fiyatını hesaplayın, yurt içi ve yurt dışı fiyatlarını karşılaştırın."
+        ...buildPageMeta("Samsung Galaxy Z Fold4'ün")
+    },
+    {
+        id: 14,
+        brandId: 2,
+        title: "Galaxy Z Flip4",
+        slug: "samsung-galaxy-z-flip4",
+        releaseDate: new Date("2022-10-26"),
+        thumbnail: "telefon-vergisi-hesaplayici/img/samsung-galaxy-z-flip4.png",
+        url: buildUrl("samsung-galaxy-z-flip4"),
+        ogImageName: "telefon-vergisi-hesaplayici-samsung-galaxy-z-flip4.jpg",
+        ...buildPageMeta("Samsung Galaxy Z Flip4'ün")
     }
 ];
