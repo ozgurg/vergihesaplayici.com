@@ -31,7 +31,7 @@ export default (() => {
         ...parentPage.breadcrumbs,
         { title, url }
     ];
-    const summary = "\"O ney vatandaş, bir tane de bana ver\"<br /><i>- Vergili Mıçı</i>";
+    const summary = "\"O ney vatandaş, 1.03 tane de bana ver\"<br /><i>- Vergili Mıçı</i>";
 
     return {
         icon,
