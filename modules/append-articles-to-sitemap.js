@@ -9,7 +9,7 @@ export default function AppendArticlesToSitemap() {
         this.nuxt.options.sitemap.routes = [
             ...this.nuxt.options.sitemap.routes,
             ...articles.map(({ path }) => ({
-                url: `/yazilar/${path}`,
+                url: `/yazilar/${path}/`,
                 changefreq: "weekly",
                 priority: 0.8
             }))
