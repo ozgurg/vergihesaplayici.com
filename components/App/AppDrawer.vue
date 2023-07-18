@@ -6,6 +6,7 @@
         app=""
         overlay-color="#000"
         overlay-opacity=".75"
+        touchless=""
         width="265">
         <template #prepend>
             <div class="px-4 py-4">
