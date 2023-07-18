@@ -41,11 +41,12 @@ export default {
     white-space: nowrap;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    gap: 1rem;
     scroll-padding-inline: var(--vh-calculation-presets-negative-margin-x);
     margin: 0 calc(var(--vh-calculation-presets-negative-margin-x) * -1);
     padding-block-end: .5rem;
+    gap: .5rem;
     @media #{map-get($display-breakpoints, "md-and-up")} {
+        gap: 1rem;
         --vh-calculation-presets-negative-margin-x: 0
     }
     > div {
