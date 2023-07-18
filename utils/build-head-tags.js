@@ -11,6 +11,7 @@ const buildHeadTags = ({
     ogImageName
 }) => {
     const ogImage = require(`@/assets/og/${ogImageName}`);
+    const ogImageUrl = process.env.APP_URL + ogImage;
     return {
         title,
         meta: [
@@ -44,7 +45,7 @@ const buildHeadTags = ({
             },
             {
                 name: "og:image",
-                content: ogImage
+                content: ogImageUrl
             },
             {
                 name: "og:locale",
@@ -66,7 +67,7 @@ const buildHeadTags = ({
             },
             {
                 name: "twitter:image",
-                content: ogImage
+                content: ogImageUrl
             }
         ]
     };

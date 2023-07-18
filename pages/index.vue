@@ -67,7 +67,7 @@ export default {
     }),
     async asyncData({ $content }) {
         return {
-            articles: await $content("/").sortBy("createdAt", "desc").limit(12).fetch()
+            articles: await $content("/").sortBy("gitCreatedAt", "desc").limit(12).fetch()
         };
     }
 };

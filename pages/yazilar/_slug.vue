@@ -70,7 +70,7 @@ export default {
         const article = await $content(slug).fetch();
 
         const otherArticles = await $content("/")
-            .sortBy("createdAt", "desc")
+            .sortBy("gitCreatedAt", "desc")
             .limit(6)
             .where({ slug: { $ne: slug } })
             .fetch();

@@ -58,6 +58,7 @@ export default {
     &__thumb {
         height: 96px;
         width: auto;
+        min-width: 72px;
         max-width: 96px;
         object-fit: contain
     }
