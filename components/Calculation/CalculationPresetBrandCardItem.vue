@@ -59,7 +59,7 @@ export default {
     align-items: center;
     justify-content: center;
     min-width: max-content;
-    width: 128px;
+    width: 110px;
     @media #{map-get($display-breakpoints, "md-and-up")} {
         width: 144px
     }

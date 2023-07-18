@@ -33,7 +33,7 @@ export default {
 @import "~vuetify/src/styles/settings/_variables.scss";
 
 .vh-calculation-presets {
-    --vh-calculation-presets-negative-margin-x: #{$spacer * 6};
+    --vh-calculation-presets-negative-margin-x: #{$spacer * 5};
     --vh-calculation-presets-padding-x: var(--vh-calculation-presets-negative-margin-x);
     display: flex;
     flex-flow: row nowrap;
@@ -41,14 +41,12 @@ export default {
     white-space: nowrap;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    gap: 1rem;
     scroll-padding-inline: var(--vh-calculation-presets-negative-margin-x);
     margin: 0 calc(var(--vh-calculation-presets-negative-margin-x) * -1);
     padding-block-end: .5rem;
-    @media #{map-get($display-breakpoints, "sm-and-up")} {
-        --vh-calculation-presets-negative-margin-x: #{$spacer * 8}
-    }
+    gap: .5rem;
     @media #{map-get($display-breakpoints, "md-and-up")} {
+        gap: 1rem;
         --vh-calculation-presets-negative-margin-x: 0
     }
     > div {

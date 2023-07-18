@@ -41,14 +41,20 @@ export default {
 </script>
 
 <style lang="scss" scoped="">
+@import "~vuetify/src/styles/settings/_variables.scss";
+
 .vh-calculation-preset-item {
     flex-grow: 0;
     flex-shrink: 0;
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
-    min-width: 236px;
-    flex-basis: 236px;
+    min-width: 204px;
+    flex-basis: 204px;
+    @media #{map-get($display-breakpoints, "md-and-up")} {
+        min-width: 236px;
+        flex-basis: 236px
+    }
     &__thumb {
         height: 96px;
         width: auto;
