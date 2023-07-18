@@ -156,7 +156,7 @@
                             <img
                                 :src="require('@/assets/img/logo-screenshot.png')"
                                 class="me-1"
-                                loading="lazy"
+                                loading="eager"
                                 decoding="async"
                                 alt="Logo"
                                 width="136"
