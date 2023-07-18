@@ -101,7 +101,7 @@ $vh-breadcrumbs-item-padding-x: .375rem;
 // And I also include the padding-x of ".v-breadcrumbs__item" in this calculation as I want the content of "AppBreadcrumbs" to align with "MainContainer".
 .vh-breadcrumbs {
     --vh-breadcrumbs-negative-margin-y: 0px; // Removing "px" causes "calc(0 * -1)" calculation error
-    --vh-breadcrumbs-negative-margin-x: #{$spacer * 6};
+    --vh-breadcrumbs-negative-margin-x: #{$spacer * 5};
     --vh-breadcrumbs-padding-x: calc(var(--vh-breadcrumbs-negative-margin-x) - #{$vh-breadcrumbs-item-padding-x});
     display: flex;
     align-items: center;
@@ -112,12 +112,9 @@ $vh-breadcrumbs-item-padding-x: .375rem;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     margin: calc(var(--vh-breadcrumbs-negative-margin-y) * -1) calc(var(--vh-breadcrumbs-negative-margin-x) * -1);
-    @media #{map-get($display-breakpoints, "sm-and-up")} {
-        --vh-breadcrumbs-negative-margin-x: #{$spacer * 8}
-    }
     @media #{map-get($display-breakpoints, "md-and-up")} {
         --vh-breadcrumbs-negative-margin-y: #{$vh-breadcrumbs-item-padding-y};
-        --vh-breadcrumbs-negative-margin-x: #{$spacer * 10};
+        --vh-breadcrumbs-negative-margin-x: #{$spacer * 12};
         background: 0
     }
     li {

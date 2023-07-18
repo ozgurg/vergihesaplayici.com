@@ -1,6 +1,7 @@
 <template>
     <v-main>
-        <v-container class="px-6 px-sm-8 px-md-10 my-8 my-md-16">
+        <!-- px-5 set to align to v-app-bar-nav-icon -->
+        <v-container class="px-5 px-md-12 my-8 my-md-16">
             <slot />
         </v-container>
     </v-main>
