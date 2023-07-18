@@ -11,7 +11,7 @@ export default [
         brandId: 1,
         title: "iPhone 14 Pro",
         slug: "iphone-14-pro", // TODO: "apple-" prefix will be added
-        releaseDate: new Date("2022-09-07"),
+        releaseDate: new Date("2022-09-16"),
         thumbnail: "telefon-vergisi-hesaplayici/img/apple-iphone-14-pro.webp",
         url: buildUrl("iphone-14-pro"), // TODO: "apple-" prefix will be added
         ogImageName: "telefon-vergisi-hesaplayici-apple-iphone-14-pro.jpg",
@@ -22,7 +22,7 @@ export default [
         brandId: 1,
         title: "iPhone 14 Pro Max",
         slug: "iphone-14-pro-max", // TODO: "apple-" prefix will be added
-        releaseDate: new Date("2022-09-07"),
+        releaseDate: new Date("2022-09-16"),
         thumbnail: "telefon-vergisi-hesaplayici/img/apple-iphone-14-pro-max.webp",
         url: buildUrl("iphone-14-pro-max"), // TODO: "apple-" prefix will be added
         ogImageName: "telefon-vergisi-hesaplayici-apple-iphone-14-pro-max.jpg",
@@ -33,7 +33,7 @@ export default [
         brandId: 1,
         title: "iPhone 14",
         slug: "iphone-14", // TODO: "apple-" prefix will be added
-        releaseDate: new Date("2022-09-07"),
+        releaseDate: new Date("2022-09-16"),
         thumbnail: "telefon-vergisi-hesaplayici/img/apple-iphone-14.webp",
         url: buildUrl("iphone-14"), // TODO: "apple-" prefix will be added
         ogImageName: "telefon-vergisi-hesaplayici-apple-iphone-14.jpg",
@@ -44,7 +44,7 @@ export default [
         brandId: 1,
         title: "iPhone 14 Plus",
         slug: "iphone-14-plus", // TODO: "apple-" prefix will be added
-        releaseDate: new Date("2022-09-07"),
+        releaseDate: new Date("2022-09-16"),
         thumbnail: "telefon-vergisi-hesaplayici/img/apple-iphone-14-plus.webp",
         url: buildUrl("iphone-14-plus"), // TODO: "apple-" prefix will be added
         ogImageName: "telefon-vergisi-hesaplayici-apple-iphone-14-plus.jpg",
@@ -88,7 +88,7 @@ export default [
         brandId: 1,
         title: "iPhone 12",
         slug: "iphone-12", // TODO: "apple-" prefix will be added
-        releaseDate: new Date("2020-10-13"),
+        releaseDate: new Date("2020-10-23"),
         thumbnail: "telefon-vergisi-hesaplayici/img/apple-iphone-12.webp",
         url: buildUrl("iphone-12"), // TODO: "apple-" prefix will be added
         ogImageName: "telefon-vergisi-hesaplayici-apple-iphone-12.jpg",
@@ -99,7 +99,7 @@ export default [
         brandId: 1,
         title: "Vision Pro",
         slug: "apple-vision-pro",
-        releaseDate: new Date("2023-06-05"),
+        releaseDate: new Date("2024-12-31"),
         thumbnail: "telefon-vergisi-hesaplayici/img/apple-vision-pro.webp",
         url: buildUrl("apple-vision-pro"),
         ogImageName: "telefon-vergisi-hesaplayici-apple-vision-pro.jpg",
@@ -143,7 +143,7 @@ export default [
         brandId: 2,
         title: "Galaxy Z Fold4",
         slug: "samsung-galaxy-z-fold4",
-        releaseDate: new Date("2022-10-25"),
+        releaseDate: new Date("2022-08-25"),
         thumbnail: "telefon-vergisi-hesaplayici/img/samsung-galaxy-z-fold4.webp",
         url: buildUrl("samsung-galaxy-z-fold4"),
         ogImageName: "telefon-vergisi-hesaplayici-samsung-galaxy-z-fold4.jpg",
@@ -154,7 +154,7 @@ export default [
         brandId: 2,
         title: "Galaxy Z Flip4",
         slug: "samsung-galaxy-z-flip4",
-        releaseDate: new Date("2022-10-26"),
+        releaseDate: new Date("2022-08-26"),
         thumbnail: "telefon-vergisi-hesaplayici/img/samsung-galaxy-z-flip4.webp",
         url: buildUrl("samsung-galaxy-z-flip4"),
         ogImageName: "telefon-vergisi-hesaplayici-samsung-galaxy-z-flip4.jpg",
