@@ -54,9 +54,15 @@ export default {
         ],
         link: [
             {
+                hid: "shortcut-icon", // Override @nuxtjs/pwa
                 rel: "icon",
-                type: "image/x-icon",
-                href: "/favicon.ico"
+                href: "/favicon.svg",
+                type: "image/svg+xml"
+            },
+            {
+                rel: "icon",
+                type: "image/png",
+                href: "/favicon.png"
             },
             {
                 rel: "dns-prefetch",
