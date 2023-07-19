@@ -191,12 +191,16 @@ export default {
             theme_color: process.env.APP_PRIMARY_COLOR
         },
         manifest: {
+            background_color: process.env.APP_SECONDARY_COLOR,
             name: process.env.APP_NAME,
             short_name: process.env.APP_NAME,
             description: "vergihesaplayici.com, vergi hesaplar.",
             orientation: "portrait",
             id: "/?standalone=true",
             lang: "tr"
+        },
+        icon: {
+            purpose: "maskable"
         }
     },
 
