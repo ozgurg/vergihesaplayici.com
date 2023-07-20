@@ -38,7 +38,7 @@ export default {
 .vh-form-row {
     $self: &;
     gap: var(--vh-form-row-gap);
-    --vh-form-row-gap: .5rem;
+    --vh-form-row-gap: .375rem;
     --vh-form-row-label-col-width: 100%;
     --vh-form-row-label-justify-content: flex-start;
     &--horizontal {

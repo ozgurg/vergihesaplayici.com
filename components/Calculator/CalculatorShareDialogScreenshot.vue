@@ -154,7 +154,7 @@
 
                         <div class="d-flex align-center justify-center flex-row primary--text caption">
                             <img
-                                :src="require('@/assets/img/logo-screenshot.png')"
+                                :src="require('@/assets/img/logo-screenshot.webp')"
                                 class="me-1"
                                 loading="eager"
                                 decoding="async"

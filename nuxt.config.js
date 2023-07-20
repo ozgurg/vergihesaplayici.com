@@ -170,7 +170,8 @@ export default {
             dark: true,
             options: {
                 cspNonce,
-                variations: false
+                variations: false,
+                customProperties: false
             },
             themes: {
                 dark: {
@@ -204,9 +205,6 @@ export default {
             orientation: "portrait",
             id: "/?standalone=true",
             lang: "tr"
-        },
-        icon: {
-            purpose: "maskable"
         }
     },
 
