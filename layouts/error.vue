@@ -39,19 +39,16 @@
 </template>
 
 <script>
+import { buildHeadTags } from "~/utils/build-head-tags.js";
+
 export default {
     head() {
         const vm = this;
-        return {
+        return buildHeadTags({
             title: vm.title,
-            meta: [
-                {
-                    hid: "title",
-                    name: "title",
-                    content: vm.title
-                }
-            ]
-        };
+            description: vm.message,
+            ogImageName: "ana-sayfa.jpg"
+        });
     },
     props: {
         error: {

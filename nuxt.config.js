@@ -94,16 +94,10 @@ export default {
         "@nuxtjs/vuetify",
         "@nuxtjs/svg",
         "@nuxtjs/pwa",
+        "@/modules/append-canonical-to-head.js",
         "@/modules/append-calculator-presets-to-sitemap.js", // Must be before "@nuxtjs/sitemap"
         "@/modules/append-articles-to-sitemap.js", // Must be before "@nuxtjs/sitemap"
-        "@nuxtjs/sitemap",
-        [
-            "nuxt-canonical",
-            {
-                baseUrl: process.env.APP_URL,
-                trailingSlashes: true
-            }
-        ]
+        "@nuxtjs/sitemap"
     ],
     router: {
         trailingSlash: true

@@ -44,6 +44,8 @@
 </template>
 
 <script>
+import { buildHeadTags } from "@/utils/build-head-tags.js";
+
 export default {
     head() {
         return this.head;
@@ -78,10 +80,11 @@ export default {
         return {
             articles: otherArticles,
             article,
-            head: {
+            head: buildHeadTags({
                 title: article.title,
-                description: article.description
-            }
+                description: article.description,
+                ogImageName: "ana-sayfa.jpg"
+            })
         };
     }
 };

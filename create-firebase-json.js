@@ -180,11 +180,6 @@ const firebaseJson = {
                 source: "/yazilar/verginin-vergisi-hangi-ulke-icat-etmistir/",
                 destination: "/yazilar/verginin-vergisini-hangi-ulke-icat-etmistir/",
                 type: 301
-            },
-            {
-                source: "/yazilar/mahsuplardan-kesilen-damga-vergisi-nedir",
-                destination: "/yazilar/mahsuplardan-kesilen-damga-vergisi-nedir/",
-                type: 301
             }
         ]
     },
