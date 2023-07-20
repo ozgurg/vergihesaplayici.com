@@ -170,6 +170,21 @@ const firebaseJson = {
                 source: "/yazilar/zirai-kazanc-vergisi-nedir/",
                 destination: "/yazilar/zirai-kazanc-gelir-vergisi-nedir/",
                 type: 301
+            },
+            {
+                source: "/yazilar/luks-tuketimden-daha-fazla-vergi-alinmali-midir/",
+                destination: "/yazilar/luks-tuketimden-daha-fazla-vergi-alinmali-mi/",
+                type: 301
+            },
+            {
+                source: "/yazilar/verginin-vergisi-hangi-ulke-icat-etmistir/",
+                destination: "/yazilar/verginin-vergisini-hangi-ulke-icat-etmistir/",
+                type: 301
+            },
+            {
+                source: "/yazilar/mahsuplardan-kesilen-damga-vergisi-nedir",
+                destination: "/yazilar/mahsuplardan-kesilen-damga-vergisi-nedir/",
+                type: 301
             }
         ]
     },
