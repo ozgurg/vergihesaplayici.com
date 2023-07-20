@@ -11,6 +11,7 @@
 
             <video
                 class="rounded mb-12"
+                poster="/icon.png"
                 width="256"
                 height="256"
                 autoplay=""
@@ -19,7 +20,7 @@
                 playsinline=""
                 preload="none">
                 <source
-                    src="@/assets/video/kemal-sunal.mp4"
+                    src="/video/kemal-sunal.mp4"
                     type="video/mp4" />
             </video>
 

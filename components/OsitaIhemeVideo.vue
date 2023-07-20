@@ -6,22 +6,19 @@
         rel="nofollow noopener noreferrer"
         target="_blank"
         title="Osita Iheme">
-        <v-responsive
-            :aspect-ratio="1"
-            class="d-inline-flex">
-            <video
-                class="rounded"
-                width="256"
-                height="256"
-                autoplay=""
-                loop=""
-                muted=""
-                playsinline=""
-                preload="none">
-                <source
-                    src="@/assets/video/osita-iheme.mp4"
-                    type="video/mp4" />
-            </video>
-        </v-responsive>
+        <video
+            class="rounded"
+            poster="/icon.png"
+            width="256"
+            height="256"
+            autoplay=""
+            loop=""
+            muted=""
+            playsinline=""
+            preload="none">
+            <source
+                src="/video/osita-iheme.mp4"
+                type="video/mp4" />
+        </video>
     </a>
 </template>
