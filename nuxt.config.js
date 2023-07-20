@@ -204,9 +204,6 @@ export default {
             orientation: "portrait",
             id: "/?standalone=true",
             lang: "tr"
-        },
-        icon: {
-            purpose: "maskable"
         }
     },
 
