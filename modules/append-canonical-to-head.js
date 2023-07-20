@@ -15,7 +15,11 @@ export default function AppendCanonicalToHead() {
         const fullUrl = getFullUrl(page.route);
 
         head.append(`<link rel="canonical" href="${fullUrl}" />`);
+
         head.append(`<meta property="og:url" content="${fullUrl}" />`);
+
+        head.append(`<link rel="alternate" hreflang="x-default" href="${fullUrl}" />`);
+        head.append(`<link rel="alternate" hreflang="tr" href="${fullUrl}" />`);
 
         page.html = $.html();
     });
