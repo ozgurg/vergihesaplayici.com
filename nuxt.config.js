@@ -170,7 +170,8 @@ export default {
             dark: true,
             options: {
                 cspNonce,
-                variations: false
+                variations: false,
+                customProperties: false
             },
             themes: {
                 dark: {
