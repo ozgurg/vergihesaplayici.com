@@ -6,116 +6,97 @@
             {{ page.title }}
         </Heading1>
 
-        <div class="mb-12">
-            <template v-if="$vuetify.breakpoint.lgAndUp">
-                <AdsterraBanner728x90 :order="0" />
-            </template>
-            <template v-else-if="$vuetify.breakpoint.mdAndDown">
-                <AdsterraBanner300x250 :order="0" />
-            </template>
-        </div>
-
-        <InnerContainer>
-            <FormRow>
-                <Heading2>
-                    Hazır hesaplamalar
-                </Heading2>
-                <div class="d-flex flex-column gap-12">
-                    <template v-for="_calculation in ui.calculations">
-                        <div :key="_calculation.brand.id">
-                            <CalculationPresets
-                                :presets="_calculation.presets"
-                                :brand="_calculation.brand" />
+        <div class="d-flex flex-column gap-16">
+            <div>
+                <InnerContainer>
+                    <FormRow>
+                        <Heading2>
+                            Hazır hesaplamalar
+                        </Heading2>
+                        <div class="d-flex flex-column gap-12">
+                            <template v-for="_calculation in ui.calculations">
+                                <div :key="_calculation.brand.id">
+                                    <CalculationPresets
+                                        :presets="_calculation.presets"
+                                        :brand="_calculation.brand" />
+                                </div>
+                            </template>
                         </div>
-                    </template>
-                </div>
+                    </FormRow>
+                </InnerContainer>
+            </div>
 
-                <div class="my-12">
-                    <template v-if="$vuetify.breakpoint.lgAndUp">
-                        <AdsterraBanner728x90 :order="1" />
-                    </template>
-                    <template v-else-if="$vuetify.breakpoint.mdAndDown">
-                        <AdsterraBanner300x250 :order="1" />
-                    </template>
-                </div>
-
+            <div>
                 <Heading2>
                     Kendiniz hesaplayın
                 </Heading2>
-            </FormRow>
-        </InnerContainer>
+                <CalculatorInnerContainer>
+                    <FormRow
+                        class="mb-10"
+                        label="Telefon fiyatı">
+                        <v-row>
+                            <v-col>
+                                <v-text-field
+                                    v-model.number="form.price"
+                                    v-number=""
+                                    :prefix="selectedCurrency.sign"
+                                    class="tabular-nums"
+                                    hide-details=""
+                                    hide-spin-buttons=""
+                                    filled=""
+                                    outlined=""
+                                    min="1"
+                                    inputmode="decimal"
+                                    type="number"
+                                    aria-label="Telefon fiyatı" />
+                            </v-col>
+                            <v-col
+                                cols="4"
+                                md="3">
+                                <CurrencySelector v-model="form.currency" />
+                            </v-col>
+                        </v-row>
+                    </FormRow>
 
-        <CalculatorInnerContainer>
-            <FormRow
-                class="mb-10"
-                label="Telefon fiyatı">
-                <v-row>
-                    <v-col>
-                        <v-text-field
-                            v-model.number="form.price"
-                            v-number=""
-                            :prefix="selectedCurrency.sign"
-                            class="tabular-nums"
-                            hide-details=""
-                            hide-spin-buttons=""
-                            filled=""
-                            outlined=""
-                            min="1"
-                            inputmode="decimal"
-                            type="number"
-                            aria-label="Telefon fiyatı" />
-                    </v-col>
-                    <v-col
-                        cols="4"
-                        md="3">
-                        <CurrencySelector v-model="form.currency" />
-                    </v-col>
-                </v-row>
-            </FormRow>
+                    <FormRow
+                        class="mb-10"
+                        label="Kayıt yolu">
+                        <RadioGrid
+                            v-model="form.registration"
+                            :items="ui.registration" />
+                    </FormRow>
 
-            <FormRow
-                class="mb-10"
-                label="Kayıt yolu">
-                <RadioGrid
-                    v-model="form.registration"
-                    :items="ui.registration" />
-            </FormRow>
+                    <template v-if="shouldShowResults">
+                        <FormRow>
+                            <template v-if="form.currency === 'TRY'">
+                                <ReverseCalculationAlert />
+                            </template>
+                            <template v-else>
+                                <EstimatedCalculationAlert />
+                            </template>
+                        </FormRow>
 
-            <template v-if="shouldShowResults">
-                <FormRow>
-                    <template v-if="form.currency === 'TRY'">
-                        <ReverseCalculationAlert />
+                        <CalculatorResultList
+                            :items="resultList"
+                            class="mb-5" />
+
+                        <FormRow>
+                            <MinimumWageAlert
+                                :price="results.prices.taxAdded"
+                                class="mb-10" />
+                        </FormRow>
+
+                        <FormRow direction="horizontal">
+                            <CalculatorShareButton
+                                :screenshot-input="screenshotInput"
+                                :screenshot-output="resultList"
+                                :form="form"
+                                :calculator-title="page.title" />
+                        </FormRow>
                     </template>
-                    <template v-else>
-                        <EstimatedCalculationAlert />
-                    </template>
-                </FormRow>
-
-                <CalculatorResultList
-                    :items="resultList"
-                    class="mb-5" />
-
-                <FormRow>
-                    <MinimumWageAlert
-                        :price="results.prices.taxAdded"
-                        class="mb-10" />
-                </FormRow>
-
-                <FormRow direction="horizontal">
-                    <CalculatorShareButton
-                        :screenshot-input="screenshotInput"
-                        :screenshot-output="resultList"
-                        :form="form"
-                        :calculator-title="page.title" />
-                </FormRow>
-            </template>
-        </CalculatorInnerContainer>
-
-        <InnerContainer>
-            <AdsterraNative
-                :order="2"
-                class="mt-16" />
-        </InnerContainer>
+                </CalculatorInnerContainer>
+            </div>
+        </div>
     </div>
 </template>
 
