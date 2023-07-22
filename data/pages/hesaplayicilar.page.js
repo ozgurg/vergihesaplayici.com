@@ -6,8 +6,7 @@ export default (() => {
     const url = "/hesaplayicilar/";
     const head = buildHeadTags({
         title,
-        description,
-        ogImageName: "ana-sayfa.jpg"
+        description
     });
     const breadcrumbs = [
         { title, url }

@@ -82,8 +82,7 @@ export default {
             article,
             head: buildHeadTags({
                 title: article.title,
-                description: article.description,
-                ogImageName: "ana-sayfa.jpg"
+                description: article.description
             })
         };
     }

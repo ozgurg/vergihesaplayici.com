@@ -8,7 +8,7 @@
 const buildHeadTags = ({
     title,
     description,
-    ogImageName
+    ogImageName = "ana-sayfa.jpg"
 }) => {
     const ogImage = require(`@/assets/og/${ogImageName}`);
     const ogImageUrl = process.env.APP_URL + ogImage;

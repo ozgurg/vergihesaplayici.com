@@ -72,8 +72,7 @@ export default {
         // Thanks to ChatGPT :)
         return buildHeadTags({
             title: "Yazılar",
-            description: "Vergiler hakkında bilgi edinmek ve güncel vergi kanunlarına dair rehber arıyorsanız, doğru adrestesiniz! Vergilerle ilgili tüm detayları içeren kapsamlı makalelerimiz ve vergi ipuçlarımızla size yol gösteriyoruz. Vergi dünyasında kendinizi güvende hissetmek ve vergi yükümlülüklerinizi anlamak için sayfamızı keşfedin.",
-            ogImageName: "ana-sayfa.jpg"
+            description: "Vergiler hakkında bilgi edinmek ve güncel vergi kanunlarına dair rehber arıyorsanız, doğru adrestesiniz! Vergilerle ilgili tüm detayları içeren kapsamlı makalelerimiz ve vergi ipuçlarımızla size yol gösteriyoruz. Vergi dünyasında kendinizi güvende hissetmek ve vergi yükümlülüklerinizi anlamak için sayfamızı keşfedin."
         });
     },
     methods: {
