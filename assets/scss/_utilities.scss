@@ -12,10 +12,18 @@
     gap: 1.5rem !important
 }
 
+.gap-16 {
+    gap: 4rem !important
+}
+
 .tabular-nums {
     font-variant-numeric: tabular-nums
 }
 
 .valign-middle {
     vertical-align: middle
+}
+
+.flex-1 {
+    flex: 1
 }

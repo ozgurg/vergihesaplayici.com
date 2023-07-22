@@ -46,8 +46,7 @@ export default {
         const vm = this;
         return buildHeadTags({
             title: vm.title,
-            description: vm.message,
-            ogImageName: "ana-sayfa.jpg"
+            description: vm.message
         });
     },
     props: {

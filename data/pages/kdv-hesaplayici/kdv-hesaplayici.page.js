@@ -18,7 +18,7 @@ export default (() => {
     const icon = mdiBrightnessPercent;
     const title = "KDV Hesaplayıcı";
     const shortTitle = "Katma Değer Vergisi";
-    const description = "Namıdiğer her şeyin vergisini hariç ve dahil olarak hesaplayın.";
+    const description = "Katma Değer Vergisi (KDV) Hesaplayıcı aracını KDV hariç fiyattan KDV dahil fiyatı veya KDV dahil fiyattan KDV hariç fiyatı hesaplamak için kullanabilirsiniz.";
     const url = "/kdv-hesaplayici/";
     const head = buildHeadTags({
         title,

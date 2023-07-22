@@ -6,15 +6,6 @@
             {{ page.title }}
         </Heading1>
 
-        <div class="mb-12">
-            <template v-if="$vuetify.breakpoint.lgAndUp">
-                <AdsterraBanner728x90 :order="0" />
-            </template>
-            <template v-else-if="$vuetify.breakpoint.mdAndDown">
-                <AdsterraBanner300x250 :order="0" />
-            </template>
-        </div>
-
         <CalculatorInnerContainer>
             <FormRow
                 class="mb-10"
@@ -63,6 +54,7 @@
                             :key="_preset.title"
                             :class="{'primary--text primary': isPresetActive(_preset)}"
                             outlined=""
+                            class="py-6 justify-center rounded-pill flex-1"
                             @click="choosePreset(_preset)">
                             {{ _preset.title }}
                         </v-chip>
@@ -83,12 +75,6 @@
                 </FormRow>
             </template>
         </CalculatorInnerContainer>
-
-        <InnerContainer>
-            <AdsterraNative
-                :order="1"
-                class="mt-16" />
-        </InnerContainer>
     </div>
 </template>
 
@@ -107,15 +93,23 @@ export default {
             modeOptions,
             presets: [
                 {
-                    title: "Yüzde 1",
+                    title: "%1",
                     form: { rate: 1 }
                 },
                 {
-                    title: "Yüzde 10",
+                    title: "%8",
+                    form: { rate: 8 }
+                },
+                {
+                    title: "%10",
                     form: { rate: 10 }
                 },
                 {
-                    title: "Yüzde 20",
+                    title: "%18",
+                    form: { rate: 18 }
+                },
+                {
+                    title: "%20",
                     form: { rate: 20 }
                 }
             ]

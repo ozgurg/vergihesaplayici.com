@@ -6,40 +6,24 @@
             {{ article.title }}
         </Heading1>
 
-        <div class="mb-12">
-            <template v-if="$vuetify.breakpoint.lgAndUp">
-                <AdsterraBanner728x90 :order="0" />
-            </template>
-            <template v-else-if="$vuetify.breakpoint.mdAndDown">
-                <AdsterraBanner300x250 :order="0" />
-            </template>
-        </div>
-
         <InnerContainer>
-            <ArticleDisclaimerAlert class="mb-12" />
+            <div class="d-flex flex-column gap-16">
+                <div>
+                    <ArticleDisclaimerAlert class="mb-12" />
 
-            <nuxt-content :document="article" />
+                    <nuxt-content :document="article" />
 
-            <ArticleDisclaimerAlert class="mt-12" />
+                    <ArticleDisclaimerAlert class="mt-12" />
+                </div>
 
-            <AdsterraNative
-                :order="1"
-                class="my-12" />
-
-            <Heading2>
-                Diğer yazılar
-            </Heading2>
-            <ArticleGrid :articles="articles" />
+                <div>
+                    <Heading2>
+                        Diğer yazılar
+                    </Heading2>
+                    <ArticleGrid :articles="articles" />
+                </div>
+            </div>
         </InnerContainer>
-
-        <div class="mt-16">
-            <template v-if="$vuetify.breakpoint.lgAndUp">
-                <AdsterraBanner728x90 :order="2" />
-            </template>
-            <template v-else-if="$vuetify.breakpoint.mdAndDown">
-                <AdsterraBanner300x250 :order="2" />
-            </template>
-        </div>
     </div>
 </template>
 
@@ -73,7 +57,7 @@ export default {
 
         const otherArticles = await $content("/")
             .sortBy("gitCreatedAt", "desc")
-            .limit(6)
+            .limit(15)
             .where({ slug: { $ne: slug } })
             .fetch();
 
@@ -82,8 +66,7 @@ export default {
             article,
             head: buildHeadTags({
                 title: article.title,
-                description: article.description,
-                ogImageName: "ana-sayfa.jpg"
+                description: article.description
             })
         };
     }

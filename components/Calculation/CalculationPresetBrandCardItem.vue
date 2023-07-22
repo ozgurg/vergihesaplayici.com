@@ -1,7 +1,6 @@
 <template>
     <v-card
         outlined=""
-        :color="brand.color"
         class="vh-calculation-preset-brand-item px-2 py-6 px-lg-4 py-lg-8 h-100">
         <v-avatar
             size="32"
@@ -59,9 +58,24 @@ export default {
     align-items: center;
     justify-content: center;
     min-width: max-content;
+    border-color: v-bind("brand.color");
+    overflow: hidden;
     width: 110px;
     @media #{map-get($display-breakpoints, "md-and-up")} {
         width: 144px
+    }
+    & > * {
+        position: relative;
+        z-index: 2
+    }
+    &::before {
+        position: absolute;
+        z-index: 1;
+        inset: 0;
+        opacity: .4;
+        background: v-bind("brand.color");
+        pointer-events: none;
+        content: ""
     }
 }
 </style>
