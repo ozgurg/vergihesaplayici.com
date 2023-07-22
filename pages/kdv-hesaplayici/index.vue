@@ -54,6 +54,7 @@
                             :key="_preset.title"
                             :class="{'primary--text primary': isPresetActive(_preset)}"
                             outlined=""
+                            class="py-6 justify-center rounded-pill flex-1"
                             @click="choosePreset(_preset)">
                             {{ _preset.title }}
                         </v-chip>
@@ -92,15 +93,23 @@ export default {
             modeOptions,
             presets: [
                 {
-                    title: "Yüzde 1",
+                    title: "%1",
                     form: { rate: 1 }
                 },
                 {
-                    title: "Yüzde 10",
+                    title: "%8",
+                    form: { rate: 8 }
+                },
+                {
+                    title: "%10",
                     form: { rate: 10 }
                 },
                 {
-                    title: "Yüzde 20",
+                    title: "%18",
+                    form: { rate: 18 }
+                },
+                {
+                    title: "%20",
                     form: { rate: 20 }
                 }
             ]
