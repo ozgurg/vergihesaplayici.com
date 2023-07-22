@@ -2,12 +2,13 @@
     <v-card
         :to="preset.url"
         outlined=""
+        active-class="vh-calculation-preset-item--active"
         class="vh-calculation-preset-item px-4 py-6 px-lg-6 py-lg-8">
         <v-card-title class="pa-0 mb-4">
             {{ preset.title }}
         </v-card-title>
 
-        <v-card-subtitle class="pa-0 mb-8">
+        <v-card-subtitle class="vh-calculation-preset-item__desc pa-0 mb-8">
             {{ brand.title }} • {{ preset.releaseDate.getFullYear() }}
         </v-card-subtitle>
 
@@ -44,6 +45,7 @@ export default {
 @import "~vuetify/src/styles/settings/_variables.scss";
 
 .vh-calculation-preset-item {
+    $item: &;
     flex-grow: 0;
     flex-shrink: 0;
     display: flex;
@@ -61,6 +63,16 @@ export default {
         min-width: 72px;
         max-width: 96px;
         object-fit: contain
+    }
+    &--active {
+        border-color: $vh-color-primary;
+        color: $vh-color-primary;
+        &::before {
+            opacity: $vh-card-hover-opacity
+        }
+        #{$item}__desc {
+            color: rgba($vh-color-primary, .8)
+        }
     }
 }
 </style>
