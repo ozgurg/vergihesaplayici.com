@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 // create-csp-nonce-txt.js
-// const cspNonce = fs.readFileSync(path.join(__dirname, "csp-nonce.txt"), "UTF8");
+const cspNonce = fs.readFileSync(path.join(__dirname, "csp-nonce.txt"), { encoding: "utf-8" });
 
 const objectToCspHeader = object => {
     const cspHeader = [];
@@ -39,8 +39,7 @@ const firebaseJson = {
                     {
                         key: "Content-Security-Policy",
                         value: objectToCspHeader({
-                            // Disabled for ads
-                            /* "base-uri": [
+                            "base-uri": [
                                 "'self'"
                             ],
                             "object-src": [
@@ -54,13 +53,12 @@ const firebaseJson = {
                                 "https://www.google.com/recaptcha/",
                                 "https://www.gstatic.com/recaptcha/",
                                 "https://www.googletagmanager.com",
-                                "https://cdn.jsdelivr.net"
+                                "https://cdn.jsdelivr.net" // For Workbox
                             ],
                             "frame-src": [
                                 "'self'",
                                 "https://www.google.com/recaptcha/",
-                                "https://recaptcha.google.com/recaptcha/",
-                                "https://ghbtns.com/"
+                                "https://recaptcha.google.com/recaptcha/"
                             ],
                             "img-src": [
                                 "'self'",
@@ -74,7 +72,7 @@ const firebaseJson = {
                             ],
                             "font-src": [
                                 "fonts.gstatic.com"
-                            ] */
+                            ]
                         })
                     }
                 ]

@@ -5,7 +5,7 @@ import tr from "vuetify/es5/locale/tr";
 let cspNonce = "";
 if (process.env.NODE_EV === "production") {
     // create-csp-nonce-txt.js
-    cspNonce = fs.readFileSync(path.join(__dirname, "csp-nonce.txt"), "UTF8");
+    cspNonce = fs.readFileSync(path.join(__dirname, "csp-nonce.txt"), { encoding: "utf-8" });
 }
 
 export default {
