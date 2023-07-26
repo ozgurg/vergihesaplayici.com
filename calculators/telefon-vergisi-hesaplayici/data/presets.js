@@ -139,6 +139,28 @@ export default [
         ...buildPageMeta("Samsung Galaxy S23 Ultra'nın")
     },
     {
+        id: 15,
+        brandId: 2,
+        title: "Galaxy Z Fold5",
+        slug: "samsung-galaxy-z-fold5",
+        releaseDate: new Date("2023-07-26"),
+        thumbnail: "telefon-vergisi-hesaplayici/img/samsung-galaxy-z-fold5.webp",
+        url: buildUrl("samsung-galaxy-z-fold5"),
+        ogImageName: "telefon-vergisi-hesaplayici-samsung-galaxy-z-fold5.jpg",
+        ...buildPageMeta("Samsung Galaxy Z Fold5'in")
+    },
+    {
+        id: 16,
+        brandId: 2,
+        title: "Galaxy Z Flip5",
+        slug: "samsung-galaxy-z-flip5",
+        releaseDate: new Date("2023-07-26"),
+        thumbnail: "telefon-vergisi-hesaplayici/img/samsung-galaxy-z-flip5.webp",
+        url: buildUrl("samsung-galaxy-z-flip5"),
+        ogImageName: "telefon-vergisi-hesaplayici-samsung-galaxy-z-flip5.jpg",
+        ...buildPageMeta("Samsung Galaxy Z Flip5'in")
+    },
+    {
         id: 13,
         brandId: 2,
         title: "Galaxy Z Fold4",

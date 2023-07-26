@@ -1,5 +1,5 @@
 const lastUpdatedDateIphone = new Date("Mon Jul 10 2023 04:22:25 GMT+0300 (GMT+03:00)");
-const lastUpdatedDateSamsung = new Date("Wed Jul 12 2023 21:14:13 GMT+0300 (GMT+03:00)");
+const lastUpdatedDateSamsung = new Date("Wed Jul 26 2023 19:22:27 GMT+0300 (GMT+03:00)");
 
 export default [
     // Apple iPhone 14 Pro
@@ -466,6 +466,77 @@ export default [
             value: 65999,
             lastUpdatedDate: lastUpdatedDateSamsung,
             sourceUrl: "https://shop.samsung.com/tr/galaxy-s23-ultra/"
+        }
+    },
+
+
+    // Samsung Galaxy Z Fold5
+    {
+        presetId: 15,
+        title: "256GB",
+        form: {
+            price: 1799.99,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 64999,
+            lastUpdatedDate: lastUpdatedDateSamsung,
+            sourceUrl: "https://shop.samsung.com/tr/galaxy-z-fold5/"
+        }
+    },
+    {
+        presetId: 15,
+        title: "512GB",
+        form: {
+            price: 1919.99,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 67999,
+            lastUpdatedDate: lastUpdatedDateSamsung,
+            sourceUrl: "https://shop.samsung.com/tr/galaxy-z-fold5/"
+        }
+    },
+    {
+        presetId: 15,
+        title: "1TB",
+        form: {
+            price: 2159.99,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 72999,
+            lastUpdatedDate: lastUpdatedDateSamsung,
+            sourceUrl: "https://shop.samsung.com/tr/galaxy-z-fold5/"
+        }
+    },
+
+
+    // Samsung Galaxy Z Flip5
+    {
+        presetId: 16,
+        title: "256GB",
+        form: {
+            price: 999.99,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 44999,
+            lastUpdatedDate: lastUpdatedDateSamsung,
+            sourceUrl: "https://shop.samsung.com/tr/galaxy-z-flip5/"
+        }
+    },
+    {
+        presetId: 16,
+        title: "512GB",
+        form: {
+            price: 1199.99,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 47999,
+            lastUpdatedDate: lastUpdatedDateSamsung,
+            sourceUrl: "https://shop.samsung.com/tr/galaxy-z-flip5/"
         }
     },
 
