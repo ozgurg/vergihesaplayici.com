@@ -84,5 +84,17 @@ export default [
         ogImageName: "konsol-vergisi-hesaplayici-nintendo-switch-oled.jpg",
         pageTitle: "Nintendo Switch OLED'in vergisi ne kadar?",
         pageDescription: "Satın aldığınız bir Nintendo Switch OLED'in yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın."
+    },
+    {
+        id: 21,
+        brandId: 6,
+        title: "Deck",
+        slug: "steam-deck",
+        releaseDate: new Date("2022-02-25"),
+        thumbnail: "konsol-vergisi-hesaplayici/img/steam-deck.webp",
+        url: buildUrl("steam-deck"),
+        ogImageName: "konsol-vergisi-hesaplayici-steam-deck.jpg",
+        pageTitle: "Steam Deck'in vergisi ne kadar?",
+        pageDescription: "Satın aldığınız bir Steam Deck'in yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın."
     }
 ];

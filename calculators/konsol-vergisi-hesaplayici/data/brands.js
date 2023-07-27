@@ -18,5 +18,11 @@ export default [
         title: "Nintendo",
         icon: mdiNintendoSwitch,
         color: "#e60012"
+    },
+    {
+        id: 6,
+        title: "Steam",
+        icon: "steam-deck.svg",
+        color: "#5c96d6"
     }
 ];

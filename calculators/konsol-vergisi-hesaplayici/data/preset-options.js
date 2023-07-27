@@ -141,5 +141,32 @@ export default [
             lastUpdatedDate: new Date("Sun Jul 16 2023 16:31:44 GMT+0300 (GMT+03:00)"),
             sourceUrl: "https://www.overgameweb.com/nintendo-switch-konsol-oled-edition-neon"
         }
+    },
+
+
+    // Steam Deck (https://store.steampowered.com/steamdeck)
+    {
+        presetId: 21,
+        title: "64GBB",
+        form: {
+            price: 399,
+            currency: "USD"
+        }
+    },
+    {
+        presetId: 21,
+        title: "256GBB",
+        form: {
+            price: 529,
+            currency: "USD"
+        }
+    },
+    {
+        presetId: 21,
+        title: "512GBB",
+        form: {
+            price: 649,
+            currency: "USD"
+        }
     }
 ];
