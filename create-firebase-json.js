@@ -132,6 +132,11 @@ const firebaseJson = {
                 destination: "/konsol-vergisi-hesaplayici/microsoft-xbox-series-x/",
                 type: 301
             },
+            {
+                source: "/konsol-vergisi-hesaplayici/steam-deck/",
+                destination: "/konsol-vergisi-hesaplayici/valve-steam-deck/",
+                type: 301
+            },
 
             {
                 source: "/hesaplayicilar/telefon-vergisi-hesaplayici",

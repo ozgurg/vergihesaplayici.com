@@ -144,7 +144,7 @@ export default [
     },
 
 
-    // Steam Deck (https://store.steampowered.com/steamdeck)
+    // Valve Steam Deck (https://store.steampowered.com/steamdeck)
     {
         presetId: 21,
         title: "64GBB",

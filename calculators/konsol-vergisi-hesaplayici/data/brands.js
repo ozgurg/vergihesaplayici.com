@@ -21,8 +21,8 @@ export default [
     },
     {
         id: 6,
-        title: "Steam",
-        icon: "steam-deck.svg",
+        title: "Valve",
+        icon: "valve-steam-deck.svg",
         color: "#5c96d6"
     }
 ];
