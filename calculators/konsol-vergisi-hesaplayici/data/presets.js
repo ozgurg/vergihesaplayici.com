@@ -88,13 +88,13 @@ export default [
     {
         id: 21,
         brandId: 6,
-        title: "Deck",
-        slug: "steam-deck",
+        title: "Steam Deck",
+        slug: "valve-steam-deck",
         releaseDate: new Date("2022-02-25"),
-        thumbnail: "konsol-vergisi-hesaplayici/img/steam-deck.webp",
-        url: buildUrl("steam-deck"),
-        ogImageName: "konsol-vergisi-hesaplayici-steam-deck.jpg",
-        pageTitle: "Steam Deck'in vergisi ne kadar?",
-        pageDescription: "Satın aldığınız bir Steam Deck'in yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın."
+        thumbnail: "konsol-vergisi-hesaplayici/img/valve-steam-deck.webp",
+        url: buildUrl("valve-steam-deck"),
+        ogImageName: "konsol-vergisi-hesaplayici-valve-steam-deck.jpg",
+        pageTitle: "Valve Steam Deck'in vergisi ne kadar?",
+        pageDescription: "Satın aldığınız bir Valve Steam Deck'in yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın."
     }
 ];
