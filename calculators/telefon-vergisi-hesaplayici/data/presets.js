@@ -7,6 +7,50 @@ const buildPageMeta = phoneNameWithPossession => ({
 
 export default [
     {
+        id: 17,
+        brandId: 1,
+        title: "iPhone 15 Pro",
+        slug: "iphone-15-pro", // TODO: "apple-" prefix will be added
+        releaseDate: new Date("2023-09-12"),
+        thumbnail: "telefon-vergisi-hesaplayici/img/apple-iphone-15-pro.webp",
+        url: buildUrl("iphone-15-pro"), // TODO: "apple-" prefix will be added
+        ogImageName: "telefon-vergisi-hesaplayici-apple-iphone-15-pro.jpg",
+        ...buildPageMeta("Apple iPhone 15 Pro'nun")
+    },
+    {
+        id: 18,
+        brandId: 1,
+        title: "iPhone 15 Pro Max",
+        slug: "iphone-15-pro-max", // TODO: "apple-" prefix will be added
+        releaseDate: new Date("2023-09-12"),
+        thumbnail: "telefon-vergisi-hesaplayici/img/apple-iphone-15-pro-max.webp",
+        url: buildUrl("iphone-15-pro-max"), // TODO: "apple-" prefix will be added
+        ogImageName: "telefon-vergisi-hesaplayici-apple-iphone-15-pro-max.jpg",
+        ...buildPageMeta("Apple iPhone 15 Pro Max'in")
+    },
+    {
+        id: 19,
+        brandId: 1,
+        title: "iPhone 15",
+        slug: "iphone-15", // TODO: "apple-" prefix will be added
+        releaseDate: new Date("2023-09-12"),
+        thumbnail: "telefon-vergisi-hesaplayici/img/apple-iphone-15.webp",
+        url: buildUrl("iphone-15"), // TODO: "apple-" prefix will be added
+        ogImageName: "telefon-vergisi-hesaplayici-apple-iphone-15.jpg",
+        ...buildPageMeta("Apple iPhone 15'ün")
+    },
+    {
+        id: 20,
+        brandId: 1,
+        title: "iPhone 15 Plus",
+        slug: "iphone-15-plus", // TODO: "apple-" prefix will be added
+        releaseDate: new Date("2023-09-12"),
+        thumbnail: "telefon-vergisi-hesaplayici/img/apple-iphone-15-plus.webp",
+        url: buildUrl("iphone-15-plus"), // TODO: "apple-" prefix will be added
+        ogImageName: "telefon-vergisi-hesaplayici-apple-iphone-15-plus.jpg",
+        ...buildPageMeta("Apple iPhone 15 Plus'ın")
+    },
+    {
         id: 1,
         brandId: 1,
         title: "iPhone 14 Pro",

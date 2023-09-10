@@ -29,6 +29,8 @@ export default slug => {
 
     const options = findPresetOptionsByPresetId(preset.id, presetOptions);
 
+    console.log(options);
+
     return {
         title,
         calculatorTitle: TelefonVergisiHesaplayici.title,

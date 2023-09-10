@@ -2,6 +2,199 @@ const lastUpdatedDateIphone = new Date("Mon Jul 10 2023 04:22:25 GMT+0300 (GMT+0
 const lastUpdatedDateSamsung = new Date("Wed Jul 26 2023 19:22:27 GMT+0300 (GMT+03:00)");
 
 export default [
+    // Apple iPhone 15 Pro
+    {
+        presetId: 17,
+        title: "128GB",
+        form: {
+            price: 999,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 62541,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
+        }
+    },
+    {
+        presetId: 17,
+        title: "256GB",
+        form: {
+            price: 1099,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 66609,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
+        }
+    },
+    {
+        presetId: 17,
+        title: "512GB",
+        form: {
+            price: 1299,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 74745,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
+        }
+    },
+    {
+        presetId: 17,
+        title: "1TB",
+        form: {
+            price: 1599,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 82880,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
+        }
+    },
+
+
+    // Apple iPhone 15 Pro Max
+    {
+        presetId: 18,
+        title: "128GB",
+        form: {
+            price: 1099,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 67118,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
+        }
+    },
+    {
+        presetId: 18,
+        title: "256GB",
+        form: {
+            price: 1199,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 71185,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
+        }
+    },
+    {
+        presetId: 18,
+        title: "512GB",
+        form: {
+            price: 1399,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 79321,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
+        }
+    },
+    {
+        presetId: 18,
+        title: "1TB",
+        form: {
+            price: 1599,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 87457,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
+        }
+    },
+
+
+    // Apple iPhone 15
+    {
+        presetId: 19,
+        title: "128GB",
+        form: {
+            price: 799,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 48304,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
+        }
+    },
+    {
+        presetId: 19,
+        title: "256GB",
+        form: {
+            price: 899,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 52372,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
+        }
+    },
+    {
+        presetId: 19,
+        title: "512GB",
+        form: {
+            price: 1099,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 60507,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
+        }
+    },
+
+
+    // Apple iPhone 15 Plus
+    {
+        presetId: 20,
+        title: "128GB",
+        form: {
+            price: 899,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 53389,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
+        }
+    },
+    {
+        presetId: 20,
+        title: "256GB",
+        form: {
+            price: 999,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 57457,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
+        }
+    },
+    {
+        presetId: 20,
+        title: "512GB",
+        form: {
+            price: 1199,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 65592,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
+        }
+    },
+
     // Apple iPhone 14 Pro
     {
         presetId: 1,
