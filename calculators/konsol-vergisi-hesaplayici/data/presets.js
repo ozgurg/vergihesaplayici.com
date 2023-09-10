@@ -25,6 +25,7 @@ export default [
         pageTitle: "Sony PlayStation VR2'nin vergisi ne kadar?",
         pageDescription: "Satın aldığınız bir Sony PlayStation VR2'nin yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın."
     },
+
     {
         id: 16,
         brandId: 4,
@@ -49,6 +50,7 @@ export default [
         pageTitle: "Microsoft Xbox Series X'in vergisi ne kadar?",
         pageDescription: "Satın aldığınız bir Microsoft Xbox Series X'in yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın."
     },
+
     {
         id: 18,
         brandId: 5,
@@ -85,6 +87,7 @@ export default [
         pageTitle: "Nintendo Switch OLED'in vergisi ne kadar?",
         pageDescription: "Satın aldığınız bir Nintendo Switch OLED'in yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın."
     },
+
     {
         id: 21,
         brandId: 6,
