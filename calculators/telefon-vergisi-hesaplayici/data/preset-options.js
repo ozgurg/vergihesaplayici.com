@@ -7,107 +7,94 @@ export default [
         presetId: 17,
         title: "128GB",
         form: {
-            price: 1099,
+            price: 999,
             currency: "USD"
-        }
-        /* retailPrice: {
-            value: 62541,
-            lastUpdatedDate: lastUpdatedDateIphone,
+        },
+        retailPrice: {
+            value: 64999,
+            lastUpdatedDate: new Date("Tue Sep 12 2023 21:30:59 GMT+0300 (GMT+03:00)"),
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
-        } */
+        }
     },
     {
         presetId: 17,
         title: "256GB",
         form: {
-            price: 1199,
+            price: 1099,
             currency: "USD"
-        }
-        /* retailPrice: {
-            value: 66609,
-            lastUpdatedDate: lastUpdatedDateIphone,
+        },
+        retailPrice: {
+            value: 68999,
+            lastUpdatedDate: new Date("Tue Sep 12 2023 21:30:59 GMT+0300 (GMT+03:00)"),
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
-        } */
+        }
     },
     {
         presetId: 17,
         title: "512GB",
         form: {
-            price: 1399,
+            price: 1299,
             currency: "USD"
-        }
-        /* retailPrice: {
-            value: 74745,
-            lastUpdatedDate: lastUpdatedDateIphone,
+        },
+        retailPrice: {
+            value: 76999,
+            lastUpdatedDate: new Date("Tue Sep 12 2023 21:30:59 GMT+0300 (GMT+03:00)"),
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
-        } */
+        }
     },
     {
         presetId: 17,
         title: "1TB",
         form: {
-            price: 1699,
+            price: 1499,
             currency: "USD"
-        }
-        /* retailPrice: {
-            value: 82880,
-            lastUpdatedDate: lastUpdatedDateIphone,
+        },
+        retailPrice: {
+            value: 84999,
+            lastUpdatedDate: new Date("Tue Sep 12 2023 21:30:59 GMT+0300 (GMT+03:00)"),
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
-        } */
+        }
     },
 
     // [18] Apple iPhone 15 Pro Max
     {
         presetId: 18,
-        title: "128GB",
-        form: {
-            price: 1299,
-            currency: "USD"
-        }
-        /* retailPrice: {
-            value: 67118,
-            lastUpdatedDate: lastUpdatedDateIphone,
-            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
-        } */
-    },
-    {
-        presetId: 18,
         title: "256GB",
         form: {
-            price: 1399,
+            price: 1199,
             currency: "USD"
-        }
-        /* retailPrice: {
-            value: 71185,
-            lastUpdatedDate: lastUpdatedDateIphone,
+        },
+        retailPrice: {
+            value: 76999,
+            lastUpdatedDate: new Date("Tue Sep 12 2023 21:30:59 GMT+0300 (GMT+03:00)"),
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
-        } */
+        }
     },
     {
         presetId: 18,
         title: "512GB",
         form: {
-            price: 1599,
+            price: 1399,
             currency: "USD"
-        }
-        /* retailPrice: {
-            value: 79321,
-            lastUpdatedDate: lastUpdatedDateIphone,
+        },
+        retailPrice: {
+            value: 84999,
+            lastUpdatedDate: new Date("Tue Sep 12 2023 21:30:59 GMT+0300 (GMT+03:00)"),
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
-        } */
+        }
     },
     {
         presetId: 18,
         title: "1TB",
         form: {
-            price: 1799,
+            price: 1599,
             currency: "USD"
-        }
-        /* retailPrice: {
-            value: 87457,
-            lastUpdatedDate: lastUpdatedDateIphone,
+        },
+        retailPrice: {
+            value: 92999,
+            lastUpdatedDate: new Date("Tue Sep 12 2023 21:30:59 GMT+0300 (GMT+03:00)"),
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
-        } */
+        }
     },
 
     // [19] Apple iPhone 15
@@ -117,12 +104,12 @@ export default [
         form: {
             price: 799,
             currency: "USD"
-        }
-        /* retailPrice: {
-            value: 48304,
-            lastUpdatedDate: lastUpdatedDateIphone,
+        },
+        retailPrice: {
+            value: 49999,
+            lastUpdatedDate: new Date("Tue Sep 12 2023 21:30:59 GMT+0300 (GMT+03:00)"),
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
-        } */
+        }
     },
     {
         presetId: 19,
@@ -130,12 +117,12 @@ export default [
         form: {
             price: 899,
             currency: "USD"
-        }
-        /* retailPrice: {
-            value: 52372,
-            lastUpdatedDate: lastUpdatedDateIphone,
+        },
+        retailPrice: {
+            value: 53999,
+            lastUpdatedDate: new Date("Tue Sep 12 2023 21:30:59 GMT+0300 (GMT+03:00)"),
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
-        } */
+        }
     },
     {
         presetId: 19,
@@ -143,12 +130,12 @@ export default [
         form: {
             price: 1099,
             currency: "USD"
-        }
-        /* retailPrice: {
-            value: 60507,
-            lastUpdatedDate: lastUpdatedDateIphone,
+        },
+        retailPrice: {
+            value: 61999,
+            lastUpdatedDate: new Date("Tue Sep 12 2023 21:30:59 GMT+0300 (GMT+03:00)"),
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
-        } */
+        }
     },
 
     // [20] Apple iPhone 15 Plus
@@ -158,12 +145,12 @@ export default [
         form: {
             price: 899,
             currency: "USD"
-        }
-        /* retailPrice: {
-            value: 53389,
-            lastUpdatedDate: lastUpdatedDateIphone,
+        },
+        retailPrice: {
+            value: 56999,
+            lastUpdatedDate: new Date("Tue Sep 12 2023 21:30:59 GMT+0300 (GMT+03:00)"),
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
-        } */
+        }
     },
     {
         presetId: 20,
@@ -171,12 +158,12 @@ export default [
         form: {
             price: 999,
             currency: "USD"
-        }
-        /* retailPrice: {
-            value: 57457,
-            lastUpdatedDate: lastUpdatedDateIphone,
+        },
+        retailPrice: {
+            value: 60999,
+            lastUpdatedDate: new Date("Tue Sep 12 2023 21:30:59 GMT+0300 (GMT+03:00)"),
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
-        } */
+        }
     },
     {
         presetId: 20,
@@ -184,12 +171,12 @@ export default [
         form: {
             price: 1199,
             currency: "USD"
-        }
-        /* retailPrice: {
-            value: 65592,
-            lastUpdatedDate: lastUpdatedDateIphone,
+        },
+        retailPrice: {
+            value: 68999,
+            lastUpdatedDate: new Date("Tue Sep 12 2023 21:30:59 GMT+0300 (GMT+03:00)"),
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
-        } */
+        }
     },
 
 
