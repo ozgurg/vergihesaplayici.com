@@ -7,6 +7,51 @@ const buildPageMeta = phoneNameWithPossession => ({
 
 export default [
     {
+        id: 17,
+        brandId: 1,
+        title: "iPhone 15 Pro",
+        slug: "iphone-15-pro", // TODO: "apple-" prefix will be added
+        releaseDate: new Date("2023-09-12"),
+        thumbnail: "telefon-vergisi-hesaplayici/img/apple-iphone-15-pro.webp",
+        url: buildUrl("iphone-15-pro"), // TODO: "apple-" prefix will be added
+        ogImageName: "telefon-vergisi-hesaplayici-apple-iphone-15-pro.jpg",
+        ...buildPageMeta("Apple iPhone 15 Pro'nun")
+    },
+    {
+        id: 18,
+        brandId: 1,
+        title: "iPhone 15 Pro Max",
+        slug: "iphone-15-pro-max", // TODO: "apple-" prefix will be added
+        releaseDate: new Date("2023-09-12"),
+        thumbnail: "telefon-vergisi-hesaplayici/img/apple-iphone-15-pro-max.webp",
+        url: buildUrl("iphone-15-pro-max"), // TODO: "apple-" prefix will be added
+        ogImageName: "telefon-vergisi-hesaplayici-apple-iphone-15-pro-max.jpg",
+        ...buildPageMeta("Apple iPhone 15 Pro Max'in")
+    },
+    {
+        id: 19,
+        brandId: 1,
+        title: "iPhone 15",
+        slug: "iphone-15", // TODO: "apple-" prefix will be added
+        releaseDate: new Date("2023-09-12"),
+        thumbnail: "telefon-vergisi-hesaplayici/img/apple-iphone-15.webp",
+        url: buildUrl("iphone-15"), // TODO: "apple-" prefix will be added
+        ogImageName: "telefon-vergisi-hesaplayici-apple-iphone-15.jpg",
+        ...buildPageMeta("Apple iPhone 15'ün")
+    },
+    {
+        id: 20,
+        brandId: 1,
+        title: "iPhone 15 Plus",
+        slug: "iphone-15-plus", // TODO: "apple-" prefix will be added
+        releaseDate: new Date("2023-09-12"),
+        thumbnail: "telefon-vergisi-hesaplayici/img/apple-iphone-15-plus.webp",
+        url: buildUrl("iphone-15-plus"), // TODO: "apple-" prefix will be added
+        ogImageName: "telefon-vergisi-hesaplayici-apple-iphone-15-plus.jpg",
+        ...buildPageMeta("Apple iPhone 15 Plus'ın")
+    },
+
+    {
         id: 1,
         brandId: 1,
         title: "iPhone 14 Pro",
@@ -50,6 +95,7 @@ export default [
         ogImageName: "telefon-vergisi-hesaplayici-apple-iphone-14-plus.jpg",
         ...buildPageMeta("Apple iPhone 14 Plus'ın")
     },
+
     {
         id: 5,
         brandId: 1,
@@ -72,6 +118,7 @@ export default [
         ogImageName: "telefon-vergisi-hesaplayici-apple-iphone-13.jpg",
         ...buildPageMeta("Apple iPhone 13'ün")
     },
+
     {
         id: 7,
         brandId: 1,
@@ -83,6 +130,7 @@ export default [
         ogImageName: "telefon-vergisi-hesaplayici-apple-iphone-se-2022.jpg",
         ...buildPageMeta("Apple iPhone SE 3'ün (2022)")
     },
+
     {
         id: 8,
         brandId: 1,
@@ -94,6 +142,7 @@ export default [
         ogImageName: "telefon-vergisi-hesaplayici-apple-iphone-12.jpg",
         ...buildPageMeta("Apple iPhone 12'nin")
     },
+
     {
         id: 9,
         brandId: 1,
@@ -105,6 +154,7 @@ export default [
         ogImageName: "telefon-vergisi-hesaplayici-apple-vision-pro.jpg",
         ...buildPageMeta("Apple Vision Pro'nun")
     },
+
     {
         id: 10,
         brandId: 2,
@@ -138,6 +188,7 @@ export default [
         ogImageName: "telefon-vergisi-hesaplayici-samsung-galaxy-s23-ultra.jpg",
         ...buildPageMeta("Samsung Galaxy S23 Ultra'nın")
     },
+
     {
         id: 15,
         brandId: 2,
@@ -150,17 +201,6 @@ export default [
         ...buildPageMeta("Samsung Galaxy Z Fold5'in")
     },
     {
-        id: 16,
-        brandId: 2,
-        title: "Galaxy Z Flip5",
-        slug: "samsung-galaxy-z-flip5",
-        releaseDate: new Date("2023-07-26"),
-        thumbnail: "telefon-vergisi-hesaplayici/img/samsung-galaxy-z-flip5.webp",
-        url: buildUrl("samsung-galaxy-z-flip5"),
-        ogImageName: "telefon-vergisi-hesaplayici-samsung-galaxy-z-flip5.jpg",
-        ...buildPageMeta("Samsung Galaxy Z Flip5'in")
-    },
-    {
         id: 13,
         brandId: 2,
         title: "Galaxy Z Fold4",
@@ -170,6 +210,18 @@ export default [
         url: buildUrl("samsung-galaxy-z-fold4"),
         ogImageName: "telefon-vergisi-hesaplayici-samsung-galaxy-z-fold4.jpg",
         ...buildPageMeta("Samsung Galaxy Z Fold4'ün")
+    },
+
+    {
+        id: 16,
+        brandId: 2,
+        title: "Galaxy Z Flip5",
+        slug: "samsung-galaxy-z-flip5",
+        releaseDate: new Date("2023-07-26"),
+        thumbnail: "telefon-vergisi-hesaplayici/img/samsung-galaxy-z-flip5.webp",
+        url: buildUrl("samsung-galaxy-z-flip5"),
+        ogImageName: "telefon-vergisi-hesaplayici-samsung-galaxy-z-flip5.jpg",
+        ...buildPageMeta("Samsung Galaxy Z Flip5'in")
     },
     {
         id: 14,

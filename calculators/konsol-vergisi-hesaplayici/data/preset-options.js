@@ -1,5 +1,5 @@
 export default [
-    // Sony PlayStation 5
+    // [14] Sony PlayStation 5
     {
         // FIXME: Need official price
         // https://blog.playstation.com/2022/08/25/ps5-price-to-increase-in-select-markets-due-to-global-economic-environment-including-high-inflation-rates/
@@ -32,8 +32,7 @@ export default [
         }
     },
 
-
-    // Sony PlayStation VR2
+    // [15] Sony PlayStation VR2
     {
         // FIXME: Need official price
         // https://blog.playstation.com/2022/11/02/playstation-vr2-launches-in-february-at-549-99/
@@ -51,7 +50,7 @@ export default [
     },
 
 
-    // Microsoft Xbox Series S
+    // [16] Microsoft Xbox Series S
     {
         // FIXME: Need official price
         presetId: 16,
@@ -75,8 +74,7 @@ export default [
         }
     },
 
-
-    // Microsoft Xbox Series X
+    // [17] Microsoft Xbox Series X
     {
         // FIXME: Need official price
         presetId: 17,
@@ -93,7 +91,7 @@ export default [
     },
 
 
-    // Nintendo Switch (https://www.nintendo.com/store/hardware/systems/)
+    // [18] Nintendo Switch (https://www.nintendo.com/store/hardware/systems/)
     {
         // FIXME: Need official price
         presetId: 18,
@@ -109,8 +107,7 @@ export default [
         }
     },
 
-
-    // Nintendo Switch Lite (https://www.nintendo.com/store/hardware/systems/)
+    // [19] Nintendo Switch Lite (https://www.nintendo.com/store/hardware/systems/)
     {
         // FIXME: Need official price
         presetId: 19,
@@ -126,8 +123,7 @@ export default [
         }
     },
 
-
-    // Nintendo Switch OLED (https://www.nintendo.com/store/hardware/systems/)
+    // [20] Nintendo Switch OLED (https://www.nintendo.com/store/hardware/systems/)
     {
         // FIXME: Need official price
         presetId: 20,
@@ -144,7 +140,7 @@ export default [
     },
 
 
-    // Valve Steam Deck (https://store.steampowered.com/steamdeck)
+    // [21] Valve Steam Deck (https://store.steampowered.com/steamdeck)
     {
         presetId: 21,
         title: "64GBB",

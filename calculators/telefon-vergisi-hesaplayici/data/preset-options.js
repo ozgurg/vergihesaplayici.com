@@ -2,7 +2,198 @@ const lastUpdatedDateIphone = new Date("Mon Jul 10 2023 04:22:25 GMT+0300 (GMT+0
 const lastUpdatedDateSamsung = new Date("Wed Jul 26 2023 19:22:27 GMT+0300 (GMT+03:00)");
 
 export default [
-    // Apple iPhone 14 Pro
+    // [17] Apple iPhone 15 Pro
+    {
+        presetId: 17,
+        title: "128GB",
+        form: {
+            price: 1099,
+            currency: "USD"
+        }
+        /* retailPrice: {
+            value: 62541,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
+        } */
+    },
+    {
+        presetId: 17,
+        title: "256GB",
+        form: {
+            price: 1199,
+            currency: "USD"
+        }
+        /* retailPrice: {
+            value: 66609,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
+        } */
+    },
+    {
+        presetId: 17,
+        title: "512GB",
+        form: {
+            price: 1399,
+            currency: "USD"
+        }
+        /* retailPrice: {
+            value: 74745,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
+        } */
+    },
+    {
+        presetId: 17,
+        title: "1TB",
+        form: {
+            price: 1699,
+            currency: "USD"
+        }
+        /* retailPrice: {
+            value: 82880,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
+        } */
+    },
+
+    // [18] Apple iPhone 15 Pro Max
+    {
+        presetId: 18,
+        title: "128GB",
+        form: {
+            price: 1299,
+            currency: "USD"
+        }
+        /* retailPrice: {
+            value: 67118,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
+        } */
+    },
+    {
+        presetId: 18,
+        title: "256GB",
+        form: {
+            price: 1399,
+            currency: "USD"
+        }
+        /* retailPrice: {
+            value: 71185,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
+        } */
+    },
+    {
+        presetId: 18,
+        title: "512GB",
+        form: {
+            price: 1599,
+            currency: "USD"
+        }
+        /* retailPrice: {
+            value: 79321,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
+        } */
+    },
+    {
+        presetId: 18,
+        title: "1TB",
+        form: {
+            price: 1799,
+            currency: "USD"
+        }
+        /* retailPrice: {
+            value: 87457,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
+        } */
+    },
+
+    // [19] Apple iPhone 15
+    {
+        presetId: 19,
+        title: "128GB",
+        form: {
+            price: 799,
+            currency: "USD"
+        }
+        /* retailPrice: {
+            value: 48304,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
+        } */
+    },
+    {
+        presetId: 19,
+        title: "256GB",
+        form: {
+            price: 899,
+            currency: "USD"
+        }
+        /* retailPrice: {
+            value: 52372,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
+        } */
+    },
+    {
+        presetId: 19,
+        title: "512GB",
+        form: {
+            price: 1099,
+            currency: "USD"
+        }
+        /* retailPrice: {
+            value: 60507,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
+        } */
+    },
+
+    // [20] Apple iPhone 15 Plus
+    {
+        presetId: 20,
+        title: "128GB",
+        form: {
+            price: 899,
+            currency: "USD"
+        }
+        /* retailPrice: {
+            value: 53389,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
+        } */
+    },
+    {
+        presetId: 20,
+        title: "256GB",
+        form: {
+            price: 999,
+            currency: "USD"
+        }
+        /* retailPrice: {
+            value: 57457,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
+        } */
+    },
+    {
+        presetId: 20,
+        title: "512GB",
+        form: {
+            price: 1199,
+            currency: "USD"
+        }
+        /* retailPrice: {
+            value: 65592,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
+        } */
+    },
+
+
+    // [1] Apple iPhone 14 Pro
     {
         presetId: 1,
         title: "128GB",
@@ -56,8 +247,7 @@ export default [
         }
     },
 
-
-    // Apple iPhone 14 Pro Max
+    // [2] Apple iPhone 14 Pro Max
     {
         presetId: 2,
         title: "128GB",
@@ -111,8 +301,7 @@ export default [
         }
     },
 
-
-    // Apple iPhone 14
+    // [3] Apple iPhone 14
     {
         presetId: 3,
         title: "128GB",
@@ -153,8 +342,7 @@ export default [
         }
     },
 
-
-    // Apple iPhone 14 Plus
+    // [4] Apple iPhone 14 Plus
     {
         presetId: 4,
         title: "128GB",
@@ -196,7 +384,7 @@ export default [
     },
 
 
-    // Apple iPhone 13 mini
+    // [5] Apple iPhone 13 mini
     {
         presetId: 5,
         title: "128GB",
@@ -237,8 +425,7 @@ export default [
         }
     },
 
-
-    // Apple iPhone 13
+    // [6] Apple iPhone 13
     {
         presetId: 6,
         title: "128GB",
@@ -280,7 +467,7 @@ export default [
     },
 
 
-    // Apple iPhone SE 3 (2022)
+    // [7] Apple iPhone SE 3 (2022)
     {
         presetId: 7,
         title: "64GB",
@@ -322,7 +509,7 @@ export default [
     },
 
 
-    // Apple iPhone 12
+    // [8] Apple iPhone 12
     {
         presetId: 8,
         title: "64GB",
@@ -364,7 +551,7 @@ export default [
     },
 
 
-    // Apple Vision Pro
+    // [9] Apple Vision Pro
     {
         presetId: 9,
         title: "Standart",
@@ -375,7 +562,7 @@ export default [
     },
 
 
-    // Samsung Galaxy S23
+    // [10] Samsung Galaxy S23
     {
         presetId: 10,
         title: "128GB",
@@ -403,8 +590,7 @@ export default [
         }
     },
 
-
-    // Samsung Galaxy S23+
+    // [11] Samsung Galaxy S23+
     {
         presetId: 11,
         title: "256GB",
@@ -427,8 +613,7 @@ export default [
         }
     },
 
-
-    // Samsung Galaxy S23 Ultra
+    // [12] Samsung Galaxy S23 Ultra
     {
         presetId: 12,
         title: "256GB (8GB)",
@@ -470,7 +655,7 @@ export default [
     },
 
 
-    // Samsung Galaxy Z Fold5
+    // [15] Samsung Galaxy Z Fold5
     {
         presetId: 15,
         title: "256GB",
@@ -511,37 +696,7 @@ export default [
         }
     },
 
-
-    // Samsung Galaxy Z Flip5
-    {
-        presetId: 16,
-        title: "256GB",
-        form: {
-            price: 999.99,
-            currency: "USD"
-        },
-        retailPrice: {
-            value: 44999,
-            lastUpdatedDate: lastUpdatedDateSamsung,
-            sourceUrl: "https://shop.samsung.com/tr/galaxy-z-flip5/"
-        }
-    },
-    {
-        presetId: 16,
-        title: "512GB",
-        form: {
-            price: 1199.99,
-            currency: "USD"
-        },
-        retailPrice: {
-            value: 47999,
-            lastUpdatedDate: lastUpdatedDateSamsung,
-            sourceUrl: "https://shop.samsung.com/tr/galaxy-z-flip5/"
-        }
-    },
-
-
-    // Samsung Galaxy Z Fold4
+    // [13] Samsung Galaxy Z Fold4
     {
         presetId: 13,
         title: "256GB",
@@ -573,7 +728,35 @@ export default [
     },
 
 
-    // Samsung Galaxy Z Flip4
+    // [16] Samsung Galaxy Z Flip5
+    {
+        presetId: 16,
+        title: "256GB",
+        form: {
+            price: 999.99,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 44999,
+            lastUpdatedDate: lastUpdatedDateSamsung,
+            sourceUrl: "https://shop.samsung.com/tr/galaxy-z-flip5/"
+        }
+    },
+    {
+        presetId: 16,
+        title: "512GB",
+        form: {
+            price: 1199.99,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 47999,
+            lastUpdatedDate: lastUpdatedDateSamsung,
+            sourceUrl: "https://shop.samsung.com/tr/galaxy-z-flip5/"
+        }
+    },
+
+    // [14] Samsung Galaxy Z Flip4
     {
         presetId: 14,
         title: "128GB",
