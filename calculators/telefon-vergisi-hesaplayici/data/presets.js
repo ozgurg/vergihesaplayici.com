@@ -37,7 +37,7 @@ export default [
         thumbnail: "telefon-vergisi-hesaplayici/img/apple-iphone-15.webp",
         url: buildUrl("iphone-15"), // TODO: "apple-" prefix will be added
         ogImageName: "telefon-vergisi-hesaplayici-apple-iphone-15.jpg",
-        ...buildPageMeta("Apple iPhone 15'ün")
+        ...buildPageMeta("Apple iPhone 15'in")
     },
     {
         id: 20,
