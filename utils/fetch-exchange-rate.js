@@ -4,7 +4,7 @@
  * @returns {Promise<number>}
  */
 const fetchExchangeRate = async (from, to) => {
-    const apiUrl = `https://api.exchangerate.host/latest?base=${from}&symbols=${to}`;
+    const apiUrl = `https://open.er-api.com/v6/latest/${from}`;
     return await fetch(apiUrl)
         .then(response => response.json())
         .then(response => response.rates[to]);
