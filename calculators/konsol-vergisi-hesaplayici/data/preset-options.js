@@ -3,7 +3,7 @@ export default [
     {
         // https://blog.playstation.com/2022/08/25/ps5-price-to-increase-in-select-markets-due-to-global-economic-environment-including-high-inflation-rates/
         presetId: 14,
-        title: "Disksiz (Fat)",
+        title: "Disksiz (Fat/Slim)",
         form: {
             price: 449.99,
             currency: "EUR"
@@ -17,7 +17,7 @@ export default [
     {
         // https://blog.playstation.com/2022/08/25/ps5-price-to-increase-in-select-markets-due-to-global-economic-environment-including-high-inflation-rates/
         presetId: 14,
-        title: "Diskli (Fat)",
+        title: "Diskli (Fat/Slim)",
         form: {
             price: 549.99,
             currency: "EUR"
