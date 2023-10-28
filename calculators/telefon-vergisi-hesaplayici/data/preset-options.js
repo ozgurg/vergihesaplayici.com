@@ -530,6 +530,34 @@ export default [
         }
     },
 
+    // [21] Samsung Galaxy S23 FE
+    {
+        presetId: 21,
+        title: "128GB",
+        form: {
+            price: 629.99,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 23999,
+            lastUpdatedDate: lastUpdatedDateSamsung,
+            sourceUrl: "https://shop.samsung.com/tr/galaxy-s23-fe/"
+        }
+    },
+    {
+        presetId: 21,
+        title: "256GB",
+        form: {
+            price: 689.99,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 25999,
+            lastUpdatedDate: lastUpdatedDateSamsung,
+            sourceUrl: "https://shop.samsung.com/tr/galaxy-s23-fe/"
+        }
+    },
+
     // [12] Samsung Galaxy S23 Ultra
     {
         presetId: 12,
