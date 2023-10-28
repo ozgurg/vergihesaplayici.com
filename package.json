@@ -1,6 +1,6 @@
 {
     "name": "vergihesaplayici.com",
-    "version": "6.66.0",
+    "version": "6.67.0",
     "description": "vergihesaplayici.com, vergi hesaplar.",
     "license": "MIT",
     "homepage": "https://vergihesaplayici.com/",
@@ -36,7 +36,7 @@
         "tax-calculator"
     ],
     "dependencies": {
-        "firebase": "10.3.1",
+        "firebase": "10.5.0",
         "js-file-downloader": "1.1.25",
         "nuxt": "2.17.1",
         "vue": "2.7.14",
@@ -56,17 +56,17 @@
         "@nuxtjs/pwa": "3.3.5",
         "@nuxtjs/sitemap": "2.4.0",
         "@nuxtjs/style-resources": "1.2.1",
-        "@nuxtjs/svg": "0.4.0",
+        "@nuxtjs/svg": "0.4.1",
         "@nuxtjs/vuetify": "1.12.3",
         "cheerio": "1.0.0-rc.12",
-        "eslint": "8.48.0",
+        "eslint": "8.52.0",
         "eslint-config-google": "0.14.0",
-        "eslint-plugin-jsdoc": "46.5.1",
+        "eslint-plugin-jsdoc": "46.8.2",
         "eslint-plugin-nuxt": "4.0.0",
         "eslint-plugin-vue": "9.17.0",
         "husky": "8.0.3",
-        "jest": "29.6.4",
-        "lint-staged": "14.0.1",
+        "jest": "29.7.0",
+        "lint-staged": "15.0.2",
         "nuxt-content-git": "3.0.32"
     },
     "overrides": {

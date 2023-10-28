@@ -1,5 +1,5 @@
-const lastUpdatedDateIphone = new Date("Tue Sep 12 2023 22:05:06 GMT+0300 (GMT+03:00)");
-const lastUpdatedDateSamsung = new Date("Tue Sep 12 2023 22:05:06 GMT+0300 (GMT+03:00)");
+const lastUpdatedDateIphone = new Date("Mon Oct 23 2023 05:56:33 GMT+0300 (GMT+03:00)");
+const lastUpdatedDateSamsung = new Date("Mon Oct 23 2023 05:56:33 GMT+0300 (GMT+03:00)");
 
 export default [
     // [17] Apple iPhone 15 Pro
@@ -488,7 +488,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 31189,
+            value: 32819,
             lastUpdatedDate: lastUpdatedDateSamsung,
             sourceUrl: "https://shop.samsung.com/tr/galaxy-s23/"
         }
@@ -501,7 +501,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 33389,
+            value: 35899,
             lastUpdatedDate: lastUpdatedDateSamsung,
             sourceUrl: "https://shop.samsung.com/tr/galaxy-s23/"
         }
@@ -530,6 +530,34 @@ export default [
         }
     },
 
+    // [21] Samsung Galaxy S23 FE
+    {
+        presetId: 21,
+        title: "128GB",
+        form: {
+            price: 629.99,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 23999,
+            lastUpdatedDate: lastUpdatedDateSamsung,
+            sourceUrl: "https://shop.samsung.com/tr/galaxy-s23-fe/"
+        }
+    },
+    {
+        presetId: 21,
+        title: "256GB",
+        form: {
+            price: 689.99,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 25999,
+            lastUpdatedDate: lastUpdatedDateSamsung,
+            sourceUrl: "https://shop.samsung.com/tr/galaxy-s23-fe/"
+        }
+    },
+
     // [12] Samsung Galaxy S23 Ultra
     {
         presetId: 12,
@@ -539,7 +567,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 55019,
+            value: 57999,
             lastUpdatedDate: lastUpdatedDateSamsung,
             sourceUrl: "https://shop.samsung.com/tr/galaxy-s23-ultra/"
         }
@@ -552,7 +580,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 55329,
+            value: 60999,
             lastUpdatedDate: lastUpdatedDateSamsung,
             sourceUrl: "https://shop.samsung.com/tr/galaxy-s23-ultra/"
         }
@@ -649,7 +677,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 44999,
+            value: 43079,
             lastUpdatedDate: lastUpdatedDateSamsung,
             sourceUrl: "https://shop.samsung.com/tr/galaxy-z-flip5/"
         }
@@ -662,7 +690,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 47999,
+            value: 45129,
             lastUpdatedDate: lastUpdatedDateSamsung,
             sourceUrl: "https://shop.samsung.com/tr/galaxy-z-flip5/"
         }
@@ -675,11 +703,6 @@ export default [
         form: {
             price: 899.99,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 35999,
-            lastUpdatedDate: lastUpdatedDateSamsung,
-            sourceUrl: "https://shop.samsung.com/tr/galaxy-z-flip4/"
         }
     },
     {

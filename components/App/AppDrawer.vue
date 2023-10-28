@@ -21,7 +21,23 @@
             <v-list
                 class="mb-auto"
                 subheader="">
-                <v-subheader>Döviz kurları</v-subheader>
+                <v-subheader class="d-flex flex-row justify-space-between">
+                    <span>Döviz kurları</span>
+                    <v-btn
+                        href="https://www.exchangerate-api.com"
+                        target="_blank"
+                        plain=""
+                        small=""
+                        rel="nofollow noopener noreferrer"
+                        class="mx-n2">
+                        Exchange Rate API
+                        <v-icon
+                            size="12"
+                            right="">
+                            {{ icons.mdiOpenInNew }}
+                        </v-icon>
+                    </v-btn>
+                </v-subheader>
                 <v-list-item>
                     <ExchangeRateGrid />
                 </v-list-item>
@@ -39,7 +55,14 @@
 </template>
 
 <script>
+import { mdiOpenInNew } from "@mdi/js";
+
 export default {
+    data: () => ({
+        icons: {
+            mdiOpenInNew
+        }
+    }),
     computed: {
         isDrawerOpen: {
             get() {

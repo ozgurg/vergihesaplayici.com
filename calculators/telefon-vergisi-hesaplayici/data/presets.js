@@ -178,6 +178,17 @@ export default [
         ...buildPageMeta("Samsung Galaxy S23+'ın")
     },
     {
+        id: 21,
+        brandId: 2,
+        title: "Galaxy S23 FE",
+        slug: "samsung-galaxy-s23-fe",
+        releaseDate: new Date("2023-10-26"),
+        thumbnail: "telefon-vergisi-hesaplayici/img/samsung-galaxy-s23-fe.webp",
+        url: buildUrl("samsung-galaxy-s23-fe"),
+        ogImageName: "telefon-vergisi-hesaplayici-samsung-galaxy-s23-fe.jpg",
+        ...buildPageMeta("Samsung Galaxy S23 FE'nin")
+    },
+    {
         id: 12,
         brandId: 2,
         title: "Galaxy S23 Ultra",
