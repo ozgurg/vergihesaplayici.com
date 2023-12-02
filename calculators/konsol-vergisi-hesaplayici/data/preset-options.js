@@ -7,11 +7,6 @@ export default [
         form: {
             price: 449.99,
             currency: "EUR"
-        },
-        retailPrice: { // FIXME: Need official retail price
-            value: 24999,
-            lastUpdatedDate: new Date("Mon Oct 23 2023 05:56:33 GMT+0300 (GMT+03:00)"),
-            sourceUrl: "https://www.vatanbilgisayar.com/sony-playstation-5-digital-surum-oyun-konsolu.html"
         }
     },
     {
@@ -21,11 +16,6 @@ export default [
         form: {
             price: 549.99,
             currency: "EUR"
-        },
-        retailPrice: { // FIXME: Need official retail price
-            value: 254999,
-            lastUpdatedDate: new Date("Mon Oct 23 2023 05:56:33 GMT+0300 (GMT+03:00)"),
-            sourceUrl: "https://www.vatanbilgisayar.com/sony-playstation-5-oyun-konsolu.html"
         }
     },
 
@@ -51,7 +41,7 @@ export default [
         },
         retailPrice: { // FIXME: Need official retail price
             value: 14999,
-            lastUpdatedDate: new Date("Mon Oct 23 2023 05:56:33 GMT+0300 (GMT+03:00)"),
+            lastUpdatedDate: new Date("Sat Dec 02 2023 11:57:51 GMT+0300 (GMT+03:00"),
             sourceUrl: "https://www.overgameweb.com/xbox-series-s-512gb-konsol"
         }
     },
@@ -74,7 +64,7 @@ export default [
         },
         retailPrice: {
             value: 29999,
-            lastUpdatedDate: new Date("Mon Oct 23 2023 05:56:33 GMT+0300 (GMT+03:00)"),
+            lastUpdatedDate: new Date("Sat Dec 02 2023 11:57:51 GMT+0300 (GMT+03:00"),
             sourceUrl: "https://www.vatanbilgisayar.com/microsoft-xbox-series-x-oyun-konsolu.html"
         }
     },
