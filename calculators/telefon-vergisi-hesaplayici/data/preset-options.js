@@ -1,5 +1,5 @@
-const lastUpdatedDateIphone = new Date("Mon Oct 23 2023 05:56:33 GMT+0300 (GMT+03:00)");
-const lastUpdatedDateSamsung = new Date("Mon Oct 23 2023 05:56:33 GMT+0300 (GMT+03:00)");
+const lastUpdatedDateIphone = new Date("Sat Dec 02 2023 11:57:51 GMT+0300 (GMT+03:00)");
+const lastUpdatedDateSamsung = new Date("Sat Dec 02 2023 11:57:51 GMT+0300 (GMT+03:00)");
 
 export default [
     // [17] Apple iPhone 15 Pro
@@ -11,7 +11,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 64999,
+            value: 69999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
         }
@@ -24,7 +24,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 68999,
+            value: 74499,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
         }
@@ -37,7 +37,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 76999,
+            value: 82999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
         }
@@ -50,7 +50,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 84999,
+            value: 91499,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
         }
@@ -65,7 +65,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 76999,
+            value: 82999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
         }
@@ -78,7 +78,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 84999,
+            value: 91499,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
         }
@@ -91,7 +91,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 92999,
+            value: 99999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
         }
@@ -106,7 +106,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 49999,
+            value: 53999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
         }
@@ -119,7 +119,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 53999,
+            value: 58499,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
         }
@@ -132,7 +132,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 61999,
+            value: 66999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
         }
@@ -147,7 +147,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 56999,
+            value: 61999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
         }
@@ -160,7 +160,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 60999,
+            value: 66499,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
         }
@@ -173,7 +173,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 68999,
+            value: 74999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
         }
@@ -257,7 +257,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 43999,
+            value: 47499,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
         }
@@ -270,7 +270,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 47999,
+            value: 51999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
         }
@@ -283,7 +283,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 55999,
+            value: 60499,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
         }
@@ -298,7 +298,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 49999,
+            value: 53999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
         }
@@ -311,7 +311,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 53999,
+            value: 58499,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
         }
@@ -324,7 +324,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 61999,
+            value: 66999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
         }
@@ -366,7 +366,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 36999,
+            value: 39999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-13"
         }
@@ -379,7 +379,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 40999,
+            value: 44499,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-13"
         }
@@ -392,7 +392,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 48999,
+            value: 52999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-13"
         }
@@ -408,7 +408,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 24999,
+            value: 26999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-se"
         }
@@ -421,7 +421,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 26999,
+            value: 28999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-se"
         }
@@ -434,7 +434,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 30999,
+            value: 33499,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-se"
         }
@@ -488,7 +488,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 32819,
+            value: 34999,
             lastUpdatedDate: lastUpdatedDateSamsung,
             sourceUrl: "https://shop.samsung.com/tr/galaxy-s23/"
         }
@@ -501,7 +501,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 35899,
+            value: 36999,
             lastUpdatedDate: lastUpdatedDateSamsung,
             sourceUrl: "https://shop.samsung.com/tr/galaxy-s23/"
         }
@@ -677,7 +677,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 43079,
+            value: 44999,
             lastUpdatedDate: lastUpdatedDateSamsung,
             sourceUrl: "https://shop.samsung.com/tr/galaxy-z-flip5/"
         }
@@ -690,7 +690,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 45129,
+            value: 47999,
             lastUpdatedDate: lastUpdatedDateSamsung,
             sourceUrl: "https://shop.samsung.com/tr/galaxy-z-flip5/"
         }
