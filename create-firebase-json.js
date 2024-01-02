@@ -65,11 +65,11 @@ const firebaseJson = {
                                 "data:",
                                 "www.googletagmanager.com"
                             ],
-                            "style-src": [
+                            /* "style-src": [
                                 "'self'",
                                 `'nonce-${cspNonce}'`,
                                 "fonts.googleapis.com"
-                            ],
+                            ], */
                             "font-src": [
                                 "fonts.gstatic.com"
                             ]
@@ -188,7 +188,7 @@ const firebaseJson = {
     },
     emulators: {
         hosting: {
-            port: 8080
+            port: 8090
         },
         ui: {
             enabled: true

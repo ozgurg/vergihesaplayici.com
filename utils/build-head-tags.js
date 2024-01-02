@@ -58,7 +58,7 @@ const buildHeadTags = ({
                 content: "TR"
             },
 
-            // Twitter
+            // X
             {
                 name: "twitter:card",
                 content: "summary_large_image"

@@ -44,7 +44,7 @@
                     <v-icon left="">
                         {{ icons.mdiCellphoneScreenshot }}
                     </v-icon>
-                    <span>Ekran görüntüsü</span>
+                    <span>Ekran Görüntüsü</span>
                 </v-tab>
             </v-tabs>
         </div>

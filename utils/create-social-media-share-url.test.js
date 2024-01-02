@@ -2,7 +2,7 @@ import {
     createFacebookShareUrl,
     createRedditShareUrl,
     createTelegramShareUrl,
-    createTwitterShareUrl,
+    createXShareUrl,
     createWhatsAppShareUrl
 } from "@/utils/create-social-media-share-url.js";
 
@@ -17,10 +17,10 @@ describe("utils/create-social-media-share-url", () => {
         });
     });
 
-    describe("createTwitterShareUrl", () => {
-        it("should return a valid Twitter share URL", () => {
-            const result = createTwitterShareUrl(url, title);
-            expect(result).toBe(`https://twitter.com/intent/tweet?url=${url}&text=${title}`);
+    describe("createXShareUrl", () => {
+        it("should return a valid X share URL", () => {
+            const result = createXShareUrl(url, title);
+            expect(result).toBe(`https://x.com/intent/tweet?url=${url}&text=${title}`);
         });
     });
 

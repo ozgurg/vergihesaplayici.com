@@ -23,22 +23,72 @@
 }
 
 
-// Override Vuetify properties to prevent layout shifting caused by its JavaScript behavior.
+// We override Vuetify properties to prevent layout shifting caused by its JavaScript behavior.
 // Unfortunately we have to use "!important".
 // Be sure to test thoroughly before making changes.
+
 .v-navigation-drawer {
-    display: none !important;
+    background: $vh-color-app-drawer !important;
     width: $vh-app-drawer-width !important;
+    @media #{map-get($display-breakpoints, "sm-and-down")} {
+        z-index: $vh-app-drawer-zindex !important;
+        transform: translateX(-100%) !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        & + .v-overlay {
+            z-index: $vh-app-drawer-overlay-zindex !important;
+            pointer-events: none !important;
+            opacity: 0 !important;
+            visibility: hidden !important
+        }
+        html.#{$vh-app-drawer-opened-state-class-name} & {
+            transform: translateX(0) !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            & + .v-overlay {
+                pointer-events: all !important;
+                opacity: 1 !important;
+                visibility: visible !important
+            }
+        }
+        @at-root html.#{$vh-app-drawer-opened-state-class-name} {
+            position: fixed;
+            &, body {
+                width: 100%;
+                height: 100%;
+                inset: 0;
+                overflow: hidden
+            }
+            body {
+                position: absolute
+            }
+        }
+    }
     @media #{map-get($display-breakpoints, "md-and-up")} {
         display: flex !important;
         visibility: visible !important;
         transition: none !important;
-        transform: none !important
-    }
-    &--open {
-        @media #{map-get($display-breakpoints, "sm-and-down")} {
-            display: flex !important
+        transform: none !important;
+        & + .v-overlay {
+            display: none !important
         }
+    }
+}
+
+.v-app-bar {
+    background: transparentize($vh-color-app-bar, .18) !important;
+    backdrop-filter: blur(1rem);
+    box-shadow: none !important;
+    height: $vh-app-bar-height !important;
+    border-block-end: 1px solid rgba(#fff, .12) !important;
+    @media #{map-get($display-breakpoints, "md-and-up")} {
+        display: none !important
+    }
+    .v-toolbar__content {
+        height: 100% !important
+    }
+    .vh-app-logo {
+        margin-inline-start: -48px
     }
 }
 
@@ -50,12 +100,6 @@
     }
 }
 
-.v-app-bar {
-    height: $vh-app-bar-height !important;
-    @media #{map-get($display-breakpoints, "md-and-up")} {
-        display: none !important
-    }
-    .v-toolbar__content {
-        height: 100% !important
-    }
+.v-tab {
+    text-transform: unset
 }
