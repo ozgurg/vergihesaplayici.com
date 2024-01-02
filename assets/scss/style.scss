@@ -10,7 +10,7 @@ html {
     scroll-behavior: unset;
     &,
     body {
-        background: #121212
+        background: $vh-color-body
     }
     body {
         user-select: none;

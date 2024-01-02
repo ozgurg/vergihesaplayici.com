@@ -1,7 +1,6 @@
 <template>
     <v-navigation-drawer
         v-model="isDrawerOpen"
-        color="#121212"
         app=""
         overlay-color="#000"
         overlay-opacity=".75"
