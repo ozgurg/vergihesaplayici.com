@@ -44,7 +44,8 @@
 }
 
 .v-app-bar {
-    background: $vh-color-app-bar !important;
+    background: transparentize($vh-color-app-bar, .18) !important;
+    backdrop-filter: blur(1rem);
     box-shadow: none !important;
     height: $vh-app-bar-height !important;
     border-block-end: 1px solid rgba(#fff, .12) !important;
