@@ -6,3 +6,9 @@
         </v-container>
     </v-main>
 </template>
+
+<style lang="scss" scoped="">
+.v-main {
+    transition: none
+}
+</style>
