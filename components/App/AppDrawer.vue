@@ -1,13 +1,11 @@
 <template>
     <v-navigation-drawer
         v-model="isDrawerOpen"
-        :permanent="$vuetify.breakpoint.mdAndUp"
         color="#121212"
         app=""
         overlay-color="#000"
         overlay-opacity=".75"
-        touchless=""
-        width="265">
+        touchless="">
         <template #prepend>
             <div class="px-4 py-4">
                 <AppLogo class="py-4" />
@@ -44,10 +42,8 @@
             </v-list>
         </div>
 
-        <template
-            v-if="$vuetify.breakpoint.mdAndUp"
-            #append>
-            <div class="pa-4">
+        <template #append>
+            <div class="d-none d-md-block pa-4">
                 <AppFooter />
             </div>
         </template>

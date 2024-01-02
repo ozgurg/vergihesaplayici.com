@@ -1,5 +1,5 @@
-const lastUpdatedDateIphone = new Date("Sat Dec 02 2023 11:57:51 GMT+0300 (GMT+03:00)");
-const lastUpdatedDateSamsung = new Date("Sat Dec 02 2023 11:57:51 GMT+0300 (GMT+03:00)");
+const lastUpdatedDateIphone = new Date("Tue Jan 02 2024 21:29:27 GMT+0300 (GMT+03:00)");
+const lastUpdatedDateSamsung = new Date("Tue Jan 02 2024 21:29:27 GMT+0300 (GMT+03:00)");
 
 export default [
     // [17] Apple iPhone 15 Pro
@@ -488,7 +488,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 34999,
+            value: 37999,
             lastUpdatedDate: lastUpdatedDateSamsung,
             sourceUrl: "https://shop.samsung.com/tr/galaxy-s23/"
         }
@@ -501,7 +501,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 36999,
+            value: 39999,
             lastUpdatedDate: lastUpdatedDateSamsung,
             sourceUrl: "https://shop.samsung.com/tr/galaxy-s23/"
         }
@@ -516,7 +516,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 44999,
+            value: 48499,
             lastUpdatedDate: lastUpdatedDateSamsung,
             sourceUrl: "https://shop.samsung.com/tr/galaxy-s23-plus/"
         }
@@ -539,7 +539,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 23999,
+            value: 24999,
             lastUpdatedDate: lastUpdatedDateSamsung,
             sourceUrl: "https://shop.samsung.com/tr/galaxy-s23-fe/"
         }
@@ -552,7 +552,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 25999,
+            value: 26999,
             lastUpdatedDate: lastUpdatedDateSamsung,
             sourceUrl: "https://shop.samsung.com/tr/galaxy-s23-fe/"
         }
@@ -567,7 +567,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 57999,
+            value: 61999,
             lastUpdatedDate: lastUpdatedDateSamsung,
             sourceUrl: "https://shop.samsung.com/tr/galaxy-s23-ultra/"
         }
@@ -580,7 +580,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 60999,
+            value: 65999,
             lastUpdatedDate: lastUpdatedDateSamsung,
             sourceUrl: "https://shop.samsung.com/tr/galaxy-s23-ultra/"
         }
@@ -593,7 +593,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 65999,
+            value: 70999,
             lastUpdatedDate: lastUpdatedDateSamsung,
             sourceUrl: "https://shop.samsung.com/tr/galaxy-s23-ultra/"
         }
@@ -609,7 +609,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 64999,
+            value: 73999,
             lastUpdatedDate: lastUpdatedDateSamsung,
             sourceUrl: "https://shop.samsung.com/tr/galaxy-z-fold5/"
         }
@@ -622,7 +622,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 67999,
+            value: 75999,
             lastUpdatedDate: lastUpdatedDateSamsung,
             sourceUrl: "https://shop.samsung.com/tr/galaxy-z-fold5/"
         }
@@ -635,7 +635,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 72999,
+            value: 69999,
             lastUpdatedDate: lastUpdatedDateSamsung,
             sourceUrl: "https://shop.samsung.com/tr/galaxy-z-fold5/"
         }
@@ -677,7 +677,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 44999,
+            value: 41999,
             lastUpdatedDate: lastUpdatedDateSamsung,
             sourceUrl: "https://shop.samsung.com/tr/galaxy-z-flip5/"
         }
@@ -690,7 +690,7 @@ export default [
             currency: "USD"
         },
         retailPrice: {
-            value: 47999,
+            value: 44999,
             lastUpdatedDate: lastUpdatedDateSamsung,
             sourceUrl: "https://shop.samsung.com/tr/galaxy-z-flip5/"
         }

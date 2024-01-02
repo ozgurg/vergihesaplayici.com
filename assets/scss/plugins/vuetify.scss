@@ -21,3 +21,41 @@
         }
     }
 }
+
+
+// Override Vuetify properties to prevent layout shifting caused by its JavaScript behavior.
+// Unfortunately we have to use "!important".
+// Be sure to test thoroughly before making changes.
+.v-navigation-drawer {
+    display: none !important;
+    width: $vh-app-drawer-width !important;
+    @media #{map-get($display-breakpoints, "md-and-up")} {
+        display: flex !important;
+        visibility: visible !important;
+        transition: none !important;
+        transform: none !important
+    }
+    &--open {
+        @media #{map-get($display-breakpoints, "sm-and-down")} {
+            display: flex !important
+        }
+    }
+}
+
+.v-main {
+    transition: none !important;
+    padding: $vh-app-bar-height 0 0 0 !important;
+    @media #{map-get($display-breakpoints, "md-and-up")} {
+        padding: 0 0 0 $vh-app-drawer-width !important
+    }
+}
+
+.v-app-bar {
+    height: $vh-app-bar-height !important;
+    @media #{map-get($display-breakpoints, "md-and-up")} {
+        display: none !important
+    }
+    .v-toolbar__content {
+        height: 100% !important
+    }
+}

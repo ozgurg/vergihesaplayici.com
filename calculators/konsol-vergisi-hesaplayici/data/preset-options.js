@@ -40,8 +40,8 @@ export default [
             currency: "EUR"
         },
         retailPrice: { // FIXME: Need official retail price
-            value: 14999,
-            lastUpdatedDate: new Date("Sat Dec 02 2023 11:57:51 GMT+0300 (GMT+03:00"),
+            value: 13999,
+            lastUpdatedDate: new Date("Tue Jan 02 2024 21:29:27 GMT+0300 (GMT+03:00)"),
             sourceUrl: "https://www.overgameweb.com/xbox-series-s-512gb-konsol"
         }
     },
@@ -63,9 +63,9 @@ export default [
             currency: "EUR"
         },
         retailPrice: {
-            value: 29999,
-            lastUpdatedDate: new Date("Sat Dec 02 2023 11:57:51 GMT+0300 (GMT+03:00"),
-            sourceUrl: "https://www.vatanbilgisayar.com/microsoft-xbox-series-x-oyun-konsolu.html"
+            value: 25999,
+            lastUpdatedDate: new Date("Tue Jan 02 2024 21:29:27 GMT+0300 (GMT+03:00)"),
+            sourceUrl: "https://www.overgameweb.com/microsoft-xbox-series-x-black-1-tb-konsol"
         }
     },
 
