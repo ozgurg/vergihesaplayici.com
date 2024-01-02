@@ -4,7 +4,7 @@ $vh-dialog-selector: ".vh-dialog";
 
 #{$vh-dialog-selector} {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     background: map-get($material-dark-elevation-colors, "1");
     &__header {
         flex: 0
