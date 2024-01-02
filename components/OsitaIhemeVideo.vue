@@ -8,7 +8,7 @@
         title="Osita Iheme">
         <video
             class="rounded"
-            poster="/icon.png"
+            poster="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
             width="256"
             height="256"
             autoplay=""
