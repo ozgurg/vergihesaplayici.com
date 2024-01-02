@@ -79,13 +79,13 @@
 </template>
 
 <script>
-import { mdiFacebook, mdiReddit, mdiTwitter, mdiWhatsapp } from "@mdi/js";
+import { mdiFacebook, mdiReddit, mdiWhatsapp } from "@mdi/js";
 import { createShareUrlOfCalculator } from "@/utils/create-share-url-of-calculator.js";
 import {
     createFacebookShareUrl,
     createRedditShareUrl,
     createTelegramShareUrl,
-    createTwitterShareUrl,
+    createXShareUrl,
     createWhatsAppShareUrl
 } from "@/utils/create-social-media-share-url.js";
 import { isCustomIcon, loadCustomIconAsHtml } from "@/utils/custom-icon.js";
@@ -145,10 +145,10 @@ export default {
                     icon: mdiFacebook
                 },
                 {
-                    url: createTwitterShareUrl(vm.url, document.title),
-                    title: "Twitter'da paylaş",
-                    color: "#00acee",
-                    icon: mdiTwitter
+                    url: createXShareUrl(vm.url, document.title),
+                    title: "X'de paylaş",
+                    color: "#000",
+                    icon: "x.svg"
                 },
                 {
                     url: createWhatsAppShareUrl(vm.url, document.title),

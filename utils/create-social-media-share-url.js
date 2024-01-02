@@ -9,7 +9,7 @@ const createFacebookShareUrl = url => `https://www.facebook.com/sharer/sharer.ph
  * @param {string} title
  * @returns {string}
  */
-const createTwitterShareUrl = (url, title) => `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+const createXShareUrl = (url, title) => `https://x.com/intent/tweet?url=${url}&text=${title}`;
 
 /**
  * @param {string} url
@@ -33,7 +33,7 @@ const createRedditShareUrl = (url, title) => `https://www.reddit.com/submit?url=
 
 export {
     createFacebookShareUrl,
-    createTwitterShareUrl,
+    createXShareUrl,
     createWhatsAppShareUrl,
     createTelegramShareUrl,
     createRedditShareUrl
