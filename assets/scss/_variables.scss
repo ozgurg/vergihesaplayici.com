@@ -12,3 +12,10 @@ $vh-card-hover-opacity: .08;
 // sizing
 $vh-app-bar-height: 72px;
 $vh-app-drawer-width: 256px;
+
+// z-index
+$vh-app-drawer-zindex: 6;
+$vh-app-drawer-overlay-zindex: $vh-app-drawer-zindex - 1;
+
+// class
+$vh-app-drawer-opened-state-class-name: "state--v-navigation-drawer-opened";

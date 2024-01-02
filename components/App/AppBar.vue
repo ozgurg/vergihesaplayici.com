@@ -2,7 +2,7 @@
     <v-app-bar app="">
         <v-app-bar-nav-icon
             aria-label="Menüyü aç"
-            @click="toggleDrawer()" />
+            @click="openDrawer()" />
 
         <div class="d-flex justify-center flex-grow-1 h-100 py-2">
             <AppLogo />
@@ -11,12 +11,11 @@
 </template>
 
 <script>
+import { openDrawer } from "@/utils/drawer.js";
+
 export default {
     methods: {
-        toggleDrawer() {
-            const vm = this;
-            vm.$store.dispatch("ui/toggleDrawer");
-        }
+        openDrawer
     }
 };
 </script>
