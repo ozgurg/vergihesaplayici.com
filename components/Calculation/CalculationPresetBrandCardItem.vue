@@ -5,7 +5,7 @@
         <v-avatar
             size="32"
             color="white">
-            <Icon
+            <vh-icon
                 :icon="brand.icon"
                 :color="brand.color" />
         </v-avatar>
