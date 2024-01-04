@@ -1,12 +1,9 @@
 <template>
     <!-- DO NOT use v-html on root element -->
-    <v-alert
-        :icon="false"
-        text=""
-        type="info">
+    <vh-alert type="info">
         <!-- eslint-disable vue/no-v-text-v-html-on-component vue/no-v-html -->
         <div v-html="text" />
-    </v-alert>
+    </vh-alert>
 </template>
 
 <script>

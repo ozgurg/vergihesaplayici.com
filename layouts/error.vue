@@ -28,12 +28,9 @@
                 Kalmasın diyorsan hatalarımı yüzüme vurmak için bunu kullanabilirsin:
             </p>
 
-            <v-alert
-                :icon="false"
-                text=""
-                type="error">
+            <vh-alert type="error">
                 {{ message }}
-            </v-alert>
+            </vh-alert>
         </InnerContainer>
     </div>
 </template>

@@ -8,12 +8,12 @@
 
         <CalculatorInnerContainer>
             <template v-if="slug === 'steam-deck'">
-                <v-alert
-                    class="mb-10"
-                    type="info">
+                <vh-alert
+                    type="info"
+                    class="mb-10">
                     Bu ürünün hangi ürün kategorisinden vergilendirildiğini henüz bilmiyoruz. Bu sayfa sadece bilgi
                     vermek amacıyla hazırlanmıştır.
-                </v-alert>
+                </vh-alert>
             </template>
 
             <FormRow
