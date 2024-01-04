@@ -3,6 +3,6 @@
         :icon="false"
         text=""
         type="warning">
-        Para birimini <b>TRY</b> seçtiğiniz için vergili fiyat üzerinden vergisiz fiyat hesaplaması yapıldı.
+        Para birimi <b>TRY</b> olduğu için vergili fiyat üzerinden vergisiz fiyat hesaplaması yapıldı.
     </v-alert>
 </template>
