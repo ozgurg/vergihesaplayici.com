@@ -61,7 +61,7 @@
                     <template v-if="shouldShowResults">
                         <FormRow>
                             <template v-if="form.currency === 'TRY'">
-                                <ReverseCalculationAlert />
+                                <reverse-calculation-alert />
                             </template>
                             <template v-else>
                                 <EstimatedCalculationAlert />
