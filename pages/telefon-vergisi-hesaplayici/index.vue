@@ -53,7 +53,7 @@
                             <v-col
                                 cols="4"
                                 md="3">
-                                <CurrencySelector v-model="form.currency" />
+                                <currency-selector v-model="form.currency" />
                             </v-col>
                         </v-row>
                     </FormRow>
