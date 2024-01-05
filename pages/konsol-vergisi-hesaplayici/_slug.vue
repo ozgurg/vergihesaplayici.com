@@ -34,7 +34,7 @@
                     class="mb-4" />
 
                 <FormRow class="mb-10">
-                    <MinimumWageAlert :price="results.prices.taxAdded" />
+                    <affordability-alert :price="results.prices.taxAdded" />
                 </FormRow>
 
                 <div
