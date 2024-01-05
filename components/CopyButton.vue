@@ -1,35 +1,40 @@
 <template>
     <v-btn
-        :aria-checked="isCopied ? 'true' : 'false'"
         :aria-label="ariaLabel"
         title="Kopyala"
-        class="vh-copy-button mx-n2"
+        class="mx-n2"
         icon=""
         @click="copy()">
-        <span class="vh-copy-button__copy-icon">
-            <v-icon
-                size="20"
-                class="grey--text lighten-3">
-                {{ icons.mdiContentCopy }}
-            </v-icon>
-        </span>
-        <span class="vh-copy-button__check-icon">
-            <v-icon
-                size="24"
-                color="primary">
-                {{ icons.mdiCheck }}
-            </v-icon>
-        </span>
+        <v-scroll-y-transition
+            origin="center"
+            mode="out-in">
+            <template v-if="!isCopied">
+                <v-icon
+                    key="copy"
+                    size="20"
+                    class="grey--text lighten-3">
+                    {{ icons.mdiContentCopy }}
+                </v-icon>
+            </template>
+            <template v-else>
+                <v-icon
+                    key="copied"
+                    size="24"
+                    color="primary">
+                    {{ icons.mdiCheckCircle }}
+                </v-icon>
+            </template>
+        </v-scroll-y-transition>
     </v-btn>
 </template>
 
 <script>
-import { mdiCheck, mdiContentCopy } from "@mdi/js";
+import { mdiCheckCircle, mdiContentCopy } from "@mdi/js";
 
 export default {
     data: () => ({
         icons: {
-            mdiCheck,
+            mdiCheckCircle,
             mdiContentCopy
         },
         copiedTimeout: null,
@@ -49,28 +54,30 @@ export default {
         copy() {
             const vm = this;
 
-            // Prevent multiple copying
             if (vm.isCopied) return;
 
             vm._copyValue();
-
-            if (vm.copiedTimeout !== null) {
-                clearTimeout(vm.copiedTimeout);
-            }
+            vm._destroyTimeout();
 
             vm.isCopied = true;
-
             vm.copiedTimeout = setTimeout(() => {
                 vm.isCopied = false;
-            }, 1200); // 1000 + $secondary-transition's duration
+            }, 1000);
         },
         _copyValue() {
             const vm = this;
 
-            if (vm.containerSelector !== null) {
-                vm.$copyText(vm.valueToCopy, document.querySelector(vm.containerSelector));
-            } else {
-                vm.$copyText(vm.valueToCopy);
+            // DO NOT pass "null" as the default value.
+            // When "null" is used instead of "false", "$copyText" doesn't behave as expected.
+            const container = vm.containerSelector ? document.querySelector(vm.containerSelector) : false;
+            vm.$copyText(vm.valueToCopy, container);
+        },
+        _destroyTimeout() {
+            const vm = this;
+
+            if (vm.copiedTimeout !== null) {
+                clearTimeout(vm.copiedTimeout);
+                vm.copiedTimeout = null;
             }
         }
     },
@@ -82,39 +89,7 @@ export default {
     },
     destroyed() {
         const vm = this;
-        clearTimeout(vm.copiedTimeout);
+        vm._destroyTimeout();
     }
 };
 </script>
-
-<style lang="scss" scoped="">
-@import "~vuetify/src/styles/settings/_variables.scss";
-
-.vh-copy-button {
-    $self: &;
-    min-width: unset !important;
-    &[aria-checked="true"] {
-        #{$self}__copy-icon {
-            opacity: 0
-        }
-        #{$self}__check-icon {
-            opacity: 1
-        }
-    }
-    &__check-icon {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        flex-flow: column wrap;
-        justify-content: center;
-        opacity: 0
-    }
-    &__copy-icon,
-    &__check-icon {
-        transition: opacity $secondary-transition
-    }
-}
-</style>
