@@ -54,7 +54,7 @@
                         label="Piyasa fiyatı" />
 
                     <FormRow direction="horizontal">
-                        <RetailPriceUpdateInfo
+                        <retail-price-update-info
                             :last-updated-date="form.option.retailPrice.lastUpdatedDate"
                             :source-url="form.option.retailPrice.sourceUrl" />
                     </FormRow>
