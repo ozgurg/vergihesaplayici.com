@@ -41,7 +41,7 @@
 
             <template #append>
                 <div class="d-none d-md-block pa-4">
-                    <AppFooter />
+                    <app-footer />
                 </div>
             </template>
         </v-navigation-drawer>
