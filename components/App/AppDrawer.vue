@@ -40,9 +40,7 @@
             </div>
 
             <template #append>
-                <div class="d-none d-md-block pa-4">
-                    <app-footer />
-                </div>
+                <app-footer class="d-none d-md-block pa-4" />
             </template>
         </v-navigation-drawer>
         <v-overlay
