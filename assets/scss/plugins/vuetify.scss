@@ -75,23 +75,6 @@
     }
 }
 
-.v-app-bar {
-    background: transparentize($vh-color-app-bar, .18) !important;
-    backdrop-filter: blur(1rem);
-    box-shadow: none !important;
-    height: $vh-app-bar-height !important;
-    border-block-end: 1px solid rgba(#fff, .12) !important;
-    @media #{map-get($display-breakpoints, "md-and-up")} {
-        display: none !important
-    }
-    .v-toolbar__content {
-        height: 100% !important
-    }
-    .vh-app-logo {
-        margin-inline-start: -48px
-    }
-}
-
 .v-main {
     transition: none !important;
     padding: $vh-app-bar-height 0 0 0 !important;
