@@ -64,7 +64,7 @@
                                 <reverse-calculation-alert />
                             </template>
                             <template v-else>
-                                <EstimatedCalculationAlert />
+                                <estimated-calculation-alert />
                             </template>
                         </FormRow>
 
