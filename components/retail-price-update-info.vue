@@ -1,17 +1,17 @@
 <template>
     <v-tooltip
         right=""
-        max-width="240">
+        max-width="224">
         <template #activator="{ on, attrs }">
             <v-btn
                 v-bind="attrs"
                 :href="sourceUrl"
                 target="_blank"
-                plain=""
                 rel="nofollow noopener noreferrer"
+                plain=""
                 class="mx-n3"
                 v-on="on">
-                {{ relativeFormattedDate }} güncellendi
+                <span>{{ relativeFormattedDate }} güncellendi</span>
                 <v-icon
                     size="16"
                     right="">
@@ -20,7 +20,9 @@
             </v-btn>
         </template>
         <span>
-            Piyasa fiyatı <b>{{ formattedDate }}</b> tarihinde <b>{{ domain }}</b> adresinden alınmıştır. Şu anki fiyat farklı olabilir.
+            Piyasa fiyatı <b>{{ formattedDate }}</b> tarihinde <b>{{ domain }}</b> sitesinden elle güncellenmiştir.
+            <br />
+            Güncel fiyat farklı olabilir.
         </span>
     </v-tooltip>
 </template>

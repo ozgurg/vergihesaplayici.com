@@ -12,7 +12,7 @@
                             vergihesaplayici.com, vergi hesaplar.
                         </p>
 
-                        <OsitaIhemeVideo />
+                        <osita-iheme-video />
                     </div>
                 </div>
 

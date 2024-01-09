@@ -9,7 +9,7 @@
         <MainContainer>
             <Nuxt />
 
-            <AppFooter class="d-block d-md-none mt-16" />
+            <app-footer class="d-block d-md-none mt-16" />
         </MainContainer>
     </v-app>
 </template>

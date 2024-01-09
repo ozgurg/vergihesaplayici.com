@@ -1,19 +1,20 @@
 <template>
     <a
         v-ripple=""
-        class="d-inline-flex overflow-hidden rounded grey darken-4"
+        class="d-inline-block overflow-hidden rounded"
         href="https://youtu.be/LPrhPC-L5Go?t=5"
         rel="nofollow noopener noreferrer"
         target="_blank"
         title="Osita Iheme">
         <video
-            class="rounded"
-            poster="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
             width="256"
             height="256"
             autoplay=""
             loop=""
             muted=""
+            defaultMuted=""
+            disablePictureInPicture=""
+            controlsList="nodownload"
             playsinline=""
             preload="none">
             <source

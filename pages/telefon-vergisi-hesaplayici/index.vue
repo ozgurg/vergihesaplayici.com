@@ -53,7 +53,7 @@
                             <v-col
                                 cols="4"
                                 md="3">
-                                <CurrencySelector v-model="form.currency" />
+                                <currency-selector v-model="form.currency" />
                             </v-col>
                         </v-row>
                     </FormRow>
@@ -69,7 +69,7 @@
                     <template v-if="shouldShowResults">
                         <FormRow>
                             <template v-if="form.currency === 'TRY'">
-                                <ReverseCalculationAlert />
+                                <reverse-calculation-alert />
                             </template>
                             <template v-else>
                                 <EstimatedCalculationAlert />
@@ -81,7 +81,7 @@
                             class="mb-5" />
 
                         <FormRow>
-                            <MinimumWageAlert
+                            <affordability-alert
                                 :price="results.prices.taxAdded"
                                 class="mb-10" />
                         </FormRow>

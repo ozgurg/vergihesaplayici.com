@@ -1,5 +1,7 @@
 <template>
-    <v-list-item :to="calculator.url">
+    <v-list-item
+        :to="calculator.url"
+        color="primary">
         <v-list-item-icon>
             <v-icon>
                 {{ calculator.icon }}

@@ -1,8 +1,13 @@
 <template>
-    <div class="vh-icon">
+    <div
+        class="vh-icon"
+        :style="style">
         <template v-if="isCustomIcon(icon)">
             <!-- eslint-disable vue/no-v-html -->
-            <div v-html="loadCustomIconAsHtml(icon)" />
+            <!-- FIXME: We don't need the wrapping "span" for it to work properly. It needs to be removed somehow. -->
+            <span
+                aria-hidden="true"
+                v-html="loadCustomIconAsHtml(icon)" />
         </template>
         <template v-else>
             <v-icon
@@ -25,7 +30,7 @@ export default {
         },
         color: {
             type: String,
-            required: true
+            default: "#000"
         },
         size: {
             type: Number,
@@ -35,18 +40,27 @@ export default {
     methods: {
         isCustomIcon,
         loadCustomIconAsHtml
+    },
+    computed: {
+        style() {
+            const vm = this;
+            return {
+                "--vh-icon-size": `${vm.size}px`,
+                "--vh-icon-color": vm.color
+            };
+        }
     }
 };
 </script>
 
-<style lang="scss" scoped="">
+<style>
 .vh-icon {
-    > div {
-        width: 24px;
-        height: 24px
-    }
-    :deep(svg) {
-        fill: v-bind(color)
+    color: var(--vh-icon-color);
+    width: var(--vh-icon-size);
+    height: var(--vh-icon-size);
+
+    svg {
+        fill: currentColor
     }
 }
 </style>

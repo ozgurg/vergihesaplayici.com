@@ -8,12 +8,12 @@
 
         <CalculatorInnerContainer>
             <template v-if="slug === 'apple-vision-pro'">
-                <v-alert
-                    class="mb-10"
-                    type="info">
+                <vh-alert
+                    type="info"
+                    class="mb-10">
                     Bu ürünün hangi ürün kategorisinden vergilendirileceğini henüz bilmiyoruz. Bu sayfa sadece bilgi
                     vermek amacıyla hazırlanmıştır.
-                </v-alert>
+                </vh-alert>
             </template>
 
             <FormRow
@@ -42,7 +42,7 @@
                     class="mb-4" />
 
                 <FormRow class="mb-10">
-                    <MinimumWageAlert :price="results.prices.taxAdded" />
+                    <affordability-alert :price="results.prices.taxAdded" />
                 </FormRow>
 
                 <div
@@ -54,7 +54,7 @@
                         label="Piyasa fiyatı" />
 
                     <FormRow direction="horizontal">
-                        <RetailPriceUpdateInfo
+                        <retail-price-update-info
                             :last-updated-date="form.option.retailPrice.lastUpdatedDate"
                             :source-url="form.option.retailPrice.sourceUrl" />
                     </FormRow>
