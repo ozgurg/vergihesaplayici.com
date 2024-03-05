@@ -26,7 +26,7 @@
 
             <template v-if="shouldShowResults">
                 <FormRow>
-                    <EstimatedCalculationAlert />
+                    <estimated-calculation-alert />
                 </FormRow>
 
                 <CalculatorResultList

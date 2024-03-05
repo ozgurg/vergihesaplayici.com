@@ -25,6 +25,18 @@ export default [
         pageTitle: "Sony PlayStation VR2'nin vergisi ne kadar?",
         pageDescription: "Satın aldığınız bir Sony PlayStation VR2'nin yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın."
     },
+    {
+        id: 22,
+        brandId: 3,
+        title: "PlayStation Portal",
+        slug: "sony-playstation-portal",
+        releaseDate: new Date("2023-11-15"),
+        thumbnail: "konsol-vergisi-hesaplayici/img/sony-playstation-portal.webp",
+        url: buildUrl("sony-playstation-portal"),
+        ogImageName: "konsol-vergisi-hesaplayici-sony-playstation-portal.jpg",
+        pageTitle: "Sony PlayStation Portal'ın vergisi ne kadar?",
+        pageDescription: "Satın aldığınız bir Sony PlayStation Portal'ın yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın."
+    },
 
     {
         id: 16,
