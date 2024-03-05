@@ -1,30 +1,37 @@
 export default [
     // [14] Sony PlayStation 5
     {
-        // https://blog.playstation.com/2022/08/25/ps5-price-to-increase-in-select-markets-due-to-global-economic-environment-including-high-inflation-rates/
         presetId: 14,
-        title: "Disksiz (Fat/Slim)",
-        form: {
+        title: "Disksiz (Slim)",
+        form: { // https://blog.playstation.com/2022/08/25/ps5-price-to-increase-in-select-markets-due-to-global-economic-environment-including-high-inflation-rates/
             price: 449.99,
             currency: "EUR"
+        },
+        retailPrice: {
+            value: 24999,
+            lastUpdatedDate: new Date("Tue Mar 05 2024 20:13:15 GMT+0300 (GMT+03:00)"),
+            sourceUrl: "https://twitter.com/Ersinklc/status/1760234205739405588"
         }
     },
     {
-        // https://blog.playstation.com/2022/08/25/ps5-price-to-increase-in-select-markets-due-to-global-economic-environment-including-high-inflation-rates/
         presetId: 14,
-        title: "Diskli (Fat/Slim)",
-        form: {
+        title: "Diskli (Slim)",
+        form: { // https://blog.playstation.com/2022/08/25/ps5-price-to-increase-in-select-markets-due-to-global-economic-environment-including-high-inflation-rates/
             price: 549.99,
             currency: "EUR"
+        },
+        retailPrice: {
+            value: 27999,
+            lastUpdatedDate: new Date("Tue Mar 05 2024 20:13:15 GMT+0300 (GMT+03:00)"),
+            sourceUrl: "https://twitter.com/Ersinklc/status/1760234205739405588"
         }
     },
 
     // [15] Sony PlayStation VR2
     {
-        // https://blog.playstation.com/2022/11/02/playstation-vr2-launches-in-february-at-549-99/
         presetId: 15,
         title: "Standart",
-        form: {
+        form: { // https://blog.playstation.com/2022/11/02/playstation-vr2-launches-in-february-at-549-99/
             price: 599.99,
             currency: "EUR"
         }
@@ -38,11 +45,6 @@ export default [
         form: {
             price: 299,
             currency: "EUR"
-        },
-        retailPrice: { // FIXME: Need official retail price
-            value: 13999,
-            lastUpdatedDate: new Date("Tue Jan 02 2024 21:29:27 GMT+0300 (GMT+03:00)"),
-            sourceUrl: "https://www.overgameweb.com/xbox-series-s-512gb-konsol"
         }
     },
     {
@@ -64,7 +66,7 @@ export default [
         },
         retailPrice: {
             value: 25999,
-            lastUpdatedDate: new Date("Tue Jan 02 2024 21:29:27 GMT+0300 (GMT+03:00)"),
+            lastUpdatedDate: new Date("Tue Mar 05 2024 20:13:15 GMT+0300 (GMT+03:00)"),
             sourceUrl: "https://www.overgameweb.com/microsoft-xbox-series-x-black-1-tb-konsol"
         }
     },
