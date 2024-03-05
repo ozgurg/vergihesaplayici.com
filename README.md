@@ -35,6 +35,11 @@ npm run generate
 
 See [CONTRIBUTING.md](https://github.com/ozgurg/vergihesaplayici.com/blob/main/CONTRIBUTING.md)
 
+## Assets
+
+You'll find all assets inside this Google Drive
+folder: [vergihesaplayici.com Assets](https://drive.google.com/drive/folders/1uRfWhdf32G7iwmMJ85WRo95Q86cpEssC?usp=sharing)
+
 ## License
 
 [![License](https://img.shields.io/badge/License-GPLv3-%2388DF95.svg)](https://github.com/ozgurg/vergihesaplayici.com/blob/main/LICENSE)
