@@ -37,6 +37,21 @@ export default [
         }
     },
 
+    // [22] Sony PlayStation Portal
+    {
+        presetId: 22,
+        title: "Standart",
+        form: { // https://blog.playstation.com/2023/08/23/playstations-first-remote-play-dedicated-device-playstation-portal-remote-player-to-launch-later-this-year-at-199-99/
+            price: 219.99,
+            currency: "EUR"
+        },
+        retailPrice: {
+            value: 11999,
+            lastUpdatedDate: new Date("Tue Mar 05 2024 20:13:15 GMT+0300 (GMT+03:00)"),
+            sourceUrl: "https://twitter.com/Ersinklc/status/1760223698311680478"
+        }
+    },
+
 
     // [16] Microsoft Xbox Series S
     {
