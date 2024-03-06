@@ -7,7 +7,7 @@
     "private": true,
     "repository": {
         "type": "git",
-        "url": "https://github.com/ozgurg/vergihesaplayici.com"
+        "url": "git+https://github.com/ozgurg/vergihesaplayici.com.git"
     },
     "scripts": {
         "dev": "nuxt",
