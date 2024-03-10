@@ -101,7 +101,7 @@
 </template>
 
 <script>
-import Calculator from "@/domain/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.calculator.js";
+import Calculator from "@/domain/telefon-vergisi-hesaplayici/calculator.js";
 import { registrationOptions } from "@/domain/telefon-vergisi-hesaplayici/registration-options.js";
 import { TelefonVergisiHesaplayiciPageDef } from "@/page-def/telefon-vergisi-hesaplayici.page-def.js";
 import {

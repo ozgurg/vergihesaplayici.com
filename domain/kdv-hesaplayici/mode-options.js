@@ -1,4 +1,4 @@
-import { Mode } from "@/domain/pages/kdv-hesaplayici/kdv-hesaplayici.calculator.js";
+import { Mode } from "@/domain/kdv-hesaplayici/calculator.js";
 
 const modeOptions = [
     {

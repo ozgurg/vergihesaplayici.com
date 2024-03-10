@@ -1,4 +1,4 @@
-import { Registration } from "@/domain/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.calculator.js";
+import { Registration } from "@/domain/telefon-vergisi-hesaplayici/calculator.js";
 
 const registrationOptions = [
     {

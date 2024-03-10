@@ -91,7 +91,7 @@ import {
     buildScreenshotInput,
     shouldShowResults
 } from "@/domain/konsol-vergisi-hesaplayici/utils.js";
-import Calculator from "@/domain/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.calculator.js";
+import Calculator from "@/domain/konsol-vergisi-hesaplayici/calculator.js";
 import { buildCalculations } from "@/domain/konsol-vergisi-hesaplayici/db/_index.js";
 
 export default {

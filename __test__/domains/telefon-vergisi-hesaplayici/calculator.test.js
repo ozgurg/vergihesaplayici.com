@@ -1,4 +1,4 @@
-import Calculator, { getSpecialConsumptionTaxRateByPrice, Registration } from "@/domain/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.calculator.js";
+import Calculator, { getSpecialConsumptionTaxRateByPrice, Registration } from "@/domain/telefon-vergisi-hesaplayici/calculator.js";
 
 describe("telefon-vergisi-hesaplayici/Calculator", () => {
     describe("getSpecialConsumptionTaxRateByPrice", () => {
