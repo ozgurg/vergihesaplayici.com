@@ -7,6 +7,8 @@
         </Heading1>
 
         <InnerContainer>
+            <article-disclaimer-alert class="mb-12" />
+
             <v-row>
                 <template v-for="_article in articles">
                     <v-col
