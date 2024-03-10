@@ -2,11 +2,11 @@
     <v-card
         :to="article.url"
         outlined=""
-        class="vh-article-card-item px-4 py-6 px-lg-6 py-lg-8">
+        class="px-4 py-6 px-lg-6 py-lg-8">
         <v-card-title class="pa-0 mb-4">
             {{ article.title }}
         </v-card-title>
-        <v-card-text class="vh-article-card-item__desc pa-0">
+        <v-card-text class="pa-0">
             {{ article.description }}…
         </v-card-text>
     </v-card>
@@ -24,9 +24,9 @@ export default {
 </script>
 
 <style lang="scss" scoped="">
-.vh-article-card-item {
+.v-card {
     min-height: 192px;
-    &__desc {
+    &__text {
         @include vh-ellipsis-multiline(4)
     }
 }
