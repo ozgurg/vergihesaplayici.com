@@ -20,7 +20,7 @@
                     <Heading2>
                         Diğer yazılar
                     </Heading2>
-                    <ArticleGrid :articles="otherArticles" />
+                    <article-grid :articles="otherArticles" />
                 </div>
             </div>
         </InnerContainer>

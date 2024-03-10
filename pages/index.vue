@@ -27,7 +27,7 @@
                     <Heading2 :to="yazilarPage.url">
                         {{ yazilarPage.title }}
                     </Heading2>
-                    <ArticleGrid :articles="articles" />
+                    <article-grid :articles="articles" />
                 </div>
             </div>
         </InnerContainer>
