@@ -18,7 +18,7 @@ const KonsolVergisiHesaplayiciPageDef = () => {
     const head = buildHeadTags({
         title,
         description: "Satın aldığınız bir oyun konsolunun yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
-        ogImageName: "konsol-vergisi-hesaplayici.jpg"
+        ogImage: "konsol-vergisi-hesaplayici/og/konsol-vergisi-hesaplayici.jpg"
     });
 
     return {

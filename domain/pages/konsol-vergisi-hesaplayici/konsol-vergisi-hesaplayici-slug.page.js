@@ -24,7 +24,7 @@ export default slug => {
     const head = buildHeadTags({
         title,
         description,
-        ogImageName: preset.ogImageName ?? "konsol-vergisi-hesaplayici.jpg"
+        ogImage: preset.ogImage ?? "konsol-vergisi-hesaplayici/og/konsol-vergisi-hesaplayici.jpg"
     });
     const breadcrumbs = [
         ...konsolVergisiHesaplayiciPage.breadcrumbs,

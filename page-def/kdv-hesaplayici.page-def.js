@@ -18,7 +18,7 @@ const KdvHesaplayiciPageDef = () => {
     const head = buildHeadTags({
         title,
         description: "Katma Değer Vergisi (KDV) Hesaplayıcı aracını KDV hariç fiyattan KDV dahil fiyatı veya KDV dahil fiyattan KDV hariç fiyatı hesaplamak için kullanabilirsiniz.",
-        ogImageName: "kdv-hesaplayici.jpg"
+        ogImage: "kdv-hesaplayici/og/kdv-hesaplayici.jpg"
     });
 
     return {

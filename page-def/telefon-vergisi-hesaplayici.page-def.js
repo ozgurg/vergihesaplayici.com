@@ -18,7 +18,7 @@ const TelefonVergisiHesaplayiciPageDef = () => {
     const head = buildHeadTags({
         title,
         description: "Bir telefonun vergisini hesaplamak için başta ÖTV gibi tüm telefon vergilerini hesaplama yeteneğine sahip Telefon Vergisi Hesaplayıcı aracını kullanın. Vergilerin ne kadar uygulandığını ve vergisiz telefon fiyatını öğrenin. Yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
-        ogImageName: "telefon-vergisi-hesaplayici.jpg"
+        ogImage: "telefon-vergisi-hesaplayici/og/telefon-vergisi-hesaplayici.jpg"
     });
 
     return {

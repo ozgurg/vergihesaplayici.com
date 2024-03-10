@@ -15,7 +15,7 @@ const AnaSayfaPageDef = () => {
         ...buildHeadTags({
             title,
             description: "Telefon ve oyun konsolu gibi farklı ürün gruplarının yurt içi ve yurt dışı fiyatlarına Türkiye'de ne kadar vergi uygulandığını hesaplayın.",
-            ogImageName: "ana-sayfa.jpg"
+            ogImage: "ana-sayfa/og/ana-sayfa.jpg"
         })
     };
 
