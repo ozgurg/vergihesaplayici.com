@@ -39,7 +39,7 @@ import { AnaSayfaPageDef } from "@/domain/ana-sayfa/index.page-def.js";
 import { HesaplayicilarPageDef } from "@/domain/hesaplayicilar/index.page-def.js";
 import { YazilarPageDef } from "@/domain/yazilar/index.page-def.js";
 import { YazilarSlugPageDef } from "@/domain/yazilar/slug.page-def.js";
-import { getAllArticles } from "@/domain/articles.js";
+import { getAllArticles } from "@/domain/yazilar/db/_index.js";
 
 const anaSayfaPage = AnaSayfaPageDef();
 const hesaplayicilarPage = HesaplayicilarPageDef();
