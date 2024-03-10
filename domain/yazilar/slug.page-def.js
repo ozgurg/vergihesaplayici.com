@@ -1,4 +1,4 @@
-import { YazilarPageDef } from "@/page-def/yazilar.page-def.js";
+import { YazilarPageDef } from "@/domain/yazilar/index.page-def.js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
 
 const parentPage = YazilarPageDef();

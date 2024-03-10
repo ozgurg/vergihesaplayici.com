@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { HesaplayicilarPageDef } from "@/page-def/hesaplayicilar.page-def.js";
+import { HesaplayicilarPageDef } from "@/domain/hesaplayicilar/index.page-def.js";
 
 const hesaplayicilarPage = HesaplayicilarPageDef();
 

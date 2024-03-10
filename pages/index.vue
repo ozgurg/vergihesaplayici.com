@@ -35,10 +35,10 @@
 </template>
 
 <script>
-import { AnaSayfaPageDef } from "@/page-def/ana-sayfa.page-def.js";
-import { HesaplayicilarPageDef } from "@/page-def/hesaplayicilar.page-def.js";
-import { YazilarPageDef } from "@/page-def/yazilar.page-def.js";
-import { YazilarSlugPageDef } from "@/page-def/yazilar-slug.page-def.js";
+import { AnaSayfaPageDef } from "@/domain/ana-sayfa/index.page-def.js";
+import { HesaplayicilarPageDef } from "@/domain/hesaplayicilar/index.page-def.js";
+import { YazilarPageDef } from "@/domain/yazilar/index.page-def.js";
+import { YazilarSlugPageDef } from "@/domain/yazilar/slug.page-def.js";
 import { getAllArticles } from "@/domain/articles.js";
 
 const anaSayfaPage = AnaSayfaPageDef();

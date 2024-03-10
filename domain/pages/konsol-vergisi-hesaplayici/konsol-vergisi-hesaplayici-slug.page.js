@@ -1,5 +1,5 @@
 import { buildHeadTags } from "@/utils/build-head-tags.js";
-import { KonsolVergisiHesaplayiciPageDef } from "@/page-def/konsol-vergisi-hesaplayici.page-def.js";
+import { KonsolVergisiHesaplayiciPageDef } from "@/domain/konsol-vergisi-hesaplayici/index.page-def.js";
 import { findCalculatorPresetBySlug } from "@/utils/find-calculator-preset-by-slug.js";
 import {
     findBrandById,
@@ -8,7 +8,7 @@ import {
     presets
 } from "@/domain/konsol-vergisi-hesaplayici/db/_index.js";
 
-const konsolVergisiHesaplayiciPage = KonsolVergisiHesaplayiciPageDef();
+const parentPage = KonsolVergisiHesaplayiciPageDef();
 
 export default slug => {
     const preset = findCalculatorPresetBySlug(slug, presets);
@@ -27,7 +27,7 @@ export default slug => {
         ogImage: preset.ogImage ?? "konsol-vergisi-hesaplayici/og/konsol-vergisi-hesaplayici.jpg"
     });
     const breadcrumbs = [
-        ...konsolVergisiHesaplayiciPage.breadcrumbs,
+        ...parentPage.breadcrumbs,
         {
             title: `${brand.title} ${preset.title}`,
             url
@@ -38,7 +38,7 @@ export default slug => {
 
     return {
         title,
-        calculatorTitle: konsolVergisiHesaplayiciPage.title,
+        calculatorTitle: parentPage.title,
         url,
         description,
         head,

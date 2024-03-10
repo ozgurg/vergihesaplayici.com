@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import { AnaSayfaPageDef } from "@/page-def/ana-sayfa.page-def.js";
+import { AnaSayfaPageDef } from "@/domain/ana-sayfa/index.page-def.js";
 import logo from "@/assets/img/logo.svg?raw";
 
 const anaSayfaPage = AnaSayfaPageDef();

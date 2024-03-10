@@ -1,5 +1,5 @@
 import { buildHeadTags } from "@/utils/build-head-tags.js";
-import { TelefonVergisiHesaplayiciPageDef } from "@/page-def/telefon-vergisi-hesaplayici.page-def.js";
+import { TelefonVergisiHesaplayiciPageDef } from "@/domain/telefon-vergisi-hesaplayici/index.page-def.js";
 import { findCalculatorPresetBySlug } from "@/utils/find-calculator-preset-by-slug.js";
 import {
     findBrandById,
@@ -8,7 +8,7 @@ import {
     presets
 } from "@/domain/telefon-vergisi-hesaplayici/db/_index.js";
 
-const telefonVergisiHesaplayiciPage = TelefonVergisiHesaplayiciPageDef();
+const parentPage = TelefonVergisiHesaplayiciPageDef();
 
 export default slug => {
     const preset = findCalculatorPresetBySlug(slug, presets);
@@ -27,7 +27,7 @@ export default slug => {
         ogImage: preset.ogImage ?? "telefon-vergisi-hesaplayici/og/telefon-vergisi-hesaplayici.jpg"
     });
     const breadcrumbs = [
-        ...telefonVergisiHesaplayiciPage.breadcrumbs,
+        ...parentPage.breadcrumbs,
         {
             title: `${brand.title} ${preset.title}`,
             url
@@ -38,7 +38,7 @@ export default slug => {
 
     return {
         title,
-        calculatorTitle: telefonVergisiHesaplayiciPage.title,
+        calculatorTitle: parentPage.title,
         url,
         description,
         head,

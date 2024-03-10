@@ -24,8 +24,8 @@
 </template>
 
 <script>
-import { YazilarPageDef } from "@/page-def/yazilar.page-def.js";
-import { YazilarSlugPageDef } from "@/page-def/yazilar-slug.page-def.js";
+import { YazilarPageDef } from "@/domain/yazilar/index.page-def.js";
+import { YazilarSlugPageDef } from "@/domain/yazilar/slug.page-def.js";
 import { getAllArticles } from "@/domain/articles.js";
 
 const yazilarPage = YazilarPageDef();

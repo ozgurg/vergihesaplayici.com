@@ -82,7 +82,7 @@
 import Calculator, { Mode } from "@/domain/kdv-hesaplayici/calculator.js";
 import { modeOptions } from "@/domain/kdv-hesaplayici/mode-options.js";
 import { buildResultList, handleQuery, shouldShowResults } from "@/domain/kdv-hesaplayici/utils.js";
-import { KdvHesaplayiciPageDef } from "@/page-def/kdv-hesaplayici.page-def.js";
+import { KdvHesaplayiciPageDef } from "@/domain/kdv-hesaplayici/index.page-def.js";
 
 const kdvHesaplayiciPage = KdvHesaplayiciPageDef();
 

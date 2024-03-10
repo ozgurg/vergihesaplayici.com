@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import { YazilarSlugPageDef } from "@/page-def/yazilar-slug.page-def.js";
+import { YazilarSlugPageDef } from "@/domain/yazilar/slug.page-def.js";
 import { getAllArticles, getArticleBySlug } from "@/domain/articles.js";
 
 export default {

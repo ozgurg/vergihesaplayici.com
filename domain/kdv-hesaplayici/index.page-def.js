@@ -1,5 +1,5 @@
 import { mdiBrightnessPercent } from "@mdi/js";
-import { HesaplayicilarPageDef } from "@/page-def/hesaplayicilar.page-def.js";
+import { HesaplayicilarPageDef } from "@/domain/hesaplayicilar/index.page-def.js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
 
 const parentPage = HesaplayicilarPageDef();

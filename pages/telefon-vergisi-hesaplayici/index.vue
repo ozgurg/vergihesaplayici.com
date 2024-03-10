@@ -103,7 +103,7 @@
 <script>
 import Calculator from "@/domain/telefon-vergisi-hesaplayici/calculator.js";
 import { registrationOptions } from "@/domain/telefon-vergisi-hesaplayici/registration-options.js";
-import { TelefonVergisiHesaplayiciPageDef } from "@/page-def/telefon-vergisi-hesaplayici.page-def.js";
+import { TelefonVergisiHesaplayiciPageDef } from "@/domain/telefon-vergisi-hesaplayici/index.page-def.js";
 import {
     buildResultList,
     buildScreenshotInput,

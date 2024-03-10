@@ -94,7 +94,7 @@
 
 <script>
 import Calculator from "@/domain/konsol-vergisi-hesaplayici/calculator.js";
-import { KonsolVergisiHesaplayiciPageDef } from "@/page-def/konsol-vergisi-hesaplayici.page-def.js";
+import { KonsolVergisiHesaplayiciPageDef } from "@/domain/konsol-vergisi-hesaplayici/index.page-def.js";
 import {
     buildResultList,
     buildScreenshotInput,

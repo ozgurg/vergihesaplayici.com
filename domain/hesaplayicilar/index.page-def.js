@@ -1,4 +1,4 @@
-import { AnaSayfaPageDef } from "@/page-def/ana-sayfa.page-def.js";
+import { AnaSayfaPageDef } from "@/domain/ana-sayfa/index.page-def.js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
 
 const parentPage = AnaSayfaPageDef();
