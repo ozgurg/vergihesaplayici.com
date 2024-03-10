@@ -101,7 +101,7 @@ import {
     handleQuery,
     shouldShowResults
 } from "@/domain/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.utils.js";
-import { buildCalculations } from "@/domain/konsol-vergisi-hesaplayici/utils.js";
+import { buildCalculations } from "@/domain/konsol-vergisi-hesaplayici/db/utils.js";
 
 const konsolVergisiHesaplayiciPage = KonsolVergisiHesaplayiciPageDef();
 
