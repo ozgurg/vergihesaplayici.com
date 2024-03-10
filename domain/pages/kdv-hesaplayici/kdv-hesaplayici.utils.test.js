@@ -1,14 +1,21 @@
-import {
-    handleQuery,
-    shouldShowResults
-} from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.utils.js";
+import { handleQuery, shouldShowResults } from "@/domain/pages/kdv-hesaplayici/kdv-hesaplayici.utils.js";
+import { Mode } from "@/domain/pages/kdv-hesaplayici/kdv-hesaplayici.calculator.js";
 
-describe("konsol-vergisi-hesaplayici/utils", () => {
+describe("kdv-hesaplayici/utils", () => {
+    const modeOptions = [
+        {
+            value: Mode.TaxFreePriceToTaxAddedPrice
+        },
+        {
+            value: Mode.TaxAddedPriceToTaxFreePrice
+        }
+    ];
+
     describe("shouldShowResults", () => {
         it("should return 'true' for valid form object", () => {
             expect(shouldShowResults({
                 price: 599,
-                currency: "TRY"
+                rate: 18
             })).toBe(true);
         });
 
@@ -16,8 +23,7 @@ describe("konsol-vergisi-hesaplayici/utils", () => {
             // All
             expect(shouldShowResults({})).toBe(false);
             expect(shouldShowResults({
-                price: null,
-                currency: null
+                price: null
             })).toBe(false);
 
             // price
@@ -25,10 +31,6 @@ describe("konsol-vergisi-hesaplayici/utils", () => {
             expect(shouldShowResults({ price: 0 })).toBe(false);
             expect(shouldShowResults({ price: -1 })).toBe(false);
             expect(shouldShowResults({ price: "" })).toBe(false);
-
-            // currency
-            expect(shouldShowResults({ currency: null })).toBe(false);
-            expect(shouldShowResults({ currency: "" })).toBe(false);
         });
     });
 
@@ -39,11 +41,12 @@ describe("konsol-vergisi-hesaplayici/utils", () => {
 
         it("should return valid \"handled query\" for valid query object", () => {
             const query = {
-                price: 599,
-                currency: "TRY"
+                mode: Mode.TaxAddedPriceToTaxFreePrice,
+                rate: 18,
+                price: 599
             };
             const requirements = {
-                availableCurrencies: ["TRY"]
+                modeOptions
             };
             expect(handleQuery(query, requirements)).toStrictEqual(query);
         });
@@ -55,34 +58,37 @@ describe("konsol-vergisi-hesaplayici/utils", () => {
                 kayitYolu: "import"
             };
             const requirements1 = {
-                availableCurrencies: []
+                modeOptions
             };
             expect(handleQuery(query1, requirements1)).toStrictEqual({});
 
             const query2 = {
-                price: "599.99" // String
+                price: "599.99", // String
+                rate: 18.5 // Float
             };
             const requirements2 = {
-                availableCurrencies: []
+                modeOptions
             };
             expect(handleQuery(query2, requirements2)).toStrictEqual({
-                price: 599.99 // Float
+                price: 599.99, // Float
+                rate: 18.5 // Float
             });
         });
 
         it("should return only valid properties", () => {
             const query = {
                 price: 599, // Valid
-                currency: "ABC",
+                rate: 18,
                 property1: {},
                 property2: null,
                 property3: 0,
                 property4: "Hi"
             };
             const requirements = {
-                availableCurrencies: ["TRY"]
+                modeOptions
             };
             expect(handleQuery(query, requirements)).toStrictEqual({
+                rate: 18,
                 price: 599
             });
         });

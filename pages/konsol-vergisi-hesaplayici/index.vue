@@ -93,15 +93,15 @@
 </template>
 
 <script>
-import Calculator from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.calculator.js";
+import Calculator from "@/domain/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.calculator.js";
 import { KonsolVergisiHesaplayiciPageDef } from "@/page-def/konsol-vergisi-hesaplayici.page-def.js";
 import {
     buildResultList,
     buildScreenshotInput,
     handleQuery,
     shouldShowResults
-} from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.utils.js";
-import { buildCalculations } from "@/data/konsol-vergisi-hesaplayici/utils.js";
+} from "@/domain/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.utils.js";
+import { buildCalculations } from "@/domain/konsol-vergisi-hesaplayici/utils.js";
 
 const konsolVergisiHesaplayiciPage = KonsolVergisiHesaplayiciPageDef();
 

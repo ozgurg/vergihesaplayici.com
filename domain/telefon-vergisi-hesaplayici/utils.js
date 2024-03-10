@@ -1,6 +1,6 @@
-import brands from "@/data/konsol-vergisi-hesaplayici/brands.js";
-import presets from "@/data/konsol-vergisi-hesaplayici/presets.js";
-import presetOptions from "@/data/konsol-vergisi-hesaplayici/preset-options.js";
+import brands from "@/domain/telefon-vergisi-hesaplayici/brands.js";
+import presets from "@/domain/telefon-vergisi-hesaplayici/presets.js";
+import presetOptions from "@/domain/telefon-vergisi-hesaplayici/preset-options.js";
 
 const findBrandById = brandId => {
     return brands.find(brand => brand.id === brandId);

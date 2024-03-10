@@ -1,5 +1,5 @@
 import { numberFormat } from "@/utils/formatter.js";
-import { Mode } from "@/data/pages/kdv-hesaplayici/kdv-hesaplayici.calculator.js";
+import { Mode } from "@/domain/pages/kdv-hesaplayici/kdv-hesaplayici.calculator.js";
 
 /**
  * Decides whether to show the calculator results or not.

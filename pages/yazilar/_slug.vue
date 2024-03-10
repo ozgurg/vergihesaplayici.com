@@ -29,7 +29,7 @@
 
 <script>
 import { YazilarSlugPageDef } from "@/page-def/yazilar-slug.page-def.js";
-import { getAllArticles, getArticleBySlug } from "@/data/articles.js";
+import { getAllArticles, getArticleBySlug } from "@/domain/articles.js";
 
 export default {
     head() {

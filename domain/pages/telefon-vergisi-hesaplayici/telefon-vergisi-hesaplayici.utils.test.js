@@ -1,4 +1,4 @@
-import { handleQuery, shouldShowResults } from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.utils.js";
+import { handleQuery, shouldShowResults } from "@/domain/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.utils.js";
 
 describe("telefon-vergisi-hesaplayici/utils", () => {
     describe("shouldShowResults", () => {

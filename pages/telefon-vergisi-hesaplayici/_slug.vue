@@ -92,16 +92,16 @@
 </template>
 
 <script>
-import page from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici-slug.page.js";
-import { registrationOptions } from "@/data/telefon-vergisi-hesaplayici/registration-options.js";
+import page from "@/domain/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici-slug.page.js";
+import { registrationOptions } from "@/domain/telefon-vergisi-hesaplayici/registration-options.js";
 import {
     buildResultList,
     buildScreenshotInput,
     shouldShowResults
-} from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.utils.js";
-import Calculator from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.calculator.js";
+} from "@/domain/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.utils.js";
+import Calculator from "@/domain/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.calculator.js";
 import { moneyFormat } from "@/utils/formatter.js";
-import { buildCalculations } from "@/data/telefon-vergisi-hesaplayici/utils.js";
+import { buildCalculations } from "@/domain/telefon-vergisi-hesaplayici/utils.js";
 
 export default {
     head() {

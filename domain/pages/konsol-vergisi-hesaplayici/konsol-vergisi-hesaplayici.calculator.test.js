@@ -1,4 +1,4 @@
-import Calculator from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.calculator.js";
+import Calculator from "@/domain/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.calculator.js";
 
 describe("konsol-vergisi-hesaplayici/Calculator", () => {
     it(`should correctly calculate console tax if params are: price: [300, 400, 500] / calculateFromTaxAddedPrice: ${false}`, () => {

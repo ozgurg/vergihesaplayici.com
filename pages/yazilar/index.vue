@@ -26,7 +26,7 @@
 <script>
 import { YazilarPageDef } from "@/page-def/yazilar.page-def.js";
 import { YazilarSlugPageDef } from "@/page-def/yazilar-slug.page-def.js";
-import { getAllArticles } from "@/data/articles.js";
+import { getAllArticles } from "@/domain/articles.js";
 
 const yazilarPage = YazilarPageDef();
 

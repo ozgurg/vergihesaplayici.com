@@ -84,15 +84,15 @@
 </template>
 
 <script>
-import page from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici-slug.page.js";
+import page from "@/domain/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici-slug.page.js";
 import { moneyFormat } from "@/utils/formatter.js";
 import {
     buildResultList,
     buildScreenshotInput,
     shouldShowResults
-} from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.utils.js";
-import Calculator from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.calculator.js";
-import { buildCalculations } from "@/data/konsol-vergisi-hesaplayici/utils.js";
+} from "@/domain/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.utils.js";
+import Calculator from "@/domain/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.calculator.js";
+import { buildCalculations } from "@/domain/konsol-vergisi-hesaplayici/utils.js";
 
 export default {
     head() {
