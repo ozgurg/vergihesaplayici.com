@@ -9,11 +9,11 @@
         <InnerContainer>
             <div class="d-flex flex-column gap-16">
                 <div>
-                    <ArticleDisclaimerAlert class="mb-12" />
+                    <article-disclaimer-alert class="mb-12" />
 
                     <nuxt-content :document="nuxtContent" />
 
-                    <ArticleDisclaimerAlert class="mt-12" />
+                    <article-disclaimer-alert class="mt-12" />
                 </div>
 
                 <div>
