@@ -3,16 +3,6 @@ import { buildHeadTags } from "@/utils/build-head-tags.js";
 
 const parentPage = YazilarPageDef();
 
-/**
- * @param {{[key: string]: any}} nuxtContentObject
- * @return {Article}
- */
-const mapNuxtContentObjectAsArticle = nuxtContentObject => ({
-    title: nuxtContentObject.title,
-    slug: nuxtContentObject.slug,
-    description: nuxtContentObject.description
-});
-
 /** @type {YazilarSlugPageDefinition} */
 const YazilarSlugPageDef = article => {
     const title = article.title;
@@ -39,6 +29,5 @@ const YazilarSlugPageDef = article => {
 };
 
 export {
-    mapNuxtContentObjectAsArticle,
     YazilarSlugPageDef
 };

@@ -11,4 +11,5 @@
  * @property {string} title
  * @property {string} slug
  * @property {string} description
+ * @property {object} nuxtContent
  */

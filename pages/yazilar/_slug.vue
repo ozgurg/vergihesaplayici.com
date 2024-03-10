@@ -28,7 +28,8 @@
 </template>
 
 <script>
-import { mapNuxtContentObjectAsArticle, YazilarSlugPageDef } from "@/page-def/yazilar-slug.page-def.js";
+import { YazilarSlugPageDef } from "@/page-def/yazilar-slug.page-def.js";
+import { getAllArticles, getArticleBySlug } from "@/data/articles.js";
 
 export default {
     head() {
@@ -39,26 +40,23 @@ export default {
         error,
         params: { slug }
     }) {
-        const nuxtContent = await $content(slug).fetch();
-        if (!nuxtContent) {
+        const article = await getArticleBySlug(slug, $content);
+        if (!article) {
             return error({ statusCode: 404 });
         }
 
-        const article = mapNuxtContentObjectAsArticle(nuxtContent);
-
         const yazilarSlugPage = YazilarSlugPageDef(article);
 
-        const otherNuxtContents = await $content("/")
-            .sortBy("gitCreatedAt", "desc")
-            .limit(15)
-            .where({ slug: { $ne: slug } })
-            .fetch();
-        const otherArticles = otherNuxtContents.map(mapNuxtContentObjectAsArticle).map(YazilarSlugPageDef);
+        const otherArticles = await getAllArticles($content, {
+            limit: 15,
+            where: { slug: { $ne: slug } }
+        });
+        const otherYazilarSlugPages = otherArticles.map(YazilarSlugPageDef);
 
         return {
             page: yazilarSlugPage,
-            nuxtContent,
-            otherArticles
+            nuxtContent: article.nuxtContent,
+            otherArticles: otherYazilarSlugPages
         };
     }
 };
