@@ -38,6 +38,7 @@
 import { AnaSayfaPageDef } from "@/page-def/ana-sayfa.page-def.js";
 import { HesaplayicilarPageDef } from "@/page-def/hesaplayicilar.page-def.js";
 import { YazilarPageDef } from "@/page-def/yazilar.page-def.js";
+import { mapNuxtContentObjectAsArticle, YazilarSlugPageDef } from "@/page-def/yazilar-slug.page-def.js";
 
 const anaSayfaPage = AnaSayfaPageDef();
 const hesaplayicilarPage = HesaplayicilarPageDef();
@@ -53,8 +54,10 @@ export default {
         yazilarPage
     }),
     async asyncData({ $content }) {
+        const nuxtContents = await $content("/").sortBy("gitCreatedAt", "desc").limit(15).fetch();
+        const articles = nuxtContents.map(mapNuxtContentObjectAsArticle).map(YazilarSlugPageDef);
         return {
-            articles: await $content("/").sortBy("gitCreatedAt", "desc").limit(15).fetch()
+            articles
         };
     }
 };

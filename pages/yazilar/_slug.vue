@@ -1,9 +1,9 @@
 <template>
     <div>
-        <AppBreadcrumbs :items="breadcrumbs()" />
+        <AppBreadcrumbs :items="page.breadcrumbs" />
 
         <Heading1>
-            {{ article.title }}
+            {{ page.title }}
         </Heading1>
 
         <InnerContainer>
@@ -11,7 +11,7 @@
                 <div>
                     <ArticleDisclaimerAlert class="mb-12" />
 
-                    <nuxt-content :document="article" />
+                    <nuxt-content :document="nuxtContent" />
 
                     <ArticleDisclaimerAlert class="mt-12" />
                 </div>
@@ -20,7 +20,7 @@
                     <Heading2>
                         Diğer yazılar
                     </Heading2>
-                    <ArticleGrid :articles="articles" />
+                    <ArticleGrid :articles="otherArticles" />
                 </div>
             </div>
         </InnerContainer>
@@ -28,46 +28,37 @@
 </template>
 
 <script>
-import { buildHeadTags } from "@/utils/build-head-tags.js";
+import { mapNuxtContentObjectAsArticle, YazilarSlugPageDef } from "@/page-def/yazilar-slug.page-def.js";
 
 export default {
     head() {
-        return this.head;
-    },
-    methods: {
-        breadcrumbs() {
-            const vm = this;
-            return [
-                {
-                    title: "Yazılar",
-                    url: "/yazilar/"
-                },
-                {
-                    title: vm.article.title,
-                    url: `/yazilar${vm.article.path}/`
-                }
-            ];
-        }
+        return this.page.head;
     },
     async asyncData({
         $content,
+        error,
         params: { slug }
     }) {
-        const article = await $content(slug).fetch();
+        const nuxtContent = await $content(slug).fetch();
+        if (!nuxtContent) {
+            return error({ statusCode: 404 });
+        }
 
-        const otherArticles = await $content("/")
+        const article = mapNuxtContentObjectAsArticle(nuxtContent);
+
+        const yazilarSlugPage = YazilarSlugPageDef(article);
+
+        const otherNuxtContents = await $content("/")
             .sortBy("gitCreatedAt", "desc")
             .limit(15)
             .where({ slug: { $ne: slug } })
             .fetch();
+        const otherArticles = otherNuxtContents.map(mapNuxtContentObjectAsArticle).map(YazilarSlugPageDef);
 
         return {
-            articles: otherArticles,
-            article,
-            head: buildHeadTags({
-                title: article.title,
-                description: article.description
-            })
+            page: yazilarSlugPage,
+            nuxtContent,
+            otherArticles
         };
     }
 };

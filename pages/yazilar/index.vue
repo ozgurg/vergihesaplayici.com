@@ -23,6 +23,7 @@
 
 <script>
 import { YazilarPageDef } from "@/page-def/yazilar.page-def.js";
+import { mapNuxtContentObjectAsArticle, YazilarSlugPageDef } from "@/page-def/yazilar-slug.page-def.js";
 
 const yazilarPage = YazilarPageDef();
 
@@ -30,12 +31,12 @@ export default {
     head() {
         return this.page.head;
     },
-    data: () => ({
-        page: yazilarPage
-    }),
     async asyncData({ $content }) {
+        const nuxtContents = await $content("/").sortBy("gitCreatedAt", "desc").fetch();
+        const articles = nuxtContents.map(mapNuxtContentObjectAsArticle).map(YazilarSlugPageDef);
         return {
-            articles: await $content("/").sortBy("gitCreatedAt", "desc").fetch()
+            page: yazilarPage,
+            articles
         };
     }
 };

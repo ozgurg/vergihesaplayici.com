@@ -1,6 +1,6 @@
 <template>
     <v-card
-        :to="url()"
+        :to="article.url"
         outlined=""
         class="vh-article-card-item px-4 py-6 px-lg-6 py-lg-8">
         <v-card-title class="pa-0 mb-4">
@@ -18,14 +18,6 @@ export default {
         article: {
             type: Object,
             required: true
-        }
-    },
-    methods: {
-        // Making it "computed", causes Nuxt to fail to detect "yazilar/_slug" pages while "generate".
-        // We should not depend on this behavior. It's not critical, but it would be nice to fix it.
-        url() {
-            const vm = this;
-            return `/yazilar${vm.article.path}/`;
         }
     }
 };
