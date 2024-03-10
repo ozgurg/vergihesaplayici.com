@@ -93,7 +93,7 @@
 
 <script>
 import page from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici-slug.page.js";
-import { registrationOptions } from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.page.js";
+import { registrationOptions } from "@/data/telefon-vergisi-hesaplayici/registration-options.js";
 import {
     buildResultList,
     buildScreenshotInput,
