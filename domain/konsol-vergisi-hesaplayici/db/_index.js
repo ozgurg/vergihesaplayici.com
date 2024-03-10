@@ -25,6 +25,9 @@ const buildCalculations = () => {
 };
 
 export {
+    brands,
+    presets,
+    presetOptions,
     findBrandById,
     findPresetsByBrandId,
     findPresetOptionsByPresetId,
