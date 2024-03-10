@@ -59,7 +59,6 @@
         "@nuxtjs/style-resources": "1.2.2",
         "@nuxtjs/svg": "0.4.1",
         "@nuxtjs/vuetify": "1.12.3",
-        "cheerio": "1.0.0-rc.12",
         "eslint": "8.57.0",
         "eslint-config-google": "0.14.0",
         "eslint-plugin-nuxt": "4.0.0",
