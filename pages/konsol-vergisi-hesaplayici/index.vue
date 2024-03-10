@@ -94,7 +94,7 @@
 
 <script>
 import Calculator from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.calculator.js";
-import page from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.page.js";
+import { KonsolVergisiHesaplayiciPageDef } from "@/page-def/konsol-vergisi-hesaplayici.page-def.js";
 import {
     buildResultList,
     buildScreenshotInput,
@@ -103,12 +103,14 @@ import {
 } from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.utils.js";
 import { buildCalculations } from "@/calculators/konsol-vergisi-hesaplayici/utils.js";
 
+const konsolVergisiHesaplayiciPage = KonsolVergisiHesaplayiciPageDef();
+
 export default {
     head() {
         return this.page.head;
     },
     data: () => ({
-        page,
+        page: konsolVergisiHesaplayiciPage,
         ui: {
             calculations: buildCalculations()
         },

@@ -1,10 +1,12 @@
 import { buildHeadTags } from "@/utils/build-head-tags.js";
-import KonsolVergisiHesaplayici from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.page.js";
+import { KonsolVergisiHesaplayiciPageDef } from "@/page-def/konsol-vergisi-hesaplayici.page-def.js";
 import { findCalculatorPresetBySlug } from "@/utils/find-calculator-preset-by-slug.js";
 
 import presets from "@/calculators/konsol-vergisi-hesaplayici/data/presets.js";
-import { findPresetOptionsByPresetId, findBrandById } from "@/calculators/konsol-vergisi-hesaplayici/utils.js";
+import { findBrandById, findPresetOptionsByPresetId } from "@/calculators/konsol-vergisi-hesaplayici/utils.js";
 import presetOptions from "@/calculators/konsol-vergisi-hesaplayici/data/preset-options.js";
+
+const konsolVergisiHesaplayiciPage = KonsolVergisiHesaplayiciPageDef();
 
 export default slug => {
     const preset = findCalculatorPresetBySlug(slug, presets);
@@ -23,15 +25,18 @@ export default slug => {
         ogImageName: preset.ogImageName ?? "konsol-vergisi-hesaplayici.jpg"
     });
     const breadcrumbs = [
-        ...KonsolVergisiHesaplayici.breadcrumbs,
-        { title: `${brand.title} ${preset.title}`, url }
+        ...konsolVergisiHesaplayiciPage.breadcrumbs,
+        {
+            title: `${brand.title} ${preset.title}`,
+            url
+        }
     ];
 
     const options = findPresetOptionsByPresetId(preset.id, presetOptions);
 
     return {
         title,
-        calculatorTitle: KonsolVergisiHesaplayici.title,
+        calculatorTitle: konsolVergisiHesaplayiciPage.title,
         url,
         description,
         head,
