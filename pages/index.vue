@@ -24,8 +24,8 @@
                 </div>
 
                 <div>
-                    <Heading2 to="/yazilar/">
-                        Yazılar
+                    <Heading2 :to="yazilarPage.url">
+                        {{ yazilarPage.title }}
                     </Heading2>
                     <ArticleGrid :articles="articles" />
                 </div>
@@ -37,9 +37,11 @@
 <script>
 import { AnaSayfaPageDef } from "@/page-def/ana-sayfa.page-def.js";
 import { HesaplayicilarPageDef } from "@/page-def/hesaplayicilar.page-def.js";
+import { YazilarPageDef } from "@/page-def/yazilar.page-def.js";
 
 const anaSayfaPage = AnaSayfaPageDef();
 const hesaplayicilarPage = HesaplayicilarPageDef();
+const yazilarPage = YazilarPageDef();
 
 export default {
     head() {
@@ -47,7 +49,8 @@ export default {
     },
     data: () => ({
         page: anaSayfaPage,
-        hesaplayicilarPage
+        hesaplayicilarPage,
+        yazilarPage
     }),
     async asyncData({ $content }) {
         return {

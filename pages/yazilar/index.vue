@@ -1,9 +1,9 @@
 <template>
     <div>
-        <AppBreadcrumbs :items="breadcrumbs()" />
+        <AppBreadcrumbs :items="page.breadcrumbs" />
 
         <Heading1>
-            Yazılar
+            {{ page.title }}
         </Heading1>
 
         <InnerContainer>
@@ -22,26 +22,17 @@
 </template>
 
 <script>
-import { buildHeadTags } from "@/utils/build-head-tags.js";
+import { YazilarPageDef } from "@/page-def/yazilar.page-def.js";
+
+const yazilarPage = YazilarPageDef();
 
 export default {
     head() {
-        // Thanks to ChatGPT :)
-        return buildHeadTags({
-            title: "Yazılar",
-            description: "Vergiler hakkında bilgi edinmek ve güncel vergi kanunlarına dair rehber arıyorsanız, doğru adrestesiniz! Vergilerle ilgili tüm detayları içeren kapsamlı makalelerimiz ve vergi ipuçlarımızla size yol gösteriyoruz. Vergi dünyasında kendinizi güvende hissetmek ve vergi yükümlülüklerinizi anlamak için sayfamızı keşfedin."
-        });
+        return this.page.head;
     },
-    methods: {
-        breadcrumbs() {
-            return [
-                {
-                    title: "Yazılar",
-                    url: "/yazilar/"
-                }
-            ];
-        }
-    },
+    data: () => ({
+        page: yazilarPage
+    }),
     async asyncData({ $content }) {
         return {
             articles: await $content("/").sortBy("gitCreatedAt", "desc").fetch()
