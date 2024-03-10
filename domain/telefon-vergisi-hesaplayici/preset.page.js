@@ -1,3 +1,5 @@
+/** @deprecated */
+
 import { buildHeadTags } from "@/utils/build-head-tags.js";
 import { TelefonVergisiHesaplayiciPageDef } from "@/domain/telefon-vergisi-hesaplayici/index.page-def.js";
 import { findCalculatorPresetBySlug } from "@/utils/find-calculator-preset-by-slug.js";

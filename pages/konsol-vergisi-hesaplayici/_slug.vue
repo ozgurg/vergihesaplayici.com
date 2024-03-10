@@ -84,7 +84,7 @@
 </template>
 
 <script>
-import page from "@/domain/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici-slug.page.js";
+import page from "@/domain/konsol-vergisi-hesaplayici/preset.page.js";
 import { moneyFormat } from "@/utils/formatter.js";
 import {
     buildResultList,

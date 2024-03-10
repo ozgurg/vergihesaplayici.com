@@ -92,7 +92,7 @@
 </template>
 
 <script>
-import page from "@/domain/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici-slug.page.js";
+import page from "@/domain/telefon-vergisi-hesaplayici/preset.page.js";
 import { registrationOptions } from "@/domain/telefon-vergisi-hesaplayici/registration-options.js";
 import {
     buildResultList,

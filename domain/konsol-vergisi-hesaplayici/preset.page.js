@@ -1,3 +1,5 @@
+/** @deprecated */
+
 import { buildHeadTags } from "@/utils/build-head-tags.js";
 import { KonsolVergisiHesaplayiciPageDef } from "@/domain/konsol-vergisi-hesaplayici/index.page-def.js";
 import { findCalculatorPresetBySlug } from "@/utils/find-calculator-preset-by-slug.js";
