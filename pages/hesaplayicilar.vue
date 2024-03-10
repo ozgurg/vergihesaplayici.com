@@ -13,14 +13,16 @@
 </template>
 
 <script>
-import page from "@/data/pages/hesaplayicilar.page.js";
+import { HesaplayicilarPageDef } from "@/page-def/hesaplayicilar.page-def.js";
+
+const hesaplayicilarPage = HesaplayicilarPageDef();
 
 export default {
     head() {
         return this.page.head;
     },
     data: () => ({
-        page
+        page: hesaplayicilarPage
     })
 };
 </script>

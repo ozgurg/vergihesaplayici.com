@@ -1,6 +1,8 @@
 import { mdiController } from "@mdi/js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
-import parentPage from "@/data/pages/hesaplayicilar.page.js";
+import { HesaplayicilarPageDef } from "@/page-def/hesaplayicilar.page-def.js";
+
+const parentPage = HesaplayicilarPageDef();
 
 export default (() => {
     const icon = mdiController;

@@ -1,7 +1,9 @@
 import { mdiCellphone } from "@mdi/js";
 import { Registration } from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.calculator.js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
-import parentPage from "@/data/pages/hesaplayicilar.page.js";
+import { HesaplayicilarPageDef } from "@/page-def/hesaplayicilar.page-def.js";
+
+const parentPage = HesaplayicilarPageDef();
 
 const registrationOptions = [
     {
