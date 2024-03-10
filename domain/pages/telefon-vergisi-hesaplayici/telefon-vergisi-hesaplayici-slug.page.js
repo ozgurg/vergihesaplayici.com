@@ -1,10 +1,12 @@
 import { buildHeadTags } from "@/utils/build-head-tags.js";
 import { TelefonVergisiHesaplayiciPageDef } from "@/page-def/telefon-vergisi-hesaplayici.page-def.js";
 import { findCalculatorPresetBySlug } from "@/utils/find-calculator-preset-by-slug.js";
-
-import presets from "@/domain/telefon-vergisi-hesaplayici/db/presets.js";
-import { findBrandById, findPresetOptionsByPresetId } from "@/domain/telefon-vergisi-hesaplayici/db/utils.js";
-import presetOptions from "@/domain/telefon-vergisi-hesaplayici/db/preset-options.js";
+import {
+    findBrandById,
+    findPresetOptionsByPresetId,
+    presetOptions,
+    presets
+} from "@/domain/telefon-vergisi-hesaplayici/db/_index.js";
 
 const telefonVergisiHesaplayiciPage = TelefonVergisiHesaplayiciPageDef();
 
