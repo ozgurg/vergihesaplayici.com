@@ -80,15 +80,18 @@
 
 <script>
 import Calculator, { Mode } from "@/data/pages/kdv-hesaplayici/kdv-hesaplayici.calculator.js";
-import page, { modeOptions } from "@/data/pages/kdv-hesaplayici/kdv-hesaplayici.page.js";
+import { modeOptions } from "@/data/pages/kdv-hesaplayici/kdv-hesaplayici.page.js";
 import { buildResultList, handleQuery, shouldShowResults } from "@/data/pages/kdv-hesaplayici/kdv-hesaplayici.utils.js";
+import { KdvHesaplayiciPageDef } from "@/page-def/kdv-hesaplayici.page-def.js";
+
+const kdvHesaplayiciPage = KdvHesaplayiciPageDef();
 
 export default {
     head() {
         return this.page.head;
     },
     data: () => ({
-        page,
+        page: kdvHesaplayiciPage,
         ui: {
             modeOptions,
             presets: [
