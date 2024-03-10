@@ -81,7 +81,7 @@
 <script>
 import Calculator, { Mode } from "@/domain/pages/kdv-hesaplayici/kdv-hesaplayici.calculator.js";
 import { modeOptions } from "@/domain/kdv-hesaplayici/mode-options.js";
-import { buildResultList, handleQuery, shouldShowResults } from "@/domain/pages/kdv-hesaplayici/kdv-hesaplayici.utils.js";
+import { buildResultList, handleQuery, shouldShowResults } from "@/domain/kdv-hesaplayici/utils.js";
 import { KdvHesaplayiciPageDef } from "@/page-def/kdv-hesaplayici.page-def.js";
 
 const kdvHesaplayiciPage = KdvHesaplayiciPageDef();

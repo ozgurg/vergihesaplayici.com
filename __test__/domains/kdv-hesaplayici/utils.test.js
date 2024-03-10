@@ -1,4 +1,4 @@
-import { handleQuery, shouldShowResults } from "@/domain/pages/kdv-hesaplayici/kdv-hesaplayici.utils.js";
+import { handleQuery, shouldShowResults } from "@/domain/kdv-hesaplayici/utils.js";
 import { Mode } from "@/domain/pages/kdv-hesaplayici/kdv-hesaplayici.calculator.js";
 
 describe("kdv-hesaplayici/utils", () => {
