@@ -14,7 +14,7 @@
 
         <div>
             <img
-                :src="require(`@/calculators/${preset.thumbnail}`)"
+                :src="require(`@/data/${preset.thumbnail}`)"
                 :alt="preset.title"
                 class="vh-calculation-preset-item__thumb d-inline-block valign-middle rounded pa-2 white"
                 width="auto"

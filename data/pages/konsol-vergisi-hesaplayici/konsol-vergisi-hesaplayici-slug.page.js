@@ -2,9 +2,9 @@ import { buildHeadTags } from "@/utils/build-head-tags.js";
 import { KonsolVergisiHesaplayiciPageDef } from "@/page-def/konsol-vergisi-hesaplayici.page-def.js";
 import { findCalculatorPresetBySlug } from "@/utils/find-calculator-preset-by-slug.js";
 
-import presets from "@/calculators/konsol-vergisi-hesaplayici/data/presets.js";
-import { findBrandById, findPresetOptionsByPresetId } from "@/calculators/konsol-vergisi-hesaplayici/utils.js";
-import presetOptions from "@/calculators/konsol-vergisi-hesaplayici/data/preset-options.js";
+import presets from "@/data/konsol-vergisi-hesaplayici/presets.js";
+import { findBrandById, findPresetOptionsByPresetId } from "@/data/konsol-vergisi-hesaplayici/utils.js";
+import presetOptions from "@/data/konsol-vergisi-hesaplayici/preset-options.js";
 
 const konsolVergisiHesaplayiciPage = KonsolVergisiHesaplayiciPageDef();
 

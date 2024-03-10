@@ -92,7 +92,7 @@ import {
     shouldShowResults
 } from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.utils.js";
 import Calculator from "@/data/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.calculator.js";
-import { buildCalculations } from "@/calculators/konsol-vergisi-hesaplayici/utils.js";
+import { buildCalculations } from "@/data/konsol-vergisi-hesaplayici/utils.js";
 
 export default {
     head() {

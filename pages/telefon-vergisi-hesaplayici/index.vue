@@ -110,7 +110,7 @@ import {
     handleQuery,
     shouldShowResults
 } from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.utils.js";
-import { buildCalculations } from "@/calculators/telefon-vergisi-hesaplayici/utils.js";
+import { buildCalculations } from "@/data/telefon-vergisi-hesaplayici/utils.js";
 
 const telefonVergisiHesaplayiciPage = TelefonVergisiHesaplayiciPageDef();
 

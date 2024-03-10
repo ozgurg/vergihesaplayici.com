@@ -101,7 +101,7 @@ import {
 } from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.utils.js";
 import Calculator from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.calculator.js";
 import { moneyFormat } from "@/utils/formatter.js";
-import { buildCalculations } from "@/calculators/telefon-vergisi-hesaplayici/utils.js";
+import { buildCalculations } from "@/data/telefon-vergisi-hesaplayici/utils.js";
 
 export default {
     head() {
