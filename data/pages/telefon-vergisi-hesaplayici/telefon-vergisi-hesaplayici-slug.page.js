@@ -1,10 +1,12 @@
 import { buildHeadTags } from "@/utils/build-head-tags.js";
-import TelefonVergisiHesaplayici from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.page.js";
+import { TelefonVergisiHesaplayiciPageDef } from "@/page-def/telefon-vergisi-hesaplayici.page-def.js";
 import { findCalculatorPresetBySlug } from "@/utils/find-calculator-preset-by-slug.js";
 
 import presets from "@/calculators/telefon-vergisi-hesaplayici/data/presets.js";
-import { findPresetOptionsByPresetId, findBrandById } from "@/calculators/telefon-vergisi-hesaplayici/utils.js";
+import { findBrandById, findPresetOptionsByPresetId } from "@/calculators/telefon-vergisi-hesaplayici/utils.js";
 import presetOptions from "@/calculators/telefon-vergisi-hesaplayici/data/preset-options.js";
+
+const telefonVergisiHesaplayiciPage = TelefonVergisiHesaplayiciPageDef();
 
 export default slug => {
     const preset = findCalculatorPresetBySlug(slug, presets);
@@ -23,15 +25,18 @@ export default slug => {
         ogImageName: preset.ogImageName ?? "telefon-vergisi-hesaplayici.jpg"
     });
     const breadcrumbs = [
-        ...TelefonVergisiHesaplayici.breadcrumbs,
-        { title: `${brand.title} ${preset.title}`, url }
+        ...telefonVergisiHesaplayiciPage.breadcrumbs,
+        {
+            title: `${brand.title} ${preset.title}`,
+            url
+        }
     ];
 
     const options = findPresetOptionsByPresetId(preset.id, presetOptions);
 
     return {
         title,
-        calculatorTitle: TelefonVergisiHesaplayici.title,
+        calculatorTitle: telefonVergisiHesaplayiciPage.title,
         url,
         description,
         head,

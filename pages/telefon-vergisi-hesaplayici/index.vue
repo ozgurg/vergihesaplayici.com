@@ -102,9 +102,8 @@
 
 <script>
 import Calculator from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.calculator.js";
-import page, {
-    registrationOptions
-} from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.page.js";
+import { registrationOptions } from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.page.js";
+import { TelefonVergisiHesaplayiciPageDef } from "@/page-def/telefon-vergisi-hesaplayici.page-def.js";
 import {
     buildResultList,
     buildScreenshotInput,
@@ -113,12 +112,14 @@ import {
 } from "@/data/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.utils.js";
 import { buildCalculations } from "@/calculators/telefon-vergisi-hesaplayici/utils.js";
 
+const telefonVergisiHesaplayiciPage = TelefonVergisiHesaplayiciPageDef();
+
 export default {
     head() {
         return this.page.head;
     },
     data: () => ({
-        page,
+        page: telefonVergisiHesaplayiciPage,
         ui: {
             calculations: buildCalculations(),
             registration: registrationOptions
