@@ -6,7 +6,7 @@
                 cols="12"
                 sm="6"
                 md="4">
-                <ArticleCardItem :article="_article" />
+                <article-card-item :article="_article" />
             </v-col>
         </template>
     </v-row>

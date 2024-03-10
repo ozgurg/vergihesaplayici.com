@@ -13,7 +13,7 @@
                         :key="_article.slug"
                         cols="12"
                         lg="4">
-                        <ArticleCardItem :article="_article" />
+                        <article-card-item :article="_article" />
                     </v-col>
                 </template>
             </v-row>
