@@ -98,7 +98,7 @@ import {
     buildResultList,
     buildScreenshotInput,
     shouldShowResults
-} from "@/domain/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.utils.js";
+} from "@/domain/telefon-vergisi-hesaplayici/utils.js";
 import Calculator from "@/domain/pages/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.calculator.js";
 import { moneyFormat } from "@/utils/formatter.js";
 import { buildCalculations } from "@/domain/telefon-vergisi-hesaplayici/db/_index.js";

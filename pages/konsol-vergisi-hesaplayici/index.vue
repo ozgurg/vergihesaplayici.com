@@ -100,7 +100,7 @@ import {
     buildScreenshotInput,
     handleQuery,
     shouldShowResults
-} from "@/domain/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.utils.js";
+} from "@/domain/konsol-vergisi-hesaplayici/utils.js";
 import { buildCalculations } from "@/domain/konsol-vergisi-hesaplayici/db/_index.js";
 
 const konsolVergisiHesaplayiciPage = KonsolVergisiHesaplayiciPageDef();

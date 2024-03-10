@@ -1,7 +1,7 @@
 import {
     handleQuery,
     shouldShowResults
-} from "@/domain/pages/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici.utils.js";
+} from "@/domain/konsol-vergisi-hesaplayici/utils.js";
 
 describe("konsol-vergisi-hesaplayici/utils", () => {
     describe("shouldShowResults", () => {
