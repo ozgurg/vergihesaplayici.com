@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "skipLibCheck": true,
+        "target": "es2022",
+        "noEmit": true,
+        "strict": true,
+        "allowJs": true,
+        "checkJs": true
+    },
+    "include": [
+        "types/*.d.js",
+        "page-def/*.page-def.js"
+    ]
+}

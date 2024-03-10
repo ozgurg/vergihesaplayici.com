@@ -35,15 +35,17 @@
 </template>
 
 <script>
-import page from "@/data/pages/ana-sayfa.page.js";
+import { AnaSayfaPageDef } from "@/page-def/ana-sayfa.page-def.js";
 import Hesaplayicilar from "@/data/pages/hesaplayicilar.page.js";
+
+const anaSayfaPage = AnaSayfaPageDef();
 
 export default {
     head() {
         return this.page.head;
     },
     data: () => ({
-        page,
+        page: anaSayfaPage,
         Hesaplayicilar
     }),
     async asyncData({ $content }) {
