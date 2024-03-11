@@ -1,6 +1,7 @@
 import { mdiMicrosoftXbox, mdiNintendoSwitch, mdiSonyPlaystation } from "@mdi/js";
 
-export default [
+/** @type {KonsolVergisiHesaplayiciBrand[]} */
+const brands = [
     {
         id: 3,
         title: "Sony",
@@ -26,3 +27,5 @@ export default [
         color: "#5c96d6"
     }
 ];
+
+export default brands;

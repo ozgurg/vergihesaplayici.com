@@ -1,6 +1,7 @@
 import { mdiApple } from "@mdi/js";
 
-export default [
+/** @type {TelefonVergisiHesaplayiciBrand[]} */
+const brands = [
     {
         id: 1,
         title: "Apple",
@@ -14,3 +15,5 @@ export default [
         color: "#1428A0"
     }
 ];
+
+export default brands;
