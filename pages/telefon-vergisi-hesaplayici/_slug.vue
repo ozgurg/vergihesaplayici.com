@@ -92,7 +92,6 @@
 </template>
 
 <script>
-import page from "@/domain/telefon-vergisi-hesaplayici/preset.page.js";
 import { registrationOptions } from "@/domain/telefon-vergisi-hesaplayici/registration-options.js";
 import {
     buildResultList,
@@ -102,6 +101,7 @@ import {
 import Calculator from "@/domain/telefon-vergisi-hesaplayici/calculator.js";
 import { moneyFormat } from "@/utils/formatter.js";
 import { buildCalculations } from "@/domain/telefon-vergisi-hesaplayici/db/_index.js";
+import { TelefonVergisiHesaplayiciSlugPageDef } from "@/domain/telefon-vergisi-hesaplayici/slug.page-def.js";
 
 export default {
     head() {
@@ -172,35 +172,35 @@ export default {
         error,
         params: { slug }
     }) {
-        const presetPage = page(slug);
-        if (!presetPage) {
+        const telefonVergisiHesaplayiciSlugPage = TelefonVergisiHesaplayiciSlugPageDef(slug);
+        if (!telefonVergisiHesaplayiciSlugPage) {
             return error({ statusCode: 404 });
         }
 
         // For correct calculation, we need to fetch the exchange rate of the preset.
         // The result will be calculated during the build process and the calculation will be incorrect if the exchange rate changes.
         // In the front-end, the exchange rate will be re-fetched and the calculation will be correct.
-        await store.dispatch("exchange-rates/loadExchangeRateFromApi", presetPage.preset.options[0].form.currency);
+        await store.dispatch("exchange-rates/loadExchangeRateFromApi", telefonVergisiHesaplayiciSlugPage.preset.options[0].form.currency);
 
-        const options = presetPage.preset.options.map(option => ({
+        const options = telefonVergisiHesaplayiciSlugPage.preset.options.map(option => ({
             title: option.title,
             value: option,
             price: moneyFormat(option.form.price, option.form.currency)
         }));
 
         const form = {
-            option: presetPage.preset.options[0],
+            option: telefonVergisiHesaplayiciSlugPage.preset.options[0],
             currency: "USD",
             price: "",
             registration: registrationOptions[0].value,
-            ...presetPage.preset.options[0].form
+            ...telefonVergisiHesaplayiciSlugPage.preset.options[0].form
         };
 
-        const otherCalculations = buildCalculations().filter(calculation => calculation.brand.id === presetPage.preset.brandId);
+        const otherCalculations = buildCalculations().filter(calculation => calculation.brand.id === telefonVergisiHesaplayiciSlugPage.preset.brandId);
 
         return {
             slug,
-            page: presetPage,
+            page: telefonVergisiHesaplayiciSlugPage,
             ui: {
                 options,
                 calculations: otherCalculations,
