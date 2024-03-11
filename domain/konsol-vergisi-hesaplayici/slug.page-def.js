@@ -20,7 +20,7 @@ const KonsolVergisiHesaplayiciSlugPageDef = slug => {
     const brand = findBrandById(preset.brandId);
 
     const title = preset.pageTitle;
-    const url = preset.url;
+    const url = `${parentPage.url}${preset.slug}/`;
     const breadcrumbs = [
         ...parentPage.breadcrumbs,
         {

@@ -1,5 +1,3 @@
-const buildUrl = slug => `/telefon-vergisi-hesaplayici/${slug}/`;
-
 const buildPageMeta = phoneNameWithPossession => ({
     pageTitle: `${phoneNameWithPossession} vergisi ne kadar?`,
     pageDescription: `${phoneNameWithPossession} vergisini hesaplamak için başta ÖTV gibi tüm telefon vergilerini hesaplama yeteneğine sahip Telefon Vergisi Hesaplayıcı aracını kullanın. Vergilerin ne kadar uygulandığını ve vergisiz telefon fiyatını öğrenin. Yurt içi ve yurt dışı fiyatlarını karşılaştırın.`
@@ -13,7 +11,6 @@ export default [
         slug: "iphone-15-pro", // TODO: "apple-" prefix will be added
         releaseDate: new Date("2023-09-12"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-15-pro.webp",
-        url: buildUrl("iphone-15-pro"), // TODO: "apple-" prefix will be added
         ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-15-pro.jpg",
         ...buildPageMeta("Apple iPhone 15 Pro'nun")
     },
@@ -24,7 +21,6 @@ export default [
         slug: "iphone-15-pro-max", // TODO: "apple-" prefix will be added
         releaseDate: new Date("2023-09-12"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-15-pro-max.webp",
-        url: buildUrl("iphone-15-pro-max"), // TODO: "apple-" prefix will be added
         ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-15-pro-max.jpg",
         ...buildPageMeta("Apple iPhone 15 Pro Max'in")
     },
@@ -35,7 +31,6 @@ export default [
         slug: "iphone-15", // TODO: "apple-" prefix will be added
         releaseDate: new Date("2023-09-12"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-15.webp",
-        url: buildUrl("iphone-15"), // TODO: "apple-" prefix will be added
         ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-15.jpg",
         ...buildPageMeta("Apple iPhone 15'in")
     },
@@ -46,7 +41,6 @@ export default [
         slug: "iphone-15-plus", // TODO: "apple-" prefix will be added
         releaseDate: new Date("2023-09-12"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-15-plus.webp",
-        url: buildUrl("iphone-15-plus"), // TODO: "apple-" prefix will be added
         ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-15-plus.jpg",
         ...buildPageMeta("Apple iPhone 15 Plus'ın")
     },
@@ -58,7 +52,6 @@ export default [
         slug: "iphone-14-pro", // TODO: "apple-" prefix will be added
         releaseDate: new Date("2022-09-16"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-14-pro.webp",
-        url: buildUrl("iphone-14-pro"), // TODO: "apple-" prefix will be added
         ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-14-pro.jpg",
         ...buildPageMeta("Apple iPhone 14 Pro'nun")
     },
@@ -69,7 +62,6 @@ export default [
         slug: "iphone-14-pro-max", // TODO: "apple-" prefix will be added
         releaseDate: new Date("2022-09-16"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-14-pro-max.webp",
-        url: buildUrl("iphone-14-pro-max"), // TODO: "apple-" prefix will be added
         ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-14-pro-max.jpg",
         ...buildPageMeta("Apple iPhone 14 Pro Max'in")
     },
@@ -80,7 +72,6 @@ export default [
         slug: "iphone-14", // TODO: "apple-" prefix will be added
         releaseDate: new Date("2022-09-16"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-14.webp",
-        url: buildUrl("iphone-14"), // TODO: "apple-" prefix will be added
         ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-14.jpg",
         ...buildPageMeta("Apple iPhone 14'ün")
     },
@@ -91,7 +82,6 @@ export default [
         slug: "iphone-14-plus", // TODO: "apple-" prefix will be added
         releaseDate: new Date("2022-09-16"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-14-plus.webp",
-        url: buildUrl("iphone-14-plus"), // TODO: "apple-" prefix will be added
         ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-14-plus.jpg",
         ...buildPageMeta("Apple iPhone 14 Plus'ın")
     },
@@ -103,7 +93,6 @@ export default [
         slug: "iphone-13-mini", // TODO: "apple-" prefix will be added
         releaseDate: new Date("2021-09-24"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-13-mini.webp",
-        url: buildUrl("iphone-13-mini"), // TODO: "apple-" prefix will be added
         ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-13-mini.jpg",
         ...buildPageMeta("Apple iPhone 13 mini'nin")
     },
@@ -114,7 +103,6 @@ export default [
         slug: "iphone-13", // TODO: "apple-" prefix will be added
         releaseDate: new Date("2021-09-24"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-13.webp",
-        url: buildUrl("iphone-13"), // TODO: "apple-" prefix will be added
         ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-13.jpg",
         ...buildPageMeta("Apple iPhone 13'ün")
     },
@@ -126,7 +114,6 @@ export default [
         slug: "iphone-se-3-2022", // TODO: "apple-" prefix will be added
         releaseDate: new Date("2022-03-08"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-se-3-2022.webp",
-        url: buildUrl("iphone-se-3-2022"), // TODO: "apple-" prefix will be added
         ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-se-2022.jpg",
         ...buildPageMeta("Apple iPhone SE 3'ün (2022)")
     },
@@ -138,7 +125,6 @@ export default [
         slug: "iphone-12", // TODO: "apple-" prefix will be added
         releaseDate: new Date("2020-10-23"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-12.webp",
-        url: buildUrl("iphone-12"), // TODO: "apple-" prefix will be added
         ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-12.jpg",
         ...buildPageMeta("Apple iPhone 12'nin")
     },
@@ -150,7 +136,6 @@ export default [
         slug: "apple-vision-pro",
         releaseDate: new Date("2024-12-31"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-vision-pro.webp",
-        url: buildUrl("apple-vision-pro"),
         ogImage: "telefon-vergisi-hesaplayici/og/apple-vision-pro.jpg",
         ...buildPageMeta("Apple Vision Pro'nun")
     },
@@ -162,7 +147,6 @@ export default [
         slug: "samsung-galaxy-s23",
         releaseDate: new Date("2023-02-01"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/samsung-galaxy-s23.webp",
-        url: buildUrl("samsung-galaxy-s23"),
         ogImage: "telefon-vergisi-hesaplayici/og/samsung-galaxy-s23.jpg",
         ...buildPageMeta("Samsung Galaxy S23'ün")
     },
@@ -173,7 +157,6 @@ export default [
         slug: "samsung-galaxy-s23-plus",
         releaseDate: new Date("2023-02-01"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/samsung-galaxy-s23-plus.webp",
-        url: buildUrl("samsung-galaxy-s23-plus"),
         ogImage: "telefon-vergisi-hesaplayici/og/samsung-galaxy-s23-plus.jpg",
         ...buildPageMeta("Samsung Galaxy S23+'ın")
     },
@@ -184,7 +167,6 @@ export default [
         slug: "samsung-galaxy-s23-fe",
         releaseDate: new Date("2023-10-26"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/samsung-galaxy-s23-fe.webp",
-        url: buildUrl("samsung-galaxy-s23-fe"),
         ogImage: "telefon-vergisi-hesaplayici/og/samsung-galaxy-s23-fe.jpg",
         ...buildPageMeta("Samsung Galaxy S23 FE'nin")
     },
@@ -195,7 +177,6 @@ export default [
         slug: "samsung-galaxy-s23-ultra",
         releaseDate: new Date("2023-02-01"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/samsung-galaxy-s23-ultra.webp",
-        url: buildUrl("samsung-galaxy-s23-ultra"),
         ogImage: "telefon-vergisi-hesaplayici/og/samsung-galaxy-s23-ultra.jpg",
         ...buildPageMeta("Samsung Galaxy S23 Ultra'nın")
     },
@@ -207,7 +188,6 @@ export default [
         slug: "samsung-galaxy-z-fold5",
         releaseDate: new Date("2023-07-26"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/samsung-galaxy-z-fold5.webp",
-        url: buildUrl("samsung-galaxy-z-fold5"),
         ogImage: "telefon-vergisi-hesaplayici/og/samsung-galaxy-z-fold5.jpg",
         ...buildPageMeta("Samsung Galaxy Z Fold5'in")
     },
@@ -218,7 +198,6 @@ export default [
         slug: "samsung-galaxy-z-fold4",
         releaseDate: new Date("2022-08-25"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/samsung-galaxy-z-fold4.webp",
-        url: buildUrl("samsung-galaxy-z-fold4"),
         ogImage: "telefon-vergisi-hesaplayici/og/samsung-galaxy-z-fold4.jpg",
         ...buildPageMeta("Samsung Galaxy Z Fold4'ün")
     },
@@ -230,7 +209,6 @@ export default [
         slug: "samsung-galaxy-z-flip5",
         releaseDate: new Date("2023-07-26"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/samsung-galaxy-z-flip5.webp",
-        url: buildUrl("samsung-galaxy-z-flip5"),
         ogImage: "telefon-vergisi-hesaplayici/og/samsung-galaxy-z-flip5.jpg",
         ...buildPageMeta("Samsung Galaxy Z Flip5'in")
     },
@@ -241,7 +219,6 @@ export default [
         slug: "samsung-galaxy-z-flip4",
         releaseDate: new Date("2022-08-26"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/samsung-galaxy-z-flip4.webp",
-        url: buildUrl("samsung-galaxy-z-flip4"),
         ogImage: "telefon-vergisi-hesaplayici/og/samsung-galaxy-z-flip4.jpg",
         ...buildPageMeta("Samsung Galaxy Z Flip4'ün")
     }
