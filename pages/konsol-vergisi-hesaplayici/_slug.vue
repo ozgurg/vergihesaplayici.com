@@ -84,15 +84,11 @@
 </template>
 
 <script>
-import page from "@/domain/konsol-vergisi-hesaplayici/preset.page.js";
 import { moneyFormat } from "@/utils/formatter.js";
-import {
-    buildResultList,
-    buildScreenshotInput,
-    shouldShowResults
-} from "@/domain/konsol-vergisi-hesaplayici/utils.js";
+import { buildResultList, buildScreenshotInput, shouldShowResults } from "@/domain/konsol-vergisi-hesaplayici/utils.js";
 import Calculator from "@/domain/konsol-vergisi-hesaplayici/calculator.js";
 import { buildCalculations } from "@/domain/konsol-vergisi-hesaplayici/db/_index.js";
+import { KonsolVergisiHesaplayiciSlugPageDef } from "@/domain/konsol-vergisi-hesaplayici/slug.page-def.js";
 
 export default {
     head() {
@@ -160,34 +156,34 @@ export default {
         error,
         params: { slug }
     }) {
-        const presetPage = page(slug);
-        if (!presetPage) {
+        const konsolVergisiHesaplayiciSlugPage = KonsolVergisiHesaplayiciSlugPageDef(slug);
+        if (!konsolVergisiHesaplayiciSlugPage) {
             return error({ statusCode: 404 });
         }
 
         // For correct calculation, we need to fetch the exchange rate of the preset.
         // The result will be calculated during the build process and the calculation will be incorrect if the exchange rate changes.
         // In the front-end, the exchange rate will be re-fetched and the calculation will be correct.
-        await store.dispatch("exchange-rates/loadExchangeRateFromApi", presetPage.preset.options[0].form.currency);
+        await store.dispatch("exchange-rates/loadExchangeRateFromApi", konsolVergisiHesaplayiciSlugPage.preset.options[0].form.currency);
 
-        const options = presetPage.preset.options.map(option => ({
+        const options = konsolVergisiHesaplayiciSlugPage.preset.options.map(option => ({
             title: option.title,
             value: option,
             price: moneyFormat(option.form.price, option.form.currency)
         }));
 
         const form = {
-            option: presetPage.preset.options[0],
+            option: konsolVergisiHesaplayiciSlugPage.preset.options[0],
             currency: "USD",
             price: "",
-            ...presetPage.preset.options[0].form
+            ...konsolVergisiHesaplayiciSlugPage.preset.options[0].form
         };
 
-        const otherCalculations = buildCalculations().filter(calculation => calculation.brand.id === presetPage.preset.brandId);
+        const otherCalculations = buildCalculations().filter(calculation => calculation.brand.id === konsolVergisiHesaplayiciSlugPage.preset.brandId);
 
         return {
+            page: konsolVergisiHesaplayiciSlugPage,
             slug,
-            page: presetPage,
             ui: {
                 options,
                 calculations: otherCalculations

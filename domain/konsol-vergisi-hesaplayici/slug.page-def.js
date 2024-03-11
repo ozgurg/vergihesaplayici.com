@@ -1,7 +1,5 @@
-/** @deprecated */
-
-import { buildHeadTags } from "@/utils/build-head-tags.js";
 import { KonsolVergisiHesaplayiciPageDef } from "@/domain/konsol-vergisi-hesaplayici/index.page-def.js";
+import { buildHeadTags } from "@/utils/build-head-tags.js";
 import { findCalculatorPresetBySlug } from "@/utils/find-calculator-preset-by-slug.js";
 import {
     findBrandById,
@@ -12,7 +10,8 @@ import {
 
 const parentPage = KonsolVergisiHesaplayiciPageDef();
 
-export default slug => {
+/** @type {KonsolVergisiHesaplayiciPresetPageDefinition} */
+const KonsolVergisiHesaplayiciSlugPageDef = slug => {
     const preset = findCalculatorPresetBySlug(slug, presets);
     if (!preset) {
         return false;
@@ -22,12 +21,6 @@ export default slug => {
 
     const title = preset.pageTitle;
     const url = preset.url;
-    const description = preset.pageDescription;
-    const head = buildHeadTags({
-        title,
-        description,
-        ogImage: preset.ogImage ?? "konsol-vergisi-hesaplayici/og/konsol-vergisi-hesaplayici.jpg"
-    });
     const breadcrumbs = [
         ...parentPage.breadcrumbs,
         {
@@ -35,16 +28,20 @@ export default slug => {
             url
         }
     ];
+    const head = buildHeadTags({
+        title,
+        description: preset.pageDescription,
+        ogImage: preset.ogImage ?? "konsol-vergisi-hesaplayici/og/konsol-vergisi-hesaplayici.jpg"
+    });
 
     const options = findPresetOptionsByPresetId(preset.id, presetOptions);
 
     return {
         title,
-        calculatorTitle: parentPage.title,
         url,
-        description,
-        head,
         breadcrumbs,
+        head,
+        calculatorTitle: parentPage.title,
         preset: {
             ...preset,
             options
@@ -53,5 +50,5 @@ export default slug => {
 };
 
 export {
-    presets
+    KonsolVergisiHesaplayiciSlugPageDef
 };
