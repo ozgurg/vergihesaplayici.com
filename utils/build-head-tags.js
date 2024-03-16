@@ -1,8 +1,8 @@
 /**
- * @param {object} args
- * @param {string} args.title
- * @param {string} args.description
- * @returns {{title: string, meta: {hid: string, name: string, content: string|*}[]}}
+ * @param title
+ * @param description
+ * @param ogImage
+ * @return {{meta: [{hid: string, name: string, content},{hid: string, name: string, content},{property: string, name: string, content},{property: string, name: string, content},{property: string, name: string, content},null,null,null,null,null,null,null], title}}
  */
 const buildHeadTags = ({
     title,
