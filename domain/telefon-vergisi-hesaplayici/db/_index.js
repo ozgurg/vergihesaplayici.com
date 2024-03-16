@@ -55,7 +55,6 @@ const _mergePresetWithPage = (preset, brand) => {
 
 export {
     presets,
-    presetOptions,
     findBrandById,
     findPresetOptionsByPresetId,
     buildCalculations
