@@ -1,5 +1,4 @@
 import { numberFormat } from "@/utils/formatter.js";
-import { Mode } from "@/domain/kdv-hesaplayici/calculator.js";
 
 /**
  * Decides whether to show the calculator results or not.
@@ -16,8 +15,8 @@ const shouldShowResults = form => {
 /**
  * @param {{[key: string]: *}} query
  * @param {object} requirements
- * @param {{title: string, value: Mode}[]} requirements.modeOptions
- * @returns {{price: number, mode: Mode}|void}
+ * @param {{title: string, value: string}[]} requirements.modeOptions
+ * @returns {{price: number, mode: string}|void}
  */
 const handleQuery = (query, { modeOptions }) => {
     const form = {};
