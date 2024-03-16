@@ -1,50 +1,45 @@
 <template>
     <div>
-        <AppBreadcrumbs :items="breadcrumbs()" />
+        <AppBreadcrumbs :items="page.breadcrumbs" />
 
-        <Heading1>
-            Yazılar
-        </Heading1>
+        <heading-1>
+            {{ page.title }}
+        </heading-1>
 
-        <InnerContainer>
+        <inner-container>
+            <article-disclaimer-alert class="mb-12" />
+
             <v-row>
                 <template v-for="_article in articles">
                     <v-col
                         :key="_article.slug"
                         cols="12"
                         lg="4">
-                        <ArticleCardItem :article="_article" />
+                        <article-card-item :article="_article" />
                     </v-col>
                 </template>
             </v-row>
-        </InnerContainer>
+        </inner-container>
     </div>
 </template>
 
 <script>
-import { buildHeadTags } from "@/utils/build-head-tags.js";
+import { YazilarPageDef } from "@/domain/yazilar/index.page-def.js";
+import { YazilarSlugPageDef } from "@/domain/yazilar/slug.page-def.js";
+import { getAllArticles } from "@/domain/yazilar/db/_index.js";
+
+const yazilarPage = YazilarPageDef();
 
 export default {
     head() {
-        // Thanks to ChatGPT :)
-        return buildHeadTags({
-            title: "Yazılar",
-            description: "Vergiler hakkında bilgi edinmek ve güncel vergi kanunlarına dair rehber arıyorsanız, doğru adrestesiniz! Vergilerle ilgili tüm detayları içeren kapsamlı makalelerimiz ve vergi ipuçlarımızla size yol gösteriyoruz. Vergi dünyasında kendinizi güvende hissetmek ve vergi yükümlülüklerinizi anlamak için sayfamızı keşfedin."
-        });
-    },
-    methods: {
-        breadcrumbs() {
-            return [
-                {
-                    title: "Yazılar",
-                    url: "/yazilar/"
-                }
-            ];
-        }
+        return this.page.head;
     },
     async asyncData({ $content }) {
+        const articles = await getAllArticles($content);
+        const yazilarSlugPages = articles.map(YazilarSlugPageDef);
         return {
-            articles: await $content("/").sortBy("gitCreatedAt", "desc").fetch()
+            page: yazilarPage,
+            articles: yazilarSlugPages
         };
     }
 };

@@ -8,7 +8,7 @@
             </div>
             <v-divider class="mx-4 mb-4" />
 
-            <CalculatorList />
+            <calculator-list />
 
             <v-list
                 class="mb-auto"
@@ -31,7 +31,7 @@
                     </v-btn>
                 </v-subheader>
                 <v-list-item>
-                    <ExchangeRateGrid />
+                    <exchange-rate-grid />
                 </v-list-item>
             </v-list>
 

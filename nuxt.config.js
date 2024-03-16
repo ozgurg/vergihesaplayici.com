@@ -83,10 +83,6 @@ export default {
         ]
     },
     modules: [
-        ["nuxt-content-git", {
-            createdAtName: "gitCreatedAt",
-            updatedAtName: "gitUpdatedAt"
-        }],
         "@nuxt/content"
     ],
     buildModules: [

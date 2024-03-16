@@ -1,73 +1,62 @@
 <template>
     <div>
-        <AppBreadcrumbs :items="breadcrumbs()" />
+        <AppBreadcrumbs :items="page.breadcrumbs" />
 
-        <Heading1>
-            {{ article.title }}
-        </Heading1>
+        <heading-1>
+            {{ page.title }}
+        </heading-1>
 
-        <InnerContainer>
+        <inner-container>
             <div class="d-flex flex-column gap-16">
                 <div>
-                    <ArticleDisclaimerAlert class="mb-12" />
+                    <article-disclaimer-alert class="mb-12" />
 
-                    <nuxt-content :document="article" />
+                    <nuxt-content :document="nuxtContent" />
 
-                    <ArticleDisclaimerAlert class="mt-12" />
+                    <article-disclaimer-alert class="mt-12" />
                 </div>
 
                 <div>
-                    <Heading2>
+                    <heading-2>
                         Diğer yazılar
-                    </Heading2>
-                    <ArticleGrid :articles="articles" />
+                    </heading-2>
+                    <article-grid :articles="otherArticles" />
                 </div>
             </div>
-        </InnerContainer>
+        </inner-container>
     </div>
 </template>
 
 <script>
-import { buildHeadTags } from "@/utils/build-head-tags.js";
+import { YazilarSlugPageDef } from "@/domain/yazilar/slug.page-def.js";
+import { getAllArticles, getArticleBySlug } from "@/domain/yazilar/db/_index.js";
 
 export default {
     head() {
-        return this.head;
-    },
-    methods: {
-        breadcrumbs() {
-            const vm = this;
-            return [
-                {
-                    title: "Yazılar",
-                    url: "/yazilar/"
-                },
-                {
-                    title: vm.article.title,
-                    url: `/yazilar${vm.article.path}/`
-                }
-            ];
-        }
+        return this.page.head;
     },
     async asyncData({
         $content,
+        error,
         params: { slug }
     }) {
-        const article = await $content(slug).fetch();
+        const article = await getArticleBySlug(slug, $content);
+        if (!article) {
+            return error({ statusCode: 404 });
+        }
 
-        const otherArticles = await $content("/")
-            .sortBy("gitCreatedAt", "desc")
-            .limit(15)
-            .where({ slug: { $ne: slug } })
-            .fetch();
+        const yazilarSlugPage = YazilarSlugPageDef(article);
+
+        const otherArticles = await getAllArticles($content, {
+            limit: 15,
+            where: { slug: { $ne: slug } }
+        });
+        const otherYazilarSlugPages = otherArticles.map(YazilarSlugPageDef);
 
         return {
-            articles: otherArticles,
-            article,
-            head: buildHeadTags({
-                title: article.title,
-                description: article.description
-            })
+            page: yazilarSlugPage,
+            nuxtContent: article.nuxtContent,
+            otherArticles: otherYazilarSlugPages
         };
     }
 };

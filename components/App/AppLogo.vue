@@ -4,13 +4,15 @@
         v-ripple=""
         class="vh-app-logo d-flex align-center justify-center px-4 rounded-pill"
         aria-label="Ana sayfaya git"
-        :to="AnaSayfa.url"
+        :to="anaSayfaPage.url"
         v-html="logo" />
 </template>
 
 <script setup>
-import AnaSayfa from "@/data/pages/ana-sayfa.page.js";
+import { AnaSayfaPageDef } from "@/domain/ana-sayfa/index.page-def.js";
 import logo from "@/assets/img/logo.svg?raw";
+
+const anaSayfaPage = AnaSayfaPageDef();
 </script>
 
 <!-- DO NOT make scoped -->

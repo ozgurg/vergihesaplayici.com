@@ -1,10 +1,10 @@
 <template>
     <div>
-        <Heading1 class="mt-lg-12">
+        <heading-1 class="mt-lg-12">
             {{ page.title }}
-        </Heading1>
+        </heading-1>
 
-        <InnerContainer>
+        <inner-container>
             <div class="d-flex flex-column gap-16">
                 <div>
                     <div class="text-center text-md-start">
@@ -17,38 +17,48 @@
                 </div>
 
                 <div>
-                    <Heading2 :to="Hesaplayicilar.url">
-                        {{ Hesaplayicilar.title }}
-                    </Heading2>
-                    <CalculatorGrid />
+                    <heading-2 :to="hesaplayicilarPage.url">
+                        {{ hesaplayicilarPage.title }}
+                    </heading-2>
+                    <calculator-grid />
                 </div>
 
                 <div>
-                    <Heading2 to="/yazilar/">
-                        Yazılar
-                    </Heading2>
-                    <ArticleGrid :articles="articles" />
+                    <heading-2 :to="yazilarPage.url">
+                        {{ yazilarPage.title }}
+                    </heading-2>
+                    <article-grid :articles="articles" />
                 </div>
             </div>
-        </InnerContainer>
+        </inner-container>
     </div>
 </template>
 
 <script>
-import page from "@/data/pages/ana-sayfa.page.js";
-import Hesaplayicilar from "@/data/pages/hesaplayicilar.page.js";
+import { AnaSayfaPageDef } from "@/domain/ana-sayfa/index.page-def.js";
+import { HesaplayicilarPageDef } from "@/domain/hesaplayicilar/index.page-def.js";
+import { YazilarPageDef } from "@/domain/yazilar/index.page-def.js";
+import { YazilarSlugPageDef } from "@/domain/yazilar/slug.page-def.js";
+import { getAllArticles } from "@/domain/yazilar/db/_index.js";
+
+const anaSayfaPage = AnaSayfaPageDef();
+const hesaplayicilarPage = HesaplayicilarPageDef();
+const yazilarPage = YazilarPageDef();
 
 export default {
     head() {
         return this.page.head;
     },
     data: () => ({
-        page,
-        Hesaplayicilar
+        page: anaSayfaPage,
+        hesaplayicilarPage,
+        yazilarPage
     }),
     async asyncData({ $content }) {
+        const articles = await getAllArticles($content, { limit: 15 });
+        const yazilarSlugPages = articles.map(YazilarSlugPageDef);
         return {
-            articles: await $content("/").sortBy("gitCreatedAt", "desc").limit(15).fetch()
+            articles: yazilarSlugPages
         };
     }
 };

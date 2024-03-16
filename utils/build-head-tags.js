@@ -1,17 +1,15 @@
 /**
- * @param {object} args
- * @param {string} args.title
- * @param {string} args.description
- * @param {string} args.ogImageName
- * @returns {{title: string, meta: {hid: string, name: string, content: string|*}[]}}
+ * @param title
+ * @param description
+ * @param ogImage
+ * @return {{meta: [{hid: string, name: string, content},{hid: string, name: string, content},{property: string, name: string, content},{property: string, name: string, content},{property: string, name: string, content},null,null,null,null,null,null,null], title}}
  */
 const buildHeadTags = ({
     title,
     description,
-    ogImageName = "ana-sayfa.jpg"
+    ogImage = "ana-sayfa/og/ana-sayfa.jpg"
 }) => {
-    const ogImage = require(`@/assets/og/${ogImageName}`);
-    const ogImageUrl = process.env.APP_URL + ogImage;
+    const ogImageUrl = process.env.APP_URL + require(`@/domain/${ogImage}`);
     return {
         title,
         meta: [

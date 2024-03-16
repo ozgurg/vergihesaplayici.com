@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "skipLibCheck": true,
+        "target": "es2022",
+        "moduleResolution": "Node",
+        "noEmit": true,
+        "strict": true,
+        "allowJs": true,
+        "checkJs": true,
+        "paths": {
+            "@/*": [
+                "./*"
+            ]
+        }
+    },
+    "include": [
+        "domain/**/db/*.js",
+        "domain/**/*.page-def.js",
+        "types/*.d.js",
+        "page-def/*.page-def.js"
+    ]
+}

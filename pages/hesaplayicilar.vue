@@ -2,25 +2,27 @@
     <div>
         <AppBreadcrumbs :items="page.breadcrumbs" />
 
-        <Heading1>
+        <heading-1>
             {{ page.title }}
-        </Heading1>
+        </heading-1>
 
-        <InnerContainer>
-            <CalculatorGrid />
-        </InnerContainer>
+        <inner-container>
+            <calculator-grid />
+        </inner-container>
     </div>
 </template>
 
 <script>
-import page from "@/data/pages/hesaplayicilar.page.js";
+import { HesaplayicilarPageDef } from "@/domain/hesaplayicilar/index.page-def.js";
+
+const hesaplayicilarPage = HesaplayicilarPageDef();
 
 export default {
     head() {
         return this.page.head;
     },
     data: () => ({
-        page
+        page: hesaplayicilarPage
     })
 };
 </script>
