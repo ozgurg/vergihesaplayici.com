@@ -1,4 +1,5 @@
 import store from "@/store/exchange-rates.js";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 describe("store/exchange-rates", () => {
     let state = {};
@@ -39,7 +40,7 @@ describe("store/exchange-rates", () => {
         let context = {};
 
         beforeEach(() => {
-            global.fetch = jest.fn(() =>
+            global.fetch = vi.fn(() =>
                 Promise.resolve({
                     json: () => Promise.resolve({
                         rates: {
@@ -51,7 +52,7 @@ describe("store/exchange-rates", () => {
 
             context = {
                 state,
-                commit: jest.fn()
+                commit: vi.fn()
             };
         });
 

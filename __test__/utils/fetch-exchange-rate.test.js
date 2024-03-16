@@ -1,8 +1,9 @@
 import { fetchExchangeRate } from "@/utils/fetch-exchange-rate.js";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 describe("utils/load-exchange-rate", () => {
     beforeEach(() => {
-        global.fetch = jest.fn(() =>
+        global.fetch = vi.fn(() =>
             Promise.resolve({
                 json: () => Promise.resolve({
                     rates: {

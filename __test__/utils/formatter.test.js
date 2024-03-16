@@ -1,4 +1,5 @@
-import { dateFormat, moneyFormat, normalizePrice, numberFormat } from "@/utils/formatter.js";
+import { moneyFormat, normalizePrice, numberFormat } from "@/utils/formatter.js";
+import { describe, expect, it } from "vitest";
 
 describe("utils/formatter", () => {
     describe("normalizePrice", () => {

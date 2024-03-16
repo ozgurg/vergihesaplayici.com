@@ -2,9 +2,10 @@ import {
     createFacebookShareUrl,
     createRedditShareUrl,
     createTelegramShareUrl,
-    createXShareUrl,
-    createWhatsAppShareUrl
+    createWhatsAppShareUrl,
+    createXShareUrl
 } from "@/utils/create-social-media-share-url.js";
+import { describe, expect, it } from "vitest";
 
 describe("utils/create-social-media-share-url", () => {
     const url = "https://vergihesaplayici.com";
@@ -12,7 +13,7 @@ describe("utils/create-social-media-share-url", () => {
 
     describe("createFacebookShareUrl", () => {
         it("should return a valid Facebook share URL", () => {
-            const result = createFacebookShareUrl(url, title);
+            const result = createFacebookShareUrl(url);
             expect(result).toBe(`https://www.facebook.com/sharer/sharer.php?u=${url}`);
         });
     });
@@ -26,7 +27,7 @@ describe("utils/create-social-media-share-url", () => {
 
     describe("createWhatsAppShareUrl", () => {
         it("should return a valid WhatsApp share URL", () => {
-            const result = createWhatsAppShareUrl(url, title);
+            const result = createWhatsAppShareUrl(url);
             expect(result).toBe(`https://wa.me/?text=${url}`);
         });
     });

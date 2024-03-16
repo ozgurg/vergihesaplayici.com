@@ -1,4 +1,5 @@
 import { normalizeCalculatorResults } from "@/utils/normalize-calculator-results.js";
+import { describe, expect, it } from "vitest";
 
 describe("utils/normalize-calculator-results", () => {
     it("should normalize calculator results", () => {

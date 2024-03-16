@@ -1,4 +1,5 @@
 import Calculator, { Mode } from "@/domain/kdv-hesaplayici/calculator.js";
+import { describe, expect, it } from "vitest";
 
 describe("kdv-hesaplayici/Calculator", () => {
     it(`should correctly calculate value added tax if params are: price-rate: [100-%15, 250-%18, 448-%25] / mode: ${Mode.TaxFreePriceToTaxAddedPrice}`, () => {
@@ -8,17 +9,26 @@ describe("kdv-hesaplayici/Calculator", () => {
                 {
                     price: 100,
                     rate: 15,
-                    expected: { taxFree: 100, taxAdded: 115 }
+                    expected: {
+                        taxFree: 100,
+                        taxAdded: 115
+                    }
                 },
                 {
                     price: 250,
                     rate: 18,
-                    expected: { taxFree: 250, taxAdded: 295 }
+                    expected: {
+                        taxFree: 250,
+                        taxAdded: 295
+                    }
                 },
                 {
                     price: 448,
                     rate: 25,
-                    expected: { taxFree: 448, taxAdded: 560 }
+                    expected: {
+                        taxFree: 448,
+                        taxAdded: 560
+                    }
                 }
             ]
         });
@@ -31,25 +41,41 @@ describe("kdv-hesaplayici/Calculator", () => {
                 {
                     price: 100,
                     rate: 15,
-                    expected: { taxFree: 87, taxAdded: 100 }
+                    expected: {
+                        taxFree: 87,
+                        taxAdded: 100
+                    }
                 },
                 {
                     price: 250,
                     rate: 18,
-                    expected: { taxFree: 211.9, taxAdded: 250 }
+                    expected: {
+                        taxFree: 211.9,
+                        taxAdded: 250
+                    }
                 },
                 {
                     price: 448,
                     rate: 25,
-                    expected: { taxFree: 358.4, taxAdded: 448 }
+                    expected: {
+                        taxFree: 358.4,
+                        taxAdded: 448
+                    }
                 }
             ]
         });
     });
 });
 
-function calculate({ inputs, mode }) {
-    for (const { price, rate, expected } of inputs) {
+function calculate({
+    inputs,
+    mode
+}) {
+    for (const {
+        price,
+        rate,
+        expected
+    } of inputs) {
         const calculator = new Calculator({
             price,
             rate,

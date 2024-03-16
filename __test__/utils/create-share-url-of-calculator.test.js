@@ -1,11 +1,8 @@
 import { createShareUrlOfCalculator } from "@/utils/create-share-url-of-calculator.js";
+import { describe, expect, it, vi } from "vitest";
 
 describe("utils/create-share-url-of-calculator", () => {
-    global.process = {
-        env: {
-            APP_URL: "https://vergihesaplayici.com"
-        }
-    };
+    vi.stubEnv("APP_URL", "https://vergihesaplayici.com");
 
     const calculatorPath = "/calculator";
     const params = {
