@@ -2,13 +2,11 @@ import fs from "fs";
 import path from "path";
 import tr from "vuetify/es5/locale/tr";
 
-let cspNonce = "development-mode";
 const cspNonceTxtPath = path.join(__dirname, "csp-nonce.txt");
-const cspNonceTxt = fs.existsSync(cspNonceTxtPath);
-if (cspNonceTxt) {
-    // create-csp-nonce-txt.js
-    cspNonce = fs.readFileSync(cspNonceTxtPath, { encoding: "utf-8" });
-}
+const isCspNonceTxtExists = fs.existsSync(cspNonceTxtPath);
+const cspNonce = isCspNonceTxtExists ?
+    fs.readFileSync(cspNonceTxtPath, { encoding: "utf-8" }) :
+    "development-mode";
 
 export default {
     target: "static",
