@@ -16,7 +16,7 @@
         "emulator:hosting": "npm run generate && firebase emulators:start --only hosting",
         "lint:fix": "npm run lint -- --fix",
         "lint": "eslint --ext \".js,.vue\" .",
-        "test": "vitest",
+        "test": "vitest run",
         "lint-staged": "lint-staged",
         "prepare": "husky",
         "prepare-csp-nonce": "node create-csp-nonce-txt.js && node create-firebase-json.js",
