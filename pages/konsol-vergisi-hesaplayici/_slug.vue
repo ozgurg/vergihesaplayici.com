@@ -87,8 +87,9 @@
 import { moneyFormat } from "@/utils/formatter.js";
 import { buildResultList, buildScreenshotInput, shouldShowResults } from "@/domain/konsol-vergisi-hesaplayici/utils.js";
 import Calculator from "@/domain/konsol-vergisi-hesaplayici/calculator.js";
-import { buildCalculations } from "@/domain/konsol-vergisi-hesaplayici/db/_index.js";
+import { buildCalculations, findBrandById, presets } from "@/domain/konsol-vergisi-hesaplayici/db/_index.js";
 import { KonsolVergisiHesaplayiciSlugPageDef } from "@/domain/konsol-vergisi-hesaplayici/slug.page-def.js";
+import { findCalculatorPresetBySlug } from "@/utils/find-calculator-preset-by-slug.js";
 
 export default {
     head() {
@@ -156,33 +157,43 @@ export default {
         error,
         params: { slug }
     }) {
-        const konsolVergisiHesaplayiciSlugPage = KonsolVergisiHesaplayiciSlugPageDef(slug);
-        if (!konsolVergisiHesaplayiciSlugPage) {
+        const preset = findCalculatorPresetBySlug(slug, presets);
+        if (!preset) {
             return error({ statusCode: 404 });
         }
+
+        const brand = findBrandById(preset.brandId);
+        if (!brand) {
+            return error({ statusCode: 404 });
+        }
+
+        const page = KonsolVergisiHesaplayiciSlugPageDef({
+            preset,
+            brand
+        });
 
         // For correct calculation, we need to fetch the exchange rate of the preset.
         // The result will be calculated during the build process and the calculation will be incorrect if the exchange rate changes.
         // In the front-end, the exchange rate will be re-fetched and the calculation will be correct.
-        await store.dispatch("exchange-rates/loadExchangeRateFromApi", konsolVergisiHesaplayiciSlugPage.preset.options[0].form.currency);
+        await store.dispatch("exchange-rates/loadExchangeRateFromApi", page.preset.options[0].form.currency);
 
-        const options = konsolVergisiHesaplayiciSlugPage.preset.options.map(option => ({
+        const options = page.preset.options.map(option => ({
             title: option.title,
             value: option,
             price: moneyFormat(option.form.price, option.form.currency)
         }));
 
         const form = {
-            option: konsolVergisiHesaplayiciSlugPage.preset.options[0],
+            option: page.preset.options[0],
             currency: "USD",
             price: "",
-            ...konsolVergisiHesaplayiciSlugPage.preset.options[0].form
+            ...page.preset.options[0].form
         };
 
-        const otherCalculations = buildCalculations().filter(calculation => calculation.brand.id === konsolVergisiHesaplayiciSlugPage.preset.brandId);
+        const otherCalculations = buildCalculations().filter(calculation => calculation.brand.id === page.preset.brandId);
 
         return {
-            page: konsolVergisiHesaplayiciSlugPage,
+            page,
             slug,
             ui: {
                 options,

@@ -1,4 +1,5 @@
-export default [
+/** @type {KonsolVergisiHesaplayiciPreset[]} */
+const presets = [
     {
         id: 14,
         brandId: 3,
@@ -102,3 +103,5 @@ export default [
         pageDescription: "Satın aldığınız bir Valve Steam Deck'in yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın."
     }
 ];
+
+export default presets;

@@ -1,24 +1,14 @@
 import { TelefonVergisiHesaplayiciPageDef } from "@/domain/telefon-vergisi-hesaplayici/index.page-def.js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
-import { findCalculatorPresetBySlug } from "@/utils/find-calculator-preset-by-slug.js";
-import {
-    findBrandById,
-    findPresetOptionsByPresetId,
-    presetOptions,
-    presets
-} from "@/domain/telefon-vergisi-hesaplayici/db/_index.js";
+import { findPresetOptionsByPresetId, presetOptions } from "@/domain/telefon-vergisi-hesaplayici/db/_index.js";
 
 const parentPage = TelefonVergisiHesaplayiciPageDef();
 
 /** @type {TelefonVergisiHesaplayiciPresetPageDefinition} */
-const TelefonVergisiHesaplayiciSlugPageDef = slug => {
-    const preset = findCalculatorPresetBySlug(slug, presets);
-    if (!preset) {
-        return false;
-    }
-
-    const brand = findBrandById(preset.brandId);
-
+const TelefonVergisiHesaplayiciSlugPageDef = ({
+    preset,
+    brand
+}) => {
     const title = preset.pageTitle;
     const url = `${parentPage.url}${preset.slug}/`;
     const breadcrumbs = [

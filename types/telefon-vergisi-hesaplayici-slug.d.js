@@ -3,7 +3,13 @@
  */
 
 /**
- * @typedef {(slug: string) => TelefonVergisiHesaplayiciPresetPage|false} TelefonVergisiHesaplayiciPresetPageDefinition
+ * @typedef {object} TelefonVergisiHesaplayiciPresetPageDefinitionParams
+ * @property {TelefonVergisiHesaplayiciPreset} preset
+ * @property {TelefonVergisiHesaplayiciBrand} brand
+ */
+
+/**
+ * @typedef {(params: TelefonVergisiHesaplayiciPresetPageDefinitionParams) => TelefonVergisiHesaplayiciPresetPage} TelefonVergisiHesaplayiciPresetPageDefinition
  */
 
 /**
@@ -12,4 +18,17 @@
  * @property {string} title
  * @property {Icon} icon
  * @property {HexColor} color
+ */
+
+/**
+ * @typedef {object} TelefonVergisiHesaplayiciPreset
+ * @property {number} id
+ * @property {number} brandId
+ * @property {string} title
+ * @property {string} slug
+ * @property {Date} releaseDate
+ * @property {`${string}.webp`} thumbnail
+ * @property {`${string}.jpg`} ogImage
+ * @property {string} pageTitle
+ * @property {string} pageDescription
  */

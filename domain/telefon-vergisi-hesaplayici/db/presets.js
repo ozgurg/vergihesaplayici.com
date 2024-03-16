@@ -3,7 +3,8 @@ const buildPageMeta = phoneNameWithPossession => ({
     pageDescription: `${phoneNameWithPossession} vergisini hesaplamak için başta ÖTV gibi tüm telefon vergilerini hesaplama yeteneğine sahip Telefon Vergisi Hesaplayıcı aracını kullanın. Vergilerin ne kadar uygulandığını ve vergisiz telefon fiyatını öğrenin. Yurt içi ve yurt dışı fiyatlarını karşılaştırın.`
 });
 
-export default [
+/** @type {TelefonVergisiHesaplayiciPreset[]} */
+const presets = [
     {
         id: 17,
         brandId: 1,
@@ -223,3 +224,5 @@ export default [
         ...buildPageMeta("Samsung Galaxy Z Flip4'ün")
     }
 ];
+
+export default presets;

@@ -1,24 +1,14 @@
 import { KonsolVergisiHesaplayiciPageDef } from "@/domain/konsol-vergisi-hesaplayici/index.page-def.js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
-import { findCalculatorPresetBySlug } from "@/utils/find-calculator-preset-by-slug.js";
-import {
-    findBrandById,
-    findPresetOptionsByPresetId,
-    presetOptions,
-    presets
-} from "@/domain/konsol-vergisi-hesaplayici/db/_index.js";
+import { findPresetOptionsByPresetId, presetOptions } from "@/domain/konsol-vergisi-hesaplayici/db/_index.js";
 
 const parentPage = KonsolVergisiHesaplayiciPageDef();
 
 /** @type {KonsolVergisiHesaplayiciPresetPageDefinition} */
-const KonsolVergisiHesaplayiciSlugPageDef = slug => {
-    const preset = findCalculatorPresetBySlug(slug, presets);
-    if (!preset) {
-        return false;
-    }
-
-    const brand = findBrandById(preset.brandId);
-
+const KonsolVergisiHesaplayiciSlugPageDef = ({
+    preset,
+    brand
+}) => {
     const title = preset.pageTitle;
     const url = `${parentPage.url}${preset.slug}/`;
     const breadcrumbs = [
