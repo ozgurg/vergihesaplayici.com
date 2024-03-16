@@ -33,7 +33,7 @@ npm run generate
 
 ## Contributing
 
-See [CONTRIBUTING.md](https://github.com/ozgurg/vergihesaplayici.com/blob/main/CONTRIBUTING.md)
+See [CONTRIBUTING.md](https://github.com/ozgurg/vergihesaplayici.com/blob/main/.github/CONTRIBUTING.md)
 
 ## Assets
 
