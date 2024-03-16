@@ -1,7 +1,8 @@
 const lastUpdatedDateIphone = new Date("Tue Mar 05 2024 20:13:15 GMT+0300 (GMT+03:00)");
 const lastUpdatedDateSamsung = new Date("Tue Mar 05 2024 20:13:15 GMT+0300 (GMT+03:00)");
 
-export default [
+/** @type {TelefonVergisiHesaplayiciPresetOption[]} */
+const presetOptions = [
     // [17] Apple iPhone 15 Pro
     {
         presetId: 17,
@@ -717,3 +718,5 @@ export default [
         }
     }
 ];
+
+export default presetOptions;

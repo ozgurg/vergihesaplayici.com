@@ -34,6 +34,27 @@
  */
 
 /**
+ * @typedef {object} TelefonVergisiHesaplayiciPresetOption
+ * @property {number} presetId
+ * @property {string} title
+ * @property {TelefonVergisiHesaplayiciPresetOptionForm} form
+ * @property {TelefonVergisiHesaplayiciPresetOptionRetailPrice} [retailPrice]
+ */
+
+/**
+ * @typedef {object} TelefonVergisiHesaplayiciPresetOptionForm
+ * @property {number} price
+ * @property {string} currency
+ */
+
+/**
+ * @typedef {object} TelefonVergisiHesaplayiciPresetOptionRetailPrice
+ * @property {number} value
+ * @property {Date} lastUpdatedDate
+ * @property {`https://${string}`} sourceUrl
+ */
+
+/**
  * @typedef {TelefonVergisiHesaplayiciPreset & TelefonVergisiHesaplayiciPresetPage} TelefonVergisiHesaplayiciPresetWithPage
  */
 

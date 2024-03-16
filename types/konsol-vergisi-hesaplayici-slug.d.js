@@ -34,6 +34,27 @@
  */
 
 /**
+ * @typedef {object} KonsolVergisiHesaplayiciPresetOption
+ * @property {number} presetId
+ * @property {string} title
+ * @property {KonsolVergisiHesaplayiciPresetOptionForm} form
+ * @property {KonsolVergisiHesaplayiciPresetOptionRetailPrice} [retailPrice]
+ */
+
+/**
+ * @typedef {object} KonsolVergisiHesaplayiciPresetOptionForm
+ * @property {number} price
+ * @property {string} currency
+ */
+
+/**
+ * @typedef {object} KonsolVergisiHesaplayiciPresetOptionRetailPrice
+ * @property {number} value
+ * @property {Date} lastUpdatedDate
+ * @property {`https://${string}`} sourceUrl
+ */
+
+/**
  * @typedef {KonsolVergisiHesaplayiciPreset & KonsolVergisiHesaplayiciPresetPage} KonsolVergisiHesaplayiciPresetWithPage
  */
 

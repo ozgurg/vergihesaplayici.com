@@ -1,4 +1,5 @@
-export default [
+/** @type {KonsolVergisiHesaplayiciPresetOption[]} */
+const presetOptions = [
     // [14] Sony PlayStation 5
     {
         presetId: 14,
@@ -144,3 +145,5 @@ export default [
         }
     }
 ];
+
+export default presetOptions;
