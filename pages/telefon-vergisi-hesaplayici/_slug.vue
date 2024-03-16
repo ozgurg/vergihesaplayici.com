@@ -7,7 +7,7 @@
         </Heading1>
 
         <CalculatorInnerContainer>
-            <template v-if="slug === 'apple-vision-pro'">
+            <template v-if="preset.slug === 'apple-vision-pro'">
                 <vh-alert
                     type="info"
                     class="mb-10">
@@ -66,7 +66,7 @@
                         :screenshot-output="resultList"
                         :form="form"
                         :calculator-title="page.calculatorTitle"
-                        :preset-title="presetTitle"
+                        :preset-title="preset.title"
                         :preset-option-title="form.option.title" />
                 </FormRow>
             </template>
@@ -79,12 +79,11 @@
                 Diğer hesaplamalar
             </Heading2>
             <div class="d-flex flex-column gap-12">
-                <template v-for="_calculation in ui.calculations">
-                    <div :key="_calculation.brand.id">
-                        <CalculationPresets
-                            :presets="_calculation.presets"
-                            :brand="_calculation.brand" />
-                    </div>
+                <template v-for="_calculation in ui.otherCalculations">
+                    <CalculationPresets
+                        :key="_calculation.brand.id"
+                        :presets="_calculation.presets"
+                        :brand="_calculation.brand" />
                 </template>
             </div>
         </InnerContainer>
@@ -114,7 +113,6 @@ export default {
         return this.page.head;
     },
     data: () => ({
-        slug: null,
         page: null,
         preset: null,
         ui: {},
@@ -126,22 +124,25 @@ export default {
         _calculate() {
             const vm = this;
 
-            const calculator = new Calculator({
-                price: vm.form.price * vm.selectedCurrency.rate,
-                registration: vm.form.registration,
-                eurToTryCurrency: vm.$store.getters["exchange-rates/currencies"].EUR.rate
-            }, {
-                calculateFromTaxAddedPrice: vm.form.currency === "TRY"
-            });
+            const selectedCurrencyRate = vm.$store.getters["exchange-rates/currencies"][vm.form.currency].rate;
+            const eurToTryCurrencyRate = vm.$store.getters["exchange-rates/currencies"].EUR.rate;
+            const calculateFromTaxAddedPrice = vm.form.currency === "TRY";
+
+            const calculator = new Calculator(
+                {
+                    price: vm.form.price * selectedCurrencyRate,
+                    registration: vm.form.registration,
+                    eurToTryCurrency: eurToTryCurrencyRate
+                },
+                {
+                    calculateFromTaxAddedPrice
+                }
+            );
 
             vm.results = calculator.calculate();
         }
     },
     computed: {
-        selectedCurrency() {
-            const vm = this;
-            return vm.$store.getters["exchange-rates/currencies"][vm.form.currency];
-        },
         shouldShowResults() {
             const vm = this;
             return shouldShowResults(vm.form);
@@ -193,34 +194,32 @@ export default {
             return error({ statusCode: 404 });
         }
 
-        // For correct calculation, we need to fetch the exchange rate of the preset.
-        // The result will be calculated during the build process and the calculation will be incorrect if the exchange rate changes.
-        // In the front-end, the exchange rate will be re-fetched and the calculation will be correct.
-        await store.dispatch("exchange-rates/loadExchangeRateFromApi", presetOptions[0].form.currency);
+        const initialPresetOption = presetOptions[0];
 
-        const options = presetOptions.map(option => ({
-            title: option.title,
-            value: option,
-            price: moneyFormat(option.form.price, option.form.currency)
+        await store.dispatch("exchange-rates/loadExchangeRateFromApi", initialPresetOption.form.currency);
+
+        const options = presetOptions.map(_option => ({
+            title: _option.title,
+            value: _option,
+            price: moneyFormat(_option.form.price, _option.form.currency)
         }));
 
         const form = {
-            option: presetOptions[0],
+            option: initialPresetOption,
             currency: "USD",
             price: "",
             registration: registrationOptions[0].value,
-            ...presetOptions[0].form
+            ...initialPresetOption.form
         };
 
         const otherCalculations = buildCalculations().filter(_calculation => _calculation.brand.id === preset.brandId);
 
         return {
-            presetTitle: preset.title, // FIXME
             page,
-            slug,
+            preset,
             ui: {
                 options,
-                calculations: otherCalculations,
+                otherCalculations,
                 registration: registrationOptions
             },
             form
