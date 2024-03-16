@@ -1,20 +1,84 @@
 const fs = require("fs");
 const path = require("path");
 
-// create-csp-nonce-txt.js
-const cspNonce = fs.readFileSync(path.join(__dirname, "csp-nonce.txt"), { encoding: "utf-8" });
-
-const objectToCspHeader = object => {
+const _objectToCspHeader = object => {
     const cspHeader = [];
-    for (const [key, values] of Object.entries(object)) {
-        if (values.length > 0) {
-            cspHeader.push(`${key} ${values.join(" ")}`);
-        } else {
-            cspHeader.push(`${key}`);
-        }
+    for (const [_key, _values] of Object.entries(object)) {
+        cspHeader.push(
+            _values.length > 0 ? `${_key} ${_values.join(" ")}` : _key
+        );
     }
     return cspHeader.join(";");
 };
+
+// [0] = source (from), [1] = destination (to)
+const redirections301 = [
+    [
+        "/konsol-vergisi-hesaplayici/apple-vision-pro/",
+        "/telefon-vergisi-hesaplayici/apple-vision-pro/"
+    ],
+    [
+        "/konsol-vergisi-hesaplayici/playstation-5/",
+        "/konsol-vergisi-hesaplayici/sony-playstation-5/"
+    ],
+    [
+        "/konsol-vergisi-hesaplayici/playstation-vr2",
+        "/konsol-vergisi-hesaplayici/sony-playstation-vr2/"
+    ],
+    [
+        "/konsol-vergisi-hesaplayici/xbox-series-s/",
+        "/konsol-vergisi-hesaplayici/microsoft-xbox-series-s/"
+    ],
+    [
+        "/konsol-vergisi-hesaplayici/xbox-series-x/",
+        "/konsol-vergisi-hesaplayici/microsoft-xbox-series-x/"
+    ],
+    [
+        "/konsol-vergisi-hesaplayici/steam-deck/",
+        "/konsol-vergisi-hesaplayici/valve-steam-deck/"
+    ],
+
+    [
+        "/hesaplayicilar/telefon-vergisi-hesaplayici",
+        "/telefon-vergisi-hesaplayici/"
+    ],
+    [
+        "/hesaplayicilar/konsol-vergisi-hesaplayici",
+        "/konsol-vergisi-hesaplayici/"
+    ],
+    [
+        "/hesaplayicilar/kdv-hesaplayici",
+        "/kdv-hesaplayici/"
+    ],
+    [
+        "/hesaplayicilar/telefon-vergisi-hesaplayici/",
+        "/telefon-vergisi-hesaplayici/"
+    ],
+    [
+        "/hesaplayicilar/konsol-vergisi-hesaplayici/",
+        "/konsol-vergisi-hesaplayici/"
+    ],
+    [
+        "/hesaplayicilar/kdv-hesaplayici/",
+        "/kdv-hesaplayici/"
+    ],
+
+    [
+        "/yazilar/zirai-kazanc-vergisi-nedir/",
+        "/yazilar/zirai-kazanc-gelir-vergisi-nedir/"
+    ],
+    [
+        "/yazilar/luks-tuketimden-daha-fazla-vergi-alinmali-midir/",
+        "/yazilar/luks-tuketimden-daha-fazla-vergi-alinmali-mi/"
+    ],
+    [
+        "/yazilar/verginin-vergisi-hangi-ulke-icat-etmistir/",
+        "/yazilar/verginin-vergisini-hangi-ulke-icat-etmistir/"
+    ]
+];
+
+// create-csp-nonce-txt.js
+const cspNonce = fs.readFileSync(path.join(__dirname, "csp-nonce.txt"), { encoding: "utf-8" });
 
 const firebaseJson = {
     hosting: {
@@ -36,9 +100,9 @@ const firebaseJson = {
             {
                 source: "**",
                 headers: [
-                    {
+                    { // Commented directives break our app.
                         key: "Content-Security-Policy",
-                        value: objectToCspHeader({
+                        value: _objectToCspHeader({
                             "base-uri": [
                                 "'self'"
                             ],
@@ -53,7 +117,7 @@ const firebaseJson = {
                                 "https://www.google.com/recaptcha/",
                                 "https://www.gstatic.com/recaptcha/",
                                 "https://www.googletagmanager.com",
-                                "https://cdn.jsdelivr.net" // For Workbox
+                                "https://cdn.jsdelivr.net" // For Workbox in static/sw.js
                             ],
                             "frame-src": [
                                 "'self'",
@@ -73,6 +137,9 @@ const firebaseJson = {
                             "font-src": [
                                 "fonts.gstatic.com"
                             ]
+                            /* "require-trusted-types-for": [
+                                "'script'"
+                            ] */
                         })
                     }
                 ]
@@ -82,7 +149,7 @@ const firebaseJson = {
                 headers: [
                     {
                         key: "Cache-Control",
-                        value: "no-cache, no-store, must-revalidate"
+                        value: "no-cache,no-store,must-revalidate"
                     }
                 ]
             },
@@ -91,7 +158,7 @@ const firebaseJson = {
                 headers: [
                     {
                         key: "Cache-Control",
-                        value: "no-cache, no-store, must-revalidate"
+                        value: "no-cache,no-store,must-revalidate"
                     }
                 ]
             },
@@ -105,90 +172,15 @@ const firebaseJson = {
                 ]
             }
         ],
-        redirects: [
-            {
-                source: "/konsol-vergisi-hesaplayici/apple-vision-pro/",
-                destination: "/telefon-vergisi-hesaplayici/apple-vision-pro/",
-                type: 301
-            },
-
-            {
-                source: "/konsol-vergisi-hesaplayici/playstation-5/",
-                destination: "/konsol-vergisi-hesaplayici/sony-playstation-5/",
-                type: 301
-            },
-            {
-                source: "/konsol-vergisi-hesaplayici/playstation-vr2/",
-                destination: "/konsol-vergisi-hesaplayici/sony-playstation-vr2/",
-                type: 301
-            },
-            {
-                source: "/konsol-vergisi-hesaplayici/xbox-series-s/",
-                destination: "/konsol-vergisi-hesaplayici/microsoft-xbox-series-s/",
-                type: 301
-            },
-            {
-                source: "/konsol-vergisi-hesaplayici/xbox-series-x/",
-                destination: "/konsol-vergisi-hesaplayici/microsoft-xbox-series-x/",
-                type: 301
-            },
-            {
-                source: "/konsol-vergisi-hesaplayici/steam-deck/",
-                destination: "/konsol-vergisi-hesaplayici/valve-steam-deck/",
-                type: 301
-            },
-
-            {
-                source: "/hesaplayicilar/telefon-vergisi-hesaplayici",
-                destination: "/telefon-vergisi-hesaplayici/",
-                type: 301
-            },
-            {
-                source: "/hesaplayicilar/konsol-vergisi-hesaplayici",
-                destination: "/konsol-vergisi-hesaplayici/",
-                type: 301
-            },
-            {
-                source: "/hesaplayicilar/kdv-hesaplayici",
-                destination: "/kdv-hesaplayici/",
-                type: 301
-            },
-            {
-                source: "/hesaplayicilar/telefon-vergisi-hesaplayici/",
-                destination: "/telefon-vergisi-hesaplayici/",
-                type: 301
-            },
-            {
-                source: "/hesaplayicilar/konsol-vergisi-hesaplayici/",
-                destination: "/konsol-vergisi-hesaplayici/",
-                type: 301
-            },
-            {
-                source: "/hesaplayicilar/kdv-hesaplayici/",
-                destination: "/kdv-hesaplayici/",
-                type: 301
-            },
-
-            {
-                source: "/yazilar/zirai-kazanc-vergisi-nedir/",
-                destination: "/yazilar/zirai-kazanc-gelir-vergisi-nedir/",
-                type: 301
-            },
-            {
-                source: "/yazilar/luks-tuketimden-daha-fazla-vergi-alinmali-midir/",
-                destination: "/yazilar/luks-tuketimden-daha-fazla-vergi-alinmali-mi/",
-                type: 301
-            },
-            {
-                source: "/yazilar/verginin-vergisi-hangi-ulke-icat-etmistir/",
-                destination: "/yazilar/verginin-vergisini-hangi-ulke-icat-etmistir/",
-                type: 301
-            }
-        ]
+        redirects: redirections301.map(_redirection => ({
+            source: _redirection[0],
+            destination: _redirection[0],
+            type: 301
+        }))
     },
     emulators: {
         hosting: {
-            port: 8090
+            port: 8026
         },
         ui: {
             enabled: true
@@ -196,6 +188,7 @@ const firebaseJson = {
     }
 };
 
-fs.writeFileSync(path.join(__dirname, "firebase.json"), JSON.stringify(firebaseJson));
+const filePath = path.join(__dirname, "firebase.json");
+fs.writeFileSync(filePath, JSON.stringify(firebaseJson));
 
-console.log("firebase.json created");
+console.log(`${path.basename(filePath)} created`);
