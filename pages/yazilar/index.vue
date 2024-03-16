@@ -2,11 +2,11 @@
     <div>
         <AppBreadcrumbs :items="page.breadcrumbs" />
 
-        <Heading1>
+        <heading-1>
             {{ page.title }}
-        </Heading1>
+        </heading-1>
 
-        <InnerContainer>
+        <inner-container>
             <article-disclaimer-alert class="mb-12" />
 
             <v-row>
@@ -19,7 +19,7 @@
                     </v-col>
                 </template>
             </v-row>
-        </InnerContainer>
+        </inner-container>
     </div>
 </template>
 

@@ -2,9 +2,9 @@
     <div>
         <AppBreadcrumbs :items="page.breadcrumbs" />
 
-        <Heading1>
+        <heading-1>
             {{ page.title }}
-        </Heading1>
+        </heading-1>
 
         <CalculatorInnerContainer>
             <template v-if="preset.slug === 'apple-vision-pro'">
@@ -16,34 +16,34 @@
                 </vh-alert>
             </template>
 
-            <FormRow
+            <form-row
                 class="mb-10"
                 label="Kapasite">
-                <RadioGrid
+                <radio-grid
                     v-model="form.option"
                     :items="ui.options" />
-            </FormRow>
+            </form-row>
 
-            <FormRow
+            <form-row
                 class="mb-10"
                 label="Kayıt yolu">
-                <RadioGrid
+                <radio-grid
                     v-model="form.registration"
                     :items="ui.registration" />
-            </FormRow>
+            </form-row>
 
             <template v-if="shouldShowResults">
-                <FormRow>
+                <form-row>
                     <estimated-calculation-alert />
-                </FormRow>
+                </form-row>
 
                 <CalculatorResultList
                     :items="resultList"
                     class="mb-4" />
 
-                <FormRow class="mb-10">
+                <form-row class="mb-10">
                     <affordability-alert :price="results.prices.taxAdded" />
-                </FormRow>
+                </form-row>
 
                 <div
                     v-if="form.option.retailPrice"
@@ -53,14 +53,14 @@
                         class="mb-2"
                         label="Piyasa fiyatı" />
 
-                    <FormRow direction="horizontal">
+                    <form-row direction="horizontal">
                         <retail-price-update-info
                             :last-updated-date="form.option.retailPrice.lastUpdatedDate"
                             :source-url="form.option.retailPrice.sourceUrl" />
-                    </FormRow>
+                    </form-row>
                 </div>
 
-                <FormRow direction="horizontal">
+                <form-row direction="horizontal">
                     <CalculatorShareButton
                         :screenshot-input="screenshotInput"
                         :screenshot-output="resultList"
@@ -68,16 +68,16 @@
                         :calculator-title="page.calculatorTitle"
                         :preset-title="preset.title"
                         :preset-option-title="form.option.title" />
-                </FormRow>
+                </form-row>
             </template>
         </CalculatorInnerContainer>
 
         <v-divider class="my-16" />
 
-        <InnerContainer>
-            <Heading2>
+        <inner-container>
+            <heading-2>
                 Diğer hesaplamalar
-            </Heading2>
+            </heading-2>
             <div class="d-flex flex-column gap-12">
                 <template v-for="_calculation in ui.otherCalculations">
                     <CalculationPresets
@@ -86,7 +86,7 @@
                         :brand="_calculation.brand" />
                 </template>
             </div>
-        </InnerContainer>
+        </inner-container>
     </div>
 </template>
 

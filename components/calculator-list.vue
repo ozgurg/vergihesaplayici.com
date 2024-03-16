@@ -7,7 +7,7 @@
         </v-subheader>
 
         <template v-for="_calculator in calculators">
-            <CalculatorListItem
+            <calculator-list-item
                 :key="_calculator.title"
                 :calculator="_calculator" />
         </template>

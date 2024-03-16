@@ -2,20 +2,20 @@
     <div>
         <AppBreadcrumbs :items="page.breadcrumbs" />
 
-        <Heading1>
+        <heading-1>
             {{ page.title }}
-        </Heading1>
+        </heading-1>
 
         <CalculatorInnerContainer>
-            <FormRow
+            <form-row
                 class="mb-10"
                 label="Hesaplama modu">
-                <RadioGrid
+                <radio-grid
                     v-model="form.mode"
                     :items="ui.modeOptions" />
-            </FormRow>
+            </form-row>
 
-            <FormRow
+            <form-row
                 class="mb-10"
                 :label="priceLabel">
                 <v-text-field
@@ -30,9 +30,9 @@
                     min="1"
                     inputmode="decimal"
                     type="number" />
-            </FormRow>
+            </form-row>
 
-            <FormRow
+            <form-row
                 class="mb-10"
                 label="KDV oranı">
                 <v-text-field
@@ -60,19 +60,19 @@
                         </v-chip>
                     </template>
                 </div>
-            </FormRow>
+            </form-row>
 
             <template v-if="shouldShowResults">
                 <CalculatorResultList
                     :items="resultList"
                     class="mb-10" />
 
-                <FormRow direction="horizontal">
+                <form-row direction="horizontal">
                     <CalculatorShareButton
                         :screenshot-output="resultList"
                         :form="form"
                         :calculator-title="page.title" />
-                </FormRow>
+                </form-row>
             </template>
         </CalculatorInnerContainer>
     </div>

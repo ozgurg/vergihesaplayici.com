@@ -5,7 +5,7 @@
                 :key="_calculator.title"
                 cols="12"
                 sm="6">
-                <CalculatorCardItem :calculator="_calculator" />
+                <calculator-card-item :calculator="_calculator" />
             </v-col>
         </template>
     </v-row>

@@ -2,13 +2,13 @@
     <div>
         <AppBreadcrumbs :items="page.breadcrumbs" />
 
-        <Heading1>
+        <heading-1>
             {{ page.title }}
-        </Heading1>
+        </heading-1>
 
-        <InnerContainer>
-            <CalculatorGrid />
-        </InnerContainer>
+        <inner-container>
+            <calculator-grid />
+        </inner-container>
     </div>
 </template>
 

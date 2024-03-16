@@ -1,5 +1,5 @@
 <template>
-    <FormRow
+    <form-row
         :label="label"
         direction="horizontal">
         <v-text-field
@@ -17,7 +17,7 @@
                 <copy-icon-button :value-to-copy="value" />
             </template>
         </v-text-field>
-    </FormRow>
+    </form-row>
 </template>
 
 <script>

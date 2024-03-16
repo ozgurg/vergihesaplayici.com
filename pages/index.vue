@@ -1,10 +1,10 @@
 <template>
     <div>
-        <Heading1 class="mt-lg-12">
+        <heading-1 class="mt-lg-12">
             {{ page.title }}
-        </Heading1>
+        </heading-1>
 
-        <InnerContainer>
+        <inner-container>
             <div class="d-flex flex-column gap-16">
                 <div>
                     <div class="text-center text-md-start">
@@ -17,20 +17,20 @@
                 </div>
 
                 <div>
-                    <Heading2 :to="hesaplayicilarPage.url">
+                    <heading-2 :to="hesaplayicilarPage.url">
                         {{ hesaplayicilarPage.title }}
-                    </Heading2>
-                    <CalculatorGrid />
+                    </heading-2>
+                    <calculator-grid />
                 </div>
 
                 <div>
-                    <Heading2 :to="yazilarPage.url">
+                    <heading-2 :to="yazilarPage.url">
                         {{ yazilarPage.title }}
-                    </Heading2>
+                    </heading-2>
                     <article-grid :articles="articles" />
                 </div>
             </div>
-        </InnerContainer>
+        </inner-container>
     </div>
 </template>
 

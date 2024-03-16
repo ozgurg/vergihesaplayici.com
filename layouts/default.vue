@@ -6,10 +6,10 @@
             <AppBar />
         </template>
 
-        <MainContainer>
+        <main-container>
             <Nuxt />
 
             <app-footer class="d-block d-md-none mt-16" />
-        </MainContainer>
+        </main-container>
     </v-app>
 </template>

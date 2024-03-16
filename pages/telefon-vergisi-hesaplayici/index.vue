@@ -2,17 +2,17 @@
     <div>
         <AppBreadcrumbs :items="page.breadcrumbs" />
 
-        <Heading1>
+        <heading-1>
             {{ page.title }}
-        </Heading1>
+        </heading-1>
 
         <div class="d-flex flex-column gap-16">
             <div>
-                <InnerContainer>
-                    <FormRow>
-                        <Heading2>
+                <inner-container>
+                    <form-row>
+                        <heading-2>
                             Hazır hesaplamalar
-                        </Heading2>
+                        </heading-2>
                         <div class="d-flex flex-column gap-12">
                             <template v-for="_calculation in ui.calculations">
                                 <div :key="_calculation.brand.id">
@@ -22,16 +22,16 @@
                                 </div>
                             </template>
                         </div>
-                    </FormRow>
-                </InnerContainer>
+                    </form-row>
+                </inner-container>
             </div>
 
             <div>
-                <Heading2>
+                <heading-2>
                     Kendiniz hesaplayın
-                </Heading2>
+                </heading-2>
                 <CalculatorInnerContainer>
-                    <FormRow
+                    <form-row
                         class="mb-10"
                         label="Telefon fiyatı">
                         <v-row>
@@ -56,43 +56,43 @@
                                 <currency-selector v-model="form.currency" />
                             </v-col>
                         </v-row>
-                    </FormRow>
+                    </form-row>
 
-                    <FormRow
+                    <form-row
                         class="mb-10"
                         label="Kayıt yolu">
-                        <RadioGrid
+                        <radio-grid
                             v-model="form.registration"
                             :items="ui.registration" />
-                    </FormRow>
+                    </form-row>
 
                     <template v-if="shouldShowResults">
-                        <FormRow>
+                        <form-row>
                             <template v-if="form.currency === 'TRY'">
                                 <reverse-calculation-alert />
                             </template>
                             <template v-else>
                                 <estimated-calculation-alert />
                             </template>
-                        </FormRow>
+                        </form-row>
 
                         <CalculatorResultList
                             :items="resultList"
                             class="mb-5" />
 
-                        <FormRow>
+                        <form-row>
                             <affordability-alert
                                 :price="results.prices.taxAdded"
                                 class="mb-10" />
-                        </FormRow>
+                        </form-row>
 
-                        <FormRow direction="horizontal">
+                        <form-row direction="horizontal">
                             <CalculatorShareButton
                                 :screenshot-input="screenshotInput"
                                 :screenshot-output="resultList"
                                 :form="form"
                                 :calculator-title="page.title" />
-                        </FormRow>
+                        </form-row>
                     </template>
                 </CalculatorInnerContainer>
             </div>

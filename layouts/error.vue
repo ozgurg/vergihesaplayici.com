@@ -1,10 +1,10 @@
 <template>
     <div>
-        <Heading1 class="mt-lg-12">
+        <heading-1 class="mt-lg-12">
             Hata falan mı oldu, bir şey oldu sanki…
-        </Heading1>
+        </heading-1>
 
-        <InnerContainer>
+        <inner-container>
             <p class="mb-8 text-body-1">
                 …ama bu aramızda kalabilir.
             </p>
@@ -31,7 +31,7 @@
             <vh-alert type="error">
                 {{ message }}
             </vh-alert>
-        </InnerContainer>
+        </inner-container>
     </div>
 </template>
 

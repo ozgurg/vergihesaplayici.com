@@ -2,11 +2,11 @@
     <div>
         <AppBreadcrumbs :items="page.breadcrumbs" />
 
-        <Heading1>
+        <heading-1>
             {{ page.title }}
-        </Heading1>
+        </heading-1>
 
-        <InnerContainer>
+        <inner-container>
             <div class="d-flex flex-column gap-16">
                 <div>
                     <article-disclaimer-alert class="mb-12" />
@@ -17,13 +17,13 @@
                 </div>
 
                 <div>
-                    <Heading2>
+                    <heading-2>
                         Diğer yazılar
-                    </Heading2>
+                    </heading-2>
                     <article-grid :articles="otherArticles" />
                 </div>
             </div>
-        </InnerContainer>
+        </inner-container>
     </div>
 </template>
 
