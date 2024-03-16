@@ -1,5 +1,5 @@
 /**
- * @typedef {Page & *} KonsolVergisiHesaplayiciPresetPage
+ * @typedef {Page & { calculatorTitle: string }} KonsolVergisiHesaplayiciPresetPage
  */
 
 /**

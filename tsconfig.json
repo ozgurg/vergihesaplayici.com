@@ -15,6 +15,7 @@
     },
     "include": [
         "domain/**/db/*.js",
+        "domain/**/*.page-def.js",
         "types/*.d.js",
         "page-def/*.page-def.js"
     ]

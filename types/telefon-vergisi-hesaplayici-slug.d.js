@@ -1,5 +1,5 @@
 /**
- * @typedef {Page & *} TelefonVergisiHesaplayiciPresetPage
+ * @typedef {Page & { calculatorTitle: string }} TelefonVergisiHesaplayiciPresetPage
  */
 
 /**

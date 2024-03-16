@@ -58,7 +58,7 @@
                         :screenshot-output="resultList"
                         :form="form"
                         :calculator-title="page.calculatorTitle"
-                        :preset-title="page.preset.title"
+                        :preset-title="presetTitle"
                         :preset-option-title="form.option.title" />
                 </FormRow>
             </template>
@@ -87,7 +87,12 @@
 import { moneyFormat } from "@/utils/formatter.js";
 import { buildResultList, buildScreenshotInput, shouldShowResults } from "@/domain/konsol-vergisi-hesaplayici/utils.js";
 import Calculator from "@/domain/konsol-vergisi-hesaplayici/calculator.js";
-import { buildCalculations, findBrandById, presets } from "@/domain/konsol-vergisi-hesaplayici/db/_index.js";
+import {
+    buildCalculations,
+    findBrandById,
+    findPresetOptionsByPresetId,
+    presets
+} from "@/domain/konsol-vergisi-hesaplayici/db/_index.js";
 import { KonsolVergisiHesaplayiciSlugPageDef } from "@/domain/konsol-vergisi-hesaplayici/slug.page-def.js";
 import { findCalculatorPresetBySlug } from "@/utils/find-calculator-preset-by-slug.js";
 
@@ -158,12 +163,9 @@ export default {
         params: { slug }
     }) {
         const preset = findCalculatorPresetBySlug(slug, presets);
-        if (!preset) {
-            return error({ statusCode: 404 });
-        }
-
-        const brand = findBrandById(preset.brandId);
-        if (!brand) {
+        const presetOptions = preset ? findPresetOptionsByPresetId(preset.id) : false;
+        const brand = preset && presetOptions ? findBrandById(preset.brandId) : false;
+        if (!preset || !presetOptions || !brand) {
             return error({ statusCode: 404 });
         }
 
@@ -175,24 +177,25 @@ export default {
         // For correct calculation, we need to fetch the exchange rate of the preset.
         // The result will be calculated during the build process and the calculation will be incorrect if the exchange rate changes.
         // In the front-end, the exchange rate will be re-fetched and the calculation will be correct.
-        await store.dispatch("exchange-rates/loadExchangeRateFromApi", page.preset.options[0].form.currency);
+        await store.dispatch("exchange-rates/loadExchangeRateFromApi", presetOptions[0].form.currency);
 
-        const options = page.preset.options.map(option => ({
+        const options = presetOptions.map(option => ({
             title: option.title,
             value: option,
             price: moneyFormat(option.form.price, option.form.currency)
         }));
 
         const form = {
-            option: page.preset.options[0],
+            option: presetOptions[0],
             currency: "USD",
             price: "",
-            ...page.preset.options[0].form
+            ...presetOptions[0].form
         };
 
-        const otherCalculations = buildCalculations().filter(calculation => calculation.brand.id === page.preset.brandId);
+        const otherCalculations = buildCalculations().filter(_calculation => _calculation.brand.id === preset.brandId);
 
         return {
+            presetTitle: preset.title, // FIXME
             page,
             slug,
             ui: {

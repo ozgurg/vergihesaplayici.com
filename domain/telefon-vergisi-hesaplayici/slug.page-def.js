@@ -1,6 +1,5 @@
 import { TelefonVergisiHesaplayiciPageDef } from "@/domain/telefon-vergisi-hesaplayici/index.page-def.js";
 import { buildHeadTags } from "@/utils/build-head-tags.js";
-import { findPresetOptionsByPresetId } from "@/domain/telefon-vergisi-hesaplayici/db/_index.js";
 
 const parentPage = TelefonVergisiHesaplayiciPageDef();
 
@@ -24,18 +23,12 @@ const TelefonVergisiHesaplayiciSlugPageDef = ({
         ogImage: preset.ogImage ?? "telefon-vergisi-hesaplayici/og/telefon-vergisi-hesaplayici.jpg"
     });
 
-    const options = findPresetOptionsByPresetId(preset.id);
-
     return {
         title,
         url,
         breadcrumbs,
         head,
-        calculatorTitle: parentPage.title,
-        preset: {
-            ...preset,
-            options
-        }
+        calculatorTitle: parentPage.title // FIXME
     };
 };
 
