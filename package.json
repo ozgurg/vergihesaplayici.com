@@ -12,8 +12,6 @@
     "scripts": {
         "tsc": "tsc",
         "dev": "nuxt",
-        "build": "nuxt build",
-        "start": "nuxt start",
         "generate": "npm run prepare-csp-nonce && nuxt generate",
         "emulator:hosting": "npm run generate && firebase emulators:start --only hosting",
         "lint:fix": "npm run lint -- --fix",
