@@ -1,6 +1,6 @@
 <template>
     <v-card
-        :to="preset.url"
+        :to="preset.page.url"
         outlined=""
         active-class="vh-calculation-preset-item--active"
         class="vh-calculation-preset-item px-4 py-6 px-lg-6 py-lg-8">

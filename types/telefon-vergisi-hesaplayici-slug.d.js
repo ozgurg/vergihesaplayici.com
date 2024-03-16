@@ -32,3 +32,14 @@
  * @property {string} pageTitle
  * @property {string} pageDescription
  */
+
+/**
+ * @typedef {TelefonVergisiHesaplayiciPreset & TelefonVergisiHesaplayiciPresetPage} TelefonVergisiHesaplayiciPresetWithPage
+ */
+
+/**
+ * @typedef {object} TelefonVergisiHesaplayiciCalculation
+ * @property {TelefonVergisiHesaplayiciBrand} brand
+ * @property {TelefonVergisiHesaplayiciPresetWithPage[]} presets
+ */
+

@@ -32,3 +32,13 @@
  * @property {string} pageTitle
  * @property {string} pageDescription
  */
+
+/**
+ * @typedef {KonsolVergisiHesaplayiciPreset & KonsolVergisiHesaplayiciPresetPage} KonsolVergisiHesaplayiciPresetWithPage
+ */
+
+/**
+ * @typedef {object} KonsolVergisiHesaplayiciCalculation
+ * @property {KonsolVergisiHesaplayiciBrand} brand
+ * @property {KonsolVergisiHesaplayiciPresetWithPage[]} presets
+ */
