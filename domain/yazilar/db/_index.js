@@ -30,7 +30,7 @@ const getAllArticles = async ($content, options = {
     limit: null,
     where: null
 }) => {
-    let nuxtContents = $content("/").sortBy("gitCreatedAt", "desc");
+    let nuxtContents = $content("/").sortBy("createdAt", "asc");
 
     if (options.limit !== null) {
         nuxtContents.limit(options.limit);
