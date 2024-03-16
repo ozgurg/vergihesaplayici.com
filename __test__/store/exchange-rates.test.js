@@ -1,5 +1,5 @@
-import store from "@/store/exchange-rates.js";
 import { beforeEach, describe, expect, it, vi } from "vitest";
+import store from "@/store/exchange-rates.js";
 
 describe("store/exchange-rates", () => {
     let state = {};

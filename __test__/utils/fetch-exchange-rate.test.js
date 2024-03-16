@@ -1,5 +1,5 @@
-import { fetchExchangeRate } from "@/utils/fetch-exchange-rate.js";
 import { beforeEach, describe, expect, it, vi } from "vitest";
+import { fetchExchangeRate } from "@/utils/fetch-exchange-rate.js";
 
 describe("utils/load-exchange-rate", () => {
     beforeEach(() => {

@@ -1,8 +1,8 @@
+import { describe, expect, it } from "vitest";
 import Calculator, {
     getSpecialConsumptionTaxRateByPrice,
     Registration
 } from "@/domain/telefon-vergisi-hesaplayici/calculator.js";
-import { describe, expect, it } from "vitest";
 
 describe("telefon-vergisi-hesaplayici/Calculator", () => {
     describe("getSpecialConsumptionTaxRateByPrice", () => {

@@ -1,6 +1,6 @@
+import { describe, expect, it } from "vitest";
 import { handleQuery, shouldShowResults } from "@/domain/kdv-hesaplayici/utils.js";
 import { Mode } from "@/domain/kdv-hesaplayici/calculator.js";
-import { describe, expect, it } from "vitest";
 
 describe("kdv-hesaplayici/utils", () => {
     const modeOptions = [

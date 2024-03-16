@@ -1,5 +1,5 @@
-import { isCustomIcon } from "@/utils/custom-icon.js";
 import { describe, expect, it } from "vitest";
+import { isCustomIcon } from "@/utils/custom-icon.js";
 
 describe("utils/custom-icon", () => {
     describe("isCustomIcon", () => {

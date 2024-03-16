@@ -1,5 +1,5 @@
-import { getDomainFromUrl } from "@/utils/get-domain-from-url.js";
 import { describe, expect, it } from "vitest";
+import { getDomainFromUrl } from "@/utils/get-domain-from-url.js";
 
 describe("utils/get-domain-from-url", () => {
     it("should return correct domain from URL", () => {

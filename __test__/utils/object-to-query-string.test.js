@@ -1,5 +1,5 @@
-import { objectToQueryString } from "@/utils/object-to-query-string.js";
 import { describe, expect, it } from "vitest";
+import { objectToQueryString } from "@/utils/object-to-query-string.js";
 
 describe("utils/object-to-query-string", () => {
     const object = {

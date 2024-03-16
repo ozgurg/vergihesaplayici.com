@@ -1,5 +1,5 @@
-import Calculator, { Mode } from "@/domain/kdv-hesaplayici/calculator.js";
 import { describe, expect, it } from "vitest";
+import Calculator, { Mode } from "@/domain/kdv-hesaplayici/calculator.js";
 
 describe("kdv-hesaplayici/Calculator", () => {
     it(`should correctly calculate value added tax if params are: price-rate: [100-%15, 250-%18, 448-%25] / mode: ${Mode.TaxFreePriceToTaxAddedPrice}`, () => {

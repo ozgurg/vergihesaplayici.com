@@ -1,3 +1,4 @@
+import { describe, expect, it } from "vitest";
 import {
     createFacebookShareUrl,
     createRedditShareUrl,
@@ -5,7 +6,6 @@ import {
     createWhatsAppShareUrl,
     createXShareUrl
 } from "@/utils/create-social-media-share-url.js";
-import { describe, expect, it } from "vitest";
 
 describe("utils/create-social-media-share-url", () => {
     const url = "https://vergihesaplayici.com";

@@ -1,5 +1,5 @@
-import { findCalculatorPresetBySlug } from "@/utils/find-calculator-preset-by-slug.js";
 import { describe, expect, it } from "vitest";
+import { findCalculatorPresetBySlug } from "@/utils/find-calculator-preset-by-slug.js";
 
 describe("utils/find-calculator-preset-by-slug", () => {
     it("should return correct preset by slug", () => {

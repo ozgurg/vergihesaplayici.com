@@ -1,5 +1,5 @@
-import Calculator from "@/domain/konsol-vergisi-hesaplayici/calculator.js";
 import { describe, expect, it } from "vitest";
+import Calculator from "@/domain/konsol-vergisi-hesaplayici/calculator.js";
 
 describe("konsol-vergisi-hesaplayici/Calculator", () => {
     it(`should correctly calculate console tax if params are: price: [300, 400, 500] / calculateFromTaxAddedPrice: ${false}`, () => {

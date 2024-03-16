@@ -1,5 +1,5 @@
-import { handleQuery, shouldShowResults } from "@/domain/konsol-vergisi-hesaplayici/utils.js";
 import { describe, expect, it } from "vitest";
+import { handleQuery, shouldShowResults } from "@/domain/konsol-vergisi-hesaplayici/utils.js";
 
 describe("konsol-vergisi-hesaplayici/utils", () => {
     describe("shouldShowResults", () => {

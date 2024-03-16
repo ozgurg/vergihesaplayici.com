@@ -1,9 +1,9 @@
+import { describe, expect, it } from "vitest";
 import {
     calculateTaxFromTaxAddedPrice,
     calculateTaxFromTaxFreePrice,
     calculateTotalTaxRate
 } from "@/utils/calculate-tax.js";
-import { describe, expect, it } from "vitest";
 
 describe("utils/calculate-tax", () => {
     describe("calculateTaxFromTaxAddedPrice", () => {

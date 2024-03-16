@@ -1,5 +1,5 @@
-import { createShareUrlOfCalculator } from "@/utils/create-share-url-of-calculator.js";
 import { describe, expect, it, vi } from "vitest";
+import { createShareUrlOfCalculator } from "@/utils/create-share-url-of-calculator.js";
 
 describe("utils/create-share-url-of-calculator", () => {
     vi.stubEnv("APP_URL", "https://vergihesaplayici.com");
