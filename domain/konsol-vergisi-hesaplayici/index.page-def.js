@@ -6,7 +6,7 @@ const parentPage = HesaplayicilarPageDef();
 
 /** @type {CalculatorPageDef} */
 const KonsolVergisiHesaplayiciPageDef = () => {
-    const title = "Konsol Vergisi Hesaplayıc";
+    const title = "Konsol Vergisi Hesaplayıcı";
     const url = "/konsol-vergisi-hesaplayici/";
     const breadcrumbs = [
         ...parentPage.breadcrumbs,
