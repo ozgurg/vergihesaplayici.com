@@ -77,7 +77,6 @@ const redirections301 = [
     ]
 ];
 
-// create-csp-nonce-txt.js
 const cspNonce = fs.readFileSync(path.join(__dirname, "csp-nonce.txt"), { encoding: "utf-8" });
 
 const firebaseJson = {
@@ -117,7 +116,7 @@ const firebaseJson = {
                                 "https://www.google.com/recaptcha/",
                                 "https://www.gstatic.com/recaptcha/",
                                 "https://www.googletagmanager.com",
-                                "https://cdn.jsdelivr.net" // For Workbox in static/sw.js
+                                "https://cdn.jsdelivr.net" // For Workbox in `static/sw.js`
                             ],
                             "frame-src": [
                                 "'self'",
@@ -180,7 +179,7 @@ const firebaseJson = {
     },
     emulators: {
         hosting: {
-            port: 8026
+            port: process.env.EMULATOR_PORT
         },
         ui: {
             enabled: true

@@ -1,6 +1,6 @@
 {
     "name": "vergihesaplayici.com",
-    "version": "7.0.2",
+    "version": "7.1.0",
     "description": "vergihesaplayici.com, vergi hesaplar.",
     "license": "MIT",
     "homepage": "https://vergihesaplayici.com/",
@@ -16,7 +16,7 @@
         "emulator:hosting": "npm run generate && firebase emulators:start --only hosting",
         "lint:fix": "npm run lint -- --fix",
         "lint": "eslint --ext \".js,.vue\" .",
-        "test": "vitest",
+        "test": "vitest run",
         "lint-staged": "lint-staged",
         "prepare": "husky",
         "prepare-csp-nonce": "node create-csp-nonce-txt.js && node create-firebase-json.js",
@@ -67,6 +67,9 @@
     },
     "overrides": {
         "webpack-dev-middleware": "5.0.0"
+    },
+    "engines": {
+        "node": ">=18.0.0"
     },
     "lint-staged": {
         "*.{js,vue}": [

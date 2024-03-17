@@ -2,13 +2,11 @@ import fs from "fs";
 import path from "path";
 import tr from "vuetify/es5/locale/tr";
 
-let cspNonce = "development-mode";
-const cspNonceTxtPath = path.join(__dirname, "csp-nonce.txt");
-const cspNonceTxt = fs.existsSync(cspNonceTxtPath);
-if (cspNonceTxt) {
-    // create-csp-nonce-txt.js
-    cspNonce = fs.readFileSync(cspNonceTxtPath, { encoding: "utf-8" });
-}
+const cspNonceTxtPath = path.resolve(__dirname, "csp-nonce.txt");
+const isCspNonceTxtExists = fs.existsSync(cspNonceTxtPath);
+const cspNonce = isCspNonceTxtExists ?
+    fs.readFileSync(cspNonceTxtPath, { encoding: "utf-8" }) :
+    "development-mode";
 
 export default {
     target: "static",
@@ -17,8 +15,8 @@ export default {
         fallback: "404.html"
     },
     server: {
-        host: process.env.HOST,
-        port: process.env.PORT
+        host: process.env.SERVER_HOST,
+        port: process.env.SERVER_PORT
     },
     head: {
         titleTemplate: `%s - ${process.env.APP_NAME}`,
@@ -56,7 +54,7 @@ export default {
         ],
         link: [
             {
-                hid: "shortcut-icon", // Override @nuxtjs/pwa
+                hid: "shortcut-icon", // Overriding `@nuxtjs/pwa`
                 rel: "icon",
                 href: "/favicon.svg",
                 type: "image/svg+xml"
@@ -93,8 +91,8 @@ export default {
         "@nuxtjs/svg",
         "@nuxtjs/pwa",
         "@/modules/append-canonical-to-head.js",
-        "@/modules/append-calculator-presets-to-sitemap.js", // Must be before "@nuxtjs/sitemap"
-        "@/modules/append-articles-to-sitemap.js", // Must be before "@nuxtjs/sitemap"
+        "@/modules/append-calculator-presets-to-sitemap.js", // It must be before `@nuxtjs/sitemap`
+        "@/modules/append-articles-to-sitemap.js", // It must be before `@nuxtjs/sitemap`
         "@nuxtjs/sitemap"
     ],
     router: {
@@ -107,8 +105,7 @@ export default {
             ignoreOrder: true
         },
         html: {
-            minify: {
-                // https://stackoverflow.com/a/64739284/7841581
+            minify: { // https://stackoverflow.com/a/64739284/7841581
                 collapseBooleanAttributes: true,
                 decodeEntities: true,
                 minifyCSS: true,
@@ -119,7 +116,7 @@ export default {
                 trimCustomFragments: true,
                 useShortDoctype: true,
                 preserveLineBreaks: false,
-                collapseWhitespace: false // "true" makes v-main's padding-left twice the width of v-navigation-drawer when it's builded
+                collapseWhitespace: true
             }
         }
     },
@@ -132,7 +129,7 @@ export default {
         ]
     },
     plugins: [
-        "@/plugins/firebase.client.js",
+        process.env.NODE_ENV ? "@/plugins/firebase.client.js" : null,
         "@/plugins/vue-clipboard2.client.js",
         "@/plugins/vue-html2canvas.client.js",
         "@/plugins/number-directive.client.js"
@@ -200,7 +197,8 @@ export default {
         }
     },
 
-    // Disable unused Nuxt features
+    // Disable unused Nuxt features for a small bundle size.
+    // This is not documented by Nuxt.
     loadingIndicator: false,
     fetch: {
         client: false
