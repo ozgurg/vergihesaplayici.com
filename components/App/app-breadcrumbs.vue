@@ -89,10 +89,10 @@ export default {
 $vh-breadcrumbs-item-padding-y: .5rem;
 $vh-breadcrumbs-item-padding-x: .375rem;
 
-// "AppBreadcrumbs" will always be in "main-container" and "main-container" has different padding-x for different resolutions.
-// I want "AppBreadcrumbs" to be full width, and I do this using negative margin-x.
+// "app-breadcrumbs" will always be in "main-container" and "main-container" has different padding-x for different resolutions.
+// I want "app-breadcrumbs" to be full width, and I do this using negative margin-x.
 // I update the negative margin-x to be the same as the padding-x of the "main-container".
-// And I also include the padding-x of ".v-breadcrumbs__item" in this calculation as I want the content of "AppBreadcrumbs" to align with "main-container".
+// And I also include the padding-x of ".v-breadcrumbs__item" in this calculation as I want the content of "app-breadcrumbs" to align with "main-container".
 .vh-breadcrumbs {
     --vh-breadcrumbs-negative-margin-y: 0px; // Removing "px" causes "calc(0 * -1)" calculation error
     --vh-breadcrumbs-negative-margin-x: #{$spacer * 5};

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <AppBreadcrumbs :items="page.breadcrumbs" />
+        <app-breadcrumbs :items="page.breadcrumbs" />
 
         <heading-1>
             {{ page.title }}
