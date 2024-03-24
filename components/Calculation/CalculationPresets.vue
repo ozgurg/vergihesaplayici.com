@@ -6,7 +6,7 @@
 
         <template v-for="_preset in presets">
             <div :key="_preset.id">
-                <CalculationPresetCardItem
+                <calculation-preset-card-item
                     :preset="_preset"
                     :brand="brand" />
             </div>
