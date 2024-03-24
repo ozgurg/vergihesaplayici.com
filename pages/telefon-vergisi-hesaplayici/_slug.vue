@@ -80,7 +80,7 @@
             </heading-2>
             <div class="d-flex flex-column gap-12">
                 <template v-for="_calculation in ui.otherCalculations">
-                    <CalculationPresets
+                    <calculation-presets
                         :key="_calculation.brand.id"
                         :presets="_calculation.presets"
                         :brand="_calculation.brand" />
