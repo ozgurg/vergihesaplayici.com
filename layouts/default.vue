@@ -3,7 +3,7 @@
         <AppDrawer />
 
         <template v-if="$vuetify.breakpoint.smAndDown">
-            <AppBar />
+            <app-bar />
         </template>
 
         <main-container>
