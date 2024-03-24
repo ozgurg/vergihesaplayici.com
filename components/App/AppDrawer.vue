@@ -4,7 +4,7 @@
             app=""
             touchless="">
             <div class="pa-4">
-                <AppLogo />
+                <app-logo />
             </div>
             <v-divider class="mx-4 mb-4" />
 
