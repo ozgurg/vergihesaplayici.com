@@ -1,6 +1,6 @@
 <template>
     <v-app>
-        <AppDrawer />
+        <app-drawer />
 
         <template v-if="$vuetify.breakpoint.smAndDown">
             <app-bar />
