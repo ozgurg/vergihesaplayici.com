@@ -1,7 +1,7 @@
 <template>
     <div class="vh-calculation-presets">
         <div>
-            <CalculationPresetBrandCardItem :brand="brand" />
+            <calculation-preset-brand-card-item :brand="brand" />
         </div>
 
         <template v-for="_preset in presets">
