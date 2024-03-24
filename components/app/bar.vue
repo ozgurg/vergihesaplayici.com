@@ -5,7 +5,7 @@
             @click="openDrawer()" />
 
         <div class="d-flex align-center justify-center flex-1">
-            <AppLogo />
+            <app-logo />
         </div>
     </v-app-bar>
 </template>

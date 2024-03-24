@@ -1,16 +1,13 @@
 <template>
     <div class="vh-calculation-presets">
         <div>
-            <CalculationPresetBrandCardItem :brand="brand" />
+            <calculation-preset-brand-card-item :brand="brand" />
         </div>
-
-        <template v-for="_preset in presets">
-            <div :key="_preset.id">
-                <CalculationPresetCardItem
-                    :preset="_preset"
-                    :brand="brand" />
-            </div>
-        </template>
+        <calculation-preset-card-item
+            v-for="_preset in presets"
+            :key="_preset.id"
+            :preset="_preset"
+            :brand="brand" />
     </div>
 </template>
 
@@ -40,17 +37,15 @@ export default {
     -webkit-overflow-scrolling: touch;
     white-space: nowrap;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
     scroll-padding-inline: var(--vh-calculation-presets-negative-margin-x);
     margin: 0 calc(var(--vh-calculation-presets-negative-margin-x) * -1);
     padding-block-end: .5rem;
     gap: .5rem;
     @media #{map-get($display-breakpoints, "md-and-up")} {
-        gap: 1rem;
-        --vh-calculation-presets-negative-margin-x: 0
+        --vh-calculation-presets-negative-margin-x: 0;
+        gap: 1rem
     }
     > div {
-        scroll-snap-align: start;
         &:first-child {
             padding-inline-start: var(--vh-calculation-presets-negative-margin-x)
         }

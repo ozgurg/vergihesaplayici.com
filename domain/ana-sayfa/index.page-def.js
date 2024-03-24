@@ -4,12 +4,12 @@ import { buildHeadTags } from "@/utils/build-head-tags.js";
 const AnaSayfaPageDef = () => {
     const title = "Vergi Hesaplayıcı";
     const url = "/";
-    /* const breadcrumbs = [
+    const breadcrumbs = [
         {
-            title,
+            title: "Ana Sayfa",
             url
         }
-    ]; */
+    ];
     const head = {
         titleTemplate: null,
         ...buildHeadTags({
@@ -22,7 +22,7 @@ const AnaSayfaPageDef = () => {
     return {
         title,
         url,
-        breadcrumbs: [], // We make it empty until complete the migration
+        breadcrumbs,
         head
     };
 };

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <AppBreadcrumbs :items="page.breadcrumbs" />
+        <app-breadcrumbs :items="page.breadcrumbs" />
 
         <heading-1>
             {{ page.title }}
@@ -16,7 +16,7 @@
                         <div class="d-flex flex-column gap-12">
                             <template v-for="_calculation in ui.calculations">
                                 <div :key="_calculation.brand.id">
-                                    <CalculationPresets
+                                    <calculation-presets
                                         :presets="_calculation.presets"
                                         :brand="_calculation.brand" />
                                 </div>
