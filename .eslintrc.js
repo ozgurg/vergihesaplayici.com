@@ -105,6 +105,7 @@ module.exports = {
             }
         }],
         "vue/multi-word-component-names": "off",
+        "require-jsdoc": "off",
         "valid-jsdoc": 0
     }
 };

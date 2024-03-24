@@ -94,7 +94,6 @@ class Calculator {
     }
 
     /**
-     * @private
      * @param {number} price
      */
     #doCalculation(price) {
@@ -102,7 +101,6 @@ class Calculator {
     }
 
     /**
-     * @private
      * @param {{[key: string]: number|null}} taxFees
      * @returns {number}
      */
@@ -124,56 +122,37 @@ class Calculator {
         return this.#calculateFromTaxAddedPrice ? calculateTaxFromTaxAddedPrice(price, rate) : calculateTaxFromTaxFreePrice(price, rate);
     }
 
-    /**
-     * @private
-     */
     #_ministryOfCulture() {
         this.#taxFees.ministryOfCulture = this.#calculateTax(this.#price, this.#taxRates.ministryOfCulture);
         this.#doCalculation(this.#taxFees.ministryOfCulture);
     }
 
-    /**
-     * @private
-     */
     #_trtImport() {
         this.#taxFees.trtImport = this.#calculateTax(this.#price, this.#taxRates.trtImport);
         this.#doCalculation(this.#taxFees.trtImport);
     }
 
-    /**
-     * @private
-     */
     #_specialConsumptionTax() {
         this.#taxRates.specialConsumptionTax = getSpecialConsumptionTaxRateByPrice(this.#price);
         this.#taxFees.specialConsumptionTax = this.#calculateTax(this.#price, this.#taxRates.specialConsumptionTax);
         this.#doCalculation(this.#taxFees.specialConsumptionTax);
     }
 
-    /**
-     * @private
-     */
     #_valueAddedTax() {
         this.#taxFees.valueAddedTax = this.#calculateTax(this.#price, this.#taxRates.valueAddedTax);
         this.#doCalculation(this.#taxFees.valueAddedTax);
     }
 
-    /**
-     * @private
-     */
     #_trtPassport() {
         this.#taxFees.trtPassport = this.#taxRates.trtPassport * this.#eurToTryCurrency;
         this.#doCalculation(this.#taxFees.trtPassport);
     }
 
-    /**
-     * @private
-     */
     #_registration() {
         this.#doCalculation(this.#taxFees.registration);
     }
 
     /**
-     * @public
      * @returns {{[key: string]: {[key: string]: number|null}}}
      */
     calculate() {

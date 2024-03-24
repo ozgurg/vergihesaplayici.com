@@ -58,7 +58,6 @@ class Calculator {
     }
 
     /**
-     * @private
      * @param {number} price
      */
     #doCalculation(price) {
@@ -66,7 +65,6 @@ class Calculator {
     }
 
     /**
-     * @private
      * @param {{[key: string]: number|null}} taxFees
      * @returns {number}
      */
@@ -83,32 +81,22 @@ class Calculator {
         return this.#calculateFromTaxAddedPrice ? calculateTaxFromTaxAddedPrice(price, rate) : calculateTaxFromTaxFreePrice(price, rate);
     }
 
-    /**
-     * @private
-     */
     #_customTax() {
         this.#taxFees.customTax = this.#calculateTax(this.#price, this.#taxRates.customTax);
         this.#doCalculation(this.#taxFees.customTax);
     }
 
-    /**
-     * @private
-     */
     #_specialConsumptionTax() {
         this.#taxFees.specialConsumptionTax = this.#calculateTax(this.#price, this.#taxRates.specialConsumptionTax);
         this.#doCalculation(this.#taxFees.specialConsumptionTax);
     }
 
-    /**
-     * @private
-     */
     #_valueAddedTax() {
         this.#taxFees.valueAddedTax = this.#calculateTax(this.#price, this.#taxRates.valueAddedTax);
         this.#doCalculation(this.#taxFees.valueAddedTax);
     }
 
     /**
-     * @public
      * @returns {{[key: string]: {[key: string]: number|null}}}
      */
     calculate() {
