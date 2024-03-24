@@ -2,13 +2,12 @@
     <v-card
         :to="preset.page.url"
         outlined=""
-        active-class="vh-calculation-preset-item--active"
-        class="vh-calculation-preset-item px-4 py-6 px-lg-6 py-lg-8">
+        class="px-4 py-6 px-lg-6 py-lg-8">
         <v-card-title class="pa-0 mb-4">
             {{ preset.title }}
         </v-card-title>
 
-        <v-card-subtitle class="vh-calculation-preset-item__desc pa-0 mb-8">
+        <v-card-subtitle class="pa-0 mb-8">
             {{ brand.title }} • {{ preset.releaseDate.getFullYear() }}
         </v-card-subtitle>
 
@@ -16,7 +15,7 @@
             <img
                 :src="require(`@/domain/${preset.thumbnail}`)"
                 :alt="preset.title"
-                class="vh-calculation-preset-item__thumb d-inline-block valign-middle rounded pa-2 white"
+                class="d-inline-block valign-middle rounded pa-2 white"
                 width="auto"
                 height="96"
                 loading="lazy"
@@ -44,7 +43,7 @@ export default {
 <style lang="scss" scoped="">
 @import "~vuetify/src/styles/settings/_variables.scss";
 
-.vh-calculation-preset-item {
+.v-card {
     $item: &;
     flex-grow: 0;
     flex-shrink: 0;
@@ -57,20 +56,21 @@ export default {
         min-width: 236px;
         flex-basis: 236px
     }
-    &__thumb {
+    img {
         height: 96px;
         width: auto;
         min-width: 72px;
         max-width: 96px;
         object-fit: contain
     }
-    &--active {
+    &[aria-current="page"] {
         border-color: $vh-color-primary;
         color: $vh-color-primary;
+
         &::before {
             opacity: $vh-card-hover-opacity
         }
-        #{$item}__desc {
+        .v-card__subtitle {
             color: rgba($vh-color-primary, .8)
         }
     }

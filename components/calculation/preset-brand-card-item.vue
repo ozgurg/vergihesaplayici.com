@@ -1,7 +1,7 @@
 <template>
     <v-card
         outlined=""
-        class="vh-calculation-preset-brand-item px-2 py-6 px-lg-4 py-lg-8 h-100">
+        class="px-2 py-6 px-lg-4 py-lg-8 h-100">
         <v-avatar
             size="32"
             color="white">
@@ -50,7 +50,7 @@ export default {
 <style lang="scss" scoped="">
 @import "~vuetify/src/styles/settings/_variables.scss";
 
-.vh-calculation-preset-brand-item {
+.v-card {
     flex-grow: 0;
     flex-shrink: 0;
     display: flex;
