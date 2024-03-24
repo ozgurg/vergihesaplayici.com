@@ -64,15 +64,9 @@ export default {
     computed: {
         positionAddedItems() {
             const vm = this;
-            return [
-                {
-                    title: "Ana Sayfa",
-                    url: "/"
-                },
-                ...vm.items
-            ].map((item, index) => ({
-                ...item,
-                position: ++index
+            return vm.items.map((_item, _index) => ({
+                ..._item,
+                position: ++_index
             }));
         }
     },
