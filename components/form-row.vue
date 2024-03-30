@@ -1,12 +1,12 @@
 <template>
     <v-row
-        :class="{'vh-form-row--horizontal': direction === 'horizontal'}"
+        :class="{'vh-form-row--horizontal': props.label === 'horizontal'}"
         no-gutters=""
         class="vh-form-row flex-column flex-sm-row">
         <v-col class="vh-form-row__label-col">
-            <template v-if="label">
+            <template v-if="props.label">
                 <label>
-                    {{ label }}
+                    {{ props.label }}
                 </label>
             </template>
         </v-col>
@@ -17,19 +17,17 @@
     </v-row>
 </template>
 
-<script>
-export default {
-    props: {
-        label: {
-            type: String,
-            default: null
-        },
-        direction: {
-            type: String,
-            default: "vertical"
-        }
+<script setup="">
+const props = defineProps({
+    label: {
+        type: String,
+        default: null
+    },
+    direction: {
+        type: String,
+        default: "vertical"
     }
-};
+});
 </script>
 
 <style lang="scss" scoped="">
