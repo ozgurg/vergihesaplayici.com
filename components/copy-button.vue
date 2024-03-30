@@ -44,10 +44,6 @@ export default {
         valueToCopy: {
             type: String,
             required: true
-        },
-        containerSelector: {
-            type: String,
-            default: null
         }
     },
     methods: {
@@ -66,11 +62,7 @@ export default {
         },
         _copyValue() {
             const vm = this;
-
-            // DO NOT pass "null" as the default value.
-            // When "null" is used instead of "false", "$copyText" doesn't behave as expected.
-            const container = vm.containerSelector ? document.querySelector(vm.containerSelector) : false;
-            vm.$copyText(vm.valueToCopy, container);
+            navigator.clipboard.writeText(vm.valueToCopy);
         },
         _destroyTimeout() {
             const vm = this;

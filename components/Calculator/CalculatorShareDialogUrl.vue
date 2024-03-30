@@ -50,9 +50,7 @@
             </template>
         </v-row>
 
-        <div
-            id="calculatorShareDialogCopyUrlContainer"
-            class="mt-8">
+        <div class="mt-8">
             <v-text-field
                 :value="url"
                 hide-details=""
@@ -62,9 +60,7 @@
                     <v-divider
                         class="my-2 me-3"
                         vertical="" />
-                    <lazy-copy-icon-button
-                        :value-to-copy="url"
-                        container-selector="#calculatorShareDialogCopyUrlContainer" />
+                    <lazy-copy-button :value-to-copy="url" />
                 </template>
             </v-text-field>
         </div>

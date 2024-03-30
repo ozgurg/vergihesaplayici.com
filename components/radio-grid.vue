@@ -1,92 +1,75 @@
 <template>
     <div
-        :class="`vh-radio-grid--${items.length}`"
-        class="vh-radio-grid"
+        class="radio-grid"
         role="radiogroup">
-        <template v-for="_item in items">
+        <template v-for="_item in props.items">
             <v-card
                 :key="_item.title"
-                :aria-checked="isItemActive(_item) ? 'true' : 'false'"
+                :aria-checked="isItemChecked(_item) ? 'true' : 'false'"
                 role="radio"
                 outlined=""
-                class="vh-radio-grid__item px-4 py-6"
-                @click="emit(_item.value)">
-                <v-card-title class="text-subtitle-1 font-weight-bold pa-0">
+                class="py-2"
+                @click="emitInput(_item)">
+                <v-card-title class="subtitle-1 font-weight-bold">
                     {{ _item.title }}
                 </v-card-title>
 
-                <v-card-text
-                    class="vh-radio-grid__item__desc pa-0">
-                    <template v-if="_item.description">
-                        {{ _item.description }}
-                    </template>
-                    <template v-else-if="_item.price">
-                        <span class="tabular-nums">{{ _item.price }}</span>
-                    </template>
-                </v-card-text>
+                <v-card-subtitle :class="{'tabular-nums': _item.price !== undefined}">
+                    {{ _item.description || _item.price }}
+                </v-card-subtitle>
             </v-card>
         </template>
     </div>
 </template>
 
-<script>
-export default {
-    props: {
-        value: {
-            type: [String, Object],
-            default: null
-        },
-        items: {
-            type: Array,
-            required: true
-        }
+<script setup="">
+const props = defineProps({
+    value: {
+        type: [String, Object],
+        default: null
     },
-    methods: {
-        isItemActive(item) {
-            const vm = this;
-            return item.value === vm.value;
-        },
-        emit(value) {
-            const vm = this;
-            vm.$emit("input", value);
-        }
+    items: {
+        type: Array,
+        required: true
     }
-};
+});
+const emit = defineEmits(["input"]);
+
+const isItemChecked = item => item.value === props.value;
+const emitInput = item => emit("input", item.value);
 </script>
 
 <style lang="scss" scoped="">
 @import "~vuetify/src/styles/styles.sass";
 
-$vh-radio-grid-optimal-width: 144px;
-
 // I chose to set it individually for each item count
 // to give more control over the user experience
-// on different screen resolutions and different item counts.
-.vh-radio-grid {
+// on different screen resolutions and with different item counts.
+.radio-grid {
+    --vh-radio-grid-optimal-width: 144px;
     display: grid;
     grid-template-columns: var(--vh-radio-grid-columns);
     grid-gap: .75rem;
     grid-auto-rows: 1fr;
-    &--1 {
-        --vh-radio-grid-columns: repeat(auto-fill, minmax(#{$vh-radio-grid-optimal-width}, 1fr))
+    &:has(> .v-card:nth-child(1)) {
+        --vh-radio-grid-columns: repeat(auto-fill, minmax(var(--vh-radio-grid-optimal-width), 1fr))
     }
-    &--2 {
+    &:has(> .v-card:nth-child(2)) {
         --vh-radio-grid-columns: repeat(2, 1fr)
     }
-    &--3 {
+    &:has(> .v-card:nth-child(3)) {
         --vh-radio-grid-columns: repeat(2, 1fr);
         @media #{map-get($display-breakpoints, "sm-and-up")} {
-            --vh-radio-grid-columns: repeat(auto-fill, minmax(#{$vh-radio-grid-optimal-width}, 1fr))
+            --vh-radio-grid-columns: repeat(auto-fill, minmax(var(--vh-radio-grid-optimal-width), 1fr))
         }
     }
-    &--4 {
+    &:has(> .v-card:nth-child(4)) {
         --vh-radio-grid-columns: repeat(2, 1fr);
         @media #{map-get($display-breakpoints, "sm-and-up")} {
             --vh-radio-grid-columns: repeat(4, 1fr)
         }
     }
-    &__item {
-        $item: &;
+    .v-card {
         background: 0 !important;
         &[aria-checked="true"] {
             border-color: $vh-color-primary;
@@ -95,7 +78,7 @@ $vh-radio-grid-optimal-width: 144px;
             &::before {
                 opacity: $vh-card-hover-opacity
             }
-            #{$item}__desc {
+            .v-card__subtitle {
                 color: rgba($vh-color-primary, .8)
             }
         }

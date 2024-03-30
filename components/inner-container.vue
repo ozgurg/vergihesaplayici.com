@@ -1,11 +1,11 @@
 <template>
-    <div class="vh-inner-container">
-        <slot />
+    <div>
+        <slot v-if="$slots.default" />
     </div>
 </template>
 
 <style lang="scss" scoped="">
-.vh-inner-container {
+div {
     max-width: 900px
 }
 </style>

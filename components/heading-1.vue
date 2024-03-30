@@ -1,28 +1,17 @@
 <template>
-    <div class="mb-12">
-        <component
-            :is="tag"
-            class="vh-heading-1 text-h4 text-lg-h3 mb-4 font-weight-bold text-center text-md-start">
-            <slot />
-        </component>
-
-        <v-divider />
-    </div>
+    <component
+        :is="props.tag"
+        class="text-h4 text-lg-h3 font-weight-bold text-center text-md-start">
+        <slot v-if="$slots.default" />
+        <v-divider class="mb-12 mt-4" />
+    </component>
 </template>
 
-<script>
-export default {
-    props: {
-        tag: {
-            type: String,
-            default: "h1"
-        }
+<script setup="">
+const props = defineProps({
+    tag: {
+        type: String,
+        default: "h1"
     }
-};
+});
 </script>
-
-<style lang="scss" scoped="">
-.vh-heading-1 {
-    text-wrap: balance
-}
-</style>
