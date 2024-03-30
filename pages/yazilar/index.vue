@@ -9,16 +9,7 @@
         <inner-container>
             <article-disclaimer-alert class="mb-12" />
 
-            <v-row>
-                <template v-for="_article in articles">
-                    <v-col
-                        :key="_article.slug"
-                        cols="12"
-                        lg="4">
-                        <article-card-item :article="_article" />
-                    </v-col>
-                </template>
-            </v-row>
+            <article-grid :articles="articles" />
         </inner-container>
     </div>
 </template>
