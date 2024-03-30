@@ -2,8 +2,8 @@
     <v-card
         :to="props.calculator.url"
         outlined=""
-        class="vh-calculator-card-item px-4 py-6 px-lg-6 py-lg-8">
-        <div class="vh-calculator-card-item__icon d-inline-block pa-4 rounded-circle mb-4">
+        class="px-4 py-6 px-lg-6 py-lg-8">
+        <div class="icon d-inline-block pa-4 rounded-circle mb-4">
             <v-icon
                 color="primary"
                 size="40">
@@ -16,13 +16,13 @@
         </v-card-title>
 
         <!-- eslint-disable vue/no-v-text-v-html-on-component vue/no-v-html -->
-        <v-card-text
+        <v-card-subtitle
             class="pa-0"
             v-html="props.calculator.summary" />
 
         <v-icon
             color="white"
-            class="vh-calculator-card-item__bg-icon"
+            class="bg-icon"
             size="128">
             {{ props.calculator.icon }}
         </v-icon>
@@ -39,13 +39,13 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped="">
-.vh-calculator-card-item {
+.v-card {
     position: relative;
-    &__icon {
-        background: rgba($vh-color-primary, .08)
+    .icon {
+        background: rgba($vh-color-primary, $vh-card-hover-opacity)
     }
-    &__bg-icon {
-        position: absolute !important;
+    .bg-icon {
+        position: absolute;
         inset-inline-end: 0;
         inset-block-end: 0;
         transform: translate(30%, -10%) rotate(-15deg);
