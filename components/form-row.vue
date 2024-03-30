@@ -1,6 +1,6 @@
 <template>
     <v-row
-        :class="{'vh-form-row--horizontal': props.label === 'horizontal'}"
+        :class="{'vh-form-row--horizontal': props.direction === 'horizontal'}"
         no-gutters=""
         class="vh-form-row flex-column flex-sm-row">
         <v-col class="vh-form-row__label-col">
