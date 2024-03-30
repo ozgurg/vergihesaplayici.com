@@ -1,6 +1,9 @@
 <template>
     <v-row
-        :class="{'horizontal': props.direction === 'horizontal'}"
+        :class="{
+            'horizontal': props.direction === 'horizontal',
+            'highlighted': isHighlighted
+        }"
         no-gutters=""
         class="form-row flex-column flex-sm-row">
         <v-col>
@@ -26,6 +29,10 @@ const props = defineProps({
     direction: {
         type: String,
         default: "vertical"
+    },
+    isHighlighted: {
+        type: Boolean,
+        default: false
     }
 });
 </script>
@@ -37,6 +44,7 @@ const props = defineProps({
     --vh-form-row-label-col-width: 100%;
     --vh-form-row-label-justify-content: flex-start;
     gap: .375rem;
+
     &.horizontal {
         @media #{map-get($display-breakpoints, "sm-and-up")} {
             --vh-form-row-label-col-width: 170px; // Optimized for "TRT bandrolü (€20,00)" text
@@ -44,9 +52,18 @@ const props = defineProps({
             gap: 1rem
         }
     }
+
+    &.highlighted {
+        label {
+            font-weight: 700;
+            color: $vh-color-primary
+        }
+    }
+
     & > .col:first-child {
         flex: 0 0 var(--vh-form-row-label-col-width);
         max-width: var(--vh-form-row-label-col-width);
+
         label {
             height: min(#{$text-field-filled-full-width-outlined-slot-min-height}, 100%);
             display: flex;

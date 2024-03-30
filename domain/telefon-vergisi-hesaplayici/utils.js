@@ -93,7 +93,8 @@ const buildResultList = (results, registration) => {
         },
         {
             key: "Tahmini satış fiyatı",
-            value: moneyFormat(results.prices.taxAdded, "TRY")
+            value: moneyFormat(results.prices.taxAdded, "TRY"),
+            isHighlighted: true
         }
     ];
 };
