@@ -1,43 +1,41 @@
 <template>
     <v-card
-        :to="calculator.url"
+        :to="props.calculator.url"
         outlined=""
         class="vh-calculator-card-item px-4 py-6 px-lg-6 py-lg-8">
         <div class="vh-calculator-card-item__icon d-inline-block pa-4 rounded-circle mb-4">
             <v-icon
                 color="primary"
                 size="40">
-                {{ calculator.icon }}
+                {{ props.calculator.icon }}
             </v-icon>
         </div>
 
         <v-card-title class="pa-0 mb-4">
-            {{ calculator.title }}
+            {{ props.calculator.title }}
         </v-card-title>
 
         <!-- eslint-disable vue/no-v-text-v-html-on-component vue/no-v-html -->
         <v-card-text
             class="pa-0"
-            v-html="calculator.summary" />
+            v-html="props.calculator.summary" />
 
         <v-icon
             color="white"
             class="vh-calculator-card-item__bg-icon"
             size="128">
-            {{ calculator.icon }}
+            {{ props.calculator.icon }}
         </v-icon>
     </v-card>
 </template>
 
-<script>
-export default {
-    props: {
-        calculator: {
-            type: Object,
-            required: true
-        }
+<script setup="">
+const props = defineProps({
+    calculator: {
+        type: Object,
+        required: true
     }
-};
+});
 </script>
 
 <style lang="scss" scoped="">
