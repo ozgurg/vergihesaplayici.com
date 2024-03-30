@@ -1,7 +1,5 @@
 <template>
-    <v-list-item
-        :to="props.calculator.url"
-        color="primary">
+    <v-list-item :to="props.calculator.url">
         <v-list-item-icon>
             <v-icon>
                 {{ props.calculator.icon }}
