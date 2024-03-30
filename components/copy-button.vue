@@ -67,8 +67,8 @@ export default {
         _copyValue() {
             const vm = this;
 
-            // DO NOT pass "null" as the default value.
-            // When "null" is used instead of "false", "$copyText" doesn't behave as expected.
+            // DO NOT pass `null` as the default value.
+            // When `null` is used instead of `false`, `$copyText` doesn't behave as expected.
             const container = vm.containerSelector ? document.querySelector(vm.containerSelector) : false;
             vm.$copyText(vm.valueToCopy, container);
         },

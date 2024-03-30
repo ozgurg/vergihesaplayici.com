@@ -14,7 +14,7 @@
                 <v-divider
                     class="my-2 me-3"
                     vertical="" />
-                <copy-icon-button :value-to-copy="value" />
+                <copy-button :value-to-copy="value" />
             </template>
         </v-text-field>
     </form-row>

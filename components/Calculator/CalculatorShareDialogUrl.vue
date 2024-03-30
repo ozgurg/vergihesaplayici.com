@@ -62,7 +62,7 @@
                     <v-divider
                         class="my-2 me-3"
                         vertical="" />
-                    <lazy-copy-icon-button
+                    <lazy-copy-button
                         :value-to-copy="url"
                         container-selector="#calculatorShareDialogCopyUrlContainer" />
                 </template>
