@@ -130,7 +130,6 @@ export default {
     },
     plugins: [
         process.env.NODE_ENV ? "@/plugins/firebase.client.js" : null,
-        "@/plugins/vue-clipboard2.client.js",
         "@/plugins/vue-html2canvas.client.js",
         "@/plugins/number-directive.client.js"
     ],
