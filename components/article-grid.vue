@@ -1,6 +1,6 @@
 <template>
     <v-row>
-        <template v-for="_article in articles">
+        <template v-for="_article in props.articles">
             <v-col
                 :key="_article.title"
                 cols="12"
@@ -12,13 +12,11 @@
     </v-row>
 </template>
 
-<script>
-export default {
-    props: {
-        articles: {
-            type: Array,
-            required: true
-        }
+<script setup="">
+const props = defineProps({
+    articles: {
+        type: Array,
+        required: true
     }
-};
+});
 </script>
