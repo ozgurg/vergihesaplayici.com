@@ -2,7 +2,7 @@
     <v-row
         :class="{'horizontal': props.direction === 'horizontal'}"
         no-gutters=""
-        class="flex-column flex-sm-row">
+        class="form-row flex-column flex-sm-row">
         <v-col>
             <template v-if="props.label">
                 <label>
@@ -33,19 +33,18 @@ const props = defineProps({
 <style lang="scss" scoped="">
 @import "~vuetify/src/components/VTextField/_variables.scss";
 
-.row {
-    --vh-form-row-gap: .375rem;
+.form-row {
     --vh-form-row-label-col-width: 100%;
     --vh-form-row-label-justify-content: flex-start;
-    gap: var(--vh-form-row-gap);
+    gap: .375rem;
     &.horizontal {
         @media #{map-get($display-breakpoints, "sm-and-up")} {
-            --vh-form-row-gap: 1rem;
             --vh-form-row-label-col-width: 170px; // Optimized for "TRT bandrolü (€20,00)" text
-            --vh-form-row-label-justify-content: flex-end
+            --vh-form-row-label-justify-content: flex-end;
+            gap: 1rem
         }
     }
-    .col:first-child {
+    & > .col:first-child {
         flex: 0 0 var(--vh-form-row-label-col-width);
         max-width: var(--vh-form-row-label-col-width);
         label {

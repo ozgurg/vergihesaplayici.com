@@ -1,12 +1,16 @@
 <template>
-    <p class="text--secondary subtitle-2 mb-0 text-balance">
-        Piyasa fiyatı <b>{{ formattedDate }}</b> tarihinde <a
-        :href="sourceUrl"
-        class="text--secondary"
-        target="_blank"
-        rel="nofollow noopener noreferrer">{{ domain }}</a>
-        sitesinden elle güncellenmiştir. Güncel fiyat farklı olabilir.
-    </p>
+    <div class="text--secondary subtitle-2">
+        <p class="mb-0">
+            Son güncellenme: {{ formattedUpdatedDate }}
+        </p>
+        <p class="mb-0">
+            Kaynak: <a
+            :href="sourceUrl"
+            class="text--secondary"
+            target="_blank"
+            rel="nofollow noopener noreferrer">{{ domain }}</a>
+        </p>
+    </div>
 </template>
 
 <script setup="">
@@ -24,6 +28,6 @@ const props = defineProps({
     }
 });
 
+const formattedUpdatedDate = dateFormat(props.lastUpdatedDate);
 const domain = getDomainFromUrl(props.sourceUrl);
-const formattedDate = dateFormat(props.lastUpdatedDate);
 </script>
