@@ -34,15 +34,14 @@ const props = defineProps({
 @import "~vuetify/src/components/VTextField/_variables.scss";
 
 .form-row {
-    --vh-form-row-gap: .375rem;
     --vh-form-row-label-col-width: 100%;
     --vh-form-row-label-justify-content: flex-start;
-    gap: var(--vh-form-row-gap);
+    gap: .375rem;
     &.horizontal {
         @media #{map-get($display-breakpoints, "sm-and-up")} {
-            --vh-form-row-gap: 1rem;
             --vh-form-row-label-col-width: 170px; // Optimized for "TRT bandrolü (€20,00)" text
-            --vh-form-row-label-justify-content: flex-end
+            --vh-form-row-label-justify-content: flex-end;
+            gap: 1rem
         }
     }
     & > .col:first-child {
