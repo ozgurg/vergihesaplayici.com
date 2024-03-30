@@ -2,7 +2,7 @@
     <v-row
         :class="{'horizontal': props.direction === 'horizontal'}"
         no-gutters=""
-        class="flex-column flex-sm-row">
+        class="form-row flex-column flex-sm-row">
         <v-col>
             <template v-if="props.label">
                 <label>
@@ -33,7 +33,7 @@ const props = defineProps({
 <style lang="scss" scoped="">
 @import "~vuetify/src/components/VTextField/_variables.scss";
 
-.row {
+.form-row {
     --vh-form-row-gap: .375rem;
     --vh-form-row-label-col-width: 100%;
     --vh-form-row-label-justify-content: flex-start;
@@ -45,7 +45,7 @@ const props = defineProps({
             --vh-form-row-label-justify-content: flex-end
         }
     }
-    .col:first-child {
+    & > .col:first-child {
         flex: 0 0 var(--vh-form-row-label-col-width);
         max-width: var(--vh-form-row-label-col-width);
         label {
