@@ -42,31 +42,28 @@ const emitInput = item => emit("input", item.value);
 <style lang="scss" scoped="">
 @import "~vuetify/src/styles/styles.sass";
 
-// I chose to set it individually for each item count
-// to give more control over the user experience
-// on different screen resolutions and with different item counts.
+$optimal-width: 144px;
+
 .radio-grid {
-    --vh-radio-grid-optimal-width: 144px;
     display: grid;
-    grid-template-columns: var(--vh-radio-grid-columns);
     grid-gap: .75rem;
     grid-auto-rows: 1fr;
     &:has(> .v-card:nth-child(1)) {
-        --vh-radio-grid-columns: repeat(auto-fill, minmax(var(--vh-radio-grid-optimal-width), 1fr))
+        grid-template-columns: repeat(auto-fill, minmax(#{$optimal-width}, 1fr))
     }
     &:has(> .v-card:nth-child(2)) {
-        --vh-radio-grid-columns: repeat(2, 1fr)
+        grid-template-columns: repeat(2, 1fr)
     }
     &:has(> .v-card:nth-child(3)) {
-        --vh-radio-grid-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         @media #{map-get($display-breakpoints, "sm-and-up")} {
-            --vh-radio-grid-columns: repeat(auto-fill, minmax(var(--vh-radio-grid-optimal-width), 1fr))
+            grid-template-columns: repeat(auto-fill, minmax(#{$optimal-width}, 1fr))
         }
     }
     &:has(> .v-card:nth-child(4)) {
-        --vh-radio-grid-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         @media #{map-get($display-breakpoints, "sm-and-up")} {
-            --vh-radio-grid-columns: repeat(4, 1fr)
+            grid-template-columns: repeat(4, 1fr)
         }
     }
     .v-card {
