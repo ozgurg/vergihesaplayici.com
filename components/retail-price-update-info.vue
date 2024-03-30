@@ -1,35 +1,16 @@
 <template>
-    <v-tooltip
-        right=""
-        max-width="224">
-        <template #activator="{ on, attrs }">
-            <v-btn
-                v-bind="attrs"
-                :href="sourceUrl"
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                plain=""
-                class="mx-n3"
-                v-on="on">
-                <span>{{ relativeFormattedDate }} güncellendi</span>
-                <v-icon
-                    size="16"
-                    right="">
-                    {{ mdiOpenInNew }}
-                </v-icon>
-            </v-btn>
-        </template>
-        <span>
-            Piyasa fiyatı <b>{{ formattedDate }}</b> tarihinde <b>{{ domain }}</b> sitesinden elle güncellenmiştir.
-            <br />
-            Güncel fiyat farklı olabilir.
-        </span>
-    </v-tooltip>
+    <p class="text--secondary subtitle-2 mb-0 text-balance">
+        Piyasa fiyatı <b>{{ formattedDate }}</b> tarihinde <a
+        :href="sourceUrl"
+        class="text--secondary"
+        target="_blank"
+        rel="nofollow noopener noreferrer">{{ domain }}</a>
+        sitesinden elle güncellenmiştir. Güncel fiyat farklı olabilir.
+    </p>
 </template>
 
 <script setup="">
-import { mdiOpenInNew } from "@mdi/js";
-import { dateFormat, relativeDateFormat } from "@/utils/formatter.js";
+import { dateFormat } from "@/utils/formatter.js";
 import { getDomainFromUrl } from "@/utils/get-domain-from-url.js";
 
 const props = defineProps({
@@ -45,5 +26,4 @@ const props = defineProps({
 
 const domain = getDomainFromUrl(props.sourceUrl);
 const formattedDate = dateFormat(props.lastUpdatedDate);
-const relativeFormattedDate = relativeDateFormat(props.lastUpdatedDate);
 </script>
