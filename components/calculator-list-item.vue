@@ -1,26 +1,24 @@
 <template>
     <v-list-item
-        :to="calculator.url"
+        :to="props.calculator.url"
         color="primary">
         <v-list-item-icon>
             <v-icon>
-                {{ calculator.icon }}
+                {{ props.calculator.icon }}
             </v-icon>
         </v-list-item-icon>
 
         <v-list-item-title>
-            {{ calculator.shortTitle }}
+            {{ props.calculator.shortTitle }}
         </v-list-item-title>
     </v-list-item>
 </template>
 
-<script>
-export default {
-    props: {
-        calculator: {
-            type: Object,
-            required: true
-        }
+<script setup="">
+const props = defineProps({
+    calculator: {
+        type: Object,
+        required: true
     }
-};
+});
 </script>
