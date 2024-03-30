@@ -15,7 +15,7 @@
                 <v-icon
                     size="16"
                     right="">
-                    {{ icons.mdiOpenInNew }}
+                    {{ mdiOpenInNew }}
                 </v-icon>
             </v-btn>
         </template>
@@ -27,40 +27,23 @@
     </v-tooltip>
 </template>
 
-<script>
+<script setup="">
 import { mdiOpenInNew } from "@mdi/js";
 import { dateFormat, relativeDateFormat } from "@/utils/formatter.js";
 import { getDomainFromUrl } from "@/utils/get-domain-from-url.js";
 
-export default {
-    data: () => ({
-        icons: {
-            mdiOpenInNew
-        }
-    }),
-    props: {
-        lastUpdatedDate: {
-            type: Date,
-            required: true
-        },
-        sourceUrl: {
-            type: String,
-            required: true
-        }
+const props = defineProps({
+    lastUpdatedDate: {
+        type: Date,
+        required: true
     },
-    computed: {
-        domain() {
-            const vm = this;
-            return getDomainFromUrl(vm.sourceUrl);
-        },
-        formattedDate() {
-            const vm = this;
-            return dateFormat(vm.lastUpdatedDate);
-        },
-        relativeFormattedDate() {
-            const vm = this;
-            return relativeDateFormat(vm.lastUpdatedDate);
-        }
+    sourceUrl: {
+        type: String,
+        required: true
     }
-};
+});
+
+const domain = getDomainFromUrl(props.sourceUrl);
+const formattedDate = dateFormat(props.lastUpdatedDate);
+const relativeFormattedDate = relativeDateFormat(props.lastUpdatedDate);
 </script>
