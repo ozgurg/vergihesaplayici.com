@@ -11,12 +11,6 @@
     </v-row>
 </template>
 
-<script>
+<script setup="">
 import { calculators } from "@/domain/hesaplayicilar/calculator-list.js";
-
-export default {
-    data: () => ({
-        calculators
-    })
-};
 </script>
