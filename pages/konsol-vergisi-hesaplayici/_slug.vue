@@ -29,7 +29,7 @@
                     <estimated-calculation-alert />
                 </form-row>
 
-                <CalculatorResultList
+                <calculator-result-list
                     :items="resultList"
                     class="mb-4" />
 

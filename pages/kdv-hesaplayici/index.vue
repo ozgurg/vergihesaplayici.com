@@ -63,7 +63,7 @@
             </form-row>
 
             <template v-if="shouldShowResults">
-                <CalculatorResultList
+                <calculator-result-list
                     :items="resultList"
                     class="mb-10" />
 
