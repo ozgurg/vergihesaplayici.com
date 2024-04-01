@@ -1,6 +1,6 @@
 <template>
     <div class="vh-result-list d-flex flex-column">
-        <CalculatorResultFormRow
+        <calculator-result-form-row
             v-for="_item in items"
             :key="_item.key"
             :value="_item.value"

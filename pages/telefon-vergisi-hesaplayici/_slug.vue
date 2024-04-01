@@ -6,7 +6,7 @@
             {{ page.title }}
         </heading-1>
 
-        <CalculatorInnerContainer>
+        <calculator-inner-container>
             <template v-if="preset.slug === 'apple-vision-pro'">
                 <vh-alert
                     type="info"
@@ -48,7 +48,7 @@
                 <div
                     v-if="form.option.retailPrice"
                     class="mb-10">
-                    <CalculatorResultFormRow
+                    <calculator-result-form-row
                         :value="moneyFormat(form.option.retailPrice.value, 'TRY')"
                         class="mb-2"
                         label="Piyasa fiyatı" />
@@ -66,7 +66,7 @@
                     <calculator-quick-share
                         :query-string="form"
                         @click:other="showShareDialog()" />
-                    <CalculatorShareDialog
+                    <calculator-share-dialog
                         v-model="ui.isShareDialogShown"
                         :screenshot-input="screenshotInput"
                         :screenshot-output="resultList"
@@ -76,7 +76,7 @@
                         :preset-option-title="form.option.title" />
                 </form-row>
             </template>
-        </CalculatorInnerContainer>
+        </calculator-inner-container>
 
         <v-divider class="my-16" />
 

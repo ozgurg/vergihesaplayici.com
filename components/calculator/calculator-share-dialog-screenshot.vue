@@ -140,7 +140,7 @@
                             <v-col
                                 v-for="_currencyCode in currencyCodes"
                                 :key="_currencyCode">
-                                <LazyCalculatorShareDialogScreenshotExchangeRateItem :currency-code="_currencyCode" />
+                                <lazy-calculator-share-dialog-screenshot-exchange-rate-item :currency-code="_currencyCode" />
                             </v-col>
                         </v-row>
                     </td>

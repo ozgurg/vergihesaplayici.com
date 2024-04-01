@@ -53,14 +53,14 @@
             <template v-if="currentTab === 0">
                 <div class="d-flex flex-column h-100">
                     <div class="mt-auto py-10 px-6 py-lg-12 px-lg-8">
-                        <LazyCalculatorShareDialogUrl :form="form" />
+                        <lazy-calculator-share-dialog-url :form="form" />
                     </div>
                 </div>
             </template>
             <template v-else-if="currentTab === 1">
                 <div class="d-flex flex-column h-100">
                     <div class="mt-auto py-10 py-lg-6 px-2">
-                        <CalculatorShareDialogScreenshot
+                        <calculator-share-dialog-screenshot
                             :input="screenshotInput"
                             :output="screenshotOutput"
                             :calculator-title="calculatorTitle"

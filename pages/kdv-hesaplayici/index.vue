@@ -6,7 +6,7 @@
             {{ page.title }}
         </heading-1>
 
-        <CalculatorInnerContainer>
+        <calculator-inner-container>
             <form-row
                 class="mb-10"
                 label="Hesaplama modu">
@@ -73,14 +73,14 @@
                     <calculator-quick-share
                         :query-string="form"
                         @click:other="showShareDialog()" />
-                    <CalculatorShareDialog
+                    <calculator-share-dialog
                         v-model="ui.isShareDialogShown"
                         :screenshot-output="resultList"
                         :form="form"
                         :calculator-title="page.title" />
                 </form-row>
             </template>
-        </CalculatorInnerContainer>
+        </calculator-inner-container>
     </div>
 </template>
 
