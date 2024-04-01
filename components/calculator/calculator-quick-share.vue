@@ -11,7 +11,7 @@
                 target="_blank">
                 <vh-icon
                     :icon="_item.icon"
-                    size="28" />
+                    :size="28" />
             </v-btn>
         </template>
 
