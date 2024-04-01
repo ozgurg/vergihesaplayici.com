@@ -6,7 +6,7 @@
             {{ page.title }}
         </heading-1>
 
-        <CalculatorInnerContainer>
+        <calculator-inner-container>
             <form-row
                 class="mb-10"
                 label="Hesaplama modu">
@@ -63,18 +63,24 @@
             </form-row>
 
             <template v-if="shouldShowResults">
-                <CalculatorResultList
+                <calculator-result-list
                     :items="resultList"
                     class="mb-10" />
 
-                <form-row direction="horizontal">
-                    <CalculatorShareButton
+                <form-row
+                    label="Sonuçları paylaş"
+                    direction="horizontal">
+                    <calculator-quick-share
+                        :query-string="form"
+                        @click:other="showShareDialog()" />
+                    <calculator-share-dialog
+                        v-model="ui.isShareDialogShown"
                         :screenshot-output="resultList"
                         :form="form"
                         :calculator-title="page.title" />
                 </form-row>
             </template>
-        </CalculatorInnerContainer>
+        </calculator-inner-container>
     </div>
 </template>
 
@@ -115,7 +121,8 @@ export default {
                     title: "%20",
                     form: { rate: 20 }
                 }
-            ]
+            ],
+            isShareDialogShown: false
         },
         form: {
             price: "",
@@ -125,6 +132,10 @@ export default {
         results: {}
     }),
     methods: {
+        showShareDialog() {
+            const vm = this;
+            vm.ui.isShareDialogShown = true;
+        },
         isPresetActive(preset) {
             const vm = this;
             return preset.form.rate === vm.form.rate;

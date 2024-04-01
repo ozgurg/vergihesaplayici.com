@@ -1,10 +1,11 @@
 <template>
-    <div class="vh-result-list">
-        <CalculatorResultFormRow
+    <div class="vh-result-list d-flex flex-column">
+        <calculator-result-form-row
             v-for="_item in items"
             :key="_item.key"
             :value="_item.value"
-            :label="_item.key" />
+            :label="_item.key"
+            :is-highlighted="_item.isHighlighted ?? false" />
     </div>
 </template>
 
@@ -21,8 +22,6 @@ export default {
 
 <style scoped="">
 .vh-result-list {
-    display: flex;
-    flex-flow: column wrap;
     gap: 1.125rem
 }
 </style>

@@ -1,6 +1,7 @@
 <template>
     <form-row
         :label="label"
+        :is-highlighted="isHighlighted"
         direction="horizontal">
         <v-text-field
             :value="value"
@@ -30,6 +31,10 @@ export default {
         value: {
             type: String,
             default: null
+        },
+        isHighlighted: {
+            type: Boolean,
+            default: false
         }
     }
 };

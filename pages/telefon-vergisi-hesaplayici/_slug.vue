@@ -6,7 +6,7 @@
             {{ page.title }}
         </heading-1>
 
-        <CalculatorInnerContainer>
+        <calculator-inner-container>
             <template v-if="preset.slug === 'apple-vision-pro'">
                 <vh-alert
                     type="info"
@@ -37,7 +37,7 @@
                     <estimated-calculation-alert />
                 </form-row>
 
-                <CalculatorResultList
+                <calculator-result-list
                     :items="resultList"
                     class="mb-4" />
 
@@ -48,7 +48,7 @@
                 <div
                     v-if="form.option.retailPrice"
                     class="mb-10">
-                    <CalculatorResultFormRow
+                    <calculator-result-form-row
                         :value="moneyFormat(form.option.retailPrice.value, 'TRY')"
                         class="mb-2"
                         label="Piyasa fiyatı" />
@@ -60,8 +60,14 @@
                     </form-row>
                 </div>
 
-                <form-row direction="horizontal">
-                    <CalculatorShareButton
+                <form-row
+                    label="Sonuçları paylaş"
+                    direction="horizontal">
+                    <calculator-quick-share
+                        :query-string="form"
+                        @click:other="showShareDialog()" />
+                    <calculator-share-dialog
+                        v-model="ui.isShareDialogShown"
                         :screenshot-input="screenshotInput"
                         :screenshot-output="resultList"
                         :form="form"
@@ -70,7 +76,7 @@
                         :preset-option-title="form.option.title" />
                 </form-row>
             </template>
-        </CalculatorInnerContainer>
+        </calculator-inner-container>
 
         <v-divider class="my-16" />
 
@@ -121,6 +127,10 @@ export default {
     }),
     methods: {
         moneyFormat,
+        showShareDialog() {
+            const vm = this;
+            vm.ui.isShareDialogShown = true;
+        },
         _calculate() {
             const vm = this;
 
@@ -220,7 +230,8 @@ export default {
             ui: {
                 options,
                 otherCalculations,
-                registration: registrationOptions
+                registration: registrationOptions,
+                isShareDialogShown: false
             },
             form
         };

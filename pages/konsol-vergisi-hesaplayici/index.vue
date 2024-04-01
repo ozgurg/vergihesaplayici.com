@@ -30,7 +30,7 @@
                 <heading-2>
                     Kendiniz hesaplayın
                 </heading-2>
-                <CalculatorInnerContainer>
+                <calculator-inner-container>
                     <form-row
                         class="mb-10"
                         label="Konsol fiyatı">
@@ -68,7 +68,7 @@
                             </template>
                         </form-row>
 
-                        <CalculatorResultList
+                        <calculator-result-list
                             :items="resultList"
                             class="mb-5" />
 
@@ -78,15 +78,21 @@
                                 class="mb-10" />
                         </form-row>
 
-                        <form-row direction="horizontal">
-                            <CalculatorShareButton
+                        <form-row
+                            label="Sonuçları paylaş"
+                            direction="horizontal">
+                            <calculator-quick-share
+                                :query-string="form"
+                                @click:other="showShareDialog()" />
+                            <calculator-share-dialog
+                                v-model="ui.isShareDialogShown"
                                 :screenshot-input="screenshotInput"
                                 :screenshot-output="resultList"
                                 :form="form"
                                 :calculator-title="page.title" />
                         </form-row>
                     </template>
-                </CalculatorInnerContainer>
+                </calculator-inner-container>
             </div>
         </div>
     </div>
@@ -112,7 +118,8 @@ export default {
     data: () => ({
         page: konsolVergisiHesaplayiciPage,
         ui: {
-            calculations: buildCalculations()
+            calculations: buildCalculations(),
+            isShareDialogShown: false
         },
         form: {
             currency: "USD",
@@ -121,6 +128,10 @@ export default {
         results: {}
     }),
     methods: {
+        showShareDialog() {
+            const vm = this;
+            vm.ui.isShareDialogShown = true;
+        },
         _calculate() {
             const vm = this;
 

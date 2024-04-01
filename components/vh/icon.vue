@@ -30,7 +30,7 @@ export default {
         },
         color: {
             type: String,
-            default: "#000"
+            default: "inherit"
         },
         size: {
             type: Number,
