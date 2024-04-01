@@ -38,8 +38,7 @@ export default {
     props: {
         queryString: {
             type: Object,
-            default: () => {
-            }
+            default: () => null
         }
     },
     methods: {
@@ -51,7 +50,7 @@ export default {
     computed: {
         url() {
             const vm = this;
-            return createShareUrlOfCalculator(vm.$route.path, vm.queryString, true);
+            return createShareUrlOfCalculator(vm.$route.path, vm.queryString, vm.queryString !== null);
         },
         items() {
             const vm = this;

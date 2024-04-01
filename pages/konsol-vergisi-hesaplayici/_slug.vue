@@ -55,9 +55,7 @@
                 <form-row
                     label="Sonuçları paylaş"
                     direction="horizontal">
-                    <calculator-quick-share
-                        :query-string="form"
-                        @click:other="showShareDialog()" />
+                    <calculator-quick-share @click:other="showShareDialog()" />
                     <calculator-share-dialog
                         v-model="ui.isShareDialogShown"
                         :screenshot-input="screenshotInput"
