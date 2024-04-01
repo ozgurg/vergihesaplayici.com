@@ -78,8 +78,14 @@
                                 class="mb-10" />
                         </form-row>
 
-                        <form-row direction="horizontal">
-                            <CalculatorShareButton
+                        <form-row
+                            label="Sonuçları paylaş"
+                            direction="horizontal">
+                            <calculator-quick-share
+                                :query-string="form"
+                                @click:other="showShareDialog()" />
+                            <CalculatorShareDialog
+                                v-model="ui.isShareDialogShown"
                                 :screenshot-input="screenshotInput"
                                 :screenshot-output="resultList"
                                 :form="form"
@@ -112,7 +118,8 @@ export default {
     data: () => ({
         page: konsolVergisiHesaplayiciPage,
         ui: {
-            calculations: buildCalculations()
+            calculations: buildCalculations(),
+            isShareDialogShown: false
         },
         form: {
             currency: "USD",
@@ -121,6 +128,10 @@ export default {
         results: {}
     }),
     methods: {
+        showShareDialog() {
+            const vm = this;
+            vm.ui.isShareDialogShown = true;
+        },
         _calculate() {
             const vm = this;
 
