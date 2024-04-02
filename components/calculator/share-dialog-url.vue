@@ -19,15 +19,9 @@
                         elevation="0"
                         block=""
                         rounded="">
-                        <template v-if="isCustomIcon(_item)">
-                            <!-- eslint-disable vue/no-v-html -->
-                            <div v-html="loadCustomIconAsHtml(_item)" />
-                        </template>
-                        <template v-else>
-                            <v-icon size="28">
-                                {{ _item.icon }}
-                            </v-icon>
-                        </template>
+                        <vh-icon
+                            :icon="_item.icon"
+                            :size="28" />
                     </v-btn>
                 </v-col>
             </template>
@@ -84,7 +78,6 @@ import {
     createXShareUrl,
     createWhatsAppShareUrl
 } from "@/utils/create-social-media-share-url.js";
-import { isCustomIcon, loadCustomIconAsHtml } from "@/utils/custom-icon.js";
 
 export default {
     data: () => ({
@@ -107,12 +100,6 @@ export default {
                 });
             } catch {
             }
-        },
-        isCustomIcon(item) {
-            return isCustomIcon(item.icon);
-        },
-        loadCustomIconAsHtml(item) {
-            return loadCustomIconAsHtml(item.icon);
         }
     },
     computed: {
@@ -135,7 +122,7 @@ export default {
             const vm = this;
             return [
                 {
-                    url: createFacebookShareUrl(vm.url, document.title),
+                    url: createFacebookShareUrl(vm.url),
                     title: "Facebook'ta paylaş",
                     color: "#1877f2",
                     icon: mdiFacebook
@@ -147,7 +134,7 @@ export default {
                     icon: "x.svg"
                 },
                 {
-                    url: createWhatsAppShareUrl(vm.url, document.title),
+                    url: createWhatsAppShareUrl(vm.url),
                     title: "WhatsApp ile gönder",
                     color: "#25d366",
                     icon: mdiWhatsapp
@@ -170,15 +157,7 @@ export default {
 };
 </script>
 
-<style scoped="">
-/* Custom icons for social media sharing */
-:deep(svg) {
-    vertical-align: middle;
-    width: 1.75rem;
-    height: 1.75rem
-}
-
-/* Copy button for URL sharing */
+<style lang="scss" scoped="">
 :deep(.v-input__append-inner) {
     padding-inline-start: .75rem !important;
     margin-block: auto !important
