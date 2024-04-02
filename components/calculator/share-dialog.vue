@@ -7,6 +7,7 @@
         overlay-opacity=".75"
         width="700"
         @click:outside="close()"
+        @keydown.esc="close()"
         @close="close()">
         <v-toolbar flat="">
             <v-toolbar-title>
