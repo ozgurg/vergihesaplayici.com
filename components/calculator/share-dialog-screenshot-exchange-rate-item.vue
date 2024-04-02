@@ -12,30 +12,22 @@
                 width="100%"
                 type="image" />
         </template>
+        <template v-else-if="exchangeRate !== null">
+            <span class="grey--text text--lighten-1">
+                {{ moneyFormat(exchangeRate.rate, "TRY") }}
+            </span>
+        </template>
         <template v-else>
-            <div class="grey--text text--lighten-1">
-                <template v-if="exchangeRate">
-                    {{ moneyFormat(exchangeRate.rate, "TRY") }}
-                </template>
-                <template v-else>
-                    <v-icon
-                        color="red"
-                        size="20">
-                        {{ errorIcon }}
-                    </v-icon>
-                </template>
-            </div>
+            Hata 😊
         </template>
     </div>
 </template>
 
 <script>
-import { mdiAlertCircle } from "@mdi/js";
 import { moneyFormat } from "@/utils/formatter.js";
 
 export default {
     data: () => ({
-        errorIcon: mdiAlertCircle,
         isLoading: true,
         exchangeRate: null
     }),
@@ -47,18 +39,16 @@ export default {
     },
     methods: {
         moneyFormat,
-        _load() {
+        async _load() {
             const vm = this;
-            vm.$store.dispatch("exchange-rates/loadExchangeRateFromApi", vm.currencyCode)
-                .then(exchangeRate => {
-                    vm.exchangeRate = exchangeRate;
-                })
-                .catch(() => {
-                    vm.exchangeRate = null;
-                })
-                .finally(() => {
-                    vm.isLoading = false;
-                });
+            vm.exchangeRate = null;
+            try {
+                vm.exchangeRate = await vm.$store.dispatch("exchange-rates/loadExchangeRateFromApi", vm.currencyCode);
+            } catch (error) {
+                vm.exchangeRate = null;
+            } finally {
+                vm.isLoading = false;
+            }
         }
     },
     mounted() {

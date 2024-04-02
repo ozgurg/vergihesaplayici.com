@@ -1,11 +1,11 @@
 <template>
-    <div class="vh-calculator-inner-container">
-        <slot />
+    <div>
+        <slot v-if="$slots.default" />
     </div>
 </template>
 
-<style>
-.vh-calculator-inner-container {
+<style lang="scss" scoped="">
+div {
     max-width: 512px
 }
 </style>
