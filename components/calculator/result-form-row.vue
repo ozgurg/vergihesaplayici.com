@@ -1,11 +1,11 @@
 <template>
     <form-row
-        :label="label"
-        :is-highlighted="isHighlighted"
+        :label="props.label"
+        :is-highlighted="props.isHighlighted"
         direction="horizontal">
         <v-text-field
-            :value="value"
-            :aria-label="label"
+            :value="props.value"
+            :aria-label="props.label"
             dense=""
             class="tabular-nums"
             hide-details=""
@@ -15,32 +15,30 @@
                 <v-divider
                     class="my-2 me-3"
                     vertical="" />
-                <copy-button :value-to-copy="value" />
+                <copy-button :value-to-copy="props.value" />
             </template>
         </v-text-field>
     </form-row>
 </template>
 
-<script>
-export default {
-    props: {
-        label: {
-            type: String,
-            default: null
-        },
-        value: {
-            type: String,
-            default: null
-        },
-        isHighlighted: {
-            type: Boolean,
-            default: false
-        }
+<script setup="">
+const props = defineProps({
+    label: {
+        type: String,
+        default: null
+    },
+    value: {
+        type: String,
+        default: null
+    },
+    isHighlighted: {
+        type: Boolean,
+        default: false
     }
-};
+});
 </script>
 
-<style scoped="">
+<style lang="scss" scoped="">
 :deep(.v-input__append-inner) {
     padding-inline-start: .75rem !important;
     margin-block: auto !important
