@@ -2,7 +2,7 @@
     "name": "vergihesaplayici.com",
     "version": "7.6.0",
     "description": "vergihesaplayici.com, vergi hesaplar.",
-    "license": "MIT",
+    "license": "GPL-3.0",
     "homepage": "https://vergihesaplayici.com/",
     "private": true,
     "repository": {
