@@ -161,7 +161,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 71499,
+            value: 78999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16"
         }
