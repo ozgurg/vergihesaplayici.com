@@ -3,8 +3,52 @@ const buildPageMeta = phoneNameWithPossession => ({
     pageDescription: `${phoneNameWithPossession} vergisini hesaplamak için başta ÖTV gibi tüm telefon vergilerini hesaplama yeteneğine sahip Telefon Vergisi Hesaplayıcı aracını kullanın. Vergilerin ne kadar uygulandığını ve vergisiz telefon fiyatını öğrenin. Yurt içi ve yurt dışı fiyatlarını karşılaştırın.`
 });
 
+// Last ID: 25
+
 /** @type {TelefonVergisiHesaplayiciPreset[]} */
 const presets = [
+    {
+        id: 22,
+        brandId: 1,
+        title: "iPhone 16 Pro",
+        slug: "apple-iphone-16-pro",
+        releaseDate: new Date("2024-09-09"),
+        thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-16-pro.webp",
+        ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-16-pro.jpg",
+        ...buildPageMeta("Apple iPhone 16 Pro'nun")
+    },
+    {
+        id: 23,
+        brandId: 1,
+        title: "iPhone 16 Pro Max",
+        slug: "apple-iphone-16-pro-max",
+        releaseDate: new Date("2024-09-09"),
+        thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-16-pro-max.webp",
+        ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-16-pro-max.jpg",
+        ...buildPageMeta("Apple iPhone 16 Pro Max'in")
+    },
+    {
+        id: 24,
+        brandId: 1,
+        title: "iPhone 16",
+        slug: "apple-iphone-16",
+        releaseDate: new Date("2024-09-09"),
+        thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-16.webp",
+        ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-16.jpg",
+        ...buildPageMeta("Apple iPhone 16'in")
+    },
+    {
+        id: 25,
+        brandId: 1,
+        title: "iPhone 16 Plus",
+        slug: "apple-iphone-16-plus",
+        releaseDate: new Date("2024-09-09"),
+        thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-16-plus.webp",
+        ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-16-plus.jpg",
+        ...buildPageMeta("Apple iPhone 16 Plus'ın")
+    },
+
+
     {
         id: 17,
         brandId: 1,
