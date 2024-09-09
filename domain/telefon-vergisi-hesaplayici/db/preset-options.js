@@ -1,8 +1,186 @@
-const lastUpdatedDateIphone = new Date("Tue Mar 05 2024 20:13:15 GMT+0300 (GMT+03:00)");
+const lastUpdatedDateIphone = new Date("Mon Sep 09 2024 21:38:04 GMT+0300 (GMT+03:00)");
 const lastUpdatedDateSamsung = new Date("Tue Mar 05 2024 20:13:15 GMT+0300 (GMT+03:00)");
 
 /** @type {TelefonVergisiHesaplayiciPresetOption[]} */
 const presetOptions = [
+    // [22] Apple iPhone 16 Pro
+    {
+        presetId: 22,
+        title: "128GB",
+        form: {
+            price: 999,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 82999,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16-pro"
+        }
+    },
+    {
+        presetId: 22,
+        title: "256GB",
+        form: {
+            price: 1099,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 87999,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16-pro"
+        }
+    },
+    {
+        presetId: 22,
+        title: "512GB",
+        form: {
+            price: 1299,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 97999,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16-pro"
+        }
+    },
+    {
+        presetId: 22,
+        title: "1TB",
+        form: {
+            price: 1499,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 107999,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16-pro"
+        }
+    },
+
+    // [23] Apple iPhone 16 Pro Max
+    {
+        presetId: 23,
+        title: "256GB",
+        form: {
+            price: 1199,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 99999,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16-pro"
+        }
+    },
+    {
+        presetId: 23,
+        title: "512GB",
+        form: {
+            price: 1399,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 109999,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16-pro"
+        }
+    },
+    {
+        presetId: 23,
+        title: "1TB",
+        form: {
+            price: 1599,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 119999,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16-pro"
+        }
+    },
+
+    // [24] Apple iPhone 16
+    {
+        presetId: 24,
+        title: "128GB",
+        form: {
+            price: 799,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 64999,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16"
+        }
+    },
+    {
+        presetId: 24,
+        title: "256GB",
+        form: {
+            price: 899,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 69999,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16"
+        }
+    },
+    {
+        presetId: 24,
+        title: "512GB",
+        form: {
+            price: 1099,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 79999,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16"
+        }
+    },
+
+    // [25] Apple iPhone 16 Plus
+    {
+        presetId: 25,
+        title: "128GB",
+        form: {
+            price: 899,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 73999,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16"
+        }
+    },
+    {
+        presetId: 25,
+        title: "256GB",
+        form: {
+            price: 999,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 71499,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16"
+        }
+    },
+    {
+        presetId: 25,
+        title: "512GB",
+        form: {
+            price: 1199,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 88999,
+            lastUpdatedDate: lastUpdatedDateIphone,
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16"
+        }
+    },
+
+
     // [17] Apple iPhone 15 Pro
     {
         presetId: 17,
