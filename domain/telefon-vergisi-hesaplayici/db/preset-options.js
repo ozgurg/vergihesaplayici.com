@@ -1,5 +1,5 @@
-const lastUpdatedDateIphone = new Date("Mon Sep 09 2024 21:38:04 GMT+0300 (GMT+03:00)");
-const lastUpdatedDateSamsung = new Date("Tue Mar 05 2024 20:13:15 GMT+0300 (GMT+03:00)");
+const lastUpdatedDateIphone = new Date("Mon Sep 09 2024 22:17:01 GMT+0300 (GMT+03:00)");
+const lastUpdatedDateSamsung = new Date("Mon Sep 09 2024 22:17:01 GMT+0300 (GMT+03:00)");
 
 /** @type {TelefonVergisiHesaplayiciPresetOption[]} */
 const presetOptions = [
@@ -188,11 +188,6 @@ const presetOptions = [
         form: {
             price: 999,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 75499,
-            lastUpdatedDate: lastUpdatedDateIphone,
-            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
         }
     },
     {
@@ -201,11 +196,6 @@ const presetOptions = [
         form: {
             price: 1099,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 79999,
-            lastUpdatedDate: lastUpdatedDateIphone,
-            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
         }
     },
     {
@@ -214,11 +204,6 @@ const presetOptions = [
         form: {
             price: 1299,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 88999,
-            lastUpdatedDate: lastUpdatedDateIphone,
-            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
         }
     },
     {
@@ -227,11 +212,6 @@ const presetOptions = [
         form: {
             price: 1499,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 97999,
-            lastUpdatedDate: lastUpdatedDateIphone,
-            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
         }
     },
 
@@ -242,11 +222,6 @@ const presetOptions = [
         form: {
             price: 1199,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 89999,
-            lastUpdatedDate: lastUpdatedDateIphone,
-            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
         }
     },
     {
@@ -255,11 +230,6 @@ const presetOptions = [
         form: {
             price: 1399,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 98999,
-            lastUpdatedDate: lastUpdatedDateIphone,
-            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
         }
     },
     {
@@ -268,11 +238,6 @@ const presetOptions = [
         form: {
             price: 1599,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 107999,
-            lastUpdatedDate: lastUpdatedDateIphone,
-            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15-pro"
         }
     },
 
@@ -281,11 +246,11 @@ const presetOptions = [
         presetId: 19,
         title: "128GB",
         form: {
-            price: 799,
+            price: 699,
             currency: "USD"
         },
         retailPrice: {
-            value: 58499,
+            value: 56999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
         }
@@ -294,11 +259,11 @@ const presetOptions = [
         presetId: 19,
         title: "256GB",
         form: {
-            price: 899,
+            price: 799,
             currency: "USD"
         },
         retailPrice: {
-            value: 62999,
+            value: 61999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
         }
@@ -307,7 +272,7 @@ const presetOptions = [
         presetId: 19,
         title: "512GB",
         form: {
-            price: 1099,
+            price: 999,
             currency: "USD"
         },
         retailPrice: {
@@ -322,11 +287,11 @@ const presetOptions = [
         presetId: 20,
         title: "128GB",
         form: {
-            price: 899,
+            price: 799,
             currency: "USD"
         },
         retailPrice: {
-            value: 66999,
+            value: 64999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
         }
@@ -335,11 +300,11 @@ const presetOptions = [
         presetId: 20,
         title: "256GB",
         form: {
-            price: 999,
+            price: 899,
             currency: "USD"
         },
         retailPrice: {
-            value: 71499,
+            value: 69999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
         }
@@ -348,11 +313,11 @@ const presetOptions = [
         presetId: 20,
         title: "512GB",
         form: {
-            price: 1199,
+            price: 1099,
             currency: "USD"
         },
         retailPrice: {
-            value: 80499,
+            value: 79999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
         }
@@ -432,11 +397,11 @@ const presetOptions = [
         presetId: 3,
         title: "128GB",
         form: {
-            price: 799,
+            price: 599,
             currency: "USD"
         },
         retailPrice: {
-            value: 51499,
+            value: 47999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
         }
@@ -445,11 +410,11 @@ const presetOptions = [
         presetId: 3,
         title: "256GB",
         form: {
-            price: 899,
+            price: 699,
             currency: "USD"
         },
         retailPrice: {
-            value: 55999,
+            value: 52999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
         }
@@ -458,11 +423,11 @@ const presetOptions = [
         presetId: 3,
         title: "512GB",
         form: {
-            price: 1099,
+            price: 899,
             currency: "USD"
         },
         retailPrice: {
-            value: 64999,
+            value: 62999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
         }
@@ -473,11 +438,11 @@ const presetOptions = [
         presetId: 4,
         title: "128GB",
         form: {
-            price: 899,
+            price: 699,
             currency: "USD"
         },
         retailPrice: {
-            value: 58499,
+            value: 56999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
         }
@@ -486,11 +451,11 @@ const presetOptions = [
         presetId: 4,
         title: "256GB",
         form: {
-            price: 999,
+            price: 799,
             currency: "USD"
         },
         retailPrice: {
-            value: 62999,
+            value: 61999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
         }
@@ -499,7 +464,7 @@ const presetOptions = [
         presetId: 4,
         title: "512GB",
         form: {
-            price: 1199,
+            price: 999,
             currency: "USD"
         },
         retailPrice: {
@@ -543,11 +508,6 @@ const presetOptions = [
         form: {
             price: 699,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 42999,
-            lastUpdatedDate: lastUpdatedDateIphone,
-            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-13"
         }
     },
     {
@@ -556,11 +516,6 @@ const presetOptions = [
         form: {
             price: 799,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 47499,
-            lastUpdatedDate: lastUpdatedDateIphone,
-            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-13"
         }
     },
     {
@@ -569,11 +524,6 @@ const presetOptions = [
         form: {
             price: 999,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 56499,
-            lastUpdatedDate: lastUpdatedDateIphone,
-            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-13"
         }
     },
 
@@ -587,7 +537,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 28999,
+            value: 31999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-se"
         }
@@ -600,7 +550,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 31199,
+            value: 34499,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-se"
         }
@@ -613,7 +563,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 35699,
+            value: 39499,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-se"
         }
@@ -665,11 +615,6 @@ const presetOptions = [
         form: {
             price: 799.99,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 37999,
-            lastUpdatedDate: lastUpdatedDateSamsung,
-            sourceUrl: "https://shop.samsung.com/tr/galaxy-s23/"
         }
     },
     {
@@ -693,11 +638,6 @@ const presetOptions = [
         form: {
             price: 999.99,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 48499,
-            lastUpdatedDate: lastUpdatedDateSamsung,
-            sourceUrl: "https://shop.samsung.com/tr/galaxy-s23-plus/"
         }
     },
     {
@@ -718,7 +658,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 24999,
+            value: 26999,
             lastUpdatedDate: lastUpdatedDateSamsung,
             sourceUrl: "https://shop.samsung.com/tr/galaxy-s23-fe/"
         }
@@ -731,7 +671,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 26999,
+            value: 28999,
             lastUpdatedDate: lastUpdatedDateSamsung,
             sourceUrl: "https://shop.samsung.com/tr/galaxy-s23-fe/"
         }
@@ -744,11 +684,6 @@ const presetOptions = [
         form: {
             price: 1199.99,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 61999,
-            lastUpdatedDate: lastUpdatedDateSamsung,
-            sourceUrl: "https://shop.samsung.com/tr/galaxy-s23-ultra/"
         }
     },
     {
@@ -757,11 +692,6 @@ const presetOptions = [
         form: {
             price: 1379.99,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 65999,
-            lastUpdatedDate: lastUpdatedDateSamsung,
-            sourceUrl: "https://shop.samsung.com/tr/galaxy-s23-ultra/"
         }
     },
     {
@@ -781,11 +711,6 @@ const presetOptions = [
         form: {
             price: 1799.99,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 73999,
-            lastUpdatedDate: lastUpdatedDateSamsung,
-            sourceUrl: "https://shop.samsung.com/tr/galaxy-z-fold5/"
         }
     },
     {
@@ -794,11 +719,6 @@ const presetOptions = [
         form: {
             price: 1919.99,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 75999,
-            lastUpdatedDate: lastUpdatedDateSamsung,
-            sourceUrl: "https://shop.samsung.com/tr/galaxy-z-fold5/"
         }
     },
     {
@@ -807,11 +727,6 @@ const presetOptions = [
         form: {
             price: 2159.99,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 82999,
-            lastUpdatedDate: lastUpdatedDateSamsung,
-            sourceUrl: "https://shop.samsung.com/tr/galaxy-z-fold5/"
         }
     },
 
@@ -851,7 +766,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 47999,
+            value: 51999,
             lastUpdatedDate: lastUpdatedDateSamsung,
             sourceUrl: "https://shop.samsung.com/tr/galaxy-z-flip5/"
         }
@@ -862,11 +777,6 @@ const presetOptions = [
         form: {
             price: 1199.99,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 51999,
-            lastUpdatedDate: lastUpdatedDateSamsung,
-            sourceUrl: "https://shop.samsung.com/tr/galaxy-z-flip5/"
         }
     },
 
