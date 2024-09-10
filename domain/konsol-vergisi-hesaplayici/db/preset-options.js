@@ -1,5 +1,16 @@
 /** @type {KonsolVergisiHesaplayiciPresetOption[]} */
 const presetOptions = [
+    // [23] Sony PlayStation 5 Pro
+    {
+        presetId: 23,
+        title: "Disksiz",
+        form: { // https://www.youtube.com/live/X24BzyzQQ-8?t=1096
+            price: 799.99,
+            currency: "EUR"
+        }
+    },
+
+
     // [14] Sony PlayStation 5
     {
         presetId: 14,
