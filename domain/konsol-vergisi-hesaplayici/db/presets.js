@@ -1,5 +1,18 @@
+// Last ID: 23
+
 /** @type {KonsolVergisiHesaplayiciPreset[]} */
 const presets = [
+    {
+        id: 23,
+        brandId: 3,
+        title: "PlayStation 5 Pro",
+        slug: "sony-playstation-5-pro",
+        releaseDate: new Date("2024-11-07"),
+        thumbnail: "konsol-vergisi-hesaplayici/thumb/sony-playstation-5-pro.webp",
+        ogImage: "konsol-vergisi-hesaplayici/og/sony-playstation-5-pro.jpg",
+        pageTitle: "Sony PlayStation 5 Pro'nun vergisi ne kadar?",
+        pageDescription: "Satın aldığınız bir Sony PlayStation 5 Pro'nun yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın."
+    },
     {
         id: 14,
         brandId: 3,
