@@ -1,6 +1,6 @@
 {
     "name": "vergihesaplayici.com",
-    "version": "7.8.2",
+    "version": "7.9.0",
     "description": "vergihesaplayici.com, vergi hesaplar.",
     "license": "GPL-3.0",
     "homepage": "https://vergihesaplayici.com/",
@@ -60,7 +60,7 @@
         "eslint-plugin-nuxt": "4.0.0",
         "eslint-plugin-vue": "9.32.0",
         "husky": "9.1.7",
-        "lint-staged": "15.2.11",
+        "lint-staged": "15.3.0",
         "typescript": "5.7.2",
         "vitest": "1.4.0"
     },
