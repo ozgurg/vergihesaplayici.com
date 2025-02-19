@@ -179,7 +179,7 @@ const presets = [
         brandId: 1,
         title: "Vision Pro",
         slug: "apple-vision-pro",
-        releaseDate: new Date("2024-12-31"),
+        releaseDate: new Date("2024-02-02"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-vision-pro.webp",
         ogImage: "telefon-vergisi-hesaplayici/og/apple-vision-pro.jpg",
         ...buildPageMeta("Apple Vision Pro'nun")
