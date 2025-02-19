@@ -3,6 +3,47 @@ const lastUpdatedDateSamsung = new Date("Mon Sep 09 2024 22:17:01 GMT+0300 (GMT+
 
 /** @type {TelefonVergisiHesaplayiciPresetOption[]} */
 const presetOptions = [
+    // [26] Apple iPhone 16e
+    {
+        presetId: 26,
+        title: "128GB",
+        form: {
+            price: 599,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 47999,
+            lastUpdatedDate: new Date("Wed Feb 19 2025 19:12:25 GMT+0300 (GMT+03:00)"),
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16e"
+        }
+    },
+    {
+        presetId: 26,
+        title: "256GB",
+        form: {
+            price: 699,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 52999,
+            lastUpdatedDate: new Date("Wed Feb 19 2025 19:12:25 GMT+0300 (GMT+03:00)"),
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16e"
+        }
+    },
+    {
+        presetId: 26,
+        title: "512GB",
+        form: {
+            price: 899,
+            currency: "USD"
+        },
+        retailPrice: {
+            value: 62999,
+            lastUpdatedDate: new Date("Wed Feb 19 2025 19:12:25 GMT+0300 (GMT+03:00)"),
+            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16e"
+        }
+    },
+
     // [22] Apple iPhone 16 Pro
     {
         presetId: 22,
