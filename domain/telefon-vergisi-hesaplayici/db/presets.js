@@ -3,10 +3,20 @@ const buildPageMeta = phoneNameWithPossession => ({
     pageDescription: `${phoneNameWithPossession} vergisini hesaplamak için başta ÖTV gibi tüm telefon vergilerini hesaplama yeteneğine sahip Telefon Vergisi Hesaplayıcı aracını kullanın. Vergilerin ne kadar uygulandığını ve vergisiz telefon fiyatını öğrenin. Yurt içi ve yurt dışı fiyatlarını karşılaştırın.`
 });
 
-// Last ID: 25
+// Last ID: 26
 
 /** @type {TelefonVergisiHesaplayiciPreset[]} */
 const presets = [
+    {
+        id: 26,
+        brandId: 1,
+        title: "iPhone 16e",
+        slug: "apple-iphone-16e",
+        releaseDate: new Date("2025-02-19"),
+        thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-16e.webp",
+        ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-16e.jpg",
+        ...buildPageMeta("Apple iPhone 16e'nin")
+    },
     {
         id: 22,
         brandId: 1,
