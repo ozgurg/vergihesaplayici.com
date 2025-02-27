@@ -55,7 +55,7 @@
  */
 
 /**
- * @typedef {TelefonVergisiHesaplayiciPreset & TelefonVergisiHesaplayiciPresetPage} TelefonVergisiHesaplayiciPresetWithPage
+ * @typedef {TelefonVergisiHesaplayiciPreset & {page: TelefonVergisiHesaplayiciPresetPage}} TelefonVergisiHesaplayiciPresetWithPage
  */
 
 /**

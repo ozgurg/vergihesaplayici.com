@@ -1,5 +1,5 @@
-const lastUpdatedDateIphone = new Date("Mon Sep 09 2024 22:17:01 GMT+0300 (GMT+03:00)");
-const lastUpdatedDateSamsung = new Date("Mon Sep 09 2024 22:17:01 GMT+0300 (GMT+03:00)");
+const lastUpdatedDateIphone = new Date("Thu Feb 27 2025 03:50:26 GMT+0300 (GMT+03:00)");
+// const lastUpdatedDateSamsung = new Date("Thu Feb 27 2025 03:50:26 GMT+0300 (GMT+03:00)");
 
 /** @type {TelefonVergisiHesaplayiciPresetOption[]} */
 const presetOptions = [
@@ -13,7 +13,7 @@ const presetOptions = [
         },
         retailPrice: {
             value: 47999,
-            lastUpdatedDate: new Date("Wed Feb 19 2025 19:12:25 GMT+0300 (GMT+03:00)"),
+            lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16e"
         }
     },
@@ -26,7 +26,7 @@ const presetOptions = [
         },
         retailPrice: {
             value: 52999,
-            lastUpdatedDate: new Date("Wed Feb 19 2025 19:12:25 GMT+0300 (GMT+03:00)"),
+            lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16e"
         }
     },
@@ -39,10 +39,11 @@ const presetOptions = [
         },
         retailPrice: {
             value: 62999,
-            lastUpdatedDate: new Date("Wed Feb 19 2025 19:12:25 GMT+0300 (GMT+03:00)"),
+            lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16e"
         }
     },
+
 
     // [22] Apple iPhone 16 Pro
     {
@@ -98,6 +99,7 @@ const presetOptions = [
         }
     },
 
+
     // [23] Apple iPhone 16 Pro Max
     {
         presetId: 23,
@@ -139,6 +141,7 @@ const presetOptions = [
         }
     },
 
+
     // [24] Apple iPhone 16
     {
         presetId: 24,
@@ -179,6 +182,7 @@ const presetOptions = [
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16"
         }
     },
+
 
     // [25] Apple iPhone 16 Plus
     {
@@ -256,6 +260,7 @@ const presetOptions = [
         }
     },
 
+
     // [18] Apple iPhone 15 Pro Max
     {
         presetId: 18,
@@ -281,6 +286,7 @@ const presetOptions = [
             currency: "USD"
         }
     },
+
 
     // [19] Apple iPhone 15
     {
@@ -322,6 +328,7 @@ const presetOptions = [
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
         }
     },
+
 
     // [20] Apple iPhone 15 Plus
     {
@@ -399,6 +406,7 @@ const presetOptions = [
         }
     },
 
+
     // [2] Apple iPhone 14 Pro Max
     {
         presetId: 2,
@@ -433,6 +441,7 @@ const presetOptions = [
         }
     },
 
+
     // [3] Apple iPhone 14
     {
         presetId: 3,
@@ -440,11 +449,6 @@ const presetOptions = [
         form: {
             price: 599,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 47999,
-            lastUpdatedDate: lastUpdatedDateIphone,
-            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
         }
     },
     {
@@ -453,11 +457,6 @@ const presetOptions = [
         form: {
             price: 699,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 52999,
-            lastUpdatedDate: lastUpdatedDateIphone,
-            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
         }
     },
     {
@@ -466,13 +465,9 @@ const presetOptions = [
         form: {
             price: 899,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 62999,
-            lastUpdatedDate: lastUpdatedDateIphone,
-            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
         }
     },
+
 
     // [4] Apple iPhone 14 Plus
     {
@@ -481,11 +476,6 @@ const presetOptions = [
         form: {
             price: 699,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 56999,
-            lastUpdatedDate: lastUpdatedDateIphone,
-            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
         }
     },
     {
@@ -494,11 +484,6 @@ const presetOptions = [
         form: {
             price: 799,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 61999,
-            lastUpdatedDate: lastUpdatedDateIphone,
-            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
         }
     },
     {
@@ -507,11 +492,6 @@ const presetOptions = [
         form: {
             price: 999,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 71999,
-            lastUpdatedDate: lastUpdatedDateIphone,
-            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-14"
         }
     },
 
@@ -541,6 +521,7 @@ const presetOptions = [
             currency: "USD"
         }
     },
+
 
     // [6] Apple iPhone 13
     {
@@ -576,11 +557,6 @@ const presetOptions = [
         form: {
             price: 429,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 31999,
-            lastUpdatedDate: lastUpdatedDateIphone,
-            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-se"
         }
     },
     {
@@ -589,11 +565,6 @@ const presetOptions = [
         form: {
             price: 479,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 34499,
-            lastUpdatedDate: lastUpdatedDateIphone,
-            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-se"
         }
     },
     {
@@ -602,11 +573,6 @@ const presetOptions = [
         form: {
             price: 579,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 39499,
-            lastUpdatedDate: lastUpdatedDateIphone,
-            sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-se"
         }
     },
 
@@ -664,13 +630,9 @@ const presetOptions = [
         form: {
             price: 859.99,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 39999,
-            lastUpdatedDate: lastUpdatedDateSamsung,
-            sourceUrl: "https://shop.samsung.com/tr/galaxy-s23/"
         }
     },
+
 
     // [11] Samsung Galaxy S23+
     {
@@ -690,6 +652,7 @@ const presetOptions = [
         }
     },
 
+
     // [21] Samsung Galaxy S23 FE
     {
         presetId: 21,
@@ -697,11 +660,6 @@ const presetOptions = [
         form: {
             price: 629.99,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 26999,
-            lastUpdatedDate: lastUpdatedDateSamsung,
-            sourceUrl: "https://shop.samsung.com/tr/galaxy-s23-fe/"
         }
     },
     {
@@ -710,13 +668,9 @@ const presetOptions = [
         form: {
             price: 689.99,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 28999,
-            lastUpdatedDate: lastUpdatedDateSamsung,
-            sourceUrl: "https://shop.samsung.com/tr/galaxy-s23-fe/"
         }
     },
+
 
     // [12] Samsung Galaxy S23 Ultra
     {
@@ -771,6 +725,7 @@ const presetOptions = [
         }
     },
 
+
     // [13] Samsung Galaxy Z Fold4
     {
         presetId: 13,
@@ -805,11 +760,6 @@ const presetOptions = [
         form: {
             price: 999.99,
             currency: "USD"
-        },
-        retailPrice: {
-            value: 51999,
-            lastUpdatedDate: lastUpdatedDateSamsung,
-            sourceUrl: "https://shop.samsung.com/tr/galaxy-z-flip5/"
         }
     },
     {
@@ -820,6 +770,7 @@ const presetOptions = [
             currency: "USD"
         }
     },
+
 
     // [14] Samsung Galaxy Z Flip4
     {

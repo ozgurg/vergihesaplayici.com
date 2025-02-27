@@ -18,11 +18,6 @@ const presetOptions = [
         form: { // https://blog.playstation.com/2022/08/25/ps5-price-to-increase-in-select-markets-due-to-global-economic-environment-including-high-inflation-rates/
             price: 449.99,
             currency: "EUR"
-        },
-        retailPrice: {
-            value: 24999,
-            lastUpdatedDate: new Date("Tue Mar 05 2024 20:13:15 GMT+0300 (GMT+03:00)"),
-            sourceUrl: "https://twitter.com/Ersinklc/status/1760234205739405588"
         }
     },
     {
@@ -31,13 +26,9 @@ const presetOptions = [
         form: { // https://blog.playstation.com/2022/08/25/ps5-price-to-increase-in-select-markets-due-to-global-economic-environment-including-high-inflation-rates/
             price: 549.99,
             currency: "EUR"
-        },
-        retailPrice: {
-            value: 27999,
-            lastUpdatedDate: new Date("Tue Mar 05 2024 20:13:15 GMT+0300 (GMT+03:00)"),
-            sourceUrl: "https://twitter.com/Ersinklc/status/1760234205739405588"
         }
     },
+
 
     // [15] Sony PlayStation VR2
     {
@@ -49,6 +40,7 @@ const presetOptions = [
         }
     },
 
+
     // [22] Sony PlayStation Portal
     {
         presetId: 22,
@@ -56,11 +48,6 @@ const presetOptions = [
         form: { // https://blog.playstation.com/2023/08/23/playstations-first-remote-play-dedicated-device-playstation-portal-remote-player-to-launch-later-this-year-at-199-99/
             price: 219.99,
             currency: "EUR"
-        },
-        retailPrice: {
-            value: 11999,
-            lastUpdatedDate: new Date("Tue Mar 05 2024 20:13:15 GMT+0300 (GMT+03:00)"),
-            sourceUrl: "https://twitter.com/Ersinklc/status/1760223698311680478"
         }
     },
 
@@ -83,6 +70,7 @@ const presetOptions = [
         }
     },
 
+
     // [17] Microsoft Xbox Series X
     {
         presetId: 17,
@@ -90,11 +78,6 @@ const presetOptions = [
         form: {
             price: 499,
             currency: "EUR"
-        },
-        retailPrice: {
-            value: 25999,
-            lastUpdatedDate: new Date("Tue Mar 05 2024 20:13:15 GMT+0300 (GMT+03:00)"),
-            sourceUrl: "https://www.overgameweb.com/microsoft-xbox-series-x-black-1-tb-konsol"
         }
     },
 
@@ -109,6 +92,7 @@ const presetOptions = [
         }
     },
 
+
     // [19] Nintendo Switch Lite (https://www.nintendo.com/store/hardware/systems/)
     {
         presetId: 19,
@@ -118,6 +102,7 @@ const presetOptions = [
             currency: "USD"
         }
     },
+
 
     // [20] Nintendo Switch OLED (https://www.nintendo.com/store/hardware/systems/)
     {

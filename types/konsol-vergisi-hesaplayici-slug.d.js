@@ -55,7 +55,7 @@
  */
 
 /**
- * @typedef {KonsolVergisiHesaplayiciPreset & KonsolVergisiHesaplayiciPresetPage} KonsolVergisiHesaplayiciPresetWithPage
+ * @typedef {KonsolVergisiHesaplayiciPreset & {page: KonsolVergisiHesaplayiciPresetPage}} KonsolVergisiHesaplayiciPresetWithPage
  */
 
 /**

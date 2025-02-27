@@ -12,7 +12,7 @@ const _mapNuxtContentObjectAsArticle = nuxtContentObject => ({
 /**
  * @param {string} slug
  * @param {*} $content
- * @return {Promise<Article>|null}
+ * @return {Promise<Article|null>}
  */
 const getArticleBySlug = async (slug, $content) => {
     const nuxtContent = await $content(slug).fetch();
