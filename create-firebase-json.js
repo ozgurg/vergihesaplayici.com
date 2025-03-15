@@ -11,7 +11,8 @@ const _objectToCspHeader = object => {
     return cspHeader.join(";");
 };
 
-// [0] = source (from), [1] = destination (to)
+// [0] = source (from)
+// [1] = destination (to)
 const redirections301 = [
     [
         "/konsol-vergisi-hesaplayici/apple-vision-pro/",
@@ -222,7 +223,7 @@ const firebaseJson = {
         ],
         redirects: redirections301.map(_redirection => ({
             source: _redirection[0],
-            destination: _redirection[0],
+            destination: _redirection[1],
             type: 301
         }))
     },
