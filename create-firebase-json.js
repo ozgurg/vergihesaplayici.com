@@ -74,6 +74,55 @@ const redirections301 = [
     [
         "/yazilar/verginin-vergisi-hangi-ulke-icat-etmistir/",
         "/yazilar/verginin-vergisini-hangi-ulke-icat-etmistir/"
+    ],
+
+    [
+        "/telefon-vergisi-hesaplayici/iphone-15-pro/",
+        "/telefon-vergisi-hesaplayici/apple-iphone-15-pro/"
+    ],
+    [
+        "/telefon-vergisi-hesaplayici/iphone-15-pro-max/",
+        "/telefon-vergisi-hesaplayici/apple-iphone-15-pro-max/"
+    ],
+    [
+        "/telefon-vergisi-hesaplayici/iphone-15/",
+        "/telefon-vergisi-hesaplayici/apple-iphone-15/"
+    ],
+    [
+        "/telefon-vergisi-hesaplayici/iphone-15-plus/",
+        "/telefon-vergisi-hesaplayici/apple-iphone-15-plus/"
+    ],
+    [
+        "/telefon-vergisi-hesaplayici/iphone-14-pro/",
+        "/telefon-vergisi-hesaplayici/apple-iphone-14-pro/"
+    ],
+    [
+        "/telefon-vergisi-hesaplayici/iphone-14-pro-max/",
+        "/telefon-vergisi-hesaplayici/apple-iphone-14-pro-max/"
+    ],
+    [
+        "/telefon-vergisi-hesaplayici/iphone-14/",
+        "/telefon-vergisi-hesaplayici/apple-iphone-14/"
+    ],
+    [
+        "/telefon-vergisi-hesaplayici/iphone-14-plus/",
+        "/telefon-vergisi-hesaplayici/apple-iphone-14-plus/"
+    ],
+    [
+        "/telefon-vergisi-hesaplayici/iphone-13-mini/",
+        "/telefon-vergisi-hesaplayici/apple-iphone-13-mini/"
+    ],
+    [
+        "/telefon-vergisi-hesaplayici/iphone-13/",
+        "/telefon-vergisi-hesaplayici/apple-iphone-13/"
+    ],
+    [
+        "/telefon-vergisi-hesaplayici/iphone-se-3-2022/",
+        "/telefon-vergisi-hesaplayici/apple-iphone-se-3-2022/"
+    ],
+    [
+        "/telefon-vergisi-hesaplayici/iphone-12/",
+        "/telefon-vergisi-hesaplayici/apple-iphone-12/"
     ]
 ];
 
