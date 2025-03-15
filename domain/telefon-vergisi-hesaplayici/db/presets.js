@@ -49,7 +49,7 @@ const presets = [
         releaseDate: new Date("2024-09-09"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-16.webp",
         ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-16.jpg",
-        ...buildPageMeta("Apple iPhone 16'in")
+        ...buildPageMeta("Apple iPhone 16'nın")
     },
     {
         id: 25,
@@ -67,7 +67,7 @@ const presets = [
         id: 17,
         brandId: 1,
         title: "iPhone 15 Pro",
-        slug: "iphone-15-pro", // TODO: "apple-" prefix will be added
+        slug: "apple-iphone-15-pro",
         releaseDate: new Date("2023-09-12"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-15-pro.webp",
         ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-15-pro.jpg",
@@ -77,7 +77,7 @@ const presets = [
         id: 18,
         brandId: 1,
         title: "iPhone 15 Pro Max",
-        slug: "iphone-15-pro-max", // TODO: "apple-" prefix will be added
+        slug: "apple-iphone-15-pro-max",
         releaseDate: new Date("2023-09-12"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-15-pro-max.webp",
         ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-15-pro-max.jpg",
@@ -87,7 +87,7 @@ const presets = [
         id: 19,
         brandId: 1,
         title: "iPhone 15",
-        slug: "iphone-15", // TODO: "apple-" prefix will be added
+        slug: "apple-iphone-15",
         releaseDate: new Date("2023-09-12"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-15.webp",
         ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-15.jpg",
@@ -97,7 +97,7 @@ const presets = [
         id: 20,
         brandId: 1,
         title: "iPhone 15 Plus",
-        slug: "iphone-15-plus", // TODO: "apple-" prefix will be added
+        slug: "apple-iphone-15-plus",
         releaseDate: new Date("2023-09-12"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-15-plus.webp",
         ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-15-plus.jpg",
@@ -108,7 +108,7 @@ const presets = [
         id: 1,
         brandId: 1,
         title: "iPhone 14 Pro",
-        slug: "iphone-14-pro", // TODO: "apple-" prefix will be added
+        slug: "apple-iphone-14-pro",
         releaseDate: new Date("2022-09-16"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-14-pro.webp",
         ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-14-pro.jpg",
@@ -118,7 +118,7 @@ const presets = [
         id: 2,
         brandId: 1,
         title: "iPhone 14 Pro Max",
-        slug: "iphone-14-pro-max", // TODO: "apple-" prefix will be added
+        slug: "apple-iphone-14-pro-max",
         releaseDate: new Date("2022-09-16"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-14-pro-max.webp",
         ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-14-pro-max.jpg",
@@ -128,7 +128,7 @@ const presets = [
         id: 3,
         brandId: 1,
         title: "iPhone 14",
-        slug: "iphone-14", // TODO: "apple-" prefix will be added
+        slug: "apple-iphone-14",
         releaseDate: new Date("2022-09-16"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-14.webp",
         ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-14.jpg",
@@ -138,7 +138,7 @@ const presets = [
         id: 4,
         brandId: 1,
         title: "iPhone 14 Plus",
-        slug: "iphone-14-plus", // TODO: "apple-" prefix will be added
+        slug: "apple-iphone-14-plus",
         releaseDate: new Date("2022-09-16"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-14-plus.webp",
         ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-14-plus.jpg",
@@ -149,7 +149,7 @@ const presets = [
         id: 5,
         brandId: 1,
         title: "iPhone 13 mini",
-        slug: "iphone-13-mini", // TODO: "apple-" prefix will be added
+        slug: "apple-iphone-13-mini",
         releaseDate: new Date("2021-09-24"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-13-mini.webp",
         ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-13-mini.jpg",
@@ -159,7 +159,7 @@ const presets = [
         id: 6,
         brandId: 1,
         title: "iPhone 13",
-        slug: "iphone-13", // TODO: "apple-" prefix will be added
+        slug: "apple-iphone-13",
         releaseDate: new Date("2021-09-24"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-13.webp",
         ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-13.jpg",
@@ -170,18 +170,18 @@ const presets = [
         id: 7,
         brandId: 1,
         title: "iPhone SE 3",
-        slug: "iphone-se-3-2022", // TODO: "apple-" prefix will be added
+        slug: "apple-iphone-se-3-2022",
         releaseDate: new Date("2022-03-08"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-se-3-2022.webp",
         ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-se-2022.jpg",
-        ...buildPageMeta("Apple iPhone SE 3'ün (2022)")
+        ...buildPageMeta("Apple iPhone SE 3 (2022)'ün")
     },
 
     {
         id: 8,
         brandId: 1,
         title: "iPhone 12",
-        slug: "iphone-12", // TODO: "apple-" prefix will be added
+        slug: "apple-iphone-12",
         releaseDate: new Date("2020-10-23"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-12.webp",
         ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-12.jpg",
@@ -217,7 +217,7 @@ const presets = [
         releaseDate: new Date("2023-02-01"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/samsung-galaxy-s23-plus.webp",
         ogImage: "telefon-vergisi-hesaplayici/og/samsung-galaxy-s23-plus.jpg",
-        ...buildPageMeta("Samsung Galaxy S23+'ın")
+        ...buildPageMeta("Samsung Galaxy S23+'nın")
     },
     {
         id: 21,
