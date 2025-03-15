@@ -49,7 +49,7 @@ const presets = [
         releaseDate: new Date("2024-09-09"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-16.webp",
         ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-16.jpg",
-        ...buildPageMeta("Apple iPhone 16'in")
+        ...buildPageMeta("Apple iPhone 16'nın")
     },
     {
         id: 25,
@@ -174,7 +174,7 @@ const presets = [
         releaseDate: new Date("2022-03-08"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/apple-iphone-se-3-2022.webp",
         ogImage: "telefon-vergisi-hesaplayici/og/apple-iphone-se-2022.jpg",
-        ...buildPageMeta("Apple iPhone SE 3'ün (2022)")
+        ...buildPageMeta("Apple iPhone SE 3 (2022)'ün")
     },
 
     {
@@ -217,7 +217,7 @@ const presets = [
         releaseDate: new Date("2023-02-01"),
         thumbnail: "telefon-vergisi-hesaplayici/thumb/samsung-galaxy-s23-plus.webp",
         ogImage: "telefon-vergisi-hesaplayici/og/samsung-galaxy-s23-plus.jpg",
-        ...buildPageMeta("Samsung Galaxy S23+'ın")
+        ...buildPageMeta("Samsung Galaxy S23+'nın")
     },
     {
         id: 21,
