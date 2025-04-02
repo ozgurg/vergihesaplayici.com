@@ -34,7 +34,7 @@
         "tax-calculator"
     ],
     "dependencies": {
-        "firebase": "11.4.0",
+        "firebase": "11.6.0",
         "js-file-downloader": "1.1.25",
         "nuxt": "2.18.1",
         "vue": "2.7.16",
@@ -43,7 +43,7 @@
         "vuex": "3.6.2"
     },
     "devDependencies": {
-        "@babel/eslint-parser": "7.26.10",
+        "@babel/eslint-parser": "7.27.0",
         "@mdi/js": "7.4.47",
         "@nuxt/content": "1.15.1",
         "@nuxt/types": "2.18.1",
@@ -62,7 +62,7 @@
         "husky": "9.1.7",
         "lint-staged": "15.5.0",
         "typescript": "5.8.2",
-        "vitest": "3.0.8"
+        "vitest": "3.1.1"
     },
     "overrides": {
         "webpack-dev-middleware": "5.0.0"
