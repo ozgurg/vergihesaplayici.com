@@ -1,7 +1,18 @@
-// Last ID: 23
+// Last ID: 24
 
 /** @type {KonsolVergisiHesaplayiciPreset[]} */
 const presets = [
+    {
+        id: 24,
+        brandId: 5,
+        title: "Switch 2",
+        slug: "nintendo-switch-2",
+        releaseDate: new Date("2025-06-05"),
+        thumbnail: "konsol-vergisi-hesaplayici/thumb/nintendo-switch-2.webp",
+        ogImage: "konsol-vergisi-hesaplayici/og/nintendo-switch-2.jpg",
+        pageTitle: "Nintendo Switch 2'nin vergisi ne kadar?",
+        pageDescription: "Satın aldığınız bir Sony Nintendo Switch 2'nin yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın."
+    },
     {
         id: 23,
         brandId: 3,

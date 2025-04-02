@@ -1,5 +1,16 @@
 /** @type {KonsolVergisiHesaplayiciPresetOption[]} */
 const presetOptions = [
+    // [24] Nintendo Switch 2
+    {
+        presetId: 24,
+        title: "256GB",
+        form: { // https://www.nintendo.com/successor/en-gb/index.html
+            price: 449.99,
+            currency: "USD"
+        }
+    },
+
+
     // [23] Sony PlayStation 5 Pro
     {
         presetId: 23,
