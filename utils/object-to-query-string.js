@@ -2,7 +2,7 @@
  * @param {object} object
  * @returns {string}
  */
-const objectToQueryString = object => {
+export const objectToQueryString = object => {
     const objectToArray = [];
 
     for (const [key, values] of Object.entries(object)) {
@@ -14,8 +14,4 @@ const objectToQueryString = object => {
     }
 
     return new URLSearchParams(objectToArray).toString();
-};
-
-export {
-    objectToQueryString
 };

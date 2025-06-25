@@ -3,7 +3,7 @@
  * @param {string} fileName
  * @returns {Promise<void>}
  */
-const downloadFile = (url, fileName) => {
+export const downloadFile = (url, fileName) => {
     return new Promise(_resolve => {
         const a = document.createElement("a");
         a.href = url;
@@ -15,8 +15,4 @@ const downloadFile = (url, fileName) => {
 
         return _resolve();
     });
-};
-
-export {
-    downloadFile
 };

@@ -5,7 +5,7 @@ import { normalizePrice } from "@/utils/formatter.js";
  * @param {number} taxRate
  * @returns {number}
  */
-const calculateTaxFromTaxFreePrice = (taxFreePrice, taxRate) => {
+export const calculateTaxFromTaxFreePrice = (taxFreePrice, taxRate) => {
     return normalizePrice((taxFreePrice / 100) * taxRate);
 };
 
@@ -14,7 +14,7 @@ const calculateTaxFromTaxFreePrice = (taxFreePrice, taxRate) => {
  * @param {number} taxRate
  * @returns {number}
  */
-const calculateTaxFromTaxAddedPrice = (taxAddedPrice, taxRate) => {
+export const calculateTaxFromTaxAddedPrice = (taxAddedPrice, taxRate) => {
     return normalizePrice(taxAddedPrice / (1 + (100 / taxRate)));
 };
 
@@ -23,12 +23,6 @@ const calculateTaxFromTaxAddedPrice = (taxAddedPrice, taxRate) => {
  * @param {number} price
  * @returns {number}
  */
-const calculateTotalTaxRate = (taxFee, price) => {
+export const calculateTotalTaxRate = (taxFee, price) => {
     return ((taxFee / price) * 100);
-};
-
-export {
-    calculateTaxFromTaxFreePrice,
-    calculateTaxFromTaxAddedPrice,
-    calculateTotalTaxRate
 };
