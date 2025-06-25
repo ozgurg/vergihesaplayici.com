@@ -35,7 +35,6 @@
     ],
     "dependencies": {
         "firebase": "11.9.1",
-        "js-file-downloader": "1.1.25",
         "nuxt": "2.18.1",
         "vue": "2.7.16",
         "vue-html2canvas": "0.0.4",
