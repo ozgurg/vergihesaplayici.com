@@ -3,8 +3,4 @@
  * @param {string[]} availableCurrencies
  * @returns {boolean}
  */
-const isCurrencyAvailable = (currency, availableCurrencies) => availableCurrencies.includes(currency);
-
-export {
-    isCurrencyAvailable
-};
+export const isCurrencyAvailable = (currency, availableCurrencies) => availableCurrencies.includes(currency);

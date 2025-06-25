@@ -2,7 +2,7 @@
  * @param {{title: string, description: string, ogImage?: string}} params
  * @return {{title: string, meta: {hid?: string, property?: string, name: string, content: string}[]}}
  */
-const buildHeadTags = ({
+export const buildHeadTags = ({
     title,
     description,
     ogImage = "ana-sayfa/og/ana-sayfa.jpg"
@@ -73,8 +73,4 @@ const buildHeadTags = ({
             }
         ]
     };
-};
-
-export {
-    buildHeadTags
 };

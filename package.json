@@ -1,6 +1,6 @@
 {
     "name": "vergihesaplayici.com",
-    "version": "7.13.0",
+    "version": "7.14.0",
     "description": "vergihesaplayici.com, vergi hesaplar.",
     "license": "GPL-3.0",
     "homepage": "https://vergihesaplayici.com/",
@@ -34,8 +34,7 @@
         "tax-calculator"
     ],
     "dependencies": {
-        "firebase": "11.6.0",
-        "js-file-downloader": "1.1.25",
+        "firebase": "11.9.1",
         "nuxt": "2.18.1",
         "vue": "2.7.16",
         "vue-html2canvas": "0.0.4",
@@ -43,7 +42,7 @@
         "vuex": "3.6.2"
     },
     "devDependencies": {
-        "@babel/eslint-parser": "7.27.0",
+        "@babel/eslint-parser": "7.27.5",
         "@mdi/js": "7.4.47",
         "@nuxt/content": "1.15.1",
         "@nuxt/types": "2.18.1",
@@ -60,9 +59,9 @@
         "eslint-plugin-nuxt": "4.0.0",
         "eslint-plugin-vue": "9.32.0",
         "husky": "9.1.7",
-        "lint-staged": "15.5.0",
-        "typescript": "5.8.2",
-        "vitest": "3.1.1"
+        "lint-staged": "16.1.2",
+        "typescript": "5.8.3",
+        "vitest": "3.2.4"
     },
     "overrides": {
         "webpack-dev-middleware": "5.0.0"

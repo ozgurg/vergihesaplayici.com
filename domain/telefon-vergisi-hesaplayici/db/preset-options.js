@@ -1,5 +1,5 @@
-const lastUpdatedDateIphone = new Date("Thu Feb 27 2025 03:50:26 GMT+0300 (GMT+03:00)");
-// const lastUpdatedDateSamsung = new Date("Thu Feb 27 2025 03:50:26 GMT+0300 (GMT+03:00)");
+const lastUpdatedDateIphone = new Date("Wed Jun 25 2025 03:16:42 GMT+0300 (GMT+03:00)");
+// const lastUpdatedDateSamsung = new Date("Wed Jun 25 2025 03:16:42 GMT+0300 (GMT+03:00)");
 
 /** @type {TelefonVergisiHesaplayiciPresetOption[]} */
 const presetOptions = [
@@ -12,7 +12,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 47999,
+            value: 49999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16e"
         }
@@ -25,7 +25,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 52999,
+            value: 55499,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16e"
         }
@@ -38,7 +38,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 62999,
+            value: 66499,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16e"
         }
@@ -54,7 +54,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 82999,
+            value: 89999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16-pro"
         }
@@ -67,7 +67,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 87999,
+            value: 95499,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16-pro"
         }
@@ -80,7 +80,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 97999,
+            value: 106499,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16-pro"
         }
@@ -93,7 +93,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 107999,
+            value: 117499,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16-pro"
         }
@@ -109,7 +109,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 99999,
+            value: 109999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16-pro"
         }
@@ -122,7 +122,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 109999,
+            value: 120999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16-pro"
         }
@@ -135,7 +135,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 119999,
+            value: 131999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16-pro"
         }
@@ -151,7 +151,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 64999,
+            value: 69999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16"
         }
@@ -164,7 +164,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 69999,
+            value: 75499,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16"
         }
@@ -177,7 +177,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 79999,
+            value: 86499,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16"
         }
@@ -193,7 +193,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 73999,
+            value: 79999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16"
         }
@@ -206,7 +206,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 78999,
+            value: 85499,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16"
         }
@@ -219,7 +219,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 88999,
+            value: 96499,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-16"
         }
@@ -297,7 +297,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 56999,
+            value: 59999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
         }
@@ -310,7 +310,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 61999,
+            value: 65499,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
         }
@@ -323,7 +323,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 71999,
+            value: 76499,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
         }
@@ -339,7 +339,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 64999,
+            value: 69999,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
         }
@@ -352,7 +352,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 69999,
+            value: 75499,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
         }
@@ -365,7 +365,7 @@ const presetOptions = [
             currency: "USD"
         },
         retailPrice: {
-            value: 79999,
+            value: 86499,
             lastUpdatedDate: lastUpdatedDateIphone,
             sourceUrl: "https://www.apple.com/tr/shop/buy-iphone/iphone-15"
         }

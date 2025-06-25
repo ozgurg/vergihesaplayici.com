@@ -2,14 +2,14 @@
  * @param {number} price
  * @returns {number}
  */
-const normalizePrice = price => parseFloat(price.toFixed(1));
+export const normalizePrice = price => parseFloat(price.toFixed(1));
 
 /**
  * @param {string | number} price
  * @param {string} currency
  * @returns {string}
  */
-const moneyFormat = (price, currency) => {
+export const moneyFormat = (price, currency) => {
     const formatter = new Intl.NumberFormat("tr-TR", {
         style: "currency",
         currency,
@@ -22,7 +22,7 @@ const moneyFormat = (price, currency) => {
  * @param {any} number
  * @returns {string}
  */
-const numberFormat = number => {
+export const numberFormat = number => {
     const formatter = new Intl.NumberFormat("tr-TR", {
         minimumFractionDigits: 2
     });
@@ -33,17 +33,10 @@ const numberFormat = number => {
  * @param {Date} date
  * @returns {string}
  */
-const dateFormat = date => {
+export const dateFormat = date => {
     const formatter = new Intl.DateTimeFormat("tr-TR", {
         dateStyle: "full",
         timeStyle: "medium"
     });
     return formatter.format(date);
-};
-
-export {
-    normalizePrice,
-    moneyFormat,
-    numberFormat,
-    dateFormat
 };
