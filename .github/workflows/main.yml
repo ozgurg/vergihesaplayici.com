@@ -6,6 +6,8 @@ on:
     paths-ignore:
       - "**.md"
 
+  workflow_dispatch:
+
 jobs:
   ci-and-deploy:
     runs-on: ubuntu-latest
