@@ -21,12 +21,12 @@ jobs:
         uses: actions/checkout@v4.2.2
 
       - name: "[SET UP] Setup node env 🏗"
-        uses: actions/setup-node@v4.2.0
+        uses: actions/setup-node@v4.4.0
         with:
           node-version: ${{ matrix.node }}
 
       - name: "[SET UP] Cache node_modules 📦"
-        uses: actions/cache@v4.2.2
+        uses: actions/cache@v4.2.3
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -48,7 +48,7 @@ jobs:
         run: npm run generate
 
       - name: "[DEPLOY] Deploy to Firebase"
-        uses: w9jds/firebase-action@v13.34.0
+        uses: w9jds/firebase-action@v14.10.1
         with:
           args: deploy --only hosting
         env:
