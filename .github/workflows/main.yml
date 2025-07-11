@@ -1,4 +1,4 @@
-name: "CI"
+name: "CI & Deploy"
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
       - ".github/dependabot.yml"
 
 jobs:
-  ci:
+  ci-and-deploy:
     runs-on: ubuntu-latest
 
     strategy:
