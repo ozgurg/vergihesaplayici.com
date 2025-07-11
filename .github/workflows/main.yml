@@ -18,6 +18,8 @@ jobs:
     steps:
       - name: "📥 Checkout"
         uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 1
 
       - name: "🔧 Setup Node.js"
         uses: actions/setup-node@v4.4.0
