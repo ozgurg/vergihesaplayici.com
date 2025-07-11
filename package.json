@@ -34,7 +34,7 @@
         "tax-calculator"
     ],
     "dependencies": {
-        "firebase": "11.9.1",
+        "firebase": "11.10.0",
         "nuxt": "2.18.1",
         "vue": "2.7.16",
         "vue-html2canvas": "0.0.4",
@@ -42,7 +42,7 @@
         "vuex": "3.6.2"
     },
     "devDependencies": {
-        "@babel/eslint-parser": "7.27.5",
+        "@babel/eslint-parser": "7.28.0",
         "@mdi/js": "7.4.47",
         "@nuxt/content": "1.15.1",
         "@nuxt/types": "2.18.1",
