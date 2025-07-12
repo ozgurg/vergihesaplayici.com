@@ -1,6 +1,8 @@
 // oxlint-disable-next-line extensions
 import { getViteConfig } from "astro/config";
 
+process.env.TZ = "Europe/Istanbul";
+
 // oxlint-disable-next-line no-anonymous-default-export no-default-export
 export default getViteConfig({
     test: {
