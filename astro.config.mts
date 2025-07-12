@@ -96,9 +96,9 @@ export default defineConfig({
             rollupOptions: {
                 output: {
                     compact: true,
-                    entryFileNames: `[name]-[hash]-${packageJson.version}.js`,
+                    entryFileNames: `[name]-${packageJson.version}.js`,
                     chunkFileNames: `[name]-[hash]-${packageJson.version}.js`,
-                    assetFileNames: `[name]-[hash]-${packageJson.version}[extname]`
+                    assetFileNames: `assets/[name]-[hash]-${packageJson.version}[extname]`
                 }
             }
         },
