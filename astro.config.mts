@@ -2,6 +2,7 @@ import path, { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "astro/config";
 import { loadEnv } from "vite";
+import packageJson from "./package.json" with { type: "json" };
 
 import exchangeRatesIntegration from "./src/integrations/exchange-rates.js";
 import extractColorFromThumbsIntegration from "./src/integrations/extract-color-from-thumbs.js";
@@ -91,6 +92,16 @@ export default defineConfig({
         })
     ],
     vite: {
+        build: {
+            rollupOptions: {
+                output: {
+                    compact: true,
+                    entryFileNames: `[name]-[hash]-${packageJson.version}.js`,
+                    chunkFileNames: `[name]-[hash]-${packageJson.version}.js`,
+                    assetFileNames: `[name]-[hash]-${packageJson.version}[extname]`
+                }
+            }
+        },
         plugins: [
             autoImportPlugin({
                 dts: "unplugin-auto-import.d.ts",

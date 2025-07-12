@@ -47,10 +47,7 @@ const readableDate = props.date.toLocaleDateString("tr-TR");
 .article-card-item {
     block-size: 100%;
     @include vh-media-breakpoint-down(sm) {
-        &:first-child {
-            margin-block-start: calc((var(--vh-spacer) * 2) * -1)
-        }
-        &:nth-child(even) a {
+        &:nth-child(odd) a {
             background-color: hsla(var(--vh-clr-white-hsl), .04)
         }
     }
