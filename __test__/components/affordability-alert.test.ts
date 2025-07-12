@@ -47,10 +47,10 @@ describe("components/affordability-alert.vue", () => {
         expect(wrapper.vm.wageDurationSummary).toContain("1 günlük");
     });
 
-    it("rounds down duration to nearest whole number", () => {
+    it("shows decimal places", () => {
         const wrapper = createWrapper({
             price: MOCK_MINIMUM_WAGE_GROSS_MONTHLY * 1.9
         });
-        expect(wrapper.vm.wageDurationSummary).toContain("1 aylık");
+        expect(wrapper.vm.wageDurationSummary).toContain("1.9 aylık");
     });
 });
