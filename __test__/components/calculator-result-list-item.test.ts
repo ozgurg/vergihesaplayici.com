@@ -20,7 +20,7 @@ describe("components/calculator-result-list-item.vue", () => {
 
     it("renders label and value correctly", () => {
         const testProps = {
-            label: "Tax Free Price",
+            label: "Total Tax (50%)",
             value: "100"
         };
         const wrapper = mount(CalculatorResultListItem, {
@@ -34,6 +34,19 @@ describe("components/calculator-result-list-item.vue", () => {
         const ddStringCarousel2 = wrapper.find("dd").findComponent(StringCarousel2);
         expect(ddStringCarousel2.exists()).toBeTruthy();
         expect(ddStringCarousel2.props("text")).toBe(testProps.value);
+    });
+
+    it("renders label as it is if it does not contains any number", () => {
+        const testProps = {
+            label: "Tax Free Price",
+            value: ""
+        };
+        const wrapper = mount(CalculatorResultListItem, {
+            props: testProps
+        });
+
+        const dt = wrapper.find("dt");
+        expect(dt.text()).toBe(testProps.label);
     });
 
     it("applies a `variant` class", () => {

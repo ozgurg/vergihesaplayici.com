@@ -1,7 +1,12 @@
 <template>
     <div :class="CLASSES">
         <dt>
-            <string-carousel2 :text="props.label" />
+            <template v-if="doesLabelContainNumber">
+                <string-carousel2 :text="props.label" />
+            </template>
+            <template v-else>
+                {{ props.label }}
+            </template>
         </dt>
         <dd class="text-number">
             <string-carousel2 :text="props.value" />
@@ -19,6 +24,8 @@ export type Props = {
 } & /* @vue-ignore */ Partial<HtmlAttrs_div>;
 
 const props = defineProps<Props>();
+
+const doesLabelContainNumber = /\d/.test(props.label);
 
 const CLASSES = [
     "calculator-result-list-item",
