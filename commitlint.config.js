@@ -19,7 +19,8 @@ export default {
                 "revert",
                 "style",
                 "test",
-                "design"
+                "design",
+                "content"
             ]
         ]
     }
