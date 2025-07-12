@@ -1,0 +1,65 @@
+---
+import DefaultLayout from "@/layouts/default-layout.astro";
+import PageHeader from "@/components/common/page-header.vue";
+import Container from "@/components/common/container.vue";
+import Breadcrumbs from "@/components/common/breadcrumbs.vue";
+import Heading1 from "@/components/common/heading-1.vue";
+import Heading2 from "@/components/common/heading-2.vue";
+import CalculatorPresetCarousel from "@/components/calculator-preset-carousel.astro";
+import TelefonVergisiHesaplayici
+    from "@/components/calculator/telefon-vergisi-hesaplayici/telefon-vergisi-hesaplayici.vue";
+
+import { TelefonVergisiHesaplayiciPageDef } from "@/domains/telefon-vergisi-hesaplayici/page-def.js";
+import { getPresetsForAllBrands } from "@/domains/telefon-vergisi-hesaplayici/db.js";
+import {
+    mapPresetsForCalculatorPresetCarouselComponent
+} from "@/domains/telefon-vergisi-hesaplayici/utils/map-presets-for-calculator-preset-carousel-component.js";
+
+const telefonVergisiHesaplayiciPage = TelefonVergisiHesaplayiciPageDef();
+
+const EXCHANGE_RATES = getExchangeRates();
+const presets = getPresetsForAllBrands();
+const presetsForCalculatorPresetCarousel = mapPresetsForCalculatorPresetCarouselComponent(presets);
+---
+
+<DefaultLayout head={telefonVergisiHesaplayiciPage.head}>
+    <PageHeader>
+        <Container>
+            <Breadcrumbs
+                items={telefonVergisiHesaplayiciPage.breadcrumbs}
+                client:load />
+            <Heading1>
+                {telefonVergisiHesaplayiciPage.title}
+            </Heading1>
+        </Container>
+    </PageHeader>
+
+    <section>
+        <Container>
+            <Heading2>
+                Hazır hesaplamalar
+            </Heading2>
+        </Container>
+        <CalculatorPresetCarousel items={presetsForCalculatorPresetCarousel} />
+    </section>
+
+    <hr class="divider" />
+
+    <section>
+        <Container>
+            <Heading2>
+                Kendiniz hesaplayın
+            </Heading2>
+        </Container>
+        <TelefonVergisiHesaplayici
+            EXCHANGE_RATES={EXCHANGE_RATES}
+            calculatorPage={telefonVergisiHesaplayiciPage}
+            client:load />
+    </section>
+</DefaultLayout>
+
+<style lang="scss">
+    .divider {
+        margin-block: calc(var(--vh-spacer) * 2)
+    }
+</style>

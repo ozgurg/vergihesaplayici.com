@@ -1,0 +1,46 @@
+@import "./_variables.scss";
+@import "./_mixins.scss";
+@import "./_sass-to-css.scss";
+@import "./_reset.scss";
+@import "./_utils.scss";
+@import "./_shared-variables.scss";
+@import "./_plugins.scss";
+
+html {
+    background: var(--vh-clr-body-bg);
+
+    scroll-padding-block-start: calc(var(--header-down-md-block-size) + var(--vh-spacer));
+    @include vh-media-breakpoint-up(md) {
+        scroll-padding-block-start: calc(var(--header-up-md-expanded-block-size) + var(--vh-spacer))
+    }
+}
+
+body {
+    font-family: var(--vh-ff-primary);
+    line-height: var(--vh-lh-base);
+    color: var(--vh-clr-body-text);
+    background: hsl(var(--vh-clr-primary-h), 10%, 6%);
+    color-scheme: only dark;
+    caret-color: var(--vh-clr-primary);
+    accent-color: var(--vh-clr-primary);
+    min-block-size: 100vh;
+    display: flex;
+    flex-direction: column
+}
+
+::selection {
+    color: var(--vh-clr-secondary);
+    background: var(--vh-clr-primary)
+}
+
+*:focus-visible {
+    @include vh-focus-appearance
+}
+
+hr {
+    border-block-start: var(--vh-border-inline-size) solid hsla(var(--vh-clr-white-hsl), var(--vh-clr-border-alpha))
+}
+
+@view-transition {
+    navigation: auto
+}

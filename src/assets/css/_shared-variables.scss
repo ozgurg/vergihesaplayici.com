@@ -1,0 +1,24 @@
+:root {
+    // src/components/header.astro
+    --header-zindex: 100;
+    --header-down-md-block-size: 4.375rem;
+    --header-up-md-collapsed-block-size: 4.5rem;
+    --header-up-md-expanded-block-size: 6rem;
+
+
+    // src/components/common/breadcrumbs.vue
+    --breadcrumbs-block-size: 3rem;
+    --breadcrumbs-margin-block-start: calc(var(--vh-spacer) * .5);
+    --breadcrumbs-item-block-size: 1.75rem;
+
+
+    // src/components/common/container.vue
+    --container-padding-inline: var(--vh-spacer);
+
+    --container-inline-size: 0;
+    @each $__breakpoint, $__properties in $_container-breakpoints {
+        @include vh-media-breakpoint-up($__breakpoint) {
+            --container-inline-size: #{map-get($__properties, "max-inline-size")}
+        }
+    }
+}

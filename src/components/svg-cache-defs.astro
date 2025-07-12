@@ -1,0 +1,10 @@
+<!-- Just to ignore the TypeScript error -->
+<svg {...({ hidden: true, inert: true } as any)}>
+    <defs>
+        {getSvgCache().map(([_key, _svg]) => {
+            return (
+                <Fragment set:html={svgToSymbol(_key, _svg)} />
+            );
+        })}
+    </defs>
+</svg>

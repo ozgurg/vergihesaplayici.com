@@ -1,0 +1,248 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:color";
+@use "sass:math";
+@import "./_variables.scss";
+
+@mixin vh-js-enabled {
+    @media (scripting: enabled) {
+        @content
+    }
+}
+
+@mixin vh-js-disabled {
+    @media (scripting: none) {
+        @content
+    }
+}
+
+@mixin vh-touch {
+    @media (pointer: coarse) {
+        @content
+    }
+}
+
+@mixin vh-hover {
+    @media (pointer: fine) {
+        @content
+    }
+}
+
+@mixin vh-placeholder {
+    &::-webkit-input-placeholder {
+        @content
+    }
+    &:-moz-placeholder {
+        @content
+    }
+    &::-moz-placeholder {
+        @content
+    }
+    &:-ms-input-placeholder {
+        @content
+    }
+}
+
+
+@function vh-breakpoint-min($name) {
+    $min: map.get($_container-breakpoints, $name, "breakpoint");
+    @return if($min != 0, $min, null);
+}
+
+@function vh-breakpoint-max($name) {
+    $max: map.get($_container-breakpoints, $name, "breakpoint");
+    @return if($max and $max > 0, $max - .02, null);
+}
+
+@mixin vh-media-breakpoint-up($name) {
+    $min: vh-breakpoint-min($name);
+    @if $min {
+        @media (width >= $min) {
+            @content
+        }
+    } @else {
+        @content
+    }
+}
+
+@mixin vh-media-breakpoint-down($name) {
+    $max: vh-breakpoint-max($name);
+    @if $max {
+        @media (width <= $max) {
+            @content
+        }
+    } @else {
+        @content
+    }
+}
+
+
+@function vh-transition($properties, $duration, $timing-function: var(--vh-timing-normal)) {
+    $transitions: ();
+    @each $__property in $properties {
+        $transition: $__property $duration $timing-function;
+        $transitions: list.append($transitions, $transition, comma);
+    }
+    @return $transitions;
+}
+
+@mixin vh-backdrop-filter($value) {
+    -webkit-backdrop-filter: $value;
+    backdrop-filter: $value;
+    @media (prefers-reduced-transparency) {
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        @content
+    }
+}
+
+@mixin vh-reset-button {
+    line-height: 1;
+    font-size: 0;
+    background: 0;
+    border: 0;
+    appearance: none
+}
+
+@mixin vh-reset-input {
+    background: 0;
+    border: 0;
+    appearance: none
+}
+
+@mixin vh-reset-select {
+    @include vh-reset-input
+}
+
+@mixin vh-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+@mixin vh-ellipsis-multiline($lineCount) {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: $lineCount;
+    -webkit-box-orient: vertical
+}
+
+@mixin vh-screen-reader-only {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    clip-path: inset(100%);
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 0
+}
+
+@mixin vh-focus-appearance {
+    outline: .125rem dashed #000;
+    box-shadow: 0 0 0 .25rem #fff
+}
+
+@mixin vh-clear-focus-appearance {
+    outline: 0;
+    box-shadow: none
+}
+
+@mixin vh-hide-scrollbar {
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none
+    }
+}
+
+@mixin vh-text-number {
+    font-variant-numeric: tabular-nums;
+    font-family: var(--vh-ff-monospace)
+}
+
+@mixin vh-link {
+    text-underline-offset: .125rem;
+    text-decoration: underline;
+    @include vh-hover {
+        transition: vh-transition(opacity, var(--vh-duration-short));
+        &:hover {
+            opacity: .75
+        }
+        &:active {
+            opacity: .5
+        }
+    }
+}
+
+@mixin vh-card($hover: false, $active: false) {
+    --_color-hsl: var(--color-hsl, var(--vh-clr-white-hsl));
+    --_border-hsl: var(--border-hsl, var(--_color-hsl));
+    --_border-alpha: var(--border-alpha, var(--vh-clr-border-alpha));
+    --_bg-alpha: var(--bg-alpha, 0);
+    --_border-radius: var(--border-radius, var(--vh-br-normal));
+    border-radius: var(--_border-radius);
+    border: var(--vh-border-inline-size) solid hsla(var(--_border-hsl), var(--_border-alpha));
+    background-image: linear-gradient(to bottom, hsla(var(--_color-hsl), .08), hsla(var(--_color-hsl), .04));
+    background-color: hsla(var(--_color-hsl), var(--_bg-alpha));
+    @if $hover or $active {
+        @include vh-hover {
+            transition: vh-transition(background-color, var(--vh-duration-short));
+            @if $hover {
+                &:hover {
+                    --bg-alpha: .08
+                }
+            }
+            @if $active {
+                &:active {
+                    --bg-alpha: .12
+                }
+            }
+        }
+    }
+    @media (prefers-contrast: less) {
+        --border-alpha: .08
+    }
+    @media (prefers-contrast: more) {
+        --border-alpha: 1
+    }
+}
+
+
+/**
+ * This function solves a specific problem with transparent elements in animations:
+ * When semi-transparent elements move over each other during animations, they create
+ * unintended color variations as their transparencies compound. This can lead to
+ * visual inconsistencies and undesired color effects in the UI.
+ *
+ * By using this function, I can:
+ * 1. Calculate what color a transparent overlay would produce
+ * 2. Use that solid color instead of the transparent one
+ * 3. Maintain the intended visual effect without transparency-related issues
+ *
+ * For example, instead of using `rgba(255, 255, 255, .5)` which might cause problems
+ * during animations, I can use the equivalent solid color `#808080` which will
+ * look identical on the specified background but won't create compounding
+ * transparency effects during movement.
+ */
+@function vh-calculate-overlay-color($background, $overlay) {
+    $bg-red: color.red($background);
+    $bg-green: color.green($background);
+    $bg-blue: color.blue($background);
+
+    $overlay-red: color.red($overlay);
+    $overlay-green: color.green($overlay);
+    $overlay-blue: color.blue($overlay);
+    $overlay-alpha: color.alpha($overlay);
+
+    $result-red: math.round($bg-red * (1 - $overlay-alpha) + $overlay-red * $overlay-alpha);
+    $result-green: math.round($bg-green * (1 - $overlay-alpha) + $overlay-green * $overlay-alpha);
+    $result-blue: math.round($bg-blue * (1 - $overlay-alpha) + $overlay-blue * $overlay-alpha);
+
+    @return rgb($result-red, $result-green, $result-blue);
+}
+
+@mixin vh-map-to-properties($map) {
+    @each $prop, $value in $map {
+        #{$prop}: #{$value}
+    }
+}

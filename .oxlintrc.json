@@ -1,0 +1,102 @@
+{
+    "$schema": "node_modules/oxlint/configuration_schema.json",
+    "categories": {
+        "correctness": "error",
+        "perf": "error",
+        "restriction": "error",
+        "suspicious": "error",
+        "pedantic": "error",
+        "style": "error"
+    },
+    "plugins": [
+        "typescript",
+        "unicorn",
+        "oxc",
+        "import",
+        "node",
+        "promise"
+    ],
+    "rules": {
+        "import/unambiguous": "off",
+        "import/group-exports": "off",
+        "import/exports-last": "off",
+        "import/prefer-default-export": "off",
+        "import/max-dependencies": "off",
+        "import/extensions": [
+            "error",
+            "always"
+        ],
+
+        "typescript/explicit-function-return-type": "off",
+        "typescript/consistent-type-definitions": [
+            "error",
+            "type"
+        ],
+        "typescript/consistent-indexed-object-style": ["error", "index-signature"],
+
+        "eslint/no-duplicate-imports": [
+            "off",
+            {
+                "allowSeparateTypeImports": true
+            }
+        ],
+        "eslint/no-plusplus": "off",
+        "eslint/no-undefined": "off",
+        "eslint/no-magic-numbers": "off",
+        "eslint/no-alert": "off",
+        "eslint/yoda": [
+            "error",
+            {
+                "always": true
+            }
+        ],
+        "eslint/max-lines-per-function": "off",
+        "eslint/sort-keys": "off",
+        "eslint/sort-imports": "off",
+        "eslint/id-length": "off",
+        "eslint/arrow-body-style": "off",
+        "eslint/no-ternary": "off",
+        "eslint/max-lines": "off",
+        "eslint/no-console": "off",
+        "eslint/init-declarations": "off",
+        "eslint/curly": [
+            "error",
+            "multi-line"
+        ],
+
+        "unicorn/prefer-global-this": "off",
+        "unicorn/filename-case": "off",
+        "unicorn/no-await-expression-member": "off",
+        "unicorn/numeric-separators-style": [
+            "error",
+            {
+                "number": {
+                    "minimumDigits": 4,
+                    "groupLength": 3
+                }
+            }
+        ],
+        "unicorn/no-null": "off",
+
+        "oxc/no-async-await": "off",
+        "oxc/no-rest-spread-properties": "off",
+        "oxc/no-optional-chaining": "off"
+    },
+    "ignorePatterns": [
+        "public/sw.js",
+        "*.d.ts",
+        "dist/**"
+    ],
+    "overrides": [
+        {
+            "files": [
+                "__test__/**/*.ts"
+            ],
+            "rules": {
+                "typescript/explicit-function-return-type": "off",
+                "typescript/no-non-null-assertion": "off",
+                "typescript/no-explicit-any": "off"
+            }
+        }
+    ]
+}

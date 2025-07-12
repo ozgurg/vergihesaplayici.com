@@ -1,0 +1,28 @@
+@use "sass:meta";
+@use "sass:color";
+@use "./variables.scss" as vh;
+
+$_prefix: "vh";
+
+:root {
+    @each $__name, $__value in meta.module-variables(vh) {
+        $__name: #{$_prefix}-#{$__name};
+
+        @if type-of($__value) == "color" {
+            --#{$__name}-h: #{color.channel($__value, "hue", $space: hsl)};
+            --#{$__name}-s: #{color.channel($__value, "saturation", $space: hsl)};
+            --#{$__name}-l: #{color.channel($__value, "lightness", $space: hsl)};
+            --#{$__name}-hsl: var(--#{$__name}-h), var(--#{$__name}-s), var(--#{$__name}-l);
+            --#{$__name}: hsl(var(--#{$__name}-hsl))
+        } @else {
+            --#{$__name}: #{$__value}
+        }
+    }
+
+    @media (prefers-contrast: less) {
+        --#{$_prefix}-clr-border-alpha: .08
+    }
+    @media (prefers-contrast: more) {
+        --#{$_prefix}-clr-border-alpha: 1
+    }
+}

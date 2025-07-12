@@ -1,0 +1,118 @@
+---
+import type { Thumb } from "@/utils/thumb-loader.js";
+import type { HTMLAttributes } from "astro/types";
+import { Image } from "astro:assets";
+import SvgIcon from "@/components/common/svg-icon.vue";
+import { icon_chevronRight } from "@/utils/icons.js";
+
+export type Props = {
+    thumb: Thumb;
+    title: string;
+    brandTitle: string;
+    releaseYear: number;
+    url: URL;
+    loading: HTMLAttributes<"img">["loading"];
+}
+
+const props = Astro.props;
+
+const STYLE = {
+    "--color-h": `${props.thumb.color.hsl.h}deg`,
+    "--color-s": `${props.thumb.color.hsl.s}%`,
+    "--color-l": `${props.thumb.color.hsl.l}%`
+};
+
+const IMG_ALT = `${props.brandTitle} ${props.title}`;
+---
+
+<a
+    href={props.url}
+    style={STYLE}
+    class="calculator-preset-carousel-item">
+    <Image
+        src={props.thumb.metadata}
+        alt={IMG_ALT}
+        loading={props.loading}
+        height="96"
+        class="thumb"
+        densities={[1, 2]}
+        decoding="async"
+        draggable="false" />
+    <div>
+        <h2 class="title">
+            <span>{props.title}</span>
+            <SvgIcon icon={icon_chevronRight} />
+        </h2>
+        <div class="summary">
+            {props.brandTitle} • {props.releaseYear}
+        </div>
+    </div>
+</a>
+
+<style lang="scss" is:global>
+    .calculator-preset-carousel-item {
+        @include vh-card($hover: true, $active: true);
+        --color-hsl: var(--_color-hsl);
+        --border-hsl: var(--_color-h), 100%, 96%;
+        --border-alpha: .12;
+
+        --_color-h: var(--color-h);
+        --_color-s: var(--color-s);
+        --_color-l: var(--color-l);
+        --_color-hsl: var(--_color-h), var(--_color-s), var(--_color-l);
+        color: hsl(var(--_color-h), 100%, 94%);
+        background-image: radial-gradient(ellipse at left top, hsla(var(--_color-hsl), .24), transparent);
+        display: flex;
+        align-items: flex-start;
+        padding: var(--vh-spacer);
+        gap: var(--vh-spacer);
+        flex-direction: row;
+        @include vh-media-breakpoint-up(md) {
+            padding: calc(var(--vh-spacer) * 1.5) var(--vh-spacer);
+            gap: calc(var(--vh-spacer) * 1.25);
+            flex-direction: column
+        }
+        .thumb {
+            box-shadow: 0 .75rem .75rem hsl(var(--_color-hsl), .125);
+            border-radius: calc(var(--vh-spacer) * .75);
+            padding: calc(var(--vh-spacer) * .375);
+            background: hsl(var(--_color-h), var(--_color-s), 40%, .5);
+            object-fit: contain;
+            inline-size: auto;
+            block-size: calc(var(--vh-spacer) * 5);
+            max-inline-size: calc(var(--vh-spacer) * 5);
+            @include vh-media-breakpoint-up(md) {
+                block-size: calc(var(--vh-spacer) * 6);
+                max-inline-size: calc(var(--vh-spacer) * 6)
+            }
+        }
+        .title {
+            --_icon-size: calc(var(--vh-spacer) * 1.25);
+            display: flex;
+            align-items: flex-end;
+            flex-flow: row nowrap;
+            margin-block-end: calc(var(--vh-spacer) * .25);
+            gap: calc(var(--vh-spacer) * .125);
+            span {
+                text-wrap: pretty;
+                font-size: var(--vh-fs-md);
+                font-weight: var(--vh-fw-bold);
+                line-height: var(--vh-lh-lg);
+                display: inline-block;
+                max-inline-size: calc(100% - var(--_icon-size));
+                @include vh-ellipsis-multiline(1)
+            }
+            .svg-icon {
+                --size: var(--_icon-size);
+                transform: translateY(-3px);
+                opacity: .75
+            }
+        }
+        .summary {
+            font-size: var(--vh-fs-sm);
+            font-weight: var(--vh-fw-medium);
+            line-height: var(--vh-lh-lg);
+            opacity: .75
+        }
+    }
+</style>

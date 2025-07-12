@@ -1,0 +1,132 @@
+* {
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    &,
+    &::before,
+    &::after {
+        box-sizing: border-box;
+        @media (prefers-reduced-motion: reduce) {
+            transition-duration: .001ms !important;
+            transition-delay: 0s !important;
+            animation-duration: .001ms !important;
+            animation-iteration-count: 1 !important
+        }
+    }
+}
+
+html {
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    text-size-adjust: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    -webkit-font-smoothing: antialiased;
+    scrollbar-gutter: stable;
+    @media (prefers-reduced-motion: no-preference) {
+        scroll-behavior: smooth
+    }
+}
+
+body {
+    overflow-x: hidden;
+    min-block-size: 100vh
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    text-decoration-skip-ink: auto
+}
+
+ul,
+ol {
+    list-style: none
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+    overflow-wrap: break-word
+}
+
+p {
+    text-wrap: pretty;
+    overflow-wrap: break-word
+}
+
+img,
+picture,
+svg,
+canvas,
+video {
+    display: block;
+    max-inline-size: 100%;
+    block-size: auto
+}
+
+img,
+svg {
+    vertical-align: middle
+}
+
+button,
+[role="button"] {
+    cursor: pointer;
+    user-select: none
+}
+
+input {
+    font-size: 16px // https://defensivecss.dev/tip/input-zoom-safari/
+}
+
+input,
+select,
+textarea,
+button {
+    color: inherit
+}
+
+*:disabled,
+*[disabled] {
+    cursor: not-allowed !important;
+    opacity: .75 !important
+}
+
+[hidden] {
+    display: none !important
+}
+
+dialog {
+    color: inherit;
+    border: 0;
+    background: 0;
+    &::backdrop {
+        background: 0
+    }
+}
+
+hr {
+    color: inherit; // https://github.com/twbs/bootstrap/blob/5210c9b24c44f8230c3ca4813d30211289f27b2e/scss/_reboot.scss#L70
+    border: 0
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    min-inline-size: 0; // https://github.com/twbs/bootstrap/blob/5210c9b24c44f8230c3ca4813d30211289f27b2e/scss/_reboot.scss#L486
+    legend {
+        display: block;
+        float: left; // https://github.com/twbs/bootstrap/blob/5210c9b24c44f8230c3ca4813d30211289f27b2e/scss/_reboot.scss#L498
+        padding: 0;
+        inline-size: 100%;
+        & + * {
+            clear: left // https://github.com/twbs/bootstrap/blob/5210c9b24c44f8230c3ca4813d30211289f27b2e/scss/_reboot.scss#L507
+        }
+    }
+}

@@ -1,0 +1,86 @@
+// Font Family
+$ff-primary: "Inter Variable", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$ff-monospace: "Roboto Mono Variable", "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", monospace;
+
+
+// Font Size
+$fs-xs: .75rem;
+$fs-sm: .875rem;
+$fs-base: 1rem;
+$fs-md: 1.25rem;
+$fs-lg: 1.375rem;
+$fs-xl: 2.25rem;
+$fs-xxl: 2.5rem;
+
+
+// Font Weight
+$fw-light: 300;
+$fw-normal: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+
+// Line Height
+$lh-sm: 1.25;
+$lh-base: 1.375;
+$lh-lg: 1.5;
+
+
+// Colors
+$clr-primary: #88df95;
+$clr-secondary: #00262c;
+
+$clr-warning: #ff9800;
+$clr-danger: #f44336;
+$clr-info: #2196f3;
+
+$clr-body-bg: #111;
+$clr-body-text: #eee;
+
+$clr-border: #fff;
+$clr-border-alpha: .16;
+
+$clr-black: #000;
+$clr-white: #fff;
+
+
+// Border Radius
+$br-small: .75rem;
+$br-normal: 1rem;
+$br-pill: 50rem;
+
+
+// Duration
+$duration-short: .195s;
+$duration-medium: .225s;
+$duration-long: .375s;
+$duration-longer: .5s;
+$duration-longest: 1s;
+
+
+// Timing
+$timing-normal: cubic-bezier(.25, .8, .25, 1);
+$timing-spring: cubic-bezier(.25, .8, .25, 1.125);
+
+
+// Sizing
+$spacer: 1rem;
+$border-inline-size: .5px;
+
+
+// Components
+$_container-breakpoints: (
+    "xs": (
+        max-inline-size: 100%,
+        breakpoint: 0
+    ),
+    "sm": (
+        max-inline-size: 540px,
+        breakpoint: 576px
+    ),
+    "md": (
+        max-inline-size: 800px,
+        breakpoint: 860px
+    )
+);

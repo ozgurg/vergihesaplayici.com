@@ -1,21 +1,27 @@
-// This file will generate a random string to use as a CSP nonce using the package version, the day of the current month, and the current timestamp.
-// This goes against nonce logic, but at least each build will have a different nonce.
-// There's no problem for our static site.
-// Check the "generate" script in package.json to see which step of the build we are using this file for.
+// Generates a pseudo-random CSP nonce using the package version, day of month, and timestamp.
+// Not a true nonce, but ensures a unique value per build — fine for our static site.
+// See the `build` script in `package.json` for where this is used.
 
-const fs = require("fs");
-const path = require("path");
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import packageJson from "./package.json" with { type: "json" };
 
-const { version } = require("./package.json");
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-const currentTimestamp = Date.now();
-const versionNumber = parseInt(version.replace(/\D/g, ""), 10);
-const multiplication = currentTimestamp * versionNumber;
+const generateNonce = () => {
+    const now = Date.now();
+    const version = Number.parseInt(packageJson.version.replaceAll(".", ""), 10);
+    const raw = (now * version).toString();
+    const filtered = [...raw].filter(char => char !== "0").reverse().join("");
+    return Buffer.from(filtered).toString("base64");
+};
 
-const cspNonce = multiplication.toString().split("").filter(letter => letter !== "0").reverse().join("");
-const encoded = Buffer.from(cspNonce).toString("base64");
+const writeNonceToFile = (nonce, filename) => {
+    const fullPath = path.join(__dirname, filename);
+    fs.writeFileSync(fullPath, nonce);
+    console.info("[create-csp-nonce-txt] ✅ Done!");
+};
 
-const filePath = path.join(__dirname, "csp-nonce.txt");
-fs.writeFileSync(filePath, encoded);
-
-console.log(`${path.basename(filePath)} created`);
+writeNonceToFile(generateNonce(), "csp-nonce.txt");
