@@ -16,7 +16,8 @@ export const staticUrl = (path: UrlPath): URL => {
 };
 
 export const staticSiteUrl = (path: UrlPath): URL => {
-    return new URL(`${siteUrl(path)}?v=${PACKAGE_JSON_VERSION}`);
+    const url = siteUrl(path).href.replace(/\/$/, "");
+    return new URL(`${url}?v=${PACKAGE_JSON_VERSION}`);
 };
 
 export const isCurrentPage = (currentUrl: URL, pageUrl: URL): boolean => {
