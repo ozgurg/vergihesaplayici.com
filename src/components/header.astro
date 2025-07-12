@@ -1,0 +1,362 @@
+---
+import Container from "@/components/common/container.vue";
+import CachedSvg from "@/components/common/cached-svg.vue";
+import logoSvg from "@/assets/img/logo.svg?raw";
+import SvgIcon from "@/components/common/svg-icon.vue";
+import Drawer from "@/components/drawer.vue";
+import { icon_apps, icon_close } from "@/utils/icons.js";
+import { CalculatorPages } from "@/domains/hesaplayicilar/db.js";
+import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
+
+const DRAWER_TOGGLE_ID = "header-drawer-toggle";
+const DRAWER_ID = "drawer";
+
+const anaSayfaPage = AnaSayfaPageDef();
+
+const nav = CalculatorPages;
+---
+
+<header class="header">
+    <Container>
+        <a
+            href={anaSayfaPage.url}
+            class="logo"
+            title="Ana sayfaya git">
+            <CachedSvg svg={logoSvg} />
+        </a>
+        <nav class="nav">
+            <ul>
+                {nav.map(_navItem => (
+                    <li>
+                        <a
+                            href={_navItem.url}
+                            aria-current={ariaCurrentValue(Astro.url, _navItem.url)}>
+                            <SvgIcon icon={_navItem.icon} />
+                            <span>{_navItem.shortTitle}</span>
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </nav>
+        <button
+            id={DRAWER_TOGGLE_ID}
+            class="drawer-toggle"
+            type="button">
+            <SvgIcon class="open-icon" icon={icon_apps} />
+            <SvgIcon class="close-icon" icon={icon_close} />
+        </button>
+    </Container>
+</header>
+
+<Drawer id={DRAWER_ID} />
+
+<style lang="scss" is:global>
+    @mixin blur {
+        @include vh-backdrop-filter(blur(1rem)) {
+            background: hsla(var(--vh-clr-body-bg-hsl), 1)
+        }
+    }
+
+    @mixin border {
+        border-block-end: var(--vh-border-inline-size) solid hsla(var(--vh-clr-border-hsl), var(--vh-clr-border-alpha))
+    }
+
+    @mixin nav-hover-indicator-before {
+        --_bg: hsla(var(--bg-hsl, var(--vh-clr-white-hsl)), .16);
+        position: absolute;
+        z-index: 0;
+        content: "";
+        transform: scale(0);
+        border-radius: var(--vh-br-pill);
+        background: var(--_bg)
+    }
+
+    @mixin if-drawer-open {
+        html:has(.drawer[open]) & {
+            @content
+        }
+    }
+
+    @mixin drawer-toggle-icon-hidden-state {
+        opacity: 0;
+        transform: scale(0)
+    }
+
+    @mixin drawer-toggle-icon-shown-state {
+        opacity: 1;
+        transform: scale(1)
+    }
+
+    html:has(.drawer[open]) {
+        body {
+            overflow: hidden
+        }
+    }
+
+    .header {
+        @include vh-media-breakpoint-down(md) {
+            position: fixed;
+            z-index: var(--header-zindex);
+            inset-inline: 0;
+            inset-block-start: 0;
+            inline-size: 100%;
+            pointer-events: none;
+            block-size: var(--header-down-md-block-size);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            &::after {
+                position: absolute;
+                z-index: -1;
+                content: "";
+                inset: 0;
+                mask: linear-gradient(to bottom, #000 50%, transparent);
+                @include vh-backdrop-filter(blur(.5rem)) {
+                    background: var(--vh-clr-body-bg)
+                }
+            }
+            .container {
+                pointer-events: all;
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                justify-content: space-between;
+                inline-size: 250px;
+                background: hsla(var(--vh-clr-primary-h), 10%, 6%, .75);
+                @include blur;
+                padding: calc(var(--vh-spacer) * .125) !important; // Needs to be overridden
+                padding-inline-start: calc(var(--vh-spacer) * .875) !important; // Needs to be overridden
+                border-radius: var(--vh-br-pill);
+                border: calc(var(--vh-border-inline-size) * 2) solid hsla(var(--vh-clr-border-hsl), var(--vh-clr-border-alpha))
+            }
+        }
+        @include vh-media-breakpoint-up(md) {
+            position: sticky;
+            z-index: var(--header-zindex);
+            inset-block-start: env(safe-area-inset-top, 0);
+            inline-size: 100%;
+            background: hsla(var(--vh-clr-primary-hsl), .04);
+            @include blur;
+            block-size: var(--header-up-md-collapsed-block-size);
+            @supports (animation-timeline: scroll()) {
+                block-size: var(--header-up-md-expanded-block-size);
+                animation: header-shrink-block-size both;
+                animation-timeline: scroll();
+                animation-range: 0 var(--header-up-md-expanded-block-size);
+                @keyframes header-shrink-block-size {
+                    to {
+                        block-size: var(--header-up-md-collapsed-block-size);
+                        background: hsla(var(--vh-clr-primary-h), 10%, 6%, .75)
+                    }
+                }
+            }
+            @supports (not(animation-timeline: scroll())) {
+                background: hsla(var(--vh-clr-primary-h), 10%, 6%, .75);
+                @include blur;
+                @include border
+            }
+            .container {
+                block-size: 100%;
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                justify-content: space-between;
+                @supports (animation-timeline: scroll()) {
+                    animation: header-container-border both;
+                    animation-timeline: scroll();
+                    animation-range: var(--header-up-md-collapsed-block-size) var(--header-up-md-collapsed-block-size);
+                    @keyframes header-container-border {
+                        to {
+                            @include border
+                        }
+                    }
+                }
+            }
+        }
+        .logo {
+            display: inline-flex;
+            @include vh-media-breakpoint-up(md) {
+                --_bg-alpha: var(--bg-alpha, .08);
+                align-items: center;
+                justify-content: center;
+                block-size: 3rem;
+                border-radius: var(--vh-br-pill);
+                padding-inline: var(--vh-spacer);
+                background: hsla(var(--vh-clr-primary-hsl), var(--_bg-alpha));
+                transition: vh-transition(background-color, var(--vh-duration-short))
+            }
+            @include vh-hover {
+                &:hover {
+                    --bg-alpha: .12
+                }
+                &:active {
+                    --bg-alpha: .16
+                }
+            }
+            svg {
+                fill: var(--vh-clr-primary);
+                inline-size: 182px;
+                block-size: 24px
+            }
+        }
+        .drawer-toggle {
+            --_size: calc(var(--vh-spacer) * 3);
+            --_icon-size: calc(var(--vh-spacer) * 1.25);
+            position: relative;
+            @include vh-reset-button;
+            background: hsla(var(--vh-clr-white-hsl), .08);
+            border-radius: var(--vh-br-pill);
+            inline-size: var(--_size);
+            block-size: var(--_size);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include vh-media-breakpoint-up(md) {
+                display: none
+            }
+            .svg-icon {
+                --size: var(--_icon-size);
+                position: absolute;
+                inset: auto;
+                transition: vh-transition(opacity transform, var(--vh-duration-long));
+                &.open-icon {
+                    @include if-drawer-open {
+                        & {
+                            @include drawer-toggle-icon-hidden-state
+                        }
+                    }
+                }
+                &.close-icon {
+                    @include drawer-toggle-icon-hidden-state;
+                    @include if-drawer-open {
+                        & {
+                            @include drawer-toggle-icon-shown-state
+                        }
+                    }
+                }
+            }
+        }
+        .nav {
+            --_anchor-name: var(--anchor-name, --header-hover-indicator);
+            margin-inline: calc((var(--vh-spacer) * .875) * -1);
+            @include vh-media-breakpoint-down(md) {
+                display: none
+            }
+            ul {
+                @supports (anchor-name: var(--_anchor-name)) {
+                    position: relative;
+                    &:has(a:hover)::before {
+                        transform: scale(1)
+                    }
+                    &:has(a[aria-current="page"]:hover)::before {
+                        --bg-hsl: var(--vh-clr-primary-hsl)
+                    }
+                    li:has(a:hover) {
+                        anchor-name: --_anchor-name
+                    }
+                    &::before {
+                        @include nav-hover-indicator-before;
+                        transition: vh-transition(inset-inline inline-size background-color opacity, var(--vh-duration-long)), vh-transition(transform, var(--vh-duration-long), var(--vh-timing-spring));
+                        inset: 0 anchor(--_anchor-name start);
+                        inline-size: anchor-size(--_anchor-name inline);
+                        block-size: 100%
+                    }
+                }
+                @supports (not(anchor-name: var(--_anchor-name))) {
+                    li a {
+                        position: relative;
+                        &:hover::before {
+                            transform: scale(1)
+                        }
+                        &::before {
+                            @include nav-hover-indicator-before;
+                            transition: vh-transition(transform, var(--vh-duration-long), var(--vh-timing-spring));
+                            inset: 0;
+                            inline-size: 100%;
+                            block-size: 100%
+                        }
+                    }
+                }
+            }
+            ul {
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                justify-content: center;
+                li {
+                    position: relative;
+                    display: inline-flex;
+                    & + li::before {
+                        position: absolute;
+                        display: inline-block;
+                        inset-inline-start: 0;
+                        inset-block-start: calc(50% - ((var(--vh-spacer) * 1.25) / 2));
+                        block-size: calc(var(--vh-spacer) * 1.25);
+                        inline-size: 1px;
+                        background: hsla(var(--vh-clr-border-hsl), var(--vh-clr-border-alpha));
+                        pointer-events: none;
+                        content: "";
+                        transition: vh-transition(visibility opacity, var(--vh-duration-long))
+                    }
+                    &:hover {
+                        &::before, & + li::before {
+                            visibility: hidden;
+                            opacity: 0
+                        }
+                    }
+                    a {
+                        display: flex;
+                        flex-flow: row nowrap;
+                        align-items: center;
+                        justify-content: center;
+                        text-align: center;
+                        gap: calc(var(--vh-spacer) * .5);
+                        padding: calc(var(--vh-spacer) * .625) calc(var(--vh-spacer) * .75);
+                        color: currentColor;
+                        text-decoration: none;
+                        &[aria-current="page"] {
+                            color: var(--vh-clr-primary)
+                        }
+                        span {
+                            line-height: 1;
+                            font-size: 1rem
+                        }
+                    }
+                }
+            }
+        }
+    }
+</style>
+
+<script>
+    /**
+     * Since we cannot pass Astro's variables to bundled `<script />` tags,
+     * I need to update two different locations for the IDs
+     * https://docs.astro.build/en/reference/directives-reference/#definevars
+     */
+    const DRAWER_TOGGLE_ID = "header-drawer-toggle";
+    const DRAWER_ID = "drawer";
+
+    const headerDrawerOpenerEl = document.querySelector(`#${DRAWER_TOGGLE_ID}`) as HTMLButtonElement;
+    const drawerEl = document.querySelector(`#${DRAWER_ID}`) as HTMLDialogElement;
+
+    const _setTitle = (): void => {
+        headerDrawerOpenerEl.title = drawerEl.open ? "Menüyü kapat" : "Menüyü aç";
+    };
+
+    const _toggleDrawer = (): void => {
+        if (drawerEl.open) {
+            drawerEl.close();
+        } else {
+            drawerEl.show();
+            setTimeout(() => {
+                drawerEl.focus();
+            }, 0);
+        }
+        _setTitle();
+    };
+
+    _setTitle();
+    headerDrawerOpenerEl.addEventListener("click", _toggleDrawer);
+</script>

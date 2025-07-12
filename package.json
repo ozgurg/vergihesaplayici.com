@@ -1,77 +1,74 @@
 {
     "name": "vergihesaplayici.com",
-    "version": "7.15.1",
-    "description": "vergihesaplayici.com, vergi hesaplar.",
+    "version": "8.0.0",
+    "type": "module",
     "license": "GPL-3.0",
-    "homepage": "https://vergihesaplayici.com/",
+    "scripts": {
+        "dev": "astro dev --host",
+        "generate": "npm run prepare-firebase && astro build",
+        "preview": "astro preview",
+        "lint": "oxlint",
+        "test": "vitest run",
+        "test:coverage": "vitest run --coverage",
+        "firebase:hosting:deploy": "firebase deploy --only hosting",
+        "prepare-firebase": "node create-csp-nonce-txt.js && node create-firebase-json.js",
+        "lint-staged": "lint-staged",
+        "prepare": "husky"
+    },
+    "dependencies": {
+        "@fontsource-variable/inter": "5.2.6",
+        "@fontsource-variable/roboto-mono": "5.2.6",
+        "astro": "5.11.0",
+        "firebase": "11.10.0",
+        "html-to-image": "1.11.13",
+        "remixicon": "4.6.0",
+        "vue": "3.5.17"
+    },
+    "devDependencies": {
+        "@astrojs/check": "0.9.4",
+        "@astrojs/sitemap": "3.4.1",
+        "@astrojs/vue": "5.1.0",
+        "@commitlint/cli": "19.8.1",
+        "@commitlint/config-conventional": "19.8.1",
+        "@vitejs/plugin-vue": "6.0.0",
+        "@vitest/coverage-istanbul": "3.2.4",
+        "@vue/test-utils": "2.4.6",
+        "astro-compress": "2.3.8",
+        "fast-average-color-node": "3.1.0",
+        "husky": "9.1.7",
+        "jsdom": "26.1.0",
+        "lint-staged": "16.1.2",
+        "oxlint": "1.6.0",
+        "sass": "1.89.2",
+        "satori": "0.15.2",
+        "satori-html": "0.3.2",
+        "sharp": "0.34.3",
+        "typescript": "5.8.3",
+        "unplugin-auto-import": "19.3.0",
+        "unplugin-vue-components": "28.8.0",
+        "vitest": "3.2.4"
+    },
+    "peerDependencies": {
+        "firebase-tools": "14.10.1"
+    },
+    "engines": {
+        "node": ">=22.0.0"
+    },
+    "lint-staged": {
+        "*.{ts,vue}": [
+            "npm run lint"
+        ]
+    },
     "private": true,
+    "description": "vergihesaplayici.com, calculates taxes.",
+    "homepage": "https://vergihesaplayici.com/",
     "repository": {
         "type": "git",
-        "url": "https://github.com/ozgurg/vergihesaplayici.com"
-    },
-    "scripts": {
-        "tsc": "tsc",
-        "dev": "nuxt",
-        "generate": "npm run prepare-csp-nonce && nuxt generate",
-        "emulator:hosting": "npm run generate && firebase emulators:start --only hosting",
-        "lint:fix": "npm run lint -- --fix",
-        "lint": "eslint --ext \".js,.vue\" .",
-        "test": "vitest run",
-        "lint-staged": "lint-staged",
-        "prepare": "husky",
-        "prepare-csp-nonce": "node create-csp-nonce-txt.js && node create-firebase-json.js",
-        "deploy": "firebase deploy --only hosting"
+        "url": "git+https://github.com/ozgurg/vergihesaplayici.com.git"
     },
     "author": {
         "email": "ozgurgorgulu54@gmail.com",
         "name": "Özgür Görgülü",
         "url": "https://github.com/ozgurg"
-    },
-    "keywords": [
-        "website",
-        "vue",
-        "nuxtjs",
-        "tax-calculator"
-    ],
-    "dependencies": {
-        "firebase": "11.10.0",
-        "nuxt": "2.18.1",
-        "vue": "2.7.16",
-        "vue-html2canvas": "0.0.4",
-        "vuetify": "2.7.2",
-        "vuex": "3.6.2"
-    },
-    "devDependencies": {
-        "@babel/eslint-parser": "7.28.0",
-        "@mdi/js": "7.4.47",
-        "@nuxt/content": "1.15.1",
-        "@nuxt/types": "2.18.1",
-        "@nuxtjs/dotenv": "1.4.2",
-        "@nuxtjs/eslint-config": "12.0.0",
-        "@nuxtjs/eslint-module": "3.1.0",
-        "@nuxtjs/pwa": "3.3.5",
-        "@nuxtjs/sitemap": "2.4.0",
-        "@nuxtjs/style-resources": "1.2.2",
-        "@nuxtjs/svg": "0.4.1",
-        "@nuxtjs/vuetify": "1.12.3",
-        "eslint": "8.57.0",
-        "eslint-config-google": "0.14.0",
-        "eslint-plugin-nuxt": "4.0.0",
-        "eslint-plugin-vue": "9.32.0",
-        "husky": "9.1.7",
-        "lint-staged": "16.1.2",
-        "typescript": "5.8.3",
-        "vitest": "3.2.4"
-    },
-    "overrides": {
-        "webpack-dev-middleware": "5.0.0"
-    },
-    "engines": {
-        "node": ">=18.0.0"
-    },
-    "lint-staged": {
-        "*.{js,vue}": [
-            "eslint"
-        ]
     }
 }

@@ -1,0 +1,41 @@
+---
+import DefaultLayout from "@/layouts/default-layout.astro";
+import PageHeader from "@/components/common/page-header.vue";
+import Container from "@/components/common/container.vue";
+import Breadcrumbs from "@/components/common/breadcrumbs.vue";
+import Heading1 from "@/components/common/heading-1.vue";
+import VerginiOlustur from "@/components/calculator/vergini-olustur/vergini-olustur.vue";
+
+import { VerginiOlusturPageDef } from "@/domains/vergini-olustur/page-def.js";
+
+const verginiOlusturPage = VerginiOlusturPageDef();
+
+const EXCHANGE_RATES = getExchangeRates();
+---
+
+<DefaultLayout head={verginiOlusturPage.head}>
+    <PageHeader>
+        <Container>
+            <Breadcrumbs
+                items={verginiOlusturPage.breadcrumbs}
+                client:load />
+            <Heading1>
+                {verginiOlusturPage.title} <sup>(beta)</sup>
+            </Heading1>
+        </Container>
+    </PageHeader>
+
+    <section>
+        <VerginiOlustur
+            EXCHANGE_RATES={EXCHANGE_RATES}
+            calculatorPage={verginiOlusturPage}
+            client:load />
+    </section>
+</DefaultLayout>
+
+<style lang="scss">
+    sup {
+        margin-inline-start: .5rem;
+        font-size: 1rem
+    }
+</style>

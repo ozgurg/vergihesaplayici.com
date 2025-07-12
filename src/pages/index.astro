@@ -1,0 +1,104 @@
+---
+import DefaultLayout from "@/layouts/default-layout.astro";
+import PageHeader from "@/components/common/page-header.vue";
+import Container from "@/components/common/container.vue";
+import Heading1 from "@/components/common/heading-1.vue";
+import RichText from "@/components/common/rich-text.vue";
+import OsitaIhemeVideo from "@/components/osita-iheme-video.vue";
+import Heading2 from "@/components/common/heading-2.vue";
+import CalculatorsGrid from "@/components/calculators-grid.vue";
+import ArticlesGrid from "@/components/articles-grid.vue";
+
+import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
+import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
+import { YazilarPageDef } from "@/domains/yazilar/page-def.js";
+import { getYazilar } from "@/domains/yazilar/db.js";
+import { mapYazilarForArticlesGridComponent } from "@/domains/yazilar/utils.js";
+
+const anaSayfaPage = AnaSayfaPageDef();
+const hesaplayicilarPage = HesaplayicilarPageDef();
+const yazilarPage = YazilarPageDef();
+
+// oxlint-disable-next-line no-magic-numbers
+const yazilar = (await getYazilar()).slice(0, 8);
+const yazilarForArticlesGrid = mapYazilarForArticlesGridComponent(yazilar);
+---
+
+<DefaultLayout head={anaSayfaPage.head}>
+    <section class="hero">
+        <PageHeader>
+            <Container>
+                <div>
+                    <Heading1>
+                        Vergi Hesaplayıcı
+                    </Heading1>
+                    <RichText>
+                        <p>vergihesaplayici.com, vergi hesaplar.</p>
+                    </RichText>
+                </div>
+                <OsitaIhemeVideo client:idle />
+            </Container>
+        </PageHeader>
+    </section>
+
+    <hr class="divider" />
+
+    <Container>
+        <section>
+            <Heading2>
+                <a href={hesaplayicilarPage.url}>
+                    {hesaplayicilarPage.title}
+                </a>
+            </Heading2>
+            <CalculatorsGrid />
+        </section>
+
+        <hr class="divider" />
+
+        <section>
+            <Heading2>
+                <a href={yazilarPage.url}>
+                    {yazilarPage.title}
+                </a>
+            </Heading2>
+            <ArticlesGrid items={yazilarForArticlesGrid} />
+        </section>
+    </Container>
+</DefaultLayout>
+
+<style lang="scss">
+    .heading-1 {
+        @include vh-media-breakpoint-down(md) {
+            // I tried to keep the title in the same position across pages
+            padding-block-start: calc(var(--breadcrumbs-block-size) + var(--breadcrumbs-margin-block-start))
+        }
+    }
+
+    .page-header {
+        padding-block-end: 0
+    }
+
+    .hero {
+        .container {
+            display: flex;
+            gap: var(--vh-spacer);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            @include vh-media-breakpoint-up(md) {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center
+            }
+        }
+        .rich-text {
+            @include vh-media-breakpoint-up(md) {
+                font-size: var(--vh-fs-md)
+            }
+        }
+    }
+
+    .divider {
+        margin-block: calc(var(--vh-spacer) * 2)
+    }
+</style>

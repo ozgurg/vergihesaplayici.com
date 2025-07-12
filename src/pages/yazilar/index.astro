@@ -1,0 +1,36 @@
+---
+import DefaultLayout from "@/layouts/default-layout.astro";
+import PageHeader from "@/components/common/page-header.vue";
+import Container from "@/components/common/container.vue";
+import Breadcrumbs from "@/components/common/breadcrumbs.vue";
+import Heading1 from "@/components/common/heading-1.vue";
+import ArticleLegalDisclaimerAlert from "@/components/article-legal-disclaimer-alert.vue";
+import ArticlesGrid from "@/components/articles-grid.vue";
+
+import { YazilarPageDef } from "@/domains/yazilar/page-def.js";
+import { getYazilar } from "@/domains/yazilar/db.js";
+import { mapYazilarForArticlesGridComponent } from "@/domains/yazilar/utils.js";
+
+const yazilarPage = YazilarPageDef();
+
+const yazilar = await getYazilar();
+const yazilarForArticlesGrid = mapYazilarForArticlesGridComponent(yazilar);
+---
+
+<DefaultLayout head={yazilarPage.head}>
+    <PageHeader>
+        <Container>
+            <Breadcrumbs
+                items={yazilarPage.breadcrumbs}
+                client:load />
+            <Heading1>
+                {yazilarPage.title}
+            </Heading1>
+        </Container>
+    </PageHeader>
+
+    <Container>
+        <ArticleLegalDisclaimerAlert />
+        <ArticlesGrid items={yazilarForArticlesGrid} />
+    </Container>
+</DefaultLayout>

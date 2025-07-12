@@ -1,21 +1,40 @@
 {
+    "extends": "astro/tsconfigs/strictest",
     "compilerOptions": {
-        "skipLibCheck": true,
-        "target": "es2022",
-        "moduleResolution": "Node",
-        "noEmit": true,
         "strict": true,
-        "allowJs": true,
-        "checkJs": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitOverride": true,
+        "noImplicitReturns": true,
+        "noImplicitAny": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noUncheckedIndexedAccess": true,
+        "exactOptionalPropertyTypes": false,
+        "allowUnreachableCode": false,
+        "allowUnusedLabels": false,
+        "noUncheckedSideEffectImports": true,
+        "allowImportingTsExtensions": false,
+        "verbatimModuleSyntax": true,
+        "baseUrl": ".",
+        "types": [
+            "node"
+        ],
         "paths": {
             "@/*": [
-                "./*"
+                "src/*"
+            ],
+            "@root/*": [
+                "*"
             ]
         }
     },
+    "exclude": [
+        "dist"
+    ],
     "include": [
-        "domain/**/db/*.js",
-        "domain/**/*.page-def.js",
-        "types/*.d.js"
+        ".astro/types.d.ts",
+        "**/*",
+        "unplugin-vue-components.d.ts",
+        "unplugin-auto-import.d.ts"
     ]
 }

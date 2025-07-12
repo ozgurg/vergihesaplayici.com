@@ -1,7 +1,12 @@
-const fs = require("fs");
-const path = require("path");
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-const _objectToCspHeader = object => {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// oxlint-disable-next-line no-unused-vars
+const objectToCspHeader = object => {
     const cspHeader = [];
     for (const [_key, _values] of Object.entries(object)) {
         cspHeader.push(
@@ -14,120 +19,40 @@ const _objectToCspHeader = object => {
 // [0] = source (from)
 // [1] = destination (to)
 const redirections301 = [
-    [
-        "/konsol-vergisi-hesaplayici/apple-vision-pro/",
-        "/telefon-vergisi-hesaplayici/apple-vision-pro/"
-    ],
-    [
-        "/konsol-vergisi-hesaplayici/playstation-5/",
-        "/konsol-vergisi-hesaplayici/sony-playstation-5/"
-    ],
-    [
-        "/konsol-vergisi-hesaplayici/playstation-vr2",
-        "/konsol-vergisi-hesaplayici/sony-playstation-vr2/"
-    ],
-    [
-        "/konsol-vergisi-hesaplayici/xbox-series-s/",
-        "/konsol-vergisi-hesaplayici/microsoft-xbox-series-s/"
-    ],
-    [
-        "/konsol-vergisi-hesaplayici/xbox-series-x/",
-        "/konsol-vergisi-hesaplayici/microsoft-xbox-series-x/"
-    ],
-    [
-        "/konsol-vergisi-hesaplayici/steam-deck/",
-        "/konsol-vergisi-hesaplayici/valve-steam-deck/"
-    ],
+    ["/konsol-vergisi-hesaplayici/apple-vision-pro/", "/telefon-vergisi-hesaplayici/apple-vision-pro/"],
+    ["/konsol-vergisi-hesaplayici/playstation-5/", "/konsol-vergisi-hesaplayici/sony-playstation-5/"],
+    ["/konsol-vergisi-hesaplayici/playstation-vr2", "/konsol-vergisi-hesaplayici/sony-playstation-vr2/"],
+    ["/konsol-vergisi-hesaplayici/xbox-series-s/", "/konsol-vergisi-hesaplayici/microsoft-xbox-series-s/"],
+    ["/konsol-vergisi-hesaplayici/xbox-series-x/", "/konsol-vergisi-hesaplayici/microsoft-xbox-series-x/"],
+    ["/konsol-vergisi-hesaplayici/steam-deck/", "/konsol-vergisi-hesaplayici/valve-steam-deck/"],
 
-    [
-        "/hesaplayicilar/telefon-vergisi-hesaplayici",
-        "/telefon-vergisi-hesaplayici/"
-    ],
-    [
-        "/hesaplayicilar/konsol-vergisi-hesaplayici",
-        "/konsol-vergisi-hesaplayici/"
-    ],
-    [
-        "/hesaplayicilar/kdv-hesaplayici",
-        "/kdv-hesaplayici/"
-    ],
-    [
-        "/hesaplayicilar/telefon-vergisi-hesaplayici/",
-        "/telefon-vergisi-hesaplayici/"
-    ],
-    [
-        "/hesaplayicilar/konsol-vergisi-hesaplayici/",
-        "/konsol-vergisi-hesaplayici/"
-    ],
-    [
-        "/hesaplayicilar/kdv-hesaplayici/",
-        "/kdv-hesaplayici/"
-    ],
+    ["/hesaplayicilar/telefon-vergisi-hesaplayici", "/telefon-vergisi-hesaplayici/"],
+    ["/hesaplayicilar/konsol-vergisi-hesaplayici", "/konsol-vergisi-hesaplayici/"],
+    ["/hesaplayicilar/kdv-hesaplayici", "/kdv-hesaplayici/"],
+    ["/hesaplayicilar/telefon-vergisi-hesaplayici/", "/telefon-vergisi-hesaplayici/"],
+    ["/hesaplayicilar/konsol-vergisi-hesaplayici/", "/konsol-vergisi-hesaplayici/"],
+    ["/hesaplayicilar/kdv-hesaplayici/", "/kdv-hesaplayici/"],
 
-    [
-        "/yazilar/zirai-kazanc-vergisi-nedir/",
-        "/yazilar/zirai-kazanc-gelir-vergisi-nedir/"
-    ],
-    [
-        "/yazilar/luks-tuketimden-daha-fazla-vergi-alinmali-midir/",
-        "/yazilar/luks-tuketimden-daha-fazla-vergi-alinmali-mi/"
-    ],
-    [
-        "/yazilar/verginin-vergisi-hangi-ulke-icat-etmistir/",
-        "/yazilar/verginin-vergisini-hangi-ulke-icat-etmistir/"
-    ],
+    ["/yazilar/zirai-kazanc-vergisi-nedir/", "/yazilar/zirai-kazanc-gelir-vergisi-nedir/"],
+    ["/yazilar/luks-tuketimden-daha-fazla-vergi-alinmali-midir/", "/yazilar/luks-tuketimden-daha-fazla-vergi-alinmali-mi/"],
+    ["/yazilar/verginin-vergisi-hangi-ulke-icat-etmistir/", "/yazilar/verginin-vergisini-hangi-ulke-icat-etmistir/"],
 
-    [
-        "/telefon-vergisi-hesaplayici/iphone-15-pro/",
-        "/telefon-vergisi-hesaplayici/apple-iphone-15-pro/"
-    ],
-    [
-        "/telefon-vergisi-hesaplayici/iphone-15-pro-max/",
-        "/telefon-vergisi-hesaplayici/apple-iphone-15-pro-max/"
-    ],
-    [
-        "/telefon-vergisi-hesaplayici/iphone-15/",
-        "/telefon-vergisi-hesaplayici/apple-iphone-15/"
-    ],
-    [
-        "/telefon-vergisi-hesaplayici/iphone-15-plus/",
-        "/telefon-vergisi-hesaplayici/apple-iphone-15-plus/"
-    ],
-    [
-        "/telefon-vergisi-hesaplayici/iphone-14-pro/",
-        "/telefon-vergisi-hesaplayici/apple-iphone-14-pro/"
-    ],
-    [
-        "/telefon-vergisi-hesaplayici/iphone-14-pro-max/",
-        "/telefon-vergisi-hesaplayici/apple-iphone-14-pro-max/"
-    ],
-    [
-        "/telefon-vergisi-hesaplayici/iphone-14/",
-        "/telefon-vergisi-hesaplayici/apple-iphone-14/"
-    ],
-    [
-        "/telefon-vergisi-hesaplayici/iphone-14-plus/",
-        "/telefon-vergisi-hesaplayici/apple-iphone-14-plus/"
-    ],
-    [
-        "/telefon-vergisi-hesaplayici/iphone-13-mini/",
-        "/telefon-vergisi-hesaplayici/apple-iphone-13-mini/"
-    ],
-    [
-        "/telefon-vergisi-hesaplayici/iphone-13/",
-        "/telefon-vergisi-hesaplayici/apple-iphone-13/"
-    ],
-    [
-        "/telefon-vergisi-hesaplayici/iphone-se-3-2022/",
-        "/telefon-vergisi-hesaplayici/apple-iphone-se-3-2022/"
-    ],
-    [
-        "/telefon-vergisi-hesaplayici/iphone-12/",
-        "/telefon-vergisi-hesaplayici/apple-iphone-12/"
-    ]
+    ["/telefon-vergisi-hesaplayici/iphone-15-pro/", "/telefon-vergisi-hesaplayici/apple-iphone-15-pro/"],
+    ["/telefon-vergisi-hesaplayici/iphone-15-pro-max/", "/telefon-vergisi-hesaplayici/apple-iphone-15-pro-max/"],
+    ["/telefon-vergisi-hesaplayici/iphone-15/", "/telefon-vergisi-hesaplayici/apple-iphone-15/"],
+    ["/telefon-vergisi-hesaplayici/iphone-15-plus/", "/telefon-vergisi-hesaplayici/apple-iphone-15-plus/"],
+    ["/telefon-vergisi-hesaplayici/iphone-14-pro/", "/telefon-vergisi-hesaplayici/apple-iphone-14-pro/"],
+    ["/telefon-vergisi-hesaplayici/iphone-14-pro-max/", "/telefon-vergisi-hesaplayici/apple-iphone-14-pro-max/"],
+    ["/telefon-vergisi-hesaplayici/iphone-14/", "/telefon-vergisi-hesaplayici/apple-iphone-14/"],
+    ["/telefon-vergisi-hesaplayici/iphone-14-plus/", "/telefon-vergisi-hesaplayici/apple-iphone-14-plus/"],
+    ["/telefon-vergisi-hesaplayici/iphone-13-mini/", "/telefon-vergisi-hesaplayici/apple-iphone-13-mini/"],
+    ["/telefon-vergisi-hesaplayici/iphone-13/", "/telefon-vergisi-hesaplayici/apple-iphone-13/"],
+    ["/telefon-vergisi-hesaplayici/iphone-se-3-2022/", "/telefon-vergisi-hesaplayici/apple-iphone-se-3-2022/"],
+    ["/telefon-vergisi-hesaplayici/iphone-12/", "/telefon-vergisi-hesaplayici/apple-iphone-12/"]
 ];
 
-const cspNonce = fs.readFileSync(path.join(__dirname, "csp-nonce.txt"), { encoding: "utf-8" });
+// oxlint-disable-next-line no-unused-vars
+const cspNonce = fs.readFileSync(path.join(__dirname, "csp-nonce.txt"), "utf8");
 
 const firebaseJson = {
     hosting: {
@@ -146,27 +71,21 @@ const firebaseJson = {
             }
         ],
         headers: [
+            /* TODO: Content-Security-Policy is experimental for now: https://docs.astro.build/en/reference/experimental-flags/csp/
             {
                 source: "**",
                 headers: [
-                    { // Commented directives break our app.
+                    {
                         key: "Content-Security-Policy",
-                        value: _objectToCspHeader({
-                            "base-uri": [
-                                "'self'"
-                            ],
-                            "object-src": [
-                                "'none'"
-                            ],
+                        value: objectToCspHeader({
+                            "base-uri": ["'self'"],
+                            "object-src": ["'none'"],
                             "script-src": [
                                 "'self'",
                                 `'nonce-${cspNonce}'`,
-                                "'unsafe-inline'",
-                                // "'strict-dynamic'",
                                 "https://www.google.com/recaptcha/",
                                 "https://www.gstatic.com/recaptcha/",
-                                "https://www.googletagmanager.com",
-                                "https://cdn.jsdelivr.net" // For Workbox in `static/sw.js`
+                                "https://www.googletagmanager.com"
                             ],
                             "frame-src": [
                                 "'self'",
@@ -175,24 +94,20 @@ const firebaseJson = {
                             ],
                             "img-src": [
                                 "'self'",
-                                "data:",
                                 "www.googletagmanager.com"
                             ],
-                            /* "style-src": [
+                            "style-src": [
                                 "'self'",
-                                `'nonce-${cspNonce}'`,
                                 "fonts.googleapis.com"
-                            ], */
+                            ],
                             "font-src": [
                                 "fonts.gstatic.com"
                             ]
-                            /* "require-trusted-types-for": [
-                                "'script'"
-                            ] */
                         })
                     }
                 ]
             },
+            */
             {
                 source: "/sw.js",
                 headers: [
@@ -212,7 +127,7 @@ const firebaseJson = {
                 ]
             },
             {
-                source: "**/*.@(jpg|jpeg|gif|png|svg|webp|js|css|eot|otf|ttf|ttc|woff|woff2|font.css|mp4|webm)",
+                source: "**/*.@(jpg|jpeg|gif|png|svg|webp|js|css|eot|otf|ttf|woff|woff2|mp4)",
                 headers: [
                     {
                         key: "Cache-Control",
@@ -221,23 +136,15 @@ const firebaseJson = {
                 ]
             }
         ],
-        redirects: redirections301.map(_redirection => ({
-            source: _redirection[0],
-            destination: _redirection[1],
+        redirects: redirections301.map(([_from, _to]) => ({
+            source: _from,
+            destination: _to,
             type: 301
         }))
-    },
-    emulators: {
-        hosting: {
-            port: process.env.EMULATOR_PORT
-        },
-        ui: {
-            enabled: true
-        }
     }
 };
 
-const filePath = path.join(__dirname, "firebase.json");
-fs.writeFileSync(filePath, JSON.stringify(firebaseJson));
 
-console.log(`${path.basename(filePath)} created`);
+const outputPath = path.join(__dirname, "firebase.json");
+fs.writeFileSync(outputPath, JSON.stringify(firebaseJson, null, 2));
+console.info("[create-firebase-json] ✅ Done!");

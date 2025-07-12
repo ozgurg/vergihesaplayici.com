@@ -1,0 +1,112 @@
+---
+import DefaultLayout from "@/layouts/default-layout.astro";
+import PageHeader from "@/components/common/page-header.vue";
+import Container from "@/components/common/container.vue";
+import Breadcrumbs from "@/components/common/breadcrumbs.vue";
+import Heading1 from "@/components/common/heading-1.vue";
+import KonsolVergisiHesaplayiciPreset
+    from "@/components/calculator/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici-preset.vue";
+import Heading2 from "@/components/common/heading-2.vue";
+import CalculatorPresetCarousel from "@/components/calculator-preset-carousel.astro";
+
+import { getPresetsForAllBrands, getBrandById } from "@/domains/konsol-vergisi-hesaplayici/db.js";
+import {
+    KonsolVergisiHesaplayiciPageDef,
+    KonsolVergisiHesaplayiciPresetSlugPageDef
+} from "@/domains/konsol-vergisi-hesaplayici/page-def.js";
+import {
+    mapPresetsForCalculatorPresetCarouselComponent
+} from "@/domains/konsol-vergisi-hesaplayici/utils/map-presets-for-calculator-preset-carousel-component.js";
+import { calculateResults } from "@/domains/konsol-vergisi-hesaplayici/utils/calculate-results.js";
+import { DEFAULT_CURRENCY } from "@/domains/konsol-vergisi-hesaplayici/config.js";
+
+export const getStaticPaths = () => {
+    return getPresetsForAllBrands().map(_preset => ({
+        params: {
+            presetSlug: _preset.slug
+        },
+        props: {
+            preset: _preset,
+            brand: getBrandById(_preset.brandId)
+        }
+    }));
+};
+
+const { preset, brand } = Astro.props;
+
+const konsolVergisiHesaplayiciPage = KonsolVergisiHesaplayiciPageDef();
+const konsolVergisiHesaplayiciPresetSlugPage = KonsolVergisiHesaplayiciPresetSlugPageDef({ preset });
+
+const EXCHANGE_RATES = getExchangeRates();
+const presets = getPresetsForAllBrands();
+const presetsForCalculatorPresetCarousel = mapPresetsForCalculatorPresetCarouselComponent(
+    presets.filter(_preset => _preset.brandId === preset.brandId && _preset.slug !== preset.slug) // Show same brands and hide current
+);
+
+const calculateServerSide = () => {
+    const optionIndex = 0;
+    // oxlint-disable-next-line no-non-null-assertion
+    const option = preset.options[optionIndex]!;
+
+    const form = {
+        price: option.form.price ?? 0,
+        currency: option.form.currency ?? DEFAULT_CURRENCY
+    };
+
+    const {
+        results,
+        resultList,
+        screenshotData
+    } = calculateResults({
+        form,
+        exchangeRates: EXCHANGE_RATES
+    });
+
+    return {
+        form,
+        results,
+        resultList,
+        screenshotData
+    };
+};
+
+const initial = calculateServerSide();
+---
+
+<DefaultLayout head={konsolVergisiHesaplayiciPresetSlugPage.head}>
+    <PageHeader>
+        <Container>
+            <Breadcrumbs
+                items={konsolVergisiHesaplayiciPresetSlugPage.breadcrumbs}
+                client:load />
+            <Heading1>
+                {preset.pageTitle}
+            </Heading1>
+        </Container>
+    </PageHeader>
+
+    <KonsolVergisiHesaplayiciPreset
+        EXCHANGE_RATES={EXCHANGE_RATES}
+        calculatorPage={konsolVergisiHesaplayiciPage}
+        presetPage={konsolVergisiHesaplayiciPresetSlugPage}
+        brand={brand}
+        preset={preset}
+        initial={initial}
+        client:load />
+
+    {presetsForCalculatorPresetCarousel.length > 0 ?
+        <hr class="divider" />
+        <Container>
+            <Heading2>
+                Diğer hazır hesaplamalar
+            </Heading2>
+        </Container>
+        <CalculatorPresetCarousel items={presetsForCalculatorPresetCarousel} />
+        : ""}
+</DefaultLayout>
+
+<style lang="scss">
+    .divider {
+        margin-block: calc(var(--vh-spacer) * 2)
+    }
+</style>

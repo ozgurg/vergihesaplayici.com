@@ -1,0 +1,164 @@
+---
+import type { Props as CalculatorPresetCarouselItemProps } from "@/components/calculator-preset-carousel-item.astro";
+import CalculatorPresetCarouselItem from "@/components/calculator-preset-carousel-item.astro";
+import CalculatorPresetCarouselNav from "@/components/calculator-preset-carousel-nav.vue";
+
+export type Props = {
+    items: Omit<CalculatorPresetCarouselItemProps, "loading">[];
+}
+
+const { items } = Astro.props;
+
+const ROOT_ID = "calculator-preset-carousel";
+const ITEMS_CONTAINER_ID = "calculator-preset-carousel-items";
+---
+
+<section
+    id={ROOT_ID}
+    aria-roledescription="carousel"
+    aria-label="Hazır hesaplamalar"
+    class="calculator-preset-carousel">
+    <div
+        id={ITEMS_CONTAINER_ID}
+        data-scroll-container=""
+        aria-live="polite"
+        class="calculator-preset-carousel-items">
+        {items.map((_item, _index) => (
+            <div
+                class="item"
+                role="group"
+                aria-label={`${_index + 1}/${items.length}`}
+                aria-roledescription="slide">
+                <CalculatorPresetCarouselItem
+                    {..._item}
+                    loading={_index > 5 ? "lazy" : "eager"} />
+            </div>
+        ))}
+    </div>
+
+    <CalculatorPresetCarouselNav ariaControls={ITEMS_CONTAINER_ID} />
+</section>
+
+<style lang="scss" is:global>
+    .calculator-preset-carousel {
+        --_container-max-inline-size: var(--container-inline-size);
+        --_container-padding-inline: var(--container-padding-inline);
+        --_item-gap: calc(var(--vh-spacer) * .5);
+        --_item-count: 3.10;
+        --_total-gap-between-items: (var(--_item-count) - 1) * var(--_item-gap);
+        --_container-actual-inline-size: var(--_container-max-inline-size) - (var(--_container-padding-inline) * 2);
+        --_safe-inline-size-for-items: var(--_container-actual-inline-size) - var(--_total-gap-between-items);
+        --_item-inline-size: round(up, calc((var(--_safe-inline-size-for-items)) / var(--_item-count)), 1px);
+        position: relative;
+        z-index: 1;
+        &-items {
+            display: flex;
+            flex-flow: row nowrap;
+            gap: var(--_item-gap);
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            padding-block: calc(var(--vh-spacer) * .25);
+            margin-block: calc((var(--vh-spacer) * .25) * -1);
+            scroll-padding-inline: var(--_container-padding-inline);
+            padding-inline: var(--_container-padding-inline);
+            @include vh-js-enabled {
+                @include vh-hide-scrollbar
+            }
+            @include vh-media-breakpoint-up(sm) {
+                scroll-padding-inline: calc(((100vw - var(--_container-actual-inline-size)) / 2) + (var(--_container-padding-inline) / 2));
+                padding-inline: calc(((100vw - var(--_container-actual-inline-size)) / 2) + (var(--_container-padding-inline) / 2))
+            }
+            @include vh-hover {
+                scroll-snap-type: x mandatory
+            }
+        }
+        .item {
+            position: relative;
+            z-index: 1;
+            flex-grow: 0;
+            flex-shrink: 0;
+            min-inline-size: 320px;
+            flex-basis: calc(100% - (var(--vh-spacer) * 2));
+            @include vh-media-breakpoint-down(md) {
+                &:only-child {
+                    flex-basis: 100%
+                }
+            }
+            @include vh-media-breakpoint-up(md) {
+                min-inline-size: unset;
+                flex-basis: var(--_item-inline-size)
+            }
+            @include vh-hover {
+                scroll-snap-align: center;
+                @include vh-media-breakpoint-up(md) {
+                    scroll-snap-align: start
+                }
+            }
+        }
+    }
+</style>
+
+<script>
+    /**
+     * Since we cannot pass Astro's variables to bundled `<script />` tags,
+     * I need to update two different locations for the IDs
+     * https://docs.astro.build/en/reference/directives-reference/#definevars
+     */
+    const ROOT_ID = "calculator-preset-carousel";
+
+    const BUTTON_STATE_UPDATE_DEBOUNCE_TIMEOUT_IN_MS = 50;
+    const ITEM_PER_MOVE = 2;
+
+    const carouselEl = document.querySelector(`#${ROOT_ID}`) as HTMLDivElement;
+    const scrollContainerEl = carouselEl.querySelector("[data-scroll-container]") as HTMLDivElement;
+    const prevButtonEl = carouselEl.querySelector("[data-prev-button]") as HTMLButtonElement;
+    const nextButtonEl = carouselEl.querySelector("[data-next-button]") as HTMLButtonElement;
+
+    // Every unit of measurement is in pixels
+    let gap = 0;
+    let childWidth = 0;
+    let maxScroll = 0;
+
+    const calculateDimensions = (): void => {
+        gap = Number.parseInt(getComputedStyle(scrollContainerEl).gap, 10) || 0;
+        childWidth = (scrollContainerEl.firstElementChild as HTMLDivElement).offsetWidth + gap;
+        maxScroll = scrollContainerEl.scrollWidth - scrollContainerEl.clientWidth;
+    };
+
+    const updateButtonStates = (): void => {
+        prevButtonEl.disabled = scrollContainerEl.scrollLeft <= 0;
+        nextButtonEl.disabled = scrollContainerEl.scrollLeft >= maxScroll;
+    };
+
+    let scrollTimeout: ReturnType<typeof setTimeout> | null = null;
+    const updateButtonStatesDebounced = (): void => {
+        if (scrollTimeout !== null) {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = null;
+        }
+        scrollTimeout = setTimeout(updateButtonStates, BUTTON_STATE_UPDATE_DEBOUNCE_TIMEOUT_IN_MS);
+    };
+
+    const scrollByAmount = (amount: number): void => {
+        const targetScroll = Math.min(
+            Math.max(scrollContainerEl.scrollLeft + amount, 0),
+            maxScroll
+        );
+        scrollContainerEl.scrollTo({
+            left: targetScroll,
+            behavior: "smooth"
+        });
+    };
+
+    scrollContainerEl.addEventListener("scroll", updateButtonStatesDebounced, { passive: true });
+    prevButtonEl.addEventListener("click", () => scrollByAmount(-childWidth * ITEM_PER_MOVE));
+    nextButtonEl.addEventListener("click", () => scrollByAmount(childWidth * ITEM_PER_MOVE));
+
+    new ResizeObserver(() => {
+        calculateDimensions();
+        updateButtonStates();
+    }).observe(scrollContainerEl);
+
+    calculateDimensions();
+    updateButtonStates();
+</script>

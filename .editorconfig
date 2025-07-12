@@ -10,3 +10,6 @@ trim_trailing_whitespace = true
 
 [*.svg]
 insert_final_newline = false
+
+[public/sw.js]
+insert_final_newline = false

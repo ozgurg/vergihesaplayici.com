@@ -1,0 +1,29 @@
+---
+import DefaultLayout from "@/layouts/default-layout.astro";
+import PageHeader from "@/components/common/page-header.vue";
+import Container from "@/components/common/container.vue";
+import Breadcrumbs from "@/components/common/breadcrumbs.vue";
+import Heading1 from "@/components/common/heading-1.vue";
+import CalculatorsGrid from "@/components/calculators-grid.vue";
+
+import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
+
+const hesaplayicilarPage = HesaplayicilarPageDef();
+---
+
+<DefaultLayout head={hesaplayicilarPage.head}>
+    <PageHeader>
+        <Container>
+            <Breadcrumbs
+                items={hesaplayicilarPage.breadcrumbs}
+                client:load />
+            <Heading1>
+                {hesaplayicilarPage.title}
+            </Heading1>
+        </Container>
+    </PageHeader>
+
+    <Container>
+        <CalculatorsGrid />
+    </Container>
+</DefaultLayout>

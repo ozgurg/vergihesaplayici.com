@@ -1,0 +1,88 @@
+---
+import type { Head } from "@/types/common.js";
+
+export type Props = {
+    head: Head;
+};
+const { head } = Astro.props;
+
+const TITLE = head.title ? `${head.title} - Vergi Hesaplayıcı` : "Vergi Hesaplayıcı";
+const DESCRIPTION = head.description;
+const THEME_COLOR = "#88df95";
+const BASE_URL = siteUrl();
+const PAGE_URL = head.canonicalUrl;
+const OG_IMAGE = head.ogImageUrl ?? staticSiteUrl("/og/ana-sayfa.jpg");
+const MANIFEST_JSON = staticUrl("/manifest.json");
+---
+
+<meta charset="UTF-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5" />
+<title>{TITLE}</title>
+
+<meta name="description" content={DESCRIPTION} />
+
+<meta name="format-detection" content="telephone=no" />
+<meta name="robots" content="index, follow" />
+<meta itemprop="url" content={BASE_URL.href} />
+
+<base href={BASE_URL.href} />
+<link href={PAGE_URL.href} rel="canonical" />
+
+<link rel="alternate" href={PAGE_URL.href} hreflang="x-default" />
+<link rel="alternate" href={PAGE_URL.href} hreflang="tr" />
+
+<meta name="theme-color" content={THEME_COLOR} />
+<link rel="manifest" href={MANIFEST_JSON.href} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content={TITLE} />
+<meta name="twitter:title" content={TITLE} />
+<meta name="twitter:description" content={DESCRIPTION} />
+<meta name="twitter:url" content={PAGE_URL.href} />
+<meta name="twitter:image" content={OG_IMAGE.href} />
+<meta name="twitter:image:alt" content={TITLE} />
+
+<meta name="author" content={TITLE} />
+<meta property="og:title" content={TITLE} />
+<meta property="og:site_name" content={TITLE} />
+<meta property="og:description" content={DESCRIPTION} />
+<meta property="og:url" content={PAGE_URL.href} />
+<meta property="og:type" content="website" />
+<meta property="og:image" content={OG_IMAGE.href} />
+<meta property="og:locale" content="TR" />
+
+<link href={staticUrl("/pwa/favicon.jpg")} rel="shortcut icon" type="image/x-icon" />
+<link href={staticUrl("/pwa/favicon.jpg")} rel="icon" type="image/x-icon" />
+<link rel="icon" type="image/png" sizes="196x196" href={staticUrl("/pwa/favicon.jpg")} />
+
+<link rel="sitemap" href={staticUrl("/sitemap-index.xml")} />
+
+<meta name="msapplication-navbutton-color" content={THEME_COLOR} />
+<!--<meta name="msapplication-square70x70logo" content={imgUrl("/pwa/mstile-icon-128.png")} />
+<meta name="msapplication-square150x150logo" content={imgUrl("/pwa/mstile-icon-270.png")} />
+<meta name="msapplication-square310x310logo" content={imgUrl("/pwa/mstile-icon-558.png")} />
+<meta name="msapplication-wide310x150logo" content={imgUrl("/pwa/mstile-icon-558-270.png")} /> -->
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="msapplication-TileColor" content={THEME_COLOR} />
+<!-- <meta name="msapplication-TileImage" content={imgUrl("/pwa/mstile-icon-558.png")} /> -->
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content={TITLE} />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+<script is:inline define:vars={{ serviceWorkerUrl: staticUrl("/sw.js") }}>
+    if ("serviceWorker" in globalThis.navigator) {
+        globalThis.addEventListener("load", () => {
+            globalThis.navigator.serviceWorker.register(serviceWorkerUrl);
+        });
+    }
+</script>
+
+<script>
+    if (import.meta.env.PROD) {
+        // oxlint-disable-next-line import/no-unassigned-import
+        import("@/integrations/firebase.js");
+    }
+</script>

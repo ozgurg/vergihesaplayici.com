@@ -1,4 +1,0 @@
-Contact: https://github.com/ozgurg/vergihesaplayici.com/issues/new
-Expires: 2035-12-30T21:00:00.000Z
-Preferred-Languages: en, tr
-Policy: https://github.com/ozgurg/vergihesaplayici.com/blob/main/.github/SECURITY.md

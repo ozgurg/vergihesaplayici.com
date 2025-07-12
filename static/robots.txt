@@ -1,5 +1,0 @@
-user-agent: *
-disallow: /*?
-disallow: /public/static/*
-disallow: /_nuxt/*
-disallow: /*.html$

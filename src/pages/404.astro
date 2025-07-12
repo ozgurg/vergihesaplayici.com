@@ -1,0 +1,43 @@
+---
+import DefaultLayout from "@/layouts/default-layout.astro";
+import PageHeader from "@/components/common/page-header.vue";
+import Container from "@/components/common/container.vue";
+import Heading1 from "@/components/common/heading-1.vue";
+import RichText from "@/components/common/rich-text.vue";
+import DwightSchruteVideo from "@/components/dwight-schrute-video.vue";
+
+import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
+
+const anaSayfaPage = AnaSayfaPageDef();
+---
+
+<DefaultLayout head={anaSayfaPage.head}>
+    <PageHeader>
+        <Container>
+            <Heading1>
+                Hata falan mı oldu, bir şey oldu sanki…
+            </Heading1>
+        </Container>
+    </PageHeader>
+
+    <Container>
+        <RichText
+            is="section"
+            class="text">
+            <p>…ama bu aramızda kalabilir ¯\_(ツ)_/¯</p>
+            <DwightSchruteVideo client:idle />
+        </RichText>
+    </Container>
+</DefaultLayout>
+
+<style lang="scss">
+    .heading-1 {
+        padding-block-start: var(--breadcrumbs-block-size)
+    }
+
+    .text {
+        @include vh-media-breakpoint-down(md) {
+            text-align: center
+        }
+    }
+</style>
