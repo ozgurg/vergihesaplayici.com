@@ -48,6 +48,16 @@ At first, I tried to do this in the browser, and it worked. But Astro builds run
 libraries didn't work properly there. I found some libraries that worked in Node but not in the browser, so the final
 solution is a bit hacky, but it works for now.
 
+### Presets
+
+The Telefon Vergisi Hesaplayıcı and Konsol Vergisi Hesaplayıcı have presets. Every day, a new phone is announced.
+Currently, I'm only adding flagship phones from Apple and Samsung. Apple is the main focus because, according to
+analytics, none of this site's users really care about Samsung. I'll only add Samsung phones if I need to or if they
+voluntarily pay me to do it. 💀
+
+Also, the presets include prices that are manually updated. So, don't expect precision. These calculations only provide
+information about taxes.
+
 ### SVG Cache
 
 I tested a new approach for managing SVGs by grouping them all inside one `<svg />` as `<symbol />` elements and
@@ -57,6 +67,12 @@ used once, this actually increases the HTML size.)
 I built a simple Map cache in `svg-cache.ts` to store SVGs, make symbols, and add them to the end of `<body />`. It
 works in theory, but with Vue components using `client:load` on many pages, the cache breaks. So I commented this part
 out for now until I find a better way.
+
+### Exchange Rates
+
+I prefer free exchange rate services that do not require an API key. Free APIs are not precise, but since the calculator
+on this site is not financially critical, precision is not that important. Exchange rates are fetched during the build
+process.
 
 ### Tests
 
