@@ -1,61 +1,55 @@
 <template>
     <div class="tax-item">
-        <div class="tax-item-name">
-            <form-group>
-                <template #label>
-                    <form-label is="legend">
-                        Vergi adı<small>&nbsp;–&nbsp;isteğe bağlı</small>
-                    </form-label>
-                </template>
-                <form-control
-                    v-model="props.taxItem.name"
-                    :placeholder="props.taxItem.placeholder"
-                    scale="small" />
-            </form-group>
-        </div>
+        <form-group>
+            <template #label>
+                <form-label is="legend">
+                    Vergi adı<small>&nbsp;–&nbsp;isteğe bağlı</small>
+                </form-label>
+            </template>
+            <form-control
+                v-model="props.taxItem.name"
+                :placeholder="props.taxItem.placeholder"
+                scale="small" />
+        </form-group>
 
-        <div class="tax-item-rate">
+        <div class="tax-item-second-row">
             <form-group label="Oran">
                 <form-control-number
                     v-model="props.taxItem.rate"
                     :required="true"
                     scale="small" />
             </form-group>
-        </div>
 
-        <div class="tax-item-rate-type">
             <form-group label="Oran tipi">
                 <vergini-olustur-form-tax-item-rate-type-selector
                     v-model="props.taxItem.rateType"
                     :required="true"
                     scale="small" />
             </form-group>
+
+            <div>
+                <transition name="fade-transition" mode="out-in">
+                    <template v-if="props.taxItem.rateType === RateType.UNIT">
+                        <form-group label="Para birimi">
+                            <form-select-currency
+                                v-model="props.taxItem.rateTypeUnitCurrency"
+                                :EXCHANGE_RATES="props.EXCHANGE_RATES"
+                                :required="true"
+                                scale="small" />
+                        </form-group>
+                    </template>
+                </transition>
+            </div>
         </div>
 
-        <div class="tax-item-rate-type-unit-currency">
-            <transition name="fade-transition" mode="out-in">
-                <template v-if="props.taxItem.rateType === RateType.UNIT">
-                    <form-group label="Para birimi">
-                        <form-select-currency
-                            v-model="props.taxItem.rateTypeUnitCurrency"
-                            :EXCHANGE_RATES="props.EXCHANGE_RATES"
-                            :required="true"
-                            scale="small" />
-                    </form-group>
-                </template>
-            </transition>
-        </div>
-
-        <div class="tax-item-base-amount-mode">
+        <div class="tax-item-third-row">
             <form-group label="Baz alınacak tutar">
                 <vergini-olustur-form-tax-item-base-amount-mode-selector
                     v-model="props.taxItem.baseAmountMode"
                     :required="true"
                     scale="small" />
             </form-group>
-        </div>
 
-        <div class="tax-item-actions">
             <form-group label="">
                 <vergini-olustur-form-tax-item-action-buttons
                     v-model:is-delete-mode="isDeleteMode"
@@ -84,37 +78,40 @@ const emit = defineEmits<Events>();
 
 <style lang="scss" scoped>
 .tax-item {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     gap: var(--vh-spacer);
-    grid-template-areas:
-        "name name name"
-        "rate rate-type rate-type-unit-currency"
-        "base-amount-mode actions actions";
-    padding: var(--vh-spacer);
-    padding-block-start: calc(var(--vh-spacer) * 1.25);
-    border-radius: calc(var(--vh-spacer) + var(--vh-br-normal));
-    margin-inline: calc(var(--vh-spacer) * -1);
-    border: var(--vh-border-inline-size) solid hsla(var(--vh-clr-border-hsl), var(--vh-clr-border-alpha));
-    &-name {
-        grid-area: name
+    padding-block: var(--vh-spacer);
+    padding-inline: var(--container-padding-inline);
+    margin-inline: calc(var(--container-padding-inline) * -1);
+    @include vh-media-breakpoint-down(sm) {
+        &:nth-child(odd) {
+            background-color: hsla(var(--vh-clr-white-hsl), .04)
+        }
     }
-    &-rate {
-        grid-area: rate
+    @include vh-media-breakpoint-up(sm) {
+        padding-inline: var(--vh-spacer);
+        padding-block: calc(var(--vh-spacer) * 1.5);
+        margin-inline: calc(var(--vh-spacer) * -1);
+        border-radius: calc(var(--vh-spacer) + var(--vh-br-normal));
+        border: var(--vh-border-inline-size) solid hsla(var(--vh-clr-border-hsl), var(--vh-clr-border-alpha));
+        &:nth-child(even) {
+            background-color: hsla(var(--vh-clr-white-hsl), .02)
+        }
     }
-    &-rate-type {
-        grid-area: rate-type
+    &-second-row {
+        display: flex;
+        flex-direction: row;
+        gap: inherit;
+        & > * {
+            flex: 1
+        }
     }
-    &-rate-type-unit-currency {
-        grid-area: rate-type-unit-currency
-    }
-    &-base-amount-mode {
-        grid-area: base-amount-mode
-    }
-    &-actions {
-        grid-area: actions;
-        text-align: end
+    &-third-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: inherit
     }
 }
 </style>
