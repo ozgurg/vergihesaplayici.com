@@ -11,6 +11,8 @@
 
 import type { Props as AlertProps } from "@/components/common/alert.vue";
 
+const DECIMAL_PLACES = 1;
+
 export type Props = {
     price: number;
 } & AlertProps;
@@ -18,18 +20,23 @@ export type Props = {
 const props = defineProps<Props>();
 const MINIMUM_WAGE_GROSS_MONTHLY = inject("MINIMUM_WAGE_GROSS_MONTHLY", 22_104.67); // Source: https://www.csgb.gov.tr/tr/poco-pages/asgari-ucret/
 
+const roundToDecimalPlaces = (value: number) => {
+    const factor = 10 ** DECIMAL_PLACES;
+    return Math.round(value * factor) / factor;
+};
+
 const wageDurationSummary = computed<string>(() => {
-    const yearCount = Math.floor(props.price / (MINIMUM_WAGE_GROSS_MONTHLY * 12));
+    const yearCount = roundToDecimalPlaces(props.price / (MINIMUM_WAGE_GROSS_MONTHLY * 12));
     if (yearCount >= 1) {
         return `${yearCount} yıllık`;
     }
 
-    const monthCount = Math.floor(props.price / MINIMUM_WAGE_GROSS_MONTHLY);
+    const monthCount = roundToDecimalPlaces(props.price / MINIMUM_WAGE_GROSS_MONTHLY);
     if (monthCount >= 1) {
         return `${monthCount} aylık`;
     }
 
-    const dayCount = Math.floor(props.price / (MINIMUM_WAGE_GROSS_MONTHLY / 30));
+    const dayCount = roundToDecimalPlaces(props.price / (MINIMUM_WAGE_GROSS_MONTHLY / 30));
     return `${dayCount} günlük`;
 });
 </script>
