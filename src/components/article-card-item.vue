@@ -47,7 +47,7 @@ const readableDate = props.date.toLocaleDateString("tr-TR");
 .article-card-item {
     block-size: 100%;
     @include vh-media-breakpoint-down(sm) {
-        &:nth-child(even) a {
+        &:nth-child(odd) a {
             background-color: hsla(var(--vh-clr-white-hsl), .04)
         }
     }
