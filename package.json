@@ -18,7 +18,7 @@
     "dependencies": {
         "@fontsource-variable/inter": "5.2.6",
         "@fontsource-variable/roboto-mono": "5.2.6",
-        "astro": "5.11.0",
+        "astro": "5.12.0",
         "firebase": "11.10.0",
         "html-to-image": "1.11.13",
         "remixicon": "4.6.0",
@@ -38,7 +38,7 @@
         "husky": "9.1.7",
         "jsdom": "26.1.0",
         "lint-staged": "16.1.2",
-        "oxlint": "1.6.0",
+        "oxlint": "1.7.0",
         "sass": "1.89.2",
         "satori": "0.15.2",
         "satori-html": "0.3.2",
@@ -49,7 +49,7 @@
         "vitest": "3.2.4"
     },
     "peerDependencies": {
-        "firebase-tools": "14.10.1"
+        "firebase-tools": "14.11.0"
     },
     "engines": {
         "node": ">=22.0.0"
