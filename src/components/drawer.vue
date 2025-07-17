@@ -31,6 +31,7 @@ const props = defineProps<Props>();
     z-index: calc(var(--header-zindex) - 1);
     inset-inline: 0;
     inset-block-end: 0;
+    padding-block-end: env(safe-area-inset-bottom);
     inline-size: 100%;
     block-size: 100dvh;
     background: var(--vh-clr-body-bg);
