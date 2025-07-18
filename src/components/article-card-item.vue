@@ -6,13 +6,24 @@
         <a
             :href="props.url.href"
             itemprop="url">
-            <time
-                :datetime="timeDateTimeAttr"
-                :content="timeContentAttr"
-                itemprop="datePublished"
-                class="date">
-                {{ readableDate }}
-            </time>
+            <div class="meta">
+                <time
+                    :datetime="timeDateTimeAttr"
+                    :content="timeContentAttr"
+                    itemprop="datePublished"
+                    class="meta-date">
+                    {{ readableDate }}
+                </time>
+                •
+                <span
+                    :itemscope="true"
+                    itemprop="author"
+                    itemtype="https://schema.org/Person"
+                    class="meta-author">
+                    <span itemprop="name">vergihesaplayici.com</span>
+                    <meta :content="authorUrl.href" itemprop="url" />
+                </span>
+            </div>
             <h2 class="title">
                 <span itemprop="headline">{{ props.title }}</span>
                 <svg-icon :icon="icon_chevronRight" />
@@ -41,6 +52,7 @@ const props = defineProps<Props>();
 const timeDateTimeAttr = props.date.toISOString().split("T")[0]; // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time#valid_datetime_values
 const timeContentAttr = props.date.toISOString(); // https://developers.google.com/search/docs/appearance/structured-data/article#article-types
 const readableDate = props.date.toLocaleDateString("tr-TR");
+const authorUrl = siteUrl();
 </script>
 
 <style lang="scss" scoped>
@@ -64,13 +76,21 @@ const readableDate = props.date.toLocaleDateString("tr-TR");
             margin-inline: calc(var(--container-padding-inline) * -1)
         }
     }
-    .date {
+    .meta {
+        margin-block-end: calc(var(--vh-spacer) * .5);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1ch;
         font-size: var(--vh-fs-sm);
-        font-weight: var(--vh-fw-medium);
         line-height: var(--vh-lh-lg);
-        display: block;
-        color: hsl(var(--vh-clr-primary-h), var(--vh-clr-primary-s), 85%);
-        margin-block-end: calc(var(--vh-spacer) * .5)
+        &-date {
+            font-weight: var(--vh-fw-medium);
+            color: hsl(var(--vh-clr-primary-h), var(--vh-clr-primary-s), 85%)
+        }
+        &-author {
+            color: hsl(var(--vh-clr-white-h), var(--vh-clr-white-s), 85%)
+        }
     }
     .title {
         text-wrap: pretty;
