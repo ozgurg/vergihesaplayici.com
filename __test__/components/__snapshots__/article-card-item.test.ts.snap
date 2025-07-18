@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`components/article-card-item.vue > renders card correctly 1`] = `
-"<article data-v-fcd2fd17="" itemscope="" itemtype="https://schema.org/NewsArticle" class="article-card-item"><a data-v-fcd2fd17="" href="https://vergihesaplayici.com/" itemprop="url"><time data-v-fcd2fd17="" datetime="2025-01-01" content="2025-01-01T00:00:00.000Z" itemprop="datePublished" class="date">01.01.2025</time><h2 data-v-fcd2fd17="" class="title"><span data-v-fcd2fd17="" itemprop="headline">Test Title</span><i data-v-9e7465ed="" data-v-fcd2fd17="" aria-hidden="true" class="svg-icon"><!--
+"<article data-v-fcd2fd17="" itemscope="" itemtype="https://schema.org/NewsArticle" class="article-card-item"><a data-v-fcd2fd17="" href="https://vergihesaplayici.com/" itemprop="url"><div data-v-fcd2fd17="" class="meta"><time data-v-fcd2fd17="" datetime="2025-01-01" content="2025-01-01T00:00:00.000Z" itemprop="datePublished" class="meta-date">01.01.2025</time> • <span data-v-fcd2fd17="" itemscope="" itemprop="author" itemtype="https://schema.org/Person" class="meta-author"><span data-v-fcd2fd17="" itemprop="name">vergihesaplayici.com</span><meta data-v-fcd2fd17="" content="https://vergihesaplayici.com/" itemprop="url"></span></div><h2 data-v-fcd2fd17="" class="title"><span data-v-fcd2fd17="" itemprop="headline">Test Title</span><i data-v-9e7465ed="" data-v-fcd2fd17="" aria-hidden="true" class="svg-icon"><!--
     In \`DEV\` mode, when using \`<use />\` with \`<svg />\`s, Astro fails to load the SVGs properly on the initial load.
     To avoid this issue, I bypass the cache reading in \`DEV\` mode by directly rendering the SVG with \`<svg-fragment />\`.
     --><!--
