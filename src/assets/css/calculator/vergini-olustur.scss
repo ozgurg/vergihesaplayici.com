@@ -41,6 +41,7 @@
 }
 
 .tax-items {
+    counter-reset: tax-item-count;
     margin-block-end: var(--vh-spacer);
     display: flex;
     flex-direction: column;
