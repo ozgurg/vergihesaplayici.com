@@ -56,6 +56,8 @@
                     @click:delete="emit('click:delete')" />
             </form-group>
         </div>
+
+        <div class="tax-item-count"></div>
     </div>
 </template>
 
@@ -78,6 +80,8 @@ const emit = defineEmits<Events>();
 
 <style lang="scss" scoped>
 .tax-item {
+    position: relative;
+    counter-increment: tax-item-count;
     display: flex;
     flex-direction: column;
     gap: var(--vh-spacer);
@@ -112,6 +116,29 @@ const emit = defineEmits<Events>();
         flex-direction: row;
         justify-content: space-between;
         gap: inherit
+    }
+    &-count {
+        position: absolute;
+        background: hsla(var(--vh-clr-border-hsl), var(--vh-clr-border-alpha));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: calc(var(--vh-spacer) * 2);
+        height: calc(var(--vh-spacer) * 2);
+        line-height: calc(var(--vh-spacer) * 2);
+        font-weight: var(--vh-fw-bold);
+        font-size: var(--vh-fs-base);
+        border-radius: var(--vh-br-pill);
+        @include vh-text-number;
+        inset-inline-end: var(--vh-spacer);
+        inset-block-start: calc(var(--vh-spacer) * .25);
+        @include vh-media-breakpoint-up(sm) {
+            inset-block-start: calc(var(--vh-spacer) * .625)
+        }
+        &::before {
+            content: counter(tax-item-count)
+        }
     }
 }
 </style>
