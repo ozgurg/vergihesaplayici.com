@@ -8,7 +8,7 @@ const { head } = Astro.props;
 
 const TITLE = head.title ? `${head.title} - Vergi Hesaplayıcı` : "Vergi Hesaplayıcı";
 const DESCRIPTION = head.description;
-const THEME_COLOR = "#88df95";
+const THEME_COLOR = "#111912"; // Calculated start color of `page-header`s linear-gradient
 const BASE_URL = siteUrl();
 const PAGE_URL = head.canonicalUrl;
 const OG_IMAGE = head.ogImageUrl ?? staticSiteUrl("/og/ana-sayfa.jpg");
