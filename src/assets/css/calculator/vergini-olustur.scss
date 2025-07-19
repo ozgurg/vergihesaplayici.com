@@ -45,7 +45,9 @@
     margin-block-end: var(--vh-spacer);
     display: flex;
     flex-direction: column;
-    gap: calc(var(--vh-spacer) * .75)
+    @include vh-media-breakpoint-up(sm) {
+        gap: calc(var(--vh-spacer) * .75)
+    }
 }
 
 .list-transition {
