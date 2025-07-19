@@ -14,7 +14,10 @@
 
                 <div>
                     <form-group label="Vergi kalemleri">
-                        <div class="tax-items">
+                        <transition-group
+                            name="list-transition"
+                            tag="div"
+                            class="tax-items">
                             <template v-for="[_id, _taxItem] in form.taxItems" :key="_id">
                                 <vergini-olustur-form-tax-item
                                     v-model:is-delete-mode="isDeleteMode"
@@ -22,7 +25,7 @@
                                     :tax-item="_taxItem"
                                     :EXCHANGE_RATES="props.EXCHANGE_RATES" />
                             </template>
-                        </div>
+                        </transition-group>
                     </form-group>
                     <form-button
                         @click="addTaxItem()"

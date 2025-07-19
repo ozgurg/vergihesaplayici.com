@@ -46,3 +46,26 @@
     flex-direction: column;
     gap: calc(var(--vh-spacer) * .75)
 }
+
+.list-transition {
+    &-enter-active,
+    &-leave-active {
+        transition: vh-transition(transform, var(--vh-duration-longer), var(--vh-timing-spring)), vh-transition(opacity, var(--vh-duration-longer))
+    }
+    &-enter-from {
+        transform: translateX(-4rem);
+        opacity: 0
+    }
+    &-enter-to {
+        transform: translateX(0);
+        opacity: 1
+    }
+    &-leave-from {
+        transform: translateX(0);
+        opacity: 1
+    }
+    &-leave-to {
+        transform: translateX(4rem);
+        opacity: 0
+    }
+}
