@@ -31,7 +31,6 @@ const props = defineProps<Props>();
     z-index: calc(var(--header-zindex) - 1);
     inset-inline: 0;
     inset-block-end: 0;
-    padding-block-end: env(safe-area-inset-bottom);
     inline-size: 100%;
     block-size: 100dvh;
     background: var(--vh-clr-body-bg);
@@ -51,7 +50,7 @@ const props = defineProps<Props>();
         gap: var(--_gap);
         scrollbar-width: thin;
         padding-block-start: calc(var(--header-down-md-block-size) + (var(--_padding-y)));
-        padding-block-end: var(--_padding-y)
+        padding-block-end: calc(env(safe-area-inset-bottom) + var(--_padding-y))
     }
     .calculator-card-item {
         flex-shrink: 0;
