@@ -92,7 +92,8 @@ onUnmounted(_destroyObservers);
         opacity: 0;
         padding-block: $padding-block;
         inset-inline: 0;
-        inset-block-end: env(safe-area-inset-bottom);
+        inset-block-end: 0;
+        padding-block-end: env(safe-area-inset-bottom);
         inline-size: 100%;
         &::after {
             position: absolute;

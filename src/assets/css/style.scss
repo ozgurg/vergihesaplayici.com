@@ -7,8 +7,6 @@
 @import "./_plugins.scss";
 
 html {
-    background: var(--vh-clr-body-bg);
-
     scroll-padding-block-start: calc(var(--header-down-md-block-size) + var(--vh-spacer));
     @include vh-media-breakpoint-up(md) {
         scroll-padding-block-start: calc(var(--header-up-md-expanded-block-size) + var(--vh-spacer))
