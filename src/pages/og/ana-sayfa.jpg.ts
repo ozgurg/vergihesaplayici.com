@@ -44,6 +44,10 @@ export const GET: APIRoute = async (): Promise<Response> => {
                 flex: 1
             }
 
+            .og-image-body img {
+                height: 80px
+            }
+
             .og-image-footer {
                 display: flex;
                 align-items: center;
@@ -58,10 +62,7 @@ export const GET: APIRoute = async (): Promise<Response> => {
         <div class="og-image">
             <div class="debug"></div>
             <div class="og-image-body">
-                <!-- DO NOT ADD width -->
-                <img
-                    src="${logoSvgBase64}"
-                    height="80" />
+                <img src="${logoSvgBase64}" />
             </div>
             <div class="og-image-footer"></div>
         </div>
