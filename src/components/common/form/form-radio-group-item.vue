@@ -76,6 +76,7 @@ $_scales: (
     flex-flow: column wrap;
     justify-content: center;
     min-block-size: var(--_min-block-size);
+    padding-block: calc(var(--vh-spacer) * .75);
     padding-inline-start: var(--vh-spacer);
     padding-inline-end: calc(var(--vh-spacer) + (var(--vh-spacer) * .75));
     @include vh-card($hover: true, $active: true);
