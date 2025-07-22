@@ -61,6 +61,10 @@ export const GET: APIRoute = async (): Promise<Response> => {
                 background: rgba(0, 0, 0, .25)
             }
 
+            .og-image-footer img {
+                height: 38px
+            }
+
             .icon {
                 padding: 16px;
                 border-radius: 50rem;
@@ -92,10 +96,7 @@ export const GET: APIRoute = async (): Promise<Response> => {
                 <div class="title">${page.title.replace("ş", "s")}</div>
             </div>
             <div class="og-image-footer">
-                <!-- DO NOT ADD width -->
-                <img
-                    src="${logoSvgBase64}"
-                    height="38" />
+                <img src="${logoSvgBase64}" />
             </div>
         </div>
     `);
