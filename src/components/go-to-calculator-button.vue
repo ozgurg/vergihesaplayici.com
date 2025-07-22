@@ -17,9 +17,9 @@
 import type { HtmlAttrs_div } from "@/types/html.js";
 
 const MD_BREAKPOINT_MAX_WIDTH_IN_PIXELS = 800;
-const VISIBLE_THRESHOLD_RATIO = .5;
+const VISIBLE_THRESHOLD_RATIO = .75;
 // oxlint-disable-next-line no-magic-numbers
-const OBSERVER_THRESHOLDS = [0, .5, 1];
+const OBSERVER_THRESHOLDS = [0, .75, 1];
 
 export type Props = {
     calculatorContainer: HTMLElement;
