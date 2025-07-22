@@ -17,9 +17,9 @@
 import type { HtmlAttrs_div } from "@/types/html.js";
 
 const MD_BREAKPOINT_MAX_WIDTH_IN_PIXELS = 800;
-const VISIBLE_THRESHOLD_RATIO = .5;
+const VISIBLE_THRESHOLD_RATIO = .75;
 // oxlint-disable-next-line no-magic-numbers
-const OBSERVER_THRESHOLDS = [0, .5, 1];
+const OBSERVER_THRESHOLDS = [0, .75, 1];
 
 export type Props = {
     calculatorContainer: HTMLElement;
@@ -82,18 +82,18 @@ onUnmounted(_destroyObservers);
         display: none
     }
     @include vh-media-breakpoint-down(md) {
-        $padding-block: calc(var(--vh-spacer) * .75);
+        --_padding-block: calc(var(--vh-spacer) * .75);
         position: fixed;
         z-index: 10;
         display: block;
-        transition: vh-transition(visibility opacity transform, var(--vh-duration-longer));
+        transition: vh-transition(transform visibility, var(--vh-duration-longer));
         transform: translateY(100%);
+        visibility: hidden;
         pointer-events: none;
-        opacity: 0;
-        padding-block: $padding-block;
+        padding-block-start: var(--_padding-block);
+        padding-block-end: calc(env(safe-area-inset-bottom) + var(--_padding-block));
         inset-inline: 0;
         inset-block-end: 0;
-        padding-block-end: env(safe-area-inset-bottom);
         inline-size: 100%;
         &::after {
             position: absolute;
@@ -107,17 +107,17 @@ onUnmounted(_destroyObservers);
         }
         &[aria-hidden="false"] {
             transform: translateY(0);
+            visibility: visible;
             pointer-events: all;
-            opacity: 1;
             button {
                 transform: translateY(0);
                 opacity: 1
             }
         }
         button {
-            transition: vh-transition(opacity transform, var(--vh-duration-long), var(--vh-timing-spring));
-            transition-delay: .1s;
-            transform: translateY(calc(100% + #{$padding-block}));
+            transition: vh-transition(transform opacity, var(--vh-duration-long), var(--vh-timing-spring));
+            transition-delay: .15s;
+            transform: translateY(calc(100% + (var(--_padding-block) * 2)));
             opacity: 0
         }
     }
