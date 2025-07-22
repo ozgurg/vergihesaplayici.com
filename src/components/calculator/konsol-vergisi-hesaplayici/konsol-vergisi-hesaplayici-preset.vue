@@ -59,9 +59,11 @@
         </template>
     </container>
 
-    <go-to-calculator-button
-        :calculator-container="formEl!"
-        :results-container="resultsEl!" />
+    <template v-if="PRESET_OPTIONS.length > 1">
+        <go-to-calculator-button
+            :calculator-container="formEl!"
+            :results-container="resultsEl!" />
+    </template>
 </template>
 
 <script lang="ts" setup>
