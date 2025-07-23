@@ -27,6 +27,9 @@
         }
     }
     & > *:last-child {
+        display: flex;
+        flex-direction: column;
+        gap: calc(var(--vh-spacer) * .5);
         @include vh-media-breakpoint-down(md) {
             order: 1
         }

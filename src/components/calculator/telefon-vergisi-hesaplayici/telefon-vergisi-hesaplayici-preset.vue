@@ -52,14 +52,18 @@
                             }" />
                     </inner-container>
 
-                    <transition name="fade-transition" mode="out-in">
-                        <template v-if="form.currency === 'TRY'">
-                            <reverse-calculation-alert />
-                        </template>
-                        <template v-else>
-                            <estimated-calculation-alert />
-                        </template>
-                    </transition>
+                    <div>
+                        <calculator-last-update-alert :date="LAST_UPDATE" />
+
+                        <transition name="fade-transition" mode="out-in">
+                            <template v-if="form.currency === 'TRY'">
+                                <reverse-calculation-alert />
+                            </template>
+                            <template v-else>
+                                <estimated-calculation-alert />
+                            </template>
+                        </transition>
+                    </div>
                 </div>
             </div>
         </template>
@@ -85,6 +89,7 @@ import type {
 } from "@/domains/telefon-vergisi-hesaplayici/types.js";
 import type { ExchangeRates } from "@/types/common.js";
 import { calculateResults } from "@/domains/telefon-vergisi-hesaplayici/utils/calculate-results.js";
+import { LAST_UPDATE } from "@/domains/telefon-vergisi-hesaplayici/config.js";
 
 export type Props = {
     EXCHANGE_RATES: ExchangeRates;
