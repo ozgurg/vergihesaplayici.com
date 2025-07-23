@@ -66,30 +66,24 @@ export default defineConfig({
                     item.changefreq = EnumChangefreq.MONTHLY;
                     item.lastmod = LAST_MODIFIED_DATE;
                     item.priority = .6;
-                }
-
-                if (/hesaplayicilar/.test(item.url)) {
+                } else if (/hesaplayicilar/.test(item.url)) {
                     item.changefreq = EnumChangefreq.MONTHLY;
                     item.lastmod = LAST_MODIFIED_DATE;
                     item.priority = .7;
-                }
-
-                if (/kdv-hesaplayici/.test(item.url) || /vergini-olustur/.test(item.url)) {
+                } else if (/kdv-hesaplayici/.test(item.url) || /vergini-olustur/.test(item.url)) {
                     item.changefreq = EnumChangefreq.MONTHLY;
                     item.lastmod = LAST_MODIFIED_DATE;
                     item.priority = .8;
-                }
-
-                if (/telefon-vergisi-hesaplayici/.test(item.url) || /konsol-vergisi-hesaplayici/.test(item.url)) {
+                } else if (/telefon-vergisi-hesaplayici/.test(item.url) || /konsol-vergisi-hesaplayici/.test(item.url)) {
                     item.changefreq = EnumChangefreq.DAILY;
                     item.lastmod = LAST_MODIFIED_DATE;
                     item.priority = .9;
+                } else {
+                    // `/`
+                    item.changefreq = EnumChangefreq.MONTHLY;
+                    item.lastmod = LAST_MODIFIED_DATE;
+                    item.priority = 1;
                 }
-
-                // `/`
-                item.changefreq = EnumChangefreq.MONTHLY;
-                item.lastmod = LAST_MODIFIED_DATE;
-                item.priority = 1;
 
                 return item;
             }
