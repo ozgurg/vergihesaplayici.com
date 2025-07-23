@@ -5,6 +5,7 @@
     "license": "GPL-3.0",
     "scripts": {
         "dev": "astro dev --host",
+        "check": "astro check",
         "generate": "npm run prepare-firebase && astro build",
         "preview": "astro preview",
         "lint": "oxlint",
