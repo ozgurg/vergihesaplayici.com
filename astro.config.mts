@@ -1,3 +1,4 @@
+// oxlint-disable no-non-null-assertion
 import path, { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "astro/config";
@@ -21,7 +22,7 @@ const {
     SERVER_PORT,
     SERVER_HOST,
     URL_BASE
-} = loadEnv(process.env.NODE_ENV, process.cwd(), "");
+} = loadEnv(process.env.NODE_ENV!, process.cwd(), "");
 
 // oxlint-disable-next-line no-anonymous-default-export no-default-export
 export default defineConfig({
@@ -35,7 +36,7 @@ export default defineConfig({
     },
     server: {
         host: SERVER_HOST,
-        port: Number.parseInt(SERVER_PORT, 10)
+        port: Number.parseInt(SERVER_PORT!, 10)
     },
     build: {
         inlineStylesheets: "always"
