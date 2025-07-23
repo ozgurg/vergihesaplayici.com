@@ -19,11 +19,11 @@
     "dependencies": {
         "@fontsource-variable/inter": "5.2.6",
         "@fontsource-variable/roboto-mono": "5.2.6",
-        "astro": "5.12.2",
+        "astro": "5.12.3",
         "firebase": "12.0.0",
         "html-to-image": "1.11.13",
         "remixicon": "4.6.0",
-        "vue": "3.5.17"
+        "vue": "3.5.18"
     },
     "devDependencies": {
         "@astrojs/check": "0.9.4",
@@ -41,7 +41,7 @@
         "lint-staged": "16.1.2",
         "oxlint": "1.8.0",
         "sass": "1.89.2",
-        "satori": "0.16.0",
+        "satori": "0.16.1",
         "satori-html": "0.3.2",
         "sharp": "0.34.3",
         "typescript": "5.8.3",
@@ -50,7 +50,7 @@
         "vitest": "3.2.4"
     },
     "peerDependencies": {
-        "firebase-tools": "14.11.0"
+        "firebase-tools": "14.11.1"
     },
     "engines": {
         "node": ">=22.0.0"
