@@ -9,6 +9,7 @@ import extractColorFromThumbsIntegration from "./src/integrations/extract-color-
 import astroCompressIntegration from "astro-compress";
 import astroVueIntegration from "@astrojs/vue";
 import astroSitemapIntegration from "@astrojs/sitemap";
+import { EnumChangefreq } from "sitemap/dist/lib/types";
 
 import autoImportPlugin from "unplugin-auto-import/vite";
 import autoImportVueComponentsPlugin from "unplugin-vue-components/vite";
@@ -58,33 +59,36 @@ export default defineConfig({
             serialize(item) {
                 // TODO: It can be dynamic via `PageDef`
 
+                // https://developers.google.com/search/blog/2006/04/using-lastmod-attribute
+                const LAST_MODIFIED_DATE = new Date().toDateString();
+
                 if (/yazilar/.test(item.url)) {
-                    item.changefreq = "monthly";
-                    item.lastmod = new Date();
+                    item.changefreq = EnumChangefreq.MONTHLY;
+                    item.lastmod = LAST_MODIFIED_DATE;
                     item.priority = .6;
                 }
 
                 if (/hesaplayicilar/.test(item.url)) {
-                    item.changefreq = "monthly";
-                    item.lastmod = new Date();
+                    item.changefreq = EnumChangefreq.MONTHLY;
+                    item.lastmod = LAST_MODIFIED_DATE;
                     item.priority = .7;
                 }
 
                 if (/kdv-hesaplayici/.test(item.url) || /vergini-olustur/.test(item.url)) {
-                    item.changefreq = "monthly";
-                    item.lastmod = new Date();
+                    item.changefreq = EnumChangefreq.MONTHLY;
+                    item.lastmod = LAST_MODIFIED_DATE;
                     item.priority = .8;
                 }
 
                 if (/telefon-vergisi-hesaplayici/.test(item.url) || /konsol-vergisi-hesaplayici/.test(item.url)) {
-                    item.changefreq = "daily";
-                    item.lastmod = new Date();
+                    item.changefreq = EnumChangefreq.DAILY;
+                    item.lastmod = LAST_MODIFIED_DATE;
                     item.priority = .9;
                 }
 
                 // `/`
-                item.changefreq = "monthly";
-                item.lastmod = new Date();
+                item.changefreq = EnumChangefreq.MONTHLY;
+                item.lastmod = LAST_MODIFIED_DATE;
                 item.priority = 1;
 
                 return item;
