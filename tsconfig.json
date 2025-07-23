@@ -17,7 +17,8 @@
         "verbatimModuleSyntax": true,
         "baseUrl": ".",
         "types": [
-            "node"
+            "node",
+            "vitest"
         ],
         "paths": {
             "@/*": [
