@@ -91,7 +91,7 @@ onUnmounted(_destroyObservers);
         visibility: hidden;
         pointer-events: none;
         padding-block-start: var(--_padding-block);
-        padding-block-end: calc(env(safe-area-inset-bottom) + var(--_padding-block));
+        padding-block-end: max(env(safe-area-inset-bottom), var(--_padding-block));
         inset-inline: 0;
         inset-block-end: 0;
         inline-size: 100%;
