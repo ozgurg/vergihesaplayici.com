@@ -20,7 +20,10 @@ const props = withDefaults(defineProps<Props>(), {
 
 <style lang="scss" scoped>
 .rich-text {
+    --_link-color: var(--link-color, var(--vh-clr-primary));
     line-height: 1.5;
+
+
     // Paragraph
     :deep(p):not(:last-child) {
         margin-block-end: calc(var(--vh-spacer) * 2)
@@ -71,7 +74,7 @@ const props = withDefaults(defineProps<Props>(), {
         text-underline-offset: .25rem
     }
     :deep(a) {
-        color: var(--vh-clr-primary);
+        color: var(--_link-color);
         @include vh-link
     }
 
