@@ -71,10 +71,12 @@ const dateUpdated = new Date(props.EXCHANGE_RATES.dateUpdated);
 
 <style lang="scss" scoped>
 .main-footer {
+    --_padding-block: calc(var(--vh-spacer) * 2);
     text-align: center;
     margin-block-start: auto;
     background: linear-gradient(to bottom, transparent, hsla(var(--vh-clr-primary-hsl), .02));
-    padding-block: calc(var(--vh-spacer) * 2);
+    padding-block-start: var(--_padding-block);
+    padding-block-end: max(env(safe-area-inset-bottom), var(--_padding-block));
     hr {
         margin-block: var(--vh-spacer)
     }

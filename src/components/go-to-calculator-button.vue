@@ -16,7 +16,7 @@
 <script lang="ts" setup>
 import type { HtmlAttrs_div } from "@/types/html.js";
 
-const MD_BREAKPOINT_MAX_WIDTH_IN_PIXELS = 800;
+const MD_BREAKPOINT_MAX_WIDTH_IN_PIXELS = 860;
 const VISIBLE_THRESHOLD_RATIO = .75;
 // oxlint-disable-next-line no-magic-numbers
 const OBSERVER_THRESHOLDS = [0, .75, 1];
@@ -91,7 +91,7 @@ onUnmounted(_destroyObservers);
         visibility: hidden;
         pointer-events: none;
         padding-block-start: var(--_padding-block);
-        padding-block-end: calc(env(safe-area-inset-bottom) + var(--_padding-block));
+        padding-block-end: max(env(safe-area-inset-bottom), var(--_padding-block));
         inset-inline: 0;
         inset-block-end: 0;
         inline-size: 100%;

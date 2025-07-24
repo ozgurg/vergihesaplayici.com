@@ -36,6 +36,7 @@ $_colors: (
 .alert {
     --_bg-hsl: var(--bg-hsl, var(--vh-clr-white-hsl));
     --_text-hsl: var(--text-hsl, var(--vh-clr-white-hsl));
+    --link-color: hsl(var(--_text-hsl));
     padding: calc(var(--vh-spacer) * .75) var(--vh-spacer);
     text-wrap: pretty;
     color: hsl(var(--_text-hsl));

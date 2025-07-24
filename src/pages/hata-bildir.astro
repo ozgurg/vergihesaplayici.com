@@ -1,0 +1,72 @@
+---
+import DefaultLayout from "@/layouts/default-layout.astro";
+import PageHeader from "@/components/common/page-header.vue";
+import Container from "@/components/common/container.vue";
+import Breadcrumbs from "@/components/common/breadcrumbs.vue";
+import Heading1 from "@/components/common/heading-1.vue";
+import RichText from "@/components/common/rich-text.vue";
+import FormButton from "@/components/common/form/form-button.vue";
+
+import { HataBildirPageDef } from "@/domains/hata-bildir/page-def.js";
+
+const hataBildirPage = HataBildirPageDef();
+
+const PUBLIC_RECAPTCHA_V3_PUBLIC_KEY = import.meta.env.PUBLIC_RECAPTCHA_V3_PUBLIC_KEY;
+---
+
+<DefaultLayout head={hataBildirPage.head}>
+    <PageHeader>
+        <Container>
+            <Breadcrumbs
+                items={hataBildirPage.breadcrumbs}
+                client:load />
+            <Heading1>
+                {hataBildirPage.title}
+            </Heading1>
+        </Container>
+    </PageHeader>
+
+    <Container>
+        <RichText>
+            <p>vergihesaplayici.com'daki hesaplayıcılar, elimden geldiğince güvenilir kaynaklardan derlediğim parametrelere dayanıyor. Ancak bu kaynakların her zaman %100 doğru olduğunu garanti edemem. Üstelik mevzuat dediğimiz şey durduğu yerde durmuyor; bugün doğru olan bir bilgi, yarın yürürlükten kalkmış olabiliyor. Yani mevzuat değişiklikleri hesaplayıcıları bir anda geçersiz kılabilir.</p>
+            <p>Bu site, vergi koyan biri tarafından değil; vergileri ödemeye alışkın, maaşlı bir çalışan tarafından hazırlandı. :) Kodlama hatası da olabilir, bilgi eskimiş de olabilir, bazen mevzuat değiştiğinde güncellemeye üşenmiş de olabilirim.</p>
+            <p>Eğer bir yanlışlık fark ederseniz, lütfen aşağıdaki e-posta adresinden bana yazın. En kısa sürede düzeltmeye çalışırım. Hataları bildirirken teyit edebileceğim somut bir kaynak da paylaşırsanız çok mutlu olurum. Örneğin "X vergisi %10 değil, %15" diyorsanız, bunu gösteren resmi bir belge ya da bir bağlantı işimi çok kolaylaştırır.</p>
+
+            <hr class="divider" />
+
+            <div id="hidden-email-container">
+                <FormButton type="button" scale="medium">E-posta adresini göster</FormButton>
+            </div>
+        </RichText>
+    </Container>
+</DefaultLayout>
+
+<script is:inline src={`https://www.google.com/recaptcha/api.js?render=${PUBLIC_RECAPTCHA_V3_PUBLIC_KEY}`}></script>
+<script is:inline define:vars={{ PUBLIC_RECAPTCHA_V3_PUBLIC_KEY }}>
+    // Let's put a little bit of effort into hiding the e-mail address from bots. :)
+    const hiddenEmailContainer = document.querySelector("#hidden-email-container");
+    const showEmailAddressButton = hiddenEmailContainer.querySelector("button");
+
+    showEmailAddressButton.addEventListener("click", async () => {
+        const token = await grecaptcha.execute(PUBLIC_RECAPTCHA_V3_PUBLIC_KEY, { action: "email_reveal" });
+        if (token) {
+            const encodedEmail = "t92YuwWah12ZARTN1xWdnJ3bnJXdnp3b"; // Encoded in Base64 and reversed
+            const email = atob([...encodedEmail].reverse().join(""));
+
+            showEmailAddressButton.remove();
+
+            const a = document.createElement("a");
+            a.setAttribute("href", encodeURI(`mailto:${email}&subject:vergihesaplayici.com: Hata Bildir`));
+            a.textContent = email;
+            hiddenEmailContainer.replaceWith(a);
+        } else {
+            alert("Al kırdın, kırdın… Kalbimi.");
+        }
+    });
+</script>
+
+<style lang="scss">
+    .divider {
+        margin-block: calc(var(--vh-spacer) * 2)
+    }
+</style>

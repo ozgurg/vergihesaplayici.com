@@ -67,11 +67,25 @@ const MANIFEST_JSON = staticUrl("/manifest.json");
 <meta name="apple-mobile-web-app-title" content={TITLE} />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
-<script is:inline define:vars={{ serviceWorkerUrl: staticUrl("/sw.js") }}>
+<script is:inline define:vars={{ serviceWorkerUrl: staticUrl("/sw.js"), THEME_COLOR }}>
     if ("serviceWorker" in globalThis.navigator) {
         globalThis.addEventListener("load", () => {
             globalThis.navigator.serviceWorker.register(serviceWorkerUrl);
         });
+    }
+
+
+    // TODO: Remove this behavior when `animation-timeline` is Baseline Widely-available
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timeline
+    const updateThemeColor = () => {
+        const MD_BREAKPOINT_MIN_WIDTH_IN_PIXELS = 860;
+        const isMd = globalThis.matchMedia(`(min-width:${MD_BREAKPOINT_MIN_WIDTH_IN_PIXELS}px)`).matches;
+        document.querySelector(`meta[name="theme-color"]`).setAttribute("content", isMd ? "#0d110d" : THEME_COLOR);
+    };
+
+    if (!CSS.supports("animation-timeline: scroll()")) {
+        window.addEventListener("resize", updateThemeColor);
+        updateThemeColor();
     }
 </script>
 

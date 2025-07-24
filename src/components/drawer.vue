@@ -40,7 +40,7 @@ const props = defineProps<Props>();
     .container {
         --_gap: calc(var(--vh-spacer) * .5);
         --_ideal-item-count: 2.75;
-        --_padding-y: var(--vh-spacer);
+        --_padding-block: var(--vh-spacer);
         display: flex;
         overflow-x: hidden;
         overflow-y: auto;
@@ -49,8 +49,8 @@ const props = defineProps<Props>();
         block-size: 100%;
         gap: var(--_gap);
         scrollbar-width: thin;
-        padding-block-start: calc(var(--header-down-md-block-size) + (var(--_padding-y)));
-        padding-block-end: calc(env(safe-area-inset-bottom) + var(--_padding-y))
+        padding-block-start: calc(var(--header-down-md-block-size) + (var(--_padding-block)));
+        padding-block-end: max(env(safe-area-inset-bottom), var(--_padding-block))
     }
     .calculator-card-item {
         flex-shrink: 0;
