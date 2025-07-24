@@ -23,11 +23,11 @@
             </template>
             <template v-else>
                 <form-button
-                    hidden=""
                     type="button"
                     color="light"
                     scale="small"
-                    variant="text">
+                    variant="text"
+                    data-sortable-handle="">
                     <svg-icon :icon="icon_draggable" />
                 </form-button>
                 <form-button

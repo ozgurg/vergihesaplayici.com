@@ -14,18 +14,30 @@
 
                 <div>
                     <form-group label="Vergi kalemleri">
-                        <transition-group
-                            name="list-transition"
-                            tag="div"
-                            class="tax-items">
-                            <template v-for="[_id, _taxItem] in form.taxItems" :key="_id">
-                                <vergini-olustur-form-tax-item
-                                    v-model:is-delete-mode="isDeleteMode"
-                                    @click:delete="deleteTaxItem(_id)"
-                                    :tax-item="_taxItem"
-                                    :EXCHANGE_RATES="props.EXCHANGE_RATES" />
-                            </template>
-                        </transition-group>
+                        <!--
+                        animation = $duration-long
+                        easing = $timing-normal
+                        -->
+                        <VueDraggable
+                            v-model="form.taxItems"
+                            :animation="375"
+                            handle="[data-sortable-handle]"
+                            ghost-class="data-sortable-ghost"
+                            easing="cubic-bezier(.25, .8, .25, 1)"
+                            target=".tax-items">
+                            <transition-group
+                                name="list-transition"
+                                tag="div"
+                                class="tax-items">
+                                <template v-for="_taxItem in form.taxItems" :key="_taxItem.id">
+                                    <vergini-olustur-form-tax-item
+                                        v-model:is-delete-mode="isDeleteMode"
+                                        @click:delete="deleteTaxItem(_taxItem.id)"
+                                        :tax-item="_taxItem"
+                                        :EXCHANGE_RATES="props.EXCHANGE_RATES" />
+                                </template>
+                            </transition-group>
+                        </VueDraggable>
                     </form-group>
                     <form-button
                         @click="addTaxItem()"
@@ -81,6 +93,7 @@ import type { CalculationResults, Form, ResultList, ScreenshotData, TaxItem } fr
 import { BaseAmountMode, RateType } from "@/domains/vergini-olustur/types.js";
 import { calculateResults } from "@/domains/vergini-olustur/utils/calculate-results.js";
 import { pickRandomPlaceholder } from "@/domains/vergini-olustur/utils/pick-random-placeholder.js";
+import { VueDraggable } from "vue-draggable-plus";
 
 let id = 0;
 
@@ -100,16 +113,17 @@ const resultsEl = useTemplateRef<HTMLElement>("resultsEl");
 
 const form = reactive<Form<UITaxItem>>({
     basePrice: 0,
-    taxItems: new Map([
-        [id, {
+    taxItems: [
+        {
+            id,
             name: "",
             rate: 0,
             rateType: RateType.PERCENT,
             rateTypeUnitCurrency: "TRY",
             baseAmountMode: BaseAmountMode.BASE_AMOUNT,
             placeholder: pickRandomPlaceholder()
-        }]
-    ])
+        }
+    ]
 });
 const results = ref<CalculationResults | null>(null);
 const resultList = ref<ResultList | null>(null);
@@ -118,7 +132,8 @@ const isCalculatorShareModalOpened = ref<boolean>(false);
 const isDeleteMode = ref<boolean>(false);
 
 const addTaxItem = (): void => {
-    form.taxItems.set(++id, {
+    form.taxItems.push({
+        id: ++id,
         name: "",
         rate: 0,
         rateType: RateType.PERCENT,
@@ -129,8 +144,8 @@ const addTaxItem = (): void => {
 };
 
 const deleteTaxItem = (id: number): void => {
-    form.taxItems.delete(id);
-    if (form.taxItems.size === 0) {
+    form.taxItems = form.taxItems.filter(_taxItem => _taxItem.id !== id);
+    if (form.taxItems.length === 0) {
         isDeleteMode.value = false;
     }
 };
