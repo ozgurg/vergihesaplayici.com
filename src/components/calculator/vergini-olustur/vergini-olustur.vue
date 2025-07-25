@@ -58,14 +58,16 @@
         </inner-container>
 
         <template v-if="results !== null">
-            <div ref="resultsEl">
+            <div>
                 <heading-3>
                     Hesaplama sonuçları
                 </heading-3>
 
                 <div class="calculation-result-row">
                     <inner-container>
-                        <calculator-result-list :items="resultList!" />
+                        <calculator-result-list
+                            ref="resultsEl"
+                            :items="resultList!" />
 
                         <calculator-quick-share
                             :url="props.calculatorPage.url"
@@ -84,6 +86,10 @@
             </div>
         </template>
     </container>
+
+    <go-to-calculator-button
+        :calculator-container="formEl!"
+        :results-container="resultsEl?.$el!" />
 </template>
 
 <script lang="ts" setup>
