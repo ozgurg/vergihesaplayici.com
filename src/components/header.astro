@@ -105,6 +105,25 @@ const nav = CalculatorPages;
             display: flex;
             align-items: flex-end;
             justify-content: center;
+            &::before {
+                // CAUTION: Workaround that might change in future updates
+                // In iOS 26 Public Beta 1 Safari, Apple made the status bar transparent.
+                // With our progressive blur effect, this creates a weird visual artifact where
+                // the site content is clearly visible beneath the status bar before the blur
+                // effect begins to take effect.
+                // To fix this issue, I discovered that Apple renders the status bar color by
+                // sampling pixels `6px` and larger from the beginning of the viewport. I created
+                // this pseudo-element using the same color as the `page-header`s linear-gradient
+                // to ensure the status bar appears properly colored and eliminates the visual artifact.
+                position: absolute;
+                z-index: -2;
+                inset-inline: 0;
+                inset-block-start: 0;
+                inline-size: 100%;
+                block-size: 6px;
+                content: "";
+                background: #111912
+            }
             &::after {
                 position: absolute;
                 z-index: -1;
