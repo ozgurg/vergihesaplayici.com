@@ -18,10 +18,6 @@ export default getViteConfig({
                 "src/components/*.astro",
 
 
-                // TODO: Beta
-                "**/vergini-olustur/**",
-
-
                 // TODO: Too complex to write unit test
                 "src/integrations/**",
                 "src/{pages,layouts}/**/*.astro",
@@ -57,6 +53,8 @@ export default getViteConfig({
                 "src/content.config.ts",
                 "public/sw.js",
                 "astro.config.mts",
+                "vitest.config.ts",
+                "dist",
                 "__test__",
                 "create-csp-nonce-txt.js",
                 "create-firebase-json.js"

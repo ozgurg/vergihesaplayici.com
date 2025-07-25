@@ -13,6 +13,7 @@ export enum RateType {
 }
 
 export type TaxItem = {
+    id: number;
     name: string;
     rate: number;
     rateType: RateType;
@@ -44,7 +45,7 @@ export type Prices = {
 // DB
 export type Form<TaxItem> = {
     basePrice: number;
-    taxItems: Map<number, TaxItem>;
+    taxItems: TaxItem[];
 };
 
 

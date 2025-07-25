@@ -23,14 +23,16 @@
         </inner-container>
 
         <template v-if="results !== null">
-            <div ref="resultsEl">
-                <heading-3>
+            <div>
+                <heading-3 is="h2">
                     Hesaplama sonuçları
                 </heading-3>
 
                 <div class="calculation-result-row">
                     <inner-container>
-                        <calculator-result-list :items="resultList!" />
+                        <calculator-result-list
+                            ref="resultsEl"
+                            :items="resultList!" />
                         <affordability-alert :price="results.prices.taxAdded" />
 
                         <calculator-quick-share
@@ -72,7 +74,7 @@
     <template v-if="PRESET_OPTIONS.length > 1">
         <go-to-calculator-button
             :calculator-container="formEl!"
-            :results-container="resultsEl!" />
+            :results-container="resultsEl?.$el!" />
     </template>
 </template>
 

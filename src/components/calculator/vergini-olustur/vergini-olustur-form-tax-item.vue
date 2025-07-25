@@ -1,5 +1,8 @@
 <template>
-    <div class="tax-item">
+    <div
+        class="tax-item"
+        aria-label="Vergi kalemi"
+        role="group">
         <form-group>
             <template #label>
                 <form-label is="legend">
@@ -50,14 +53,19 @@
                     scale="small" />
             </form-group>
 
-            <form-group label="">
+            <form-group aria-label="Vergi kalemi işlemleri">
                 <vergini-olustur-form-tax-item-action-buttons
                     v-model:is-delete-mode="isDeleteMode"
-                    @click:delete="emit('click:delete')" />
+                    @click:delete="emit('click:delete')"
+                    @move:up="emit('move:up')"
+                    @move:down="emit('move:down')" />
             </form-group>
         </div>
 
-        <div class="tax-item-count"></div>
+        <div
+            aria-hidden="true"
+            class="tax-item-count">
+        </div>
     </div>
 </template>
 
@@ -71,7 +79,7 @@ export type Props = {
     EXCHANGE_RATES: ExchangeRates;
 }
 
-export type Events = (event: "click:delete") => void;
+export type Events = (event: "click:delete" | "move:up" | "move:down") => void;
 
 const isDeleteMode = defineModel<boolean>("is-delete-mode", { default: false });
 const props = defineProps<Props>();
@@ -115,6 +123,7 @@ const emit = defineEmits<Events>();
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: flex-end;
         gap: inherit
     }
     &-count {
