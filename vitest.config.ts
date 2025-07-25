@@ -57,6 +57,8 @@ export default getViteConfig({
                 "src/content.config.ts",
                 "public/sw.js",
                 "astro.config.mts",
+                "vitest.config.ts",
+                "dist",
                 "__test__",
                 "create-csp-nonce-txt.js",
                 "create-firebase-json.js"
