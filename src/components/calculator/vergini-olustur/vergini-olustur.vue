@@ -29,10 +29,12 @@
                                 name="list-transition"
                                 tag="div"
                                 class="tax-items">
-                                <template v-for="_taxItem in form.taxItems" :key="_taxItem.id">
+                                <template v-for="(_taxItem, index) in form.taxItems" :key="_taxItem.id">
                                     <vergini-olustur-form-tax-item
                                         v-model:is-delete-mode="isDeleteMode"
                                         @click:delete="deleteTaxItem(_taxItem.id)"
+                                        @move:up="moveTaxItemUp(index)"
+                                        @move:down="moveTaxItemDown(index)"
                                         :tax-item="_taxItem"
                                         :EXCHANGE_RATES="props.EXCHANGE_RATES" />
                                 </template>
@@ -154,6 +156,38 @@ const deleteTaxItem = (id: number): void => {
     if (form.taxItems.length === 0) {
         isDeleteMode.value = false;
     }
+};
+
+const moveTaxItemUp = (index: number): void => {
+    if (index <= 0 || index >= form.taxItems.length) {
+        return;
+    }
+
+    // oxlint-disable-next-line no-non-null-assertion
+    form.taxItems.splice(index - 1, 2, form.taxItems[index]!, form.taxItems[index - 1]!);
+
+    nextTick(() => {
+        const newButton = document.querySelector(`[data-sortable-handle]:nth-child(${index})`) as HTMLButtonElement;
+        if (newButton) {
+            newButton.focus();
+        }
+    });
+};
+
+const moveTaxItemDown = (index: number): void => {
+    if (index < 0 || index >= form.taxItems.length - 1) {
+        return;
+    }
+
+    // oxlint-disable-next-line no-non-null-assertion
+    form.taxItems.splice(index, 2, form.taxItems[index + 1]!, form.taxItems[index]!);
+
+    nextTick(() => {
+        const newButton = document.querySelector(`[data-sortable-handle]:nth-child(${index + 2})`) as HTMLButtonElement;
+        if (newButton) {
+            newButton.focus();
+        }
+    });
 };
 
 const calculate = (): void => {

@@ -23,11 +23,15 @@
             </template>
             <template v-else>
                 <form-button
+                    @keydown.up.prevent="emit('move:up')"
+                    @keydown.down.prevent="emit('move:down')"
                     type="button"
                     color="light"
                     scale="small"
                     variant="text"
-                    data-sortable-handle="">
+                    data-sortable-handle=""
+                    tabindex="0"
+                    aria-label="Sıralamayı değiştirmek için sürükleyip bırakın veya ok tuşlarını kullanın">
                     <svg-icon :icon="icon_draggable" />
                 </form-button>
                 <form-button
@@ -46,7 +50,7 @@
 <script setup lang="ts">
 import { icon_draggable } from "@/utils/icons.js";
 
-export type Events = (event: "click:delete") => void;
+export type Events = (event: "click:delete" | "move:up" | "move:down") => void;
 
 const emit = defineEmits<Events>();
 const isDeleteMode = defineModel<boolean>("is-delete-mode", { default: false });
