@@ -73,6 +73,77 @@ describe("utils/exchange-rates.js", () => {
             await expect(initializeExchangeRates()).rejects.toThrow("unknown");
         });
 
+        it("handles non-ok response status and return fallback rates", async () => {
+            // oxlint-disable-next-line no-empty-function
+            const consoleWarnSpy = vi.spyOn(console, "warn").mockImplementation(() => {});
+
+            mockFetch.mockResolvedValueOnce({
+                ok: false,
+                status: 500
+            });
+
+            const result = await initializeExchangeRates();
+
+            expect(result).toEqual({
+                dateUpdated: expect.any(Date),
+                rates: {
+                    TRY: 1,
+                    USD: 1,
+                    EUR: 1
+                }
+            });
+
+            expect(consoleWarnSpy).toHaveBeenCalledWith(
+                "[exchange-rates] ❌ API request failed with status 500, using fallback rates"
+            );
+
+            consoleWarnSpy.mockRestore();
+        });
+
+        it("handles network error in development mode and return fallback rates", async () => {
+            // oxlint-disable-next-line no-empty-function
+            const consoleWarnSpy = vi.spyOn(console, "warn").mockImplementation(() => {});
+
+            // Mock `import.meta.env.DEV` to be true
+            const originalEnv = import.meta.env;
+            vi.stubGlobal("import.meta", {
+                env: { ...originalEnv, DEV: true }
+            });
+
+            const networkError = new TypeError("fetch is not defined");
+            mockFetch.mockRejectedValueOnce(networkError);
+
+            const result = await initializeExchangeRates();
+
+            expect(result).toEqual({
+                dateUpdated: expect.any(Date),
+                rates: {
+                    TRY: 1,
+                    USD: 1,
+                    EUR: 1
+                }
+            });
+
+            expect(consoleWarnSpy).toHaveBeenCalledWith(
+                "[exchange-rates] ❌ Network error in development: fetch is not defined, using fallback rates"
+            );
+
+            consoleWarnSpy.mockRestore();
+            vi.unstubAllGlobals();
+        });
+
+        it("re-throws non-network errors even in development mode", async () => {
+            const otherError = new Error("Some other error");
+            mockFetch.mockRejectedValueOnce(otherError);
+            await expect(initializeExchangeRates()).rejects.toThrow("Some other error");
+        });
+
+        it("re-throws network errors that don't include `fetch` in the message", async () => {
+            const networkError = new TypeError("Network request failed");
+            mockFetch.mockRejectedValueOnce(networkError);
+            await expect(initializeExchangeRates()).rejects.toThrow("Network request failed");
+        });
+
         it("should calculate inverse rates correctly", async () => {
             mockFetch.mockResolvedValueOnce({
                 ok: true,
