@@ -18,10 +18,6 @@ export default getViteConfig({
                 "src/components/*.astro",
 
 
-                // TODO: Beta
-                "**/vergini-olustur/**",
-
-
                 // TODO: Too complex to write unit test
                 "src/integrations/**",
                 "src/{pages,layouts}/**/*.astro",
