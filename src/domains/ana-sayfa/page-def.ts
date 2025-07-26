@@ -13,7 +13,7 @@ export const AnaSayfaPageDef: PageDef = (): Page => {
         breadcrumbs,
         head: {
             title: null,
-            description: "Telefon ve oyun konsolu gibi farklı ürün gruplarının yurt içi ve yurt dışı fiyatlarına Türkiye'de ne kadar vergi uygulandığını hesaplayın.",
+            description: "vergihesaplayici.com, Telefon Vergisi, Konsol Vergisi ve KDV gibi vergi hesaplayıcıları barındıran bir vergi hesaplayıcıdır.",
             canonicalUrl: url,
             ogImageUrl: null
         }
