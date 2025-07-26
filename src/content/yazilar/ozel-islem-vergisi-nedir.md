@@ -24,6 +24,6 @@ Aynı zamanda, **Özel İşlem Vergisi**, **ithalat yapılan ürünler** için d
 hedeflenir.
 
 Sonuç olarak, **Özel İşlem Vergisi**, Türkiye'de tüketici davranışlarını düzenlemek ve ithalatı yerli üretimin önüne
-geçmemesi adına belirli ürünler üzerinden alınan bir tür tüketim vergisidir. Bu vergi türü, **ekonomi politikalarının**
+geçmemesi adına belirli ürünler üzerinden alınan bir tür tüketim vergisidir. Bu <a href="/yazilar/vergi-turleri/">vergi türü</a>, **ekonomi politikalarının**
 bir parçası olarak, **kamu gelirlerinin artırılması** ve tüketici alışkanlıklarının şekillendirilmesi amacıyla
 yürürlükte bulunmaktadır.

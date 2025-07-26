@@ -25,7 +25,7 @@ ettikleri gelirlerin vergi oranlarının diğer mükelleflere göre daha düşü
 sahiplerine daha fazla rekabet avantajı sağlar.
 
 Ancak **GSSMK**'nın dezavantajları da vardır. Özellikle yüksek kazançlı serbest meslek sahipleri, bu vergi yöntemi ile
-daha fazla vergi ödeyecekleri için vergiden kaçınmak amacıyla düşük gelir beyan edebilirler. Bu durum, vergi kaybına yol
+daha fazla vergi ödeyecekleri için <a href="/yazilar/vergiden-nasil-kacinilir/">vergiden kaçınmak</a> amacıyla düşük gelir beyan edebilirler. Bu durum, vergi kaybına yol
 açabilir.
 
 Sonuç olarak, **Gelir Götürü Serbest Meslek Kazancı** vergi yöntemi, Türkiye'de serbest meslek sahiplerinin vergi yükünü

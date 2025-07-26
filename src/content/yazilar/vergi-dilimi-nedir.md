@@ -9,7 +9,7 @@ denir. **Vergi dilimleri**, vergi sistemi içindeki farklı gelir gruplarını t
 oranları uygulanır.
 
 Vergi dilimleri, genellikle **gelir vergisi** sistemi içinde kullanılır. Bu sistemde, vergilendirilebilir gelir belirli
-bir aralığa ayrılır ve her aralık için farklı bir vergi oranı uygulanır. **Vergi dilimleri**, bir ülkenin gelir
+bir aralığa ayrılır ve her aralık için farklı bir <a href="/yazilar/vergi-orani-nasil-hesaplanir/">vergi oranı</a> uygulanır. **Vergi dilimleri**, bir ülkenin gelir
 dağılımını yansıtır ve farklı gelir gruplarından insanların farklı oranlarda vergi ödemelerine neden olur.
 
 Örneğin, Türkiye'de gelir vergisi dilimleri 2021 yılı için şu şekildedir:

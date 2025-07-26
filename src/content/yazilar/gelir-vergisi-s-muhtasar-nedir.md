@@ -22,7 +22,7 @@ edildiğinden emin olmak için kullanılır. Bu beyannameler, beyan edilen brüt
 kesinti yapılması gereken **Sosyal Güvenlik Kurumu primleri**, **işsizlik sigortası primleri** ve gelir vergisi
 tutarlarını da içerir.
 
-Gelir Vergisi S., yıllık gelir vergisi beyannamelerinde kullanılan verilerin önemli bir parçasıdır. Çalışanlar, yıllık
+Gelir Vergisi S., <a href="/yazilar/yillik-gelir-vergisi-nedir/">yıllık gelir</a> vergisi beyannamelerinde kullanılan verilerin önemli bir parçasıdır. Çalışanlar, yıllık
 gelir vergisi beyannamelerinde beyan edilen tutarlar üzerinden vergi iadesi alabilirler veya vergi ödemelerinde indirim
 yapabilirler. Beyanname, mükelleflerin gelirleri üzerinden doğru bir şekilde vergilendirildiğini gösterir.
 

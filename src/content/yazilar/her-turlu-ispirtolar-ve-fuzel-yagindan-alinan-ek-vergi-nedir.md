@@ -15,7 +15,7 @@ değişen oranlarda **özel tüketim vergisi (ÖTV)** alınmaktadır. Özellikle
 yüksek olmaktadır.
 
 **Füzel yağı** ise, genellikle endüstriyel amaçlar için kullanılan bir akaryakıt türüdür. Türkiye'de de özellikle
-denizcilik sektörü ve gemi yakıtlarında kullanılmaktadır. **Füzel yağına** uygulanan ek vergi oranı, diğer akaryakıtlara
+denizcilik sektörü ve gemi yakıtlarında kullanılmaktadır. **Füzel yağına** uygulanan ek <a href="/yazilar/vergi-orani-nasil-hesaplanir/">vergi oranı</a>, diğer akaryakıtlara
 uygulanan vergi oranlarından daha yüksektir.
 
 Türkiye'de akaryakıt türlerinden alınan vergiler, **ÖTV** ve **Özel İletişim Vergisi (ÖİV)** olarak iki ayrı kategoride

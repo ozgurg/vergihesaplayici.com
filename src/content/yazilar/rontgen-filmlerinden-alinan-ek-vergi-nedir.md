@@ -21,7 +21,7 @@ Türkiye'de röntgen filmlerinden alınan ek vergi, 1986 yılında yürürlüğe
 bugünkü haliyle uygulanmaya başlanan bir vergi türüdür. Bu vergi, Sağlık Bakanlığı'nın gözetimi altında, tıbbi
 görüntüleme merkezlerinde yapılan röntgen çekimlerinden elde edilen gelirler üzerinden alınır.
 
-Röntgen filmlerinden alınan ek vergi oranı, Sağlık Bakanlığı tarafından belirlenen tarifeye göre hesaplanır. Tarife,
+Röntgen filmlerinden alınan ek <a href="/yazilar/vergi-orani-nasil-hesaplanir/">vergi oranı</a>, Sağlık Bakanlığı tarafından belirlenen tarifeye göre hesaplanır. Tarife,
 çekilen röntgen filminin türüne, bölgeye, merkezin büyüklüğüne ve diğer faktörlere göre farklılık gösterebilir. Vergi
 oranı, genellikle elde edilen gelirin belirli bir yüzdesi olarak uygulanır.
 
