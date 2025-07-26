@@ -137,5 +137,21 @@ const props = withDefaults(defineProps<Props>(), {
             }
         }
     }
+
+
+    // Various
+    :deep(blockquote) {
+        border-radius: 0 var(--vh-br-normal) var(--vh-br-normal) 0;
+        margin-block-end: calc(var(--vh-spacer) * 2);
+        padding: var(--vh-spacer);
+        border-left: .25rem solid var(--vh-clr-primary);
+        background: hsla(var(--vh-clr-white-hsl), .12)
+    }
+
+    :deep(hr) {
+        border-color: var(--vh-clr-white);
+        border-style: dashed;
+        margin-block-end: calc(var(--vh-spacer) * 2)
+    }
 }
 </style>
