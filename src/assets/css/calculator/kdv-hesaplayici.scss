@@ -33,14 +33,14 @@
     }
 }
 
-:deep(.form-radio-group-mode) {
+:deep(.form-check-group-mode) {
     grid-template-columns: 1fr !important // FIXME: Remove `!important` 😔
 }
 
-:deep(.form-radio-group-rate-presets) {
+:deep(.form-check-group-rate-presets) {
     grid-template-columns: repeat(3, 1fr) !important; // FIXME: Remove `!important` 😔
     margin-block-start: var(--vh-spacer);
-    .form-radio-group-item {
+    .form-check {
         background-image: none
     }
     b {

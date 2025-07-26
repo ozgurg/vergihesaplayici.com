@@ -48,7 +48,7 @@
     }
 }
 
-.form-radio-group-preset-options :deep(small) {
+.form-check-group-preset-options :deep(small) {
     font-weight: var(--vh-fw-semibold);
     @include vh-text-number
 }

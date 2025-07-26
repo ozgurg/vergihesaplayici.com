@@ -10,7 +10,7 @@
                     <kdv-hesaplayici-mode
                         v-model="form.mode"
                         :required="true"
-                        class="form-radio-group-mode" />
+                        class="form-check-group-mode" />
                 </form-group>
 
                 <form-group>
@@ -35,7 +35,7 @@
                     <kdv-hesaplayici-rate-presets
                         v-model="form.rate"
                         scale="small"
-                        class="form-radio-group-rate-presets" />
+                        class="form-check-group-rate-presets" />
                 </form-group>
 
                 <form-button

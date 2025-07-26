@@ -1,21 +1,22 @@
 <template>
-    <form-radio-group
+    <form-check-group
         v-bind="props"
-        :items="MODE_OPTIONS" />
+        :items="MODE_OPTIONS"
+        type="radio" />
 </template>
 
 <script lang="ts" setup>
 import type {
-    Item as FormRadioGroupItem,
-    Props as FormRadioGroupProps
-} from "@/components/common/form/form-radio-group.vue";
+    Item as FormCheckProps,
+    Props as FormCheckGroupProps
+} from "@/components/common/form/form-check-group.vue";
 import { Mode } from "@/domains/kdv-hesaplayici/types.js";
 
-export type Props = Partial<FormRadioGroupProps>;
+export type Props = Partial<FormCheckGroupProps>;
 
 const props = defineProps<Props>();
 
-const MODE_OPTIONS: FormRadioGroupItem[] = [
+const MODE_OPTIONS: FormCheckProps[] = [
     {
         title: "KDV hariç tutardan KDV dahil tutarı hesapla",
         input: {

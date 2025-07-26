@@ -7,11 +7,12 @@
                 @submit.prevent="onSubmit()"
                 class="calculation-form">
                 <form-group label="Kapasite">
-                    <form-radio-group
+                    <form-check-group
                         v-model="optionIndex"
                         :items="PRESET_OPTIONS"
+                        type="radio"
                         :required="true"
-                        class="form-radio-group-preset-options" />
+                        class="form-check-group-preset-options" />
                 </form-group>
 
                 <form-group label="Kayıt yolu">
@@ -80,7 +81,7 @@
 
 <script lang="ts" setup>
 import type { CalculatorPage, Page } from "@/types/page-def.js";
-import type { Item as FormRadioGroupItem } from "@/components/common/form/form-radio-group.vue";
+import type { Item as FormCheckGroupItem } from "@/components/common/form/form-check-group.vue";
 import type {
     Brand,
     CalculationResults,
@@ -109,7 +110,7 @@ export type Props = {
 
 const props = defineProps<Props>();
 
-const PRESET_OPTIONS: FormRadioGroupItem[] = props.preset.options.map((_option, _index) => ({
+const PRESET_OPTIONS: FormCheckGroupItem[] = props.preset.options.map((_option, _index) => ({
     title: _option.title,
     // oxlint-disable-next-line no-non-null-assertion
     description: formatMoney(_option.form.price!, _option.form.currency!),
