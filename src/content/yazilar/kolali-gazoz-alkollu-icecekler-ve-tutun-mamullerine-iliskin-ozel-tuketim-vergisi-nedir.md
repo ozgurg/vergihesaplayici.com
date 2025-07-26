@@ -20,7 +20,7 @@ başına sabit bir miktar veya alkollü içeceğin alkollü hacmine göre bir y�
 **Tütün mamülleri**, Özel Tüketim Vergisi'nin en yüksek oranlarına tabidir. **Sigara**, **puro**, **pipo** gibi tütün
 mamülleri için **ÖTV**, hem adet başına hem de birim ağırlık veya hacim üzerinden uygulanır. **Sigaralar** için **ÖTV
 oranı**, 2021 itibarıyla 1.900 TL'den başlamakta ve tütün mamülünün türüne, markasına ve fiyatına göre değişmektedir. Bu
-yüksek vergi oranı, tütün mamüllerinin hem sağlık üzerindeki olumsuz etkilerini azaltmayı hem de vergi geliri elde
+yüksek <a href="/yazilar/vergi-orani-nasil-hesaplanir/">vergi oranı</a>, tütün mamüllerinin hem sağlık üzerindeki olumsuz etkilerini azaltmayı hem de vergi geliri elde
 etmeyi amaçlar.
 
 Özel Tüketim Vergisi, **kolalı gazozlar**, **alkollü içecekler** ve **tütün mamüllerinin** yanı sıra diğer birçok ürün

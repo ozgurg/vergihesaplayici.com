@@ -13,7 +13,7 @@ alınan bir vergidir. Vergi, bu işlemlerin tutarı üzerinden **yüzde olarak**
 ödenir.
 
 Banka Muameleleri Vergisi, Türkiye'de hükümetin gelirlerini artırmak için kullanılan bir vergi türüdür. Vergi,
-bankaların müşterilerinden tahsil edilir ve hükümetin genel bütçesine aktarılır. Vergi oranı, işlem türüne ve tutarına
+bankaların müşterilerinden tahsil edilir ve hükümetin genel bütçesine aktarılır. <a href="/yazilar/vergi-orani-nasil-hesaplanir/">Vergi oranı</a>, işlem türüne ve tutarına
 göre **değişebilir**.
 
 Banka Muameleleri Vergisi'nin en önemli avantajı, Türkiye hükümetine önemli bir gelir kaynağı sağlamasıdır. Vergi, diğer

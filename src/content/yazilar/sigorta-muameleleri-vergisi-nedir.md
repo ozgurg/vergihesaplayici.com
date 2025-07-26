@@ -21,6 +21,6 @@ Sigorta muameleleri vergisi, devletin gelirlerinden bir **kaynak** oluştururken
 önemli bir rol oynamaktadır. Sigorta şirketleri tarafından ödenen bu vergi, **sağlık, emeklilik, kaza, yangın** gibi
 birçok alanda yapılan sigorta işlemlerinden alınmaktadır.
 
-Sonuç olarak, **sigorta muameleleri vergisi**, sigorta işlemlerinde yer alan taraflar arasında bir vergi yükü oluşturur
+Sonuç olarak, **sigorta muameleleri vergisi**, sigorta işlemlerinde yer alan taraflar arasında bir <a href="/yazilar/vergi-yuku-nedir/">vergi yükü</a> oluşturur
 ve sigorta şirketleri tarafından toplanarak devlete ödenir. Bu vergi, Türkiye'de sigorta sektörünün finansmanında önemli
 bir rol oynamaktadır.

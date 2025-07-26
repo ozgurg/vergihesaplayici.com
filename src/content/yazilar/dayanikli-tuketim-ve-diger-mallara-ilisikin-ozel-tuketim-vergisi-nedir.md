@@ -22,7 +22,7 @@ caydırmak** ve **tasarrufu teşvik etmek** olduğunu belirtmek önemlidir. Ayr�
 **desteklemek** için ayarlanabilir. Örneğin, **çevre dostu araçlara** uygulanan özel tüketim vergisi oranları düşük
 tutularak, **yeşil teknolojilerin yaygınlaşması** teşvik edilebilir.
 
-Bu vergi türü aynı zamanda **vergi adaletini sağlamak** amacıyla da kullanılır. Örneğin, **yüksek gelirli kişilerin**
+Bu <a href="/yazilar/vergi-turleri/">vergi türü</a> aynı zamanda **vergi adaletini sağlamak** amacıyla da kullanılır. Örneğin, **yüksek gelirli kişilerin**
 daha fazla tüketim yapması beklenirken, **daha düşük gelirli kişilerin** daha az tüketmesi hedeflenir. Dolayısıyla,
 **lüks** ve **yüksek değerli ürünlere** uygulanan vergi oranları genellikle daha yüksektir.
 

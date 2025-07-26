@@ -37,7 +37,7 @@ kazançlarına göre hesaplanır. Türkiye'deki tüm kurumlar, vergi yükümlül
 yapılması gerekmektedir.
 
 **Kurumlar Vergisi**'nin amacı, kurumların faaliyetleri sonucu elde ettikleri kazançları vergilendirmek ve devletin kamu
-hizmetlerini finanse etmek için gelir sağlamaktır. Bu vergi türü, kurumların vergi yükümlülüklerini yerine getirmesi
+hizmetlerini finanse etmek için gelir sağlamaktır. Bu <a href="/yazilar/vergi-turleri/">vergi türü</a>, kurumların vergi yükümlülüklerini yerine getirmesi
 için önemli bir kaynak sağlar. Aynı zamanda, **Kurumlar Vergisi**, Türkiye'deki ekonomik büyüme ve kalkınma için de
 önemli bir faktördür. Çünkü, devletin kamu hizmetlerine yatırım yapabilmesi ve ekonomik büyümeyi destekleyebilmesi için
 gelir kaynaklarına ihtiyacı vardır.

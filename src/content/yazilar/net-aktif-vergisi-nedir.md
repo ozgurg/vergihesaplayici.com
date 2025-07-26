@@ -20,7 +20,7 @@ getirilmiştir.
 ## **Uygulama**
 
 **Net Aktif Vergisi**, Türkiye'de belirli bir eşiği aşan mükellefler için geçerlidir. 2023 yılı itibarıyla, brüt aktifi
-50 milyon Türk Lirası ve üzeri olan mükellefler Net Aktif Vergisi'ne tabidir. Vergi oranı, brüt aktifin yüzde 0,1'i
+50 milyon Türk Lirası ve üzeri olan mükellefler Net Aktif Vergisi'ne tabidir. <a href="/yazilar/vergi-orani-nasil-hesaplanir/">Vergi oranı</a>, brüt aktifin yüzde 0,1'i
 olarak belirlenmiştir. Bu vergi yıllık olarak tahakkuk ettirilir ve beyan edilen değer üzerinden ödenir.
 
 ## **Türkiye Ekonomisine Etkileri**

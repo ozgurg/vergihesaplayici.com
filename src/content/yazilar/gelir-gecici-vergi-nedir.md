@@ -4,7 +4,7 @@ description: "Gelir geçici vergi, bir işletmenin veya bireysel bir kişinin, v
 date: 2023-05-13
 ---
 
-**Gelir geçici vergi**, bir işletmenin veya bireysel bir kişinin, vergi beyannamelerini hazırlamak ve vergi ödemelerini
+**<a href="/yazilar/gelir-vergisi-gecici-vergi-nedir/">Gelir geçici vergi</a>**, bir işletmenin veya bireysel bir kişinin, vergi beyannamelerini hazırlamak ve vergi ödemelerini
 düzenlemek için önceden ödemesi gereken bir vergidir. Bu vergi, genellikle **yıllık vergi beyannamelerinin hazırlanması**
 sırasında vergi borcunun hesaplanması için kullanılır.
 
@@ -17,7 +17,7 @@ bir işletme yılın sonuna doğru büyük bir kazanç elde ettiğinde, yıl son
 olabilir. Ancak, yıl boyunca düzenli olarak ödenen geçici vergi tutarları sayesinde, bu yüksek vergi ödemesiyle
 karşılaşmak zorunda kalınmaz.
 
-Gelir geçici vergisi, bir işletmenin veya bireysel bir kişinin vergi borcunun hesaplanmasına yardımcı olurken, aynı
+<a href="/yazilar/gelir-vergisi-gecici-vergi-nedir/">Gelir geçici vergisi</a>, bir işletmenin veya bireysel bir kişinin vergi borcunun hesaplanmasına yardımcı olurken, aynı
 zamanda **gelir vergisi beyannamelerinin daha doğru bir şekilde hazırlanmasını** sağlar. Bu beyannameler, vergi
 mükelleflerinin vergi beyannamelerini doğru bir şekilde doldurmaları için gereklidir. Geçici vergi beyannameleri,
 genellikle yıllık gelir vergisi beyannamelerinin bir ön hazırlığı olarak hazırlanır.

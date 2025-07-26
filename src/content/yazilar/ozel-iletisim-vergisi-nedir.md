@@ -12,11 +12,11 @@ devletin gelir kaynakları arasında **önemli** bir yere sahiptir.
 geçirilmiştir. İletişim hizmetlerinin yaygınlaşması ve teknolojinin gelişimiyle birlikte, iletişim sektörüne yönelik bir
 vergi düzenlemesi yapılması gereği ortaya çıkmıştır. ÖİV, bu ihtiyaç doğrultusunda oluşturulan bir vergi mekanizmasıdır.
 
-ÖİV'nin temel amacı, iletişim hizmetlerinden faydalanan bireyler ve kuruluşlar üzerinde ek bir vergi yükü oluşturarak
+ÖİV'nin temel amacı, iletişim hizmetlerinden faydalanan bireyler ve kuruluşlar üzerinde ek bir <a href="/yazilar/vergi-yuku-nedir/">vergi yükü</a> oluşturarak
 devlet gelirlerine katkı sağlamaktır. Vergi, telekomünikasyon operatörleri aracılığıyla kullanıcılardan toplanır ve
 vergi miktarı, iletişim hizmetinin türüne, süresine ve maliyetine bağlı olarak belirlenir.
 
-Bu vergi türü, fatura tutarının belirli bir yüzdesi olarak uygulanır ve fatura üzerinde ayrı bir kale olarak gösterilir.
+Bu <a href="/yazilar/vergi-turleri/">vergi türü</a>, fatura tutarının belirli bir yüzdesi olarak uygulanır ve fatura üzerinde ayrı bir kale olarak gösterilir.
 ÖİV'nin oranı, iletişim hizmetlerine göre değişkenlik gösterir. Örneğin, **cep telefonu** görüşmeleri, **SMS**
 gönderimleri, **internet erişimi** gibi hizmetler üzerinden ÖİV alınırken, **ev telefonu** hizmetleri bu vergiden muaf
 tutulmuştur.

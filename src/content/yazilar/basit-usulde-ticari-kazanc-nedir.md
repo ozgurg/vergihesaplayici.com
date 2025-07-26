@@ -6,7 +6,7 @@ date: 2023-05-10
 
 Ticaret hayatının önemli bir parçası olan **basit usul**, küçük çaplı işletmeler için uygulanan bir vergi sistemi olarak
 karşımıza çıkmaktadır. Bu sistem, ticari faaliyetlerin **gelir** ve **giderleri** baz alınarak vergilendirilmesini
-sağlamaktadır. **Basit usulde** ticari kazanç nedir sorusuna cevap vermeden önce, basit usulün ne olduğuna dair birkaç
+sağlamaktadır. **Basit usulde** <a href="/yazilar/gelir-goturu-ticari-kazanc-nedir/">ticari kazanç nedir</a> sorusuna cevap vermeden önce, basit usulün ne olduğuna dair birkaç
 kelime etmek faydalı olacaktır.
 
 ## Basit Usul Nedir?
@@ -31,7 +31,7 @@ hesaplanmaktadır. Bu nedenle, işletmenin yaptığı giderlerin belgelenmesi ve
 edilmesi oldukça önemlidir.
 
 Basit usulde ticari kazanç beyanı, **yıllık** olarak yapılır. İşletmeler, yılın sonunda beyan ettikleri kazanç üzerinden
-vergi ödemekle yükümlüdürler. Bu vergi türü, işletmenin yaptığı faaliyetlere ve kazanç miktarına göre değişebilmektedir.
+vergi ödemekle yükümlüdürler. Bu <a href="/yazilar/vergi-turleri/">vergi türü</a>, işletmenin yaptığı faaliyetlere ve kazanç miktarına göre değişebilmektedir.
 Basit usulde ticari kazanç, işletmenin yıllık brüt satış hasılatı **81.000 TL'yi geçmediği** durumlarda uygulanabilir.
 
 ## Basit Usulde Ticari Kazanç Beyanı Nasıl Yapılır?

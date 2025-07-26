@@ -13,7 +13,7 @@ vergilere dair bazı önemli noktalar:
    Kuyumculuk sektöründe faaliyet gösteren işletmeler, bu vergiyi satış anında tahsil ederek devlete ödemekle
    yükümlüdür.
 
-2. Ticari amaçla kıymetli maden ve ziynet eşyası ithalatında alınan **Gümrük Vergisi**: Kıymetli maden ve ziynet eşyası
+2. Ticari amaçla kıymetli maden ve ziynet eşyası ithalatında alınan **<a href="/yazilar/gumruk-vergisi-nedir/">Gümrük Vergisi</a>**: Kıymetli maden ve ziynet eşyası
    ithalatı yapılırken gümrük vergisi uygulanır. Bu vergi, ithalatçı tarafından ödenir ve gümrük beyannamesi üzerinden
    tahsil edilir. Gümrük vergisi oranları, Türkiye'nin uyguladığı ticaret politikalarına ve dünya ticaretine yönelik
    anlaşmalara bağlı olarak değişebilir.

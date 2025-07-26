@@ -8,7 +8,7 @@ date: 2023-05-14
 Bu vergi, Türkiye'de üretilen veya ithal edilen **oyun kağıtları**, **oyun kartları**, **oyun pulları**, **biletleri**,
 **çekleri**, **piyango bileti** ve **kuponları** gibi şans oyunlarında kullanılan malzemeler üzerinden alınmaktadır.
 
-**Ek vergi oranı**, oyun kağıtlarına veya diğer şans oyunları malzemelerine göre farklılık göstermektedir. Örneğin, oyun
+**Ek <a href="/yazilar/vergi-orani-nasil-hesaplanir/">vergi oranı</a>**, oyun kağıtlarına veya diğer şans oyunları malzemelerine göre farklılık göstermektedir. Örneğin, oyun
 kağıtlarından alınan ek vergi oranı, satış fiyatı üzerinden **%10** olarak belirlenmiştir. Bu vergi, oyun kağıtlarının
 üreticileri veya ithalatçıları tarafından ödenir ve ürünlerin satış fiyatına eklenerek tüketiciye yansıtılır.
 
