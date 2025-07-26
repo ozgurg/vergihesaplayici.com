@@ -1,0 +1,35 @@
+---
+import DefaultLayout from "@/layouts/default-layout.astro";
+import PageHeader from "@/components/common/page-header.vue";
+import Container from "@/components/common/container.vue";
+import Breadcrumbs from "@/components/common/breadcrumbs.vue";
+import Heading1 from "@/components/common/heading-1.vue";
+import GumrukVergisiHesaplayici
+    from "@/components/calculator/gumruk-vergisi-hesaplayici/gumruk-vergisi-hesaplayici.vue";
+
+import { GumrukVergisiHesaplayiciPageDef } from "@/domains/gumruk-vergisi-hesaplayici/page-def.js";
+
+const gumrukVergisiHesaplayiciPage = GumrukVergisiHesaplayiciPageDef();
+
+const EXCHANGE_RATES = getExchangeRates();
+---
+
+<DefaultLayout head={gumrukVergisiHesaplayiciPage.head}>
+    <PageHeader>
+        <Container>
+            <Breadcrumbs
+                items={gumrukVergisiHesaplayiciPage.breadcrumbs}
+                client:load />
+            <Heading1>
+                {gumrukVergisiHesaplayiciPage.title}
+            </Heading1>
+        </Container>
+    </PageHeader>
+
+    <section>
+        <GumrukVergisiHesaplayici
+            EXCHANGE_RATES={EXCHANGE_RATES}
+            calculatorPage={gumrukVergisiHesaplayiciPage}
+            client:load />
+    </section>
+</DefaultLayout>

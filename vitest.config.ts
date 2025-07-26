@@ -25,11 +25,7 @@ export default getViteConfig({
                 "src/utils/og-image.ts",
                 "src/components/go-to-calculator-button.vue",
                 "src/components/calculator-share-modal/**.vue", // Most of them
-
-                "src/components/calculator/telefon-vergisi-hesaplayici/**.vue",
-                "src/components/calculator/konsol-vergisi-hesaplayici/**.vue",
-                "src/components/calculator/kdv-hesaplayici/**.vue",
-                "src/components/calculator/vergini-olustur/**.vue",
+                "src/components/calculator/**/**.vue",
 
 
                 // No test needed to raw data
