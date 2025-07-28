@@ -18,7 +18,6 @@
                 -->
                 <option
                     :disabled="_item.disabled"
-                    :selected="_item.selected"
                     :value="_item.value">
                     {{ _item.title }}
                 </option>
