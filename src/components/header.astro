@@ -5,7 +5,7 @@ import logoSvg from "@/assets/img/logo.svg?raw";
 import SvgIcon from "@/components/common/svg-icon.vue";
 import Drawer from "@/components/drawer.vue";
 import { icon_apps, icon_close } from "@/utils/icons.js";
-import { CalculatorPages } from "@/domains/hesaplayicilar/db.js";
+import { getCalculatorPages } from "@/domains/hesaplayicilar/db.js";
 import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
 
 const DRAWER_TOGGLE_ID = "header-drawer-toggle";
@@ -13,7 +13,7 @@ const DRAWER_ID = "drawer";
 
 const anaSayfaPage = AnaSayfaPageDef();
 
-const nav = CalculatorPages;
+const nav = getCalculatorPages();
 ---
 
 <header class="header">

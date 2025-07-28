@@ -5,10 +5,14 @@ import { GumrukVergisiHesaplayiciPageDef } from "@/domains/gumruk-vergisi-hesapl
 import { KdvHesaplayiciPageDef } from "@/domains/kdv-hesaplayici/page-def.js";
 import { VerginiOlusturPageDef } from "@/domains/vergini-olustur/page-def.js";
 
-export const CalculatorPages: CalculatorPage[] = [
+const CalculatorPages: CalculatorPage[] = [
     TelefonVergisiHesaplayiciPageDef(),
     KonsolVergisiHesaplayiciPageDef(),
     GumrukVergisiHesaplayiciPageDef(),
     KdvHesaplayiciPageDef(),
     VerginiOlusturPageDef()
 ] as const;
+
+export const getCalculatorPages = (): CalculatorPage[] => {
+    return CalculatorPages;
+};
