@@ -1,11 +1,11 @@
 <template>
-    <container class="calculation-container">
+    <container class="calculator-container">
         <inner-container>
             <form
                 ref="formEl"
                 :aria-label="props.calculatorPage.title"
                 @submit.prevent="onSubmit()"
-                class="calculation-form">
+                class="calculator-form">
                 <form-group label="Vergisiz tutar">
                     <form-control-number
                         v-model="form.basePrice"
@@ -65,8 +65,8 @@
                     Hesaplama sonuçları
                 </heading-3>
 
-                <div class="calculation-result-row">
-                    <inner-container>
+                <div class="calculator-result-row">
+                    <inner-container class="calculator-result-row-primary">
                         <calculator-result-list
                             ref="resultsEl"
                             :items="resultList!" />

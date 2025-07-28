@@ -1,0 +1,49 @@
+.calculator-container {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--vh-spacer) * 3)
+}
+
+.calculator-form {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--vh-spacer) * 2)
+}
+
+.calculator-result-row {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: var(--vh-spacer);
+    @include vh-media-breakpoint-up(md) {
+        flex-direction: row
+    }
+    &-primary {
+        display: flex;
+        flex-direction: column;
+        gap: var(--vh-spacer);
+        @include vh-media-breakpoint-down(md) {
+            order: 2
+        }
+    }
+    &-secondary {
+        display: flex;
+        flex-direction: column;
+        gap: calc(var(--vh-spacer) * .5);
+        @include vh-media-breakpoint-down(md) {
+            order: 1
+        }
+    }
+}
+
+.calculator-pricing-row {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: calc(var(--vh-spacer) * .5);
+    & > *:first-child {
+        flex: 1
+    }
+    & > *:last-child {
+        inline-size: 7rem
+    }
+}
