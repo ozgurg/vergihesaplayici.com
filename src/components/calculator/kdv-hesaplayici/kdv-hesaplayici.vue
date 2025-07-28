@@ -9,8 +9,7 @@
                 <form-group label="Hesaplama modu">
                     <kdv-hesaplayici-mode
                         v-model="form.mode"
-                        :required="true"
-                        class="form-check-group-mode" />
+                        :required="true" />
                 </form-group>
 
                 <form-group>
@@ -34,8 +33,7 @@
                         :required="true" />
                     <kdv-hesaplayici-rate-presets
                         v-model="form.rate"
-                        scale="small"
-                        class="form-check-group-rate-presets" />
+                        scale="small" />
                 </form-group>
 
                 <form-button

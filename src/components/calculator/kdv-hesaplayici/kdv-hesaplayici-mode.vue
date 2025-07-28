@@ -2,7 +2,8 @@
     <form-check-group
         v-bind="props"
         :items="MODE_OPTIONS"
-        type="radio" />
+        type="radio"
+        class="form-check-group-mode" />
 </template>
 
 <script lang="ts" setup>

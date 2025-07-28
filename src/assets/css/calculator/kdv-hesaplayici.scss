@@ -1,14 +1,10 @@
-:deep(.form-check-group-mode) {
-    grid-template-columns: 1fr !important // FIXME: Remove `!important` 😔
-}
-
-:deep(.form-check-group-rate-presets) {
-    grid-template-columns: repeat(3, 1fr) !important; // FIXME: Remove `!important` 😔
+.form-check-group-presets {
+    grid-template-columns: repeat(3, 1fr);
     margin-block-start: var(--vh-spacer);
-    .form-check {
+    :deep(.form-check) {
         background-image: none
     }
-    b {
+    :deep(b) {
         font-weight: var(--vh-fw-semibold);
         @include vh-text-number
     }
