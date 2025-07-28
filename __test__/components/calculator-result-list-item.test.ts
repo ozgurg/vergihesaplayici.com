@@ -1,7 +1,7 @@
 import { mount } from "@vue/test-utils";
 import { describe, expect, it } from "vitest";
 import { testAttrPassingToRoot, testRootClass } from "@root/__test__/utils.js";
-import StringCarousel2 from "@/components/common/string-carousel2.vue";
+import StringCarousel from "@/components/common/string-carousel.vue";
 import CalculatorResultListItem from "@/components/calculator-result-list-item.vue";
 
 describe("components/calculator-result-list-item.vue", () => {
@@ -27,13 +27,13 @@ describe("components/calculator-result-list-item.vue", () => {
             props: testProps
         });
 
-        const dtStringCarousel2 = wrapper.find("dt").findComponent(StringCarousel2);
-        expect(dtStringCarousel2.exists()).toBeTruthy();
-        expect(dtStringCarousel2.props("text")).toBe(testProps.label);
+        const dtStringCarousel = wrapper.find("dt").findComponent(StringCarousel);
+        expect(dtStringCarousel.exists()).toBeTruthy();
+        expect(dtStringCarousel.props("text")).toBe(testProps.label);
 
-        const ddStringCarousel2 = wrapper.find("dd").findComponent(StringCarousel2);
-        expect(ddStringCarousel2.exists()).toBeTruthy();
-        expect(ddStringCarousel2.props("text")).toBe(testProps.value);
+        const ddStringCarousel = wrapper.find("dd").findComponent(StringCarousel);
+        expect(ddStringCarousel.exists()).toBeTruthy();
+        expect(ddStringCarousel.props("text")).toBe(testProps.value);
     });
 
     it("renders label as it is if it does not contains any number", () => {

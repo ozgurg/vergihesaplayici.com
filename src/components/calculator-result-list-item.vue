@@ -2,14 +2,14 @@
     <div :class="CLASSES">
         <dt>
             <template v-if="doesLabelContainNumber">
-                <string-carousel2 :text="props.label" />
+                <string-carousel :text="props.label" />
             </template>
             <template v-else>
                 {{ props.label }}
             </template>
         </dt>
         <dd class="text-number">
-            <string-carousel2 :text="props.value" />
+            <string-carousel :text="props.value" />
         </dd>
     </div>
 </template>

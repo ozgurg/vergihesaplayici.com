@@ -7,19 +7,18 @@
         but to make all of them look like a group with
         chars and a11y text, I wrapped them
         -->
-        <div
+        <transition-group
+            name="list-transition"
+            tag="div"
             aria-hidden="true"
             role="presentation"
             class="string-carousel-wrapper">
-            <template v-for="(_char, _index) in chars" :key="_index">
-                <template v-if="isDigit(_char)">
-                    <string-carousel-digit :digit="_char" />
-                </template>
-                <template v-else>
-                    <span>{{ _char === " " ? "&nbsp;" : _char }}</span>
-                </template>
+            <template v-for="(_char, _index) in chars" :key="Math.random()">
+                <span :style="{'--index': _index}">
+                    {{ _char === " " ? "&nbsp;" : _char }}
+                </span>
             </template>
-        </div>
+        </transition-group>
         <span class="visually-hidden">
             {{ props.text }}
         </span>
@@ -39,8 +38,6 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const chars = computed<string[]>(() => [...String(props.text)]);
-
-const isDigit = (char: string): boolean => /\d/.test(char);
 </script>
 
 <style lang="scss" scoped>
@@ -55,11 +52,32 @@ const isDigit = (char: string): boolean => /\d/.test(char);
         display: inline-flex;
         overflow: hidden;
         flex-flow: row wrap;
-        block-size: var(--_block-size)
+        block-size: var(--_block-size);
+        span {
+            will-change: transform, opacity
+        }
     }
     .visually-hidden {
         user-select: none;
         pointer-events: none
+    }
+}
+
+.list-transition {
+    &-leave-active {
+        display: none
+    }
+    &-enter-active {
+        transition: vh-transition(transform opacity, var(--vh-duration-longer), var(--vh-timing-spring));
+        transition-delay: calc(var(--index) * 10ms)
+    }
+    &-enter-from {
+        transform: translateY(-100%) scale(0);
+        opacity: 0
+    }
+    &-leave-to {
+        transform: translateY(100%) scale(0);
+        opacity: 0
     }
 }
 </style>
