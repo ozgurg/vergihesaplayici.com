@@ -143,7 +143,3 @@ const _scrollToResults = (): void => {
 
 onMounted(onSubmit);
 </script>
-
-<style lang="scss" scoped>
-@import "@/assets/css/calculator/kdv-hesaplayici.scss";
-</style>

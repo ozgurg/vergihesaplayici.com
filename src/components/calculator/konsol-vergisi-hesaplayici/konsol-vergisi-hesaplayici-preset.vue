@@ -12,7 +12,7 @@
                         :items="PRESET_OPTIONS"
                         type="radio"
                         :required="true"
-                        class="form-check-group-preset-options" />
+                        class="preset-options" />
                 </form-group>
             </form>
         </inner-container>
@@ -153,5 +153,21 @@ watch(form, onSubmit, { deep: true });
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/css/calculator/konsol-vergisi-hesaplayici.scss";
+.preset-options {
+    &:has(> *:nth-child(1)),
+    &:has(> *:nth-child(2)),
+    &:has(> *:nth-child(3)) {
+        grid-template-columns: repeat(auto-fill, minmax(144px, 1fr))
+    }
+    &:has(> *:nth-child(4)) {
+        grid-template-columns: repeat(3, 1fr);
+        @include vh-media-breakpoint-up(md) {
+            grid-template-columns: repeat(4, 1fr)
+        }
+    }
+    :deep(small) {
+        font-weight: var(--vh-fw-semibold);
+        @include vh-text-number
+    }
+}
 </style>

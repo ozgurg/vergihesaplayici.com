@@ -147,7 +147,3 @@ const _scrollToResults = (): void => {
 
 onMounted(onSubmit);
 </script>
-
-<style lang="scss" scoped>
-@import "@/assets/css/calculator/telefon-vergisi-hesaplayici.scss";
-</style>

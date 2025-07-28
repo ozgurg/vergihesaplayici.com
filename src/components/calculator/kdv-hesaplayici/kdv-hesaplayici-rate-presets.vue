@@ -3,7 +3,7 @@
         v-bind="props"
         :items="ITEMS"
         type="radio"
-        class="form-check-group-presets" />
+        class="presets" />
 </template>
 
 <script lang="ts" setup>
@@ -37,3 +37,17 @@ const ITEMS: FormCheckProps[] = [
     }
 ];
 </script>
+
+<style lang="scss" scoped>
+.presets {
+    grid-template-columns: repeat(3, 1fr);
+    margin-block-start: var(--vh-spacer);
+    :deep(.form-check) {
+        background-image: none
+    }
+    :deep(b) {
+        font-weight: var(--vh-fw-semibold);
+        @include vh-text-number
+    }
+}
+</style>
