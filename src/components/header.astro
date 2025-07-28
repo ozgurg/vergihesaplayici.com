@@ -5,15 +5,17 @@ import logoSvg from "@/assets/img/logo.svg?raw";
 import SvgIcon from "@/components/common/svg-icon.vue";
 import Drawer from "@/components/drawer.vue";
 import { icon_apps, icon_close } from "@/utils/icons.js";
-import { getCalculatorPages } from "@/domains/hesaplayicilar/db.js";
+import { getFeaturedCalculatorPages } from "@/domains/hesaplayicilar/db.js";
 import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
+import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
 
 const DRAWER_TOGGLE_ID = "header-drawer-toggle";
 const DRAWER_ID = "drawer";
 
 const anaSayfaPage = AnaSayfaPageDef();
+const hesaplayicilarPage = HesaplayicilarPageDef();
 
-const nav = getCalculatorPages();
+const nav = getFeaturedCalculatorPages();
 ---
 
 <header class="header">
@@ -36,6 +38,14 @@ const nav = getCalculatorPages();
                         </a>
                     </li>
                 ))}
+                <li>
+                    <a
+                        href={hesaplayicilarPage.url}
+                        aria-current={ariaCurrentValue(Astro.url, hesaplayicilarPage.url)}>
+                        <SvgIcon icon={icon_apps} />
+                        <span>Tüm Hesaplayıcılar</span>
+                    </a>
+                </li>
             </ul>
         </nav>
         <button

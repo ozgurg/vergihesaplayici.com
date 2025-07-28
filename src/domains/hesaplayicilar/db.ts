@@ -5,14 +5,20 @@ import { GumrukVergisiHesaplayiciPageDef } from "@/domains/gumruk-vergisi-hesapl
 import { KdvHesaplayiciPageDef } from "@/domains/kdv-hesaplayici/page-def.js";
 import { VerginiOlusturPageDef } from "@/domains/vergini-olustur/page-def.js";
 
-const CalculatorPages: CalculatorPage[] = [
-    TelefonVergisiHesaplayiciPageDef(),
-    KonsolVergisiHesaplayiciPageDef(),
-    GumrukVergisiHesaplayiciPageDef(),
-    KdvHesaplayiciPageDef(),
-    VerginiOlusturPageDef()
-] as const;
-
 export const getCalculatorPages = (): CalculatorPage[] => {
-    return CalculatorPages;
+    return [
+        TelefonVergisiHesaplayiciPageDef(),
+        GumrukVergisiHesaplayiciPageDef(),
+        KdvHesaplayiciPageDef(),
+        KonsolVergisiHesaplayiciPageDef(),
+        VerginiOlusturPageDef()
+    ];
+};
+
+export const getFeaturedCalculatorPages = (): CalculatorPage[] => {
+    return [
+        TelefonVergisiHesaplayiciPageDef(),
+        GumrukVergisiHesaplayiciPageDef(),
+        KdvHesaplayiciPageDef()
+    ] as const;
 };
