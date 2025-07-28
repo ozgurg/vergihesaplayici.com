@@ -63,6 +63,7 @@
         </div>
 
         <div
+            data-sortable-hide-ghost=""
             aria-hidden="true"
             class="tax-item-count">
         </div>
