@@ -105,6 +105,8 @@ $_scales: (
         }
     }
     &:has(select:disabled) {
+        cursor: not-allowed;
+        opacity: .75;
         border-color: transparent
     }
     &:has(select:focus-visible) {
