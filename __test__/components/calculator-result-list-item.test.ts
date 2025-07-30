@@ -73,4 +73,35 @@ describe("components/calculator-result-list-item.vue", () => {
         });
         expect(wrapper.attributes("class")).toBe("calculator-result-list-item");
     });
+
+    it("applies or not applies `muted` class", () => {
+        const wrapper1 = mount(CalculatorResultListItem, {
+            props: {
+                label: "Tax Free Price",
+                value: "100",
+                variant: "tax-free-price"
+            }
+        });
+        expect(wrapper1.classes()).not.toContain("calculator-result-list-item-muted");
+
+        const wrapper2 = mount(CalculatorResultListItem, {
+            props: {
+                label: "Tax Free Price",
+                value: "100",
+                variant: "tax-free-price",
+                isMuted: false
+            }
+        });
+        expect(wrapper2.classes()).not.toContain("calculator-result-list-item-muted");
+
+        const wrapper3 = mount(CalculatorResultListItem, {
+            props: {
+                label: "Tax Free Price",
+                value: "100",
+                variant: "tax-free-price",
+                isMuted: true
+            }
+        });
+        expect(wrapper3.classes()).toContain("calculator-result-list-item-muted");
+    });
 });

@@ -4,11 +4,12 @@
         tag="dl"
         aria-label="Hesaplama sonuçları"
         class="calculator-result-list">
-        <template v-for="_item in props.items" :key="_item.key">
+        <template v-for="_item in props.items" :key="_item.key + _item.isMuted">
             <calculator-result-list-item
                 :label="_item.label"
                 :value="_item.value"
-                :variant="KEY_VARIANT_MAP[_item.key]" />
+                :variant="KEY_VARIANT_MAP[_item.key]"
+                :is-muted="_item.isMuted" />
         </template>
     </transition-group>
 </template>

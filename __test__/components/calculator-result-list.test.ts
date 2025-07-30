@@ -5,8 +5,8 @@ import CalculatorResultListItem from "@/components/calculator-result-list-item.v
 import CalculatorResultList from "@/components/calculator-result-list.vue";
 
 const TEST_ITEMS = [
-    { key: "taxFree", label: "Tax Free Price", value: "100", variant: "tax-free-price" },
-    { key: "total", label: "Total Tax", value: "20", variant: "total-tax" },
+    { key: "taxFree", label: "Tax Free Price", value: "100", variant: "tax-free-price", isMuted: false },
+    { key: "total", label: "Total Tax", value: "20", variant: "total-tax", isMuted: true },
     { key: "taxAdded", label: "Tax Added Price", value: "120", variant: "tax-added-price" }
 ];
 
@@ -33,7 +33,8 @@ describe("components/calculator-result-list.vue", () => {
             expect(_calculatorResultListItem.props()).toEqual({
                 label: item.label,
                 value: item.value,
-                variant: item.variant
+                variant: item.variant,
+                isMuted: item.isMuted || false
             });
         }
     });

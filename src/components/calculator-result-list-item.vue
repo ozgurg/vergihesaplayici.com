@@ -21,15 +21,19 @@ export type Props = {
     label: string;
     value: string;
     variant?: "tax-free-price" | "total-tax" | "tax-added-price";
+    isMuted?: boolean;
 } & /* @vue-ignore */ Partial<HtmlAttrs_div>;
 
-const props = defineProps<Props>();
+const props = withDefaults(defineProps<Props>(), {
+    isMuted: false
+});
 
 const doesLabelContainNumber = /\d/.test(props.label);
 
 const CLASSES = [
     "calculator-result-list-item",
-    props.variant ? `calculator-result-list-item-variant-${props.variant}` : undefined
+    props.variant ? `calculator-result-list-item-variant-${props.variant}` : undefined,
+    props.isMuted ? `calculator-result-list-item-muted` : undefined
 ];
 </script>
 
@@ -64,6 +68,13 @@ $_variants: (
     @each $__variant, $__properties in $_variants {
         &-variant-#{$__variant} {
             @include vh-map-to-properties($__properties)
+        }
+    }
+    &-muted {
+        transition: vh-transition(opacity, var(--vh-duration-short));
+        opacity: .625;
+        &:hover {
+            opacity: 1
         }
     }
     dt {
