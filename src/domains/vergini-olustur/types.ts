@@ -32,7 +32,7 @@ export type TaxFees = {
 };
 
 export type TaxRates = {
-    total: number;
+    total: TaxFees["total"];
     items: number;
 };
 

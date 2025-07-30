@@ -2,27 +2,19 @@ import type { CalculationResults, Prices, TaxFees, TaxRates } from "@/domains/kd
 import { Mode } from "@/domains/kdv-hesaplayici/types.js";
 
 export class Calculator {
-    // Most of the calculation values will be assigned when `calculate()` is called.
-    // Initially, I set them to `WILL_ASSIGNED_LATER`, but why not just assign `0`?
-    // Because in some calculations, `0` can have a specific meaning.
-    // Even if the value is `0`, the name will clarify its purpose,
-    // making sure there's no confusion unless `0` really means something.
-    // I also don't want to use `null` because handling it in TypeScript adds unnecessary complexity.
-    private readonly WILL_ASSIGNED_LATER: number = 0;
-
     private taxFees: TaxFees = {
-        total: this.WILL_ASSIGNED_LATER,
-        valueAddedTax: this.WILL_ASSIGNED_LATER
+        total: 0,
+        valueAddedTax: 0
     };
 
     private taxRates: TaxRates = {
-        total: this.WILL_ASSIGNED_LATER,
-        valueAddedTax: this.WILL_ASSIGNED_LATER
+        total: 0,
+        valueAddedTax: 0
     };
 
     private readonly prices: Prices = {
-        taxFree: this.WILL_ASSIGNED_LATER,
-        taxAdded: this.WILL_ASSIGNED_LATER
+        taxFree: 0,
+        taxAdded: 0
     };
 
     private mode: Mode;
@@ -52,6 +44,7 @@ export class Calculator {
     public calculate(): CalculationResults {
         this.calculateTax_valueAddedTax();
 
+
         this.taxFees.total = this.calculateTotalTaxFee();
         this.taxRates.total = calculateTotalTaxRate(this.taxFees.total, this.prices.taxFree);
 
@@ -66,6 +59,7 @@ export class Calculator {
         return this.taxFees.valueAddedTax;
     }
 
+    // "Katma Değer Vergisi (KDV)"
     private calculateTax_valueAddedTax(): void {
         this.taxRates.valueAddedTax = this.rate;
 
