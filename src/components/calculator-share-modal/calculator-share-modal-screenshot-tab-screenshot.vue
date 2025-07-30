@@ -20,7 +20,7 @@
         <main>
             <template v-if="props.screenshotData.input.length > 0">
                 <dl class="screenshot-list">
-                    <template v-for="_item in props.screenshotData.input" :key="_item.value">
+                    <template v-for="_item in props.screenshotData.input" :key="Math.random()">
                         <div class="screenshot-list-item">
                             <dt>{{ _item.label }}</dt>
                             <dd :class="{'text-number': _item.isNumeric}">
@@ -34,7 +34,7 @@
             </template>
 
             <dl class="screenshot-list">
-                <template v-for="_item in props.screenshotData.output" :key="_item.value">
+                <template v-for="_item in props.screenshotData.output" :key="Math.random()">
                     <div class="screenshot-list-item">
                         <dt>{{ _item.label }}</dt>
                         <dd :class="{'text-number': _item.isNumeric || true}">
