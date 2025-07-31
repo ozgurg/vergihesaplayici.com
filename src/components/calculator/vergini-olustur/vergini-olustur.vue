@@ -111,6 +111,7 @@ export type Props = {
 }
 
 export type UITaxItem = TaxItem & {
+    id: number;
     placeholder: string;
 };
 
