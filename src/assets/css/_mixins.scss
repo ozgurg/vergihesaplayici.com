@@ -225,13 +225,13 @@
  * transparency effects during movement.
  */
 @function vh-calculate-overlay-color($background, $overlay) {
-    $bg-red: color.red($background);
-    $bg-green: color.green($background);
-    $bg-blue: color.blue($background);
+    $bg-red: color.channel($background, "red", $space: rgb);
+    $bg-green: color.channel($background, "green", $space: rgb);
+    $bg-blue: color.channel($background, "blue", $space: rgb);
 
-    $overlay-red: color.red($overlay);
-    $overlay-green: color.green($overlay);
-    $overlay-blue: color.blue($overlay);
+    $overlay-red: color.channel($overlay, "red", $space: rgb);
+    $overlay-green: color.channel($overlay, "green", $space: rgb);
+    $overlay-blue: color.channel($overlay, "blue", $space: rgb);
     $overlay-alpha: color.alpha($overlay);
 
     $result-red: math.round($bg-red * (1 - $overlay-alpha) + $overlay-red * $overlay-alpha);
