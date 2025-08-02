@@ -1,14 +1,10 @@
 import { describe, expect, it } from "vitest";
-import type { Prices } from "@/domains/kdv-hesaplayici/types.js";
+import type { Form, Prices } from "@/domains/kdv-hesaplayici/types.js";
 import { Mode } from "@/domains/kdv-hesaplayici/types.js";
 import { Calculator } from "@/domains/kdv-hesaplayici/calculator.js";
 
 type CalculateParams = {
-    input: {
-        mode: Mode;
-        price: number;
-        rate: number;
-    };
+    input: Form;
     expectedOutput: Prices;
 };
 

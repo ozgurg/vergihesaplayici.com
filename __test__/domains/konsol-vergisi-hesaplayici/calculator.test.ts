@@ -1,11 +1,9 @@
-import type { Prices } from "@/domains/konsol-vergisi-hesaplayici/types.js";
+import type { Form, Prices } from "@/domains/konsol-vergisi-hesaplayici/types.js";
 import { describe, expect, it } from "vitest";
 import { Calculator } from "@/domains/konsol-vergisi-hesaplayici/calculator.js";
 
 type CalculateParams = {
-    input: {
-        price: number;
-    };
+    input: Omit<Form, "currency">;
     options: {
         calculateFromTaxAddedPrice: boolean;
     };
