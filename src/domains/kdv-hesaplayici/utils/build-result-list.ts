@@ -1,6 +1,6 @@
-import type { CalculationResults, ResultList } from "@/domains/kdv-hesaplayici/types.js";
+import type { CalculationResults, Form, ResultList } from "@/domains/kdv-hesaplayici/types.js";
 
-export const buildResultList = (results: CalculationResults): ResultList => {
+export const buildResultList = (results: CalculationResults, _: Form): ResultList => {
     const { prices, taxFees, taxRates } = results;
     const list: ResultList = [];
 

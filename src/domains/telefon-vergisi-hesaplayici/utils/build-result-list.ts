@@ -1,7 +1,7 @@
-import type { CalculationResults, ResultList } from "@/domains/telefon-vergisi-hesaplayici/types.js";
+import type { CalculationResults, Form, ResultList } from "@/domains/telefon-vergisi-hesaplayici/types.js";
 import { Registration } from "@/domains/telefon-vergisi-hesaplayici/types.js";
 
-export const buildResultList = (results: CalculationResults, registration: Registration): ResultList => {
+export const buildResultList = (results: CalculationResults, form: Form): ResultList => {
     const { prices, taxFees, taxRates } = results;
     const list: ResultList = [];
 
@@ -13,7 +13,7 @@ export const buildResultList = (results: CalculationResults, registration: Regis
     });
 
     // 😐
-    if (registration === Registration.IMPORT) {
+    if (form.registration === Registration.IMPORT) {
         list.push({
             key: "ministryOfCulture",
             label: `Kültür Bakanlığı (%${taxRates.ministryOfCulture})`,
@@ -34,7 +34,7 @@ export const buildResultList = (results: CalculationResults, registration: Regis
             label: `KDV (%${taxRates.valueAddedTax})`,
             value: formatMoney(taxFees.valueAddedTax, "TRY")
         });
-    } else {
+    } else if (form.registration === Registration.PASSPORT) {
         list.push({
             key: "trtPassport",
             label: `TRT bandrolü (${formatMoney(taxRates.trtPassport, "EUR")})`,
