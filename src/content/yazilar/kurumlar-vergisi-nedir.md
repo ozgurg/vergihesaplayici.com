@@ -1,6 +1,6 @@
 ---
 title: "Kurumlar Vergisi Nedir?"
-description: "Kurumlar Vergisi, Türkiye'deki tüm kurumların faaliyetlerinden elde ettikleri kazançların üzerinden ödediği bir vergidir"
+description: "Kurumlar Vergisi, Türkiye'deki tüm kurumların faaliyetlerinden elde ettikleri kazançların üzerinden ödediği bir vergidir."
 date: 2023-05-08
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Gümrük Vergisi Nedir?"
-description: "Gümrük vergisi, bir ülkenin sınırları içine giren veya çıkan mallara uygulanan bir vergidir"
+description: "Gümrük vergisi, bir ülkenin sınırları içine giren veya çıkan mallara uygulanan bir vergidir."
 date: 2023-04-27
 ---
 

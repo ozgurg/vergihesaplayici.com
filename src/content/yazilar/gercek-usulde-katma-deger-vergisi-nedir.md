@@ -1,6 +1,6 @@
 ---
 title: "Gerçek Usülde Katma Değer Vergisi Nedir?"
-description: "Katma Değer Vergisi (KDV) birçok ülkenin uyguladığı bir tür dolaylı vergidir"
+description: "Katma Değer Vergisi (KDV) birçok ülkenin uyguladığı bir tür dolaylı vergidir."
 date: 2023-05-10
 ---
 

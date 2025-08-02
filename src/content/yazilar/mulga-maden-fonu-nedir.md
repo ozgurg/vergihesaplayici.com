@@ -1,6 +1,6 @@
 ---
 title: "Mülga Maden Fonu Nedir?"
-description: "Mülga Maden Fonu, Türkiye'de 1980'li yıllarda uygulanan bir madencilik politikası sonucu oluşturulan bir fona verilen isimdir"
+description: "Mülga Maden Fonu, Türkiye'de 1980'li yıllarda uygulanan bir madencilik politikası sonucu oluşturulan bir fona verilen isimdir."
 date: 2023-05-13
 ---
 

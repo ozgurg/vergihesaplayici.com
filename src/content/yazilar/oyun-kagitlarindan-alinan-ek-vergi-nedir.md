@@ -1,6 +1,6 @@
 ---
 title: "Oyun Kağıtlarından Alınan Ek Vergi Nedir?"
-description: "Türkiye'de oyun kağıtlarından alınan ek vergi, 4760 sayılı Özel Tüketim Vergisi Kanunu'nda düzenlenen bir vergidir"
+description: "Türkiye'de oyun kağıtlarından alınan ek vergi, 4760 sayılı Özel Tüketim Vergisi Kanunu'nda düzenlenen bir vergidir."
 date: 2023-05-14
 ---
 

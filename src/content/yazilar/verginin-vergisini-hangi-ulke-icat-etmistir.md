@@ -1,6 +1,6 @@
 ---
 title: "Verginin Vergisini Hangi Ülke İcat Etmiştir?"
-description: "Verginin vergisi, İngiltere'de icat edilmiştir"
+description: "Verginin vergisi, İngiltere'de icat edilmiştir."
 date: 2023-05-09
 ---
 

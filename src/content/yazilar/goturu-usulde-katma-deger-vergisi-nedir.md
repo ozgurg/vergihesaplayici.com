@@ -1,6 +1,6 @@
 ---
 title: "Götürü Usülde Katma Değer Vergisi Nedir?"
-description: "Götürü usulde katma değer vergisi, Türkiye'de belirli sektörlerde faaliyet gösteren işletmelerin vergilendirme yöntemidir"
+description: "Götürü usulde katma değer vergisi, Türkiye'de belirli sektörlerde faaliyet gösteren işletmelerin vergilendirme yöntemidir."
 date: 2023-05-10
 ---
 

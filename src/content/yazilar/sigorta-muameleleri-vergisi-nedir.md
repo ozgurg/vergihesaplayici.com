@@ -1,6 +1,6 @@
 ---
 title: "Sigorta Muameleleri Vergisi Nedir?"
-description: "Sigorta Muameleleri Vergisi, sigorta şirketleri tarafından yapılan sigorta işlemlerinden alınan bir vergidir"
+description: "Sigorta Muameleleri Vergisi, sigorta şirketleri tarafından yapılan sigorta işlemlerinden alınan bir vergidir."
 date: 2023-05-09
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Yıllık Gelir Vergisi Nedir?"
-description: "Yıllık gelir vergisi, bir ülkede yaşayan kişilerin, yıllık olarak elde ettikleri kazançlarının bir kısmını devlete vergi olarak ödemesidir"
+description: "Yıllık gelir vergisi, bir ülkede yaşayan kişilerin, yıllık olarak elde ettikleri kazançlarının bir kısmını devlete vergi olarak ödemesidir."
 date: 2023-05-06
 ---
 

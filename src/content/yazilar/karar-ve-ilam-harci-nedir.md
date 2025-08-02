@@ -1,6 +1,6 @@
 ---
 title: "Karar ve İlam Harcı Nedir?"
-description: "Türkiye'de hukuki süreçlerin yürütülmesi ve mahkemelerde verilen kararların resmileştirilmesi için bazı harçlar ödenmektedir"
+description: "Türkiye'de hukuki süreçlerin yürütülmesi ve mahkemelerde verilen kararların resmileştirilmesi için bazı harçlar ödenmektedir."
 date: 2023-07-19
 ---
 

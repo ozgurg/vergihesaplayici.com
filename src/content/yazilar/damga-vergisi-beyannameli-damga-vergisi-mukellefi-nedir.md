@@ -1,6 +1,6 @@
 ---
 title: "Damga Vergisi (Beyannameli Damga Vergisi Mükellefi) Nedir?"
-description: "Damga vergisi, Türkiye'de hemen hemen her türlü belgeye uygulanan bir vergi türüdür"
+description: "Damga vergisi, Türkiye'de hemen hemen her türlü belgeye uygulanan bir vergi türüdür."
 date: 2023-05-13
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Gelir Geçici Vergi Nedir?"
-description: "Gelir geçici vergi, bir işletmenin veya bireysel bir kişinin, vergi beyannamelerini hazırlamak ve vergi ödemelerini düzenlemek için önceden ödemesi gereken bir vergidir"
+description: "Gelir geçici vergi, bir işletmenin veya bireysel bir kişinin, vergi beyannamelerini hazırlamak ve vergi ödemelerini düzenlemek için önceden ödemesi gereken bir vergidir."
 date: 2023-05-13
 ---
 

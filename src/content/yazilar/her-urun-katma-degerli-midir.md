@@ -1,6 +1,6 @@
 ---
 title: "Her Ürün Katma Değerli Midir?"
-description: "Katma değer, bir mal veya hizmetin üretiminde yaratılan artı değerdir"
+description: "Katma değer, bir mal veya hizmetin üretiminde yaratılan artı değerdir."
 date: 2023-05-04
 ---
 

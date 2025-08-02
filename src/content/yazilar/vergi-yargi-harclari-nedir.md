@@ -1,6 +1,6 @@
 ---
 title: "Vergi Yargı Harçları Nedir?"
-description: "Türkiye'de vergi yasalarının uygulanması ve vergi davalarının çözümü için Vergi Mahkemeleri ve Danıştay gibi yargı organları bulunmaktadır"
+description: "Türkiye'de vergi yasalarının uygulanması ve vergi davalarının çözümü için Vergi Mahkemeleri ve Danıştay gibi yargı organları bulunmaktadır."
 date: 2023-05-16
 ---
 

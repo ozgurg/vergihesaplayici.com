@@ -1,6 +1,6 @@
 ---
 title: "Faiz Vergisi Nedir?"
-description: "Faiz vergisi, Türkiye'de uygulanan bir vergi türüdür ve bankalar aracılığıyla gerçekleştirilen finansal işlemlerden alınır"
+description: "Faiz vergisi, Türkiye'de uygulanan bir vergi türüdür ve bankalar aracılığıyla gerçekleştirilen finansal işlemlerden alınır."
 date: 2023-07-17
 ---
 

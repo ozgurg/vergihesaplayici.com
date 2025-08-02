@@ -1,6 +1,6 @@
 ---
 title: "Akaryakıt Tüketim Vergisi Nedir?"
-description: "Akaryakıt tüketim vergisi, Türkiye'deki akaryakıt tüketimine uygulanan bir vergidir"
+description: "Akaryakıt tüketim vergisi, Türkiye'deki akaryakıt tüketimine uygulanan bir vergidir."
 date: 2023-05-10
 ---
 

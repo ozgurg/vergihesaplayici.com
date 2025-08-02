@@ -1,6 +1,6 @@
 ---
 title: "Vergi Alınmayan Ürünler Nelerdir?"
-description: "Vergi alınmayan ürünler, ülkeden ülkeye değişebilir. Ancak genel olarak aşağıdaki ürünler vergiden muaf tutulabilir"
+description: "Vergi alınmayan ürünler, ülkeden ülkeye değişebilir. Ancak genel olarak aşağıdaki ürünler vergiden muaf tutulabilir."
 date: 2023-04-27
 ---
 

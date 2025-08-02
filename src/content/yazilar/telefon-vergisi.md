@@ -1,6 +1,6 @@
 ---
 title: "Telefon Vergisi"
-description: "Telefon vergisi, birçok ülkede telekomünikasyon hizmetleri için alınan bir vergidir"
+description: "Telefon vergisi, birçok ülkede telekomünikasyon hizmetleri için alınan bir vergidir."
 date: 2023-05-04
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: "Telekomünikasyon Kurumu Tarafından Yatırılan Telgraf ve Telefon Kanunu İdari Para Cezaları Nedir? "
-description: "Telekomünikasyon alanında düzenlemeler, ülkemizde önemli bir yere sahiptir. Bu alanda hizmet veren kurumlar, Telekomünikasyon Kurumu (BTK) tarafından belirlenen kanun ve yönetmeliklere uymak zorundadır"
+title: "Telekomünikasyon Kurumu Tarafından Yatırılan Telgraf ve Telefon Kanunu İdari Para Cezaları Nedir?"
+description: "Telekomünikasyon alanında düzenlemeler, ülkemizde önemli bir yere sahiptir. Bu alanda hizmet veren kurumlar, Telekomünikasyon Kurumu (BTK) tarafından belirlenen kanun ve yönetmeliklere uymak zorundadır."
 date: 2023-07-25
 ---
 

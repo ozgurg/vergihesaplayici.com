@@ -1,6 +1,6 @@
 ---
 title: "Vergi Türleri"
-description: "Çok fazla olan vergi türleri kodlaryla bu sayfada bulunuyor"
+description: "Çok fazla olan vergi türleri kodlaryla bu sayfada bulunuyor."
 date: 2023-05-13
 ---
 
@@ -39,7 +39,7 @@ date: 2023-05-13
 | 0062 | <a href="/yazilar/mulga-kooperatifcilik-tanitma-ve-egitim-fonu-nedir/">Mülga Kooperatifçilik Tanıtma ve Eğitim Fonu</a>                                                                                                                               |
 | 0067 | <a href="/yazilar/gelir-vergisi-kanunu-gecici-67-11-maddesine-gore-yapilan-ihtiyari-beyan-nedir/">Gelir Vergisi Kanunu Geçici 67/11 Maddesine Göre Yapılan İhtiyari Beyan</a>                                                                         |
 | 0071 | <a href="/yazilar/petrol-ve-dogalgaz-urunlerine-iliskin-ozel-tuketim-vergisi-nedir/">Petrol ve Doğalgaz Ürünlerine İlişkin Özel Tüketim Vergisi</a>                                                                                                   |
-| 0073 | <a href="/yazilar/kolali-gazoz-alkollu-icecekler-ve-tutun-mamullerine-iliskin-ozel-tuketim-vergisi-nedir/">Kolalı Gazoz, Alkollü İçecekler ve Tütün Mamüllerine İlişkin Özel Tüketim Vergisi Nedir?</a>                                               |
+| 0073 | <a href="/yazilar/kolali-gazoz-alkollu-icecekler-ve-tutun-mamullerine-iliskin-ozel-tuketim-vergisi-nedir/">Kolalı Gazoz, Alkollü İçecekler ve Tütün Mamüllerine İlişkin Özel Tüketim Vergisi</a>                                                      |
 | 0074 | <a href="/yazilar/dayanikli-tuketim-ve-diger-mallara-ilisikin-ozel-tuketim-vergisi-nedir/">Dayanıklı Tüketim ve Diğer Mallara İlişikin Özel Tüketim Vergisi</a>                                                                                       |
 | 0075 | <a href="/yazilar/alkollu-iceceklere-iliskin-ozel-tuketim-vergisi-nedir/">Alkollü İçeceklere İlişkin Özel Tüketim Vergisi</a>                                                                                                                         |
 | 0076 | <a href="/yazilar/tutun-mamullerine-iliskin-ozel-tuketim-vergisi-nedir/">Tütün Mamüllerine İlişkin Özel Tüketim Vergisi</a>                                                                                                                           |

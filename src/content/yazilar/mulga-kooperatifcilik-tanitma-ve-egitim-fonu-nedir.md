@@ -1,6 +1,6 @@
 ---
 title: "Mülga Kooperatifçilik Tanıtma ve Eğitim Fonu Nedir?"
-description: "Mülga Kooperatifçilik Tanıtma ve Eğitim Fonu, Türkiye'de kooperatifçilik sektörünün gelişimini desteklemek amacıyla kurulan bir fon olarak faaliyet göstermektedir"
+description: "Mülga Kooperatifçilik Tanıtma ve Eğitim Fonu, Türkiye'de kooperatifçilik sektörünün gelişimini desteklemek amacıyla kurulan bir fon olarak faaliyet göstermektedir."
 date: 2023-05-22
 ---
 

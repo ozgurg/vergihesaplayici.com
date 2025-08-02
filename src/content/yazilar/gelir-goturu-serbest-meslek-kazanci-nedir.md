@@ -1,6 +1,6 @@
 ---
 title: "Gelir Götürü Serbest Meslek Kazancı Nedir?"
-description: "Gelir Götürü Serbest Meslek Kazancı (GSSMK), serbest meslek sahiplerinin elde ettiği gelirin vergilendirilmesinde kullanılan bir vergi yöntemidir"
+description: "Gelir Götürü Serbest Meslek Kazancı (GSSMK), serbest meslek sahiplerinin elde ettiği gelirin vergilendirilmesinde kullanılan bir vergi yöntemidir."
 date: 2023-05-06
 ---
 

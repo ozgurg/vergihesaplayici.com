@@ -1,6 +1,6 @@
 ---
 title: "Röntgen Filmlerinden Alınan Ek Vergi Nedir?"
-description: "Vergiler, bir ülkenin mali yapısının temel taşlarından biridir"
+description: "Vergiler, bir ülkenin mali yapısının temel taşlarından biridir."
 date: 2023-05-18
 ---
 

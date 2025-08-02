@@ -1,6 +1,6 @@
 ---
 title: "Kurumlar Vergisi Stopajı (KVKM24) Nedir?"
-description: "Kurumlar vergisi stopajı, Türkiye'deki kurumların ödediği bir vergidir. KVKM24 olarak da bilinir"
+description: "Kurumlar vergisi stopajı, Türkiye'deki kurumların ödediği bir vergidir. KVKM24 olarak da bilinir."
 date: 2023-05-14
 ---
 

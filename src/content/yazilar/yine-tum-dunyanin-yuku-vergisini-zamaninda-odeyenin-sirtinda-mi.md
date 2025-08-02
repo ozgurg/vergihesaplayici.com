@@ -1,6 +1,6 @@
 ---
 title: "Yine Tüm Dünyanın Yükü Vergisini Zamanında Ödeyenin Sırtında Mı?"
-description: "Vergi yükü, her ülkenin kendine özgü vergi politikaları ve vergi yasaları ile belirlenmektedir"
+description: "Vergi yükü, her ülkenin kendine özgü vergi politikaları ve vergi yasaları ile belirlenmektedir."
 date: 2023-04-27
 ---
 
