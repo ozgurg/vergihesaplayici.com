@@ -102,6 +102,37 @@ export const presets: Preset[] = [
             }
         ]
     },
+    {
+        brandId: BRAND_ID,
+        title: "Galaxy Z Fold7",
+        slug: "samsung-galaxy-z-fold7",
+        releaseDate: new Date("2025-07-25"),
+        thumb: "samsung-galaxy-z-fold7.png",
+        ...buildPageMeta("Samsung Galaxy Z Fold7'nin"),
+        options: [
+            {
+                title: "256GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-z-fold7/buy/galaxy-z-fold7-256gb-unlocked-sku-sm-f966udbaxaa/
+                    price: 1_999.99,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "512GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-z-fold7/buy/galaxy-z-fold7-256gb-unlocked-sku-sm-f966udbaxaa/
+                    price: 2_119.99,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "1TB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-z-fold7/buy/galaxy-z-fold7-256gb-unlocked-sku-sm-f966udbaxaa/
+                    price: 2_419.99,
+                    currency: "USD"
+                }
+            }
+        ]
+    },
 
     {
         brandId: BRAND_ID,
@@ -176,6 +207,30 @@ export const presets: Preset[] = [
             {
                 title: "512GB",
                 form: { // https://www.samsung.com/us/smartphones/galaxy-z-flip6/buy/galaxy-z-flip6-512gb-unlocked-sm-f741uakexaa/
+                    price: 1_219.99,
+                    currency: "USD"
+                }
+            }
+        ]
+    },
+    {
+        brandId: BRAND_ID,
+        title: "Galaxy Z Flip7",
+        slug: "samsung-galaxy-z-flip7",
+        releaseDate: new Date("2025-07-25"),
+        thumb: "samsung-galaxy-z-flip7.png",
+        ...buildPageMeta("Samsung Galaxy Z Flip7'nin"),
+        options: [
+            {
+                title: "256GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-z-flip7/buy/galaxy-z-flip7-256gb-unlocked-sku-sm-f766uzkaxaa/
+                    price: 1_099.99,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "512GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-z-flip7/buy/galaxy-z-flip7-256gb-unlocked-sku-sm-f766uzkaxaa/
                     price: 1_219.99,
                     currency: "USD"
                 }
@@ -445,61 +500,5 @@ export const presets: Preset[] = [
                 }
             }
         ]
-    },
-
-    {
-        brandId: BRAND_ID,
-        title: "Galaxy Z Fold7",
-        slug: "samsung-galaxy-z-fold7",
-        releaseDate: new Date("2025-07-25"),
-        thumb: "samsung-galaxy-z-fold7.png",
-        ...buildPageMeta("Samsung Galaxy Z Fold7'nin"),
-        options: [
-            {
-                title: "256GB",
-                form: { // https://www.samsung.com/us/smartphones/galaxy-z-fold7/buy/galaxy-z-fold7-256gb-unlocked-sku-sm-f966udbaxaa/
-                    price: 1_999.99,
-                    currency: "USD"
-                }
-            },
-            {
-                title: "512GB",
-                form: { // https://www.samsung.com/us/smartphones/galaxy-z-fold7/buy/galaxy-z-fold7-256gb-unlocked-sku-sm-f966udbaxaa/
-                    price: 2_119.99,
-                    currency: "USD"
-                }
-            },
-            {
-                title: "1TB",
-                form: { // https://www.samsung.com/us/smartphones/galaxy-z-fold7/buy/galaxy-z-fold7-256gb-unlocked-sku-sm-f966udbaxaa/
-                    price: 2_419.99,
-                    currency: "USD"
-                }
-            }
-        ]
-    },
-    {
-        brandId: BRAND_ID,
-        title: "Galaxy Z Flip7",
-        slug: "samsung-galaxy-z-flip7",
-        releaseDate: new Date("2025-07-25"),
-        thumb: "samsung-galaxy-z-flip7.png",
-        ...buildPageMeta("Samsung Galaxy Z Flip7'nin"),
-        options: [
-            {
-                title: "256GB",
-                form: { // https://www.samsung.com/us/smartphones/galaxy-z-flip7/buy/galaxy-z-flip7-256gb-unlocked-sku-sm-f766uzkaxaa/
-                    price: 1_099.99,
-                    currency: "USD"
-                }
-            },
-            {
-                title: "512GB",
-                form: { // https://www.samsung.com/us/smartphones/galaxy-z-flip7/buy/galaxy-z-flip7-256gb-unlocked-sku-sm-f766uzkaxaa/
-                    price: 1_219.99,
-                    currency: "USD"
-                }
-            }
-        ]
-    },
+    }
 ];
