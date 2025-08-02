@@ -32,7 +32,10 @@
             "error",
             "type"
         ],
-        "typescript/consistent-indexed-object-style": ["error", "index-signature"],
+        "typescript/consistent-indexed-object-style": [
+            "error",
+            "index-signature"
+        ],
 
         "eslint/no-duplicate-imports": [
             "off",
