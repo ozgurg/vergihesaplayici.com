@@ -37,6 +37,6 @@ const ITEMS: FormCheckProps[] = [
 
 <style lang="scss" scoped>
 .registration {
-    grid-template-columns: repeat(2, 1fr)
+    grid-template-columns: repeat(2, 1fr) !important // FIXME
 }
 </style>
