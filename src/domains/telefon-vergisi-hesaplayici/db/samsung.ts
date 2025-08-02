@@ -262,30 +262,6 @@ export const presets: Preset[] = [
             }
         ]
     },
-    {
-        brandId: BRAND_ID,
-        title: "Galaxy S23 FE",
-        slug: "samsung-galaxy-s23-fe",
-        releaseDate: new Date("2023-10-05"),
-        thumb: "samsung-galaxy-s23-fe.png",
-        ...buildPageMeta("Samsung Galaxy S23 FE'nin"),
-        options: [
-            {
-                title: "128GB",
-                form: {
-                    price: 629.99,
-                    currency: "USD"
-                }
-            },
-            {
-                title: "256GB",
-                form: {
-                    price: 689.99,
-                    currency: "USD"
-                }
-            }
-        ]
-    },
 
     {
         brandId: BRAND_ID,
