@@ -135,7 +135,7 @@ const onSubmit = (): void => {
 };
 
 const _scrollToResults = (): void => {
-    resultsEl.value?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    resultsEl.value?.$el?.scrollIntoView({ block: "nearest", behavior: "smooth" });
 };
 
 onMounted(onSubmit);
