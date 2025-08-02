@@ -469,5 +469,29 @@ export const presets: Preset[] = [
                 }
             }
         ]
+    },
+    {
+        brandId: BRAND_ID,
+        title: "Galaxy S25 Edge",
+        slug: "samsung-galaxy-s25-edge",
+        releaseDate: new Date("2025-05-29"),
+        thumb: "samsung-galaxy-s25-edge.png",
+        ...buildPageMeta("Samsung Galaxy S25 Edge'nin"),
+        options: [
+            {
+                title: "256GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-s25-edge/buy/galaxy-s25-edge-256gb-unlocked-sku-sm-s937uzsaxaa/
+                    price: 1_099.99,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "512GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-s25-edge/buy/galaxy-s25-edge-256gb-unlocked-sku-sm-s937uzsaxaa/
+                    price: 1_219.99,
+                    currency: "USD"
+                }
+            }
+        ]
     }
 ];
