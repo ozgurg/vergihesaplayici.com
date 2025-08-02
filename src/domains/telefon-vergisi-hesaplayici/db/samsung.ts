@@ -342,30 +342,6 @@ export const presets: Preset[] = [
             }
         ]
     },
-    {
-        brandId: BRAND_ID,
-        title: "Galaxy S24 FE",
-        slug: "samsung-galaxy-s24-fe",
-        releaseDate: new Date("2024-10-03"),
-        thumb: "samsung-galaxy-s24-fe.png",
-        ...buildPageMeta("Samsung Galaxy S24 FE'nin"),
-        options: [
-            {
-                title: "128GB",
-                form: { // https://www.samsung.com/us/smartphones/galaxy-s24-fe/buy/galaxy-s24-fe-128gb-unlocked-sm-s721uzkaxaa/
-                    price: 649.99,
-                    currency: "USD"
-                }
-            },
-            {
-                title: "256GB",
-                form: { // https://www.samsung.com/us/smartphones/galaxy-s24-fe/buy/galaxy-s24-fe-256gb-unlocked-sm-s721uzkexaa/
-                    price: 709.99,
-                    currency: "USD"
-                }
-            }
-        ]
-    },
 
     {
         brandId: BRAND_ID,
