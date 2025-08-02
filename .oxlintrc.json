@@ -32,7 +32,10 @@
             "error",
             "type"
         ],
-        "typescript/consistent-indexed-object-style": ["error", "index-signature"],
+        "typescript/consistent-indexed-object-style": [
+            "error",
+            "index-signature"
+        ],
 
         "eslint/no-duplicate-imports": [
             "off",
@@ -96,6 +99,14 @@
                 "typescript/explicit-function-return-type": "off",
                 "typescript/no-non-null-assertion": "off",
                 "typescript/no-explicit-any": "off"
+            }
+        },
+        {
+            "files": [
+                "src/pages/*.astro"
+            ],
+            "rules": {
+                "typescript/explicit-module-boundary-types": "off"
             }
         }
     ]

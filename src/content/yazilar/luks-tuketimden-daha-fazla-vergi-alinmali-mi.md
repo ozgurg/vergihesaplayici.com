@@ -1,6 +1,6 @@
 ---
 title: "Lüks Tüketimden Daha Fazla Vergi Alınmalı Mı?"
-description: "Lüks tüketim, genellikle yüksek fiyatlı ve gereksiz olarak değerlendirilen tüketim mallarını ifade eder"
+description: "Lüks tüketim, genellikle yüksek fiyatlı ve gereksiz olarak değerlendirilen tüketim mallarını ifade eder."
 date: 2023-05-09
 ---
 

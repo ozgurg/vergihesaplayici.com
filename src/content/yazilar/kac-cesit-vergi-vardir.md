@@ -1,6 +1,6 @@
 ---
 title: "Kaç Çeşit Vergi Vardır?"
-description: "Vergiler, farklı şekillerde sınıflandırılabilir. Bunlar genellikle vergi türleri, vergi kaynakları ve vergi yöntemleri olarak adlandırılır"
+description: "Vergiler, farklı şekillerde sınıflandırılabilir. Bunlar genellikle vergi türleri, vergi kaynakları ve vergi yöntemleri olarak adlandırılır."
 date: 2023-04-27
 ---
 

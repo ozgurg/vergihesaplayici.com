@@ -3,40 +3,91 @@
         :for="ID"
         :class="CLASSES">
         <svg-icon
-            :icon="icon_radioChecked"
-            class="form-radio-group-item-icon checked-icon" />
+            :icon="checkedIcon"
+            class="form-check-icon checked-icon" />
         <svg-icon
-            :icon="icon_radioUnchecked"
-            class="form-radio-group-item-icon unchecked-icon" />
+            :icon="uncheckedIcon"
+            class="form-check-icon unchecked-icon" />
         <input
             v-bind="$attrs"
-            v-model="formRadioGroupModelValue"
             :id="ID"
-            class="form-radio-group-item-icon"
-            type="radio" />
+            :type="props.type"
+            :value="props.value"
+            :checked="isChecked"
+            @change="onChange($event)"
+            class="form-check-icon" />
         <slot name="default" />
     </label>
 </template>
 
 <script lang="ts" setup>
 import type { HtmlAttrs_input } from "@/types/html.js";
-import { icon_radioChecked, icon_radioUnchecked } from "@/utils/icons.js";
+import { icon_checkboxChecked, icon_checkboxUnchecked, icon_radioChecked, icon_radioUnchecked } from "@/utils/icons.js";
+
+const DEFAULT_UNCHECKED_VALUE = false;
 
 type Scale = "small" | "medium" | "large";
 
 export type Props = {
+    type: "radio" | "checkbox";
+    value: HtmlAttrs_input["value"];
+    uncheckedValue?: HtmlAttrs_input["value"];
     scale?: Scale;
 } & /* @vue-ignore */ Omit<HtmlAttrs_input, "type">;
 
 defineOptions({ inheritAttrs: false });
 const props = defineProps<Props>();
-const formRadioGroupModelValue = inject("form-radio-group.modelValue", ref());
+const modelValue = defineModel<HtmlAttrs_input["value"] | HtmlAttrs_input["value"][]>();
 
-const ID = `form-radio-group-item-${useId()}`;
+const ID = `form-check-${useId()}`;
 const CLASSES = [
-    "form-radio-group-item",
-    `form-radio-group-item-scale-${props.scale}`
+    "form-check",
+    `form-check-scale-${props.scale}`
 ];
+
+const checkedIcon = {
+    radio: icon_radioChecked,
+    checkbox: icon_checkboxChecked
+}[props.type];
+
+const uncheckedIcon = {
+    radio: icon_radioUnchecked,
+    checkbox: icon_checkboxUnchecked
+}[props.type];
+
+const isArray = computed<boolean>(() => Array.isArray(modelValue.value));
+
+const isChecked = computed<boolean>(() => {
+    if (props.type === "radio") {
+        return modelValue.value === props.value;
+    }
+
+    return isArray.value
+        ? modelValue.value.includes(props.value)
+        : modelValue.value === props.value;
+});
+
+const onChange = (event: Event): void => {
+    const input = event.target as HTMLInputElement;
+
+    if (props.type === "radio") {
+        modelValue.value = props.value;
+        return;
+    }
+
+    // checkbox
+    if (isArray.value) {
+        const newValue = new Set(modelValue.value);
+        if (input.checked) {
+            newValue.add(props.value);
+        } else {
+            newValue.delete(props.value);
+        }
+        modelValue.value = [...newValue];
+    } else {
+        modelValue.value = input.checked ? props.value : props.uncheckedValue ?? DEFAULT_UNCHECKED_VALUE;
+    }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -67,28 +118,39 @@ $_scales: (
     opacity: 1
 }
 
-// Checked state is managed in `<form-radio-group />`
-.form-radio-group-item {
+// Checked state is managed in `<form-check-group />`
+.form-check {
     --_min-block-size: var(--min-block-size);
     --_border-radius: var(--border-radius);
+    --_icon-size: calc(var(--vh-spacer) * 1.25);
+    --_padding-inline: var(--vh-spacer);
     position: relative;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     min-block-size: var(--_min-block-size);
     padding-block: calc(var(--vh-spacer) * .75);
-    padding-inline-start: var(--vh-spacer);
-    padding-inline-end: calc(var(--vh-spacer) + (var(--vh-spacer) * .75));
+    padding-inline-start: var(--_padding-inline);
+    padding-inline-end: calc(var(--_padding-inline) + var(--_icon-size));
     @include vh-card($hover: true, $active: true);
     cursor: pointer;
-    transition: vh-transition(color background-color, var(--vh-duration-short));
+    transition: vh-transition(color background-color border-color, var(--vh-duration-short));
     @each $__scale, $__properties in $_scales {
         &-scale-#{$__scale} {
             @include vh-map-to-properties($__properties)
         }
     }
+    &:has(input:disabled) {
+        cursor: not-allowed;
+        opacity: .75;
+        border-color: transparent;
+        :deep(small) {
+            // Avoid over-opacity
+            opacity: 1
+        }
+    }
     &-icon {
-        --size: calc(var(--vh-spacer) * 1.25);
+        --size: var(--_icon-size);
         position: absolute;
         transition: vh-transition(opacity transform, var(--vh-duration-long), var(--vh-timing-spring));
         inset-inline-end: calc(var(--vh-spacer) * .5);
@@ -109,6 +171,9 @@ $_scales: (
         opacity: 0;
         block-size: var(--size);
         inline-size: var(--size)
+    }
+    &:has(input[type="checkbox"]:checked) {
+        border-color: var(--vh-clr-primary)
     }
     &:has(input:checked) {
         color: var(--vh-clr-primary);

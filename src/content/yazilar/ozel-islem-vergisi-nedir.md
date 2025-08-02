@@ -1,6 +1,6 @@
 ---
 title: "Özel İşlem Vergisi Nedir? "
-description: "Türkiye'de her türlü mal ve hizmetin alım ve satım işlemlerinden dolayı alınan vergi türleri bulunmaktadır"
+description: "Türkiye'de her türlü mal ve hizmetin alım ve satım işlemlerinden dolayı alınan vergi türleri bulunmaktadır."
 date: 2023-07-26
 ---
 

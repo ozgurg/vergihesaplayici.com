@@ -18,7 +18,6 @@
                 -->
                 <option
                     :disabled="_item.disabled"
-                    :selected="_item.selected"
                     :value="_item.value">
                     {{ _item.title }}
                 </option>
@@ -106,6 +105,8 @@ $_scales: (
         }
     }
     &:has(select:disabled) {
+        cursor: not-allowed;
+        opacity: .75;
         border-color: transparent
     }
     &:has(select:focus-visible) {

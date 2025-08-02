@@ -1,11 +1,11 @@
 <template>
-    <container class="calculation-container">
+    <container class="calculator-container">
         <inner-container>
             <form
                 ref="formEl"
                 :aria-label="props.calculatorPage.title"
                 @submit.prevent="onSubmit()"
-                class="calculation-form">
+                class="calculator-form">
                 <form-group label="Vergisiz tutar">
                     <form-control-number
                         v-model="form.basePrice"
@@ -65,8 +65,8 @@
                     Hesaplama sonuçları
                 </heading-3>
 
-                <div class="calculation-result-row">
-                    <inner-container>
+                <div class="calculator-result-row">
+                    <inner-container class="calculator-result-row-primary">
                         <calculator-result-list
                             ref="resultsEl"
                             :items="resultList!" />
@@ -111,6 +111,7 @@ export type Props = {
 }
 
 export type UITaxItem = TaxItem & {
+    id: number;
     placeholder: string;
 };
 
@@ -228,5 +229,36 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/css/calculator/vergini-olustur.scss";
+.tax-items {
+    counter-reset: tax-item-count;
+    margin-block-end: var(--vh-spacer);
+    display: flex;
+    flex-direction: column;
+    @include vh-media-breakpoint-up(sm) {
+        gap: calc(var(--vh-spacer) * .75)
+    }
+}
+
+.list-transition {
+    &-enter-active,
+    &-leave-active {
+        transition: vh-transition(transform, var(--vh-duration-longer), var(--vh-timing-spring)), vh-transition(opacity, var(--vh-duration-longer))
+    }
+    &-enter-from {
+        transform: translateX(-4rem);
+        opacity: 0
+    }
+    &-enter-to {
+        transform: translateX(0);
+        opacity: 1
+    }
+    &-leave-from {
+        transform: translateX(0);
+        opacity: 1
+    }
+    &-leave-to {
+        transform: translateX(4rem);
+        opacity: 0
+    }
+}
 </style>

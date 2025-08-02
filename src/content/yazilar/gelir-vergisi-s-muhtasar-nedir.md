@@ -1,6 +1,6 @@
 ---
 title: "Gelir Vergisi S. (Muhtasar) Nedir?"
-description: "Gelir Vergisi Stopaj Kesinti Listesi, kısaca Gelir Vergisi S. veya muhtasar olarak da bilinir"
+description: "Gelir Vergisi Stopaj Kesinti Listesi, kısaca Gelir Vergisi S. veya muhtasar olarak da bilinir."
 date: 2023-05-13
 ---
 

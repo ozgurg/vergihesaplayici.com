@@ -1,6 +1,6 @@
 ---
 title: "Şans Oyunları Vergisi Nedir?"
-description: "Şans oyunları, Türkiye'de popüler bir eğlence ve kazanç aracıdır"
+description: "Şans oyunları, Türkiye'de popüler bir eğlence ve kazanç aracıdır."
 date: 2023-06-06
 ---
 

@@ -1,13 +1,10 @@
-import type { Prices } from "@/domains/telefon-vergisi-hesaplayici/types.js";
+import type { Form, Prices } from "@/domains/telefon-vergisi-hesaplayici/types.js";
 import { Registration } from "@/domains/telefon-vergisi-hesaplayici/types.js";
 import { describe, expect, it } from "vitest";
 import { Calculator } from "@/domains/telefon-vergisi-hesaplayici/calculator.js";
 
 type CalculateParams = {
-    input: {
-        price: number;
-        registration: Registration;
-    };
+    input: Omit<Form, "currency">;
     options: {
         calculateFromTaxAddedPrice: boolean;
     };

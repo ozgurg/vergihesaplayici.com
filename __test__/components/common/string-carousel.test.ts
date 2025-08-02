@@ -1,37 +1,37 @@
 import { mount } from "@vue/test-utils";
 import { describe, expect, it } from "vitest";
 import { testAttrPassingToRoot, testRootClass } from "@root/__test__/utils.js";
-import StringCarouselDigit from "@/components/common/string-carousel-digit.vue";
 import StringCarousel from "@/components/common/string-carousel.vue";
 
 describe("components/common/string-carousel.vue", () => {
     testAttrPassingToRoot(StringCarousel, { props: { text: "Türkiye" } });
     testRootClass(StringCarousel, "string-carousel", { props: { text: "Türkiye" } });
 
-    it("renders text correctly", () => {
-        const nonDigits = "AB";
-        const digits = "012";
-        const testText = `${nonDigits}${digits}`;
-
+    it("renders chars of given text", () => {
+        const testText = "Türkiye";
         const wrapper = mount(StringCarousel, {
             props: { text: testText }
         });
 
-        const nonDigitSpans = wrapper.findAll(".string-carousel-wrapper > span");
-        expect(nonDigitSpans).toHaveLength(nonDigits.length);
-        for (const [_index, _nonDigitSpan] of nonDigitSpans.entries()) {
-            const char = nonDigits[_index];
-            expect(_nonDigitSpan.text()).toBe(char);
-        }
+        const charElements = wrapper.findAll(".string-carousel-wrapper > span");
 
-        const digitComponents = wrapper.findAllComponents(StringCarouselDigit);
-        expect(digitComponents).toHaveLength(digits.length);
-        for (const [_index, _digitComponent] of digitComponents.entries()) {
-            const char = digits[_index];
-            expect(_digitComponent.props("digit")).toBe(char);
-            expect(_digitComponent.find(`div[aria-current="true"]`).exists()).toBeTruthy();
-            expect(_digitComponent.find(`div[aria-current="true"]`).text()).toBe(char);
+        expect(charElements).toHaveLength(testText.length);
+
+        for (const [_index, _charElement] of charElements.entries()) {
+            const char = testText[_index];
+            expect(_charElement.text()).toBe(char);
         }
+    });
+
+    it("handles text with spaces correctly", () => {
+        const testText = "Türkiye Cumhuriyeti";
+        const wrapper = mount(StringCarousel, {
+            props: { text: testText }
+        });
+
+        const spans = wrapper.findAll(".string-carousel-wrapper > span");
+        expect(spans).toHaveLength(testText.length);
+        expect(spans[7]!.html()).toContain("&nbsp;");
     });
 
     it("renders a visually hidden text with full text", () => {

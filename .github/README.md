@@ -108,4 +108,15 @@ See [CONTRIBUTING.md](https://github.com/ozgurg/vergihesaplayici.com/blob/main/.
 
 ## License
 
-[![License](https://img.shields.io/badge/License-GPLv3-%2388DF95.svg)](https://github.com/ozgurg/vergihesaplayici.com/blob/main/LICENSE)
+This project is licensed under the GNU Affero General Public License v3 (AGPLv3), with additional conditions under
+Section 7.
+
+### Summary of License Terms
+
+- You may use, modify, and redistribute this software under AGPLv3.
+- You **must preserve attribution** to the original author (Özgür Görgülü) and project name (Vergi Hesaplayıcı).
+- You **must not reuse the project name ("Vergi Hesaplayıcı"), domain ("vergihesaplayici.com"), or any original branding
+  ** in derivative works unless granted permission.
+- You must **display attribution** in the user interface of any derivative version.
+
+[![License](https://img.shields.io/badge/License-AGPLv3-%2388DF95.svg)](https://github.com/ozgurg/vergihesaplayici.com/blob/main/LICENSE)

@@ -1,6 +1,6 @@
 ---
 title: "Net Aktif Vergisi Nedir?"
-description: "Vergi sistemi bir ülkenin ekonomik kaynaklarını finanse etmek ve kamu hizmetlerini sağlamak için önemli bir araçtır"
+description: "Vergi sistemi bir ülkenin ekonomik kaynaklarını finanse etmek ve kamu hizmetlerini sağlamak için önemli bir araçtır."
 date: 2023-06-06
 ---
 

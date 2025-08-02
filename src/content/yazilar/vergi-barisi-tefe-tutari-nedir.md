@@ -1,6 +1,6 @@
 ---
 title: "Vergi Barışı Tefe Tutarı Nedir?"
-description: "Vergi barışı, vergi mükelleflerinin vergi borçlarından kurtulmalarını sağlayan bir düzenlemedir"
+description: "Vergi barışı, vergi mükelleflerinin vergi borçlarından kurtulmalarını sağlayan bir düzenlemedir."
 date: 2023-05-17
 ---
 

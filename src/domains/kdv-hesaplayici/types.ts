@@ -10,10 +10,7 @@ export type TaxFees = {
     valueAddedTax: number;
 };
 
-export type TaxRates = {
-    total: number;
-    valueAddedTax: number;
-};
+export type TaxRates = TaxFees;
 
 export type Prices = {
     taxFree: number;

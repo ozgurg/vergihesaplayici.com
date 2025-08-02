@@ -1,22 +1,29 @@
-import type { CalculationResults, ResultList } from "@/domains/kdv-hesaplayici/types.js";
+import type { CalculationResults, Form, ResultList } from "@/domains/kdv-hesaplayici/types.js";
 
-export const buildResultList = (results: CalculationResults): ResultList => {
+export const buildResultList = (results: CalculationResults, _: Form): ResultList => {
     const { prices, taxFees, taxRates } = results;
-    return [
-        {
-            key: "taxFree",
-            label: "KDV hariç fiyat",
-            value: formatNumber(prices.taxFree)
-        },
-        {
-            key: "valueAddedTax",
-            label: `KDV (%${taxRates.valueAddedTax})`,
-            value: formatNumber(taxFees.valueAddedTax)
-        },
-        {
-            key: "taxAdded",
-            label: "KDV dahil fiyat",
-            value: formatNumber(prices.taxAdded)
-        }
-    ];
+    const list: ResultList = [];
+
+    // 😊
+    list.push({
+        key: "taxFree",
+        label: "KDV hariç tutar",
+        value: formatNumber(prices.taxFree)
+    });
+
+    // 😐
+    list.push({
+        key: "valueAddedTax",
+        label: `KDV (%${taxRates.valueAddedTax})`,
+        value: formatNumber(taxFees.valueAddedTax)
+    });
+
+    // 😔
+    list.push({
+        key: "taxAdded",
+        label: "KDV dahil tutar",
+        value: formatNumber(prices.taxAdded)
+    });
+
+    return list;
 };

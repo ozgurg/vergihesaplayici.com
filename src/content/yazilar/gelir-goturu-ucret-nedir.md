@@ -1,6 +1,6 @@
 ---
 title: "Gelir Götürü Ücret Nedir?"
-description: "Gelir, gider ve maliyet kavramları işletmelerin en temel konularıdır. Gelir, işletmenin elde ettiği para miktarını ifade ederken, gider işletmenin harcadığı para miktarını ifade eder"
+description: "Gelir, gider ve maliyet kavramları işletmelerin en temel konularıdır. Gelir, işletmenin elde ettiği para miktarını ifade ederken, gider işletmenin harcadığı para miktarını ifade eder."
 date: 2023-05-06
 ---
 

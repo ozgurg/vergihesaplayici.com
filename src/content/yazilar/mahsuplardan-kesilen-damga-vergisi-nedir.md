@@ -1,6 +1,6 @@
 ---
 title: "Mahsuplardan Kesilen Damga Vergisi Nedir?"
-description: "Türkiye'de, çeşitli finansal işlemler ve belgeler damga vergisi adı verilen bir vergi ile yükümlendirilmektedir"
+description: "Türkiye'de, çeşitli finansal işlemler ve belgeler damga vergisi adı verilen bir vergi ile yükümlendirilmektedir."
 date: 2023-05-16
 ---
 

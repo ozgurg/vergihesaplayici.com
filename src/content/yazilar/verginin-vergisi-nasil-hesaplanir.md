@@ -1,6 +1,6 @@
 ---
 title: "Verginin Vergisi Nasıl Hesaplanır?"
-description: "Verginin vergisi, Türkiye'de faaliyet gösteren tüzel kişilerin ödedikleri kurumlar vergisi üzerinden hesaplanan bir vergidir"
+description: "Verginin vergisi, Türkiye'de faaliyet gösteren tüzel kişilerin ödedikleri kurumlar vergisi üzerinden hesaplanan bir vergidir."
 date: 2023-05-04
 ---
 

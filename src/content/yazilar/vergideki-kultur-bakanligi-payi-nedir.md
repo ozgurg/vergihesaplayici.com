@@ -1,6 +1,6 @@
 ---
 title: "Vergideki Kültür Bakanlığı Payı Nedir?"
-description: "Vergideki Kültür Bakanlığı Payı, Türkiye'de faaliyet gösteren ve kültür-sanat alanında çalışmalar yürüten kuruluşların bütçelerinden kesinti yapılarak Kültür ve Turizm Bakanlığı'na aktarılan bir fon sistemidir"
+description: "Vergideki Kültür Bakanlığı Payı, Türkiye'de faaliyet gösteren ve kültür-sanat alanında çalışmalar yürüten kuruluşların bütçelerinden kesinti yapılarak Kültür ve Turizm Bakanlığı'na aktarılan bir fon sistemidir."
 date: 2023-05-04
 ---
 

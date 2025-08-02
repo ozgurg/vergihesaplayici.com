@@ -3,7 +3,7 @@
         :id="props.id"
         class="drawer">
         <container>
-            <template v-for="_calculatorPage in calculatorPages" :key="_calculatorPage.url">
+            <template v-for="_calculatorPage in CALCULATOR_PAGES" :key="_calculatorPage.url">
                 <calculator-card-item
                     :title="_calculatorPage.title"
                     :description="_calculatorPage.summary"
@@ -16,7 +16,9 @@
 
 <script lang="ts" setup>
 import type { HtmlAttrs_dialog } from "@/types/html.js";
-import { CalculatorPages as calculatorPages } from "@/domains/hesaplayicilar/db.js";
+import { getCalculatorPages } from "@/domains/hesaplayicilar/db.js";
+
+const CALCULATOR_PAGES = getCalculatorPages();
 
 export type Props = {
     id: string;

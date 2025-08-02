@@ -1,6 +1,6 @@
 ---
 title: "Tek Başına Alınabilen Damga Vergisi Nedir?"
-description: "Damga vergisi, Türkiye'de önemli bir vergi türüdür ve birçok farklı belge ve işlem için ödenmesi gereken bir vergidir"
+description: "Damga vergisi, Türkiye'de önemli bir vergi türüdür ve birçok farklı belge ve işlem için ödenmesi gereken bir vergidir."
 date: 2023-06-06
 ---
 

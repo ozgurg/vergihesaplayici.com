@@ -1,6 +1,6 @@
 ---
 title: "Trafik Muayene Ücreti Hazine Payı Nedir?"
-description: "Türkiye'de araç sahiplerinin her yıl düzenli olarak yapmaları gereken işlemlerden biri, trafik muayenesidir"
+description: "Türkiye'de araç sahiplerinin her yıl düzenli olarak yapmaları gereken işlemlerden biri, trafik muayenesidir."
 date: 2023-07-12
 ---
 

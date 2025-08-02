@@ -5,6 +5,7 @@
 @import "./_utils.scss";
 @import "./_shared-variables.scss";
 @import "./_plugins.scss";
+@import "./calculators.scss";
 
 html {
     scroll-padding-block-start: calc(var(--header-down-md-block-size) + var(--vh-spacer));

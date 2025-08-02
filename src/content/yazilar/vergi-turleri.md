@@ -1,6 +1,6 @@
 ---
 title: "Vergi Türleri"
-description: "Çok fazla olan vergi türleri kodlaryla bu sayfada bulunuyor"
+description: "Çok fazla olan vergi türleri kodlaryla bu sayfada bulunuyor."
 date: 2023-05-13
 ---
 
@@ -39,7 +39,7 @@ date: 2023-05-13
 | 0062 | <a href="/yazilar/mulga-kooperatifcilik-tanitma-ve-egitim-fonu-nedir/">Mülga Kooperatifçilik Tanıtma ve Eğitim Fonu</a>                                                                                                                               |
 | 0067 | <a href="/yazilar/gelir-vergisi-kanunu-gecici-67-11-maddesine-gore-yapilan-ihtiyari-beyan-nedir/">Gelir Vergisi Kanunu Geçici 67/11 Maddesine Göre Yapılan İhtiyari Beyan</a>                                                                         |
 | 0071 | <a href="/yazilar/petrol-ve-dogalgaz-urunlerine-iliskin-ozel-tuketim-vergisi-nedir/">Petrol ve Doğalgaz Ürünlerine İlişkin Özel Tüketim Vergisi</a>                                                                                                   |
-| 0073 | <a href="/yazilar/kolali-gazoz-alkollu-icecekler-ve-tutun-mamullerine-iliskin-ozel-tuketim-vergisi-nedir/">Kolalı Gazoz, Alkollü İçecekler ve Tütün Mamüllerine İlişkin Özel Tüketim Vergisi Nedir?</a>                                               |
+| 0073 | <a href="/yazilar/kolali-gazoz-alkollu-icecekler-ve-tutun-mamullerine-iliskin-ozel-tuketim-vergisi-nedir/">Kolalı Gazoz, Alkollü İçecekler ve Tütün Mamüllerine İlişkin Özel Tüketim Vergisi</a>                                                      |
 | 0074 | <a href="/yazilar/dayanikli-tuketim-ve-diger-mallara-ilisikin-ozel-tuketim-vergisi-nedir/">Dayanıklı Tüketim ve Diğer Mallara İlişikin Özel Tüketim Vergisi</a>                                                                                       |
 | 0075 | <a href="/yazilar/alkollu-iceceklere-iliskin-ozel-tuketim-vergisi-nedir/">Alkollü İçeceklere İlişkin Özel Tüketim Vergisi</a>                                                                                                                         |
 | 0076 | <a href="/yazilar/tutun-mamullerine-iliskin-ozel-tuketim-vergisi-nedir/">Tütün Mamüllerine İlişkin Özel Tüketim Vergisi</a>                                                                                                                           |
@@ -70,7 +70,7 @@ date: 2023-05-13
 | 1084 | <a href="/yazilar/gecikme-faizi-nedir/">Gecikme Faizi</a>                                                                                                                                                                                             |
 | 1085 | PARA CEZASI FAİZİ                                                                                                                                                                                                                                     |
 | 1086 | GECİKME ZAMMI                                                                                                                                                                                                                                         |
-| 1087 | ERKEN ÖDEME İNDİRİMİ                                                                                                                                                                                                                                  |
+| 1087 | <a href="/yazilar/erken-odeme-indirimi-nedir/">Erken Ödeme İndirimi</a>                                                                                                                                                                               |
 | 1088 | PEŞİN ÖDEME İNDİRİMİ                                                                                                                                                                                                                                  |
 | 1089 | ALINAN DİĞER FAİZLER                                                                                                                                                                                                                                  |
 | 1090 | KANUNİ FAİZ                                                                                                                                                                                                                                           |
@@ -85,7 +85,7 @@ date: 2023-05-13
 | 3076 | KUSUR CEZASI                                                                                                                                                                                                                                          |
 | 3077 | AĞIR KUSUR CEZASI                                                                                                                                                                                                                                     |
 | 3078 | KAÇAKÇILIK CEZASI                                                                                                                                                                                                                                     |
-| 3080 | VERGİ ZİYAI CEZASI                                                                                                                                                                                                                                    |
+| 3080 | <a href="/yazilar/vergi-ziyai-cezasi-nedir/">Vergi Ziyaı Cezası</a>                                                                                                                                                                                   |
 | 3099 | VUK 112/4 Maddesi Gereğince Ödenen Faiz                                                                                                                                                                                                               |
 | 4001 | EK GELİR VERGİSİ                                                                                                                                                                                                                                      |
 | 4003 | EK ÜCRET GELİR VERGİSİ                                                                                                                                                                                                                                |

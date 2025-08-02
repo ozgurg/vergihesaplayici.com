@@ -91,12 +91,6 @@ button {
     color: inherit
 }
 
-*:disabled,
-*[disabled] {
-    cursor: not-allowed !important;
-    opacity: .75 !important
-}
-
 [hidden] {
     display: none !important
 }

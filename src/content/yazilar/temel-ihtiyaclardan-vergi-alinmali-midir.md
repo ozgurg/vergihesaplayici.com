@@ -1,6 +1,6 @@
 ---
 title: "Temel İhtiyaçlardan Vergi Alınmalı Mıdır?"
-description: "Bu konuda farklı görüşler bulunmaktadır. Bazıları temel ihtiyaçların vergiden muaf tutulması gerektiğini savunurken, bazıları ise tüm mal ve hizmetlerin vergilendirilmesi gerektiğini savunmaktadır"
+description: "Bu konuda farklı görüşler bulunmaktadır. Bazıları temel ihtiyaçların vergiden muaf tutulması gerektiğini savunurken, bazıları ise tüm mal ve hizmetlerin vergilendirilmesi gerektiğini savunmaktadır."
 date: 2023-04-27
 ---
 

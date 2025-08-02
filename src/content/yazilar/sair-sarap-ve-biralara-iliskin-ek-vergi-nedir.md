@@ -1,6 +1,6 @@
 ---
 title: "Sair Şarap ve Biralara İlişkin Ek Vergi Nedir?"
-description: "Türkiye, tarih boyunca zengin kültürel mirasıyla ünlüdür ve bu mirasın bir parçası olarak şarap ve bira tüketimi de önemli bir yer tutar"
+description: "Türkiye, tarih boyunca zengin kültürel mirasıyla ünlüdür ve bu mirasın bir parçası olarak şarap ve bira tüketimi de önemli bir yer tutar."
 date: 2023-05-18
 ---
 

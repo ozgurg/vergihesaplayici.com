@@ -1,6 +1,6 @@
 ---
 title: "Neden Seçim Zamanlarında Vergi Affı Yapılır?"
-description: "Seçim dönemlerinde vergi affı yapılması, siyasi partilerin seçmenler üzerindeki etkisini artırmak ve seçimlerde oy kazanmak için bir strateji olarak kullanılabilmektedir"
+description: "Seçim dönemlerinde vergi affı yapılması, siyasi partilerin seçmenler üzerindeki etkisini artırmak ve seçimlerde oy kazanmak için bir strateji olarak kullanılabilmektedir."
 date: 2023-04-27
 ---
 

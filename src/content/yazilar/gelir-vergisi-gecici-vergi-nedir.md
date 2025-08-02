@@ -1,6 +1,6 @@
 ---
 title: "Gelir Vergisi Geçici Vergi Nedir?"
-description: "Gelir Vergisi Geçici Vergi, Türkiye'deki işletmelerin yıllık gelir vergisi beyannameleri sonuçlarına göre ödemeleri gereken bir tür vergidir"
+description: "Gelir Vergisi Geçici Vergi, Türkiye'deki işletmelerin yıllık gelir vergisi beyannameleri sonuçlarına göre ödemeleri gereken bir tür vergidir."
 date: 2023-05-13
 ---
 

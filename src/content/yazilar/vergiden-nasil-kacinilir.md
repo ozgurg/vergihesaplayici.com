@@ -1,6 +1,6 @@
 ---
 title: "Vergiden Nasıl Kaçınılır?"
-description: "Vergi, bir devletin bütçesini finanse etmek için topladığı önemli bir gelir kaynağıdır"
+description: "Vergi, bir devletin bütçesini finanse etmek için topladığı önemli bir gelir kaynağıdır."
 date: 2023-04-27
 ---
 

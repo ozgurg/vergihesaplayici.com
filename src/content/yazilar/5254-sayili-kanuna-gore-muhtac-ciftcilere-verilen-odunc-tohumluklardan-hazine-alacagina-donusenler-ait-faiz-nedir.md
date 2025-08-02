@@ -1,6 +1,6 @@
 ---
 title: "5254 Sayılı Kanuna Göre Muhtaç Çiftçilere Verilen Ödünç Tohumluklardan Hazine Alacağına Dönüşenler Ait Faiz Nedir?"
-description: "Türkiye'de tarım sektörü, ülkenin ekonomik ve sosyal yapısında önemli bir yere sahiptir"
+description: "Türkiye'de tarım sektörü, ülkenin ekonomik ve sosyal yapısında önemli bir yere sahiptir."
 date: 2023-07-26
 ---
 

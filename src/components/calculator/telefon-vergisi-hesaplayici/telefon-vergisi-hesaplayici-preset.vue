@@ -1,17 +1,18 @@
 <template>
-    <container class="calculation-container">
+    <container class="calculator-container">
         <inner-container>
             <form
                 ref="formEl"
                 :aria-label="props.calculatorPage.title"
                 @submit.prevent="onSubmit()"
-                class="calculation-form">
+                class="calculator-form">
                 <form-group label="Kapasite">
-                    <form-radio-group
+                    <form-check-group
                         v-model="optionIndex"
                         :items="PRESET_OPTIONS"
+                        type="radio"
                         :required="true"
-                        class="form-radio-group-preset-options" />
+                        class="preset-options" />
                 </form-group>
 
                 <form-group label="Kayıt yolu">
@@ -28,8 +29,8 @@
                     Hesaplama sonuçları
                 </heading-3>
 
-                <div class="calculation-result-row">
-                    <inner-container>
+                <div class="calculator-result-row">
+                    <inner-container class="calculator-result-row-primary">
                         <calculator-result-list
                             ref="resultsEl"
                             :items="resultList!" />
@@ -54,7 +55,7 @@
                             }" />
                     </inner-container>
 
-                    <div>
+                    <div class="calculator-result-row-secondary">
                         <calculator-last-update-alert :date="LAST_UPDATE" />
 
                         <transition name="fade-transition" mode="out-in">
@@ -80,7 +81,7 @@
 
 <script lang="ts" setup>
 import type { CalculatorPage, Page } from "@/types/page-def.js";
-import type { Item as FormRadioGroupItem } from "@/components/common/form/form-radio-group.vue";
+import type { Item as FormCheckGroupItem } from "@/components/common/form/form-check-group.vue";
 import type {
     Brand,
     CalculationResults,
@@ -109,7 +110,7 @@ export type Props = {
 
 const props = defineProps<Props>();
 
-const PRESET_OPTIONS: FormRadioGroupItem[] = props.preset.options.map((_option, _index) => ({
+const PRESET_OPTIONS: FormCheckGroupItem[] = props.preset.options.map((_option, _index) => ({
     title: _option.title,
     // oxlint-disable-next-line no-non-null-assertion
     description: formatMoney(_option.form.price!, _option.form.currency!),
@@ -158,5 +159,21 @@ watch(form, onSubmit, { deep: true });
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/css/calculator/telefon-vergisi-hesaplayici.scss";
+.preset-options {
+    &:has(> *:nth-child(1)),
+    &:has(> *:nth-child(2)),
+    &:has(> *:nth-child(3)) {
+        grid-template-columns: repeat(auto-fill, minmax(144px, 1fr))
+    }
+    &:has(> *:nth-child(4)) {
+        grid-template-columns: repeat(3, 1fr);
+        @include vh-media-breakpoint-up(md) {
+            grid-template-columns: repeat(4, 1fr)
+        }
+    }
+    :deep(small) {
+        font-weight: var(--vh-fw-semibold);
+        @include vh-text-number
+    }
+}
 </style>

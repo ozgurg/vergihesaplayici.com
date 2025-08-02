@@ -46,8 +46,8 @@ $clr-white: #fff;
 
 
 // Border Radius
-$br-small: .75rem;
-$br-normal: 1rem;
+$br-small: .875rem;
+$br-normal: 1.125rem;
 $br-pill: 50rem;
 
 
@@ -80,7 +80,7 @@ $_container-breakpoints: (
         breakpoint: 576px
     ),
     "md": (
-        max-inline-size: 800px,
-        breakpoint: 860px
+        max-inline-size: 820px,
+        breakpoint: 880px
     )
 );

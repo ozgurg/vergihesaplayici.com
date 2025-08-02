@@ -17,14 +17,7 @@ export type TaxFees = {
     registration: number;
 };
 
-export type TaxRates = {
-    total: number;
-    ministryOfCulture: number;
-    trtImport: number;
-    specialConsumptionTax: number;
-    valueAddedTax: number;
-    trtPassport: number;
-};
+export type TaxRates = TaxFees;
 
 export type Prices = {
     taxFree: number;

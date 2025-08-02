@@ -1,6 +1,6 @@
 ---
 title: "Kolalı Gazozlara İlişkin Özel Tüketim Vergisi Nedir?"
-description: "Türkiye, geniş bir tüketim kültürüne sahip olan bir ülkedir ve gazoz gibi gazlı içecekler popüler bir seçenek olarak ön plana çıkmaktadır"
+description: "Türkiye, geniş bir tüketim kültürüne sahip olan bir ülkedir ve gazoz gibi gazlı içecekler popüler bir seçenek olarak ön plana çıkmaktadır."
 date: 2023-05-22
 ---
 

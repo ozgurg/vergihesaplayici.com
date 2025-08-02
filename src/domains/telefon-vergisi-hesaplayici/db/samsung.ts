@@ -102,6 +102,37 @@ export const presets: Preset[] = [
             }
         ]
     },
+    {
+        brandId: BRAND_ID,
+        title: "Galaxy Z Fold7",
+        slug: "samsung-galaxy-z-fold7",
+        releaseDate: new Date("2025-07-25"),
+        thumb: "samsung-galaxy-z-fold7.png",
+        ...buildPageMeta("Samsung Galaxy Z Fold7'nin"),
+        options: [
+            {
+                title: "256GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-z-fold7/buy/galaxy-z-fold7-256gb-unlocked-sku-sm-f966udbaxaa/
+                    price: 1_999.99,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "512GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-z-fold7/buy/galaxy-z-fold7-256gb-unlocked-sku-sm-f966udbaxaa/
+                    price: 2_119.99,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "1TB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-z-fold7/buy/galaxy-z-fold7-256gb-unlocked-sku-sm-f966udbaxaa/
+                    price: 2_419.99,
+                    currency: "USD"
+                }
+            }
+        ]
+    },
 
     {
         brandId: BRAND_ID,
@@ -176,6 +207,30 @@ export const presets: Preset[] = [
             {
                 title: "512GB",
                 form: { // https://www.samsung.com/us/smartphones/galaxy-z-flip6/buy/galaxy-z-flip6-512gb-unlocked-sm-f741uakexaa/
+                    price: 1_219.99,
+                    currency: "USD"
+                }
+            }
+        ]
+    },
+    {
+        brandId: BRAND_ID,
+        title: "Galaxy Z Flip7",
+        slug: "samsung-galaxy-z-flip7",
+        releaseDate: new Date("2025-07-25"),
+        thumb: "samsung-galaxy-z-flip7.png",
+        ...buildPageMeta("Samsung Galaxy Z Flip7'nin"),
+        options: [
+            {
+                title: "256GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-z-flip7/buy/galaxy-z-flip7-256gb-unlocked-sku-sm-f766uzkaxaa/
+                    price: 1_099.99,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "512GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-z-flip7/buy/galaxy-z-flip7-256gb-unlocked-sku-sm-f766uzkaxaa/
                     price: 1_219.99,
                     currency: "USD"
                 }
@@ -262,30 +317,6 @@ export const presets: Preset[] = [
             }
         ]
     },
-    {
-        brandId: BRAND_ID,
-        title: "Galaxy S23 FE",
-        slug: "samsung-galaxy-s23-fe",
-        releaseDate: new Date("2023-10-05"),
-        thumb: "samsung-galaxy-s23-fe.png",
-        ...buildPageMeta("Samsung Galaxy S23 FE'nin"),
-        options: [
-            {
-                title: "128GB",
-                form: {
-                    price: 629.99,
-                    currency: "USD"
-                }
-            },
-            {
-                title: "256GB",
-                form: {
-                    price: 689.99,
-                    currency: "USD"
-                }
-            }
-        ]
-    },
 
     {
         brandId: BRAND_ID,
@@ -366,30 +397,6 @@ export const presets: Preset[] = [
             }
         ]
     },
-    {
-        brandId: BRAND_ID,
-        title: "Galaxy S24 FE",
-        slug: "samsung-galaxy-s24-fe",
-        releaseDate: new Date("2024-10-03"),
-        thumb: "samsung-galaxy-s24-fe.png",
-        ...buildPageMeta("Samsung Galaxy S24 FE'nin"),
-        options: [
-            {
-                title: "128GB",
-                form: { // https://www.samsung.com/us/smartphones/galaxy-s24-fe/buy/galaxy-s24-fe-128gb-unlocked-sm-s721uzkaxaa/
-                    price: 649.99,
-                    currency: "USD"
-                }
-            },
-            {
-                title: "256GB",
-                form: { // https://www.samsung.com/us/smartphones/galaxy-s24-fe/buy/galaxy-s24-fe-256gb-unlocked-sm-s721uzkexaa/
-                    price: 709.99,
-                    currency: "USD"
-                }
-            }
-        ]
-    },
 
     {
         brandId: BRAND_ID,
@@ -465,6 +472,30 @@ export const presets: Preset[] = [
                 title: "1TB",
                 form: { // https://www.samsung.com/us/smartphones/galaxy-s25-ultra/buy/galaxy-s25-ultra-1tb-unlocked-sm-s938uztfxaa/
                     price: 1_659.99,
+                    currency: "USD"
+                }
+            }
+        ]
+    },
+    {
+        brandId: BRAND_ID,
+        title: "Galaxy S25 Edge",
+        slug: "samsung-galaxy-s25-edge",
+        releaseDate: new Date("2025-05-29"),
+        thumb: "samsung-galaxy-s25-edge.png",
+        ...buildPageMeta("Samsung Galaxy S25 Edge'nin"),
+        options: [
+            {
+                title: "256GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-s25-edge/buy/galaxy-s25-edge-256gb-unlocked-sku-sm-s937uzsaxaa/
+                    price: 1_099.99,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "512GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-s25-edge/buy/galaxy-s25-edge-256gb-unlocked-sku-sm-s937uzsaxaa/
+                    price: 1_219.99,
                     currency: "USD"
                 }
             }

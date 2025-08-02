@@ -1,6 +1,6 @@
 ---
 title: "Gelir V. M. Talih Oyunları Asgari Vergi Nedir?"
-description: "Talih oyunları, insanların şanslarını deneyerek para kazanma umuduyla katıldıkları oyunlardır"
+description: "Talih oyunları, insanların şanslarını deneyerek para kazanma umuduyla katıldıkları oyunlardır."
 date: 2023-05-14
 ---
 

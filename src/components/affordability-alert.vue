@@ -2,7 +2,7 @@
     <alert
         color="info"
         class="text-center">
-        Türkiye'de asgari ücretli bir çalışan yemeden içmeden bu ürünü <string-carousel2 :text="wageDurationSummary" is="b" /> maaşıyla satın alabilir.
+        Türkiye'de asgari ücretli bir çalışan yemeden içmeden bu ürünü <string-carousel :text="wageDurationSummary" is="b" /> maaşıyla satın alabilir.
     </alert>
 </template>
 

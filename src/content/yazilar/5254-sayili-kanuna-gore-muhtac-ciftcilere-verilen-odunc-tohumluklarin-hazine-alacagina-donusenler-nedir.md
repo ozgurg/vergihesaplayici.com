@@ -1,6 +1,6 @@
 ---
 title: "5254 Sayılı Kanuna Göre Muhtaç Çiftçilere Verilen Ödünç Tohumlukların Hazine Alacağına Dönüşenler Nedir?"
-description: "Türkiye'de tarım sektörü, ekonomik kalkınmanın temel taşlarından biridir"
+description: "Türkiye'de tarım sektörü, ekonomik kalkınmanın temel taşlarından biridir."
 date: 2023-07-19
 ---
 

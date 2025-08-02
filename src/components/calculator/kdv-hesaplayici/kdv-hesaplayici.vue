@@ -1,16 +1,15 @@
 <template>
-    <container class="calculation-container">
+    <container class="calculator-container">
         <inner-container>
             <form
                 ref="formEl"
                 :aria-label="props.calculatorPage.title"
                 @submit.prevent="onSubmit()"
-                class="calculation-form">
+                class="calculator-form">
                 <form-group label="Hesaplama modu">
                     <kdv-hesaplayici-mode
                         v-model="form.mode"
-                        :required="true"
-                        class="form-radio-group-mode" />
+                        :required="true" />
                 </form-group>
 
                 <form-group>
@@ -34,8 +33,7 @@
                         :required="true" />
                     <kdv-hesaplayici-rate-presets
                         v-model="form.rate"
-                        scale="small"
-                        class="form-radio-group-rate-presets" />
+                        scale="small" />
                 </form-group>
 
                 <form-button
@@ -52,8 +50,8 @@
                     Hesaplama sonuçları
                 </heading-3>
 
-                <div class="calculation-result-row">
-                    <inner-container>
+                <div class="calculator-result-row">
+                    <inner-container class="calculator-result-row-primary">
                         <calculator-result-list
                             ref="resultsEl"
                             :items="resultList!" />
@@ -145,7 +143,3 @@ const _scrollToResults = (): void => {
 
 onMounted(onSubmit);
 </script>
-
-<style lang="scss" scoped>
-@import "@/assets/css/calculator/kdv-hesaplayici.scss";
-</style>

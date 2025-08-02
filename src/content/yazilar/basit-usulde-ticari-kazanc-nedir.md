@@ -1,6 +1,6 @@
 ---
 title: "Basit Usulde Ticari Kazanç Nedir?"
-description: "Ticaret hayatının önemli bir parçası olan basit usul, küçük çaplı işletmeler için uygulanan bir vergi sistemi olarak karşımıza çıkmaktadır"
+description: "Ticaret hayatının önemli bir parçası olan basit usul, küçük çaplı işletmeler için uygulanan bir vergi sistemi olarak karşımıza çıkmaktadır."
 date: 2023-05-10
 ---
 

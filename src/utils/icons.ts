@@ -8,6 +8,8 @@ export { default as icon_arrowLeft } from "remixicon/icons/Arrows/arrow-left-lin
 export { default as icon_arrowRight } from "remixicon/icons/Arrows/arrow-right-line.svg?raw";
 export { default as icon_radioChecked } from "remixicon/icons/System/checkbox-circle-fill.svg?raw";
 export { default as icon_radioUnchecked } from "remixicon/icons/System/checkbox-blank-circle-line.svg?raw";
+export { default as icon_checkboxChecked } from "remixicon/icons/System/checkbox-fill.svg?raw";
+export { default as icon_checkboxUnchecked } from "remixicon/icons/System/checkbox-blank-line.svg?raw";
 export { default as icon_link } from "remixicon/icons/Editor/link.svg?raw";
 export { default as icon_screenshot } from "remixicon/icons/Design/screenshot-2-line.svg?raw";
 export { default as icon_download } from "remixicon/icons/System/download-2-line.svg?raw";
@@ -24,5 +26,6 @@ export { default as icon_draggable } from "remixicon/icons/Editor/draggable.svg?
 
 export { default as icon_telefonVergisiHesaplayici } from "remixicon/icons/Device/smartphone-line.svg?raw";
 export { default as icon_konsolVergisiHesaplayici } from "remixicon/icons/Device/gamepad-line.svg?raw";
+export { default as icon_gumrukVergisiHesaplayici } from "remixicon/icons/Map/ship-2-line.svg?raw";
 export { default as icon_kdvHesaplayici } from "remixicon/icons/Finance/discount-percent-line.svg?raw";
 export { default as icon_verginiOlustur } from "remixicon/icons/Weather/sparkling-line.svg?raw";

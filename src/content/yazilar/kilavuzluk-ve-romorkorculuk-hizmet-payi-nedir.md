@@ -1,6 +1,6 @@
 ---
 title: "Kılavuzluk ve Römorkörcülük Hizmet Payı Nedir?"
-description: "Kılavuzluk ve römorkörcülük, denizcilik sektöründe önemli hizmetlerden biridir ve Türkiye'de de büyük bir rol oynamaktadır"
+description: "Kılavuzluk ve römorkörcülük, denizcilik sektöründe önemli hizmetlerden biridir ve Türkiye'de de büyük bir rol oynamaktadır."
 date: 2023-07-19
 ---
 

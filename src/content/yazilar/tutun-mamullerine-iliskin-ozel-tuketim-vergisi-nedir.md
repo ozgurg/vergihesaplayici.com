@@ -1,6 +1,6 @@
 ---
 title: "Tütün Mamüllerine İlişkin Özel Tüketim Vergisi Nedir?"
-description: "Tütün mamülleri, sigara, pipo, puro gibi ürünleri kapsayan ve tütün içeren ürünlere verilen genel bir addır"
+description: "Tütün mamülleri, sigara, pipo, puro gibi ürünleri kapsayan ve tütün içeren ürünlere verilen genel bir addır."
 date: 2023-05-17
 ---
 

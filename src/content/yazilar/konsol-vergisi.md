@@ -1,6 +1,6 @@
 ---
 title: "Konsol Vergisi"
-description: "Konsol vergisi, birçok ülkede video oyun konsolları için alınan bir vergidir"
+description: "Konsol vergisi, birçok ülkede video oyun konsolları için alınan bir vergidir."
 date: 2023-05-04
 ---
 

@@ -1,6 +1,6 @@
 <template>
     <div class="calculators-grid">
-        <template v-for="_calculatorPage in calculatorPages" :key="_calculatorPage.url">
+        <template v-for="_calculatorPage in CALCULATOR_PAGES" :key="_calculatorPage.url">
             <calculator-card-item
                 :title="_calculatorPage.title"
                 :description="_calculatorPage.summary"
@@ -11,7 +11,9 @@
 </template>
 
 <script lang="ts" setup>
-import { CalculatorPages as calculatorPages } from "@/domains/hesaplayicilar/db.js";
+import { getCalculatorPages } from "@/domains/hesaplayicilar/db.js";
+
+const CALCULATOR_PAGES = getCalculatorPages();
 </script>
 
 <style lang="scss" scoped>

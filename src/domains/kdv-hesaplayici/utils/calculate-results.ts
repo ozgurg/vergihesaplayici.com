@@ -23,7 +23,7 @@ export const calculateResults = (params: {
     });
 
     const results = calculator.calculate();
-    const resultList = buildResultList(results);
+    const resultList = buildResultList(results, form);
     const screenshotData = buildScreenshotData(resultList);
 
     return {

@@ -1,6 +1,6 @@
 ---
 title: "Vergi Yükü Nedir?"
-description: "Vergi yükü, bir ülkedeki toplam vergi gelirinin milli gelir (GDP) içindeki oranıdır"
+description: "Vergi yükü, bir ülkedeki toplam vergi gelirinin milli gelir (GDP) içindeki oranıdır."
 date: 2023-04-27
 ---
 

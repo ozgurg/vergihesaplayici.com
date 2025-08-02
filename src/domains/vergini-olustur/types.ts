@@ -13,7 +13,6 @@ export enum RateType {
 }
 
 export type TaxItem = {
-    id: number;
     name: string;
     rate: number;
     rateType: RateType;
@@ -32,7 +31,7 @@ export type TaxFees = {
 };
 
 export type TaxRates = {
-    total: number;
+    total: TaxFees["total"];
     items: number;
 };
 

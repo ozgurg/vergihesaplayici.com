@@ -47,3 +47,7 @@
 [data-sortable-handle] {
     cursor: move !important
 }
+
+.sortable-chosen [data-sortable-hide-ghost] {
+    visibility: hidden !important
+}

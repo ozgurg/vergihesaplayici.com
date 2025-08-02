@@ -1,6 +1,6 @@
 ---
 title: "Tevkifattan Alınan Damga Vergisi Nedir?"
-description: "Tevkifattan alınan damga vergisi, bir sözleşme veya belge üzerinden doğrudan değil, karşı taraf tarafından kesilerek ödenen damga vergisidir. Kimler sorumludur, nasıl hesaplanır? Detaylar için hemen tıklayın."
+description: "Tevkifattan alınan damga vergisi, bir sözleşme veya belge üzerinden doğrudan değil, karşı taraf tarafından kesilerek ödenen damga vergisidir. Kimler sorumludur, nasıl hesaplanır?"
 date: 2025-07-26
 ---
 

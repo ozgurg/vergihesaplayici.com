@@ -1,6 +1,6 @@
 ---
 title: "Mera Fonu Para Cezası Nedir?"
-description: "Mera fonu para cezası, Türkiye'de mera alanlarının korunmasını sağlamak amacıyla uygulanan bir düzenlemeye ilişkin cezai yaptırımdır"
+description: "Mera fonu para cezası, Türkiye'de mera alanlarının korunmasını sağlamak amacıyla uygulanan bir düzenlemeye ilişkin cezai yaptırımdır."
 date: 2023-07-17
 ---
 

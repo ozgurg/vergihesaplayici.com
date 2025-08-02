@@ -1,12 +1,12 @@
 <template>
-    <container class="calculation-container">
+    <container class="calculator-container">
         <inner-container>
             <form
                 ref="formEl"
                 :aria-label="props.calculatorPage.title"
                 @submit.prevent="onSubmit()"
-                class="calculation-form">
-                <div class="calculation-pricing-row">
+                class="calculator-form">
+                <div class="calculator-pricing-row">
                     <form-group label="Konsol fiyatı">
                         <form-control-number
                             v-model="form.price"
@@ -35,8 +35,8 @@
                     Hesaplama sonuçları
                 </heading-3>
 
-                <div class="calculation-result-row">
-                    <inner-container>
+                <div class="calculator-result-row">
+                    <inner-container class="calculator-result-row-primary">
                         <calculator-result-list
                             ref="resultsEl"
                             :items="resultList!" />
@@ -58,7 +58,7 @@
                             }" />
                     </inner-container>
 
-                    <div>
+                    <div class="calculator-result-row-secondary">
                         <calculator-last-update-alert :date="LAST_UPDATE" />
 
                         <transition name="fade-transition" mode="out-in">
@@ -140,7 +140,3 @@ const _scrollToResults = (): void => {
 
 onMounted(onSubmit);
 </script>
-
-<style lang="scss" scoped>
-@import "@/assets/css/calculator/konsol-vergisi-hesaplayici.scss";
-</style>

@@ -224,8 +224,9 @@ $_scales: (
         }
     }
     &[disabled] {
-        pointer-events: none;
-        opacity: .75
+        cursor: not-allowed;
+        opacity: .5;
+        border-color: transparent
     }
     &-content {
         display: flex;

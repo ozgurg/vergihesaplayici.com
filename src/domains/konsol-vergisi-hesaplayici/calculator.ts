@@ -1,31 +1,23 @@
 import type { CalculationResults, Prices, TaxFees, TaxRates } from "@/domains/konsol-vergisi-hesaplayici/types.js";
 
 export class Calculator {
-    // Most of the calculation values will be assigned when `calculate()` is called.
-    // Initially, I set them to `WILL_ASSIGNED_LATER`, but why not just assign `0`?
-    // Because in some calculations, `0` can have a specific meaning.
-    // Even if the value is `0`, the name will clarify its purpose,
-    // making sure there's no confusion unless `0` really means something.
-    // I also don't want to use `null` because handling it in TypeScript adds unnecessary complexity.
-    private readonly WILL_ASSIGNED_LATER: number = 0;
-
     private taxFees: TaxFees = {
-        total: this.WILL_ASSIGNED_LATER,
-        customTax: this.WILL_ASSIGNED_LATER, // TRY | "Gümrük vergisi"
-        specialConsumptionTax: this.WILL_ASSIGNED_LATER, // TRY | "Özel Tüketim Vergisi (ÖTV)"
-        valueAddedTax: this.WILL_ASSIGNED_LATER // TRY | "Katma Değer Vergisi (KDV)"
+        total: 0,
+        customTax: 0,
+        specialConsumptionTax: 0,
+        valueAddedTax: 0
     };
 
     private taxRates: TaxRates = {
-        total: this.WILL_ASSIGNED_LATER,
-        customTax: 20, // TRY | "Gümrük vergisi"
-        specialConsumptionTax: 20, // TRY | "Özel Tüketim Vergisi (ÖTV)"
-        valueAddedTax: 20 // TRY | "Katma Değer Vergisi (KDV)"
+        total: 0,
+        customTax: 0,
+        specialConsumptionTax: 0,
+        valueAddedTax: 0
     };
 
     private readonly prices: Prices = {
-        taxFree: this.WILL_ASSIGNED_LATER,
-        taxAdded: this.WILL_ASSIGNED_LATER
+        taxFree: 0,
+        taxAdded: 0
     };
 
     private price: number;
@@ -53,6 +45,7 @@ export class Calculator {
         this.calculateTax_customTax();
         this.calculateTax_specialConsumptionTax();
         this.calculateTax_valueAddedTax();
+
 
         if (this.calculateFromTaxAddedPrice) {
             this.prices.taxFree = this.price;
@@ -90,17 +83,23 @@ export class Calculator {
             this.taxFees.valueAddedTax;
     }
 
+    // "Gümrük vergisi" | TRY | RateType.PERCENT | BaseAmountMode.PREVIOUS_AMOUNT
     private calculateTax_customTax(): void {
+        this.taxRates.customTax = 20;
         this.taxFees.customTax = this.calculateTax(this.price, this.taxRates.customTax);
         this.calculatePrice(this.taxFees.customTax);
     }
 
+    // "Özel Tüketim Vergisi (ÖTV)" | TRY | RateType.PERCENT | BaseAmountMode.PREVIOUS_AMOUNT
     private calculateTax_specialConsumptionTax(): void {
+        this.taxRates.specialConsumptionTax = 20;
         this.taxFees.specialConsumptionTax = this.calculateTax(this.price, this.taxRates.specialConsumptionTax);
         this.calculatePrice(this.taxFees.specialConsumptionTax);
     }
 
+    // "Katma Değer Vergisi (KDV)" | TRY | RateType.PERCENT | BaseAmountMode.PREVIOUS_AMOUNT
     private calculateTax_valueAddedTax(): void {
+        this.taxRates.valueAddedTax = 20;
         this.taxFees.valueAddedTax = this.calculateTax(this.price, this.taxRates.valueAddedTax);
         this.calculatePrice(this.taxFees.valueAddedTax);
     }

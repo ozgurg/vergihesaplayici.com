@@ -1,6 +1,6 @@
 ---
 title: "Vergi Ne Zaman Ortaya Çıkmıştır?"
-description: "Vergi, tarihin başlangıcından beri var olan bir olgudur ve insanların toplu olarak yaşamaya başlamalarıyla ortaya çıkmıştır"
+description: "Vergi, tarihin başlangıcından beri var olan bir olgudur ve insanların toplu olarak yaşamaya başlamalarıyla ortaya çıkmıştır."
 date: 2023-04-27
 ---
 
