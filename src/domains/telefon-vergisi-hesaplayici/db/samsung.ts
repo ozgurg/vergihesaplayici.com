@@ -526,4 +526,28 @@ export const presets: Preset[] = [
             }
         ]
     },
+    {
+        brandId: BRAND_ID,
+        title: "Galaxy Z Flip7",
+        slug: "samsung-galaxy-z-flip7",
+        releaseDate: new Date("2025-07-25"),
+        thumb: "samsung-galaxy-z-flip7.png",
+        ...buildPageMeta("Samsung Galaxy Z Flip7'nin"),
+        options: [
+            {
+                title: "256GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-z-flip7/buy/galaxy-z-flip7-256gb-unlocked-sku-sm-f766uzkaxaa/
+                    price: 1_099.99,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "512GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-z-flip7/buy/galaxy-z-flip7-256gb-unlocked-sku-sm-f766uzkaxaa/
+                    price: 1_219.99,
+                    currency: "USD"
+                }
+            }
+        ]
+    },
 ];
