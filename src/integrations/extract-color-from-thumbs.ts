@@ -106,15 +106,18 @@ const rgbToHsl = ({ r, g, b }: RGBColor): HSLColor => {
 
     let hue = 0;
     switch (max) {
-        case normalizedR:
+        case normalizedR: {
             hue = ((normalizedG - normalizedB) / delta) + (normalizedG < normalizedB ? 6 : 0);
             break;
-        case normalizedG:
+        }
+        case normalizedG : {
             hue = ((normalizedB - normalizedR) / delta) + 2;
             break;
-        default: // normalizedB
+        }
+        default: { // normalizedB
             hue = ((normalizedR - normalizedG) / delta) + 4;
             break;
+        }
     }
 
     return {
