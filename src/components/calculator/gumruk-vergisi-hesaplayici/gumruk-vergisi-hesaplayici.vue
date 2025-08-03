@@ -134,18 +134,11 @@ const resultList = ref<ResultList | null>(null);
 const screenshotData = ref<ScreenshotData | null>(null);
 const isCalculatorShareModalOpened = ref<boolean>(false);
 
-const eurPrice = computed<number>(() => {
-    if (form.currency === "TRY") {
-        return form.price / props.EXCHANGE_RATES.rates["EUR"];
-    }
-    if (form.currency === "EUR") {
-        return form.price;
-    }
-    if (form.currency === "USD") {
-        // TODO
-        return form.price / props.EXCHANGE_RATES.rates["USD"];
-    }
-});
+const eurPrice = computed<number>(() => ({
+    TRY: form.price / props.EXCHANGE_RATES.rates["EUR"],
+    EUR: form.price,
+    USD: form.price / props.EXCHANGE_RATES.rates["USD"]
+}[form.currency] || form.price));
 
 watch(eurPrice, newValue => {
     form.isOverTaxExemptionPriceLimit = newValue > TAX_EXEMPTION_PRICE_LIMIT_IN_EUR;
