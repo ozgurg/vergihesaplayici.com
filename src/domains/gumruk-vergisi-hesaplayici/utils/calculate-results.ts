@@ -27,7 +27,7 @@ export const calculateResults = (params: {
     const isSpecialConsumptionTaxed = form.isSpecialConsumptionTaxed;
     const isFromEU = form.isFromEU;
     const isShippingIncluded = form.isShippingIncluded;
-    const extraCustomTaxPercent = form.extraCustomTaxPercent;
+    const extraCustomTaxPercent = form.extraCustomTaxPercent || 0;
 
     const calculator = new Calculator({
         price,
