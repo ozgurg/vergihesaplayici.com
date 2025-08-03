@@ -27,5 +27,6 @@ export { default as icon_draggable } from "remixicon/icons/Editor/draggable.svg?
 export { default as icon_telefonVergisiHesaplayici } from "remixicon/icons/Device/smartphone-line.svg?raw";
 export { default as icon_konsolVergisiHesaplayici } from "remixicon/icons/Device/gamepad-line.svg?raw";
 export { default as icon_gumrukVergisiHesaplayici } from "remixicon/icons/Map/ship-2-line.svg?raw";
+export { default as icon_aracVergisi } from "remixicon/icons/Map/car-line.svg?raw";
 export { default as icon_kdvHesaplayici } from "remixicon/icons/Finance/discount-percent-line.svg?raw";
 export { default as icon_verginiOlustur } from "remixicon/icons/Weather/sparkling-line.svg?raw";

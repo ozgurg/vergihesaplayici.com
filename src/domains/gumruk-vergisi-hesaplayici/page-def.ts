@@ -6,7 +6,7 @@ export const GumrukVergisiHesaplayiciPageDef: CalculatorPageDef = (): Calculator
     const parentPage = HesaplayicilarPageDef();
 
     const title = "Gümrük Vergisi Hesaplayıcı";
-    const shortTitle = "Gümrük Vergisi";
+    const shortTitle = "Gümrük";
     const url = siteUrl("/gumruk-vergisi-hesaplayici");
     const ogImageUrl = staticSiteUrl("/og/gumruk-vergisi-hesaplayici.jpg");
     const breadcrumbs = [
