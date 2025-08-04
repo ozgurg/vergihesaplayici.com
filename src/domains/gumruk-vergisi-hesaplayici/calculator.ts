@@ -90,6 +90,7 @@ export class Calculator {
         this.calculateTax_submission();
         this.calculateTax_stampDuty();
 
+
         this.prices.taxAdded = this.price;
 
         this.taxFees.total = this.calculateTotalTaxFee();
