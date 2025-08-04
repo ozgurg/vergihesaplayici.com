@@ -150,7 +150,7 @@ $_scales: (
         }
     }
     &-icon {
-        --size: var(--_icon-size);
+        --size: var(--_icon-size) !important; // FIXME
         position: absolute;
         transition: vh-transition(opacity transform, var(--vh-duration-long), var(--vh-timing-spring));
         inset-inline-end: calc(var(--vh-spacer) * .5);
