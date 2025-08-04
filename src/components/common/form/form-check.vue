@@ -173,7 +173,8 @@ $_scales: (
         inline-size: var(--size)
     }
     &:has(input[type="checkbox"]:checked) {
-        border-color: var(--vh-clr-primary)
+        border-color: var(--vh-clr-primary);
+        box-shadow: 0 0 0 var(--vh-border-inline-size) var(--vh-clr-primary)
     }
     &:has(input:checked) {
         color: var(--vh-clr-primary);
