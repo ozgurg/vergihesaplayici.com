@@ -191,6 +191,11 @@ $_scales: (
     &:has(small) {
         padding-block: var(--vh-spacer)
     }
+    :deep(.svg-icon) {
+        --size: 1.5rem;
+        opacity: .875;
+        margin-block-end: calc(var(--vh-spacer) * .375)
+    }
     :deep(b) {
         font-size: var(--vh-fs-base);
         font-weight: var(--vh-fw-bold);

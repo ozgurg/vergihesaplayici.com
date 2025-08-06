@@ -14,6 +14,9 @@
                     :required="props.required"
                     :scale="props.scale"
                     :type="props.type">
+                    <template v-if="_item.icon">
+                        <svg-icon :icon="_item.icon" />
+                    </template>
                     <b>{{ _item.title }}</b>
                     <template v-if="_item.description">
                         <small>{{ _item.description }}</small>
@@ -34,6 +37,7 @@ import type { Props as FormCheckProps } from "@/components/common/form/form-chec
 export type Item = {
     title: string;
     description?: string;
+    icon?: string;
 
     // I omit some properties to prevent duplicate definition
     input: Omit<Partial<HtmlAttrs_input>, "type" | "required" | "name">
