@@ -35,24 +35,6 @@ describe("components/common/form/form-check.vue", () => {
         expect(FormChecks[0]!.attributes("for")).not.toBe(FormChecks[1]!.attributes("for"));
     });
 
-    it("passes all attrs to `<input />`", () => {
-        const testAttrs = {
-            required: "",
-            "hey-im-an-attr": "yes-iam"
-        };
-        const wrapper = mount(FormCheck, {
-            props: { type: "radio", value: "check" },
-            attrs: testAttrs
-        });
-
-        const input = wrapper.find("input") as DOMWrapper<HTMLInputElement>;
-
-        expect(input.exists()).toBeTruthy();
-        for (const [attr, value] of Object.entries(testAttrs)) {
-            expect(input.attributes(attr)).toEqual(value);
-        }
-    });
-
     it("binds `v-model` correctly for radio buttons", async () => {
         const wrapper = mount({
             //language=Vue

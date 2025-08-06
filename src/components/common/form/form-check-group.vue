@@ -1,25 +1,30 @@
 <template>
-    <div
+    <transition-group
         :aria-labelledby="ARIA_LABELLEDBY"
         :style="{'--anchor-name': ANCHOR_NAME}"
         :class="CLASSES"
+        name="list-transition"
+        tag="div"
         role="radiogroup">
         <template v-if="props.items && props.type">
-            <template v-for="_item in props.items" :key="_item.input.value">
+            <template v-for="(_item, _index) in props.items" :key="_item.input.value">
                 <form-check
-                    v-bind="_item.input"
                     v-model="modelValue"
+                    :input="_item.input"
                     :value="_item.input.value"
-                    :name="NAME"
-                    :required="props.required"
+                    :type="props.type"
                     :scale="props.scale"
-                    :type="props.type">
+                    :required="props.required"
+                    :name="NAME"
+                    :style="{'transition-delay': `${100 * _index}ms`}">
                     <template v-if="_item.icon">
                         <svg-icon :icon="_item.icon" />
                     </template>
-                    <b>{{ _item.title }}</b>
+
+                    <b v-html="_item.title"></b>
+
                     <template v-if="_item.description">
-                        <small>{{ _item.description }}</small>
+                        <small v-html="_item.description"></small>
                     </template>
                 </form-check>
             </template>
@@ -27,7 +32,7 @@
         <template v-else>
             <slot name="default" />
         </template>
-    </div>
+    </transition-group>
 </template>
 
 <script lang="ts" setup>
@@ -162,6 +167,22 @@ $_scales: (
                 }
             }
         }
+    }
+}
+
+.list-transition {
+    &-leave-active {
+        display: none
+    }
+    &-move,
+    &-enter-active {
+        transition: vh-transition(transform, var(--vh-duration-longer), var(--vh-timing-spring))
+    }
+    &-enter-from {
+        transform: scale(0)
+    }
+    &-leave-active {
+        position: absolute
     }
 }
 </style>

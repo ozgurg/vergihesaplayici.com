@@ -9,10 +9,13 @@
             :icon="uncheckedIcon"
             class="form-check-icon unchecked-icon" />
         <input
-            v-bind="$attrs"
+            v-bind="props.input"
             :id="ID"
             :type="props.type"
             :value="props.value"
+            :name="props.name"
+            :required="props.required"
+            :disabled="props.disabled"
             :checked="isChecked"
             @change="onChange($event)"
             class="form-check-icon" />
@@ -32,10 +35,13 @@ export type Props = {
     type: "radio" | "checkbox";
     value: HtmlAttrs_input["value"];
     uncheckedValue?: HtmlAttrs_input["value"];
+    name?: HtmlAttrs_input["name"];
+    required?: HtmlAttrs_input["required"];
+    disabled?: HtmlAttrs_input["disabled"];
     scale?: Scale;
-} & /* @vue-ignore */ Omit<HtmlAttrs_input, "type">;
+    input?: Omit<HtmlAttrs_input, "type" | "value" | "name" | "required">
+};
 
-defineOptions({ inheritAttrs: false });
 const props = defineProps<Props>();
 const modelValue = defineModel<HtmlAttrs_input["value"] | HtmlAttrs_input["value"][]>();
 
