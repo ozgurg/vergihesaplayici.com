@@ -36,8 +36,10 @@ $_colors: (
 .alert {
     --_bg-hsl: var(--bg-hsl, var(--vh-clr-white-hsl));
     --_text-hsl: var(--text-hsl, var(--vh-clr-white-hsl));
+    --_border-hsl: var(--border-hsl, var(--_text-hsl));
     --link-color: hsl(var(--_text-hsl));
     padding: calc(var(--vh-spacer) * .75) var(--vh-spacer);
+    border: var(--vh-border-inline-size) solid hsla(var(--_border-hsl), .08);
     text-wrap: pretty;
     color: hsl(var(--_text-hsl));
     border-radius: var(--vh-br-normal);
