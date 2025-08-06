@@ -128,7 +128,9 @@ $_scales: (
     }
     &:has(input:user-invalid) {
         border-radius: var(--vh-br-normal);
-        box-shadow: 0 0 0 1px var(--vh-clr-danger)
+        // Since `<form-check-group />` does not have a border,
+        // we double its error border width to match that of `<form-check />`
+        box-shadow: 0 0 0 calc(1px * 2) var(--vh-clr-danger)
     }
     &-type-radio {
         // Since the checked indicator depends on the anchor name,
