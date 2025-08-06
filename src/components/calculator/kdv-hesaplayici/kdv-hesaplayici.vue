@@ -14,13 +14,9 @@
 
                 <form-group>
                     <template #label>
-                        <transition name="fade-transition" mode="out-in">
-                            <form-label
-                                :key="priceLabel"
-                                is="legend">
-                                {{ priceLabel }}
-                            </form-label>
-                        </transition>
+                        <form-label is="legend">
+                            <string-carousel :text="priceLabel" />
+                        </form-label>
                     </template>
                     <form-control-number
                         v-model="form.price"
