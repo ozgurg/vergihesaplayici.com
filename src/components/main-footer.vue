@@ -45,7 +45,7 @@
             <hr />
 
             <rich-text>
-                <a href="https://github.com/ozgurg" target="_blank" rel="noopener noreferrer">@ozgurg</a> tarafından <a href="https://github.com/ozgurg/vergihesaplayici.com" target="_blank" rel="noopener noreferrer">açık kaynaklı</a> olarak geliştirilmektedir – v{{ VERSION }}
+                <a href="https://github.com/ozgurg" target="_blank" rel="noopener noreferrer">@ozgurg</a> tarafından AGPL-3.0 lisansı altında <a href="https://github.com/ozgurg/vergihesaplayici.com" target="_blank" rel="noopener noreferrer">açık kaynaklı</a> olarak geliştirilmektedir – v{{ VERSION }}
             </rich-text>
         </container>
     </footer>
