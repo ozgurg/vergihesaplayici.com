@@ -12,7 +12,7 @@
                         :items="PRESET_OPTIONS"
                         type="radio"
                         :required="true"
-                        class="preset-options" />
+                        class="telefon-vergisi-hesaplayici-preset-options" />
                 </form-group>
 
                 <form-group label="Kayıt yolu">
@@ -159,7 +159,7 @@ watch(form, onSubmit, { deep: true });
 </script>
 
 <style lang="scss" scoped>
-.preset-options {
+.telefon-vergisi-hesaplayici-preset-options {
     &:has(> *:nth-child(1)),
     &:has(> *:nth-child(2)),
     &:has(> *:nth-child(3)) {

@@ -3,7 +3,7 @@
         v-bind="props"
         :items="ITEMS"
         type="radio"
-        class="presets" />
+        class="kdv-hesaplayici-rate-presets" />
 </template>
 
 <script lang="ts" setup>
@@ -39,7 +39,7 @@ const ITEMS: FormCheckProps[] = [
 </script>
 
 <style lang="scss" scoped>
-.presets {
+.kdv-hesaplayici-rate-presets {
     grid-template-columns: repeat(3, 1fr);
     margin-block-start: var(--vh-spacer);
     :deep(.form-check) {
