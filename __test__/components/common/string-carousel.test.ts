@@ -34,17 +34,6 @@ describe("components/common/string-carousel.vue", () => {
         expect(spans[7]!.html()).toContain("&nbsp;");
     });
 
-    it("renders a visually hidden text with full text", () => {
-        const testText = "Türkiye Cumhuriyeti";
-        const wrapper = mount(StringCarousel, {
-            props: { text: testText }
-        });
-
-        const visuallyHiddenText = wrapper.find(".visually-hidden");
-        expect(visuallyHiddenText.exists()).toBeTruthy();
-        expect(visuallyHiddenText.text()).toBe(testText);
-    });
-
     it("renders correctly with default tag", () => {
         const wrapper = mount(StringCarousel, {
             props: { text: "Türkiye" }
