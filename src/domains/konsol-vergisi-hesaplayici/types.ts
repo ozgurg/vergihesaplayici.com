@@ -2,6 +2,11 @@ import type { CurrencyCode } from "@/types/common.js";
 
 
 // Calculator
+export enum Mode {
+    TAX_ADDED_TO_TAX_FREE = "tax-added-to-tax-free",
+    TAX_FREE_TO_TAX_ADDED = "tax-free-to-tax-added"
+}
+
 export type TaxFees = {
     total: number;
     customTax: number;
@@ -19,6 +24,7 @@ export type Prices = {
 
 // DB
 export type Form = {
+    mode: Mode;
     price: number;
     currency: CurrencyCode;
 };

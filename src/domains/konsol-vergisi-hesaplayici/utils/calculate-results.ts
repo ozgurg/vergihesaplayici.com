@@ -19,13 +19,13 @@ export const calculateResults = (params: {
 } => {
     const { form, exchangeRates } = params;
 
+    const mode = form.mode;
     const price = form.price * exchangeRates.rates[form.currency];
-    const calculateFromTaxAddedPrice = form.currency === "TRY";
 
     const calculator = new Calculator({
         price
     }, {
-        calculateFromTaxAddedPrice
+        mode
     });
 
     const results = calculator.calculate();

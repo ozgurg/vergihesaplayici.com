@@ -6,8 +6,17 @@
                 :aria-label="props.calculatorPage.title"
                 @submit.prevent="onSubmit()"
                 class="calculator-form">
+                <form-group label="Hesaplama modu">
+                    <konsol-vergisi-hesaplayici-mode v-model="form.mode" />
+                </form-group>
+
                 <div class="calculator-pricing-row">
-                    <form-group label="Konsol fiyatı">
+                    <form-group>
+                        <template #label>
+                            <form-label is="legend">
+                                <string-carousel :text="priceLabel" />
+                            </form-label>
+                        </template>
                         <form-control-number
                             v-model="form.price"
                             :required="true" />
@@ -60,15 +69,7 @@
 
                     <div class="calculator-result-row-secondary">
                         <calculator-last-update-alert :date="LAST_UPDATE" />
-
-                        <transition name="fade-transition" mode="out-in">
-                            <template v-if="form.currency === 'TRY'">
-                                <reverse-calculation-alert />
-                            </template>
-                            <template v-else>
-                                <estimated-calculation-alert />
-                            </template>
-                        </transition>
+                        <estimated-calculation-alert />
                     </div>
                 </div>
             </div>
@@ -90,7 +91,7 @@ import type {
 } from "@/domains/konsol-vergisi-hesaplayici/types.js";
 import type { ExchangeRates } from "@/types/common.js";
 import { calculateResults } from "@/domains/konsol-vergisi-hesaplayici/utils/calculate-results.js";
-import { DEFAULT_CURRENCY, LAST_UPDATE } from "@/domains/konsol-vergisi-hesaplayici/config.js";
+import { DEFAULT_FORM, LAST_UPDATE, PRICE_LABEL_BY_MODE } from "@/domains/konsol-vergisi-hesaplayici/config.js";
 
 export type Props = {
     EXCHANGE_RATES: ExchangeRates;
@@ -102,14 +103,13 @@ const props = defineProps<Props>();
 const formEl = useTemplateRef<HTMLFormElement>("formEl");
 const resultsEl = useTemplateRef<HTMLElement>("resultsEl");
 
-const form = reactive<Form>({
-    price: 0,
-    currency: DEFAULT_CURRENCY
-});
+const form = reactive<Form>(DEFAULT_FORM);
 const results = ref<CalculationResults | null>(null);
 const resultList = ref<ResultList | null>(null);
 const screenshotData = ref<ScreenshotData | null>(null);
 const isCalculatorShareModalOpened = ref<boolean>(false);
+
+const priceLabel = computed<string>(() => PRICE_LABEL_BY_MODE[form.mode]);
 
 const calculate = (): void => {
     const {

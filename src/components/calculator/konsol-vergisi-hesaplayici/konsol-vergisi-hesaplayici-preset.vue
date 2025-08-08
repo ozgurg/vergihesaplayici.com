@@ -51,15 +51,7 @@
 
                     <div class="calculator-result-row-secondary">
                         <calculator-last-update-alert :date="LAST_UPDATE" />
-
-                        <transition name="fade-transition" mode="out-in">
-                            <template v-if="form.currency === 'TRY'">
-                                <reverse-calculation-alert />
-                            </template>
-                            <template v-else>
-                                <estimated-calculation-alert />
-                            </template>
-                        </transition>
+                        <estimated-calculation-alert />
                     </div>
                 </div>
             </div>
