@@ -25,7 +25,7 @@ export default getViteConfig({
                 "src/utils/og-image.ts",
                 "src/components/go-to-calculator-button.vue",
                 "src/components/calculator-share-modal/**.vue", // Most of them
-                "src/components/calculator/**/**.vue",
+                "src/domains/**/**.vue",
 
 
                 // No test needed to raw data

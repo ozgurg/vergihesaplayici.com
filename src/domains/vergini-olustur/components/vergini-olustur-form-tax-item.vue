@@ -71,7 +71,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { UITaxItem } from "@/components/calculator/vergini-olustur/vergini-olustur.vue";
+import type { UITaxItem } from "@/domains/vergini-olustur/components/vergini-olustur.vue";
 import type { ExchangeRates } from "@/types/common.js";
 import { RateType } from "@/domains/vergini-olustur/types.js";
 
