@@ -18,7 +18,7 @@ import {
     mapPresetsForCalculatorPresetCarouselComponent
 } from "@/domains/telefon-vergisi-hesaplayici/utils/map-presets-for-calculator-preset-carousel-component.js";
 import { calculateResults } from "@/domains/telefon-vergisi-hesaplayici/utils/calculate-results.js";
-import { DEFAULT_CURRENCY, DEFAULT_REGISTRATION } from "@/domains/telefon-vergisi-hesaplayici/config.js";
+import { DEFAULT_PRESET_FORM } from "@/domains/telefon-vergisi-hesaplayici/config.js";
 
 export const getStaticPaths = () => {
     return getPresetsForAllBrands().map(_preset => ({
@@ -49,10 +49,8 @@ const calculateServerSide = () => {
     const option = preset.options[optionIndex]!;
 
     const form = {
-        // oxlint-disable-next-line no-magic-numbers
-        price: option.form.price ?? 0,
-        currency: option.form.currency ?? DEFAULT_CURRENCY,
-        registration: DEFAULT_REGISTRATION
+        ...DEFAULT_PRESET_FORM,
+        ...option.form
     };
 
     const {

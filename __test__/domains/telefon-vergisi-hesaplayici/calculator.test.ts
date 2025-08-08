@@ -1,12 +1,12 @@
 import type { Form, Prices } from "@/domains/telefon-vergisi-hesaplayici/types.js";
-import { Registration } from "@/domains/telefon-vergisi-hesaplayici/types.js";
+import { Mode, Registration } from "@/domains/telefon-vergisi-hesaplayici/types.js";
 import { describe, expect, it } from "vitest";
 import { Calculator } from "@/domains/telefon-vergisi-hesaplayici/calculator.js";
 
 type CalculateParams = {
-    input: Omit<Form, "currency">;
+    input: Omit<Form, "mode" | "currency">;
     options: {
-        calculateFromTaxAddedPrice: boolean;
+        mode: Mode;
     };
     expectedOutput: Prices;
 };
@@ -22,14 +22,14 @@ const calculate = ({ input, options, expectedOutput }: CalculateParams): void =>
 
 describe("domains/telefon-vergisi-hesaplayici/calculator.js", () => {
     it("calculates taxes correctly with given inputs", () => {
-        // Registration.IMPORT | calculateFromTaxAddedPrice: false
+        // Registration.IMPORT | Mode.TAX_FREE_TO_TAX_ADDED
         calculate({
             input: {
                 price: 500,
                 registration: Registration.IMPORT
             },
             options: {
-                calculateFromTaxAddedPrice: false
+                mode: Mode.TAX_FREE_TO_TAX_ADDED
             },
             expectedOutput: {
                 taxFree: 500,
@@ -42,7 +42,7 @@ describe("domains/telefon-vergisi-hesaplayici/calculator.js", () => {
                 registration: Registration.IMPORT
             },
             options: {
-                calculateFromTaxAddedPrice: false
+                mode: Mode.TAX_FREE_TO_TAX_ADDED
             },
             expectedOutput: {
                 taxFree: 1_500,
@@ -55,7 +55,7 @@ describe("domains/telefon-vergisi-hesaplayici/calculator.js", () => {
                 registration: Registration.IMPORT
             },
             options: {
-                calculateFromTaxAddedPrice: false
+                mode: Mode.TAX_FREE_TO_TAX_ADDED
             },
             expectedOutput: {
                 taxFree: 5_000,
@@ -64,14 +64,14 @@ describe("domains/telefon-vergisi-hesaplayici/calculator.js", () => {
         });
 
 
-        // Registration.IMPORT | calculateFromTaxAddedPrice: true
+        // Registration.IMPORT | Mode.TAX_ADDED_TO_TAX_FREE
         calculate({
             input: {
                 price: 500,
                 registration: Registration.IMPORT
             },
             options: {
-                calculateFromTaxAddedPrice: true
+                mode: Mode.TAX_ADDED_TO_TAX_FREE
             },
             expectedOutput: {
                 taxFree: 294.67,
@@ -84,7 +84,7 @@ describe("domains/telefon-vergisi-hesaplayici/calculator.js", () => {
                 registration: Registration.IMPORT
             },
             options: {
-                calculateFromTaxAddedPrice: true
+                mode: Mode.TAX_ADDED_TO_TAX_FREE
             },
             expectedOutput: {
                 taxFree: 789.3,
@@ -97,7 +97,7 @@ describe("domains/telefon-vergisi-hesaplayici/calculator.js", () => {
                 registration: Registration.IMPORT
             },
             options: {
-                calculateFromTaxAddedPrice: true
+                mode: Mode.TAX_ADDED_TO_TAX_FREE
             },
             expectedOutput: {
                 taxFree: 2_455.61,
@@ -106,14 +106,14 @@ describe("domains/telefon-vergisi-hesaplayici/calculator.js", () => {
         });
 
 
-        // Registration.PASSPORT | calculateFromTaxAddedPrice: false
+        // Registration.PASSPORT | Mode.TAX_FREE_TO_TAX_ADDED
         calculate({
             input: {
                 price: 500,
                 registration: Registration.PASSPORT
             },
             options: {
-                calculateFromTaxAddedPrice: false
+                mode: Mode.TAX_FREE_TO_TAX_ADDED
             },
             expectedOutput: {
                 taxFree: 500,
@@ -126,7 +126,7 @@ describe("domains/telefon-vergisi-hesaplayici/calculator.js", () => {
                 registration: Registration.PASSPORT
             },
             options: {
-                calculateFromTaxAddedPrice: false
+                mode: Mode.TAX_FREE_TO_TAX_ADDED
             },
             expectedOutput: {
                 taxFree: 1_500,
@@ -139,7 +139,7 @@ describe("domains/telefon-vergisi-hesaplayici/calculator.js", () => {
                 registration: Registration.PASSPORT
             },
             options: {
-                calculateFromTaxAddedPrice: false
+                mode: Mode.TAX_FREE_TO_TAX_ADDED
             },
             expectedOutput: {
                 taxFree: 5_000,
@@ -148,14 +148,14 @@ describe("domains/telefon-vergisi-hesaplayici/calculator.js", () => {
         });
 
 
-        // Registration.PASSPORT | calculateFromTaxAddedPrice: true
+        // Registration.PASSPORT | Mode.TAX_ADDED_TO_TAX_FREE
         calculate({
             input: {
                 price: 500,
                 registration: Registration.PASSPORT
             },
             options: {
-                calculateFromTaxAddedPrice: true
+                mode: Mode.TAX_ADDED_TO_TAX_FREE
             },
             expectedOutput: {
                 taxFree: -45_134,
@@ -168,7 +168,7 @@ describe("domains/telefon-vergisi-hesaplayici/calculator.js", () => {
                 registration: Registration.PASSPORT
             },
             options: {
-                calculateFromTaxAddedPrice: true
+                mode: Mode.TAX_ADDED_TO_TAX_FREE
             },
             expectedOutput: {
                 taxFree: -44_134,
@@ -181,7 +181,7 @@ describe("domains/telefon-vergisi-hesaplayici/calculator.js", () => {
                 registration: Registration.PASSPORT
             },
             options: {
-                calculateFromTaxAddedPrice: true
+                mode: Mode.TAX_ADDED_TO_TAX_FREE
             },
             expectedOutput: {
                 taxFree: -40_634,
