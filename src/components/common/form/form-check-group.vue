@@ -39,13 +39,15 @@
 import type { HtmlAttrs_div, HtmlAttrs_input } from "@/types/html.js";
 import type { Props as FormCheckProps } from "@/components/common/form/form-check.vue";
 
-export type Item = {
+export type Item<V = HtmlAttrs_input["value"]> = {
     title: string;
     description?: string;
     icon?: string;
 
     // I omit some properties to prevent duplicate definition
-    input: Omit<Partial<HtmlAttrs_input>, "type" | "required" | "name">
+    input: Omit<Partial<HtmlAttrs_input>, "type" | "required" | "name"> & {
+        value?: V;
+    }
 }
 
 export type Props = {
