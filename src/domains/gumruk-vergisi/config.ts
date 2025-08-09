@@ -1,4 +1,4 @@
-import type { Form } from "@/domains/gumruk-vergisi-hesaplayici/types.js";
+import type { Form } from "@/domains/gumruk-vergisi/types.js";
 
 export const TAX_EXEMPTION_WEIGHT_LIMIT_IN_KG = 30;
 export const TAX_EXEMPTION_PRICE_LIMIT_IN_EUR = 1_500;

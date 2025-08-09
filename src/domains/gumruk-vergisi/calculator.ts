@@ -1,4 +1,4 @@
-import type { CalculationResults, Prices, TaxFees, TaxRates } from "@/domains/gumruk-vergisi-hesaplayici/types.js";
+import type { CalculationResults, Prices, TaxFees, TaxRates } from "@/domains/gumruk-vergisi/types.js";
 
 export const SHIPPING_PRICE_IN_EUR = 3;
 

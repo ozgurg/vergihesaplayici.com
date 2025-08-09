@@ -24,7 +24,7 @@
                 </div>
 
                 <form-group label="Paket özellikleri">
-                    <gumruk-vergisi-hesaplayici-package-options
+                    <gumruk-vergisi-package-options
                         :eur-price="eurPrice"
                         v-model:isOverTaxExemptionWeightLimit="form.isOverTaxExemptionWeightLimit"
                         v-model:isOverTaxExemptionPriceLimit="form.isOverTaxExemptionPriceLimit"
@@ -100,13 +100,13 @@ import type {
     Form,
     ResultList,
     ScreenshotData
-} from "@/domains/gumruk-vergisi-hesaplayici/types.js";
-import { calculateResults } from "@/domains/gumruk-vergisi-hesaplayici/utils/calculate-results.js";
+} from "@/domains/gumruk-vergisi/types.js";
+import { calculateResults } from "@/domains/gumruk-vergisi/utils/calculate-results.js";
 import {
     DEFAULT_FORM,
     LAST_UPDATE,
     TAX_EXEMPTION_PRICE_LIMIT_IN_EUR
-} from "@/domains/gumruk-vergisi-hesaplayici/config.js";
+} from "@/domains/gumruk-vergisi/config.js";
 
 export type Props = {
     EXCHANGE_RATES: ExchangeRates;

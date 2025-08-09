@@ -1,6 +1,6 @@
-import type { Form, Prices } from "@/domains/gumruk-vergisi-hesaplayici/types.js";
+import type { Form, Prices } from "@/domains/gumruk-vergisi/types.js";
 import { describe, expect, it } from "vitest";
-import { Calculator } from "@/domains/gumruk-vergisi-hesaplayici/calculator.js";
+import { Calculator } from "@/domains/gumruk-vergisi/calculator.js";
 
 type CalculateParams = {
     input: Partial<Omit<Form, "currency">>;
@@ -28,7 +28,7 @@ const calculate = ({ input, expectedOutput }: CalculateParams): void => {
     expect(results.prices).toStrictEqual(expectedOutput);
 };
 
-describe("domains/gumruk-vergisi-hesaplayici/calculator.js", () => {
+describe("domains/gumruk-vergisi/calculator.js", () => {
     it("calculates taxes correctly with given inputs", () => {
         calculate({
             input: {},

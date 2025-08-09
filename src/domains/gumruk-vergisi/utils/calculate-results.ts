@@ -4,10 +4,10 @@ import type {
     Form,
     ResultList,
     ScreenshotData
-} from "@/domains/gumruk-vergisi-hesaplayici/types.js";
-import { Calculator } from "@/domains/gumruk-vergisi-hesaplayici/calculator.js";
-import { buildResultList } from "@/domains/gumruk-vergisi-hesaplayici/utils/build-result-list.js";
-import { buildScreenshotData } from "@/domains/gumruk-vergisi-hesaplayici/utils/build-screenshot-data.js";
+} from "@/domains/gumruk-vergisi/types.js";
+import { Calculator } from "@/domains/gumruk-vergisi/calculator.js";
+import { buildResultList } from "@/domains/gumruk-vergisi/utils/build-result-list.js";
+import { buildScreenshotData } from "@/domains/gumruk-vergisi/utils/build-screenshot-data.js";
 
 export const calculateResults = (params: {
     form: Form;

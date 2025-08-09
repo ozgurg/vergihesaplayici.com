@@ -33,6 +33,8 @@ const redirections301 = [
     ["/hesaplayicilar/konsol-vergisi-hesaplayici/", "/konsol-vergisi-hesaplayici/"],
     ["/hesaplayicilar/kdv-hesaplayici/", "/kdv-hesaplayici/"],
 
+    ["/gumruk-vergisi-hesaplayici/", "/gumruk-vergisi/"],
+
     ["/yazilar/zirai-kazanc-vergisi-nedir/", "/yazilar/zirai-kazanc-gelir-vergisi-nedir/"],
     ["/yazilar/luks-tuketimden-daha-fazla-vergi-alinmali-midir/", "/yazilar/luks-tuketimden-daha-fazla-vergi-alinmali-mi/"],
     ["/yazilar/verginin-vergisi-hangi-ulke-icat-etmistir/", "/yazilar/verginin-vergisini-hangi-ulke-icat-etmistir/"],

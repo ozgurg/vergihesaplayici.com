@@ -1,8 +1,8 @@
 import type { APIRoute } from "astro";
 import logoSvgBase64 from "@/assets/img/logo.svg?inline";
-import { GumrukVergisiHesaplayiciPageDef } from "@/domains/gumruk-vergisi-hesaplayici/page-def.js";
+import { GumrukVergisiPageDef } from "@/domains/gumruk-vergisi/page-def.js";
 
-const page = GumrukVergisiHesaplayiciPageDef();
+const page = GumrukVergisiPageDef();
 
 export const GET: APIRoute = async (): Promise<Response> => {
     const {

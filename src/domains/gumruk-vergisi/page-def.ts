@@ -1,14 +1,14 @@
 import type { CalculatorPage, CalculatorPageDef } from "@/types/page-def.js";
-import { icon_gumrukVergisiHesaplayici as icon } from "@/utils/icons.js";
+import { icon_gumrukVergisi as icon } from "@/utils/icons.js";
 import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
 
-export const GumrukVergisiHesaplayiciPageDef: CalculatorPageDef = (): CalculatorPage => {
+export const GumrukVergisiPageDef: CalculatorPageDef = (): CalculatorPage => {
     const parentPage = HesaplayicilarPageDef();
 
     const title = "Gümrük Vergisi Hesaplayıcı";
     const shortTitle = "Gümrük";
-    const url = siteUrl("/gumruk-vergisi-hesaplayici");
-    const ogImageUrl = staticSiteUrl("/og/gumruk-vergisi-hesaplayici.jpg");
+    const url = siteUrl("/gumruk-vergisi");
+    const ogImageUrl = staticSiteUrl("/og/gumruk-vergisi.jpg");
     const breadcrumbs = [
         ...parentPage.breadcrumbs,
         { title, url }

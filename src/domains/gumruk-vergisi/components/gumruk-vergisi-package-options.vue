@@ -79,8 +79,8 @@ import { formatMoney } from "@/utils/formatter.js";
 import {
     TAX_EXEMPTION_PRICE_LIMIT_IN_EUR,
     TAX_EXEMPTION_WEIGHT_LIMIT_IN_KG
-} from "@/domains/gumruk-vergisi-hesaplayici/config.js";
-import { SHIPPING_PRICE_IN_EUR } from "@/domains/gumruk-vergisi-hesaplayici/calculator.js";
+} from "@/domains/gumruk-vergisi/config.js";
+import { SHIPPING_PRICE_IN_EUR } from "@/domains/gumruk-vergisi/calculator.js";
 
 export type Props = {
     eurPrice: number;

@@ -4,31 +4,31 @@ import PageHeader from "@/components/common/page-header.vue";
 import Container from "@/components/common/container.vue";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
 import Heading1 from "@/components/common/heading-1.vue";
-import GumrukVergisiHesaplayici from "@/domains/gumruk-vergisi-hesaplayici/components/gumruk-vergisi-hesaplayici.vue";
+import GumrukVergisi from "@/domains/gumruk-vergisi/components/gumruk-vergisi.vue";
 
-import { GumrukVergisiHesaplayiciPageDef } from "@/domains/gumruk-vergisi-hesaplayici/page-def.js";
+import { GumrukVergisiPageDef } from "@/domains/gumruk-vergisi/page-def.js";
 
-const gumrukVergisiHesaplayiciPage = GumrukVergisiHesaplayiciPageDef();
+const gumrukVergisiPage = GumrukVergisiPageDef();
 
 const EXCHANGE_RATES = getExchangeRates();
 ---
 
-<DefaultLayout head={gumrukVergisiHesaplayiciPage.head}>
+<DefaultLayout head={gumrukVergisiPage.head}>
     <PageHeader>
         <Container>
             <Breadcrumbs
-                items={gumrukVergisiHesaplayiciPage.breadcrumbs}
+                items={gumrukVergisiPage.breadcrumbs}
                 client:load />
             <Heading1>
-                {gumrukVergisiHesaplayiciPage.title}
+                {gumrukVergisiPage.title}
             </Heading1>
         </Container>
     </PageHeader>
 
     <section>
-        <GumrukVergisiHesaplayici
+        <GumrukVergisi
             EXCHANGE_RATES={EXCHANGE_RATES}
-            calculatorPage={gumrukVergisiHesaplayiciPage}
+            calculatorPage={gumrukVergisiPage}
             client:load />
     </section>
 </DefaultLayout>
