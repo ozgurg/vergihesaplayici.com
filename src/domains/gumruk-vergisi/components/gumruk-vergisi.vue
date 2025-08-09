@@ -1,55 +1,60 @@
 <template>
     <container class="calculator-container">
-        <inner-container>
-            <form
-                ref="formEl"
-                :aria-label="props.calculatorPage.title"
-                @submit.prevent="onSubmit()"
-                class="calculator-form">
-                <div class="calculator-pricing-row">
-                    <form-group label="Sipariş tutarı (TRY)">
-                        <form-control-number
-                            v-model="form.price"
-                            :required="true" />
+        <div class="calculator-result-row">
+            <inner-container class="calculator-result-row-primary">
+                <form
+                    ref="formEl"
+                    :aria-label="props.calculatorPage.title"
+                    @submit.prevent="onSubmit()"
+                    class="calculator-form">
+                    <div class="calculator-pricing-row">
+                        <form-group label="Sipariş tutarı (TRY)">
+                            <form-control-number
+                                v-model="form.price"
+                                :required="true" />
+                        </form-group>
+
+                        <!-- TODO
+                        <form-group label="Para birimi">
+                            <form-select-currency
+                                v-model="form.currency"
+                                :EXCHANGE_RATES="props.EXCHANGE_RATES"
+                                :required="true" />
+                        </form-group>
+                        -->
+                    </div>
+
+                    <form-group label="Paket özellikleri">
+                        <gumruk-vergisi-package-options
+                            :eur-price="eurPrice"
+                            v-model:isOverTaxExemptionWeightLimit="form.isOverTaxExemptionWeightLimit"
+                            v-model:isOverTaxExemptionPriceLimit="form.isOverTaxExemptionPriceLimit"
+                            v-model:isPrintedOnly="form.isPrintedOnly"
+                            v-model:isSpecialConsumptionTaxed="form.isSpecialConsumptionTaxed"
+                            v-model:isFromEU="form.isFromEU"
+                            v-model:isShippingIncluded="form.isShippingIncluded" />
                     </form-group>
 
-                    <!-- TODO
-                    <form-group label="Para birimi">
-                        <form-select-currency
-                            v-model="form.currency"
-                            :EXCHANGE_RATES="props.EXCHANGE_RATES"
-                            :required="true" />
+                    <form-group>
+                        <template #label>
+                            <form-label is="legend">
+                                İlave gümrük vergisi (Yüzde)<small>&nbsp;–&nbsp;isteğe bağlı</small>
+                            </form-label>
+                        </template>
+                        <form-control-number v-model="form.extraCustomTaxPercent" />
                     </form-group>
-                    -->
-                </div>
 
-                <form-group label="Paket özellikleri">
-                    <gumruk-vergisi-package-options
-                        :eur-price="eurPrice"
-                        v-model:isOverTaxExemptionWeightLimit="form.isOverTaxExemptionWeightLimit"
-                        v-model:isOverTaxExemptionPriceLimit="form.isOverTaxExemptionPriceLimit"
-                        v-model:isPrintedOnly="form.isPrintedOnly"
-                        v-model:isSpecialConsumptionTaxed="form.isSpecialConsumptionTaxed"
-                        v-model:isFromEU="form.isFromEU"
-                        v-model:isShippingIncluded="form.isShippingIncluded" />
-                </form-group>
-
-                <form-group>
-                    <template #label>
-                        <form-label is="legend">
-                            İlave gümrük vergisi (Yüzde)<small>&nbsp;–&nbsp;isteğe bağlı</small>
-                        </form-label>
-                    </template>
-                    <form-control-number v-model="form.extraCustomTaxPercent" />
-                </form-group>
-
-                <form-button
-                    class="w-100"
-                    type="submit">
-                    Hesapla
-                </form-button>
-            </form>
-        </inner-container>
+                    <form-button
+                        class="w-100"
+                        type="submit">
+                        Hesapla
+                    </form-button>
+                </form>
+            </inner-container>
+            <div class="calculator-result-row-secondary">
+                <calculator-last-update-alert :date="LAST_UPDATE" />
+            </div>
+        </div>
 
         <template v-if="results !== null">
             <div>
@@ -78,10 +83,6 @@
                                 screenshotData: screenshotData!
                             }" />
                     </inner-container>
-
-                    <div class="calculator-result-row-secondary">
-                        <calculator-last-update-alert :date="LAST_UPDATE" />
-                    </div>
                 </div>
             </div>
         </template>

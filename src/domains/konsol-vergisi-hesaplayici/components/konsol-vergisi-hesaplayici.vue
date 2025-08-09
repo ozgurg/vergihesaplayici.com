@@ -1,42 +1,47 @@
 <template>
     <container class="calculator-container">
-        <inner-container>
-            <form
-                ref="formEl"
-                :aria-label="props.calculatorPage.title"
-                @submit.prevent="onSubmit()"
-                class="calculator-form">
-                <form-group label="Hesaplama modu">
-                    <konsol-vergisi-hesaplayici-mode v-model="form.mode" />
-                </form-group>
-
-                <div class="calculator-pricing-row">
-                    <form-group>
-                        <template #label>
-                            <form-label is="legend">
-                                <string-carousel :text="priceLabel" />
-                            </form-label>
-                        </template>
-                        <form-control-number
-                            v-model="form.price"
-                            :required="true" />
+        <div class="calculator-result-row">
+            <inner-container class="calculator-result-row-primary">
+                <form
+                    ref="formEl"
+                    :aria-label="props.calculatorPage.title"
+                    @submit.prevent="onSubmit()"
+                    class="calculator-form">
+                    <form-group label="Hesaplama modu">
+                        <konsol-vergisi-hesaplayici-mode v-model="form.mode" />
                     </form-group>
 
-                    <form-group label="Para birimi">
-                        <form-select-currency
-                            v-model="form.currency"
-                            :EXCHANGE_RATES="props.EXCHANGE_RATES"
-                            :required="true" />
-                    </form-group>
-                </div>
+                    <div class="calculator-pricing-row">
+                        <form-group>
+                            <template #label>
+                                <form-label is="legend">
+                                    <string-carousel :text="priceLabel" />
+                                </form-label>
+                            </template>
+                            <form-control-number
+                                v-model="form.price"
+                                :required="true" />
+                        </form-group>
 
-                <form-button
-                    class="w-100"
-                    type="submit">
-                    Hesapla
-                </form-button>
-            </form>
-        </inner-container>
+                        <form-group label="Para birimi">
+                            <form-select-currency
+                                v-model="form.currency"
+                                :EXCHANGE_RATES="props.EXCHANGE_RATES"
+                                :required="true" />
+                        </form-group>
+                    </div>
+
+                    <form-button
+                        class="w-100"
+                        type="submit">
+                        Hesapla
+                    </form-button>
+                </form>
+            </inner-container>
+            <div class="calculator-result-row-secondary">
+                <calculator-last-update-alert :date="LAST_UPDATE" />
+            </div>
+        </div>
 
         <template v-if="results !== null">
             <div>
@@ -68,7 +73,6 @@
                     </inner-container>
 
                     <div class="calculator-result-row-secondary">
-                        <calculator-last-update-alert :date="LAST_UPDATE" />
                         <estimated-calculation-alert />
                     </div>
                 </div>

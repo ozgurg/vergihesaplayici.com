@@ -50,7 +50,9 @@
                     </inner-container>
 
                     <div class="calculator-result-row-secondary">
-                        <calculator-last-update-alert :date="LAST_UPDATE" />
+                        <calculator-last-update-alert
+                            :date="LAST_UPDATE"
+                            :align-to-label="false" />
                         <estimated-calculation-alert />
                     </div>
                 </div>
