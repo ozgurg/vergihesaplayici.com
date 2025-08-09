@@ -1,8 +1,9 @@
 <template>
-    <alert color="warning">
-        Hesaplayıcı, en son <b>{{ props.date.toLocaleString("tr-TR") }}</b> tarihinde güncellenmiştir. Bu tarihten sonra yürürlüğe girmiş olabilecek vergi değişikliklerini yansıtmayabilir.
-        <br />
-        Eğer hesaplayıcıda bir hata tespit ettiyseniz; <b><a :href="hataBildirPage.url.href">{{ hataBildirPage.title }}</a></b> sayfasından bildirebilirsiniz.
+    <alert
+        :class="CLASSES"
+        color="warning">
+        <p>Hesaplayıcı en son <b>{{ props.date.toLocaleString("tr-TR") }}</b> tarihinde güncellendi. Bu tarihten sonraki vergi değişikliklerini yansıtmaz.</p>
+        <p>Hata tespit ettiyseniz; <b><a :href="hataBildirPage.url.href">{{ hataBildirPage.title }}</a></b> sayfasından bildirebilirsiniz.</p>
     </alert>
 </template>
 
@@ -12,9 +13,28 @@ import { HataBildirPageDef } from "@/domains/hata-bildir/page-def.js";
 
 export type Props = {
     date: Date;
+    alignToLabel?: boolean;
 } & AlertProps;
 
-const props = defineProps<Props>();
+const props = withDefaults(defineProps<Props>(), {
+    alignToLabel: true
+});
 
 const hataBildirPage = HataBildirPageDef();
+
+const CLASSES = [
+    "calculator-last-update-alert",
+    props.alignToLabel ? `calculator-last-update-alert-label-aligned` : undefined
+];
 </script>
+
+<style lang="scss" scoped>
+.calculator-last-update-alert {
+    &-label-aligned {
+        @include vh-media-breakpoint-up(sm) {
+            // `2px` is for optical alignment
+            margin-block-start: calc((1lh + (var(--vh-spacer) * .25)) - 2px)
+        }
+    }
+}
+</style>
