@@ -66,7 +66,7 @@ export const buildResultList = (results: CalculationResults, form: Form): Result
     });
     list.push({
         key: "taxAdded",
-        label: "Vergili sipariş tutarı",
+        label: "Tahmini vergili fiyat",
         value: formatMoney(prices.taxAdded, "TRY")
     });
 
