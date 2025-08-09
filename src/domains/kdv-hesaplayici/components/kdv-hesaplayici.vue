@@ -82,7 +82,7 @@ import type { CalculatorPage } from "@/types/page-def.js";
 import type { CalculationResults, Form, ResultList, ScreenshotData } from "@/domains/kdv-hesaplayici/types.js";
 import { Mode } from "@/domains/kdv-hesaplayici/types.js";
 import { calculateResults } from "@/domains/kdv-hesaplayici/utils/calculate-results.js";
-import { DEFAULT_MODE, DEFAULT_RATE } from "@/domains/kdv-hesaplayici/config.js";
+import { DEFAULT_FORM } from "@/domains/kdv-hesaplayici/config.js";
 
 export type Props = {
     calculatorPage: CalculatorPage;
@@ -93,11 +93,7 @@ const props = defineProps<Props>();
 const formEl = useTemplateRef<HTMLFormElement>("formEl");
 const resultsEl = useTemplateRef<HTMLElement>("resultsEl");
 
-const form = reactive<Form>({
-    mode: DEFAULT_MODE,
-    price: 0,
-    rate: DEFAULT_RATE
-});
+const form = reactive<Form>(DEFAULT_FORM);
 const results = ref<CalculationResults | null>(null);
 const resultList = ref<ResultList | null>(null);
 const screenshotData = ref<ScreenshotData | null>(null);
