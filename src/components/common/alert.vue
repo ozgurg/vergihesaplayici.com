@@ -49,5 +49,8 @@ $_colors: (
             @include vh-map-to-properties($__properties)
         }
     }
+    :deep(p:not(:last-child)) {
+        margin-block-end: calc(var(--vh-spacer) * .5)
+    }
 }
 </style>
