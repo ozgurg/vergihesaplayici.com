@@ -103,7 +103,7 @@ import type {
 } from "@/domains/gumruk-vergisi-hesaplayici/types.js";
 import { calculateResults } from "@/domains/gumruk-vergisi-hesaplayici/utils/calculate-results.js";
 import {
-    DEFAULT_CURRENCY,
+    DEFAULT_FORM,
     LAST_UPDATE,
     TAX_EXEMPTION_PRICE_LIMIT_IN_EUR
 } from "@/domains/gumruk-vergisi-hesaplayici/config.js";
@@ -118,17 +118,7 @@ const props = defineProps<Props>();
 const formEl = useTemplateRef<HTMLFormElement>("formEl");
 const resultsEl = useTemplateRef<HTMLElement>("resultsEl");
 
-const form = reactive<Form>({
-    price: 0,
-    currency: DEFAULT_CURRENCY,
-    isOverTaxExemptionWeightLimit: false,
-    isOverTaxExemptionPriceLimit: false,
-    isPrintedOnly: false,
-    isSpecialConsumptionTaxed: false,
-    isFromEU: false,
-    isShippingIncluded: true,
-    extraCustomTaxPercent: 0
-});
+const form = reactive<Form>(DEFAULT_FORM);
 const results = ref<CalculationResults | null>(null);
 const resultList = ref<ResultList | null>(null);
 const screenshotData = ref<ScreenshotData | null>(null);
