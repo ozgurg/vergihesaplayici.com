@@ -44,7 +44,7 @@ provide<string>("screenshotFileName", SCREENSHOT_FILE_NAME);
     overflow: hidden;
     border-radius: var(--vh-br-normal);
     inline-size: max-content;
-    max-inline-size: 30rem;
+    max-inline-size: 20rem;
     margin-inline: auto;
     &-table {
         position: relative;
