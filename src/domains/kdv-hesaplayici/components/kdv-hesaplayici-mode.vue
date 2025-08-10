@@ -1,8 +1,9 @@
 <template>
     <form-check-group
         v-bind="props"
-        :items="MODE_OPTIONS"
-        type="radio" />
+        :items="ITEMS"
+        type="radio"
+        class="mode" />
 </template>
 
 <script lang="ts" setup>
@@ -16,7 +17,7 @@ export type Props = Partial<FormCheckGroupProps>;
 
 const props = defineProps<Props>();
 
-const MODE_OPTIONS: FormCheckProps[] = [
+const ITEMS: FormCheckProps[] = [
     {
         title: "KDV hariç tutardan KDV dahil tutarı hesapla",
         input: {
@@ -37,3 +38,9 @@ const MODE_OPTIONS: FormCheckProps[] = [
     }
 ];
 </script>
+
+<style lang="scss" scoped>
+.mode {
+    grid-template-columns: 1fr
+}
+</style>
