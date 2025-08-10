@@ -1,10 +1,5 @@
 import type { ExchangeRates } from "@/types/common.js";
-import type {
-    CalculationResults,
-    Form,
-    ResultList,
-    ScreenshotData
-} from "@/domains/gumruk-vergisi/types.js";
+import type { CalculationResults, Form, ResultList, ScreenshotData } from "@/domains/gumruk-vergisi/types.js";
 import { Calculator } from "@/domains/gumruk-vergisi/calculator.js";
 import { buildResultList } from "@/domains/gumruk-vergisi/utils/build-result-list.js";
 import { buildScreenshotData } from "@/domains/gumruk-vergisi/utils/build-screenshot-data.js";
@@ -21,13 +16,15 @@ export const calculateResults = (params: {
 
     const price = form.price * exchangeRates.rates[form.currency];
     const eurToTryCurrency = exchangeRates.rates.EUR;
-    const isOverTaxExemptionWeightLimit = form.isOverTaxExemptionWeightLimit;
-    const isOverTaxExemptionPriceLimit = form.isOverTaxExemptionPriceLimit;
-    const isPrintedOnly = form.isPrintedOnly;
-    const isSpecialConsumptionTaxed = form.isSpecialConsumptionTaxed;
-    const isFromEU = form.isFromEU;
-    const isShippingIncluded = form.isShippingIncluded;
-    const extraCustomTaxPercent = form.extraCustomTaxPercent || 0;
+    const {
+        isOverTaxExemptionWeightLimit,
+        isOverTaxExemptionPriceLimit,
+        isPrintedOnly,
+        isSpecialConsumptionTaxed,
+        isFromEU,
+        isShippingIncluded,
+        extraCustomTaxPercent = 0
+    } = form;
 
     const calculator = new Calculator({
         price,

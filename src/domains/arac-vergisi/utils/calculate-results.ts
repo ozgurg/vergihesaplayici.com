@@ -14,11 +14,12 @@ export const calculateResults = (params: {
 } => {
     const { form, exchangeRates } = params;
 
-    // oxlint-disable no-non-null-assertion
-    const mode = form.mode;
     const price = form.price * exchangeRates.rates[form.currency];
-    const vehicleType = form.vehicleType!;
-    const vehicleEngineVolume = form.vehicleEngineVolume!;
+    const {
+        mode,
+        vehicleType,
+        vehicleEngineVolume
+    } = form;
 
     const calculator = new Calculator({
         price,

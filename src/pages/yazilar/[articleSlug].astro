@@ -14,7 +14,7 @@ import { YazilarPageDef, YazilarSlugPageDef } from "@/domains/yazilar/page-def.j
 import { getYazilar } from "@/domains/yazilar/db.js";
 import { mapYazilarForArticlesGridComponent } from "@/domains/yazilar/utils.js";
 
-export const getStaticPaths = async () => {
+export const getStaticPaths = async (): Promise<object> => {
     return (await getYazilar()).map(_yazi => ({
         params: {
             articleSlug: _yazi.slug

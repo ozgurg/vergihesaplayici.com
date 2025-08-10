@@ -19,8 +19,8 @@ export const calculateResults = (params: {
 } => {
     const { form, exchangeRates } = params;
 
-    const mode = form.mode;
     const price = form.price * exchangeRates.rates[form.currency];
+    const { mode } = form;
 
     const calculator = new Calculator({
         price

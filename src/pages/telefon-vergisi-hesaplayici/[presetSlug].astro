@@ -20,7 +20,7 @@ import {
 import { calculateResults } from "@/domains/telefon-vergisi-hesaplayici/utils/calculate-results.js";
 import { DEFAULT_PRESET_FORM } from "@/domains/telefon-vergisi-hesaplayici/config.js";
 
-export const getStaticPaths = () => {
+export const getStaticPaths = (): object => {
     return getPresetsForAllBrands().map(_preset => ({
         params: {
             presetSlug: _preset.slug
