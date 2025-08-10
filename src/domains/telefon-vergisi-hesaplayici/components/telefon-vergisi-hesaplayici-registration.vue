@@ -3,7 +3,7 @@
         v-bind="props"
         :items="ITEMS"
         type="radio"
-        class="telefon-vergisi-hesaplayici-registration" />
+        class="registration" />
 </template>
 
 <script lang="ts" setup>
@@ -37,7 +37,7 @@ const ITEMS: FormCheckProps[] = [
 </script>
 
 <style lang="scss" scoped>
-.telefon-vergisi-hesaplayici-registration {
+.registration {
     grid-template-columns: repeat(2, 1fr)
 }
 </style>

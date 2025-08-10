@@ -1,5 +1,5 @@
 <template>
-    <form-check-group>
+    <form-check-group class="package-options">
         <form-check
             v-model="isOverTaxExemptionWeightLimit"
             :value="true"
@@ -17,7 +17,9 @@
             <!-- 🤮 -->
             <template v-if="isOverTaxExemptionWeightLimit && isOverTaxExemptionPriceLimit">
                 <small>
-                    {{ TAX_EXEMPTION_WEIGHT_LIMIT_IN_KG }} kg veya <span class="text-number">{{ formatMoney(TAX_EXEMPTION_PRICE_LIMIT_IN_EUR, "EUR") }}</span> üzeri paketlerde kitap veya benzeri basılı yayın muafiyeti geçerli değildir
+                    {{ TAX_EXEMPTION_WEIGHT_LIMIT_IN_KG }} kg veya <span
+                    class="text-number">{{ formatMoney(TAX_EXEMPTION_PRICE_LIMIT_IN_EUR, "EUR") }}</span> üzeri
+                    paketlerde kitap veya benzeri basılı yayın muafiyeti geçerli değildir
                 </small>
                 <small>
                     Sipariş tutarı: <span class="text-number">{{ formatMoney(props.eurPrice, "EUR") }}</span>
@@ -25,12 +27,14 @@
             </template>
             <template v-else-if="isOverTaxExemptionWeightLimit">
                 <small>
-                    {{ TAX_EXEMPTION_WEIGHT_LIMIT_IN_KG }} kg üzeri paketlerde kitap veya benzeri basılı yayın muafiyeti geçerli değildir
+                    {{ TAX_EXEMPTION_WEIGHT_LIMIT_IN_KG }} kg üzeri paketlerde kitap veya benzeri basılı yayın muafiyeti
+                    geçerli değildir
                 </small>
             </template>
             <template v-else-if="isOverTaxExemptionPriceLimit">
                 <small>
-                    <span class="text-number">{{ formatMoney(TAX_EXEMPTION_PRICE_LIMIT_IN_EUR, "EUR") }}</span> üzeri paketlerde kitap veya benzeri basılı yayın muafiyeti geçerli değildir
+                    <span class="text-number">{{ formatMoney(TAX_EXEMPTION_PRICE_LIMIT_IN_EUR, "EUR") }}</span> üzeri
+                    paketlerde kitap veya benzeri basılı yayın muafiyeti geçerli değildir
                 </small>
                 <small>
                     Sipariş tutarı: <span class="text-number">{{ formatMoney(props.eurPrice, "EUR") }}</span>
@@ -76,10 +80,7 @@
 
 <script lang="ts" setup>
 import { formatMoney } from "@/utils/formatter.js";
-import {
-    TAX_EXEMPTION_PRICE_LIMIT_IN_EUR,
-    TAX_EXEMPTION_WEIGHT_LIMIT_IN_KG
-} from "@/domains/gumruk-vergisi/config.js";
+import { TAX_EXEMPTION_PRICE_LIMIT_IN_EUR, TAX_EXEMPTION_WEIGHT_LIMIT_IN_KG } from "@/domains/gumruk-vergisi/config.js";
 import { SHIPPING_PRICE_IN_EUR } from "@/domains/gumruk-vergisi/calculator.js";
 
 export type Props = {
@@ -108,3 +109,9 @@ watch(isPrintedOnly, (newValue) => {
     }
 });
 </script>
+
+<style lang="scss" scoped>
+.package-options {
+    grid-template-columns: 1fr
+}
+</style>

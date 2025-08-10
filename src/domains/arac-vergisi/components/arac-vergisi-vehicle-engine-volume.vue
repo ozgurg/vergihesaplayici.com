@@ -76,38 +76,38 @@ const items = computed<FormCheckProps[] | null>(() => {
 
 const className = computed<string | null>(() => {
     const map: Partial<{ [key in VehicleType]: string }> = {
-        [VehicleType.AUTOMOBILE]: "arac-vergisi-vehicle-engine-volume-automobile",
-        [VehicleType.ELECTRIC_AUTOMOBILE]: "arac-vergisi-vehicle-engine-volume-electric-automobile",
-        [VehicleType.HYBRID_AUTOMOBILE]: "arac-vergisi-vehicle-engine-volume-hybrid-automobile",
-        [VehicleType.MOTORCYCLE]: "arac-vergisi-vehicle-engine-volume-motorcycle"
+        [VehicleType.AUTOMOBILE]: "vehicle-engine-volume-automobile",
+        [VehicleType.ELECTRIC_AUTOMOBILE]: "vehicle-engine-volume-electric-automobile",
+        [VehicleType.HYBRID_AUTOMOBILE]: "vehicle-engine-volume-hybrid-automobile",
+        [VehicleType.MOTORCYCLE]: "vehicle-engine-volume-motorcycle"
     };
     return map[props.vehicleType] ?? null;
 });
 </script>
 
 <style lang="scss" scoped>
-.arac-vergisi-vehicle-engine-volume-automobile {
+.vehicle-engine-volume-automobile {
     grid-template-columns: repeat(2, 1fr);
     @include vh-media-breakpoint-up(sm) {
         grid-template-columns: repeat(3, 1fr)
     }
 }
 
-.arac-vergisi-vehicle-engine-volume-electric-automobile {
+.vehicle-engine-volume-electric-automobile {
     grid-template-columns: repeat(2, 1fr);
     @include vh-media-breakpoint-up(sm) {
         grid-template-columns: repeat(3, 1fr)
     }
 }
 
-.arac-vergisi-vehicle-engine-volume-hybrid-automobile {
+.vehicle-engine-volume-hybrid-automobile {
     grid-template-columns: repeat(1, 1fr);
     @include vh-media-breakpoint-up(sm) {
         grid-template-columns: repeat(2, 1fr)
     }
 }
 
-.arac-vergisi-vehicle-engine-volume-motorcycle {
+.vehicle-engine-volume-motorcycle {
     grid-template-columns: repeat(2, 1fr);
     @include vh-media-breakpoint-up(sm) {
         grid-template-columns: repeat(3, 1fr)

@@ -4,10 +4,10 @@
         v-bind="props"
         :items="items"
         type="radio"
-        class="arac-vergisi-vehicle-type" />
+        class="vehicle-type" />
 
     <template v-if="!isAllShown">
-        <div class="arac-vergisi-vehicle-type-show-all">
+        <div class="show-all">
             <form-button
                 @click="isAllShown = true"
                 type="button"
@@ -85,7 +85,7 @@ watch(isAllShown, () => {
 </script>
 
 <style lang="scss" scoped>
-.arac-vergisi-vehicle-type {
+.vehicle-type {
     grid-template-columns: repeat(2, 1fr);
     @include vh-media-breakpoint-up(sm) {
         grid-template-columns: repeat(3, 1fr)
@@ -95,7 +95,7 @@ watch(isAllShown, () => {
     }
 }
 
-.arac-vergisi-vehicle-type-show-all {
+.show-all {
     margin-block-start: calc(var(--vh-spacer) * .5)
 }
 </style>

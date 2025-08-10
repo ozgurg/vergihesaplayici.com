@@ -3,7 +3,7 @@
         v-bind="props"
         :items="ITEMS"
         type="radio"
-        class="arac-vergisi-mode" />
+        class="mode" />
 </template>
 
 <script lang="ts" setup>
@@ -34,7 +34,7 @@ const ITEMS: FormCheckProps[] = [
 </script>
 
 <style lang="scss" scoped>
-.arac-vergisi-mode {
+.mode {
     grid-template-columns: repeat(1, 1fr);
     @include vh-media-breakpoint-up(sm) {
         grid-template-columns: repeat(2, 1fr)

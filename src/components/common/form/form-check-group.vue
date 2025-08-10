@@ -106,7 +106,6 @@ $_scales: (
 .form-check-group {
     --_anchor-name: var(--anchor-name, --form-check-group-checked-indicator);
     display: grid;
-    grid-template-columns: 1fr;
     gap: calc(var(--vh-spacer) * .5);
     @each $__scale, $__properties in $_scales {
         &-scale-#{$__scale} {
