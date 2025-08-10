@@ -7,7 +7,7 @@ export const TelefonVergisiHesaplayiciPageDef: CalculatorPageDef = (): Calculato
     const parentPage = HesaplayicilarPageDef();
 
     const title = "Telefon Vergisi Hesaplayıcı";
-    const shortTitle = "Telefon Vergisi";
+    const shortTitle = "Telefon";
     const url = siteUrl("/telefon-vergisi-hesaplayici");
     const ogImageUrl = staticSiteUrl("/og/telefon-vergisi-hesaplayici.jpg");
     const breadcrumbs = [

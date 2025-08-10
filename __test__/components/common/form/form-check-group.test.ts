@@ -2,6 +2,7 @@ import type { DOMWrapper } from "@vue/test-utils";
 import { mount } from "@vue/test-utils";
 import { describe, expect, it } from "vitest";
 import { testAttrPassingToRoot, testRootClass } from "@root/__test__/utils.js";
+import SvgIcon from "@/components/common/svg-icon.vue";
 import FormCheck from "@/components/common/form/form-check.vue";
 import FormCheckGroup from "@/components/common/form/form-check-group.vue";
 
@@ -147,6 +148,79 @@ describe("components/common/form/form-check-group.vue", () => {
 
         for (const _formCheck of formChecks) {
             expect(_formCheck.find("small").exists()).toBeFalsy();
+        }
+    });
+
+    it("renders items with icons correctly", () => {
+        const testItem = [
+            {
+                title: "Item 1",
+                icon: "test-icon-1",
+                input: {
+                    value: "item-1"
+                }
+            },
+            {
+                title: "Item 2",
+                icon: "test-icon-2",
+                input: {
+                    value: "item-2"
+                }
+            }
+        ];
+        const wrapper = mount(FormCheckGroup, {
+            props: {
+                items: testItem,
+                type: "radio"
+            }
+        });
+
+        const formChecks = wrapper.findAllComponents(FormCheck);
+
+        for (const [_index, _formCheck] of formChecks.entries()) {
+            const item = testItem[_index]!;
+            const svgIcons = _formCheck.findAllComponents(SvgIcon);
+            const customIcon = svgIcons.find(icon =>
+                !icon.classes().includes("checked-icon") &&
+                !icon.classes().includes("unchecked-icon")
+            );
+
+            expect(customIcon).toBeTruthy();
+            expect(customIcon!.props("icon")).toBe(item.icon);
+        }
+    });
+
+    it("renders items without icons correctly", () => {
+        const testItem = [
+            {
+                title: "Item 1",
+                input: {
+                    value: "item-1"
+                }
+            },
+            {
+                title: "Item 2",
+                input: {
+                    value: "item-2"
+                }
+            }
+        ];
+        const wrapper = mount(FormCheckGroup, {
+            props: {
+                items: testItem,
+                type: "radio"
+            }
+        });
+
+        const formChecks = wrapper.findAllComponents(FormCheck);
+
+        for (const _formCheck of formChecks) {
+            const svgIcons = _formCheck.findAllComponents(SvgIcon);
+            const customIcon = svgIcons.find(icon =>
+                !icon.classes().includes("checked-icon") &&
+                !icon.classes().includes("unchecked-icon")
+            );
+            expect(customIcon).toBeFalsy();
         }
     });
 

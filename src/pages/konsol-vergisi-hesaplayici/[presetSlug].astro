@@ -5,7 +5,7 @@ import Container from "@/components/common/container.vue";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
 import Heading1 from "@/components/common/heading-1.vue";
 import KonsolVergisiHesaplayiciPreset
-    from "@/components/calculator/konsol-vergisi-hesaplayici/konsol-vergisi-hesaplayici-preset.vue";
+    from "@/domains/konsol-vergisi-hesaplayici/components/konsol-vergisi-hesaplayici-preset.vue";
 import Heading2 from "@/components/common/heading-2.vue";
 import CalculatorPresetCarousel from "@/components/calculator-preset-carousel.astro";
 
@@ -18,9 +18,9 @@ import {
     mapPresetsForCalculatorPresetCarouselComponent
 } from "@/domains/konsol-vergisi-hesaplayici/utils/map-presets-for-calculator-preset-carousel-component.js";
 import { calculateResults } from "@/domains/konsol-vergisi-hesaplayici/utils/calculate-results.js";
-import { DEFAULT_CURRENCY } from "@/domains/konsol-vergisi-hesaplayici/config.js";
+import { DEFAULT_PRESET_FORM } from "@/domains/konsol-vergisi-hesaplayici/config.js";
 
-export const getStaticPaths = () => {
+export const getStaticPaths = (): object => {
     return getPresetsForAllBrands().map(_preset => ({
         params: {
             presetSlug: _preset.slug
@@ -49,8 +49,8 @@ const calculateServerSide = () => {
     const option = preset.options[optionIndex]!;
 
     const form = {
-        price: option.form.price ?? 0,
-        currency: option.form.currency ?? DEFAULT_CURRENCY
+        ...DEFAULT_PRESET_FORM,
+        ...option.form
     };
 
     const {

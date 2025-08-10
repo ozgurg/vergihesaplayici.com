@@ -39,8 +39,9 @@ import { icon_chevronDown } from "@/utils/icons.js";
 
 type Scale = "small" | "medium" | "large";
 
-export type Item = {
+export type Item<V = HtmlAttrs_option["value"]> = {
     title: string;
+    value?: V;
 } & /* @vue-ignore */ Partial<HtmlAttrs_option>;
 
 export type Props = {

@@ -1,5 +1,5 @@
 import type { CalculationResults, Prices, TaxFees, TaxRates } from "@/domains/telefon-vergisi-hesaplayici/types.js";
-import { Registration } from "@/domains/telefon-vergisi-hesaplayici/types.js";
+import { Mode, Registration } from "@/domains/telefon-vergisi-hesaplayici/types.js";
 
 export class Calculator {
     private taxFees: TaxFees = {
@@ -39,13 +39,13 @@ export class Calculator {
             eurToTryCurrency: number
         },
         options: {
-            calculateFromTaxAddedPrice: boolean
+            mode: Mode
         }
     ) {
         this.price = params.price;
         this.registration = params.registration;
         this.eurToTryCurrency = params.eurToTryCurrency;
-        this.calculateFromTaxAddedPrice = options.calculateFromTaxAddedPrice;
+        this.calculateFromTaxAddedPrice = options.mode === Mode.TAX_ADDED_TO_TAX_FREE;
 
         if (this.calculateFromTaxAddedPrice) {
             this.prices.taxAdded = params.price;

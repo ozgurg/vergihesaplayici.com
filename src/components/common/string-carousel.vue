@@ -2,26 +2,23 @@
     <component
         :is="props.is"
         class="string-carousel">
-        <!--
-        This can be done without `&-wrapper`,
-        but to make all of them look like a group with
-        chars and a11y text, I wrapped them
-        -->
-        <transition-group
-            name="list-transition"
-            tag="div"
-            aria-hidden="true"
-            role="presentation"
-            class="string-carousel-wrapper">
-            <template v-for="(_char, _index) in chars" :key="Math.random()">
-                <span :style="{'--index': _index}">
-                    {{ _char === " " ? "&nbsp;" : _char }}
-                </span>
-            </template>
-        </transition-group>
-        <span class="visually-hidden">
-            {{ props.text }}
-        </span>
+        <div class="string-carousel-container">
+            <transition-group
+                name="list-transition"
+                tag="div"
+                inert=""
+                aria-hidden="true"
+                class="string-carousel-wrapper">
+                <template v-for="(_char, _index) in chars" :key="Math.random()">
+                    <span :style="{'--index': _index}">
+                        {{ _char === " " ? "\u00A0" : _char }}
+                    </span>
+                </template>
+            </transition-group>
+            <div class="string-carousel-text-overlay">
+                {{ props.text }}
+            </div>
+        </div>
     </component>
 </template>
 
@@ -47,19 +44,34 @@ const chars = computed<string[]>(() => [...String(props.text)]);
     --_block-size: 1.125em;
     --_duration: var(--duration, var(--vh-duration-longer));
     display: inline-flex;
+    &-container {
+        position: relative;
+        display: inline-flex
+    }
     &-wrapper {
         line-height: var(--_block-size);
         display: inline-flex;
         overflow: hidden;
         flex-flow: row wrap;
         block-size: var(--_block-size);
+        pointer-events: none; // Disable interaction with animated chars
+        user-select: none; // Prevent selection of individual `<span />`s
         span {
-            will-change: transform, opacity
+            will-change: transform, opacity;
+            user-select: none // Explicitly disable selection
         }
     }
-    .visually-hidden {
-        user-select: none;
-        pointer-events: none
+    &-text-overlay {
+        position: absolute;
+        inset: 0;
+        block-size: 100%;
+        inline-size: 100%;
+        color: transparent;
+        user-select: text;
+        cursor: text;
+        line-height: var(--_block-size);
+        font: inherit;
+        white-space: nowrap
     }
 }
 

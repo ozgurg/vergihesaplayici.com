@@ -122,7 +122,8 @@ export default defineConfig({
             autoImportVueComponentsPlugin({
                 dts: "unplugin-vue-components.d.ts",
                 dirs: [
-                    "src/components"
+                    "src/components",
+                    "src/domains/**/components"
                 ]
             })
         ],

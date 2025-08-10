@@ -12,9 +12,11 @@ export const calculateResults = (params: {
 } => {
     const { form } = params;
 
-    const mode = form.mode;
-    const price = form.price;
-    const rate = form.rate;
+    const {
+        mode,
+        price,
+        rate
+    } = form;
 
     const calculator = new Calculator({
         price,

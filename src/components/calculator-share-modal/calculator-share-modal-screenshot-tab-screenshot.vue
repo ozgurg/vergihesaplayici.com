@@ -23,8 +23,9 @@
                     <template v-for="_item in props.screenshotData.input" :key="Math.random()">
                         <div class="screenshot-list-item">
                             <dt>{{ _item.label }}</dt>
-                            <dd :class="{'text-number': _item.isNumeric}">
-                                {{ _item.value }}
+                            <dd
+                                v-html="_item.value"
+                                :class="{'text-number': _item.isNumeric}">
                             </dd>
                         </div>
                     </template>

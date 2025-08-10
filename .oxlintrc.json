@@ -43,6 +43,13 @@
                 "allowSeparateTypeImports": true
             }
         ],
+        "eslint/new-cap": [
+            "error",
+            {
+                "capIsNewExceptionPattern": "PageDef$"
+            }
+        ],
+        "eslint/prefer-destructuring": "off",
         "eslint/no-plusplus": "off",
         "eslint/no-undefined": "off",
         "eslint/no-magic-numbers": "off",

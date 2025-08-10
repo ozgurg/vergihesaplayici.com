@@ -147,7 +147,7 @@ $_scales: (
     @include vh-reset-button;
     font-size: var(--_font-size);
     font-weight: var(--_font-weight);
-    display: flex;
+    display: inline-flex;
     align-items: center;
     align-self: center;
     justify-content: center;

@@ -1,0 +1,34 @@
+---
+import DefaultLayout from "@/layouts/default-layout.astro";
+import PageHeader from "@/components/common/page-header.vue";
+import Container from "@/components/common/container.vue";
+import Breadcrumbs from "@/components/common/breadcrumbs.vue";
+import Heading1 from "@/components/common/heading-1.vue";
+import AracVergisi from "@/domains/arac-vergisi/components/arac-vergisi.vue";
+
+import { AracVergisiPageDef } from "@/domains/arac-vergisi/page-def.js";
+
+const aracVergisiPage = AracVergisiPageDef();
+
+const EXCHANGE_RATES = getExchangeRates();
+---
+
+<DefaultLayout head={aracVergisiPage.head}>
+    <PageHeader>
+        <Container>
+            <Breadcrumbs
+                items={aracVergisiPage.breadcrumbs}
+                client:load />
+            <Heading1>
+                {aracVergisiPage.title}
+            </Heading1>
+        </Container>
+    </PageHeader>
+
+    <section>
+        <AracVergisi
+            EXCHANGE_RATES={EXCHANGE_RATES}
+            calculatorPage={aracVergisiPage}
+            client:load />
+    </section>
+</DefaultLayout>

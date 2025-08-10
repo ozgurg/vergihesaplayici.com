@@ -7,7 +7,7 @@ export const KonsolVergisiHesaplayiciPageDef: CalculatorPageDef = (): Calculator
     const parentPage = HesaplayicilarPageDef();
 
     const title = "Konsol Vergisi Hesaplayıcı";
-    const shortTitle = "Konsol Vergisi";
+    const shortTitle = "Konsol";
     const url = siteUrl("/konsol-vergisi-hesaplayici");
     const ogImageUrl = staticSiteUrl("/og/konsol-vergisi-hesaplayici.jpg");
     const breadcrumbs = [

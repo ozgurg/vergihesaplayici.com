@@ -9,10 +9,13 @@
             :icon="uncheckedIcon"
             class="form-check-icon unchecked-icon" />
         <input
-            v-bind="$attrs"
+            v-bind="props.input"
             :id="ID"
             :type="props.type"
             :value="props.value"
+            :name="props.name"
+            :required="props.required"
+            :disabled="props.disabled"
             :checked="isChecked"
             @change="onChange($event)"
             class="form-check-icon" />
@@ -32,10 +35,13 @@ export type Props = {
     type: "radio" | "checkbox";
     value: HtmlAttrs_input["value"];
     uncheckedValue?: HtmlAttrs_input["value"];
+    name?: HtmlAttrs_input["name"];
+    required?: HtmlAttrs_input["required"];
+    disabled?: HtmlAttrs_input["disabled"];
     scale?: Scale;
-} & /* @vue-ignore */ Omit<HtmlAttrs_input, "type">;
+    input?: Omit<HtmlAttrs_input, "type" | "value" | "name" | "required">
+};
 
-defineOptions({ inheritAttrs: false });
 const props = defineProps<Props>();
 const modelValue = defineModel<HtmlAttrs_input["value"] | HtmlAttrs_input["value"][]>();
 
@@ -150,7 +156,7 @@ $_scales: (
         }
     }
     &-icon {
-        --size: var(--_icon-size);
+        --size: var(--_icon-size) !important; // FIXME
         position: absolute;
         transition: vh-transition(opacity transform, var(--vh-duration-long), var(--vh-timing-spring));
         inset-inline-end: calc(var(--vh-spacer) * .5);
@@ -173,7 +179,8 @@ $_scales: (
         inline-size: var(--size)
     }
     &:has(input[type="checkbox"]:checked) {
-        border-color: var(--vh-clr-primary)
+        border-color: var(--vh-clr-primary);
+        box-shadow: 0 0 0 var(--vh-border-inline-size) var(--vh-clr-primary)
     }
     &:has(input:checked) {
         color: var(--vh-clr-primary);
@@ -189,6 +196,11 @@ $_scales: (
     }
     &:has(small) {
         padding-block: var(--vh-spacer)
+    }
+    :deep(.svg-icon) {
+        --size: 1.5rem;
+        opacity: .875;
+        margin-block-end: calc(var(--vh-spacer) * .375)
     }
     :deep(b) {
         font-size: var(--vh-fs-base);

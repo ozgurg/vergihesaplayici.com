@@ -1,0 +1,34 @@
+---
+import DefaultLayout from "@/layouts/default-layout.astro";
+import PageHeader from "@/components/common/page-header.vue";
+import Container from "@/components/common/container.vue";
+import Breadcrumbs from "@/components/common/breadcrumbs.vue";
+import Heading1 from "@/components/common/heading-1.vue";
+import GumrukVergisi from "@/domains/gumruk-vergisi/components/gumruk-vergisi.vue";
+
+import { GumrukVergisiPageDef } from "@/domains/gumruk-vergisi/page-def.js";
+
+const gumrukVergisiPage = GumrukVergisiPageDef();
+
+const EXCHANGE_RATES = getExchangeRates();
+---
+
+<DefaultLayout head={gumrukVergisiPage.head}>
+    <PageHeader>
+        <Container>
+            <Breadcrumbs
+                items={gumrukVergisiPage.breadcrumbs}
+                client:load />
+            <Heading1>
+                {gumrukVergisiPage.title}
+            </Heading1>
+        </Container>
+    </PageHeader>
+
+    <section>
+        <GumrukVergisi
+            EXCHANGE_RATES={EXCHANGE_RATES}
+            calculatorPage={gumrukVergisiPage}
+            client:load />
+    </section>
+</DefaultLayout>

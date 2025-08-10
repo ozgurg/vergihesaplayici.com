@@ -1,5 +1,6 @@
 import type { CalculationResults, Form, ResultList } from "@/domains/telefon-vergisi-hesaplayici/types.js";
 import { Registration } from "@/domains/telefon-vergisi-hesaplayici/types.js";
+import { TAX_ADDED_LABEL_BY_MODE, TAX_FREE_LABEL_BY_MODE } from "@/domains/telefon-vergisi-hesaplayici/config.js";
 
 export const buildResultList = (results: CalculationResults, form: Form): ResultList => {
     const { prices, taxFees, taxRates } = results;
@@ -8,7 +9,7 @@ export const buildResultList = (results: CalculationResults, form: Form): Result
     // 😊
     list.push({
         key: "taxFree",
-        label: "Vergisiz fiyat",
+        label: TAX_FREE_LABEL_BY_MODE[form.mode],
         value: formatMoney(prices.taxFree, "TRY")
     });
 
@@ -55,7 +56,7 @@ export const buildResultList = (results: CalculationResults, form: Form): Result
     });
     list.push({
         key: "taxAdded",
-        label: "Tahmini satış fiyatı",
+        label: TAX_ADDED_LABEL_BY_MODE[form.mode],
         value: formatMoney(prices.taxAdded, "TRY")
     });
 
