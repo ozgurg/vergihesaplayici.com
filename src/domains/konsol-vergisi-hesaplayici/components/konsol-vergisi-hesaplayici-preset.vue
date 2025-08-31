@@ -1,5 +1,11 @@
 <template>
     <container class="calculator-container">
+        <template v-if="preset.disclaimerNote">
+            <alert
+                v-html="preset.disclaimerNote"
+                class="text-center" />
+        </template>
+
         <inner-container>
             <form
                 ref="formEl"
