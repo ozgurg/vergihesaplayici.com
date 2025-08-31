@@ -51,6 +51,7 @@ export type Preset = {
     thumb: `${Lowercase<string>}.png`;
     pageTitle: string;
     pageDescription: string;
+    disclaimerNote?: string;
     options: PresetOption[];
 };
 
