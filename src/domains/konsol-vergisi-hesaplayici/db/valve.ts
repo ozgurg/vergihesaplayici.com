@@ -1,6 +1,8 @@
 import type { Brand, Preset } from "@/domains/konsol-vergisi-hesaplayici/types.js";
 import { buildPageMeta } from "@/domains/konsol-vergisi-hesaplayici/utils/build-page-meta.js";
 
+const DISCLAIMER_NOTE = "Bu ürün, resmi olarak Türkiye satılmadığı için hangi kategoriden vergilendirieceğiniz bilmiyoruz.<br />Bu sayfa sadece bilgi vermek amacı taşımaktadır.";
+
 const BRAND_ID = "valve";
 
 export const brand: Brand = {
@@ -16,6 +18,7 @@ export const presets: Preset[] = [
         releaseDate: new Date("2022-02-25"),
         thumb: "valve-steam-deck.png",
         ...buildPageMeta("Valve Steam Deck'in"),
+        disclaimerNote: DISCLAIMER_NOTE,
         options: [
             {
                 title: "64GB",
@@ -48,6 +51,7 @@ export const presets: Preset[] = [
         releaseDate: new Date("2023-11-16"),
         thumb: "valve-steam-deck-oled.png",
         ...buildPageMeta("Valve Steam Deck OLED'in"),
+        disclaimerNote: DISCLAIMER_NOTE,
         options: [
             {
                 title: "512GB",

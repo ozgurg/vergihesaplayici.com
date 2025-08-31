@@ -100,12 +100,14 @@ const OTV_RATES: OtvRates = {
 export class Calculator {
     private taxFees: TaxFees = {
         total: 0,
+        trt: 0,
         specialConsumptionTax: 0,
         valueAddedTax: 0
     };
 
     private taxRates: TaxRates = {
         total: 0,
+        trt: 0,
         specialConsumptionTax: 0,
         valueAddedTax: 0
     };
@@ -143,6 +145,7 @@ export class Calculator {
     }
 
     public calculate(): CalculationResults {
+        this.calculateTax_trt();
         this.calculateTax_specialConsumptionTax();
         this.calculateTax_valueAddedTax();
 
@@ -178,7 +181,9 @@ export class Calculator {
     }
 
     private calculateTotalTaxFee(): number {
-        return this.taxFees.specialConsumptionTax + this.taxFees.valueAddedTax;
+        return this.taxFees.trt +
+            this.taxFees.specialConsumptionTax +
+            this.taxFees.valueAddedTax;
     }
 
     private getOtvRate(): number | void {
@@ -203,7 +208,14 @@ export class Calculator {
         }
     }
 
-    // "Özel Tüketim Vergisi (ÖTV)" | TRY | RateType.PERCENT | BaseAmountMode.BASE_AMOUNT
+    // "TRT bandrolü" | TRY | RateType.PERCENT | BaseAmountMode.BASE_AMOUNT
+    private calculateTax_trt(): void {
+        this.taxRates.trt = .8; // Eight per thousand
+        this.taxFees.trt = this.calculateTax(this.price, this.taxRates.trt);
+        this.calculatePrice(this.taxFees.trt);
+    }
+
+    // "Özel Tüketim Vergisi (ÖTV)" | TRY | RateType.PERCENT | BaseAmountMode.PREVIOUS_AMOUNT
     private calculateTax_specialConsumptionTax(): void {
         this.taxRates.specialConsumptionTax = this.getOtvRate() ?? 0;
         this.taxFees.specialConsumptionTax = this.calculateTax(this.price, this.taxRates.specialConsumptionTax);

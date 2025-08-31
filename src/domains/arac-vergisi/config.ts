@@ -69,4 +69,4 @@ export const VEHICLE_ENGINE_VOLUME_LABEL_BY_VEHICLE_ENGINE_VOLUME: { [key in Veh
     [VehicleEngineVolume.MOTORCYCLE__251_UP]: "251 ve üzeri"
 };
 
-export const LAST_UPDATE = new Date("Wed Aug 04 2025 23:00:00 GMT+0300 (GMT+03:00)");
+export const LAST_UPDATE = new Date("Sun Aug 31 2025 04:00:00 GMT+0300 (GMT+03:00)");
