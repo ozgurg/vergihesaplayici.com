@@ -14,6 +14,11 @@ export const buildResultList = (results: CalculationResults, form: Form): Result
 
     // 😐
     list.push({
+        key: "trt",
+        label: `TRT bandrolü (%${taxRates.trt})`,
+        value: formatMoney(taxFees.trt, "TRY")
+    });
+    list.push({
         key: "specialConsumptionTax",
         label: `ÖTV (%${taxRates.specialConsumptionTax})`,
         value: formatMoney(taxFees.specialConsumptionTax, "TRY")

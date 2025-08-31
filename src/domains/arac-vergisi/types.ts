@@ -40,6 +40,7 @@ export enum VehicleEngineVolume {
 
 export type TaxFees = {
     total: number;
+    trt: number;
     specialConsumptionTax: number;
     valueAddedTax: number;
 };
