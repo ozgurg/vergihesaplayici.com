@@ -21,7 +21,7 @@ defineProps<Props>();
 
 <style lang="scss" scoped>
 .modal-close-button {
-    border: 0;
-    border-radius: 0 var(--vh-br-normal) 0 var(--vh-br-normal)
+    --border-alpha: 0;
+    --border-radius: 0 var(--vh-br-normal) 0 var(--vh-br-normal)
 }
 </style>
