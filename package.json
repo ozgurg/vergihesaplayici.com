@@ -39,7 +39,7 @@
         "fast-average-color-node": "3.1.0",
         "husky": "9.1.7",
         "jsdom": "26.1.0",
-        "lint-staged": "16.1.5",
+        "lint-staged": "16.1.6",
         "oxlint": "1.14.0",
         "sass": "1.91.0",
         "satori": "0.18.1",
