@@ -21,7 +21,8 @@ defineProps<Props>();
 
 <style lang="scss" scoped>
 .modal-close-button {
-    --border-alpha: 0;
-    --border-radius: 0 var(--vh-br-normal) 0 var(--vh-br-normal)
+    // FIXME: There is a specificity issue during build. `!important` is used as an override.
+    --border-alpha: 0 !important;
+    --border-radius: 0 var(--vh-br-normal) 0 var(--vh-br-normal) !important
 }
 </style>
