@@ -74,7 +74,7 @@ const IMG_ALT = `${props.brandTitle} ${props.title}`;
         }
         .thumb {
             box-shadow: 0 .75rem .75rem hsl(var(--_color-hsl), .125);
-            border-radius: calc(var(--vh-spacer) * .75);
+            @include vh-squircle(calc(var(--vh-spacer) * .75));
             padding: calc(var(--vh-spacer) * .375);
             background: hsl(var(--_color-h), var(--_color-s), 40%, .5);
             object-fit: contain;

@@ -48,7 +48,7 @@ const props = defineProps<Props>();
     padding: calc(var(--vh-spacer) * 2) calc(var(--vh-spacer) * 1.5);
     color: var(--vh-clr-body-text);
     border: var(--vh-border-inline-size) solid hsla(var(--_hsl), var(--vh-clr-border-alpha));
-    border-radius: var(--vh-br-normal);
+    @include vh-squircle(var(--vh-br-normal));
     background: radial-gradient(ellipse at left top, var(--_color), transparent);
     @include vh-hover {
         transition: vh-transition(--_color, var(--vh-duration-short));

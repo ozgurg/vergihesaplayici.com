@@ -108,16 +108,18 @@ $_scales: (
     display: grid;
     gap: calc(var(--vh-spacer) * .5);
     @each $__scale, $__properties in $_scales {
+        // If scales change more properties than `border-radius`,
+        // we probably need to update with `vh-map-to-properties` and keep `vh-squircle`
         &-scale-#{$__scale} {
             @supports (anchor-name: var(--_anchor-name)) {
                 &::before {
-                    @include vh-map-to-properties($__properties)
+                    @include vh-squircle(map.get($__properties, "border-radius"))
                 }
             }
             @supports (not(anchor-name: var(--_anchor-name))) {
                 & > * {
                     &::before {
-                        @include vh-map-to-properties($__properties)
+                        @include vh-squircle(map.get($__properties, "border-radius"))
                     }
                 }
             }

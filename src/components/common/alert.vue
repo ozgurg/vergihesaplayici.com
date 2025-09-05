@@ -42,7 +42,7 @@ $_colors: (
     border: var(--vh-border-inline-size) solid hsla(var(--_border-hsl), .08);
     text-wrap: pretty;
     color: hsl(var(--_text-hsl));
-    border-radius: var(--vh-br-normal);
+    @include vh-squircle(var(--vh-br-normal));
     background: linear-gradient(to top, hsla(var(--_bg-hsl), .08), hsla(var(--_bg-hsl), .16));
     @each $__color, $__properties in $_colors {
         &-color-#{$__color} {

@@ -174,13 +174,49 @@
     }
 }
 
+@mixin vh-squircle($topLeft: null, $topRight: null, $bottomRight: null, $bottomLeft: null) {
+    // `squircle` needs to more rounded to make it look like a circle
+    $multiplier: 2.25;
+    $isAll: $topRight == null and $bottomRight == null and $bottomLeft == null;
+
+    @if $isAll {
+        $topRight: $topLeft;
+        $bottomRight: $topLeft;
+        $bottomLeft: $topLeft
+    }
+
+    border-radius: $topLeft $topRight $bottomRight $bottomLeft !important;
+
+    @supports (corner-shape: squircle) {
+        corner-shape: squircle;
+
+        @if $isAll {
+            border-radius: calc(#{$topLeft} * $multiplier) !important
+        } @else {
+            border-radius: 0 !important;
+            @if $topLeft {
+                border-top-left-radius: calc(#{$topLeft} * $multiplier) !important
+            }
+            @if $topRight {
+                border-top-right-radius: calc(#{$topRight} * $multiplier) !important
+            }
+            @if $bottomRight {
+                border-bottom-right-radius: calc(#{$bottomRight} * $multiplier) !important
+            }
+            @if $bottomLeft {
+                border-bottom-left-radius: calc(#{$bottomLeft} * $multiplier) !important
+            }
+        }
+    }
+}
+
 @mixin vh-card($hover: false, $active: false) {
     --_color-hsl: var(--color-hsl, var(--vh-clr-white-hsl));
     --_border-hsl: var(--border-hsl, var(--_color-hsl));
     --_border-alpha: var(--border-alpha, var(--vh-clr-border-alpha));
     --_bg-alpha: var(--bg-alpha, 0);
     --_border-radius: var(--border-radius, var(--vh-br-normal));
-    border-radius: var(--_border-radius);
+    @include vh-squircle(var(--_border-radius));
     border: var(--vh-border-inline-size) solid hsla(var(--_border-hsl), var(--_border-alpha));
     background-image: linear-gradient(to bottom, hsla(var(--_color-hsl), .08), hsla(var(--_color-hsl), .04));
     background-color: hsla(var(--_color-hsl), var(--_bg-alpha));

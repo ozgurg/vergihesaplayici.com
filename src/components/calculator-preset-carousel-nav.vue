@@ -77,7 +77,10 @@ const props = defineProps<Props>();
     }
     &-prev {
         text-align: start;
-        border-radius: 0 var(--vh-br-normal) var(--vh-br-normal) 0;
+        @include vh-squircle(
+            $topRight: var(--vh-br-normal),
+            $bottomRight: var(--vh-br-normal)
+        );
         background: linear-gradient(to right, var(--vh-clr-body-bg), transparent);
         inset-inline-start: 0;
         &:disabled {
@@ -90,7 +93,10 @@ const props = defineProps<Props>();
     }
     &-next {
         text-align: end;
-        border-radius: var(--vh-br-normal) 0 0 var(--vh-br-normal);
+        @include vh-squircle(
+            $topLeft: var(--vh-br-normal),
+            $bottomLeft: var(--vh-br-normal)
+        );
         background: linear-gradient(to left, var(--vh-clr-body-bg), transparent);
         inset-inline-end: 0;
         &:disabled {
