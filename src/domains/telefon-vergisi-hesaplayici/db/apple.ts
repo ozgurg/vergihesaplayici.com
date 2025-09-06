@@ -17,7 +17,7 @@ export const presets: Preset[] = [
         releaseDate: new Date("2024-02-02"),
         thumb: "apple-vision-pro.png",
         ...buildPageMeta("Apple Vision Pro'nun"),
-        disclaimerNote: "Bu ürün, resmi olarak Türkiye satılmadığı için hangi kategoriden vergilendirieceğiniz bilmiyoruz.<br />Bu sayfa sadece bilgi vermek amacı taşımaktadır.",
+        disclaimerNote: "Bu ürün, resmi olarak Türkiye satılmadığı için hangi kategoriden vergilendirieceğiniz bilmiyoruz. Bu sayfa sadece bilgi vermek amacı taşımaktadır.",
         options: [
             {
                 title: "Vision Pro",
@@ -585,6 +585,135 @@ export const presets: Preset[] = [
                 title: "512GB",
                 form: {
                     price: 899,
+                    currency: "USD"
+                }
+            }
+        ]
+    },
+
+    {
+        brandId: BRAND_ID,
+        title: "iPhone 17",
+        slug: "apple-iphone-17",
+        releaseDate: new Date("2025-09-09"),
+        thumb: "apple-iphone-17.png",
+        ...buildPageMeta("Apple iPhone 17'nin"),
+        disclaimerNote: "iPhone 17 serisi henüz resmi olarak duyurulmadı. Modeller ve görseller dbrand.com'daki kılıf verilerine dayanmaktadır. Fiyatlar, iPhone 17 ile aynı seviyede olup sızan bilgilere göre olası zamlı versiyonları yansıtmaktadır. 9 Eylül 2025'teki resmi tanıtımın ardından güncellenecektir.",
+        options: [
+            {
+                title: "128GB",
+                form: {
+                    price: 799,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "256GB",
+                form: {
+                    price: 899,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "512GB",
+                form: {
+                    price: 1_099,
+                    currency: "USD"
+                }
+            }
+        ]
+    },
+    {
+        brandId: BRAND_ID,
+        title: "iPhone 17 Air",
+        slug: "apple-iphone-17-air",
+        releaseDate: new Date("2025-09-09"),
+        thumb: "apple-iphone-17-air.png",
+        ...buildPageMeta("Apple iPhone 17 Air'in"),
+        disclaimerNote: "iPhone 17 serisi henüz resmi olarak duyurulmadı. Modeller ve görseller dbrand.com'daki kılıf verilerine dayanmaktadır. Fiyatlar, iPhone 16 Plus ile aynı seviyede olup sızan bilgilere göre olası zamlı versiyonları yansıtmaktadır. 9 Eylül 2025'teki resmi tanıtımın ardından güncellenecektir.",
+        options: [
+            {
+                title: "128GB",
+                form: {
+                    price: 949,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "256GB",
+                form: {
+                    price: 1_049,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "512GB",
+                form: {
+                    price: 1_249,
+                    currency: "USD"
+                }
+            }
+        ]
+    },
+    {
+        brandId: BRAND_ID,
+        title: "iPhone 17 Pro",
+        slug: "apple-iphone-17-pro",
+        releaseDate: new Date("2025-09-09"),
+        thumb: "apple-iphone-17-pro.png",
+        ...buildPageMeta("Apple iPhone 17 Pro'nun"),
+        disclaimerNote: "iPhone 17 serisi henüz resmi olarak duyurulmadı. Modeller ve görseller dbrand.com'daki kılıf verilerine dayanmaktadır. Fiyatlar, iPhone 16 Pro ile aynı seviyede olup sızan bilgilere göre olası zamlı versiyonları yansıtmaktadır. 9 Eylül 2025'teki resmi tanıtımın ardından güncellenecektir.",
+        options: [
+            {
+                title: "256GB",
+                form: {
+                    price: 1_099,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "512GB",
+                form: {
+                    price: 1_299,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "1TB",
+                form: {
+                    price: 1_499,
+                    currency: "USD"
+                }
+            }
+        ]
+    },
+    {
+        brandId: BRAND_ID,
+        title: "iPhone 17 Pro Max",
+        slug: "apple-iphone-17-pro-max",
+        releaseDate: new Date("2025-09-09"),
+        thumb: "apple-iphone-17-pro-max.png",
+        ...buildPageMeta("Apple iPhone 17 Pro Max'in"),
+        disclaimerNote: "iPhone 17 serisi henüz resmi olarak duyurulmadı. Modeller ve görseller dbrand.com'daki kılıf verilerine dayanmaktadır. Fiyatlar, iPhone 16 Pro Max ile aynı seviyede olup sızan bilgilere göre olası zamlı versiyonları yansıtmaktadır. 9 Eylül 2025'teki resmi tanıtımın ardından güncellenecektir.",
+        options: [
+            {
+                title: "256GB",
+                form: {
+                    price: 1_199,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "512GB",
+                form: {
+                    price: 1_399,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "1TB",
+                form: {
+                    price: 1_599,
                     currency: "USD"
                 }
             }

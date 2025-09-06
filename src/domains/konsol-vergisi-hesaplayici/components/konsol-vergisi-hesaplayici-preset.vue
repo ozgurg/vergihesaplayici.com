@@ -1,9 +1,9 @@
 <template>
     <container class="calculator-container">
         <template v-if="preset.disclaimerNote">
-            <alert
-                v-html="preset.disclaimerNote"
-                class="text-center" />
+            <alert>
+                {{ preset.disclaimerNote }}
+            </alert>
         </template>
 
         <inner-container>

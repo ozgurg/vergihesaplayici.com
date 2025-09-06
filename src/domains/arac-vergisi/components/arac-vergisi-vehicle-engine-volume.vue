@@ -6,16 +6,16 @@
             </form-label>
         </template>
         <transition name="fade-transition" mode="out-in">
-            <template v-if="items">
+            <div v-if="items">
                 <form-check-group
                     v-bind="$attrs"
                     :items="items"
                     :class="className"
                     type="radio" />
-            </template>
-            <template v-else>
+            </div>
+            <div v-else>
                 <alert color="info">Bu araç türünde motora göre değişen vergilendirme yok. Henüz.</alert>
-            </template>
+            </div>
         </transition>
     </form-group>
 </template>
