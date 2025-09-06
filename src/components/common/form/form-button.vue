@@ -155,7 +155,7 @@ $_scales: (
     text-align: center;
     text-decoration: none;
     color: hsla(var(--_text-hsl), var(--_text-alpha));
-    border-radius: var(--_border-radius);
+    @include vh-squircle(var(--_border-radius));
     padding-inline: var(--vh-spacer);
     min-inline-size: 4rem;
     block-size: var(--_block-size);

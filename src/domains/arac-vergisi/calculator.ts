@@ -90,10 +90,10 @@ const OTV_RATES: OtvRates = {
     },
 
     [VehicleType.BOAT]: {
-        maxBasePrice: Infinity, percent: 0
+        maxBasePrice: Infinity, percent: 8
     },
     [VehicleType.YACHT]: {
-        maxBasePrice: Infinity, percent: 0
+        maxBasePrice: Infinity, percent: 8
     }
 };
 

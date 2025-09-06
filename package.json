@@ -1,6 +1,6 @@
 {
     "name": "vergihesaplayici.com",
-    "version": "9.2.2",
+    "version": "9.3.0",
     "type": "module",
     "license": "AGPL-3.0",
     "scripts": {
@@ -23,7 +23,7 @@
         "firebase": "12.2.1",
         "html-to-image": "1.11.13",
         "remixicon": "4.6.0",
-        "vue": "3.5.20",
+        "vue": "3.5.21",
         "vue-draggable-plus": "0.6.0"
     },
     "devDependencies": {
@@ -41,8 +41,8 @@
         "jsdom": "26.1.0",
         "lint-staged": "16.1.6",
         "oxlint": "1.14.0",
-        "sass": "1.91.0",
-        "satori": "0.18.1",
+        "sass": "1.92.0",
+        "satori": "0.18.2",
         "satori-html": "0.3.2",
         "sharp": "0.34.3",
         "typescript": "5.9.2",
@@ -51,7 +51,7 @@
         "vitest": "3.2.4"
     },
     "peerDependencies": {
-        "firebase-tools": "14.15.1"
+        "firebase-tools": "14.15.2"
     },
     "engines": {
         "node": ">=22.0.0"

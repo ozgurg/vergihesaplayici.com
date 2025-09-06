@@ -92,7 +92,7 @@ onBeforeMount(() => nextTick(() => {
                 align-items: center;
                 justify-content: center;
                 color: hsla(var(--_text-hsl), var(--_text-alpha));
-                border-radius: var(--vh-br-small);
+                @include vh-squircle(var(--vh-br-small));
                 background: hsla(var(--_bg-hsl), var(--_bg-alpha));
                 padding-inline: calc(var(--vh-spacer) * .5);
                 block-size: var(--breadcrumbs-item-block-size)

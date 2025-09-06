@@ -45,7 +45,10 @@
             <hr />
 
             <rich-text>
-                <a href="https://github.com/ozgurg" target="_blank" rel="noopener noreferrer">@ozgurg</a> tarafından AGPL-3.0 lisansı altında <a href="https://github.com/ozgurg/vergihesaplayici.com" target="_blank" rel="noopener noreferrer">açık kaynaklı</a> olarak geliştirilmektedir – v{{ VERSION }}
+                <a href="https://github.com/ozgurg" target="_blank" rel="noopener noreferrer">@ozgurg</a> tarafından
+                AGPL-3.0 lisansı altında <a href="https://github.com/ozgurg/vergihesaplayici.com" target="_blank"
+                                            rel="noopener noreferrer">açık kaynaklı</a> olarak geliştirilmektedir –
+                v{{ VERSION }}
             </rich-text>
         </container>
     </footer>
@@ -93,7 +96,7 @@ const dateUpdated = new Date(props.EXCHANGE_RATES.dateUpdated);
                 padding-block: calc(var(--vh-spacer) * .75);
                 min-inline-size: 5.625rem;
                 background: hsla(var(--vh-clr-white-hsl), .06);
-                border-radius: var(--vh-br-normal);
+                @include vh-squircle(var(--vh-br-normal));
                 display: flex;
                 flex-direction: column;
                 small {

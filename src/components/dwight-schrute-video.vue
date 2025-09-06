@@ -40,7 +40,7 @@ onMounted(() => {
 .dwight-schrute-video {
     display: inline-block;
     overflow: hidden;
-    border-radius: var(--vh-br-normal);
+    @include vh-squircle(var(--vh-br-normal));
     background: hsla(var(--vh-clr-white-hsl), .08);
     aspect-ratio: 455/256
 }

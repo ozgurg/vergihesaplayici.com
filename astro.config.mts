@@ -140,7 +140,6 @@ export default defineConfig({
                     silenceDeprecations: [
                         "import", // https://sass-lang.com/documentation/breaking-changes/import/#silencing-specific-deprecations
                         "global-builtin", // https://sass-lang.com/documentation/breaking-changes/import/#silencing-specific-deprecations
-                        "mixed-decls", // https://sass-lang.com/documentation/breaking-changes/mixed-decls/#silencing-specific-deprecations
                         "legacy-js-api" // https://sass-lang.com/documentation/breaking-changes/legacy-js-api/#silencing-warnings
                     ],
                     //language=scss
