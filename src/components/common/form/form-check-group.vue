@@ -135,10 +135,8 @@ $_scales: (
                 }
             }
             @supports (not(anchor-name: var(--_anchor-name))) {
-                & > * {
-                    &::before {
-                        @include vh-squircle(map.get($__properties, "border-radius"))
-                    }
+                & > *:deep(.form-check)::before {
+                    @include vh-squircle(map.get($__properties, "border-radius"))
                 }
             }
         }
@@ -176,7 +174,7 @@ $_scales: (
             }
         }
         @supports (not(anchor-name: var(--_anchor-name))) {
-            & > * {
+            & > *:deep(.form-check) {
                 &::before {
                     @include checked-state-before;
                     opacity: 0;
