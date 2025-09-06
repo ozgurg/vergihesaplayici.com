@@ -8,7 +8,10 @@
         role="radiogroup">
         <template v-if="props.items && props.type">
             <template v-for="(_item, _index) in props.items" :key="_item.input.value">
-                <!-- Wrap it with a parent and apply a `transition-delay, to the parent to prevent it from overriding the child's `transition delay` -->
+                <!--
+                Wrap it with a parent and apply a `transition-delay,
+                to the parent to prevent it from overriding the child's `transition delay`
+                -->
                 <div :style="{'transition-delay': getTransitionDelay(_index)}">
                     <form-check
                         v-model="modelValue"
@@ -67,7 +70,7 @@ export type Props = {
     initialItemCount?: number;
 } & /* @vue-ignore */ Partial<HtmlAttrs_div>;
 
-const TRANSITION_DELAY_INCREMENT_IN_MS = 100;
+const TRANSITION_DELAY_INCREMENT_IN_MS = 75;
 
 const props = withDefaults(defineProps<Props>(), {
     scale: "large"
