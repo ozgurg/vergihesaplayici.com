@@ -8,25 +8,27 @@
         role="radiogroup">
         <template v-if="props.items && props.type">
             <template v-for="(_item, _index) in props.items" :key="_item.input.value">
-                <form-check
-                    v-model="modelValue"
-                    :input="_item.input"
-                    :value="_item.input.value"
-                    :type="props.type"
-                    :scale="props.scale"
-                    :required="props.required"
-                    :name="NAME"
-                    :style="{'transition-delay': `${100 * _index}ms`}">
-                    <template v-if="_item.icon">
-                        <svg-icon :icon="_item.icon" />
-                    </template>
+                <!-- Wrap it with a parent and apply a `transition-delay, to the parent to prevent it from overriding the child's `transition delay` -->
+                <div :style="{'transition-delay': getTransitionDelay(_index)}">
+                    <form-check
+                        v-model="modelValue"
+                        :input="_item.input"
+                        :value="_item.input.value"
+                        :type="props.type"
+                        :scale="props.scale"
+                        :required="props.required"
+                        :name="NAME">
+                        <template v-if="_item.icon">
+                            <svg-icon :icon="_item.icon" />
+                        </template>
 
-                    <b v-html="_item.title"></b>
+                        <b v-html="_item.title"></b>
 
-                    <template v-if="_item.description">
-                        <small v-html="_item.description"></small>
-                    </template>
-                </form-check>
+                        <template v-if="_item.description">
+                            <small v-html="_item.description"></small>
+                        </template>
+                    </form-check>
+                </div>
             </template>
         </template>
         <template v-else>
@@ -59,7 +61,13 @@ export type Props = {
     // I moved them to the props to prevent duplicate definition
     required?: HtmlAttrs_input["required"];
     name?: HtmlAttrs_input["name"];
+
+    // 🤮
+    startDelay?: number;
+    initialItemCount?: number;
 } & /* @vue-ignore */ Partial<HtmlAttrs_div>;
+
+const TRANSITION_DELAY_INCREMENT_IN_MS = 100;
 
 const props = withDefaults(defineProps<Props>(), {
     scale: "large"
@@ -79,6 +87,16 @@ const CLASSES = [
 // A `name` is required for multiple radios to work properly;
 // Setting a default with `withDefaults` does not work when the value contains `useId()`
 const NAME = props["name"] || `UNUSED-PLACEHOLDER-NAME-${useId()}`;
+
+// 🤮
+const getTransitionDelay = (index: number) => {
+    const itemCount = props.initialItemCount ?? props.items?.length ?? 0;
+    const startDelay = props.startDelay ?? 0;
+    const delay = index < itemCount
+        ? startDelay + TRANSITION_DELAY_INCREMENT_IN_MS * index
+        : TRANSITION_DELAY_INCREMENT_IN_MS * (index - (props.initialItemCount ?? 0));
+    return `${delay}ms`;
+};
 </script>
 
 <style lang="scss" scoped>

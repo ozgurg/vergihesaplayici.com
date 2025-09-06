@@ -3,6 +3,8 @@
         v-model="model"
         v-bind="props"
         :items="items"
+        :start-delay="0"
+        :initial-item-count="initialItemCount"
         type="radio"
         class="vehicle-type" />
 
@@ -78,6 +80,9 @@ const props = defineProps<Props>();
 const model = defineModel<VehicleType>();
 const isAllShown = ref<boolean>(false);
 const items = ref<FormCheckProps<VehicleType>[]>(INITIAL_ITEMS);
+
+// Track which items are initial vs newly added
+const initialItemCount = INITIAL_ITEMS.length;
 
 watch(isAllShown, () => {
     items.value.push(...HIDDEN_ITEMS);
