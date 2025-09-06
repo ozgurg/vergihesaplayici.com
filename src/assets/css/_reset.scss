@@ -95,6 +95,10 @@ button {
     display: none !important
 }
 
+[disabled] {
+    pointer-events: none
+}
+
 dialog {
     color: inherit;
     border: 0;

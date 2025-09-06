@@ -85,6 +85,7 @@ const props = defineProps<Props>();
         inset-inline-start: 0;
         &:disabled {
             background: 0;
+            backdrop-filter: none;
             span {
                 transform: translateX(calc(var(--vh-spacer) * -1));
                 opacity: 0
@@ -101,6 +102,7 @@ const props = defineProps<Props>();
         inset-inline-end: 0;
         &:disabled {
             background: 0;
+            backdrop-filter: none;
             span {
                 transform: translateX(var(--vh-spacer));
                 opacity: 0
