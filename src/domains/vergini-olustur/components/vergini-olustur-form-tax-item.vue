@@ -103,11 +103,14 @@ const emit = defineEmits<Events>();
         }
     }
     @include vh-media-breakpoint-up(sm) {
-        padding-inline: var(--vh-spacer);
-        padding-block: calc(var(--vh-spacer) * 1.5);
-        margin-inline: calc(var(--vh-spacer) * -1);
-        border-radius: calc(var(--vh-spacer) + var(--vh-br-normal));
         border: var(--vh-border-inline-size) solid hsla(var(--vh-clr-border-hsl), var(--vh-clr-border-alpha));
+        margin-inline: calc(var(--vh-spacer) * -1);
+        padding: var(--vh-spacer);
+        padding-block-start: calc(var(--vh-spacer) * 1.25);
+        border-radius: calc(var(--vh-spacer) + var(--vh-br-normal));
+        @supports (corner-shape: squircle) {
+            @include vh-squircle(var(--vh-br-normal))
+        }
         &:nth-child(even) {
             background-color: hsla(var(--vh-clr-white-hsl), .02)
         }
@@ -144,7 +147,7 @@ const emit = defineEmits<Events>();
         inset-inline-end: var(--vh-spacer);
         inset-block-start: calc(var(--vh-spacer) * .25);
         @include vh-media-breakpoint-up(sm) {
-            inset-block-start: calc(var(--vh-spacer) * .625)
+            inset-block-start: calc(var(--vh-spacer) * .5)
         }
         &::before {
             content: counter(tax-item-count)
