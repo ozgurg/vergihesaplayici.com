@@ -17,7 +17,7 @@ export const presets: Preset[] = [
         releaseDate: new Date("2024-02-02"),
         thumb: "apple-vision-pro.png",
         ...buildPageMeta("Apple Vision Pro'nun"),
-        disclaimerNote: "Bu ürün, resmi olarak Türkiye satılmadığı için hangi kategoriden vergilendirieceğiniz bilmiyoruz.<br />Bu sayfa sadece bilgi vermek amacı taşımaktadır.",
+        disclaimerNote: "Bu ürün, resmi olarak Türkiye satılmadığı için hangi kategoriden vergilendirieceğiniz bilmiyoruz. Bu sayfa sadece bilgi vermek amacı taşımaktadır.",
         options: [
             {
                 title: "Vision Pro",
