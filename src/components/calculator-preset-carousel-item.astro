@@ -38,14 +38,12 @@ const IMG_ALT = `${props.brandTitle} ${props.title}`;
         densities={[1, 2]}
         decoding="async"
         draggable="false" />
-    <div>
-        <h2 class="title">
-            <span>{props.title}</span>
-            <SvgIcon icon={icon_chevronRight} />
-        </h2>
-        <div class="summary">
-            {props.brandTitle} • {props.releaseYear}
-        </div>
+    <h2 class="title">
+        <span>{props.title}</span>
+        <SvgIcon icon={icon_chevronRight} />
+    </h2>
+    <div class="summary">
+        {props.brandTitle} • {props.releaseYear}
     </div>
 </a>
 
@@ -64,15 +62,15 @@ const IMG_ALT = `${props.brandTitle} ${props.title}`;
         background-image: radial-gradient(ellipse at left top, hsla(var(--_color-hsl), .24), transparent);
         display: flex;
         align-items: flex-start;
-        padding: var(--vh-spacer);
-        gap: var(--vh-spacer);
-        flex-direction: row;
+        flex-direction: column;
+        padding-block: var(--vh-spacer);
+        padding-inline: calc(var(--vh-spacer) * .875);
         @include vh-media-breakpoint-up(md) {
-            padding: calc(var(--vh-spacer) * 1.5) var(--vh-spacer);
-            gap: calc(var(--vh-spacer) * 1.25);
-            flex-direction: column
+            padding-block: calc(var(--vh-spacer) * 1.5);
+            padding-inline: var(--vh-spacer)
         }
         .thumb {
+            margin-block-end: var(--vh-spacer);
             box-shadow: 0 .75rem .75rem hsl(var(--_color-hsl), .125);
             @include vh-squircle(calc(var(--vh-spacer) * .75));
             padding: calc(var(--vh-spacer) * .375);
@@ -95,24 +93,33 @@ const IMG_ALT = `${props.brandTitle} ${props.title}`;
             gap: calc(var(--vh-spacer) * .125);
             span {
                 text-wrap: pretty;
-                font-size: var(--vh-fs-md);
                 font-weight: var(--vh-fw-bold);
                 line-height: var(--vh-lh-lg);
                 display: inline-block;
                 max-inline-size: calc(100% - var(--_icon-size));
-                @include vh-ellipsis-multiline(1)
+                @include vh-ellipsis-multiline(1);
+                font-size: var(--vh-fs-sm);
+                @include vh-media-breakpoint-up(md) {
+                    font-size: var(--vh-fs-md)
+                }
             }
             .svg-icon {
                 --size: var(--_icon-size);
-                transform: translateY(-3px);
-                opacity: .75
+                opacity: .75;
+                transform: translateY(-1px);
+                @include vh-media-breakpoint-up(md) {
+                    transform: translateY(-3px)
+                }
             }
         }
         .summary {
-            font-size: var(--vh-fs-sm);
             font-weight: var(--vh-fw-medium);
             line-height: var(--vh-lh-lg);
-            opacity: .75
+            opacity: .75;
+            font-size: var(--vh-fs-xs);
+            @include vh-media-breakpoint-up(md) {
+                font-size: var(--vh-fs-sm)
+            }
         }
     }
 </style>

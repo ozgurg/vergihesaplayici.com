@@ -77,13 +77,7 @@ const ITEMS_CONTAINER_ID = "calculator-preset-carousel-items";
             z-index: 1;
             flex-grow: 0;
             flex-shrink: 0;
-            min-inline-size: 320px;
-            flex-basis: calc(100% - (var(--vh-spacer) * 2));
-            @include vh-media-breakpoint-down(md) {
-                &:only-child {
-                    flex-basis: 100%
-                }
-            }
+            min-inline-size: 160px;
             @include vh-media-breakpoint-up(md) {
                 min-inline-size: unset;
                 flex-basis: var(--_item-inline-size)
