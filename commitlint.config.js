@@ -20,7 +20,15 @@ export default {
                 "style",
                 "test",
                 "design",
-                "content"
+                "content",
+
+                // Calculators
+                "arac",
+                "gumruk",
+                "kdv",
+                "konsol",
+                "telefon",
+                "olustur"
             ]
         ]
     }
