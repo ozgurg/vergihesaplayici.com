@@ -48,12 +48,12 @@ const props = defineProps<Props>();
         position: absolute;
         z-index: 2;
         @include vh-reset-button;
-        padding: var(--vh-spacer);
+        text-align: center;
         transition: vh-transition(background-color, var(--vh-duration-short));
         inset-block: .25rem;
         @include vh-backdrop-filter(blur(1px));
         block-size: calc(100% - .5rem);
-        inline-size: calc(var(--vh-spacer) * 5);
+        inline-size: calc(var(--vh-spacer) * 4.5);
         &:not([disabled]) {
             &:hover {
                 background-color: hsla(var(--vh-clr-white-hsl), .12)
@@ -76,7 +76,6 @@ const props = defineProps<Props>();
         box-shadow: 0 0 2rem var(--vh-clr-body-bg)
     }
     &-prev {
-        text-align: start;
         @include vh-squircle(
             $topRight: var(--vh-br-normal),
             $bottomRight: var(--vh-br-normal)
@@ -93,7 +92,6 @@ const props = defineProps<Props>();
         }
     }
     &-next {
-        text-align: end;
         @include vh-squircle(
             $topLeft: var(--vh-br-normal),
             $bottomLeft: var(--vh-br-normal)
