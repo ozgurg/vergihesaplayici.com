@@ -500,5 +500,29 @@ export const presets: Preset[] = [
                 }
             }
         ]
+    },
+    {
+        brandId: BRAND_ID,
+        title: "Galaxy S25 FE",
+        slug: "samsung-galaxy-s25-fe",
+        releaseDate: new Date("2025-09-04"),
+        thumb: "samsung-galaxy-s25-fe.png",
+        ...buildPageMeta("Samsung Galaxy S25 FE'nin"),
+        options: [
+            {
+                title: "128GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-s25-fe/buy/galaxy-s25-fe-128gb-unlocked-sku-sm-s731udbaxaa/
+                    price: 649.99,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "256GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-s25-fe/buy/galaxy-s25-fe-128gb-unlocked-sku-sm-s731udbaxaa/
+                    price: 709.99,
+                    currency: "USD"
+                }
+            }
+        ]
     }
 ];
