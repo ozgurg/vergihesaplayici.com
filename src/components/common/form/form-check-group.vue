@@ -8,25 +8,27 @@
         role="radiogroup">
         <template v-if="props.items && props.type">
             <template v-for="(_item, _index) in props.items" :key="_item.input.value">
-                <form-check
-                    v-model="modelValue"
-                    :input="_item.input"
-                    :value="_item.input.value"
-                    :type="props.type"
-                    :scale="props.scale"
-                    :required="props.required"
-                    :name="NAME"
-                    :style="{'transition-delay': `${100 * _index}ms`}">
-                    <template v-if="_item.icon">
-                        <svg-icon :icon="_item.icon" />
-                    </template>
+                <!-- Wrap it with a parent and apply a `transition-delay, to the parent to prevent it from overriding the child's `transition delay` -->
+                <div :style="{'transition-delay': `${100 * _index}ms`}">
+                    <form-check
+                        v-model="modelValue"
+                        :input="_item.input"
+                        :value="_item.input.value"
+                        :type="props.type"
+                        :scale="props.scale"
+                        :required="props.required"
+                        :name="NAME">
+                        <template v-if="_item.icon">
+                            <svg-icon :icon="_item.icon" />
+                        </template>
 
-                    <b v-html="_item.title"></b>
+                        <b v-html="_item.title"></b>
 
-                    <template v-if="_item.description">
-                        <small v-html="_item.description"></small>
-                    </template>
-                </form-check>
+                        <template v-if="_item.description">
+                            <small v-html="_item.description"></small>
+                        </template>
+                    </form-check>
+                </div>
             </template>
         </template>
         <template v-else>
