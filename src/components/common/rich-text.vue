@@ -99,6 +99,13 @@ const props = withDefaults(defineProps<Props>(), {
 
     // Table
     :deep(table) {
+        @mixin cell-padding {
+            padding-inline: var(--container-padding-inline);
+            padding-block: calc(var(--vh-spacer) * .5);
+            @include vh-media-breakpoint-up(sm) {
+                padding-inline: var(--vh-spacer)
+            }
+        }
         table-layout: auto;
         vertical-align: top;
         caption-side: bottom;
@@ -130,10 +137,13 @@ const props = withDefaults(defineProps<Props>(), {
         }
         th,
         td {
-            padding-inline: var(--container-padding-inline);
-            padding-block: calc(var(--vh-spacer) * .5);
-            @include vh-media-breakpoint-up(sm) {
-                padding-inline: var(--vh-spacer)
+            @include cell-padding;
+            &:has(a:only-child) {
+                padding: 0;
+                a {
+                    display: inline-block;
+                    @include cell-padding
+                }
             }
         }
     }
