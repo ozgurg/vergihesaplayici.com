@@ -12,8 +12,6 @@ jobs:
         
         steps:
             -   name: Trigger main.yml
-                uses: peter-evans/workflow-dispatch@v3.0.0
+                uses: peter-evans/repository-dispatch@v3.0.0
                 with:
-                    workflow: main.yml
-                    repository: ${{ github.repository }}
-                    ref: main
+                   event-type: fetch-exchange-rates
