@@ -5,7 +5,7 @@ on:
         branches: [ main ]
         paths-ignore:
             - "**.md"
-            - ".github"
+            - ".github/**"
     
     workflow_dispatch:
 
