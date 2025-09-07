@@ -5,8 +5,12 @@ on:
         branches: [ main ]
         paths-ignore:
             - "**.md"
+            - ".github"
     
     workflow_dispatch:
+
+    repository_dispatch:
+        types: [fetch-exchange-rates]
 
 jobs:
     ci-and-deploy:
