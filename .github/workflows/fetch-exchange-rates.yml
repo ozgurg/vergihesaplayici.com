@@ -1,0 +1,19 @@
+name: Fetch Exchange Rates
+
+on:
+    schedule:
+        -   cron: "0 18 * * *"
+    
+    workflow_dispatch:
+
+jobs:
+    trigger-main:
+        runs-on: ubuntu-latest
+        
+        steps:
+            -   name: Trigger main.yml
+                uses: peter-evans/workflow-dispatch@v3.0.0
+                with:
+                    workflow: main.yml
+                    repository: ${{ github.repository }}
+                    ref: main
