@@ -166,7 +166,7 @@ watch(form, onSubmit, { deep: true });
         grid-template-columns: repeat(auto-fill, minmax(144px, 1fr))
     }
     &:has(> *:nth-child(4)) {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         @include vh-media-breakpoint-up(md) {
             grid-template-columns: repeat(4, 1fr)
         }
