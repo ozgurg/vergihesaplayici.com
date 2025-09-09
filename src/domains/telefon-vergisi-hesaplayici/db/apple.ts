@@ -598,26 +598,18 @@ export const presets: Preset[] = [
         releaseDate: new Date("2025-09-09"),
         thumb: "apple-iphone-17.png",
         ...buildPageMeta("Apple iPhone 17'nin"),
-        disclaimerNote: "iPhone 17 serisi henüz resmi olarak duyurulmadı. Modeller ve görseller dbrand.com'daki kılıf verilerine dayanmaktadır. Fiyatlar, iPhone 17 ile aynı seviyede olup sızan bilgilere göre olası zamlı versiyonları yansıtmaktadır. 9 Eylül 2025'teki resmi tanıtımın ardından güncellenecektir.",
         options: [
             {
-                title: "128GB",
+                title: "256GB",
                 form: {
                     price: 799,
                     currency: "USD"
                 }
             },
             {
-                title: "256GB",
-                form: {
-                    price: 899,
-                    currency: "USD"
-                }
-            },
-            {
                 title: "512GB",
                 form: {
-                    price: 1_099,
+                    price: 999,
                     currency: "USD"
                 }
             }
@@ -630,26 +622,25 @@ export const presets: Preset[] = [
         releaseDate: new Date("2025-09-09"),
         thumb: "apple-iphone-17-air.png",
         ...buildPageMeta("Apple iPhone 17 Air'in"),
-        disclaimerNote: "iPhone 17 serisi henüz resmi olarak duyurulmadı. Modeller ve görseller dbrand.com'daki kılıf verilerine dayanmaktadır. Fiyatlar, iPhone 16 Plus ile aynı seviyede olup sızan bilgilere göre olası zamlı versiyonları yansıtmaktadır. 9 Eylül 2025'teki resmi tanıtımın ardından güncellenecektir.",
         options: [
-            {
-                title: "128GB",
-                form: {
-                    price: 949,
-                    currency: "USD"
-                }
-            },
             {
                 title: "256GB",
                 form: {
-                    price: 1_049,
+                    price: 999,
                     currency: "USD"
                 }
             },
             {
                 title: "512GB",
                 form: {
-                    price: 1_249,
+                    price: 1_199,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "1TB",
+                form: {
+                    price: 1_399,
                     currency: "USD"
                 }
             }
@@ -662,7 +653,6 @@ export const presets: Preset[] = [
         releaseDate: new Date("2025-09-09"),
         thumb: "apple-iphone-17-pro.png",
         ...buildPageMeta("Apple iPhone 17 Pro'nun"),
-        disclaimerNote: "iPhone 17 serisi henüz resmi olarak duyurulmadı. Modeller ve görseller dbrand.com'daki kılıf verilerine dayanmaktadır. Fiyatlar, iPhone 16 Pro ile aynı seviyede olup sızan bilgilere göre olası zamlı versiyonları yansıtmaktadır. 9 Eylül 2025'teki resmi tanıtımın ardından güncellenecektir.",
         options: [
             {
                 title: "256GB",
@@ -694,7 +684,6 @@ export const presets: Preset[] = [
         releaseDate: new Date("2025-09-09"),
         thumb: "apple-iphone-17-pro-max.png",
         ...buildPageMeta("Apple iPhone 17 Pro Max'in"),
-        disclaimerNote: "iPhone 17 serisi henüz resmi olarak duyurulmadı. Modeller ve görseller dbrand.com'daki kılıf verilerine dayanmaktadır. Fiyatlar, iPhone 16 Pro Max ile aynı seviyede olup sızan bilgilere göre olası zamlı versiyonları yansıtmaktadır. 9 Eylül 2025'teki resmi tanıtımın ardından güncellenecektir.",
         options: [
             {
                 title: "256GB",
@@ -714,6 +703,13 @@ export const presets: Preset[] = [
                 title: "1TB",
                 form: {
                     price: 1_599,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "2TB",
+                form: {
+                    price: 1_999,
                     currency: "USD"
                 }
             }
