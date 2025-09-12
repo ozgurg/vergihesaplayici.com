@@ -2,7 +2,7 @@
     <alert
         :class="CLASSES"
         color="warning">
-        <p>Hesaplayıcı en son <b>{{ props.date.toLocaleString("tr-TR") }}</b> tarihinde güncellendi. Bu tarihten sonraki vergi değişikliklerini yansıtmaz.</p>
+        <p>Vergi kalemleri ve oranları en son <b>{{ props.date.toLocaleString("tr-TR") }}</b> tarihinde güncellendi. Bu tarihten sonraki vergi değişikliklerini yansıtmayabilir.</p>
         <p>Hata tespit ettiyseniz; <b><a :href="hataBildirPage.url.href">{{ hataBildirPage.title }}</a></b> sayfasından bildirebilirsiniz.</p>
     </alert>
 </template>
