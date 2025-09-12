@@ -177,6 +177,16 @@ const firebaseJson = {
                         value: "max-age=31536000"
                     }
                 ]
+            },
+            {
+                // Static images such as favicons and Open Graph images
+                source: "**/*.@(jpg|jpeg|png|svg|webp)",
+                headers: [
+                    {
+                        key: "Cross-Origin-Resource-Policy",
+                        value: "cross-origin"
+                    }
+                ]
             }
         ],
         redirects: redirections301.map(([_from, _to]) => ({
