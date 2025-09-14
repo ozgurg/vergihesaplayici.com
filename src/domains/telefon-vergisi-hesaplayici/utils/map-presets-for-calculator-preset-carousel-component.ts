@@ -3,7 +3,7 @@ import type { Props as CalculatorPresetCarouselProps } from "@/components/calcul
 import { TelefonVergisiHesaplayiciPresetSlugPageDef } from "@/domains/telefon-vergisi-hesaplayici/page-def.js";
 import { getBrandById, getThumbByFileName } from "@/domains/telefon-vergisi-hesaplayici/db.js";
 
-export const mapPresetsForCalculatorPresetCarouselComponent = (presets: Preset[]): CalculatorPresetCarouselProps => {
+export const mapPresetsForCalculatorPresetCarouselComponent = (presets: Preset[]): CalculatorPresetCarouselProps["items"] => {
     return presets.map(_preset => {
         const telefonVergisiHesaplayiciPresetSlugPage = TelefonVergisiHesaplayiciPresetSlugPageDef({ preset: _preset });
         const presetBrand = getBrandById(_preset.brandId);
