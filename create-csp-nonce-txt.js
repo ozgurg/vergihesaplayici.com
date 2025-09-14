@@ -14,7 +14,7 @@ const generateNonce = () => {
     const now = Date.now();
     const version = Number.parseInt(packageJson.version.replaceAll(".", ""), 10);
     const raw = (now * version).toString();
-    const filtered = [...raw].filter(char => char !== "0").reverse().join("");
+    const filtered = [...raw].filter(char => char !== "0").toReversed().join("");
     return Buffer.from(filtered).toString("base64");
 };
 

@@ -158,7 +158,7 @@ $_scales: (
         // Since the checked indicator depends on the anchor name,
         // I manage the checked state styling of its child `<form-check-group-item />` here
         @supports (anchor-name: var(--_anchor-name)) {
-            & > *:has(input:checked) {
+            :deep(.form-check:has(input:checked)) {
                 anchor-name: var(--_anchor-name)
             }
             &::before {

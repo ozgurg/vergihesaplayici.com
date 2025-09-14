@@ -3,7 +3,7 @@ import satori from "satori";
 import sharp from "sharp";
 import { html } from "satori-html";
 
-const INTER_FONT_VERSION = "5.2.6";
+const INTER_FONT_VERSION = "5.2.7";
 const OG_IMAGE_QUALITY = 75;
 const OG_IMAGE_WIDTH_IN_PIXELS = 1_200;
 const OG_IMAGE_HEIGHT_IN_PIXELS = 627;
