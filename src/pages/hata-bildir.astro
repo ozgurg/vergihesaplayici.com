@@ -51,7 +51,7 @@ const PUBLIC_RECAPTCHA_V3_PUBLIC_KEY = import.meta.env.PUBLIC_RECAPTCHA_V3_PUBLI
         const token = await grecaptcha.execute(PUBLIC_RECAPTCHA_V3_PUBLIC_KEY, { action: "email_reveal" });
         if (token) {
             const encodedEmail = "t92YuwWah12ZARTN1xWdnJ3bnJXdnp3b"; // Encoded in Base64 and reversed
-            const email = atob([...encodedEmail].reverse().join(""));
+            const email = atob([...encodedEmail].toReversed().join(""));
 
             showEmailAddressButton.remove();
 
