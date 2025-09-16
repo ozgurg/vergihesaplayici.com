@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`components/article-card-item.vue > renders card correctly 1`] = `
-"<article data-v-fcd2fd17="" itemscope="" itemtype="https://schema.org/NewsArticle" class="article-card-item"><a data-v-fcd2fd17="" href="https://vergihesaplayici.com/" itemprop="url"><div data-v-fcd2fd17="" class="meta"><time data-v-fcd2fd17="" datetime="2025-01-01" content="2025-01-01T00:00:00.000Z" itemprop="datePublished" class="meta-date">01.01.2025</time> • <span data-v-fcd2fd17="" itemscope="" itemprop="author" itemtype="https://schema.org/Person" class="meta-author"><span data-v-fcd2fd17="" itemprop="name">vergihesaplayici.com</span><meta data-v-fcd2fd17="" content="https://vergihesaplayici.com/" itemprop="url"></span></div><h2 data-v-fcd2fd17="" class="title"><span data-v-fcd2fd17="" itemprop="headline">Test Title</span><i data-v-9e7465ed="" data-v-fcd2fd17="" aria-hidden="true" class="svg-icon"><!--
+"<article data-v-fcd2fd17="" itemscope="" itemtype="https://schema.org/NewsArticle" class="article-card-item"><div data-v-fcd2fd17="" class="meta"><time data-v-fcd2fd17="" datetime="2025-01-01" content="2025-01-01T00:00:00.000Z" itemprop="datePublished" class="meta-date">01.01.2025</time><span data-v-fcd2fd17="" aria-hidden="true">•</span><span data-v-fcd2fd17="" itemscope="" itemprop="author" itemtype="https://schema.org/Person" aria-hidden="true" class="meta-author"><span data-v-fcd2fd17="" itemprop="name">vergihesaplayici.com</span><meta data-v-fcd2fd17="" content="https://vergihesaplayici.com/" itemprop="url"></span></div><h2 data-v-fcd2fd17="" class="title"><a data-v-fcd2fd17="" href="https://vergihesaplayici.com/" itemprop="url" class="stretched-link"><span data-v-fcd2fd17="" itemprop="headline">Test Title</span></a><i data-v-9e7465ed="" data-v-fcd2fd17="" aria-hidden="true" class="svg-icon"><!--
     In \`DEV\` mode, when using \`<use />\` with \`<svg />\`s, Astro fails to load the SVGs properly on the initial load.
     To avoid this issue, I bypass the cache reading in \`DEV\` mode by directly rendering the SVG with \`<svg-fragment />\`.
     --><!--
@@ -13,5 +13,5 @@ exports[`components/article-card-item.vue > renders card correctly 1`] = `
             <use :href="svgCacheHref" />
         </svg>
     </template>
-    --><svg data-v-9e7465ed="" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z"></path></svg></i></h2><div data-v-fcd2fd17="" class="summary">Test Description</div></a></article>"
+    --><svg data-v-9e7465ed="" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z"></path></svg></i></h2><div data-v-fcd2fd17="" aria-hidden="true" class="summary">Test Description</div></article>"
 `;

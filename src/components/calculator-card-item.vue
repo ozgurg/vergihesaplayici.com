@@ -1,19 +1,22 @@
 <template>
-    <a
-        :href="props.url.href"
-        class="calculator-card-item">
+    <div class="calculator-card-item">
         <div class="icon">
             <svg-icon :icon="props.icon" />
         </div>
         <h2 class="title">
-            <span>{{ props.title }}</span>
+            <a
+                :href="props.url.href"
+                class="stretched-link">
+                <span>{{ props.title }}</span>
+            </a>
             <svg-icon :icon="icon_chevronRight" />
         </h2>
         <div
             v-html="props.description"
+            aria-hidden="true"
             class="summary">
         </div>
-    </a>
+    </div>
 </template>
 
 <script lang="ts" setup>
@@ -44,6 +47,7 @@ const props = defineProps<Props>();
     --_l: var(--s, var(--vh-clr-primary-l));
     --_hsl: var(--_h), var(--_s), var(--_l);
     --_color: hsla(var(--_hsl), .12);
+    position: relative;
     display: block;
     padding: calc(var(--vh-spacer) * 2) calc(var(--vh-spacer) * 1.5);
     color: var(--vh-clr-body-text);
@@ -58,6 +62,9 @@ const props = defineProps<Props>();
         &:active {
             --_color: hsla(var(--_hsl), .24)
         }
+    }
+    &:focus-within {
+        @include vh-focus-appearance()
     }
     .icon {
         display: inline-flex;
@@ -79,14 +86,17 @@ const props = defineProps<Props>();
         flex-flow: row nowrap;
         margin-block-end: calc(var(--vh-spacer) * .25);
         gap: calc(var(--vh-spacer) * .125);
-        span {
+        a {
             text-wrap: pretty;
             font-size: var(--vh-fs-md);
             font-weight: var(--vh-fw-bold);
             line-height: var(--vh-lh-lg);
             display: inline-block;
             max-inline-size: calc(100% - var(--_icon-size));
-            @include vh-ellipsis-multiline(1)
+            @include vh-ellipsis-multiline(1);
+            &:focus {
+                @include vh-clear-focus-appearance()
+            }
         }
         .svg-icon {
             --size: var(--_icon-size);
