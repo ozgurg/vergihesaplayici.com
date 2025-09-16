@@ -11,15 +11,16 @@
                 class="meta-date">
                 {{ readableDate }}
             </time>
-            •
+            <span aria-hidden="true">•</span>
             <span
                 :itemscope="true"
                 itemprop="author"
                 itemtype="https://schema.org/Person"
+                aria-hidden="true"
                 class="meta-author">
-                    <span itemprop="name">vergihesaplayici.com</span>
-                    <meta :content="authorUrl.href" itemprop="url" />
-                </span>
+                <span itemprop="name">vergihesaplayici.com</span>
+                <meta :content="authorUrl.href" itemprop="url" />
+            </span>
         </div>
         <h2 class="title">
             <a
@@ -32,6 +33,7 @@
         </h2>
         <div
             v-html="props.description"
+            aria-hidden="true"
             class="summary">
         </div>
     </article>
