@@ -22,7 +22,8 @@ const STYLE = {
     "--color-l": `${props.thumb.color.hsl.l}%`
 };
 
-const IMG_ALT = `${props.brandTitle} ${props.title}`;
+const FULL_TITLE = `${props.brandTitle} ${props.title}`;
+const IMG_ALT = FULL_TITLE;
 ---
 
 <div
@@ -36,16 +37,20 @@ const IMG_ALT = `${props.brandTitle} ${props.title}`;
         class="thumb"
         densities={[1, 2]}
         decoding="async"
+        aria-hidden="true"
         draggable="false" />
     <h2 class="title">
         <a
             href={props.url}
+            aria-label={FULL_TITLE}
             class="stretched-link">
-            <span>{props.title}</span>
+            <span aria-hidden="true">{props.title}</span>
         </a>
         <SvgIcon icon={icon_chevronRight} />
     </h2>
-    <div class="summary">
+    <div
+        class="summary"
+        aria-hidden="true">
         {props.brandTitle} • {props.releaseYear}
     </div>
 </div>
