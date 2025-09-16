@@ -63,7 +63,7 @@ const props = defineProps<Props>();
             --_color: hsla(var(--_hsl), .24)
         }
     }
-    &:focus-within {
+    &:has(a:focus-visible) {
         @include vh-focus-appearance()
     }
     .icon {

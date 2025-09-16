@@ -78,7 +78,7 @@ const IMG_ALT = FULL_TITLE;
             padding-block: calc(var(--vh-spacer) * 1.5);
             padding-inline: var(--vh-spacer)
         }
-        &:focus-within {
+        &:has(a:focus-visible) {
             @include vh-focus-appearance()
         }
         .thumb {
