@@ -25,8 +25,7 @@ const STYLE = {
 const IMG_ALT = `${props.brandTitle} ${props.title}`;
 ---
 
-<a
-    href={props.url}
+<div
     style={STYLE}
     class="calculator-preset-carousel-item">
     <Image
@@ -39,16 +38,21 @@ const IMG_ALT = `${props.brandTitle} ${props.title}`;
         decoding="async"
         draggable="false" />
     <h2 class="title">
-        <span>{props.title}</span>
+        <a
+            href={props.url}
+            class="stretched-link">
+            <span>{props.title}</span>
+        </a>
         <SvgIcon icon={icon_chevronRight} />
     </h2>
     <div class="summary">
         {props.brandTitle} • {props.releaseYear}
     </div>
-</a>
+</div>
 
 <style lang="scss" is:global>
     .calculator-preset-carousel-item {
+        position: relative;
         @include vh-card($hover: true, $active: true);
         --color-hsl: var(--_color-hsl);
         --border-hsl: var(--_color-h), 100%, 96%;
@@ -68,6 +72,9 @@ const IMG_ALT = `${props.brandTitle} ${props.title}`;
         @include vh-media-breakpoint-up(md) {
             padding-block: calc(var(--vh-spacer) * 1.5);
             padding-inline: var(--vh-spacer)
+        }
+        &:focus-within {
+            @include vh-focus-appearance()
         }
         .thumb {
             margin-block-end: var(--vh-spacer);
@@ -91,7 +98,7 @@ const IMG_ALT = `${props.brandTitle} ${props.title}`;
             flex-flow: row nowrap;
             margin-block-end: calc(var(--vh-spacer) * .25);
             gap: calc(var(--vh-spacer) * .125);
-            span {
+            a {
                 text-wrap: pretty;
                 font-weight: var(--vh-fw-bold);
                 line-height: var(--vh-lh-lg);
@@ -101,6 +108,9 @@ const IMG_ALT = `${props.brandTitle} ${props.title}`;
                 font-size: var(--vh-fs-sm);
                 @include vh-media-breakpoint-up(md) {
                     font-size: var(--vh-fs-md)
+                }
+                &:focus {
+                    @include vh-clear-focus-appearance()
                 }
             }
             .svg-icon {
