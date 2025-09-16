@@ -17,3 +17,12 @@
 .visually-hidden {
     @include vh-screen-reader-only
 }
+
+.stretched-link {
+    &::after {
+        position: absolute;
+        z-index: 1;
+        inset: 0;
+        content: ""
+    }
+}

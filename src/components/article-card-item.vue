@@ -3,36 +3,37 @@
         :itemscope="true"
         itemtype="https://schema.org/NewsArticle"
         class="article-card-item">
-        <a
-            :href="props.url.href"
-            itemprop="url">
-            <div class="meta">
-                <time
-                    :datetime="timeDateTimeAttr"
-                    :content="timeContentAttr"
-                    itemprop="datePublished"
-                    class="meta-date">
-                    {{ readableDate }}
-                </time>
-                •
-                <span
-                    :itemscope="true"
-                    itemprop="author"
-                    itemtype="https://schema.org/Person"
-                    class="meta-author">
+        <div class="meta">
+            <time
+                :datetime="timeDateTimeAttr"
+                :content="timeContentAttr"
+                itemprop="datePublished"
+                class="meta-date">
+                {{ readableDate }}
+            </time>
+            •
+            <span
+                :itemscope="true"
+                itemprop="author"
+                itemtype="https://schema.org/Person"
+                class="meta-author">
                     <span itemprop="name">vergihesaplayici.com</span>
                     <meta :content="authorUrl.href" itemprop="url" />
                 </span>
-            </div>
-            <h2 class="title">
+        </div>
+        <h2 class="title">
+            <a
+                :href="props.url.href"
+                itemprop="url"
+                class="stretched-link">
                 <span itemprop="headline">{{ props.title }}</span>
-                <svg-icon :icon="icon_chevronRight" />
-            </h2>
-            <div
-                v-html="props.description"
-                class="summary">
-            </div>
-        </a>
+            </a>
+            <svg-icon :icon="icon_chevronRight" />
+        </h2>
+        <div
+            v-html="props.description"
+            class="summary">
+        </div>
     </article>
 </template>
 
@@ -57,24 +58,25 @@ const authorUrl = siteUrl();
 
 <style lang="scss" scoped>
 .article-card-item {
+    position: relative;
+    @include vh-card($hover: true, $active: true);
+    background-image: none;
     block-size: 100%;
+    display: block;
+    padding: calc(var(--vh-spacer) * 2) calc(var(--vh-spacer) * 1.5);
     @include vh-media-breakpoint-down(sm) {
-        &:nth-child(odd) a {
+        border-radius: 0;
+        border: 0;
+        padding-inline: var(--container-padding-inline);
+        margin-inline: calc(var(--container-padding-inline) * -1)
+    }
+    @include vh-media-breakpoint-down(sm) {
+        &:nth-child(odd) {
             background-color: hsla(var(--vh-clr-white-hsl), .04)
         }
     }
-    a {
-        @include vh-card($hover: true, $active: true);
-        background-image: none;
-        block-size: 100%;
-        display: block;
-        padding: calc(var(--vh-spacer) * 2) calc(var(--vh-spacer) * 1.5);
-        @include vh-media-breakpoint-down(sm) {
-            border-radius: 0;
-            border: 0;
-            padding-inline: var(--container-padding-inline);
-            margin-inline: calc(var(--container-padding-inline) * -1)
-        }
+    &:focus-within {
+        @include vh-focus-appearance()
     }
     .meta {
         margin-block-end: calc(var(--vh-spacer) * .5);
@@ -95,10 +97,13 @@ const authorUrl = siteUrl();
     .title {
         text-wrap: pretty;
         margin-block-end: calc(var(--vh-spacer) * .25);
-        span {
+        a {
             font-size: var(--vh-fs-md);
             font-weight: var(--vh-fw-bold);
-            line-height: var(--vh-lh-lg)
+            line-height: var(--vh-lh-lg);
+            &:focus {
+                @include vh-clear-focus-appearance()
+            }
         }
         .svg-icon {
             --size: calc(var(--vh-spacer) * 1.25);
