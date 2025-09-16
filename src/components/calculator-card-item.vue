@@ -13,6 +13,7 @@
         </h2>
         <div
             v-html="props.description"
+            aria-hidden="true"
             class="summary">
         </div>
     </div>
