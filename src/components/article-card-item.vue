@@ -77,7 +77,7 @@ const authorUrl = siteUrl();
             background-color: hsla(var(--vh-clr-white-hsl), .04)
         }
     }
-    &:focus-within {
+    &:has(a:focus-visible) {
         @include vh-focus-appearance()
     }
     .meta {
