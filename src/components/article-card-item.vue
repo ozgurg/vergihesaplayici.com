@@ -67,7 +67,7 @@ const authorUrl = siteUrl();
     display: block;
     padding: calc(var(--vh-spacer) * 2) calc(var(--vh-spacer) * 1.5);
     @include vh-media-breakpoint-down(sm) {
-        border-radius: 0;
+        --border-radius: 0;
         border: 0;
         padding-inline: var(--container-padding-inline);
         margin-inline: calc(var(--container-padding-inline) * -1)
