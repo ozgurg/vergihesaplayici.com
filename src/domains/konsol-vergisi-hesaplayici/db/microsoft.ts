@@ -18,9 +18,23 @@ export const presets: Preset[] = [
         ...buildPageMeta("Microsoft Xbox Series X'in"),
         options: [
             {
-                title: "1TB",
+                title: "1TB – Disksiz",
                 form: {
-                    price: 499,
+                    price: 549.99,
+                    currency: "EUR"
+                }
+            },
+            {
+                title: "1TB – Diskli",
+                form: {
+                    price: 599.99,
+                    currency: "EUR"
+                }
+            },
+            {
+                title: "2TB – Diskli",
+                form: {
+                    price: 699.99,
                     currency: "EUR"
                 }
             }
@@ -36,16 +50,16 @@ export const presets: Preset[] = [
         ...buildPageMeta("Microsoft Xbox Series S'nin"),
         options: [
             {
-                title: "512GB",
+                title: "512GB – Disksiz",
                 form: {
-                    price: 299,
+                    price: 349.99,
                     currency: "EUR"
                 }
             },
             {
-                title: "1TB",
+                title: "1TB – Disksiz",
                 form: {
-                    price: 349.99,
+                    price: 399.99,
                     currency: "EUR"
                 }
             }

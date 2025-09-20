@@ -18,14 +18,14 @@ export const presets: Preset[] = [
         ...buildPageMeta("Sony PlayStation 5'in"),
         options: [
             {
-                title: "Disksiz – 825GB",
+                title: "825GB – Disksiz",
                 form: { // https://blog.playstation.com/2022/08/25/ps5-price-to-increase-in-select-markets-due-to-global-economic-environment-including-high-inflation-rates/
-                    price: 449.99,
+                    price: 499.99,
                     currency: "EUR"
                 }
             },
             {
-                title: "Diskli – 825GB",
+                title: "825GB – Diskli",
                 form: { // https://blog.playstation.com/2022/08/25/ps5-price-to-increase-in-select-markets-due-to-global-economic-environment-including-high-inflation-rates/
                     price: 549.99,
                     currency: "EUR"
@@ -44,8 +44,8 @@ export const presets: Preset[] = [
         options: [
             {
                 title: "PlayStation VR2",
-                form: { // https://blog.playstation.com/2022/11/02/playstation-vr2-launches-in-february-at-549-99/
-                    price: 599.99,
+                form: { // https://blog.playstation.com/2025/02/27/a-great-new-price-for-playstation-vr2/
+                    price: 449.99,
                     currency: "EUR"
                 }
             }
@@ -61,7 +61,7 @@ export const presets: Preset[] = [
         ...buildPageMeta("Sony PlayStation 5 Pro'nun"),
         options: [
             {
-                title: "Disksiz – 2TB",
+                title: "2TB – Disksiz",
                 form: { // https://www.youtube.com/live/X24BzyzQQ-8?t=1096
                     price: 799.99,
                     currency: "EUR"

@@ -1,6 +1,6 @@
 {
     "name": "vergihesaplayici.com",
-    "version": "9.7.1",
+    "version": "9.8.0",
     "type": "module",
     "license": "AGPL-3.0",
     "scripts": {
@@ -17,10 +17,10 @@
         "prepare": "husky"
     },
     "dependencies": {
-        "@fontsource-variable/inter": "5.2.7",
-        "@fontsource-variable/roboto-mono": "5.2.7",
-        "astro": "5.13.7",
-        "firebase": "12.2.1",
+        "@fontsource-variable/inter": "5.2.8",
+        "@fontsource-variable/roboto-mono": "5.2.8",
+        "astro": "5.13.9",
+        "firebase": "12.3.0",
         "html-to-image": "1.11.13",
         "remixicon": "4.6.0",
         "vue": "3.5.21",
@@ -28,7 +28,7 @@
     },
     "devDependencies": {
         "@astrojs/check": "0.9.4",
-        "@astrojs/sitemap": "3.5.1",
+        "@astrojs/sitemap": "3.6.0",
         "@astrojs/vue": "5.1.1",
         "@commitlint/cli": "19.8.1",
         "@commitlint/config-conventional": "19.8.1",
@@ -41,17 +41,17 @@
         "jsdom": "27.0.0",
         "lint-staged": "16.1.6",
         "oxlint": "1.16.0",
-        "sass": "1.92.1",
+        "sass": "1.93.0",
         "satori": "0.18.3",
         "satori-html": "0.3.2",
-        "sharp": "0.34.3",
+        "sharp": "0.34.4",
         "typescript": "5.9.2",
         "unplugin-auto-import": "20.1.0",
-        "unplugin-vue-components": "29.0.0",
+        "unplugin-vue-components": "29.1.0",
         "vitest": "3.2.4"
     },
     "peerDependencies": {
-        "firebase-tools": "14.16.0"
+        "firebase-tools": "14.17.0"
     },
     "engines": {
         "node": ">=22.0.0"
