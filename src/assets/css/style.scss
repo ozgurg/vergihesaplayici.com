@@ -18,7 +18,7 @@ body {
     font-family: var(--vh-ff-primary);
     line-height: var(--vh-lh-base);
     color: var(--vh-clr-body-text);
-    background: hsl(var(--vh-clr-primary-h), 10%, 6%);
+    background: hsl(var(--body-bg-hsl));
     color-scheme: only dark;
     caret-color: var(--vh-clr-primary);
     accent-color: var(--vh-clr-primary);

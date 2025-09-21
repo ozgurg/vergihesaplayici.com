@@ -1,4 +1,7 @@
 :root {
+    --body-bg-hsl: var(--vh-clr-primary-h), 10%, 4.5%;
+
+
     // src/components/header.astro
     --header-zindex: 100;
     --header-down-md-block-size: 4.375rem;
