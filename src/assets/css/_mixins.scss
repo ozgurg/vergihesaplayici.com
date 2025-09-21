@@ -220,7 +220,8 @@
             }
             @if $active {
                 &:active {
-                    --bg-alpha: .12
+                    --bg-alpha: .12;
+                    transform: scale(.99)
                 }
             }
         }

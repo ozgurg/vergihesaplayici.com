@@ -219,7 +219,8 @@ const nav = getFeaturedCalculatorPages();
                     --bg-alpha: .12
                 }
                 &:active {
-                    --bg-alpha: .16
+                    --bg-alpha: .16;
+                    transform: scale(.99)
                 }
             }
             svg {
@@ -350,6 +351,9 @@ const nav = getFeaturedCalculatorPages();
                         span {
                             line-height: 1;
                             font-size: 1rem
+                        }
+                        &:active {
+                            transform: scale(.95)
                         }
                     }
                 }
