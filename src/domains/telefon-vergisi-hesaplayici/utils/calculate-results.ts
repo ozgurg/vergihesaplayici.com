@@ -32,7 +32,7 @@ export const calculateResults = (params: {
     });
 
     const results = calculator.calculate();
-    const resultList = buildResultList(results, form);
+    const resultList = buildResultList(form, results);
     const screenshotData = buildScreenshotData(form, resultList);
 
     return {

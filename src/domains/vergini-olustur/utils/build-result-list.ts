@@ -2,7 +2,7 @@ import type { CalculationResults, Form, ResultList, TaxItem } from "@/domains/ve
 import { RateType } from "@/domains/vergini-olustur/types.js";
 import { normalizePrice } from "@/utils/formatter.js";
 
-export const buildResultList = (results: CalculationResults, _: Form<TaxItem>): ResultList => {
+export const buildResultList = (form: Form<TaxItem>, results: CalculationResults): ResultList => {
     const { taxFees, taxRates, prices } = results;
     const list: ResultList = [];
 

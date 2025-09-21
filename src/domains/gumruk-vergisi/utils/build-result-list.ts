@@ -1,6 +1,6 @@
 import type { CalculationResults, Form, ResultList } from "@/domains/gumruk-vergisi/types.js";
 
-export const buildResultList = (results: CalculationResults, form: Form): ResultList => {
+export const buildResultList = (form: Form, results: CalculationResults): ResultList => {
     const { prices, taxFees, taxRates } = results;
     const list: ResultList = [];
 
