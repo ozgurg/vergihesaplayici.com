@@ -88,7 +88,7 @@ $_maximum-modal-headers: 2;
         background: hsl(var(--vh-clr-primary-h), 8%, 10%);
         inline-size: 38rem;
         max-inline-size: 100%;
-        @include vh-squircle($topLeft: var(--vh-br-normal), $topRight: var(--vh-br-normal));
+        @include vh-squircle(var(--vh-br-normal) var(--vh-br-normal) 0 0);
         max-block-size: 100%;
         min-block-size: 60vh;
         @include vh-media-breakpoint-up(md) {

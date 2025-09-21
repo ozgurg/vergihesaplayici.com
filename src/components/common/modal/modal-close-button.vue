@@ -23,11 +23,6 @@ defineProps<Props>();
 .modal-close-button {
     // FIXME: There is a specificity issue during build. `!important` is used as an override.
     --border-alpha: 0 !important;
-    @include vh-squircle(
-        $topLeft: 0,
-        $topRight: var(--vh-br-normal),
-        $bottomRight: 0,
-        $bottomLeft: var(--vh-br-normal)
-    )
+    @include vh-squircle(0 var(--vh-br-normal) 0 var(--vh-br-normal))
 }
 </style>

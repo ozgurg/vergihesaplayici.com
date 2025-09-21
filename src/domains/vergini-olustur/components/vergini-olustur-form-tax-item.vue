@@ -107,10 +107,10 @@ const emit = defineEmits<Events>();
         margin-inline: calc(var(--vh-spacer) * -1);
         padding: var(--vh-spacer);
         padding-block-start: calc(var(--vh-spacer) * 1.25);
-        border-radius: calc(var(--vh-spacer) + var(--vh-br-normal));
-        @supports (corner-shape: squircle) {
-            @include vh-squircle(var(--vh-br-normal))
-        }
+        @include vh-squircle(
+            $values: var(--vh-br-normal),
+            $fallbackValues: calc(var(--vh-spacer) + var(--vh-br-normal))
+        );
         &:nth-child(even) {
             background-color: hsla(var(--vh-clr-white-hsl), .02)
         }

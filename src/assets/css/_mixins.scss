@@ -174,39 +174,29 @@
     }
 }
 
-@mixin vh-squircle($topLeft: null, $topRight: null, $bottomRight: null, $bottomLeft: null) {
-    // `squircle` needs to more rounded to make it look like a circle
-    $multiplier: 2.25;
-    $isAll: $topRight == null and $bottomRight == null and $bottomLeft == null;
+@mixin vh-squircle($values, $fallbackValues: null, $property: border-radius) {
+    $SQUIRCLE_MULTIPLIER: 2;
 
-    @if $isAll {
-        $topRight: $topLeft;
-        $bottomRight: $topLeft;
-        $bottomLeft: $topLeft
+    $squircleValue: ();
+    $fallbackValue: ();
+
+    @each $value in $values {
+        @if type-of($value) == "number" {
+            $squircleValue: append($squircleValue, $value * $SQUIRCLE_MULTIPLIER, space);
+        } @else {
+            $squircleValue: append($squircleValue, calc((#{$value}) * $SQUIRCLE_MULTIPLIER), space);
+        }
     }
 
-    border-radius: $topLeft $topRight $bottomRight $bottomLeft !important;
+    $fallbacks: if($fallbackValues == null, $values, $fallbackValues);
+    @each $value in $fallbacks {
+        $fallbackValue: append($fallbackValue, $value, space);
+    }
 
+    #{$property}: $fallbackValue !important;
     @supports (corner-shape: squircle) {
         corner-shape: squircle;
-
-        @if $isAll {
-            border-radius: calc(#{$topLeft} * $multiplier) !important
-        } @else {
-            border-radius: 0 !important;
-            @if $topLeft {
-                border-top-left-radius: calc(#{$topLeft} * $multiplier) !important
-            }
-            @if $topRight {
-                border-top-right-radius: calc(#{$topRight} * $multiplier) !important
-            }
-            @if $bottomRight {
-                border-bottom-right-radius: calc(#{$bottomRight} * $multiplier) !important
-            }
-            @if $bottomLeft {
-                border-bottom-left-radius: calc(#{$bottomLeft} * $multiplier) !important
-            }
-        }
+        #{$property}: $squircleValue !important
     }
 }
 
