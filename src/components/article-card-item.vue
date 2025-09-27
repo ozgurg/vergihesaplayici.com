@@ -60,8 +60,8 @@ const authorUrl = siteUrl();
 
 <style lang="scss" scoped>
 .article-card-item {
-    position: relative;
     @include vh-card($hover: true, $active: true);
+    position: relative;
     background-image: none;
     block-size: 100%;
     display: block;

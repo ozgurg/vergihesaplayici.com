@@ -126,8 +126,8 @@ $_scales: (
 
 // Checked state is managed in `<form-check-group />`
 .form-check {
+    @include vh-card($hover: true, $active: true);
     --_min-block-size: var(--min-block-size);
-    --_border-radius: var(--border-radius);
     --_icon-size: calc(var(--vh-spacer) * 1.25);
     --_padding-inline: var(--vh-spacer);
     position: relative;
@@ -138,7 +138,6 @@ $_scales: (
     padding-block: calc(var(--vh-spacer) * .75);
     padding-inline-start: var(--_padding-inline);
     padding-inline-end: calc(var(--_padding-inline) + var(--_icon-size));
-    @include vh-card($hover: true, $active: true);
     cursor: pointer;
     transition: vh-transition(color background-color border-color, var(--vh-duration-short));
     @each $__scale, $__properties in $_scales {
