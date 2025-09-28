@@ -103,6 +103,7 @@ export default defineConfig({
         },
         plugins: [
             autoImportPlugin({
+                dtsMode: "overwrite",
                 dts: "unplugin-auto-import.d.ts",
                 dirs: [
                     "src/utils/**.ts",
