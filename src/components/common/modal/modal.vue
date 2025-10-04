@@ -56,7 +56,7 @@ onMounted(_toggle);
 // This requires defining a maximum `<modal-header />` count.
 // Once we can read the child count and use that count in a `calc()` function, this workaround can be safely removed.
 // https://css-tricks.com/almanac/functions/s/sibling-count/
-$_maximum-modal-headers: 2;
+$_MAX_MODAL_HEADER_COUNT: 2;
 
 .modal {
     $self: &;
@@ -97,7 +97,7 @@ $_maximum-modal-headers: 2;
             min-block-size: unset
         }
     }
-    @for $i from 1 through $_maximum-modal-headers {
+    @for $i from 1 through $_MAX_MODAL_HEADER_COUNT {
         &:has(#{$self}-header > div:nth-child(#{$i})) {
             --modal-header-count: #{$i}
         }
