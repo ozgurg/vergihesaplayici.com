@@ -62,6 +62,21 @@
                             :items="resultList!" />
                         <affordability-alert :price="results.prices.taxAdded" />
 
+                        <calculator-charts :charts="[
+                            {
+                                title: 'Telefon-Vergi',
+                                props: {
+                                    items: chartData!.total
+                                }
+                            },
+                            {
+                                title: 'Vergi dağılımı',
+                                props: {
+                                    items: chartData!.taxRates
+                                }
+                            }
+                        ]" />
+
                         <calculator-quick-share
                             :url="props.calculatorPage.url"
                             @click:other="isCalculatorShareModalOpened = true" />
@@ -95,6 +110,7 @@
 import type { CalculatorPage } from "@/types/page-def.js";
 import type {
     CalculationResults,
+    ChartData,
     Form,
     ResultList,
     ScreenshotData
@@ -117,6 +133,7 @@ const form = reactive<Form>(DEFAULT_FORM);
 const results = ref<CalculationResults | null>(null);
 const resultList = ref<ResultList | null>(null);
 const screenshotData = ref<ScreenshotData | null>(null);
+const chartData = ref<ChartData | null>(null);
 const isCalculatorShareModalOpened = ref<boolean>(false);
 
 const priceLabel = computed<string>(() => PRICE_LABEL_BY_MODE[form.mode]);
@@ -125,7 +142,8 @@ const calculate = (): void => {
     const {
         results: calculatedResults,
         resultList: calculatedResultList,
-        screenshotData: calculatedScreenshotData
+        screenshotData: calculatedScreenshotData,
+        chartData: calculatedChartData
     } = calculateResults({
         form,
         exchangeRates: props.EXCHANGE_RATES
@@ -134,6 +152,7 @@ const calculate = (): void => {
     results.value = calculatedResults;
     resultList.value = calculatedResultList;
     screenshotData.value = calculatedScreenshotData;
+    chartData.value = calculatedChartData;
 };
 
 const onSubmit = (): void => {

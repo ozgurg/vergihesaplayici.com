@@ -1,8 +1,9 @@
 import type { ExchangeRates } from "@/types/common.js";
-import type { CalculationResults, Form, ResultList, ScreenshotData } from "@/domains/arac-vergisi/types.js";
+import type { CalculationResults, ChartData, Form, ResultList, ScreenshotData } from "@/domains/arac-vergisi/types.js";
 import { Calculator } from "@/domains/arac-vergisi/calculator.js";
 import { buildResultList } from "@/domains/arac-vergisi/utils/build-result-list.js";
 import { buildScreenshotData } from "@/domains/arac-vergisi/utils/build-screenshot-data.js";
+import { buildChartData } from "@/domains/arac-vergisi/utils/build-chart-data.js";
 
 export const calculateResults = (params: {
     form: Form,
@@ -11,6 +12,7 @@ export const calculateResults = (params: {
     results: CalculationResults;
     resultList: ResultList;
     screenshotData: ScreenshotData;
+    chartData: ChartData;
 } => {
     const { form, exchangeRates } = params;
 
@@ -32,10 +34,12 @@ export const calculateResults = (params: {
     const results = calculator.calculate();
     const resultList = buildResultList(form, results);
     const screenshotData = buildScreenshotData(form, resultList);
+    const chartData = buildChartData(form, results);
 
     return {
         results,
         resultList,
-        screenshotData
+        screenshotData,
+        chartData
     };
 };

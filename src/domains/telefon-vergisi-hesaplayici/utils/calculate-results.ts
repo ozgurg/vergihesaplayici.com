@@ -1,6 +1,7 @@
 import type { ExchangeRates } from "@/types/common.js";
 import type {
     CalculationResults,
+    ChartData,
     Form,
     ResultList,
     ScreenshotData
@@ -8,6 +9,7 @@ import type {
 import { Calculator } from "@/domains/telefon-vergisi-hesaplayici/calculator.js";
 import { buildResultList } from "@/domains/telefon-vergisi-hesaplayici/utils/build-result-list.js";
 import { buildScreenshotData } from "@/domains/telefon-vergisi-hesaplayici/utils/build-screenshot-data.js";
+import { buildChartData } from "@/domains/telefon-vergisi-hesaplayici/utils/build-chart-data.js";
 
 export const calculateResults = (params: {
     form: Form;
@@ -16,6 +18,7 @@ export const calculateResults = (params: {
     results: CalculationResults;
     resultList: ResultList;
     screenshotData: ScreenshotData;
+    chartData: ChartData;
 } => {
     const { form, exchangeRates } = params;
 
@@ -34,10 +37,12 @@ export const calculateResults = (params: {
     const results = calculator.calculate();
     const resultList = buildResultList(form, results);
     const screenshotData = buildScreenshotData(form, resultList);
+    const chartData = buildChartData(form, results);
 
     return {
         results,
         resultList,
-        screenshotData
+        screenshotData,
+        chartData
     };
 };

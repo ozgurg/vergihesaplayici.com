@@ -68,6 +68,21 @@
                             ref="resultsEl"
                             :items="resultList!" />
 
+                        <calculator-charts :charts="[
+                            {
+                                title: 'Sipariş-Vergi',
+                                props: {
+                                    items: chartData!.total
+                                }
+                            },
+                            {
+                                title: 'Vergi dağılımı',
+                                props: {
+                                    items: chartData!.taxRates
+                                }
+                            }
+                        ]" />
+
                         <calculator-quick-share
                             :url="props.calculatorPage.url"
                             @click:other="isCalculatorShareModalOpened = true" />
@@ -98,16 +113,13 @@ import type { CalculatorPage } from "@/types/page-def.js";
 import type { ExchangeRates } from "@/types/common.js";
 import type {
     CalculationResults,
+    ChartData,
     Form,
     ResultList,
     ScreenshotData
 } from "@/domains/gumruk-vergisi/types.js";
 import { calculateResults } from "@/domains/gumruk-vergisi/utils/calculate-results.js";
-import {
-    DEFAULT_FORM,
-    LAST_UPDATE,
-    TAX_EXEMPTION_PRICE_LIMIT_IN_EUR
-} from "@/domains/gumruk-vergisi/config.js";
+import { DEFAULT_FORM, LAST_UPDATE, TAX_EXEMPTION_PRICE_LIMIT_IN_EUR } from "@/domains/gumruk-vergisi/config.js";
 
 export type Props = {
     EXCHANGE_RATES: ExchangeRates;
@@ -123,6 +135,7 @@ const form = reactive<Form>(DEFAULT_FORM);
 const results = ref<CalculationResults | null>(null);
 const resultList = ref<ResultList | null>(null);
 const screenshotData = ref<ScreenshotData | null>(null);
+const chartData = ref<ChartData | null>(null);
 const isCalculatorShareModalOpened = ref<boolean>(false);
 
 const eurPrice = computed<number>(() => ({
@@ -139,7 +152,8 @@ const calculate = (): void => {
     const {
         results: calculatedResults,
         resultList: calculatedResultList,
-        screenshotData: calculatedScreenshotData
+        screenshotData: calculatedScreenshotData,
+        chartData: calculatedChartData
     } = calculateResults({
         form,
         exchangeRates: props.EXCHANGE_RATES
@@ -148,6 +162,7 @@ const calculate = (): void => {
     results.value = calculatedResults;
     resultList.value = calculatedResultList;
     screenshotData.value = calculatedScreenshotData;
+    chartData.value = calculatedChartData;
 };
 
 const onSubmit = (): void => {

@@ -96,6 +96,15 @@
     }
 }
 
+@mixin vh-blur($amount) {
+    filter: blur($amount);
+    @if $amount > 0 {
+        @media (prefers-reduced-transparency) {
+            filter: blur(0)
+        }
+    }
+}
+
 @mixin vh-reset-button {
     line-height: 1;
     font-size: 0;
@@ -216,7 +225,7 @@
     background-color: hsla(var(--_color-hsl), var(--_bg-alpha));
     @if $hover or $active {
         @include vh-hover {
-            transition: vh-transition(background-color, var(--vh-duration-short));
+            transition: vh-transition(background-color border-color, var(--vh-duration-short));
             @if $hover {
                 &:hover {
                     --bg-alpha: .08

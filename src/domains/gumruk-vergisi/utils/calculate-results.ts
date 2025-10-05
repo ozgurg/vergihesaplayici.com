@@ -1,8 +1,15 @@
 import type { ExchangeRates } from "@/types/common.js";
-import type { CalculationResults, Form, ResultList, ScreenshotData } from "@/domains/gumruk-vergisi/types.js";
+import type {
+    CalculationResults,
+    ChartData,
+    Form,
+    ResultList,
+    ScreenshotData
+} from "@/domains/gumruk-vergisi/types.js";
 import { Calculator } from "@/domains/gumruk-vergisi/calculator.js";
 import { buildResultList } from "@/domains/gumruk-vergisi/utils/build-result-list.js";
 import { buildScreenshotData } from "@/domains/gumruk-vergisi/utils/build-screenshot-data.js";
+import { buildChartData } from "@/domains/gumruk-vergisi/utils/build-chart-data.js";
 
 export const calculateResults = (params: {
     form: Form;
@@ -11,6 +18,7 @@ export const calculateResults = (params: {
     results: CalculationResults;
     resultList: ResultList;
     screenshotData: ScreenshotData;
+    chartData: ChartData;
 } => {
     const { form, exchangeRates } = params;
 
@@ -41,10 +49,12 @@ export const calculateResults = (params: {
     const results = calculator.calculate();
     const resultList = buildResultList(form, results);
     const screenshotData = buildScreenshotData(resultList);
+    const chartData = buildChartData(form, results);
 
     return {
         results,
         resultList,
-        screenshotData
+        screenshotData,
+        chartData
     };
 };
