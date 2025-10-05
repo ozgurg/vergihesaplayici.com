@@ -155,8 +155,12 @@
     }
 }
 
+@mixin vh-tabular-nums {
+    font-variant-numeric: tabular-nums
+}
+
 @mixin vh-text-number {
-    font-variant-numeric: tabular-nums;
+    @include vh-tabular-nums;
     font-family: var(--vh-ff-monospace)
 }
 
