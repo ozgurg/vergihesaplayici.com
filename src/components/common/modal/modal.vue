@@ -128,7 +128,7 @@ $_MAX_MODAL_HEADER_COUNT: 2;
         transition: vh-transition(opacity, var(--vh-duration-short));
         opacity: 0;
         background: hsla(var(--vh-clr-black-hsl), .5);
-        @include vh-backdrop-filter(blur(1px))
+        @include vh-backdrop-blur(1px)
     }
 }
 

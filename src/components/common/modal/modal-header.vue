@@ -23,7 +23,7 @@ defineProps<Props>();
     inline-size: 100%;
     inset-block-start: 0;
     inset-inline: 0;
-    @include vh-backdrop-filter(blur(1rem));
+    @include vh-backdrop-blur(1rem);
     &:last-of-type {
         border-block-end: var(--vh-border-inline-size) solid hsla(var(--vh-clr-border-hsl), var(--vh-clr-border-alpha))
     }

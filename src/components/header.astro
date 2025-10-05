@@ -62,7 +62,7 @@ const nav = getFeaturedCalculatorPages();
 
 <style lang="scss" is:global>
     @mixin blur {
-        @include vh-backdrop-filter(blur(1rem)) {
+        @include vh-backdrop-blur(1rem) {
             background: hsla(var(--vh-clr-body-bg-hsl), 1)
         }
     }
@@ -140,7 +140,7 @@ const nav = getFeaturedCalculatorPages();
                 content: "";
                 inset: 0;
                 mask: linear-gradient(to bottom, #000 50%, transparent);
-                @include vh-backdrop-filter(blur(.5rem)) {
+                @include vh-backdrop-blur(.5rem) {
                     background: var(--vh-clr-body-bg)
                 }
             }

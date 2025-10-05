@@ -51,7 +51,7 @@ const props = defineProps<Props>();
         text-align: center;
         transition: vh-transition(background-color, var(--vh-duration-short));
         inset-block: .25rem;
-        @include vh-backdrop-filter(blur(1px));
+        @include vh-backdrop-blur(1px);
         block-size: calc(100% - .5rem);
         inline-size: calc(var(--vh-spacer) * 4.5);
         &:not([disabled]) {

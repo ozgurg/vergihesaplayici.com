@@ -86,9 +86,9 @@
     @return $transitions;
 }
 
-@mixin vh-backdrop-filter($value) {
-    -webkit-backdrop-filter: $value;
-    backdrop-filter: $value;
+@mixin vh-backdrop-blur($amount) {
+    -webkit-backdrop-filter: blur($amount);
+    backdrop-filter: blur($amount);
     @media (prefers-reduced-transparency) {
         -webkit-backdrop-filter: none;
         backdrop-filter: none;
