@@ -1,5 +1,5 @@
 import type { CalculatorPage, CalculatorPageDef, Page } from "@/types/page-def.js";
-import type { Preset } from "@/domains/telefon-vergisi-hesaplayici/types.js";
+import type { Brand, Preset } from "@/domains/telefon-vergisi-hesaplayici/types.js";
 import { icon_telefonVergisiHesaplayici as icon } from "@/utils/icons.js";
 import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
 
@@ -38,9 +38,10 @@ export const TelefonVergisiHesaplayiciPageDef: CalculatorPageDef = (): Calculato
 
 type _Params = {
     preset: Preset;
+    brand: Brand;
 };
 type _PageDef = (params: _Params) => Page;
-export const TelefonVergisiHesaplayiciPresetSlugPageDef: _PageDef = ({ preset }): Page => {
+export const TelefonVergisiHesaplayiciPresetSlugPageDef: _PageDef = ({ preset, brand }): Page => {
     const parentPage = TelefonVergisiHesaplayiciPageDef();
 
     const title = preset.pageTitle;
@@ -48,7 +49,8 @@ export const TelefonVergisiHesaplayiciPresetSlugPageDef: _PageDef = ({ preset })
     const ogImageUrl = staticSiteUrl(`/og/telefon-vergisi-hesaplayici-${preset.slug}.jpg`);
     const breadcrumbs = [
         ...parentPage.breadcrumbs,
-        { title, url }
+        { title: brand.title, url: parentPage.url },
+        { title: preset.title, url }
     ];
 
     return {

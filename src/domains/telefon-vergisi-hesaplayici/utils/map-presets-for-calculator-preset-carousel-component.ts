@@ -5,8 +5,11 @@ import { getBrandById, getThumbByFileName } from "@/domains/telefon-vergisi-hesa
 
 export const mapPresetsForCalculatorPresetCarouselComponent = (presets: Preset[]): CalculatorPresetCarouselProps["items"] => {
     return presets.map(_preset => {
-        const telefonVergisiHesaplayiciPresetSlugPage = TelefonVergisiHesaplayiciPresetSlugPageDef({ preset: _preset });
         const presetBrand = getBrandById(_preset.brandId);
+        const telefonVergisiHesaplayiciPresetSlugPage = TelefonVergisiHesaplayiciPresetSlugPageDef({
+            preset: _preset,
+            brand: presetBrand
+        });
         return {
             thumb: getThumbByFileName(_preset.thumb),
             title: _preset.title,

@@ -1,5 +1,5 @@
 import type { CalculatorPage, CalculatorPageDef, Page } from "@/types/page-def.js";
-import type { Preset } from "@/domains/konsol-vergisi-hesaplayici/types.js";
+import type { Brand, Preset } from "@/domains/konsol-vergisi-hesaplayici/types.js";
 import { icon_konsolVergisiHesaplayici as icon } from "@/utils/icons.js";
 import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
 
@@ -38,9 +38,10 @@ export const KonsolVergisiHesaplayiciPageDef: CalculatorPageDef = (): Calculator
 
 type _Params = {
     preset: Preset;
+    brand: Brand;
 };
 type _PageDef = (params: _Params) => Page;
-export const KonsolVergisiHesaplayiciPresetSlugPageDef: _PageDef = ({ preset }): Page => {
+export const KonsolVergisiHesaplayiciPresetSlugPageDef: _PageDef = ({ preset, brand }): Page => {
     const parentPage = KonsolVergisiHesaplayiciPageDef();
 
     const title = preset.pageTitle;
@@ -48,7 +49,8 @@ export const KonsolVergisiHesaplayiciPresetSlugPageDef: _PageDef = ({ preset }):
     const ogImageUrl = staticSiteUrl(`/og/konsol-vergisi-hesaplayici-${preset.slug}.jpg`);
     const breadcrumbs = [
         ...parentPage.breadcrumbs,
-        { title, url }
+        { title: brand.title, url: parentPage.url },
+        { title: preset.title, url }
     ];
 
     return {

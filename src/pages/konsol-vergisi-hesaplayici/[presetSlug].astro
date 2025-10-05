@@ -35,7 +35,7 @@ export const getStaticPaths = (): object => {
 const { preset, brand } = Astro.props;
 
 const konsolVergisiHesaplayiciPage = KonsolVergisiHesaplayiciPageDef();
-const konsolVergisiHesaplayiciPresetSlugPage = KonsolVergisiHesaplayiciPresetSlugPageDef({ preset });
+const konsolVergisiHesaplayiciPresetSlugPage = KonsolVergisiHesaplayiciPresetSlugPageDef({ preset, brand });
 
 const EXCHANGE_RATES = getExchangeRates();
 const presets = getPresetsForAllBrands();
