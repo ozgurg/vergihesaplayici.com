@@ -1,13 +1,13 @@
 <template>
-    <form-button
+    <button
         aria-label="Kapat"
         class="modal-close-button"
-        color="light"
         tabindex="0"
-        type="button"
-        variant="outlined">
-        <svg-icon :icon="icon_close" />
-    </form-button>
+        type="button">
+        <span>
+            <svg-icon :icon="icon_close" />
+        </span>
+    </button>
 </template>
 
 <script lang="ts" setup>
@@ -21,8 +21,37 @@ defineProps<Props>();
 
 <style lang="scss" scoped>
 .modal-close-button {
-    // FIXME: There is a specificity issue during build. `!important` is used as an override.
-    --border-alpha: 0 !important;
-    @include vh-squircle(0 var(--vh-br-normal) 0 var(--vh-br-normal))
+    --_bg-hsl: var(--vh-clr-white-hsl);
+    @include vh-reset-button;
+    block-size: 100%;
+    padding-inline: calc(var(--vh-spacer) * .375);
+    &:focus-visible {
+        @include vh-clear-focus-appearance;
+        span {
+            @include vh-focus-appearance
+        }
+    }
+    @include vh-hover {
+        &:hover span {
+            background-color: hsla(var(--_bg-hsl), .12)
+        }
+        &:active span {
+            background-color: hsla(var(--_bg-hsl), .16)
+        }
+    }
+    span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        block-size: calc(var(--vh-spacer) * 2.5);
+        inline-size: calc(var(--vh-spacer) * 2.5);
+        border-radius: var(--vh-br-pill);
+        @include vh-hover {
+            transition: vh-transition(background-color, var(--vh-duration-short))
+        }
+        :deep(.svg-icon) {
+            --size: 1.875rem
+        }
+    }
 }
 </style>
