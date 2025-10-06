@@ -5,7 +5,7 @@
         :aria-disabled="props.disabled ? 'true' : undefined"
         :class="CLASSES"
         :disabled="props.disabled ? '' : undefined"
-        :href="props.href">
+        :href="props.href?.href ?? undefined">
         <transition name="fade-scale-transition" mode="out-in">
             <template v-if="loading">
                 <spinner />
