@@ -50,13 +50,18 @@ const { Content } = await render(yazi.entry);
     </PageHeader>
 
     <Container>
+        <div ta-ad-container=""></div>
+        <hr />
+
         <ArticleLegalDisclaimerAlert />
 
         <RichText is="section">
             <Content />
         </RichText>
 
-        <hr class="divider" />
+        <hr />
+        <div ta-ad-container=""></div>
+        <hr />
 
         <section>
             <Heading2>
@@ -65,12 +70,8 @@ const { Content } = await render(yazi.entry);
                 </a>
             </Heading2>
             <ArticlesGrid items={yazilarForArticlesGrid} />
+            <hr />
+            <div ta-ad-container=""></div>
         </section>
     </Container>
 </DefaultLayout>
-
-<style lang="scss">
-    .divider {
-        margin-block: calc(var(--vh-spacer) * 2)
-    }
-</style>

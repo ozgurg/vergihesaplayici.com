@@ -35,7 +35,7 @@ export const getStaticPaths = (): object => {
 const { preset, brand } = Astro.props;
 
 const konsolVergisiHesaplayiciPage = KonsolVergisiHesaplayiciPageDef();
-const konsolVergisiHesaplayiciPresetSlugPage = KonsolVergisiHesaplayiciPresetSlugPageDef({ preset });
+const konsolVergisiHesaplayiciPresetSlugPage = KonsolVergisiHesaplayiciPresetSlugPageDef({ preset, brand });
 
 const EXCHANGE_RATES = getExchangeRates();
 const presets = getPresetsForAllBrands();
@@ -56,7 +56,8 @@ const calculateServerSide = () => {
     const {
         results,
         resultList,
-        screenshotData
+        screenshotData,
+        chartData
     } = calculateResults({
         form,
         exchangeRates: EXCHANGE_RATES
@@ -66,7 +67,8 @@ const calculateServerSide = () => {
         form,
         results,
         resultList,
-        screenshotData
+        screenshotData,
+        chartData
     };
 };
 
@@ -95,18 +97,19 @@ const initial = calculateServerSide();
         client:load />
 
     {presetsForCalculatorPresetCarousel.length > 0 ?
-        <hr class="divider" />
+        <hr />
         <Container>
+            <div ta-ad-container=""></div>
+            <hr />
             <Heading2>
                 Diğer hazır hesaplamalar
             </Heading2>
         </Container>
         <CalculatorPresetCarousel items={presetsForCalculatorPresetCarousel} />
         : ""}
-</DefaultLayout>
 
-<style lang="scss">
-    .divider {
-        margin-block: calc(var(--vh-spacer) * 2)
-    }
-</style>
+    <hr />
+    <Container>
+        <div ta-ad-container=""></div>
+    </Container>
+</DefaultLayout>

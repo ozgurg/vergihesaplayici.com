@@ -19,7 +19,7 @@ export const Presets: Preset[] = [
 export const Thumbs: Thumb[] = await loadThumbs("telefon-vergisi-hesaplayici");
 
 const sortPresetsByReleaseDate = (presets: Preset[]): Preset[] => {
-    return presets.sort((_p1, _p2) => _p2.releaseDate.getTime() - _p1.releaseDate.getTime());
+    return presets.toSorted((_p1, _p2) => _p2.releaseDate.getTime() - _p1.releaseDate.getTime());
 };
 
 export const getPresetBySlug = (slug: string): Preset => {

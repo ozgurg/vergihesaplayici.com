@@ -30,6 +30,7 @@
         </inner-container>
 
         <template v-if="results !== null">
+            <div ta-ad-container=""></div>
             <div>
                 <heading-3 is="h2">
                     Hesaplama sonuçları
@@ -41,6 +42,21 @@
                             ref="resultsEl"
                             :items="resultList!" />
                         <affordability-alert :price="results.prices.taxAdded" />
+
+                        <calculator-charts :charts="[
+                            {
+                                title: 'Telefon-Vergi',
+                                props: {
+                                    items: chartData.total
+                                }
+                            },
+                            {
+                                title: 'Vergi dağılımı',
+                                props: {
+                                    items: chartData.taxRates
+                                }
+                            }
+                        ]" />
 
                         <calculator-quick-share
                             :url="props.presetPage.url"
@@ -85,6 +101,7 @@ import type { Item as FormCheckGroupItem } from "@/components/common/form/form-c
 import type {
     Brand,
     CalculationResults,
+    ChartData,
     Form,
     Preset,
     ResultList,
@@ -105,6 +122,7 @@ export type Props = {
         results: CalculationResults;
         resultList: ResultList;
         screenshotData: ScreenshotData;
+        chartData: ChartData;
     }
 };
 
@@ -124,16 +142,18 @@ const resultsEl = useTemplateRef<HTMLElement>("resultsEl");
 
 const optionIndex = ref<number>(0);
 const form = reactive<Form>(props.initial.form);
-const results = ref<CalculationResults | null>(props.initial.results);
-const resultList = ref<ResultList | null>(props.initial.resultList);
-const screenshotData = ref<ScreenshotData | null>(props.initial.screenshotData);
+const results = ref<CalculationResults>(props.initial.results);
+const resultList = ref<ResultList>(props.initial.resultList);
+const screenshotData = ref<ScreenshotData>(props.initial.screenshotData);
+const chartData = ref<ChartData>(props.initial.chartData);
 const isCalculatorShareModalOpened = ref<boolean>(false);
 
 const calculate = (): void => {
     const {
         results: calculatedResults,
         resultList: calculatedResultList,
-        screenshotData: calculatedScreenshotData
+        screenshotData: calculatedScreenshotData,
+        chartData: calculatedChartData
     } = calculateResults({
         form,
         exchangeRates: props.EXCHANGE_RATES
@@ -142,6 +162,7 @@ const calculate = (): void => {
     results.value = calculatedResults;
     resultList.value = calculatedResultList;
     screenshotData.value = calculatedScreenshotData;
+    chartData.value = calculatedChartData;
 };
 
 const onSubmit = (): void => {

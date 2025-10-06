@@ -128,3 +128,7 @@ fieldset {
         }
     }
 }
+
+:focus {
+    @include vh-clear-focus-appearance
+}

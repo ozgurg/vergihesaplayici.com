@@ -162,6 +162,9 @@ $_scales: (
     @media (prefers-contrast: more) {
         --_border-alpha: 1
     }
+    &:active {
+        transform: scale(.99)
+    }
     @each $__color, $__properties in $_colors {
         &-color-#{$__color} {
             @include vh-map-to-properties($__properties)

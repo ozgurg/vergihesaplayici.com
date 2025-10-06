@@ -118,7 +118,7 @@ const props = withDefaults(defineProps<Props>(), {
             @include vh-media-breakpoint-up(md) {
                 position: sticky;
                 inset-block-start: var(--header-up-md-collapsed-block-size);
-                @include vh-backdrop-filter(blur(1rem))
+                @include vh-backdrop-blur(1rem)
             }
         }
         tr {
@@ -151,22 +151,11 @@ const props = withDefaults(defineProps<Props>(), {
 
     // Various
     :deep(blockquote) {
-        @include vh-squircle(
-            $topLeft: 0,
-            $topRight: var(--vh-br-normal),
-            $bottomRight: var(--vh-br-normal),
-            $bottomLeft: 0
-        );
+        @include vh-squircle(0 var(--vh-br-normal) var(--vh-br-normal) 0);
         margin-block-end: calc(var(--vh-spacer) * 2);
         padding: var(--vh-spacer);
         border-left: .25rem solid var(--vh-clr-primary);
         background: hsla(var(--vh-clr-white-hsl), .12)
-    }
-
-    :deep(hr) {
-        border-color: var(--vh-clr-white);
-        border-style: dashed;
-        margin-block-end: calc(var(--vh-spacer) * 2)
     }
 }
 </style>

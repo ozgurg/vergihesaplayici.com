@@ -62,7 +62,7 @@ const nav = getFeaturedCalculatorPages();
 
 <style lang="scss" is:global>
     @mixin blur {
-        @include vh-backdrop-filter(blur(1rem)) {
+        @include vh-backdrop-blur(1rem) {
             background: hsla(var(--vh-clr-body-bg-hsl), 1)
         }
     }
@@ -140,7 +140,7 @@ const nav = getFeaturedCalculatorPages();
                 content: "";
                 inset: 0;
                 mask: linear-gradient(to bottom, #000 50%, transparent);
-                @include vh-backdrop-filter(blur(.5rem)) {
+                @include vh-backdrop-blur(.5rem) {
                     background: var(--vh-clr-body-bg)
                 }
             }
@@ -151,7 +151,7 @@ const nav = getFeaturedCalculatorPages();
                 align-items: center;
                 justify-content: space-between;
                 inline-size: 250px;
-                background: hsla(var(--vh-clr-primary-h), 10%, 6%, .75);
+                background: hsla(var(--body-bg-hsl), .75);
                 @include blur;
                 padding: calc(var(--vh-spacer) * .125) !important; // Needs to be overridden
                 padding-inline-start: calc(var(--vh-spacer) * .875) !important; // Needs to be overridden
@@ -175,12 +175,12 @@ const nav = getFeaturedCalculatorPages();
                 @keyframes header-shrink-block-size {
                     to {
                         block-size: var(--header-up-md-collapsed-block-size);
-                        background: hsla(var(--vh-clr-primary-h), 10%, 6%, .75)
+                        background: hsla(var(--body-bg-hsl), .75)
                     }
                 }
             }
             @supports (not(animation-timeline: scroll())) {
-                background: hsla(var(--vh-clr-primary-h), 10%, 6%, .75);
+                background: hsla(var(--body-bg-hsl), .75);
                 @include blur;
                 @include border
             }
@@ -219,7 +219,8 @@ const nav = getFeaturedCalculatorPages();
                     --bg-alpha: .12
                 }
                 &:active {
-                    --bg-alpha: .16
+                    --bg-alpha: .16;
+                    transform: scale(.99)
                 }
             }
             svg {
@@ -350,6 +351,9 @@ const nav = getFeaturedCalculatorPages();
                         span {
                             line-height: 1;
                             font-size: 1rem
+                        }
+                        &:active {
+                            transform: scale(.95)
                         }
                     }
                 }

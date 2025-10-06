@@ -87,6 +87,7 @@ $_scales: (
 );
 
 .form-select {
+    @include vh-card($hover: true);
     --_padding-inline: var(--padding-inline);
     --_block-size: var(--block-size);
     --_border-radius: var(--border-radius);
@@ -99,7 +100,6 @@ $_scales: (
     transition: vh-transition(background-color box-shadow border-color, var(--vh-duration-short));
     gap: calc(var(--vh-spacer) * .5);
     block-size: var(--_block-size);
-    @include vh-card($hover: true);
     @each $__scale, $__properties in $_scales {
         &-scale-#{$__scale} {
             @include vh-map-to-properties($__properties)

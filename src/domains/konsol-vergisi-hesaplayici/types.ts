@@ -57,6 +57,16 @@ export type {
     ScreenshotData
 } from "@/components/calculator-share-modal/calculator-share-modal-screenshot-tab-screenshot.vue";
 
+export type ChartItem = {
+    value: number;
+    label: string;
+};
+
+export type ChartData = {
+    taxRates: ChartItem[],
+    total: ChartItem[]
+};
+
 export type CalculationResults = {
     taxFees: TaxFees;
     taxRates: TaxRates;

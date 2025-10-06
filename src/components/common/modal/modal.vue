@@ -56,7 +56,7 @@ onMounted(_toggle);
 // This requires defining a maximum `<modal-header />` count.
 // Once we can read the child count and use that count in a `calc()` function, this workaround can be safely removed.
 // https://css-tricks.com/almanac/functions/s/sibling-count/
-$_maximum-modal-headers: 2;
+$_MAX_MODAL_HEADER_COUNT: 2;
 
 .modal {
     $self: &;
@@ -88,7 +88,7 @@ $_maximum-modal-headers: 2;
         background: hsl(var(--vh-clr-primary-h), 8%, 10%);
         inline-size: 38rem;
         max-inline-size: 100%;
-        @include vh-squircle($topLeft: var(--vh-br-normal), $topRight: var(--vh-br-normal));
+        @include vh-squircle(var(--vh-br-normal) var(--vh-br-normal) 0 0);
         max-block-size: 100%;
         min-block-size: 60vh;
         @include vh-media-breakpoint-up(md) {
@@ -97,7 +97,7 @@ $_maximum-modal-headers: 2;
             min-block-size: unset
         }
     }
-    @for $i from 1 through $_maximum-modal-headers {
+    @for $i from 1 through $_MAX_MODAL_HEADER_COUNT {
         &:has(#{$self}-header > div:nth-child(#{$i})) {
             --modal-header-count: #{$i}
         }
@@ -128,7 +128,7 @@ $_maximum-modal-headers: 2;
         transition: vh-transition(opacity, var(--vh-duration-short));
         opacity: 0;
         background: hsla(var(--vh-clr-black-hsl), .5);
-        @include vh-backdrop-filter(blur(1px))
+        @include vh-backdrop-blur(1px)
     }
 }
 

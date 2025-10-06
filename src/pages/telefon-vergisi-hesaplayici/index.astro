@@ -43,7 +43,11 @@ const presetsForCalculatorPresetCarousel = mapPresetsForCalculatorPresetCarousel
         <CalculatorPresetCarousel items={presetsForCalculatorPresetCarousel} />
     </section>
 
-    <hr class="divider" />
+    <hr />
+    <Container>
+        <div ta-ad-container=""></div>
+        <hr />
+    </Container>
 
     <section>
         <Container>
@@ -56,10 +60,9 @@ const presetsForCalculatorPresetCarousel = mapPresetsForCalculatorPresetCarousel
             calculatorPage={telefonVergisiHesaplayiciPage}
             client:load />
     </section>
-</DefaultLayout>
 
-<style lang="scss">
-    .divider {
-        margin-block: calc(var(--vh-spacer) * 2)
-    }
-</style>
+    <hr />
+    <Container>
+        <div ta-ad-container=""></div>
+    </Container>
+</DefaultLayout>

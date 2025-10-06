@@ -24,7 +24,7 @@ describe("components/common/string-carousel-digit.vue", () => {
             props: { digit: testDigit }
         });
 
-        const digits = wrapper.findAll(".string-carousel-digit > div");
+        const digits = wrapper.findAll("div[aria-current]");
         for (const _digit of digits.values()) {
             if (_digit.text() === testDigit) {
                 expect(_digit.attributes("aria-current")).toBe("true");
@@ -39,7 +39,7 @@ describe("components/common/string-carousel-digit.vue", () => {
             props: { digit: "0" }
         });
 
-        const digits = wrapper.findAll(".string-carousel-digit > div");
+        const digits = wrapper.findAll("div[aria-current]");
         expect(digits.length).toBe(10);
         for (const [_index, _digit] of digits.entries()) {
             expect(_digit.text()).toBe(_index.toString());

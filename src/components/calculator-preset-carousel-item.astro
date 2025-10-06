@@ -57,7 +57,6 @@ const IMG_ALT = FULL_TITLE;
 
 <style lang="scss" is:global>
     .calculator-preset-carousel-item {
-        position: relative;
         @include vh-card($hover: true, $active: true);
         --color-hsl: var(--_color-hsl);
         --border-hsl: var(--_color-h), 100%, 96%;
@@ -67,6 +66,7 @@ const IMG_ALT = FULL_TITLE;
         --_color-s: var(--color-s);
         --_color-l: var(--color-l);
         --_color-hsl: var(--_color-h), var(--_color-s), var(--_color-l);
+        position: relative;
         color: hsl(var(--_color-h), 100%, 94%);
         background-image: radial-gradient(ellipse at left top, hsla(var(--_color-hsl), .24), transparent);
         display: flex;
@@ -83,7 +83,6 @@ const IMG_ALT = FULL_TITLE;
         }
         .thumb {
             margin-block-end: var(--vh-spacer);
-            box-shadow: 0 .75rem .75rem hsl(var(--_color-hsl), .125);
             @include vh-squircle(calc(var(--vh-spacer) * .75));
             padding: calc(var(--vh-spacer) * .375);
             background: hsl(var(--_color-h), var(--_color-s), 40%, .5);

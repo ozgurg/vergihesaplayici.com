@@ -51,7 +51,7 @@ const props = defineProps<Props>();
         text-align: center;
         transition: vh-transition(background-color, var(--vh-duration-short));
         inset-block: .25rem;
-        @include vh-backdrop-filter(blur(1px));
+        @include vh-backdrop-blur(1px);
         block-size: calc(100% - .5rem);
         inline-size: calc(var(--vh-spacer) * 4.5);
         &:not([disabled]) {
@@ -76,10 +76,7 @@ const props = defineProps<Props>();
         box-shadow: 0 0 2rem var(--vh-clr-body-bg)
     }
     &-prev {
-        @include vh-squircle(
-            $topRight: var(--vh-br-normal),
-            $bottomRight: var(--vh-br-normal)
-        );
+        @include vh-squircle(0 var(--vh-br-normal) var(--vh-br-normal) 0);
         background: linear-gradient(to right, var(--vh-clr-body-bg), transparent);
         inset-inline-start: 0;
         &:disabled {
@@ -92,10 +89,7 @@ const props = defineProps<Props>();
         }
     }
     &-next {
-        @include vh-squircle(
-            $topLeft: var(--vh-br-normal),
-            $bottomLeft: var(--vh-br-normal)
-        );
+        @include vh-squircle(var(--vh-br-normal) 0 0 var(--vh-br-normal));
         background: linear-gradient(to left, var(--vh-clr-body-bg), transparent);
         inset-inline-end: 0;
         &:disabled {

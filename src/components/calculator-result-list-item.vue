@@ -54,11 +54,11 @@ $_variants: (
 );
 
 .calculator-result-list-item {
+    @include vh-card();
     --_bg: var(--bg, 0);
     --_font-weight: var(--font-weight, var(--vh-fw-normal));
     font-weight: var(--_font-weight);
     display: flex;
-    @include vh-card();
     align-items: center;
     flex-flow: row wrap;
     justify-content: space-between;

@@ -38,7 +38,7 @@ export default getViteConfig({
                 // TypeScript enforces the types for us.
                 "src/domains/*/db.ts",
                 "src/domains/{telefon-vergisi-hesaplayici,konsol-vergisi-hesaplayici}/utils/{build-page-meta,map-presets-for-calculator-preset-carousel-component}.ts",
-                "src/domains/*/utils/{build-result-list,build-screenshot-data,calculate-results}.ts",
+                "src/domains/*/utils/{build-result-list,build-screenshot-data,build-chart-data,calculate-results}.ts",
 
 
                 "src/pages/manifest.json.ts",

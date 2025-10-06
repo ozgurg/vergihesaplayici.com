@@ -60,7 +60,8 @@ const props = defineProps<Props>();
             --_color: hsla(var(--_hsl), .20)
         }
         &:active {
-            --_color: hsla(var(--_hsl), .24)
+            --_color: hsla(var(--_hsl), .24);
+            transform: scale(.99)
         }
     }
     &:has(a:focus-visible) {

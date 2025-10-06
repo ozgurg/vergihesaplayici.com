@@ -17,6 +17,7 @@
         "promise"
     ],
     "rules": {
+        "import/no-named-export": "off",
         "import/unambiguous": "off",
         "import/group-exports": "off",
         "import/exports-last": "off",

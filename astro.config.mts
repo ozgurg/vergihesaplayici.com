@@ -103,6 +103,7 @@ export default defineConfig({
         },
         plugins: [
             autoImportPlugin({
+                dtsMode: "overwrite",
                 dts: "unplugin-auto-import.d.ts",
                 dirs: [
                     "src/utils/**.ts",
@@ -147,6 +148,8 @@ export default defineConfig({
                         @use "sass:map";
                         // noinspection CssUnknownTarget
                         @import "@/assets/css/_mixins.scss";
+
+                        ${process.env.NODE_ENV === "development" ? `@import "@/assets/css/debug.scss";` : ""}
                     `
                 }
             }

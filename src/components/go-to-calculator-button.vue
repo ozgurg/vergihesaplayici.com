@@ -101,7 +101,7 @@ onUnmounted(_destroyObservers);
             content: "";
             inset: 0;
             mask: linear-gradient(to top, #000 50%, transparent);
-            @include vh-backdrop-filter(blur(.5rem)) {
+            @include vh-backdrop-blur(.5rem) {
                 background: var(--vh-clr-body-bg)
             }
         }
