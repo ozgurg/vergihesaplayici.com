@@ -148,6 +148,8 @@ export default defineConfig({
                         @use "sass:map";
                         // noinspection CssUnknownTarget
                         @import "@/assets/css/_mixins.scss";
+
+                        ${process.env.NODE_ENV === "development" ? `@import "@/assets/css/debug.scss";` : ""}
                     `
                 }
             }

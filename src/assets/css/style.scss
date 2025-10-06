@@ -37,6 +37,7 @@ body {
 }
 
 hr {
+    margin-block: calc(var(--vh-spacer) * 2);
     border-block-start: var(--vh-border-inline-size) solid hsla(var(--vh-clr-white-hsl), var(--vh-clr-border-alpha))
 }
 

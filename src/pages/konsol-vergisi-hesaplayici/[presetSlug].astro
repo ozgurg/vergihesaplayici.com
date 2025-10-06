@@ -97,18 +97,19 @@ const initial = calculateServerSide();
         client:load />
 
     {presetsForCalculatorPresetCarousel.length > 0 ?
-        <hr class="divider" />
+        <hr />
         <Container>
+            <div ta-ad-container=""></div>
+            <hr />
             <Heading2>
                 Diğer hazır hesaplamalar
             </Heading2>
         </Container>
         <CalculatorPresetCarousel items={presetsForCalculatorPresetCarousel} />
         : ""}
-</DefaultLayout>
 
-<style lang="scss">
-    .divider {
-        margin-block: calc(var(--vh-spacer) * 2)
-    }
-</style>
+    <hr />
+    <Container>
+        <div ta-ad-container=""></div>
+    </Container>
+</DefaultLayout>

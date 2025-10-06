@@ -41,7 +41,11 @@ const yazilarForArticlesGrid = mapYazilarForArticlesGridComponent(yazilar);
         </PageHeader>
     </section>
 
-    <hr class="divider" />
+    <hr />
+    <Container>
+        <div ta-ad-container=""></div>
+        <hr />
+    </Container>
 
     <Container>
         <section>
@@ -53,7 +57,9 @@ const yazilarForArticlesGrid = mapYazilarForArticlesGridComponent(yazilar);
             <CalculatorsGrid />
         </section>
 
-        <hr class="divider" />
+        <hr />
+        <div ta-ad-container=""></div>
+        <hr />
 
         <section>
             <Heading2>
@@ -63,6 +69,9 @@ const yazilarForArticlesGrid = mapYazilarForArticlesGridComponent(yazilar);
             </Heading2>
             <ArticlesGrid items={yazilarForArticlesGrid} />
         </section>
+
+        <hr />
+        <div ta-ad-container=""></div>
     </Container>
 </DefaultLayout>
 
@@ -96,9 +105,5 @@ const yazilarForArticlesGrid = mapYazilarForArticlesGridComponent(yazilar);
                 font-size: var(--vh-fs-md)
             }
         }
-    }
-
-    .divider {
-        margin-block: calc(var(--vh-spacer) * 2)
     }
 </style>

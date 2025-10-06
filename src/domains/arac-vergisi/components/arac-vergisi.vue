@@ -57,6 +57,7 @@
         </div>
 
         <template v-if="results !== null">
+            <div ta-ad-container=""></div>
             <div>
                 <heading-3 is="h2">
                     Hesaplama sonuçları

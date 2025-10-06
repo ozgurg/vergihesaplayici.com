@@ -1,0 +1,17 @@
+[ta-ad-container] {
+    position: relative;
+    min-height: 96px;
+    &::before {
+        position: absolute;
+        inset: 0;
+        block-size: 100%;
+        inline-size: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: red;
+        @include vh-squircle(var(--vh-br-normal));
+        font-weight: var(--vh-fw-bold);
+        content: "TinyAdz"
+    }
+}
