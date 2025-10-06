@@ -3,7 +3,7 @@ import { COLLECTION_NAME } from "@/domains/yazilar/types.js";
 import { getCollection } from "astro:content";
 
 const sortYazilarByDate = (yazilar: Yazi[]): Yazi[] => {
-    return yazilar.sort((_y1, _y2) => _y2.date.getTime() - _y1.date.getTime());
+    return yazilar.toSorted((_y1, _y2) => _y2.date.getTime() - _y1.date.getTime());
 };
 
 const mapAstroYazilarCollectionAsYazilar = (yazilarCollection: AstroYazilarCollection): Yazi[] => {
