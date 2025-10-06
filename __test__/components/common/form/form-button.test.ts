@@ -15,12 +15,12 @@ describe("components/common/form/form-button.vue", () => {
     });
 
     it("renders as `<a />` when `href` is passed", () => {
-        const testHref = "https://vergihesaplayici.com";
+        const testHref = new URL("https://vergihesaplayici.com");
         const wrapper = mount(FormButton, {
             props: { href: testHref }
         });
         expect(wrapper.element.tagName).toBe("A");
-        expect(wrapper.attributes("href")).toBe(testHref);
+        expect(wrapper.attributes("href")).toBe(testHref.href);
     });
 
     it("shows `<spinner />` when `loading` is `true`", () => {

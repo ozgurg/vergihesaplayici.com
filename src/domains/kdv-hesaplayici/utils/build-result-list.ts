@@ -1,6 +1,6 @@
 import type { CalculationResults, Form, ResultList } from "@/domains/kdv-hesaplayici/types.js";
 
-export const buildResultList = (form: Form, results: CalculationResults): ResultList => {
+export const buildResultList = (_: Form, results: CalculationResults): ResultList => {
     const { prices, taxFees, taxRates } = results;
     const list: ResultList = [];
 

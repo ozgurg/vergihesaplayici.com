@@ -1,6 +1,6 @@
 import type { CalculationResults, ChartData, Form } from "@/domains/gumruk-vergisi/types.js";
 
-export const buildChartData = (form: Form, results: CalculationResults): ChartData => {
+export const buildChartData = (_: Form, results: CalculationResults): ChartData => {
     const { prices, taxFees } = results;
 
     const taxRatesData = [];
