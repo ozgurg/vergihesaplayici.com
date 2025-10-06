@@ -137,7 +137,9 @@ const firebaseJson = {
                         key: "X-Permitted-Cross-Domain-Policies",
                         value: "none"
                     },
-                    {
+
+                    // Disabled for TinyAdz
+                    /* {
                         key: "Cross-Origin-Embedder-Policy",
                         value: "require-corp"
                     },
@@ -148,7 +150,7 @@ const firebaseJson = {
                     {
                         key: "Cross-Origin-Resource-Policy",
                         value: "same-origin"
-                    }
+                    } */
                 ]
             },
             {
