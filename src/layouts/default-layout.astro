@@ -16,6 +16,7 @@ export type Props = {
 const { head } = Astro.props;
 
 const EXCHANGE_RATES = getExchangeRates();
+const IS_DEV_MODE = import.meta.env.DEV;
 ---
 
 <html
@@ -26,17 +27,22 @@ const EXCHANGE_RATES = getExchangeRates();
 <head>
     <DefaultLayoutHead head={head} />
 
-    <script is:inline src="https://cdn.apitiny.net/scripts/v2.0/main.js" data-site-id="68d6da655ba59d41c1dbce36" async=""></script>
+    <script
+        is:inline
+        src="https://cdn.apitiny.net/scripts/v2.0/main.js"
+        data-site-id="68d6da655ba59d41c1dbce36"
+        async=""
+        data-test-mode={IS_DEV_MODE ? "true" : "false"}></script>
 </head>
 <body>
-    <Header />
+<Header />
 
-    <MainBody>
-        <slot name="default" />
-    </MainBody>
+<MainBody>
+<slot name="default" />
+</MainBody>
 
-    <MainFooter EXCHANGE_RATES={EXCHANGE_RATES} />
+<MainFooter EXCHANGE_RATES={EXCHANGE_RATES} />
 
-    <!-- <SvgCacheDefs /> -->
+<!-- <SvgCacheDefs /> -->
 </body>
 </html>
