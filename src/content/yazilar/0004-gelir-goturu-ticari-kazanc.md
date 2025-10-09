@@ -1,5 +1,5 @@
 ---
-title: "Gelir Götürü Ticari Kazanç Nedir?"
+title: "Gelir Götürü Ticari Kazanç [0004]"
 description: "Gelir Götürü Ticari Kazanç, Türkiye'deki ticari faaliyetlerin vergilendirilmesi açısından oldukça önemli bir kavramdır."
 date: 2023-05-06
 ---

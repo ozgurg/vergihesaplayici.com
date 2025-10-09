@@ -42,6 +42,12 @@ const redirections301 = [
     ["/yazilar/gelir-v-m-talih-oyunlari-asgari-vergi-nedir/", "/yazilar/gelir-vergisi-mukellefleri-talih-oyunlari-asgari-vergisi-nedir/"],
     ["/yazilar/kurumlar-v-m-talih-oyunlari-asgari-vergi-nedir/", "/yazilar/kurumlar-vergisi-mukellefleri-talih-oyunlari-asgari-vergisi-nedir/"],
 
+    ["/yazilar/yillik-gelir-vergisi-nedir/",                        "/yazilar/0001-yillik-gelir-vergisi/"],
+    ["/yazilar/zirai-kazanc-gelir-vergisi-nedir/",                  "/yazilar/0002-zirai-kazanc-gelir-vergisi/"],
+    ["/yazilar/gelir-vergisi-stopaji-muhtasar-beyanname-nedir/",    "/yazilar/0003-gelir-vergisi-stopaji-muhtasar-beyanname/"],
+    ["/yazilar/gelir-goturu-ticari-kazanc-nedir/",                  "/yazilar/0004-gelir-goturu-ticari-kazanc/"],
+    ["/yazilar/gelir-goturu-serbest-meslek-kazanci-nedir/",         "/yazilar/0005-gelir-goturu-serbest-meslek-kazanci/"],
+
     ["/telefon-vergisi-hesaplayici/iphone-15-pro/", "/telefon-vergisi-hesaplayici/apple-iphone-15-pro/"],
     ["/telefon-vergisi-hesaplayici/iphone-15-pro-max/", "/telefon-vergisi-hesaplayici/apple-iphone-15-pro-max/"],
     ["/telefon-vergisi-hesaplayici/iphone-15/", "/telefon-vergisi-hesaplayici/apple-iphone-15/"],
