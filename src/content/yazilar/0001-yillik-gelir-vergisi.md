@@ -1,5 +1,5 @@
 ---
-title: "Yıllık Gelir Vergisi Nedir?"
+title: "Yıllık Gelir Vergisi [0001]"
 description: "Yıllık gelir vergisi, bir ülkede yaşayan kişilerin, yıllık olarak elde ettikleri kazançlarının bir kısmını devlete vergi olarak ödemesidir."
 date: 2023-05-06
 ---
