@@ -12,6 +12,7 @@
         "test": "vitest run",
         "test:coverage": "vitest run --coverage",
         "firebase:hosting:deploy": "firebase deploy --only hosting",
+        "firebase:hosting:emulator": "firebase emulators:start --only hosting",
         "prepare-firebase": "node create-csp-nonce-txt.js && node create-firebase-json.js",
         "lint-staged": "lint-staged",
         "prepare": "husky"
