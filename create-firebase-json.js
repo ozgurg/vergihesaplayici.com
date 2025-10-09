@@ -19,47 +19,47 @@ const objectToCspHeader = object => {
 // [0] = source (from)
 // [1] = destination (to)
 const redirections301 = [
-    ["/konsol-vergisi-hesaplayici/apple-vision-pro/", "/telefon-vergisi-hesaplayici/apple-vision-pro/"],
-    ["/konsol-vergisi-hesaplayici/playstation-5/", "/konsol-vergisi-hesaplayici/sony-playstation-5/"],
-    ["/konsol-vergisi-hesaplayici/playstation-vr2", "/konsol-vergisi-hesaplayici/sony-playstation-vr2/"],
-    ["/konsol-vergisi-hesaplayici/xbox-series-s/", "/konsol-vergisi-hesaplayici/microsoft-xbox-series-s/"],
-    ["/konsol-vergisi-hesaplayici/xbox-series-x/", "/konsol-vergisi-hesaplayici/microsoft-xbox-series-x/"],
-    ["/konsol-vergisi-hesaplayici/steam-deck/", "/konsol-vergisi-hesaplayici/valve-steam-deck/"],
+    ["konsol-vergisi-hesaplayici/apple-vision-pro", "telefon-vergisi-hesaplayici/apple-vision-pro"],
+    ["konsol-vergisi-hesaplayici/playstation-5", "konsol-vergisi-hesaplayici/sony-playstation-5"],
+    ["konsol-vergisi-hesaplayici/playstation-vr2", "konsol-vergisi-hesaplayici/sony-playstation-vr2"],
+    ["konsol-vergisi-hesaplayici/xbox-series-s", "konsol-vergisi-hesaplayici/microsoft-xbox-series-s"],
+    ["konsol-vergisi-hesaplayici/xbox-series-x", "konsol-vergisi-hesaplayici/microsoft-xbox-series-x"],
+    ["konsol-vergisi-hesaplayici/steam-deck", "konsol-vergisi-hesaplayici/valve-steam-deck"],
 
-    ["/hesaplayicilar/telefon-vergisi-hesaplayici", "/telefon-vergisi-hesaplayici/"],
-    ["/hesaplayicilar/konsol-vergisi-hesaplayici", "/konsol-vergisi-hesaplayici/"],
-    ["/hesaplayicilar/kdv-hesaplayici", "/kdv-hesaplayici/"],
-    ["/hesaplayicilar/telefon-vergisi-hesaplayici/", "/telefon-vergisi-hesaplayici/"],
-    ["/hesaplayicilar/konsol-vergisi-hesaplayici/", "/konsol-vergisi-hesaplayici/"],
-    ["/hesaplayicilar/kdv-hesaplayici/", "/kdv-hesaplayici/"],
+    ["hesaplayicilar/telefon-vergisi-hesaplayici", "telefon-vergisi-hesaplayici"],
+    ["hesaplayicilar/konsol-vergisi-hesaplayici", "konsol-vergisi-hesaplayici"],
+    ["hesaplayicilar/kdv-hesaplayici", "kdv-hesaplayici"],
+    ["hesaplayicilar/telefon-vergisi-hesaplayici", "telefon-vergisi-hesaplayici"],
+    ["hesaplayicilar/konsol-vergisi-hesaplayici", "konsol-vergisi-hesaplayici"],
+    ["hesaplayicilar/kdv-hesaplayici", "kdv-hesaplayici"],
 
-    ["/gumruk-vergisi-hesaplayici/", "/gumruk-vergisi/"],
+    ["gumruk-vergisi-hesaplayici", "gumruk-vergisi"],
 
-    ["/yazilar/zirai-kazanc-vergisi-nedir/", "/yazilar/zirai-kazanc-gelir-vergisi-nedir/"],
-    ["/yazilar/luks-tuketimden-daha-fazla-vergi-alinmali-midir/", "/yazilar/luks-tuketimden-daha-fazla-vergi-alinmali-mi/"],
-    ["/yazilar/verginin-vergisi-hangi-ulke-icat-etmistir/", "/yazilar/verginin-vergisini-hangi-ulke-icat-etmistir/"],
-    ["/yazilar/gelir-vergisi-s-muhtasar-nedir/", "/yazilar/gelir-vergisi-stopaji-muhtasar-beyanname-nedir/"],
-    ["/yazilar/gelir-v-m-talih-oyunlari-asgari-vergi-nedir/", "/yazilar/gelir-vergisi-mukellefleri-talih-oyunlari-asgari-vergisi-nedir/"],
-    ["/yazilar/kurumlar-v-m-talih-oyunlari-asgari-vergi-nedir/", "/yazilar/kurumlar-vergisi-mukellefleri-talih-oyunlari-asgari-vergisi-nedir/"],
+    ["yazilar/zirai-kazanc-vergisi-nedir", "yazilar/zirai-kazanc-gelir-vergisi-nedir"],
+    ["yazilar/luks-tuketimden-daha-fazla-vergi-alinmali-midir", "yazilar/luks-tuketimden-daha-fazla-vergi-alinmali-mi"],
+    ["yazilar/verginin-vergisi-hangi-ulke-icat-etmistir", "yazilar/verginin-vergisini-hangi-ulke-icat-etmistir"],
+    ["yazilar/gelir-vergisi-s-muhtasar-nedir", "yazilar/gelir-vergisi-stopaji-muhtasar-beyanname-nedir"],
+    ["yazilar/gelir-v-m-talih-oyunlari-asgari-vergi-nedir", "yazilar/gelir-vergisi-mukellefleri-talih-oyunlari-asgari-vergisi-nedir"],
+    ["yazilar/kurumlar-v-m-talih-oyunlari-asgari-vergi-nedir", "yazilar/kurumlar-vergisi-mukellefleri-talih-oyunlari-asgari-vergisi-nedir"],
 
-    ["/yazilar/yillik-gelir-vergisi-nedir/",                        "/yazilar/0001-yillik-gelir-vergisi/"],
-    ["/yazilar/zirai-kazanc-gelir-vergisi-nedir/",                  "/yazilar/0002-zirai-kazanc-gelir-vergisi/"],
-    ["/yazilar/gelir-vergisi-stopaji-muhtasar-beyanname-nedir/",    "/yazilar/0003-gelir-vergisi-stopaji-muhtasar-beyanname/"],
-    ["/yazilar/gelir-goturu-ticari-kazanc-nedir/",                  "/yazilar/0004-gelir-goturu-ticari-kazanc/"],
-    ["/yazilar/gelir-goturu-serbest-meslek-kazanci-nedir/",         "/yazilar/0005-gelir-goturu-serbest-meslek-kazanci/"],
+    ["yazilar/yillik-gelir-vergisi-nedir",                      "yazilar/0001-yillik-gelir-vergisi"],
+    ["yazilar/zirai-kazanc-gelir-vergisi-nedir",                "yazilar/0002-zirai-kazanc-gelir-vergisi"],
+    ["yazilar/gelir-vergisi-stopaji-muhtasar-beyanname-nedir",  "yazilar/0003-gelir-vergisi-stopaji-muhtasar-beyanname"],
+    ["yazilar/gelir-goturu-ticari-kazanc-nedir",                "yazilar/0004-gelir-goturu-ticari-kazanc"],
+    ["yazilar/gelir-goturu-serbest-meslek-kazanci-nedir",       "yazilar/0005-gelir-goturu-serbest-meslek-kazanci"],
 
-    ["/telefon-vergisi-hesaplayici/iphone-15-pro/", "/telefon-vergisi-hesaplayici/apple-iphone-15-pro/"],
-    ["/telefon-vergisi-hesaplayici/iphone-15-pro-max/", "/telefon-vergisi-hesaplayici/apple-iphone-15-pro-max/"],
-    ["/telefon-vergisi-hesaplayici/iphone-15/", "/telefon-vergisi-hesaplayici/apple-iphone-15/"],
-    ["/telefon-vergisi-hesaplayici/iphone-15-plus/", "/telefon-vergisi-hesaplayici/apple-iphone-15-plus/"],
-    ["/telefon-vergisi-hesaplayici/iphone-14-pro/", "/telefon-vergisi-hesaplayici/apple-iphone-14-pro/"],
-    ["/telefon-vergisi-hesaplayici/iphone-14-pro-max/", "/telefon-vergisi-hesaplayici/apple-iphone-14-pro-max/"],
-    ["/telefon-vergisi-hesaplayici/iphone-14/", "/telefon-vergisi-hesaplayici/apple-iphone-14/"],
-    ["/telefon-vergisi-hesaplayici/iphone-14-plus/", "/telefon-vergisi-hesaplayici/apple-iphone-14-plus/"],
-    ["/telefon-vergisi-hesaplayici/iphone-13-mini/", "/telefon-vergisi-hesaplayici/apple-iphone-13-mini/"],
-    ["/telefon-vergisi-hesaplayici/iphone-13/", "/telefon-vergisi-hesaplayici/apple-iphone-13/"],
-    ["/telefon-vergisi-hesaplayici/iphone-se-3-2022/", "/telefon-vergisi-hesaplayici/apple-iphone-se-3-2022/"],
-    ["/telefon-vergisi-hesaplayici/iphone-12/", "/telefon-vergisi-hesaplayici/apple-iphone-12/"]
+    ["telefon-vergisi-hesaplayici/iphone-15-pro", "telefon-vergisi-hesaplayici/apple-iphone-15-pro"],
+    ["telefon-vergisi-hesaplayici/iphone-15-pro-max", "telefon-vergisi-hesaplayici/apple-iphone-15-pro-max"],
+    ["telefon-vergisi-hesaplayici/iphone-15", "telefon-vergisi-hesaplayici/apple-iphone-15"],
+    ["telefon-vergisi-hesaplayici/iphone-15-plus", "telefon-vergisi-hesaplayici/apple-iphone-15-plus"],
+    ["telefon-vergisi-hesaplayici/iphone-14-pro", "telefon-vergisi-hesaplayici/apple-iphone-14-pro"],
+    ["telefon-vergisi-hesaplayici/iphone-14-pro-max", "telefon-vergisi-hesaplayici/apple-iphone-14-pro-max"],
+    ["telefon-vergisi-hesaplayici/iphone-14", "telefon-vergisi-hesaplayici/apple-iphone-14"],
+    ["telefon-vergisi-hesaplayici/iphone-14-plus", "telefon-vergisi-hesaplayici/apple-iphone-14-plus"],
+    ["telefon-vergisi-hesaplayici/iphone-13-mini", "telefon-vergisi-hesaplayici/apple-iphone-13-mini"],
+    ["telefon-vergisi-hesaplayici/iphone-13", "telefon-vergisi-hesaplayici/apple-iphone-13"],
+    ["telefon-vergisi-hesaplayici/iphone-se-3-2022", "telefon-vergisi-hesaplayici/apple-iphone-se-3-2022"],
+    ["telefon-vergisi-hesaplayici/iphone-12", "telefon-vergisi-hesaplayici/apple-iphone-12"]
 ];
 
 // oxlint-disable-next-line no-unused-vars
@@ -201,8 +201,8 @@ const firebaseJson = {
             }
         ],
         redirects: redirections301.map(([_from, _to]) => ({
-            source: _from,
-            destination: _to,
+            source: `/${_from}/`,
+            destination: `/${_to}/`,
             type: 301
         }))
     }
