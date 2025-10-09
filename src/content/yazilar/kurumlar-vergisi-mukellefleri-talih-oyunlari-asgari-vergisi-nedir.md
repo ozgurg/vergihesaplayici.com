@@ -1,5 +1,5 @@
 ---
-title: "Kurumlar V. M. Talih Oyunları Asgari Vergi Nedir?"
+title: "Kurumlar Vergisi Mükellefleri Talih Oyunları Asgari Vergisi Nedir?"
 description: "Kurumlar vergisi, Türkiye'de faaliyet gösteren tüm kurum ve şirketlerin elde ettikleri kazançlar üzerinden ödedikleri bir vergidir."
 date: 2023-05-14
 ---

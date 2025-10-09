@@ -38,6 +38,9 @@ const redirections301 = [
     ["/yazilar/zirai-kazanc-vergisi-nedir/", "/yazilar/zirai-kazanc-gelir-vergisi-nedir/"],
     ["/yazilar/luks-tuketimden-daha-fazla-vergi-alinmali-midir/", "/yazilar/luks-tuketimden-daha-fazla-vergi-alinmali-mi/"],
     ["/yazilar/verginin-vergisi-hangi-ulke-icat-etmistir/", "/yazilar/verginin-vergisini-hangi-ulke-icat-etmistir/"],
+    ["/yazilar/gelir-vergisi-s-muhtasar-nedir/", "/yazilar/gelir-vergisi-stopaji-muhtasar-beyanname-nedir/"],
+    ["/yazilar/gelir-v-m-talih-oyunlari-asgari-vergi-nedir/", "/yazilar/gelir-vergisi-mukellefleri-talih-oyunlari-asgari-vergisi-nedir/"],
+    ["/yazilar/kurumlar-v-m-talih-oyunlari-asgari-vergi-nedir/", "/yazilar/kurumlar-vergisi-mukellefleri-talih-oyunlari-asgari-vergisi-nedir/"],
 
     ["/telefon-vergisi-hesaplayici/iphone-15-pro/", "/telefon-vergisi-hesaplayici/apple-iphone-15-pro/"],
     ["/telefon-vergisi-hesaplayici/iphone-15-pro-max/", "/telefon-vergisi-hesaplayici/apple-iphone-15-pro-max/"],
