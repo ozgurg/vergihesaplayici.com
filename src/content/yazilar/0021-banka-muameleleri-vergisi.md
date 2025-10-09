@@ -1,5 +1,5 @@
 ---
-title: "Banka Muameleleri Vergisi Nedir?"
+title: "Banka Muameleleri Vergisi [0021]"
 description: "Banka Muameleleri Vergisi, Türkiye'de finansal işlemler üzerinden alınan bir vergidir."
 date: 2023-05-09
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Kurum Geçici Vergi Nedir?"
+title: "Kurum Geçici Vergi [0033]"
 description: "Kurum geçici vergisi, Türkiye'deki ticari şirketlerin ve kurumların yıllık gelirlerine bağlı olarak ödedikleri bir vergidir."
 date: 2023-05-14
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Gerçek Usülde Katma Değer Vergisi Nedir?"
+title: "Gerçek Usulde Katma Değer Vergisi [0015]"
 description: "Katma Değer Vergisi (KDV) birçok ülkenin uyguladığı bir tür dolaylı vergidir."
 date: 2023-05-10
 ---

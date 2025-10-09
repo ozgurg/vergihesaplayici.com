@@ -1,5 +1,5 @@
 ---
-title: "Kurumlar Vergisi Nedir?"
+title: "Kurumlar Vergisi [0010]"
 description: "Kurumlar Vergisi, Türkiye'deki tüm kurumların faaliyetlerinden elde ettikleri kazançların üzerinden ödediği bir vergidir."
 date: 2023-05-08
 ---
