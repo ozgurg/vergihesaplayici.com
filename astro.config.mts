@@ -92,6 +92,7 @@ export default defineConfig({
     ],
     vite: {
         build: {
+            reportCompressedSize: false,
             rollupOptions: {
                 output: {
                     // TODO: If we can add the version to the URL, it would be better than adding a hash or version to the name.
