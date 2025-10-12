@@ -1,5 +1,5 @@
 ---
-title: "Dağıtılmayan Kâr Stopajı Nedir?"
+title: "Dağıtılmayan Kar Stopajı [0007]"
 description: "Dağıtılmayan kâr stopajı, Türkiye'de faaliyet gösteren anonim şirketlerin (A.Ş.) dağıtılmamış kârları üzerinden ödediği bir vergi türüdür."
 date: 2023-05-08
 ---

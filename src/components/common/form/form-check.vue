@@ -102,11 +102,11 @@ $_default-block-size: 3.125rem;
 $_scales: (
     "small": (
         --min-block-size: 2.5rem,
-        --border-radius: var(--vh-br-small)
+        --border-radius: var(--vh-br-sm)
     ),
     "medium": (
         --min-block-size: 2.75rem,
-        --border-radius: var(--vh-br-small)
+        --border-radius: var(--vh-br-sm)
     ),
     "large": (
         --min-block-size: #{$_default-block-size},

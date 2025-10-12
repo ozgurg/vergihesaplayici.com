@@ -9,6 +9,7 @@ const { head } = Astro.props;
 const TITLE = head.title ? `${head.title} - Vergi Hesaplayıcı` : "Vergi Hesaplayıcı";
 const DESCRIPTION = head.description;
 const THEME_COLOR = "#111912"; // Calculated start color of `page-header`s linear-gradient
+const CREATOR = "@ozgurg0";
 const BASE_URL = siteUrl();
 const PAGE_URL = head.canonicalUrl;
 const OG_IMAGE = head.ogImageUrl ?? staticSiteUrl("/og/ana-sayfa.jpg");
@@ -17,7 +18,7 @@ const MANIFEST_JSON = staticUrl("/manifest.json");
 
 <meta charset="UTF-8" />
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,viewport-fit=cover" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,viewport-fit=cover,interactive-widget=resizes-content" />
 <title>{TITLE}</title>
 
 <meta name="description" content={DESCRIPTION} />
@@ -42,6 +43,7 @@ const MANIFEST_JSON = staticUrl("/manifest.json");
 <meta name="twitter:url" content={PAGE_URL.href} />
 <meta name="twitter:image" content={OG_IMAGE.href} />
 <meta name="twitter:image:alt" content={TITLE} />
+<meta name="twitter:creator" content={CREATOR} />
 
 <meta name="author" content={TITLE} />
 <meta property="og:title" content={TITLE} />
@@ -52,8 +54,9 @@ const MANIFEST_JSON = staticUrl("/manifest.json");
 <meta property="og:image" content={OG_IMAGE.href} />
 <meta property="og:locale" content="TR" />
 
-<link rel="icon" type="image/svg+xml" href={staticUrl("/pwa/favicon.svg")} />
-<link rel="icon" type="image/jpeg" href={staticUrl("/pwa/favicon.jpg")} />
+<link href={staticUrl("/pwa/favicon.jpg")} rel="shortcut icon" type="image/x-icon" />
+<link href={staticUrl("/pwa/favicon.jpg")} rel="icon" type="image/x-icon" />
+<link href={staticUrl("/pwa/favicon.jpg")} rel="icon" type="image/jpeg" sizes="196x196" />
 
 <link rel="sitemap" href={staticUrl("/sitemap-index.xml")} />
 
@@ -67,22 +70,22 @@ const MANIFEST_JSON = staticUrl("/manifest.json");
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
 <script is:inline define:vars={{ serviceWorkerUrl: staticUrl("/sw.js"), THEME_COLOR }}>
-    if ("serviceWorker" in globalThis.navigator) {
-        globalThis.addEventListener("load", () => {
-            globalThis.navigator.serviceWorker.register(serviceWorkerUrl);
+    if ("serviceWorker" in window.navigator) {
+        window.addEventListener("load", () => {
+            window.navigator.serviceWorker.register(serviceWorkerUrl);
         });
     }
 
-
-    // TODO: Remove this behavior when `animation-timeline` is Baseline Widely-available
-    // https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timeline
-    const updateThemeColor = () => {
-        const MD_BREAKPOINT_MIN_WIDTH_IN_PIXELS = 860;
-        const isMd = globalThis.matchMedia(`(min-width:${MD_BREAKPOINT_MIN_WIDTH_IN_PIXELS}px)`).matches;
-        document.querySelector(`meta[name="theme-color"]`).setAttribute("content", isMd ? "#0d110d" : THEME_COLOR);
-    };
-
     if (!CSS.supports("animation-timeline: scroll()")) {
+        // TODO: Remove this behavior when `animation-timeline` is Baseline Widely-available
+        // https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timeline
+        // oxlint-disable-next-line consistent-function-scoping
+        const updateThemeColor = () => {
+            const MD_BREAKPOINT_MIN_WIDTH_IN_PIXELS = 860;
+            const isMd = window.matchMedia(`(min-width:${MD_BREAKPOINT_MIN_WIDTH_IN_PIXELS}px)`).matches;
+            document.querySelector(`meta[name="theme-color"]`).setAttribute("content", isMd ? "#0d110d" : THEME_COLOR);
+        };
+
         window.addEventListener("resize", updateThemeColor);
         updateThemeColor();
     }

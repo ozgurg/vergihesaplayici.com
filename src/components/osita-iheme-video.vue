@@ -28,7 +28,7 @@ const videoEl = useTemplateRef<HTMLVideoElement>("videoEl");
 const SRC = staticUrl("/osita-iheme.mp4").href;
 
 onMounted(() => {
-    if (videoEl.value && globalThis.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (videoEl.value && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         videoEl.value.autoplay = false;
         videoEl.value.controls = true;
         videoEl.value.pause();

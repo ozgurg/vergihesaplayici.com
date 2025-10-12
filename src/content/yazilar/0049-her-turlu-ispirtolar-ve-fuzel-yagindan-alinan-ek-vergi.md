@@ -1,5 +1,5 @@
 ---
-title: "Her Türlü İspirtolar ve Füzel Yağından Alınan Ek Vergi Nedir?"
+title: "Her Türlü İspirtolar ve Füzel Yağından Alınan Ek Vergi [0049]"
 description: "Türkiye'de her türlü ispirtolar ve füzel yağı gibi akaryakıt türlerinden alınan ek vergiler, hükümetin vergi politikaları arasında yer almaktadır."
 date: 2023-05-14
 ---

@@ -72,12 +72,12 @@ $_scales: (
     "small": (
         --padding-inline: calc(var(--vh-spacer) * .75),
         --block-size: 2.5rem,
-        --border-radius: var(--vh-br-small)
+        --border-radius: var(--vh-br-sm)
     ),
     "medium": (
         --padding-inline: var(--vh-spacer),
         --block-size: 2.75rem,
-        --border-radius: var(--vh-br-small)
+        --border-radius: var(--vh-br-sm)
     ),
     "large": (
         --padding-inline: var(--vh-spacer),

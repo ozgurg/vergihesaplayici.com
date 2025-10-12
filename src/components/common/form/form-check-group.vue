@@ -105,10 +105,10 @@ const getTransitionDelay = (index: number) => {
 <style lang="scss" scoped>
 $_scales: (
     "small": (
-        border-radius: var(--vh-br-small)
+        border-radius: var(--vh-br-sm)
     ),
     "medium": (
-        border-radius: var(--vh-br-small)
+        border-radius: var(--vh-br-sm)
     ),
     "large": (
         border-radius: var(--vh-br-normal)

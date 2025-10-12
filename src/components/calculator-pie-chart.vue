@@ -332,7 +332,7 @@ $_MAX_CHART_ITEM_COUNT: 10;
         --color-hsl: var(--_color-hsl);
         --border-hsl: var(--_color-h), 100%, 96%;
         --border-alpha: .12;
-        --border-radius: var(--vh-br-small);
+        --border-radius: var(--vh-br-sm);
 
         --_border-width: calc(var(--vh-spacer) * .25);
         --_color-h: var(--color-h);
