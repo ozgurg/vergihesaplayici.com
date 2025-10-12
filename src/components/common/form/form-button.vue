@@ -112,14 +112,14 @@ $_scales: (
         --block-size: 2.5rem,
         --font-size: var(--vh-fs-sm),
         --font-weight: var(--vh-fw-normal),
-        --border-radius: var(--vh-br-small),
+        --border-radius: var(--vh-br-sm),
         --icon-size: 1.5rem
     ),
     "medium": (
         --block-size: 2.75rem,
         --font-size: var(--vh-fs-sm),
         --font-weight: var(--vh-fw-semibold),
-        --border-radius: var(--vh-br-small),
+        --border-radius: var(--vh-br-sm),
         --icon-size: 1.625rem
     ),
     "large": (
