@@ -9,6 +9,7 @@ const { head } = Astro.props;
 const TITLE = head.title ? `${head.title} - Vergi Hesaplayıcı` : "Vergi Hesaplayıcı";
 const DESCRIPTION = head.description;
 const THEME_COLOR = "#111912"; // Calculated start color of `page-header`s linear-gradient
+const CREATOR = "@ozgurg0";
 const BASE_URL = siteUrl();
 const PAGE_URL = head.canonicalUrl;
 const OG_IMAGE = head.ogImageUrl ?? staticSiteUrl("/og/ana-sayfa.jpg");
@@ -42,6 +43,7 @@ const MANIFEST_JSON = staticUrl("/manifest.json");
 <meta name="twitter:url" content={PAGE_URL.href} />
 <meta name="twitter:image" content={OG_IMAGE.href} />
 <meta name="twitter:image:alt" content={TITLE} />
+<meta name="twitter:creator" content={CREATOR} />
 
 <meta name="author" content={TITLE} />
 <meta property="og:title" content={TITLE} />
