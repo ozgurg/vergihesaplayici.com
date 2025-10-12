@@ -39,7 +39,7 @@ export default defineConfig({
         port: Number.parseInt(SERVER_PORT!, 10)
     },
     build: {
-        inlineStylesheets: "never"
+        inlineStylesheets: "always"
     },
     output: "static",
     site: URL_BASE,
