@@ -38,7 +38,7 @@ const scrollToForm = (): void => {
 };
 
 const _updateObserverBasedOnResolution = (): void => {
-    const isDownMdResolution = globalThis.matchMedia(`(max-width:${MD_BREAKPOINT_MAX_WIDTH_IN_PIXELS}px)`).matches;
+    const isDownMdResolution = window.matchMedia(`(max-width:${MD_BREAKPOINT_MAX_WIDTH_IN_PIXELS}px)`).matches;
     if (isDownMdResolution) {
         intersectionObserver.observe(props.resultsContainer);
     } else {

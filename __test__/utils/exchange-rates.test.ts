@@ -225,14 +225,14 @@ describe("utils/exchange-rates.js", () => {
                     EUR: 44
                 }
             };
-            (globalThis as any).__EXCHANGE_RATES__ = mockRates;
+            (window as any).__EXCHANGE_RATES__ = mockRates;
 
             const result = getExchangeRates();
             expect(result).toEqual(mockRates);
         });
 
         it("returns `undefined` when global exchange rates are not set", () => {
-            delete (globalThis as any).__EXCHANGE_RATES__; // To make sure it's undefined
+            delete (window as any).__EXCHANGE_RATES__; // To make sure it's undefined
 
             const result = getExchangeRates();
             expect(result).toBeUndefined();
