@@ -1,5 +1,5 @@
 ---
-title: "Kaynak Kullanımı Destekleme Fonu Kesintisi Nedir?"
+title: "Kaynak Kullanımı Destekleme Fonu Kesintisi [0061]"
 description: "Türkiye'nin enerji sektörü, ekonomik büyüme ve kalkınma için hayati bir rol oynamaktadır."
 date: 2023-05-18
 ---

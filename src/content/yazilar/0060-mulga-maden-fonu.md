@@ -1,5 +1,5 @@
 ---
-title: "Mülga Maden Fonu Nedir?"
+title: "Mülga Maden Fonu [0060]"
 description: "Mülga Maden Fonu, Türkiye'de 1980'li yıllarda uygulanan bir madencilik politikası sonucu oluşturulan bir fona verilen isimdir."
 date: 2023-05-13
 ---

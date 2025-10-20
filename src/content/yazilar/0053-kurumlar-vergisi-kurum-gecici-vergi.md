@@ -1,5 +1,5 @@
 ---
-title: "Kurumlar Vergisi Kurum Geçici Vergi Nedir?"
+title: "Kurumlar Vergisi Kurum Geçici Vergi [0053]"
 description: "Türkiye'de işletmelerin vergi sistemi oldukça kapsamlıdır ve Kurumlar Vergisi ile Kurum Geçici Vergi, işletmelerin vergi yükümlülüklerini yerine getirmelerinde önemli bir rol oynamaktadır."
 date: 2023-05-17
 ---

@@ -17,6 +17,8 @@
         "promise"
     ],
     "rules": {
+        "node/no-process-env": "off",
+
         "import/no-named-export": "off",
         "import/unambiguous": "off",
         "import/group-exports": "off",
