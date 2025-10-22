@@ -1,5 +1,5 @@
 ---
-title: "Her Türlü Alkollü İçkilere İlişkin Ek Vergi Nedir?"
+title: "Her Türlü Alkollü İçkilere İlişkin Ek Vergi [0092]"
 description: "Alkol tüketimini azaltma amacıyla Türkiye'de alkollü içkilere ek vergi uygulanmaktadır."
 date: 2023-06-06
 ---

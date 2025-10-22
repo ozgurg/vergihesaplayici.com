@@ -1,5 +1,5 @@
 ---
-title: "Eğitim, Gençlik, Spor ve Sağlık Hizmetleri Vergisi Nedir?"
+title: "Eğitim, Gençlik, Spor ve Sağlık Hizmetleri Vergisi [1013]"
 description: "Türkiye, kamu hizmetlerini finanse etmek için çeşitli vergi türlerine başvurmaktadır."
 date: 2023-05-18
 ---
