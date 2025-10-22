@@ -1,5 +1,8 @@
 name: Fetch Exchange Rates
 
+permissions:
+    contents: read
+
 on:
     schedule:
         -   cron: "0 18 * * *"
@@ -8,11 +11,7 @@ on:
 
 jobs:
     trigger-main:
-        runs-on: ubuntu-latest
-
-         permissions:
-            contents: read
-            repository_dispatch: write
+        runs-on: ubuntu-latest   
         
         steps:
             -   name: Trigger main.yml
