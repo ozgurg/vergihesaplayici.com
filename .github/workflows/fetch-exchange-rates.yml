@@ -9,6 +9,10 @@ on:
 jobs:
     trigger-main:
         runs-on: ubuntu-latest
+
+         permissions:
+            contents: read
+            repository_dispatch: write
         
         steps:
             -   name: Trigger main.yml
