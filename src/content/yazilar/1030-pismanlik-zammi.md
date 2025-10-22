@@ -1,5 +1,5 @@
 ---
-title: "Pişmanlık Zammı Nedir?"
+title: "Pişmanlık Zammı [1030]"
 description: "Pişmanlık zamması, bir suçun işlenmesiyle ortaya çıkan pişmanlık duygusunu hafifletecek bir ceza indirimini ifade eder."
 date: 2023-05-16
 ---

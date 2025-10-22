@@ -1,5 +1,5 @@
 ---
-title: "Kolalı Gazoz, Alkollü İçecekler ve Tütün Mamüllerine İlişkin Özel Tüketim Vergisi Nedir?"
+title: "Kolalı Gazoz, Alkollü İçecekler ve Tütün Mamüllerine İlişkin Özel Tüketim Vergisi [0073]"
 description: "Özel Tüketim Vergisi (ÖTV), Türkiye'de farklı ürünler için uygulanan bir vergi türüdür."
 date: 2023-06-06
 ---

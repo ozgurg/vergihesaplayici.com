@@ -1,5 +1,5 @@
 ---
-title: "Her Türlü Alkolsüz İçeceklerden Alınan Ek Vergi Nedir?"
+title: "Her Türlü Alkolsüz İçeceklerden Alınan Ek Vergi [0094]"
 description: "Türkiye'de alkollü içeceklerden alınan vergiler uzun yıllardır mevcut olan bir konudur."
 date: 2023-05-17
 ---

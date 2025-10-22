@@ -1,5 +1,5 @@
 ---
-title: "Gelir Vergisi Kanunu Geçici 67/11 Maddesine Göre Yapılan İhtiyari Beyan Nedir?"
+title: "Gelir Vergisi Kanunu Geçici 67/11 Maddesine Göre Yapılan İhtiyari Beyan [0067]"
 description: "Türkiye'de, Gelir Vergisi Kanunu Geçici 67/11 maddesi, vergi mükelleflerine bazı gelir ve giderleri ihtiyari olarak beyan etme imkanı tanımaktadır."
 date: 2023-05-22
 ---
