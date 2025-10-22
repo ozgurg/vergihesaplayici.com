@@ -2,7 +2,6 @@ name: "CI & Deploy"
 
 permissions:
     contents: read
-    actions: read
 
 on:
     push:
