@@ -20,7 +20,7 @@
     "dependencies": {
         "@fontsource-variable/inter": "5.2.8",
         "@fontsource-variable/roboto-mono": "5.2.8",
-        "astro": "5.14.7",
+        "astro": "5.14.8",
         "firebase": "12.4.0",
         "html-to-image": "1.11.13",
         "remixicon": "4.7.0",
