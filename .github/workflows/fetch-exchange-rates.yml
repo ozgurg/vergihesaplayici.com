@@ -1,7 +1,7 @@
 name: Fetch Exchange Rates
 
 permissions:
-    contents: read
+    contents: write
     actions: read
 
 on:
@@ -18,5 +18,4 @@ jobs:
             -   name: Trigger main.yml
                 uses: peter-evans/repository-dispatch@v3.0.0
                 with:
-                   token: ${{ secrets.REPO_PAT }}
                    event-type: fetch-exchange-rates
