@@ -2,6 +2,7 @@ name: Fetch Exchange Rates
 
 permissions:
     contents: read
+    actions: read
 
 on:
     schedule:
