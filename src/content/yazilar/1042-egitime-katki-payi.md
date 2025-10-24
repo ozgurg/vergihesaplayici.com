@@ -1,5 +1,5 @@
 ---
-title: "Eğitime Katkı Payı Nedir?"
+title: "Eğitime Katkı Payı [1042]"
 description: "Eğitime Katkı Payı (E. Katkı Payı), kamu gelirlerinden belirli oranlarda alınarak eğitim yatırımlarının finansmanında kullanılan bir paydır. Eğitim kalitesini artırmayı ve toplumsal kalkınmayı hedefler."
 date: 2025-10-09
 ---
