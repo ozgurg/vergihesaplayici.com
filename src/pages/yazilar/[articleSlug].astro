@@ -35,6 +35,11 @@ const yazilar = (await getYazilar()).filter(_yazi => _yazi.slug !== yazi.slug).s
 const yazilarForArticlesGrid = mapYazilarForArticlesGridComponent(yazilar);
 
 const { Content } = await render(yazi.entry);
+
+const date = yazi.date;
+const timeDateTimeAttr = date.toISOString().split("T")[0]; // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time#valid_datetime_values
+const timeContentAttr = date.toISOString(); // https://developers.google.com/search/docs/appearance/structured-data/article#article-types
+const readableDate = date.toLocaleDateString("tr-TR");
 ---
 
 <DefaultLayout head={yazilarSlugPage.head}>
@@ -46,6 +51,9 @@ const { Content } = await render(yazi.entry);
             <Heading1>
                 {yazi.title}
             </Heading1>
+            <div>
+                Yayınlanma tarihi: <time datetime={timeDateTimeAttr} content={timeContentAttr} class="meta-date">{readableDate}</time>
+            </div>
         </Container>
     </PageHeader>
 
