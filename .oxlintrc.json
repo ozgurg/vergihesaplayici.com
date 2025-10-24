@@ -52,6 +52,7 @@
                 "capIsNewExceptionPattern": "PageDef$"
             }
         ],
+        "eslint/no-warning-comments": "off",
         "eslint/class-methods-use-this": "off",
         "eslint/prefer-destructuring": "off",
         "eslint/no-plusplus": "off",

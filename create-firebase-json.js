@@ -87,6 +87,8 @@ const redirections301 = [
     ["yazilar/mahsuplardan-kesilen-damga-vergisi-nedir", "yazilar/1018-mahsuplardan-kesilen-damga-vergisi"],
     ["yazilar/5254-sayili-kanuna-gore-muhtac-ciftcilere-verilen-odunc-tohumluklardan-hazine-alacagina-donusenler-ait-faiz-nedir", "yazilar/1026-5254-sayili-kanuna-gore-muhtac-ciftcilere-verilen-odunc-tohumluklardan-hazine-alacagina-donusenler-ait-faiz"],
     ["yazilar/pismanlik-zammi-nedir", "yazilar/1030-pismanlik-zammi"],
+    ["yazilar/trafik-muayenesi-para-cezalari-nedir", "yazilar/1037-trafik-muayenesi-para-cezalari"],
+    ["yazilar/egitime-katki-payi-nedir", "yazilar/1042-egitime-katki-payi"],
 
 
     ["yazilar/mera-fonu-para-cezasi-nedir", "yazilar/9341-mera-fonu-para-cezasi"],

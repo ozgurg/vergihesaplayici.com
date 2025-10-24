@@ -1,5 +1,5 @@
 ---
-title: "Trafik Muayenesi Para Cezaları Nedir?"
+title: "Trafik Muayenesi Para Cezaları [1037]"
 description: "Trafik güvenliği, toplumda yaşayan herkesin hayatını etkileyen önemli bir konudur."
 date: 2023-05-18
 ---

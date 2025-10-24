@@ -123,9 +123,10 @@ export class Calculator {
 
     // "Özel Tüketim Vergisi (ÖTV)" | TRY | RateType.PERCENT | BaseAmountMode.PREVIOUS_AMOUNT
     private calculateTax_specialConsumptionTax(): void {
+        // https://www.resmigazete.gov.tr/eskiler/2025/10/20251024-5.pdf
         this.taxRates.specialConsumptionTax = ((price: number) => {
-            if (price <= 640) return 25;
-            if (price < 1_500) return 40;
+            if (price <= 4_500) return 25;
+            if (price <= 9_000) return 40;
             return 50;
         })(this.price);
         this.taxFees.specialConsumptionTax = this.calculateTax(this.price, this.taxRates.specialConsumptionTax);
