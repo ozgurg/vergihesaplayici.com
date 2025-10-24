@@ -45,10 +45,9 @@
             <hr />
 
             <rich-text>
-                <a href="https://github.com/ozgurg" target="_blank" rel="noopener noreferrer">@ozgurg</a> tarafından
-                AGPL-3.0 lisansı altında <a href="https://github.com/ozgurg/vergihesaplayici.com" target="_blank"
-                                            rel="noopener noreferrer">açık kaynaklı</a> olarak geliştirilmektedir –
-                v{{ VERSION }}
+                <a href="https://github.com/ozgurg" target="_blank" rel="noopener noreferrer">@ozgurg</a> tarafından AGPL-3.0 lisansı altında <a href="https://github.com/ozgurg/vergihesaplayici.com" target="_blank" rel="noopener noreferrer">açık kaynaklı</a> olarak geliştirilmektedir
+                <br />
+                <a :href="hataBildirPage.url.href">{{ hataBildirPage.title }}</a> – v{{ VERSION }}
             </rich-text>
         </container>
     </footer>
@@ -59,6 +58,7 @@ import type { ExchangeRates } from "@/types/common.js";
 import { formatMoney } from "@/utils/formatter.js";
 import { API_PROVIDER_CREDIT } from "@/utils/exchange-rates.js";
 import { version as VERSION } from "@root/package.json";
+import { HataBildirPageDef } from "@/domains/hata-bildir/page-def.js";
 
 const PRIMARY_CURRENCY_CODE = "TRY";
 
@@ -70,6 +70,7 @@ const props = defineProps<Props>();
 
 const exchangeRates = Object.entries(props.EXCHANGE_RATES.rates).filter(([currencyCode]) => currencyCode !== PRIMARY_CURRENCY_CODE);
 const dateUpdated = new Date(props.EXCHANGE_RATES.dateUpdated);
+const hataBildirPage = HataBildirPageDef();
 </script>
 
 <style lang="scss" scoped>
