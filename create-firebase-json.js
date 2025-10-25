@@ -19,6 +19,8 @@ const objectToCspHeader = object => {
 // [0] = source (from)
 // [1] = destination (to)
 const redirections301 = [
+    ["telefon", "telefon-vergisi-hesaplayici"],
+
     ["konsol-vergisi-hesaplayici/apple-vision-pro", "telefon-vergisi-hesaplayici/apple-vision-pro"],
     ["konsol-vergisi-hesaplayici/playstation-5", "konsol-vergisi-hesaplayici/sony-playstation-5"],
     ["konsol-vergisi-hesaplayici/playstation-vr2", "konsol-vergisi-hesaplayici/sony-playstation-vr2"],
@@ -245,11 +247,18 @@ const firebaseJson = {
                 ]
             }
         ],
-        redirects: redirections301.map(([_from, _to]) => ({
-            source: `/${_from}/`,
-            destination: `/${_to}/`,
-            type: 301
-        }))
+        redirects: [
+            ...redirections301.map(([_from, _to]) => ({
+                source: `/${_from}/`,
+                destination: `/${_to}/`,
+                type: 301
+            })),
+            {
+                source: "/public/",
+                destination: "/",
+                type: 301
+            }
+        ]
     }
 };
 

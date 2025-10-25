@@ -41,7 +41,7 @@ const props = defineProps<Props>();
     }
     .container {
         --_gap: calc(var(--vh-spacer) * .5);
-        --_ideal-item-count: 2.75;
+        --_ideal-item-count: 3;
         --_padding-block: var(--vh-spacer);
         display: flex;
         overflow-x: hidden;
@@ -57,6 +57,8 @@ const props = defineProps<Props>();
     .calculator-card-item {
         flex-shrink: 0;
         block-size: calc((100% - (var(--_gap) * (var(--_ideal-item-count) - 1))) / var(--_ideal-item-count));
+        min-block-size: 183px;
+        max-block-size: 183px;
         padding-block: 0;
         display: flex;
         flex-direction: column;

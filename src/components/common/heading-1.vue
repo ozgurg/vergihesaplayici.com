@@ -10,7 +10,7 @@
 import type { HtmlAttrs_h1 } from "@/types/html.js";
 
 export type Props = {
-    is?: `h${number}`;
+    is?: `h${number}` | string;
 } & /* @vue-ignore */ Partial<HtmlAttrs_h1>;
 
 const props = withDefaults(defineProps<Props>(), {

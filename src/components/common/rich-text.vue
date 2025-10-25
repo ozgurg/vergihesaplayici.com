@@ -106,6 +106,8 @@ const props = withDefaults(defineProps<Props>(), {
                 padding-inline: var(--vh-spacer)
             }
         }
+        border: var(--vh-border-inline-size) solid hsla(var(--vh-clr-border-hsl), var(--vh-clr-border-alpha));
+        width: 100%;
         table-layout: auto;
         vertical-align: top;
         caption-side: bottom;

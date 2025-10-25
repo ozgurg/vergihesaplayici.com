@@ -1,7 +1,7 @@
 import type { Brand, Preset } from "@/domains/konsol-vergisi-hesaplayici/types.js";
 import { buildPageMeta } from "@/domains/konsol-vergisi-hesaplayici/utils/build-page-meta.js";
 
-const DISCLAIMER_NOTE = "Bu ürün, resmi olarak Türkiye satılmadığı için hangi kategoriden vergilendirieceğiniz bilmiyoruz. Bu sayfa sadece bilgi vermek amacı taşımaktadır.";
+const DISCLAIMER_NOTE = "Bu ürün Türkiye'de resmi olarak satılmadığından, hangi vergi kategorisine gireceği kesin olarak bilinmemektedir. Bu sayfa yalnızca bilgi verme amacı taşır.";
 
 const BRAND_ID = "valve";
 
