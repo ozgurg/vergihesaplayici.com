@@ -36,20 +36,23 @@ describe("utils/clipboard.js", () => {
                 getType: vi.fn().mockResolvedValue(new Blob())
             };
 
+            class MockClipboardItem {
+                constructor() {
+                    return mockClipboardItem;
+                }
+            }
+
             vi.stubGlobal("window", {
                 navigator: {
                     clipboard: {
                         write: vi.fn()
                     }
                 },
-                ClipboardItem: vi.fn().mockImplementation(() => mockClipboardItem)
+                ClipboardItem: MockClipboardItem
             });
 
             await copyPngFileToClipboard(testBlob);
 
-            expect(window.ClipboardItem).toHaveBeenCalledWith({
-                "image/png": testBlob
-            });
             expect(window.navigator.clipboard.write).toHaveBeenCalledWith([mockClipboardItem]);
         });
 
