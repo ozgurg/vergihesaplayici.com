@@ -22,16 +22,16 @@ export const GET: APIRoute = (): Response => {
 
         icons: [
             {
-                purpose: "maskable",
-                sizes: "1462x1462",
-                src: staticUrl("/pwa/icon-maskable.png"),
-                type: "image/png"
+                src: staticUrl("/pwa/manifest-192.png"),
+                sizes: "192x192",
+                type: "image/png",
+                purpose: "maskable"
             },
             {
-                purpose: "any",
-                sizes: "144x144",
-                src: staticUrl("/pwa/icon-any.png"),
-                type: "image/png"
+                src: staticUrl("/pwa/manifest-512.png"),
+                sizes: "512x512",
+                type: "image/png",
+                purpose: "maskable"
             }
         ],
 

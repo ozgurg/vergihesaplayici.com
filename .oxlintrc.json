@@ -110,7 +110,10 @@
             "rules": {
                 "typescript/explicit-function-return-type": "off",
                 "typescript/no-non-null-assertion": "off",
-                "typescript/no-explicit-any": "off"
+                "typescript/no-explicit-any": "off",
+                "typescript/no-extraneous-class": "off",
+                "eslint/no-constructor-return": "off",
+                "eslint/max-classes-per-file": "off"
             }
         },
         {
