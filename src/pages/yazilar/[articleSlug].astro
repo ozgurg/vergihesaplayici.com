@@ -7,6 +7,7 @@ import Heading1 from "@/components/common/heading-1.vue";
 import ArticleLegalDisclaimerAlert from "@/components/article-legal-disclaimer-alert.vue";
 import RichText from "@/components/common/rich-text.vue";
 import Heading2 from "@/components/common/heading-2.vue";
+import Heading3 from "@/components/common/heading-3.vue";
 import ArticlesGrid from "@/components/articles-grid.vue";
 
 import { render } from "astro:content";
@@ -40,6 +41,21 @@ const date = yazi.date;
 const timeDateTimeAttr = date.toISOString().split("T")[0]; // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time#valid_datetime_values
 const timeContentAttr = date.toISOString(); // https://developers.google.com/search/docs/appearance/structured-data/article#article-types
 const readableDate = date.toLocaleDateString("tr-TR");
+
+const parseTitleAsTaxInfo = (title: string): { name: string, code: string } | false => {
+    const pattern = /^(.*?)\s*\[([^\]]+)]\s*$/;
+    const matchArray = title.match(pattern);
+    if (matchArray) {
+        const name = matchArray[1]?.trim() ?? null;
+        const code = matchArray[2]?.trim() ?? null;
+        if (name && code) {
+            return { name, code };
+        }
+    }
+    return false;
+};
+
+const taxInfo = parseTitleAsTaxInfo(yazi.title);
 ---
 
 <DefaultLayout head={yazilarSlugPage.head}>
@@ -64,6 +80,22 @@ const readableDate = date.toLocaleDateString("tr-TR");
         <ArticleLegalDisclaimerAlert />
 
         <RichText is="section">
+            {taxInfo ?
+                <Heading3 is="span">Vergi adı ve kodu</Heading3>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Vergi adı</td>
+                            <td>{taxInfo.name}</td>
+                        </tr>
+                        <tr>
+                            <td>Vergi kodu</td>
+                            <td class="text-number">{taxInfo.code}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr />
+                : ""}
             <Content />
         </RichText>
 
