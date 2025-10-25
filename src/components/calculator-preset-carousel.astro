@@ -44,11 +44,11 @@ const ITEMS_CONTAINER_ID = "calculator-preset-carousel-items";
         --_container-max-inline-size: var(--container-inline-size);
         --_container-padding-inline: var(--container-padding-inline);
         --_item-gap: calc(var(--vh-spacer) * .5);
-        --_item-count: 3.10;
-        --_total-gap-between-items: (var(--_item-count) - 1) * var(--_item-gap);
+        // --_item-count: 3.50;
+        // --_total-gap-between-items: (var(--_item-count) - 1) * var(--_item-gap);
         --_container-actual-inline-size: var(--_container-max-inline-size) - (var(--_container-padding-inline) * 2);
-        --_safe-inline-size-for-items: var(--_container-actual-inline-size) - var(--_total-gap-between-items);
-        --_item-inline-size: round(up, calc((var(--_safe-inline-size-for-items)) / var(--_item-count)), 1px);
+        // --_safe-inline-size-for-items: var(--_container-actual-inline-size) - var(--_total-gap-between-items);
+        // --_item-inline-size: round(up, calc((var(--_safe-inline-size-for-items)) / var(--_item-count)), 1px);
         position: relative;
         z-index: 1;
         &-items {
@@ -79,8 +79,7 @@ const ITEMS_CONTAINER_ID = "calculator-preset-carousel-items";
             flex-shrink: 0;
             min-inline-size: 160px;
             @include vh-media-breakpoint-up(md) {
-                min-inline-size: unset;
-                flex-basis: var(--_item-inline-size)
+                min-inline-size: 199px
             }
             @include vh-hover {
                 scroll-snap-align: center;

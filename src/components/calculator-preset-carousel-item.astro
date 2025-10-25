@@ -61,6 +61,7 @@ const IMG_ALT = FULL_TITLE;
         --color-hsl: var(--_color-hsl);
         --border-hsl: var(--_color-h), 100%, 96%;
         --border-alpha: .12;
+        --border-radius: 1.75rem;
 
         --_color-h: var(--color-h);
         --_color-s: var(--color-s);
@@ -72,10 +73,10 @@ const IMG_ALT = FULL_TITLE;
         display: flex;
         align-items: flex-start;
         flex-direction: column;
-        padding-block: var(--vh-spacer);
+        padding-block: var(--vh-spacer) calc(var(--vh-spacer) * 1.125);
         padding-inline: calc(var(--vh-spacer) * .875);
         @include vh-media-breakpoint-up(md) {
-            padding-block: calc(var(--vh-spacer) * 1.5);
+            padding-block: var(--vh-spacer) calc(var(--vh-spacer) * 1.25);
             padding-inline: var(--vh-spacer)
         }
         &:has(a:focus-visible) {
@@ -111,7 +112,7 @@ const IMG_ALT = FULL_TITLE;
                 @include vh-ellipsis-multiline(1);
                 font-size: var(--vh-fs-sm);
                 @include vh-media-breakpoint-up(md) {
-                    font-size: var(--vh-fs-md)
+                    font-size: var(--vh-fs-base)
                 }
                 &:focus {
                     @include vh-clear-focus-appearance()
@@ -130,10 +131,7 @@ const IMG_ALT = FULL_TITLE;
             font-weight: var(--vh-fw-medium);
             line-height: var(--vh-lh-lg);
             opacity: .75;
-            font-size: var(--vh-fs-xs);
-            @include vh-media-breakpoint-up(md) {
-                font-size: var(--vh-fs-sm)
-            }
+            font-size: var(--vh-fs-xs)
         }
     }
 </style>
