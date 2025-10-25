@@ -67,9 +67,6 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
             <Heading1>
                 {yazi.title}
             </Heading1>
-            <div>
-                Yayınlanma tarihi: <time datetime={timeDateTimeAttr} content={timeContentAttr} class="meta-date">{readableDate}</time>
-            </div>
         </Container>
     </PageHeader>
 
@@ -97,6 +94,10 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
                 <hr />
                 : ""}
             <Content />
+
+            <p class="publish-date">
+                Yayınlanma tarihi: <time datetime={timeDateTimeAttr} content={timeContentAttr} class="meta-date">{readableDate}</time>
+            </p>
         </RichText>
 
         <hr />
@@ -115,3 +116,10 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
         </section>
     </Container>
 </DefaultLayout>
+
+<style lang="scss">
+    .publish-date {
+        opacity: .75;
+        font-size: var(--vh-fs-base)
+    }
+</style>
