@@ -1,3 +1,6 @@
 user-agent: *
+
 disallow: /*?
+disallow: /public/
+disallow: /_astro/
 disallow: /*.html$
