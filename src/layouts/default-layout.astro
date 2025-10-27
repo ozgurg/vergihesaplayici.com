@@ -17,6 +17,7 @@ export type Props = {
 const { head } = Astro.props;
 
 const EXCHANGE_RATES = getExchangeRates();
+const BASE_URL = siteUrl();
 ---
 
 <html
@@ -36,6 +37,15 @@ const EXCHANGE_RATES = getExchangeRates();
     </MainBody>
 
     <MainFooter EXCHANGE_RATES={EXCHANGE_RATES} />
+
+    <div
+        hidden=""
+        inert=""
+        itemscope=""
+        itemtype="https://schema.org/Organization">
+        <meta itemprop="url" content={BASE_URL.href} />
+        <meta itemprop="logo" content={staticUrl("/pwa/favicon-96x96.png")} />
+    </div>
 
     <!--
     <SvgCacheDefs />
