@@ -4,7 +4,7 @@ description: "Gelir Götürü Ticari Kazanç, Türkiye'deki ticari faaliyetlerin
 date: 2023-05-06
 ---
 
-Gelir Götürü <a href="/yazilar/basit-usulde-ticari-kazanc-nedir/">Ticari Kazanç</a>, Türkiye'deki ticari faaliyetlerin vergilendirilmesi açısından oldukça önemli bir kavramdır.
+Gelir Götürü <a href="/yazilar/0014-basit-usulde-ticari-kazanc/">Ticari Kazanç</a>, Türkiye'deki ticari faaliyetlerin vergilendirilmesi açısından oldukça önemli bir kavramdır.
 Ticari faaliyetlerden elde edilen kazançların vergilendirilmesi için **Gelir Vergisi Kanunu**'nda belirtilen çeşitli
 kavramlar bulunmaktadır. Bu kavramlardan biri de **Gelir Götürü Ticari Kazanç**'tır.
 

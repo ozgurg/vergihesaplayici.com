@@ -74,8 +74,6 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
         <div ta-ad-container=""></div>
         <hr />
 
-        <ArticleLegalDisclaimerAlert />
-
         <RichText is="section">
             {taxInfo ?
                 <Heading3 is="span">Vergi adı ve kodu</Heading3>
@@ -91,14 +89,20 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
                         </tr>
                     </tbody>
                 </table>
-                <hr />
+                <br />
                 : ""}
             <Content />
-
-            <p class="publish-date">
-                Yayınlanma tarihi: <time datetime={timeDateTimeAttr} content={timeContentAttr} class="meta-date">{readableDate}</time>
-            </p>
         </RichText>
+
+        <br />
+
+        <p class="publish-date">
+            Yayınlanma tarihi: <time datetime={timeDateTimeAttr} content={timeContentAttr} class="meta-date">{readableDate}</time>
+        </p>
+
+        <br />
+
+        <ArticleLegalDisclaimerAlert />
 
         <hr />
         <div ta-ad-container=""></div>

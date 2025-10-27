@@ -5,6 +5,7 @@ import type { Head } from "@/types/common.js";
 import "@/assets/css/style.scss";
 
 import DefaultLayoutHead from "@/layouts/default-layout-head.astro";
+import Tinyadz from "@/components/tinyadz.astro";
 import Header from "@/components/header.astro";
 import MainBody from "@/components/main-body.vue";
 import MainFooter from "@/components/main-footer.vue";
@@ -16,7 +17,7 @@ export type Props = {
 const { head } = Astro.props;
 
 const EXCHANGE_RATES = getExchangeRates();
-const IS_DEV_MODE = import.meta.env.DEV;
+const BASE_URL = siteUrl();
 ---
 
 <html
@@ -26,23 +27,28 @@ const IS_DEV_MODE = import.meta.env.DEV;
     dir="ltr">
 <head>
     <DefaultLayoutHead head={head} />
-
-    <script
-        is:inline
-        src="https://cdn.apitiny.net/scripts/v2.0/main.js"
-        data-site-id="68d6da655ba59d41c1dbce36"
-        async=""
-        data-test-mode={IS_DEV_MODE ? "true" : "false"}></script>
+    <Tinyadz />
 </head>
 <body>
-<Header />
+    <Header />
 
-<MainBody>
-<slot name="default" />
-</MainBody>
+    <MainBody>
+        <slot name="default" />
+    </MainBody>
 
-<MainFooter EXCHANGE_RATES={EXCHANGE_RATES} />
+    <MainFooter EXCHANGE_RATES={EXCHANGE_RATES} />
 
-<!-- <SvgCacheDefs /> -->
+    <div
+        hidden=""
+        inert=""
+        itemscope=""
+        itemtype="https://schema.org/Organization">
+        <meta itemprop="url" content={BASE_URL.href} />
+        <meta itemprop="logo" content={staticUrl("/pwa/favicon-96x96.png")} />
+    </div>
+
+    <!--
+    <SvgCacheDefs />
+    -->
 </body>
 </html>
