@@ -34,7 +34,7 @@
         "@commitlint/cli": "20.1.0",
         "@commitlint/config-conventional": "20.0.0",
         "@vitejs/plugin-vue": "6.0.1",
-        "@vitest/coverage-istanbul": "4.0.3",
+        "@vitest/coverage-istanbul": "4.0.4",
         "@vue/test-utils": "2.4.6",
         "astro-compress": "2.3.8",
         "fast-average-color-node": "3.1.0",
@@ -49,7 +49,7 @@
         "typescript": "5.9.3",
         "unplugin-auto-import": "20.2.0",
         "unplugin-vue-components": "30.0.0",
-        "vitest": "4.0.3"
+        "vitest": "4.0.4"
     },
     "peerDependencies": {
         "firebase-tools": "14.22.0"
