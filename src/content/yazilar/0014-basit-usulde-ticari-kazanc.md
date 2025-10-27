@@ -6,7 +6,7 @@ date: 2023-05-10
 
 Ticaret hayatının önemli bir parçası olan **basit usul**, küçük çaplı işletmeler için uygulanan bir vergi sistemi olarak
 karşımıza çıkmaktadır. Bu sistem, ticari faaliyetlerin **gelir** ve **giderleri** baz alınarak vergilendirilmesini
-sağlamaktadır. **Basit usulde** <a href="/yazilar/gelir-goturu-ticari-kazanc-nedir/">ticari kazanç nedir</a> sorusuna cevap vermeden önce, basit usulün ne olduğuna dair birkaç
+sağlamaktadır. **Basit usulde** <a href="/yazilar/0004-gelir-goturu-ticari-kazanc/">ticari kazanç nedir</a> sorusuna cevap vermeden önce, basit usulün ne olduğuna dair birkaç
 kelime etmek faydalı olacaktır.
 
 ## Basit Usul Nedir?
