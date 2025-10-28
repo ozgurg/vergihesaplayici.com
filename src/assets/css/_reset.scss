@@ -22,6 +22,7 @@ html {
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     scrollbar-gutter: stable;
     @media (prefers-reduced-motion: no-preference) {
         scroll-behavior: smooth
