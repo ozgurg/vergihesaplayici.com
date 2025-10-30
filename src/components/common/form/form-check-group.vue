@@ -17,6 +17,7 @@
                         v-model="modelValue"
                         :input="_item.input"
                         :value="_item.input.value"
+                        :disabled="_item.input.disabled"
                         :type="props.type"
                         :scale="props.scale"
                         :required="props.required"

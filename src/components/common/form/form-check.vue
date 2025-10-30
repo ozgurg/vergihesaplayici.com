@@ -135,6 +135,7 @@ $_scales: (
     flex-flow: column wrap;
     justify-content: center;
     min-block-size: var(--_min-block-size);
+    block-size: 100%;
     padding-block: calc(var(--vh-spacer) * .75);
     padding-inline-start: var(--_padding-inline);
     padding-inline-end: calc(var(--_padding-inline) + var(--_icon-size));

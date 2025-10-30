@@ -1,5 +1,5 @@
 ---
-title: "Vergi Barışı Geç Ödeme Zammı Nedir?"
+title: "Vergi Barışı Geç Ödeme Zammı [1051]"
 description: "Vergi Barışı Geç Ödeme Zammı, vadesinde ödenmeyen vergi borçlarına uygulanan ek ücret olup, borcun devlet tarafından tahsil edilmesini sağlar ve yasal çerçevede hesaplanır."
 date: 2025-09-06
 ---

@@ -91,6 +91,13 @@ const redirections301 = [
     ["yazilar/pismanlik-zammi-nedir", "yazilar/1030-pismanlik-zammi"],
     ["yazilar/trafik-muayenesi-para-cezalari-nedir", "yazilar/1037-trafik-muayenesi-para-cezalari"],
     ["yazilar/egitime-katki-payi-nedir", "yazilar/1042-egitime-katki-payi"],
+    ["yazilar/ozel-islem-vergisi-nedir", "yazilar/1043-ozel-islem-vergisi"],
+    ["yazilar/tevkifattan-alinan-damga-vergisi-nedir", "yazilar/1046-tevkifattan-alinan-damga-vergisi"],
+    ["yazilar/damga-vergisi-nedir", "yazilar/1047-damga-vergisi"],
+    ["yazilar/5035-sayili-kanuna-gore-damga-vergisi-nedir", "yazilar/1048-5035-sayili-kanuna-gore-damga-vergisi"],
+    ["yazilar/vergi-barisi-tefe-tutari-nedir", "yazilar/1050-vergi-barisi-tefe-tutari"],
+    ["yazilar/vergi-barisi-gec-odeme-zammi-nedir", "yazilar/1051-vergi-barisi-gec-odeme-zammi"],
+    ["yazilar/5335-sayili-kanuna-gore-hazine-alacagina-donusen-tohumluk-kredilerine-ait-gec-odeme-zammi-nedir", "yazilar/1052-5335-sayili-kanuna-gore-hazine-alacagina-donusen-tohumluk-kredilerine-ait-gec-odeme-zammi"],
 
 
     ["yazilar/mera-fonu-para-cezasi-nedir", "yazilar/9341-mera-fonu-para-cezasi"],
