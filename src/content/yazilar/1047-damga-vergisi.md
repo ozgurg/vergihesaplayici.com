@@ -1,5 +1,5 @@
 ---
-title: "Damga Vergisi Nedir?"
+title: "Damga Vergisi [1047]"
 description: "Damga vergisi, Türkiye'de finansal ve ticari işlemler üzerinde uygulanan bir vergi türüdür."
 date: 2023-05-17
 ---

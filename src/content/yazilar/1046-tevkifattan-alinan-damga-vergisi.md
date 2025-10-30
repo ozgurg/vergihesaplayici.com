@@ -1,5 +1,5 @@
 ---
-title: "Tevkifattan Alınan Damga Vergisi Nedir?"
+title: "Tevkifattan Alınan Damga Vergisi [1046]"
 description: "Tevkifattan alınan damga vergisi, bir sözleşme veya belge üzerinden doğrudan değil, karşı taraf tarafından kesilerek ödenen damga vergisidir. Kimler sorumludur, nasıl hesaplanır?"
 date: 2025-07-26
 ---
