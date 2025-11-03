@@ -74,7 +74,9 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
         <div ta-ad-container=""></div>
         <hr />
 
-        <RichText is="section">
+        <RichText
+            is="section"
+            class="content">
             {taxInfo ?
                 <Heading3 is="span">Vergi adı ve kodu</Heading3>
                 <table>
@@ -122,6 +124,10 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
 </DefaultLayout>
 
 <style lang="scss">
+    .content {
+        line-height: var(--vh-lh-xl)
+    }
+
     .publish-date {
         opacity: .75;
         font-size: var(--vh-fs-base)

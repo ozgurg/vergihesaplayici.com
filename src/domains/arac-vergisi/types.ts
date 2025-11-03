@@ -18,7 +18,7 @@ export enum VehicleType {
     HELICOPTER = "helicopter",
     PLANE = "plane",
     BOAT = "boat",
-    YACHT = "yatch",
+    YACHT = "yacht",
 }
 
 export enum VehicleEngineVolume {

@@ -1,5 +1,5 @@
 ---
-title: "Gecikme Faizi Nedir?"
+title: "Gecikme Faizi [1084]"
 description: "Gecikme faizi, borcun zamanında ödenmediği durumlarda uygulanan bir tür cezai faizdir."
 date: 2023-07-12
 ---
