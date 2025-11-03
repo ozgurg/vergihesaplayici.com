@@ -1,5 +1,5 @@
 ---
-title: "Erken Ödeme İndirimi Nedir?"
+title: "Erken Ödeme İndirimi [1087]"
 description: "Erken ödeme indirimi, vergi mükelleflerine ödemelerini zamanında veya erken yapmaları halinde sunulan bir avantajdır. Bu yazıda erken ödeme indiriminin kapsamı ve detaylarını bulabilirsiniz."
 date: 2025-08-02
 ---

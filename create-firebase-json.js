@@ -98,6 +98,11 @@ const redirections301 = [
     ["yazilar/vergi-barisi-tefe-tutari-nedir", "yazilar/1050-vergi-barisi-tefe-tutari"],
     ["yazilar/vergi-barisi-gec-odeme-zammi-nedir", "yazilar/1051-vergi-barisi-gec-odeme-zammi"],
     ["yazilar/5335-sayili-kanuna-gore-hazine-alacagina-donusen-tohumluk-kredilerine-ait-gec-odeme-zammi-nedir", "yazilar/1052-5335-sayili-kanuna-gore-hazine-alacagina-donusen-tohumluk-kredilerine-ait-gec-odeme-zammi"],
+    ["yazilar/vergi-yargi-harclari-nedir", "yazilar/1067-vergi-yargi-harclari"],
+    ["yazilar/gecikme-faizi-nedir", "yazilar/1084-gecikme-faizi"],
+    ["yazilar/erken-odeme-indirimi-nedir", "yazilar/1087-erken-odeme-indirimi"],
+    ["yazilar/vergi-ziyai-cezasi-nedir", "yazilar/3080-vergi-ziyai-cezasi"],
+    ["yazilar/faiz-vergisi-nedir", "yazilar/4006-faiz-vergisi"],
 
 
     ["yazilar/mera-fonu-para-cezasi-nedir", "yazilar/9341-mera-fonu-para-cezasi"],
