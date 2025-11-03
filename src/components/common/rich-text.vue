@@ -21,7 +21,7 @@ const props = withDefaults(defineProps<Props>(), {
 <style lang="scss" scoped>
 .rich-text {
     --_link-color: var(--link-color, var(--vh-clr-primary));
-    line-height: var(--vh-lh-xl);
+    line-height: var(--vh-lh-lg);
 
 
     // Paragraph
