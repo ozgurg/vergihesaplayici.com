@@ -1,0 +1,13 @@
+---
+title: "Orköy Fonu Gelirleri [9111]"
+description: "Orköy Fonu Gelirleri nedir, kimler öder, nasıl hesaplanır? 2025 güncel oranları, beyan ve ödeme detaylarını hemen öğrenin."
+date: 2025-11-04
+---
+
+**Orköy Fonu Gelirleri**, orman köylerinde yaşayan vatandaşların ekonomik kalkınmasını desteklemek için kurulan özel bir mali kaynaktır. Bu fon, ormanların korunması ve sürdürülebilir şekilde işletilmesini sağlarken köylülerin gelir düzeyini artırmayı hedefler. **Orköy Fonu**, orman ürünleri satışlarından, izin ve kira gelirlerinden alınan belirli oranlardaki kesintilerle oluşturulur. Gelirleri, Tarım ve Orman Bakanlığı’na bağlı Orman Genel Müdürlüğü tarafından yönetilir ve doğrudan kırsal kalkınma projelerine aktarılır. Bu yönüyle, hem çevresel sürdürülebilirliği hem de ekonomik canlılığı destekleyen önemli bir kamu finansman aracıdır.
+
+Fonun **hesaplanması ve aktarımı**, 6831 sayılı Orman Kanunu ile düzenlenmiştir. Orman emvali satışlarından elde edilen gelirin belirli bir yüzdesi Orköy Fonu’na ayrılır. Aynı şekilde, orman arazilerinin kiralanması, kullanımı veya izin verilmesi karşılığında elde edilen gelirlerden de pay kesilir. Bu oranlar, her yıl güncellenen yönetmeliklere göre belirlenir. Fon tutarları doğrudan **tevkifat** yöntemiyle ayrılır ve mükelleflerce ayrıca beyan edilmez. 2025 yılı itibarıyla, fon kesintileri ve aktarım süreçleri **elektronik beyan sistemi (e-Beyanname)** üzerinden izlenebilir hale getirilmiştir. Bu dijital dönüşüm, işlemlerin hem şeffaf hem de hızlı şekilde gerçekleşmesini sağlamıştır.
+
+**Orköy Fonu Gelirleri**’nin kullanım alanları arasında konut yapımı, hayvancılık, arıcılık, güneş enerjisi sistemleri ve küçük ölçekli işletme yatırımları yer alır. Fonun amacı, orman köylerinde yaşayan ailelerin geçim kaynaklarını çeşitlendirmek ve orman üzerindeki baskıyı azaltmaktır. Bu sayede hem gelir artışı sağlanır hem de ormanların sürdürülebilir kullanımı teşvik edilir. **Muafiyet** kapsamına giren gelir türleri bulunmamakla birlikte, fon kesintileri doğrudan idare tarafından yapıldığı için mükelleflerin ayrıca ödeme yükümlülüğü bulunmaz. Ancak kurumların muhasebe kayıtlarında bu kalemler doğru şekilde izlenmeli ve **matrah** hesaplamalarına dahil edilmemelidir.
+
+2025 yılı itibarıyla, fonun tahsilat yapısı ve izleme sistemi tamamen dijital hale getirilmiştir. Artık tüm **tutar, oran ve tevkifat** bilgileri elektronik ortamda kayıt altına alınmakta, denetimler merkezi olarak yürütülmektedir. Bu sayede, hem kamu kaynaklarının verimli kullanımı hem de orman köylerinin ekonomik gelişimi güvence altına alınmıştır. Orköy Fonu Gelirleri, sadece mali bir kalem değil, kırsal yaşamı güçlendiren uzun vadeli bir sosyal yatırım aracıdır.
