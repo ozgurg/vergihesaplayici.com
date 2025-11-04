@@ -27,9 +27,8 @@ const {
 // oxlint-disable-next-line no-anonymous-default-export no-default-export
 export default defineConfig({
     prefetch: {
-        // No need to increase the bandwidth for now
-        prefetchAll: false
-        // defaultStrategy: "hover"
+        prefetchAll: true,
+        defaultStrategy: "tap"
     },
     devToolbar: {
         enabled: false
