@@ -195,7 +195,7 @@ export class Calculator {
         }
 
         // OtvRate[]
-        if (this.vehicleEngineVolume && this.vehicleEngineVolume in rateData) {
+        if (this.vehicleEngineVolume !== null && this.vehicleEngineVolume in rateData) {
             // oxlint-disable-next-line no-explicit-any
             const rates = (rateData as any)[this.vehicleEngineVolume];
             if (rates && Array.isArray(rates)) {
