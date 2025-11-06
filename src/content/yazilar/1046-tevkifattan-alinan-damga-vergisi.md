@@ -29,7 +29,7 @@ vergi dairesine yatırır.
 
 ## Kim Sorumlu Olur?
 
-Damga Vergisi Kanunu’na göre normalde her iki taraf da vergiden müteselsilen sorumludur. Ancak tevkifat uygulandığında,
+Damga Vergisi Kanunu'na göre normalde her iki taraf da vergiden müteselsilen sorumludur. Ancak tevkifat uygulandığında,
 verginin ödenmesinden **kesintiyi yapan taraf** (örneğin kamu kurumu) sorumlu hale gelir. Bu sayede diğer tarafın
 beyanname vermesi ya da ödeme yapması gerekmez.
 

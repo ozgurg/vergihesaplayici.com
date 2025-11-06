@@ -4,11 +4,11 @@ description: "5035 sayılı Kanun ile damga vergisinde kağıt tanımı, elektro
 date: 2025-07-26
 ---
 
-5035 sayılı Kanun, 2004 yılında yürürlüğe girmiş ve birçok vergi kanununda olduğu gibi **Damga Vergisi Kanunu’nda** da
+5035 sayılı Kanun, 2004 yılında yürürlüğe girmiş ve birçok vergi kanununda olduğu gibi **Damga Vergisi Kanunu'nda** da
 köklü değişiklikler yapmıştır. Bu düzenlemeler, özellikle **kağıt tanımı**, **elektronik belgeler** ve **istisna
 kapsamları** gibi alanlarda damga vergisinin uygulama şeklini değiştirmiştir.
 
-## 5035 Sayılı Kanun’un Damga Vergisi’ne Etkisi
+## 5035 Sayılı Kanun'un Damga Vergisi'ne Etkisi
 
 Bu kanunla yapılan değişiklikler özetle şu şekildedir:
 
@@ -36,7 +36,7 @@ bazı işlemler ve sosyal amaçlı faaliyetler bu kapsama alındı.
 
 ## Elektronik Belgeler İçin Damga Vergisi
 
-5035 sayılı Kanun’un en dikkat çeken yeniliklerinden biri, **e-belgelerin damga vergisine tabi tutulması**dır. Bu sayede
+5035 sayılı Kanun'un en dikkat çeken yeniliklerinden biri, **e-belgelerin damga vergisine tabi tutulması**dır. Bu sayede
 elektronik ortamda düzenlenen sözleşmeler, taahhütnameler ve protokoller de artık vergiye tabi hale geldi.
 
 ### Örnek:

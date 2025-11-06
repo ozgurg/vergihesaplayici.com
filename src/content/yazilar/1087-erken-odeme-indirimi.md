@@ -17,7 +17,7 @@ olabilir. Uygulama alanı, ilgili mevzuata göre değişiklik gösterebilir.
 ## Ne Kadar İndirim Yapılır?
 
 İndirim oranı, ödenecek verginin türüne ve ilgili kurumun uygulamasına göre değişebilir. Örneğin, trafik cezalarında
-peşin ödeme halinde cezanın yüzde 25’i oranında indirim uygulanmaktadır. Bu oranlar zaman içinde değişebileceği için,
+peşin ödeme halinde cezanın yüzde 25'i oranında indirim uygulanmaktadır. Bu oranlar zaman içinde değişebileceği için,
 güncel bilgiye resmi kurumların duyurularından ulaşmak önemlidir.
 
 ## Erken Ödeme Nasıl Yapılır?

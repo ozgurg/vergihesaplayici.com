@@ -1,6 +1,6 @@
 ---
 title: "Kurumlar Vergisi Kurum Geçici Vergi [0053]"
-description: "Türkiye’de işletmelerin vergi sistemi kapsamlıdır; Kurumlar ve Kurum Geçici Vergisi vergi yükümlülüklerinde önemli rol oynar."
+description: "Türkiye'de işletmelerin vergi sistemi kapsamlıdır; Kurumlar ve Kurum Geçici Vergisi vergi yükümlülüklerinde önemli rol oynar."
 date: 2023-05-17
 ---
 
