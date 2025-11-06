@@ -267,6 +267,11 @@ const firebaseJson = {
                 destination: `/${_to}/`,
                 type: 301
             })),
+            ...redirections301.map(([_from, _to]) => ({
+                source: _from,
+                destination: `/${_to}/`,
+                type: 301
+            })),
             {
                 source: "/public/",
                 destination: "/",
