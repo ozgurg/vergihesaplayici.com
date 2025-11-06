@@ -1,6 +1,6 @@
 ---
 title: "Vergi Ödemek Zorunda Mıyız?"
-description: "Vergi ödemek, birçok ülkede vatandaşların yasal yükümlülüklerinden biridir. Vergi, ülkelerin vergi gelirlerini artırarak kamu hizmetleri sunmalarına yardımcı olur."
+description: "Vergi ödemek, vatandaşların yasal yükümlülüğüdür ve kamu hizmetlerinin finansmanına katkı sağlar."
 date: 2023-05-04
 ---
 

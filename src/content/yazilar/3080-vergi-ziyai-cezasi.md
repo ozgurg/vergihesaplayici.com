@@ -5,7 +5,7 @@ date: 2025-08-02
 ---
 
 **Vergi ziyaı**, bir verginin zamanında veya doğru şekilde tahakkuk ettirilmemesi sonucunda devletin vergi kaybına
-uğramasıdır. Bu durumlarda uygulanan **vergi ziyaı cezası**, Vergi Usul Kanunu’na göre mükellefin beyan ettiği ya da
+uğramasıdır. Bu durumlarda uygulanan **vergi ziyaı cezası**, Vergi Usul Kanunu'na göre mükellefin beyan ettiği ya da
 beyan etmesi gereken vergiyle ilgili eksiklikler veya yanlışlıklar nedeniyle gündeme gelir.
 
 Vergi ziyaına sebep olan bazı durumlar şunlardır:

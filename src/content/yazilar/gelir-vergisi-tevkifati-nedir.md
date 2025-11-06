@@ -1,6 +1,6 @@
 ---
 title: "Gelir Vergisi Tevkifatı Nedir?"
-description: "Gelir vergisi tevkifatı, Türkiye'de vergi mevzuatına göre belirli ödemelerin yapılması sırasında vergi tutarının ödeme yapılan kişi ya da kurum tarafından kesilerek, doğrudan vergi dairesine yatırılması işlemidir."
+description: "Gelir vergisi tevkifatı, ödemelerden kesilen verginin doğrudan vergi dairesine yatırılmasıdır."
 date: 2023-07-25
 ---
 

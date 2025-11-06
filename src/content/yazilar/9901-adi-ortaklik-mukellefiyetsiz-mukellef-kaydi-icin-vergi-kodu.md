@@ -1,6 +1,6 @@
 ---
 title: "Adi Ortaklık Mükellefiyetsiz Mükellef Kaydı İçin Vergi Kodu [9901]"
-description: "Adi Ortaklık Mükellefiyetsiz Mükellef Kaydı, tüzel kişiliği olmayan adi ortaklıkların vergi işlemlerinin izlenebilmesi için 9901 koduyla açılan özel kayıttır. Ortaklar arası vergi sorumluluğunu netleştirir."
+description: "Adi Ortaklık Mükellefiyetsiz Mükellef Kaydı, tüzel kişiliği olmayan ortaklıkların vergi işlemlerini izlemek için 9901 koduyla açılan özel kayıttır."
 date: 2025-10-28
 ---
 

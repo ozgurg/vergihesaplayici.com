@@ -1,6 +1,6 @@
 ---
 title: "1475 Sayılı İş Kanununa Bağlı Para Cezası Nedir?"
-description: "İş hayatında, işverenlerin ve çalışanların belirli kurallara uyması gerekmektedir."
+description: "İş hayatında, hem işverenlerin hem de çalışanların uyması gereken yasal ve etik kurallar, düzenli ve adil bir çalışma ortamının temelini oluşturur."
 date: 2023-07-19
 ---
 

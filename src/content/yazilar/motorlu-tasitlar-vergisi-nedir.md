@@ -1,15 +1,15 @@
 ---
 title: "Motorlu Taşıtlar Vergisi Nedir?"
-description: "Motorlu Taşıtlar Vergisi (MTV), araç sahiplerinin her yıl Ocak ve Temmuz aylarında ödemekle yükümlü olduğu, aracın yaşı ve motor hacmine göre hesaplanan bir vergidir."
+description: "Motorlu Taşıtlar Vergisi (MTV), araç yaşı ve motor hacmine göre, her yıl Ocak ve Temmuz'da ödenen bir vergidir."
 date: 2025-09-21
 ---
 
-**Motorlu Taşıtlar Vergisi (MTV)**, Türkiye’de trafiğe kayıtlı **araç sahiplerinin** ödemekle yükümlü olduğu bir
+**Motorlu Taşıtlar Vergisi (MTV)**, Türkiye'de trafiğe kayıtlı **araç sahiplerinin** ödemekle yükümlü olduğu bir
 vergidir. 9034 koduyla mevzuatta yer alan bu vergi, hem bireysel hem de ticari araçlar için geçerlidir. Verginin temel
 amacı, karayollarının kullanımı ve bakımına katkı sağlamak, aynı zamanda kamu hizmetlerinin finansmanına destek
 olmaktır.
 
-MTV’nin tutarı; aracın **yaşı**, **motor silindir hacmi**, **araç tipi** ve bazı durumlarda **değeri** dikkate alınarak
+MTV'nin tutarı; aracın **yaşı**, **motor silindir hacmi**, **araç tipi** ve bazı durumlarda **değeri** dikkate alınarak
 hesaplanır. Örneğin, yeni ve yüksek motor hacmine sahip bir otomobilin vergisi daha yüksek olurken, yaşı ilerlemiş ve
 motor hacmi küçük araçlarda vergi daha düşük seviyelerde olabilir.
 

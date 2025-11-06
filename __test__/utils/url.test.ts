@@ -18,6 +18,10 @@ describe("utils/url.js", () => {
         it("returns static site URL with a version query param", () => {
             expect(staticSiteUrl("/og-image.jpg").href).toBe("https://vergihesaplayici.com/og-image.jpg?v=1.2.3");
         });
+
+        it("returns static site URL without a version query param if `withVersion` is set to `false`", () => {
+            expect(staticSiteUrl("/og-image.jpg", false).href).toBe("https://vergihesaplayici.com/og-image.jpg");
+        });
     });
 
     describe("staticUrl", () => {
