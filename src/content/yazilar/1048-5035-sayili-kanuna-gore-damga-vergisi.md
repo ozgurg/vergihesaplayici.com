@@ -1,6 +1,6 @@
 ---
 title: "5035 Sayılı Kanuna Göre Damga Vergisi [1048]"
-description: "5035 sayılı Kanun ile damga vergisinde önemli değişiklikler yapılmıştır. Kağıt tanımı, elektronik belgeler ve istisnalar nasıl değişti? Güncel bilgiler bu içerikte."
+description: "5035 sayılı Kanun ile damga vergisinde kağıt tanımı, elektronik belgeler ve istisnalar güncellenmiştir."
 date: 2025-07-26
 ---
 

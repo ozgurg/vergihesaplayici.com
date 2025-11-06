@@ -23,7 +23,7 @@ export const TelefonVergisiHesaplayiciPageDef: CalculatorPageDef = (): Calculato
         icon,
         head: {
             title,
-            description: "Bir telefonun vergisini hesaplamak için başta ÖTV gibi tüm telefon vergilerini hesaplama yeteneğine sahip Telefon Vergisi Hesaplayıcı aracını kullanın. Vergilerin ne kadar uygulandığını ve vergisiz telefon fiyatını öğrenin. Yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
+            description: "Telefon Vergisi Hesaplayıcı ile ÖTV dahil tüm vergileri hesaplayın, vergisiz fiyatı görün ve yurt içi-yurt dışı fiyatları karşılaştırın.",
             canonicalUrl: url,
             ogImageUrl
         },

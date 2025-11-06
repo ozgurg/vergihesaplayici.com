@@ -1,6 +1,6 @@
 ---
 title: "DSİ Sulama Tesisleri Yatırım Bedeli Nedir?"
-description: "Tarım sektörü Türkiye ekonomisi için hayati bir öneme sahiptir ve tarımsal faaliyetlerin verimli bir şekilde sürdürülebilmesi için sulama sistemleri oldukça önemlidir."
+description: "Tarım sektörü Türkiye ekonomisi için kritik olup, verimli üretim için sulama sistemleri önemlidir."
 date: 2023-07-19
 ---
 
