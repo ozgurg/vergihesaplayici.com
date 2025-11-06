@@ -1,6 +1,6 @@
 {
     "name": "vergihesaplayici.com",
-    "version": "9.19.0",
+    "version": "9.20.0",
     "type": "module",
     "license": "AGPL-3.0",
     "scripts": {
@@ -24,7 +24,7 @@
         "firebase": "12.5.0",
         "html-to-image": "1.11.13",
         "remixicon": "4.7.0",
-        "vue": "3.5.22",
+        "vue": "3.5.23",
         "vue-draggable-plus": "0.6.0"
     },
     "devDependencies": {
@@ -34,14 +34,14 @@
         "@commitlint/cli": "20.1.0",
         "@commitlint/config-conventional": "20.0.0",
         "@vitejs/plugin-vue": "6.0.1",
-        "@vitest/coverage-istanbul": "4.0.6",
+        "@vitest/coverage-istanbul": "4.0.7",
         "@vue/test-utils": "2.4.6",
         "astro-compress": "2.3.8",
         "fast-average-color-node": "3.1.0",
         "husky": "9.1.7",
         "jsdom": "27.1.0",
         "lint-staged": "16.2.6",
-        "oxlint": "1.25.0",
+        "oxlint": "1.26.0",
         "sass": "1.93.3",
         "satori": "0.18.3",
         "satori-html": "0.3.2",
@@ -49,10 +49,10 @@
         "typescript": "5.9.3",
         "unplugin-auto-import": "20.2.0",
         "unplugin-vue-components": "30.0.0",
-        "vitest": "4.0.6"
+        "vitest": "4.0.7"
     },
     "peerDependencies": {
-        "firebase-tools": "14.23.0"
+        "firebase-tools": "14.24.0"
     },
     "engines": {
         "node": ">=22.0.0"

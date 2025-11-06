@@ -9,7 +9,6 @@ import Tinyadz from "@/components/tinyadz.astro";
 import Header from "@/components/header.astro";
 import MainBody from "@/components/main-body.vue";
 import MainFooter from "@/components/main-footer.vue";
-// import SvgCacheDefs from "@/components/svg-cache-defs.astro";
 
 export type Props = {
     head: Head;
@@ -46,9 +45,5 @@ const BASE_URL = siteUrl();
         <meta itemprop="url" content={BASE_URL.href} />
         <meta itemprop="logo" content={staticUrl("/pwa/favicon-96x96.png")} />
     </div>
-
-    <!--
-    <SvgCacheDefs />
-    -->
 </body>
 </html>

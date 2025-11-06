@@ -103,8 +103,10 @@ const redirections301 = [
     ["yazilar/erken-odeme-indirimi-nedir", "yazilar/1087-erken-odeme-indirimi"],
     ["yazilar/vergi-ziyai-cezasi-nedir", "yazilar/3080-vergi-ziyai-cezasi"],
     ["yazilar/faiz-vergisi-nedir", "yazilar/4006-faiz-vergisi"],
-
-
+    ["yazilar/gelir-dahili-tevkifat-nedir", "yazilar/4008-gelir-dahili-tevkifat"],
+    ["yazilar/trafik-muayene-ucreti-hazine-payi-nedir", "yazilar/4037-trafik-muayene-ucreti-hazine-payi"],
+    ["yazilar/seker-kanunu-idari-para-cezasi-nedir", "yazilar/9315-seker-kanunu-idari-para-cezasi"],
+    ["yazilar/sorumlu-sifatiyla-verilen-otv-1-liste-nedir", "yazilar/9171-sorumlu-sifatiyla-verilen-otv-1-liste"],
     ["yazilar/mera-fonu-para-cezasi-nedir", "yazilar/9341-mera-fonu-para-cezasi"],
 
     ["telefon-vergisi-hesaplayici/iphone-15-pro", "telefon-vergisi-hesaplayici/apple-iphone-15-pro"],

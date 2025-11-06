@@ -1,5 +1,5 @@
 ---
-title: "Gelir Dahili Tevkifat Nedir?"
+title: "Gelir Dahili Tevkifat [4008]"
 description: "Gelir dahili tevkifat, Türkiye'de vergi sistemi içerisinde önemli bir yere sahip olan bir uygulamadır."
 date: 2023-07-17
 ---

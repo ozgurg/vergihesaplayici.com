@@ -30,6 +30,10 @@ const _extractAttrs = (htmlString: string): { [key: string]: string } => {
         }
     }
 
+    if (attrs["fill"] === "currentColor") {
+        delete attrs["fill"];
+    }
+
     return attrs;
 };
 
