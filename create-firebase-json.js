@@ -109,6 +109,7 @@ const redirections301 = [
     ["yazilar/sorumlu-sifatiyla-verilen-otv-1-liste-nedir", "yazilar/9171-sorumlu-sifatiyla-verilen-otv-1-liste"],
     ["yazilar/mera-fonu-para-cezasi-nedir", "yazilar/9341-mera-fonu-para-cezasi"],
 
+    ["yazilar/telefon-vergisi", "telefon-vergisi-hesaplayici"],
     ["yazilar/konsol-vergisi", "konsol-vergisi-hesaplayici"],
 
     ["telefon-vergisi-hesaplayici/iphone-15-pro", "telefon-vergisi-hesaplayici/apple-iphone-15-pro"],
