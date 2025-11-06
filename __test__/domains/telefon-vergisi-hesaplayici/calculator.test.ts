@@ -188,5 +188,18 @@ describe("domains/telefon-vergisi-hesaplayici/calculator.js", () => {
                 taxAdded: 5_000
             }
         });
+        calculate({
+            input: {
+                price: 50_000,
+                registration: Registration.IMPORT
+            },
+            options: {
+                mode: Mode.TAX_ADDED_TO_TAX_FREE
+            },
+            expectedOutput: {
+                taxFree: 24_556.03,
+                taxAdded: 50_000
+            }
+        });
     });
 });
