@@ -74,7 +74,7 @@ export default defineConfig({
                     item.changefreq = EnumChangefreq.MONTHLY;
                     item.lastmod = LAST_MODIFIED_DATE;
                     item.priority = .8;
-                } else if (/telefon-vergisi-hesaplayici/.test(item.url) || /konsol-vergisi-hesaplayici/.test(item.url)) {
+                } else if (/telefon-vergisi-hesaplayici/.test(item.url) || /konsol-vergisi-hesaplayici/.test(item.url) || /gumruk-vergisi/.test(item.url) || /arac-vergisi/.test(item.url)) {
                     item.changefreq = EnumChangefreq.DAILY;
                     item.lastmod = LAST_MODIFIED_DATE;
                     item.priority = .9;
