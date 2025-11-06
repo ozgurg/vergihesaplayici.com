@@ -34,7 +34,7 @@
                                 :href="API_PROVIDER_CREDIT.url.href"
                                 class="link"
                                 target="_blank"
-                                rel="noopener noreferrer">
+                                rel="nofollow noopener noreferrer">
                                 {{ API_PROVIDER_CREDIT.title }}
                             </a>
                         </b>
@@ -45,7 +45,7 @@
             <hr />
 
             <rich-text>
-                <a href="https://github.com/ozgurg" target="_blank" rel="noopener noreferrer">@ozgurg</a> tarafından AGPL-3.0 lisansı altında <a href="https://github.com/ozgurg/vergihesaplayici.com" target="_blank" rel="noopener noreferrer">açık kaynaklı</a> olarak geliştirilmektedir
+                <a href="https://github.com/ozgurg" target="_blank" rel="nofollow noopener noreferrer">@ozgurg</a> tarafından AGPL-3.0 lisansı altında <a href="https://github.com/ozgurg/vergihesaplayici.com" target="_blank" rel="nofollow noopener noreferrer">açık kaynaklı</a> olarak geliştirilmektedir
                 <br />
                 <a :href="hataBildirPage.url.href">{{ hataBildirPage.title }}</a> – v{{ VERSION }}
             </rich-text>
