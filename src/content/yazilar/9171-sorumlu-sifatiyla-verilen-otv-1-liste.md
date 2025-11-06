@@ -1,5 +1,5 @@
 ---
-title: "Sorumlu Sıfatıyla Verilen ÖTV 1. Liste Nedir?"
+title: "Sorumlu Sıfatıyla Verilen ÖTV 1. Liste [9171]"
 description: "Bilindiği gibi, ÖTV (Özel Tüketim Vergisi), Türkiye'de tüketilen bazı ürünlerin vergilendirilmesi amacıyla uygulanan bir vergidir."
 date: 2023-07-19
 ---

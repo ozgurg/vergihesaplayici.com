@@ -1,5 +1,5 @@
 ---
-title: "Şeker Kanunu İdari Para Cezası Nedir?"
+title: "Şeker Kanunu İdari Para Cezası [9315]"
 description: "Şeker Kanunu, Türkiye'de şeker üretimi, tüketimi ve ticaretini düzenleyen önemli bir mevzuattır."
 date: 2023-07-19
 ---
