@@ -63,11 +63,11 @@ export default defineConfig({
                 const LAST_MODIFIED_DATE = new Date().toDateString();
 
                 if (/yazilar/.test(item.url)) {
-                    item.changefreq = EnumChangefreq.MONTHLY;
+                    item.changefreq = EnumChangefreq.WEEKLY;
                     item.lastmod = LAST_MODIFIED_DATE;
                     item.priority = .6;
                 } else if (/hesaplayicilar/.test(item.url)) {
-                    item.changefreq = EnumChangefreq.MONTHLY;
+                    item.changefreq = EnumChangefreq.YEARLY;
                     item.lastmod = LAST_MODIFIED_DATE;
                     item.priority = .7;
                 } else if (/kdv-hesaplayici/.test(item.url) || /vergini-olustur/.test(item.url)) {
@@ -80,7 +80,7 @@ export default defineConfig({
                     item.priority = .9;
                 } else {
                     // `/`
-                    item.changefreq = EnumChangefreq.MONTHLY;
+                    item.changefreq = EnumChangefreq.WEEKLY;
                     item.lastmod = LAST_MODIFIED_DATE;
                     item.priority = 1;
                 }
