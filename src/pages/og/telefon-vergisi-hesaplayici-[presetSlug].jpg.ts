@@ -63,12 +63,12 @@ export const GET: APIRoute = async ({ params }): Promise<Response> => {
                 text-align: center;
                 border-top: 1px solid rgba(255, 255, 255, .12);
                 width: 100%;
-                height: 72px;
+                height: 80px;
                 background: rgba(0, 0, 0, .25)
             }
 
             .og-image-footer img {
-                height: 38px
+                height: 48px
             }
 
             .thumb {
@@ -89,7 +89,7 @@ export const GET: APIRoute = async ({ params }): Promise<Response> => {
                 font-family: "${fonts.interLatin700Normal.name}";
                 text-wrap: balance;
                 margin-top: 24px;
-                font-size: 40px;
+                font-size: 42px;
                 font-weight: 700
             }
 
@@ -98,10 +98,10 @@ export const GET: APIRoute = async ({ params }): Promise<Response> => {
                 margin-top: 40px;
                 padding: 4px 16px;
                 font-weight: 500;
-                border-radius: 16px;
+                border-radius: 32px;
                 background: #88df95;
                 color: #00262c;
-                font-size: 20px
+                font-size: 26px
             }
         </style>
 

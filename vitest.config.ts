@@ -23,6 +23,7 @@ export default getViteConfig({
                 "src/{pages,layouts}/**/*.astro",
                 "src/utils/thumb-loader.ts",
                 "src/utils/og-image.ts",
+                "src/utils/calculator-page-og-image.ts",
                 "src/components/go-to-calculator-button.vue",
                 "src/components/calculator-share-modal/**.vue", // Most of them
                 "src/domains/**/**.vue",

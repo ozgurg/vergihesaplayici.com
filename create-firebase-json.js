@@ -279,6 +279,11 @@ const firebaseJson = {
                 source: "/public/",
                 destination: "/",
                 type: 301
+            },
+            {
+                source: "/_nuxt/**",
+                destination: "/",
+                type: 301
             }
         ]
     }

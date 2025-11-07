@@ -2,7 +2,6 @@
 
 import type { Brand, Preset } from "@/domains/telefon-vergisi-hesaplayici/types.js";
 import type { Thumb } from "@/utils/thumb-loader.js";
-import { loadThumbs } from "@/utils/thumb-loader.js";
 import * as Apple from "@/domains/telefon-vergisi-hesaplayici/db/apple.js";
 import * as Samsung from "@/domains/telefon-vergisi-hesaplayici/db/samsung.js";
 

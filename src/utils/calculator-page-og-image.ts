@@ -1,24 +1,15 @@
-import type { APIRoute } from "astro";
+import type { CalculatorPage } from "@/types/page-def.js";
 import logoSvgBase64 from "@/assets/img/logo.svg?inline";
-import {
-    getPresetBySlug,
-    getPresetsForAllBrands,
-    getThumbByFileName
-} from "@/domains/konsol-vergisi-hesaplayici/db.js";
-import { KonsolVergisiHesaplayiciPageDef } from "@/domains/konsol-vergisi-hesaplayici/page-def.js";
 
-const page = KonsolVergisiHesaplayiciPageDef();
-
-export const GET: APIRoute = async ({ params }): Promise<Response> => {
-    const preset = getPresetBySlug(params.presetSlug as string);
-    const thumb = getThumbByFileName(preset.thumb);
-
+export const calculatorPageOgImage = async (page: CalculatorPage): Promise<Response> => {
     const {
         debug,
         size,
         fonts,
         build
     } = await ogImage();
+
+    const iconSvgColored = page.icon.replace(`fill="currentColor"`, `fill="#88df95"`);
 
     //language=HTML
     return build(`
@@ -71,60 +62,39 @@ export const GET: APIRoute = async ({ params }): Promise<Response> => {
                 height: 48px
             }
 
-            .thumb {
-                display: flex;
-                border-radius: 12px;
-                padding: 4px;
-                background: hsl(${thumb.color.hsl.h}deg, ${thumb.color.hsl.s}%, ${thumb.color.hsl.l}%);
-                width: 160px
+            .icon {
+                padding: 16px;
+                border-radius: 50rem;
+                background: rgba(136, 223, 149, .125);
+                display: flex
             }
 
-            .thumb img {
-                object-fit: contain;
-                width: 100%
+            .icon svg {
+                width: 96px;
+                height: 96px
             }
 
             .title {
-                color: hsl(${thumb.color.hsl.h}deg, 100%, 94%);
                 font-family: "${fonts.interLatin700Normal.name}";
                 text-wrap: balance;
                 margin-top: 24px;
-                font-size: 42px;
-                font-weight: 700
-            }
-
-            .calculator {
-                font-family: "${fonts.interLatin500Normal.name}";
-                margin-top: 40px;
-                padding: 4px 16px;
-                font-weight: 500;
-                border-radius: 32px;
-                background: #88df95;
-                color: #00262c;
-                font-size: 26px
+                font-size: 56px;
+                font-weight: 900
             }
         </style>
 
         <div class="og-image">
             <div class="debug"></div>
             <div class="og-image-body">
-                <div class="thumb">
-                    <img src="${thumb.base64}" width="160" />
+                <div class="icon">
+                    ${iconSvgColored}
                 </div>
-                <div class="title">${preset.pageTitle}</div>
-                <div class="calculator">${page.title}</div>
+                <!-- FIXME: The "ş" character is displayed as "NO GLYPH" -->
+                <div class="title">${page.title.replace("ş", "s")}</div>
             </div>
             <div class="og-image-footer">
                 <img src="${logoSvgBase64}" />
             </div>
         </div>
     `);
-};
-
-export const getStaticPaths = (): object => {
-    return getPresetsForAllBrands().map(_preset => ({
-        params: {
-            presetSlug: _preset.slug
-        }
-    }));
 };

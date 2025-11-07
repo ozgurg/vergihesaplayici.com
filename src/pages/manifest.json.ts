@@ -1,6 +1,5 @@
 import type { APIRoute } from "astro";
 import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
-import { staticUrl } from "@/utils/url.js";
 
 const anaSayfaPage = AnaSayfaPageDef();
 

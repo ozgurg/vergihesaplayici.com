@@ -1,6 +1,5 @@
 import type { CalculationResults, Form, ResultList, TaxItem } from "@/domains/vergini-olustur/types.js";
 import { RateType } from "@/domains/vergini-olustur/types.js";
-import { normalizePrice } from "@/utils/formatter.js";
 
 export const buildResultList = (_: Form<TaxItem>, results: CalculationResults): ResultList => {
     const { taxFees, taxRates, prices } = results;
