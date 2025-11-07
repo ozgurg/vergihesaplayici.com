@@ -81,7 +81,7 @@
 
 <script lang="ts" setup>
 import type { HSLColor } from "@/types/common.js";
-import { formatMoney } from "@/utils/formatter.js";
+import { formatMoney } from "@/utils/formatter.js"; // It should be imported since it is used inside the template
 
 // I added a minimum angle calculation to make small
 // percentages appear larger to improve the pointer's target area

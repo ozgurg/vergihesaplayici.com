@@ -1,5 +1,3 @@
-import { normalizePrice } from "@/utils/formatter.js";
-
 type CalculatorPrimitive = string | number | boolean | null | undefined;
 type CalculatorValue = CalculatorPrimitive | CalculatorValue[] | { [key: string]: CalculatorValue };
 

@@ -2,7 +2,6 @@
 
 import type { Brand, Preset } from "@/domains/konsol-vergisi-hesaplayici/types.js";
 import type { Thumb } from "@/utils/thumb-loader.js";
-import { loadThumbs } from "@/utils/thumb-loader.js";
 import * as Nintendo from "@/domains/konsol-vergisi-hesaplayici/db/nintendo.js";
 import * as Valve from "@/domains/konsol-vergisi-hesaplayici/db/valve.js";
 import * as Sony from "@/domains/konsol-vergisi-hesaplayici/db/sony.js";

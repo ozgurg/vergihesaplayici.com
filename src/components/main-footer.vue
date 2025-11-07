@@ -55,8 +55,8 @@
 
 <script lang="ts" setup>
 import type { ExchangeRates } from "@/types/common.js";
-import { formatMoney } from "@/utils/formatter.js";
-import { API_PROVIDER_CREDIT } from "@/utils/exchange-rates.js";
+import { formatMoney } from "@/utils/formatter.js"; // It should be imported since it is used inside the template
+import { API_PROVIDER_CREDIT } from "@/utils/exchange-rates.js"; // It should be imported since it is used inside the template
 import { version as VERSION } from "@root/package.json";
 import { HataBildirPageDef } from "@/domains/hata-bildir/page-def.js";
 
