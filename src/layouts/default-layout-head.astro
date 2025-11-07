@@ -71,6 +71,8 @@ const MANIFEST_JSON = staticUrl("/manifest.json");
 <meta name="apple-mobile-web-app-title" content={TITLE} />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="hgZsRnZKNf2I0PbluLfvbA" async=""></script>
+
 <script is:inline define:vars={{ SERVICE_WORKER_URL: staticUrl("/sw.js") }}>
 /* oxlint-disable no-unused-expressions */"serviceWorker"in window.navigator&&window.addEventListener("load",()=>{window.navigator.serviceWorker.register(SERVICE_WORKER_URL)});
 </script>
