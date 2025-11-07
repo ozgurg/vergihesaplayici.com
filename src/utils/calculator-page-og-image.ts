@@ -54,12 +54,12 @@ export const calculatorPageOgImage = async (page: CalculatorPage): Promise<Respo
                 text-align: center;
                 border-top: 1px solid rgba(255, 255, 255, .12);
                 width: 100%;
-                height: 72px;
+                height: 80px;
                 background: rgba(0, 0, 0, .25)
             }
 
             .og-image-footer img {
-                height: 38px
+                height: 48px
             }
 
             .icon {
