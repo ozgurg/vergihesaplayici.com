@@ -1,5 +1,5 @@
 ---
-title: "Turizm Para Cezası Nedir?"
+title: "Turizm Para Cezası [9309]"
 description: "Turizm sektörü, Türkiye'nin ekonomik büyümesinde önemli bir role sahiptir."
 date: 2023-07-18
 ---

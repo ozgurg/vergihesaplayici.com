@@ -108,6 +108,7 @@ const redirections301 = [
     ["yazilar/seker-kanunu-idari-para-cezasi-nedir", "yazilar/9315-seker-kanunu-idari-para-cezasi"],
     ["yazilar/sorumlu-sifatiyla-verilen-otv-1-liste-nedir", "yazilar/9171-sorumlu-sifatiyla-verilen-otv-1-liste"],
     ["yazilar/mera-fonu-para-cezasi-nedir", "yazilar/9341-mera-fonu-para-cezasi"],
+    ["yazilar/turizm-para-cezasi-nedir", "yazilar/9309-turizm-para-cezasi"],
 
     ["yazilar/telefon-vergisi", "telefon-vergisi-hesaplayici"],
     ["yazilar/konsol-vergisi", "konsol-vergisi-hesaplayici"],
