@@ -4,7 +4,7 @@ description: "Türkiye'de gayrimenkul sahipleri için bazı vergi ve harçlar d�
 date: 2023-07-19
 ---
 
-Türkiye'de gayrimenkul sahipleri için bazı <a href="/yazilar/vergi-yargi-harclari-nedir/">vergi ve harçlar</a> dışında, ilave olarak ödenmesi gereken bazı **ödemeler**
+Türkiye'de gayrimenkul sahipleri için bazı <a href="yazilar/1067-vergi-yargi-harclari/">vergi ve harçlar</a> dışında, ilave olarak ödenmesi gereken bazı **ödemeler**
 bulunmaktadır. Bu ödemelerden biri de **ecrimisil gelirleri**dir. Ecrimisil gelirleri, **5736 Sayılı Kanun**'a göre
 belirlenmiş olan bir ödeme türüdür.
 
@@ -23,7 +23,7 @@ Ecrimisil gelirleri, taşınmaz mal sahiplerinden **tahsil edilmekte** ve ilgili
 gelirler, kamu hizmetlerinin finansmanında kullanılmakta ve kamu yararına harcanmaktadır.
 
 Ecrimisil ödemeleri, taşınmaz mal sahipleri tarafından **düzenli olarak yapılması gereken bir yükümlülük**tür. Ecrimisil
-borçlarının zamanında ödenmemesi durumunda ise **<a hreef="/yazilar/gecikme-faizi-nedir/">gecikme faizi</a>** gibi cezalar uygulanabilmektedir.
+borçlarının zamanında ödenmemesi durumunda ise **<a hreef="/yazilar/1084-gecikme-faizi/">gecikme faizi</a>** gibi cezalar uygulanabilmektedir.
 
 Sonuç olarak, **5736 Sayılı Kanun** uyarınca tahsil edilecek ecrimisil gelirleri, taşınmaz mal sahiplerinin kamu
 hizmetlerinden kaynaklanan değer artışının bir karşılığı olarak ödenen kullanım bedelleridir. Bu ödemeler, taşınmazların
