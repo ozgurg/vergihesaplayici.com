@@ -6,6 +6,7 @@ import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
 export const KonsolVergisiHesaplayiciPageDef: CalculatorPageDef = (): CalculatorPage => {
     const parentPage = HesaplayicilarPageDef();
 
+    const id = "hesaplayici-konsol";
     const title = "Konsol Vergisi Hesaplayıcı";
     const shortTitle = "Konsol";
     const url = siteUrl("/konsol-vergisi-hesaplayici");
@@ -16,6 +17,7 @@ export const KonsolVergisiHesaplayiciPageDef: CalculatorPageDef = (): Calculator
     ];
 
     return {
+        id,
         title,
         shortTitle,
         url,
@@ -44,6 +46,7 @@ type _PageDef = (params: _Params) => Page;
 export const KonsolVergisiHesaplayiciPresetSlugPageDef: _PageDef = ({ preset, brand }): Page => {
     const parentPage = KonsolVergisiHesaplayiciPageDef();
 
+    const id = "hesaplayici-konsol-preset";
     const title = preset.pageTitle;
     const url = siteUrl(`/konsol-vergisi-hesaplayici/${preset.slug}`);
     const ogImageUrl = staticSiteUrl(`/og/konsol-vergisi-hesaplayici-${preset.slug}.jpg`);
@@ -54,6 +57,7 @@ export const KonsolVergisiHesaplayiciPresetSlugPageDef: _PageDef = ({ preset, br
     ];
 
     return {
+        id,
         title,
         url,
         breadcrumbs,

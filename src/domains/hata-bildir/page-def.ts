@@ -4,6 +4,7 @@ import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
 const parentPage = AnaSayfaPageDef();
 
 export const HataBildirPageDef: PageDef = (): Page => {
+    const id = "hata-bildir";
     const title = "Hata Bildir";
     const url = siteUrl("/hata-bildir");
     const breadcrumbs = [
@@ -12,6 +13,7 @@ export const HataBildirPageDef: PageDef = (): Page => {
     ];
 
     return {
+        id,
         title,
         url,
         breadcrumbs,

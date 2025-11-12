@@ -5,6 +5,7 @@ import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
 export const VerginiOlusturPageDef: CalculatorPageDef = (): CalculatorPage => {
     const parentPage = HesaplayicilarPageDef();
 
+    const id = "hesaplayici-vergini-olustur";
     const title = "Vergini Oluştur";
     const shortTitle = title;
     const url = siteUrl("/vergini-olustur");
@@ -15,6 +16,7 @@ export const VerginiOlusturPageDef: CalculatorPageDef = (): CalculatorPage => {
     ];
 
     return {
+        id,
         title,
         shortTitle,
         url,

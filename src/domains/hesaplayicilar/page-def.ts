@@ -4,6 +4,7 @@ import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
 const parentPage = AnaSayfaPageDef();
 
 export const HesaplayicilarPageDef: PageDef = (): Page => {
+    const id = "hesaplayicilar";
     const title = "Hesaplayıcılar";
     const url = siteUrl("/hesaplayicilar");
     const breadcrumbs = [
@@ -12,6 +13,7 @@ export const HesaplayicilarPageDef: PageDef = (): Page => {
     ];
 
     return {
+        id,
         title,
         url,
         breadcrumbs,

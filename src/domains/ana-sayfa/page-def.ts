@@ -1,6 +1,7 @@
 import type { Page, PageDef } from "@/types/page-def.js";
 
 export const AnaSayfaPageDef: PageDef = (): Page => {
+    const id = "ana-sayfa";
     const title = "Ana Sayfa";
     const url = siteUrl();
     const breadcrumbs = [
@@ -8,6 +9,7 @@ export const AnaSayfaPageDef: PageDef = (): Page => {
     ];
 
     return {
+        id,
         title,
         url,
         breadcrumbs,

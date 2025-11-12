@@ -5,6 +5,7 @@ import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
 export const KdvHesaplayiciPageDef: CalculatorPageDef = (): CalculatorPage => {
     const parentPage = HesaplayicilarPageDef();
 
+    const id = "hesaplayici-kdv";
     const title = "KDV Hesaplayıcı";
     const shortTitle = "KDV";
     const url = siteUrl("/kdv-hesaplayici");
@@ -15,6 +16,7 @@ export const KdvHesaplayiciPageDef: CalculatorPageDef = (): CalculatorPage => {
     ];
 
     return {
+        id,
         title,
         shortTitle,
         url,
