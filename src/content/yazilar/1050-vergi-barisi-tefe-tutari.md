@@ -1,6 +1,6 @@
 ---
 title: "Vergi Barışı Tefe Tutarı [1050]"
-description: "Vergi barışı, vergi mükelleflerinin vergi borçlarından kurtulmalarını sağlayan bir düzenlemedir."
+description: "Türkiye'de vergi barışı tefe tutarı, vergi borçlarının ana miktarını ifade eder ve mükelleflere borçlarını ceza ve faiz ödemeden kapatma imkanı sunar."
 date: 2023-05-17
 ---
 

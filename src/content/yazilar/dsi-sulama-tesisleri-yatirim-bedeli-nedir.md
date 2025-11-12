@@ -1,6 +1,6 @@
 ---
 title: "DSİ Sulama Tesisleri Yatırım Bedeli Nedir?"
-description: "Tarım sektörü Türkiye ekonomisi için kritik olup, verimli üretim için sulama sistemleri önemlidir."
+description: "DSİ sulama tesisleri yatırım bedeli; projenin büyüklüğü, su kaynağı, teknik sistemler ve coğrafi koşullara göre değişen tarımsal bir yatırım maliyetidir."
 date: 2023-07-19
 ---
 

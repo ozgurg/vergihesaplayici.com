@@ -1,6 +1,6 @@
 ---
 title: "Tekel Safi Hasılat Nedir?"
-description: "Tekel safi hasılatı, Türkiye'de vergi sisteminde önemli bir kavramdır."
+description: "Tekel safi hasılatı, Türkiye'de tekel ürünlerinin satışından elde edilen geliri ifade eder ve vergi politikalarıyla devlet bütçesine katkı sağlar."
 date: 2023-06-06
 ---
 

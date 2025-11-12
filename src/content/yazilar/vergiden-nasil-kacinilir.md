@@ -1,6 +1,6 @@
 ---
 title: "Vergiden Nasıl Kaçınılır?"
-description: "Vergi, bir devletin bütçesini finanse etmek için topladığı önemli bir gelir kaynağıdır."
+description: "Meşru vergi planlaması, teşvikler, avantajlı yatırımlar ve doğru beyanla vergi yükünü azaltır; vergi kaçakçılığı yasa dışıdır, cezaları ağırdır."
 date: 2023-04-27
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Eğitim, Gençlik, Spor ve Sağlık Hizmetleri Vergisi [1013]"
-description: "Türkiye, kamu hizmetlerini finanse etmek için çeşitli vergi türlerine başvurmaktadır."
+description: "Türkiye'de EGSHV, eğitim, gençlik, spor ve sağlık hizmetlerini finanse ederek altyapıyı güçlendirir ve hizmet kalitesini artırır."
 date: 2023-05-18
 ---
 

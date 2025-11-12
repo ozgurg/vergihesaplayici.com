@@ -1,6 +1,6 @@
 ---
 title: "5254 Sayılı Kanuna Göre Muhtaç Çiftçilere Verilen Ödünç Tohumlukların Hazine Alacağına Dönüşenler Nedir?"
-description: "Türkiye'de tarım sektörü, kırsal kalkınmayı destekleyen, gıda güvenliğini sağlayan ve ekonomik büyümenin temel taşlarından biri olarak önem taşır."
+description: "5254 Sayılı Kanun ile Türkiye'de muhtaç çiftçilere verilen ödünç tohumluklar, tarımsal üretimi destekler ve borç ödenmezse hazine alacağına dönüşür."
 date: 2023-07-19
 ---
 
