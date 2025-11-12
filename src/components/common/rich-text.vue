@@ -108,14 +108,19 @@ const props = withDefaults(defineProps<Props>(), {
                 padding-inline: var(--vh-spacer)
             }
         }
-        border: var(--vh-border-inline-size) solid hsla(var(--vh-clr-border-hsl), var(--vh-clr-border-alpha));
-        inline-size: 100%;
         table-layout: auto;
         vertical-align: top;
         caption-side: bottom;
         border-collapse: collapse;
+        border: var(--vh-border-inline-size) solid hsla(var(--vh-clr-border-hsl), var(--vh-clr-border-alpha));
+        inline-size: calc(100% + (var(--container-padding-inline) * 2));
+        margin-inline: calc(var(--container-padding-inline) * -1);
         @include vh-media-breakpoint-down(sm) {
-            margin-inline: calc(var(--container-padding-inline) * -1)
+            border-inline: 0
+        }
+        @include vh-media-breakpoint-up(sm) {
+            inline-size: calc(100% + (var(--vh-spacer) * 2));
+            margin-inline: calc(var(--vh-spacer) * -1)
         }
         thead {
             background: hsla(var(--vh-clr-white-hsl), .08);
