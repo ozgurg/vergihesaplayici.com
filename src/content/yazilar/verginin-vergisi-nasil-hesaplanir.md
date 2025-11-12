@@ -15,7 +15,7 @@ Verginin vergisi oranı, her yıl Bakanlar Kurulu tarafından belirlenir. 2021 y
 belirlenmiştir. Örneğin, bir şirketin 2021 yılında elde ettiği brüt kazançı **1.000.000 TL** olsun ve kurumlar vergisi
 oranı **%22** olsun. Bu durumda, şirketin ödeyeceği kurumlar vergisi tutarı **220.000 TL** olacaktır. Daha sonra,
 verginin vergisi oranı olan **%5** de hesaba katılarak, şirketin ödeyeceği verginin vergisi tutarı **11.000 TL**
-olacaktır. Böylece, toplam <a href="/yazilar/vergi-yuku-nedir/">vergi yükü</a> **231.000 TL** olacaktır.
+olacaktır. Böylece, toplam vergi yükü **231.000 TL** olacaktır.
 
 Verginin vergisi hesaplaması, **kurumlar vergisi** beyannamesi üzerinden yapılır. Beyanname üzerindeki ilgili
 kutucuklara, şirketin **brüt kazancı** ve **kurumlar vergisi tutarı** yazılarak verginin vergisi hesaplanır.

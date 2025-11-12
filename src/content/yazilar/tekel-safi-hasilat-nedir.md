@@ -15,7 +15,7 @@ vergilendirilir.
 üretimini kontrol ederek, satışlarını düzenler ve vergileri toplar. Bu sayede devlet, tekel ürünlerinden elde edilen
 gelirleri kamu harcamalarında kullanabilir.
 
-**Tekel safi hasılatı**, vergi politikalarının önemli bir bileşenidir. Ürünlerin tüketici üzerindeki <a href="/yazilar/vergi-yuku-nedir/">vergi yükü</a>, tekel
+**Tekel safi hasılatı**, vergi politikalarının önemli bir bileşenidir. Ürünlerin tüketici üzerindeki vergi yükü, tekel
 safi hasılatının düzenlenmesiyle belirlenir. Vergi oranlarının ayarlanmasıyla, tüketimin kontrol altına alınması ve
 vergi gelirlerinin artırılması hedeflenir.
 
