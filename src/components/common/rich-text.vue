@@ -80,11 +80,13 @@ const props = withDefaults(defineProps<Props>(), {
 
 
     // Heading
+    :deep(h1),
     :deep(h2),
     :deep(h3),
     :deep(h4),
     :deep(h5),
     :deep(h6) {
+        text-wrap: pretty;
         margin-block-end: calc(var(--vh-spacer) * .5)
     }
     :deep(h2) {
