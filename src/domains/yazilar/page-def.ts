@@ -19,7 +19,7 @@ export const YazilarPageDef: PageDef = (): Page => {
         url,
         breadcrumbs,
         head: {
-            title,
+            title: `${title} - %site-title%`,
             description: "Vergiler hakkında rehber ve güncel bilgiler için doğru adrestesiniz. Makalelerimiz ve ipuçlarımızla vergi yükümlülüklerinizi kolayca anlayın.",
             canonicalUrl: url,
             ogImageUrl: null
@@ -48,7 +48,7 @@ export const YazilarSlugPageDef: _PageDef = ({ yazi }): Page => {
         url,
         breadcrumbs,
         head: {
-            title,
+            title: `${title} - %site-title%`,
             description: yazi.description,
             canonicalUrl: url,
             ogImageUrl: null

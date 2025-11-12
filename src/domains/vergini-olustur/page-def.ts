@@ -23,7 +23,7 @@ export const VerginiOlusturPageDef: CalculatorPageDef = (): CalculatorPage => {
         breadcrumbs,
         icon,
         head: {
-            title,
+            title: `${title} - %site-title%`,
             description: "Kendi vergi oranlarınızı ekleyip çıkararak net vergi miktarını hızlıca hesaplayabileceğiniz, pratik ve kullanıcı dostu bir vergi hesaplayıcı.",
             canonicalUrl: url,
             ogImageUrl

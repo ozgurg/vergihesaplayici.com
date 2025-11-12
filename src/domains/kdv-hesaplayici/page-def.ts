@@ -23,7 +23,7 @@ export const KdvHesaplayiciPageDef: CalculatorPageDef = (): CalculatorPage => {
         breadcrumbs,
         icon,
         head: {
-            title,
+            title: `${title} - %site-title%`,
             description: "Katma Değer Vergisi (KDV) Hesaplayıcı aracını KDV hariç fiyattan KDV dahil fiyatı veya KDV dahil fiyattan KDV hariç fiyatı hesaplamak için kullanabilirsiniz.",
             canonicalUrl: url,
             ogImageUrl

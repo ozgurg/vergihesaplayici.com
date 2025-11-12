@@ -24,7 +24,7 @@ export const TelefonVergisiHesaplayiciPageDef: CalculatorPageDef = (): Calculato
         breadcrumbs,
         icon,
         head: {
-            title,
+            title: `${title} - %site-title%`,
             description: "Telefon Vergisi Hesaplayıcı ile ÖTV dahil tüm vergileri hesaplayın, vergisiz fiyatı görün ve yurt içi-yurt dışı fiyatları karşılaştırın.",
             canonicalUrl: url,
             ogImageUrl
@@ -62,7 +62,7 @@ export const TelefonVergisiHesaplayiciPresetSlugPageDef: _PageDef = ({ preset, b
         url,
         breadcrumbs,
         head: {
-            title,
+            title: `${title} - ${parentPage.title}`,
             description: preset.pageDescription,
             canonicalUrl: url,
             ogImageUrl

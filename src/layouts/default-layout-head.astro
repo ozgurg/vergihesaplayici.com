@@ -1,8 +1,6 @@
 ---
 import type { Page } from "@/types/page-def.js";
 
-const MAX_TITLE_LENGTH = 60;
-
 export type Props = {
     page: Page
 };
@@ -10,13 +8,7 @@ const { page } = Astro.props;
 const { head } = page;
 
 const SITE_NAME = "Vergi Hesaplayıcı";
-
-let title = head.title ? `${head.title} - ${SITE_NAME}` : SITE_NAME;
-if (page.id === "yazilar-slug" && head.title && title.length > MAX_TITLE_LENGTH) {
-    title = head.title;
-}
-const TITLE = title;
-
+const TITLE = head.title.replace("%site-title%", SITE_NAME);
 const DESCRIPTION = head.description;
 const THEME_COLOR = "#111912"; // Calculated start color of `page-header`s linear-gradient
 const CREATOR = "@ozgurg0";

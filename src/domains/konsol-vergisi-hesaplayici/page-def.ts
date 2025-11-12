@@ -24,7 +24,7 @@ export const KonsolVergisiHesaplayiciPageDef: CalculatorPageDef = (): Calculator
         breadcrumbs,
         icon,
         head: {
-            title,
+            title: `${title} - %site-title%`,
             description: "Satın aldığınız bir oyun konsolunun yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
             canonicalUrl: url,
             ogImageUrl
@@ -62,7 +62,7 @@ export const KonsolVergisiHesaplayiciPresetSlugPageDef: _PageDef = ({ preset, br
         url,
         breadcrumbs,
         head: {
-            title,
+            title: `${title} - ${parentPage.title}`,
             description: preset.pageDescription,
             canonicalUrl: url,
             ogImageUrl

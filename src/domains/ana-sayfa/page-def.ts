@@ -14,7 +14,7 @@ export const AnaSayfaPageDef: PageDef = (): Page => {
         url,
         breadcrumbs,
         head: {
-            title: null,
+            title: "%site-title%",
             description: "vergihesaplayici.com, Telefon Vergisi, Konsol Vergisi ve KDV gibi vergi hesaplayıcıları barındıran bir vergi hesaplayıcıdır.",
             canonicalUrl: url,
             ogImageUrl: null
