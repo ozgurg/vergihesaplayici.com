@@ -64,14 +64,14 @@ const props = withDefaults(defineProps<Props>(), {
     // Inline
     :deep(b),
     :deep(strong) {
-        font-weight: 700
+        font-weight: var(--vh-fw-bold)
     }
     :deep(em),
     :deep(i) {
         font-style: italic
     }
     :deep(u) {
-        text-underline-offset: .25rem
+        text-underline-offset: calc(var(--vh-spacer) * .25)
     }
     :deep(a) {
         color: var(--_link-color);
@@ -91,11 +91,11 @@ const props = withDefaults(defineProps<Props>(), {
     }
     :deep(h2) {
         font-size: var(--vh-fs-lg);
-        font-weight: 600
+        font-weight: var(--vh-fw-semibold)
     }
     :deep(h3) {
         font-size: var(--vh-fs-md);
-        font-weight: 600
+        font-weight: var(--vh-fw-semibold)
     }
 
 
@@ -109,7 +109,7 @@ const props = withDefaults(defineProps<Props>(), {
             }
         }
         border: var(--vh-border-inline-size) solid hsla(var(--vh-clr-border-hsl), var(--vh-clr-border-alpha));
-        width: 100%;
+        inline-size: 100%;
         table-layout: auto;
         vertical-align: top;
         caption-side: bottom;
@@ -158,7 +158,7 @@ const props = withDefaults(defineProps<Props>(), {
         @include vh-squircle(0 var(--vh-br-normal) var(--vh-br-normal) 0);
         margin-block-end: calc(var(--vh-spacer) * 2);
         padding: var(--vh-spacer);
-        border-left: .25rem solid var(--vh-clr-primary);
+        border-inline-start: calc(var(--vh-spacer) * .25) solid var(--vh-clr-primary);
         background: hsla(var(--vh-clr-white-hsl), .12)
     }
 }
