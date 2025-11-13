@@ -2,15 +2,29 @@
     <nav
         ref="breadcrumbsEl"
         class="breadcrumbs">
-        <ol>
+        <ol
+            :itemscope="true"
+            itemtype="https://schema.org/BreadcrumbList">
             <template v-for="(_item, _index) in items" :key="_index">
-                <li :aria-current="isLastItem(_index) ? 'page' : 'false'">
+                <li
+                    :aria-current="isLastItem(_index) ? 'page' : 'false'"
+                    :itemscope="true"
+                    itemprop="itemListElement"
+                    itemtype="https://schema.org/ListItem">
                     <template v-if="isLastItem(_index)">
-                        <span>{{ _item.title }}</span>
+                        <span itemprop="name">{{ _item.title }}</span>
+                        <meta
+                            :content="String(_index + 1)"
+                            itemprop="position" />
                     </template>
                     <template v-else>
-                        <a :href="_item.url.href">
-                            {{ _item.title }}
+                        <a
+                            :href="_item.url.href"
+                            itemprop="item">
+                            <span itemprop="name">{{ _item.title }}</span>
+                            <meta
+                                :content="String(_index + 1)"
+                                itemprop="position" />
                         </a>
                     </template>
                 </li>
@@ -82,8 +96,8 @@ onBeforeMount(() => nextTick(() => {
                     --text-alpha: .75
                 }
             }
-            a,
-            span {
+            & > a,
+            & > span {
                 --_text-hsl: var(--text-hsl, var(--vh-clr-white-hsl));
                 --_text-alpha: var(--text-alpha, 1);
                 --_bg-hsl: var(--_text-hsl);
