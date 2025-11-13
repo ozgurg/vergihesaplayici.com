@@ -1,6 +1,6 @@
 ---
 title: "Vergi Ödemek Zorunda Mıyız?"
-description: "Vergi ödemek, vatandaşların yasal yükümlülüğüdür ve kamu hizmetlerinin finansmanına katkı sağlar."
+description: "Vergi ödemek, kamu hizmetlerini finanse eden yasal bir yükümlülüktür. Vergi kaçırma suçtur; cezalar ve uygulama yöntemleri hakkında bilgi edinin."
 date: 2023-05-04
 ---
 

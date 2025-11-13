@@ -1,6 +1,6 @@
 ---
 title: "Gelir Vergisi Mükellefleri Talih Oyunları Asgari Vergisi [0048]"
-description: "Talih oyunları, insanların şanslarını deneyerek para kazanma umuduyla katıldıkları oyunlardır."
+description: "Talih oyunlarında kazanılan tutar, Türkiye'de %20 asgari vergiye tabidir; bu vergi, kazançların vergilendirilmesini ve vergi uyumunu sağlar."
 date: 2023-05-14
 ---
 

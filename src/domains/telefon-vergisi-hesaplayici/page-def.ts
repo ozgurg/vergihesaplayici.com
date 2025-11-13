@@ -6,6 +6,7 @@ import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
 export const TelefonVergisiHesaplayiciPageDef: CalculatorPageDef = (): CalculatorPage => {
     const parentPage = HesaplayicilarPageDef();
 
+    const id = "hesaplayici-telefon";
     const title = "Telefon Vergisi Hesaplayıcı";
     const shortTitle = "Telefon";
     const url = siteUrl("/telefon-vergisi-hesaplayici");
@@ -16,13 +17,14 @@ export const TelefonVergisiHesaplayiciPageDef: CalculatorPageDef = (): Calculato
     ];
 
     return {
+        id,
         title,
         shortTitle,
         url,
         breadcrumbs,
         icon,
         head: {
-            title,
+            title: `${title} - %site-title%`,
             description: "Telefon Vergisi Hesaplayıcı ile ÖTV dahil tüm vergileri hesaplayın, vergisiz fiyatı görün ve yurt içi-yurt dışı fiyatları karşılaştırın.",
             canonicalUrl: url,
             ogImageUrl
@@ -44,6 +46,7 @@ type _PageDef = (params: _Params) => Page;
 export const TelefonVergisiHesaplayiciPresetSlugPageDef: _PageDef = ({ preset, brand }): Page => {
     const parentPage = TelefonVergisiHesaplayiciPageDef();
 
+    const id = "hesaplayici-telefon-preset";
     const title = preset.pageTitle;
     const url = siteUrl(`/telefon-vergisi-hesaplayici/${preset.slug}`);
     const ogImageUrl = staticSiteUrl(`/og/telefon-vergisi-hesaplayici-${preset.slug}.jpg`);
@@ -54,11 +57,12 @@ export const TelefonVergisiHesaplayiciPresetSlugPageDef: _PageDef = ({ preset, b
     ];
 
     return {
+        id,
         title,
         url,
         breadcrumbs,
         head: {
-            title,
+            title: `${title} - ${parentPage.title}`,
             description: preset.pageDescription,
             canonicalUrl: url,
             ogImageUrl

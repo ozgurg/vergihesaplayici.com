@@ -14,7 +14,7 @@ Bu kanunla yapılan değişiklikler özetle şu şekildedir:
 
 ### 1. **Kağıt Tanımının Genişletilmesi**
 
-5035 sayılı Kanun, “kağıt” kavramını genişleterek **yalnızca fiziksel belgeleri değil, elektronik ortamda düzenlenen
+5035 sayılı Kanun, "kağıt" kavramını genişleterek **yalnızca fiziksel belgeleri değil, elektronik ortamda düzenlenen
 belgeleri de** damga vergisi kapsamına aldı.
 
 > Artık e-imzalı sözleşmeler, elektronik faturalar ve benzeri dijital belgeler de damga vergisine tabi olabilir.

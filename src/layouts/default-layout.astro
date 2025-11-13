@@ -1,5 +1,5 @@
 ---
-import type { Head } from "@/types/common.js";
+import type { Page } from "@/types/page-def.js";
 
 // oxlint-disable-next-line no-unassigned-import
 import "@/assets/css/style.scss";
@@ -11,9 +11,9 @@ import MainBody from "@/components/main-body.vue";
 import MainFooter from "@/components/main-footer.vue";
 
 export type Props = {
-    head: Head;
+    page: Page;
 };
-const { head } = Astro.props;
+const { page } = Astro.props;
 
 const EXCHANGE_RATES = getExchangeRates();
 const BASE_URL = siteUrl();
@@ -25,7 +25,7 @@ const BASE_URL = siteUrl();
     lang="tr"
     dir="ltr">
 <head>
-    <DefaultLayoutHead head={head} />
+    <DefaultLayoutHead page={page} />
     <Tinyadz />
 </head>
 <body>

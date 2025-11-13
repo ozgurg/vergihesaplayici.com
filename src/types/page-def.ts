@@ -9,6 +9,7 @@ export type Breadcrumbs = BreadcrumbItem[];
 
 
 export type Page = {
+    id: Lowercase<string>;
     title: string;
     url: ReturnType<typeof siteUrl>;
     breadcrumbs: Breadcrumbs;

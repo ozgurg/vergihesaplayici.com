@@ -5,6 +5,7 @@ import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
 export const AracVergisiPageDef: CalculatorPageDef = (): CalculatorPage => {
     const parentPage = HesaplayicilarPageDef();
 
+    const id = "hesaplayici-arac";
     const title = "Araç Vergisi Hesaplayıcı";
     const shortTitle = "Araç";
     const url = siteUrl("/arac-vergisi");
@@ -15,13 +16,14 @@ export const AracVergisiPageDef: CalculatorPageDef = (): CalculatorPage => {
     ];
 
     return {
+        id,
         title,
         shortTitle,
         url,
         breadcrumbs,
         icon,
         head: {
-            title,
+            title: `${title} - %site-title%`,
             description: "Sıfır araç fiyatına göre ÖTV ve KDV tutarını hesaplayın. Araç vergisi hesaplama aracı ile 2025'te toplam maliyeti anında görün.",
             canonicalUrl: url,
             ogImageUrl

@@ -6,6 +6,7 @@ import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
 export const KonsolVergisiHesaplayiciPageDef: CalculatorPageDef = (): CalculatorPage => {
     const parentPage = HesaplayicilarPageDef();
 
+    const id = "hesaplayici-konsol";
     const title = "Konsol Vergisi Hesaplayıcı";
     const shortTitle = "Konsol";
     const url = siteUrl("/konsol-vergisi-hesaplayici");
@@ -16,13 +17,14 @@ export const KonsolVergisiHesaplayiciPageDef: CalculatorPageDef = (): Calculator
     ];
 
     return {
+        id,
         title,
         shortTitle,
         url,
         breadcrumbs,
         icon,
         head: {
-            title,
+            title: `${title} - %site-title%`,
             description: "Satın aldığınız bir oyun konsolunun yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
             canonicalUrl: url,
             ogImageUrl
@@ -44,6 +46,7 @@ type _PageDef = (params: _Params) => Page;
 export const KonsolVergisiHesaplayiciPresetSlugPageDef: _PageDef = ({ preset, brand }): Page => {
     const parentPage = KonsolVergisiHesaplayiciPageDef();
 
+    const id = "hesaplayici-konsol-preset";
     const title = preset.pageTitle;
     const url = siteUrl(`/konsol-vergisi-hesaplayici/${preset.slug}`);
     const ogImageUrl = staticSiteUrl(`/og/konsol-vergisi-hesaplayici-${preset.slug}.jpg`);
@@ -54,11 +57,12 @@ export const KonsolVergisiHesaplayiciPresetSlugPageDef: _PageDef = ({ preset, br
     ];
 
     return {
+        id,
         title,
         url,
         breadcrumbs,
         head: {
-            title,
+            title: `${title} - ${parentPage.title}`,
             description: preset.pageDescription,
             canonicalUrl: url,
             ogImageUrl

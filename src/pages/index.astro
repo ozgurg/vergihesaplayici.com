@@ -24,7 +24,7 @@ const yazilar = (await getYazilar()).slice(0, 8);
 const yazilarForArticlesGrid = mapYazilarForArticlesGridComponent(yazilar);
 ---
 
-<DefaultLayout head={anaSayfaPage.head}>
+<DefaultLayout page={anaSayfaPage}>
     <section class="hero">
         <PageHeader>
             <Container>

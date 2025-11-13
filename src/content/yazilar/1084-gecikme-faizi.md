@@ -1,6 +1,6 @@
 ---
 title: "Gecikme Faizi [1084]"
-description: "Gecikme faizi, borcun zamanında ödenmediği durumlarda uygulanan bir tür cezai faizdir."
+description: "Türkiye'de gecikme faizi, borcun zamanında ödenmemesi durumunda uygulanır ve alacaklıyı koruyarak borçluyu ödeme yapmaya teşvik eder."
 date: 2023-07-12
 ---
 

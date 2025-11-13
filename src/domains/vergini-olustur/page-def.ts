@@ -5,6 +5,7 @@ import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
 export const VerginiOlusturPageDef: CalculatorPageDef = (): CalculatorPage => {
     const parentPage = HesaplayicilarPageDef();
 
+    const id = "hesaplayici-vergini-olustur";
     const title = "Vergini Oluştur";
     const shortTitle = title;
     const url = siteUrl("/vergini-olustur");
@@ -15,13 +16,14 @@ export const VerginiOlusturPageDef: CalculatorPageDef = (): CalculatorPage => {
     ];
 
     return {
+        id,
         title,
         shortTitle,
         url,
         breadcrumbs,
         icon,
         head: {
-            title,
+            title: `${title} - %site-title%`,
             description: "Kendi vergi oranlarınızı ekleyip çıkararak net vergi miktarını hızlıca hesaplayabileceğiniz, pratik ve kullanıcı dostu bir vergi hesaplayıcı.",
             canonicalUrl: url,
             ogImageUrl

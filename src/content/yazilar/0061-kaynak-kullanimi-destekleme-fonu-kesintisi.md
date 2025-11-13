@@ -1,6 +1,6 @@
 ---
 title: "Kaynak Kullanımı Destekleme Fonu Kesintisi [0061]"
-description: "Türkiye'nin enerji sektörü, ekonomik büyüme ve kalkınma için hayati bir rol oynamaktadır."
+description: "Türkiye'de KKDF ve KKDF kesintisi, enerji verimliliğini artırmak, yenilenebilir projeleri desteklemek ve sürdürülebilirliği sağlamak için uygulanır."
 date: 2023-05-18
 ---
 

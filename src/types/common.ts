@@ -25,7 +25,7 @@ export type RGBColor = { r: number; g: number; b: number };
 
 
 export type Head = {
-    title: string | null;
+    title: string;
     description: string;
     canonicalUrl: URL;
     ogImageUrl: ReturnType<typeof staticSiteUrl> | null;

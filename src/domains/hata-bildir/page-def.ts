@@ -4,6 +4,7 @@ import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
 const parentPage = AnaSayfaPageDef();
 
 export const HataBildirPageDef: PageDef = (): Page => {
+    const id = "hata-bildir";
     const title = "Hata Bildir";
     const url = siteUrl("/hata-bildir");
     const breadcrumbs = [
@@ -12,11 +13,12 @@ export const HataBildirPageDef: PageDef = (): Page => {
     ];
 
     return {
+        id,
         title,
         url,
         breadcrumbs,
         head: {
-            title,
+            title: `${title} - %site-title%`,
             description: "vergihesaplayici.com'daki hesaplayıcılarda tespit ettiğiniz hataları bildirerek düzeltilmesine katkı sağlayın.",
             canonicalUrl: url,
             ogImageUrl: null

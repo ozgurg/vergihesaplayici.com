@@ -20,11 +20,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 <style lang="scss" scoped>
 .heading-3 {
-    font-size: var(--vh-fs-md);
-    font-weight: var(--vh-fw-medium);
-    display: flex;
-    align-items: center;
-    margin-block-end: var(--vh-spacer);
-    gap: calc(var(--vh-spacer) * .75)
+    @include vh-heading-3;
+    margin-block-end: var(--vh-spacer)
 }
 </style>

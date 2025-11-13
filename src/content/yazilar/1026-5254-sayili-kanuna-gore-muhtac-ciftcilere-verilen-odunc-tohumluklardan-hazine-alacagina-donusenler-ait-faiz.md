@@ -1,6 +1,6 @@
 ---
 title: "5254 Sayılı Kanuna Göre Muhtaç Çiftçilere Verilen Ödünç Tohumluklardan Hazine Alacağına Dönüşenler Ait Faiz [1026]"
-description: "Türkiye'de tarım sektörü, ülkenin ekonomik ve sosyal yapısında önemli bir yere sahiptir."
+description: "5254 Sayılı Kanun kapsamında muhtaç çiftçilere verilen ödünç tohumluklar, geri ödemeyi teşvik ederek tarımsal üretimi destekler."
 date: 2023-07-26
 ---
 

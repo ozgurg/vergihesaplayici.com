@@ -1,6 +1,6 @@
 ---
 title: "Kolalı Gazoz, Alkollü İçecekler ve Tütün Mamüllerine İlişkin Özel Tüketim Vergisi [0073]"
-description: "Özel Tüketim Vergisi (ÖTV), Türkiye'de farklı ürünler için uygulanan bir vergi türüdür."
+description: "Türkiye'de Özel Tüketim Vergisi (ÖTV), kolalı gazoz, alkollü içecek ve tütün ürünlerinde uygulanır, tüketimi düzenler ve devlet gelirlerini artırır."
 date: 2023-06-06
 ---
 

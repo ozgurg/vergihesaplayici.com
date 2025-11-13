@@ -48,7 +48,7 @@ export default defineConfig({
         extractColorFromThumbsIntegration(),
         astroCompressIntegration({
             CSS: true,
-            HTML: true,
+            HTML: false, // Setting this to `true` somehow breaks the `.modal` `@starting-style` definition
             Image: true,
             JavaScript: true,
             SVG: false,

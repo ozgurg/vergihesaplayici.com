@@ -1,6 +1,6 @@
 ---
 title: "Trafik Muayenesi Para Cezaları [1037]"
-description: "Trafik güvenliği, toplumda yaşayan herkesin hayatını etkileyen önemli bir konudur."
+description: "Trafik muayenesi, araçların güvenliğini kontrol eder. Muayene yaptırmayan veya eksik olanlara para cezası uygulanır."
 date: 2023-05-18
 ---
 

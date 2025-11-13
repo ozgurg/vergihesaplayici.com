@@ -1,16 +1,27 @@
 ---
-import type { Head } from "@/types/common.js";
+import type { Page } from "@/types/page-def.js";
+
+const MAX_TITLE_LENGTH = 60;
 
 export type Props = {
-    head: Head;
+    page: Page
 };
-const { head } = Astro.props;
+const { page } = Astro.props;
+const { head } = page;
 
 const SITE_NAME = "Vergi Hesaplayıcı";
-const TITLE = head.title ? `${head.title} - ${SITE_NAME}` : SITE_NAME;
+
+let TITLE;
+const titleWithSiteName = head.title.replace("%site-title%", SITE_NAME);
+if (titleWithSiteName.length > MAX_TITLE_LENGTH) {
+    TITLE = head.title.split(" - ")[0];
+} else {
+    TITLE = titleWithSiteName;
+}
+
 const DESCRIPTION = head.description;
 const THEME_COLOR = "#111912"; // Calculated start color of `page-header`s linear-gradient
-const CREATOR = "@ozgurg0";
+const X_CREATOR = "@vergihesaplar";
 const BASE_URL = siteUrl();
 const PAGE_URL = head.canonicalUrl;
 const OG_IMAGE = head.ogImageUrl ?? staticSiteUrl("/og/ana-sayfa.jpg");
@@ -44,7 +55,7 @@ const MANIFEST_JSON = staticUrl("/manifest.json");
 <meta name="twitter:url" content={PAGE_URL.href} />
 <meta name="twitter:image" content={OG_IMAGE.href} />
 <meta name="twitter:image:alt" content={TITLE} />
-<meta name="twitter:creator" content={CREATOR} />
+<meta name="twitter:creator" content={X_CREATOR} />
 
 <meta name="author" content={SITE_NAME} />
 <meta property="og:title" content={TITLE} />
@@ -71,7 +82,7 @@ const MANIFEST_JSON = staticUrl("/manifest.json");
 <meta name="apple-mobile-web-app-title" content={TITLE} />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
-<script src="https://analytics.ahrefs.com/analytics.js" data-key="hgZsRnZKNf2I0PbluLfvbA" async=""></script>
+<script is:inline src="https://analytics.ahrefs.com/analytics.js" data-key="hgZsRnZKNf2I0PbluLfvbA" async=""></script>
 
 <script is:inline define:vars={{ SERVICE_WORKER_URL: staticUrl("/sw.js") }}>
 /* oxlint-disable no-unused-expressions */"serviceWorker"in window.navigator&&window.addEventListener("load",()=>{window.navigator.serviceWorker.register(SERVICE_WORKER_URL)});

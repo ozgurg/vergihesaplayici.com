@@ -15,6 +15,10 @@
     }
 }
 
+:root {
+    interpolate-size: allow-keywords
+}
+
 html {
     font-size: 16px;
     quotes: "“" "”";
@@ -135,4 +139,14 @@ fieldset {
 
 :focus {
     @include vh-clear-focus-appearance
+}
+
+details {
+    & > summary {
+        list-style: none
+    }
+    & > summary::marker,
+    & > summary::-webkit-details-marker {
+        display: none
+    }
 }

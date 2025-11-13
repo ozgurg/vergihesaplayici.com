@@ -58,7 +58,7 @@ const parseTitleAsTaxInfo = (title: string): { name: string, code: string } | fa
 const taxInfo = parseTitleAsTaxInfo(yazi.title);
 ---
 
-<DefaultLayout head={yazilarSlugPage.head}>
+<DefaultLayout page={yazilarSlugPage}>
     <PageHeader>
         <Container>
             <Breadcrumbs
@@ -125,7 +125,7 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
 
 <style lang="scss">
     .content {
-        line-height: var(--vh-lh-xl)
+        --line-height-p: var(--vh-lh-xl)
     }
 
     .publish-date {
@@ -133,3 +133,36 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
         font-size: var(--vh-fs-base)
     }
 </style>
+
+<script type="module">
+    document.addEventListener("DOMContentLoaded", () => {
+        const detailsList = document.querySelectorAll("details");
+        if (detailsList.length === 0) return;
+
+        const faqData = {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": []
+        };
+
+        for (const _details of detailsList) {
+            const question = _details.querySelector("summary")?.textContent.trim();
+            const answer = _details.querySelector("div")?.textContent.trim();
+            if (question || !answer) {
+                faqData.mainEntity.push({
+                    "@type": "Question",
+                    "name": question,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": answer
+                    }
+                });
+            }
+        }
+
+        const script = document.createElement("script");
+        script.type = "application/ld+json";
+        script.textContent = JSON.stringify(faqData, null, 0);
+        document.head.append(script);
+    });
+</script>

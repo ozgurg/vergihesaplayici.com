@@ -1,6 +1,6 @@
 ---
 title: "Vergi Oranı Nasıl Hesaplanır?"
-description: "Vergi oranı, bir ülkenin veya bölgenin belirli bir faaliyet veya mal/hizmet üzerinden tahsil ettiği vergi miktarının, o faaliyet veya mal/hizmetin toplam değerine oranlanarak belirlenen bir orandır."
+description: "Vergi oranı, bir ülkenin belirli bir faaliyet veya mal/hizmetten tahsil ettiği verginin, o faaliyetin veya malın değerine oranıdır."
 date: 2023-05-04
 ---
 

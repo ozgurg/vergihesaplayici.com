@@ -1,6 +1,6 @@
 ---
 title: "Damga Vergisi (Beyannameli Damga Vergisi Mükellefi) [0040]"
-description: "Damga vergisi, Türkiye'de hemen hemen her türlü belgeye uygulanan bir vergi türüdür."
+description: "Damga vergisi, Türkiye'de sözleşme, fatura, senet ve benzeri belgeler üzerinden alınan bir vergi türüdür ve beyannameli mükellefler tarafından ödenir."
 date: 2023-05-13
 ---
 

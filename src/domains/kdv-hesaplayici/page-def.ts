@@ -5,6 +5,7 @@ import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
 export const KdvHesaplayiciPageDef: CalculatorPageDef = (): CalculatorPage => {
     const parentPage = HesaplayicilarPageDef();
 
+    const id = "hesaplayici-kdv";
     const title = "KDV Hesaplayıcı";
     const shortTitle = "KDV";
     const url = siteUrl("/kdv-hesaplayici");
@@ -15,13 +16,14 @@ export const KdvHesaplayiciPageDef: CalculatorPageDef = (): CalculatorPage => {
     ];
 
     return {
+        id,
         title,
         shortTitle,
         url,
         breadcrumbs,
         icon,
         head: {
-            title,
+            title: `${title} - %site-title%`,
             description: "Katma Değer Vergisi (KDV) Hesaplayıcı aracını KDV hariç fiyattan KDV dahil fiyatı veya KDV dahil fiyattan KDV hariç fiyatı hesaplamak için kullanabilirsiniz.",
             canonicalUrl: url,
             ogImageUrl

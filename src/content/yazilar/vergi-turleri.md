@@ -1,6 +1,6 @@
 ---
 title: "Vergi Türleri"
-description: "Çok fazla olan vergi türleri kodlaryla bu sayfada bulunuyor."
+description: "Türkiye'deki vergi türleri tablosu, gelir, harcama ve servet üzerinden alınan vergileri özetleyerek vergi sisteminin genel yapısını gösterir."
 date: 2023-05-13
 ---
 
