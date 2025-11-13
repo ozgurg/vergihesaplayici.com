@@ -21,22 +21,33 @@ const props = withDefaults(defineProps<Props>(), {
 <style lang="scss" scoped>
 .rich-text {
     --_link-color: var(--link-color, var(--vh-clr-primary));
-    line-height: var(--vh-lh-lg);
+    --_line-height-p: var(--line-height-p, var(--vh-lh-lg));
+    line-height: var(--vh-lh-base);
 
 
     // Paragraph
-    :deep(p):not(:last-child) {
-        margin-block-end: calc(var(--vh-spacer) * 2)
+    :deep(p) {
+        line-height: var(--_line-height-p);
+        margin-block-end: calc(var(--vh-spacer) * 1.25);
+        &:last-child {
+            margin-block-end: 0
+        }
+        &:has(+ ul),
+        &:has(+ ol),
+        &:has(+ table) {
+            margin-block-end: calc(var(--vh-spacer) * .75)
+        }
+        & + h1,
+        & + h2,
+        & + h3,
+        & + h4,
+        & + h5,
+        & + h6 {
+            margin-block-start: calc(var(--vh-spacer) * 3)
+        }
     }
-    :deep(p + ol, p + ul) {
-        margin-block-start: calc(var(--vh-spacer) * -1)
-    }
-    :deep(p + h2),
-    :deep(p + h3),
-    :deep(p + h4),
-    :deep(p + h5),
-    :deep(p + h6) {
-        margin-block-start: calc(var(--vh-spacer) * 3)
+    :deep(table):has(+ p) {
+        margin-block-end: calc(var(--vh-spacer) * .75)
     }
 
 
