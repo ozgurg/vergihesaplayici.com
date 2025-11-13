@@ -5,7 +5,11 @@
         <tabs v-model="tabValue">
             <modal-header>
                 <div>
-                    <modal-title :id="HEADING_ID">Hesaplayıcıyı paylaş</modal-title>
+                    <modal-title
+                        :id="HEADING_ID"
+                        is="h6">
+                        Hesaplayıcıyı paylaş
+                    </modal-title>
                     <modal-close-button @click="close()" />
                 </div>
                 <div>

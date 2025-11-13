@@ -101,11 +101,13 @@ const initial = calculateServerSide();
         <Container>
             <div ta-ad-container=""></div>
             <hr />
-            <Heading2>
+            <Heading2 is="h2">
                 Diğer hazır hesaplamalar
             </Heading2>
         </Container>
-        <CalculatorPresetCarousel items={presetsForCalculatorPresetCarousel} />
+        <CalculatorPresetCarousel
+            titleTag="h3"
+            items={presetsForCalculatorPresetCarousel} />
         : ""}
 
     <hr />

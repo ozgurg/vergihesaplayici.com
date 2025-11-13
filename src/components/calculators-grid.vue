@@ -3,6 +3,7 @@
         <template v-for="_calculatorPage in CALCULATOR_PAGES" :key="_calculatorPage.url">
             <calculator-card-item
                 :title="_calculatorPage.title"
+                :title-tag="props.titleTag"
                 :description="_calculatorPage.summary"
                 :url="_calculatorPage.url"
                 :icon="_calculatorPage.icon" />
@@ -11,9 +12,16 @@
 </template>
 
 <script lang="ts" setup>
+import type { Props as CalculatorCardProps } from "@/components/calculator-card-item.vue";
 import { getCalculatorPages } from "@/domains/hesaplayicilar/db.js";
 
 const CALCULATOR_PAGES = getCalculatorPages();
+
+export type Props = {
+    titleTag: CalculatorCardProps["titleTag"]
+}
+
+const props = defineProps<Props>();
 </script>
 
 <style lang="scss" scoped>

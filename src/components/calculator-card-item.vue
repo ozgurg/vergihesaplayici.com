@@ -3,14 +3,16 @@
         <div class="icon">
             <svg-icon :icon="props.icon" />
         </div>
-        <h2 class="title">
+        <component
+            :is="titleTag"
+            class="title">
             <a
                 :href="props.url.href"
                 class="stretched-link">
                 <span>{{ props.title }}</span>
             </a>
             <svg-icon :icon="icon_chevronRight" />
-        </h2>
+        </component>
         <div
             v-html="props.description"
             aria-hidden="true"
@@ -21,11 +23,12 @@
 
 <script lang="ts" setup>
 import type { HtmlAttrs_a } from "@/types/html.js";
-import type { SvgIcon } from "@/types/common.js";
+import type { Heading, SvgIcon } from "@/types/common.js";
 import { icon_chevronRight } from "@/utils/icons.js";
 
 export type Props = {
     title: string;
+    titleTag: Heading;
     description: string;
     url: URL;
     icon: SvgIcon;

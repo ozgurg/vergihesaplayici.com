@@ -49,12 +49,12 @@ const yazilarForArticlesGrid = mapYazilarForArticlesGridComponent(yazilar);
 
     <Container>
         <section>
-            <Heading2>
+            <Heading2 is="h2">
                 <a href={hesaplayicilarPage.url}>
                     {hesaplayicilarPage.title}
                 </a>
             </Heading2>
-            <CalculatorsGrid />
+            <CalculatorsGrid titleTag="h3" />
         </section>
 
         <hr />
@@ -62,12 +62,14 @@ const yazilarForArticlesGrid = mapYazilarForArticlesGridComponent(yazilar);
         <hr />
 
         <section>
-            <Heading2>
+            <Heading2 is="h2">
                 <a href={yazilarPage.url}>
                     {yazilarPage.title}
                 </a>
             </Heading2>
-            <ArticlesGrid items={yazilarForArticlesGrid} />
+            <ArticlesGrid
+                titleTag="h3"
+                items={yazilarForArticlesGrid} />
         </section>
 
         <hr />

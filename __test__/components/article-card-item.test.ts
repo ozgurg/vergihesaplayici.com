@@ -5,6 +5,7 @@ import ArticleCardItem from "@/components/article-card-item.vue";
 
 const TEST_ARTICLE = {
     title: "Test Title",
+    titleTag: "h3",
     description: "Test Description",
     url: new URL("https://vergihesaplayici.com"),
     date: new Date("2025-01-01")

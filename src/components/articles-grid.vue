@@ -3,6 +3,7 @@
         <template v-for="_item in props.items" :key="_item.url">
             <article-card-item
                 :title="_item.title"
+                :title-tag="props.titleTag"
                 :description="_item.description"
                 :url="_item.url"
                 :date="_item.date" />
@@ -15,7 +16,8 @@ import type { HtmlAttrs_div } from "@/types/html.js";
 import type { Props as ArticleCardItemProps } from "@/components/article-card-item.vue";
 
 export type Props = {
-    items: ArticleCardItemProps[]
+    titleTag: ArticleCardItemProps["titleTag"]
+    items: Omit<ArticleCardItemProps, "titleTag">[]
 } & /* @vue-ignore */ Partial<HtmlAttrs_div>;
 
 const props = defineProps<Props>();
