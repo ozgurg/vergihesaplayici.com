@@ -8,7 +8,8 @@
                     :title="_calculatorPage.title"
                     :description="_calculatorPage.summary"
                     :url="_calculatorPage.url"
-                    :icon="_calculatorPage.icon" />
+                    :icon="_calculatorPage.icon"
+                    title-tag="div" />
             </template>
         </container>
     </dialog>

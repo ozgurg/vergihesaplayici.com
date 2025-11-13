@@ -1,13 +1,15 @@
 ---
+import type { Heading } from "@/types/common.js";
 import type { Props as CalculatorPresetCarouselItemProps } from "@/components/calculator-preset-carousel-item.astro";
 import CalculatorPresetCarouselItem from "@/components/calculator-preset-carousel-item.astro";
 import CalculatorPresetCarouselNav from "@/components/calculator-preset-carousel-nav.vue";
 
 export type Props = {
-    items: Omit<CalculatorPresetCarouselItemProps, "loading">[];
+    titleTag: Heading,
+    items: Omit<CalculatorPresetCarouselItemProps, "loading" | "titleTag">[];
 }
 
-const { items } = Astro.props;
+const { titleTag, items } = Astro.props;
 
 const ROOT_ID = "calculator-preset-carousel";
 const ITEMS_CONTAINER_ID = "calculator-preset-carousel-items";
@@ -31,6 +33,7 @@ const ITEMS_CONTAINER_ID = "calculator-preset-carousel-items";
                 aria-roledescription="slide">
                 <CalculatorPresetCarouselItem
                     {..._item}
+                    titleTag={titleTag}
                     loading={_index > 5 ? "lazy" : "eager"} />
             </div>
         ))}

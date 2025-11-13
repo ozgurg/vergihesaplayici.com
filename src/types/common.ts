@@ -6,6 +6,8 @@ export type SvgIcon = string;
 
 export type Icon = SvgFile | SvgIcon;
 
+export type Heading = `h${number}` | string;
+
 
 export type ExchangeRates = {
     dateUpdated: Date;

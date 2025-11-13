@@ -22,7 +22,9 @@
                 <meta :content="authorUrl.href" itemprop="url" />
             </span>
         </div>
-        <h2 class="title">
+        <component
+            :is="titleTag"
+            class="title">
             <a
                 :href="props.url.href"
                 itemprop="url"
@@ -30,7 +32,7 @@
                 <span itemprop="headline">{{ props.title }}</span>
             </a>
             <svg-icon :icon="icon_chevronRight" />
-        </h2>
+        </component>
         <div
             v-html="props.description"
             aria-hidden="true"
@@ -40,11 +42,13 @@
 </template>
 
 <script lang="ts" setup>
+import type { Heading } from "@/types/common.js";
 import type { HtmlAttrs_a } from "@/types/html.js";
 import { icon_chevronRight } from "@/utils/icons.js";
 
 export type Props = {
     title: string;
+    titleTag: Heading;
     description: string;
     url: URL;
     date: Date;

@@ -33,6 +33,7 @@ describe("components/drawer.vue", () => {
             const calculatorPage = CALCULATOR_PAGES[_index]!;
             expect(_calculatorCardItem.props()).toEqual({
                 title: calculatorPage.title,
+                titleTag: "div",
                 description: calculatorPage.summary,
                 url: calculatorPage.url,
                 icon: calculatorPage.icon

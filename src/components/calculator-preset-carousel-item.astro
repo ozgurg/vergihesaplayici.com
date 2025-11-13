@@ -1,5 +1,6 @@
 ---
 import type { Thumb } from "@/utils/thumb-loader.js";
+import type { Heading } from "@/types/common.js";
 import type { HTMLAttributes } from "astro/types";
 import { Image } from "astro:assets";
 import SvgIcon from "@/components/common/svg-icon.vue";
@@ -8,6 +9,7 @@ import { icon_chevronRight } from "@/utils/icons.js";
 export type Props = {
     thumb: Thumb;
     title: string;
+    titleTag: Heading,
     brandTitle: string;
     releaseYear: number;
     url: URL;
@@ -24,6 +26,7 @@ const STYLE = {
 
 const FULL_TITLE = `${props.brandTitle} ${props.title}`;
 const IMG_ALT = FULL_TITLE;
+const TitleTag = props.titleTag;
 ---
 
 <div
@@ -39,15 +42,15 @@ const IMG_ALT = FULL_TITLE;
         decoding="async"
         aria-hidden="true"
         draggable="false" />
-    <h2 class="title">
+    <TitleTag class="title">
         <a
             href={props.url}
             aria-label={FULL_TITLE}
             class="stretched-link">
-            <span aria-hidden="true">{props.title}</span>
+            <span hidden="">{props.brandTitle} </span><span>{props.title}</span>
         </a>
         <SvgIcon icon={icon_chevronRight} />
-    </h2>
+    </TitleTag>
     <div
         class="summary"
         aria-hidden="true">

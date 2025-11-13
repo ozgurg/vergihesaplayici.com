@@ -111,12 +111,14 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
         <hr />
 
         <section>
-            <Heading2>
+            <Heading2 is="h2">
                 <a href={yazilarPage.url}>
                     Son yazılar
                 </a>
             </Heading2>
-            <ArticlesGrid items={yazilarForArticlesGrid} />
+            <ArticlesGrid
+                titleTag="h3"
+                items={yazilarForArticlesGrid} />
             <hr />
             <div ta-ad-container=""></div>
         </section>
