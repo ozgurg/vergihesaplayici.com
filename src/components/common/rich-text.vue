@@ -86,16 +86,13 @@ const props = withDefaults(defineProps<Props>(), {
     :deep(h4),
     :deep(h5),
     :deep(h6) {
-        text-wrap: pretty;
-        margin-block-end: calc(var(--vh-spacer) * .5)
+        margin-block-end: calc(var(--vh-spacer) * .75)
     }
     :deep(h2) {
-        font-size: var(--vh-fs-lg);
-        font-weight: var(--vh-fw-semibold)
+        @include vh-heading-2
     }
     :deep(h3) {
-        font-size: var(--vh-fs-md);
-        font-weight: var(--vh-fw-semibold)
+        @include vh-heading-3
     }
 
 
