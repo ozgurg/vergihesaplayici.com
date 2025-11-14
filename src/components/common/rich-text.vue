@@ -46,8 +46,22 @@ const props = withDefaults(defineProps<Props>(), {
             margin-block-start: calc(var(--vh-spacer) * 3)
         }
     }
-    :deep(table):has(+ p) {
-        margin-block-end: calc(var(--vh-spacer) * .75)
+    :deep(table) {
+        margin-block-end: calc(var(--vh-spacer) * 1.25);
+        &:last-child {
+            margin-block-end: 0
+        }
+        &:has(+ p) {
+            margin-block-end: calc(var(--vh-spacer) * .75)
+        }
+        & + h1,
+        & + h2,
+        & + h3,
+        & + h4,
+        & + h5,
+        & + h6 {
+            margin-block-start: calc(var(--vh-spacer) * 3)
+        }
     }
 
 
@@ -61,13 +75,13 @@ const props = withDefaults(defineProps<Props>(), {
     :deep(ul) {
         list-style: inside square;
         &:not(:last-child) {
-            margin-block-end: calc(var(--vh-spacer) * 2)
+            margin-block-end: calc(var(--vh-spacer) * 3)
         }
     }
     :deep(ol) {
         list-style: inside decimal;
         &:not(:last-child) {
-            margin-block-end: calc(var(--vh-spacer) * 4)
+            margin-block-end: calc(var(--vh-spacer) * 3)
         }
     }
 
@@ -168,11 +182,20 @@ const props = withDefaults(defineProps<Props>(), {
 
     // Various
     :deep(blockquote) {
-        @include vh-squircle(0 var(--vh-br-normal) var(--vh-br-normal) 0);
+        position: relative;
+        @include vh-squircle(var(--vh-br-normal));
         margin-block-end: calc(var(--vh-spacer) * 2);
         padding: var(--vh-spacer);
-        border-inline-start: calc(var(--vh-spacer) * .25) solid var(--vh-clr-primary);
-        background: hsla(var(--vh-clr-white-hsl), .12)
+        background: hsla(var(--vh-clr-white-hsl), .12);
+        &::before {
+            position: absolute;
+            content: "";
+            border-radius: 0 var(--vh-br-normal) var(--vh-br-normal) 0;
+            background: var(--vh-clr-primary);
+            inset-block: var(--vh-spacer);
+            inset-inline-start: 0;
+            inline-size: calc(var(--vh-spacer) * .25)
+        }
     }
 
 

@@ -13,6 +13,7 @@ Bu kavramı bilmek, maaşınızın neden azaldığını veya hangi vergi dilimin
 ---
 
 ## 1. Kümülatif Vergi Matrahı Kavramı: Ne Demektir?
+
 - "Kümülatif" = birikmiş, toplam
 - "Matrah" = vergilendirilecek tutar
 
@@ -20,6 +21,7 @@ Bu kavramı bilmek, maaşınızın neden azaldığını veya hangi vergi dilimin
 Her ay eklenir, yıl sonunda toplamı vergi dilimini belirler.
 
 Özet:
+
 - Her ayın vergi matrahı hesaplanır.
 - Önceki ayların matrahlarıyla toplanır.
 - Toplam, vergi oranının (%15, %20, %27…) hangi dilimde olacağını belirler.
@@ -27,12 +29,15 @@ Her ay eklenir, yıl sonunda toplamı vergi dilimini belirler.
 ---
 
 ## 2. Kimler İçin Geçerlidir?
+
 Kümülatif vergi matrahı:
+
 - Ücretli çalışanlar (kamu, özel sektör)
 - Maaş karşılığı hizmet verenler
   için geçerlidir.
 
 Ancak:
+
 - Serbest meslek sahipleri için farklı hesaplama yapılır.
 - Yıl içinde iş değiştirildiğinde matrah sıfırlanabilir veya taşınabilir.
 - Her yıl başında (1 Ocak) sıfırlanır.
@@ -42,9 +47,11 @@ Ancak:
 ## 3. Nasıl Hesaplanır?
 
 ### 3.1 Aylık Matrah
+
 Aylık Vergi Matrahı = Brüt Maaş – (SGK İşçi Payı + İşsizlik Sigortası İşçi Payı)
 
 Örnek:
+
 - Brüt maaş: 30.000 TL
 - SGK (%14): 4.200 TL
 - İşsizlik (%1): 300 TL
@@ -53,6 +60,7 @@ Aylık Vergi Matrahı = Brüt Maaş – (SGK İşçi Payı + İşsizlik Sigortas
 ---
 
 ### 3.2 Kümülatif Matrah
+
 Her ayın matrahı toplanır:
 | Ay | Aylık Matrah | Kümülatif Toplam |
 |----|--------------|------------------|
@@ -64,6 +72,7 @@ Her ayın matrahı toplanır:
 ---
 
 ### 3.3 Vergi Dilimleri (2025)
+
 | Gelir Aralığı (TL)    | Vergi Oranı |
 |-----------------------|-------------|
 | 0 – 158.000           | %15         |
@@ -77,7 +86,9 @@ Kümülatif matrahınız hangi aralıkta ise, o orandan vergi ödersiniz.
 ---
 
 ### 3.4 Örnek
+
 Brüt maaş 20.000 TL, yıl boyu sabit:
+
 - SGK (%14): 2.800 TL
 - İşsizlik (%1): 200 TL
 - Aylık matrah: 17.000 TL
@@ -90,22 +101,27 @@ Brüt maaş 20.000 TL, yıl boyu sabit:
 ## 4. Uygulamada Dikkat Edilmesi Gerekenler
 
 ### 4.1 İş Değişikliği
+
 - Aynı işverenin şubesi: matrah devam eder.
 - Farklı işveren: genellikle sıfırdan başlar.
 - Sonuç: fazla vergi kesilebilir veya iade gerekebilir.
 
 ### 4.2 Bordro Takibi
+
 Her çalışanın kümülatif matrahı bordroda izlenmelidir.
 Yanlış takip, yanlış vergi dilimine yol açar.
 
 ### 4.3 Net Maaş Düşüşü
+
 Yıl ilerledikçe matrah artar → vergi oranı yükselir → net maaş azalır.
 
 ### 4.4 Yıl Başında Sıfırlanma
+
 Her 1 Ocak’ta kümülatif matrah sıfırlanır.
 Ocak maaşı bu yüzden genellikle daha yüksek görünür.
 
 ### 4.5 İşveren Planlaması
+
 İkramiye veya zam öncesi matrah analizi yapmak, yüksek vergiye girmemek için önemlidir.
 
 ---
@@ -113,11 +129,13 @@ Ocak maaşı bu yüzden genellikle daha yüksek görünür.
 ## 5. Önemi: Avantajlar ve Riskler
 
 ### Avantajlar
+
 - **Vergi adaleti:** Çok kazanan çok vergi öder.
 - **Tahmin kolaylığı:** Yıl sonu vergi yükü önceden görülebilir.
 - **Şeffaflık:** Bordro daha anlaşılır olur.
 
 ### Riskler
+
 - İş değişikliği sonrası matrahın bildirilmemesi.
 - Bordroda hesaplama hataları.
 - Yıl sonunda maaş düşüşünün yanlış yorumlanması.
@@ -149,6 +167,7 @@ Sebebi çoğu zaman dilim artışıdır.
 ## 7. Gerçek Senaryolar
 
 ### A) Yıl Boyunca Aynı Maaş
+
 - Brüt: 25.000 TL
 - SGK + İşsizlik: %15
 - Aylık matrah: ~21.250 TL
@@ -156,10 +175,12 @@ Sebebi çoğu zaman dilim artışıdır.
   Son aylarda vergi oranı %20’ye geçer, net maaş düşer.
 
 ### B) Maaş Artışı + İkramiye
+
 Temmuz’da zam, Kasım’da ikramiye → matrah hızla artar.
 Sonuç: üst vergi dilimine geçiş.
 
 ### C) İş Değişikliği
+
 Eski işyeri matrahını bildirmezse yeni işveren sıfırdan başlatır.
 Fazla vergi kesilebilir.
 **Çözüm:** Eski işyerinden "kümülatif vergi matrahı belgesi" alın.
