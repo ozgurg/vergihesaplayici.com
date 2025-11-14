@@ -182,11 +182,20 @@ const props = withDefaults(defineProps<Props>(), {
 
     // Various
     :deep(blockquote) {
-        @include vh-squircle(0 var(--vh-br-normal) var(--vh-br-normal) 0);
+        position: relative;
+        @include vh-squircle(var(--vh-br-normal));
         margin-block-end: calc(var(--vh-spacer) * 2);
         padding: var(--vh-spacer);
-        border-inline-start: calc(var(--vh-spacer) * .25) solid var(--vh-clr-primary);
-        background: hsla(var(--vh-clr-white-hsl), .12)
+        background: hsla(var(--vh-clr-white-hsl), .12);
+        &::before {
+            position: absolute;
+            content: "";
+            border-radius: 0 var(--vh-br-normal) var(--vh-br-normal) 0;
+            background: var(--vh-clr-primary);
+            inset-block: var(--vh-spacer);
+            inset-inline-start: 0;
+            inline-size: calc(var(--vh-spacer) * .25)
+        }
     }
 
 
