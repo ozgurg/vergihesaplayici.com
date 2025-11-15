@@ -5,7 +5,7 @@ import type { Props as DefaultLayoutHeadProps } from "@/layouts/default-layout-h
 import "@/assets/css/style.scss";
 
 import DefaultLayoutHead from "@/layouts/default-layout-head.astro";
-import Tinyadz from "@/components/tinyadz.astro";
+import TinyadzScript from "@/components/tinyadz-script.astro";
 import Header from "@/components/header.astro";
 import MainBody from "@/components/main-body.vue";
 import MainFooter from "@/components/main-footer.vue";
@@ -24,7 +24,7 @@ const BASE_URL = siteUrl();
     dir="ltr">
 <head>
     <DefaultLayoutHead page={props.page} />
-    <Tinyadz />
+    <TinyadzScript />
 </head>
 <body>
     <Header />

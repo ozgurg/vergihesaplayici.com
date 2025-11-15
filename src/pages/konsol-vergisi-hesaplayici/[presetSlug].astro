@@ -99,8 +99,8 @@ const initial = calculateServerSide();
     {presetsForCalculatorPresetCarousel.length > 0 ?
         <hr />
         <Container>
-            <div ta-ad-container=""></div>
-            <hr />
+            <div class="ta-ad-first" ta-ad-container=""></div>
+
             <Heading2 is="h2">
                 Diğer hazır hesaplamalar
             </Heading2>
@@ -110,8 +110,7 @@ const initial = calculateServerSide();
             items={presetsForCalculatorPresetCarousel} />
         : ""}
 
-    <hr />
     <Container>
-        <div ta-ad-container=""></div>
+        <div class="ta-ad-last" ta-ad-container=""></div>
     </Container>
 </DefaultLayout>

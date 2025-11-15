@@ -71,8 +71,7 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
     </PageHeader>
 
     <Container>
-        <div ta-ad-container=""></div>
-        <hr />
+        <div class="ta-ad-first" ta-ad-container=""></div>
 
         <RichText
             is="section"
@@ -106,10 +105,12 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
 
         <ArticleLegalDisclaimerAlert />
 
-        <hr />
-        <div ta-ad-container=""></div>
-        <hr />
+        <div class="ta-ad-last" ta-ad-container=""></div>
+    </Container>
 
+    <hr />
+
+    <Container>
         <section>
             <Heading2 is="h2">
                 <a href={yazilarPage.url}>
@@ -119,8 +120,8 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
             <ArticlesGrid
                 titleTag="h3"
                 items={yazilarForArticlesGrid} />
-            <hr />
-            <div ta-ad-container=""></div>
+
+            <div class="ta-ad-last" ta-ad-container=""></div>
         </section>
     </Container>
 </DefaultLayout>

@@ -60,11 +60,12 @@
         </inner-container>
 
         <template v-if="results !== null">
-            <div ta-ad-container=""></div>
             <div>
                 <heading-3 is="h2">
                     Hesaplama sonuçları
                 </heading-3>
+
+                <div class="ta-ad-first" ta-ad-container=""></div>
 
                 <div class="calculator-result-row">
                     <inner-container class="calculator-result-row-primary">
