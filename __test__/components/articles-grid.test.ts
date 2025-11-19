@@ -8,14 +8,12 @@ describe("components/articles-grid.vue", () => {
         const testItems = [
             {
                 title: "Test Title 1",
-                titleTag: "h2",
                 description: "Test Description 1",
                 url: new URL("https://vergihesaplayici.com/article-1"),
                 date: new Date("2025-01-01")
             },
             {
                 title: "Test Title 2",
-                titleTag: "h2",
                 description: "Test Description 2",
                 url: new URL("https://vergihesaplayici.com/article-2"),
                 date: new Date("2025-01-02")
@@ -34,7 +32,6 @@ describe("components/articles-grid.vue", () => {
             const item = testItems[_index]!;
             expect(_articleCardItem.props()).toEqual({
                 title: item.title,
-                titleTag: "h2",
                 description: item.description,
                 url: item.url,
                 date: item.date
