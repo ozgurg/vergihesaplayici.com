@@ -1,5 +1,5 @@
 ---
-title: "5736 Sayılı Kanun Uyarınca Tahsil Edilecek Ecrimisil Gelirleri Nedir?"
+title: "5736 Sayılı Kanun Uyarınca Tahsil Edilecek Ecrimisil Gelirleri [9153]"
 description: "Türkiye'de gayrimenkul sahipleri için bazı vergi ve harçlar dışında, ilave olarak ödenmesi gereken bazı ödemeler bulunmaktadır."
 createdDate: 2023-07-19
 ---

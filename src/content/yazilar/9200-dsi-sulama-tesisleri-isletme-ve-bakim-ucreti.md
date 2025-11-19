@@ -1,5 +1,5 @@
 ---
-title: "DSİ Sulama Tesisleri İşletme ve Bakım Ücreti Nedir?"
+title: "DSİ Sulama Tesisleri İşletme ve Bakım Ücreti [9200]"
 description: "DSİ sulama tesislerinin yatırım bedeli, proje büyüklüğü, sulama yöntemi ve arazi koşullarına göre milyonlarca liradan milyarlara kadar değişebilir."
 createdDate: 2023-07-19
 ---

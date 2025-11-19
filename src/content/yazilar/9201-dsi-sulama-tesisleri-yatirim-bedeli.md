@@ -1,5 +1,5 @@
 ---
-title: "DSİ Sulama Tesisleri Yatırım Bedeli Nedir?"
+title: "DSİ Sulama Tesisleri Yatırım Bedeli [9201]"
 description: "DSİ sulama tesisleri yatırım bedeli; projenin büyüklüğü, su kaynağı, teknik sistemler ve coğrafi koşullara göre değişen tarımsal bir yatırım maliyetidir."
 createdDate: 2023-07-19
 ---
