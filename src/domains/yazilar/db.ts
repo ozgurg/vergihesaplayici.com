@@ -3,7 +3,16 @@ import { COLLECTION_NAME } from "@/domains/yazilar/types.js";
 import { getCollection } from "astro:content";
 
 const sortYazilarByDate = (yazilar: Yazi[]): Yazi[] => {
-    return yazilar.toSorted((_y1, _y2) => _y2.date.getTime() - _y1.date.getTime());
+    return yazilar.toSorted((a, b) => {
+        const aUpdated = a.updatedDate ? a.updatedDate.getTime() : 0;
+        const bUpdated = b.updatedDate ? b.updatedDate.getTime() : 0;
+
+        if (aUpdated !== bUpdated) {
+            return bUpdated - aUpdated;
+        }
+
+        return b.createdDate.getTime() - a.createdDate.getTime();
+    });
 };
 
 const mapAstroYazilarCollectionAsYazilar = (yazilarCollection: AstroYazilarCollection): Yazi[] => {

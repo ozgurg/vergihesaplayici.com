@@ -19,14 +19,16 @@ describe("domains/yazilar/utils.js", () => {
                     slug: "test-slug-1",
                     title: "Test Title 1",
                     description: "Test description 1",
-                    date: new Date("2025-01-01"),
+                    createdDate: new Date("2025-01-01"),
+                    updatedDate: new Date("2025-02-01"),
                     entry: {} as any
                 },
                 {
                     slug: "test-slug-2",
                     title: "Test Title 2",
                     description: "Test description 2",
-                    date: new Date("2025-01-02"),
+                    createdDate: new Date("2025-01-02"),
+                    updatedDate: null,
                     entry: {} as any
                 }
             ];
@@ -37,7 +39,7 @@ describe("domains/yazilar/utils.js", () => {
                     title: "Test Title 1",
                     description: "Test description 1",
                     url: new URL("https://vergihesaplayici.com/yazilar/test-slug-1/"),
-                    date: new Date("2025-01-01")
+                    date: new Date("2025-02-01")
                 },
                 {
                     title: "Test Title 2",

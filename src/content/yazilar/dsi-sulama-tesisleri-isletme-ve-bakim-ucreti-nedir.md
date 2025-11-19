@@ -1,7 +1,7 @@
 ---
 title: "DSİ Sulama Tesisleri İşletme ve Bakım Ücreti Nedir?"
 description: "DSİ sulama tesislerinin yatırım bedeli, proje büyüklüğü, sulama yöntemi ve arazi koşullarına göre milyonlarca liradan milyarlara kadar değişebilir."
-date: 2023-07-19
+createdDate: 2023-07-19
 ---
 
 Tarım sektörü, Türkiye'nin ekonomik büyümesinde ve gıda üretiminde kritik bir rol oynamaktadır. Tarım faaliyetlerinin

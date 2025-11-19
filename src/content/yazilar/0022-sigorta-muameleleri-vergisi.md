@@ -1,7 +1,7 @@
 ---
 title: "Sigorta Muameleleri Vergisi [0022]"
 description: "Sigorta Muameleleri Vergisi, sigorta şirketleri tarafından yapılan sigorta işlemlerinden alınan bir vergidir."
-date: 2023-05-09
+createdDate: 2023-05-09
 ---
 
 **Sigorta Muameleleri Vergisi**, sigorta şirketleri tarafından yapılan sigorta işlemlerinden alınan bir vergidir. Bu

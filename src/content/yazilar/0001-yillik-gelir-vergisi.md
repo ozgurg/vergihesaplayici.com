@@ -1,7 +1,8 @@
 ---
 title: "Yıllık Gelir Vergisi [0001]"
 description: "Yıllık Gelir Vergisi (0001) nedir, kimleri kapsar, 2025 gelir vergisi oranları ve hesaplama yöntemleri nelerdir?"
-date: 2023-05-06
+createdDate: 2023-05-06
+updatedDate: 2025-11-14
 ---
 
 Gelir elde etmek güzel, ama kazancın bir kısmını devlete geri vermek zorunda olduğumuzu da unutmamak gerekir. Türkiye'de bireylerin kazançları üzerinden alınan **Yıllık Gelir Vergisi (0001)**, bu sistemin en temel direklerinden biridir. Bu yazıda, 0001 kodlu Yıllık Gelir Vergisi'nin ne olduğunu, kimleri kapsadığını, nasıl hesaplandığını ve 2025 yılı itibarıyla oranlarını detaylı şekilde öğreneceksiniz.

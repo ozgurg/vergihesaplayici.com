@@ -1,7 +1,7 @@
 ---
 title: "Kaldırılan Vergi Artıkları [9099]"
 description: "Kaldırılan Vergi Artıkları nedir, hangi durumlarda tahsil edilir? Eski vergi borçlarının tahsilatı, zamanaşımı ve ödeme şartları hakkında bilmeniz gerekenler."
-date: 2025-10-29
+createdDate: 2025-10-29
 ---
 
 Kaldırılan vergi artıkları, yürürlükten kaldırılmış vergi kanunlarına göre doğmuş ancak henüz tahsil edilmemiş vergi borçlarını ifade eder. Türk vergi sistemi zaman içinde birçok değişiklik geçirmiş, bazı vergiler tamamen kaldırılmış ya da başka vergilerle birleştirilmiştir. Bu süreçte, kaldırılan vergilerden kaynaklanan ve henüz ödenmeyen tutarlar "kaldırılan vergi artıkları" olarak kayıtlarda görünmeye devam eder. **9099 vergi kodu** bu tür geçmiş borçların tahsili için kullanılır ve özellikle eski dönemlere ait vergi incelemelerinde veya yeniden değerleme işlemlerinde karşımıza çıkar.

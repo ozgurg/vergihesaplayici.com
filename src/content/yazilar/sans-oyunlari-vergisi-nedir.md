@@ -1,7 +1,7 @@
 ---
 title: "Şans Oyunları Vergisi Nedir?"
 description: "Şans oyunları vergisi, Türkiye'de şans oyunu işletmecilerinin brüt gelirleri üzerinden alınan ve devlet gelirlerine katkı sağlayan bir vergi türüdür."
-date: 2023-06-06
+createdDate: 2023-06-06
 ---
 
 Şans oyunları, Türkiye'de popüler bir eğlence ve kazanç aracıdır. Ancak, bu oyunlardan elde edilen gelirler

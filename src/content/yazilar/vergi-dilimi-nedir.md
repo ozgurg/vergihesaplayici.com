@@ -1,7 +1,7 @@
 ---
 title: "Vergi Dilimi Nedir?"
 description: "Vergi dilimi, vergilendirilebilir gelirin belirli bir aralığındaki gelirler için uygulanan farklı vergi oranlarına denir."
-date: 2023-05-04
+createdDate: 2023-05-04
 ---
 
 Vergi dilimi, vergilendirilebilir gelirin belirli bir aralığındaki gelirler için uygulanan farklı vergi oranlarına

@@ -1,7 +1,7 @@
 ---
 title: "Orköy Fonu Gelirleri [9111]"
 description: "Orköy Fonu Gelirleri nedir, kimler öder, nasıl hesaplanır? 2025 güncel oranları, beyan ve ödeme detaylarını hemen öğrenin."
-date: 2025-11-04
+createdDate: 2025-11-04
 ---
 
 **Orköy Fonu Gelirleri**, orman köylerinde yaşayan vatandaşların ekonomik kalkınmasını desteklemek için kurulan özel bir mali kaynaktır. Bu fon, ormanların korunması ve sürdürülebilir şekilde işletilmesini sağlarken köylülerin gelir düzeyini artırmayı hedefler. **Orköy Fonu**, orman ürünleri satışlarından, izin ve kira gelirlerinden alınan belirli oranlardaki kesintilerle oluşturulur. Gelirleri, Tarım ve Orman Bakanlığı'na bağlı Orman Genel Müdürlüğü tarafından yönetilir ve doğrudan kırsal kalkınma projelerine aktarılır. Bu yönüyle, hem çevresel sürdürülebilirliği hem de ekonomik canlılığı destekleyen önemli bir kamu finansman aracıdır.

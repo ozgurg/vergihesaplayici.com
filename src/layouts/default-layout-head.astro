@@ -1,12 +1,35 @@
 ---
 import type { Page } from "@/types/page-def.js";
 
+const pad = (number: number): string => String(number).padStart(2, "0");
+
+const toMetaContent = (date: Date): string => {
+    const Y = date.getFullYear();
+    const M = pad(date.getMonth() + 1);
+    const D = pad(date.getDate());
+    const h = pad(date.getHours());
+    const m = pad(date.getMinutes());
+    const s = pad(date.getSeconds());
+
+    const offsetMin = -date.getTimezoneOffset();
+    const sign = offsetMin >= 0 ? "+" : "-";
+    const absMin = Math.abs(offsetMin);
+    const offH = pad(Math.floor(absMin / 60));
+    const offM = pad(absMin % 60);
+
+    return `${Y}-${M}-${D}T${h}:${m}:${s}${sign}${offH}:${offM}`;
+};
+
 const MAX_TITLE_LENGTH = 60;
 
 export type Props = {
-    page: Page
+    page: Page;
+    dates?: {
+        created?: Date;
+        updated?: Date | null;
+    }
 };
-const { page } = Astro.props;
+const { page, dates } = Astro.props;
 const { head } = page;
 
 const SITE_NAME = "Vergi Hesaplayıcı";
@@ -32,6 +55,18 @@ const MANIFEST_JSON = staticUrl("/manifest.json");
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,viewport-fit=cover,interactive-widget=resizes-content" />
 <title>{TITLE}</title>
+
+{dates?.created ?
+<meta name="published_time" content={toMetaContent(dates.created)} />
+<meta itemprop="datePublished" content={toMetaContent(dates.created)} />
+<meta property="article:published_time" content={toMetaContent(dates.created)} />
+    : ""}
+
+{dates?.updated ?
+<meta name="modified_time" content={toMetaContent(dates.updated)} />
+<meta itemprop="dateModified" content={toMetaContent(dates.updated)} />
+<meta property="article:modified_time" content={toMetaContent(dates.updated)} />
+    : ""}
 
 <meta name="description" content={DESCRIPTION} />
 

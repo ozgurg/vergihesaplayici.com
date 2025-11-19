@@ -1,7 +1,7 @@
 ---
 title: "Her Türlü Alkolsüz İçeceklerden Alınan Ek Vergi [0094]"
 description: "Türkiye'de alkolsüz içeceklerden alınan ek vergi, sağlık politikalarını destekler ve vergi gelirlerini artırırken tüketim ve fiyatları da etkiler."
-date: 2023-05-17
+createdDate: 2023-05-17
 ---
 
 Türkiye'de alkollü içeceklerden alınan vergiler uzun yıllardır mevcut olan bir konudur. Ancak son zamanlarda, alkolsüz

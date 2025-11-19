@@ -1,7 +1,7 @@
 ---
 title: "Vergi Yargı Harçları [1067]"
 description: "Türkiye'de vergi yasalarının uygulanması ve vergi davalarının çözümü için Vergi Mahkemeleri ve Danıştay gibi yargı organları bulunmaktadır."
-date: 2023-05-16
+createdDate: 2023-05-16
 ---
 
 Türkiye'de vergi yasalarının uygulanması ve vergi davalarının çözümü için **Vergi Mahkemeleri** ve **Danıştay** gibi

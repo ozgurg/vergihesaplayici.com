@@ -1,7 +1,7 @@
 ---
 title: "Kıymetli Maden ve Ziynet Eşyasından Alınan Vergi Nedir?"
 description: "Türkiye'de kıymetli madenler ve ziynet eşyaları, vergi mevzuatı çerçevesinde belirli oranlarda vergilendirilmektedir."
-date: 2023-06-06
+createdDate: 2023-06-06
 ---
 
 Türkiye'de kıymetli madenler ve ziynet eşyaları, vergi mevzuatı çerçevesinde belirli oranlarda vergilendirilmektedir. Bu

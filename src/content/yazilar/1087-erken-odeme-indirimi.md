@@ -1,7 +1,7 @@
 ---
 title: "Erken Ödeme İndirimi [1087]"
 description: "Erken ödeme indirimi, vergi mükelleflerine zamanında veya erken ödeme yapmaları durumunda sağlanan avantajdır."
-date: 2025-08-02
+createdDate: 2025-08-02
 ---
 
 Vergi sisteminde zamanında ödeme teşviklerini artırmak amacıyla uygulanan erken ödeme indirimi, mükelleflere belirli

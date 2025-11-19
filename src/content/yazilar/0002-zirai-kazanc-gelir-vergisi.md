@@ -1,7 +1,7 @@
 ---
 title: "Zirai Kazanç Gelir Vergisi [0002]"
 description: "Zirai kazanç vergisi, Türkiye'de faaliyet gösteren çiftçilerin elde ettikleri gelirler üzerinden ödedikleri bir vergidir."
-date: 2023-05-06
+createdDate: 2023-05-06
 ---
 
 Zirai kazanç vergisi, Türkiye'de faaliyet gösteren çiftçilerin elde ettikleri gelirler üzerinden ödedikleri bir

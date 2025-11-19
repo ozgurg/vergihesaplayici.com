@@ -1,7 +1,7 @@
 ---
 title: "Her Ürün Katma Değerli Midir?"
 description: "Katma değer, bir ürünün üretim sürecinde eklenen artı değerle satış fiyatının yükselmesini sağlar; ancak her ürün bu değeri yaratmayabilir."
-date: 2023-05-04
+createdDate: 2023-05-04
 ---
 
 Katma değer, bir mal veya hizmetin üretiminde yaratılan **artı değer**dir. Bu artı değer, üretim aşamasında ürüne

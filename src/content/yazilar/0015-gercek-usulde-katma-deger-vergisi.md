@@ -1,7 +1,7 @@
 ---
 title: "Gerçek Usulde Katma Değer Vergisi [0015]"
 description: "Gerçek Usulde KDV, işletmelerin satış ve alışlarına göre net KDV hesapladığı, her ay beyanname verilmesi gereken bir KDV yöntemidir."
-date: 2023-05-10
+createdDate: 2023-05-10
 ---
 
 **Katma Değer Vergisi (KDV)** birçok ülkenin uyguladığı bir tür dolaylı vergidir. Türkiye'de ise KDV uygulaması 1985

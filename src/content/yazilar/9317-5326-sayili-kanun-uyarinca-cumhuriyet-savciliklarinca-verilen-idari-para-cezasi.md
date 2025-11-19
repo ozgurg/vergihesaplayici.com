@@ -1,7 +1,7 @@
 ---
 title: "5326 Sayılı Kanun Uyarınca Cumhuriyet Savcılıklarınca Verilen İdari Para Cezası [9317]"
 description: "5326 Sayılı Kanun uyarınca Cumhuriyet Savcılıklarınca verilen idari para cezası nedir, kimler öder, nasıl hesaplanır? 2025 güncel bilgileri öğrenin."
-date: 2025-11-06
+createdDate: 2025-11-06
 ---
 
 **5326 Sayılı Kanun uyarınca Cumhuriyet Savcılıklarınca verilen idari para cezası**, Kabahatler Kanunu kapsamındaki idari suçlarda, mahkeme öncesinde savcılık tarafından uygulanabilen mali yaptırımı ifade eder. Bu ceza, kanuna aykırı davranışta bulunan gerçek veya tüzel kişilere yöneltilir ve ihlalin türüne göre tutarı belirlenir. **İdari para cezası**, trafik, çevre, iş sağlığı, hijyen ve kamu düzeni gibi çeşitli alanlarda uygulanabilir. Savcılık kararı ile tahakkuk ettiği için, ödeme yükümlülüğü doğrudan ilgili kişi veya kuruluşa aittir.

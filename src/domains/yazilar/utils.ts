@@ -9,7 +9,7 @@ export const mapYazilarForArticlesGridComponent = (yazilar: Yazi[]): ArticlesGri
             title: yazilarSlugPage.title,
             description: _yazi.description,
             url: yazilarSlugPage.url,
-            date: _yazi.date
+            date: _yazi.updatedDate ?? _yazi.createdDate
         };
     });
 };

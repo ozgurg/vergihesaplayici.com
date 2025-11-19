@@ -1,7 +1,7 @@
 ---
 title: "Damga Vergisi [1047]"
 description: "Damga vergisi, Türkiye'de sözleşme, belge ve çeşitli finansal işlemler üzerinden alınan, hem ticari hem de hukuki işlemleri kapsayan bir vergi türüdür."
-date: 2023-05-17
+createdDate: 2023-05-17
 ---
 
 Damga vergisi, Türkiye'de finansal ve ticari işlemler üzerinde uygulanan bir vergi türüdür. İşlemlerin belgelenmesi

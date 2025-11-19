@@ -1,7 +1,7 @@
 ---
 title: "Gelir Götürü Ücret [0006]"
 description: "Gelir, gider ve maliyet işletmelerin temel kavramlarıdır; gelir elde edilen, gider harcanan para miktarını ifade eder."
-date: 2023-05-06
+createdDate: 2023-05-06
 ---
 
 Gelir, gider ve maliyet kavramları işletmelerin en temel konularıdır. **Gelir**, işletmenin elde ettiği para miktarını

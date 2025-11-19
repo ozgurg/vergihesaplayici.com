@@ -1,7 +1,7 @@
 ---
 title: "Mülga Kooperatifçilik Tanıtma ve Eğitim Fonu [0062]"
 description: "Mülga Kooperatifçilik Tanıtma ve Eğitim Fonu, Türkiye’de kooperatifçiliği destekler ve **eğitim** ile **tanıtım** faaliyetleriyle sektörde farkındalık yaratır."
-date: 2023-05-22
+createdDate: 2023-05-22
 ---
 
 Mülga Kooperatifçilik Tanıtma ve Eğitim Fonu, Türkiye'de kooperatifçilik sektörünün gelişimini desteklemek amacıyla

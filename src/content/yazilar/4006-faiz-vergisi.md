@@ -1,7 +1,7 @@
 ---
 title: "Faiz Vergisi [4006]"
 description: "Faiz vergisi, Türkiye'de uygulanan bir vergi türüdür ve bankalar aracılığıyla gerçekleştirilen finansal işlemlerden alınır."
-date: 2023-07-17
+createdDate: 2023-07-17
 ---
 
 **Faiz vergisi**, Türkiye'de uygulanan bir vergi türüdür ve bankalar aracılığıyla gerçekleştirilen finansal işlemlerden
