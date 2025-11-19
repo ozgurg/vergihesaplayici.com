@@ -162,7 +162,7 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
     }
 </style>
 
-<script type="module">
+<script is:inline type="module">
     document.addEventListener("DOMContentLoaded", () => {
         const detailsList = document.querySelectorAll("details");
         if (detailsList.length === 0) return;

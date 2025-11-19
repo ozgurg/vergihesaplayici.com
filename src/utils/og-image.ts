@@ -38,7 +38,7 @@ const toSatori = (template: string, options: SatoriOptions): Promise<string> => 
 
 const toResponse = async (svgString: string, width: number, height: number): Promise<Response> => {
     const jpgBuffer = await svgToJpgBuffer(svgString, width, height);
-    return new Response(jpgBuffer, {
+    return new Response(new Uint8Array(jpgBuffer), {
         headers: {
             "Content-Type": "image/jpeg"
         }
