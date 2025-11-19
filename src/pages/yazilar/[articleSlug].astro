@@ -1,4 +1,5 @@
 ---
+import type { Yazi } from "@/domains/yazilar/types.js";
 import DefaultLayout from "@/layouts/default-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
 import Container from "@/components/common/container.vue";
@@ -26,6 +27,9 @@ export const getStaticPaths = async (): Promise<object> => {
     }));
 };
 
+type Props = {
+    yazi: Yazi;
+};
 const { yazi } = Astro.props;
 
 const yazilarPage = YazilarPageDef();

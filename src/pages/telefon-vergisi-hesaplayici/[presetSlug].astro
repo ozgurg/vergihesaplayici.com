@@ -1,4 +1,5 @@
 ---
+import type { Preset, Brand } from "@/domains/telefon-vergisi-hesaplayici/types.js";
 import DefaultLayout from "@/layouts/default-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
 import Container from "@/components/common/container.vue";
@@ -32,6 +33,10 @@ export const getStaticPaths = (): object => {
     }));
 };
 
+type Props = {
+    preset: Preset;
+    brand: Brand;
+};
 const { preset, brand } = Astro.props;
 
 const telefonVergisiHesaplayiciPage = TelefonVergisiHesaplayiciPageDef();
