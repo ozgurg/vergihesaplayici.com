@@ -1,7 +1,7 @@
 ---
 title: "Vergideki Kültür Bakanlığı Payı Nedir?"
 description: "Vergideki Kültür Bakanlığı Payı, kültür-sanat kuruluşlarının bütçesinden kesilen ve Bakanlığa aktarılan bir fondur."
-date: 2023-05-04
+createdDate: 2023-05-04
 ---
 
 Vergideki **Kültür Bakanlığı Payı**, Türkiye'de faaliyet gösteren ve kültür-sanat alanında çalışmalar yürüten

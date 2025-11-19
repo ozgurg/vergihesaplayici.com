@@ -303,6 +303,7 @@
     &::before {
         display: inline-block;
         content: "";
+        flex-shrink: 0;
         border-radius: 0 var(--vh-br-normal) var(--vh-br-normal) 0;
         background: var(--vh-clr-primary);
         block-size: calc(var(--vh-spacer) * 1.5);

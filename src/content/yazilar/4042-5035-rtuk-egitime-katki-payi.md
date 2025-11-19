@@ -1,7 +1,7 @@
 ---
 title: "5035 RTÜK Eğitime Katkı Payı [4042]"
 description: "5035 RTÜK Eğitime Katkı Payı nedir, kimler öder, nasıl hesaplanır? 2025 yılı ödeme oranları ve beyan detaylarını öğrenin."
-date: 2025-11-05
+createdDate: 2025-11-05
 ---
 
 **5035 RTÜK Eğitime Katkı Payı**, radyo ve televizyon kuruluşlarının elde ettiği reklam gelirleri üzerinden ödenen özel bir kamu payıdır. Bu pay, Radyo ve Televizyon Üst Kurulu (RTÜK) gelirleri arasında yer alır ve doğrudan **Milli Eğitim Bakanlığı'na aktarılan** bir destek kalemi olarak kullanılır. Amaç, eğitim altyapısının güçlendirilmesi ve medya gelirlerinin toplumsal faydaya dönüştürülmesidir. Bu vergi türü, yalnızca yayın lisansına sahip medya kuruluşlarını kapsar; bireysel gelir veya kurumlar vergisinden bağımsız şekilde hesaplanır.

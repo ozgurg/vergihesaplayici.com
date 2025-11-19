@@ -1,7 +1,7 @@
 ---
-title: "Telgraf ve Telefon Kanunu 2. Madde İdari Para Cezası Nedir?"
+title: "Telgraf ve Telefon Kanunu 2. Madde İdari Para Cezası [9304]"
 description: "Telgraf ve Telefon Kanunu, Türkiye'de telekomünikasyon hizmetlerinin düzenlenmesini sağlayan önemli bir yasal düzenlemeyi temsil eder."
-date: 2023-07-19
+createdDate: 2023-07-19
 ---
 
 **Telgraf ve Telefon Kanunu**, Türkiye'de telekomünikasyon hizmetlerinin düzenlenmesini sağlayan önemli bir yasal

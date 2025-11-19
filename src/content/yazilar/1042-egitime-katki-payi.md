@@ -1,7 +1,7 @@
 ---
 title: "Eğitime Katkı Payı [1042]"
 description: "Eğitime Katkı Payı, kamu gelirlerinden alınarak eğitim yatırımlarını finanse eder ve eğitim kalitesini artırmayı hedefler."
-date: 2025-10-09
+createdDate: 2025-10-09
 ---
 
 **Eğitime Katkı Payı (E. Katkı Payı)**, Türkiye'de kamu gelirlerinden belirli oranlarda alınan ve doğrudan **eğitim

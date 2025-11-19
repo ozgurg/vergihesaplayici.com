@@ -2,7 +2,7 @@
 title: "5335 Sayılı Kanuna Göre Hazine Alacağına Dönüşen Tohumluk Kredilerine Ait Geç Ödeme Zammı [1052]"
 description: "5335 sayılı Kanun kapsamında Hazine alacağına dönüşen tohumluk kredilerinde vadesinde ödeme yapılmazsa geç ödeme zammı
 uygulanır ve borcun toplam tutarı artar."
-date: 2025-09-06
+createdDate: 2025-09-06
 ---
 
 5335 sayılı Kanun kapsamında, çiftçilere destek amacıyla verilen bazı tohumluk kredileri zamanında ödenmediğinde

@@ -109,6 +109,12 @@ const redirections301 = [
     ["yazilar/sorumlu-sifatiyla-verilen-otv-1-liste-nedir", "yazilar/9171-sorumlu-sifatiyla-verilen-otv-1-liste"],
     ["yazilar/mera-fonu-para-cezasi-nedir", "yazilar/9341-mera-fonu-para-cezasi"],
     ["yazilar/turizm-para-cezasi-nedir", "yazilar/9309-turizm-para-cezasi"],
+    ["yazilar/5736-sayili-kanun-uyarinca-tahsil-edilecek-ecrimisil-gelirleri-nedir", "yazilar/9153-5736-sayili-kanun-uyarinca-tahsil-edilecek-ecrimisil-gelirleri"],
+    ["yazilar/3516-sayili-kanuna-gore-olcu-ayar-para-cezasi-nedir", "yazilar/9307-3516-sayili-kanuna-gore-olcu-ayar-para-cezasi"],
+    ["yazilar/1475-sayili-is-kanununa-bagli-para-cezasi-nedir", "yazilar/9306-1475-sayili-is-kanununa-bagli-para-cezasi"],
+    ["yazilar/dsi-sulama-tesisleri-yatirim-bedeli-nedir", "yazilar/9201-dsi-sulama-tesisleri-yatirim-bedeli"],
+    ["yazilar/telgraf-ve-telefon-kanunu-2-madde-idari-para-cezasi-nedir", "yazilar/9304-telgraf-ve-telefon-kanunu-2-madde-idari-para-cezasi"],
+    ["yazilar/dsi-sulama-tesisleri-isletme-ve-bakim-ucreti-nedir", "yazilar/9200-dsi-sulama-tesisleri-isletme-ve-bakim-ucreti"],
 
     ["yazilar/telefon-vergisi", "telefon-vergisi-hesaplayici"],
     ["yazilar/konsol-vergisi", "konsol-vergisi-hesaplayici"],

@@ -1,7 +1,7 @@
 ---
 title: "Gelir Geçici Vergi [0032]"
 description: "Gelir geçici vergi, işletme veya bireylerin vergi ödemelerini önceden yapmasını gerektiren bir vergidir."
-date: 2023-05-13
+createdDate: 2023-05-13
 ---
 
 **<a href="/yazilar/0027-gelir-vergisi-gecici-vergi/">Gelir geçici vergi</a>**, bir işletmenin veya bireysel bir kişinin, vergi beyannamelerini hazırlamak ve vergi ödemelerini

@@ -1,7 +1,7 @@
 ---
 title: "Kümülatif Vergi Matrahı Nedir?"
 description: "Kümülatif vergi matrahı, yıl boyunca artan gelirinizin hangi vergi dilimine girdiğini belirler ve maaşınızdaki değişimi açıklar."
-date: 2025-11-13
+createdDate: 2025-11-13
 ---
 
 Geliriniz yıl boyunca arttıkça, vergide bir "geçiş süreci"yle karşılaşırsınız: başlangıçta düşük oranlar, sonra daha yüksek dilimler.

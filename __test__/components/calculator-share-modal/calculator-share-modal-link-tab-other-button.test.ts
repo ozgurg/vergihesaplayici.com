@@ -34,7 +34,6 @@ describe("components/calculator-share-modal/calculator-share-modal-link-tab-othe
         expect(formButton.props("disabled")).toBeFalsy();
         expect(formButton.props("loading")).toBeFalsy();
 
-        // @ts-expect-error: FIXME
         expect(wrapper.vm.isLoading).toBeFalsy();
     });
 });

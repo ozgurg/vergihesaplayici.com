@@ -1,19 +1,17 @@
 ---
-import type { Page } from "@/types/page-def.js";
+import type { Props as DefaultLayoutHeadProps } from "@/layouts/default-layout-head.astro";
 
 // oxlint-disable-next-line no-unassigned-import
 import "@/assets/css/style.scss";
 
 import DefaultLayoutHead from "@/layouts/default-layout-head.astro";
-import Tinyadz from "@/components/tinyadz.astro";
+import TinyadzScript from "@/components/tinyadz-script.astro";
 import Header from "@/components/header.astro";
 import MainBody from "@/components/main-body.vue";
 import MainFooter from "@/components/main-footer.vue";
 
-export type Props = {
-    page: Page;
-};
-const { page } = Astro.props;
+type Props = DefaultLayoutHeadProps;
+const props = Astro.props;
 
 const EXCHANGE_RATES = getExchangeRates();
 const BASE_URL = siteUrl();
@@ -25,8 +23,8 @@ const BASE_URL = siteUrl();
     lang="tr"
     dir="ltr">
 <head>
-    <DefaultLayoutHead page={page} />
-    <Tinyadz />
+    <DefaultLayoutHead {...props} />
+    <TinyadzScript />
 </head>
 <body>
     <Header />

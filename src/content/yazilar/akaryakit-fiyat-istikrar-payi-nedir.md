@@ -1,7 +1,7 @@
 ---
 title: "Akaryakıt Fiyat İstikrar Payı Nedir?"
 description: "Akaryakıt fiyat istikrar payı, Türkiye'de benzin ve motorin gibi akaryakıtların fiyatlarının belirlenmesinde uygulanan bir sistemdir."
-date: 2023-06-06
+createdDate: 2023-06-06
 ---
 
 Akaryakıt fiyat istikrar payı, Türkiye'de benzin ve motorin gibi akaryakıtların fiyatlarının belirlenmesinde uygulanan

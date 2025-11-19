@@ -1,7 +1,7 @@
 ---
 title: "5035 Sayılı Kanuna Göre Finansal Faaliyet Harcı Nedir?"
 description: "5035 Sayılı Kanuna Göre Finansal Faaliyet Harcı, Türkiye'de finansal sektörde faaliyet gösteren kurumlar için ödenmesi gereken bir vergi türüdür."
-date: 2023-06-06
+createdDate: 2023-06-06
 ---
 
 **5035 Sayılı Kanuna** Göre **Finansal Faaliyet Harcı**, Türkiye'de finansal sektörde faaliyet gösteren kurumlar için

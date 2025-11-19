@@ -1,7 +1,7 @@
 ---
 title: "Tütün Mamüllerine İlişkin Ek Vergi [0091]"
 description: "Türkiye'de tütün ürünlerine uygulanan **ek vergi**, fiyatları artırarak tüketimi azaltmayı ve kamu sağlığını korumayı amaçlar."
-date: 2023-05-22
+createdDate: 2023-05-22
 ---
 
 Tütün mamülleri, dünya genelinde ve Türkiye'de **önemli bir sağlık sorunu** haline gelmiştir. **Sigara içimi**, ciddi

@@ -1,4 +1,5 @@
 ---
+import type { Yazi } from "@/domains/yazilar/types.js";
 import DefaultLayout from "@/layouts/default-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
 import Container from "@/components/common/container.vue";
@@ -26,22 +27,6 @@ export const getStaticPaths = async (): Promise<object> => {
     }));
 };
 
-const { yazi } = Astro.props;
-
-const yazilarPage = YazilarPageDef();
-const yazilarSlugPage = YazilarSlugPageDef({ yazi });
-
-// oxlint-disable-next-line no-magic-numbers
-const yazilar = (await getYazilar()).filter(_yazi => _yazi.slug !== yazi.slug).slice(0, 6);
-const yazilarForArticlesGrid = mapYazilarForArticlesGridComponent(yazilar);
-
-const { Content } = await render(yazi.entry);
-
-const date = yazi.date;
-const timeDateTimeAttr = date.toISOString().split("T")[0]; // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time#valid_datetime_values
-const timeContentAttr = date.toISOString(); // https://developers.google.com/search/docs/appearance/structured-data/article#article-types
-const readableDate = date.toLocaleDateString("tr-TR");
-
 const parseTitleAsTaxInfo = (title: string): { name: string, code: string } | false => {
     const pattern = /^(.*?)\s*\[([^\]]+)]\s*$/;
     const matchArray = title.match(pattern);
@@ -55,10 +40,37 @@ const parseTitleAsTaxInfo = (title: string): { name: string, code: string } | fa
     return false;
 };
 
+const parseDate = (date: Date): { timeDateTimeAttr: string, readableDate: string } => {
+    const timeDateTimeAttr = date.toISOString().split("T")?.[0] ?? ""; // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time#valid_datetime_values
+    const readableDate = date.toLocaleDateString("tr-TR");
+    return {
+        timeDateTimeAttr,
+        readableDate
+    };
+};
+
+type Props = {
+    yazi: Yazi;
+};
+const { yazi } = Astro.props;
+
+const yazilarPage = YazilarPageDef();
+const yazilarSlugPage = YazilarSlugPageDef({ yazi });
+
+// oxlint-disable-next-line no-magic-numbers
+const yazilar = (await getYazilar()).filter(_yazi => _yazi.slug !== yazi.slug).slice(0, 6);
+const yazilarForArticlesGrid = mapYazilarForArticlesGridComponent(yazilar);
+
+const { Content } = await render(yazi.entry);
+
+const createdDate = parseDate(yazi.createdDate);
+const updatedDate = yazi.updatedDate ? parseDate(yazi.updatedDate) : null;
 const taxInfo = parseTitleAsTaxInfo(yazi.title);
 ---
 
-<DefaultLayout page={yazilarSlugPage}>
+<DefaultLayout
+    page={yazilarSlugPage}
+    dates={{ created: yazi.createdDate, updated: yazi.updatedDate }}>
     <PageHeader>
         <Container>
             <Breadcrumbs
@@ -71,8 +83,7 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
     </PageHeader>
 
     <Container>
-        <div ta-ad-container=""></div>
-        <hr />
+        <div class="ta-ad-first" ta-ad-container=""></div>
 
         <RichText
             is="section"
@@ -96,20 +107,35 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
             <Content />
         </RichText>
 
-        <br />
+        <hr />
 
-        <p class="publish-date">
-            Yayınlanma tarihi: <time datetime={timeDateTimeAttr} content={timeContentAttr} class="meta-date">{readableDate}</time>
-        </p>
+        <div class="dates">
+            <p>
+                Yayınlanma tarihi:
+                <time datetime={createdDate.timeDateTimeAttr}>
+                    {createdDate.readableDate}
+                </time>
+            </p>
+
+            {updatedDate ?
+                <p>
+                    Son güncellenme tarihi:
+                    <time datetime={updatedDate.timeDateTimeAttr}>
+                        {updatedDate.readableDate}
+                    </time>
+                </p> : ""}
+        </div>
 
         <br />
 
         <ArticleLegalDisclaimerAlert />
 
-        <hr />
-        <div ta-ad-container=""></div>
-        <hr />
+        <div class="ta-ad-last" ta-ad-container=""></div>
+    </Container>
 
+    <hr />
+
+    <Container>
         <section>
             <Heading2 is="h2">
                 <a href={yazilarPage.url}>
@@ -119,8 +145,8 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
             <ArticlesGrid
                 titleTag="h3"
                 items={yazilarForArticlesGrid} />
-            <hr />
-            <div ta-ad-container=""></div>
+
+            <div class="ta-ad-last" ta-ad-container=""></div>
         </section>
     </Container>
 </DefaultLayout>
@@ -130,13 +156,13 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
         --line-height-p: var(--vh-lh-xl)
     }
 
-    .publish-date {
+    .dates {
         opacity: .75;
         font-size: var(--vh-fs-base)
     }
 </style>
 
-<script type="module">
+<script is:inline type="module">
     document.addEventListener("DOMContentLoaded", () => {
         const detailsList = document.querySelectorAll("details");
         if (detailsList.length === 0) return;

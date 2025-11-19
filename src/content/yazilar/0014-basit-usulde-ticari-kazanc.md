@@ -1,7 +1,7 @@
 ---
 title: "Basit Usulde Ticari Kazanç [0014]"
 description: "Ticaret hayatının önemli bir parçası olan basit usul, küçük çaplı işletmeler için uygulanan bir vergi sistemi olarak karşımıza çıkmaktadır."
-date: 2023-05-10
+createdDate: 2023-05-10
 ---
 
 Ticaret hayatının önemli bir parçası olan **basit usul**, küçük çaplı işletmeler için uygulanan bir vergi sistemi olarak

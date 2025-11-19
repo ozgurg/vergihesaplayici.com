@@ -1,7 +1,7 @@
 ---
 title: "MEP İştirakçisi Kurumlar Vergisi [0020]"
 description: "MEP İştirakçisi Kurumlar Vergisi, yabancı sermayeli şirketlerin Türkiye'deki ortaklık kazançlarından ödedikleri vergidir."
-date: 2023-05-09
+createdDate: 2023-05-09
 ---
 
 **MEP İştirakçisi Kurumlar Vergisi**, Türkiye'de faaliyet gösteren **yabancı sermayeli şirketlerin**, Türkiye'de

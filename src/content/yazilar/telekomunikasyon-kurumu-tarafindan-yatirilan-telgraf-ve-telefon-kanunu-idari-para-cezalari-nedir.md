@@ -1,7 +1,7 @@
 ---
 title: "Telekomünikasyon Kurumu Tarafından Yatırılan Telgraf ve Telefon Kanunu İdari Para Cezaları Nedir?"
 description: "Türkiye'de telekomünikasyon hizmetleri, BTK tarafından denetlenir. Kanunlara uymayan işletmelere idari para cezası verilir."
-date: 2023-07-25
+createdDate: 2023-07-25
 ---
 
 Telekomünikasyon alanında düzenlemeler, ülkemizde **önemli** bir yere sahiptir. Bu alanda hizmet veren kurumlar,

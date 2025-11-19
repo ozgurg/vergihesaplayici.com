@@ -30,15 +30,13 @@ const yazilarForArticlesGrid = mapYazilarForArticlesGridComponent(yazilar);
     </PageHeader>
 
     <Container>
-        <div ta-ad-container=""></div>
-        <hr />
+        <div class="ta-ad-first" ta-ad-container=""></div>
 
         <ArticleLegalDisclaimerAlert />
         <ArticlesGrid
             titleTag="h2"
             items={yazilarForArticlesGrid} />
 
-        <hr />
-        <div ta-ad-container=""></div>
+        <div class="ta-ad-last" ta-ad-container=""></div>
     </Container>
 </DefaultLayout>

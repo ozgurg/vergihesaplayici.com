@@ -1,7 +1,7 @@
 ---
 title: "2762 Sayılı Kanuna Göre Alınan Taviz Bedeli Nedir?"
 description: "Ticari hayatta işletmeler arasında yapılan anlaşmaların bazı durumlarda gerçek değerlerinin altında olabileceği bir gerçektir."
-date: 2023-07-25
+createdDate: 2023-07-25
 ---
 
 **Ticari** hayatta işletmeler arasında yapılan anlaşmaların bazı durumlarda gerçek değerlerinin altında olabileceği bir

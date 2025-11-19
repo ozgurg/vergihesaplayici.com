@@ -8,14 +8,16 @@ export const COLLECTION_PATH = "./src/content/yazilar";
 export const Schema = z.object({
     title: z.string(),
     description: z.string(),
-    date: z.coerce.date()
+    createdDate: z.coerce.date(),
+    updatedDate: z.coerce.date().optional()
 });
 
 export type Yazi = {
     slug: string;
     title: string;
     description: string;
-    date: Date;
+    createdDate: Date;
+    updatedDate: Date | null;
     entry: AstroYazilarCollectionEntry;
 }
 

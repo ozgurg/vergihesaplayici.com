@@ -1,7 +1,7 @@
 ---
 title: "Kurumlar Vergisi Mükellefleri Talih Oyunları Asgari Vergisi [0050]"
 description: "Kurumlar vergisi, Türkiye'de faaliyet gösteren tüm kurum ve şirketlerin elde ettikleri kazançlar üzerinden ödedikleri bir vergidir."
-date: 2023-05-14
+createdDate: 2023-05-14
 ---
 
 **Kurumlar vergisi**, Türkiye'de faaliyet gösteren tüm **kurum ve şirketlerin** elde ettikleri kazançlar üzerinden

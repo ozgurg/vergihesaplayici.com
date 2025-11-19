@@ -1,7 +1,7 @@
 ---
 title: "Mera Fonu Para Cezası [9341]"
 description: "Mera fonu para cezası, Türkiye'de mera alanlarının korunmasını sağlamak amacıyla uygulanan bir düzenlemeye ilişkin cezai yaptırımdır."
-date: 2023-07-17
+createdDate: 2023-07-17
 ---
 
 Mera fonu para cezası, Türkiye'de **mera alanlarının korunmasını sağlamak** amacıyla uygulanan bir düzenlemeye ilişkin

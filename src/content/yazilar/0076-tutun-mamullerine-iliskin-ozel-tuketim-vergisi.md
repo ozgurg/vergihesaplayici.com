@@ -1,7 +1,7 @@
 ---
 title: "Tütün Mamüllerine İlişkin Özel Tüketim Vergisi [0076]"
 description: "Tütün mamülleri, sigara, pipo, puro gibi ürünleri kapsayan ve tütün içeren ürünlere verilen genel bir addır."
-date: 2023-05-17
+createdDate: 2023-05-17
 ---
 
 Tütün mamülleri, sigara, pipo, puro gibi ürünleri kapsayan ve tütün içeren ürünlere verilen genel bir addır. Türkiye'de

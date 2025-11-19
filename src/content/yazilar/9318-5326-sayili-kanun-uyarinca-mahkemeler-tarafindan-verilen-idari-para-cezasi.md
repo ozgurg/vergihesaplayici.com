@@ -1,7 +1,7 @@
 ---
 title: "5326 Sayılı Kanun Uyarınca Mahkemeler Tarafından Verilen İdari Para Cezası [9318]"
 description: "5326 Sayılı Kanun uyarınca mahkemeler tarafından verilen idari para cezası nedir, kimler öder ve nasıl hesaplanır? 2025 güncel detaylar."
-date: 2025-11-07
+createdDate: 2025-11-07
 ---
 
 **5326 Sayılı Kanun uyarınca mahkemeler tarafından verilen idari para cezası**, Kabahatler Kanunu kapsamında işlenen idari suçlar nedeniyle mahkeme kararıyla belirlenen mali yükümlülüktür. Bu ceza, yasaya aykırı davranışlarda bulunan gerçek veya tüzel kişilere uygulanır ve ilgili davranışın ağırlığı ile ihlalin türüne göre değişir. **İdari para cezası**, genellikle trafik, çevre, iş sağlığı, hijyen ve kamu düzeni gibi çeşitli alanlarda düzenlenen kabahatler için söz konusudur. Mahkeme kararına dayandığı için, cezayı doğrudan idari makam değil yargı organı tahakkuk ettirir.

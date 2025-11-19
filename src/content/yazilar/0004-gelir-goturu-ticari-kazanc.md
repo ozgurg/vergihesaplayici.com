@@ -1,7 +1,7 @@
 ---
 title: "Gelir Götürü Ticari Kazanç [0004]"
 description: "Gelir Götürü Ticari Kazanç, Türkiye'deki ticari faaliyetlerin vergilendirilmesi açısından oldukça önemli bir kavramdır."
-date: 2023-05-06
+createdDate: 2023-05-06
 ---
 
 Gelir Götürü <a href="/yazilar/0014-basit-usulde-ticari-kazanc/">Ticari Kazanç</a>, Türkiye'deki ticari faaliyetlerin vergilendirilmesi açısından oldukça önemli bir kavramdır.

@@ -1,7 +1,7 @@
 ---
 title: "ÖTV Nedir?"
 description: "ÖTV, Özel Tüketim Vergisi'nin kısaltmasıdır ve belirli tüketim ürünleri için alınan bir tür vergidir."
-date: 2023-04-27
+createdDate: 2023-04-27
 ---
 
 ÖTV, **Özel Tüketim Vergisi**'nin kısaltmasıdır ve belirli tüketim ürünleri için alınan bir tür vergidir. Özellikle

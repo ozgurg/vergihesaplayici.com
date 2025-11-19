@@ -1,7 +1,7 @@
 ---
 title: "Petrol ve Doğalgaz Ürünlerine İlişkin Özel Tüketim Vergisi [0071]"
 description: "Petrol ve Doğalgaz Ürünlerine İlişkin Özel Tüketim Vergisi (ÖTV), Türkiye'de uygulanan bir vergi türüdür."
-date: 2023-05-22
+createdDate: 2023-05-22
 ---
 
 Petrol ve Doğalgaz Ürünlerine İlişkin Özel Tüketim Vergisi (ÖTV), Türkiye'de uygulanan bir vergi türüdür. **ÖTV**,

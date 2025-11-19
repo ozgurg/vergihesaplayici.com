@@ -1,7 +1,7 @@
 ---
 title: "Turizm Para Cezası [9309]"
 description: "Türkiye'de turizm para cezaları, sektörün düzenli ve sürdürülebilir yürütülmesini sağlar, çevre ve kültürel mirasın korunmasını destekler."
-date: 2023-07-18
+createdDate: 2023-07-18
 ---
 
 **Turizm** sektörü, Türkiye'nin ekonomik büyümesinde önemli bir role sahiptir. Ülkemiz, **tarihi** ve **doğal

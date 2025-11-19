@@ -1,4 +1,5 @@
 ---
+import type { Preset, Brand } from "@/domains/telefon-vergisi-hesaplayici/types.js";
 import DefaultLayout from "@/layouts/default-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
 import Container from "@/components/common/container.vue";
@@ -32,6 +33,10 @@ export const getStaticPaths = (): object => {
     }));
 };
 
+type Props = {
+    preset: Preset;
+    brand: Brand;
+};
 const { preset, brand } = Astro.props;
 
 const telefonVergisiHesaplayiciPage = TelefonVergisiHesaplayiciPageDef();
@@ -75,7 +80,9 @@ const calculateServerSide = () => {
 const initial = calculateServerSide();
 ---
 
-<DefaultLayout page={telefonVergisiHesaplayiciPresetSlugPage}>
+<DefaultLayout
+    page={telefonVergisiHesaplayiciPresetSlugPage}
+    dates={{ created: preset.releaseDate, updated: new Date(EXCHANGE_RATES.dateUpdated) }}>
     <PageHeader>
         <Container>
             <Breadcrumbs
@@ -99,8 +106,8 @@ const initial = calculateServerSide();
     {presetsForCalculatorPresetCarousel.length > 0 ?
         <hr />
         <Container>
-            <div ta-ad-container=""></div>
-            <hr />
+            <div class="ta-ad-first" ta-ad-container=""></div>
+
             <Heading2 is="h2">
                 Diğer hazır hesaplamalar
             </Heading2>
@@ -110,8 +117,7 @@ const initial = calculateServerSide();
             items={presetsForCalculatorPresetCarousel} />
         : ""}
 
-    <hr />
     <Container>
-        <div ta-ad-container=""></div>
+        <div class="ta-ad-last" ta-ad-container=""></div>
     </Container>
 </DefaultLayout>

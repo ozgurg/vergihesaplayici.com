@@ -1,7 +1,7 @@
 ---
 title: "Akaryakıt Tüketim Vergisi [0046]"
 description: "Akaryakıt tüketim vergisi, Türkiye'de benzin, motorin ve LPG gibi yakıtlar üzerinden alınan ÖTV türüdür ve devlet bütçesine katkı sağlar."
-date: 2023-05-10
+createdDate: 2023-05-10
 ---
 
 **Akaryakıt tüketim vergisi**, Türkiye'deki akaryakıt tüketimine uygulanan bir vergidir. Bu vergi, **Özel Tüketim

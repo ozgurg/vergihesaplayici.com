@@ -1,7 +1,7 @@
 ---
 title: "Özel İletişim Vergisi Nedir?"
 description: "Özel İletişim Vergisi (ÖİV), Türkiye'de telekomünikasyon ve internet hizmetlerinden alınan, fatura tutarının belirli yüzdesi kadar tahsil edilen bir vergidir."
-date: 2023-06-06
+createdDate: 2023-06-06
 ---
 
 **Özel İletişim Vergisi** (**ÖİV**), **Türkiye'de** iletişim hizmetleri üzerinde uygulanan bir vergi türüdür. Bu vergi,

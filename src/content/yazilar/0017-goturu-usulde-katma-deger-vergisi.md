@@ -1,7 +1,7 @@
 ---
 title: "Götürü Usulde Katma Değer Vergisi [0017]"
 description: "Götürü usulde katma değer vergisi, Türkiye'de belirli sektörlerde faaliyet gösteren işletmelerin vergilendirme yöntemidir."
-date: 2023-05-10
+createdDate: 2023-05-10
 ---
 
 **Götürü usulde katma değer vergisi**, Türkiye'de belirli sektörlerde faaliyet gösteren işletmelerin vergilendirme

@@ -1,7 +1,7 @@
 ---
 title: "Röntgen Filmlerinden Alınan Ek Vergi [0057]"
 description: "Türkiye'de röntgen filmlerinden ek vergi, tıbbi görüntüleme gelirlerinden alınır ve sağlık hizmetlerinin finansmanına katkı sağlar."
-date: 2023-05-18
+createdDate: 2023-05-18
 ---
 
 Vergiler, bir ülkenin mali yapısının temel taşlarından biridir. Devletler, kamu hizmetlerini finanse etmek, ekonomik

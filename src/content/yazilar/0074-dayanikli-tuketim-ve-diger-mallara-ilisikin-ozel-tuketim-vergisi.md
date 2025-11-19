@@ -1,7 +1,7 @@
 ---
 title: "Dayanıklı Tüketim ve Diğer Mallara İlişikin Özel Tüketim Vergisi [0074]"
 description: "Dayanıklı tüketim ve diğer mallara ilişkin özel tüketim vergisi, Türkiye'de uygulanan bir vergi türüdür."
-date: 2023-05-22
+createdDate: 2023-05-22
 ---
 
 Dayanıklı tüketim ve diğer mallara ilişkin **özel tüketim vergisi**, Türkiye'de uygulanan bir vergi türüdür. Bu vergi,

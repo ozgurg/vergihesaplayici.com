@@ -1,7 +1,7 @@
 ---
 title: "Tevkifattan Alınan Damga Vergisi [1046]"
 description: "Tevkifattan alınan damga vergisi, sözleşme veya belgeden karşı tarafça kesilerek ödenen vergidir. Sorumlular ve hesaplama yöntemi içeriktedir."
-date: 2025-07-26
+createdDate: 2025-07-26
 ---
 
 Tevkifattan alınan damga vergisi, bir belge veya sözleşmeye ait damga vergisinin doğrudan mükellef tarafından değil,

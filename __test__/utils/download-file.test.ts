@@ -19,7 +19,6 @@ describe("utils/download-file.js", () => {
                 remove: removeMock
             } as unknown as HTMLAnchorElement;
 
-            // @ts-expect-error: FIXME
             createElementSpy = vi.spyOn(document, "createElement").mockReturnValue(anchorMock);
 
             appendSpy = vi.spyOn(document.body, "append");

@@ -18,7 +18,7 @@ describe("components/common/form/form-group.vue", () => {
 
         const formLabel = wrapper.findComponent(FormLabel);
         expect(formLabel.exists()).toBeTruthy();
-        expect(formLabel.element.tagName).toBe("LEGEND");
+        expect((formLabel.element as HTMLElement).tagName).toBe("LEGEND");
         expect(formLabel.text()).toBe(testLabel);
     });
 

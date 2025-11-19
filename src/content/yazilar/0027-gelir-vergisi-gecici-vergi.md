@@ -1,7 +1,7 @@
 ---
 title: "Gelir Vergisi Geçici Vergi [0027]"
 description: "Gelir Vergisi Geçici Vergi, Türkiye'deki işletmelerin yıllık gelir vergisi beyannameleri sonuçlarına göre ödemeleri gereken bir tür vergidir."
-date: 2023-05-13
+createdDate: 2023-05-13
 ---
 
 **Gelir Vergisi Geçici Vergi**, Türkiye'deki işletmelerin yıllık gelir vergisi beyannameleri sonuçlarına göre ödemeleri

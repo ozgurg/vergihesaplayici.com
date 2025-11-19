@@ -1,7 +1,7 @@
 ---
 title: "Alkollü İçeceklere İlişkin Özel Tüketim Vergisi [0075]"
 description: "Özel tüketim vergisi (ÖTV), Türkiye'de alkollü içecekler gibi belirli ürünlere uygulanan bir vergi türüdür."
-date: 2023-05-17
+createdDate: 2023-05-17
 ---
 
 Özel tüketim vergisi (ÖTV), Türkiye'de alkollü içecekler gibi belirli ürünlere uygulanan bir vergi türüdür. Bu vergi,

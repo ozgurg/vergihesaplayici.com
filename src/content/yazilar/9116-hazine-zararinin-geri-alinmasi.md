@@ -1,7 +1,7 @@
 ---
 title: "Hazine Zararının Geri Alınması [9116]"
 description: "Hazine Zararının Geri Alınması, kamu kayıplarını tespit edip sorumlulardan tahsil ederek mali şeffaflığı artırır."
-date: 2025-10-25
+createdDate: 2025-10-25
 ---
 
 **Hazine Zararının Geri Alınması**, kamu kaynaklarının etkin kullanılmasını sağlamak ve **devletin mali kayıplarını

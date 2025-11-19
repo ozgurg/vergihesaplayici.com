@@ -1,7 +1,7 @@
 ---
-title: "3516 Sayılı Kanuna Göre Ölçü Ayar Para Cezası Nedir?"
+title: "3516 Sayılı Kanuna Göre Ölçü Ayar Para Cezası [9307]"
 description: "Türkiye'de 3516 Sayılı Ölçüler ve Ayar Kanunu, ticari faaliyetlerde ölçü ve tartı aletlerinin doğru kullanımını sağlar."
-date: 2023-07-19
+createdDate: 2023-07-19
 ---
 
 **Türkiye'de 3516 Sayılı Ölçüler ve Ayar Kanunu**, ülkedeki ticari faaliyetlerde ölçü ve tartı aletlerinin doğru ve adil
