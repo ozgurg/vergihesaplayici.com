@@ -115,6 +115,7 @@ const redirections301 = [
     ["yazilar/dsi-sulama-tesisleri-yatirim-bedeli-nedir", "yazilar/9201-dsi-sulama-tesisleri-yatirim-bedeli"],
     ["yazilar/telgraf-ve-telefon-kanunu-2-madde-idari-para-cezasi-nedir", "yazilar/9304-telgraf-ve-telefon-kanunu-2-madde-idari-para-cezasi"],
     ["yazilar/dsi-sulama-tesisleri-isletme-ve-bakim-ucreti-nedir", "yazilar/9200-dsi-sulama-tesisleri-isletme-ve-bakim-ucreti"],
+    ["yazilar/kadastro-harclari-nedir", "yazilar/9162-kadastro-harclari"],
 
     ["yazilar/telefon-vergisi", "telefon-vergisi-hesaplayici"],
     ["yazilar/konsol-vergisi", "konsol-vergisi-hesaplayici"],
