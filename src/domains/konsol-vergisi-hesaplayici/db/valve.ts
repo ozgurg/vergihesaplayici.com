@@ -68,5 +68,31 @@ export const presets: Preset[] = [
                 }
             }
         ]
+    },
+
+    {
+        brandId: BRAND_ID,
+        title: "Steam Machine",
+        slug: "valve-steam-machine",
+        releaseDate: new Date("2026-03-19"),
+        thumb: "valve-steam-machine.png",
+        ...buildPageMeta("Valve Steam Machine'nin"),
+        disclaimerNote: `Listelenen fiyat ve çıkış tarihi yer tutucu amacıyla eklenmiştir, gerçeği yansıtmamaktadır. ${DISCLAIMER_NOTE}`,
+        options: [
+            {
+                title: "512GB",
+                form: {
+                    price: 519,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "2TB",
+                form: {
+                    price: 669,
+                    currency: "USD"
+                }
+            }
+        ]
     }
 ];
