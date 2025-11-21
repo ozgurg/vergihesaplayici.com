@@ -64,8 +64,8 @@
         inline-size: calc(100% + (var(--container-padding-inline) * 2));
         padding-inline: var(--container-padding-inline);
         @include vh-media-breakpoint-up(sm) {
-            margin-inline: 0;
-            inline-size: 100%;
+            margin-inline: calc(var(--vh-spacer) * -1);
+            inline-size: calc(100% + (var(--vh-spacer) * 2));
             padding-inline: var(--vh-spacer);
             @include vh-squircle(calc(var(--vh-br-normal) + var(--vh-spacer)))
         }
