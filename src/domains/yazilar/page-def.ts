@@ -43,7 +43,7 @@ export const YazilarSlugPageDef: _PageDef = ({ yazi }): Page => {
     if (isVergiTuru) {
         breadcrumbs = [
             ...parentPage.breadcrumbs,
-            { title: "Vergi Türleri", url: siteUrl("/yazilar/vergi-turleri/") },
+            { title: "Vergi Türleri", url: siteUrl("/yazilar/vergi-turleri") },
             { title, url }
         ];
     } else {
