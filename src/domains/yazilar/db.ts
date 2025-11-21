@@ -4,14 +4,9 @@ import { getCollection } from "astro:content";
 
 const sortYazilarByDate = (yazilar: Yazi[]): Yazi[] => {
     return yazilar.toSorted((a, b) => {
-        const aUpdated = a.updatedDate ? a.updatedDate.getTime() : 0;
-        const bUpdated = b.updatedDate ? b.updatedDate.getTime() : 0;
-
-        if (aUpdated !== bUpdated) {
-            return bUpdated - aUpdated;
-        }
-
-        return b.createdDate.getTime() - a.createdDate.getTime();
+        const aDate = a.updatedDate ?? a.createdDate;
+        const bDate = b.updatedDate ?? b.createdDate;
+        return bDate.getTime() - aDate.getTime();
     });
 };
 
