@@ -1,5 +1,5 @@
 ---
-title: "Kadastro Harçları Nedir?"
+title: "Kadastro Harçları [9162]"
 description: "Kadastro harçları, Türkiye'de taşınmaz mal sahiplerinin kadastro işlemleri için ödediği ücretlerdir."
 createdDate: 2023-07-18
 ---
