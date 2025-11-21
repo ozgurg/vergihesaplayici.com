@@ -1,5 +1,5 @@
 ---
-title: "Gelir Vergisi Tevkifatı Nedir?"
+title: "Gelir Vergisi Tevkifatı [9113]"
 description: "Gelir vergisi tevkifatı, ödemeler sırasında verginin kesilip doğrudan vergi dairesine yatırılmasıyla vergi tahsilatını kolaylaştırır."
 createdDate: 2023-07-25
 ---

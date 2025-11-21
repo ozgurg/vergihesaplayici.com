@@ -1,5 +1,5 @@
 ---
-title: "Mahalli İdarelerden Alınan Paylar Nedir?"
+title: "Mahalli İdarelerden Alınan Paylar [9133]"
 description: "Türkiye'de, mahalli idareler yerel yönetimleri temsil eder ve kendi bölgesel ihtiyaçlarına cevap vermek için vergi ve diğer gelir kaynaklarını kullanır."
 createdDate: 2023-07-19
 ---

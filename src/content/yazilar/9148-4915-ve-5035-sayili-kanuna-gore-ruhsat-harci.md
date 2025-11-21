@@ -1,5 +1,5 @@
 ---
-title: "4915 ve 5035 Sayılı Kanuna Göre Ruhsat Harcı Nedir?"
+title: "4915 ve 5035 Sayılı Kanuna Göre Ruhsat Harcı [9148]"
 description: "Ruhsat harcı, Türkiye'de faaliyet gösteren işletmelerin belirli ruhsat ve izinleri alabilmesi için ödemek zorunda olduğu bir tür vergidir."
 createdDate: 2023-07-19
 ---

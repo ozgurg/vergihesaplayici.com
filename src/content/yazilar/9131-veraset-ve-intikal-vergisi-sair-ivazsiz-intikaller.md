@@ -1,5 +1,5 @@
 ---
-title: "Veraset ve İntikal Vergisi (Sair İvazsız İntikaller) Nedir?"
+title: "Veraset ve İntikal Vergisi (Sair İvazsız İntikaller) [9131]"
 description: "Türkiye'de miras yoluyla veya bağışlama suretiyle elde edilen bazı mal varlıklarına yönelik vergi türleri bulunmaktadır."
 createdDate: 2023-07-25
 ---

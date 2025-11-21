@@ -1,5 +1,5 @@
 ---
-title: "5254 Sayılı Kanuna Göre Muhtaç Çiftçilere Verilen Ödünç Tohumlukların Hazine Alacağına Dönüşenler Nedir?"
+title: "5254 Sayılı Kanuna Göre Muhtaç Çiftçilere Verilen Ödünç Tohumlukların Hazine Alacağına Dönüşenler [9126]"
 description: "5254 Sayılı Kanun ile Türkiye'de muhtaç çiftçilere verilen ödünç tohumluklar, tarımsal üretimi destekler ve borç ödenmezse hazine alacağına dönüşür."
 createdDate: 2023-07-19
 ---

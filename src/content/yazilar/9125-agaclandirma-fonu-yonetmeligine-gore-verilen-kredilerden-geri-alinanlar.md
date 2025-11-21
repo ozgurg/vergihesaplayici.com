@@ -1,5 +1,5 @@
 ---
-title: "Ağaçlandırma Fonu Yönetmeliğine Göre Verilen Kredilerden Geri Alınanlar Nedir?"
+title: "Ağaçlandırma Fonu Yönetmeliğine Göre Verilen Kredilerden Geri Alınanlar [9125]"
 description: "Ağaçlandırma Fonu Yönetmeliği, Türkiye'de orman varlığının artırılması ve sürdürülebilir orman yönetimi için önemli bir mekanizma sağlar."
 createdDate: 2023-07-19
 ---

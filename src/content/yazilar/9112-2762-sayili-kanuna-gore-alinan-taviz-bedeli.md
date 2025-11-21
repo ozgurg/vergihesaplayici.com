@@ -1,5 +1,5 @@
 ---
-title: "2762 Sayılı Kanuna Göre Alınan Taviz Bedeli Nedir?"
+title: "2762 Sayılı Kanuna Göre Alınan Taviz Bedeli [9112]"
 description: "Ticari hayatta işletmeler arasında yapılan anlaşmaların bazı durumlarda gerçek değerlerinin altında olabileceği bir gerçektir."
 createdDate: 2023-07-25
 ---
