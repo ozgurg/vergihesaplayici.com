@@ -1,5 +1,5 @@
 ---
-title: "Kıymetli Maden ve Ziynet Eşyasından Alınan Vergi Nedir?"
+title: "Kıymetli Maden ve Ziynet Eşyasından Alınan Vergi [4079]"
 description: "Türkiye'de kıymetli madenler ve ziynet eşyaları, vergi mevzuatı çerçevesinde belirli oranlarda vergilendirilmektedir."
 createdDate: 2023-06-06
 ---

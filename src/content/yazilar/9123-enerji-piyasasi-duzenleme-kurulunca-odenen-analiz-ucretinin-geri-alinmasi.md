@@ -1,5 +1,5 @@
 ---
-title: "Enerji Piyasası Düzenleme Kurulunca Ödenen Analiz Ücretinin Geri Alınması Nedir?"
+title: "Enerji Piyasası Düzenleme Kurulunca Ödenen Analiz Ücretinin Geri Alınması [9123]"
 description: "Enerji sektörü EPDK tarafından denetlenir; firmalardan analiz ve rapor hazırlığı için ücret alınır, hatalı veya gecikmeli raporlar için iade talep edilebilir."
 createdDate: 2023-07-25
 ---

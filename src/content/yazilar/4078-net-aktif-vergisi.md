@@ -1,5 +1,5 @@
 ---
-title: "Net Aktif Vergisi Nedir?"
+title: "Net Aktif Vergisi [4078]"
 description: "Vergi sistemi bir ülkenin ekonomik kaynaklarını finanse etmek ve kamu hizmetlerini sağlamak için önemli bir araçtır."
 createdDate: 2023-06-06
 ---

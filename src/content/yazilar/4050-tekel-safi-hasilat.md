@@ -1,5 +1,5 @@
 ---
-title: "Tekel Safi Hasılat Nedir?"
+title: "Tekel Safi Hasılat [4050]"
 description: "Tekel safi hasılatı, Türkiye'de tekel ürünlerinin satışından elde edilen geliri ifade eder ve vergi politikalarıyla devlet bütçesine katkı sağlar."
 createdDate: 2023-06-06
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Şans Oyunları Vergisi Nedir?"
+title: "Şans Oyunları Vergisi [4048]"
 description: "Şans oyunları vergisi, Türkiye'de şans oyunu işletmecilerinin brüt gelirleri üzerinden alınan ve devlet gelirlerine katkı sağlayan bir vergi türüdür."
 createdDate: 2023-06-06
 ---
