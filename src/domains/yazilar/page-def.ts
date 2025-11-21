@@ -37,10 +37,21 @@ export const YazilarSlugPageDef: _PageDef = ({ yazi }): Page => {
     const id = "yazilar-slug";
     const title = yazi.title;
     const url = siteUrl(`/yazilar/${yazi.slug}`);
-    const breadcrumbs = [
-        ...parentPage.breadcrumbs,
-        { title, url }
-    ];
+
+    let breadcrumbs;
+    const isVergiTuru = /\[\d{4}]$/.test(yazi.title);
+    if (isVergiTuru) {
+        breadcrumbs = [
+            ...parentPage.breadcrumbs,
+            { title: "Vergi Türleri", url: siteUrl("/yazilar/vergi-turleri/") },
+            { title, url }
+        ];
+    } else {
+        breadcrumbs = [
+            ...parentPage.breadcrumbs,
+            { title, url }
+        ];
+    }
 
     return {
         id,
