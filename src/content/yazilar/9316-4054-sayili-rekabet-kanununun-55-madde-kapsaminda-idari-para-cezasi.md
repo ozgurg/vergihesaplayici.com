@@ -1,6 +1,6 @@
 ---
 title: "4054 Sayılı Rekabet Kanununun 55. Madde Kapsamında İdari Para Cezası [9316]"
-description: "DSİ sulama tesislerinin yatırım bedeli, proje büyüklüğü, sulama yöntemi ve arazi koşullarına göre milyonlarca liradan milyarlara kadar değişebilir."
+description: "4054 Sayılı Rekabet Kanununun 55. maddesi ve idari para cezası [9316] hakkında kapsamlı, anlaşılır ve uygulamaya dönük bilgiler sunan detaylı bir rehber."
 createdDate: 2025-11-21
 ---
 
