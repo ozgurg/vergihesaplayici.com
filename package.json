@@ -20,7 +20,7 @@
     "dependencies": {
         "@fontsource-variable/inter": "5.2.8",
         "@fontsource-variable/roboto-mono": "5.2.8",
-        "astro": "5.15.9",
+        "astro": "5.16.0",
         "firebase": "12.6.0",
         "html-to-image": "1.11.13",
         "remixicon": "4.7.0",
@@ -34,25 +34,25 @@
         "@commitlint/cli": "20.1.0",
         "@commitlint/config-conventional": "20.0.0",
         "@vitejs/plugin-vue": "6.0.2",
-        "@vitest/coverage-istanbul": "4.0.10",
+        "@vitest/coverage-istanbul": "4.0.12",
         "@vue/test-utils": "2.4.6",
         "astro-compress": "2.3.8",
         "fast-average-color-node": "3.1.0",
         "husky": "9.1.7",
         "jsdom": "27.2.0",
-        "lint-staged": "16.2.6",
+        "lint-staged": "16.2.7",
         "oxlint": "1.29.0",
-        "sass": "1.94.1",
+        "sass": "1.94.2",
         "satori": "0.18.3",
         "satori-html": "0.3.2",
         "sharp": "0.34.5",
         "typescript": "5.9.3",
         "unplugin-auto-import": "20.2.0",
         "unplugin-vue-components": "30.0.0",
-        "vitest": "4.0.10"
+        "vitest": "4.0.12"
     },
     "peerDependencies": {
-        "firebase-tools": "14.25.1"
+        "firebase-tools": "14.26.0"
     },
     "engines": {
         "node": ">=22.0.0"
