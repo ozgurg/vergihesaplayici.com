@@ -1,10 +1,11 @@
 ---
 const IS_DEV_MODE = import.meta.env.DEV;
+const SITE_ID = import.meta.env.PUBLIC_TINYADZ_SITE_ID;
 ---
 
 <script
     is:inline
     src="https://cdn.apitiny.net/scripts/v2.0/main.js"
-    data-site-id="68d6da655ba59d41c1dbce36"
+    data-site-id={SITE_ID}
     async=""
     data-test-mode={IS_DEV_MODE ? "true" : "false"}></script>
