@@ -16,6 +16,8 @@ interface ImportMetaEnv {
 
     readonly PUBLIC_RECAPTCHA_V3_PUBLIC_KEY: string;
 
+    readonly PUBLIC_TINYADZ_SITE_ID: string;
+
     // `.env.(development|production|production|production.local)`
     readonly URL_BASE: string;
 }
