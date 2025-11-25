@@ -1,5 +1,5 @@
 ---
-import DefaultLayout from "@/layouts/default-layout.astro";
+import AppLayout from "@/layouts/app-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
 import Container from "@/components/common/container.vue";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
@@ -14,7 +14,7 @@ const hataBildirPage = HataBildirPageDef();
 const PUBLIC_RECAPTCHA_V3_PUBLIC_KEY = import.meta.env.PUBLIC_RECAPTCHA_V3_PUBLIC_KEY;
 ---
 
-<DefaultLayout page={hataBildirPage}>
+<AppLayout page={hataBildirPage}>
     <PageHeader>
         <Container>
             <Breadcrumbs
@@ -49,7 +49,7 @@ const PUBLIC_RECAPTCHA_V3_PUBLIC_KEY = import.meta.env.PUBLIC_RECAPTCHA_V3_PUBLI
 
         <div class="ta-ad-last" ta-ad-container=""></div>
     </Container>
-</DefaultLayout>
+</AppLayout>
 
 <script is:inline src={`https://www.google.com/recaptcha/api.js?render=${PUBLIC_RECAPTCHA_V3_PUBLIC_KEY}`}></script>
 <script is:inline define:vars={{ PUBLIC_RECAPTCHA_V3_PUBLIC_KEY }}>

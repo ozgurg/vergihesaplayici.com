@@ -1,5 +1,5 @@
 ---
-import DefaultLayout from "@/layouts/default-layout.astro";
+import AppLayout from "@/layouts/app-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
 import Container from "@/components/common/container.vue";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
@@ -17,7 +17,7 @@ const yazilar = await getYazilar();
 const yazilarForArticlesGrid = mapYazilarForArticlesGridComponent(yazilar);
 ---
 
-<DefaultLayout page={yazilarPage}>
+<AppLayout page={yazilarPage}>
     <PageHeader>
         <Container>
             <Breadcrumbs
@@ -39,4 +39,4 @@ const yazilarForArticlesGrid = mapYazilarForArticlesGridComponent(yazilar);
 
         <div class="ta-ad-last" ta-ad-container=""></div>
     </Container>
-</DefaultLayout>
+</AppLayout>

@@ -1,6 +1,6 @@
 ---
 import type { Yazi } from "@/domains/yazilar/types.js";
-import DefaultLayout from "@/layouts/default-layout.astro";
+import AppLayout from "@/layouts/app-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
 import Container from "@/components/common/container.vue";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
@@ -68,7 +68,7 @@ const updatedDate = yazi.updatedDate ? parseDate(yazi.updatedDate) : null;
 const taxInfo = parseTitleAsTaxInfo(yazi.title);
 ---
 
-<DefaultLayout
+<AppLayout
     page={yazilarSlugPage}
     dates={{ created: yazi.createdDate, updated: yazi.updatedDate }}>
     <PageHeader>
@@ -149,7 +149,7 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
             <div class="ta-ad-last" ta-ad-container=""></div>
         </section>
     </Container>
-</DefaultLayout>
+</AppLayout>
 
 <style lang="scss">
     .content {
