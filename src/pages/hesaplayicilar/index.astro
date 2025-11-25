@@ -1,5 +1,5 @@
 ---
-import DefaultLayout from "@/layouts/default-layout.astro";
+import AppLayout from "@/layouts/app-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
 import Container from "@/components/common/container.vue";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
@@ -11,7 +11,7 @@ import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
 const hesaplayicilarPage = HesaplayicilarPageDef();
 ---
 
-<DefaultLayout page={hesaplayicilarPage}>
+<AppLayout page={hesaplayicilarPage}>
     <PageHeader>
         <Container>
             <Breadcrumbs
@@ -30,4 +30,4 @@ const hesaplayicilarPage = HesaplayicilarPageDef();
 
         <div class="ta-ad-last" ta-ad-container=""></div>
     </Container>
-</DefaultLayout>
+</AppLayout>

@@ -1,5 +1,5 @@
 ---
-import DefaultLayout from "@/layouts/default-layout.astro";
+import AppLayout from "@/layouts/app-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
 import Container from "@/components/common/container.vue";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
@@ -21,7 +21,7 @@ const presets = getPresetsForAllBrands();
 const presetsForCalculatorPresetCarousel = mapPresetsForCalculatorPresetCarouselComponent(presets);
 ---
 
-<DefaultLayout page={konsolVergisiHesaplayiciPage}>
+<AppLayout page={konsolVergisiHesaplayiciPage}>
     <PageHeader>
         <Container>
             <Breadcrumbs
@@ -64,4 +64,4 @@ const presetsForCalculatorPresetCarousel = mapPresetsForCalculatorPresetCarousel
     <Container>
         <div class="ta-ad-last" ta-ad-container=""></div>
     </Container>
-</DefaultLayout>
+</AppLayout>

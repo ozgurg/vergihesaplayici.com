@@ -1,5 +1,5 @@
 ---
-import DefaultLayout from "@/layouts/default-layout.astro";
+import AppLayout from "@/layouts/app-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
 import Container from "@/components/common/container.vue";
 import Heading1 from "@/components/common/heading-1.vue";
@@ -11,7 +11,7 @@ import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
 const anaSayfaPage = AnaSayfaPageDef();
 ---
 
-<DefaultLayout page={anaSayfaPage}>
+<AppLayout page={anaSayfaPage}>
     <PageHeader>
         <Container>
             <Heading1>
@@ -30,7 +30,7 @@ const anaSayfaPage = AnaSayfaPageDef();
             <div class="ta-ad-last" ta-ad-container=""></div>
         </RichText>
     </Container>
-</DefaultLayout>
+</AppLayout>
 
 <style lang="scss">
     .heading-1 {

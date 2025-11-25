@@ -1,5 +1,5 @@
 ---
-import DefaultLayout from "@/layouts/default-layout.astro";
+import AppLayout from "@/layouts/app-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
 import Container from "@/components/common/container.vue";
 import Heading1 from "@/components/common/heading-1.vue";
@@ -24,7 +24,7 @@ const yazilar = (await getYazilar()).slice(0, 8);
 const yazilarForArticlesGrid = mapYazilarForArticlesGridComponent(yazilar);
 ---
 
-<DefaultLayout page={anaSayfaPage}>
+<AppLayout page={anaSayfaPage}>
     <section class="hero">
         <PageHeader>
             <Container>
@@ -71,7 +71,7 @@ const yazilarForArticlesGrid = mapYazilarForArticlesGridComponent(yazilar);
 
         <div class="ta-ad-last" ta-ad-container=""></div>
     </Container>
-</DefaultLayout>
+</AppLayout>
 
 <style lang="scss">
     .heading-1 {

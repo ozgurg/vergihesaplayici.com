@@ -1,6 +1,6 @@
 ---
 import type { Preset, Brand } from "@/domains/telefon-vergisi-hesaplayici/types.js";
-import DefaultLayout from "@/layouts/default-layout.astro";
+import AppLayout from "@/layouts/app-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
 import Container from "@/components/common/container.vue";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
@@ -80,7 +80,7 @@ const calculateServerSide = () => {
 const initial = calculateServerSide();
 ---
 
-<DefaultLayout
+<AppLayout
     page={telefonVergisiHesaplayiciPresetSlugPage}
     dates={{ created: preset.releaseDate, updated: new Date(EXCHANGE_RATES.dateUpdated) }}>
     <PageHeader>
@@ -120,4 +120,4 @@ const initial = calculateServerSide();
     <Container>
         <div class="ta-ad-last" ta-ad-container=""></div>
     </Container>
-</DefaultLayout>
+</AppLayout>
