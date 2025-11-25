@@ -24,7 +24,7 @@
         "firebase": "12.6.0",
         "html-to-image": "1.11.13",
         "remixicon": "4.7.0",
-        "vue": "3.5.24",
+        "vue": "3.5.25",
         "vue-draggable-plus": "0.6.0"
     },
     "devDependencies": {
@@ -34,14 +34,14 @@
         "@commitlint/cli": "20.1.0",
         "@commitlint/config-conventional": "20.0.0",
         "@vitejs/plugin-vue": "6.0.2",
-        "@vitest/coverage-istanbul": "4.0.13",
+        "@vitest/coverage-istanbul": "4.0.14",
         "@vue/test-utils": "2.4.6",
         "astro-compress": "2.3.8",
         "fast-average-color-node": "3.1.0",
         "husky": "9.1.7",
         "jsdom": "27.2.0",
         "lint-staged": "16.2.7",
-        "oxlint": "1.29.0",
+        "oxlint": "1.30.0",
         "sass": "1.94.2",
         "satori": "0.18.3",
         "satori-html": "0.3.2",
@@ -49,7 +49,7 @@
         "typescript": "5.9.3",
         "unplugin-auto-import": "20.2.0",
         "unplugin-vue-components": "30.0.0",
-        "vitest": "4.0.13"
+        "vitest": "4.0.14"
     },
     "peerDependencies": {
         "firebase-tools": "14.26.0"
