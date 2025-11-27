@@ -22,7 +22,10 @@ const FALLBACK_EXCHANGE_RATES: ExchangeRates = {
     rates: {
         TRY: 1,
         USD: 1,
-        EUR: 1
+        EUR: 1,
+        GBP: 1,
+        INR: 1,
+        CNY: 1,
     }
 };
 
@@ -43,7 +46,10 @@ const fetchExchangeRate = async (): Promise<ExchangeRates> => {
                 rates: {
                     TRY: json?.rates?.TRY ?? 0,
                     USD: json?.rates?.USD ? 1 / json.rates.USD : 0,
-                    EUR: json?.rates?.EUR ? 1 / json.rates.EUR : 0
+                    EUR: json?.rates?.EUR ? 1 / json.rates.EUR : 0,
+                    GBP: json?.rates?.GBP ? 1 / json.rates.GBP : 0,
+                    INR: json?.rates?.INR ? 1 / json.rates.INR : 0,
+                    CNY: json?.rates?.CNY ? 1 / json.rates.CNY : 0,
                 }
             };
         }

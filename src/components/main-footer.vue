@@ -90,8 +90,9 @@ const hataBildirPage = HataBildirPageDef();
         align-items: center;
         &-list {
             display: inline-flex;
-            flex-direction: row;
-            gap: calc(var(--vh-spacer) * .75);
+            flex-flow: row wrap;
+            justify-content: center;
+            gap: calc(var(--vh-spacer) * .5);
             margin-block-end: calc(var(--vh-spacer) * .75);
             li {
                 padding-block: calc(var(--vh-spacer) * .75);
