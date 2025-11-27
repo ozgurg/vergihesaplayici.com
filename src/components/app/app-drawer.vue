@@ -58,8 +58,8 @@ const props = defineProps<Props>();
     .calculator-card-item {
         flex-shrink: 0;
         block-size: calc((100% - (var(--_gap) * (var(--_ideal-item-count) - 1))) / var(--_ideal-item-count));
-        min-block-size: 183px;
-        max-block-size: 183px;
+        min-block-size: 192px;
+        max-block-size: 192px;
         padding-block: 0;
         display: flex;
         flex-direction: column;
