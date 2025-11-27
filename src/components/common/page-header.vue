@@ -17,7 +17,7 @@ defineProps<Props>();
     background: linear-gradient(to top, transparent, hsla(var(--vh-clr-primary-hsl), .04));
     padding-block-end: calc(var(--vh-spacer) * 2);
     @include vh-media-breakpoint-down(md) {
-        padding-block-start: calc((var(--header-down-md-block-size) - (var(--breadcrumbs-block-size) - var(--breadcrumbs-item-block-size))) + var(--vh-spacer))
+        padding-block-start: calc((var(--app-header-down-md-block-size) - (var(--breadcrumbs-block-size) - var(--breadcrumbs-item-block-size))) + var(--vh-spacer))
     }
     @include vh-media-breakpoint-up(md) {
         @supports (not(animation-timeline: scroll())) {

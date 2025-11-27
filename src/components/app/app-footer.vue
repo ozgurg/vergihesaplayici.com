@@ -1,7 +1,5 @@
-<!-- `main-` is used to avoid conflicts with the native `<footer />` element -->
-
 <template>
-    <footer class="main-footer">
+    <footer class="app-footer">
         <container>
             <div
                 class="exchange-rates"
@@ -74,7 +72,7 @@ const hataBildirPage = HataBildirPageDef();
 </script>
 
 <style lang="scss" scoped>
-.main-footer {
+.app-footer {
     --_padding-block: calc(var(--vh-spacer) * 2);
     text-align: center;
     margin-block-start: auto;
@@ -90,8 +88,9 @@ const hataBildirPage = HataBildirPageDef();
         align-items: center;
         &-list {
             display: inline-flex;
-            flex-direction: row;
-            gap: calc(var(--vh-spacer) * .75);
+            flex-flow: row wrap;
+            justify-content: center;
+            gap: calc(var(--vh-spacer) * .5);
             margin-block-end: calc(var(--vh-spacer) * .75);
             li {
                 padding-block: calc(var(--vh-spacer) * .75);

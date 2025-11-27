@@ -3,25 +3,25 @@ import { mount } from "@vue/test-utils";
 import { testAttrPassingToRoot, testRootClass } from "@root/__test__/utils.js";
 import { getCalculatorPages } from "@/domains/hesaplayicilar/db.js";
 import CalculatorCardItem from "@/components/calculator-card-item.vue";
-import Drawer from "@/components/drawer.vue";
+import AppDrawer from "@/components/app/app-drawer.vue";
 
 const CALCULATOR_PAGES = getCalculatorPages();
 
-describe("components/drawer.vue", () => {
-    testAttrPassingToRoot(Drawer, { props: { id: "passed-id" } });
-    testRootClass(Drawer, "drawer", { props: { id: "passed-id" } });
+describe("components/app/app-drawer.vue", () => {
+    testAttrPassingToRoot(AppDrawer, { props: { id: "passed-id" } });
+    testRootClass(AppDrawer, "app-drawer", { props: { id: "passed-id" } });
 
     it("uses passed `id`", () => {
-        const testId = "test-drawer";
-        const wrapper = mount(Drawer, {
+        const testId = "test-app-drawer";
+        const wrapper = mount(AppDrawer, {
             props: { id: testId }
         });
         expect(wrapper.attributes("id")).toBe(testId);
     });
 
     it("renders all calculator pages as `<calculator-card-item />`", () => {
-        const testId = "test-drawer";
-        const wrapper = mount(Drawer, {
+        const testId = "test-app-drawer";
+        const wrapper = mount(AppDrawer, {
             props: { id: testId }
         });
 

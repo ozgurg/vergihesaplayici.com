@@ -15,6 +15,9 @@ export type ExchangeRates = {
         TRY: number;
         USD: number;
         EUR: number;
+        GBP: number,
+        INR: number,
+        CNY: number,
     }
 };
 

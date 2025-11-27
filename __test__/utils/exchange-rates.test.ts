@@ -32,7 +32,10 @@ describe("utils/exchange-rates.js", () => {
                     rates: {
                         TRY: 1,
                         USD: 0.039,
-                        EUR: 0.044
+                        EUR: 0.044,
+                        GBP: 0.018,
+                        INR: 2.11,
+                        CNY: 0.17
                     },
                     time_last_update_utc: testDate
                 })
@@ -45,7 +48,10 @@ describe("utils/exchange-rates.js", () => {
                 rates: {
                     TRY: 1,
                     USD: 1 / 0.039,
-                    EUR: 1 / 0.044
+                    EUR: 1 / 0.044,
+                    GBP: 1 / 0.018,
+                    INR: 1 / 2.11,
+                    CNY: 1 / 0.17
                 }
             });
         });
@@ -89,7 +95,10 @@ describe("utils/exchange-rates.js", () => {
                 rates: {
                     TRY: 1,
                     USD: 1,
-                    EUR: 1
+                    EUR: 1,
+                    GBP: 1,
+                    INR: 1,
+                    CNY: 1
                 }
             });
 
@@ -120,7 +129,10 @@ describe("utils/exchange-rates.js", () => {
                 rates: {
                     TRY: 1,
                     USD: 1,
-                    EUR: 1
+                    EUR: 1,
+                    GBP: 1,
+                    INR: 1,
+                    CNY: 1
                 }
             });
 
@@ -152,7 +164,10 @@ describe("utils/exchange-rates.js", () => {
                     rates: {
                         TRY: 1,
                         USD: 2, // 1 TRY = 2 USD, so 1 USD = 0.5 TRY
-                        EUR: 4 // 1 TRY = 4 EUR, so 1 EUR = 0.25 TRY
+                        EUR: 4, // 1 TRY = 4 EUR, so 1 EUR = 0.25 TRY
+                        GBP: 5, // 1 TRY = 5 GBP, so 1 GBP = 0.25 TRY
+                        INR: 6, // 1 TRY = 6 INR, so 1 INR = 0.25 TRY
+                        CNY: 7 // 1 TRY = 7 CNY, so 1 CNY = 0.25 TRY
                     },
                     time_last_update_utc: "2025-01-02T01:02:03Z"
                 })
@@ -161,6 +176,9 @@ describe("utils/exchange-rates.js", () => {
             const result = await initializeExchangeRates();
             expect(result.rates.USD).toBe(0.5); // 1 / 2.0
             expect(result.rates.EUR).toBe(0.25); // 1 / 4.0
+            expect(result.rates.GBP).toBe(0.2); // 1 / 5.0
+            expect(result.rates.INR).toBe(0.166_666_666_666_666_66); // 1 / 6.0
+            expect(result.rates.CNY).toBe(0.142_857_142_857_142_85); // 1 / 70.0
         });
 
         it("should handle zero rates gracefully", async () => {
@@ -188,7 +206,10 @@ describe("utils/exchange-rates.js", () => {
                     rates: {
                         TRY: 1,
                         USD: 0.039,
-                        EUR: 0.044
+                        EUR: 0.044,
+                        GBP: 1 / 0.018,
+                        INR: 1 / 2.11,
+                        CNY: 1 / 0.17
                     },
                     time_last_update_utc: testDate
                 })
@@ -222,7 +243,10 @@ describe("utils/exchange-rates.js", () => {
                 rates: {
                     TRY: 1,
                     USD: 39,
-                    EUR: 44
+                    EUR: 44,
+                    GBP: 1 / 0.018,
+                    INR: 1 / 2.11,
+                    CNY: 1 / 0.17
                 }
             };
             (window as any).__EXCHANGE_RATES__ = mockRates;
