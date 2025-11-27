@@ -117,8 +117,7 @@ export default defineConfig({
                 dtsMode: "overwrite",
                 dts: "unplugin-auto-import.d.ts",
                 dirs: [
-                    "src/utils/**.ts",
-                    "src/composables/**.ts"
+                    "src/utils/**.ts"
                 ],
                 imports: [
                     "vue",
