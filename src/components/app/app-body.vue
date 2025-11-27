@@ -1,7 +1,5 @@
-<!-- `-body` is used to avoid conflicts with the native `<main />` element -->
-
 <template>
-    <main class="main-body">
+    <main class="app-body">
         <slot name="default" />
     </main>
 </template>
@@ -15,7 +13,7 @@ defineProps<Props>();
 </script>
 
 <style lang="scss" scoped>
-.main-body {
+.app-body {
     flex: 1;
     padding-block-end: calc(var(--vh-spacer) * 2);
     @include vh-media-breakpoint-up(md) {

@@ -148,7 +148,7 @@ const props = withDefaults(defineProps<Props>(), {
             background: hsla(var(--vh-clr-white-hsl), .08);
             @include vh-media-breakpoint-up(md) {
                 position: sticky;
-                inset-block-start: var(--header-up-md-collapsed-block-size);
+                inset-block-start: var(--app-header-up-md-collapsed-block-size);
                 @include vh-backdrop-blur(1rem)
             }
         }

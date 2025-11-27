@@ -2,11 +2,11 @@
     --body-bg-hsl: var(--vh-clr-primary-h), 10%, 4.5%;
 
 
-    // src/components/header.astro
-    --header-zindex: 100;
-    --header-down-md-block-size: 4.375rem;
-    --header-up-md-collapsed-block-size: 4.5rem;
-    --header-up-md-expanded-block-size: 6rem;
+    // src/components/app/app-header.astro
+    --app-header-zindex: 100;
+    --app-header-down-md-block-size: 4.375rem;
+    --app-header-up-md-collapsed-block-size: 4.5rem;
+    --app-header-up-md-expanded-block-size: 6rem;
 
 
     // src/components/common/breadcrumbs.vue

@@ -1,10 +1,10 @@
 import { describe, expect, it } from "vitest";
 import { mount } from "@vue/test-utils";
 import { testRootClass } from "@root/__test__/utils.js";
-import MainFooter from "@/components/main-footer.vue";
+import AppFooter from "@/components/app/app-footer.vue";
 
-describe("components/main-footer.vue", () => {
-    testRootClass(MainFooter, "main-footer", {
+describe("components/app/app-footer.vue", () => {
+    testRootClass(AppFooter, "app-footer", {
         props: {
             EXCHANGE_RATES: { rates: {}, dateUpdated: new Date() }
         }
@@ -13,7 +13,7 @@ describe("components/main-footer.vue", () => {
     it("renders exchange rates correctly", () => {
         const primaryCurrencyCode = "TRY";
         const testRates = { [primaryCurrencyCode]: 1, USD: 38, EUR: 44 };
-        const wrapper = mount(MainFooter, {
+        const wrapper = mount(AppFooter, {
             props: {
                 EXCHANGE_RATES: {
                     rates: testRates,
@@ -40,7 +40,7 @@ describe("components/main-footer.vue", () => {
 
     it("renders update date correctly", () => {
         const textDateUpdated = new Date("2025-01-01T10:00:00Z");
-        const wrapper = mount(MainFooter, {
+        const wrapper = mount(AppFooter, {
             props: {
                 // @ts-expect-error: Value of `rates` is not important for this test
                 EXCHANGE_RATES: { rates: {}, dateUpdated: textDateUpdated }
@@ -54,7 +54,7 @@ describe("components/main-footer.vue", () => {
     });
 
     it("renders API provider credit link correctly", () => {
-        const wrapper = mount(MainFooter, {
+        const wrapper = mount(AppFooter, {
             props: {
                 // @ts-expect-error: Value of `rates` is not important for this test
                 EXCHANGE_RATES: { rates: {}, dateUpdated: new Date() }

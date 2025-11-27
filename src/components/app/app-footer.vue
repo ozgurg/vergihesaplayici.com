@@ -1,7 +1,5 @@
-<!-- `main-` is used to avoid conflicts with the native `<footer />` element -->
-
 <template>
-    <footer class="main-footer">
+    <footer class="app-footer">
         <container>
             <div
                 class="exchange-rates"
@@ -74,7 +72,7 @@ const hataBildirPage = HataBildirPageDef();
 </script>
 
 <style lang="scss" scoped>
-.main-footer {
+.app-footer {
     --_padding-block: calc(var(--vh-spacer) * 2);
     text-align: center;
     margin-block-start: auto;

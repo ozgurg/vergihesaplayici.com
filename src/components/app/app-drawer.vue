@@ -1,7 +1,7 @@
 <template>
     <dialog
         :id="props.id"
-        class="drawer">
+        class="app-drawer">
         <container>
             <template v-for="_calculatorPage in CALCULATOR_PAGES" :key="_calculatorPage.url">
                 <calculator-card-item
@@ -29,9 +29,9 @@ const props = defineProps<Props>();
 </script>
 
 <style lang="scss" scoped>
-.drawer {
+.app-drawer {
     position: fixed;
-    z-index: calc(var(--header-zindex) - 1);
+    z-index: calc(var(--app-header-zindex) - 1);
     inset-inline: 0;
     inset-block-end: 0;
     inline-size: 100%;
@@ -52,7 +52,7 @@ const props = defineProps<Props>();
         block-size: 100%;
         gap: var(--_gap);
         scrollbar-width: thin;
-        padding-block-start: calc(var(--header-down-md-block-size) + (var(--_padding-block)));
+        padding-block-start: calc(var(--app-header-down-md-block-size) + (var(--_padding-block)));
         padding-block-end: max(env(safe-area-inset-bottom), var(--_padding-block))
     }
     .calculator-card-item {

@@ -3,14 +3,14 @@ import Container from "@/components/common/container.vue";
 import CachedSvg from "@/components/common/cached-svg.vue";
 import logoSvg from "@/assets/img/logo.svg?raw";
 import SvgIcon from "@/components/common/svg-icon.vue";
-import Drawer from "@/components/drawer.vue";
+import AppDrawer from "@/components/app/app-drawer.vue";
 import { icon_apps, icon_close } from "@/utils/icons.js";
 import { getFeaturedCalculatorPages } from "@/domains/hesaplayicilar/db.js";
 import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
 import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
 
-const DRAWER_TOGGLE_ID = "header-drawer-toggle";
-const DRAWER_ID = "drawer";
+const APP_DRAWER_TOGGLE_ID = "app-drawer-toggle";
+const APP_DRAWER_ID = "app-drawer";
 
 const anaSayfaPage = AnaSayfaPageDef();
 const hesaplayicilarPage = HesaplayicilarPageDef();
@@ -18,7 +18,7 @@ const hesaplayicilarPage = HesaplayicilarPageDef();
 const nav = getFeaturedCalculatorPages();
 ---
 
-<header class="header">
+<header class="app-header">
     <Container>
         <a
             href={anaSayfaPage.url}
@@ -49,7 +49,7 @@ const nav = getFeaturedCalculatorPages();
             </ul>
         </nav>
         <button
-            id={DRAWER_TOGGLE_ID}
+            id={APP_DRAWER_TOGGLE_ID}
             class="drawer-toggle"
             type="button">
             <SvgIcon class="open-icon" icon={icon_apps} />
@@ -58,7 +58,7 @@ const nav = getFeaturedCalculatorPages();
     </Container>
 </header>
 
-<Drawer id={DRAWER_ID} />
+<AppDrawer id={APP_DRAWER_ID} />
 
 <style lang="scss" is:global>
     @mixin blur {
@@ -81,37 +81,37 @@ const nav = getFeaturedCalculatorPages();
         background: var(--_bg)
     }
 
-    @mixin if-drawer-open {
-        html:has(.drawer[open]) & {
+    @mixin if-app-drawer-open {
+        html:has(.app-drawer[open]) & {
             @content
         }
     }
 
-    @mixin drawer-toggle-icon-hidden-state {
+    @mixin app-drawer-toggle-icon-hidden-state {
         opacity: 0;
         transform: scale(0)
     }
 
-    @mixin drawer-toggle-icon-shown-state {
+    @mixin app-drawer-toggle-icon-shown-state {
         opacity: 1;
         transform: scale(1)
     }
 
-    html:has(.drawer[open]) {
+    html:has(.app-drawer[open]) {
         body {
             overflow: hidden
         }
     }
 
-    .header {
+    .app-header {
         @include vh-media-breakpoint-down(md) {
             position: fixed;
-            z-index: var(--header-zindex);
+            z-index: var(--app-header-zindex);
             inset-inline: 0;
             inset-block-start: 0;
             inline-size: 100%;
             pointer-events: none;
-            block-size: var(--header-down-md-block-size);
+            block-size: var(--app-header-down-md-block-size);
             display: flex;
             align-items: flex-end;
             justify-content: center;
@@ -161,20 +161,20 @@ const nav = getFeaturedCalculatorPages();
         }
         @include vh-media-breakpoint-up(md) {
             position: sticky;
-            z-index: var(--header-zindex);
+            z-index: var(--app-header-zindex);
             inset-block-start: env(safe-area-inset-top, 0);
             inline-size: 100%;
             background: hsla(var(--vh-clr-primary-hsl), .04);
             @include blur;
-            block-size: var(--header-up-md-collapsed-block-size);
+            block-size: var(--app-header-up-md-collapsed-block-size);
             @supports (animation-timeline: scroll()) {
-                block-size: var(--header-up-md-expanded-block-size);
-                animation: header-shrink-block-size both;
+                block-size: var(--app-header-up-md-expanded-block-size);
+                animation: app-header-shrink-block-size both;
                 animation-timeline: scroll();
-                animation-range: 0 var(--header-up-md-expanded-block-size);
-                @keyframes header-shrink-block-size {
+                animation-range: 0 var(--app-header-up-md-expanded-block-size);
+                @keyframes app-header-shrink-block-size {
                     to {
-                        block-size: var(--header-up-md-collapsed-block-size);
+                        block-size: var(--app-header-up-md-collapsed-block-size);
                         background: hsla(var(--body-bg-hsl), .75)
                     }
                 }
@@ -191,10 +191,10 @@ const nav = getFeaturedCalculatorPages();
                 align-items: center;
                 justify-content: space-between;
                 @supports (animation-timeline: scroll()) {
-                    animation: header-container-border both;
+                    animation: app-header-container-border both;
                     animation-timeline: scroll();
-                    animation-range: var(--header-up-md-collapsed-block-size) var(--header-up-md-collapsed-block-size);
-                    @keyframes header-container-border {
+                    animation-range: var(--app-header-up-md-collapsed-block-size) var(--app-header-up-md-collapsed-block-size);
+                    @keyframes app-header-container-border {
                         to {
                             @include border
                         }
@@ -251,24 +251,24 @@ const nav = getFeaturedCalculatorPages();
                 inset: auto;
                 transition: vh-transition(opacity transform, var(--vh-duration-long));
                 &.open-icon {
-                    @include if-drawer-open {
+                    @include if-app-drawer-open {
                         & {
-                            @include drawer-toggle-icon-hidden-state
+                            @include app-drawer-toggle-icon-hidden-state
                         }
                     }
                 }
                 &.close-icon {
-                    @include drawer-toggle-icon-hidden-state;
-                    @include if-drawer-open {
+                    @include app-drawer-toggle-icon-hidden-state;
+                    @include if-app-drawer-open {
                         & {
-                            @include drawer-toggle-icon-shown-state
+                            @include app-drawer-toggle-icon-shown-state
                         }
                     }
                 }
             }
         }
         .nav {
-            --_anchor-name: var(--anchor-name, --header-hover-indicator);
+            --_anchor-name: var(--anchor-name, --app-header-hover-indicator);
             margin-inline: calc((var(--vh-spacer) * .875) * -1);
             @include vh-media-breakpoint-down(md) {
                 display: none
@@ -368,28 +368,28 @@ const nav = getFeaturedCalculatorPages();
      * I need to update two different locations for the IDs
      * https://docs.astro.build/en/reference/directives-reference/#definevars
      */
-    const DRAWER_TOGGLE_ID = "header-drawer-toggle";
-    const DRAWER_ID = "drawer";
+    const APP_DRAWER_TOGGLE_ID = "app-drawer-toggle";
+    const APP_DRAWER_ID = "app-drawer";
 
-    const headerDrawerOpenerEl = document.querySelector(`#${DRAWER_TOGGLE_ID}`) as HTMLButtonElement;
-    const drawerEl = document.querySelector(`#${DRAWER_ID}`) as HTMLDialogElement;
+    const appDrawerTogglerEl = document.querySelector(`#${APP_DRAWER_TOGGLE_ID}`) as HTMLButtonElement;
+    const appDrawerEl = document.querySelector(`#${APP_DRAWER_ID}`) as HTMLDialogElement;
 
     const _setTitle = (): void => {
-        headerDrawerOpenerEl.title = drawerEl.open ? "Menüyü kapat" : "Menüyü aç";
+        appDrawerTogglerEl.title = appDrawerEl.open ? "Menüyü kapat" : "Menüyü aç";
     };
 
-    const _toggleDrawer = (): void => {
-        if (drawerEl.open) {
-            drawerEl.close();
+    const _toggleAppDrawer = (): void => {
+        if (appDrawerEl.open) {
+            appDrawerEl.close();
         } else {
-            drawerEl.show();
+            appDrawerEl.show();
             setTimeout(() => {
-                drawerEl.focus();
+                appDrawerEl.focus();
             }, 0);
         }
         _setTitle();
     };
 
     _setTitle();
-    headerDrawerOpenerEl.addEventListener("click", _toggleDrawer);
+    appDrawerTogglerEl.addEventListener("click", _toggleAppDrawer);
 </script>
