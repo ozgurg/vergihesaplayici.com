@@ -1,5 +1,6 @@
 ---
 import type { Page } from "@/types/page-def.js";
+import interLatinNormalFontWoff2Url from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
 
 const pad = (number: number): string => String(number).padStart(2, "0");
 
@@ -55,6 +56,8 @@ const MANIFEST_JSON = staticUrl("/manifest.json");
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,viewport-fit=cover,interactive-widget=resizes-content" />
 <title>{TITLE}</title>
+
+<link rel="preload" as="font" type="font/woff2" href={interLatinNormalFontWoff2Url} crossorigin="anonymous" />
 
 {dates?.created ?
 <meta name="published_time" content={toMetaContent(dates.created)} />
