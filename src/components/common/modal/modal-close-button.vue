@@ -11,10 +11,10 @@
 </template>
 
 <script lang="ts" setup>
-import type { Props as FormButtonProps } from "@/components/common/form/form-button.vue";
+import type { HtmlAttrs_button } from "@/types/html.js";
 import { icon_close } from "@/utils/icons.js";
 
-export type Props = FormButtonProps;
+export type Props = /* @vue-ignore */ Partial<HtmlAttrs_button>;
 
 defineProps<Props>();
 </script>
