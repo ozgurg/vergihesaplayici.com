@@ -6,7 +6,8 @@
         color="light"
         scale="medium"
         type="button"
-        variant="filled">
+        variant="filled"
+        class="cursor-copy">
         <transition name="fade-scale-transition" mode="out-in">
             <template v-if="isCopied">
                 <svg-icon :icon="icon_check" />

@@ -18,6 +18,12 @@
     @include vh-screen-reader-only
 }
 
+.cursor-copy {
+    @supports (cursor: copy) {
+        cursor: copy !important
+    }
+}
+
 .stretched-link {
     &::after {
         position: absolute;
