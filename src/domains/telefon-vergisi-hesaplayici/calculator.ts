@@ -109,7 +109,7 @@ export class Calculator {
 
     // "Kültür Bakanlığı" | TRY | RateType.PERCENT | BaseAmountMode.PREVIOUS_AMOUNT
     private calculateTax_ministryOfCulture(): void {
-        this.taxRates.ministryOfCulture = 1;
+        this.taxRates.ministryOfCulture = 1.2;
         this.taxFees.ministryOfCulture = this.calculateTax(this.price, this.taxRates.ministryOfCulture);
         this.calculatePrice(this.taxFees.ministryOfCulture);
     }
