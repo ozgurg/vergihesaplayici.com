@@ -59,6 +59,8 @@
         "eslint/no-undefined": "off",
         "eslint/no-magic-numbers": "off",
         "eslint/no-alert": "off",
+        "eslint/capitalized-comments": "off",
+        "eslint/no-inline-comments": "off",
         "eslint/yoda": [
             "error",
             {
