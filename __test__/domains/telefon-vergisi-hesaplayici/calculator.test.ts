@@ -33,7 +33,7 @@ describe("domains/telefon-vergisi-hesaplayici/calculator.js", () => {
             },
             expectedOutput: {
                 taxFree: 500,
-                taxAdded: 848.4
+                taxAdded: 850.08
             }
         });
         calculate({
@@ -46,7 +46,7 @@ describe("domains/telefon-vergisi-hesaplayici/calculator.js", () => {
             },
             expectedOutput: {
                 taxFree: 1_500,
-                taxAdded: 2_545.2
+                taxAdded: 2_550.24
             }
         });
         calculate({
@@ -59,7 +59,7 @@ describe("domains/telefon-vergisi-hesaplayici/calculator.js", () => {
             },
             expectedOutput: {
                 taxFree: 5_000,
-                taxAdded: 9_502.08
+                taxAdded: 9_520.9
             }
         });
 
@@ -74,7 +74,7 @@ describe("domains/telefon-vergisi-hesaplayici/calculator.js", () => {
                 mode: Mode.TAX_ADDED_TO_TAX_FREE
             },
             expectedOutput: {
-                taxFree: 294.67,
+                taxFree: 294.08,
                 taxAdded: 500
             }
         });
@@ -87,7 +87,7 @@ describe("domains/telefon-vergisi-hesaplayici/calculator.js", () => {
                 mode: Mode.TAX_ADDED_TO_TAX_FREE
             },
             expectedOutput: {
-                taxFree: 884.02,
+                taxFree: 882.27,
                 taxAdded: 1_500
             }
         });
@@ -100,7 +100,7 @@ describe("domains/telefon-vergisi-hesaplayici/calculator.js", () => {
                 mode: Mode.TAX_ADDED_TO_TAX_FREE
             },
             expectedOutput: {
-                taxFree: 2_946.72,
+                taxFree: 2_940.9,
                 taxAdded: 5_000
             }
         });
@@ -197,7 +197,7 @@ describe("domains/telefon-vergisi-hesaplayici/calculator.js", () => {
                 mode: Mode.TAX_ADDED_TO_TAX_FREE
             },
             expectedOutput: {
-                taxFree: 24_556.03,
+                taxFree: 24_507.49,
                 taxAdded: 50_000
             }
         });

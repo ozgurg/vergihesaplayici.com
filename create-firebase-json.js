@@ -213,7 +213,8 @@ const firebaseJson = {
             {
                 source: "**",
                 headers: [
-                    { // https://hstspreload.org/
+                    {
+                        // https://hstspreload.org/
                         key: "Strict-Transport-Security",
                         value: "max-age=63072000; includeSubDomains; preload"
                     },
@@ -229,7 +230,8 @@ const firebaseJson = {
                         key: "Referrer-Policy",
                         value: "strict-origin-when-cross-origin"
                     },
-                    { // Deprecated header
+                    {
+                        // Deprecated header
                         key: "X-XSS-Protection",
                         value: "1; mode=block"
                     },

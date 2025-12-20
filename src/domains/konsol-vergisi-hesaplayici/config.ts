@@ -27,4 +27,4 @@ export const PRICE_LABEL_BY_MODE = {
     [Mode.TAX_FREE_TO_TAX_ADDED]: "Vergisiz konsol fiyatı"
 };
 
-export const LAST_UPDATE = new Date("Wed Jul 23 2025 23:00:00 GMT+0300 (GMT+03:00)");
+export const LAST_UPDATE = new Date("Sat Dec 20 2025 09:00:00 GMT+0300 (GMT+03:00)");
