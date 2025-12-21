@@ -82,7 +82,6 @@
 <script lang="ts" setup>
 import type { CalculatorPage } from "@/types/page-def.js";
 import type { CalculationResults, Form, ResultList, ScreenshotData } from "@/domains/kdv-hesaplayici/types.js";
-import { Mode } from "@/domains/kdv-hesaplayici/types.js";
 import { calculateResults } from "@/domains/kdv-hesaplayici/utils/calculate-results.js";
 import { DEFAULT_FORM } from "@/domains/kdv-hesaplayici/config.js";
 
@@ -103,9 +102,9 @@ const isCalculatorShareModalOpened = ref<boolean>(false);
 
 const priceLabel = computed<string>(() => {
     return {
-        [Mode.TAX_FREE_TO_TAX_ADDED]: "KDV hariç tutar",
-        [Mode.TAX_ADDED_TO_TAX_FREE]: "KDV dahil tutar",
-        [Mode.TAX_TO_TAX_BASE]: "KDV tutarı"
+        "tax-free-to-tax-added": "KDV hariç tutar",
+        "tax-added-to-tax-free": "KDV dahil tutar",
+        "tax-to-tax-base": "KDV tutarı"
     }[form.mode];
 });
 

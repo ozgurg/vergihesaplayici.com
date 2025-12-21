@@ -23,13 +23,13 @@
 <script lang="ts" setup>
 // oxlint-disable-next-line consistent-type-imports
 import type { Item as FormCheckProps } from "@/components/common/form/form-check-group.vue";
-import { VehicleEngineVolume, VehicleType } from "@/domains/arac-vergisi/types.js";
+import type { VehicleEngineVolume, VehicleType } from "@/domains/arac-vergisi/types.js";
 import {
     VEHICLE_ENGINE_VOLUME_LABEL_BY_VEHICLE_ENGINE_VOLUME,
     VEHICLE_ENGINE_VOLUME_LABEL_BY_VEHICLE_TYPE
 } from "@/domains/arac-vergisi/config.js";
 
-const toFormCheckProps = (items: VehicleEngineVolume[]) => {
+const toFormCheckProps = (items: VehicleEngineVolume[]): FormCheckProps[] => {
     return items.map(_item => ({
         title: VEHICLE_ENGINE_VOLUME_LABEL_BY_VEHICLE_ENGINE_VOLUME[_item],
         input: {
@@ -51,37 +51,31 @@ const label = computed<string>(() => {
 
 const items = computed<FormCheckProps[] | null>(() => {
     const map: Partial<{ [key in VehicleType]: FormCheckProps[] }> = {
-        [VehicleType.AUTOMOBILE]: toFormCheckProps([
-            VehicleEngineVolume.AUTOMOBILE__0_1400,
-            VehicleEngineVolume.AUTOMOBILE__1401_1600,
-            VehicleEngineVolume.AUTOMOBILE__1601_2000,
-            VehicleEngineVolume.AUTOMOBILE__2001_UP
+        "automobile": toFormCheckProps([
+            "automobile.0-1400",
+            "automobile.1401-1600",
+            "automobile.1601-2000",
+            "automobile.2001-up"
         ]),
-        [VehicleType.ELECTRIC_AUTOMOBILE]: toFormCheckProps([
-            VehicleEngineVolume.ELECTRIC_AUTOMOBILE__0_160,
-            VehicleEngineVolume.ELECTRIC_AUTOMOBILE__161_UP
+        "electric-automobile": toFormCheckProps([
+            "electric-automobile.0-160",
+            "electric-automobile.161-up"
         ]),
-        [VehicleType.HYBRID_AUTOMOBILE]: toFormCheckProps([
-            VehicleEngineVolume.HYBRID_AUTOMOBILE__50_UP_0_1800,
-            VehicleEngineVolume.HYBRID_AUTOMOBILE__100_UP_0_2500,
-            VehicleEngineVolume.HYBRID_AUTOMOBILE__OTHER
+        "hybrid-automobile": toFormCheckProps([
+            "hybrid-automobile.50-up.0-1800",
+            "hybrid-automobile.100-up.0-2500",
+            "hybrid-automobile.other"
         ]),
-        [VehicleType.MOTORCYCLE]: toFormCheckProps([
-            VehicleEngineVolume.MOTORCYCLE__0_250,
-            VehicleEngineVolume.MOTORCYCLE__251_UP
+        "motorcycle": toFormCheckProps([
+            "motorcycle.0-250",
+            "motorcycle.251-up"
         ])
     };
     return map[props.vehicleType] ?? null;
 });
 
-const className = computed<string | null>(() => {
-    const map: Partial<{ [key in VehicleType]: string }> = {
-        [VehicleType.AUTOMOBILE]: "vehicle-engine-volume-automobile",
-        [VehicleType.ELECTRIC_AUTOMOBILE]: "vehicle-engine-volume-electric-automobile",
-        [VehicleType.HYBRID_AUTOMOBILE]: "vehicle-engine-volume-hybrid-automobile",
-        [VehicleType.MOTORCYCLE]: "vehicle-engine-volume-motorcycle"
-    };
-    return map[props.vehicleType] ?? null;
+const className = computed<string>(() => {
+    return `vehicle-engine-volume-${props.vehicleType}`;
 });
 </script>
 

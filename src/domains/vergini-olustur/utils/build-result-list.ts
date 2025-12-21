@@ -1,5 +1,4 @@
 import type { CalculationResults, Form, ResultList, TaxItem } from "@/domains/vergini-olustur/types.js";
-import { RateType } from "@/domains/vergini-olustur/types.js";
 
 export const buildResultList = (_: Form<TaxItem>, results: CalculationResults): ResultList => {
     const { taxFees, taxRates, prices } = results;
@@ -16,13 +15,13 @@ export const buildResultList = (_: Form<TaxItem>, results: CalculationResults): 
     for (const [_index, _taxFeeItem] of taxFees.items.entries()) {
         const name = `${_taxFeeItem.taxItem.name || `${_index + 1}. vergi`}`;
 
-        if (_taxFeeItem.taxItem.rateType === RateType.PERCENT) {
+        if (_taxFeeItem.taxItem.rateType === "percent") {
             list.push({
                 key: `taxFee-${_index}`,
                 label: `${name} (%${normalizePrice(_taxFeeItem.taxItem.rate)})`, // FIXME: `rate` is not a price, so using `normalizePrice` feels misleading
                 value: formatMoney(_taxFeeItem.amount, "TRY")
             });
-        } else if (_taxFeeItem.taxItem.rateType === RateType.UNIT) {
+        } else if (_taxFeeItem.taxItem.rateType === "unit") {
             list.push({
                 key: `taxFee-${_index}`,
                 label: `${name} (${formatMoney(_taxFeeItem.taxItem.rate, _taxFeeItem.taxItem.rateTypeUnitCurrency)})`,

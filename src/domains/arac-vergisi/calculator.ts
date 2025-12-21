@@ -1,5 +1,12 @@
-import type { CalculationResults, Prices, TaxFees, TaxRates } from "@/domains/arac-vergisi/types.js";
-import { Mode, VehicleEngineVolume, VehicleType } from "@/domains/arac-vergisi/types.js";
+import type {
+    CalculationResults,
+    Mode,
+    Prices,
+    TaxFees,
+    TaxRates,
+    VehicleEngineVolume,
+    VehicleType
+} from "@/domains/arac-vergisi/types.js";
 
 type OtvRate = {
     maxBasePrice: number;
@@ -7,92 +14,92 @@ type OtvRate = {
 };
 
 type OtvRates = {
-    [vehicleType in VehicleType]: { [engineVolume in VehicleEngineVolume]?: OtvRate[] } | OtvRate;
+    [vehicleType in VehicleType]: { [engineVolume in VehicleEngineVolume & `${vehicleType}.${string}`]?: OtvRate[] } | OtvRate;
 };
 
 // Source: https://www.resmigazete.gov.tr/eskiler/2025/07/20250724-5.pdf
 // Source: https://www.mevzuat.gov.tr/mevzuatmetin/1.5.4760.pdf
 // Source: https://www.youtube.com/watch?v=qRaNnAdVnMc
 const OTV_RATES: OtvRates = {
-    [VehicleType.AUTOMOBILE]: {
-        [VehicleEngineVolume.AUTOMOBILE__0_1400]: [
+    "automobile": {
+        "automobile.0-1400": [
             { maxBasePrice: 650_000, percent: 70 },
             { maxBasePrice: 900_000, percent: 75 },
             { maxBasePrice: 1_100_000, percent: 80 },
             { maxBasePrice: Infinity, percent: 90 }
         ],
-        [VehicleEngineVolume.AUTOMOBILE__1401_1600]: [
+        "automobile.1401-1600": [
             { maxBasePrice: 850_000, percent: 75 },
             { maxBasePrice: 1_100_000, percent: 80 },
             { maxBasePrice: 1_650_000, percent: 90 },
             { maxBasePrice: Infinity, percent: 100 }
         ],
-        [VehicleEngineVolume.AUTOMOBILE__1601_2000]: [
+        "automobile.1601-2000": [
             { maxBasePrice: 1_650_000, percent: 150 },
             { maxBasePrice: Infinity, percent: 170 }
         ],
-        [VehicleEngineVolume.AUTOMOBILE__2001_UP]: [
+        "automobile.2001-up": [
             { maxBasePrice: Infinity, percent: 220 }
         ]
     },
 
-    [VehicleType.ELECTRIC_AUTOMOBILE]: {
-        [VehicleEngineVolume.ELECTRIC_AUTOMOBILE__0_160]: [
+    "electric-automobile": {
+        "electric-automobile.0-160": [
             { maxBasePrice: 1_650_000, percent: 25 },
             { maxBasePrice: Infinity, percent: 55 }
         ],
-        [VehicleEngineVolume.ELECTRIC_AUTOMOBILE__161_UP]: [
+        "electric-automobile.161-up": [
             { maxBasePrice: 1_650_000, percent: 65 },
             { maxBasePrice: Infinity, percent: 75 }
         ]
     },
 
-    [VehicleType.HYBRID_AUTOMOBILE]: {
-        [VehicleEngineVolume.HYBRID_AUTOMOBILE__50_UP_0_1800]: [
+    "hybrid-automobile": {
+        "hybrid-automobile.50-up.0-1800": [
             { maxBasePrice: 1_250_000, percent: 70 },
             { maxBasePrice: Infinity, percent: 80 }
         ],
-        [VehicleEngineVolume.HYBRID_AUTOMOBILE__100_UP_0_2500]: [
+        "hybrid-automobile.100-up.0-2500": [
             { maxBasePrice: 1_650_000, percent: 150 },
             { maxBasePrice: Infinity, percent: 170 }
         ],
-        [VehicleEngineVolume.HYBRID_AUTOMOBILE__OTHER]: [
+        "hybrid-automobile.other": [
             { maxBasePrice: Infinity, percent: 220 }
         ]
     },
 
-    [VehicleType.MOTORCYCLE]: {
-        [VehicleEngineVolume.MOTORCYCLE__0_250]: [
+    "motorcycle": {
+        "motorcycle.0-250": [
             { maxBasePrice: Infinity, percent: 0 }
         ],
-        [VehicleEngineVolume.MOTORCYCLE__251_UP]: [
+        "motorcycle.251-up": [
             { maxBasePrice: Infinity, percent: 37 }
         ]
     },
 
-    [VehicleType.BUS]: {
+    "bus": {
         maxBasePrice: Infinity, percent: 1
     },
 
-    [VehicleType.MIDIBUS]: {
+    "midibus": {
         maxBasePrice: Infinity, percent: 4
     },
 
-    [VehicleType.MINIBUS]: {
+    "minibus": {
         maxBasePrice: Infinity, percent: 9
     },
 
-    [VehicleType.HELICOPTER]: {
+    "helicopter": {
         maxBasePrice: Infinity, percent: .5
     },
-    [VehicleType.PLANE]: {
+    "plane": {
         maxBasePrice: Infinity, percent: .5
     },
 
-    [VehicleType.BOAT]: {
+    "boat": {
         maxBasePrice: Infinity, percent: 8
     },
-    [VehicleType.YACHT]: {
+    "yacht": {
         maxBasePrice: Infinity, percent: 8
     }
 };
@@ -135,7 +142,7 @@ export class Calculator {
         this.price = params.price;
         this.vehicleType = params.vehicleType;
         this.vehicleEngineVolume = params.vehicleEngineVolume;
-        this.calculateFromTaxAddedPrice = options.mode === Mode.TAX_ADDED_TO_TAX_FREE;
+        this.calculateFromTaxAddedPrice = options.mode === "tax-added-to-tax-free";
 
         if (this.calculateFromTaxAddedPrice) {
             this.prices.taxAdded = params.price;
@@ -208,21 +215,21 @@ export class Calculator {
         }
     }
 
-    // "TRT bandrolü" | TRY | RateType.PERCENT | BaseAmountMode.BASE_AMOUNT
+    // "TRT bandrolü" | TRY | "percent" | "base-amount"
     private calculateTax_trt(): void {
         this.taxRates.trt = .8; // Eight per thousand
         this.taxFees.trt = this.calculateTax(this.price, this.taxRates.trt);
         this.calculatePrice(this.taxFees.trt);
     }
 
-    // "Özel Tüketim Vergisi (ÖTV)" | TRY | RateType.PERCENT | BaseAmountMode.PREVIOUS_AMOUNT
+    // "Özel Tüketim Vergisi (ÖTV)" | TRY | "percent" | "previous-amount"
     private calculateTax_specialConsumptionTax(): void {
         this.taxRates.specialConsumptionTax = this.getOtvRate() ?? 0;
         this.taxFees.specialConsumptionTax = this.calculateTax(this.price, this.taxRates.specialConsumptionTax);
         this.calculatePrice(this.taxFees.specialConsumptionTax);
     }
 
-    // "Katma Değer Vergisi (KDV)" | TRY | RateType.PERCENT | BaseAmountMode.PREVIOUS_AMOUNT
+    // "Katma Değer Vergisi (KDV)" | TRY | "percent" | "previous-amount"
     private calculateTax_valueAddedTax(): void {
         this.taxRates.valueAddedTax = 20;
         this.taxFees.valueAddedTax = this.calculateTax(this.price, this.taxRates.valueAddedTax);

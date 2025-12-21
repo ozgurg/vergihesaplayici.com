@@ -2,15 +2,9 @@ import type { CurrencyCode } from "@/types/common.js";
 
 
 // Calculator
-export enum BaseAmountMode {
-    BASE_AMOUNT = "base-amount",
-    PREVIOUS_AMOUNT = "previous-amount"
-}
+export type BaseAmountMode = "base-amount" | "previous-amount";
 
-export enum RateType {
-    PERCENT = "percent",
-    UNIT = "unit"
-}
+export type RateType = "percent" | "unit";
 
 export type TaxItem = {
     name: string;

@@ -1,6 +1,5 @@
 import { describe, expect, it } from "vitest";
 import { Calculator } from "@/domains/vergini-olustur/calculator.js";
-import { BaseAmountMode, RateType } from "@/domains/vergini-olustur/types.js";
 
 describe("domains/vergini-olustur/calculator.js", () => {
     it("calculates results correctly and normalizes them", () => {
@@ -10,16 +9,16 @@ describe("domains/vergini-olustur/calculator.js", () => {
                 {
                     name: "KDV",
                     rate: 18,
-                    rateType: RateType.PERCENT,
+                    rateType: "percent",
                     rateTypeUnitCurrency: "TRY",
-                    baseAmountMode: BaseAmountMode.BASE_AMOUNT
+                    baseAmountMode: "base-amount"
                 },
                 {
                     name: "ÖTV",
                     rate: 10,
-                    rateType: RateType.PERCENT,
+                    rateType: "percent",
                     rateTypeUnitCurrency: "TRY",
-                    baseAmountMode: BaseAmountMode.PREVIOUS_AMOUNT
+                    baseAmountMode: "previous-amount"
                 }
             ],
             exchangeRates: {
@@ -74,9 +73,9 @@ describe("domains/vergini-olustur/calculator.js", () => {
                 {
                     name: "Unit Tax",
                     rate: 5,
-                    rateType: RateType.UNIT,
+                    rateType: "unit",
                     rateTypeUnitCurrency: "USD",
-                    baseAmountMode: BaseAmountMode.BASE_AMOUNT
+                    baseAmountMode: "base-amount"
                 }
             ],
             exchangeRates: {

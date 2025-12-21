@@ -1,5 +1,10 @@
-import type { CalculationResults, Prices, TaxFees, TaxRates } from "@/domains/konsol-vergisi-hesaplayici/types.js";
-import { Mode } from "@/domains/konsol-vergisi-hesaplayici/types.js";
+import type {
+    CalculationResults,
+    Mode,
+    Prices,
+    TaxFees,
+    TaxRates
+} from "@/domains/konsol-vergisi-hesaplayici/types.js";
 
 export class Calculator {
     private taxFees: TaxFees = {
@@ -33,7 +38,7 @@ export class Calculator {
         }
     ) {
         this.price = params.price;
-        this.calculateFromTaxAddedPrice = options.mode === Mode.TAX_ADDED_TO_TAX_FREE;
+        this.calculateFromTaxAddedPrice = options.mode === "tax-added-to-tax-free";
 
         if (this.calculateFromTaxAddedPrice) {
             this.prices.taxAdded = params.price;
@@ -84,21 +89,21 @@ export class Calculator {
             this.taxFees.valueAddedTax;
     }
 
-    // "Gümrük vergisi" | TRY | RateType.PERCENT | BaseAmountMode.PREVIOUS_AMOUNT
+    // "Gümrük vergisi" | TRY | "percent" | "previous-amount"
     private calculateTax_customTax(): void {
         this.taxRates.customTax = 20;
         this.taxFees.customTax = this.calculateTax(this.price, this.taxRates.customTax);
         this.calculatePrice(this.taxFees.customTax);
     }
 
-    // "Özel Tüketim Vergisi (ÖTV)" | TRY | RateType.PERCENT | BaseAmountMode.PREVIOUS_AMOUNT
+    // "Özel Tüketim Vergisi (ÖTV)" | TRY | "percent" | "previous-amount"
     private calculateTax_specialConsumptionTax(): void {
         this.taxRates.specialConsumptionTax = 20;
         this.taxFees.specialConsumptionTax = this.calculateTax(this.price, this.taxRates.specialConsumptionTax);
         this.calculatePrice(this.taxFees.specialConsumptionTax);
     }
 
-    // "Katma Değer Vergisi (KDV)" | TRY | RateType.PERCENT | BaseAmountMode.PREVIOUS_AMOUNT
+    // "Katma Değer Vergisi (KDV)" | TRY | "percent" | "previous-amount"
     private calculateTax_valueAddedTax(): void {
         this.taxRates.valueAddedTax = 20;
         this.taxFees.valueAddedTax = this.calculateTax(this.price, this.taxRates.valueAddedTax);

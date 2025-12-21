@@ -5,21 +5,21 @@
 </template>
 
 <script lang="ts" setup>
-import type { Props as FormSelectProps } from "@/components/common/form/form-select.vue";
-import { BaseAmountMode } from "@/domains/vergini-olustur/types.js";
+import type { Item as FormSelectItem, Props as FormSelectProps } from "@/components/common/form/form-select.vue";
+import type { BaseAmountMode } from "@/domains/vergini-olustur/types.js";
 
 export type Props = Omit<FormSelectProps, "items">;
 
 const props = defineProps<Props>();
 
-const ITEMS = [
+const ITEMS: FormSelectItem<BaseAmountMode>[] = [
     {
         title: "Vergisiz tutar",
-        value: BaseAmountMode.BASE_AMOUNT
+        value: "base-amount"
     },
     {
         title: "Önceki tutar",
-        value: BaseAmountMode.PREVIOUS_AMOUNT
+        value: "previous-amount"
     }
 ];
 </script>

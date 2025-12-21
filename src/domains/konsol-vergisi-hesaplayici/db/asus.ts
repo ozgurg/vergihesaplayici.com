@@ -1,5 +1,4 @@
 import type { Brand, Preset } from "@/domains/konsol-vergisi-hesaplayici/types.js";
-import { Mode } from "@/domains/konsol-vergisi-hesaplayici/types.js";
 import { buildPageMeta } from "@/domains/konsol-vergisi-hesaplayici/utils/build-page-meta.js";
 
 const BRAND_ID = "asus";
@@ -22,7 +21,7 @@ export const presets: Preset[] = [
             {
                 title: "16GB – 512GB",
                 form: {
-                    mode: Mode.TAX_ADDED_TO_TAX_FREE,
+                    mode: "tax-added-to-tax-free",
                     price: 37_999, // https://www.xbox.com/tr-TR/handhelds/rog-xbox-ally
                     currency: "TRY"
                 }
@@ -42,7 +41,7 @@ export const presets: Preset[] = [
             {
                 title: "24GB – 1TB",
                 form: {
-                    mode: Mode.TAX_ADDED_TO_TAX_FREE,
+                    mode: "tax-added-to-tax-free",
                     price: 58_999, // https://www.xbox.com/tr-TR/handhelds/rog-xbox-ally
                     currency: "TRY"
                 }

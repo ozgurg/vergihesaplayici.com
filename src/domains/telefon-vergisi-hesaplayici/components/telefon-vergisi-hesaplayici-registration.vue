@@ -11,26 +11,26 @@ import type {
     Item as FormCheckProps,
     Props as FormCheckGroupProps
 } from "@/components/common/form/form-check-group.vue";
-import { Registration } from "@/domains/telefon-vergisi-hesaplayici/types.js";
+import type { Registration } from "@/domains/telefon-vergisi-hesaplayici/types.js";
 import { REGISTRATION_LABEL_BY_REGISTRATION } from "@/domains/telefon-vergisi-hesaplayici/config.js";
 
 export type Props = Partial<FormCheckGroupProps>;
 
 const props = defineProps<Props>();
 
-const ITEMS: FormCheckProps[] = [
+const ITEMS: FormCheckProps<Registration>[] = [
     {
-        title: REGISTRATION_LABEL_BY_REGISTRATION[Registration.IMPORT],
+        title: REGISTRATION_LABEL_BY_REGISTRATION["import"],
         description: "İthalatçıların getirip sattığı ürünlerdir",
         input: {
-            value: Registration.IMPORT
+            value: "import"
         }
     },
     {
-        title: REGISTRATION_LABEL_BY_REGISTRATION[Registration.PASSPORT],
+        title: REGISTRATION_LABEL_BY_REGISTRATION["passport"],
         description: "Yurt dışından kişinin getirdiği ürünlerdir",
         input: {
-            value: Registration.PASSPORT
+            value: "passport"
         }
     }
 ];

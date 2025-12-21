@@ -1,5 +1,4 @@
-import type { Form, Prices } from "@/domains/konsol-vergisi-hesaplayici/types.js";
-import { Mode } from "@/domains/konsol-vergisi-hesaplayici/types.js";
+import type { Form, Mode, Prices } from "@/domains/konsol-vergisi-hesaplayici/types.js";
 import { describe, expect, it } from "vitest";
 import { Calculator } from "@/domains/konsol-vergisi-hesaplayici/calculator.js";
 
@@ -19,13 +18,13 @@ const calculate = ({ input, options, expectedOutput }: CalculateParams): void =>
 
 describe("domains/konsol-vergisi-hesaplayici/calculator.js", () => {
     it("calculates taxes correctly with given inputs", () => {
-        // Mode.TAX_FREE_TO_TAX_ADDED
+        // "tax-free-to-tax-added"
         calculate({
             input: {
                 price: 300
             },
             options: {
-                mode: Mode.TAX_FREE_TO_TAX_ADDED
+                mode: "tax-free-to-tax-added"
             },
             expectedOutput: {
                 taxFree: 300,
@@ -37,7 +36,7 @@ describe("domains/konsol-vergisi-hesaplayici/calculator.js", () => {
                 price: 400
             },
             options: {
-                mode: Mode.TAX_FREE_TO_TAX_ADDED
+                mode: "tax-free-to-tax-added"
             },
             expectedOutput: {
                 taxFree: 400,
@@ -49,7 +48,7 @@ describe("domains/konsol-vergisi-hesaplayici/calculator.js", () => {
                 price: 500
             },
             options: {
-                mode: Mode.TAX_FREE_TO_TAX_ADDED
+                mode: "tax-free-to-tax-added"
             },
             expectedOutput: {
                 taxFree: 500,
@@ -58,13 +57,13 @@ describe("domains/konsol-vergisi-hesaplayici/calculator.js", () => {
         });
 
 
-        // Mode.TAX_ADDED_TO_TAX_FREE
+        // "tax-added-to-tax-free"
         calculate({
             input: {
                 price: 300
             },
             options: {
-                mode: Mode.TAX_ADDED_TO_TAX_FREE
+                mode: "tax-added-to-tax-free"
             },
             expectedOutput: {
                 taxFree: 173.61,
@@ -76,7 +75,7 @@ describe("domains/konsol-vergisi-hesaplayici/calculator.js", () => {
                 price: 400
             },
             options: {
-                mode: Mode.TAX_ADDED_TO_TAX_FREE
+                mode: "tax-added-to-tax-free"
             },
             expectedOutput: {
                 taxFree: 231.48,
@@ -88,7 +87,7 @@ describe("domains/konsol-vergisi-hesaplayici/calculator.js", () => {
                 price: 500
             },
             options: {
-                mode: Mode.TAX_ADDED_TO_TAX_FREE
+                mode: "tax-added-to-tax-free"
             },
             expectedOutput: {
                 taxFree: 289.35,

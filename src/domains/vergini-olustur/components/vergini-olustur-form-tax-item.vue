@@ -32,7 +32,7 @@
 
             <div>
                 <transition name="fade-transition" mode="out-in">
-                    <template v-if="props.taxItem.rateType === RateType.UNIT">
+                    <template v-if="props.taxItem.rateType === 'unit'">
                         <form-group label="Para birimi">
                             <form-select-currency
                                 v-model="props.taxItem.rateTypeUnitCurrency"
@@ -73,7 +73,6 @@
 <script lang="ts" setup>
 import type { UITaxItem } from "@/domains/vergini-olustur/components/vergini-olustur.vue";
 import type { ExchangeRates } from "@/types/common.js";
-import { RateType } from "@/domains/vergini-olustur/types.js";
 
 export type Props = {
     taxItem: UITaxItem;

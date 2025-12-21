@@ -1,13 +1,12 @@
-import type { Prices } from "@/domains/arac-vergisi/types.js";
-import { Mode, VehicleEngineVolume, VehicleType } from "@/domains/arac-vergisi/types.js";
+import type { Mode, Prices, VehicleEngineVolume, VehicleType } from "@/domains/arac-vergisi/types.js";
 import { describe, expect, it } from "vitest";
 import { Calculator } from "@/domains/arac-vergisi/calculator.js";
 
-type CalculateParams = {
+type CalculateParams<T extends VehicleType = VehicleType> = {
     input: {
         price: number;
-        vehicleType: VehicleType;
-        vehicleEngineVolume: VehicleEngineVolume | null;
+        vehicleType: T;
+        vehicleEngineVolume: (VehicleEngineVolume & `${T}.${string}`) | null;
     };
     options: {
         mode: Mode;
@@ -26,11 +25,11 @@ describe("domains/arac-vergisi/calculator.js", () => {
         calculate({
             input: {
                 price: 500_000,
-                vehicleType: VehicleType.AUTOMOBILE,
-                vehicleEngineVolume: VehicleEngineVolume.AUTOMOBILE__0_1400
+                vehicleType: "automobile",
+                vehicleEngineVolume: "automobile.0-1400"
             },
             options: {
-                mode: Mode.TAX_FREE_TO_TAX_ADDED
+                mode: "tax-free-to-tax-added"
             },
             expectedOutput: {
                 taxFree: 500_000,
@@ -41,11 +40,11 @@ describe("domains/arac-vergisi/calculator.js", () => {
         calculate({
             input: {
                 price: 700_000,
-                vehicleType: VehicleType.AUTOMOBILE,
-                vehicleEngineVolume: VehicleEngineVolume.AUTOMOBILE__0_1400
+                vehicleType: "automobile",
+                vehicleEngineVolume: "automobile.0-1400"
             },
             options: {
-                mode: Mode.TAX_FREE_TO_TAX_ADDED
+                mode: "tax-free-to-tax-added"
             },
             expectedOutput: {
                 taxFree: 700_000,
@@ -56,11 +55,11 @@ describe("domains/arac-vergisi/calculator.js", () => {
         calculate({
             input: {
                 price: 600_000,
-                vehicleType: VehicleType.AUTOMOBILE,
-                vehicleEngineVolume: VehicleEngineVolume.AUTOMOBILE__1401_1600
+                vehicleType: "automobile",
+                vehicleEngineVolume: "automobile.1401-1600"
             },
             options: {
-                mode: Mode.TAX_FREE_TO_TAX_ADDED
+                mode: "tax-free-to-tax-added"
             },
             expectedOutput: {
                 taxFree: 600_000,
@@ -71,11 +70,11 @@ describe("domains/arac-vergisi/calculator.js", () => {
         calculate({
             input: {
                 price: 800_000,
-                vehicleType: VehicleType.AUTOMOBILE,
-                vehicleEngineVolume: VehicleEngineVolume.AUTOMOBILE__1601_2000
+                vehicleType: "automobile",
+                vehicleEngineVolume: "automobile.1601-2000"
             },
             options: {
-                mode: Mode.TAX_FREE_TO_TAX_ADDED
+                mode: "tax-free-to-tax-added"
             },
             expectedOutput: {
                 taxFree: 800_000,
@@ -86,11 +85,11 @@ describe("domains/arac-vergisi/calculator.js", () => {
         calculate({
             input: {
                 price: 1_000_000,
-                vehicleType: VehicleType.ELECTRIC_AUTOMOBILE,
-                vehicleEngineVolume: VehicleEngineVolume.ELECTRIC_AUTOMOBILE__0_160
+                vehicleType: "electric-automobile",
+                vehicleEngineVolume: "electric-automobile.0-160"
             },
             options: {
-                mode: Mode.TAX_FREE_TO_TAX_ADDED
+                mode: "tax-free-to-tax-added"
             },
             expectedOutput: {
                 taxFree: 1_000_000,
@@ -101,11 +100,11 @@ describe("domains/arac-vergisi/calculator.js", () => {
         calculate({
             input: {
                 price: 50_000,
-                vehicleType: VehicleType.MOTORCYCLE,
-                vehicleEngineVolume: VehicleEngineVolume.MOTORCYCLE__0_250
+                vehicleType: "motorcycle",
+                vehicleEngineVolume: "motorcycle.0-250"
             },
             options: {
-                mode: Mode.TAX_FREE_TO_TAX_ADDED
+                mode: "tax-free-to-tax-added"
             },
             expectedOutput: {
                 taxFree: 50_000,
@@ -116,11 +115,11 @@ describe("domains/arac-vergisi/calculator.js", () => {
         calculate({
             input: {
                 price: 100_000,
-                vehicleType: VehicleType.MOTORCYCLE,
-                vehicleEngineVolume: VehicleEngineVolume.MOTORCYCLE__251_UP
+                vehicleType: "motorcycle",
+                vehicleEngineVolume: "motorcycle.251-up"
             },
             options: {
-                mode: Mode.TAX_FREE_TO_TAX_ADDED
+                mode: "tax-free-to-tax-added"
             },
             expectedOutput: {
                 taxFree: 100_000,
@@ -131,11 +130,11 @@ describe("domains/arac-vergisi/calculator.js", () => {
         calculate({
             input: {
                 price: 1_020_000,
-                vehicleType: VehicleType.AUTOMOBILE,
-                vehicleEngineVolume: VehicleEngineVolume.AUTOMOBILE__0_1400
+                vehicleType: "automobile",
+                vehicleEngineVolume: "automobile.0-1400"
             },
             options: {
-                mode: Mode.TAX_ADDED_TO_TAX_FREE
+                mode: "tax-added-to-tax-free"
             },
             expectedOutput: {
                 taxFree: 468_474.42,
@@ -146,11 +145,11 @@ describe("domains/arac-vergisi/calculator.js", () => {
         calculate({
             input: {
                 price: 1_470_000,
-                vehicleType: VehicleType.AUTOMOBILE,
-                vehicleEngineVolume: VehicleEngineVolume.AUTOMOBILE__0_1400
+                vehicleType: "automobile",
+                vehicleEngineVolume: "automobile.0-1400"
             },
             options: {
-                mode: Mode.TAX_ADDED_TO_TAX_FREE
+                mode: "tax-added-to-tax-free"
             },
             expectedOutput: {
                 taxFree: 639_619.88,
@@ -161,11 +160,11 @@ describe("domains/arac-vergisi/calculator.js", () => {
         calculate({
             input: {
                 price: 1_500_000,
-                vehicleType: VehicleType.ELECTRIC_AUTOMOBILE,
-                vehicleEngineVolume: VehicleEngineVolume.ELECTRIC_AUTOMOBILE__0_160
+                vehicleType: "electric-automobile",
+                vehicleEngineVolume: "electric-automobile.0-160"
             },
             options: {
-                mode: Mode.TAX_ADDED_TO_TAX_FREE
+                mode: "tax-added-to-tax-free"
             },
             expectedOutput: {
                 taxFree: 992_063.49,
@@ -176,11 +175,11 @@ describe("domains/arac-vergisi/calculator.js", () => {
         calculate({
             input: {
                 price: 60_000,
-                vehicleType: VehicleType.MOTORCYCLE,
-                vehicleEngineVolume: VehicleEngineVolume.MOTORCYCLE__0_250
+                vehicleType: "motorcycle",
+                vehicleEngineVolume: "motorcycle.0-250"
             },
             options: {
-                mode: Mode.TAX_ADDED_TO_TAX_FREE
+                mode: "tax-added-to-tax-free"
             },
             expectedOutput: {
                 taxFree: 49_603.17,
@@ -191,11 +190,11 @@ describe("domains/arac-vergisi/calculator.js", () => {
         calculate({
             input: {
                 price: 164_400,
-                vehicleType: VehicleType.MOTORCYCLE,
-                vehicleEngineVolume: VehicleEngineVolume.MOTORCYCLE__251_UP
+                vehicleType: "motorcycle",
+                vehicleEngineVolume: "motorcycle.251-up"
             },
             options: {
-                mode: Mode.TAX_ADDED_TO_TAX_FREE
+                mode: "tax-added-to-tax-free"
             },
             expectedOutput: {
                 taxFree: 99_206.35,
@@ -206,11 +205,11 @@ describe("domains/arac-vergisi/calculator.js", () => {
         calculate({
             input: {
                 price: 1_890_000,
-                vehicleType: VehicleType.AUTOMOBILE,
-                vehicleEngineVolume: VehicleEngineVolume.AUTOMOBILE__0_1400
+                vehicleType: "automobile",
+                vehicleEngineVolume: "automobile.0-1400"
             },
             options: {
-                mode: Mode.TAX_ADDED_TO_TAX_FREE
+                mode: "tax-added-to-tax-free"
             },
             expectedOutput: {
                 taxFree: 822_368.43,
@@ -221,11 +220,11 @@ describe("domains/arac-vergisi/calculator.js", () => {
         calculate({
             input: {
                 price: 800_000,
-                vehicleType: VehicleType.HYBRID_AUTOMOBILE,
-                vehicleEngineVolume: VehicleEngineVolume.HYBRID_AUTOMOBILE__50_UP_0_1800
+                vehicleType: "hybrid-automobile",
+                vehicleEngineVolume: "hybrid-automobile.50-up.0-1800"
             },
             options: {
-                mode: Mode.TAX_FREE_TO_TAX_ADDED
+                mode: "tax-free-to-tax-added"
             },
             expectedOutput: {
                 taxFree: 800_000,
@@ -236,11 +235,11 @@ describe("domains/arac-vergisi/calculator.js", () => {
         calculate({
             input: {
                 price: 500_000,
-                vehicleType: VehicleType.BUS,
+                vehicleType: "bus",
                 vehicleEngineVolume: null
             },
             options: {
-                mode: Mode.TAX_FREE_TO_TAX_ADDED
+                mode: "tax-free-to-tax-added"
             },
             expectedOutput: {
                 taxFree: 500_000,
@@ -251,11 +250,11 @@ describe("domains/arac-vergisi/calculator.js", () => {
         calculate({
             input: {
                 price: 10_000_000,
-                vehicleType: VehicleType.PLANE,
+                vehicleType: "plane",
                 vehicleEngineVolume: null
             },
             options: {
-                mode: Mode.TAX_FREE_TO_TAX_ADDED
+                mode: "tax-free-to-tax-added"
             },
             expectedOutput: {
                 taxFree: 10_000_000,
@@ -266,11 +265,11 @@ describe("domains/arac-vergisi/calculator.js", () => {
         calculate({
             input: {
                 price: 606_000,
-                vehicleType: VehicleType.BUS,
+                vehicleType: "bus",
                 vehicleEngineVolume: null
             },
             options: {
-                mode: Mode.TAX_ADDED_TO_TAX_FREE
+                mode: "tax-added-to-tax-free"
             },
             expectedOutput: {
                 taxFree: 496_031.75,

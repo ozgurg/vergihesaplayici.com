@@ -1,36 +1,35 @@
 import type { Form } from "@/domains/telefon-vergisi-hesaplayici/types.js";
-import { Mode, Registration } from "@/domains/telefon-vergisi-hesaplayici/types.js";
 
 export const DEFAULT_FORM: Form = {
-    mode: Mode.TAX_ADDED_TO_TAX_FREE,
+    mode: "tax-added-to-tax-free",
     price: 0,
     currency: "TRY",
-    registration: Registration.IMPORT
+    registration: "import"
 };
 
 export const DEFAULT_PRESET_FORM: Form = {
     ...DEFAULT_FORM,
-    mode: Mode.TAX_FREE_TO_TAX_ADDED
+    mode: "tax-free-to-tax-added"
 };
 
 export const TAX_FREE_LABEL_BY_MODE = {
-    [Mode.TAX_ADDED_TO_TAX_FREE]: "Tahmini vergisiz fiyat",
-    [Mode.TAX_FREE_TO_TAX_ADDED]: "Vergisiz fiyat"
+    "tax-added-to-tax-free": "Tahmini vergisiz fiyat",
+    "tax-free-to-tax-added": "Vergisiz fiyat"
 };
 
 export const TAX_ADDED_LABEL_BY_MODE = {
-    [Mode.TAX_ADDED_TO_TAX_FREE]: "Vergili fiyat",
-    [Mode.TAX_FREE_TO_TAX_ADDED]: "Tahmini vergili fiyat"
+    "tax-added-to-tax-free": "Vergili fiyat",
+    "tax-free-to-tax-added": "Tahmini vergili fiyat"
 };
 
 export const PRICE_LABEL_BY_MODE = {
-    [Mode.TAX_ADDED_TO_TAX_FREE]: "Vergili telefon fiyatı",
-    [Mode.TAX_FREE_TO_TAX_ADDED]: "Vergisiz telefon fiyatı"
+    "tax-added-to-tax-free": "Vergili telefon fiyatı",
+    "tax-free-to-tax-added": "Vergisiz telefon fiyatı"
 };
 
 export const REGISTRATION_LABEL_BY_REGISTRATION = {
-    [Registration.IMPORT]: "İthalat ile",
-    [Registration.PASSPORT]: "Pasaport ile"
+    "import": "İthalat ile",
+    "passport": "Pasaport ile"
 };
 
 export const LAST_UPDATE = new Date("Fri Oct 24 2025 23:29:15 GMT+0300 (GMT+03:00)");

@@ -6,7 +6,7 @@ createdDate: 2025-12-19
 
 19 Aralık 2025 Cuma tarihli ve 10701 sayılı Cumhurbaşkanı Kararı ile birlikte cep telefonlarından alınan Kültür ve Turizm Bakanlığı payında artışa gidildi. Buna göre, hâlihazırda %1 olarak uygulanan pay, 3 Ocak 2026 tarihinden itibaren %1.2'ye yükseltilecek.
 
-Söz konusu artış, telefon satışlarında uygulanan birikimli vergi sistemi nedeniyle yalnızca ilgili kalemi değil, zincirleme şekilde tüm vergi kalemlerini etkileyecek. Bu durum, nihai satış fiyatlarının artmasına yol açacak. Düzenlemenin yürürlüğe girmesiyle birlikte, tüketicilerin cep telefonu satın alırken ödedikleri toplam vergi yükünün daha da artacak.
+Söz konusu artış, telefon satışlarında uygulanan birikimli vergi sistemi nedeniyle yalnızca ilgili kalemi değil, zincirleme şekilde tüm vergi kalemlerini etkileyecek. Bu durum, nihai satış fiyatlarının artmasına yol açacak. Düzenlemenin yürürlüğe girmesiyle birlikte, tüketicilerin cep telefonu satın alırken ödedikleri toplam vergi yükü daha da artacak.
 
 Aşağıda, yurt dışı satış fiyatı $799.99 olan Apple iPhone 17 (256GB) için **Kültür ve Turizm Bakanlığı payının %1'den %1.2'ye çıkarılmasının** etkisini göstermek amacıyla hazırlanmış **örnek** bir önce-sonra tablosu yer alıyor.
 
