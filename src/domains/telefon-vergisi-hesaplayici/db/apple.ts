@@ -1,5 +1,4 @@
 import type { Brand, Preset } from "@/domains/telefon-vergisi-hesaplayici/types.js";
-import { Registration } from "@/domains/telefon-vergisi-hesaplayici/types.js";
 import { buildPageMeta } from "@/domains/telefon-vergisi-hesaplayici/utils/build-page-meta.js";
 
 const BRAND_ID = "apple";
@@ -24,7 +23,7 @@ export const presets: Preset[] = [
                 form: {
                     price: 3_499,
                     currency: "USD",
-                    registration: Registration.PASSPORT
+                    registration: "passport"
                 }
             }
         ]

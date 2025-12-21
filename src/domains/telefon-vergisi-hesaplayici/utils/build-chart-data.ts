@@ -1,11 +1,10 @@
 import type { CalculationResults, ChartData, Form } from "@/domains/telefon-vergisi-hesaplayici/types.js";
-import { Registration } from "@/domains/telefon-vergisi-hesaplayici/types.js";
 
 export const buildChartData = (form: Form, results: CalculationResults): ChartData => {
     const { prices, taxFees } = results;
 
     const taxRatesData = [];
-    if (form.registration === Registration.IMPORT) {
+    if (form.registration === "import") {
         taxRatesData.push({
             label: "Kültür Bakanlığı",
             value: taxFees.ministryOfCulture
@@ -22,7 +21,7 @@ export const buildChartData = (form: Form, results: CalculationResults): ChartDa
             label: "KDV",
             value: taxFees.valueAddedTax
         });
-    } else if (form.registration === Registration.PASSPORT) {
+    } else if (form.registration === "passport") {
         taxRatesData.push({
             label: "TRT bandrolü",
             value: taxFees.trtPassport

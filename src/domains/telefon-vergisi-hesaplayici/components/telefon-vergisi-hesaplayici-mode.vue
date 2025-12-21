@@ -11,23 +11,23 @@ import type {
     Item as FormCheckProps,
     Props as FormCheckGroupProps
 } from "@/components/common/form/form-check-group.vue";
-import { Mode } from "@/domains/telefon-vergisi-hesaplayici/types.js";
+import type { Mode } from "@/domains/telefon-vergisi-hesaplayici/types.js";
 
 export type Props = Partial<FormCheckGroupProps>;
 
 const props = defineProps<Props>();
 
-const ITEMS: FormCheckProps[] = [
+const ITEMS: FormCheckProps<Mode>[] = [
     {
         title: "Vergili fiyattan vergisiz fiyatı hesapla",
         input: {
-            value: Mode.TAX_ADDED_TO_TAX_FREE
+            value: "tax-added-to-tax-free"
         }
     },
     {
         title: "Vergisiz fiyattan vergili fiyatı hesapla",
         input: {
-            value: Mode.TAX_FREE_TO_TAX_ADDED
+            value: "tax-free-to-tax-added"
         }
     }
 ];

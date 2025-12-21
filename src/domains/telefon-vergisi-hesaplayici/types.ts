@@ -2,15 +2,9 @@ import type { CurrencyCode } from "@/types/common.js";
 
 
 // Calculator
-export enum Mode {
-    TAX_ADDED_TO_TAX_FREE = "tax-added-to-tax-free",
-    TAX_FREE_TO_TAX_ADDED = "tax-free-to-tax-added"
-}
+export type Mode = "tax-added-to-tax-free" | "tax-free-to-tax-added";
 
-export enum Registration {
-    IMPORT = "import",
-    PASSPORT = "passport"
-}
+export type Registration = "import" | "passport";
 
 export type TaxFees = {
     total: number;

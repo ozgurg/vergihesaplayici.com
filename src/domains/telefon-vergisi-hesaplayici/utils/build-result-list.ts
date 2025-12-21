@@ -1,5 +1,4 @@
 import type { CalculationResults, Form, ResultList } from "@/domains/telefon-vergisi-hesaplayici/types.js";
-import { Registration } from "@/domains/telefon-vergisi-hesaplayici/types.js";
 import { TAX_ADDED_LABEL_BY_MODE, TAX_FREE_LABEL_BY_MODE } from "@/domains/telefon-vergisi-hesaplayici/config.js";
 
 export const buildResultList = (form: Form, results: CalculationResults): ResultList => {
@@ -14,7 +13,7 @@ export const buildResultList = (form: Form, results: CalculationResults): Result
     });
 
     // 😐
-    if (form.registration === Registration.IMPORT) {
+    if (form.registration === "import") {
         list.push({
             key: "ministryOfCulture",
             label: `Kültür Bakanlığı (%${taxRates.ministryOfCulture})`,
@@ -35,7 +34,7 @@ export const buildResultList = (form: Form, results: CalculationResults): Result
             label: `KDV (%${taxRates.valueAddedTax})`,
             value: formatMoney(taxFees.valueAddedTax, "TRY")
         });
-    } else if (form.registration === Registration.PASSPORT) {
+    } else if (form.registration === "passport") {
         list.push({
             key: "trtPassport",
             label: `TRT bandrolü (${formatMoney(taxRates.trtPassport, "EUR")})`,
