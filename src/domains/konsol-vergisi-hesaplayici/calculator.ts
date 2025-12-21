@@ -89,21 +89,21 @@ export class Calculator {
             this.taxFees.valueAddedTax;
     }
 
-    // "Gümrük vergisi" | TRY | RateType.PERCENT | BaseAmountMode.PREVIOUS_AMOUNT
+    // "Gümrük vergisi" | TRY | "percent" | BaseAmountMode.PREVIOUS_AMOUNT
     private calculateTax_customTax(): void {
         this.taxRates.customTax = 20;
         this.taxFees.customTax = this.calculateTax(this.price, this.taxRates.customTax);
         this.calculatePrice(this.taxFees.customTax);
     }
 
-    // "Özel Tüketim Vergisi (ÖTV)" | TRY | RateType.PERCENT | BaseAmountMode.PREVIOUS_AMOUNT
+    // "Özel Tüketim Vergisi (ÖTV)" | TRY | "percent" | BaseAmountMode.PREVIOUS_AMOUNT
     private calculateTax_specialConsumptionTax(): void {
         this.taxRates.specialConsumptionTax = 20;
         this.taxFees.specialConsumptionTax = this.calculateTax(this.price, this.taxRates.specialConsumptionTax);
         this.calculatePrice(this.taxFees.specialConsumptionTax);
     }
 
-    // "Katma Değer Vergisi (KDV)" | TRY | RateType.PERCENT | BaseAmountMode.PREVIOUS_AMOUNT
+    // "Katma Değer Vergisi (KDV)" | TRY | "percent" | BaseAmountMode.PREVIOUS_AMOUNT
     private calculateTax_valueAddedTax(): void {
         this.taxRates.valueAddedTax = 20;
         this.taxFees.valueAddedTax = this.calculateTax(this.price, this.taxRates.valueAddedTax);

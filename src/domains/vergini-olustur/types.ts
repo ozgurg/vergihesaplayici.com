@@ -7,10 +7,7 @@ export enum BaseAmountMode {
     PREVIOUS_AMOUNT = "previous-amount"
 }
 
-export enum RateType {
-    PERCENT = "percent",
-    UNIT = "unit"
-}
+export type RateType = "percent" | "unit";
 
 export type TaxItem = {
     name: string;

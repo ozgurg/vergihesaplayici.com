@@ -100,7 +100,7 @@
 import type { CalculatorPage } from "@/types/page-def.js";
 import type { ExchangeRates } from "@/types/common.js";
 import type { CalculationResults, Form, ResultList, ScreenshotData, TaxItem } from "@/domains/vergini-olustur/types.js";
-import { BaseAmountMode, RateType } from "@/domains/vergini-olustur/types.js";
+import { BaseAmountMode } from "@/domains/vergini-olustur/types.js";
 import { calculateResults } from "@/domains/vergini-olustur/utils/calculate-results.js";
 import { pickRandomPlaceholder } from "@/domains/vergini-olustur/utils/pick-random-placeholder.js";
 import { VueDraggable } from "vue-draggable-plus";
@@ -129,7 +129,7 @@ const form = reactive<Form<UITaxItem>>({
             id,
             name: "",
             rate: 0,
-            rateType: RateType.PERCENT,
+            rateType: "percent",
             rateTypeUnitCurrency: "TRY",
             baseAmountMode: BaseAmountMode.BASE_AMOUNT,
             placeholder: pickRandomPlaceholder()
@@ -147,7 +147,7 @@ const addTaxItem = (): void => {
         id: ++id,
         name: "",
         rate: 0,
-        rateType: RateType.PERCENT,
+        rateType: "percent",
         rateTypeUnitCurrency: "TRY",
         baseAmountMode: BaseAmountMode.PREVIOUS_AMOUNT,
         placeholder: pickRandomPlaceholder()

@@ -1,5 +1,5 @@
 import type { CalculationResults, Prices, TaxFees, TaxItem, TaxRates } from "@/domains/vergini-olustur/types.js";
-import { BaseAmountMode, RateType } from "@/domains/vergini-olustur/types.js";
+import { BaseAmountMode } from "@/domains/vergini-olustur/types.js";
 import type { ExchangeRates } from "@/types/common.js";
 
 export class Calculator {
@@ -42,13 +42,13 @@ export class Calculator {
         for (const _taxItem of this.taxItems) {
             let amount = 0;
 
-            if (_taxItem.rateType === RateType.PERCENT) {
+            if (_taxItem.rateType === "percent") {
                 if (_taxItem.baseAmountMode === BaseAmountMode.BASE_AMOUNT) {
                     amount += calculateTaxFromTaxFreePrice(this.basePrice, _taxItem.rate);
                 } else if (_taxItem.baseAmountMode === BaseAmountMode.PREVIOUS_AMOUNT) {
                     amount += calculateTaxFromTaxFreePrice(currentPrice, _taxItem.rate);
                 }
-            } else if (_taxItem.rateType === RateType.UNIT) {
+            } else if (_taxItem.rateType === "unit") {
                 amount += _taxItem.rate * this.exchangeRates.rates[_taxItem.rateTypeUnitCurrency];
             }
 

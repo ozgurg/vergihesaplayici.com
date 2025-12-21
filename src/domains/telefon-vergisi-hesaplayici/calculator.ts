@@ -113,21 +113,21 @@ export class Calculator {
             this.taxFees.registration;
     }
 
-    // "Kültür Bakanlığı" | TRY | RateType.PERCENT | BaseAmountMode.PREVIOUS_AMOUNT
+    // "Kültür Bakanlığı" | TRY | "percent" | BaseAmountMode.PREVIOUS_AMOUNT
     private calculateTax_ministryOfCulture(): void {
         this.taxRates.ministryOfCulture = 1.2;
         this.taxFees.ministryOfCulture = this.calculateTax(this.price, this.taxRates.ministryOfCulture);
         this.calculatePrice(this.taxFees.ministryOfCulture);
     }
 
-    // "TRT bandrolü" ("import") | TRY | RateType.PERCENT | BaseAmountMode.PREVIOUS_AMOUNT
+    // "TRT bandrolü" ("import") | TRY | "percent" | BaseAmountMode.PREVIOUS_AMOUNT
     private calculateTax_trtImport(): void {
         this.taxRates.trtImport = 12;
         this.taxFees.trtImport = this.calculateTax(this.price, this.taxRates.trtImport);
         this.calculatePrice(this.taxFees.trtImport);
     }
 
-    // "Özel Tüketim Vergisi (ÖTV)" | TRY | RateType.PERCENT | BaseAmountMode.PREVIOUS_AMOUNT
+    // "Özel Tüketim Vergisi (ÖTV)" | TRY | "percent" | BaseAmountMode.PREVIOUS_AMOUNT
     private calculateTax_specialConsumptionTax(): void {
         // https://www.resmigazete.gov.tr/eskiler/2025/10/20251024-5.pdf
         this.taxRates.specialConsumptionTax = ((price: number) => {
@@ -139,21 +139,21 @@ export class Calculator {
         this.calculatePrice(this.taxFees.specialConsumptionTax);
     }
 
-    // "Katma Değer Vergisi (KDV)" | TRY | RateType.PERCENT | BaseAmountMode.PREVIOUS_AMOUNT
+    // "Katma Değer Vergisi (KDV)" | TRY | "percent" | BaseAmountMode.PREVIOUS_AMOUNT
     private calculateTax_valueAddedTax(): void {
         this.taxRates.valueAddedTax = 20;
         this.taxFees.valueAddedTax = this.calculateTax(this.price, this.taxRates.valueAddedTax);
         this.calculatePrice(this.taxFees.valueAddedTax);
     }
 
-    // "TRT bandrolü" ("passport") | EUR | RateType.UNIT
+    // "TRT bandrolü" ("passport") | EUR | "unit"
     private calculateTax_trtPassport(): void {
         this.taxRates.trtPassport = 20;
         this.taxFees.trtPassport = this.taxRates.trtPassport * this.eurToTryCurrency;
         this.calculatePrice(this.taxFees.trtPassport);
     }
 
-    // "Kayıt ücreti" | TRT | RateType.UNIT
+    // "Kayıt ücreti" | TRT | "unit"
     private calculateTax_registration(): void {
         this.taxRates.registration = 45_614;
         this.taxFees.registration = this.taxRates.registration;
