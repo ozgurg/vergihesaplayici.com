@@ -1,6 +1,5 @@
 import { describe, expect, it } from "vitest";
 import type { Form, Prices } from "@/domains/kdv-hesaplayici/types.js";
-import { Mode } from "@/domains/kdv-hesaplayici/types.js";
 import { Calculator } from "@/domains/kdv-hesaplayici/calculator.js";
 
 type CalculateParams = {
@@ -16,10 +15,10 @@ const calculate = ({ input, expectedOutput }: CalculateParams): void => {
 
 describe("domains/kdv-hesaplayici/calculator.js", () => {
     it("calculates taxes correctly with given inputs", () => {
-        // Mode.TAX_FREE_TO_TAX_ADDED
+        // "tax-free-to-tax-added"
         calculate({
             input: {
-                mode: Mode.TAX_FREE_TO_TAX_ADDED,
+                mode: "tax-free-to-tax-added",
                 price: 100,
                 rate: 15
             },
@@ -30,7 +29,7 @@ describe("domains/kdv-hesaplayici/calculator.js", () => {
         });
         calculate({
             input: {
-                mode: Mode.TAX_FREE_TO_TAX_ADDED,
+                mode: "tax-free-to-tax-added",
                 price: 250,
                 rate: 18
             }, expectedOutput: {
@@ -40,7 +39,7 @@ describe("domains/kdv-hesaplayici/calculator.js", () => {
         });
         calculate({
             input: {
-                mode: Mode.TAX_FREE_TO_TAX_ADDED,
+                mode: "tax-free-to-tax-added",
                 price: 448,
                 rate: 25
             }, expectedOutput: {
@@ -50,10 +49,10 @@ describe("domains/kdv-hesaplayici/calculator.js", () => {
         });
 
 
-        // Mode.TAX_ADDED_TO_TAX_FREE
+        // "tax-added-to-tax-free"
         calculate({
             input: {
-                mode: Mode.TAX_ADDED_TO_TAX_FREE,
+                mode: "tax-added-to-tax-free",
                 price: 100,
                 rate: 15
             }, expectedOutput: {
@@ -63,7 +62,7 @@ describe("domains/kdv-hesaplayici/calculator.js", () => {
         });
         calculate({
             input: {
-                mode: Mode.TAX_ADDED_TO_TAX_FREE,
+                mode: "tax-added-to-tax-free",
                 price: 250,
                 rate: 18
             }, expectedOutput: {
@@ -73,7 +72,7 @@ describe("domains/kdv-hesaplayici/calculator.js", () => {
         });
         calculate({
             input: {
-                mode: Mode.TAX_ADDED_TO_TAX_FREE,
+                mode: "tax-added-to-tax-free",
                 price: 448,
                 rate: 25
             }, expectedOutput: {
@@ -83,10 +82,10 @@ describe("domains/kdv-hesaplayici/calculator.js", () => {
         });
 
 
-        // Mode.TAX_TO_TAX_BASE
+        // "tax-to-tax-base"
         calculate({
             input: {
-                mode: Mode.TAX_TO_TAX_BASE,
+                mode: "tax-to-tax-base",
                 price: 100,
                 rate: 15
             }, expectedOutput: {
@@ -96,7 +95,7 @@ describe("domains/kdv-hesaplayici/calculator.js", () => {
         });
         calculate({
             input: {
-                mode: Mode.TAX_TO_TAX_BASE,
+                mode: "tax-to-tax-base",
                 price: 250,
                 rate: 18
             }, expectedOutput: {
@@ -106,7 +105,7 @@ describe("domains/kdv-hesaplayici/calculator.js", () => {
         });
         calculate({
             input: {
-                mode: Mode.TAX_TO_TAX_BASE,
+                mode: "tax-to-tax-base",
                 price: 448,
                 rate: 25
             }, expectedOutput: {

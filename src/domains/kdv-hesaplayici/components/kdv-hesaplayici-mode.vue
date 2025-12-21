@@ -11,29 +11,29 @@ import type {
     Item as FormCheckProps,
     Props as FormCheckGroupProps
 } from "@/components/common/form/form-check-group.vue";
-import { Mode } from "@/domains/kdv-hesaplayici/types.js";
+import type { Mode } from "@/domains/kdv-hesaplayici/types.js";
 
 export type Props = Partial<FormCheckGroupProps>;
 
 const props = defineProps<Props>();
 
-const ITEMS: FormCheckProps[] = [
+const ITEMS: FormCheckProps<Mode>[] = [
     {
         title: "KDV hariç tutardan KDV dahil tutarı hesapla",
         input: {
-            value: Mode.TAX_FREE_TO_TAX_ADDED
+            value: "tax-free-to-tax-added"
         }
     },
     {
         title: "KDV dahil tutardan KDV hariç tutarı hesapla",
         input: {
-            value: Mode.TAX_ADDED_TO_TAX_FREE
+            value: "tax-added-to-tax-free"
         }
     },
     {
         title: "KDV tutarı ile matrah (vergisiz tutar) hesapla",
         input: {
-            value: Mode.TAX_TO_TAX_BASE
+            value: "tax-to-tax-base"
         }
     }
 ];

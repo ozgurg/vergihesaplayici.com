@@ -1,5 +1,4 @@
-import type { CalculationResults, Prices, TaxFees, TaxRates } from "@/domains/kdv-hesaplayici/types.js";
-import { Mode } from "@/domains/kdv-hesaplayici/types.js";
+import type { CalculationResults, Mode, Prices, TaxFees, TaxRates } from "@/domains/kdv-hesaplayici/types.js";
 
 export class Calculator {
     private taxFees: TaxFees = {
@@ -32,11 +31,11 @@ export class Calculator {
         this.price = params.price;
         this.rate = params.rate;
 
-        if (this.mode === Mode.TAX_FREE_TO_TAX_ADDED) {
+        if (this.mode === "tax-free-to-tax-added") {
             this.prices.taxFree = this.price;
-        } else if (this.mode === Mode.TAX_ADDED_TO_TAX_FREE) {
+        } else if (this.mode === "tax-added-to-tax-free") {
             this.prices.taxAdded = this.price;
-        } else if (this.mode === Mode.TAX_TO_TAX_BASE) {
+        } else if (this.mode === "tax-to-tax-base") {
             this.taxFees.valueAddedTax = this.price;
         }
     }
@@ -63,15 +62,15 @@ export class Calculator {
     private calculateTax_valueAddedTax(): void {
         this.taxRates.valueAddedTax = this.rate;
 
-        if (this.mode === Mode.TAX_FREE_TO_TAX_ADDED) {
+        if (this.mode === "tax-free-to-tax-added") {
             this.taxFees.valueAddedTax = calculateTaxFromTaxFreePrice(this.price, this.taxRates.valueAddedTax);
             this.price += this.taxFees.valueAddedTax;
             this.prices.taxAdded = this.price;
-        } else if (this.mode === Mode.TAX_ADDED_TO_TAX_FREE) {
+        } else if (this.mode === "tax-added-to-tax-free") {
             this.taxFees.valueAddedTax = calculateTaxFromTaxAddedPrice(this.price, this.taxRates.valueAddedTax);
             this.price -= this.taxFees.valueAddedTax;
             this.prices.taxFree = this.price;
-        } else if (this.mode === Mode.TAX_TO_TAX_BASE) {
+        } else if (this.mode === "tax-to-tax-base") {
             this.prices.taxFree = (this.taxFees.valueAddedTax * 100) / this.rate;
             this.prices.taxAdded = this.prices.taxFree + this.taxFees.valueAddedTax;
         }
