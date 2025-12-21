@@ -215,21 +215,21 @@ export class Calculator {
         }
     }
 
-    // "TRT bandrolü" | TRY | "percent" | BaseAmountMode.BASE_AMOUNT
+    // "TRT bandrolü" | TRY | "percent" | "base-amount"
     private calculateTax_trt(): void {
         this.taxRates.trt = .8; // Eight per thousand
         this.taxFees.trt = this.calculateTax(this.price, this.taxRates.trt);
         this.calculatePrice(this.taxFees.trt);
     }
 
-    // "Özel Tüketim Vergisi (ÖTV)" | TRY | "percent" | BaseAmountMode.PREVIOUS_AMOUNT
+    // "Özel Tüketim Vergisi (ÖTV)" | TRY | "percent" | "previous-amount"
     private calculateTax_specialConsumptionTax(): void {
         this.taxRates.specialConsumptionTax = this.getOtvRate() ?? 0;
         this.taxFees.specialConsumptionTax = this.calculateTax(this.price, this.taxRates.specialConsumptionTax);
         this.calculatePrice(this.taxFees.specialConsumptionTax);
     }
 
-    // "Katma Değer Vergisi (KDV)" | TRY | "percent" | BaseAmountMode.PREVIOUS_AMOUNT
+    // "Katma Değer Vergisi (KDV)" | TRY | "percent" | "previous-amount"
     private calculateTax_valueAddedTax(): void {
         this.taxRates.valueAddedTax = 20;
         this.taxFees.valueAddedTax = this.calculateTax(this.price, this.taxRates.valueAddedTax);

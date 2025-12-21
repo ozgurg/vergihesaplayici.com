@@ -120,28 +120,28 @@ export class Calculator {
             this.taxFees.stampDuty;
     }
 
-    // "Gümrük vergisi" | TRY | "percent" | BaseAmountMode.BASE_AMOUNT
+    // "Gümrük vergisi" | TRY | "percent" | "base-amount"
     private calculateTax_customTax(): void {
         this.taxRates.customTax = this.isFromEU ? 30 : 60;
         this.taxFees.customTax = this.calculateTax(this.prices.taxFree, this.taxRates.customTax);
         this.calculatePrice(this.taxFees.customTax);
     }
 
-    // "Ek gümrük vergisi" | TRY | "percent" | BaseAmountMode.BASE_AMOUNT
+    // "Ek gümrük vergisi" | TRY | "percent" | "base-amount"
     private calculateTax_additionalCustomTax(): void {
         this.taxRates.additionalCustomTax = 48;
         this.taxFees.additionalCustomTax = this.calculateTax(this.prices.taxFree, this.taxRates.additionalCustomTax);
         this.calculatePrice(this.taxFees.additionalCustomTax);
     }
 
-    // "İlave gümrük vergisi" | TRY | "percent" | BaseAmountMode.BASE_AMOUNT
+    // "İlave gümrük vergisi" | TRY | "percent" | "base-amount"
     private calculateTax_extraCustomTax(): void {
         this.taxRates.extraCustomTax = this.extraCustomTaxPercent;
         this.taxFees.extraCustomTax = this.calculateTax(this.prices.taxFree, this.taxRates.extraCustomTax);
         this.calculatePrice(this.taxFees.extraCustomTax);
     }
 
-    // "Özel Tüketim Vergisi (ÖTV)" | TRY | "percent" | BaseAmountMode.PREVIOUS_AMOUNT
+    // "Özel Tüketim Vergisi (ÖTV)" | TRY | "percent" | "previous-amount"
     private calculateTax_specialConsumptionTax(): void {
         this.taxRates.specialConsumptionTax = 20;
         this.taxFees.specialConsumptionTax = this.calculateTax(this.price, this.taxRates.specialConsumptionTax);
