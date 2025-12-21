@@ -29,7 +29,7 @@ import {
     VEHICLE_ENGINE_VOLUME_LABEL_BY_VEHICLE_TYPE
 } from "@/domains/arac-vergisi/config.js";
 
-const toFormCheckProps = (items: VehicleEngineVolume[]) => {
+const toFormCheckProps = (items: VehicleEngineVolume[]): FormCheckProps[] => {
     return items.map(_item => ({
         title: VEHICLE_ENGINE_VOLUME_LABEL_BY_VEHICLE_ENGINE_VOLUME[_item],
         input: {
@@ -74,14 +74,8 @@ const items = computed<FormCheckProps[] | null>(() => {
     return map[props.vehicleType] ?? null;
 });
 
-const className = computed<string | null>(() => {
-    const map: Partial<{ [key in VehicleType]: string }> = {
-        "automobile": "vehicle-engine-volume-automobile",
-        "electric-automobile": "vehicle-engine-volume-electric-automobile",
-        "hybrid-automobile": "vehicle-engine-volume-hybrid-automobile",
-        "motorcycle": "vehicle-engine-volume-motorcycle"
-    };
-    return map[props.vehicleType] ?? null;
+const className = computed<string>(() => {
+    return `vehicle-engine-volume-${props.vehicleType}`;
 });
 </script>
 
