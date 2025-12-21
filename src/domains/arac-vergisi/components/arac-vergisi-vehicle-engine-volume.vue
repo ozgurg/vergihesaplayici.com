@@ -23,7 +23,8 @@
 <script lang="ts" setup>
 // oxlint-disable-next-line consistent-type-imports
 import type { Item as FormCheckProps } from "@/components/common/form/form-check-group.vue";
-import { VehicleEngineVolume, VehicleType } from "@/domains/arac-vergisi/types.js";
+import type { VehicleType } from "@/domains/arac-vergisi/types.js";
+import { VehicleEngineVolume } from "@/domains/arac-vergisi/types.js";
 import {
     VEHICLE_ENGINE_VOLUME_LABEL_BY_VEHICLE_ENGINE_VOLUME,
     VEHICLE_ENGINE_VOLUME_LABEL_BY_VEHICLE_TYPE
@@ -51,22 +52,22 @@ const label = computed<string>(() => {
 
 const items = computed<FormCheckProps[] | null>(() => {
     const map: Partial<{ [key in VehicleType]: FormCheckProps[] }> = {
-        [VehicleType.AUTOMOBILE]: toFormCheckProps([
+        "automobile": toFormCheckProps([
             VehicleEngineVolume.AUTOMOBILE__0_1400,
             VehicleEngineVolume.AUTOMOBILE__1401_1600,
             VehicleEngineVolume.AUTOMOBILE__1601_2000,
             VehicleEngineVolume.AUTOMOBILE__2001_UP
         ]),
-        [VehicleType.ELECTRIC_AUTOMOBILE]: toFormCheckProps([
+        "electric-automobile": toFormCheckProps([
             VehicleEngineVolume.ELECTRIC_AUTOMOBILE__0_160,
             VehicleEngineVolume.ELECTRIC_AUTOMOBILE__161_UP
         ]),
-        [VehicleType.HYBRID_AUTOMOBILE]: toFormCheckProps([
+        "hybrid-automobile": toFormCheckProps([
             VehicleEngineVolume.HYBRID_AUTOMOBILE__50_UP_0_1800,
             VehicleEngineVolume.HYBRID_AUTOMOBILE__100_UP_0_2500,
             VehicleEngineVolume.HYBRID_AUTOMOBILE__OTHER
         ]),
-        [VehicleType.MOTORCYCLE]: toFormCheckProps([
+        "motorcycle": toFormCheckProps([
             VehicleEngineVolume.MOTORCYCLE__0_250,
             VehicleEngineVolume.MOTORCYCLE__251_UP
         ])
@@ -76,10 +77,10 @@ const items = computed<FormCheckProps[] | null>(() => {
 
 const className = computed<string | null>(() => {
     const map: Partial<{ [key in VehicleType]: string }> = {
-        [VehicleType.AUTOMOBILE]: "vehicle-engine-volume-automobile",
-        [VehicleType.ELECTRIC_AUTOMOBILE]: "vehicle-engine-volume-electric-automobile",
-        [VehicleType.HYBRID_AUTOMOBILE]: "vehicle-engine-volume-hybrid-automobile",
-        [VehicleType.MOTORCYCLE]: "vehicle-engine-volume-motorcycle"
+        "automobile": "vehicle-engine-volume-automobile",
+        "electric-automobile": "vehicle-engine-volume-electric-automobile",
+        "hybrid-automobile": "vehicle-engine-volume-hybrid-automobile",
+        "motorcycle": "vehicle-engine-volume-motorcycle"
     };
     return map[props.vehicleType] ?? null;
 });

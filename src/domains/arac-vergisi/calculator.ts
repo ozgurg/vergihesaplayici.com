@@ -1,5 +1,5 @@
-import type { CalculationResults, Prices, TaxFees, TaxRates } from "@/domains/arac-vergisi/types.js";
-import { Mode, VehicleEngineVolume, VehicleType } from "@/domains/arac-vergisi/types.js";
+import type { CalculationResults, Mode, Prices, TaxFees, TaxRates, VehicleType } from "@/domains/arac-vergisi/types.js";
+import { VehicleEngineVolume } from "@/domains/arac-vergisi/types.js";
 
 type OtvRate = {
     maxBasePrice: number;
@@ -14,7 +14,7 @@ type OtvRates = {
 // Source: https://www.mevzuat.gov.tr/mevzuatmetin/1.5.4760.pdf
 // Source: https://www.youtube.com/watch?v=qRaNnAdVnMc
 const OTV_RATES: OtvRates = {
-    [VehicleType.AUTOMOBILE]: {
+    "automobile": {
         [VehicleEngineVolume.AUTOMOBILE__0_1400]: [
             { maxBasePrice: 650_000, percent: 70 },
             { maxBasePrice: 900_000, percent: 75 },
@@ -36,7 +36,7 @@ const OTV_RATES: OtvRates = {
         ]
     },
 
-    [VehicleType.ELECTRIC_AUTOMOBILE]: {
+    "electric-automobile": {
         [VehicleEngineVolume.ELECTRIC_AUTOMOBILE__0_160]: [
             { maxBasePrice: 1_650_000, percent: 25 },
             { maxBasePrice: Infinity, percent: 55 }
@@ -47,7 +47,7 @@ const OTV_RATES: OtvRates = {
         ]
     },
 
-    [VehicleType.HYBRID_AUTOMOBILE]: {
+    "hybrid-automobile": {
         [VehicleEngineVolume.HYBRID_AUTOMOBILE__50_UP_0_1800]: [
             { maxBasePrice: 1_250_000, percent: 70 },
             { maxBasePrice: Infinity, percent: 80 }
@@ -61,7 +61,7 @@ const OTV_RATES: OtvRates = {
         ]
     },
 
-    [VehicleType.MOTORCYCLE]: {
+    "motorcycle": {
         [VehicleEngineVolume.MOTORCYCLE__0_250]: [
             { maxBasePrice: Infinity, percent: 0 }
         ],
@@ -70,29 +70,29 @@ const OTV_RATES: OtvRates = {
         ]
     },
 
-    [VehicleType.BUS]: {
+    "bus": {
         maxBasePrice: Infinity, percent: 1
     },
 
-    [VehicleType.MIDIBUS]: {
+    "midibus": {
         maxBasePrice: Infinity, percent: 4
     },
 
-    [VehicleType.MINIBUS]: {
+    "minibus": {
         maxBasePrice: Infinity, percent: 9
     },
 
-    [VehicleType.HELICOPTER]: {
+    "helicopter": {
         maxBasePrice: Infinity, percent: .5
     },
-    [VehicleType.PLANE]: {
+    "plane": {
         maxBasePrice: Infinity, percent: .5
     },
 
-    [VehicleType.BOAT]: {
+    "boat": {
         maxBasePrice: Infinity, percent: 8
     },
-    [VehicleType.YACHT]: {
+    "yacht": {
         maxBasePrice: Infinity, percent: 8
     }
 };
@@ -135,7 +135,7 @@ export class Calculator {
         this.price = params.price;
         this.vehicleType = params.vehicleType;
         this.vehicleEngineVolume = params.vehicleEngineVolume;
-        this.calculateFromTaxAddedPrice = options.mode === Mode.TAX_ADDED_TO_TAX_FREE;
+        this.calculateFromTaxAddedPrice = options.mode === "tax-added-to-tax-free";
 
         if (this.calculateFromTaxAddedPrice) {
             this.prices.taxAdded = params.price;

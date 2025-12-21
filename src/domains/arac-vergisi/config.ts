@@ -1,55 +1,55 @@
-import type { Form } from "@/domains/arac-vergisi/types.js";
-import { Mode, VehicleEngineVolume, VehicleType } from "@/domains/arac-vergisi/types.js";
+import type { Form, VehicleType } from "@/domains/arac-vergisi/types.js";
+import { VehicleEngineVolume } from "@/domains/arac-vergisi/types.js";
 
 export const DEFAULT_FORM: Form = {
-    mode: Mode.TAX_FREE_TO_TAX_ADDED,
+    mode: "tax-free-to-tax-added",
     price: 0,
     currency: "TRY",
-    vehicleType: VehicleType.AUTOMOBILE,
+    vehicleType: "automobile",
     vehicleEngineVolume: null
 };
 
 export const TAX_FREE_LABEL_BY_MODE = {
-    [Mode.TAX_ADDED_TO_TAX_FREE]: "Tahmini vergisiz fiyat",
-    [Mode.TAX_FREE_TO_TAX_ADDED]: "Vergisiz fiyat"
+    "tax-added-to-tax-free": "Tahmini vergisiz fiyat",
+    "tax-free-to-tax-added": "Vergisiz fiyat"
 };
 
 export const TAX_ADDED_LABEL_BY_MODE = {
-    [Mode.TAX_ADDED_TO_TAX_FREE]: "Vergili fiyat",
-    [Mode.TAX_FREE_TO_TAX_ADDED]: "Tahmini vergili fiyat"
+    "tax-added-to-tax-free": "Vergili fiyat",
+    "tax-free-to-tax-added": "Tahmini vergili fiyat"
 };
 
 export const PRICE_LABEL_BY_MODE = {
-    [Mode.TAX_ADDED_TO_TAX_FREE]: "Vergili araç fiyatı",
-    [Mode.TAX_FREE_TO_TAX_ADDED]: "Vergisiz araç fiyatı"
+    "tax-added-to-tax-free": "Vergili araç fiyatı",
+    "tax-free-to-tax-added": "Vergisiz araç fiyatı"
 };
 
 export const VEHICLE_TYPE_LABEL_BY_VEHICLE_TYPE: { [key in VehicleType]: string } = {
-    [VehicleType.AUTOMOBILE]: "Otomobil",
-    [VehicleType.ELECTRIC_AUTOMOBILE]: "Elektrikli",
-    [VehicleType.HYBRID_AUTOMOBILE]: "Hibrit",
-    [VehicleType.MOTORCYCLE]: "Motosiklet",
-    [VehicleType.BUS]: "Otobüs",
-    [VehicleType.MIDIBUS]: "Midibüs",
-    [VehicleType.MINIBUS]: "Minibüs",
-    [VehicleType.HELICOPTER]: "Helikopter",
-    [VehicleType.PLANE]: "Uçak",
-    [VehicleType.BOAT]: "Gemi",
-    [VehicleType.YACHT]: "Yat"
+    "automobile": "Otomobil",
+    "electric-automobile": "Elektrikli",
+    "hybrid-automobile": "Hibrit",
+    "motorcycle": "Motosiklet",
+    "bus": "Otobüs",
+    "midibus": "Midibüs",
+    "minibus": "Minibüs",
+    "helicopter": "Helikopter",
+    "plane": "Uçak",
+    "boat": "Gemi",
+    "yacht": "Yat"
 };
 
 export const VEHICLE_ENGINE_VOLUME_LABEL_BY_VEHICLE_TYPE: { [key in VehicleType]: string } = {
-    [VehicleType.AUTOMOBILE]: "Motor hacmi (cm³)",
-    [VehicleType.ELECTRIC_AUTOMOBILE]: "Motor gücü (kW)",
-    [VehicleType.HYBRID_AUTOMOBILE]: "Motor gücü (kW) ve hacmi (cm³)",
-    [VehicleType.MOTORCYCLE]: "Motor hacmi (cm³)",
-    [VehicleType.BUS]: "Motor gücü",
-    [VehicleType.MIDIBUS]: "Motor gücü",
-    [VehicleType.MINIBUS]: "Motor gücü",
-    [VehicleType.HELICOPTER]: "Motor gücü",
-    [VehicleType.PLANE]: "Motor gücü",
-    [VehicleType.BOAT]: "Motor gücü",
-    [VehicleType.YACHT]: "Motor gücü"
+    "automobile": "Motor hacmi (cm³)",
+    "electric-automobile": "Motor gücü (kW)",
+    "hybrid-automobile": "Motor gücü (kW) ve hacmi (cm³)",
+    "motorcycle": "Motor hacmi (cm³)",
+    "bus": "Motor gücü",
+    "midibus": "Motor gücü",
+    "minibus": "Motor gücü",
+    "helicopter": "Motor gücü",
+    "plane": "Motor gücü",
+    "boat": "Motor gücü",
+    "yacht": "Motor gücü"
 };
 
 export const VEHICLE_ENGINE_VOLUME_LABEL_BY_VEHICLE_ENGINE_VOLUME: { [key in VehicleEngineVolume]: string } = {

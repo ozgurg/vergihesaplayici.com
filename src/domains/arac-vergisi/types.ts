@@ -2,24 +2,20 @@ import type { CurrencyCode } from "@/types/common.js";
 
 
 // Calculator
-export enum Mode {
-    TAX_ADDED_TO_TAX_FREE = "tax-added-to-tax-free",
-    TAX_FREE_TO_TAX_ADDED = "tax-free-to-tax-added"
-}
+export type Mode = "tax-added-to-tax-free" | "tax-free-to-tax-added";
 
-export enum VehicleType {
-    AUTOMOBILE = "automobile",
-    ELECTRIC_AUTOMOBILE = "electric-automobile",
-    HYBRID_AUTOMOBILE = "hybrid-automobile",
-    MOTORCYCLE = "motorcycle",
-    BUS = "bus",
-    MIDIBUS = "midibus",
-    MINIBUS = "minibus",
-    HELICOPTER = "helicopter",
-    PLANE = "plane",
-    BOAT = "boat",
-    YACHT = "yacht"
-}
+export type VehicleType =
+    | "automobile"
+    | "electric-automobile"
+    | "hybrid-automobile"
+    | "motorcycle"
+    | "bus"
+    | "midibus"
+    | "minibus"
+    | "helicopter"
+    | "plane"
+    | "boat"
+    | "yacht";
 
 export enum VehicleEngineVolume {
     AUTOMOBILE__0_1400 = "automobile.0-1400",
