@@ -1,5 +1,10 @@
-import type { CalculationResults, Prices, TaxFees, TaxRates } from "@/domains/konsol-vergisi-hesaplayici/types.js";
-import { Mode } from "@/domains/konsol-vergisi-hesaplayici/types.js";
+import type {
+    CalculationResults,
+    Mode,
+    Prices,
+    TaxFees,
+    TaxRates
+} from "@/domains/konsol-vergisi-hesaplayici/types.js";
 
 export class Calculator {
     private taxFees: TaxFees = {
@@ -33,7 +38,7 @@ export class Calculator {
         }
     ) {
         this.price = params.price;
-        this.calculateFromTaxAddedPrice = options.mode === Mode.TAX_ADDED_TO_TAX_FREE;
+        this.calculateFromTaxAddedPrice = options.mode === "tax-added-to-tax-free";
 
         if (this.calculateFromTaxAddedPrice) {
             this.prices.taxAdded = params.price;
