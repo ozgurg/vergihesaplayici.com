@@ -23,8 +23,7 @@
 <script lang="ts" setup>
 // oxlint-disable-next-line consistent-type-imports
 import type { Item as FormCheckProps } from "@/components/common/form/form-check-group.vue";
-import type { VehicleType } from "@/domains/arac-vergisi/types.js";
-import { VehicleEngineVolume } from "@/domains/arac-vergisi/types.js";
+import type { VehicleEngineVolume, VehicleType } from "@/domains/arac-vergisi/types.js";
 import {
     VEHICLE_ENGINE_VOLUME_LABEL_BY_VEHICLE_ENGINE_VOLUME,
     VEHICLE_ENGINE_VOLUME_LABEL_BY_VEHICLE_TYPE
@@ -53,23 +52,23 @@ const label = computed<string>(() => {
 const items = computed<FormCheckProps[] | null>(() => {
     const map: Partial<{ [key in VehicleType]: FormCheckProps[] }> = {
         "automobile": toFormCheckProps([
-            VehicleEngineVolume.AUTOMOBILE__0_1400,
-            VehicleEngineVolume.AUTOMOBILE__1401_1600,
-            VehicleEngineVolume.AUTOMOBILE__1601_2000,
-            VehicleEngineVolume.AUTOMOBILE__2001_UP
+            "automobile.0-1400",
+            "automobile.1401-1600",
+            "automobile.1601-2000",
+            "automobile.2001-up"
         ]),
         "electric-automobile": toFormCheckProps([
-            VehicleEngineVolume.ELECTRIC_AUTOMOBILE__0_160,
-            VehicleEngineVolume.ELECTRIC_AUTOMOBILE__161_UP
+            "electric-automobile.0-160",
+            "electric-automobile.161-up"
         ]),
         "hybrid-automobile": toFormCheckProps([
-            VehicleEngineVolume.HYBRID_AUTOMOBILE__50_UP_0_1800,
-            VehicleEngineVolume.HYBRID_AUTOMOBILE__100_UP_0_2500,
-            VehicleEngineVolume.HYBRID_AUTOMOBILE__OTHER
+            "hybrid-automobile.50-up.0-1800",
+            "hybrid-automobile.100-up.0-2500",
+            "hybrid-automobile.other"
         ]),
         "motorcycle": toFormCheckProps([
-            VehicleEngineVolume.MOTORCYCLE__0_250,
-            VehicleEngineVolume.MOTORCYCLE__251_UP
+            "motorcycle.0-250",
+            "motorcycle.251-up"
         ])
     };
     return map[props.vehicleType] ?? null;

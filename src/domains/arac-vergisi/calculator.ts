@@ -1,5 +1,12 @@
-import type { CalculationResults, Mode, Prices, TaxFees, TaxRates, VehicleType } from "@/domains/arac-vergisi/types.js";
-import { VehicleEngineVolume } from "@/domains/arac-vergisi/types.js";
+import type {
+    CalculationResults,
+    Mode,
+    Prices,
+    TaxFees,
+    TaxRates,
+    VehicleEngineVolume,
+    VehicleType
+} from "@/domains/arac-vergisi/types.js";
 
 type OtvRate = {
     maxBasePrice: number;
@@ -7,7 +14,7 @@ type OtvRate = {
 };
 
 type OtvRates = {
-    [vehicleType in VehicleType]: { [engineVolume in VehicleEngineVolume]?: OtvRate[] } | OtvRate;
+    [vehicleType in VehicleType]: { [engineVolume in VehicleEngineVolume & `${vehicleType}.${string}`]?: OtvRate[] } | OtvRate;
 };
 
 // Source: https://www.resmigazete.gov.tr/eskiler/2025/07/20250724-5.pdf
@@ -15,57 +22,57 @@ type OtvRates = {
 // Source: https://www.youtube.com/watch?v=qRaNnAdVnMc
 const OTV_RATES: OtvRates = {
     "automobile": {
-        [VehicleEngineVolume.AUTOMOBILE__0_1400]: [
+        "automobile.0-1400": [
             { maxBasePrice: 650_000, percent: 70 },
             { maxBasePrice: 900_000, percent: 75 },
             { maxBasePrice: 1_100_000, percent: 80 },
             { maxBasePrice: Infinity, percent: 90 }
         ],
-        [VehicleEngineVolume.AUTOMOBILE__1401_1600]: [
+        "automobile.1401-1600": [
             { maxBasePrice: 850_000, percent: 75 },
             { maxBasePrice: 1_100_000, percent: 80 },
             { maxBasePrice: 1_650_000, percent: 90 },
             { maxBasePrice: Infinity, percent: 100 }
         ],
-        [VehicleEngineVolume.AUTOMOBILE__1601_2000]: [
+        "automobile.1601-2000": [
             { maxBasePrice: 1_650_000, percent: 150 },
             { maxBasePrice: Infinity, percent: 170 }
         ],
-        [VehicleEngineVolume.AUTOMOBILE__2001_UP]: [
+        "automobile.2001-up": [
             { maxBasePrice: Infinity, percent: 220 }
         ]
     },
 
     "electric-automobile": {
-        [VehicleEngineVolume.ELECTRIC_AUTOMOBILE__0_160]: [
+        "electric-automobile.0-160": [
             { maxBasePrice: 1_650_000, percent: 25 },
             { maxBasePrice: Infinity, percent: 55 }
         ],
-        [VehicleEngineVolume.ELECTRIC_AUTOMOBILE__161_UP]: [
+        "electric-automobile.161-up": [
             { maxBasePrice: 1_650_000, percent: 65 },
             { maxBasePrice: Infinity, percent: 75 }
         ]
     },
 
     "hybrid-automobile": {
-        [VehicleEngineVolume.HYBRID_AUTOMOBILE__50_UP_0_1800]: [
+        "hybrid-automobile.50-up.0-1800": [
             { maxBasePrice: 1_250_000, percent: 70 },
             { maxBasePrice: Infinity, percent: 80 }
         ],
-        [VehicleEngineVolume.HYBRID_AUTOMOBILE__100_UP_0_2500]: [
+        "hybrid-automobile.100-up.0-2500": [
             { maxBasePrice: 1_650_000, percent: 150 },
             { maxBasePrice: Infinity, percent: 170 }
         ],
-        [VehicleEngineVolume.HYBRID_AUTOMOBILE__OTHER]: [
+        "hybrid-automobile.other": [
             { maxBasePrice: Infinity, percent: 220 }
         ]
     },
 
     "motorcycle": {
-        [VehicleEngineVolume.MOTORCYCLE__0_250]: [
+        "motorcycle.0-250": [
             { maxBasePrice: Infinity, percent: 0 }
         ],
-        [VehicleEngineVolume.MOTORCYCLE__251_UP]: [
+        "motorcycle.251-up": [
             { maxBasePrice: Infinity, percent: 37 }
         ]
     },

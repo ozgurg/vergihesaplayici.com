@@ -1,5 +1,4 @@
-import type { Form, VehicleType } from "@/domains/arac-vergisi/types.js";
-import { VehicleEngineVolume } from "@/domains/arac-vergisi/types.js";
+import type { Form, VehicleEngineVolume, VehicleType } from "@/domains/arac-vergisi/types.js";
 
 export const DEFAULT_FORM: Form = {
     mode: "tax-free-to-tax-added",
@@ -53,20 +52,20 @@ export const VEHICLE_ENGINE_VOLUME_LABEL_BY_VEHICLE_TYPE: { [key in VehicleType]
 };
 
 export const VEHICLE_ENGINE_VOLUME_LABEL_BY_VEHICLE_ENGINE_VOLUME: { [key in VehicleEngineVolume]: string } = {
-    [VehicleEngineVolume.AUTOMOBILE__0_1400]: "1.400 ve altı",
-    [VehicleEngineVolume.AUTOMOBILE__1401_1600]: "1.401-1600",
-    [VehicleEngineVolume.AUTOMOBILE__1601_2000]: "1.601-2.000",
-    [VehicleEngineVolume.AUTOMOBILE__2001_UP]: "2.001 ve üzeri",
+    "automobile.0-1400": "1.400 ve altı",
+    "automobile.1401-1600": "1.401-1600",
+    "automobile.1601-2000": "1.601-2.000",
+    "automobile.2001-up": "2.001 ve üzeri",
 
-    [VehicleEngineVolume.ELECTRIC_AUTOMOBILE__0_160]: "160 ve altı",
-    [VehicleEngineVolume.ELECTRIC_AUTOMOBILE__161_UP]: "161 ve üzeri",
+    "electric-automobile.0-160": "160 ve altı",
+    "electric-automobile.161-up": "161 ve üzeri",
 
-    [VehicleEngineVolume.HYBRID_AUTOMOBILE__50_UP_0_1800]: "50 kW ve üzeri,<br />1.800 cm³ ve altı",
-    [VehicleEngineVolume.HYBRID_AUTOMOBILE__100_UP_0_2500]: "100 kW ve üzeri,<br />2.500 cm³ ve altı",
-    [VehicleEngineVolume.HYBRID_AUTOMOBILE__OTHER]: "Diğer",
+    "hybrid-automobile.50-up.0-1800": "50 kW ve üzeri,<br />1.800 cm³ ve altı",
+    "hybrid-automobile.100-up.0-2500": "100 kW ve üzeri,<br />2.500 cm³ ve altı",
+    "hybrid-automobile.other": "Diğer",
 
-    [VehicleEngineVolume.MOTORCYCLE__0_250]: "250 ve altı",
-    [VehicleEngineVolume.MOTORCYCLE__251_UP]: "251 ve üzeri"
+    "motorcycle.0-250": "250 ve altı",
+    "motorcycle.251-up": "251 ve üzeri"
 };
 
 export const LAST_UPDATE = new Date("Sat Sep 06 2025 03:00:00 GMT+0300 (GMT+03:00)");
