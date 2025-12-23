@@ -27,7 +27,9 @@
         "import/max-dependencies": "off",
         "import/extensions": [
             "error",
-            "always"
+            [
+                "ignorePackages"
+            ]
         ],
 
         "typescript/explicit-function-return-type": "off",
@@ -67,6 +69,7 @@
                 "always": true
             }
         ],
+        "eslint/max-statements": "off",
         "eslint/max-lines-per-function": "off",
         "eslint/sort-keys": "off",
         "eslint/sort-imports": "off",
@@ -81,6 +84,7 @@
             "multi-line"
         ],
 
+        "unicorn/no-immediate-mutation": "off",
         "unicorn/prefer-global-this": "off",
         "unicorn/filename-case": "off",
         "unicorn/no-await-expression-member": "off",
