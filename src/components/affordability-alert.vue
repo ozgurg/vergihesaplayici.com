@@ -18,7 +18,7 @@ export type Props = {
 } & AlertProps;
 
 const props = defineProps<Props>();
-const MINIMUM_WAGE_GROSS_MONTHLY = inject("MINIMUM_WAGE_GROSS_MONTHLY", 22_104.67); // Source: https://www.csgb.gov.tr/tr/poco-pages/asgari-ucret/
+const MINIMUM_WAGE_GROSS_MONTHLY = inject("MINIMUM_WAGE_GROSS_MONTHLY", 28_075);
 
 const roundToDecimalPlaces = (value: number) => {
     const factor = 10 ** DECIMAL_PLACES;
