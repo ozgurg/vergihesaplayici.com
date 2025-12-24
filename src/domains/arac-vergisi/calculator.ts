@@ -70,7 +70,7 @@ const OTV_RATES: OtvRates = {
 
     "motorcycle": {
         "motorcycle.0-250": [
-            { maxBasePrice: Infinity, percent: 0 }
+            { maxBasePrice: Infinity, percent: 8 }
         ],
         "motorcycle.251-up": [
             { maxBasePrice: Infinity, percent: 37 }

@@ -1,12 +1,7 @@
 <template>
     <alert
         color="info"
-        class="text-center">
-        Türkiye'de <u :aria-label="minimumWageFormatted" data-balloon-pos="up">asgari ücretli bir çalışan</u> yemeden
-        içmeden bu
-        ürünü
-        <string-carousel :text="wageDurationSummary" is="b" />
-        maaşıyla satın alabilir.
+        class="text-center">Türkiye'de <u :aria-label="minimumWageFormatted" data-balloon-pos="up">asgari ücretli bir çalışan</u> yemeden içmeden bu ürünü <string-carousel :text="wageDurationSummary" is="b" /> maaşıyla satın alabilir.
     </alert>
 </template>
 
