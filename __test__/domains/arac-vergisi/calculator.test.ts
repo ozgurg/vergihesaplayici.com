@@ -108,7 +108,7 @@ describe("domains/arac-vergisi/calculator.js", () => {
             },
             expectedOutput: {
                 taxFree: 50_000,
-                taxAdded: 60_480
+                taxAdded: 65_318.4
             }
         });
 
@@ -182,7 +182,7 @@ describe("domains/arac-vergisi/calculator.js", () => {
                 mode: "tax-added-to-tax-free"
             },
             expectedOutput: {
-                taxFree: 49_603.17,
+                taxFree: 45_928.87,
                 taxAdded: 60_000
             }
         });
