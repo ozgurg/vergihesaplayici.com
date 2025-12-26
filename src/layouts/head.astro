@@ -38,7 +38,7 @@ const SITE_NAME = "Vergi Hesaplayıcı";
 let TITLE;
 const titleWithSiteName = head.title.replace("%site-title%", SITE_NAME);
 if (titleWithSiteName.length > MAX_TITLE_LENGTH) {
-    TITLE = head.title.split(" - ")[0];
+    TITLE = titleWithSiteName.split(" - ")[0];
 } else {
     TITLE = titleWithSiteName;
 }
