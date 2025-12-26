@@ -402,7 +402,7 @@ $_MAX_CHART_ITEM_COUNT: 10;
         inset-inline-start: var(--_x);
         inset-block-start: var(--_y);
         border-bottom-left-radius: 0 !important;
-        will-change: inset-inline-start, inset-block-start;
+        will-change: opacity, visibility, filter;
         transition: vh-transition(opacity visibility filter, var(--vh-duration-short)),
         vh-transition(transform, var(--vh-duration-medium), var(--vh-timing-spring));
         &[aria-hidden="false"] {

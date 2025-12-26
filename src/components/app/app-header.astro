@@ -287,6 +287,7 @@ const nav = getFeaturedCalculatorPages();
                     }
                     &::before {
                         @include nav-hover-indicator-before;
+                        will-change: inset, inline-size, background-color, opacity;
                         transition: vh-transition(inset inline-size background-color opacity, var(--vh-duration-long)), vh-transition(transform, var(--vh-duration-long), var(--vh-timing-spring)); // `inset-inline` doesn't work on Safari 26; `inset` works
                         inset: 0 anchor(--_anchor-name start);
                         inline-size: anchor-size(--_anchor-name inline);
