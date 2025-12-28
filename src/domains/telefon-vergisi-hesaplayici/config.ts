@@ -32,4 +32,4 @@ export const REGISTRATION_LABEL_BY_REGISTRATION = {
     "passport": "Pasaport ile"
 };
 
-export const LAST_UPDATE = new Date("Fri Oct 24 2025 23:29:15 GMT+0300 (GMT+03:00)");
+export const LAST_UPDATE = new Date("Mon Dec 29 2025 00:00:00 GMT+0300 (GMT+03:00)");
