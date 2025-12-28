@@ -166,6 +166,7 @@ $_scales: (
                 @include checked-state-before;
                 transform: scale(0);
                 opacity: 0;
+                will-change: inset, inset-block, inline-size, block-size, transform, opacity;
                 transition: vh-transition(inset inset-block inline-size block-size transform opacity, var(--vh-duration-long)); // `inset-inline` doesn't work on Safari 26; `inset` works
                 inset-inline: anchor(var(--_anchor-name) start) anchor(var(--_anchor-name) end);
                 inset-block: anchor(var(--_anchor-name) top) anchor(var(--_anchor-name) bottom);

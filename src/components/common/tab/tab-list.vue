@@ -31,6 +31,7 @@ const ANCHOR_NAME = `--tab-active-item-indicator-${useId()}`;
             background: var(--vh-clr-primary);
             block-size: 3px;
             border-radius: var(--vh-br-normal) var(--vh-br-normal) 0 0;
+            will-change: inset-inline-start, inline-size;
             transition: vh-transition(inset-inline-start inline-size, var(--vh-duration-long));
             inset-inline-start: anchor(--_anchor-name start);
             inset-block-end: 0;

@@ -103,7 +103,7 @@ const initial = calculateServerSide();
         initial={initial}
         client:load />
 
-    {presetsForCalculatorPresetCarousel.length > 0 ?
+    {presetsForCalculatorPresetCarousel.length > 0 &&
         <hr />
         <Container>
             <div class="ta-ad-first" ta-ad-container=""></div>
@@ -115,7 +115,7 @@ const initial = calculateServerSide();
         <CalculatorPresetCarousel
             titleTag="h3"
             items={presetsForCalculatorPresetCarousel} />
-        : ""}
+    }
 
     <Container>
         <div class="ta-ad-last" ta-ad-container=""></div>

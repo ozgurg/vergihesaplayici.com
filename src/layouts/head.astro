@@ -21,6 +21,10 @@ const toMetaContent = (date: Date): string => {
     return `${Y}-${M}-${D}T${h}:${m}:${s}${sign}${offH}:${offM}`;
 };
 
+const replacePlaceholderTexts = (text: string): string => {
+    return text.replace("%site-title%", SITE_NAME);
+};
+
 const MAX_TITLE_LENGTH = 60;
 
 export type Props = {
@@ -36,14 +40,14 @@ const { head } = page;
 const SITE_NAME = "Vergi Hesaplayıcı";
 
 let TITLE;
-const titleWithSiteName = head.title.replace("%site-title%", SITE_NAME);
+const titleWithSiteName = replacePlaceholderTexts(head.title);
 if (titleWithSiteName.length > MAX_TITLE_LENGTH) {
-    TITLE = head.title.split(" - ")[0];
+    TITLE = titleWithSiteName.split(" - ")[0];
 } else {
     TITLE = titleWithSiteName;
 }
 
-const DESCRIPTION = head.description;
+const DESCRIPTION = replacePlaceholderTexts(head.description);
 const THEME_COLOR = "#111912"; // Calculated start color of `page-header`s linear-gradient
 const X_CREATOR = "@vergihesaplar";
 const BASE_URL = siteUrl();
@@ -59,17 +63,17 @@ const MANIFEST_JSON = staticUrl("/manifest.json");
 
 <link rel="preload" as="font" type="font/woff2" href={interLatinNormalFontWoff2Url} crossorigin="anonymous" />
 
-{dates?.created ?
+{dates?.created &&
 <meta name="published_time" content={toMetaContent(dates.created)} />
 <meta itemprop="datePublished" content={toMetaContent(dates.created)} />
 <meta property="article:published_time" content={toMetaContent(dates.created)} />
-    : ""}
+}
 
-{dates?.updated ?
+{dates?.updated &&
 <meta name="modified_time" content={toMetaContent(dates.updated)} />
 <meta itemprop="dateModified" content={toMetaContent(dates.updated)} />
 <meta property="article:modified_time" content={toMetaContent(dates.updated)} />
-    : ""}
+}
 
 <meta name="description" content={DESCRIPTION} />
 
@@ -91,7 +95,7 @@ const MANIFEST_JSON = staticUrl("/manifest.json");
 <meta name="twitter:title" content={TITLE} />
 <meta name="twitter:description" content={DESCRIPTION} />
 <meta name="twitter:url" content={PAGE_URL.href} />
-<meta name="twitter:image" content={OG_IMAGE.href} />
+<meta name="twitter:image" content={OG_IMAGE} />
 <meta name="twitter:image:alt" content={TITLE} />
 <meta name="twitter:creator" content={X_CREATOR} />
 
@@ -101,7 +105,7 @@ const MANIFEST_JSON = staticUrl("/manifest.json");
 <meta property="og:description" content={DESCRIPTION} />
 <meta property="og:url" content={PAGE_URL.href} />
 <meta property="og:type" content="website" />
-<meta property="og:image" content={OG_IMAGE.href} />
+<meta property="og:image" content={OG_IMAGE} />
 <meta property="og:locale" content="TR" />
 
 <link rel="icon" type="image/png" href={staticUrl("/pwa/favicon-96x96.png")} sizes="96x96" />

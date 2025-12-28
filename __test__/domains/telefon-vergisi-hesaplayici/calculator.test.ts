@@ -11,194 +11,187 @@ type CalculateParams = {
 };
 
 const calculate = ({ input, options, expectedOutput }: CalculateParams): void => {
-    const calculator = new Calculator({
-        ...input,
-        eurToTryCurrency: 1
-    }, options);
-    const results = calculator.calculate();
-    expect(results.prices).toStrictEqual(expectedOutput);
+    it(`input: ${JSON.stringify(input)}, options: ${JSON.stringify(options)}, expectedOutput: ${JSON.stringify(expectedOutput)}`, () => {
+        const calculator = new Calculator({
+            ...input,
+            eurToTryCurrency: 1
+        }, options);
+        const results = calculator.calculate();
+        expect(results.prices).toStrictEqual(expectedOutput);
+    });
 };
 
 describe("domains/telefon-vergisi-hesaplayici/calculator.js", () => {
-    it("calculates taxes correctly with given inputs", () => {
-        // "import" | "tax-free-to-tax-added"
-        calculate({
-            input: {
-                price: 500,
-                registration: "import"
-            },
-            options: {
-                mode: "tax-free-to-tax-added"
-            },
-            expectedOutput: {
-                taxFree: 500,
-                taxAdded: 850.08
-            }
-        });
-        calculate({
-            input: {
-                price: 1_500,
-                registration: "import"
-            },
-            options: {
-                mode: "tax-free-to-tax-added"
-            },
-            expectedOutput: {
-                taxFree: 1_500,
-                taxAdded: 2_550.24
-            }
-        });
-        calculate({
-            input: {
-                price: 5_000,
-                registration: "import"
-            },
-            options: {
-                mode: "tax-free-to-tax-added"
-            },
-            expectedOutput: {
-                taxFree: 5_000,
-                taxAdded: 9_520.9
-            }
-        });
+    calculate({
+        input: {
+            price: 500,
+            registration: "import"
+        },
+        options: {
+            mode: "tax-free-to-tax-added"
+        },
+        expectedOutput: {
+            taxFree: 500,
+            taxAdded: 850.08
+        }
+    });
+    calculate({
+        input: {
+            price: 1_500,
+            registration: "import"
+        },
+        options: {
+            mode: "tax-free-to-tax-added"
+        },
+        expectedOutput: {
+            taxFree: 1_500,
+            taxAdded: 2_550.24
+        }
+    });
+    calculate({
+        input: {
+            price: 5_000,
+            registration: "import"
+        },
+        options: {
+            mode: "tax-free-to-tax-added"
+        },
+        expectedOutput: {
+            taxFree: 5_000,
+            taxAdded: 9_520.9
+        }
+    });
 
+    calculate({
+        input: {
+            price: 500,
+            registration: "import"
+        },
+        options: {
+            mode: "tax-added-to-tax-free"
+        },
+        expectedOutput: {
+            taxFree: 294.08,
+            taxAdded: 500
+        }
+    });
+    calculate({
+        input: {
+            price: 1_500,
+            registration: "import"
+        },
+        options: {
+            mode: "tax-added-to-tax-free"
+        },
+        expectedOutput: {
+            taxFree: 882.27,
+            taxAdded: 1_500
+        }
+    });
+    calculate({
+        input: {
+            price: 5_000,
+            registration: "import"
+        },
+        options: {
+            mode: "tax-added-to-tax-free"
+        },
+        expectedOutput: {
+            taxFree: 2_940.9,
+            taxAdded: 5_000
+        }
+    });
 
-        // "import" | "tax-added-to-tax-free"
-        calculate({
-            input: {
-                price: 500,
-                registration: "import"
-            },
-            options: {
-                mode: "tax-added-to-tax-free"
-            },
-            expectedOutput: {
-                taxFree: 294.08,
-                taxAdded: 500
-            }
-        });
-        calculate({
-            input: {
-                price: 1_500,
-                registration: "import"
-            },
-            options: {
-                mode: "tax-added-to-tax-free"
-            },
-            expectedOutput: {
-                taxFree: 882.27,
-                taxAdded: 1_500
-            }
-        });
-        calculate({
-            input: {
-                price: 5_000,
-                registration: "import"
-            },
-            options: {
-                mode: "tax-added-to-tax-free"
-            },
-            expectedOutput: {
-                taxFree: 2_940.9,
-                taxAdded: 5_000
-            }
-        });
+    calculate({
+        input: {
+            price: 500,
+            registration: "passport"
+        },
+        options: {
+            mode: "tax-free-to-tax-added"
+        },
+        expectedOutput: {
+            taxFree: 500,
+            taxAdded: 57_761
+        }
+    });
+    calculate({
+        input: {
+            price: 1_500,
+            registration: "passport"
+        },
+        options: {
+            mode: "tax-free-to-tax-added"
+        },
+        expectedOutput: {
+            taxFree: 1_500,
+            taxAdded: 58_761
+        }
+    });
+    calculate({
+        input: {
+            price: 5_000,
+            registration: "passport"
+        },
+        options: {
+            mode: "tax-free-to-tax-added"
+        },
+        expectedOutput: {
+            taxFree: 5_000,
+            taxAdded: 62_261
+        }
+    });
 
-
-        // "passport" | "tax-free-to-tax-added"
-        calculate({
-            input: {
-                price: 500,
-                registration: "passport"
-            },
-            options: {
-                mode: "tax-free-to-tax-added"
-            },
-            expectedOutput: {
-                taxFree: 500,
-                taxAdded: 46_134
-            }
-        });
-        calculate({
-            input: {
-                price: 1_500,
-                registration: "passport"
-            },
-            options: {
-                mode: "tax-free-to-tax-added"
-            },
-            expectedOutput: {
-                taxFree: 1_500,
-                taxAdded: 47_134
-            }
-        });
-        calculate({
-            input: {
-                price: 5_000,
-                registration: "passport"
-            },
-            options: {
-                mode: "tax-free-to-tax-added"
-            },
-            expectedOutput: {
-                taxFree: 5_000,
-                taxAdded: 50_634
-            }
-        });
-
-
-        // "passport" | "tax-added-to-tax-free"
-        calculate({
-            input: {
-                price: 500,
-                registration: "passport"
-            },
-            options: {
-                mode: "tax-added-to-tax-free"
-            },
-            expectedOutput: {
-                taxFree: -45_134,
-                taxAdded: 500
-            }
-        });
-        calculate({
-            input: {
-                price: 1_500,
-                registration: "passport"
-            },
-            options: {
-                mode: "tax-added-to-tax-free"
-            },
-            expectedOutput: {
-                taxFree: -44_134,
-                taxAdded: 1_500
-            }
-        });
-        calculate({
-            input: {
-                price: 5_000,
-                registration: "passport"
-            },
-            options: {
-                mode: "tax-added-to-tax-free"
-            },
-            expectedOutput: {
-                taxFree: -40_634,
-                taxAdded: 5_000
-            }
-        });
-        calculate({
-            input: {
-                price: 50_000,
-                registration: "import"
-            },
-            options: {
-                mode: "tax-added-to-tax-free"
-            },
-            expectedOutput: {
-                taxFree: 24_507.49,
-                taxAdded: 50_000
-            }
-        });
+    calculate({
+        input: {
+            price: 500,
+            registration: "passport"
+        },
+        options: {
+            mode: "tax-added-to-tax-free"
+        },
+        expectedOutput: {
+            taxFree: -56_761,
+            taxAdded: 500
+        }
+    });
+    calculate({
+        input: {
+            price: 1_500,
+            registration: "passport"
+        },
+        options: {
+            mode: "tax-added-to-tax-free"
+        },
+        expectedOutput: {
+            taxFree: -55_761,
+            taxAdded: 1_500
+        }
+    });
+    calculate({
+        input: {
+            price: 5_000,
+            registration: "passport"
+        },
+        options: {
+            mode: "tax-added-to-tax-free"
+        },
+        expectedOutput: {
+            taxFree: -52_261,
+            taxAdded: 5_000
+        }
+    });
+    calculate({
+        input: {
+            price: 50_000,
+            registration: "import"
+        },
+        options: {
+            mode: "tax-added-to-tax-free"
+        },
+        expectedOutput: {
+            taxFree: 24_507.49,
+            taxAdded: 50_000
+        }
     });
 });
