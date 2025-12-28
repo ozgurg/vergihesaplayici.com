@@ -21,6 +21,10 @@ const toMetaContent = (date: Date): string => {
     return `${Y}-${M}-${D}T${h}:${m}:${s}${sign}${offH}:${offM}`;
 };
 
+const replacePlaceholderTexts = (text: string): string => {
+    return text.replace("%site-title%", SITE_NAME);
+};
+
 const MAX_TITLE_LENGTH = 60;
 
 export type Props = {
@@ -36,14 +40,14 @@ const { head } = page;
 const SITE_NAME = "Vergi Hesaplayıcı";
 
 let TITLE;
-const titleWithSiteName = head.title.replace("%site-title%", SITE_NAME);
+const titleWithSiteName = replacePlaceholderTexts(head.title);
 if (titleWithSiteName.length > MAX_TITLE_LENGTH) {
     TITLE = titleWithSiteName.split(" - ")[0];
 } else {
     TITLE = titleWithSiteName;
 }
 
-const DESCRIPTION = head.description;
+const DESCRIPTION = replacePlaceholderTexts(head.description);
 const THEME_COLOR = "#111912"; // Calculated start color of `page-header`s linear-gradient
 const X_CREATOR = "@vergihesaplar";
 const BASE_URL = siteUrl();
