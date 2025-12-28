@@ -88,7 +88,7 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
         <RichText
             is="section"
             class="content">
-            {taxInfo ?
+            {taxInfo &&
                 <Heading3 is="span">Vergi adı ve kodu</Heading3>
                 <table>
                     <tbody>
@@ -103,7 +103,7 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
                     </tbody>
                 </table>
                 <br />
-                : ""}
+            }
             <Content />
         </RichText>
 
@@ -117,13 +117,14 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
                 </time>
             </p>
 
-            {updatedDate ?
+            {updatedDate &&
                 <p>
                     Son güncellenme tarihi:
                     <time datetime={updatedDate.timeDateTimeAttr}>
                         {updatedDate.readableDate}
                     </time>
-                </p> : ""}
+                </p>
+            }
         </div>
 
         <br />

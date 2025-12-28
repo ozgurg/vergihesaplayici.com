@@ -59,17 +59,17 @@ const MANIFEST_JSON = staticUrl("/manifest.json");
 
 <link rel="preload" as="font" type="font/woff2" href={interLatinNormalFontWoff2Url} crossorigin="anonymous" />
 
-{dates?.created ?
+{dates?.created &&
 <meta name="published_time" content={toMetaContent(dates.created)} />
 <meta itemprop="datePublished" content={toMetaContent(dates.created)} />
 <meta property="article:published_time" content={toMetaContent(dates.created)} />
-    : ""}
+}
 
-{dates?.updated ?
+{dates?.updated &&
 <meta name="modified_time" content={toMetaContent(dates.updated)} />
 <meta itemprop="dateModified" content={toMetaContent(dates.updated)} />
 <meta property="article:modified_time" content={toMetaContent(dates.updated)} />
-    : ""}
+}
 
 <meta name="description" content={DESCRIPTION} />
 
