@@ -155,7 +155,7 @@ export class Calculator {
 
     // "Kayıt ücreti" | TRT | "unit"
     private calculateTax_registration(): void {
-        this.taxRates.registration = 57_241;
+        this.taxRates.registration = 54_258; // https://x.com/ozanbingoll/status/2006416851216028066
         this.taxFees.registration = this.taxRates.registration;
         this.calculatePrice(this.taxFees.registration);
     }
