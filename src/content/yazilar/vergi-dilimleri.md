@@ -2,7 +2,7 @@
 title: "Vergi Dilimleri"
 description: "Türkiye gelir vergisi dilimleri, oranları ve geçmiş yıllara göre yaşanan değişimleri ayrıntılı şekilde ele alan, güncel bilgiler içeren kapsamlı bir rehber."
 createdDate: 2025-12-04
-updatedDate: 2025-12-26
+updatedDate: 2025-12-31
 ---
 
 Türkiye'de gelir vergisi dilimleri, her yıl milyonlarca çalışanı, işvereni ve serbest meslek sahibini etkileyen temel bir vergi unsurudur. Gelir vergisinin hangi oranda uygulanacağını belirleyen bu dilimler, yıllık kazanca göre değişir ve her yıl güncellenir. Bu nedenle Türkiye gelir vergisi dilimleri, bordro hesaplaması yapanlar, gelir vergisi mükellefleri ve vergi yükünü merak eden herkes tarafından yoğun şekilde araştırılan bir konudur. Bu yazıda, **Türkiye gelir vergisi dilimleri nedir, nasıl belirlenir ve yıllara göre nasıl değişmiştir** sorularına yanıt bulabilir; 2026'dan 2015'e kadar tüm güncel ve geçmiş yıllara ait vergi dilimlerini ayrılmış başlıklar ve tablolar halinde inceleyebilirsiniz.
@@ -11,15 +11,17 @@ Türkiye'de gelir vergisi dilimleri, her yıl milyonlarca çalışanı, işveren
 
 ### 2026
 
-2026 yılı Türkiye gelir vergisi dilimleri henüz resmi olarak açıklanmamıştır. Aşağıdaki tablo, geçmiş yıllardaki artış oranları esas alınarak oluşturulmuş tahmini bir çalışmadır. Resmi bir geçerliliği yoktur. Resmî dilimler Hazine ve Maliye Bakanlığı tarafından açıklanıp Resmî Gazete'de yayımlandığında güncelleme yapılmalıdır.
-
-| Gelir Dilimi Aralığı         | Vergi Oranı |
-|------------------------------|-------------|
-| 198.000 TL'ye kadar          | %15         |
-| 198.000 TL – 414.000 TL      | %20         |
-| 414.000 TL – 1.000.000 TL    | %27         |
-| 1.000.000 TL – 5.5390.000 TL | %35         |
-| 5.5390.000 TL'den fazlası    | %40         |
+| Gelir Dilimi Aralığı        | Vergi Oranı/Sabit Ücret                                    |
+|-----------------------------|------------------------------------------------------------|
+| 190.000 TL'ye kadar         | **%15**                                                    |
+| 190.000 TL – 400.000 TL     | 190.000 TL'si için **28.500 TL**, kalanı için **%20**      |
+| 400.000 TL – 1.000.000 TL   | 400.000 TL'si için **70.500 TL**, kalanı için **%27**      |
+| 1.000.000 TL – 5.300.000 TL | 1.000.000 TL'si için **232.500 TL**, kalanı için **%35**   |
+| 5.300.000 TL'den fazlası    | 5.300.000 TL'si için **1.737.500 TL**, kalanı için **%40** |
+| **Ücret geliri için:**      |
+| 400.000 TL – 1.500.000 TL   | 400.000 TL'si için **70.500 TL**, kalanı için **%27**      |
+| 1.500.000 TL – 5.300.000 TL | 1.500.000 TL'si için **367.500 TL**, kalanı için **%35**   |
+| 5.300.000 TL'den fazlası    | 5.300.000 TL'si için **1.697.500 TL**, kalanı için **%40** |
 
 ### 2025
 
