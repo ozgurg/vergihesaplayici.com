@@ -112,7 +112,7 @@ describe("domains/telefon-vergisi-hesaplayici/calculator.js", () => {
         },
         expectedOutput: {
             taxFree: 500,
-            taxAdded: 57_761
+            taxAdded: 54_778
         }
     });
     calculate({
@@ -125,7 +125,7 @@ describe("domains/telefon-vergisi-hesaplayici/calculator.js", () => {
         },
         expectedOutput: {
             taxFree: 1_500,
-            taxAdded: 58_761
+            taxAdded: 55_778
         }
     });
     calculate({
@@ -138,7 +138,7 @@ describe("domains/telefon-vergisi-hesaplayici/calculator.js", () => {
         },
         expectedOutput: {
             taxFree: 5_000,
-            taxAdded: 62_261
+            taxAdded: 59_278
         }
     });
 
@@ -151,7 +151,7 @@ describe("domains/telefon-vergisi-hesaplayici/calculator.js", () => {
             mode: "tax-added-to-tax-free"
         },
         expectedOutput: {
-            taxFree: -56_761,
+            taxFree: -53_778,
             taxAdded: 500
         }
     });
@@ -164,7 +164,7 @@ describe("domains/telefon-vergisi-hesaplayici/calculator.js", () => {
             mode: "tax-added-to-tax-free"
         },
         expectedOutput: {
-            taxFree: -55_761,
+            taxFree: -52_778,
             taxAdded: 1_500
         }
     });
@@ -177,7 +177,7 @@ describe("domains/telefon-vergisi-hesaplayici/calculator.js", () => {
             mode: "tax-added-to-tax-free"
         },
         expectedOutput: {
-            taxFree: -52_261,
+            taxFree: -49_278,
             taxAdded: 5_000
         }
     });
