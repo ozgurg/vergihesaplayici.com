@@ -1,4 +1,5 @@
 import type { CollectionEntry } from "astro:content";
+import type { PageSlug } from "@/types/page-def.js";
 import { z } from "astro:content";
 
 export const COLLECTION_NAME = "yazilar";
@@ -13,7 +14,7 @@ export const Schema = z.object({
 });
 
 export type Yazi = {
-    slug: string;
+    slug: PageSlug;
     title: string;
     description: string;
     createdDate: Date;

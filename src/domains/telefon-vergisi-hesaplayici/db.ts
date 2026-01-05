@@ -2,6 +2,7 @@
 
 import type { Brand, Preset } from "@/domains/telefon-vergisi-hesaplayici/types.js";
 import type { Thumb } from "@/utils/thumb-loader.js";
+import type { PageSlug } from "@/types/page-def.js";
 import * as Apple from "@/domains/telefon-vergisi-hesaplayici/db/apple.js";
 import * as Samsung from "@/domains/telefon-vergisi-hesaplayici/db/samsung.js";
 
@@ -21,7 +22,7 @@ const sortPresetsByReleaseDate = (presets: Preset[]): Preset[] => {
     return presets.toSorted((_p1, _p2) => _p2.releaseDate.getTime() - _p1.releaseDate.getTime());
 };
 
-export const getPresetBySlug = (slug: string): Preset => {
+export const getPresetBySlug = (slug: PageSlug): Preset => {
     return Presets.find(_preset => _preset.slug === slug) as Preset;
 };
 
