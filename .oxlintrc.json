@@ -69,6 +69,7 @@
                 "always": true
             }
         ],
+        "eslint/complexity": "off",
         "eslint/max-statements": "off",
         "eslint/max-lines-per-function": "off",
         "eslint/sort-keys": "off",
