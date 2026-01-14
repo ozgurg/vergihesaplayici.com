@@ -1,5 +1,9 @@
 import type { Head, HtmlString, SvgIcon } from "@/types/common.js";
 
+export type PageId = Lowercase<string>;
+
+export type PageSlug = Lowercase<string>;
+
 export type BreadcrumbItem = {
     title: string;
     url: URL;
@@ -9,7 +13,7 @@ export type Breadcrumbs = BreadcrumbItem[];
 
 
 export type Page = {
-    id: Lowercase<string>;
+    id: PageId;
     title: string;
     url: ReturnType<typeof siteUrl>;
     breadcrumbs: Breadcrumbs;

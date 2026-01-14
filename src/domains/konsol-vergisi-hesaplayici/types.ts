@@ -1,4 +1,5 @@
 import type { CurrencyCode } from "@/types/common.js";
+import type { PageSlug } from "@/types/page-def.js";
 
 
 // Calculator
@@ -34,7 +35,7 @@ export type Brand = {
 export type Preset = {
     brandId: Brand["id"];
     title: string;
-    slug: Lowercase<string>;
+    slug: PageSlug;
     releaseDate: Date;
     thumb: `${Lowercase<string>}.png`;
     pageTitle: string;
