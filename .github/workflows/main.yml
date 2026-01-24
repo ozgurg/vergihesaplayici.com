@@ -17,7 +17,7 @@ on:
 
 jobs:
     ci-and-deploy:
-        runs-on: ubuntu-slim
+        runs-on: ubuntu-latest
         
         strategy:
             matrix:
