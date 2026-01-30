@@ -57,7 +57,8 @@
 @mixin vh-media-breakpoint-up($name) {
     $min: vh-breakpoint-min($name);
     @if $min {
-        @media (width >= $min) {
+        // iOS 15 does not support the new media query syntax, and I have an iOS 15 device :)
+        @media (min-width: #{$min}) {
             @content
         }
     } @else {
@@ -68,7 +69,8 @@
 @mixin vh-media-breakpoint-down($name) {
     $max: vh-breakpoint-max($name);
     @if $max {
-        @media (width <= $max) {
+        // iOS 15 does not support the new media query syntax, and I have an iOS 15 device :)
+        @media (max-width: $max) {
             @content
         }
     } @else {
