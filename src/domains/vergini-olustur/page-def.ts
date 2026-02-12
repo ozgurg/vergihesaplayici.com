@@ -29,6 +29,6 @@ export const VerginiOlusturPageDef: CalculatorPageDef = (): CalculatorPage => {
             ogImageUrl
         },
         //language=HTML
-        summary: "Ekonomist olmak hiç bu kadar kolay olmamıştı (Yoksa oldu mu? 🤔)"
+        summary: "Ekonomist olmak hiç bu kadar kolay olmamıştı"
     };
 };
