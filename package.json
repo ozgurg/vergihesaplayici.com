@@ -1,6 +1,6 @@
 {
     "name": "vergihesaplayici.com",
-    "version": "9.43.0",
+    "version": "9.44.0",
     "type": "module",
     "license": "AGPL-3.0",
     "scripts": {
@@ -20,40 +20,40 @@
     "dependencies": {
         "@fontsource-variable/inter": "5.2.8",
         "@fontsource-variable/roboto-mono": "5.2.8",
-        "astro": "5.16.12",
+        "astro": "5.17.2",
         "balloon-css": "1.2.0",
-        "firebase": "12.8.0",
+        "firebase": "12.9.0",
         "html-to-image": "1.11.13",
-        "remixicon": "4.8.0",
-        "vue": "3.5.27",
+        "remixicon": "4.9.1",
+        "vue": "3.5.28",
         "vue-draggable-plus": "0.6.1"
     },
     "devDependencies": {
         "@astrojs/check": "0.9.6",
         "@astrojs/sitemap": "3.7.0",
         "@astrojs/vue": "5.1.4",
-        "@commitlint/cli": "20.3.1",
-        "@commitlint/config-conventional": "20.3.1",
-        "@vitejs/plugin-vue": "6.0.3",
-        "@vitest/coverage-istanbul": "4.0.17",
+        "@commitlint/cli": "20.4.1",
+        "@commitlint/config-conventional": "20.4.1",
+        "@vitejs/plugin-vue": "6.0.4",
+        "@vitest/coverage-istanbul": "4.0.18",
         "@vue/test-utils": "2.4.6",
         "astro-compress": "2.3.9",
         "fast-average-color-node": "3.2.0",
         "husky": "9.1.7",
-        "jsdom": "27.4.0",
+        "jsdom": "28.0.0",
         "lint-staged": "16.2.7",
-        "oxlint": "1.41.0",
+        "oxlint": "1.47.0",
         "sass": "1.97.3",
-        "satori": "0.19.1",
+        "satori": "0.19.2",
         "satori-html": "0.3.2",
         "sharp": "0.34.5",
         "typescript": "5.9.3",
         "unplugin-auto-import": "21.0.0",
         "unplugin-vue-components": "31.0.0",
-        "vitest": "4.0.17"
+        "vitest": "4.0.18"
     },
     "peerDependencies": {
-        "firebase-tools": "15.3.1"
+        "firebase-tools": "15.6.0"
     },
     "engines": {
         "node": ">=22.0.0"

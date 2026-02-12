@@ -41,6 +41,7 @@
             "error",
             "index-signature"
         ],
+        "typescript/no-invalid-void-type": "off",
 
         "eslint/no-duplicate-imports": [
             "off",
@@ -65,9 +66,7 @@
         "eslint/no-inline-comments": "off",
         "eslint/yoda": [
             "error",
-            {
-                "always": true
-            }
+            "never"
         ],
         "eslint/complexity": "off",
         "eslint/max-statements": "off",
@@ -129,6 +128,23 @@
             ],
             "rules": {
                 "typescript/explicit-module-boundary-types": "off"
+            }
+        },
+        {
+            "files": [
+                "!src/**"
+            ],
+            "rules": {
+                "import/no-nodejs-modules": "off"
+            }
+        },
+        {
+            "files": [
+                "src/integrations/**"
+            ],
+            "rules": {
+                "import/no-relative-parent-imports": "off",
+                "import/no-nodejs-modules": "off"
             }
         }
     ]
