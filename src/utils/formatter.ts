@@ -7,7 +7,7 @@ export const normalizePrice = (price: number): number => {
 };
 
 
-let moneyFormattersCache = new Map<string, Intl.NumberFormat>();
+const moneyFormattersCache = new Map<string, Intl.NumberFormat>();
 
 export const _UNIT_TEST_ONLY_clearMoneyFormattersCache = (): void => {
     moneyFormattersCache.clear();
