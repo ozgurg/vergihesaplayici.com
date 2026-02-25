@@ -22,6 +22,7 @@ const toMetaContent = (date: Date): string => {
 };
 
 const replacePlaceholderTexts = (text: string): string => {
+    // oxlint-disable-next-line no-use-before-define
     return text.replace("%site-title%", SITE_NAME);
 };
 
@@ -43,6 +44,7 @@ const SITE_NAME = "Vergi Hesaplayıcı";
 
 let TITLE;
 const titleWithSiteName = replacePlaceholderTexts(head.title);
+// oxlint-disable-next-line unicorn/prefer-ternary
 if (titleWithSiteName.length > MAX_TITLE_LENGTH) {
     TITLE = titleWithSiteName.split(" - ")[0];
 } else {

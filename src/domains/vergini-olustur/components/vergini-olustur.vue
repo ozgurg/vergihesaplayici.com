@@ -153,6 +153,7 @@ const addTaxItem = (): void => {
     });
 };
 
+// oxlint-disable-next-line no-shadow
 const deleteTaxItem = (id: number): void => {
     form.taxItems = form.taxItems.filter(_taxItem => _taxItem.id !== id);
     if (form.taxItems.length === 0) {

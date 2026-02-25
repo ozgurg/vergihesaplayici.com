@@ -34,6 +34,7 @@ const _toggle = (): void => {
 
 const closeOnBackdropClick = (event: MouseEvent): void => {
     if (event.target === event.currentTarget) {
+        // oxlint-disable-next-line no-use-before-define
         close();
     }
 };
