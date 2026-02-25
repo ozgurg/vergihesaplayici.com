@@ -46,18 +46,23 @@ const handleKeydown = (event: KeyboardEvent): void => {
     let tabToNavigate: Tab | null = null;
 
     if (event.key === "Home") {
+        // oxlint-disable-next-line no-use-before-define
         tabToNavigate = _getFirstTab();
     } else if (event.key === "End") {
+        // oxlint-disable-next-line no-use-before-define
         tabToNavigate = _getLastTab();
     } else if (event.key === "ArrowLeft") {
+        // oxlint-disable-next-line no-use-before-define
         tabToNavigate = _getPreviousTab() ?? _getLastTab();
     } else if (event.key === "ArrowRight") {
+        // oxlint-disable-next-line no-use-before-define
         tabToNavigate = _getNextTab() ?? _getFirstTab();
     }
 
     if (tabToNavigate) {
         event.preventDefault();
         event.stopPropagation();
+        // oxlint-disable-next-line no-use-before-define
         _navigateToTab(tabToNavigate);
     }
 };

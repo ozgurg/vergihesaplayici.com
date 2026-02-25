@@ -40,6 +40,7 @@ export const YazilarSlugPageDef: _PageDef = ({ yazi }): Page => {
 
     let breadcrumbs;
     const isVergiTuru = /\[\d{4}]$/.test(yazi.title);
+    // oxlint-disable-next-line unicorn/prefer-ternary
     if (isVergiTuru) {
         breadcrumbs = [
             ...parentPage.breadcrumbs,

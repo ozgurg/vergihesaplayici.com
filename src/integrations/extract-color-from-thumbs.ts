@@ -41,11 +41,14 @@ const processThumbsForDomain = async (domain: string): Promise<void> => {
     const results: ThumbColors = {};
 
     for await (const [filePath, base64] of Object.entries(thumbsPathBase64Pair)) {
+        // oxlint-disable-next-line no-use-before-define
         const fileName = getFileName(filePath);
+        // oxlint-disable-next-line no-use-before-define
         const { hsl } = await getDominantColor(base64 as string);
         results[fileName] = { hsl };
     }
 
+    // oxlint-disable-next-line no-use-before-define
     const generatedFolder = ensureFolderExists(GENERATED_FOLDER_PATH);
 
     fs.writeFileSync(
@@ -61,6 +64,7 @@ const processThumbsForDomain = async (domain: string): Promise<void> => {
 const getDominantColor = async (base64: string): Promise<{ hsl: HSLColor }> => {
     const averageColor = await getAverageColor(base64);
     return {
+        // oxlint-disable-next-line no-use-before-define
         hsl: rgbToHsl({
             r: averageColor.value[0],
             g: averageColor.value[1],
