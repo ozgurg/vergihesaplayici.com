@@ -524,5 +524,85 @@ export const presets: Preset[] = [
                 }
             }
         ]
-    }
+    },
+
+    {
+        brandId: BRAND_ID,
+        title: "Galaxy S26",
+        slug: "samsung-galaxy-s26",
+        releaseDate: new Date("2026-02-26"),
+        thumb: "samsung-galaxy-s26.png",
+        ...buildPageMeta("Samsung Galaxy S26'nın"),
+        options: [
+            {
+                title: "256GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-s26/buy/galaxy-s26-256gb-unlocked-sku-sm-s942uzvexaa/
+                    price: 899.99,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "512GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-s26/buy/galaxy-s26-512gb-unlocked-sku-sm-s942uzvfxaa/
+                    price: 1_099.99,
+                    currency: "USD"
+                }
+            }
+        ]
+    },
+    {
+        brandId: BRAND_ID,
+        title: "Galaxy S26+",
+        slug: "samsung-galaxy-s26-plus",
+        releaseDate: new Date("2026-02-26"),
+        thumb: "samsung-galaxy-s26-plus.png",
+        ...buildPageMeta("Samsung Galaxy S26+'nın"),
+        options: [
+            {
+                title: "256GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-s26-plus/buy/galaxy-s26-plus-256gb-unlocked-sku-sm-s947uzvaxaa/
+                    price: 1_099.99,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "512GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-s26-plus/buy/galaxy-s26-plus-512gb-unlocked-sku-sm-s947uzvexaa/
+                    price: 1_299.99,
+                    currency: "USD"
+                }
+            }
+        ]
+    },
+    {
+        brandId: BRAND_ID,
+        title: "Galaxy S26 Ultra",
+        slug: "samsung-galaxy-s26-ultra",
+        releaseDate: new Date("2026-02-26"),
+        thumb: "samsung-galaxy-s26-ultra.png",
+        ...buildPageMeta("Samsung Galaxy S26 Ultra'nın"),
+        options: [
+            {
+                title: "256GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-s26-ultra/buy/galaxy-s26-ultra-256gb-unlocked-sku-sm-s948uzvaxaa/
+                    price: 1_299.99,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "512GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-s26-ultra/buy/galaxy-s26-ultra-512gb-unlocked-sku-sm-s948uzvexaa/
+                    price: 1_499.99,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "1TB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-s26-ultra/buy/galaxy-s26-ultra-1tb-unlocked-sku-sm-s948uzvfxaa/
+                    price: 1_799.99,
+                    currency: "USD"
+                }
+            }
+        ]
+    },
 ];
