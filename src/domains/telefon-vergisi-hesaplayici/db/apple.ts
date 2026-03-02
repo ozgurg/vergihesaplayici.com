@@ -713,5 +713,30 @@ export const presets: Preset[] = [
                 }
             }
         ]
-    }
+    },
+
+    {
+        brandId: BRAND_ID,
+        title: "iPhone 17e",
+        slug: "apple-iphone-17e",
+        releaseDate: new Date("2026-03-02"),
+        thumb: "apple-iphone-17e.png",
+        ...buildPageMeta("Apple iPhone 17e'nin"),
+        options: [
+            {
+                title: "256GB",
+                form: {
+                    price: 599,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "512GB",
+                form: {
+                    price: 799,
+                    currency: "USD"
+                }
+            }
+        ]
+    },
 ];
