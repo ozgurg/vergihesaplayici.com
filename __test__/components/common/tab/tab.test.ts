@@ -44,7 +44,7 @@ describe("components/common/tab/tab.vue", () => {
                 Tab
             }
         });
-        const tabs = wrapper.findAllComponents(Tab);
+        const tabs = wrapper.findAllComponents(Tab as any);
         const tab1 = tabs[0]!;
         const tab2 = tabs[1]!;
         const tab3 = tabs[2]!;

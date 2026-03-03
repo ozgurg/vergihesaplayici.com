@@ -23,7 +23,7 @@ describe("components/common/breadcrumbs.vue", () => {
     beforeEach(() => {
         mockScrollTo = vi.fn();
 
-        Element.prototype.scrollTo = mockScrollTo;
+        Element.prototype.scrollTo = mockScrollTo as any;
         Object.defineProperty(Element.prototype, "scrollWidth", {
             get: () => MOCK_SCROLL_WIDTH
         });

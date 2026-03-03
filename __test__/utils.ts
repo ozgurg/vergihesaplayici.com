@@ -19,7 +19,7 @@ export const testDefaultSlot = <T>(component: Component, options?: ComponentMoun
             slots: {
                 default: TEST_CONTENT.slotHtml
             }
-        });
+        } as any);
         expect(wrapper.html()).toContain(TEST_CONTENT.slotHtml);
     });
 };

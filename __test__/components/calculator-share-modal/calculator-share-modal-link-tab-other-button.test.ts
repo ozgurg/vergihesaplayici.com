@@ -30,9 +30,9 @@ describe("components/calculator-share-modal/calculator-share-modal-link-tab-othe
     it("is enabled by default", () => {
         const wrapper = mount(CalculatorShareModalLinkTabOtherButton, TEST_OPTIONS);
 
-        const formButton = wrapper.findComponent(FormButton);
-        expect(formButton.props("disabled")).toBeFalsy();
-        expect(formButton.props("loading")).toBeFalsy();
+        const formButton = wrapper.findComponent(FormButton as any);
+        expect((formButton as any).props("disabled")).toBeFalsy();
+        expect((formButton as any).props("loading")).toBeFalsy();
 
         expect(wrapper.vm.isLoading).toBeFalsy();
     });

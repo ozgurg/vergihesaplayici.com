@@ -16,7 +16,7 @@ describe("components/common/form/form-group.vue", () => {
             }
         });
 
-        const formLabel = wrapper.findComponent(FormLabel);
+        const formLabel = wrapper.findComponent(FormLabel as any);
         expect(formLabel.exists()).toBeTruthy();
         expect((formLabel.element as HTMLElement).tagName).toBe("LEGEND");
         expect(formLabel.text()).toBe(testLabel);
@@ -41,7 +41,7 @@ describe("components/common/form/form-group.vue", () => {
             }
         });
 
-        const formLabel = wrapper.findComponent(FormLabel);
+        const formLabel = wrapper.findComponent(FormLabel as any);
         expect(formLabel.exists()).toBeFalsy();
 
         const labelSlotContent = wrapper.find(".label-slot-content");

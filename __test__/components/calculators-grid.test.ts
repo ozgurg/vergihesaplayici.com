@@ -10,13 +10,13 @@ describe("components/calculators-grid.vue", () => {
     it("renders all calculator pages as `<calculator-card-item />`", () => {
         const wrapper = mount(CalculatorsGrid);
 
-        const calculatorCardItems = wrapper.findAllComponents(CalculatorCardItem);
+        const calculatorCardItems = wrapper.findAllComponents(CalculatorCardItem as any);
 
         expect(calculatorCardItems.length).toBe(CALCULATOR_PAGES.length);
 
         for (const [_index, _calculatorCardItem] of calculatorCardItems.entries()) {
             const item = CALCULATOR_PAGES[_index]!;
-            expect(_calculatorCardItem.props()).toEqual({
+            expect((_calculatorCardItem as any).props()).toEqual({
                 title: item.title,
                 description: item.summary,
                 url: item.url,

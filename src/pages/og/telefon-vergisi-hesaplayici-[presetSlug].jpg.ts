@@ -1,4 +1,5 @@
 import type { APIRoute } from "astro";
+import type { PageSlug } from "@/types/page-def.js";
 import logoSvgBase64 from "@/assets/img/logo.svg?inline";
 import {
     getPresetBySlug,
@@ -10,7 +11,7 @@ import { TelefonVergisiHesaplayiciPageDef } from "@/domains/telefon-vergisi-hesa
 const page = TelefonVergisiHesaplayiciPageDef();
 
 export const GET: APIRoute = async ({ params }): Promise<Response> => {
-    const preset = getPresetBySlug(params.presetSlug as string);
+    const preset = getPresetBySlug(params.presetSlug as PageSlug);
     const thumb = getThumbByFileName(preset.thumb);
 
     const {

@@ -14,9 +14,9 @@ describe("components/common/svg-icon.vue", () => {
             props: { icon: testIcon }
         });
 
-        const cachedSvg = wrapper.findComponent(CachedSvg);
+        const cachedSvg = wrapper.findComponent(CachedSvg as any);
         expect(cachedSvg.exists()).toBeTruthy();
-        expect(cachedSvg.props("svg")).toBe(testIcon);
+        expect((cachedSvg as any).props("svg")).toBe(testIcon);
     });
 
     it("has correct `aria-hidden`", () => {

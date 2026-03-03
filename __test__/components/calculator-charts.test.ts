@@ -40,7 +40,7 @@ describe("components/calculator-charts.vue", () => {
         const items = wrapper.findAll(".calculator-charts-item");
         expect(items.length).toBe(TEST_CHARTS.length);
 
-        const headings = wrapper.findAllComponents(Heading3);
+        const headings = wrapper.findAllComponents(Heading3 as any);
         expect(headings.length).toBe(TEST_CHARTS.length);
         for (const [_index, _heading] of headings.entries()) {
             expect(_heading.text()).toBe(TEST_CHARTS[_index]!.title);
@@ -54,12 +54,12 @@ describe("components/calculator-charts.vue", () => {
             }
         });
 
-        const pieCharts = wrapper.findAllComponents(CalculatorPieChart);
+        const pieCharts = wrapper.findAllComponents(CalculatorPieChart as any);
         expect(pieCharts.length).toBe(TEST_CHARTS.length);
 
         for (const [_index, _pieChart] of pieCharts.entries()) {
             const chart = TEST_CHARTS[_index]!;
-            expect(_pieChart.props()).toEqual({
+            expect((_pieChart as any).props()).toEqual({
                 title: chart.title,
                 items: chart.props.items
             });

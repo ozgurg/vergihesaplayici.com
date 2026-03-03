@@ -13,7 +13,7 @@ describe("components/calculator-quick-share.vue", () => {
             }
         });
 
-        const shareButtons = wrapper.findAllComponents(FormButton);
+        const shareButtons = wrapper.findAllComponents(FormButton as any);
         for (const _formButton of shareButtons.values()) {
             // `Diğer…` is a `<form-button />` too, so we manually skip it
             if (_formButton.attributes("href")) {

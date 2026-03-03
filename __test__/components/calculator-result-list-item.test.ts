@@ -27,13 +27,13 @@ describe("components/calculator-result-list-item.vue", () => {
             props: testProps
         });
 
-        const dtStringCarousel = wrapper.find("dt").findComponent(StringCarousel);
+        const dtStringCarousel = wrapper.find("dt").findComponent(StringCarousel as any);
         expect(dtStringCarousel.exists()).toBeTruthy();
-        expect(dtStringCarousel.props("text")).toBe(testProps.label);
+        expect((dtStringCarousel as any).props("text")).toBe(testProps.label);
 
-        const ddStringCarousel = wrapper.find("dd").findComponent(StringCarousel);
+        const ddStringCarousel = wrapper.find("dd").findComponent(StringCarousel as any);
         expect(ddStringCarousel.exists()).toBeTruthy();
-        expect(ddStringCarousel.props("text")).toBe(testProps.value);
+        expect((ddStringCarousel as any).props("text")).toBe(testProps.value);
     });
 
     it("renders label as it is if it does not contains any number", () => {

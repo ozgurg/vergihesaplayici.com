@@ -119,7 +119,7 @@ describe("components/calculator-pie-chart.vue", () => {
 
         await secondPath!.trigger("click");
 
-        const modal = wrapper.findComponent(Modal);
+        const modal = wrapper.findComponent(Modal as any);
         expect(modal.exists()).toBeTruthy();
         expect(modal.text()).toContain(TEST_ITEMS[1]!.label);
     });
@@ -131,10 +131,10 @@ describe("components/calculator-pie-chart.vue", () => {
 
         await svgPath.trigger("keydown", { key: "Enter" });
 
-        let modal = wrapper.findComponent(Modal);
+        let modal = wrapper.findComponent(Modal as any);
         if (!modal.exists()) {
             await svgPath.trigger("keydown", { key: " ", code: "Space" });
-            modal = wrapper.findComponent(Modal);
+            modal = wrapper.findComponent(Modal as any);
         }
         expect(modal.exists()).toBeTruthy();
     });
@@ -145,17 +145,17 @@ describe("components/calculator-pie-chart.vue", () => {
         const firstPath = wrapper.find("svg > path");
         await firstPath.trigger("click");
 
-        let modal = wrapper.findComponent(Modal);
+        let modal = wrapper.findComponent(Modal as any);
         expect(modal.exists()).toBeTruthy();
 
-        expect(modal.props("modelValue")).toBe(true);
+        expect((modal as any).props("modelValue")).toBe(true);
 
-        const closeButton = wrapper.findComponent(ModalCloseButton);
+        const closeButton = wrapper.findComponent(ModalCloseButton as any);
         await closeButton.trigger("click");
         await nextTick();
 
-        modal = wrapper.findComponent(Modal);
-        expect(modal.props("modelValue")).toBe(false);
+        modal = wrapper.findComponent(Modal as any);
+        expect((modal as any).props("modelValue")).toBe(false);
     });
 
     it("syncs `v-model` when `<modal />` emits `update:modelValue`", async () => {
@@ -164,14 +164,14 @@ describe("components/calculator-pie-chart.vue", () => {
         const firstPath = wrapper.find("svg > path");
         await firstPath.trigger("click");
 
-        let modal = wrapper.findComponent(Modal);
+        let modal = wrapper.findComponent(Modal as any);
         expect(modal.exists()).toBeTruthy();
-        expect(modal.props("modelValue")).toBe(true);
+        expect((modal as any).props("modelValue")).toBe(true);
 
         modal.vm.$emit("update:modelValue", false);
         await nextTick();
 
-        modal = wrapper.findComponent(Modal);
-        expect(modal.props("modelValue")).toBe(false);
+        modal = wrapper.findComponent(Modal as any);
+        expect((modal as any).props("modelValue")).toBe(false);
     });
 });

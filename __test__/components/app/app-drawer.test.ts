@@ -25,13 +25,13 @@ describe("components/app/app-drawer.vue", () => {
             props: { id: testId }
         });
 
-        const calculatorCardItems = wrapper.findAllComponents(CalculatorCardItem);
+        const calculatorCardItems = wrapper.findAllComponents(CalculatorCardItem as any);
 
         expect(calculatorCardItems.length).toBe(CALCULATOR_PAGES.length);
 
         for (const [_index, _calculatorCardItem] of calculatorCardItems.entries()) {
             const calculatorPage = CALCULATOR_PAGES[_index]!;
-            expect(_calculatorCardItem.props()).toEqual({
+            expect((_calculatorCardItem as any).props()).toEqual({
                 title: calculatorPage.title,
                 titleTag: "div",
                 description: calculatorPage.summary,
