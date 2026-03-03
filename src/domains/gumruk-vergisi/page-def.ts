@@ -26,7 +26,21 @@ export const GumrukVergisiPageDef: CalculatorPageDef = (): CalculatorPage => {
             title: `${title} - %site-title%`,
             description: "Yurt dışından gelen ürünler için ne kadar gümrük vergisi ödeyeceğinizi öğrenin. Gümrük Vergisi Hesaplayıcı ile hızlı ve kolay şekilde vergi tutarını hesaplayın.",
             canonicalUrl: url,
-            ogImageUrl
+            ogImageUrl,
+            schema: {
+                "@context": "https://schema.org",
+                "@type": "WebApplication",
+                name: title,
+                description: "Yurt dışından gelen ürünler için ne kadar gümrük vergisi ödeyeceğinizi öğrenin. Gümrük Vergisi Hesaplayıcı ile hızlı ve kolay şekilde vergi tutarını hesaplayın.",
+                applicationCategory: "BusinessApplication",
+                operatingSystem: "All",
+                url: url.href,
+                offers: {
+                    "@type": "Offer",
+                    price: "0",
+                    priceCurrency: "TRY"
+                }
+            }
         },
         //language=HTML
         summary: "Girebiliyor ama ne pahasına?"

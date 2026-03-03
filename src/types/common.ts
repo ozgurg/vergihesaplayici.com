@@ -34,4 +34,6 @@ export type Head = {
     description: string;
     canonicalUrl: URL;
     ogImageUrl: ReturnType<typeof staticSiteUrl> | null;
+    // oxlint-disable-next-line typescript/consistent-type-imports
+    schema?: import("schema-dts").Thing | import("schema-dts").WithContext<import("schema-dts").Thing> | import("schema-dts").Graph;
 };

@@ -26,7 +26,21 @@ export const KdvHesaplayiciPageDef: CalculatorPageDef = (): CalculatorPage => {
             title: `${title} - %site-title%`,
             description: "Katma Değer Vergisi (KDV) Hesaplayıcı aracını KDV hariç fiyattan KDV dahil fiyatı veya KDV dahil fiyattan KDV hariç fiyatı hesaplamak için kullanabilirsiniz.",
             canonicalUrl: url,
-            ogImageUrl
+            ogImageUrl,
+            schema: {
+                "@context": "https://schema.org",
+                "@type": "WebApplication",
+                name: title,
+                description: "Katma Değer Vergisi (KDV) Hesaplayıcı aracını KDV hariç fiyattan KDV dahil fiyatı veya KDV dahil fiyattan KDV hariç fiyatı hesaplamak için kullanabilirsiniz.",
+                applicationCategory: "BusinessApplication",
+                operatingSystem: "All",
+                url: url.href,
+                offers: {
+                    "@type": "Offer",
+                    price: "0",
+                    priceCurrency: "TRY"
+                }
+            }
         },
         //language=HTML
         summary: `

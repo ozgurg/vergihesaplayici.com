@@ -21,7 +21,14 @@ export const HataBildirPageDef: PageDef = (): Page => {
             title: `${title} - %site-title%`,
             description: "vergihesaplayici.com'daki hesaplayıcılarda tespit ettiğiniz hataları bildirerek düzeltilmesine katkı sağlayın.",
             canonicalUrl: url,
-            ogImageUrl: null
+            ogImageUrl: null,
+            schema: {
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                name: title,
+                description: "vergihesaplayici.com'daki hesaplayıcılarda tespit ettiğiniz hataları bildirerek düzeltilmesine katkı sağlayın.",
+                url: url.href
+            }
         }
     };
 };
