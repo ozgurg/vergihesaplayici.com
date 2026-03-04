@@ -1,16 +1,13 @@
 import type { Brand, Preset } from "@/domains/konsol-vergisi-hesaplayici/types.js";
 import { buildPageMeta } from "@/domains/konsol-vergisi-hesaplayici/utils/build-page-meta.js";
 
-const BRAND_ID = "nintendo";
-
 export const brand: Brand = {
-    id: BRAND_ID,
+    id: "nintendo",
     title: "Nintendo"
 };
 
-export const presets: Preset[] = [
+export const presets: Omit<Preset, "brandId">[] = [
     {
-        brandId: BRAND_ID,
         title: "Switch",
         slug: "nintendo-switch",
         releaseDate: new Date("2017-03-03"),
@@ -28,7 +25,6 @@ export const presets: Preset[] = [
     },
 
     {
-        brandId: BRAND_ID,
         title: "Switch Lite",
         slug: "nintendo-switch-lite",
         releaseDate: new Date("2019-09-20"),
@@ -46,7 +42,6 @@ export const presets: Preset[] = [
     },
 
     {
-        brandId: BRAND_ID,
         title: "Switch OLED",
         slug: "nintendo-switch-oled",
         releaseDate: new Date("2021-10-08"),
@@ -64,7 +59,6 @@ export const presets: Preset[] = [
     },
 
     {
-        brandId: BRAND_ID,
         title: "Switch 2",
         slug: "nintendo-switch-2",
         releaseDate: new Date("2025-06-05"),

@@ -1,16 +1,13 @@
 import type { Brand, Preset } from "@/domains/konsol-vergisi-hesaplayici/types.js";
 import { buildPageMeta } from "@/domains/konsol-vergisi-hesaplayici/utils/build-page-meta.js";
 
-const BRAND_ID = "asus";
-
 export const brand: Brand = {
-    id: BRAND_ID,
+    id: "asus",
     title: "ASUS"
 };
 
-export const presets: Preset[] = [
+export const presets: Omit<Preset, "brandId">[] = [
     {
-        brandId: BRAND_ID,
         title: "ROG Xbox Ally",
         slug: "asus-rog-xbox-ally",
         releaseDate: new Date("2025-10-16"),
@@ -30,7 +27,6 @@ export const presets: Preset[] = [
     },
 
     {
-        brandId: BRAND_ID,
         title: "ROG Xbox Ally X",
         slug: "asus-rog-xbox-ally-x",
         releaseDate: new Date("2025-10-16"),

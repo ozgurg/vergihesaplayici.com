@@ -1,16 +1,13 @@
 import type { Brand, Preset } from "@/domains/konsol-vergisi-hesaplayici/types.js";
 import { buildPageMeta } from "@/domains/konsol-vergisi-hesaplayici/utils/build-page-meta.js";
 
-const BRAND_ID = "sony";
-
 export const brand: Brand = {
-    id: BRAND_ID,
+    id: "sony",
     title: "Sony"
 };
 
-export const presets: Preset[] = [
+export const presets: Omit<Preset, "brandId">[] = [
     {
-        brandId: BRAND_ID,
         title: "PlayStation 5",
         slug: "sony-playstation-5",
         releaseDate: new Date("2020-11-12"),
@@ -35,7 +32,6 @@ export const presets: Preset[] = [
     },
 
     {
-        brandId: BRAND_ID,
         title: "PlayStation VR2",
         slug: "sony-playstation-vr2",
         releaseDate: new Date("2023-02-22"),
@@ -53,7 +49,6 @@ export const presets: Preset[] = [
     },
 
     {
-        brandId: BRAND_ID,
         title: "PlayStation 5 Pro",
         slug: "sony-playstation-5-pro",
         releaseDate: new Date("2024-11-07"),

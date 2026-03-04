@@ -1,16 +1,13 @@
 import type { Brand, Preset } from "@/domains/konsol-vergisi-hesaplayici/types.js";
 import { buildPageMeta } from "@/domains/konsol-vergisi-hesaplayici/utils/build-page-meta.js";
 
-const BRAND_ID = "microsoft";
-
 export const brand: Brand = {
-    id: BRAND_ID,
+    id: "microsoft",
     title: "Microsoft"
 };
 
-export const presets: Preset[] = [
+export const presets: Omit<Preset, "brandId">[] = [
     {
-        brandId: BRAND_ID,
         title: "Xbox Series X",
         slug: "microsoft-xbox-series-x",
         releaseDate: new Date("2020-11-10"),
@@ -42,7 +39,6 @@ export const presets: Preset[] = [
     },
 
     {
-        brandId: BRAND_ID,
         title: "Xbox Series S",
         slug: "microsoft-xbox-series-s",
         releaseDate: new Date("2020-11-10"),
