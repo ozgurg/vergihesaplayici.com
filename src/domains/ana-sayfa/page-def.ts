@@ -17,7 +17,13 @@ export const AnaSayfaPageDef: PageDef = (): Page => {
             title: "%site-title%",
             description: "vergihesaplayici.com, Telefon Vergisi, Konsol Vergisi ve KDV gibi vergi hesaplayıcıları barındıran bir vergi hesaplayıcıdır.",
             canonicalUrl: url,
-            ogImageUrl: null
+            ogImageUrl: null,
+            schema: {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                name: "Vergi Hesaplayıcı",
+                url: url.href
+            }
         }
     };
 };

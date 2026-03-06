@@ -12,8 +12,8 @@ describe("components/common/modal/modal.vue", () => {
         mockShowModal = vi.fn();
         mockClose = vi.fn();
 
-        HTMLDialogElement.prototype.showModal = mockShowModal;
-        HTMLDialogElement.prototype.close = mockClose;
+        HTMLDialogElement.prototype.showModal = mockShowModal as any;
+        HTMLDialogElement.prototype.close = mockClose as any;
     });
 
     testDefaultSlot(Modal);
@@ -22,7 +22,7 @@ describe("components/common/modal/modal.vue", () => {
 
     it("is closed by default", () => {
         const wrapper = mount(Modal);
-        expect(wrapper.vm.modelValue).toBeFalsy();
+        expect((wrapper.vm as any).modelValue).toBeFalsy();
     });
 
     it("accepts initial `modelValue`", () => {
@@ -31,7 +31,7 @@ describe("components/common/modal/modal.vue", () => {
                 modelValue: true
             }
         });
-        expect(wrapper.vm.modelValue).toBeTruthy();
+        expect((wrapper.vm as any).modelValue).toBeTruthy();
     });
 
     it("binds `v-model` correctly", async () => {
@@ -57,7 +57,7 @@ describe("components/common/modal/modal.vue", () => {
             }
         });
 
-        await wrapper.setProps({ modelValue: true });
+        await wrapper.setProps({ modelValue: true } as any);
         await wrapper.vm.$nextTick();
         expect(mockShowModal).toHaveBeenCalledTimes(1);
     });
@@ -69,7 +69,7 @@ describe("components/common/modal/modal.vue", () => {
             }
         });
 
-        await wrapper.setProps({ modelValue: false });
+        await wrapper.setProps({ modelValue: false } as any);
         await wrapper.vm.$nextTick();
         expect(mockClose).toHaveBeenCalledTimes(1);
     });
@@ -102,7 +102,7 @@ describe("components/common/modal/modal.vue", () => {
         expect(closeOnBackdropClickSpy).toHaveBeenCalled();
         expect(wrapper.emitted("update:modelValue")?.[0]).toEqual([false]);
         expect(mockClose).toHaveBeenCalledTimes(1);
-        expect(wrapper.vm.modelValue).toBeFalsy();
+        expect((wrapper.vm as any).modelValue).toBeFalsy();
     });
 
     it("does not close modal on content click", async () => {
@@ -123,7 +123,7 @@ describe("components/common/modal/modal.vue", () => {
         expect(closeOnBackdropClickSpy).toHaveBeenCalled();
         expect(wrapper.emitted("update:modelValue")).toBeFalsy();
         expect(mockClose).toHaveBeenCalledTimes(0);
-        expect(wrapper.vm.modelValue).toBeTruthy();
+        expect((wrapper.vm as any).modelValue).toBeTruthy();
     });
 
     it("closes modal on dialog close event", async () => {
@@ -141,6 +141,6 @@ describe("components/common/modal/modal.vue", () => {
 
         expect(wrapper.emitted("update:modelValue")?.[0]).toEqual([false]);
         expect(mockClose).toHaveBeenCalledTimes(1);
-        expect(wrapper.vm.modelValue).toBeFalsy();
+        expect((wrapper.vm as any).modelValue).toBeFalsy();
     });
 });

@@ -26,7 +26,10 @@ describe("domains/vergini-olustur/calculator.js", () => {
                 rates: {
                     TRY: 1,
                     USD: 1,
-                    EUR: 1
+                    EUR: 1,
+                    GBP: 1,
+                    INR: 1,
+                    CNY: 1
                 }
             }
         });
@@ -83,7 +86,10 @@ describe("domains/vergini-olustur/calculator.js", () => {
                 rates: {
                     TRY: 1,
                     USD: 30,
-                    EUR: 1
+                    EUR: 1,
+                    GBP: 1,
+                    INR: 1,
+                    CNY: 1
                 }
             }
         });

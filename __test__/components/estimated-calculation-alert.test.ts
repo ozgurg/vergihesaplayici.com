@@ -10,8 +10,8 @@ describe("components/estimated-calculation-alert.vue", () => {
     it("renders an `<alert />` with correct color", () => {
         const wrapper = mount(EstimatedCalculationAlert);
 
-        const alert = wrapper.findComponent(Alert);
+        const alert = wrapper.findComponent(Alert as any);
         expect(alert.exists()).toBeTruthy();
-        expect(alert.props("color")).toBe("warning");
+        expect((alert as any).props("color")).toBe("warning");
     });
 });

@@ -6,14 +6,24 @@ import type { PageSlug } from "@/types/page-def.js";
 import * as Apple from "@/domains/telefon-vergisi-hesaplayici/db/apple.js";
 import * as Samsung from "@/domains/telefon-vergisi-hesaplayici/db/samsung.js";
 
+const withBrandId = (
+    presets: Omit<Preset, "brandId">[],
+    brandId: string
+): Preset[] => {
+    return presets.map(_preset => ({
+        ..._preset,
+        brandId
+    }));
+};
+
 export const Brands: Brand[] = [
     Apple.brand,
     Samsung.brand
 ] as const;
 
 export const Presets: Preset[] = [
-    ...Apple.presets,
-    ...Samsung.presets
+    ...withBrandId(Apple.presets, Apple.brand.id),
+    ...withBrandId(Samsung.presets, Samsung.brand.id)
 ] as const;
 
 export const Thumbs: Thumb[] = await loadThumbs("telefon-vergisi-hesaplayici");

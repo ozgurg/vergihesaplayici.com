@@ -9,6 +9,16 @@ import * as Sony from "@/domains/konsol-vergisi-hesaplayici/db/sony.js";
 import * as Microsoft from "@/domains/konsol-vergisi-hesaplayici/db/microsoft.js";
 import * as Asus from "@/domains/konsol-vergisi-hesaplayici/db/asus.js";
 
+const withBrandId = (
+    presets: Omit<Preset, "brandId">[],
+    brandId: string
+): Preset[] => {
+    return presets.map(_preset => ({
+        ..._preset,
+        brandId
+    }));
+};
+
 export const Brands: Brand[] = [
     Nintendo.brand,
     Valve.brand,
@@ -18,11 +28,11 @@ export const Brands: Brand[] = [
 ] as const;
 
 export const Presets: Preset[] = [
-    ...Nintendo.presets,
-    ...Valve.presets,
-    ...Sony.presets,
-    ...Microsoft.presets,
-    ...Asus.presets
+    ...withBrandId(Nintendo.presets, Nintendo.brand.id),
+    ...withBrandId(Valve.presets, Valve.brand.id),
+    ...withBrandId(Sony.presets, Sony.brand.id),
+    ...withBrandId(Microsoft.presets, Microsoft.brand.id),
+    ...withBrandId(Asus.presets, Asus.brand.id)
 ] as const;
 
 export const Thumbs: Thumb[] = await loadThumbs("konsol-vergisi-hesaplayici");

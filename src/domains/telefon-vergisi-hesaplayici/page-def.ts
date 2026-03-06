@@ -27,7 +27,21 @@ export const TelefonVergisiHesaplayiciPageDef: CalculatorPageDef = (): Calculato
             title: `${title} - %site-title%`,
             description: "Telefon Vergisi Hesaplayıcı ile ÖTV dahil tüm vergileri hesaplayın, vergisiz fiyatı görün ve yurt içi-yurt dışı fiyatları karşılaştırın.",
             canonicalUrl: url,
-            ogImageUrl
+            ogImageUrl,
+            schema: {
+                "@context": "https://schema.org",
+                "@type": "WebApplication",
+                name: title,
+                description: "Telefon Vergisi Hesaplayıcı ile ÖTV dahil tüm vergileri hesaplayın, vergisiz fiyatı görün ve yurt içi-yurt dışı fiyatları karşılaştırın.",
+                applicationCategory: "BusinessApplication",
+                operatingSystem: "All",
+                url: url.href,
+                offers: {
+                    "@type": "Offer",
+                    price: "0",
+                    priceCurrency: "TRY"
+                }
+            }
         },
         //language=HTML
         summary: `
@@ -65,7 +79,21 @@ export const TelefonVergisiHesaplayiciPresetSlugPageDef: _PageDef = ({ preset, b
             title: `${title} - ${parentPage.title}`,
             description: preset.pageDescription,
             canonicalUrl: url,
-            ogImageUrl
+            ogImageUrl,
+            schema: {
+                "@context": "https://schema.org",
+                "@type": "WebApplication",
+                name: title,
+                description: preset.pageDescription,
+                applicationCategory: "BusinessApplication",
+                operatingSystem: "All",
+                url: url.href,
+                offers: {
+                    "@type": "Offer",
+                    price: "0",
+                    priceCurrency: "TRY"
+                }
+            }
         }
     };
 };

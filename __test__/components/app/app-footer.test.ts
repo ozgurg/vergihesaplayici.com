@@ -12,7 +12,7 @@ describe("components/app/app-footer.vue", () => {
 
     it("renders exchange rates correctly", () => {
         const primaryCurrencyCode = "TRY";
-        const testRates = { [primaryCurrencyCode]: 1, USD: 38, EUR: 44 };
+        const testRates: any = { [primaryCurrencyCode]: 1, USD: 38, EUR: 44 };
         const wrapper = mount(AppFooter, {
             props: {
                 EXCHANGE_RATES: {
@@ -31,7 +31,7 @@ describe("components/app/app-footer.vue", () => {
             if (_currencyCode !== primaryCurrencyCode) {
                 const listItem = listItems[index]!;
                 expect(listItem.find("small").text()).toBe(_currencyCode);
-                expect(listItem.find("b").text()).toBe(formatMoney(_rate, primaryCurrencyCode));
+                expect(listItem.find("b").text()).toBe(formatMoney(_rate as number, primaryCurrencyCode));
 
                 index++;
             }

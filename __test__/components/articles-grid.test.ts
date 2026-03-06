@@ -21,17 +21,18 @@ describe("components/articles-grid.vue", () => {
         ];
 
         const wrapper = mount(ArticlesGrid, {
-            props: { items: testItems }
+            props: { items: testItems, titleTag: "h2" }
         });
 
-        const articleCardItems = wrapper.findAllComponents(ArticleCardItem);
+        const articleCardItems = wrapper.findAllComponents(ArticleCardItem as any);
 
         expect(articleCardItems.length).toBe(testItems.length);
 
         for (const [_index, _articleCardItem] of articleCardItems.entries()) {
             const item = testItems[_index]!;
-            expect(_articleCardItem.props()).toEqual({
+            expect((_articleCardItem as any).props()).toEqual({
                 title: item.title,
+                titleTag: "h2",
                 description: item.description,
                 url: item.url,
                 date: item.date

@@ -1,16 +1,13 @@
 import type { Brand, Preset } from "@/domains/telefon-vergisi-hesaplayici/types.js";
 import { buildPageMeta } from "@/domains/telefon-vergisi-hesaplayici/utils/build-page-meta.js";
 
-const BRAND_ID = "samsung";
-
 export const brand: Brand = {
-    id: BRAND_ID,
+    id: "samsung",
     title: "Samsung"
 };
 
-export const presets: Preset[] = [
+export const presets: Omit<Preset, "brandId">[] = [
     {
-        brandId: BRAND_ID,
         title: "Galaxy Z Fold4",
         slug: "samsung-galaxy-z-fold4",
         releaseDate: new Date("2022-08-25"),
@@ -41,7 +38,6 @@ export const presets: Preset[] = [
         ]
     },
     {
-        brandId: BRAND_ID,
         title: "Galaxy Z Fold5",
         slug: "samsung-galaxy-z-fold5",
         releaseDate: new Date("2023-08-11"),
@@ -72,7 +68,6 @@ export const presets: Preset[] = [
         ]
     },
     {
-        brandId: BRAND_ID,
         title: "Galaxy Z Fold6",
         slug: "samsung-galaxy-z-fold6",
         releaseDate: new Date("2024-07-24"),
@@ -103,7 +98,6 @@ export const presets: Preset[] = [
         ]
     },
     {
-        brandId: BRAND_ID,
         title: "Galaxy Z Fold7",
         slug: "samsung-galaxy-z-fold7",
         releaseDate: new Date("2025-07-25"),
@@ -135,7 +129,6 @@ export const presets: Preset[] = [
     },
 
     {
-        brandId: BRAND_ID,
         title: "Galaxy Z Flip4",
         slug: "samsung-galaxy-z-flip4",
         releaseDate: new Date("2022-08-25"),
@@ -166,7 +159,6 @@ export const presets: Preset[] = [
         ]
     },
     {
-        brandId: BRAND_ID,
         title: "Galaxy Z Flip5",
         slug: "samsung-galaxy-z-flip5",
         releaseDate: new Date("2023-08-11"),
@@ -190,7 +182,6 @@ export const presets: Preset[] = [
         ]
     },
     {
-        brandId: BRAND_ID,
         title: "Galaxy Z Flip6",
         slug: "samsung-galaxy-z-flip6",
         releaseDate: new Date("2024-07-24"),
@@ -214,7 +205,6 @@ export const presets: Preset[] = [
         ]
     },
     {
-        brandId: BRAND_ID,
         title: "Galaxy Z Flip7",
         slug: "samsung-galaxy-z-flip7",
         releaseDate: new Date("2025-07-25"),
@@ -239,7 +229,6 @@ export const presets: Preset[] = [
     },
 
     {
-        brandId: BRAND_ID,
         title: "Galaxy S23",
         slug: "samsung-galaxy-s23",
         releaseDate: new Date("2023-02-17"),
@@ -263,7 +252,6 @@ export const presets: Preset[] = [
         ]
     },
     {
-        brandId: BRAND_ID,
         title: "Galaxy S23+",
         slug: "samsung-galaxy-s23-plus",
         releaseDate: new Date("2023-02-17"),
@@ -287,7 +275,6 @@ export const presets: Preset[] = [
         ]
     },
     {
-        brandId: BRAND_ID,
         title: "Galaxy S23 Ultra",
         slug: "samsung-galaxy-s23-ultra",
         releaseDate: new Date("2023-02-17"),
@@ -319,7 +306,6 @@ export const presets: Preset[] = [
     },
 
     {
-        brandId: BRAND_ID,
         title: "Galaxy S24",
         slug: "samsung-galaxy-s24",
         releaseDate: new Date("2024-01-24"),
@@ -343,7 +329,6 @@ export const presets: Preset[] = [
         ]
     },
     {
-        brandId: BRAND_ID,
         title: "Galaxy S24+",
         slug: "samsung-galaxy-s24-plus",
         releaseDate: new Date("2024-01-24"),
@@ -367,7 +352,6 @@ export const presets: Preset[] = [
         ]
     },
     {
-        brandId: BRAND_ID,
         title: "Galaxy S24 Ultra",
         slug: "samsung-galaxy-s24-ultra",
         releaseDate: new Date("2024-01-24"),
@@ -399,7 +383,6 @@ export const presets: Preset[] = [
     },
 
     {
-        brandId: BRAND_ID,
         title: "Galaxy S25",
         slug: "samsung-galaxy-s25",
         releaseDate: new Date("2025-02-03"),
@@ -423,7 +406,6 @@ export const presets: Preset[] = [
         ]
     },
     {
-        brandId: BRAND_ID,
         title: "Galaxy S25+",
         slug: "samsung-galaxy-s25-plus",
         releaseDate: new Date("2025-02-03"),
@@ -447,7 +429,6 @@ export const presets: Preset[] = [
         ]
     },
     {
-        brandId: BRAND_ID,
         title: "Galaxy S25 Ultra",
         slug: "samsung-galaxy-s25-ultra",
         releaseDate: new Date("2025-02-03"),
@@ -478,7 +459,6 @@ export const presets: Preset[] = [
         ]
     },
     {
-        brandId: BRAND_ID,
         title: "Galaxy S25 Edge",
         slug: "samsung-galaxy-s25-edge",
         releaseDate: new Date("2025-05-29"),
@@ -502,7 +482,6 @@ export const presets: Preset[] = [
         ]
     },
     {
-        brandId: BRAND_ID,
         title: "Galaxy S25 FE",
         slug: "samsung-galaxy-s25-fe",
         releaseDate: new Date("2025-09-04"),
@@ -527,7 +506,6 @@ export const presets: Preset[] = [
     },
 
     {
-        brandId: BRAND_ID,
         title: "Galaxy S26",
         slug: "samsung-galaxy-s26",
         releaseDate: new Date("2026-02-26"),
@@ -551,7 +529,6 @@ export const presets: Preset[] = [
         ]
     },
     {
-        brandId: BRAND_ID,
         title: "Galaxy S26+",
         slug: "samsung-galaxy-s26-plus",
         releaseDate: new Date("2026-02-26"),
@@ -575,7 +552,6 @@ export const presets: Preset[] = [
         ]
     },
     {
-        brandId: BRAND_ID,
         title: "Galaxy S26 Ultra",
         slug: "samsung-galaxy-s26-ultra",
         releaseDate: new Date("2026-02-26"),

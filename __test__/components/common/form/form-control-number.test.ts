@@ -7,7 +7,7 @@ describe("components/common/form/form-control-number.vue", () => {
     it("renders a `<form-control />` with correct attrs", () => {
         const wrapper = mount(FormControlNumber);
 
-        const formControl = wrapper.findComponent(FormControl);
+        const formControl = wrapper.findComponent(FormControl as any);
         const formControlInput = formControl.find("input");
         expect(formControl.exists()).toBeTruthy();
         expect(formControlInput.attributes("inputmode")).toBe("numeric");
@@ -136,7 +136,7 @@ describe("components/common/form/form-control-number.vue", () => {
         const wrapper = mount(FormControlNumber, {
             props: {
                 modelValue: testModelValue,
-                "onUpdate:modelValue": (value) => {
+                "onUpdate:modelValue": (value: any) => {
                     testModelValue = value as number;
                 }
             }

@@ -21,7 +21,14 @@ export const HesaplayicilarPageDef: PageDef = (): Page => {
             title: `${title} - %site-title%`,
             description: "Telefon ve oyun konsolu gibi farklı ürün gruplarının yurt içi ve yurt dışı fiyatlarına Türkiye'de ne kadar vergi uygulandığını hesaplayın.",
             canonicalUrl: url,
-            ogImageUrl: null
+            ogImageUrl: null,
+            schema: {
+                "@context": "https://schema.org",
+                "@type": "CollectionPage",
+                name: title,
+                description: "Telefon ve oyun konsolu gibi farklı ürün gruplarının yurt içi ve yurt dışı fiyatlarına Türkiye'de ne kadar vergi uygulandığını hesaplayın.",
+                url: url.href
+            }
         }
     };
 };

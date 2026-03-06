@@ -11,9 +11,9 @@ describe("components/calculator-last-update-alert.vue", () => {
     it("renders an `<alert />` with correct color", () => {
         const wrapper = mount(CalculatorLastUpdateAlert, { props: { date: new Date() } });
 
-        const alert = wrapper.findComponent(Alert);
+        const alert = wrapper.findComponent(Alert as any);
         expect(alert.exists()).toBeTruthy();
-        expect(alert.props("color")).toBe("warning");
+        expect((alert as any).props("color")).toBe("warning");
     });
 
     it("applies or not applies `alignToLabel` class", () => {

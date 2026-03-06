@@ -26,7 +26,21 @@ export const VerginiOlusturPageDef: CalculatorPageDef = (): CalculatorPage => {
             title: `${title} - %site-title%`,
             description: "Kendi vergi oranlarınızı ekleyip çıkararak net vergi miktarını hızlıca hesaplayabileceğiniz, pratik ve kullanıcı dostu bir vergi hesaplayıcı.",
             canonicalUrl: url,
-            ogImageUrl
+            ogImageUrl,
+            schema: {
+                "@context": "https://schema.org",
+                "@type": "WebApplication",
+                name: title,
+                description: "Kendi vergi oranlarınızı ekleyip çıkararak net vergi miktarını hızlıca hesaplayabileceğiniz, pratik ve kullanıcı dostu bir vergi hesaplayıcı.",
+                applicationCategory: "BusinessApplication",
+                operatingSystem: "All",
+                url: url.href,
+                offers: {
+                    "@type": "Offer",
+                    price: "0",
+                    priceCurrency: "TRY"
+                }
+            }
         },
         //language=HTML
         summary: "Ekonomist olmak hiç bu kadar kolay olmamıştı"

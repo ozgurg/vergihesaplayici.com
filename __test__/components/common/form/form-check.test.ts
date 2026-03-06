@@ -31,7 +31,7 @@ describe("components/common/form/form-check.vue", () => {
                 FormCheck
             }
         });
-        const FormChecks = wrapper.findAllComponents(FormCheck);
+        const FormChecks = wrapper.findAllComponents(FormCheck as any);
         expect(FormChecks[0]!.attributes("for")).not.toBe(FormChecks[1]!.attributes("for"));
     });
 

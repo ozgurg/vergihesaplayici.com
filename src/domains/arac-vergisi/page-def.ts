@@ -26,7 +26,21 @@ export const AracVergisiPageDef: CalculatorPageDef = (): CalculatorPage => {
             title: `${title} - %site-title%`,
             description: "Sıfır araç fiyatına göre ÖTV ve KDV tutarını hesaplayın. Araç vergisi hesaplama aracı ile 2025'te toplam maliyeti anında görün.",
             canonicalUrl: url,
-            ogImageUrl
+            ogImageUrl,
+            schema: {
+                "@context": "https://schema.org",
+                "@type": "WebApplication",
+                name: title,
+                description: "Sıfır araç fiyatına göre ÖTV ve KDV tutarını hesaplayın. Araç vergisi hesaplama aracı ile 2025'te toplam maliyeti anında görün.",
+                applicationCategory: "BusinessApplication",
+                operatingSystem: "All",
+                url: url.href,
+                offers: {
+                    "@type": "Offer",
+                    price: "0",
+                    priceCurrency: "TRY"
+                }
+            }
         },
         //language=HTML
         summary: "Biz en iyisi halıda oyuncak arabayla vınn-vınn yapalım"

@@ -22,7 +22,14 @@ export const YazilarPageDef: PageDef = (): Page => {
             title: `${title} - %site-title%`,
             description: "Vergiler hakkında rehber ve güncel bilgiler için doğru adrestesiniz. Makalelerimiz ve ipuçlarımızla vergi yükümlülüklerinizi kolayca anlayın.",
             canonicalUrl: url,
-            ogImageUrl: null
+            ogImageUrl: null,
+            schema: {
+                "@context": "https://schema.org",
+                "@type": "CollectionPage",
+                name: title,
+                description: "Vergiler hakkında rehber ve güncel bilgiler için doğru adrestesiniz. Makalelerimiz ve ipuçlarımızla vergi yükümlülüklerinizi kolayca anlayın.",
+                url: url.href
+            }
         }
     };
 };
@@ -63,7 +70,29 @@ export const YazilarSlugPageDef: _PageDef = ({ yazi }): Page => {
             title: `${title} - %site-title%`,
             description: yazi.description,
             canonicalUrl: url,
-            ogImageUrl: null
+            ogImageUrl: null,
+            schema: {
+                "@context": "https://schema.org",
+                "@type": "Article",
+                headline: title,
+                description: yazi.description,
+                url: url.href,
+                author: {
+                    "@type": "Person",
+                    name: "vergihesaplayici.com",
+                    url: siteUrl().href
+                },
+                publisher: {
+                    "@type": "Organization",
+                    name: "Vergi Hesaplayıcı",
+                    logo: {
+                        "@type": "ImageObject",
+                        url: siteUrl("/pwa/favicon-96x96.png").href
+                    }
+                },
+                datePublished: yazi.createdDate.toISOString(),
+                dateModified: yazi.updatedDate ? yazi.updatedDate.toISOString() : yazi.createdDate.toISOString()
+            }
         }
     };
 };

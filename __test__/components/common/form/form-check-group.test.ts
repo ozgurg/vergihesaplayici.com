@@ -62,8 +62,7 @@ describe("components/common/form/form-check-group.vue", () => {
                 FormCheckGroup
             }
         });
-        const FormCheckGroups = wrapper.findAllComponents(FormCheckGroup);
-        // @ts-expect-error: FIXME
+        const FormCheckGroups = wrapper.findAllComponents(FormCheckGroup as any);
         expect(FormCheckGroups[0]!.vm.NAME).not.toBe(FormCheckGroups[1]!.vm.NAME);
     });
 
@@ -103,7 +102,7 @@ describe("components/common/form/form-check-group.vue", () => {
             }
         });
 
-        const formChecks = wrapper.findAllComponents(FormCheck);
+        const formChecks = wrapper.findAllComponents(FormCheck as any);
 
         expect(formChecks).toHaveLength(testItem.length);
 
@@ -144,7 +143,7 @@ describe("components/common/form/form-check-group.vue", () => {
             }
         });
 
-        const formChecks = wrapper.findAllComponents(FormCheck);
+        const formChecks = wrapper.findAllComponents(FormCheck as any);
 
         for (const _formCheck of formChecks) {
             expect(_formCheck.find("small").exists()).toBeFalsy();
@@ -175,11 +174,11 @@ describe("components/common/form/form-check-group.vue", () => {
             }
         });
 
-        const formChecks = wrapper.findAllComponents(FormCheck);
+        const formChecks = wrapper.findAllComponents(FormCheck as any);
 
         for (const [_index, _formCheck] of formChecks.entries()) {
             const item = testItem[_index]!;
-            const svgIcons = _formCheck.findAllComponents(SvgIcon);
+            const svgIcons = _formCheck.findAllComponents(SvgIcon as any);
             const customIcon = svgIcons.find(icon =>
                 !icon.classes().includes("checked-icon") &&
                 !icon.classes().includes("unchecked-icon")
@@ -212,10 +211,10 @@ describe("components/common/form/form-check-group.vue", () => {
             }
         });
 
-        const formChecks = wrapper.findAllComponents(FormCheck);
+        const formChecks = wrapper.findAllComponents(FormCheck as any);
 
         for (const _formCheck of formChecks) {
-            const svgIcons = _formCheck.findAllComponents(SvgIcon);
+            const svgIcons = _formCheck.findAllComponents(SvgIcon as any);
             const customIcon = svgIcons.find(icon =>
                 !icon.classes().includes("checked-icon") &&
                 !icon.classes().includes("unchecked-icon")
@@ -256,7 +255,7 @@ describe("components/common/form/form-check-group.vue", () => {
             }
         });
 
-        const formChecks = wrapper.findAllComponents(FormCheck);
+        const formChecks = wrapper.findAllComponents(FormCheck as any);
 
         for (const [_index, _formCheck] of formChecks.entries()) {
             const item = testItem[_index]!;
@@ -265,7 +264,7 @@ describe("components/common/form/form-check-group.vue", () => {
             expect(input.attributes("name")).toBe(testName);
             expect(input.attributes("data-custom-attr")).toBe(item.input["data-custom-attr"]);
             expect(input.element.required).toBe(testRequired);
-            expect(_formCheck.props("scale")).toBe(testScale);
+            expect((_formCheck as any).props("scale")).toBe(testScale);
         }
     });
 
@@ -335,7 +334,7 @@ describe("components/common/form/form-check-group.vue", () => {
             })
         });
 
-        const formChecks = wrapper.findAllComponents(FormCheck);
+        const formChecks = wrapper.findAllComponents(FormCheck as any);
         const secondInput = formChecks[1]!.find("input") as DOMWrapper<HTMLInputElement>;
 
         // Click the second radio button
@@ -421,7 +420,7 @@ describe("components/common/form/form-check-group.vue", () => {
 
         expect(wrapper.find(".custom-slot-content").exists()).toBeFalsy();
 
-        const formChecks = wrapper.findAllComponents(FormCheck);
+        const formChecks = wrapper.findAllComponents(FormCheck as any);
         expect(formChecks).toHaveLength(1);
         expect(formChecks[0]!.find("b").text()).toBe("Item 1");
     });

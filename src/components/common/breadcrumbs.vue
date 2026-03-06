@@ -2,29 +2,15 @@
     <nav
         ref="breadcrumbsEl"
         class="breadcrumbs">
-        <ol
-            :itemscope="true"
-            itemtype="https://schema.org/BreadcrumbList">
+        <ol>
             <template v-for="(_item, _index) in items" :key="_index">
-                <li
-                    :aria-current="isLastItem(_index) ? 'page' : 'false'"
-                    :itemscope="true"
-                    itemprop="itemListElement"
-                    itemtype="https://schema.org/ListItem">
+                <li :aria-current="isLastItem(_index) ? 'page' : 'false'">
                     <template v-if="isLastItem(_index)">
-                        <span itemprop="name">{{ _item.title }}</span>
-                        <meta
-                            :content="String(_index + 1)"
-                            itemprop="position" />
+                        <span>{{ _item.title }}</span>
                     </template>
                     <template v-else>
-                        <a
-                            :href="_item.url.href"
-                            itemprop="item">
-                            <span itemprop="name">{{ _item.title }}</span>
-                            <meta
-                                :content="String(_index + 1)"
-                                itemprop="position" />
+                        <a :href="_item.url.href">
+                            <span>{{ _item.title }}</span>
                         </a>
                     </template>
                 </li>

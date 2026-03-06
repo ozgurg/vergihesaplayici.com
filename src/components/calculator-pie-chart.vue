@@ -52,7 +52,7 @@
                         Vergi miktarı: <span
                         class="text-number">{{ formatMoney(activeChartDataItem.value, "TRY") }}</span>
                         <br />
-                        Toplam vergi içindeki payı: <span
+                        Toplam fiyat içindeki payı: <span
                         class="text-number">{{ activeChartDataItem.percentage }}%</span>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                     Vergi miktarı: <span
                     class="text-number">{{ formatMoney(activeChartDataItem.value, "TRY") }}</span>
                     <hr />
-                    Toplam vergi içindeki payı: <span
+                    Toplam fiyat içindeki payı: <span
                     class="text-number">{{ activeChartDataItem.percentage }}%</span>
                 </div>
             </modal-body>

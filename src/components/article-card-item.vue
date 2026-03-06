@@ -1,25 +1,16 @@
 <template>
-    <article
-        :itemscope="true"
-        itemtype="https://schema.org/NewsArticle"
-        class="article-card-item">
+    <article class="article-card-item">
         <div class="meta">
             <time
                 :datetime="timeDateTimeAttr"
-                :content="timeContentAttr"
-                itemprop="datePublished"
                 class="meta-date">
                 {{ readableDate }}
             </time>
             <span aria-hidden="true">•</span>
             <span
-                :itemscope="true"
-                itemprop="author"
-                itemtype="https://schema.org/Person"
                 aria-hidden="true"
                 class="meta-author">
-                <span itemprop="name">vergihesaplayici.com</span>
-                <meta :content="authorUrl.href" itemprop="url" />
+                <span>vergihesaplayici.com</span>
             </span>
         </div>
         <component
@@ -27,9 +18,8 @@
             class="title">
             <a
                 :href="props.url.href"
-                itemprop="url"
                 class="stretched-link">
-                <span itemprop="headline">{{ props.title }}</span>
+                <span>{{ props.title }}</span>
             </a>
             <svg-icon :icon="icon_chevronRight" />
         </component>
@@ -57,9 +47,7 @@ export type Props = {
 const props = defineProps<Props>();
 
 const timeDateTimeAttr = props.date.toISOString().split("T")[0]; // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time#valid_datetime_values
-const timeContentAttr = props.date.toISOString(); // https://developers.google.com/search/docs/appearance/structured-data/article#article-types
 const readableDate = props.date.toLocaleDateString("tr-TR");
-const authorUrl = siteUrl();
 </script>
 
 <style lang="scss" scoped>

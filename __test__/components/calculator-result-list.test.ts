@@ -24,13 +24,13 @@ describe("components/calculator-result-list.vue", () => {
         // @ts-expect-error: FIXME
         const wrapper = mount(CalculatorResultList, DEFAULT_OPTIONS);
 
-        const calculatorResultListItems = wrapper.findAllComponents(CalculatorResultListItem);
+        const calculatorResultListItems = wrapper.findAllComponents(CalculatorResultListItem as any);
 
         expect(calculatorResultListItems).toHaveLength(TEST_ITEMS.length);
 
         for (const [_index, _calculatorResultListItem] of calculatorResultListItems.entries()) {
             const item = TEST_ITEMS[_index]!;
-            expect(_calculatorResultListItem.props()).toEqual({
+            expect((_calculatorResultListItem as any).props()).toEqual({
                 label: item.label,
                 value: item.value,
                 variant: item.variant,

@@ -27,7 +27,7 @@ describe("components/common/form/form-button.vue", () => {
         const wrapper = mount(FormButton, {
             props: { loading: true }
         });
-        expect(wrapper.findComponent(Spinner).exists()).toBeTruthy();
+        expect(wrapper.findComponent(Spinner as any).exists()).toBeTruthy();
         expect(wrapper.find(".form-button-content").exists()).toBeFalsy();
         expect(wrapper.attributes("aria-busy")).toBe("true");
     });

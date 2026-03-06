@@ -9,7 +9,10 @@ describe("components/common/form/form-select-currency.vue", () => {
         rates: {
             TRY: 1,
             USD: 1,
-            EUR: 1
+            EUR: 1,
+            GBP: 1,
+            INR: 1,
+            CNY: 1
         }
     };
 
@@ -39,7 +42,7 @@ describe("components/common/form/form-select-currency.vue", () => {
             }
         });
 
-        const select = wrapper.findComponent(FormSelect);
+        const select = wrapper.findComponent(FormSelect as any);
         await select.setValue("USD");
         expect(testModelValue).toBe("USD");
         expect(wrapper.emitted("update:modelValue")?.[0]).toEqual(["USD"]);

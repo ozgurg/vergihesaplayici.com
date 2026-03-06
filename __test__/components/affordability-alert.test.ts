@@ -21,9 +21,9 @@ describe("components/affordability-alert.vue", () => {
     it("renders an `<alert />` with correct color", () => {
         const wrapper = createWrapper({ price: 0 });
 
-        const alert = wrapper.findComponent(Alert);
+        const alert = wrapper.findComponent(Alert as any);
         expect(alert.exists()).toBeTruthy();
-        expect(alert.props("color")).toBe("info");
+        expect((alert as any).props("color")).toBe("info");
     });
 
     it("shows yearly duration for yearly minimum wage", () => {

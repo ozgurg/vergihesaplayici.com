@@ -7,28 +7,14 @@ import TinyadzScript from "@/components/tinyadz-script.astro";
 
 export type Props = HeadProps;
 const props = Astro.props;
-
-const BASE_URL = siteUrl();
 ---
 
-<html
-    itemscope=""
-    itemtype="https://schema.org/WebSite"
-    lang="tr"
-    dir="ltr">
-<head>
-    <Head {...props} />
-    <TinyadzScript />
-</head>
-<body>
-    <slot name="default" />
-    <div
-        hidden=""
-        inert=""
-        itemscope=""
-        itemtype="https://schema.org/Organization">
-        <meta itemprop="url" content={BASE_URL.href} />
-        <meta itemprop="logo" content={staticUrl("/pwa/favicon-96x96.png")} />
-    </div>
-</body>
+<html lang="tr" dir="ltr">
+    <head>
+        <Head {...props} />
+        <TinyadzScript />
+    </head>
+    <body>
+        <slot name="default" />
+    </body>
 </html>
