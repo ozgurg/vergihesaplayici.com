@@ -28,7 +28,7 @@ const {
 export default defineConfig({
     prefetch: {
         prefetchAll: true,
-        defaultStrategy: "tap"
+        defaultStrategy: "hover"
     },
     devToolbar: {
         enabled: false
