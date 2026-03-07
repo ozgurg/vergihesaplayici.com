@@ -34,6 +34,7 @@ const isDownloaded = ref<boolean>(false);
 let downloadedTimeout: ReturnType<typeof setTimeout> | null = null;
 
 const _capture = async (): Promise<URL> => {
+    const { htmlToCanvas } = await import("@/utils/html-to-image.js");
     const canvas = await htmlToCanvas(screenshotEl?.value.$el);
     return new URL(canvas.toDataURL("image/jpeg"));
 };

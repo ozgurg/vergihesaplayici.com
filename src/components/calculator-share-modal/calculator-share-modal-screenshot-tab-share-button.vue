@@ -22,8 +22,9 @@ const screenshotEl = inject<Ref<CalculatorShareModalScreenshotTabScreenshotInsta
 const screenshotFileName = inject<string>("screenshotFileName");
 const isLoading = ref<boolean>(false);
 
-const _capture = (): Promise<Blob> => {
-    return htmlToBlob(screenshotEl?.value.$el);
+const _capture = async (): Promise<Blob> => {
+    const { htmlToBlob } = await import("@/utils/html-to-image.js");
+    return await htmlToBlob(screenshotEl?.value.$el);
 };
 
 const _share = (blob: Blob): Promise<void> => {
