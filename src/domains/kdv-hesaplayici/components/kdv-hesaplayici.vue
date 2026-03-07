@@ -85,6 +85,10 @@ import type { CalculationResults, Form, ResultList, ScreenshotData } from "@/dom
 import { calculateResults } from "@/domains/kdv-hesaplayici/utils/calculate-results.js";
 import { DEFAULT_FORM } from "@/domains/kdv-hesaplayici/config.js";
 
+const CalculatorResultList = defineAsyncComponent(() => import("@/components/calculator-result-list.vue"));
+const CalculatorQuickShare = defineAsyncComponent(() => import("@/components/calculator-quick-share.vue"));
+const CalculatorShareModal = defineAsyncComponent(() => import("@/components/calculator-share-modal/calculator-share-modal.vue"));
+
 export type Props = {
     calculatorPage: CalculatorPage;
 }

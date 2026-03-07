@@ -121,6 +121,11 @@ import type { ExchangeRates } from "@/types/common.js";
 import { calculateResults } from "@/domains/telefon-vergisi-hesaplayici/utils/calculate-results.js";
 import { DEFAULT_FORM, LAST_UPDATE, PRICE_LABEL_BY_MODE } from "@/domains/telefon-vergisi-hesaplayici/config.js";
 
+const CalculatorResultList = defineAsyncComponent(() => import("@/components/calculator-result-list.vue"));
+const CalculatorCharts = defineAsyncComponent(() => import("@/components/calculator-charts.vue"));
+const CalculatorQuickShare = defineAsyncComponent(() => import("@/components/calculator-quick-share.vue"));
+const CalculatorShareModal = defineAsyncComponent(() => import("@/components/calculator-share-modal/calculator-share-modal.vue"));
+
 export type Props = {
     EXCHANGE_RATES: ExchangeRates;
     calculatorPage: CalculatorPage;
