@@ -53,7 +53,6 @@ export default getViteConfig({
                 "vitest.config.ts",
                 "dist",
                 "__test__",
-                "create-csp-nonce-txt.js",
                 "create-firebase-json.js"
             ]
         }

@@ -15,7 +15,6 @@ dist/
 node_modules/
 
 .firebase
-/csp-nonce.txt
 /firebase.json
 
 unplugin-auto-import.d.ts
