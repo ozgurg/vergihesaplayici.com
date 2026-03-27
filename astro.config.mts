@@ -9,7 +9,7 @@ import extractColorFromThumbsIntegration from "./src/integrations/extract-color-
 import astroCompressIntegration from "astro-compress";
 import astroVueIntegration from "@astrojs/vue";
 import astroSitemapIntegration from "@astrojs/sitemap";
-import { EnumChangefreq } from "sitemap/dist/lib/types";
+import { EnumChangefreq } from "sitemap";
 
 import autoImportPlugin from "unplugin-auto-import/vite";
 import autoImportVueComponentsPlugin from "unplugin-vue-components/vite";

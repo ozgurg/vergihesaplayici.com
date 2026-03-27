@@ -29,7 +29,7 @@ describe("utils/html-to-image.js", () => {
 
             (toCanvas as Mock).mockRejectedValue(mockError);
 
-            await expect(htmlToCanvas(mockElement)).rejects.toThrowError("toCanvas failed");
+            await expect(htmlToCanvas(mockElement)).rejects.toThrow("toCanvas failed");
         });
     });
 
@@ -53,7 +53,7 @@ describe("utils/html-to-image.js", () => {
 
             (toBlob as Mock).mockRejectedValue(mockError);
 
-            await expect(htmlToBlob(mockElement)).rejects.toThrowError("toBlob failed");
+            await expect(htmlToBlob(mockElement)).rejects.toThrow("toBlob failed");
         });
     });
 });

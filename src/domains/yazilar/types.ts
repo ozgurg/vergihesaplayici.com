@@ -1,6 +1,6 @@
 import type { CollectionEntry } from "astro:content";
 import type { PageSlug } from "@/types/page-def.js";
-import { z } from "astro:content";
+import { z } from "astro/zod";
 
 export const COLLECTION_NAME = "yazilar";
 
