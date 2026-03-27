@@ -1,13 +1,11 @@
-/* oxlint-disable no-magic-numbers */
-
 import type { AstroIntegration } from "astro";
 
-// noinspection ES6PreferShortImport: Aliases are not resolved at this point
+// oxlint-disable-next-line import/no-relative-parent-imports
 import { initializeExchangeRates } from "./../utils/exchange-rates.js";
 
 const INTEGRATION_NAME = "exchange-rates";
 
-// oxlint-disable-next-line no-default-export
+// oxlint-disable-next-line import/no-default-export
 export default function exchangeRates(): AstroIntegration {
     return {
         name: INTEGRATION_NAME,

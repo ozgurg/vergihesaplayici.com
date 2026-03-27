@@ -8,7 +8,7 @@
 <script lang="ts" setup>
 // Since it is only used in this component, it is imported here to reduce bundle size.
 // If it is needed elsewhere, it and the CSS below in this file should be moved to the global scope.
-// oxlint-disable-next-line no-unassigned-import
+// oxlint-disable-next-line import/no-unassigned-import
 import "balloon-css";
 
 /* oxlint-disable no-magic-numbers */

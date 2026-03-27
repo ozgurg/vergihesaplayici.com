@@ -21,7 +21,7 @@ export const formatMoney = (price: number, currency: string): string => {
             minimumFractionDigits: 2
         }));
     }
-    // oxlint-disable-next-line no-non-null-assertion
+    // oxlint-disable-next-line typescript/no-non-null-assertion
     return moneyFormattersCache.get(currency)!.format(price);
 };
 

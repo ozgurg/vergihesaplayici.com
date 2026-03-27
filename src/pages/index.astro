@@ -19,7 +19,6 @@ const anaSayfaPage = AnaSayfaPageDef();
 const hesaplayicilarPage = HesaplayicilarPageDef();
 const yazilarPage = YazilarPageDef();
 
-// oxlint-disable-next-line no-magic-numbers
 const yazilar = (await getYazilar()).slice(0, 8);
 const yazilarForArticlesGrid = mapYazilarForArticlesGridComponent(yazilar);
 ---

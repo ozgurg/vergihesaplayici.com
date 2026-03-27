@@ -1,13 +1,10 @@
-/// <reference types="vitest" />
-// oxlint-disable-next-line extensions
-import type { UserConfigFn as ViteUserConfigFn } from "vite";
+/// <reference types="vitest/config" />
 import { getViteConfig } from "astro/config";
 
 process.env.TZ = "Europe/Istanbul";
 
-// oxlint-disable-next-line no-anonymous-default-export no-default-export
+// oxlint-disable-next-line import/no-default-export
 export default getViteConfig({
-    // @ts-expect-error: Vitest configuration
     test: {
         environment: "jsdom",
         globals: true,
@@ -56,9 +53,8 @@ export default getViteConfig({
                 "vitest.config.ts",
                 "dist",
                 "__test__",
-                "create-csp-nonce-txt.js",
                 "create-firebase-json.js"
             ]
         }
-    } as ViteUserConfigFn
+    }
 });

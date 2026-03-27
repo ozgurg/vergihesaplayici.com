@@ -5,17 +5,6 @@ import { fileURLToPath } from "node:url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// oxlint-disable-next-line no-unused-vars
-const objectToCspHeader = object => {
-    const cspHeader = [];
-    for (const [_key, _values] of Object.entries(object)) {
-        cspHeader.push(
-            _values.length > 0 ? `${_key} ${_values.join(" ")}` : _key
-        );
-    }
-    return cspHeader.join(";");
-};
-
 // [0] = source (from)
 // [1] = destination (to)
 const redirections301 = [
@@ -153,9 +142,6 @@ const redirections301 = [
     ["telefon-vergisi-hesaplayici/iphone-12", "telefon-vergisi-hesaplayici/apple-iphone-12"]
 ];
 
-// oxlint-disable-next-line no-unused-vars
-const cspNonce = fs.readFileSync(path.join(__dirname, "csp-nonce.txt"), "utf8");
-
 const firebaseJson = {
     hosting: {
         public: "./dist",
@@ -173,43 +159,6 @@ const firebaseJson = {
             }
         ],
         headers: [
-            /* TODO: Content-Security-Policy is experimental for now: https://docs.astro.build/en/reference/experimental-flags/csp/
-            {
-                source: "**",
-                headers: [
-                    {
-                        key: "Content-Security-Policy",
-                        value: objectToCspHeader({
-                            "base-uri": ["'self'"],
-                            "object-src": ["'none'"],
-                            "script-src": [
-                                "'self'",
-                                `'nonce-${cspNonce}'`,
-                                "https://www.google.com/recaptcha/",
-                                "https://www.gstatic.com/recaptcha/",
-                                "https://www.googletagmanager.com"
-                            ],
-                            "frame-src": [
-                                "'self'",
-                                "https://www.google.com/recaptcha/",
-                                "https://recaptcha.google.com/recaptcha/"
-                            ],
-                            "img-src": [
-                                "'self'",
-                                "www.googletagmanager.com"
-                            ],
-                            "style-src": [
-                                "'self'",
-                                "fonts.googleapis.com"
-                            ],
-                            "font-src": [
-                                "fonts.gstatic.com"
-                            ]
-                        })
-                    }
-                ]
-            },
-            */
             {
                 source: "**",
                 headers: [

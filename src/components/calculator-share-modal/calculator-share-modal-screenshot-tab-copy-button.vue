@@ -33,8 +33,9 @@ const isCopied = ref<boolean>(false);
 
 let copiedTimeout: ReturnType<typeof setTimeout> | null = null;
 
-const _capture = (): Promise<Blob> => {
-    return htmlToBlob(screenshotEl?.value.$el);
+const _capture = async (): Promise<Blob> => {
+    const { htmlToBlob } = await import("@/utils/html-to-image.js");
+    return await htmlToBlob(screenshotEl?.value.$el);
 };
 
 const _copy = (blob: Blob): Promise<void> => {

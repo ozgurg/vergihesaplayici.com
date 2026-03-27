@@ -22,7 +22,6 @@ const mapThumbEntries = (
     base64Pair: { [key: string]: string },
     thumbColors: ThumbColors
 ): Promise<Thumb[]> => {
-    // oxlint-disable-next-line prefer-await-to-then
     return Promise.all(
         Object.entries(metadataPair).map(([_filePath, _metadata]) => {
             const base64 = base64Pair[_filePath] as string;
@@ -41,7 +40,7 @@ const mapThumbEntries = (
 
 // We'll need to duplicate the import statement for each domain because it requires literal strings
 
-// oxlint-disable first
+// oxlint-disable import/first
 import telefonVergisiHesaplayici_thumbColors from "@root/.generated/telefon-vergisi-hesaplayici-thumb-colors.json" assert { type: "json" };
 import konsolVergisiHesaplayici_thumbColors from "@root/.generated/konsol-vergisi-hesaplayici-thumb-colors.json" assert { type: "json" };
 

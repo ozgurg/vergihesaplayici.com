@@ -1,4 +1,3 @@
-// oxlint-disable no-non-null-assertion
 import path, { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "astro/config";
@@ -10,10 +9,11 @@ import extractColorFromThumbsIntegration from "./src/integrations/extract-color-
 import astroCompressIntegration from "astro-compress";
 import astroVueIntegration from "@astrojs/vue";
 import astroSitemapIntegration from "@astrojs/sitemap";
-import { EnumChangefreq } from "sitemap/dist/lib/types";
+import { EnumChangefreq } from "sitemap";
 
 import autoImportPlugin from "unplugin-auto-import/vite";
 import autoImportVueComponentsPlugin from "unplugin-vue-components/vite";
+import lazyVueComponentsPlugin, { lazyVueComponentsResolver } from "./src/plugins/lazy-vue-components.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -22,19 +22,21 @@ const {
     SERVER_PORT,
     SERVER_HOST,
     URL_BASE
+// oxlint-disable-next-line typescript/no-non-null-assertion
 } = loadEnv(process.env.NODE_ENV!, process.cwd(), "");
 
-// oxlint-disable-next-line no-anonymous-default-export no-default-export
+// oxlint-disable-next-line import/no-default-export
 export default defineConfig({
     prefetch: {
         prefetchAll: true,
-        defaultStrategy: "tap"
+        defaultStrategy: "hover"
     },
     devToolbar: {
         enabled: false
     },
     server: {
         host: SERVER_HOST,
+        // oxlint-disable-next-line typescript/no-non-null-assertion
         port: Number.parseInt(SERVER_PORT!, 10)
     },
     build: {
@@ -132,6 +134,15 @@ export default defineConfig({
             }),
             autoImportVueComponentsPlugin({
                 dts: "unplugin-vue-components.d.ts",
+                dirs: [
+                    "src/components",
+                    "src/domains/**/components"
+                ],
+                resolvers: [
+                    lazyVueComponentsResolver()
+                ]
+            }),
+            lazyVueComponentsPlugin({
                 dirs: [
                     "src/components",
                     "src/domains/**/components"

@@ -28,19 +28,20 @@ import { icon_check, icon_download } from "@/utils/icons.js";
 const DOWNLOADED_FLASH_TIMEOUT_IN_MS = 1_000;
 
 const screenshotEl = inject<Ref<CalculatorShareModalScreenshotTabScreenshotInstance>>("screenshotEl");
-const screenshotFileName = inject<string>("screenshotFileName");
+// oxlint-disable-next-line typescript/no-non-null-assertion
+const screenshotFileName = inject<string>("screenshotFileName")!;
 const isDownloaded = ref<boolean>(false);
 
 let downloadedTimeout: ReturnType<typeof setTimeout> | null = null;
 
 const _capture = async (): Promise<URL> => {
+    const { htmlToCanvas } = await import("@/utils/html-to-image.js");
     const canvas = await htmlToCanvas(screenshotEl?.value.$el);
     return new URL(canvas.toDataURL("image/jpeg"));
 };
 
 const _download = (dataUrl: URL): void => {
-    // oxlint-disable-next-line no-non-null-assertion
-    return downloadFile(dataUrl, screenshotFileName!);
+    return downloadFile(dataUrl, screenshotFileName);
 };
 
 const _resetDownloadState = (): void => {

@@ -13,7 +13,6 @@ interface ImportMetaEnv {
     readonly PUBLIC_FIREBASE_MESSAGING_SENDER_ID: string;
     readonly PUBLIC_FIREBASE_APP_ID: string;
     readonly PUBLIC_FIREBASE_MEASUREMENT_ID: string;
-
     readonly PUBLIC_RECAPTCHA_V3_PUBLIC_KEY: string;
 
     readonly PUBLIC_TINYADZ_SITE_ID: string;
@@ -27,7 +26,6 @@ interface ImportMeta {
 }
 
 declare global {
-    /* oxlint-disable no-var vars-on-top */
     // noinspection ES6ConvertVarToLetConst
     var __EXCHANGE_RATES__: ExchangeRates;
 }

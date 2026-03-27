@@ -69,14 +69,15 @@
 
                 <div class="calculator-result-row">
                     <inner-container class="calculator-result-row-primary">
-                        <calculator-result-list
+                        <lazy-calculator-result-list
                             ref="resultsEl"
                             :items="resultList!" />
 
-                        <calculator-quick-share
+                        <lazy-calculator-quick-share
                             :url="props.calculatorPage.url"
                             @click:other="isCalculatorShareModalOpened = true" />
-                        <calculator-share-modal
+
+                        <lazy-calculator-share-modal
                             v-model="isCalculatorShareModalOpened"
                             :link="{
                                 url: props.calculatorPage.url
@@ -104,7 +105,7 @@ import { calculateResults } from "@/domains/vergini-olustur/utils/calculate-resu
 import { pickRandomPlaceholder } from "@/domains/vergini-olustur/utils/pick-random-placeholder.js";
 import { VueDraggable } from "vue-draggable-plus";
 
-let id = 0;
+let lastId = 0;
 
 export type Props = {
     EXCHANGE_RATES: ExchangeRates;
@@ -125,7 +126,7 @@ const form = reactive<Form<UITaxItem>>({
     basePrice: 0,
     taxItems: [
         {
-            id,
+            id: lastId,
             name: "",
             rate: 0,
             rateType: "percent",
@@ -143,7 +144,7 @@ const isDeleteMode = ref<boolean>(false);
 
 const addTaxItem = (): void => {
     form.taxItems.push({
-        id: ++id,
+        id: ++lastId,
         name: "",
         rate: 0,
         rateType: "percent",
@@ -153,7 +154,6 @@ const addTaxItem = (): void => {
     });
 };
 
-// oxlint-disable-next-line no-shadow
 const deleteTaxItem = (id: number): void => {
     form.taxItems = form.taxItems.filter(_taxItem => _taxItem.id !== id);
     if (form.taxItems.length === 0) {
@@ -166,7 +166,7 @@ const moveTaxItemUp = (index: number): void => {
         return;
     }
 
-    // oxlint-disable-next-line no-non-null-assertion
+    // oxlint-disable-next-line typescript/no-non-null-assertion
     form.taxItems.splice(index - 1, 2, form.taxItems[index]!, form.taxItems[index - 1]!);
 
     nextTick(() => {
@@ -182,7 +182,7 @@ const moveTaxItemDown = (index: number): void => {
         return;
     }
 
-    // oxlint-disable-next-line no-non-null-assertion
+    // oxlint-disable-next-line typescript/no-non-null-assertion
     form.taxItems.splice(index, 2, form.taxItems[index + 1]!, form.taxItems[index]!);
 
     nextTick(() => {

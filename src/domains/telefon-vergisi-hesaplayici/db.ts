@@ -1,4 +1,4 @@
-/* oxlint-disable no-namespace */
+// oxlint-disable import/no-namespace
 
 import type { Brand, Preset } from "@/domains/telefon-vergisi-hesaplayici/types.js";
 import type { Thumb } from "@/utils/thumb-loader.js";

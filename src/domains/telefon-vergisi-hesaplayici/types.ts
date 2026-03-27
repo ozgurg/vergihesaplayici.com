@@ -1,4 +1,4 @@
-import type { CurrencyCode } from "@/types/common.js";
+import type { CurrencyCode, RequireSome } from "@/types/common.js";
 import type { PageSlug } from "@/types/page-def.js";
 
 
@@ -52,7 +52,7 @@ export type Preset = {
 
 export type PresetOption = {
     title: string;
-    form: Partial<Form>;
+    form: RequireSome<Form, "price" | "currency">;
 };
 
 

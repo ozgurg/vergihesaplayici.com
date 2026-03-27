@@ -50,16 +50,16 @@
 
                 <div class="calculator-result-row">
                     <inner-container class="calculator-result-row-primary">
-                        <calculator-result-list
+                        <lazy-calculator-result-list
                             ref="resultsEl"
                             :items="resultList!" />
 
-                        <calculator-quick-share
+                        <lazy-calculator-quick-share
                             :url="props.calculatorPage.url"
                             @click:other="isCalculatorShareModalOpened = true" />
 
                         <!-- 🤮 -->
-                        <calculator-share-modal
+                        <lazy-calculator-share-modal
                             v-model="isCalculatorShareModalOpened"
                             :link="{
                                 url: props.calculatorPage.url
@@ -126,7 +126,6 @@ const onSubmit = (): void => {
     const isFormValid = formEl.value?.checkValidity() ?? false;
     if (isFormValid) {
         calculate();
-        // oxlint-disable-next-line no-use-before-define
         nextTick(_scrollToResults);
     }
 };

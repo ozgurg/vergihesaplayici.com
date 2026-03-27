@@ -57,7 +57,6 @@ const { yazi } = Astro.props;
 const yazilarPage = YazilarPageDef();
 const yazilarSlugPage = YazilarSlugPageDef({ yazi });
 
-// oxlint-disable-next-line no-magic-numbers
 const yazilar = (await getYazilar()).filter(_yazi => _yazi.slug !== yazi.slug).slice(0, 6);
 const yazilarForArticlesGrid = mapYazilarForArticlesGridComponent(yazilar);
 

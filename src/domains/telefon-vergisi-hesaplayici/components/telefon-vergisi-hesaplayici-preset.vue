@@ -39,12 +39,13 @@
 
                 <div class="calculator-result-row">
                     <inner-container class="calculator-result-row-primary">
-                        <calculator-result-list
+                        <lazy-calculator-result-list
                             ref="resultsEl"
                             :items="resultList!" />
-                        <affordability-alert :price="results.prices.taxAdded" />
 
-                        <calculator-charts :charts="[
+                        <lazy-affordability-alert :price="results.prices.taxAdded" />
+
+                        <lazy-calculator-charts :charts="[
                             {
                                 title: 'Telefon-Vergi',
                                 props: {
@@ -59,12 +60,12 @@
                             }
                         ]" />
 
-                        <calculator-quick-share
+                        <lazy-calculator-quick-share
                             :url="props.presetPage.url"
                             @click:other="isCalculatorShareModalOpened = true" />
 
                         <!-- 🤮 -->
-                        <calculator-share-modal
+                        <lazy-calculator-share-modal
                             v-model="isCalculatorShareModalOpened"
                             :link="{
                                 url: props.presetPage.url
@@ -79,10 +80,11 @@
                     </inner-container>
 
                     <div class="calculator-result-row-secondary">
-                        <calculator-last-update-alert
+                        <lazy-calculator-last-update-alert
                             :date="LAST_UPDATE"
                             :align-to-label="false" />
-                        <estimated-calculation-alert />
+
+                        <lazy-estimated-calculation-alert />
                     </div>
                 </div>
             </div>
@@ -131,8 +133,7 @@ const props = defineProps<Props>();
 
 const PRESET_OPTIONS: FormCheckGroupItem[] = props.preset.options.map((_option, _index) => ({
     title: _option.title,
-    // oxlint-disable-next-line no-non-null-assertion
-    description: formatMoney(_option.form.price!, _option.form.currency!),
+    description: formatMoney(_option.form.price, _option.form.currency),
     input: {
         value: _index
     }

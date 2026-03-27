@@ -59,12 +59,12 @@
 
                 <div class="calculator-result-row">
                     <inner-container class="calculator-result-row-primary">
-                        <calculator-result-list
+                        <lazy-calculator-result-list
                             ref="resultsEl"
                             :items="resultList!" />
-                        <affordability-alert :price="results.prices.taxAdded" />
+                        <lazy-affordability-alert :price="results.prices.taxAdded" />
 
-                        <calculator-charts :charts="[
+                        <lazy-calculator-charts :charts="[
                             {
                                 title: 'Telefon-Vergi',
                                 props: {
@@ -79,12 +79,12 @@
                             }
                         ]" />
 
-                        <calculator-quick-share
+                        <lazy-calculator-quick-share
                             :url="props.calculatorPage.url"
                             @click:other="isCalculatorShareModalOpened = true" />
 
                         <!-- 🤮 -->
-                        <calculator-share-modal
+                        <lazy-calculator-share-modal
                             v-model="isCalculatorShareModalOpened"
                             :link="{
                                 url: props.calculatorPage.url
@@ -96,7 +96,7 @@
                     </inner-container>
 
                     <div class="calculator-result-row-secondary">
-                        <estimated-calculation-alert />
+                        <lazy-estimated-calculation-alert />
                     </div>
                 </div>
             </div>
@@ -161,7 +161,6 @@ const onSubmit = (): void => {
     const isFormValid = formEl.value?.checkValidity() ?? false;
     if (isFormValid) {
         calculate();
-        // oxlint-disable-next-line no-use-before-define
         nextTick(_scrollToResults);
     }
 };

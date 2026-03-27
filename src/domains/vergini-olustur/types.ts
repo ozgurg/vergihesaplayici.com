@@ -36,10 +36,9 @@ export type Prices = {
 
 
 // DB
-// oxlint-disable-next-line no-shadow
-export type Form<TaxItem> = {
+export type Form<T> = {
     basePrice: number;
-    taxItems: TaxItem[];
+    taxItems: T[];
 };
 
 

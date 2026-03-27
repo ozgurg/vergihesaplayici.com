@@ -1,5 +1,3 @@
-/* oxlint-disable extensions */
-
 export { default as icon_share } from "remixicon/icons/System/share-2-line.svg?raw";
 export { default as icon_close } from "remixicon/icons/System/close-line.svg?raw";
 export { default as icon_chevronDown } from "remixicon/icons/Arrows/arrow-down-s-line.svg?raw";
