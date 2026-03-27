@@ -1,3 +1,5 @@
+import type { Graph, Thing, WithContext } from "schema-dts";
+
 export type HtmlString = string;
 
 export type SvgFile = `${string}.svg`;
@@ -7,6 +9,8 @@ export type SvgIcon = string;
 export type Icon = SvgFile | SvgIcon;
 
 export type Heading = `h${number}` | string;
+
+export type RequireSome<T, K extends keyof T> = Required<Pick<T, K>> & Partial<Omit<T, K>>;
 
 
 export type ExchangeRates = {
@@ -34,6 +38,5 @@ export type Head = {
     description: string;
     canonicalUrl: URL;
     ogImageUrl: ReturnType<typeof staticSiteUrl> | null;
-    // oxlint-disable-next-line typescript/consistent-type-imports
-    schema?: import("schema-dts").Thing | import("schema-dts").WithContext<import("schema-dts").Thing> | import("schema-dts").Graph;
+    schema: Thing | WithContext<Thing> | Graph;
 };

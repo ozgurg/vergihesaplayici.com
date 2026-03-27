@@ -24,14 +24,14 @@ import { icon_check } from "@/utils/icons.js";
 
 const COPIED_FLASH_TIMEOUT_IN_MS = 1_000;
 
-const url = inject<URL>("url");
+// oxlint-disable-next-line typescript/no-non-null-assertion
+const url = inject<URL>("url")!;
 const isCopied = ref<boolean>(false);
 
 let copiedTimeout: ReturnType<typeof setTimeout> | null = null;
 
 const _copy = (): Promise<void> => {
-    // oxlint-disable-next-line no-non-null-assertion
-    return copyUrlToClipboard(url!);
+    return copyUrlToClipboard(url);
 };
 
 const _resetCopyState = (): void => {

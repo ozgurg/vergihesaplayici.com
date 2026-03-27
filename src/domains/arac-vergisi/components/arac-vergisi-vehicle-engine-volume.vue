@@ -21,7 +21,6 @@
 </template>
 
 <script lang="ts" setup>
-// oxlint-disable-next-line consistent-type-imports
 import type { Item as FormCheckProps } from "@/components/common/form/form-check-group.vue";
 import type { VehicleEngineVolume, VehicleType } from "@/domains/arac-vergisi/types.js";
 import {

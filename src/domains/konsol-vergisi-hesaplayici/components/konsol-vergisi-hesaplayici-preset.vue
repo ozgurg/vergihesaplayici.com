@@ -130,8 +130,7 @@ const props = defineProps<Props>();
 
 const PRESET_OPTIONS: FormCheckGroupItem[] = props.preset.options.map((_option, _index) => ({
     title: _option.title,
-    // oxlint-disable-next-line no-non-null-assertion
-    description: formatMoney(_option.form.price!, _option.form.currency!),
+    description: formatMoney(_option.form.price, _option.form.currency),
     input: {
         value: _index
     }

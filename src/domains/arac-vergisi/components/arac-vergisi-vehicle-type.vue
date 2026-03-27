@@ -22,7 +22,6 @@
 </template>
 
 <script lang="ts" setup>
-// oxlint-disable extensions
 import type {
     Item as FormCheckProps,
     Props as FormCheckGroupProps

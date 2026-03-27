@@ -1,4 +1,3 @@
-// oxlint-disable func-names
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
     _UNIT_TEST_ONLY_clearDateFormatterCache,
@@ -38,7 +37,7 @@ describe("utils/formatter.js", () => {
                 format = mockFormat;
             }
 
-            const numberFormatSpy = vi.spyOn(Intl, "NumberFormat").mockImplementation(function() {
+            const numberFormatSpy = vi.spyOn(Intl, "NumberFormat").mockImplementation(function _() {
                 return new MockNumberFormat();
             });
 
@@ -56,7 +55,7 @@ describe("utils/formatter.js", () => {
                 format = mockFormat;
             }
 
-            const numberFormatSpy = vi.spyOn(Intl, "NumberFormat").mockImplementation(function() {
+            const numberFormatSpy = vi.spyOn(Intl, "NumberFormat").mockImplementation(function _() {
                 return new MockNumberFormat();
             });
 
@@ -79,7 +78,7 @@ describe("utils/formatter.js", () => {
                 format = mockFormat;
             }
 
-            vi.spyOn(Intl, "NumberFormat").mockImplementation(function() {
+            vi.spyOn(Intl, "NumberFormat").mockImplementation(function _() {
                 return new MockNumberFormat();
             });
 
@@ -102,7 +101,7 @@ describe("utils/formatter.js", () => {
                 format = mockFormat;
             }
 
-            vi.spyOn(Intl, "NumberFormat").mockImplementation(function() {
+            vi.spyOn(Intl, "NumberFormat").mockImplementation(function _() {
                 return new MockNumberFormat();
             });
 
@@ -117,7 +116,7 @@ describe("utils/formatter.js", () => {
                 format = mockFormat;
             }
 
-            vi.spyOn(Intl, "NumberFormat").mockImplementation(function() {
+            vi.spyOn(Intl, "NumberFormat").mockImplementation(function _() {
                 return new MockNumberFormat();
             });
 
@@ -132,7 +131,7 @@ describe("utils/formatter.js", () => {
                 format = mockFormat;
             }
 
-            vi.spyOn(Intl, "NumberFormat").mockImplementation(function() {
+            vi.spyOn(Intl, "NumberFormat").mockImplementation(function _() {
                 return new MockNumberFormat();
             });
 
@@ -147,7 +146,7 @@ describe("utils/formatter.js", () => {
                 format = mockFormat;
             }
 
-            const numberFormatSpy = vi.spyOn(Intl, "NumberFormat").mockImplementation(function() {
+            const numberFormatSpy = vi.spyOn(Intl, "NumberFormat").mockImplementation(function _() {
                 return new MockNumberFormat();
             });
 
@@ -165,7 +164,7 @@ describe("utils/formatter.js", () => {
                 format = mockFormat;
             }
 
-            vi.spyOn(Intl, "NumberFormat").mockImplementation(function() {
+            vi.spyOn(Intl, "NumberFormat").mockImplementation(function _() {
                 return new MockNumberFormat();
             });
 
@@ -195,7 +194,7 @@ describe("utils/formatter.js", () => {
                 format = mockFormat;
             }
 
-            const dateTimeFormatSpy = vi.spyOn(Intl, "DateTimeFormat").mockImplementation(function() {
+            const dateTimeFormatSpy = vi.spyOn(Intl, "DateTimeFormat").mockImplementation(function _() {
                 return new MockDateTimeFormat();
             });
 
@@ -213,7 +212,7 @@ describe("utils/formatter.js", () => {
                 format = mockFormat;
             }
 
-            vi.spyOn(Intl, "DateTimeFormat").mockImplementation(function() {
+            vi.spyOn(Intl, "DateTimeFormat").mockImplementation(function _() {
                 return new MockDateTimeFormat();
             });
 

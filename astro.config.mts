@@ -1,4 +1,3 @@
-// oxlint-disable no-non-null-assertion
 import path, { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "astro/config";
@@ -22,9 +21,10 @@ const {
     SERVER_PORT,
     SERVER_HOST,
     URL_BASE
+// oxlint-disable-next-line typescript/no-non-null-assertion
 } = loadEnv(process.env.NODE_ENV!, process.cwd(), "");
 
-// oxlint-disable-next-line no-anonymous-default-export no-default-export
+// oxlint-disable-next-line import/no-default-export
 export default defineConfig({
     prefetch: {
         prefetchAll: true,
@@ -35,6 +35,7 @@ export default defineConfig({
     },
     server: {
         host: SERVER_HOST,
+        // oxlint-disable-next-line typescript/no-non-null-assertion
         port: Number.parseInt(SERVER_PORT!, 10)
     },
     build: {

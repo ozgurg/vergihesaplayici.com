@@ -12,9 +12,9 @@ const DEBUG = import.meta.env.DEV;
 const fontCache = new Map<string, Font>();
 const loadFont = async (url: `https://${string}.woff`, name: Font["name"]): Promise<Font> => {
     const cacheKey = `${name}-${url}`;
-    if (fontCache.has(cacheKey)) {
-        // oxlint-disable-next-line no-non-null-assertion
-        return fontCache.get(cacheKey)!;
+    const cachedFont = fontCache.get(cacheKey);
+    if (cachedFont) {
+        return cachedFont;
     }
     const font = await fetch(url)
         .then(async _response => ({

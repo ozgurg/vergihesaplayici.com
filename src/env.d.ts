@@ -27,7 +27,6 @@ interface ImportMeta {
 }
 
 declare global {
-    /* oxlint-disable no-var vars-on-top */
     // noinspection ES6ConvertVarToLetConst
     var __EXCHANGE_RATES__: ExchangeRates;
 }

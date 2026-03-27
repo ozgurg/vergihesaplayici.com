@@ -45,21 +45,17 @@ export const YazilarSlugPageDef: _PageDef = ({ yazi }): Page => {
     const title = yazi.title;
     const url = siteUrl(`/yazilar/${yazi.slug}`);
 
-    let breadcrumbs;
     const isVergiTuru = /\[\d{4}]$/.test(yazi.title);
-    // oxlint-disable-next-line unicorn/prefer-ternary
-    if (isVergiTuru) {
-        breadcrumbs = [
+    const breadcrumbs = isVergiTuru ?
+        [
             ...parentPage.breadcrumbs,
             { title: "Vergi Türleri", url: siteUrl("/yazilar/vergi-turleri") },
             { title, url }
-        ];
-    } else {
-        breadcrumbs = [
+        ] :
+        [
             ...parentPage.breadcrumbs,
             { title, url }
         ];
-    }
 
     return {
         id,

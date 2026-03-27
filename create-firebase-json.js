@@ -1,3 +1,5 @@
+// oxlint-disable no-unused-vars
+
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -5,7 +7,6 @@ import { fileURLToPath } from "node:url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// oxlint-disable-next-line no-unused-vars
 const objectToCspHeader = object => {
     const cspHeader = [];
     for (const [_key, _values] of Object.entries(object)) {
@@ -153,7 +154,6 @@ const redirections301 = [
     ["telefon-vergisi-hesaplayici/iphone-12", "telefon-vergisi-hesaplayici/apple-iphone-12"]
 ];
 
-// oxlint-disable-next-line no-unused-vars
 const cspNonce = fs.readFileSync(path.join(__dirname, "csp-nonce.txt"), "utf8");
 
 const firebaseJson = {

@@ -13,14 +13,14 @@
 </template>
 
 <script lang="ts" setup>
-const url = inject<URL>("url");
+// oxlint-disable-next-line typescript/no-non-null-assertion
+const url = inject<URL>("url")!;
 const isLoading = ref<boolean>(false);
 
 const _share = (): Promise<void> => {
     return shareUrl({
         text: document.title,
-        // oxlint-disable-next-line no-non-null-assertion
-        url: url!
+        url: url
     });
 };
 

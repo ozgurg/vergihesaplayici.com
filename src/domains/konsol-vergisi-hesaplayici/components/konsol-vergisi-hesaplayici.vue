@@ -160,7 +160,6 @@ const onSubmit = (): void => {
     const isFormValid = formEl.value?.checkValidity() ?? false;
     if (isFormValid) {
         calculate();
-        // oxlint-disable-next-line no-use-before-define
         nextTick(_scrollToResults);
     }
 };

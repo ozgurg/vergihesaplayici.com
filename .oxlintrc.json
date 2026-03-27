@@ -19,6 +19,7 @@
     "rules": {
         "node/no-process-env": "off",
 
+        "import/no-nodejs-modules": "off",
         "import/no-named-export": "off",
         "import/unambiguous": "off",
         "import/group-exports": "off",
@@ -49,6 +50,7 @@
                 "allowSeparateTypeImports": true
             }
         ],
+        "eslint/no-use-before-define": "off",
         "eslint/new-cap": [
             "error",
             {
@@ -119,7 +121,8 @@
                 "typescript/no-explicit-any": "off",
                 "typescript/no-extraneous-class": "off",
                 "eslint/no-constructor-return": "off",
-                "eslint/max-classes-per-file": "off"
+                "eslint/max-classes-per-file": "off",
+                "eslint/no-empty-function": "off"
             }
         },
         {
@@ -133,19 +136,12 @@
         {
             "files": [
                 "!src/**"
-            ],
-            "rules": {
-                "import/no-nodejs-modules": "off"
-            }
+            ]
         },
         {
             "files": [
                 "src/integrations/**"
-            ],
-            "rules": {
-                "import/no-relative-parent-imports": "off",
-                "import/no-nodejs-modules": "off"
-            }
+            ]
         }
     ]
 }

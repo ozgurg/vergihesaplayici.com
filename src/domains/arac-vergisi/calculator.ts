@@ -203,7 +203,7 @@ export class Calculator {
 
         // OtvRate[]
         if (this.vehicleEngineVolume !== null && this.vehicleEngineVolume in rateData) {
-            // oxlint-disable-next-line no-explicit-any
+            // oxlint-disable-next-line typescript/no-explicit-any
             const rates = (rateData as any)[this.vehicleEngineVolume];
             if (rates && Array.isArray(rates)) {
                 for (const _rate of rates) {

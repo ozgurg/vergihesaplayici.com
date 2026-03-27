@@ -141,11 +141,10 @@ const chartData = computed<ChartDataItem[]>(() => {
     const scale = 360 / totalAdjusted;
 
     return props.items.map((item, i) => {
-        // oxlint-disable-next-line no-non-null-assertion
+        // oxlint-disable-next-line typescript/no-non-null-assertion
         const angle = adjustedAngles[i]! * scale;
         const startAngle = currentAngle;
         const endAngle = currentAngle + angle;
-        // oxlint-disable-next-line no-use-before-define
         const pathData = _createArcPath({ centerX, centerY, radius, startAngle, endAngle });
         const percentage = Number((item.value / total.value * 100).toFixed(2));
 

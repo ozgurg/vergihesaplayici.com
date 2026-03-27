@@ -18,7 +18,6 @@ import type { HtmlAttrs_div } from "@/types/html.js";
 
 const MD_BREAKPOINT_MAX_WIDTH_IN_PIXELS = 860;
 const VISIBLE_THRESHOLD_RATIO = .75;
-// oxlint-disable-next-line no-magic-numbers
 const OBSERVER_THRESHOLDS = [0, .75, 1];
 
 export type Props = {
@@ -50,7 +49,7 @@ const _updateObserverBasedOnResolution = (): void => {
 const _setupObservers = (): void => {
     intersectionObserver = new IntersectionObserver(
         ([entry]: IntersectionObserverEntry[]) => {
-            // oxlint-disable-next-line no-non-null-assertion
+            // oxlint-disable-next-line typescript/no-non-null-assertion
             isVisible.value = entry!.intersectionRatio >= VISIBLE_THRESHOLD_RATIO;
         },
         { threshold: OBSERVER_THRESHOLDS }

@@ -80,7 +80,6 @@ describe("utils/exchange-rates.js", () => {
         });
 
         it("handles non-ok response status and return fallback rates", async () => {
-            // oxlint-disable-next-line no-empty-function
             const consoleWarnSpy = vi.spyOn(console, "warn").mockImplementation(() => {});
 
             mockFetch.mockResolvedValueOnce({
@@ -110,7 +109,6 @@ describe("utils/exchange-rates.js", () => {
         });
 
         it("handles network error in development mode and return fallback rates", async () => {
-            // oxlint-disable-next-line no-empty-function
             const consoleWarnSpy = vi.spyOn(console, "warn").mockImplementation(() => {});
 
             // Mock `import.meta.env.DEV` to be true

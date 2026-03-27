@@ -1,5 +1,3 @@
-/* oxlint-disable no-magic-numbers */
-
 export const PLACEHOLDERS = [
     "Nefes alma vergisi",
     "Zart zurt vergisi",
@@ -52,6 +50,6 @@ export const pickRandomPlaceholder = (): Placeholder => {
         queue = shuffleArray(PLACEHOLDERS);
         index = 0;
     }
-    // oxlint-disable-next-line no-non-null-assertion
+    // oxlint-disable-next-line typescript/no-non-null-assertion
     return queue[index++]!;
 };

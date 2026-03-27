@@ -19,7 +19,8 @@ import type {
 import { icon_share } from "@/utils/icons.js";
 
 const screenshotEl = inject<Ref<CalculatorShareModalScreenshotTabScreenshotInstance>>("screenshotEl");
-const screenshotFileName = inject<string>("screenshotFileName");
+// oxlint-disable-next-line typescript/no-non-null-assertion
+const screenshotFileName = inject<string>("screenshotFileName")!;
 const isLoading = ref<boolean>(false);
 
 const _capture = async (): Promise<Blob> => {
@@ -30,8 +31,7 @@ const _capture = async (): Promise<Blob> => {
 const _share = (blob: Blob): Promise<void> => {
     return sharePngFile({
         text: document.title,
-        // oxlint-disable-next-line no-non-null-assertion
-        fileName: screenshotFileName!,
+        fileName: screenshotFileName,
         lastModifiedDate: new Date(),
         blob
     });
