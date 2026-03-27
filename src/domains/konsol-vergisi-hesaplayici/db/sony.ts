@@ -16,15 +16,15 @@ export const presets: Omit<Preset, "brandId">[] = [
         options: [
             {
                 title: "825GB – Disksiz",
-                form: { // https://blog.playstation.com/2022/08/25/ps5-price-to-increase-in-select-markets-due-to-global-economic-environment-including-high-inflation-rates/
-                    price: 499.99,
+                form: { // https://blog.playstation.com/2026/03/27/new-price-changes-for-ps5-ps5-pro-and-playstation-portal-remote-player/
+                    price: 599.99,
                     currency: "EUR"
                 }
             },
             {
                 title: "825GB – Diskli",
-                form: { // https://blog.playstation.com/2022/08/25/ps5-price-to-increase-in-select-markets-due-to-global-economic-environment-including-high-inflation-rates/
-                    price: 549.99,
+                form: { // https://blog.playstation.com/2026/03/27/new-price-changes-for-ps5-ps5-pro-and-playstation-portal-remote-player/
+                    price: 649.99,
                     currency: "EUR"
                 }
             }
@@ -57,8 +57,8 @@ export const presets: Omit<Preset, "brandId">[] = [
         options: [
             {
                 title: "2TB – Disksiz",
-                form: { // https://www.youtube.com/live/X24BzyzQQ-8?t=1096
-                    price: 799.99,
+                form: { // https://blog.playstation.com/2026/03/27/new-price-changes-for-ps5-ps5-pro-and-playstation-portal-remote-player/
+                    price: 899.99,
                     currency: "EUR"
                 }
             }
