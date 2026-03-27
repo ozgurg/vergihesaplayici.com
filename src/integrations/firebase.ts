@@ -1,7 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { initializeAnalytics } from "firebase/analytics";
 import { initializePerformance } from "firebase/performance";
-import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
 
 export const app = initializeApp({
     apiKey: import.meta.env.PUBLIC_FIREBASE_API_KEY,
@@ -17,8 +16,3 @@ export const app = initializeApp({
 export const analytics = initializeAnalytics(app);
 
 export const performance = initializePerformance(app);
-
-export const appCheck = initializeAppCheck(app, {
-    provider: new ReCaptchaV3Provider(import.meta.env.PUBLIC_RECAPTCHA_V3_PUBLIC_KEY),
-    isTokenAutoRefreshEnabled: true
-});
