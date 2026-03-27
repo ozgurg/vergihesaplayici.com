@@ -13,6 +13,7 @@ import { EnumChangefreq } from "sitemap/dist/lib/types";
 
 import autoImportPlugin from "unplugin-auto-import/vite";
 import autoImportVueComponentsPlugin from "unplugin-vue-components/vite";
+import lazyVueComponentsPlugin, { lazyVueComponentsResolver } from "./src/plugins/lazy-vue-components.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -133,6 +134,15 @@ export default defineConfig({
             }),
             autoImportVueComponentsPlugin({
                 dts: "unplugin-vue-components.d.ts",
+                dirs: [
+                    "src/components",
+                    "src/domains/**/components"
+                ],
+                resolvers: [
+                    lazyVueComponentsResolver()
+                ]
+            }),
+            lazyVueComponentsPlugin({
                 dirs: [
                     "src/components",
                     "src/domains/**/components"

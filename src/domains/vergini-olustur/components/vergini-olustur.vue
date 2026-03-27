@@ -69,15 +69,15 @@
 
                 <div class="calculator-result-row">
                     <inner-container class="calculator-result-row-primary">
-                        <calculator-result-list
+                        <lazy-calculator-result-list
                             ref="resultsEl"
                             :items="resultList!" />
 
-                        <calculator-quick-share
+                        <lazy-calculator-quick-share
                             :url="props.calculatorPage.url"
                             @click:other="isCalculatorShareModalOpened = true" />
 
-                        <calculator-share-modal
+                        <lazy-calculator-share-modal
                             v-model="isCalculatorShareModalOpened"
                             :link="{
                                 url: props.calculatorPage.url
@@ -104,10 +104,6 @@ import type { CalculationResults, Form, ResultList, ScreenshotData, TaxItem } fr
 import { calculateResults } from "@/domains/vergini-olustur/utils/calculate-results.js";
 import { pickRandomPlaceholder } from "@/domains/vergini-olustur/utils/pick-random-placeholder.js";
 import { VueDraggable } from "vue-draggable-plus";
-
-const CalculatorResultList = defineAsyncComponent(() => import("@/components/calculator-result-list.vue"));
-const CalculatorQuickShare = defineAsyncComponent(() => import("@/components/calculator-quick-share.vue"));
-const CalculatorShareModal = defineAsyncComponent(() => import("@/components/calculator-share-modal/calculator-share-modal.vue"));
 
 let lastId = 0;
 

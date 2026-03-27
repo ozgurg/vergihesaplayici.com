@@ -59,12 +59,12 @@
 
                 <div class="calculator-result-row">
                     <inner-container class="calculator-result-row-primary">
-                        <calculator-result-list
+                        <lazy-calculator-result-list
                             ref="resultsEl"
                             :items="resultList!" />
-                        <affordability-alert :price="results.prices.taxAdded" />
+                        <lazy-affordability-alert :price="results.prices.taxAdded" />
 
-                        <calculator-charts :charts="[
+                        <lazy-calculator-charts :charts="[
                             {
                                 title: 'Telefon-Vergi',
                                 props: {
@@ -79,12 +79,12 @@
                             }
                         ]" />
 
-                        <calculator-quick-share
+                        <lazy-calculator-quick-share
                             :url="props.calculatorPage.url"
                             @click:other="isCalculatorShareModalOpened = true" />
 
                         <!-- 🤮 -->
-                        <calculator-share-modal
+                        <lazy-calculator-share-modal
                             v-model="isCalculatorShareModalOpened"
                             :link="{
                                 url: props.calculatorPage.url
@@ -96,7 +96,7 @@
                     </inner-container>
 
                     <div class="calculator-result-row-secondary">
-                        <estimated-calculation-alert />
+                        <lazy-estimated-calculation-alert />
                     </div>
                 </div>
             </div>
@@ -120,11 +120,6 @@ import type {
 import type { ExchangeRates } from "@/types/common.js";
 import { calculateResults } from "@/domains/telefon-vergisi-hesaplayici/utils/calculate-results.js";
 import { DEFAULT_FORM, LAST_UPDATE, PRICE_LABEL_BY_MODE } from "@/domains/telefon-vergisi-hesaplayici/config.js";
-
-const CalculatorResultList = defineAsyncComponent(() => import("@/components/calculator-result-list.vue"));
-const CalculatorCharts = defineAsyncComponent(() => import("@/components/calculator-charts.vue"));
-const CalculatorQuickShare = defineAsyncComponent(() => import("@/components/calculator-quick-share.vue"));
-const CalculatorShareModal = defineAsyncComponent(() => import("@/components/calculator-share-modal/calculator-share-modal.vue"));
 
 export type Props = {
     EXCHANGE_RATES: ExchangeRates;

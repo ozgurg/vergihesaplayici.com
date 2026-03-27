@@ -50,16 +50,16 @@
 
                 <div class="calculator-result-row">
                     <inner-container class="calculator-result-row-primary">
-                        <calculator-result-list
+                        <lazy-calculator-result-list
                             ref="resultsEl"
                             :items="resultList!" />
 
-                        <calculator-quick-share
+                        <lazy-calculator-quick-share
                             :url="props.calculatorPage.url"
                             @click:other="isCalculatorShareModalOpened = true" />
 
                         <!-- 🤮 -->
-                        <calculator-share-modal
+                        <lazy-calculator-share-modal
                             v-model="isCalculatorShareModalOpened"
                             :link="{
                                 url: props.calculatorPage.url
@@ -84,10 +84,6 @@ import type { CalculatorPage } from "@/types/page-def.js";
 import type { CalculationResults, Form, ResultList, ScreenshotData } from "@/domains/kdv-hesaplayici/types.js";
 import { calculateResults } from "@/domains/kdv-hesaplayici/utils/calculate-results.js";
 import { DEFAULT_FORM } from "@/domains/kdv-hesaplayici/config.js";
-
-const CalculatorResultList = defineAsyncComponent(() => import("@/components/calculator-result-list.vue"));
-const CalculatorQuickShare = defineAsyncComponent(() => import("@/components/calculator-quick-share.vue"));
-const CalculatorShareModal = defineAsyncComponent(() => import("@/components/calculator-share-modal/calculator-share-modal.vue"));
 
 export type Props = {
     calculatorPage: CalculatorPage;

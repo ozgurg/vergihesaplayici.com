@@ -66,11 +66,11 @@
 
                 <div class="calculator-result-row">
                     <inner-container class="calculator-result-row-primary">
-                        <calculator-result-list
+                        <lazy-calculator-result-list
                             ref="resultsEl"
                             :items="resultList!" />
 
-                        <calculator-charts :charts="[
+                        <lazy-calculator-charts :charts="[
                             {
                                 title: 'Sipariş-Vergi',
                                 props: {
@@ -85,12 +85,12 @@
                             }
                         ]" />
 
-                        <calculator-quick-share
+                        <lazy-calculator-quick-share
                             :url="props.calculatorPage.url"
                             @click:other="isCalculatorShareModalOpened = true" />
 
                         <!-- 🤮 -->
-                        <calculator-share-modal
+                        <lazy-calculator-share-modal
                             v-model="isCalculatorShareModalOpened"
                             :link="{
                                 url: props.calculatorPage.url
@@ -122,11 +122,6 @@ import type {
 } from "@/domains/gumruk-vergisi/types.js";
 import { calculateResults } from "@/domains/gumruk-vergisi/utils/calculate-results.js";
 import { DEFAULT_FORM, LAST_UPDATE, TAX_EXEMPTION_PRICE_LIMIT_IN_EUR } from "@/domains/gumruk-vergisi/config.js";
-
-const CalculatorResultList = defineAsyncComponent(() => import("@/components/calculator-result-list.vue"));
-const CalculatorCharts = defineAsyncComponent(() => import("@/components/calculator-charts.vue"));
-const CalculatorQuickShare = defineAsyncComponent(() => import("@/components/calculator-quick-share.vue"));
-const CalculatorShareModal = defineAsyncComponent(() => import("@/components/calculator-share-modal/calculator-share-modal.vue"));
 
 export type Props = {
     EXCHANGE_RATES: ExchangeRates;
