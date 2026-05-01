@@ -20,7 +20,7 @@ const isLoading = ref<boolean>(false);
 const _share = (): Promise<void> => {
     return shareUrl({
         text: document.title,
-        url: url
+        url
     });
 };
 

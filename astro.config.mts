@@ -1,5 +1,4 @@
-import path, { dirname } from "node:path";
-import { fileURLToPath } from "node:url";
+import path from "node:path";
 import { defineConfig } from "astro/config";
 import { loadEnv } from "vite";
 import packageJson from "./package.json" with { type: "json" };
@@ -14,9 +13,6 @@ import { EnumChangefreq } from "sitemap";
 import autoImportPlugin from "unplugin-auto-import/vite";
 import autoImportVueComponentsPlugin from "unplugin-vue-components/vite";
 import lazyVueComponentsPlugin, { lazyVueComponentsResolver } from "./src/plugins/lazy-vue-components.js";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 const {
     SERVER_PORT,
@@ -151,8 +147,8 @@ export default defineConfig({
         ],
         resolve: {
             alias: {
-                "@": path.resolve(__dirname, "src"),
-                "@root": path.resolve(__dirname, ".")
+                "@": path.resolve(import.meta.dirname, "src"),
+                "@root": path.resolve(import.meta.dirname, ".")
             }
         },
         css: {

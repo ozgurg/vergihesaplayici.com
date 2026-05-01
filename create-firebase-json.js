@@ -1,9 +1,5 @@
 import fs from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 // [0] = source (from)
 // [1] = destination (to)
@@ -268,6 +264,6 @@ const firebaseJson = {
 };
 
 
-const outputPath = path.join(__dirname, "firebase.json");
+const outputPath = path.join(import.meta.dirname, "firebase.json");
 fs.writeFileSync(outputPath, JSON.stringify(firebaseJson, null, 2));
 console.info("[create-firebase-json] ✅ Done!");

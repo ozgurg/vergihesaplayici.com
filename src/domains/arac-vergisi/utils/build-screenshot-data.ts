@@ -24,7 +24,7 @@ export const buildScreenshotData = (form: Form, results: ResultList): Screenshot
         });
     }
     return {
-        input: input,
+        input,
         output: results
     };
 };

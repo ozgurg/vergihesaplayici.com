@@ -1,9 +1,9 @@
 import { describe, expect, it, vi } from "vitest";
 import { ariaCurrentValue, isCurrentPage, siteUrl, staticSiteUrl, staticUrl } from "@/utils/url.js";
 
-describe("utils/url.js", () => {
-    vi.mock("@root/package.json", () => ({ version: "1.2.3" }));
+vi.mock("@root/package.json", () => ({ version: "1.2.3" }));
 
+describe("utils/url.js", () => {
     describe("siteUrl", () => {
         it("returns base URL with a trailing slash when no path is provided", () => {
             expect(siteUrl().href).toBe("https://vergihesaplayici.com/");
