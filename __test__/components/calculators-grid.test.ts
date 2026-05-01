@@ -8,7 +8,7 @@ const CALCULATOR_PAGES = getCalculatorPages();
 
 describe("components/calculators-grid.vue", () => {
     it("renders all calculator pages as `<calculator-card-item />`", () => {
-        const wrapper = mount(CalculatorsGrid);
+        const wrapper = mount(CalculatorsGrid, { props: { titleTag: "h3" } });
 
         const calculatorCardItems = wrapper.findAllComponents(CalculatorCardItem as any);
 
@@ -18,6 +18,7 @@ describe("components/calculators-grid.vue", () => {
             const item = CALCULATOR_PAGES[_index]!;
             expect((_calculatorCardItem as any).props()).toEqual({
                 title: item.title,
+                titleTag: "h3",
                 description: item.summary,
                 url: item.url,
                 icon: item.icon

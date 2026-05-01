@@ -41,8 +41,8 @@ const mapThumbEntries = (
 // We'll need to duplicate the import statement for each domain because it requires literal strings
 
 // oxlint-disable import/first
-import telefonVergisiHesaplayici_thumbColors from "@root/.generated/telefon-vergisi-hesaplayici-thumb-colors.json" assert { type: "json" };
-import konsolVergisiHesaplayici_thumbColors from "@root/.generated/konsol-vergisi-hesaplayici-thumb-colors.json" assert { type: "json" };
+import telefonVergisiHesaplayici_thumbColors from "@root/.generated/telefon-vergisi-hesaplayici-thumb-colors.json" with { type: "json" };
+import konsolVergisiHesaplayici_thumbColors from "@root/.generated/konsol-vergisi-hesaplayici-thumb-colors.json" with { type: "json" };
 
 export const loadThumbs = async (domain: string): Promise<Thumb[]> => {
     let thumbColors: ThumbColors;

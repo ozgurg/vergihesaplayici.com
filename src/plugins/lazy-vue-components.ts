@@ -47,7 +47,7 @@ export const lazyVueComponentsResolver = () => {
     return (name: string) => {
         if (name.startsWith("Lazy")) {
             return {
-                name: name,
+                name,
                 from: "virtual:lazy-vue-components"
             };
         }

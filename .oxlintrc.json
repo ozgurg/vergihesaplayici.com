@@ -80,6 +80,7 @@
         "eslint/no-ternary": "off",
         "eslint/max-lines": "off",
         "eslint/no-console": "off",
+        "eslint/no-underscore-dangle": "off",
         "eslint/init-declarations": "off",
         "eslint/curly": [
             "error",
@@ -120,6 +121,7 @@
                 "typescript/no-non-null-assertion": "off",
                 "typescript/no-explicit-any": "off",
                 "typescript/no-extraneous-class": "off",
+                "typescript/explicit-member-accessibility": "off",
                 "eslint/no-constructor-return": "off",
                 "eslint/max-classes-per-file": "off",
                 "eslint/no-empty-function": "off"
