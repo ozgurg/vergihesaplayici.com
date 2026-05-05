@@ -75,6 +75,7 @@ const breadcrumbsSchema = page.breadcrumbs ? {
 <title>{TITLE}</title>
 
 <link rel="preload" as="font" type="font/woff2" href={interLatinNormalFontWoff2Url} crossorigin="anonymous" />
+<link rel="dns-prefetch" href="https://cdn.apitiny.net" />
 
 {dates?.created &&
 <meta name="published_time" content={toMetaContent(dates.created)} />
