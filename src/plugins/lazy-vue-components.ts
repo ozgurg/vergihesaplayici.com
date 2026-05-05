@@ -14,8 +14,8 @@ const getAllVueFiles = (folder: string, fileList: string[] = []): string[] => {
 
     const files = fs.readdirSync(fullFolderPath);
 
-    for (const file of files) {
-        const filePath = path.join(folder, file);
+    for (const _file of files) {
+        const filePath = path.join(folder, _file);
         const absolutePath = path.resolve(process.cwd(), filePath);
 
         if (fs.statSync(absolutePath).isDirectory()) {
@@ -34,24 +34,23 @@ const isTargetVueFile = (file: string, dirs: string[]): boolean => {
     }
 
     const normalizedFile = file.replaceAll("\\", "/");
-    return dirs.some(folder => {
+    return dirs.some(_folder => {
         // Simple regex conversion for globs: `**` -> `.*`
-        const regexStr = `^${folder.replaceAll("/", String.raw`\/`).replaceAll("**", ".*")}\\/.*\\.vue$`;
-        return new RegExp(regexStr).test(normalizedFile);
+        const regexString = `^${_folder.replaceAll("/", String.raw`\/`).replaceAll("**", ".*")}\\/.*\\.vue$`;
+        return new RegExp(regexString).test(normalizedFile);
     });
 };
 
-// Export the resolver so it can be easily used inside autoImportVueComponentsPlugin without boilerplate
+// Export the resolver so it can be easily used inside `autoImportVueComponentsPlugin` without boilerplate
 // oxlint-disable-next-line typescript/explicit-module-boundary-types
 export const lazyVueComponentsResolver = () => {
     return (name: string) => {
-        if (name.startsWith("Lazy")) {
-            return {
+        return name.startsWith("Lazy") ?
+            {
                 name,
                 from: "virtual:lazy-vue-components"
-            };
-        }
-        return null;
+            } :
+            null;
     };
 };
 
@@ -63,48 +62,56 @@ export default function lazyVueComponentsPlugin(options: LazyVueComponentsOption
     return {
         name: "lazy-vue-components",
         resolveId(id: string) {
-            if (id === virtualModuleId) {
-                return resolvedVirtualModuleId;
-            }
-            return null;
+            return id === virtualModuleId ?
+                resolvedVirtualModuleId :
+                null;
         },
         load(id: string) {
-            if (id === resolvedVirtualModuleId) {
-                const allFiles = getAllVueFiles("src");
-                const files = allFiles.filter(file => isTargetVueFile(file, options.dirs));
-
-                let code = `import { defineAsyncComponent } from 'vue';\n`;
-
-                const globPatterns = options.dirs.map(dir => `    "/${dir}/**/*.vue"`).join(",\n");
-                code += `const components = import.meta.glob([\n${globPatterns}\n]);\n`;
-
-                for (const file of files) {
-                    const basename = path.basename(file, ".vue");
-                    // Transform kebab-case or camelCase to PascalCase robustly
-                    const pascal = basename.replaceAll(/(^\w|-\w)/g, (c) => c.replace("-", "").toUpperCase());
-
-                    code += `export const Lazy${pascal} = defineAsyncComponent(components["/${file}"]);\n`;
-                }
-
-                return code;
+            if (id !== resolvedVirtualModuleId) {
+                return null;
             }
-            return null;
+
+            const allFiles = getAllVueFiles("src");
+            const files = allFiles.filter(_file => isTargetVueFile(_file, options.dirs));
+            const globPatterns = options.dirs.map(_dir => `"/${_dir}/**/*.vue"`).join(",\n");
+
+            //language=JS
+            let code = `
+                // noinspection ES6UnusedImports
+                import { defineAsyncComponent } from "vue";
+
+                // noinspection JSUnusedLocalSymbols
+                const components = import.meta.glob([${globPatterns}]);
+            `;
+
+            for (const _file of files) {
+                const basename = path.basename(_file, ".vue");
+                const pascalCaseComponentName = basename
+                    .replaceAll(/(^\w|-\w)/g, _component => _component.replace("-", "")
+                        .toUpperCase());
+
+                //language=JS
+                code += `
+                    export const Lazy${pascalCaseComponentName} = defineAsyncComponent(components["/${_file}"]);
+                `;
+            }
+
+            return code;
         },
         configureServer(server) {
-            // Watch for file additions and deletions to invalidate the virtual module dynamically during dev mode
-            server.watcher.on("add", (file) => {
-                if (isTargetVueFile(file, options.dirs)) {
-                    const mod = server.moduleGraph.getModuleById(resolvedVirtualModuleId);
-                    if (mod) {
-                        server.moduleGraph.invalidateModule(mod);
+            server.watcher.on("add", _file => {
+                if (isTargetVueFile(_file, options.dirs)) {
+                    const module = server.moduleGraph.getModuleById(resolvedVirtualModuleId);
+                    if (module) {
+                        server.moduleGraph.invalidateModule(module);
                     }
                 }
             });
-            server.watcher.on("unlink", (file) => {
-                if (isTargetVueFile(file, options.dirs)) {
-                    const mod = server.moduleGraph.getModuleById(resolvedVirtualModuleId);
-                    if (mod) {
-                        server.moduleGraph.invalidateModule(mod);
+            server.watcher.on("unlink", _file => {
+                if (isTargetVueFile(_file, options.dirs)) {
+                    const module = server.moduleGraph.getModuleById(resolvedVirtualModuleId);
+                    if (module) {
+                        server.moduleGraph.invalidateModule(module);
                     }
                 }
             });

@@ -148,12 +148,6 @@ const firebaseJson = {
             "**/.*",
             "**/node_modules/**"
         ],
-        rewrites: [
-            {
-                source: "**",
-                destination: "/404.html"
-            }
-        ],
         headers: [
             {
                 source: "**",
