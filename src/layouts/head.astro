@@ -30,7 +30,7 @@ const PAGE_URL = head.canonicalUrl;
 const OG_IMAGE = head.ogImageUrl ?? staticSiteUrl("/og/ana-sayfa.jpg");
 const MANIFEST_JSON = staticUrl("/manifest.json");
 
-const breadcrumbsSchema = page.breadcrumbs ? {
+const breadcrumbsSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: page.breadcrumbs.map((_item, _index) => ({
@@ -39,7 +39,7 @@ const breadcrumbsSchema = page.breadcrumbs ? {
         name: _item.title,
         item: _item.url.href
     }))
-} : null;
+};
 ---
 
 <meta charset="UTF-8" />
@@ -104,9 +104,8 @@ const breadcrumbsSchema = page.breadcrumbs ? {
 if("serviceWorker" in window.navigator){window.addEventListener("load",()=>{window.navigator.serviceWorker.register(SERVICE_WORKER_URL)});}
 </script>
 
-{head.schema && <script is:inline type="application/ld+json" set:html={JSON.stringify(head.schema)}></script>}
-
-{breadcrumbsSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbsSchema)}></script>}
+<script is:inline type="application/ld+json" set:html={JSON.stringify(head.schema)}></script>
+<script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbsSchema)}></script>
 
 <script>
     if (import.meta.env.PROD) {
