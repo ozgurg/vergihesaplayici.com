@@ -5,25 +5,6 @@ import interLatinNormalFontWoff2Url from "@fontsource-variable/inter/files/inter
 const SITE_NAME = "Vergi Hesaplayıcı";
 const IS_DEV_MODE = import.meta.env.DEV;
 
-const pad = (number: number): string => String(number).padStart(2, "0");
-
-const toMetaContent = (date: Date): string => {
-    const Y = date.getFullYear();
-    const M = pad(date.getMonth() + 1);
-    const D = pad(date.getDate());
-    const h = pad(date.getHours());
-    const m = pad(date.getMinutes());
-    const s = pad(date.getSeconds());
-
-    const offsetMin = -date.getTimezoneOffset();
-    const sign = offsetMin >= 0 ? "+" : "-";
-    const absMin = Math.abs(offsetMin);
-    const offH = pad(Math.floor(absMin / 60));
-    const offM = pad(absMin % 60);
-
-    return `${Y}-${M}-${D}T${h}:${m}:${s}${sign}${offH}:${offM}`;
-};
-
 const replacePlaceholderTexts = (text: string): string => {
     return text.replace("%site-title%", SITE_NAME);
 };
@@ -31,13 +12,9 @@ const replacePlaceholderTexts = (text: string): string => {
 const MAX_TITLE_LENGTH = 60;
 
 export type Props = {
-    page: Page;
-    dates?: {
-        created?: Date;
-        updated?: Date | null;
-    }
+    page: Page
 };
-const { page, dates } = Astro.props;
+const { page } = Astro.props;
 const { head } = page;
 
 let TITLE;
@@ -77,23 +54,10 @@ const breadcrumbsSchema = page.breadcrumbs ? {
 <link rel="preload" as="font" type="font/woff2" href={interLatinNormalFontWoff2Url} crossorigin="anonymous" />
 <link rel="dns-prefetch" href="https://cdn.apitiny.net" />
 
-{dates?.created &&
-<meta name="published_time" content={toMetaContent(dates.created)} />
-<meta itemprop="datePublished" content={toMetaContent(dates.created)} />
-<meta property="article:published_time" content={toMetaContent(dates.created)} />
-}
-
-{dates?.updated &&
-<meta name="modified_time" content={toMetaContent(dates.updated)} />
-<meta itemprop="dateModified" content={toMetaContent(dates.updated)} />
-<meta property="article:modified_time" content={toMetaContent(dates.updated)} />
-}
-
 <meta name="description" content={DESCRIPTION} />
 
 <meta name="format-detection" content="telephone=no" />
 <meta name="robots" content="index, follow" />
-<meta itemprop="url" content={BASE_URL.href} />
 
 <base href={BASE_URL.href} />
 <link href={PAGE_URL.href} rel="canonical" />

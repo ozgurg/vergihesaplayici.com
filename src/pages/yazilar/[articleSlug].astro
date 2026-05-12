@@ -67,9 +67,7 @@ const updatedDate = yazi.updatedDate ? parseDate(yazi.updatedDate) : null;
 const taxInfo = parseTitleAsTaxInfo(yazi.title);
 ---
 
-<AppLayout
-    page={yazilarSlugPage}
-    dates={{ created: yazi.createdDate, updated: yazi.updatedDate }}>
+<AppLayout page={yazilarSlugPage}>
     <PageHeader>
         <Container>
             <Breadcrumbs

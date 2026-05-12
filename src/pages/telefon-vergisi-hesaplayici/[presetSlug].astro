@@ -80,9 +80,7 @@ const calculateServerSide = () => {
 const initial = calculateServerSide();
 ---
 
-<AppLayout
-    page={telefonVergisiHesaplayiciPresetSlugPage}
-    dates={{ created: preset.releaseDate, updated: new Date(EXCHANGE_RATES.dateUpdated) }}>
+<AppLayout page={telefonVergisiHesaplayiciPresetSlugPage}>
     <PageHeader>
         <Container>
             <Breadcrumbs
