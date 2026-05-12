@@ -1,9 +1,12 @@
-import type { Page, PageDef } from "@/types/page-def.js";
+import type { Page } from "@/types/page-def.js";
 import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
 
-const parentPage = AnaSayfaPageDef();
+export const HesaplayicilarPageDef = (
+    options?: { schema: { items?: { url: URL }[] } } | null
+): Page => {
+    const homePage = AnaSayfaPageDef();
+    const parentPage = AnaSayfaPageDef();
 
-export const HesaplayicilarPageDef: PageDef = (): Page => {
     const id = "hesaplayicilar";
     const title = "Hesaplayıcılar";
     const url = siteUrl("/hesaplayicilar");
@@ -24,10 +27,27 @@ export const HesaplayicilarPageDef: PageDef = (): Page => {
             ogImageUrl: null,
             schema: {
                 "@context": "https://schema.org",
-                "@type": "CollectionPage",
-                name: title,
-                description: "Telefon ve oyun konsolu gibi farklı ürün gruplarının yurt içi ve yurt dışı fiyatlarına Türkiye'de ne kadar vergi uygulandığını hesaplayın.",
-                url: url.href
+                "@graph": [
+                    {
+                        "@type": "CollectionPage",
+                        "@id": `${url.href}#collectionpage`,
+                        "url": url.href,
+                        "name": title,
+                        "isPartOf": { "@id": `${parentPage.url.href}#website` },
+                        "about": { "@id": `${homePage.url.href}#organization` },
+                        "inLanguage": "tr-TR",
+                        "mainEntity": {
+                            "@type": "ItemList",
+                            "itemListElement": (options?.schema.items || []).map((_page, _index) => ({
+                                "@type": "ListItem",
+                                "position": _index + 1,
+                                "item": {
+                                    "@id": `${_page.url.href}#article`
+                                }
+                            }))
+                        }
+                    }
+                ]
             }
         }
     };

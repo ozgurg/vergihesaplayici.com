@@ -14,11 +14,13 @@ import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
 import { YazilarPageDef } from "@/domains/yazilar/page-def.js";
 import { getYazilar } from "@/domains/yazilar/db.js";
 import { mapYazilarForArticlesGridComponent } from "@/domains/yazilar/utils.js";
+import { getCalculatorPages } from "@/domains/hesaplayicilar/db.js";
 
 const anaSayfaPage = AnaSayfaPageDef();
 const hesaplayicilarPage = HesaplayicilarPageDef();
 const yazilarPage = YazilarPageDef();
 
+const calculatorPages = getCalculatorPages();
 const yazilar = (await getYazilar()).slice(0, 8);
 const yazilarForArticlesGrid = mapYazilarForArticlesGridComponent(yazilar);
 ---
@@ -52,7 +54,9 @@ const yazilarForArticlesGrid = mapYazilarForArticlesGridComponent(yazilar);
                     {hesaplayicilarPage.title}
                 </a>
             </Heading2>
-            <CalculatorsGrid titleTag="h3" />
+            <CalculatorsGrid
+                items={calculatorPages}
+                titleTag="h3" />
         </section>
 
         <div class="ta-ad-first ta-ad-last" ta-ad-container=""></div>

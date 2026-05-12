@@ -7,14 +7,24 @@ import Heading1 from "@/components/common/heading-1.vue";
 import ArticleLegalDisclaimerAlert from "@/components/article-legal-disclaimer-alert.vue";
 import ArticlesGrid from "@/components/articles-grid.vue";
 
-import { YazilarPageDef } from "@/domains/yazilar/page-def.js";
+import { YazilarPageDef, YazilarSlugPageDef } from "@/domains/yazilar/page-def.js";
 import { getYazilar } from "@/domains/yazilar/db.js";
 import { mapYazilarForArticlesGridComponent } from "@/domains/yazilar/utils.js";
 
-const yazilarPage = YazilarPageDef();
-
 const yazilar = await getYazilar();
 const yazilarForArticlesGrid = mapYazilarForArticlesGridComponent(yazilar);
+const yazilarForSchemaItems = yazilar.slice(0, 20).map(_yazi => {
+    const yazilarSlugPage = YazilarSlugPageDef({ yazi: _yazi });
+    return {
+        url: yazilarSlugPage.url
+    };
+});
+
+const yazilarPage = YazilarPageDef({
+    schema: {
+        items: yazilarForSchemaItems
+    }
+});
 ---
 
 <AppLayout page={yazilarPage}>

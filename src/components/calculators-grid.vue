@@ -1,6 +1,6 @@
 <template>
     <div class="calculators-grid">
-        <template v-for="_calculatorPage in CALCULATOR_PAGES" :key="_calculatorPage.url">
+        <template v-for="_calculatorPage in props.items" :key="_calculatorPage.url">
             <calculator-card-item
                 :title="_calculatorPage.title"
                 :title-tag="props.titleTag"
@@ -12,14 +12,14 @@
 </template>
 
 <script lang="ts" setup>
+import type { HtmlAttrs_div } from "@/types/html.js";
 import type { Props as CalculatorCardProps } from "@/components/calculator-card-item.vue";
-import { getCalculatorPages } from "@/domains/hesaplayicilar/db.js";
-
-const CALCULATOR_PAGES = getCalculatorPages();
+import type { CalculatorPage } from "@/types/page-def.js";
 
 export type Props = {
     titleTag: CalculatorCardProps["titleTag"]
-}
+    items: CalculatorPage[];
+} & /* @vue-ignore */ Partial<HtmlAttrs_div>;
 
 const props = defineProps<Props>();
 </script>

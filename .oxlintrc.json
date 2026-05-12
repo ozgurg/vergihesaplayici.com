@@ -137,6 +137,14 @@
         },
         {
             "files": [
+                "src/domains/**/page-def.ts"
+            ],
+            "rules": {
+                "import/no-cycle": "off"
+            }
+        },
+        {
+            "files": [
                 "!src/**"
             ]
         },

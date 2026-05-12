@@ -1,8 +1,10 @@
 import type { CalculatorPage, CalculatorPageDef } from "@/types/page-def.js";
 import { icon_aracVergisi as icon } from "@/utils/icons.js";
 import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
+import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def";
 
 export const AracVergisiPageDef: CalculatorPageDef = (): CalculatorPage => {
+    const homePage = AnaSayfaPageDef();
     const parentPage = HesaplayicilarPageDef();
 
     const id = "hesaplayici-arac";
@@ -29,17 +31,25 @@ export const AracVergisiPageDef: CalculatorPageDef = (): CalculatorPage => {
             ogImageUrl,
             schema: {
                 "@context": "https://schema.org",
-                "@type": "WebApplication",
-                name: title,
-                description: "Sıfır araç fiyatına göre ÖTV ve KDV tutarını hesaplayın. Araç vergisi hesaplama aracı ile 2025'te toplam maliyeti anında görün.",
-                applicationCategory: "BusinessApplication",
-                operatingSystem: "All",
-                url: url.href,
-                offers: {
-                    "@type": "Offer",
-                    price: "0",
-                    priceCurrency: "TRY"
-                }
+                "@graph": [
+                    {
+                        "@type": "WebApplication",
+                        "@id": `${url.href}#webapplication`,
+                        "url": url.href,
+                        "name": title,
+                        "isPartOf": { "@id": `${parentPage.url.href}#collectionpage` },
+                        "about": { "@id": `${homePage.url.href}#organization` },
+                        "inLanguage": "tr-TR",
+                        "applicationCategory": "FinanceApplication",
+                        "operatingSystem": "All",
+                        "screenshot": ogImageUrl,
+                        "offers":{
+                            "@type":"Offer",
+                            "price":"0",
+                            "priceCurrency":"TRY"
+                        }
+                    }
+                ]
             }
         },
         //language=HTML

@@ -2,8 +2,10 @@ import type { CalculatorPage, CalculatorPageDef, Page } from "@/types/page-def.j
 import type { Brand, Preset } from "@/domains/telefon-vergisi-hesaplayici/types.js";
 import { icon_telefonVergisiHesaplayici as icon } from "@/utils/icons.js";
 import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
+import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def";
 
 export const TelefonVergisiHesaplayiciPageDef: CalculatorPageDef = (): CalculatorPage => {
+    const homePage = AnaSayfaPageDef();
     const parentPage = HesaplayicilarPageDef();
 
     const id = "hesaplayici-telefon";
@@ -30,17 +32,25 @@ export const TelefonVergisiHesaplayiciPageDef: CalculatorPageDef = (): Calculato
             ogImageUrl,
             schema: {
                 "@context": "https://schema.org",
-                "@type": "WebApplication",
-                name: title,
-                description: "Telefon Vergisi Hesaplayıcı ile ÖTV dahil tüm vergileri hesaplayın, vergisiz fiyatı görün ve yurt içi-yurt dışı fiyatları karşılaştırın.",
-                applicationCategory: "BusinessApplication",
-                operatingSystem: "All",
-                url: url.href,
-                offers: {
-                    "@type": "Offer",
-                    price: "0",
-                    priceCurrency: "TRY"
-                }
+                "@graph": [
+                    {
+                        "@type": "WebApplication",
+                        "@id": `${url.href}#webapplication`,
+                        "url": url.href,
+                        "name": title,
+                        "isPartOf": { "@id": `${parentPage.url.href}#collectionpage` },
+                        "about": { "@id": `${homePage.url.href}#organization` },
+                        "inLanguage": "tr-TR",
+                        "applicationCategory": "FinanceApplication",
+                        "operatingSystem": "All",
+                        "screenshot": ogImageUrl,
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "0",
+                            "priceCurrency": "TRY"
+                        }
+                    }
+                ]
             }
         },
         //language=HTML
@@ -58,6 +68,7 @@ type _Params = {
 };
 type _PageDef = (params: _Params) => Page;
 export const TelefonVergisiHesaplayiciPresetSlugPageDef: _PageDef = ({ preset, brand }): Page => {
+    const homePage = AnaSayfaPageDef();
     const parentPage = TelefonVergisiHesaplayiciPageDef();
 
     const id = "hesaplayici-telefon-preset";
@@ -66,8 +77,7 @@ export const TelefonVergisiHesaplayiciPresetSlugPageDef: _PageDef = ({ preset, b
     const ogImageUrl = staticSiteUrl(`/og/telefon-vergisi-hesaplayici-${preset.slug}.jpg`);
     const breadcrumbs = [
         ...parentPage.breadcrumbs,
-        { title: brand.title, url: parentPage.url },
-        { title: preset.title, url }
+        { title: `${brand.title} ${preset.title}`, url }
     ];
 
     return {
@@ -82,17 +92,25 @@ export const TelefonVergisiHesaplayiciPresetSlugPageDef: _PageDef = ({ preset, b
             ogImageUrl,
             schema: {
                 "@context": "https://schema.org",
-                "@type": "WebApplication",
-                name: title,
-                description: preset.pageDescription,
-                applicationCategory: "BusinessApplication",
-                operatingSystem: "All",
-                url: url.href,
-                offers: {
-                    "@type": "Offer",
-                    price: "0",
-                    priceCurrency: "TRY"
-                }
+                "@graph": [
+                    {
+                        "@type": "WebApplication",
+                        "@id": `${url.href}#webapplication`,
+                        "url": url.href,
+                        "name": title,
+                        "isPartOf": { "@id": `${parentPage.url.href}#webapplication` },
+                        "about": { "@id": `${homePage.url.href}#organization` },
+                        "inLanguage": "tr-TR",
+                        "applicationCategory": "FinanceApplication",
+                        "operatingSystem": "All",
+                        "screenshot": ogImageUrl,
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "0",
+                            "priceCurrency": "TRY"
+                        }
+                    }
+                ]
             }
         }
     };

@@ -2,8 +2,10 @@ import type { CalculatorPage, CalculatorPageDef, Page } from "@/types/page-def.j
 import type { Brand, Preset } from "@/domains/konsol-vergisi-hesaplayici/types.js";
 import { icon_konsolVergisiHesaplayici as icon } from "@/utils/icons.js";
 import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
+import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def";
 
 export const KonsolVergisiHesaplayiciPageDef: CalculatorPageDef = (): CalculatorPage => {
+    const homePage = AnaSayfaPageDef();
     const parentPage = HesaplayicilarPageDef();
 
     const id = "hesaplayici-konsol";
@@ -30,17 +32,25 @@ export const KonsolVergisiHesaplayiciPageDef: CalculatorPageDef = (): Calculator
             ogImageUrl,
             schema: {
                 "@context": "https://schema.org",
-                "@type": "WebApplication",
-                name: title,
-                description: "Satın aldığınız bir oyun konsolunun yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
-                applicationCategory: "BusinessApplication",
-                operatingSystem: "All",
-                url: url.href,
-                offers: {
-                    "@type": "Offer",
-                    price: "0",
-                    priceCurrency: "TRY"
-                }
+                "@graph": [
+                    {
+                        "@type": "WebApplication",
+                        "@id": `${url.href}#webapplication`,
+                        "url": url.href,
+                        "name": title,
+                        "isPartOf": { "@id": `${parentPage.url.href}#collectionpage` },
+                        "about": { "@id": `${homePage.url.href}#organization` },
+                        "inLanguage": "tr-TR",
+                        "applicationCategory": "FinanceApplication",
+                        "operatingSystem": "All",
+                        "screenshot": ogImageUrl,
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "0",
+                            "priceCurrency": "TRY"
+                        }
+                    }
+                ]
             }
         },
         //language=HTML
@@ -58,6 +68,7 @@ type _Params = {
 };
 type _PageDef = (params: _Params) => Page;
 export const KonsolVergisiHesaplayiciPresetSlugPageDef: _PageDef = ({ preset, brand }): Page => {
+    const homePage = AnaSayfaPageDef();
     const parentPage = KonsolVergisiHesaplayiciPageDef();
 
     const id = "hesaplayici-konsol-preset";
@@ -66,8 +77,7 @@ export const KonsolVergisiHesaplayiciPresetSlugPageDef: _PageDef = ({ preset, br
     const ogImageUrl = staticSiteUrl(`/og/konsol-vergisi-hesaplayici-${preset.slug}.jpg`);
     const breadcrumbs = [
         ...parentPage.breadcrumbs,
-        { title: brand.title, url: parentPage.url },
-        { title: preset.title, url }
+        { title: `${brand.title} ${preset.title}`, url }
     ];
 
     return {
@@ -82,17 +92,25 @@ export const KonsolVergisiHesaplayiciPresetSlugPageDef: _PageDef = ({ preset, br
             ogImageUrl,
             schema: {
                 "@context": "https://schema.org",
-                "@type": "WebApplication",
-                name: title,
-                description: preset.pageDescription,
-                applicationCategory: "BusinessApplication",
-                operatingSystem: "All",
-                url: url.href,
-                offers: {
-                    "@type": "Offer",
-                    price: "0",
-                    priceCurrency: "TRY"
-                }
+                "@graph": [
+                    {
+                        "@type": "WebApplication",
+                        "@id": `${url.href}#webapplication`,
+                        "url": url.href,
+                        "name": title,
+                        "isPartOf": { "@id": `${parentPage.url.href}#webapplication` },
+                        "about": { "@id": `${homePage.url.href}#organization` },
+                        "inLanguage": "tr-TR",
+                        "applicationCategory": "FinanceApplication",
+                        "operatingSystem": "All",
+                        "screenshot": ogImageUrl,
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "0",
+                            "priceCurrency": "TRY"
+                        }
+                    }
+                ]
             }
         }
     };

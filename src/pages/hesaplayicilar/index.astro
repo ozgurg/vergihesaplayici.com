@@ -7,8 +7,15 @@ import Heading1 from "@/components/common/heading-1.vue";
 import CalculatorsGrid from "@/components/calculators-grid.vue";
 
 import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
+import { getCalculatorPages } from "@/domains/hesaplayicilar/db.js";
 
-const hesaplayicilarPage = HesaplayicilarPageDef();
+const calculatorPages = getCalculatorPages();
+
+const hesaplayicilarPage = HesaplayicilarPageDef({
+    schema: {
+        items: calculatorPages
+    }
+});
 ---
 
 <AppLayout page={hesaplayicilarPage}>
@@ -26,7 +33,9 @@ const hesaplayicilarPage = HesaplayicilarPageDef();
     <Container>
         <div class="ta-ad-first" ta-ad-container=""></div>
 
-        <CalculatorsGrid titleTag="h2" />
+        <CalculatorsGrid
+            items={calculatorPages}
+            titleTag="h2" />
 
         <div class="ta-ad-last" ta-ad-container=""></div>
     </Container>

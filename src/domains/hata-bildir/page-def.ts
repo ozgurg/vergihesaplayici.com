@@ -1,9 +1,10 @@
 import type { Page, PageDef } from "@/types/page-def.js";
 import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
 
-const parentPage = AnaSayfaPageDef();
-
 export const HataBildirPageDef: PageDef = (): Page => {
+    const homePage = AnaSayfaPageDef();
+    const parentPage = AnaSayfaPageDef();
+
     const id = "hata-bildir";
     const title = "Hata Bildir";
     const url = siteUrl("/hata-bildir");
@@ -24,10 +25,17 @@ export const HataBildirPageDef: PageDef = (): Page => {
             ogImageUrl: null,
             schema: {
                 "@context": "https://schema.org",
-                "@type": "WebPage",
-                name: title,
-                description: "vergihesaplayici.com'daki hesaplayıcılarda tespit ettiğiniz hataları bildirerek düzeltilmesine katkı sağlayın.",
-                url: url.href
+                "@graph": [
+                    {
+                        "@type": "WebPage",
+                        "@id": `${url.href}#webpage`,
+                        "url": url.href,
+                        "name": title,
+                        "isPartOf": { "@id": `${parentPage.url.href}#website` },
+                        "about": { "@id": `${homePage.url.href}#organization` },
+                        "inLanguage": "tr-TR"
+                    }
+                ]
             }
         }
     };
