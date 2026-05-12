@@ -23,7 +23,7 @@ export const AracVergisiPageDef: CalculatorPageDef = (): CalculatorPage => {
         breadcrumbs,
         icon,
         head: {
-            title: `${title} - %site-title%`,
+            title: `${title} - Vergi Hesaplayıcı`,
             description: "Sıfır araç fiyatına göre ÖTV ve KDV tutarını hesaplayın. Araç vergisi hesaplama aracı ile 2025'te toplam maliyeti anında görün.",
             canonicalUrl: url,
             ogImageUrl,

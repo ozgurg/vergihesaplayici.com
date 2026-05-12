@@ -18,7 +18,7 @@ export const HesaplayicilarPageDef: PageDef = (): Page => {
         url,
         breadcrumbs,
         head: {
-            title: `${title} - %site-title%`,
+            title: `${title} - Vergi Hesaplayıcı`,
             description: "Telefon ve oyun konsolu gibi farklı ürün gruplarının yurt içi ve yurt dışı fiyatlarına Türkiye'de ne kadar vergi uygulandığını hesaplayın.",
             canonicalUrl: url,
             ogImageUrl: null,

@@ -24,7 +24,7 @@ export const KonsolVergisiHesaplayiciPageDef: CalculatorPageDef = (): Calculator
         breadcrumbs,
         icon,
         head: {
-            title: `${title} - %site-title%`,
+            title: `${title} - Vergi Hesaplayıcı`,
             description: "Satın aldığınız bir oyun konsolunun yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
             canonicalUrl: url,
             ogImageUrl,

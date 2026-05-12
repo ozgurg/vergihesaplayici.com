@@ -23,7 +23,7 @@ export const GumrukVergisiPageDef: CalculatorPageDef = (): CalculatorPage => {
         breadcrumbs,
         icon,
         head: {
-            title: `${title} - %site-title%`,
+            title: `${title} - Vergi Hesaplayıcı`,
             description: "Yurt dışından gelen ürünler için ne kadar gümrük vergisi ödeyeceğinizi öğrenin. Gümrük Vergisi Hesaplayıcı ile hızlı ve kolay şekilde vergi tutarını hesaplayın.",
             canonicalUrl: url,
             ogImageUrl,

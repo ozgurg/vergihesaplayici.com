@@ -18,7 +18,7 @@ export const HataBildirPageDef: PageDef = (): Page => {
         url,
         breadcrumbs,
         head: {
-            title: `${title} - %site-title%`,
+            title: `${title} - Vergi Hesaplayıcı`,
             description: "vergihesaplayici.com'daki hesaplayıcılarda tespit ettiğiniz hataları bildirerek düzeltilmesine katkı sağlayın.",
             canonicalUrl: url,
             ogImageUrl: null,
