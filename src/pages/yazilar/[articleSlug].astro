@@ -13,7 +13,7 @@ import ArticlesGrid from "@/components/articles-grid.vue";
 
 import { render } from "astro:content";
 import { YazilarPageDef, YazilarSlugPageDef } from "@/domains/yazilar/page-def.js";
-import { getYazilar } from "@/domains/yazilar/db.js";
+import { getYazilar, getRelatedYazilar } from "@/domains/yazilar/db.js";
 
 export const getStaticPaths = async (): Promise<object> => {
     return (await getYazilar()).map(_yazi => ({
@@ -56,7 +56,7 @@ const { yazi } = Astro.props;
 const yazilarPage = YazilarPageDef();
 const yazilarSlugPage = YazilarSlugPageDef({ yazi });
 
-const yazilar = (await getYazilar()).filter(_yazi => _yazi.slug !== yazi.slug).slice(0, 6);
+const otherYazilar = getRelatedYazilar(yazi, await getYazilar(), 6);
 
 const { Content } = await render(yazi.entry);
 
@@ -129,22 +129,24 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
         <div class="ta-ad-last" ta-ad-container=""></div>
     </Container>
 
-    <hr />
+    {otherYazilar.length > 0 &&
+        <hr />
 
-    <Container>
-        <section>
-            <Heading2 tag="h2">
-                <a href={yazilarPage.url}>
-                    Son yazılar
-                </a>
-            </Heading2>
-            <ArticlesGrid
-                titleTag="h3"
-                items={yazilar} />
+        <Container>
+            <section>
+                <Heading2 tag="h2">
+                    <a href={yazilarPage.url}>
+                        İlginizi çekebilecek diğer yazılar
+                    </a>
+                </Heading2>
+                <ArticlesGrid
+                    titleTag="h3"
+                    items={otherYazilar} />
 
-            <div class="ta-ad-last" ta-ad-container=""></div>
-        </section>
-    </Container>
+                <div class="ta-ad-last" ta-ad-container=""></div>
+            </section>
+        </Container>
+    }
 </AppLayout>
 
 <style lang="scss">
