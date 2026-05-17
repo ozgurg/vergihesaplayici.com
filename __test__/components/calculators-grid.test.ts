@@ -17,11 +17,8 @@ describe("components/calculators-grid.vue", () => {
         for (const [_index, _calculatorCardItem] of calculatorCardItems.entries()) {
             const item = calculatorPages[_index]!;
             expect((_calculatorCardItem as any).props()).toEqual({
-                title: item.title,
+                page: item,
                 titleTag: "h3",
-                description: item.summary,
-                url: item.url,
-                icon: item.icon
             });
         }
     });

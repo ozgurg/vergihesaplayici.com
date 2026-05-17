@@ -9,16 +9,9 @@ import ArticlesGrid from "@/components/articles-grid.vue";
 
 import { YazilarPageDef, YazilarSlugPageDef } from "@/domains/yazilar/page-def.js";
 import { getYazilar } from "@/domains/yazilar/db.js";
-import { mapYazilarForArticlesGridComponent } from "@/domains/yazilar/utils.js";
 
 const yazilar = await getYazilar();
-const yazilarForArticlesGrid = mapYazilarForArticlesGridComponent(yazilar);
-const yazilarForSchemaItems = yazilar.slice(0, 20).map(_yazi => {
-    const yazilarSlugPage = YazilarSlugPageDef({ yazi: _yazi });
-    return {
-        url: yazilarSlugPage.url
-    };
-});
+const yazilarForSchemaItems = yazilar.slice(0, 20).map(_yazi => YazilarSlugPageDef({ yazi: _yazi }));
 
 const yazilarPage = YazilarPageDef({
     schema: {
@@ -45,7 +38,7 @@ const yazilarPage = YazilarPageDef({
         <ArticleLegalDisclaimerAlert />
         <ArticlesGrid
             titleTag="h2"
-            items={yazilarForArticlesGrid} />
+            items={yazilar} />
 
         <div class="ta-ad-last" ta-ad-container=""></div>
     </Container>

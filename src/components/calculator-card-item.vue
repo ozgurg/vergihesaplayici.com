@@ -1,20 +1,20 @@
 <template>
     <div class="calculator-card-item">
         <div class="icon">
-            <svg-icon :icon="props.icon" />
+            <svg-icon :icon="props.page.icon" />
         </div>
         <component
             :is="titleTag"
             class="title">
             <a
-                :href="props.url.href"
+                :href="props.page.url.href"
                 class="stretched-link">
-                <span>{{ props.title }}</span>
+                <span>{{ props.page.title }}</span>
             </a>
             <svg-icon :icon="icon_chevronRight" />
         </component>
         <div
-            v-html="props.description"
+            v-html="props.page.summary"
             aria-hidden="true"
             class="summary">
         </div>
@@ -23,15 +23,12 @@
 
 <script lang="ts" setup>
 import type { HtmlAttrs_a } from "@/types/html.js";
-import type { SvgIcon } from "@/types/common.js";
+import type { CalculatorPage } from "@/types/page-def.js";
 import { icon_chevronRight } from "@/utils/icons.js";
 
 export type Props = {
-    title: string;
     titleTag: string;
-    description: string;
-    url: URL;
-    icon: SvgIcon;
+    page: CalculatorPage;
 } & /* @vue-ignore */ Partial<HtmlAttrs_a>;
 
 const props = defineProps<Props>();

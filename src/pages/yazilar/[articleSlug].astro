@@ -14,7 +14,6 @@ import ArticlesGrid from "@/components/articles-grid.vue";
 import { render } from "astro:content";
 import { YazilarPageDef, YazilarSlugPageDef } from "@/domains/yazilar/page-def.js";
 import { getYazilar } from "@/domains/yazilar/db.js";
-import { mapYazilarForArticlesGridComponent } from "@/domains/yazilar/utils.js";
 
 export const getStaticPaths = async (): Promise<object> => {
     return (await getYazilar()).map(_yazi => ({
@@ -58,7 +57,6 @@ const yazilarPage = YazilarPageDef();
 const yazilarSlugPage = YazilarSlugPageDef({ yazi });
 
 const yazilar = (await getYazilar()).filter(_yazi => _yazi.slug !== yazi.slug).slice(0, 6);
-const yazilarForArticlesGrid = mapYazilarForArticlesGridComponent(yazilar);
 
 const { Content } = await render(yazi.entry);
 
@@ -142,7 +140,7 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
             </Heading2>
             <ArticlesGrid
                 titleTag="h3"
-                items={yazilarForArticlesGrid} />
+                items={yazilar} />
 
             <div class="ta-ad-last" ta-ad-container=""></div>
         </section>

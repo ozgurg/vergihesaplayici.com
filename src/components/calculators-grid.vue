@@ -1,12 +1,9 @@
 <template>
     <div class="calculators-grid">
-        <template v-for="_calculatorPage in props.items" :key="_calculatorPage.url">
+        <template v-for="_calculatorPage in props.items" :key="_calculatorPage.id">
             <calculator-card-item
-                :title="_calculatorPage.title"
                 :title-tag="props.titleTag"
-                :description="_calculatorPage.summary"
-                :url="_calculatorPage.url"
-                :icon="_calculatorPage.icon" />
+                :page="_calculatorPage" />
         </template>
     </div>
 </template>
