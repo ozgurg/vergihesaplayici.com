@@ -1,9 +1,9 @@
-import type { CalculatorPage, CalculatorPageDef } from "@/types/page-def.js";
+import type { CalculatorPage } from "@/types/page-def.js";
 import { icon_aracVergisi as icon } from "@/utils/icons.js";
 import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
 import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def";
 
-export const AracVergisiPageDef: CalculatorPageDef = (): CalculatorPage => {
+export const AracVergisiPageDef = (): CalculatorPage => {
     const homePage = AnaSayfaPageDef();
     const parentPage = HesaplayicilarPageDef();
 
@@ -43,10 +43,10 @@ export const AracVergisiPageDef: CalculatorPageDef = (): CalculatorPage => {
                         "applicationCategory": "FinanceApplication",
                         "operatingSystem": "All",
                         "screenshot": ogImageUrl,
-                        "offers":{
-                            "@type":"Offer",
-                            "price":"0",
-                            "priceCurrency":"TRY"
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "0",
+                            "priceCurrency": "TRY"
                         }
                     }
                 ]

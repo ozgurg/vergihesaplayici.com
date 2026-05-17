@@ -20,13 +20,9 @@ export type Page = {
     head: Head;
 };
 
-export type PageDef = () => Page;
-
 
 export type CalculatorPage = Page & {
     shortTitle: string;
     icon: SvgIcon;
     summary: HtmlString;
 };
-
-export type CalculatorPageDef = () => CalculatorPage;

@@ -57,8 +57,7 @@ export const YazilarPageDef = (
 type _Params = {
     yazi: Yazi;
 };
-type _PageDef = (params: _Params) => Page;
-export const YazilarSlugPageDef: _PageDef = ({ yazi }): Page => {
+export const YazilarSlugPageDef = ({ yazi }: _Params): Page => {
     const homePage = AnaSayfaPageDef();
     const parentPage = YazilarPageDef();
 

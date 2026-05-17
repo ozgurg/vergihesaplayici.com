@@ -1,7 +1,7 @@
-import type { Page, PageDef } from "@/types/page-def.js";
+import type { Page } from "@/types/page-def.js";
 import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
 
-export const HataBildirPageDef: PageDef = (): Page => {
+export const HataBildirPageDef = (): Page => {
     const homePage = AnaSayfaPageDef();
     const parentPage = AnaSayfaPageDef();
 

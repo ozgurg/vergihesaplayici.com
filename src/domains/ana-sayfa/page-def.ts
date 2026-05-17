@@ -1,6 +1,6 @@
-import type { Page, PageDef } from "@/types/page-def.js";
+import type { Page } from "@/types/page-def.js";
 
-export const AnaSayfaPageDef: PageDef = (): Page => {
+export const AnaSayfaPageDef = (): Page => {
     const id = "ana-sayfa";
     const title = "Ana Sayfa";
     const url = siteUrl();

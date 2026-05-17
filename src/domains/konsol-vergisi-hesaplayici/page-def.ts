@@ -1,10 +1,10 @@
-import type { CalculatorPage, CalculatorPageDef, Page } from "@/types/page-def.js";
+import type { CalculatorPage, Page } from "@/types/page-def.js";
 import type { Brand, Preset } from "@/domains/konsol-vergisi-hesaplayici/types.js";
 import { icon_konsolVergisiHesaplayici as icon } from "@/utils/icons.js";
 import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
 import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def";
 
-export const KonsolVergisiHesaplayiciPageDef: CalculatorPageDef = (): CalculatorPage => {
+export const KonsolVergisiHesaplayiciPageDef = (): CalculatorPage => {
     const homePage = AnaSayfaPageDef();
     const parentPage = HesaplayicilarPageDef();
 
@@ -66,8 +66,7 @@ type _Params = {
     preset: Preset;
     brand: Brand;
 };
-type _PageDef = (params: _Params) => Page;
-export const KonsolVergisiHesaplayiciPresetSlugPageDef: _PageDef = ({ preset, brand }): Page => {
+export const KonsolVergisiHesaplayiciPresetSlugPageDef = ({ preset, brand }: _Params): Page => {
     const homePage = AnaSayfaPageDef();
     const parentPage = KonsolVergisiHesaplayiciPageDef();
 
