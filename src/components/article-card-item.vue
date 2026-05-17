@@ -1,16 +1,8 @@
 <template>
     <article class="article-card-item">
         <div class="meta">
-            <time
-                :datetime="timeDateTimeAttr"
-                class="meta-date">
-                {{ readableDate }}
-            </time>
-            <span aria-hidden="true">•</span>
-            <span
-                aria-hidden="true"
-                class="meta-author">
-                <span>vergihesaplayici.com</span>
+            <span class="meta-date">
+                {{ date }}
             </span>
         </div>
         <component
@@ -45,9 +37,7 @@ export type Props = {
 const props = defineProps<Props>();
 
 const page = YazilarSlugPageDef({ yazi: props.yazi });
-const date = props.yazi.updatedDate ?? props.yazi.createdDate;
-const timeDateTimeAttr = date.toISOString().split("T")[0]; // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time#valid_datetime_values
-const readableDate = date.toLocaleDateString("tr-TR");
+const date = (props.yazi.updatedDate ?? props.yazi.createdDate).toLocaleDateString("tr-TR");
 </script>
 
 <style lang="scss" scoped>
