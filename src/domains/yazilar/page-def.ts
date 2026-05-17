@@ -54,10 +54,10 @@ export const YazilarPageDef = (
     };
 };
 
-type _Params = {
+type Params = {
     yazi: Yazi;
 };
-export const YazilarSlugPageDef = ({ yazi }: _Params): Page => {
+export const YazilarSlugPageDef = ({ yazi }: Params): Page<Params> => {
     const homePage = AnaSayfaPageDef();
     const parentPage = YazilarPageDef();
 
@@ -117,6 +117,7 @@ export const YazilarSlugPageDef = ({ yazi }: _Params): Page => {
                     }
                 ]
             }
-        }
+        },
+        yazi
     };
 };

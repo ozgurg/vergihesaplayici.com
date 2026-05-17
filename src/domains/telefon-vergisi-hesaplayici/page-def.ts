@@ -62,11 +62,11 @@ export const TelefonVergisiHesaplayiciPageDef = (): CalculatorPage => {
     };
 };
 
-type _Params = {
+type Params = {
     preset: Preset;
     brand: Brand;
 };
-export const TelefonVergisiHesaplayiciPresetSlugPageDef = ({ preset, brand }: _Params): Page => {
+export const TelefonVergisiHesaplayiciPresetSlugPageDef = ({ preset, brand }: Params): Page<Params> => {
     const homePage = AnaSayfaPageDef();
     const parentPage = TelefonVergisiHesaplayiciPageDef();
 
@@ -111,6 +111,8 @@ export const TelefonVergisiHesaplayiciPresetSlugPageDef = ({ preset, brand }: _P
                     }
                 ]
             }
-        }
+        },
+        preset,
+        brand
     };
 };

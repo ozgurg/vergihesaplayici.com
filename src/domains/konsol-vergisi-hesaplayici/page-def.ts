@@ -62,11 +62,11 @@ export const KonsolVergisiHesaplayiciPageDef = (): CalculatorPage => {
     };
 };
 
-type _Params = {
+type Params = {
     preset: Preset;
     brand: Brand;
 };
-export const KonsolVergisiHesaplayiciPresetSlugPageDef = ({ preset, brand }: _Params): Page => {
+export const KonsolVergisiHesaplayiciPresetSlugPageDef = ({ preset, brand }: Params): Page<Params> => {
     const homePage = AnaSayfaPageDef();
     const parentPage = KonsolVergisiHesaplayiciPageDef();
 
@@ -111,6 +111,8 @@ export const KonsolVergisiHesaplayiciPresetSlugPageDef = ({ preset, brand }: _Pa
                     }
                 ]
             }
-        }
+        },
+        preset,
+        brand
     };
 };

@@ -12,7 +12,7 @@ export type BreadcrumbItem = {
 export type Breadcrumbs = BreadcrumbItem[];
 
 
-export type Page = {
+export type Page<T = unknown> = T & {
     id: PageId;
     title: string;
     url: ReturnType<typeof siteUrl>;
