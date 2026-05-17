@@ -13,7 +13,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Steam Deck",
         slug: "valve-steam-deck",
         releaseDate: new Date("2022-02-25"),
-        thumb: "valve-steam-deck.png",
+        thumb: "valve-steam-deck.webp",
         ...buildPageMeta("Valve Steam Deck'in"),
         disclaimerNote: DISCLAIMER_NOTE,
         options: [
@@ -45,7 +45,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Steam Deck OLED",
         slug: "valve-steam-deck-oled",
         releaseDate: new Date("2023-11-16"),
-        thumb: "valve-steam-deck-oled.png",
+        thumb: "valve-steam-deck-oled.webp",
         ...buildPageMeta("Valve Steam Deck OLED'in"),
         disclaimerNote: DISCLAIMER_NOTE,
         options: [
@@ -70,7 +70,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Steam Machine",
         slug: "valve-steam-machine",
         releaseDate: new Date("2026-03-19"),
-        thumb: "valve-steam-machine.png",
+        thumb: "valve-steam-machine.webp",
         ...buildPageMeta("Valve Steam Machine'nin"),
         disclaimerNote: `Listelenen fiyat ve çıkış tarihi yer tutucu amacıyla eklenmiştir, gerçeği yansıtmamaktadır. ${DISCLAIMER_NOTE}`,
         options: [

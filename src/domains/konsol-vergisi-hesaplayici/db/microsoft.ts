@@ -11,7 +11,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Xbox Series X",
         slug: "microsoft-xbox-series-x",
         releaseDate: new Date("2020-11-10"),
-        thumb: "microsoft-xbox-series-x.png",
+        thumb: "microsoft-xbox-series-x.webp",
         ...buildPageMeta("Microsoft Xbox Series X'in"),
         options: [
             {
@@ -42,7 +42,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Xbox Series S",
         slug: "microsoft-xbox-series-s",
         releaseDate: new Date("2020-11-10"),
-        thumb: "microsoft-xbox-series-s.png",
+        thumb: "microsoft-xbox-series-s.webp",
         ...buildPageMeta("Microsoft Xbox Series S'nin"),
         options: [
             {

@@ -11,7 +11,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Vision Pro",
         slug: "apple-vision-pro",
         releaseDate: new Date("2024-02-02"),
-        thumb: "apple-vision-pro.png",
+        thumb: "apple-vision-pro.webp",
         ...buildPageMeta("Apple Vision Pro'nun"),
         disclaimerNote: "Bu ürün Türkiye'de resmi olarak satılmadığından, hangi vergi kategorisine gireceği kesin olarak bilinmemektedir. Bu sayfa yalnızca bilgi verme amacı taşır.",
         options: [
@@ -30,7 +30,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "iPhone SE 3",
         slug: "apple-iphone-se-3-2022",
         releaseDate: new Date("2022-03-18"),
-        thumb: "apple-iphone-se-3-2022.png",
+        thumb: "apple-iphone-se-3-2022.webp",
         ...buildPageMeta("Apple iPhone SE 3 (2022)'ün"),
         options: [
             {
@@ -61,7 +61,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "iPhone 12",
         slug: "apple-iphone-12",
         releaseDate: new Date("2020-10-23"),
-        thumb: "apple-iphone-12.png",
+        thumb: "apple-iphone-12.webp",
         ...buildPageMeta("Apple iPhone 12'nin"),
         options: [
             {
@@ -92,7 +92,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "iPhone 13 mini",
         slug: "apple-iphone-13-mini",
         releaseDate: new Date("2021-09-24"),
-        thumb: "apple-iphone-13-mini.png",
+        thumb: "apple-iphone-13-mini.webp",
         ...buildPageMeta("Apple iPhone 13 mini'nin"),
         options: [
             {
@@ -122,7 +122,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "iPhone 13",
         slug: "apple-iphone-13",
         releaseDate: new Date("2021-09-24"),
-        thumb: "apple-iphone-13.png",
+        thumb: "apple-iphone-13.webp",
         ...buildPageMeta("Apple iPhone 13'ün"),
         options: [
             {
@@ -153,7 +153,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "iPhone 14 Pro",
         slug: "apple-iphone-14-pro",
         releaseDate: new Date("2022-09-16"),
-        thumb: "apple-iphone-14-pro.png",
+        thumb: "apple-iphone-14-pro.webp",
         ...buildPageMeta("Apple iPhone 14 Pro'nun"),
         options: [
             {
@@ -190,7 +190,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "iPhone 14 Pro Max",
         slug: "apple-iphone-14-pro-max",
         releaseDate: new Date("2022-09-16"),
-        thumb: "apple-iphone-14-pro-max.png",
+        thumb: "apple-iphone-14-pro-max.webp",
         ...buildPageMeta("Apple iPhone 14 Pro Max'in"),
         options: [
             {
@@ -227,7 +227,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "iPhone 14",
         slug: "apple-iphone-14",
         releaseDate: new Date("2022-09-16"),
-        thumb: "apple-iphone-14.png",
+        thumb: "apple-iphone-14.webp",
         ...buildPageMeta("Apple iPhone 14'ün"),
         options: [
             {
@@ -257,7 +257,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "iPhone 14 Plus",
         slug: "apple-iphone-14-plus",
         releaseDate: new Date("2022-10-07"),
-        thumb: "apple-iphone-14-plus.png",
+        thumb: "apple-iphone-14-plus.webp",
         ...buildPageMeta("Apple iPhone 14 Plus'ın"),
         options: [
             {
@@ -288,7 +288,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "iPhone 15 Pro",
         slug: "apple-iphone-15-pro",
         releaseDate: new Date("2023-09-22"),
-        thumb: "apple-iphone-15-pro.png",
+        thumb: "apple-iphone-15-pro.webp",
         ...buildPageMeta("Apple iPhone 15 Pro'nun"),
         options: [
             {
@@ -325,7 +325,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "iPhone 15 Pro Max",
         slug: "apple-iphone-15-pro-max",
         releaseDate: new Date("2023-09-22"),
-        thumb: "apple-iphone-15-pro-max.png",
+        thumb: "apple-iphone-15-pro-max.webp",
         ...buildPageMeta("Apple iPhone 15 Pro Max'in"),
         options: [
             {
@@ -355,7 +355,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "iPhone 15",
         slug: "apple-iphone-15",
         releaseDate: new Date("2023-09-22"),
-        thumb: "apple-iphone-15.png",
+        thumb: "apple-iphone-15.webp",
         ...buildPageMeta("Apple iPhone 15'in"),
         options: [
             {
@@ -385,7 +385,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "iPhone 15 Plus",
         slug: "apple-iphone-15-plus",
         releaseDate: new Date("2023-09-22"),
-        thumb: "apple-iphone-15-plus.png",
+        thumb: "apple-iphone-15-plus.webp",
         ...buildPageMeta("Apple iPhone 15 Plus'ın"),
         options: [
             {
@@ -416,7 +416,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "iPhone 16 Pro",
         slug: "apple-iphone-16-pro",
         releaseDate: new Date("2024-09-20"),
-        thumb: "apple-iphone-16-pro.png",
+        thumb: "apple-iphone-16-pro.webp",
         ...buildPageMeta("Apple iPhone 16 Pro'nun"),
         options: [
             {
@@ -453,7 +453,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "iPhone 16 Pro Max",
         slug: "apple-iphone-16-pro-max",
         releaseDate: new Date("2024-09-20"),
-        thumb: "apple-iphone-16-pro-max.png",
+        thumb: "apple-iphone-16-pro-max.webp",
         ...buildPageMeta("Apple iPhone 16 Pro Max'in"),
         options: [
             {
@@ -483,7 +483,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "iPhone 16",
         slug: "apple-iphone-16",
         releaseDate: new Date("2024-09-20"),
-        thumb: "apple-iphone-16.png",
+        thumb: "apple-iphone-16.webp",
         ...buildPageMeta("Apple iPhone 16'nın"),
         options: [
             {
@@ -513,7 +513,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "iPhone 16 Plus",
         slug: "apple-iphone-16-plus",
         releaseDate: new Date("2024-09-20"),
-        thumb: "apple-iphone-16-plus.png",
+        thumb: "apple-iphone-16-plus.webp",
         ...buildPageMeta("Apple iPhone 16 Plus'ın"),
         options: [
             {
@@ -543,7 +543,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "iPhone 16e",
         slug: "apple-iphone-16e",
         releaseDate: new Date("2025-02-28"),
-        thumb: "apple-iphone-16e.png",
+        thumb: "apple-iphone-16e.webp",
         ...buildPageMeta("Apple iPhone 16e'nin"),
         options: [
             {
@@ -574,7 +574,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "iPhone 17",
         slug: "apple-iphone-17",
         releaseDate: new Date("2025-09-09"),
-        thumb: "apple-iphone-17.png",
+        thumb: "apple-iphone-17.webp",
         ...buildPageMeta("Apple iPhone 17'nin"),
         options: [
             {
@@ -597,7 +597,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "iPhone 17 Air",
         slug: "apple-iphone-17-air",
         releaseDate: new Date("2025-09-09"),
-        thumb: "apple-iphone-17-air.png",
+        thumb: "apple-iphone-17-air.webp",
         ...buildPageMeta("Apple iPhone 17 Air'in"),
         options: [
             {
@@ -627,7 +627,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "iPhone 17 Pro",
         slug: "apple-iphone-17-pro",
         releaseDate: new Date("2025-09-09"),
-        thumb: "apple-iphone-17-pro.png",
+        thumb: "apple-iphone-17-pro.webp",
         ...buildPageMeta("Apple iPhone 17 Pro'nun"),
         options: [
             {
@@ -657,7 +657,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "iPhone 17 Pro Max",
         slug: "apple-iphone-17-pro-max",
         releaseDate: new Date("2025-09-09"),
-        thumb: "apple-iphone-17-pro-max.png",
+        thumb: "apple-iphone-17-pro-max.webp",
         ...buildPageMeta("Apple iPhone 17 Pro Max'in"),
         options: [
             {
@@ -695,7 +695,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "iPhone 17e",
         slug: "apple-iphone-17e",
         releaseDate: new Date("2026-03-02"),
-        thumb: "apple-iphone-17e.png",
+        thumb: "apple-iphone-17e.webp",
         ...buildPageMeta("Apple iPhone 17e'nin"),
         options: [
             {

@@ -11,7 +11,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "ROG Xbox Ally",
         slug: "asus-rog-xbox-ally",
         releaseDate: new Date("2025-10-16"),
-        thumb: "asus-rog-xbox-ally.png",
+        thumb: "asus-rog-xbox-ally.webp",
         ...buildPageMeta("ASUS ROG Xbox Ally'nin"),
         disclaimerNote: "Bu ürün her ne kadar bir oyun konsoluna benzese de, eğer bilgisayar kategorisinden vergilendiriliyorsa bu sayfadaki hesaplama geçerli olmayacaktır.",
         options: [
@@ -30,7 +30,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "ROG Xbox Ally X",
         slug: "asus-rog-xbox-ally-x",
         releaseDate: new Date("2025-10-16"),
-        thumb: "asus-rog-xbox-ally-x.png",
+        thumb: "asus-rog-xbox-ally-x.webp",
         ...buildPageMeta("ASUS ROG Xbox Ally X'in"),
         disclaimerNote: "Bu ürün her ne kadar bir oyun konsoluna benzese de, eğer bilgisayar kategorisinden vergilendiriliyorsa bu sayfadaki hesaplama geçerli olmayacaktır.",
         options: [

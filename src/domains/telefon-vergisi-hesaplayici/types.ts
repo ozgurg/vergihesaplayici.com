@@ -43,7 +43,7 @@ export type Preset = {
     title: string;
     slug: PageSlug;
     releaseDate: Date;
-    thumb: `${Lowercase<string>}.png`;
+    thumb: `${Lowercase<string>}.webp`;
     pageTitle: string;
     pageDescription: string;
     disclaimerNote?: string;

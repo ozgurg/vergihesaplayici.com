@@ -20,13 +20,13 @@ const processThumbsForDomain = async (domain: string): Promise<void> => {
     let thumbsPathBase64Pair: { [key: string]: string };
 
     if (domain === "telefon-vergisi-hesaplayici") {
-        thumbsPathBase64Pair = import.meta.glob<string>("./../domains/telefon-vergisi-hesaplayici/thumb/*.png", {
+        thumbsPathBase64Pair = import.meta.glob<string>("./../domains/telefon-vergisi-hesaplayici/thumb/*.webp", {
             eager: true,
             import: "default",
             query: "?inline"
         });
     } else if (domain === "konsol-vergisi-hesaplayici") {
-        thumbsPathBase64Pair = import.meta.glob<string>("./../domains/konsol-vergisi-hesaplayici/thumb/*.png", {
+        thumbsPathBase64Pair = import.meta.glob<string>("./../domains/konsol-vergisi-hesaplayici/thumb/*.webp", {
             eager: true,
             import: "default",
             query: "?inline"

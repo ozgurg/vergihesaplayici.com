@@ -11,7 +11,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "PlayStation 5",
         slug: "sony-playstation-5",
         releaseDate: new Date("2020-11-12"),
-        thumb: "sony-playstation-5.png",
+        thumb: "sony-playstation-5.webp",
         ...buildPageMeta("Sony PlayStation 5'in"),
         options: [
             {
@@ -35,7 +35,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "PlayStation VR2",
         slug: "sony-playstation-vr2",
         releaseDate: new Date("2023-02-22"),
-        thumb: "sony-playstation-vr2.png",
+        thumb: "sony-playstation-vr2.webp",
         ...buildPageMeta("Sony PlayStation VR2'nin"),
         options: [
             {
@@ -52,7 +52,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "PlayStation 5 Pro",
         slug: "sony-playstation-5-pro",
         releaseDate: new Date("2024-11-07"),
-        thumb: "sony-playstation-5-pro.png",
+        thumb: "sony-playstation-5-pro.webp",
         ...buildPageMeta("Sony PlayStation 5 Pro'nun"),
         options: [
             {
