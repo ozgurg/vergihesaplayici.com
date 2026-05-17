@@ -1,6 +1,6 @@
 <template>
     <component
-        :is="props.is"
+        :is="props.tag"
         class="string-carousel">
         <div class="string-carousel-container">
             <transition-group
@@ -26,12 +26,12 @@
 import type { HtmlAttrs_div } from "@/types/html.js";
 
 export type Props = {
-    is?: string;
+    tag?: string;
     text: string | number;
 } & /* @vue-ignore */ Partial<HtmlAttrs_div>;
 
 const props = withDefaults(defineProps<Props>(), {
-    is: "div"
+    tag: "div"
 });
 
 const chars = computed<string[]>(() => [...String(props.text)]);

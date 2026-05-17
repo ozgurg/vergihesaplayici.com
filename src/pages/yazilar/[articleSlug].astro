@@ -83,10 +83,10 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
         <div class="ta-ad-first" ta-ad-container=""></div>
 
         <RichText
-            is="section"
+            tag="section"
             class="content">
             {taxInfo &&
-                <Heading3 is="span">Vergi adı ve kodu</Heading3>
+                <Heading3 tag="span">Vergi adı ve kodu</Heading3>
                 <table>
                     <tbody>
                         <tr>
@@ -135,7 +135,7 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
 
     <Container>
         <section>
-            <Heading2 is="h2">
+            <Heading2 tag="h2">
                 <a href={yazilarPage.url}>
                     Son yazılar
                 </a>

@@ -1,7 +1,7 @@
 <template>
     <fieldset class="form-group">
         <template v-if="props.label !== undefined">
-            <form-label is="legend">
+            <form-label tag="legend">
                 {{ props.label }}
             </form-label>
         </template>

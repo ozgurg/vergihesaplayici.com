@@ -1,6 +1,6 @@
 <template>
     <component
-        :is="props.is"
+        :is="props.tag"
         class="heading-3">
         <slot name="default" />
     </component>
@@ -10,11 +10,11 @@
 import type { HtmlAttrs_h3 } from "@/types/html.js";
 
 export type Props = {
-    is?: string;
+    tag?: string;
 } & /* @vue-ignore */ Partial<HtmlAttrs_h3>;
 
 const props = withDefaults(defineProps<Props>(), {
-    is: "h3"
+    tag: "h3"
 });
 </script>
 

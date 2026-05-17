@@ -1,6 +1,6 @@
 <template>
     <component
-        :is="props.is"
+        :is="props.tag"
         class="rich-text">
         <slot name="default" />
     </component>
@@ -10,11 +10,11 @@
 import type { HtmlAttrs_div } from "@/types/html.js";
 
 export type Props = {
-    is?: string;
+    tag?: string;
 } & /* @vue-ignore */ Partial<HtmlAttrs_div>;
 
 const props = withDefaults(defineProps<Props>(), {
-    is: "div"
+    tag: "div"
 });
 </script>
 

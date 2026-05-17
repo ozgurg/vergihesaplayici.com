@@ -13,9 +13,9 @@ describe("components/common/heading-1.vue", () => {
         expect(wrapper.element.tagName).toBe("H1");
     });
 
-    it("renders with custom tag if `is` is set", () => {
+    it("renders with custom tag if `tag` is set", () => {
         const wrapper = mount(Heading1, {
-            props: { is: "h6" }
+            props: { tag: "h6" }
         });
         expect(wrapper.element.tagName).toBe("H6");
     });

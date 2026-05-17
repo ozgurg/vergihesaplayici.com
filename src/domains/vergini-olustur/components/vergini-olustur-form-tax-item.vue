@@ -5,7 +5,7 @@
         role="group">
         <form-group>
             <template #label>
-                <form-label is="legend">
+                <form-label tag="legend">
                     Vergi adı<small>&nbsp;–&nbsp;isteğe bağlı</small>
                 </form-label>
             </template>

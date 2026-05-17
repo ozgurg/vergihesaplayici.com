@@ -7,7 +7,7 @@
                 <div>
                     <modal-title
                         :id="HEADING_ID"
-                        is="h6">
+                        tag="h6">
                         Hesaplayıcıyı paylaş
                     </modal-title>
                     <modal-close-button @click="close()" />
