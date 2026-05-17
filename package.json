@@ -19,30 +19,30 @@
     },
     "dependencies": {
         "@fontsource-variable/inter": "5.2.8",
-        "@fontsource-variable/roboto-mono": "5.2.8",
-        "astro": "6.2.2",
+        "@fontsource-variable/roboto-mono": "5.2.9",
+        "astro": "6.3.5",
         "balloon-css": "1.2.0",
-        "firebase": "12.12.1",
+        "firebase": "12.13.0",
         "html-to-image": "1.11.13",
         "remixicon": "4.9.1",
-        "vue": "3.5.33",
+        "vue": "3.5.34",
         "vue-draggable-plus": "0.6.1"
     },
     "devDependencies": {
         "@astrojs/check": "0.9.9",
         "@astrojs/sitemap": "3.7.2",
         "@astrojs/vue": "6.0.1",
-        "@commitlint/cli": "20.5.3",
-        "@commitlint/config-conventional": "20.5.3",
-        "@vitejs/plugin-vue": "6.0.6",
-        "@vitest/coverage-istanbul": "4.1.5",
+        "@commitlint/cli": "21.0.1",
+        "@commitlint/config-conventional": "21.0.1",
+        "@vitejs/plugin-vue": "6.0.7",
+        "@vitest/coverage-istanbul": "4.1.6",
         "@vue/test-utils": "2.4.10",
         "astro-compress": "2.4.1",
         "fast-average-color-node": "3.2.0",
         "husky": "9.1.7",
         "jsdom": "29.1.1",
-        "lint-staged": "16.4.0",
-        "oxlint": "1.62.0",
+        "lint-staged": "17.0.5",
+        "oxlint": "1.65.0",
         "sass": "1.99.0",
         "satori": "0.26.0",
         "satori-html": "0.3.2",
@@ -51,10 +51,10 @@
         "typescript": "6.0.3",
         "unplugin-auto-import": "21.0.0",
         "unplugin-vue-components": "32.0.0",
-        "vitest": "4.1.5"
+        "vitest": "4.1.6"
     },
     "peerDependencies": {
-        "firebase-tools": "15.16.0"
+        "firebase-tools": "15.18.0"
     },
     "engines": {
         "node": ">=22.0.0"

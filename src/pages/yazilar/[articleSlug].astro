@@ -27,7 +27,7 @@ export const getStaticPaths = async (): Promise<object> => {
 };
 
 const parseTitleAsTaxInfo = (title: string): { name: string, code: string } | false => {
-    const pattern = /^(.*?)\s*\[([^\]]+)]\s*$/;
+    const pattern = /^(.*?)\s*\[([^\]\\]+)\]\s*$/u;
     const matchArray = title.match(pattern);
     if (matchArray) {
         const name = matchArray[1]?.trim() ?? null;

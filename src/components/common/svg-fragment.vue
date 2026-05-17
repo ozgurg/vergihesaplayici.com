@@ -14,8 +14,8 @@ export type Props = {
 const props = defineProps<Props>();
 
 const _extractAttrs = (htmlString: string): { [key: string]: string } => {
-    const SVG_TAG_REGEX = /<svg([^>]*)>/;
-    const ATTRS_REGEX = /([\w-]+)(?:=(["'])(.*?)\2)?/g;
+    const SVG_TAG_REGEX = /<svg([^>]*)>/u;
+    const ATTRS_REGEX = /([\w-]+)(?:=(["'])(.*?)\2)?/gu;
     const attrs: { [key: string]: string } = {};
 
     const svgMatch = SVG_TAG_REGEX.exec(htmlString);
@@ -40,6 +40,6 @@ const _extractAttrs = (htmlString: string): { [key: string]: string } => {
 const svgAttrs = _extractAttrs(props.html);
 
 const content = props.html
-    .replace(/<([a-z]+)(?![^>]*\/>)[^>]*>/, "")
-    .replace(/<\/([a-z]+)>$/, "");
+    .replace(/<([a-z]+)(?![^>]*\/>)[^>]*>/u, "")
+    .replace(/<\/([a-z]+)>$/u, "");
 </script>

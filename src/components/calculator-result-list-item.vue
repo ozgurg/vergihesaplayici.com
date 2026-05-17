@@ -28,7 +28,7 @@ const props = withDefaults(defineProps<Props>(), {
     isMuted: false
 });
 
-const doesLabelContainNumber = /\d/.test(props.label);
+const doesLabelContainNumber = /\d/u.test(props.label);
 
 const CLASSES = [
     "calculator-result-list-item",

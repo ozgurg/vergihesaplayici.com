@@ -58,19 +58,19 @@ export default defineConfig({
                 // https://developers.google.com/search/blog/2006/04/using-lastmod-attribute
                 const LAST_MODIFIED_DATE = new Date().toDateString();
 
-                if (/yazilar/.test(item.url)) {
+                if (/yazilar/u.test(item.url)) {
                     item.changefreq = EnumChangefreq.WEEKLY;
                     item.lastmod = LAST_MODIFIED_DATE;
                     item.priority = .6;
-                } else if (/hesaplayicilar/.test(item.url)) {
+                } else if (/hesaplayicilar/u.test(item.url)) {
                     item.changefreq = EnumChangefreq.YEARLY;
                     item.lastmod = LAST_MODIFIED_DATE;
                     item.priority = .7;
-                } else if (/kdv-hesaplayici/.test(item.url) || /vergini-olustur/.test(item.url)) {
+                } else if (/kdv-hesaplayici/u.test(item.url) || /vergini-olustur/u.test(item.url)) {
                     item.changefreq = EnumChangefreq.MONTHLY;
                     item.lastmod = LAST_MODIFIED_DATE;
                     item.priority = .8;
-                } else if (/telefon-vergisi-hesaplayici/.test(item.url) || /konsol-vergisi-hesaplayici/.test(item.url) || /gumruk-vergisi/.test(item.url) || /arac-vergisi/.test(item.url)) {
+                } else if (/telefon-vergisi-hesaplayici/u.test(item.url) || /konsol-vergisi-hesaplayici/u.test(item.url) || /gumruk-vergisi/u.test(item.url) || /arac-vergisi/u.test(item.url)) {
                     item.changefreq = EnumChangefreq.DAILY;
                     item.lastmod = LAST_MODIFIED_DATE;
                     item.priority = .9;

@@ -16,7 +16,7 @@ export const staticUrl = (path: UrlPath): URL => {
 };
 
 export const staticSiteUrl = (path: UrlPath, withVersion = true): string => {
-    const url = siteUrl(path).href.replace(/\/$/, "");
+    const url = siteUrl(path).href.replace(/\/$/u, "");
     if (withVersion) {
         return `${url}?v=${PACKAGE_JSON_VERSION}`;
     }
@@ -26,7 +26,7 @@ export const staticSiteUrl = (path: UrlPath, withVersion = true): string => {
 export const isCurrentPage = (currentUrl: URL, pageUrl: URL): boolean => {
     return pageUrl.pathname === "/" ?
         currentUrl.href === pageUrl.href :
-        currentUrl.href.startsWith(pageUrl.href.replace(/\/+$/, ""));
+        currentUrl.href.startsWith(pageUrl.href.replace(/\/+$/u, ""));
 };
 
 export const ariaCurrentValue = (currentUrl: URL, pageUrl: URL): "page" | "false" => {

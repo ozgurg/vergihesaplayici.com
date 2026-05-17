@@ -65,7 +65,7 @@ export const YazilarSlugPageDef = ({ yazi }: Params): Page<Params> => {
     const title = yazi.title;
     const url = siteUrl(`/yazilar/${yazi.slug}`);
 
-    const isVergiTuru = /\[\d{4}]$/.test(yazi.title);
+    const isVergiTuru = /\[\d{4}\]$/u.test(yazi.title);
     const breadcrumbs = isVergiTuru ?
         [
             ...parentPage.breadcrumbs,
@@ -96,7 +96,7 @@ export const YazilarSlugPageDef = ({ yazi }: Params): Page<Params> => {
                         "url": url.href,
                         "headline": title,
                         "wordCount": yazi.entry.body?.trim()
-                            .split(/\s+/)
+                            .split(/\s+/u)
                             .filter(Boolean)
                             .length,
                         "description": yazi.description,
