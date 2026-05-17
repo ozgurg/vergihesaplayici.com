@@ -3,7 +3,6 @@ import { defineConfig } from "astro/config";
 import { loadEnv } from "vite";
 import packageJson from "./package.json" with { type: "json" };
 
-import exchangeRatesIntegration from "./src/integrations/exchange-rates.js";
 import extractColorFromThumbsIntegration from "./src/integrations/extract-color-from-thumbs.js";
 import astroCompressIntegration from "astro-compress";
 import astroVueIntegration from "@astrojs/vue";
@@ -42,7 +41,6 @@ export default defineConfig({
     site: URL_BASE,
     trailingSlash: "always",
     integrations: [
-        exchangeRatesIntegration(),
         extractColorFromThumbsIntegration(),
         astroCompressIntegration({
             CSS: true,

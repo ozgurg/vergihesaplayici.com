@@ -1,7 +1,6 @@
 // oxlint-disable import/no-namespace
 
 import type { Brand, Preset } from "@/domains/telefon-vergisi-hesaplayici/types.js";
-import type { Thumb } from "@/utils/thumb-loader.js";
 import type { PageSlug } from "@/types/page-def.js";
 import * as Apple from "@/domains/telefon-vergisi-hesaplayici/db/apple.js";
 import * as Samsung from "@/domains/telefon-vergisi-hesaplayici/db/samsung.js";
@@ -26,8 +25,6 @@ export const Presets: Preset[] = [
     ...withBrandId(Samsung.presets, Samsung.brand.id)
 ] as const;
 
-export const Thumbs: Thumb[] = await loadThumbs();
-
 const sortPresetsByReleaseDate = (presets: Preset[]): Preset[] => {
     return presets.toSorted((_p1, _p2) => _p2.releaseDate.getTime() - _p1.releaseDate.getTime());
 };
@@ -42,10 +39,6 @@ export const getPresetsByBrandId = (brandId: string): Preset[] => {
 
 export const getBrandById = (brandId: string): Brand => {
     return Brands.find(_brand => _brand.id === brandId) as Brand;
-};
-
-export const getThumbByFileName = (fileName: string): Thumb => {
-    return Thumbs.find(_thumb => _thumb.fileName === fileName) as Thumb;
 };
 
 export const getPresetsForAllBrands = (): Preset[] => {

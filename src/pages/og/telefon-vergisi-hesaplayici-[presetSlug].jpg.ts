@@ -3,8 +3,7 @@ import type { PageSlug } from "@/types/page-def.js";
 import logoSvgBase64 from "@/assets/img/logo.svg?inline";
 import {
     getPresetBySlug,
-    getPresetsForAllBrands,
-    getThumbByFileName
+    getPresetsForAllBrands
 } from "@/domains/telefon-vergisi-hesaplayici/db.js";
 import { TelefonVergisiHesaplayiciPageDef } from "@/domains/telefon-vergisi-hesaplayici/page-def.js";
 
@@ -110,7 +109,7 @@ export const GET: APIRoute = async ({ params }): Promise<Response> => {
             <div class="debug"></div>
             <div class="og-image-body">
                 <div class="thumb">
-                    <img src="${thumb.base64}" width="160" />
+                    <img src="${await thumb.base64}" width="160" />
                 </div>
                 <div class="title">${preset.pageTitle}</div>
                 <div class="calculator">${page.title}</div>

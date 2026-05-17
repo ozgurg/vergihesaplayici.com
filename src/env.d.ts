@@ -1,5 +1,3 @@
-import type { ExchangeRates } from "@/types/common.js";
-
 interface ImportMetaEnv {
     // `.env`
     readonly SERVER_HOST: string;
@@ -23,9 +21,4 @@ interface ImportMetaEnv {
 
 interface ImportMeta {
     readonly env: ImportMetaEnv;
-}
-
-declare global {
-    // noinspection ES6ConvertVarToLetConst
-    var __EXCHANGE_RATES__: ExchangeRates;
 }
