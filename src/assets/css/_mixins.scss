@@ -190,7 +190,7 @@
 }
 
 @mixin vh-squircle($values, $fallbackValues: null, $property: border-radius) {
-    $SQUIRCLE_MULTIPLIER: 2;
+    $SQUIRCLE_MULTIPLIER: 2.5;
 
     $squircleValue: ();
     $fallbackValue: ();
