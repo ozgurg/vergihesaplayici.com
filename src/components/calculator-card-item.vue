@@ -23,12 +23,12 @@
 
 <script lang="ts" setup>
 import type { HtmlAttrs_a } from "@/types/html.js";
-import type { Heading, SvgIcon } from "@/types/common.js";
+import type { SvgIcon } from "@/types/common.js";
 import { icon_chevronRight } from "@/utils/icons.js";
 
 export type Props = {
     title: string;
-    titleTag: Heading;
+    titleTag: string;
     description: string;
     url: URL;
     icon: SvgIcon;

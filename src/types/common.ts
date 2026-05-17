@@ -2,8 +2,6 @@ import type { Graph, Thing, WithContext } from "schema-dts";
 
 export type HtmlString = string;
 
-export type Heading = `h${number}`;
-
 export type SvgFile = `${string}.svg`;
 export type SvgIcon = string;
 export type Icon = SvgFile | SvgIcon;
@@ -19,9 +17,9 @@ export type ExchangeRates = {
         TRY: number;
         USD: number;
         EUR: number;
-        GBP: number,
-        INR: number,
-        CNY: number,
+        GBP: number;
+        INR: number;
+        CNY: number;
     }
 };
 export type CurrencyCode = keyof ExchangeRates["rates"];

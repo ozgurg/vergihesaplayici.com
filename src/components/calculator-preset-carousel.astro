@@ -1,11 +1,10 @@
 ---
-import type { Heading } from "@/types/common.js";
 import type { Props as CalculatorPresetCarouselItemProps } from "@/components/calculator-preset-carousel-item.astro";
 import CalculatorPresetCarouselItem from "@/components/calculator-preset-carousel-item.astro";
 import CalculatorPresetCarouselNav from "@/components/calculator-preset-carousel-nav.vue";
 
 export type Props = {
-    titleTag: Heading,
+    titleTag: string,
     items: Omit<CalculatorPresetCarouselItemProps, "loading" | "titleTag">[];
 }
 

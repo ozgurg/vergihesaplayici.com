@@ -32,13 +32,12 @@
 </template>
 
 <script lang="ts" setup>
-import type { Heading } from "@/types/common.js";
 import type { HtmlAttrs_a } from "@/types/html.js";
 import { icon_chevronRight } from "@/utils/icons.js";
 
 export type Props = {
     title: string;
-    titleTag: Heading;
+    titleTag: string;
     description: string;
     url: URL;
     date: Date;

@@ -1,6 +1,5 @@
 ---
 import type { Thumb } from "@/utils/thumb-loader.js";
-import type { Heading } from "@/types/common.js";
 import type { HTMLAttributes, HTMLTag } from "astro/types";
 import { Image } from "astro:assets";
 import SvgIcon from "@/components/common/svg-icon.vue";
@@ -9,7 +8,7 @@ import { icon_chevronRight } from "@/utils/icons.js";
 export type Props = {
     thumb: Thumb;
     title: string;
-    titleTag: Heading;
+    titleTag: string;
     brandTitle: string;
     releaseYear: number;
     url: URL;
