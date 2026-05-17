@@ -7,34 +7,18 @@ import { getAverageColor } from "fast-average-color-node";
 
 const INTEGRATION_NAME = "extract-color-from-thumbs";
 const GENERATED_FOLDER_PATH = ".generated";
-const SUPPORTED_DOMAINS = [
-    "telefon-vergisi-hesaplayici",
-    "konsol-vergisi-hesaplayici"
-];
 
-const processThumbsForDomain = async (domain: string): Promise<void> => {
-    console.info(`[${INTEGRATION_NAME}] ⏳ Thumbs of "${domain}" are processing…`);
+const processThumbs = async (): Promise<void> => {
+    console.info(`[${INTEGRATION_NAME}] ⏳ Thumbs are processing…`);
     const startTime = performance.now();
 
-    // I need to separate `import.meta.glob` calls for each domain because it requires literal strings
-    let thumbsPathBase64Pair: { [key: string]: string };
-
-    if (domain === "telefon-vergisi-hesaplayici") {
-        thumbsPathBase64Pair = import.meta.glob<string>("./../domains/telefon-vergisi-hesaplayici/thumb/*.webp", {
-            eager: true,
-            import: "default",
-            query: "?inline"
-        });
-    } else if (domain === "konsol-vergisi-hesaplayici") {
-        thumbsPathBase64Pair = import.meta.glob<string>("./../domains/konsol-vergisi-hesaplayici/thumb/*.webp", {
-            eager: true,
-            import: "default",
-            query: "?inline"
-        });
-    } else {
-        console.error(`[${INTEGRATION_NAME}] ⚠️ Unsupported domain: ${domain}`);
-        return;
-    }
+    const thumbsPathBase64Pair: {
+        [key: string]: string
+    } = import.meta.glob<string>("./../../public/img/thumb/*.webp", {
+        eager: true,
+        import: "default",
+        query: "?inline"
+    });
 
     const results: ThumbColors = {};
 
@@ -47,13 +31,13 @@ const processThumbsForDomain = async (domain: string): Promise<void> => {
     const generatedFolder = ensureFolderExists(GENERATED_FOLDER_PATH);
 
     fs.writeFileSync(
-        path.join(generatedFolder, `${domain}-thumb-colors.json`),
+        path.join(generatedFolder, `thumb-colors.json`),
         JSON.stringify(results),
         "utf8"
     );
 
     const endTime = performance.now();
-    console.info(`[${INTEGRATION_NAME}] 🟩 Thumbs of "${domain}" are processed in ${(endTime - startTime).toFixed(2)} ms!`);
+    console.info(`[${INTEGRATION_NAME}] 🟩 Thumbs are processed in ${(endTime - startTime).toFixed(2)} ms!`);
 };
 
 const getDominantColor = async (base64: string): Promise<{ hsl: HSLColor }> => {
@@ -104,18 +88,18 @@ const rgbToHsl = ({ r, g, b }: RGBColor): HSLColor => {
 
     let hue = 0;
     switch (max) {
-        case normalizedR: {
-            hue = ((normalizedG - normalizedB) / delta) + (normalizedG < normalizedB ? 6 : 0);
-            break;
-        }
-        case normalizedG : {
-            hue = ((normalizedB - normalizedR) / delta) + 2;
-            break;
-        }
-        default: { // normalizedB
-            hue = ((normalizedR - normalizedG) / delta) + 4;
-            break;
-        }
+    case normalizedR: {
+        hue = ((normalizedG - normalizedB) / delta) + (normalizedG < normalizedB ? 6 : 0);
+        break;
+    }
+    case normalizedG : {
+        hue = ((normalizedB - normalizedR) / delta) + 2;
+        break;
+    }
+    default: { // normalizedB
+        hue = ((normalizedR - normalizedG) / delta) + 4;
+        break;
+    }
     }
 
     return {
@@ -135,9 +119,7 @@ export default function extractColorFromThumbs(): AstroIntegration {
                 console.info(`[${INTEGRATION_NAME}] 🟡 Started`);
                 const startTime = performance.now();
 
-                for await (const domain of SUPPORTED_DOMAINS) {
-                    await processThumbsForDomain(domain);
-                }
+                await processThumbs();
 
                 const endTime = performance.now();
                 console.info(`[${INTEGRATION_NAME}] ✅ Done in ${(endTime - startTime).toFixed(2)} ms!`);

@@ -35,7 +35,7 @@ export const Presets: Preset[] = [
     ...withBrandId(Asus.presets, Asus.brand.id)
 ] as const;
 
-export const Thumbs: Thumb[] = await loadThumbs("konsol-vergisi-hesaplayici");
+export const Thumbs: Thumb[] = await loadThumbs();
 
 const sortPresetsByReleaseDate = (presets: Preset[]): Preset[] => {
     return presets.toSorted((_p1, _p2) => _p2.releaseDate.getTime() - _p1.releaseDate.getTime());

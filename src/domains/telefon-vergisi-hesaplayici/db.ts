@@ -26,7 +26,7 @@ export const Presets: Preset[] = [
     ...withBrandId(Samsung.presets, Samsung.brand.id)
 ] as const;
 
-export const Thumbs: Thumb[] = await loadThumbs("telefon-vergisi-hesaplayici");
+export const Thumbs: Thumb[] = await loadThumbs();
 
 const sortPresetsByReleaseDate = (presets: Preset[]): Preset[] => {
     return presets.toSorted((_p1, _p2) => _p2.releaseDate.getTime() - _p1.releaseDate.getTime());

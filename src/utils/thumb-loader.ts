@@ -1,6 +1,7 @@
 import type { ImageMetadata } from "astro";
 import type { HSLColor } from "@/types/common.js";
 import sharp from "sharp";
+import thumbColorsJson from "@root/.generated/thumb-colors.json" with { type: "json" };
 
 export type Thumb = {
     metadata: ImageMetadata; // Used for the `<Image />` component
@@ -53,45 +54,27 @@ const mapThumbEntries = (
     );
 };
 
+let thumbsCache: Promise<Thumb[]> | null = null;
 
-// We'll need to duplicate the import statement for each domain because it requires literal strings
-
-// oxlint-disable import/first
-import telefonVergisiHesaplayici_thumbColors
-    from "@root/.generated/telefon-vergisi-hesaplayici-thumb-colors.json" with { type: "json" };
-import konsolVergisiHesaplayici_thumbColors
-    from "@root/.generated/konsol-vergisi-hesaplayici-thumb-colors.json" with { type: "json" };
-
-export const loadThumbs = async (domain: string): Promise<Thumb[]> => {
-    let thumbColors: ThumbColors;
-    let thumbsFilePathBase64Pair: { [key: string]: string };
-    let thumbsFilePathMetadataPair: { [key: string]: ImageMetadata };
-
-    if (domain === "telefon-vergisi-hesaplayici") {
-        thumbColors = telefonVergisiHesaplayici_thumbColors;
-        thumbsFilePathBase64Pair = import.meta.glob<string>("@/domains/telefon-vergisi-hesaplayici/thumb/*.webp", {
-            eager: true,
-            import: "default",
-            query: "?inline"
-        });
-        thumbsFilePathMetadataPair = import.meta.glob<ImageMetadata>("@/domains/telefon-vergisi-hesaplayici/thumb/*.webp", {
-            eager: true,
-            import: "default"
-        });
-    } else if (domain === "konsol-vergisi-hesaplayici") {
-        thumbColors = konsolVergisiHesaplayici_thumbColors;
-        thumbsFilePathBase64Pair = import.meta.glob<string>("@/domains/konsol-vergisi-hesaplayici/thumb/*.webp", {
-            eager: true,
-            import: "default",
-            query: "?inline"
-        });
-        thumbsFilePathMetadataPair = import.meta.glob<ImageMetadata>("@/domains/konsol-vergisi-hesaplayici/thumb/*.webp", {
-            eager: true,
-            import: "default"
-        });
-    } else {
-        throw new Error(`Unsupported domain: ${domain}`);
+export const loadThumbs = (): Promise<Thumb[]> => {
+    if (thumbsCache === null) {
+        thumbsCache = (async (): Promise<Thumb[]> => {
+            const thumbColors: ThumbColors = thumbColorsJson;
+            const thumbsFilePathBase64Pair: {
+                [key: string]: string
+            } = import.meta.glob<string>("@root/public/img/thumb/*.webp", {
+                eager: true,
+                import: "default",
+                query: "?inline"
+            });
+            const thumbsFilePathMetadataPair: {
+                [key: string]: ImageMetadata
+            } = import.meta.glob<ImageMetadata>("@root/public/img/thumb/*.webp", {
+                eager: true,
+                import: "default"
+            });
+            return await mapThumbEntries(thumbsFilePathMetadataPair, thumbsFilePathBase64Pair, thumbColors);
+        })();
     }
-
-    return await mapThumbEntries(thumbsFilePathMetadataPair, thumbsFilePathBase64Pair, thumbColors);
+    return thumbsCache;
 };
