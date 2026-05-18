@@ -8,7 +8,6 @@ import Heading1 from "@/components/common/heading-1.vue";
 import ArticleLegalDisclaimerAlert from "@/components/article-legal-disclaimer-alert.vue";
 import RichText from "@/components/common/rich-text.vue";
 import Heading2 from "@/components/common/heading-2.vue";
-import Heading3 from "@/components/common/heading-3.vue";
 import ArticlesGrid from "@/components/articles-grid.vue";
 
 import { render } from "astro:content";
@@ -84,17 +83,21 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
             tag="section"
             class="content">
             {taxInfo &&
-                <Heading3 tag="span">Vergi adı ve kodu</Heading3>
                 <table>
+                    <thead>
+                    <tr>
+                        <th colspan="2">Vergi türü bilgisi</th>
+                    </tr>
+                    </thead>
                     <tbody>
-                        <tr>
-                            <td>Vergi adı</td>
-                            <td>{taxInfo.name}</td>
-                        </tr>
-                        <tr>
-                            <td>Vergi kodu</td>
-                            <td class="text-number">{taxInfo.code}</td>
-                        </tr>
+                    <tr>
+                        <td>Vergi adı</td>
+                        <td>{taxInfo.name}</td>
+                    </tr>
+                    <tr>
+                        <td>Vergi kodu</td>
+                        <td class="text-number">{taxInfo.code}</td>
+                    </tr>
                     </tbody>
                 </table>
                 <br />
