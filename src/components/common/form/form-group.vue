@@ -33,7 +33,7 @@ provide("form-group.id", ID);
 .form-group {
     :deep(legend, label) {
         min-block-size: 1lh;
-        margin-block-end: calc(var(--vh-spacer) * .25)
+        margin-block-end: calc(var(--vh-spacer) * .5)
     }
     &-content {
         flex: 1
