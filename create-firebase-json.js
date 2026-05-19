@@ -200,6 +200,10 @@ const firebaseJson = {
                     {
                         key: "Cache-Control",
                         value: "no-cache,no-store,must-revalidate"
+                    },
+                    {
+                        key: "X-Robots-Tag",
+                        value: "noindex,nofollow,noarchive"
                     }
                 ]
             },
