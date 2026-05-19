@@ -2,7 +2,7 @@ import type { CalculatorPage, Page } from "@/types/page-def.js";
 import type { Brand, Preset } from "@/domains/telefon-vergisi-hesaplayici/types.js";
 import { icon_telefonVergisiHesaplayici as icon } from "@/utils/icons.js";
 import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
-import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def";
+import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
 
 export const TelefonVergisiHesaplayiciPageDef = (): CalculatorPage => {
     const homePage = AnaSayfaPageDef();

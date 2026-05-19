@@ -1,7 +1,7 @@
 import type { CalculatorPage } from "@/types/page-def.js";
 import { icon_verginiOlustur as icon } from "@/utils/icons.js";
 import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
-import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def";
+import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
 
 export const VerginiOlusturPageDef = (): CalculatorPage => {
     const homePage = AnaSayfaPageDef();
