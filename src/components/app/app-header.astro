@@ -282,6 +282,18 @@ const nav = getFeaturedCalculatorPages();
                     &:has(a[aria-current="page"]:hover)::before {
                         --bg-hsl: var(--vh-clr-primary-hsl)
                     }
+                    // Delay the removal of the anchor-name only when leaving the entire menu.
+                    // We make this duration double (x2) the transform transition to ensure the spring-based scale-down
+                    // animation has completely settled to absolute zero before the anchor name is removed.
+                    // This eliminates any single-frame snap/flicker artifact in the center.
+                    li {
+                        transition: anchor-name calc(var(--vh-duration-long) * 2) allow-discrete
+                    }
+                    // When hovering inside the menu, disable the transition delay so switching is instant.
+                    &:has(a:hover) li {
+                        transition: none
+                    }
+                    // Hovered item gets the anchor
                     li:has(a:hover) {
                         anchor-name: --_anchor-name
                     }
