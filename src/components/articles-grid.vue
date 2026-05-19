@@ -1,12 +1,9 @@
 <template>
     <div class="articles-grid">
-        <template v-for="_item in props.items" :key="_item.url">
+        <template v-for="_item in props.items" :key="_item.slug">
             <article-card-item
-                :title="_item.title"
                 :title-tag="props.titleTag"
-                :description="_item.description"
-                :url="_item.url"
-                :date="_item.date" />
+                :yazi="_item" />
         </template>
     </div>
 </template>
@@ -14,10 +11,11 @@
 <script lang="ts" setup>
 import type { HtmlAttrs_div } from "@/types/html.js";
 import type { Props as ArticleCardItemProps } from "@/components/article-card-item.vue";
+import type { Yazi } from "@/domains/yazilar/types.js";
 
 export type Props = {
     titleTag: ArticleCardItemProps["titleTag"]
-    items: Omit<ArticleCardItemProps, "titleTag">[]
+    items: Yazi[]
 } & /* @vue-ignore */ Partial<HtmlAttrs_div>;
 
 const props = defineProps<Props>();

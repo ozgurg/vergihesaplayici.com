@@ -13,9 +13,9 @@ describe("components/common/form/form-label.vue", () => {
         expect(wrapper.element.tagName).toBe("LABEL");
     });
 
-    it("renders with custom tag when `is` is passed", () => {
+    it("renders with custom tag when `tag` is passed", () => {
         const wrapper = mount(FormLabel, {
-            props: { is: "legend" }
+            props: { tag: "legend" }
         });
         expect(wrapper.element.tagName).toBe("LEGEND");
     });

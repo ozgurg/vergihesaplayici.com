@@ -14,19 +14,10 @@ const DEFAULT_OPTIONS = {
     }
 };
 
-describe("components/common/tab/tab.vue", () => {
-    const createWrapper = (props = {}) => mount(Tab, {
-        props: {
-            value: "tab-1",
-            ...props
-        },
-        ...DEFAULT_OPTIONS
-    });
-
-    const createTabsWrapper = (initialValue: string) => {
-        const wrapper = mount({
-            //language=Vue
-            template: `
+const createTabsWrapper = (initialValue: string) => {
+    const wrapper = mount({
+        //language=Vue
+        template: `
                 <tabs v-model="value">
                     <tab-list>
                         <tab value="tab-1">Tab 1</tab>
@@ -35,24 +26,33 @@ describe("components/common/tab/tab.vue", () => {
                     </tab-list>
                 </tabs>
             `,
-            data: () => ({
-                value: initialValue
-            }),
-            components: {
-                Tabs,
-                TabList,
-                Tab
-            }
-        });
-        const tabs = wrapper.findAllComponents(Tab as any);
-        const tab1 = tabs[0]!;
-        const tab2 = tabs[1]!;
-        const tab3 = tabs[2]!;
-        return {
-            wrapper,
-            tab1, tab2, tab3
-        };
+        data: () => ({
+            value: initialValue
+        }),
+        components: {
+            Tabs,
+            TabList,
+            Tab
+        }
+    });
+    const tabs = wrapper.findAllComponents(Tab as any);
+    const tab1 = tabs[0]!;
+    const tab2 = tabs[1]!;
+    const tab3 = tabs[2]!;
+    return {
+        wrapper,
+        tab1, tab2, tab3
     };
+};
+
+describe("components/common/tab/tab.vue", () => {
+    const createWrapper = (props = {}) => mount(Tab, {
+        props: {
+            value: "tab-1",
+            ...props
+        },
+        ...DEFAULT_OPTIONS
+    });
 
     testDefaultSlot(Tab, {
         props: { value: "tab-1" },

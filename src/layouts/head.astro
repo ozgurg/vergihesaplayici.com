@@ -2,150 +2,134 @@
 import type { Page } from "@/types/page-def.js";
 import interLatinNormalFontWoff2Url from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
 
-const SITE_NAME = "Vergi Hesaplayıcı";
-const IS_DEV_MODE = import.meta.env.DEV;
-
-const pad = (number: number): string => String(number).padStart(2, "0");
-
-const toMetaContent = (date: Date): string => {
-    const Y = date.getFullYear();
-    const M = pad(date.getMonth() + 1);
-    const D = pad(date.getDate());
-    const h = pad(date.getHours());
-    const m = pad(date.getMinutes());
-    const s = pad(date.getSeconds());
-
-    const offsetMin = -date.getTimezoneOffset();
-    const sign = offsetMin >= 0 ? "+" : "-";
-    const absMin = Math.abs(offsetMin);
-    const offH = pad(Math.floor(absMin / 60));
-    const offM = pad(absMin % 60);
-
-    return `${Y}-${M}-${D}T${h}:${m}:${s}${sign}${offH}:${offM}`;
+export type Props = {
+    page: Page
 };
-
-const replacePlaceholderTexts = (text: string): string => {
-    return text.replace("%site-title%", SITE_NAME);
-};
+const { page } = Astro.props;
+const { head } = page;
 
 const MAX_TITLE_LENGTH = 60;
 
-export type Props = {
-    page: Page;
-    dates?: {
-        created?: Date;
-        updated?: Date | null;
-    }
-};
-const { page, dates } = Astro.props;
-const { head } = page;
+const SITE_NAME = "Vergi Hesaplayıcı";
+const SITE_COLOR = "#111912"; // Calculated start color of `page-header`s linear-gradient
+const SITE_URL = siteUrl();
+const SITE_MANIFEST_JSON = staticUrl("/manifest.json");
+const SITE_X_CREATOR = "@vergihesaplar";
 
-let TITLE;
-const titleWithSiteName = replacePlaceholderTexts(head.title);
-// oxlint-disable-next-line unicorn/prefer-ternary
-if (titleWithSiteName.length > MAX_TITLE_LENGTH) {
-    TITLE = titleWithSiteName.split(" - ")[0];
-} else {
-    TITLE = titleWithSiteName;
-}
+const PAGE_TITLE =
+    head.title.length > MAX_TITLE_LENGTH
+        ? head.title.split(" - ")[0]
+        : head.title;
 
-const DESCRIPTION = replacePlaceholderTexts(head.description);
-const THEME_COLOR = "#111912"; // Calculated start color of `page-header`s linear-gradient
-const X_CREATOR = "@vergihesaplar";
-const BASE_URL = siteUrl();
+const PAGE_META_DESCRIPTION = head.description;
 const PAGE_URL = head.canonicalUrl;
-const OG_IMAGE = head.ogImageUrl ?? staticSiteUrl("/og/ana-sayfa.jpg");
-const MANIFEST_JSON = staticUrl("/manifest.json");
+const PAGE_OG_IMAGE = head.ogImageUrl ?? staticSiteUrl("/og/ana-sayfa.jpg");
+const PAGE_SCHEMA = (() => {
+    const breadcrumbs = {
+        "@type": "BreadcrumbList",
+        "@id": `${PAGE_URL.href}#breadcrumb`,
+        itemListElement: page.breadcrumbs.map((item, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: item.title,
+            item: item.url.href
+        }))
+    };
 
-const breadcrumbsSchema = page.breadcrumbs ? {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: page.breadcrumbs.map((_item, _index) => ({
-        "@type": "ListItem",
-        position: _index + 1,
-        name: _item.title,
-        item: _item.url.href
-    }))
-} : null;
+    const schema: unknown = page.head.schema;
+
+    if (schema && breadcrumbs) {
+        if (typeof schema === "object" && !Array.isArray(schema) && "@graph" in schema) {
+            const graph = schema["@graph"];
+            return {
+                ...schema,
+                "@graph": Array.isArray(graph) ? [...graph, breadcrumbs] : [breadcrumbs]
+            };
+        }
+        return [schema, { "@context": "https://schema.org", ...breadcrumbs }];
+    }
+
+    if (breadcrumbs) {
+        return { "@context": "https://schema.org", ...breadcrumbs };
+    }
+
+    return schema;
+})();
 ---
 
 <meta charset="UTF-8" />
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,viewport-fit=cover,interactive-widget=resizes-content" />
-<title>{TITLE}</title>
+<meta name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=5,viewport-fit=cover,interactive-widget=resizes-content" />
+<title>{PAGE_TITLE}</title>
 
 <link rel="preload" as="font" type="font/woff2" href={interLatinNormalFontWoff2Url} crossorigin="anonymous" />
+<link rel="dns-prefetch" href="https://cdn.apitiny.net" />
 
-{dates?.created &&
-<meta name="published_time" content={toMetaContent(dates.created)} />
-<meta itemprop="datePublished" content={toMetaContent(dates.created)} />
-<meta property="article:published_time" content={toMetaContent(dates.created)} />
-}
-
-{dates?.updated &&
-<meta name="modified_time" content={toMetaContent(dates.updated)} />
-<meta itemprop="dateModified" content={toMetaContent(dates.updated)} />
-<meta property="article:modified_time" content={toMetaContent(dates.updated)} />
-}
-
-<meta name="description" content={DESCRIPTION} />
+<meta name="description" content={PAGE_META_DESCRIPTION} />
 
 <meta name="format-detection" content="telephone=no" />
 <meta name="robots" content="index, follow" />
-<meta itemprop="url" content={BASE_URL.href} />
 
-<base href={BASE_URL.href} />
+<base href={SITE_URL.href} />
 <link href={PAGE_URL.href} rel="canonical" />
 
 <link rel="alternate" href={PAGE_URL.href} hreflang="x-default" />
 <link rel="alternate" href={PAGE_URL.href} hreflang="tr" />
 
-<meta name="theme-color" content={THEME_COLOR} />
-<link rel="manifest" href={MANIFEST_JSON.href} />
+<meta name="theme-color" content={SITE_COLOR} />
+<link rel="manifest" href={SITE_MANIFEST_JSON.href} />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content={SITE_NAME} />
-<meta name="twitter:title" content={TITLE} />
-<meta name="twitter:description" content={DESCRIPTION} />
+<meta name="twitter:site" content={SITE_X_CREATOR} />
+<meta name="twitter:title" content={PAGE_TITLE} />
+<meta name="twitter:description" content={PAGE_META_DESCRIPTION} />
 <meta name="twitter:url" content={PAGE_URL.href} />
-<meta name="twitter:image" content={OG_IMAGE} />
-<meta name="twitter:image:alt" content={TITLE} />
-<meta name="twitter:creator" content={X_CREATOR} />
+<meta name="twitter:image" content={PAGE_OG_IMAGE} />
+<meta name="twitter:image:alt" content={PAGE_TITLE} />
+<meta name="twitter:creator" content={SITE_X_CREATOR} />
 
 <meta name="author" content={SITE_NAME} />
-<meta property="og:title" content={TITLE} />
+<meta property="og:title" content={PAGE_TITLE} />
 <meta property="og:site_name" content={SITE_NAME} />
-<meta property="og:description" content={DESCRIPTION} />
+<meta property="og:description" content={PAGE_META_DESCRIPTION} />
 <meta property="og:url" content={PAGE_URL.href} />
 <meta property="og:type" content="website" />
-<meta property="og:image" content={OG_IMAGE} />
-<meta property="og:locale" content="TR" />
+<meta property="og:image" content={PAGE_OG_IMAGE} />
+<meta property="og:locale" content="tr_TR" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={PAGE_TITLE} />
 
 <link rel="icon" type="image/png" href={staticUrl("/pwa/favicon-96x96.png")} sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href={staticUrl("/pwa/favicon.svg")} />
 <link rel="shortcut icon" href={staticUrl("/pwa/favicon.ico")} />
 <link rel="apple-touch-icon" sizes="180x180" href={staticUrl("/pwa/apple-touch-icon-180.png")} />
 
-<link rel="sitemap" href={staticUrl("/sitemap-index.xml")} />
+<link rel="sitemap" type="application/xml" title="Sitemap" href={staticUrl("/sitemap-index.xml")} />
 
-<meta name="msapplication-navbutton-color" content={THEME_COLOR} />
+<meta name="msapplication-navbutton-color" content={SITE_COLOR} />
 <meta name="msapplication-tap-highlight" content="no" />
-<meta name="msapplication-TileColor" content={THEME_COLOR} />
+<meta name="msapplication-TileColor" content={SITE_COLOR} />
 
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-title" content={TITLE} />
+<meta name="apple-mobile-web-app-title" content={PAGE_TITLE} />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
-{!IS_DEV_MODE && <script is:inline src="https://analytics.ahrefs.com/analytics.js" data-key="hgZsRnZKNf2I0PbluLfvbA" async=""></script>}
+{import.meta.env.PROD &&
+<script is:inline src="https://analytics.ahrefs.com/analytics.js" data-key="hgZsRnZKNf2I0PbluLfvbA" async=""
+        defer=""></script>}
 
 <script is:inline define:vars={{ SERVICE_WORKER_URL: staticUrl("/sw.js") }}>
-if("serviceWorker" in window.navigator){window.addEventListener("load",()=>{window.navigator.serviceWorker.register(SERVICE_WORKER_URL)});}
+    if ("serviceWorker" in window.navigator) {
+        window.addEventListener("load", () => {
+            window.navigator.serviceWorker.register(SERVICE_WORKER_URL);
+        });
+    }
 </script>
 
-{head.schema && <script is:inline type="application/ld+json" set:html={JSON.stringify(head.schema)}></script>}
-
-{breadcrumbsSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbsSchema)}></script>}
+<script is:inline type="application/ld+json" set:html={JSON.stringify(PAGE_SCHEMA)}></script>
 
 <script>
     if (import.meta.env.PROD) {

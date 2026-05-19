@@ -41,11 +41,11 @@ describe("components/common/string-carousel.vue", () => {
         expect(wrapper.element.tagName).toBe("DIV");
     });
 
-    it("renders correct tag based on `is`", () => {
+    it("renders correct tag based on `tag`", () => {
         const wrapper = mount(StringCarousel, {
             props: {
                 text: "Türkiye",
-                is: "section"
+                tag: "section"
             }
         });
         expect(wrapper.element.tagName).toBe("SECTION");

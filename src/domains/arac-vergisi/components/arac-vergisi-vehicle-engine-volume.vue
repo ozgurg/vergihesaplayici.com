@@ -1,7 +1,7 @@
 <template>
     <form-group>
         <template #label>
-            <form-label is="legend">
+            <form-label tag="legend">
                 <string-carousel :text="label" />
             </form-label>
         </template>

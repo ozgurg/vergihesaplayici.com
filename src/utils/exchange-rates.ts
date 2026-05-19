@@ -25,7 +25,7 @@ const FALLBACK_EXCHANGE_RATES: ExchangeRates = {
         EUR: 1,
         GBP: 1,
         INR: 1,
-        CNY: 1,
+        CNY: 1
     }
 };
 
@@ -49,7 +49,7 @@ const fetchExchangeRate = async (): Promise<ExchangeRates> => {
                     EUR: json?.rates?.EUR ? 1 / json.rates.EUR : 0,
                     GBP: json?.rates?.GBP ? 1 / json.rates.GBP : 0,
                     INR: json?.rates?.INR ? 1 / json.rates.INR : 0,
-                    CNY: json?.rates?.CNY ? 1 / json.rates.CNY : 0,
+                    CNY: json?.rates?.CNY ? 1 / json.rates.CNY : 0
                 }
             };
         }
@@ -69,10 +69,8 @@ export const API_PROVIDER_CREDIT = {
     title: "Exchange Rate API"
 };
 
-export const initializeExchangeRates = async (): Promise<ExchangeRates> => {
-    return await fetchExchangeRate();
-};
+const exchangeRates: ExchangeRates = await fetchExchangeRate();
 
 export const getExchangeRates = (): ExchangeRates => {
-    return window.__EXCHANGE_RATES__;
+    return exchangeRates;
 };

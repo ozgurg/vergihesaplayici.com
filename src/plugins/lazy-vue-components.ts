@@ -37,7 +37,7 @@ const isTargetVueFile = (file: string, dirs: string[]): boolean => {
     return dirs.some(_folder => {
         // Simple regex conversion for globs: `**` -> `.*`
         const regexString = `^${_folder.replaceAll("/", String.raw`\/`).replaceAll("**", ".*")}\\/.*\\.vue$`;
-        return new RegExp(regexString).test(normalizedFile);
+        return new RegExp(regexString, "u").test(normalizedFile);
     });
 };
 
@@ -87,7 +87,7 @@ export default function lazyVueComponentsPlugin(options: LazyVueComponentsOption
             for (const _file of files) {
                 const basename = path.basename(_file, ".vue");
                 const pascalCaseComponentName = basename
-                    .replaceAll(/(^\w|-\w)/g, _component => _component.replace("-", "")
+                    .replaceAll(/(^\w|-\w)/gu, _component => _component.replace("-", "")
                         .toUpperCase());
 
                 //language=JS

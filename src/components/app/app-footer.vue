@@ -18,7 +18,7 @@
 
                 <div class="exchange-rates-info">
                     <div>
-                        <small>Güncellenme tarihi</small>
+                        <small>Kur güncellenme tarihi</small>
                         <b>
                             <time :datetime="dateUpdated.toISOString()">
                                 {{ dateUpdated.toLocaleString("tr-TR") }}

@@ -1,21 +1,20 @@
 <template>
     <component
-        :is="props.is"
+        :is="props.tag"
         class="heading-1">
         <slot name="default" />
     </component>
 </template>
 
 <script lang="ts" setup>
-import type { Heading } from "@/types/common.js";
 import type { HtmlAttrs_h1 } from "@/types/html.js";
 
 export type Props = {
-    is?: Heading;
+    tag?: string;
 } & /* @vue-ignore */ Partial<HtmlAttrs_h1>;
 
 const props = withDefaults(defineProps<Props>(), {
-    is: "h1"
+    tag: "h1"
 });
 </script>
 

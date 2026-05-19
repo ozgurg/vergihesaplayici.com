@@ -11,7 +11,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Galaxy Z Fold4",
         slug: "samsung-galaxy-z-fold4",
         releaseDate: new Date("2022-08-25"),
-        thumb: "samsung-galaxy-z-fold4.png",
+        thumb: "samsung-galaxy-z-fold4.webp",
         ...buildPageMeta("Samsung Galaxy Z Fold4'ün"),
         options: [
             {
@@ -41,7 +41,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Galaxy Z Fold5",
         slug: "samsung-galaxy-z-fold5",
         releaseDate: new Date("2023-08-11"),
-        thumb: "samsung-galaxy-z-fold5.png",
+        thumb: "samsung-galaxy-z-fold5.webp",
         ...buildPageMeta("Samsung Galaxy Z Fold5'in"),
         options: [
             {
@@ -71,7 +71,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Galaxy Z Fold6",
         slug: "samsung-galaxy-z-fold6",
         releaseDate: new Date("2024-07-24"),
-        thumb: "samsung-galaxy-z-fold6.png",
+        thumb: "samsung-galaxy-z-fold6.webp",
         ...buildPageMeta("Samsung Galaxy Z Fold6'nın"),
         options: [
             {
@@ -101,7 +101,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Galaxy Z Fold7",
         slug: "samsung-galaxy-z-fold7",
         releaseDate: new Date("2025-07-25"),
-        thumb: "samsung-galaxy-z-fold7.png",
+        thumb: "samsung-galaxy-z-fold7.webp",
         ...buildPageMeta("Samsung Galaxy Z Fold7'nin"),
         options: [
             {
@@ -132,7 +132,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Galaxy Z Flip4",
         slug: "samsung-galaxy-z-flip4",
         releaseDate: new Date("2022-08-25"),
-        thumb: "samsung-galaxy-z-flip4.png",
+        thumb: "samsung-galaxy-z-flip4.webp",
         ...buildPageMeta("Samsung Galaxy Z Flip4'ün"),
         options: [
             {
@@ -162,7 +162,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Galaxy Z Flip5",
         slug: "samsung-galaxy-z-flip5",
         releaseDate: new Date("2023-08-11"),
-        thumb: "samsung-galaxy-z-flip5.png",
+        thumb: "samsung-galaxy-z-flip5.webp",
         ...buildPageMeta("Samsung Galaxy Z Flip5'in"),
         options: [
             {
@@ -185,7 +185,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Galaxy Z Flip6",
         slug: "samsung-galaxy-z-flip6",
         releaseDate: new Date("2024-07-24"),
-        thumb: "samsung-galaxy-z-flip6.png",
+        thumb: "samsung-galaxy-z-flip6.webp",
         ...buildPageMeta("Samsung Galaxy Z Flip6'nın"),
         options: [
             {
@@ -208,7 +208,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Galaxy Z Flip7",
         slug: "samsung-galaxy-z-flip7",
         releaseDate: new Date("2025-07-25"),
-        thumb: "samsung-galaxy-z-flip7.png",
+        thumb: "samsung-galaxy-z-flip7.webp",
         ...buildPageMeta("Samsung Galaxy Z Flip7'nin"),
         options: [
             {
@@ -232,7 +232,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Galaxy S23",
         slug: "samsung-galaxy-s23",
         releaseDate: new Date("2023-02-17"),
-        thumb: "samsung-galaxy-s23.png",
+        thumb: "samsung-galaxy-s23.webp",
         ...buildPageMeta("Samsung Galaxy S23'ün"),
         options: [
             {
@@ -255,7 +255,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Galaxy S23+",
         slug: "samsung-galaxy-s23-plus",
         releaseDate: new Date("2023-02-17"),
-        thumb: "samsung-galaxy-s23-plus.png",
+        thumb: "samsung-galaxy-s23-plus.webp",
         ...buildPageMeta("Samsung Galaxy S23+'nın"),
         options: [
             {
@@ -278,7 +278,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Galaxy S23 Ultra",
         slug: "samsung-galaxy-s23-ultra",
         releaseDate: new Date("2023-02-17"),
-        thumb: "samsung-galaxy-s23-ultra.png",
+        thumb: "samsung-galaxy-s23-ultra.webp",
         ...buildPageMeta("Samsung Galaxy S23 Ultra'nın"),
         options: [
             {
@@ -309,7 +309,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Galaxy S24",
         slug: "samsung-galaxy-s24",
         releaseDate: new Date("2024-01-24"),
-        thumb: "samsung-galaxy-s24.png",
+        thumb: "samsung-galaxy-s24.webp",
         ...buildPageMeta("Samsung Galaxy S24'ün"),
         options: [
             {
@@ -332,7 +332,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Galaxy S24+",
         slug: "samsung-galaxy-s24-plus",
         releaseDate: new Date("2024-01-24"),
-        thumb: "samsung-galaxy-s24-plus.png",
+        thumb: "samsung-galaxy-s24-plus.webp",
         ...buildPageMeta("Samsung Galaxy S24+'nın"),
         options: [
             {
@@ -355,7 +355,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Galaxy S24 Ultra",
         slug: "samsung-galaxy-s24-ultra",
         releaseDate: new Date("2024-01-24"),
-        thumb: "samsung-galaxy-s24-ultra.png",
+        thumb: "samsung-galaxy-s24-ultra.webp",
         ...buildPageMeta("Samsung Galaxy S24 Ultra'nın"),
         options: [
             {
@@ -386,7 +386,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Galaxy S25",
         slug: "samsung-galaxy-s25",
         releaseDate: new Date("2025-02-03"),
-        thumb: "samsung-galaxy-s25.png",
+        thumb: "samsung-galaxy-s25.webp",
         ...buildPageMeta("Samsung Galaxy S25'in"),
         options: [
             {
@@ -409,7 +409,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Galaxy S25+",
         slug: "samsung-galaxy-s25-plus",
         releaseDate: new Date("2025-02-03"),
-        thumb: "samsung-galaxy-s25-plus.png",
+        thumb: "samsung-galaxy-s25-plus.webp",
         ...buildPageMeta("Samsung Galaxy S25+'nın"),
         options: [
             {
@@ -432,7 +432,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Galaxy S25 Ultra",
         slug: "samsung-galaxy-s25-ultra",
         releaseDate: new Date("2025-02-03"),
-        thumb: "samsung-galaxy-s25-ultra.png",
+        thumb: "samsung-galaxy-s25-ultra.webp",
         ...buildPageMeta("Samsung Galaxy S25 Ultra'nın"),
         options: [
             {
@@ -462,7 +462,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Galaxy S25 Edge",
         slug: "samsung-galaxy-s25-edge",
         releaseDate: new Date("2025-05-29"),
-        thumb: "samsung-galaxy-s25-edge.png",
+        thumb: "samsung-galaxy-s25-edge.webp",
         ...buildPageMeta("Samsung Galaxy S25 Edge'nin"),
         options: [
             {
@@ -485,7 +485,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Galaxy S25 FE",
         slug: "samsung-galaxy-s25-fe",
         releaseDate: new Date("2025-09-04"),
-        thumb: "samsung-galaxy-s25-fe.png",
+        thumb: "samsung-galaxy-s25-fe.webp",
         ...buildPageMeta("Samsung Galaxy S25 FE'nin"),
         options: [
             {
@@ -509,7 +509,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Galaxy S26",
         slug: "samsung-galaxy-s26",
         releaseDate: new Date("2026-02-26"),
-        thumb: "samsung-galaxy-s26.png",
+        thumb: "samsung-galaxy-s26.webp",
         ...buildPageMeta("Samsung Galaxy S26'nın"),
         options: [
             {
@@ -532,7 +532,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Galaxy S26+",
         slug: "samsung-galaxy-s26-plus",
         releaseDate: new Date("2026-02-26"),
-        thumb: "samsung-galaxy-s26-plus.png",
+        thumb: "samsung-galaxy-s26-plus.webp",
         ...buildPageMeta("Samsung Galaxy S26+'nın"),
         options: [
             {
@@ -555,7 +555,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Galaxy S26 Ultra",
         slug: "samsung-galaxy-s26-ultra",
         releaseDate: new Date("2026-02-26"),
-        thumb: "samsung-galaxy-s26-ultra.png",
+        thumb: "samsung-galaxy-s26-ultra.webp",
         ...buildPageMeta("Samsung Galaxy S26 Ultra'nın"),
         options: [
             {

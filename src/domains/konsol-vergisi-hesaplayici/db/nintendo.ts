@@ -11,7 +11,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Switch",
         slug: "nintendo-switch",
         releaseDate: new Date("2017-03-03"),
-        thumb: "nintendo-switch.png",
+        thumb: "nintendo-switch.webp",
         ...buildPageMeta("Nintendo Switch'in"),
         options: [
             {
@@ -28,7 +28,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Switch Lite",
         slug: "nintendo-switch-lite",
         releaseDate: new Date("2019-09-20"),
-        thumb: "nintendo-switch-lite.png",
+        thumb: "nintendo-switch-lite.webp",
         ...buildPageMeta("Nintendo Switch Lite'nin"),
         options: [
             {
@@ -45,7 +45,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Switch OLED",
         slug: "nintendo-switch-oled",
         releaseDate: new Date("2021-10-08"),
-        thumb: "nintendo-switch-oled.png",
+        thumb: "nintendo-switch-oled.webp",
         ...buildPageMeta("Nintendo Switch OLED'in"),
         options: [
             {
@@ -62,7 +62,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         title: "Switch 2",
         slug: "nintendo-switch-2",
         releaseDate: new Date("2025-06-05"),
-        thumb: "nintendo-switch-2.png",
+        thumb: "nintendo-switch-2.webp",
         ...buildPageMeta("Nintendo Switch 2'nin"),
         options: [
             {

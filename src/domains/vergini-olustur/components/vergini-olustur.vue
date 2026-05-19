@@ -61,7 +61,7 @@
 
         <template v-if="results !== null">
             <div>
-                <heading-3 is="h2">
+                <heading-3 tag="h2">
                     Hesaplama sonuçları
                 </heading-3>
 

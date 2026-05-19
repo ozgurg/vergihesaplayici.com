@@ -69,7 +69,7 @@ describe("components/common/form/form-check-group.vue", () => {
     it("sets a unique `--anchor-name` CSS variable", () => {
         const wrapper = mount(FormCheckGroup);
         const style = getComputedStyle(wrapper.element).getPropertyValue("--anchor-name");
-        expect(style).toMatch(/^--form-check-group-checked-indicator-[\w-]+$/);
+        expect(style).toMatch(/^--form-check-group-checked-indicator-[\w-]+$/u);
     });
 
     it("applies the `scale` class", () => {

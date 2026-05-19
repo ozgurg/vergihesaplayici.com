@@ -80,9 +80,7 @@ const calculateServerSide = () => {
 const initial = calculateServerSide();
 ---
 
-<AppLayout
-    page={konsolVergisiHesaplayiciPresetSlugPage}
-    dates={{ created: preset.releaseDate, updated: new Date(EXCHANGE_RATES.dateUpdated) }}>
+<AppLayout page={konsolVergisiHesaplayiciPresetSlugPage}>
     <PageHeader>
         <Container>
             <Breadcrumbs
@@ -108,7 +106,7 @@ const initial = calculateServerSide();
         <Container>
             <div class="ta-ad-first" ta-ad-container=""></div>
 
-            <Heading2 is="h2">
+            <Heading2 tag="h2">
                 Diğer hazır hesaplamalar
             </Heading2>
         </Container>

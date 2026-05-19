@@ -14,7 +14,7 @@
                     <div class="calculator-pricing-row">
                         <form-group>
                             <template #label>
-                                <form-label is="legend">
+                                <form-label tag="legend">
                                     <string-carousel :text="priceLabel" />
                                 </form-label>
                             </template>
@@ -60,7 +60,7 @@
             <div>
                 <div class="ta-ad-first" ta-ad-container=""></div>
 
-                <heading-3 is="h2">
+                <heading-3 tag="h2">
                     Hesaplama sonuçları
                 </heading-3>
 

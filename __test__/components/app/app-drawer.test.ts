@@ -32,11 +32,8 @@ describe("components/app/app-drawer.vue", () => {
         for (const [_index, _calculatorCardItem] of calculatorCardItems.entries()) {
             const calculatorPage = CALCULATOR_PAGES[_index]!;
             expect((_calculatorCardItem as any).props()).toEqual({
-                title: calculatorPage.title,
+                page: calculatorPage,
                 titleTag: "div",
-                description: calculatorPage.summary,
-                url: calculatorPage.url,
-                icon: calculatorPage.icon
             });
         }
     });

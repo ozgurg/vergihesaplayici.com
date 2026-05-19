@@ -1,8 +1,10 @@
-import type { CalculatorPage, CalculatorPageDef } from "@/types/page-def.js";
+import type { CalculatorPage } from "@/types/page-def.js";
 import { icon_verginiOlustur as icon } from "@/utils/icons.js";
 import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
+import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
 
-export const VerginiOlusturPageDef: CalculatorPageDef = (): CalculatorPage => {
+export const VerginiOlusturPageDef = (): CalculatorPage => {
+    const homePage = AnaSayfaPageDef();
     const parentPage = HesaplayicilarPageDef();
 
     const id = "hesaplayici-vergini-olustur";
@@ -23,23 +25,31 @@ export const VerginiOlusturPageDef: CalculatorPageDef = (): CalculatorPage => {
         breadcrumbs,
         icon,
         head: {
-            title: `${title} - %site-title%`,
+            title: `${title} - Vergi Hesaplayıcı`,
             description: "Kendi vergi oranlarınızı ekleyip çıkararak net vergi miktarını hızlıca hesaplayabileceğiniz, pratik ve kullanıcı dostu bir vergi hesaplayıcı.",
             canonicalUrl: url,
             ogImageUrl,
             schema: {
                 "@context": "https://schema.org",
-                "@type": "WebApplication",
-                name: title,
-                description: "Kendi vergi oranlarınızı ekleyip çıkararak net vergi miktarını hızlıca hesaplayabileceğiniz, pratik ve kullanıcı dostu bir vergi hesaplayıcı.",
-                applicationCategory: "BusinessApplication",
-                operatingSystem: "All",
-                url: url.href,
-                offers: {
-                    "@type": "Offer",
-                    price: "0",
-                    priceCurrency: "TRY"
-                }
+                "@graph": [
+                    {
+                        "@type": "WebApplication",
+                        "@id": `${url.href}#webapplication`,
+                        "url": url.href,
+                        "name": title,
+                        "isPartOf": { "@id": `${parentPage.url.href}#collectionpage` },
+                        "about": { "@id": `${homePage.url.href}#organization` },
+                        "inLanguage": "tr-TR",
+                        "applicationCategory": "FinanceApplication",
+                        "operatingSystem": "All",
+                        "screenshot": ogImageUrl,
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "0",
+                            "priceCurrency": "TRY"
+                        }
+                    }
+                ]
             }
         },
         //language=HTML

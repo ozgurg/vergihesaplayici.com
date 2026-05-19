@@ -1,7 +1,7 @@
 <template>
     <fieldset class="form-group">
         <template v-if="props.label !== undefined">
-            <form-label is="legend">
+            <form-label tag="legend">
                 {{ props.label }}
             </form-label>
         </template>
@@ -33,7 +33,7 @@ provide("form-group.id", ID);
 .form-group {
     :deep(legend, label) {
         min-block-size: 1lh;
-        margin-block-end: calc(var(--vh-spacer) * .25)
+        margin-block-end: calc(var(--vh-spacer) * .5)
     }
     &-content {
         flex: 1

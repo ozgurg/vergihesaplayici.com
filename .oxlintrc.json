@@ -124,7 +124,8 @@
                 "typescript/explicit-member-accessibility": "off",
                 "eslint/no-constructor-return": "off",
                 "eslint/max-classes-per-file": "off",
-                "eslint/no-empty-function": "off"
+                "eslint/no-empty-function": "off",
+                "eslint/prefer-arrow-callback": "off"
             }
         },
         {

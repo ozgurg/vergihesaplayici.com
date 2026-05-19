@@ -8,20 +8,28 @@ describe("components/articles-grid.vue", () => {
         const testItems = [
             {
                 title: "Test Title 1",
+                slug: "test-title-1",
                 description: "Test Description 1",
-                url: new URL("https://vergihesaplayici.com/article-1"),
-                date: new Date("2025-01-01")
+                createdDate: new Date("2025-01-01"),
+                updatedDate: null,
+                entry: {
+                    body: "This is a test body of the article 1."
+                }
             },
             {
                 title: "Test Title 2",
+                slug: "test-title-2",
                 description: "Test Description 2",
-                url: new URL("https://vergihesaplayici.com/article-2"),
-                date: new Date("2025-01-02")
+                createdDate: new Date("2025-01-02"),
+                updatedDate: null,
+                entry: {
+                    body: "This is a test body of the article 2."
+                }
             }
         ];
 
         const wrapper = mount(ArticlesGrid, {
-            props: { items: testItems, titleTag: "h2" }
+            props: { items: testItems as any, titleTag: "h2" }
         });
 
         const articleCardItems = wrapper.findAllComponents(ArticleCardItem as any);
@@ -31,11 +39,8 @@ describe("components/articles-grid.vue", () => {
         for (const [_index, _articleCardItem] of articleCardItems.entries()) {
             const item = testItems[_index]!;
             expect((_articleCardItem as any).props()).toEqual({
-                title: item.title,
-                titleTag: "h2",
-                description: item.description,
-                url: item.url,
-                date: item.date
+                yazi: item,
+                titleTag: "h2"
             });
         }
     });

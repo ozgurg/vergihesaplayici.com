@@ -1,6 +1,6 @@
 <template>
     <component
-        :is="props.is"
+        :is="props.tag"
         :id="ID"
         class="form-label">
         <slot name="default" />
@@ -11,11 +11,11 @@
 import type { HtmlAttrs_label, HtmlAttrs_legend } from "@/types/html.js";
 
 export type Props = {
-    is?: "label" | "legend";
+    tag?: "label" | "legend";
 } & /* @vue-ignore */ Partial<HtmlAttrs_label | HtmlAttrs_legend>;
 
 const props = withDefaults(defineProps<Props>(), {
-    is: "label"
+    tag: "label"
 });
 const formGroupId = inject("form-group.id", null);
 

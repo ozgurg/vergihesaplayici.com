@@ -5,10 +5,7 @@
         <container>
             <template v-for="_calculatorPage in CALCULATOR_PAGES" :key="_calculatorPage.url">
                 <calculator-card-item
-                    :title="_calculatorPage.title"
-                    :description="_calculatorPage.summary"
-                    :url="_calculatorPage.url"
-                    :icon="_calculatorPage.icon"
+                    :page="_calculatorPage"
                     title-tag="div" />
             </template>
         </container>

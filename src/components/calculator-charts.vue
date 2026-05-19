@@ -4,7 +4,7 @@
             <template v-for="_chart in props.charts">
                 <div class="calculator-charts-item">
                     <heading-3
-                        is="h3"
+                        tag="h3"
                         aria-hidden="true">
                         {{ _chart.title }}
                     </heading-3>

@@ -1,15 +1,32 @@
-import type { Yazi } from "@/domains/yazilar/types.js";
-import type { Props as ArticlesGridProps } from "@/components/articles-grid.vue";
-import { YazilarSlugPageDef } from "@/domains/yazilar/page-def.js";
+export const parseTitleAsTaxInfo = (title: string): { name: string, code: string } | false => {
+    const pattern = /^(.*?)\s*\[([^\]\\]+)\]\s*$/u;
+    const matchArray = title.match(pattern);
+    if (matchArray) {
+        const name = matchArray[1]?.trim() ?? null;
+        const code = matchArray[2]?.trim() ?? null;
+        if (name && code) {
+            return { name, code };
+        }
+    }
+    return false;
+};
 
-export const mapYazilarForArticlesGridComponent = (yazilar: Yazi[]): ArticlesGridProps["items"] => {
-    return yazilar.map(_yazi => {
-        const yazilarSlugPage = YazilarSlugPageDef({ yazi: _yazi });
-        return {
-            title: yazilarSlugPage.title,
-            description: _yazi.description,
-            url: yazilarSlugPage.url,
-            date: _yazi.updatedDate ?? _yazi.createdDate
-        };
-    });
+export const parseDate = (date: Date): { timeDateTimeAttr: string, readableDate: string } => {
+    const timeDateTimeAttr = date.toISOString().split("T")?.[0] ?? ""; // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time#valid_datetime_values
+    const readableDate = date.toLocaleDateString("tr-TR");
+    return {
+        timeDateTimeAttr,
+        readableDate
+    };
+};
+
+export const getWordCount = (string: string): number => {
+    return string.trim()
+        .split(/\s+/u)
+        .filter(Boolean)
+        .length;
+};
+
+export const calculateReadingTimeInMinutes = (wordCount: number, wordsPerMinute = 200): number => {
+    return Math.max(1, Math.ceil(wordCount / wordsPerMinute));
 };

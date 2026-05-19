@@ -8,13 +8,19 @@ import Heading1 from "@/components/common/heading-1.vue";
 import ArticleLegalDisclaimerAlert from "@/components/article-legal-disclaimer-alert.vue";
 import RichText from "@/components/common/rich-text.vue";
 import Heading2 from "@/components/common/heading-2.vue";
-import Heading3 from "@/components/common/heading-3.vue";
 import ArticlesGrid from "@/components/articles-grid.vue";
+import SvgIcon from "@/components/common/svg-icon.vue";
 
+import { icon_calendar, icon_refresh, icon_time } from "@/utils/icons.js";
 import { render } from "astro:content";
 import { YazilarPageDef, YazilarSlugPageDef } from "@/domains/yazilar/page-def.js";
-import { getYazilar } from "@/domains/yazilar/db.js";
-import { mapYazilarForArticlesGridComponent } from "@/domains/yazilar/utils.js";
+import { getYazilar, getRelatedYazilar } from "@/domains/yazilar/db.js";
+import {
+    calculateReadingTimeInMinutes,
+    getWordCount,
+    parseDate,
+    parseTitleAsTaxInfo
+} from "@/domains/yazilar/utils.js";
 
 export const getStaticPaths = async (): Promise<object> => {
     return (await getYazilar()).map(_yazi => ({
@@ -27,28 +33,6 @@ export const getStaticPaths = async (): Promise<object> => {
     }));
 };
 
-const parseTitleAsTaxInfo = (title: string): { name: string, code: string } | false => {
-    const pattern = /^(.*?)\s*\[([^\]]+)]\s*$/;
-    const matchArray = title.match(pattern);
-    if (matchArray) {
-        const name = matchArray[1]?.trim() ?? null;
-        const code = matchArray[2]?.trim() ?? null;
-        if (name && code) {
-            return { name, code };
-        }
-    }
-    return false;
-};
-
-const parseDate = (date: Date): { timeDateTimeAttr: string, readableDate: string } => {
-    const timeDateTimeAttr = date.toISOString().split("T")?.[0] ?? ""; // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time#valid_datetime_values
-    const readableDate = date.toLocaleDateString("tr-TR");
-    return {
-        timeDateTimeAttr,
-        readableDate
-    };
-};
-
 type Props = {
     yazi: Yazi;
 };
@@ -57,19 +41,19 @@ const { yazi } = Astro.props;
 const yazilarPage = YazilarPageDef();
 const yazilarSlugPage = YazilarSlugPageDef({ yazi });
 
-const yazilar = (await getYazilar()).filter(_yazi => _yazi.slug !== yazi.slug).slice(0, 6);
-const yazilarForArticlesGrid = mapYazilarForArticlesGridComponent(yazilar);
-
-const { Content } = await render(yazi.entry);
+const yazilar = await getYazilar();
+const otherYazilar = getRelatedYazilar(yazi, yazilar, 6);
 
 const createdDate = parseDate(yazi.createdDate);
 const updatedDate = yazi.updatedDate ? parseDate(yazi.updatedDate) : null;
 const taxInfo = parseTitleAsTaxInfo(yazi.title);
+const wordCount = getWordCount(yazi.entry.body || "");
+const readingTime = calculateReadingTimeInMinutes(wordCount);
+
+const { Content } = await render(yazi.entry);
 ---
 
-<AppLayout
-    page={yazilarSlugPage}
-    dates={{ created: yazi.createdDate, updated: yazi.updatedDate }}>
+<AppLayout page={yazilarSlugPage}>
     <PageHeader>
         <Container>
             <Breadcrumbs
@@ -84,21 +68,66 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
     <Container>
         <div class="ta-ad-first" ta-ad-container=""></div>
 
+        <div class="meta">
+            <span class="meta-item">
+                <span class="meta-item-icon">
+                    <SvgIcon icon={icon_calendar} />
+                </span>
+                <span class="meta-item-content">
+                    <span class="meta-item-label">Yayınlanma</span>
+                    <time class="meta-item-value" datetime={createdDate.timeDateTimeAttr}>
+                        {createdDate.readableDate}
+                    </time>
+                </span>
+            </span>
+
+            {updatedDate && (
+                <span class="meta-separator" aria-hidden="true"></span>
+                <span class="meta-item">
+                    <span class="meta-item-icon">
+                        <SvgIcon icon={icon_refresh} />
+                    </span>
+                    <span class="meta-item-content">
+                        <span class="meta-item-label">Son güncelleme</span>
+                        <time class="meta-item-value" datetime={updatedDate.timeDateTimeAttr}>
+                            {updatedDate.readableDate}
+                        </time>
+                    </span>
+                </span>
+            )}
+
+            <span class="meta-separator" aria-hidden="true"></span>
+
+            <span class="meta-item">
+                <span class="meta-item-icon">
+                    <SvgIcon icon={icon_time} />
+                </span>
+                <span class="meta-item-content">
+                    <span class="meta-item-label">Okuma süresi</span>
+                    <span class="meta-item-value">Yaklaşık {readingTime} dk</span>
+                </span>
+            </span>
+        </div>
+
         <RichText
-            is="section"
+            tag="section"
             class="content">
             {taxInfo &&
-                <Heading3 is="span">Vergi adı ve kodu</Heading3>
                 <table>
+                    <thead>
+                    <tr>
+                        <th colspan="2">Vergi türü bilgisi</th>
+                    </tr>
+                    </thead>
                     <tbody>
-                        <tr>
-                            <td>Vergi adı</td>
-                            <td>{taxInfo.name}</td>
-                        </tr>
-                        <tr>
-                            <td>Vergi kodu</td>
-                            <td class="text-number">{taxInfo.code}</td>
-                        </tr>
+                    <tr>
+                        <td>Vergi adı</td>
+                        <td>{taxInfo.name}</td>
+                    </tr>
+                    <tr>
+                        <td>Vergi kodu</td>
+                        <td class="text-number">{taxInfo.code}</td>
+                    </tr>
                     </tbody>
                 </table>
                 <br />
@@ -107,48 +136,29 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
         </RichText>
 
         <hr />
-
-        <div class="dates">
-            <p>
-                Yayınlanma tarihi:
-                <time datetime={createdDate.timeDateTimeAttr}>
-                    {createdDate.readableDate}
-                </time>
-            </p>
-
-            {updatedDate &&
-                <p>
-                    Son güncellenme tarihi:
-                    <time datetime={updatedDate.timeDateTimeAttr}>
-                        {updatedDate.readableDate}
-                    </time>
-                </p>
-            }
-        </div>
-
-        <br />
-
         <ArticleLegalDisclaimerAlert />
 
         <div class="ta-ad-last" ta-ad-container=""></div>
     </Container>
 
-    <hr />
+    {otherYazilar.length > 0 &&
+        <hr />
 
-    <Container>
-        <section>
-            <Heading2 is="h2">
-                <a href={yazilarPage.url}>
-                    Son yazılar
-                </a>
-            </Heading2>
-            <ArticlesGrid
-                titleTag="h3"
-                items={yazilarForArticlesGrid} />
+        <Container>
+            <section>
+                <Heading2 tag="h2">
+                    <a href={yazilarPage.url}>
+                        İlginizi çekebilecek diğer yazılar
+                    </a>
+                </Heading2>
+                <ArticlesGrid
+                    titleTag="h3"
+                    items={otherYazilar} />
 
-            <div class="ta-ad-last" ta-ad-container=""></div>
-        </section>
-    </Container>
+                <div class="ta-ad-last" ta-ad-container=""></div>
+            </section>
+        </Container>
+    }
 </AppLayout>
 
 <style lang="scss">
@@ -156,9 +166,58 @@ const taxInfo = parseTitleAsTaxInfo(yazi.title);
         --line-height-p: var(--vh-lh-xl)
     }
 
-    .dates {
-        opacity: .75;
-        font-size: var(--vh-fs-base)
+    .meta {
+        @include vh-card();
+        --color-hsl: var(--vh-clr-white-hsl);
+        --bg-alpha: .02;
+        --border-alpha: .08;
+        background-image: none;
+        display: flex;
+        flex-direction: row;
+        gap: calc(var(--vh-spacer) * 1.5);
+        margin-block-end: calc(var(--vh-spacer) * 1.5);
+        padding: calc(var(--vh-spacer) * .75) var(--vh-spacer);
+        overflow-x: auto;
+        scrollbar-width: thin;
+        @include vh-media-breakpoint-down(sm) {
+            inline-size: calc(100% + (var(--container-padding-inline) * 2));
+            margin-inline: calc(var(--container-padding-inline) * -1);
+            border-inline: 0;
+            --border-radius: 0
+        }
+        &-item {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            font-size: var(--vh-fs-sm);
+            white-space: nowrap;
+            &-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                block-size: calc(var(--vh-spacer) * 2.25);
+                inline-size: calc(var(--vh-spacer) * 2.25);
+                border-radius: var(--vh-br-normal);
+                background-color: hsla(var(--vh-clr-primary-hsl), .08);
+                color: hsl(var(--vh-clr-primary-hsl))
+            }
+            &-content {
+                display: flex;
+                flex-direction: column
+            }
+            &-label {
+                font-size: var(--vh-fs-xs);
+                text-transform: uppercase
+            }
+            &-value {
+                font-weight: var(--vh-fw-bold)
+            }
+        }
+        .meta-separator {
+            flex-shrink: 0;
+            inline-size: var(--vh-border-inline-size);
+            background-color: hsla(var(--vh-clr-white-hsl), var(--vh-clr-border-alpha))
+        }
     }
 </style>
 

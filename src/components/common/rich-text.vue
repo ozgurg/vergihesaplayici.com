@@ -1,6 +1,6 @@
 <template>
     <component
-        :is="props.is"
+        :is="props.tag"
         class="rich-text">
         <slot name="default" />
     </component>
@@ -10,11 +10,11 @@
 import type { HtmlAttrs_div } from "@/types/html.js";
 
 export type Props = {
-    is?: string;
+    tag?: string;
 } & /* @vue-ignore */ Partial<HtmlAttrs_div>;
 
 const props = withDefaults(defineProps<Props>(), {
-    is: "div"
+    tag: "div"
 });
 </script>
 
@@ -125,7 +125,7 @@ const props = withDefaults(defineProps<Props>(), {
     :deep(table) {
         @mixin cell-padding {
             padding-inline: var(--container-padding-inline);
-            padding-block: calc(var(--vh-spacer) * .5);
+            padding-block: calc(var(--vh-spacer) * .75);
             @include vh-media-breakpoint-up(sm) {
                 padding-inline: var(--vh-spacer)
             }
@@ -133,31 +133,30 @@ const props = withDefaults(defineProps<Props>(), {
         table-layout: auto;
         vertical-align: top;
         caption-side: bottom;
-        border-collapse: collapse;
         border: var(--vh-border-inline-size) solid hsla(var(--vh-clr-border-hsl), var(--vh-clr-border-alpha));
-        inline-size: calc(100% + (var(--container-padding-inline) * 2));
-        margin-inline: calc(var(--container-padding-inline) * -1);
         @include vh-media-breakpoint-down(sm) {
+            inline-size: calc(100% + (var(--container-padding-inline) * 2));
+            margin-inline: calc(var(--container-padding-inline) * -1);
+            border-collapse: collapse;
             border-inline: 0
         }
         @include vh-media-breakpoint-up(sm) {
             inline-size: calc(100% + (var(--vh-spacer) * 2));
-            margin-inline: calc(var(--vh-spacer) * -1)
+            margin-inline: calc(var(--vh-spacer) * -1);
+            border-collapse: separate;
+            border-spacing: 0;
+            @include vh-squircle(var(--vh-br-sm));
+            overflow: hidden
         }
         thead {
-            background: hsla(var(--vh-clr-white-hsl), .08);
-            @include vh-media-breakpoint-up(md) {
-                position: sticky;
-                inset-block-start: var(--app-header-up-md-collapsed-block-size);
-                @include vh-backdrop-blur(1rem)
-            }
+            background: hsla(var(--vh-clr-white-hsl), .08)
         }
         tr {
             &:nth-child(even) {
-                background: hsla(var(--vh-clr-white-hsl), .02)
+                background: hsla(var(--vh-clr-white-hsl), .03)
             }
             @include vh-hover {
-                &:hover td {
+                &:hover {
                     background: hsla(var(--vh-clr-white-hsl), .04)
                 }
             }

@@ -49,7 +49,7 @@ const displayValue = computed<string>({
 const preventDisallowedKeyInput = (event: KeyboardEvent): void => {
     const isCtrlOrMetaKey = event.ctrlKey || event.metaKey;
     const isKeyAllowed = ALLOWED_KEYS.has(event.key);
-    const isNumeric = /\d/.test(event.key);
+    const isNumeric = /\d/u.test(event.key);
 
     if (!isCtrlOrMetaKey && !isKeyAllowed && !isNumeric) {
         event.preventDefault();

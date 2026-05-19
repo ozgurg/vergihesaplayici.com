@@ -1,30 +1,22 @@
 <template>
     <article class="article-card-item">
         <div class="meta">
-            <time
-                :datetime="timeDateTimeAttr"
-                class="meta-date">
-                {{ readableDate }}
-            </time>
-            <span aria-hidden="true">•</span>
-            <span
-                aria-hidden="true"
-                class="meta-author">
-                <span>vergihesaplayici.com</span>
+            <span class="meta-date">
+                {{ date }}
             </span>
         </div>
         <component
             :is="titleTag"
             class="title">
             <a
-                :href="props.url.href"
+                :href="page.url.href"
                 class="stretched-link">
-                <span>{{ props.title }}</span>
+                <span>{{ props.yazi.title }}</span>
             </a>
             <svg-icon :icon="icon_chevronRight" />
         </component>
         <div
-            v-html="props.description"
+            v-html="props.yazi.description"
             aria-hidden="true"
             class="summary">
         </div>
@@ -32,22 +24,20 @@
 </template>
 
 <script lang="ts" setup>
-import type { Heading } from "@/types/common.js";
 import type { HtmlAttrs_a } from "@/types/html.js";
+import type { Yazi } from "@/domains/yazilar/types.js";
 import { icon_chevronRight } from "@/utils/icons.js";
+import { YazilarSlugPageDef } from "@/domains/yazilar/page-def.js";
 
 export type Props = {
-    title: string;
-    titleTag: Heading;
-    description: string;
-    url: URL;
-    date: Date;
+    titleTag: string;
+    yazi: Yazi;
 } & /* @vue-ignore */ Partial<HtmlAttrs_a>;
 
 const props = defineProps<Props>();
 
-const timeDateTimeAttr = props.date.toISOString().split("T")[0]; // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time#valid_datetime_values
-const readableDate = props.date.toLocaleDateString("tr-TR");
+const page = YazilarSlugPageDef({ yazi: props.yazi });
+const date = (props.yazi.updatedDate ?? props.yazi.createdDate).toLocaleDateString("tr-TR");
 </script>
 
 <style lang="scss" scoped>

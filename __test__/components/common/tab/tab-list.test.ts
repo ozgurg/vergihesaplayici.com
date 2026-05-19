@@ -29,6 +29,6 @@ describe("components/common/tab/tab-list.vue", () => {
     it("sets a unique `--anchor-name` CSS variable", () => {
         const wrapper = createWrapper();
         const style = getComputedStyle(wrapper.element).getPropertyValue("--anchor-name");
-        expect(style).toMatch(/^--tab-active-item-indicator-[\w-]+$/);
+        expect(style).toMatch(/^--tab-active-item-indicator-[\w-]+$/u);
     });
 });

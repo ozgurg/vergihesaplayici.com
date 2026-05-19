@@ -5,18 +5,21 @@ import ArticleCardItem from "@/components/article-card-item.vue";
 
 const TEST_ARTICLE = {
     title: "Test Title",
-    titleTag: "h3",
+    slug: "test-title",
     description: "Test Description",
-    url: new URL("https://vergihesaplayici.com"),
-    date: new Date("2025-01-01")
+    createdDate: new Date("2025-01-01"),
+    updatedDate: null,
+    entry: {
+        body: "This is a test body of the article."
+    }
 };
 
 describe("components/article-card-item.vue", () => {
-    testRootClass(ArticleCardItem, "article-card-item", { props: TEST_ARTICLE });
+    testRootClass(ArticleCardItem, "article-card-item", { props: { yazi: TEST_ARTICLE as any, titleTag: "h3" } });
 
     it("renders card correctly", () => {
         const wrapper = mount(ArticleCardItem, {
-            props: TEST_ARTICLE
+            props: { yazi: TEST_ARTICLE as any, titleTag: "h3" }
         });
         expect(wrapper.html({ raw: true })).toMatchSnapshot();
     });
