@@ -489,21 +489,7 @@ export const presets: Omit<Preset, "brandId">[] = [
             {
                 title: "128GB",
                 form: {
-                    price: 799,
-                    currency: "USD"
-                }
-            },
-            {
-                title: "256GB",
-                form: {
-                    price: 899,
-                    currency: "USD"
-                }
-            },
-            {
-                title: "512GB",
-                form: {
-                    price: 1_099,
+                    price: 699, // https://www.apple.com/shop/buy-iphone/iphone-16
                     currency: "USD"
                 }
             }
@@ -519,21 +505,14 @@ export const presets: Omit<Preset, "brandId">[] = [
             {
                 title: "128GB",
                 form: {
-                    price: 899,
+                    price: 799, // https://www.apple.com/shop/buy-iphone/iphone-16
                     currency: "USD"
                 }
             },
             {
                 title: "256GB",
                 form: {
-                    price: 999,
-                    currency: "USD"
-                }
-            },
-            {
-                title: "512GB",
-                form: {
-                    price: 1_199,
+                    price: 899, // https://www.apple.com/shop/buy-iphone/iphone-16
                     currency: "USD"
                 }
             }
@@ -580,14 +559,14 @@ export const presets: Omit<Preset, "brandId">[] = [
             {
                 title: "256GB",
                 form: {
-                    price: 799,
+                    price: 799, // https://www.apple.com/shop/buy-iphone/iphone-17
                     currency: "USD"
                 }
             },
             {
                 title: "512GB",
                 form: {
-                    price: 999,
+                    price: 999, // https://www.apple.com/shop/buy-iphone/iphone-17
                     currency: "USD"
                 }
             }
@@ -603,21 +582,21 @@ export const presets: Omit<Preset, "brandId">[] = [
             {
                 title: "256GB",
                 form: {
-                    price: 999,
+                    price: 999, // https://www.apple.com/shop/buy-iphone/iphone-air
                     currency: "USD"
                 }
             },
             {
                 title: "512GB",
                 form: {
-                    price: 1_199,
+                    price: 1_199, // https://www.apple.com/shop/buy-iphone/iphone-air
                     currency: "USD"
                 }
             },
             {
                 title: "1TB",
                 form: {
-                    price: 1_399,
+                    price: 1_399, // https://www.apple.com/shop/buy-iphone/iphone-air
                     currency: "USD"
                 }
             }
@@ -633,21 +612,21 @@ export const presets: Omit<Preset, "brandId">[] = [
             {
                 title: "256GB",
                 form: {
-                    price: 1_099,
+                    price: 1_099, // https://www.apple.com/shop/buy-iphone/iphone-17-pro
                     currency: "USD"
                 }
             },
             {
                 title: "512GB",
                 form: {
-                    price: 1_299,
+                    price: 1_299, // https://www.apple.com/shop/buy-iphone/iphone-17-pro
                     currency: "USD"
                 }
             },
             {
                 title: "1TB",
                 form: {
-                    price: 1_499,
+                    price: 1_499, // https://www.apple.com/shop/buy-iphone/iphone-17-pro
                     currency: "USD"
                 }
             }
@@ -663,28 +642,28 @@ export const presets: Omit<Preset, "brandId">[] = [
             {
                 title: "256GB",
                 form: {
-                    price: 1_199,
+                    price: 1_199, // https://www.apple.com/shop/buy-iphone/iphone-17-pro
                     currency: "USD"
                 }
             },
             {
                 title: "512GB",
                 form: {
-                    price: 1_399,
+                    price: 1_399, // https://www.apple.com/shop/buy-iphone/iphone-17-pro
                     currency: "USD"
                 }
             },
             {
                 title: "1TB",
                 form: {
-                    price: 1_599,
+                    price: 1_599, // https://www.apple.com/shop/buy-iphone/iphone-17-pro
                     currency: "USD"
                 }
             },
             {
                 title: "2TB",
                 form: {
-                    price: 1_999,
+                    price: 1_999, // https://www.apple.com/shop/buy-iphone/iphone-17-pro
                     currency: "USD"
                 }
             }
@@ -701,14 +680,14 @@ export const presets: Omit<Preset, "brandId">[] = [
             {
                 title: "256GB",
                 form: {
-                    price: 599,
+                    price: 599, // https://www.apple.com//shop/buy-iphone/iphone-17e
                     currency: "USD"
                 }
             },
             {
                 title: "512GB",
                 form: {
-                    price: 799,
+                    price: 799, // https://www.apple.com//shop/buy-iphone/iphone-17e
                     currency: "USD"
                 }
             }
