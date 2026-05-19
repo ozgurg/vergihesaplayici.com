@@ -15,6 +15,12 @@ import { icon_calendar, icon_refresh, icon_time } from "@/utils/icons.js";
 import { render } from "astro:content";
 import { YazilarPageDef, YazilarSlugPageDef } from "@/domains/yazilar/page-def.js";
 import { getYazilar, getRelatedYazilar } from "@/domains/yazilar/db.js";
+import {
+    calculateReadingTimeInMinutes,
+    getWordCount,
+    parseDate,
+    parseTitleAsTaxInfo
+} from "@/domains/yazilar/utils.js";
 
 export const getStaticPaths = async (): Promise<object> => {
     return (await getYazilar()).map(_yazi => ({
@@ -27,28 +33,6 @@ export const getStaticPaths = async (): Promise<object> => {
     }));
 };
 
-const parseTitleAsTaxInfo = (title: string): { name: string, code: string } | false => {
-    const pattern = /^(.*?)\s*\[([^\]\\]+)\]\s*$/u;
-    const matchArray = title.match(pattern);
-    if (matchArray) {
-        const name = matchArray[1]?.trim() ?? null;
-        const code = matchArray[2]?.trim() ?? null;
-        if (name && code) {
-            return { name, code };
-        }
-    }
-    return false;
-};
-
-const parseDate = (date: Date): { timeDateTimeAttr: string, readableDate: string } => {
-    const timeDateTimeAttr = date.toISOString().split("T")?.[0] ?? ""; // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time#valid_datetime_values
-    const readableDate = date.toLocaleDateString("tr-TR");
-    return {
-        timeDateTimeAttr,
-        readableDate
-    };
-};
-
 type Props = {
     yazi: Yazi;
 };
@@ -57,16 +41,16 @@ const { yazi } = Astro.props;
 const yazilarPage = YazilarPageDef();
 const yazilarSlugPage = YazilarSlugPageDef({ yazi });
 
-const otherYazilar = getRelatedYazilar(yazi, await getYazilar(), 6);
-
-const { Content } = await render(yazi.entry);
+const yazilar = await getYazilar();
+const otherYazilar = getRelatedYazilar(yazi, yazilar, 6);
 
 const createdDate = parseDate(yazi.createdDate);
 const updatedDate = yazi.updatedDate ? parseDate(yazi.updatedDate) : null;
 const taxInfo = parseTitleAsTaxInfo(yazi.title);
+const wordCount = getWordCount(yazi.entry.body || "");
+const readingTime = calculateReadingTimeInMinutes(wordCount);
 
-const wordCount = (yazi.entry.body ?? "").split(/\s+/u).filter(Boolean).length;
-const readingTime = Math.max(1, Math.ceil(wordCount / 200));
+const { Content } = await render(yazi.entry);
 ---
 
 <AppLayout page={yazilarSlugPage}>

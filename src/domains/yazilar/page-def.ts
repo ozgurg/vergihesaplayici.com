@@ -1,6 +1,7 @@
 import type { Page } from "@/types/page-def.js";
 import type { Yazi } from "@/domains/yazilar/types.js";
 import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
+import { getWordCount } from "@/domains/yazilar/utils.js";
 
 export const YazilarPageDef = (
     options?: { schema: { items?: { url: URL }[] } } | null
@@ -95,10 +96,7 @@ export const YazilarSlugPageDef = ({ yazi }: Params): Page<Params> => {
                         "@id": `${url.href}#article`,
                         "url": url.href,
                         "headline": title,
-                        "wordCount": yazi.entry.body?.trim()
-                            .split(/\s+/u)
-                            .filter(Boolean)
-                            .length,
+                        "wordCount": getWordCount(yazi.entry.body || ""),
                         "description": yazi.description,
                         "abstract": yazi.description,
                         "isPartOf": { "@id": `${parentPage.url.href}#collectionpage` },
