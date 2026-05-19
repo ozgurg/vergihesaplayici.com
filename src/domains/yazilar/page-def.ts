@@ -4,7 +4,7 @@ import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
 import { getWordCount } from "@/domains/yazilar/utils.js";
 
 export const YazilarPageDef = (
-    options?: { schema: { items?: { url: URL }[] } } | null
+    options?: { schema: { items?: Page[] } } | null
 ): Page => {
     const homePage = AnaSayfaPageDef();
     const parentPage = AnaSayfaPageDef();
@@ -44,7 +44,8 @@ export const YazilarPageDef = (
                                 "@type": "ListItem",
                                 "position": _index + 1,
                                 "item": {
-                                    "@id": `${_page.url.href}#article`
+                                    // @ts-expect-error: It is defined
+                                    "@id": _page.head.schema["@graph"][0]["@id"]
                                 }
                             }))
                         }
