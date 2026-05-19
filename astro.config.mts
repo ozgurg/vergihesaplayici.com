@@ -22,10 +22,6 @@ const {
 
 // oxlint-disable-next-line import/no-default-export
 export default defineConfig({
-    prefetch: {
-        prefetchAll: true,
-        defaultStrategy: "hover"
-    },
     devToolbar: {
         enabled: false
     },
