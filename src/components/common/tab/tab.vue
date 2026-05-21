@@ -99,11 +99,13 @@ onBeforeMount(() => {
     font-size: var(--vh-fs-sm);
     flex: 1;
     color: hsla(var(--_text-hsl), var(--_text-alpha));
+    transition: vh-transition(color, var(--vh-duration-short));
     @include vh-hover {
-        transition: vh-transition(color, var(--vh-duration-short));
         &:hover {
             --text-alpha: .75
         }
+    }
+    @include vh-active {
         &:active {
             --text-alpha: 1
         }

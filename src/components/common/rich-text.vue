@@ -252,18 +252,20 @@ const props = withDefaults(defineProps<Props>(), {
             gap: var(--vh-spacer);
             font-weight: var(--vh-fw-bold);
             background-color: hsla(var(--_color-hsl), var(--_bg-alpha));
+            transition: vh-transition(background-color, var(--vh-duration-short));
             padding: var(--vh-spacer) var(--container-padding-inline);
             @include vh-media-breakpoint-up(sm) {
                 padding: var(--vh-spacer) calc(var(--vh-spacer) * 1.25)
             }
             @include vh-hover {
-                transition: vh-transition(background-color, var(--vh-duration-short));
                 &:hover {
                     --bg-alpha: .08;
                     &::before {
                         opacity: 0
                     }
                 }
+            }
+            @include vh-active {
                 &:active {
                     --bg-alpha: .12
                 }

@@ -35,6 +35,8 @@ defineProps<Props>();
         &:hover span {
             background-color: hsla(var(--_bg-hsl), .12)
         }
+    }
+    @include vh-active {
         &:active span {
             background-color: hsla(var(--_bg-hsl), .16)
         }

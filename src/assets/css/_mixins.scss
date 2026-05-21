@@ -28,6 +28,10 @@
     }
 }
 
+@mixin vh-active {
+    @content
+}
+
 @mixin vh-placeholder {
     &::-webkit-input-placeholder {
         @content
@@ -178,11 +182,13 @@
 @mixin vh-link {
     text-underline-offset: .125rem;
     text-decoration: underline;
+    transition: vh-transition(opacity, var(--vh-duration-short));
     @include vh-hover {
-        transition: vh-transition(opacity, var(--vh-duration-short));
         &:hover {
             opacity: .75
         }
+    }
+    @include vh-active {
         &:active {
             opacity: .5
         }
@@ -226,18 +232,20 @@
     background-image: linear-gradient(to bottom, hsla(var(--_color-hsl), .08), hsla(var(--_color-hsl), .04));
     background-color: hsla(var(--_color-hsl), var(--_bg-alpha));
     @if $hover or $active {
+        transition: vh-transition(background-color border-color transform, var(--vh-duration-short))
+    }
+    @if $hover {
         @include vh-hover {
-            transition: vh-transition(background-color border-color, var(--vh-duration-short));
-            @if $hover {
-                &:hover {
-                    --bg-alpha: .08
-                }
+            &:hover {
+                --bg-alpha: .08
             }
-            @if $active {
-                &:active {
-                    --bg-alpha: .12;
-                    transform: scale(.99)
-                }
+        }
+    }
+    @if $active {
+        @include vh-active {
+            &:active {
+                --bg-alpha: .12;
+                transform: scale(.985)
             }
         }
     }

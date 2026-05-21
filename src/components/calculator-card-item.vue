@@ -54,14 +54,16 @@ const props = defineProps<Props>();
     border: var(--vh-border-inline-size) solid hsla(var(--_hsl), var(--vh-clr-border-alpha));
     @include vh-squircle(var(--vh-br-normal));
     background: radial-gradient(ellipse at left top, var(--_color), transparent);
+    transition: vh-transition(--_color transform, var(--vh-duration-short));
     @include vh-hover {
-        transition: vh-transition(--_color, var(--vh-duration-short));
         &:hover {
             --_color: hsla(var(--_hsl), .20)
         }
+    }
+    @include vh-active {
         &:active {
             --_color: hsla(var(--_hsl), .24);
-            transform: scale(.99)
+            transform: scale(.985)
         }
     }
     &:has(a:focus-visible) {

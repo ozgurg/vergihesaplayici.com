@@ -292,11 +292,13 @@ $_MAX_CHART_ITEM_COUNT: 10;
             stroke: var(--vh-clr-white);
             stroke-width: 1;
             stroke-linejoin: round;
+            transition: vh-transition(opacity fill filter, var(--vh-duration-short));
             @include vh-hover {
-                transition: vh-transition(opacity fill filter, var(--vh-duration-short));
                 &:hover {
                     opacity: .75
                 }
+            }
+            @include vh-active {
                 &:active {
                     opacity: .5
                 }

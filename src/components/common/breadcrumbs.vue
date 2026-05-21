@@ -98,12 +98,14 @@ onBeforeMount(() => nextTick(() => {
                 block-size: var(--breadcrumbs-item-block-size)
             }
             a {
+                transition: vh-transition(background-color, var(--vh-duration-short));
                 @include vh-hover {
-                    transition: vh-transition(background-color, var(--vh-duration-short));
                     &:hover {
                         --text-alpha: 1;
                         --bg-alpha: .08
                     }
+                }
+                @include vh-active {
                     &:active {
                         --bg-alpha: .16
                     }

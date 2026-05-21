@@ -204,6 +204,7 @@ const nav = getFeaturedCalculatorPages();
         }
         .logo {
             display: inline-flex;
+            transition: vh-transition(background-color transform, var(--vh-duration-short));
             @include vh-media-breakpoint-up(md) {
                 --_bg-alpha: var(--bg-alpha, .08);
                 align-items: center;
@@ -211,16 +212,17 @@ const nav = getFeaturedCalculatorPages();
                 block-size: 3rem;
                 border-radius: var(--vh-br-pill);
                 padding-inline: var(--vh-spacer);
-                background: hsla(var(--vh-clr-primary-hsl), var(--_bg-alpha));
-                transition: vh-transition(background-color, var(--vh-duration-short))
+                background: hsla(var(--vh-clr-primary-hsl), var(--_bg-alpha))
             }
             @include vh-hover {
                 &:hover {
                     --bg-alpha: .12
                 }
+            }
+            @include vh-active {
                 &:active {
                     --bg-alpha: .16;
-                    transform: scale(.99)
+                    transform: scale(.985)
                 }
             }
             svg {
@@ -232,9 +234,10 @@ const nav = getFeaturedCalculatorPages();
         .drawer-toggle {
             --_size: calc(var(--vh-spacer) * 3);
             --_icon-size: calc(var(--vh-spacer) * 1.25);
+            --_bg-alpha: var(--bg-alpha, .08);
             position: relative;
             @include vh-reset-button;
-            background: hsla(var(--vh-clr-white-hsl), .08);
+            background: hsla(var(--vh-clr-white-hsl), var(--_bg-alpha));
             border-radius: var(--vh-br-pill);
             inline-size: var(--_size);
             block-size: var(--_size);
@@ -242,8 +245,14 @@ const nav = getFeaturedCalculatorPages();
             display: flex;
             justify-content: center;
             align-items: center;
+            transition: vh-transition(background-color, var(--vh-duration-short));
             @include vh-media-breakpoint-up(md) {
                 display: none
+            }
+            @include vh-active {
+                &:active {
+                    --bg-alpha: .16
+                }
             }
             .svg-icon {
                 --size: var(--_icon-size);
@@ -357,6 +366,7 @@ const nav = getFeaturedCalculatorPages();
                         gap: calc(var(--vh-spacer) * .5);
                         padding: calc(var(--vh-spacer) * .625) calc(var(--vh-spacer) * .75);
                         color: currentColor;
+                        transition: vh-transition(transform, var(--vh-duration-short));
                         text-decoration: none;
                         &[aria-current="page"] {
                             color: var(--vh-clr-primary)
