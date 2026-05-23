@@ -180,6 +180,9 @@
 }
 
 @mixin vh-link {
+    display: inline-block;
+    padding: calc(var(--vh-spacer) * .25);
+    margin: calc(var(--vh-spacer) * -.25);
     text-underline-offset: .125rem;
     text-decoration: underline;
     transition: vh-transition(opacity, var(--vh-duration-short));
