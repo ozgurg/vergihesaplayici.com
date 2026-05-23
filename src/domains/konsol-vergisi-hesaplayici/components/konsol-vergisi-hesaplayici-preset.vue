@@ -1,94 +1,91 @@
 <template>
-    <container class="calculator-container">
-        <template v-if="preset.disclaimerNote">
-            <alert>
-                {{ preset.disclaimerNote }}
-            </alert>
-        </template>
+    <div
+        :aria-expanded="results ? 'true' : 'false'"
+        class="calculator">
+        <container>
+            <div class="calculator-box">
+                <div class="calculator-box-left">
+                    <form
+                        ref="formEl"
+                        :aria-label="props.calculatorPage.title"
+                        @submit.prevent="onSubmit()"
+                        class="calculator-form">
+                        <form-group label="Model">
+                            <form-check-group
+                                v-model="optionIndex"
+                                :items="PRESET_OPTIONS"
+                                type="radio"
+                                :required="true"
+                                class="preset-options" />
+                        </form-group>
+                    </form>
 
-        <inner-container>
-            <form
-                ref="formEl"
-                :aria-label="props.calculatorPage.title"
-                @submit.prevent="onSubmit()"
-                class="calculator-form">
-                <form-group label="Model">
-                    <form-check-group
-                        v-model="optionIndex"
-                        :items="PRESET_OPTIONS"
-                        type="radio"
-                        :required="true"
-                        class="preset-options" />
-                </form-group>
-            </form>
-        </inner-container>
-
-        <template v-if="results !== null">
-            <div>
-                <div class="ta-ad-first" ta-ad-container=""></div>
-
-                <heading-3 tag="h2">
-                    Hesaplama sonuçları
-                </heading-3>
-
-                <div class="calculator-result-row">
-                    <inner-container class="calculator-result-row-primary">
-                        <lazy-calculator-result-list
-                            ref="resultsEl"
-                            :items="resultList!" />
-
-                        <lazy-affordability-alert :price="results.prices.taxAdded" />
-
-                        <lazy-calculator-charts :charts="[
-                            {
-                                title: 'Konsol-Vergi',
-                                props: {
-                                    items: chartData.total
-                                }
-                            },
-                            {
-                                title: 'Vergi dağılımı',
-                                props: {
-                                    items: chartData.taxRates
-                                }
-                            }
-                        ]" />
-
-                        <lazy-calculator-quick-share
-                            :url="props.presetPage.url"
-                            @click:other="isCalculatorShareModalOpened = true" />
-
-                        <!-- 🤮 -->
-                        <lazy-calculator-share-modal
-                            v-model="isCalculatorShareModalOpened"
-                            :link="{
-                                url: props.presetPage.url
-                            }"
-                            :screenshot="{
-                                calculatorTitle: props.calculatorPage.title,
-                                screenshotData: screenshotData!,
-                                brandTitle: brand.title,
-                                presetTitle: preset.title,
-                                optionTitle: props.preset.options[optionIndex]?.title,
-                            }" />
-                    </inner-container>
-
-                    <div class="calculator-result-row-secondary">
-                        <lazy-calculator-last-update-alert
-                            :date="LAST_UPDATE"
-                            :align-to-label="false" />
-
-                        <lazy-estimated-calculation-alert />
-                    </div>
+                    <template v-if="results !== null">
+                        <hr />
+                        <div class="calculator-alerts">
+                            <lazy-calculator-last-update-alert :date="LAST_UPDATE" />
+                            <lazy-estimated-calculation-alert />
+                        </div>
+                    </template>
                 </div>
+
+                <template v-if="results !== null">
+                    <transition name="calculator-results-transition">
+                        <div ref="resultsEl" class="calculator-box-right">
+                            <heading-3 tag="h2">
+                                Hesaplama sonuçları
+                            </heading-3>
+                            <div class="calculator-results">
+                                <lazy-calculator-result-list
+                                    :items="resultList!" />
+
+                                <lazy-affordability-alert
+                                    :price="results.prices.taxAdded" />
+
+                                <lazy-calculator-charts
+                                    :charts="[
+                                        {
+                                            title: 'Konsol-Vergi',
+                                            props: {
+                                                items: chartData.total
+                                            }
+                                        },
+                                        {
+                                            title: 'Dağılım',
+                                            props: {
+                                                items: chartData.taxRates
+                                            }
+                                        }
+                                    ]" />
+
+                                <lazy-calculator-quick-share
+                                    :url="props.presetPage.url"
+                                    @click:other="isCalculatorShareModalOpened = true" />
+
+                                <lazy-calculator-share-modal
+                                    v-model="isCalculatorShareModalOpened"
+                                    :link="{
+                                        url: props.presetPage.url
+                                    }"
+                                    :screenshot="{
+                                        calculatorTitle: props.calculatorPage.title,
+                                        screenshotData: screenshotData!,
+                                        brandTitle: brand.title,
+                                        presetTitle: preset.title,
+                                        optionTitle: props.preset.options[optionIndex]?.title,
+                                    }" />
+                            </div>
+                        </div>
+                    </transition>
+                </template>
             </div>
-        </template>
-    </container>
+        </container>
+    </div>
 
     <template v-if="PRESET_OPTIONS.length > 1">
         <go-to-calculator-button
             :calculator-container="formEl!"
-            :results-container="resultsEl?.$el!" />
+            :results-container="resultsEl!" />
     </template>
 </template>
 

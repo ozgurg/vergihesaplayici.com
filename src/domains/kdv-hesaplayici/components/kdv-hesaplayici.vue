@@ -1,82 +1,83 @@
 <template>
-    <container class="calculator-container">
-        <inner-container>
-            <form
-                ref="formEl"
-                :aria-label="props.calculatorPage.title"
-                @submit.prevent="onSubmit()"
-                class="calculator-form">
-                <form-group label="Hesaplama modu">
-                    <kdv-hesaplayici-mode
-                        v-model="form.mode"
-                        :required="true" />
-                </form-group>
+    <div
+        :aria-expanded="results ? 'true' : 'false'"
+        class="calculator">
+        <container>
+            <div class="calculator-box">
+                <div class="calculator-box-left">
+                    <form
+                        ref="formEl"
+                        :aria-label="props.calculatorPage.title"
+                        @submit.prevent="onSubmit()"
+                        class="calculator-form">
+                        <form-group label="Hesaplama modu">
+                            <kdv-hesaplayici-mode
+                                v-model="form.mode"
+                                :required="true" />
+                        </form-group>
 
-                <form-group>
-                    <template #label>
-                        <form-label tag="legend">
-                            <string-carousel :text="priceLabel" />
-                        </form-label>
-                    </template>
-                    <form-control-number
-                        v-model="form.price"
-                        :required="true" />
-                </form-group>
+                        <form-group>
+                            <template #label>
+                                <form-label tag="legend">
+                                    <string-carousel :text="priceLabel" />
+                                </form-label>
+                            </template>
+                            <form-control-number
+                                v-model="form.price"
+                                :required="true" />
+                        </form-group>
 
-                <form-group label="KDV oranı">
-                    <form-control-number
-                        v-model="form.rate"
-                        :required="true" />
-                    <kdv-hesaplayici-rate-presets
-                        v-model="form.rate"
-                        scale="small" />
-                </form-group>
+                        <form-group label="KDV oranı">
+                            <form-control-number
+                                v-model="form.rate"
+                                :required="true" />
+                            <kdv-hesaplayici-rate-presets
+                                v-model="form.rate"
+                                scale="small" />
+                        </form-group>
 
-                <form-button
-                    class="w-100"
-                    type="submit">
-                    Hesapla
-                </form-button>
-            </form>
-        </inner-container>
-
-        <template v-if="results !== null">
-            <div>
-                <div class="ta-ad-first" ta-ad-container=""></div>
-
-                <heading-3 tag="h2">
-                    Hesaplama sonuçları
-                </heading-3>
-
-                <div class="calculator-result-row">
-                    <inner-container class="calculator-result-row-primary">
-                        <lazy-calculator-result-list
-                            ref="resultsEl"
-                            :items="resultList!" />
-
-                        <lazy-calculator-quick-share
-                            :url="props.calculatorPage.url"
-                            @click:other="isCalculatorShareModalOpened = true" />
-
-                        <!-- 🤮 -->
-                        <lazy-calculator-share-modal
-                            v-model="isCalculatorShareModalOpened"
-                            :link="{
-                                url: props.calculatorPage.url
-                            }"
-                            :screenshot="{
-                                calculatorTitle: props.calculatorPage.title,
-                                screenshotData: screenshotData!
-                            }" />
-                    </inner-container>
+                        <form-button
+                            class="w-100"
+                            type="submit">
+                            Hesapla
+                        </form-button>
+                    </form>
                 </div>
+
+                <template v-if="results !== null">
+                    <transition name="calculator-results-transition">
+                        <div ref="resultsEl" class="calculator-box-right">
+                            <heading-3 tag="h2">
+                                Hesaplama sonuçları
+                            </heading-3>
+                            <div class="calculator-results">
+                                <lazy-calculator-result-list
+                                    :items="resultList!" />
+
+                                <lazy-calculator-quick-share
+                                    :url="props.calculatorPage.url"
+                                    @click:other="isCalculatorShareModalOpened = true" />
+
+                                <lazy-calculator-share-modal
+                                    v-model="isCalculatorShareModalOpened"
+                                    :link="{
+                                        url: props.calculatorPage.url
+                                    }"
+                                    :screenshot="{
+                                        calculatorTitle: props.calculatorPage.title,
+                                        screenshotData: screenshotData!
+                                    }" />
+                            </div>
+                        </div>
+                    </transition>
+                </template>
             </div>
-        </template>
-    </container>
+        </container>
+    </div>
 
     <go-to-calculator-button
         :calculator-container="formEl!"
-        :results-container="resultsEl?.$el!" />
+        :results-container="resultsEl!" />
 </template>
 
 <script lang="ts" setup>
@@ -126,12 +127,12 @@ const onSubmit = (): void => {
     const isFormValid = formEl.value?.checkValidity() ?? false;
     if (isFormValid) {
         calculate();
-        nextTick(_scrollToResults);
+        setTimeout(() => _scrollToResults(), 100);
     }
 };
 
 const _scrollToResults = (): void => {
-    resultsEl.value?.$el?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    resultsEl.value?.scrollIntoView({ block: "nearest", behavior: "smooth" });
 };
 
 onMounted(onSubmit);

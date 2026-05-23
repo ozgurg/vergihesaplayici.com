@@ -35,9 +35,6 @@ const ITEMS: FormCheckProps<Mode>[] = [
 
 <style lang="scss" scoped>
 .mode {
-    grid-template-columns: repeat(1, 1fr);
-    @include vh-media-breakpoint-up(sm) {
-        grid-template-columns: repeat(2, 1fr)
-    }
+    grid-template-columns: repeat(2, 1fr)
 }
 </style>
