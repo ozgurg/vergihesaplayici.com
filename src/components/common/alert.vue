@@ -39,11 +39,11 @@ $_colors: (
     --_border-hsl: var(--border-hsl, var(--_text-hsl));
     --link-color: hsl(var(--_text-hsl));
     padding: calc(var(--vh-spacer) * .75) var(--vh-spacer);
-    border: var(--vh-border-inline-size) solid hsla(var(--_border-hsl), .08);
+    border: var(--vh-border-inline-size) solid hsla(var(--_border-hsl), .12);
     text-wrap: pretty;
     color: hsl(var(--_text-hsl));
     @include vh-squircle(var(--vh-br-normal));
-    background: linear-gradient(to top, hsla(var(--_bg-hsl), .08), hsla(var(--_bg-hsl), .16));
+    background: linear-gradient(to top, hsla(var(--_bg-hsl), .08), hsla(var(--_bg-hsl), .12));
     @each $__color, $__properties in $_colors {
         &-color-#{$__color} {
             @include vh-map-to-properties($__properties)
