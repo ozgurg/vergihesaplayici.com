@@ -1,0 +1,9 @@
+.vergi-turleri-table {
+    tbody {
+        tr td:first-child {
+            text-align: end;
+            @include vh-text-number;
+            @include vh-tabular-nums
+        }
+    }
+}

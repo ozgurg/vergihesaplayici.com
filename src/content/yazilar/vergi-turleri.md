@@ -4,6 +4,8 @@ description: "Türkiye'deki vergi türleri tablosu, gelir, harcama ve servet üz
 createdDate: 2023-05-13
 ---
 
+<div class="vergi-turleri-table">
+
 | Kod  | Vergi adı                                                                                                                                                                                                                                            |
 |------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 0001 | <a href="/yazilar/0001-yillik-gelir-vergisi/">Yıllık Gelir Vergisi</a>                                                                                                                                                                               |
@@ -305,3 +307,5 @@ createdDate: 2023-05-13
 | 9318 | <a href="/yazilar/9318-5326-sayili-kanun-uyarinca-mahkemeler-tarafindan-verilen-idari-para-cezasi/">5326 Sayılı Kanun Uyarınca Mahkemeler Tarafından Verilen İdari Para Cezası</a>                                                                   |
 | 9341 | <a href="/yazilar/9341-mera-fonu-para-cezasi/">Mera Fonu Para Cezası</a>                                                                                                                                                                             |
 | 9901 | <a href="/yazilar/9901-adi-ortaklik-mukellefiyetsiz-mukellef-kaydi-icin-vergi-kodu/">Adi Ortaklık Mükellefiyetsiz Mükellef Kaydı İçin Vergi Kodu</a>                                                                                                 |
+
+</div>
