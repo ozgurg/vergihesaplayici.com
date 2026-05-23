@@ -85,7 +85,7 @@ $_colors: (
         --text-hsl: "0deg, 0%, 0%"
     ),
     "brand-facebook": (
-        --bg-hsl: "216.72deg, 100%, 50.98%",
+        --bg-hsl: "217.17deg, 100%, 51.47%",
         --text-hsl: "0deg, 0%, 100%"
     ),
     "brand-x": (
@@ -94,7 +94,7 @@ $_colors: (
         --border-alpha: .32
     ),
     "brand-whatsapp": (
-        --bg-hsl: "142.41deg, 70.16%, 48.63%",
+        --bg-hsl: "148.94deg, 70.85%, 39.02%",
         --text-hsl: "0deg, 0%, 100%"
     ),
     "brand-telegram": (
