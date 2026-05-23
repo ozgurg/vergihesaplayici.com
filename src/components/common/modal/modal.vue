@@ -91,6 +91,9 @@ $_MAX_MODAL_HEADER_COUNT: 2;
         @include vh-squircle(var(--vh-br-normal) var(--vh-br-normal) 0 0);
         max-block-size: 100%;
         min-block-size: 60vh;
+        @include vh-media-breakpoint-down(md) {
+            border-block-end: 0
+        }
         @include vh-media-breakpoint-up(md) {
             @include vh-squircle(var(--vh-br-normal));
             max-block-size: 85vh;
