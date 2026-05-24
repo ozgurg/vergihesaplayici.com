@@ -152,7 +152,10 @@ $_scales: (
     & > :deep(div:only-child) {
         display: contents
     }
-    &:has(input:user-invalid) {
+    // Exclude inputs inside `list-transition-leave-active` elements;
+    // they are still in DOM during the leave transition (`display: none`)
+    // but `:has()` matches them, causing a false validation flash
+    &:has(> :not(.list-transition-leave-active) input:user-invalid) {
         border-radius: var(--vh-br-normal);
         // Since `<form-check-group />` does not have a border,
         // we double its error border width to match that of `<form-check />`
