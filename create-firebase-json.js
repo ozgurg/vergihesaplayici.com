@@ -111,14 +111,17 @@ const firebaseJson = {
                     }
                 ]
             }
-        ],
-        redirects: redirections301.values().map(([_from, _to]) => ({
-            source: `/${_from}/`,
-            destination: `/${_to}/`,
-            type: 301
-        }))
+        ]
     }
 };
+
+if (redirections301.size > 0) {
+    firebaseJson.hosting.redirects = [...redirections301].map(([_from, _to]) => ({
+        source: `/${_from}/`,
+        destination: `/${_to}/`,
+        type: 301
+    }));
+}
 
 
 const outputPath = path.join(import.meta.dirname, "firebase.json");
