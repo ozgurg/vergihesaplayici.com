@@ -65,8 +65,17 @@ $_MAX_MODAL_HEADER_COUNT: 2;
     overflow: hidden;
     align-items: flex-end;
     justify-content: center;
-    will-change: opacity, transform, display, overlay;
-    transition: vh-transition(opacity transform, var(--vh-duration-long)), display var(--vh-duration-long) allow-discrete, overlay var(--vh-duration-long) allow-discrete;
+    will-change: opacity, transform;
+    transition: vh-transition(opacity transform, var(--vh-duration-long));
+    // Exit animations for `<dialog>` require `overlay` to keep the element in the
+    // top layer while transitioning out. Safari supports `allow-discrete` but
+    // not `overlay`, so the dialog leaves the top layer instantly while `display`
+    // stays `flex`, causing the backdrop to vanish and the modal to glitch.
+    // Only enable discrete transitions when `overlay` is supported.
+    @supports (overlay: auto) {
+        will-change: opacity, transform, display, overlay;
+        transition: vh-transition(opacity transform, var(--vh-duration-long)), display var(--vh-duration-long) allow-discrete, overlay var(--vh-duration-long) allow-discrete
+    }
     transform: translateY(100%);
     block-size: 100%;
     inline-size: 100%;
