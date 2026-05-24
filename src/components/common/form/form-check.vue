@@ -140,7 +140,7 @@ $_scales: (
     padding-inline-start: var(--_padding-inline);
     padding-inline-end: calc(var(--_padding-inline) + var(--_icon-size));
     cursor: pointer;
-    transition: vh-transition(color background-color border-color, var(--vh-duration-short));
+    transition: vh-transition(color background-color border-color transform, var(--vh-duration-short));
     @each $__scale, $__properties in $_scales {
         &-scale-#{$__scale} {
             @include vh-map-to-properties($__properties)

@@ -1,49 +1,93 @@
-.calculator-container {
-    display: flex;
-    flex-direction: column;
-    gap: calc(var(--vh-spacer) * 3)
-}
-
-.calculator-form {
-    display: flex;
-    flex-direction: column;
-    gap: calc(var(--vh-spacer) * 2)
-}
-
-.calculator-result-row {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: var(--vh-spacer);
-    @include vh-media-breakpoint-up(md) {
-        flex-direction: row
+.calculator {
+    $self: &;
+    $box-width: 1112px;
+    $box-width-breakpoint: $box-width + 20px;
+    $left-width: 524px;
+    $padding-block: $spacer * 2;
+    $padding-inline: $spacer * 2;
+    @media(min-width: $box-width-breakpoint) {
+        .container {
+            transition: vh-transition(max-inline-size, var(--vh-duration-longer));
+            will-change: max-inline-size
+        }
+        &[aria-expanded="true"] {
+            .container {
+                max-inline-size: $box-width
+            }
+            #{$self}-box {
+                @include vh-card;
+                background: none;
+                &-left {
+                    padding: $padding-block $padding-inline
+                }
+            }
+        }
+        #{$self}-box {
+            &-left {
+                transition: vh-transition(padding, var(--vh-duration-longer));
+                will-change: padding;
+                box-sizing: content-box;
+                flex: 0 0 $left-width
+            }
+            &-right {
+                background: hsla(var(--vh-clr-white-hsl), .02);
+                padding: $padding-block $padding-inline;
+                flex: 1;
+                min-width: 0;
+                overflow: hidden
+            }
+        }
     }
-    &-primary {
+    &-box {
+        display: flex;
+        flex-direction: column;
+        gap: calc(var(--vh-spacer) * 2);
+        @media(min-width: $box-width-breakpoint) {
+            flex-direction: row;
+            gap: 0
+        }
+    }
+    &-results-transition {
+        @media(min-width: $box-width-breakpoint) {
+            &-enter-active {
+                transition: vh-transition(opacity, var(--vh-duration-longer));
+                will-change: opacity
+            }
+            &-enter-from {
+                opacity: 0;
+            }
+            &-enter-to {
+                opacity: 1
+            }
+        }
+    }
+    &-form {
+        display: flex;
+        flex-direction: column;
+        gap: calc(var(--vh-spacer) * 2)
+    }
+    &-alerts {
+        display: flex;
+        flex-direction: column;
+        gap: calc(var(--vh-spacer) * .5)
+    }
+    &-results {
         display: flex;
         flex-direction: column;
         gap: var(--vh-spacer);
-        @include vh-media-breakpoint-down(md) {
-            order: 2
+        @media(min-width: $box-width-breakpoint) {
+            min-width: calc(#{$box-width - $left-width} - #{$padding-inline + $padding-inline + $padding-inline + $padding-inline})
         }
     }
-    &-secondary {
+    &-pricing-row {
         display: flex;
-        flex-direction: column;
+        flex-flow: row nowrap;
         gap: calc(var(--vh-spacer) * .5);
-        @include vh-media-breakpoint-down(md) {
-            order: 1
+        & > *:first-child {
+            flex: 1
         }
-    }
-}
-
-.calculator-pricing-row {
-    display: flex;
-    flex-flow: row nowrap;
-    gap: calc(var(--vh-spacer) * .5);
-    & > *:first-child {
-        flex: 1
-    }
-    & > *:last-child {
-        inline-size: 7rem
+        & > *:last-child {
+            inline-size: 7rem
+        }
     }
 }

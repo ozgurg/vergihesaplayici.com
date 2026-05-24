@@ -89,6 +89,22 @@ const ITEMS_CONTAINER_ID = "calculator-preset-carousel-items";
                     scroll-snap-align: start
                 }
             }
+            @include vh-touch {
+                @supports ((animation-timeline: view()) and (animation-range: entry)) {
+                    animation: carousel-edge-reveal auto linear both;
+                    animation-timeline: view(inline);
+                    @keyframes carousel-edge-reveal {
+                        from, to {
+                            opacity: .7;
+                            scale: .85
+                        }
+                        10%, 90% {
+                            opacity: 1;
+                            scale: 1
+                        }
+                    }
+                }
+            }
         }
     }
 </style>

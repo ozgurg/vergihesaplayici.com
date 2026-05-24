@@ -1,106 +1,108 @@
 <template>
-    <container class="calculator-container">
-        <div class="calculator-result-row">
-            <inner-container class="calculator-result-row-primary">
-                <form
-                    ref="formEl"
-                    :aria-label="props.calculatorPage.title"
-                    @submit.prevent="onSubmit()"
-                    class="calculator-form">
-                    <form-group label="Hesaplama modu">
-                        <konsol-vergisi-hesaplayici-mode v-model="form.mode" />
-                    </form-group>
-
-                    <div class="calculator-pricing-row">
-                        <form-group>
-                            <template #label>
-                                <form-label tag="legend">
-                                    <string-carousel :text="priceLabel" />
-                                </form-label>
-                            </template>
-                            <form-control-number
-                                v-model="form.price"
-                                :required="true" />
+    <div
+        :aria-expanded="results ? 'true' : 'false'"
+        class="calculator">
+        <container>
+            <div class="calculator-box">
+                <div class="calculator-box-left">
+                    <form
+                        ref="formEl"
+                        :aria-label="props.calculatorPage.title"
+                        @submit.prevent="onSubmit()"
+                        class="calculator-form">
+                        <form-group label="Hesaplama modu">
+                            <konsol-vergisi-hesaplayici-mode v-model="form.mode" />
                         </form-group>
 
-                        <form-group label="Para birimi">
-                            <form-select-currency
-                                v-model="form.currency"
-                                :EXCHANGE_RATES="props.EXCHANGE_RATES"
-                                :required="true" />
-                        </form-group>
-                    </div>
+                        <div class="calculator-pricing-row">
+                            <form-group>
+                                <template #label>
+                                    <form-label tag="legend">
+                                        <string-carousel :text="priceLabel" />
+                                    </form-label>
+                                </template>
+                                <form-control-number
+                                    v-model="form.price"
+                                    :required="true" />
+                            </form-group>
 
-                    <form-button
-                        class="w-100"
-                        type="submit">
-                        Hesapla
-                    </form-button>
-                </form>
-            </inner-container>
-            <div class="calculator-result-row-secondary">
-                <calculator-last-update-alert :date="LAST_UPDATE" />
-            </div>
-        </div>
+                            <form-group label="Para birimi">
+                                <form-select-currency
+                                    v-model="form.currency"
+                                    :EXCHANGE_RATES="props.EXCHANGE_RATES"
+                                    :required="true" />
+                            </form-group>
+                        </div>
 
-        <template v-if="results !== null">
-            <div>
-                <div class="ta-ad-first" ta-ad-container=""></div>
+                        <form-button
+                            class="w-100"
+                            type="submit">
+                            Hesapla
+                        </form-button>
+                    </form>
 
-                <heading-3 tag="h3">
-                    Hesaplama sonuçları
-                </heading-3>
-
-                <div class="calculator-result-row">
-                    <inner-container class="calculator-result-row-primary">
-                        <lazy-calculator-result-list
-                            ref="resultsEl"
-                            :items="resultList!" />
-
-                        <lazy-affordability-alert :price="results.prices.taxAdded" />
-
-                        <lazy-calculator-charts :charts="[
-                            {
-                                title: 'Konsol-Vergi',
-                                props: {
-                                    items: chartData!.total
-                                }
-                            },
-                            {
-                                title: 'Vergi dağılımı',
-                                props: {
-                                    items: chartData!.taxRates
-                                }
-                            }
-                        ]" />
-
-                        <lazy-calculator-quick-share
-                            :url="props.calculatorPage.url"
-                            @click:other="isCalculatorShareModalOpened = true" />
-
-                        <!-- 🤮 -->
-                        <lazy-calculator-share-modal
-                            v-model="isCalculatorShareModalOpened"
-                            :link="{
-                                url: props.calculatorPage.url
-                            }"
-                            :screenshot="{
-                                calculatorTitle: props.calculatorPage.title,
-                                screenshotData: screenshotData!
-                            }" />
-                    </inner-container>
-
-                    <div class="calculator-result-row-secondary">
-                        <lazy-estimated-calculation-alert />
-                    </div>
+                    <template v-if="results !== null">
+                        <hr />
+                        <div class="calculator-alerts">
+                            <lazy-calculator-last-update-alert :date="LAST_UPDATE" />
+                            <lazy-estimated-calculation-alert />
+                        </div>
+                    </template>
                 </div>
+
+                <template v-if="results !== null">
+                    <transition name="calculator-results-transition">
+                        <div class="calculator-box-right">
+                            <heading-3 tag="h2">
+                                Hesaplama sonuçları
+                            </heading-3>
+                            <div class="calculator-results">
+                                <lazy-calculator-result-list
+                                    :items="resultList!" />
+
+                                <lazy-affordability-alert
+                                    :price="results.prices.taxAdded" />
+
+                                <lazy-calculator-charts
+                                    :charts="[
+                                        {
+                                            title: 'Konsol-Vergi',
+                                            props: {
+                                                items: chartData!.total
+                                            }
+                                        },
+                                        {
+                                            title: 'Dağılım',
+                                            props: {
+                                                items: chartData!.taxRates
+                                            }
+                                        }
+                                    ]" />
+
+                                <lazy-calculator-quick-share
+                                    :url="props.calculatorPage.url"
+                                    @click:other="isCalculatorShareModalOpened = true" />
+
+                                <lazy-calculator-share-modal
+                                    v-model="isCalculatorShareModalOpened"
+                                    :link="{
+                                        url: props.calculatorPage.url
+                                    }"
+                                    :screenshot="{
+                                        calculatorTitle: props.calculatorPage.title,
+                                        screenshotData: screenshotData!
+                                    }" />
+                            </div>
+                        </div>
+                    </transition>
+                </template>
             </div>
-        </template>
-    </container>
+        </container>
+    </div>
 
     <go-to-calculator-button
         :calculator-container="formEl!"
-        :results-container="resultsEl?.$el!" />
+        :results-container="resultsEl!" />
 </template>
 
 <script lang="ts" setup>
@@ -156,12 +158,12 @@ const onSubmit = (): void => {
     const isFormValid = formEl.value?.checkValidity() ?? false;
     if (isFormValid) {
         calculate();
-        nextTick(_scrollToResults);
+        setTimeout(() => _scrollToResults(), 100);
     }
 };
 
 const _scrollToResults = (): void => {
-    resultsEl.value?.$el?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    resultsEl.value?.scrollIntoView({ block: "nearest", behavior: "smooth" });
 };
 
 onMounted(onSubmit);

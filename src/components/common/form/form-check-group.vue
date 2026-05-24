@@ -152,7 +152,10 @@ $_scales: (
     & > :deep(div:only-child) {
         display: contents
     }
-    &:has(input:user-invalid) {
+    // Exclude inputs inside `list-transition-leave-active` elements;
+    // they are still in DOM during the leave transition (`display: none`)
+    // but `:has()` matches them, causing a false validation flash
+    &:has(> :not(.list-transition-leave-active) input:user-invalid) {
         border-radius: var(--vh-br-normal);
         // Since `<form-check-group />` does not have a border,
         // we double its error border width to match that of `<form-check />`
@@ -162,23 +165,25 @@ $_scales: (
         // Since the checked indicator depends on the anchor name,
         // I manage the checked state styling of its child `<form-check-group-item />` here
         @supports (anchor-name: var(--_anchor-name)) {
-            :deep(.form-check:has(input:checked)) {
+            & > :not(.list-transition-leave-active) :deep(.form-check:has(input:checked)) {
                 anchor-name: var(--_anchor-name)
             }
             &::before {
                 @include checked-state-before;
+                display: none;
                 transform: scale(0);
                 opacity: 0;
-                will-change: inset, inset-block, inline-size, block-size, transform, opacity;
-                transition: vh-transition(inset inset-block inline-size block-size transform opacity, var(--vh-duration-long)); // `inset-inline` doesn't work on Safari 26; `inset` works
                 inset-inline: anchor(var(--_anchor-name) start) anchor(var(--_anchor-name) end);
                 inset-block: anchor(var(--_anchor-name) top) anchor(var(--_anchor-name) bottom);
                 inline-size: anchor-size(var(--_anchor-name) inline);
                 block-size: anchor-size(var(--_anchor-name) block)
             }
-            &:has(input:checked)::before {
+            &:has(> :not(.list-transition-leave-active) input:checked)::before {
+                display: block;
                 opacity: 1;
-                transform: scale(1)
+                transform: scale(1);
+                will-change: inset, inset-block, inline-size, block-size, transform, opacity;
+                transition: vh-transition(inset inset-block inline-size block-size transform opacity, var(--vh-duration-long)) // `inset-inline` doesn't work on Safari 26; `inset` works
             }
         }
         @supports (not(anchor-name: var(--_anchor-name))) {

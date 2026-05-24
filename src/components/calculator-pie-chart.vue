@@ -240,7 +240,13 @@ $_MAX_CHART_ITEM_COUNT: 10;
 }
 
 .pie-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-inline-size: 11rem;
+    gap: var(--vh-spacer);
     text-align: center;
+    margin-inline: auto;
     @for $i from 0 through $_MAX_CHART_ITEM_COUNT {
         @include vh-hover {
             &:has(.chart svg path[data-index="#{$i}"]:hover) {
@@ -265,7 +271,6 @@ $_MAX_CHART_ITEM_COUNT: 10;
 .chart {
     position: relative;
     aspect-ratio: 1/1;
-    max-inline-size: 11.5rem;
     display: inline-block;
     vertical-align: middle;
     &:has(path:focus-visible) {
@@ -292,11 +297,13 @@ $_MAX_CHART_ITEM_COUNT: 10;
             stroke: var(--vh-clr-white);
             stroke-width: 1;
             stroke-linejoin: round;
+            transition: vh-transition(opacity fill filter, var(--vh-duration-short));
             @include vh-hover {
-                transition: vh-transition(opacity fill filter, var(--vh-duration-short));
                 &:hover {
                     opacity: .75
                 }
+            }
+            @include vh-active {
                 &:active {
                     opacity: .5
                 }
@@ -325,46 +332,40 @@ $_MAX_CHART_ITEM_COUNT: 10;
     margin-block-start: var(--vh-spacer);
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    gap: calc(var(--vh-spacer) * .375);
+    margin: calc((var(--vh-spacer) * .125) * -1);
     &__item {
-        @include vh-card($hover: true);
         --color-hsl: var(--_color-hsl);
-        --border-hsl: var(--_color-h), 100%, 96%;
-        --border-alpha: .12;
-        --border-radius: var(--vh-br-sm);
-
-        --_border-width: calc(var(--vh-spacer) * .25);
         --_color-h: var(--color-h);
         --_color-s: var(--color-s);
         --_color-l: var(--color-l);
         --_color-hsl: var(--_color-h), var(--_color-s), var(--_color-l);
         color: hsl(var(--_color-h), 100%, 98%);
-
-        // There's a browser rounding issue when
-        // using very small stop sizes in a `linear-gradient`.
-        // It looks as if the gradient continues from the opposite side.
-        // To fix this, I control the gradient's size using `background-size`.
-        // So why not just use `border-inline-start` instead?
-        // Because the `vh-card` applies a `border-radius`,
-        // and if I use `border-inline-start`, that border also
-        // becomes rounded which I don't like.
-        background-image: linear-gradient(to right, hsl(var(--color-hsl)) 0, hsl(var(--color-hsl)) 100%);
-        background-size: var(--_border-width) 100%;
-        background-repeat: no-repeat;
-
-        display: flex;
+        display: inline-flex;
         align-items: center;
+        justify-content: center;
         flex-direction: row;
-        text-align: start;
+        padding: calc(var(--vh-spacer) * .125);
         gap: calc(var(--vh-spacer) * .375);
-        padding-block: calc(var(--vh-spacer) * .25);
-        padding-inline: calc((var(--vh-spacer) * .375) + var(--_border-width)) calc(var(--vh-spacer) * .375);
         cursor: default;
+        text-align: center;
         font-size: var(--vh-fs-xs);
         font-weight: var(--vh-fw-semibold);
+        white-space: nowrap;
+        &::before {
+            display: inline-block;
+            content: "";
+            flex-shrink: 0;
+            block-size: .625rem;
+            inline-size: .625rem;
+            border-radius: var(--vh-br-pill);
+            background: hsl(var(--color-hsl))
+        }
         @include vh-hover {
             &:hover {
+                text-decoration: underline;
+                text-underline-offset: .125rem;
                 @include legend-item-highlight-state
             }
         }

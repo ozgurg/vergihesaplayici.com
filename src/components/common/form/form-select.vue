@@ -87,7 +87,7 @@ $_scales: (
 );
 
 .form-select {
-    @include vh-card($hover: true);
+    @include vh-card($hover: true, $active: true);
     --_padding-inline: var(--padding-inline);
     --_block-size: var(--block-size);
     --_border-radius: var(--border-radius);

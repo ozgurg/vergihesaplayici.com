@@ -34,17 +34,6 @@ const props = defineProps<Props>();
 
 <style lang="scss" scoped>
 .calculator-charts {
-    @include vh-media-breakpoint-down(sm) {
-        background: hsla(var(--vh-clr-white-hsl), .04);
-        padding-block: var(--vh-spacer);
-        padding-inline: var(--container-padding-inline);
-        margin-inline: calc(var(--container-padding-inline) * -1)
-    }
-    @include vh-media-breakpoint-up(sm) {
-        background: hsla(var(--vh-clr-white-hsl), .04);
-        @include vh-squircle(var(--vh-br-normal));
-        padding: var(--vh-spacer)
-    }
     &-items {
         display: flex;
         flex-flow: row;
@@ -54,6 +43,9 @@ const props = defineProps<Props>();
         gap: var(--container-padding-inline)
     }
     &-item {
+        @include vh-squircle(var(--vh-br-normal));
+        padding: var(--vh-spacer);
+        background: hsla(var(--vh-clr-white-hsl), .04);
         flex: 1;
         min-width: 162px;
         :deep(.heading-3) {

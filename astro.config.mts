@@ -22,10 +22,6 @@ const {
 
 // oxlint-disable-next-line import/no-default-export
 export default defineConfig({
-    prefetch: {
-        prefetchAll: true,
-        defaultStrategy: "hover"
-    },
     devToolbar: {
         enabled: false
     },
@@ -100,7 +96,7 @@ export default defineConfig({
 
                         // The built output of image files doesn't need to be unique for each
                         // build because the version is already appended to the URL in `src/utils/url.ts::staticUrl`
-                        if (["png", "jpg", "jpeg", "gif", "svg", "webp"].includes(extension)) {
+                        if (["jpg", "jpeg", "png", "svg", "webp", "ico", "gif"].includes(extension)) {
                             return `assets/[name][extname]`;
                         }
                         return `assets/[name]-[hash]-${packageJson.version}[extname]`;

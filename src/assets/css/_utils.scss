@@ -2,6 +2,10 @@
     @include vh-text-number
 }
 
+.tabular-nums {
+    @include vh-tabular-nums
+}
+
 .link {
     @include vh-link
 }

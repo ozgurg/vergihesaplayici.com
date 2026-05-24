@@ -115,25 +115,6 @@ const nav = getFeaturedCalculatorPages();
             display: flex;
             align-items: flex-end;
             justify-content: center;
-            &::before {
-                // CAUTION: Workaround that might change in future updates
-                // In iOS 26 Public Beta 1 Safari, Apple made the status bar transparent.
-                // With our progressive blur effect, this creates a weird visual artifact where
-                // the site content is clearly visible beneath the status bar before the blur
-                // effect begins to take effect.
-                // To fix this issue, I discovered that Apple renders the status bar color by
-                // sampling pixels `6px` and larger from the beginning of the viewport. I created
-                // this pseudo-element using the same color as the `page-header`s linear-gradient
-                // to ensure the status bar appears properly colored and eliminates the visual artifact.
-                position: absolute;
-                z-index: -2;
-                inset-inline: 0;
-                inset-block-start: 0;
-                inline-size: 100%;
-                block-size: 6px;
-                content: "";
-                background: #111912
-            }
             &::after {
                 position: absolute;
                 z-index: -1;
@@ -156,7 +137,7 @@ const nav = getFeaturedCalculatorPages();
                 padding: calc(var(--vh-spacer) * .125) !important; // Needs to be overridden
                 padding-inline-start: calc(var(--vh-spacer) * .875) !important; // Needs to be overridden
                 border-radius: var(--vh-br-pill);
-                border: calc(var(--vh-border-inline-size) * 2) solid hsla(var(--vh-clr-border-hsl), var(--vh-clr-border-alpha))
+                border: var(--vh-border-inline-size) solid hsla(var(--vh-clr-border-hsl), var(--vh-clr-border-alpha))
             }
         }
         @include vh-media-breakpoint-up(md) {
@@ -204,6 +185,7 @@ const nav = getFeaturedCalculatorPages();
         }
         .logo {
             display: inline-flex;
+            transition: vh-transition(background-color transform, var(--vh-duration-short));
             @include vh-media-breakpoint-up(md) {
                 --_bg-alpha: var(--bg-alpha, .08);
                 align-items: center;
@@ -211,16 +193,17 @@ const nav = getFeaturedCalculatorPages();
                 block-size: 3rem;
                 border-radius: var(--vh-br-pill);
                 padding-inline: var(--vh-spacer);
-                background: hsla(var(--vh-clr-primary-hsl), var(--_bg-alpha));
-                transition: vh-transition(background-color, var(--vh-duration-short))
+                background: hsla(var(--vh-clr-primary-hsl), var(--_bg-alpha))
             }
             @include vh-hover {
                 &:hover {
                     --bg-alpha: .12
                 }
+            }
+            @include vh-active {
                 &:active {
                     --bg-alpha: .16;
-                    transform: scale(.99)
+                    transform: scale(.985)
                 }
             }
             svg {
@@ -232,9 +215,10 @@ const nav = getFeaturedCalculatorPages();
         .drawer-toggle {
             --_size: calc(var(--vh-spacer) * 3);
             --_icon-size: calc(var(--vh-spacer) * 1.25);
+            --_bg-alpha: var(--bg-alpha, .08);
             position: relative;
             @include vh-reset-button;
-            background: hsla(var(--vh-clr-white-hsl), .08);
+            background: hsla(var(--vh-clr-white-hsl), var(--_bg-alpha));
             border-radius: var(--vh-br-pill);
             inline-size: var(--_size);
             block-size: var(--_size);
@@ -242,8 +226,14 @@ const nav = getFeaturedCalculatorPages();
             display: flex;
             justify-content: center;
             align-items: center;
+            transition: vh-transition(background-color, var(--vh-duration-short));
             @include vh-media-breakpoint-up(md) {
                 display: none
+            }
+            @include vh-active {
+                &:active {
+                    --bg-alpha: .16
+                }
             }
             .svg-icon {
                 --size: var(--_icon-size);
@@ -282,6 +272,18 @@ const nav = getFeaturedCalculatorPages();
                     &:has(a[aria-current="page"]:hover)::before {
                         --bg-hsl: var(--vh-clr-primary-hsl)
                     }
+                    // Delay the removal of the anchor-name only when leaving the entire menu.
+                    // We make this duration double (x2) the transform transition to ensure the spring-based scale-down
+                    // animation has completely settled to absolute zero before the anchor name is removed.
+                    // This eliminates any single-frame snap/flicker artifact in the center.
+                    li {
+                        transition: anchor-name calc(var(--vh-duration-long) * 2) allow-discrete
+                    }
+                    // When hovering inside the menu, disable the transition delay so switching is instant.
+                    &:has(a:hover) li {
+                        transition: none
+                    }
+                    // Hovered item gets the anchor
                     li:has(a:hover) {
                         anchor-name: --_anchor-name
                     }
@@ -345,6 +347,7 @@ const nav = getFeaturedCalculatorPages();
                         gap: calc(var(--vh-spacer) * .5);
                         padding: calc(var(--vh-spacer) * .625) calc(var(--vh-spacer) * .75);
                         color: currentColor;
+                        transition: vh-transition(transform, var(--vh-duration-short));
                         text-decoration: none;
                         &[aria-current="page"] {
                             color: var(--vh-clr-primary)

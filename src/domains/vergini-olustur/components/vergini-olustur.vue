@@ -1,100 +1,102 @@
 <template>
-    <container class="calculator-container">
-        <inner-container>
-            <form
-                ref="formEl"
-                :aria-label="props.calculatorPage.title"
-                @submit.prevent="onSubmit()"
-                class="calculator-form">
-                <form-group label="Vergisiz tutar">
-                    <form-control-number
-                        v-model="form.basePrice"
-                        :required="true" />
-                </form-group>
+    <div
+        :aria-expanded="results ? 'true' : 'false'"
+        class="calculator">
+        <container>
+            <div class="calculator-box">
+                <div class="calculator-box-left">
+                    <form
+                        ref="formEl"
+                        :aria-label="props.calculatorPage.title"
+                        @submit.prevent="onSubmit()"
+                        class="calculator-form">
+                        <form-group label="Vergisiz tutar">
+                            <form-control-number
+                                v-model="form.basePrice"
+                                :required="true" />
+                        </form-group>
 
-                <div>
-                    <form-group label="Vergi kalemleri">
-                        <!--
-                        animation = $duration-long
-                        easing = $timing-normal
-                        -->
-                        <VueDraggable
-                            v-model="form.taxItems"
-                            :animation="375"
-                            handle="[data-sortable-handle]"
-                            ghost-class="data-sortable-ghost"
-                            easing="cubic-bezier(.25, .8, .25, 1)"
-                            target=".tax-items">
-                            <transition-group
-                                name="list-transition"
-                                tag="div"
-                                class="tax-items">
-                                <template v-for="(_taxItem, index) in form.taxItems" :key="_taxItem.id">
-                                    <vergini-olustur-form-tax-item
-                                        v-model:is-delete-mode="isDeleteMode"
-                                        @click:delete="deleteTaxItem(_taxItem.id)"
-                                        @move:up="moveTaxItemUp(index)"
-                                        @move:down="moveTaxItemDown(index)"
-                                        :tax-item="_taxItem"
-                                        :EXCHANGE_RATES="props.EXCHANGE_RATES" />
-                                </template>
-                            </transition-group>
-                        </VueDraggable>
-                    </form-group>
-                    <form-button
-                        @click="addTaxItem()"
-                        scale="small"
-                        type="button"
-                        class="w-100"
-                        variant="outlined">
-                        Yeni kalem ekle
-                    </form-button>
+                        <div>
+                            <form-group label="Vergi kalemleri">
+                                <!--
+                                animation = $duration-long
+                                easing = $timing-normal
+                                -->
+                                <VueDraggable
+                                    v-model="form.taxItems"
+                                    :animation="375"
+                                    handle="[data-sortable-handle]"
+                                    ghost-class="data-sortable-ghost"
+                                    easing="cubic-bezier(.25, .8, .25, 1)"
+                                    target=".tax-items">
+                                    <transition-group
+                                        name="list-transition"
+                                        tag="div"
+                                        class="tax-items">
+                                        <template v-for="(_taxItem, index) in form.taxItems" :key="_taxItem.id">
+                                            <vergini-olustur-form-tax-item
+                                                v-model:is-delete-mode="isDeleteMode"
+                                                @click:delete="deleteTaxItem(_taxItem.id)"
+                                                @move:up="moveTaxItemUp(index)"
+                                                @move:down="moveTaxItemDown(index)"
+                                                :tax-item="_taxItem"
+                                                :EXCHANGE_RATES="props.EXCHANGE_RATES" />
+                                        </template>
+                                    </transition-group>
+                                </VueDraggable>
+                            </form-group>
+                            <form-button
+                                @click="addTaxItem()"
+                                scale="small"
+                                type="button"
+                                class="w-100"
+                                variant="outlined">
+                                Yeni kalem ekle
+                            </form-button>
+                        </div>
+
+                        <form-button
+                            class="w-100"
+                            type="submit">
+                            Hesapla
+                        </form-button>
+                    </form>
                 </div>
 
-                <form-button
-                    class="w-100"
-                    type="submit">
-                    Hesapla
-                </form-button>
-            </form>
-        </inner-container>
+                <template v-if="results !== null">
+                    <transition name="calculator-results-transition">
+                        <div ref="resultsEl" class="calculator-box-right">
+                            <heading-3 tag="h2">
+                                Hesaplama sonuçları
+                            </heading-3>
+                            <div class="calculator-results">
+                                <lazy-calculator-result-list
+                                    :items="resultList!" />
 
-        <template v-if="results !== null">
-            <div>
-                <heading-3 tag="h2">
-                    Hesaplama sonuçları
-                </heading-3>
+                                <lazy-calculator-quick-share
+                                    :url="props.calculatorPage.url"
+                                    @click:other="isCalculatorShareModalOpened = true" />
 
-                <div class="ta-ad-first" ta-ad-container=""></div>
-
-                <div class="calculator-result-row">
-                    <inner-container class="calculator-result-row-primary">
-                        <lazy-calculator-result-list
-                            ref="resultsEl"
-                            :items="resultList!" />
-
-                        <lazy-calculator-quick-share
-                            :url="props.calculatorPage.url"
-                            @click:other="isCalculatorShareModalOpened = true" />
-
-                        <lazy-calculator-share-modal
-                            v-model="isCalculatorShareModalOpened"
-                            :link="{
-                                url: props.calculatorPage.url
-                            }"
-                            :screenshot="{
-                                calculatorTitle: props.calculatorPage.title,
-                                screenshotData: screenshotData!
-                            }" />
-                    </inner-container>
-                </div>
+                                <lazy-calculator-share-modal
+                                    v-model="isCalculatorShareModalOpened"
+                                    :link="{
+                                        url: props.calculatorPage.url
+                                    }"
+                                    :screenshot="{
+                                        calculatorTitle: props.calculatorPage.title,
+                                        screenshotData: screenshotData!
+                                    }" />
+                            </div>
+                        </div>
+                    </transition>
+                </template>
             </div>
-        </template>
-    </container>
+        </container>
+    </div>
 
     <go-to-calculator-button
         :calculator-container="formEl!"
-        :results-container="resultsEl?.$el!" />
+        :results-container="resultsEl!" />
 </template>
 
 <script lang="ts" setup>

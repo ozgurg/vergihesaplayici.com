@@ -85,7 +85,7 @@ $_colors: (
         --text-hsl: "0deg, 0%, 0%"
     ),
     "brand-facebook": (
-        --bg-hsl: "216.72deg, 100%, 50.98%",
+        --bg-hsl: "217.17deg, 100%, 51.47%",
         --text-hsl: "0deg, 0%, 100%"
     ),
     "brand-x": (
@@ -94,7 +94,7 @@ $_colors: (
         --border-alpha: .32
     ),
     "brand-whatsapp": (
-        --bg-hsl: "142.41deg, 70.16%, 48.63%",
+        --bg-hsl: "148.94deg, 70.85%, 39.02%",
         --text-hsl: "0deg, 0%, 100%"
     ),
     "brand-telegram": (
@@ -156,14 +156,11 @@ $_scales: (
     text-decoration: none;
     color: hsla(var(--_text-hsl), var(--_text-alpha));
     @include vh-squircle(var(--_border-radius));
-    padding-inline: var(--vh-spacer);
+    padding-inline: calc(var(--vh-spacer) * 1.25);
     min-inline-size: 4rem;
     block-size: var(--_block-size);
     @media (prefers-contrast: more) {
         --_border-alpha: 1
-    }
-    &:active {
-        transform: scale(.99)
     }
     @each $__color, $__properties in $_colors {
         &-color-#{$__color} {
@@ -178,15 +175,18 @@ $_scales: (
     &-variant-filled {
         border: var(--vh-border-inline-size) solid hsla(var(--_border-hsl), var(--_border-alpha));
         background: hsl(var(--_bg-hsl), var(--_bg-alpha));
+        transition: vh-transition(color background transform, var(--vh-duration-short));
         @include vh-hover {
-            transition: vh-transition(color background, var(--vh-duration-short));
             &:hover {
                 --text-alpha: .75;
                 --bg-alpha: .875
             }
+        }
+        @include vh-active {
             &:active {
                 --text-alpha: .625;
-                --bg-alpha: .75
+                --bg-alpha: .75;
+                transform: scale(.985)
             }
         }
     }
@@ -204,25 +204,31 @@ $_scales: (
         --text-hsl: var(--bg-hsl);
         --border-hsl: var(--bg-hsl);
         background-color: hsla(var(--bg-hsl), .08);
+        transition: vh-transition(background-color transform, var(--vh-duration-short));
         @include vh-hover {
-            transition: vh-transition(background-color, var(--vh-duration-short));
             &:hover {
                 background-color: hsla(var(--bg-hsl), .12)
             }
+        }
+        @include vh-active {
             &:active {
-                background-color: hsla(var(--bg-hsl), .16)
+                background-color: hsla(var(--bg-hsl), .16);
+                transform: scale(.985)
             }
         }
     }
     &-variant-outlined,
     &-variant-text {
+        transition: vh-transition(background-color transform, var(--vh-duration-short));
         @include vh-hover {
-            transition: vh-transition(background-color, var(--vh-duration-short));
             &:hover {
                 background-color: hsla(var(--bg-hsl), .08)
             }
+        }
+        @include vh-active {
             &:active {
-                background-color: hsla(var(--bg-hsl), .16)
+                background-color: hsla(var(--bg-hsl), .16);
+                transform: scale(.985)
             }
         }
     }
