@@ -59,8 +59,7 @@ const PAGE_SCHEMA = (() => {
 
 <meta charset="UTF-8" />
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
-<meta name="viewport"
-      content="width=device-width,initial-scale=1,maximum-scale=5,viewport-fit=cover,interactive-widget=resizes-content" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,viewport-fit=cover,interactive-widget=resizes-content" />
 <title>{PAGE_TITLE}</title>
 
 <link rel="preload" as="font" type="font/woff2" href={interLatinNormalFontWoff2Url} crossorigin="anonymous" />
@@ -117,9 +116,7 @@ const PAGE_SCHEMA = (() => {
 <meta name="apple-mobile-web-app-title" content={PAGE_TITLE} />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
-{import.meta.env.PROD &&
-<script is:inline src="https://analytics.ahrefs.com/analytics.js" data-key="hgZsRnZKNf2I0PbluLfvbA" async=""
-        defer=""></script>}
+{import.meta.env.PROD && <script is:inline src="https://analytics.ahrefs.com/analytics.js" data-key="hgZsRnZKNf2I0PbluLfvbA" async="" defer=""></script>}
 
 <script is:inline define:vars={{ SERVICE_WORKER_URL: staticSiteUrl("/sw.js", false) }}>
     if ("serviceWorker" in window.navigator) {
