@@ -9,6 +9,7 @@ import KonsolVergisiHesaplayiciPreset
     from "@/domains/konsol-vergisi-hesaplayici/components/konsol-vergisi-hesaplayici-preset.vue";
 import Heading2 from "@/components/common/heading-2.vue";
 import CalculatorPresetCarousel from "@/components/calculator-preset-carousel.astro";
+import { Image } from "astro:assets";
 
 import { getPresetsForAllBrands, getBrandById } from "@/domains/konsol-vergisi-hesaplayici/db.js";
 import {
@@ -20,6 +21,7 @@ import {
 } from "@/domains/konsol-vergisi-hesaplayici/utils/map-presets-for-calculator-preset-carousel-component.js";
 import { calculateResults } from "@/domains/konsol-vergisi-hesaplayici/utils/calculate-results.js";
 import { DEFAULT_PRESET_FORM } from "@/domains/konsol-vergisi-hesaplayici/config.js";
+import { getThumbByFileName } from "@/utils/thumb-loader.js";
 
 export const getStaticPaths = (): object => {
     return getPresetsForAllBrands().map(_preset => ({
@@ -78,6 +80,7 @@ const calculateServerSide = () => {
 };
 
 const initial = calculateServerSide();
+const thumb = getThumbByFileName(preset.thumb);
 ---
 
 <AppLayout page={konsolVergisiHesaplayiciPresetSlugPage}>
@@ -86,11 +89,28 @@ const initial = calculateServerSide();
             <Breadcrumbs
                 items={konsolVergisiHesaplayiciPresetSlugPage.breadcrumbs}
                 client:load />
-            <Heading1>
-                {preset.pageTitle}
-            </Heading1>
         </Container>
     </PageHeader>
+
+    <section class="preset-hero">
+        <Container>
+            <Image
+                src={thumb.metadata}
+                alt={`${brand.title} ${preset.title}`}
+                loading="eager"
+                height="96"
+                densities={[1, 2]}
+                decoding="async"
+                aria-hidden="true"
+                draggable="false"
+                class="preset-hero__thumb" />
+            <div class="preset-hero__content">
+                <Heading1>
+                    {preset.pageTitle}
+                </Heading1>
+            </div>
+        </Container>
+    </section>
 
     <KonsolVergisiHesaplayiciPreset
         EXCHANGE_RATES={EXCHANGE_RATES}
@@ -119,3 +139,32 @@ const initial = calculateServerSide();
         <div class="ta-ad-last" ta-ad-container=""></div>
     </Container>
 </AppLayout>
+
+<style lang="scss" is:global>
+    .preset-hero {
+        margin-block-end: calc(var(--vh-spacer) * 2);
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: calc(var(--vh-spacer) * 1.5);
+            @include vh-media-breakpoint-up(md) {
+                flex-direction: row;
+                gap: calc(var(--vh-spacer) * 2)
+            }
+        }
+        &__thumb {
+            flex-shrink: 0;
+            inline-size: auto;
+            block-size: calc(var(--vh-spacer) * 8);
+            @include vh-media-breakpoint-up(md) {
+                block-size: calc(var(--vh-spacer) * 10)
+            }
+        }
+        &__content {
+            .heading-1 {
+                padding-block-end: 0
+            }
+        }
+    }
+</style>

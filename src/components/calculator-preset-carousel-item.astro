@@ -35,9 +35,8 @@ const TitleTag = props.titleTag as HTMLTag;
         src={props.thumb.metadata}
         alt={IMG_ALT}
         loading={props.loading}
-        height="96"
+        height="112"
         class="thumb"
-        densities={[1, 2]}
         decoding="async"
         aria-hidden="true"
         draggable="false" />
@@ -87,8 +86,8 @@ const TitleTag = props.titleTag as HTMLTag;
             margin-block-end: var(--vh-spacer);
             object-fit: contain;
             inline-size: auto;
-            block-size: calc(var(--vh-spacer) * 6);
-            max-inline-size: calc(var(--vh-spacer) * 6)
+            block-size: calc(var(--vh-spacer) * 7);
+            max-inline-size: calc(var(--vh-spacer) * 7)
         }
         .title {
             --_icon-size: calc(var(--vh-spacer) * 1.25);
