@@ -81,6 +81,12 @@ const calculateServerSide = () => {
 
 const initial = calculateServerSide();
 const thumb = getThumbByFileName(preset.thumb);
+
+const presetHeroStyle = {
+    "--color-h": `${thumb.color.hsl.h}deg`,
+    "--color-s": `${thumb.color.hsl.s}%`,
+    "--color-l": `${thumb.color.hsl.l}%`
+};
 ---
 
 <AppLayout page={konsolVergisiHesaplayiciPresetSlugPage}>
@@ -92,14 +98,15 @@ const thumb = getThumbByFileName(preset.thumb);
         </Container>
     </PageHeader>
 
-    <section class="preset-hero">
+    <header
+        style={presetHeroStyle}
+        class="preset-hero">
         <Container>
             <Image
                 src={thumb.metadata}
                 alt={`${brand.title} ${preset.title}`}
                 loading="eager"
-                height="96"
-                densities={[1, 2]}
+                height="112"
                 decoding="async"
                 aria-hidden="true"
                 draggable="false"
@@ -110,7 +117,7 @@ const thumb = getThumbByFileName(preset.thumb);
                 </Heading1>
             </div>
         </Container>
-    </section>
+    </header>
 
     <KonsolVergisiHesaplayiciPreset
         EXCHANGE_RATES={EXCHANGE_RATES}
@@ -142,6 +149,10 @@ const thumb = getThumbByFileName(preset.thumb);
 
 <style lang="scss" is:global>
     .preset-hero {
+        --_color-h: var(--color-h);
+        --_color-s: var(--color-s);
+        --_color-l: var(--color-l);
+        --_color-hsl: var(--_color-h), var(--_color-s), var(--_color-l);
         margin-block-end: calc(var(--vh-spacer) * 2);
         .container {
             display: flex;
@@ -155,16 +166,18 @@ const thumb = getThumbByFileName(preset.thumb);
         }
         &__thumb {
             flex-shrink: 0;
+            object-fit: contain;
             inline-size: auto;
-            block-size: calc(var(--vh-spacer) * 8);
-            @include vh-media-breakpoint-up(md) {
-                block-size: calc(var(--vh-spacer) * 10)
-            }
+            block-size: calc(var(--vh-spacer) * 7);
+            max-inline-size: calc(var(--vh-spacer) * 7)
         }
         &__content {
             .heading-1 {
                 padding-block-end: 0
             }
+        }
+        .heading-1 {
+            color: hsl(var(--_color-h), var(--_color-s), 80%)
         }
     }
 </style>

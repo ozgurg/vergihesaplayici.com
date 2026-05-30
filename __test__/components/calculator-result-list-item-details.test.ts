@@ -1,29 +1,36 @@
-import { mount } from "@vue/test-utils";
+import { type DOMWrapper, mount } from "@vue/test-utils";
 import { describe, expect, it } from "vitest";
 import { testAttrPassingToRoot, testRootClass } from "@root/__test__/utils.js";
 import StringCarousel from "@/components/common/string-carousel.vue";
-import CalculatorResultListItem from "@/components/calculator-result-list-item.vue";
+import CalculatorResultListItemDetails from "@/components/calculator-result-list-item-details.vue";
 
-describe("components/calculator-result-list-item.vue", () => {
-    testAttrPassingToRoot(CalculatorResultListItem, {
+describe("components/calculator-result-list-item-details.vue", () => {
+    testAttrPassingToRoot(CalculatorResultListItemDetails, {
         props: {
             label: "Tax Free Price",
-            value: "100"
+            value: "100",
+            details: []
         }
     });
-    testRootClass(CalculatorResultListItem, "calculator-result-list-item", {
+    testRootClass(CalculatorResultListItemDetails, "calculator-result-list-item", {
         props: {
             label: "Tax Free Price",
-            value: "100"
+            value: "100",
+            details: []
         }
     });
 
-    it("renders label and value correctly", () => {
+    it("renders label, value and each details correctly", () => {
+        const testDetails = [
+            { label: "label 1", value: "value 1" },
+            { label: "label 2", value: "value 2" }
+        ];
         const testProps = {
             label: "Total Tax (50%)",
-            value: "100"
+            value: "100",
+            details: testDetails
         };
-        const wrapper = mount(CalculatorResultListItem, {
+        const wrapper = mount(CalculatorResultListItemDetails, {
             props: testProps
         });
 
@@ -34,14 +41,22 @@ describe("components/calculator-result-list-item.vue", () => {
         const valueStringCarousel = wrapper.find(".header-value").findComponent(StringCarousel as any);
         expect(valueStringCarousel.exists()).toBeTruthy();
         expect((valueStringCarousel as any).props("text")).toBe(testProps.value);
+
+        const details = wrapper.findAll(".detail") as DOMWrapper<HTMLDivElement>[];
+        expect(details.length).toBe(testDetails.length);
+        for (const [_index, _detail] of details.entries()) {
+            expect(_detail.find(".detail-label").text()).toBe(testDetails[_index]!.label);
+            expect(_detail.find(".detail-value").text()).toBe(testDetails[_index]!.value);
+        }
     });
 
     it("renders label as it is if it does not contains any number", () => {
         const testProps = {
             label: "Tax Free Price",
-            value: ""
+            value: "",
+            details: []
         };
-        const wrapper = mount(CalculatorResultListItem, {
+        const wrapper = mount(CalculatorResultListItemDetails, {
             props: testProps
         });
 
@@ -53,9 +68,10 @@ describe("components/calculator-result-list-item.vue", () => {
         const testProps = {
             label: "Tax Free Price",
             value: "100",
+            details: [],
             variant: "tax-free-price"
         };
-        const wrapper = mount(CalculatorResultListItem, {
+        const wrapper = mount(CalculatorResultListItemDetails, {
             // @ts-expect-error: FIXME
             props: testProps
         });
@@ -66,38 +82,42 @@ describe("components/calculator-result-list-item.vue", () => {
     it("does not apply any variant class when `variant` is not passed", () => {
         const testProps = {
             label: "Tax Free Price",
-            value: "100"
+            value: "100",
+            details: []
         };
-        const wrapper = mount(CalculatorResultListItem, {
+        const wrapper = mount(CalculatorResultListItemDetails, {
             props: testProps
         });
         expect(wrapper.attributes("class")).toBe("calculator-result-list-item");
     });
 
     it("applies or not applies `muted` class", () => {
-        const wrapper1 = mount(CalculatorResultListItem, {
+        const wrapper1 = mount(CalculatorResultListItemDetails, {
             props: {
                 label: "Tax Free Price",
                 value: "100",
+                details: [],
                 variant: "tax-free-price"
             }
         });
         expect(wrapper1.classes()).not.toContain("calculator-result-list-item--muted");
 
-        const wrapper2 = mount(CalculatorResultListItem, {
+        const wrapper2 = mount(CalculatorResultListItemDetails, {
             props: {
                 label: "Tax Free Price",
                 value: "100",
+                details: [],
                 variant: "tax-free-price",
                 isMuted: false
             }
         });
         expect(wrapper2.classes()).not.toContain("calculator-result-list-item--muted");
 
-        const wrapper3 = mount(CalculatorResultListItem, {
+        const wrapper3 = mount(CalculatorResultListItemDetails, {
             props: {
                 label: "Tax Free Price",
                 value: "100",
+                details: [],
                 variant: "tax-free-price",
                 isMuted: true
             }

@@ -28,6 +28,8 @@ export default getViteConfig({
                 "src/components/calculator-share-modal/**.vue", // Most of them
                 "src/domains/**/**.vue",
 
+                "src/utils/tax-calculator.ts", // I'm testing calculators that use this
+
 
                 // No test needed to raw data
                 "src/domains/telefon-vergisi-hesaplayici/db/**.ts",

@@ -1,16 +1,18 @@
 <template>
     <div :class="CLASSES">
-        <dt>
-            <template v-if="doesLabelContainNumber">
-                <string-carousel :text="props.label" />
-            </template>
-            <template v-else>
-                {{ props.label }}
-            </template>
-        </dt>
-        <dd class="text-number">
-            <string-carousel :text="props.value" />
-        </dd>
+        <div class="header">
+            <span class="header-label">
+                <template v-if="doesLabelContainNumber">
+                    <string-carousel :text="props.label" />
+                </template>
+                <template v-else>
+                    {{ props.label }}
+                </template>
+            </span>
+            <span class="header-value text-number">
+                <string-carousel :text="props.value" />
+            </span>
+        </div>
     </div>
 </template>
 
@@ -32,8 +34,8 @@ const doesLabelContainNumber = /\d/u.test(props.label);
 
 const CLASSES = [
     "calculator-result-list-item",
-    props.variant ? `calculator-result-list-item-variant-${props.variant}` : undefined,
-    props.isMuted ? `calculator-result-list-item-muted` : undefined
+    props.variant ? `calculator-result-list-item--variant-${props.variant}` : undefined,
+    props.isMuted ? `calculator-result-list-item--muted` : undefined
 ];
 </script>
 
@@ -58,32 +60,36 @@ $_variants: (
     --_bg: var(--bg, 0);
     --_font-weight: var(--font-weight, var(--vh-fw-normal));
     font-weight: var(--_font-weight);
-    display: flex;
-    align-items: center;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    padding: calc(var(--vh-spacer) * .75) var(--vh-spacer);
     background: var(--_bg);
-    gap: var(--vh-spacer);
     @each $__variant, $__properties in $_variants {
-        &-variant-#{$__variant} {
+        &--variant-#{$__variant} {
             @include vh-map-to-properties($__properties)
         }
     }
-    &-muted {
+    &--muted {
         transition: vh-transition(opacity, var(--vh-duration-short));
         opacity: .625;
-        &:hover {
-            opacity: 1
+        @include vh-hover {
+            &:hover {
+                opacity: 1
+            }
         }
     }
-    dt {
-        text-align: start
-    }
-    dd {
-        flex: 1;
-        text-align: end;
-        word-break: break-word
+    .header {
+        display: flex;
+        align-items: center;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        padding: calc(var(--vh-spacer) * .75) var(--vh-spacer);
+        gap: var(--vh-spacer);
+        &-label {
+            text-align: start
+        }
+        &-value {
+            flex: 1;
+            text-align: end;
+            word-break: break-word
+        }
     }
 }
 </style>

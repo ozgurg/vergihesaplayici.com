@@ -1,4 +1,5 @@
 import type { CurrencyCode } from "@/types/common.js";
+import type { TaxCalculationStep } from "@/utils/tax-calculator.js";
 
 
 // Calculator
@@ -63,10 +64,13 @@ export type ChartData = {
     total: ChartItem[]
 };
 
+export type TaxStepId = Exclude<keyof TaxFees, "total">;
+
 export type CalculationResults = {
     taxFees: TaxFees;
     taxRates: TaxRates;
     prices: Prices;
+    steps: { [key in TaxStepId]: TaxCalculationStep<TaxStepId> };
 };
 
 export type ResultListItem = {
@@ -74,6 +78,7 @@ export type ResultListItem = {
     label: string;
     value: string;
     isMuted?: boolean;
+    details?: { label: string; value: string }[];
 };
 
 export type ResultList = ResultListItem[];

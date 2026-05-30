@@ -225,6 +225,7 @@
 }
 
 @mixin vh-card($hover: false, $active: false) {
+    --transition: #{vh-transition(background-color border-color transform, var(--vh-duration-short))};
     --_color-hsl: var(--color-hsl, var(--vh-clr-white-hsl));
     --_border-hsl: var(--border-hsl, var(--_color-hsl));
     --_border-alpha: var(--border-alpha, var(--vh-clr-border-alpha));
@@ -235,7 +236,7 @@
     background-image: linear-gradient(to bottom, hsla(var(--_color-hsl), .08), hsla(var(--_color-hsl), .04));
     background-color: hsla(var(--_color-hsl), var(--_bg-alpha));
     @if $hover or $active {
-        transition: vh-transition(background-color border-color transform, var(--vh-duration-short))
+        transition: var(--transition)
     }
     @if $hover {
         @include vh-hover {

@@ -1,11 +1,11 @@
 import type { Form, VehicleEngineVolume, VehicleType } from "@/domains/arac-vergisi/types.js";
 
 export const DEFAULT_FORM: Form = {
-    mode: "tax-free-to-tax-added",
+    mode: "tax-added-to-tax-free",
     price: 0,
     currency: "TRY",
     vehicleType: "automobile",
-    vehicleEngineVolume: null
+    vehicleEngineVolume: "automobile.0-1400"
 };
 
 export const TAX_FREE_LABEL_BY_MODE = {
