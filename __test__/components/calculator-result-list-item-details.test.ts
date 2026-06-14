@@ -1,4 +1,5 @@
-import { type DOMWrapper, mount } from "@vue/test-utils";
+import type { DOMWrapper } from "@vue/test-utils";
+import { mount } from "@vue/test-utils";
 import { describe, expect, it } from "vitest";
 import { testAttrPassingToRoot, testRootClass } from "@root/__test__/utils.js";
 import StringCarousel from "@/components/common/string-carousel.vue";

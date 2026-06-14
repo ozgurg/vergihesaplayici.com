@@ -1,4 +1,5 @@
 /// <reference types="vitest/config" />
+// oxlint-disable typescript/no-explicit-any
 import { getViteConfig } from "astro/config";
 
 process.env.TZ = "Europe/Istanbul";
@@ -59,4 +60,4 @@ export default getViteConfig({
             ]
         }
     }
-});
+} as any);

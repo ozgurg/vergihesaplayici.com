@@ -44,6 +44,7 @@
         ],
         "typescript/no-invalid-void-type": "off",
 
+        "eslint/prefer-named-capture-group": "off",
         "eslint/no-duplicate-imports": [
             "off",
             {
@@ -87,6 +88,7 @@
             "multi-line"
         ],
 
+        "unicorn/prefer-single-call": "off",
         "unicorn/no-immediate-mutation": "off",
         "unicorn/prefer-global-this": "off",
         "unicorn/filename-case": "off",

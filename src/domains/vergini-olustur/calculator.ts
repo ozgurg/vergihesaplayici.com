@@ -42,6 +42,7 @@ export class Calculator {
             let amount = 0;
 
             if (_taxItem.rateType === "percent") {
+                // oxlint-disable-next-line unicorn/prefer-ternary
                 if (_taxItem.baseAmountMode === "base-amount") {
                     amount += calculateTaxFromTaxFreePrice(this.basePrice, _taxItem.rate);
                 } else if (_taxItem.baseAmountMode === "previous-amount") {

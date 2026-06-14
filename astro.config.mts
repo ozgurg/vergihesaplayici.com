@@ -1,3 +1,4 @@
+// oxlint-disable typescript/no-explicit-any
 import path from "node:path";
 import { defineConfig } from "astro/config";
 import { loadEnv } from "vite";
@@ -121,7 +122,7 @@ export default defineConfig({
                         type: true
                     }
                 ]
-            }),
+            }) as any,
             autoImportVueComponentsPlugin({
                 dts: "unplugin-vue-components.d.ts",
                 dirs: [
@@ -131,13 +132,13 @@ export default defineConfig({
                 resolvers: [
                     lazyVueComponentsResolver()
                 ]
-            }),
+            }) as any,
             lazyVueComponentsPlugin({
                 dirs: [
                     "src/components",
                     "src/domains/**/components"
                 ]
-            })
+            }) as any
         ],
         resolve: {
             alias: {
