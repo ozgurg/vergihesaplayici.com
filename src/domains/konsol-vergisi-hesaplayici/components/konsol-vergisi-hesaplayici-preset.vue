@@ -3,6 +3,13 @@
         :aria-expanded="results ? 'true' : 'false'"
         class="calculator">
         <container>
+            <template v-if="preset.disclaimerNote">
+                <alert>
+                    {{ preset.disclaimerNote }}
+                </alert>
+                <hr />
+            </template>
+
             <div class="calculator-box">
                 <div class="calculator-box-left">
                     <form
