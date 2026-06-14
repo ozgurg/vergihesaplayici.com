@@ -233,7 +233,7 @@
     --_border-radius: var(--border-radius, var(--vh-br-normal));
     @include vh-squircle(var(--_border-radius));
     border: var(--vh-border-inline-size) solid hsla(var(--_border-hsl), var(--_border-alpha));
-    background-image: linear-gradient(to bottom, hsla(var(--_color-hsl), .08), hsla(var(--_color-hsl), .04));
+    background-image: linear-gradient(to bottom, hsla(var(--_color-hsl), .08), hsla(var(--_color-hsl), .02));
     background-color: hsla(var(--_color-hsl), var(--_bg-alpha));
     @if $hover or $active {
         transition: var(--transition)
