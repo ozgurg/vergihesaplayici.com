@@ -18,8 +18,8 @@
         "prepare": "husky"
     },
     "dependencies": {
+        "@fontsource-variable/google-sans": "5.2.1",
         "@fontsource-variable/google-sans-code": "5.2.4",
-        "@fontsource-variable/inter": "5.2.8",
         "astro": "6.3.7",
         "balloon-css": "1.2.0",
         "firebase": "12.13.0",

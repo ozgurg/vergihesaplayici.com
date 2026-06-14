@@ -1,6 +1,6 @@
 ---
 import type { Page } from "@/types/page-def.js";
-import interLatinNormalFontWoff2Url from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
+import googleSansLatinNormalFontWoff2Url from "@fontsource-variable/google-sans/files/google-sans-latin-wght-normal.woff2?url";
 
 export type Props = {
     page: Page
@@ -62,7 +62,7 @@ const PAGE_SCHEMA = (() => {
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,viewport-fit=cover,interactive-widget=resizes-content" />
 <title>{PAGE_TITLE}</title>
 
-<link rel="preload" as="font" type="font/woff2" href={interLatinNormalFontWoff2Url} crossorigin="anonymous" />
+<link rel="preload" as="font" type="font/woff2" href={googleSansLatinNormalFontWoff2Url} crossorigin="anonymous" />
 <link rel="dns-prefetch" href="https://cdn.apitiny.net" />
 
 <meta name="description" content={PAGE_META_DESCRIPTION} />
