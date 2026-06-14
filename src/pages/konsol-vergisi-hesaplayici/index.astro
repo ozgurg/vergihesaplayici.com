@@ -6,29 +6,29 @@ import Breadcrumbs from "@/components/common/breadcrumbs.vue";
 import Heading1 from "@/components/common/heading-1.vue";
 import Heading2 from "@/components/common/heading-2.vue";
 import CalculatorPresetCarousel from "@/components/calculator-preset-carousel.astro";
-import KonsolVergisiHesaplayici from "@/domains/konsol-vergisi-hesaplayici/components/konsol-vergisi-hesaplayici.vue";
+import KonsolVergisi from "@/domains/konsol-vergisi/components/konsol-vergisi.vue";
 
-import { KonsolVergisiHesaplayiciPageDef } from "@/domains/konsol-vergisi-hesaplayici/page-def.js";
-import { getPresetsForAllBrands } from "@/domains/konsol-vergisi-hesaplayici/db.js";
+import { KonsolVergisiPageDef } from "@/domains/konsol-vergisi/page-def.js";
+import { getPresetsForAllBrands } from "@/domains/konsol-vergisi/db.js";
 import {
     mapPresetsForCalculatorPresetCarouselComponent
-} from "@/domains/konsol-vergisi-hesaplayici/utils/map-presets-for-calculator-preset-carousel-component.js";
+} from "@/domains/konsol-vergisi/utils/map-presets-for-calculator-preset-carousel-component.js";
 
-const konsolVergisiHesaplayiciPage = KonsolVergisiHesaplayiciPageDef();
+const konsolVergisiPage = KonsolVergisiPageDef();
 
 const EXCHANGE_RATES = getExchangeRates();
 const presets = getPresetsForAllBrands();
 const presetsForCalculatorPresetCarousel = mapPresetsForCalculatorPresetCarouselComponent(presets);
 ---
 
-<AppLayout page={konsolVergisiHesaplayiciPage}>
+<AppLayout page={konsolVergisiPage}>
     <PageHeader>
         <Container>
             <Breadcrumbs
-                items={konsolVergisiHesaplayiciPage.breadcrumbs}
+                items={konsolVergisiPage.breadcrumbs}
                 client:load />
             <Heading1>
-                {konsolVergisiHesaplayiciPage.title}
+                {konsolVergisiPage.title}
             </Heading1>
         </Container>
     </PageHeader>
@@ -55,9 +55,9 @@ const presetsForCalculatorPresetCarousel = mapPresetsForCalculatorPresetCarousel
                 Kendiniz hesaplayın
             </Heading2>
         </Container>
-        <KonsolVergisiHesaplayici
+        <KonsolVergisi
             EXCHANGE_RATES={EXCHANGE_RATES}
-            calculatorPage={konsolVergisiHesaplayiciPage}
+            calculatorPage={konsolVergisiPage}
             client:load />
     </section>
 

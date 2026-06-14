@@ -11,7 +11,7 @@
                         @submit.prevent="onSubmit()"
                         class="calculator-form">
                         <form-group label="Hesaplama modu">
-                            <konsol-vergisi-hesaplayici-mode v-model="form.mode" />
+                            <konsol-vergisi-mode v-model="form.mode" />
                         </form-group>
 
                         <div class="calculator-pricing-row">
@@ -113,10 +113,10 @@ import type {
     Form,
     ResultList,
     ScreenshotData
-} from "@/domains/konsol-vergisi-hesaplayici/types.js";
+} from "@/domains/konsol-vergisi/types.js";
 import type { ExchangeRates } from "@/types/common.js";
-import { calculateResults } from "@/domains/konsol-vergisi-hesaplayici/utils/calculate-results.js";
-import { DEFAULT_FORM, LAST_UPDATE, PRICE_LABEL_BY_MODE } from "@/domains/konsol-vergisi-hesaplayici/config.js";
+import { calculateResults } from "@/domains/konsol-vergisi/utils/calculate-results.js";
+import { DEFAULT_FORM, LAST_UPDATE, PRICE_LABEL_BY_MODE } from "@/domains/konsol-vergisi/config.js";
 
 export type Props = {
     EXCHANGE_RATES: ExchangeRates;

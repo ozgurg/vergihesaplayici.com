@@ -4,7 +4,7 @@ import type {
     Prices,
     TaxFees,
     TaxRates
-} from "@/domains/konsol-vergisi-hesaplayici/types.js";
+} from "@/domains/konsol-vergisi/types.js";
 
 export class Calculator {
     private taxFees: TaxFees = {

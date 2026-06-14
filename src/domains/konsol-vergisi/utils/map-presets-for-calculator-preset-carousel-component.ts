@@ -1,12 +1,12 @@
-import type { Preset } from "@/domains/konsol-vergisi-hesaplayici/types.js";
+import type { Preset } from "@/domains/konsol-vergisi/types.js";
 import type { Props as CalculatorPresetCarouselProps } from "@/components/calculator-preset-carousel.astro";
-import { KonsolVergisiHesaplayiciPresetSlugPageDef } from "@/domains/konsol-vergisi-hesaplayici/page-def.js";
-import { getBrandById } from "@/domains/konsol-vergisi-hesaplayici/db.js";
+import { KonsolVergisiPresetSlugPageDef } from "@/domains/konsol-vergisi/page-def.js";
+import { getBrandById } from "@/domains/konsol-vergisi/db.js";
 
 export const mapPresetsForCalculatorPresetCarouselComponent = (presets: Preset[]): CalculatorPresetCarouselProps["items"] => {
     return presets.map(_preset => {
         const presetBrand = getBrandById(_preset.brandId);
-        const konsolVergisiHesaplayiciPresetSlugPage = KonsolVergisiHesaplayiciPresetSlugPageDef({
+        const konsolVergisiPresetSlugPage = KonsolVergisiPresetSlugPageDef({
             preset: _preset,
             brand: presetBrand
         });
@@ -15,7 +15,7 @@ export const mapPresetsForCalculatorPresetCarouselComponent = (presets: Preset[]
             title: _preset.title,
             brandTitle: presetBrand.title,
             releaseYear: _preset.releaseDate.getFullYear(),
-            url: konsolVergisiHesaplayiciPresetSlugPage.url
+            url: konsolVergisiPresetSlugPage.url
         };
     });
 };

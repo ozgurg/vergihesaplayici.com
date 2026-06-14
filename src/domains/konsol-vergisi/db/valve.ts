@@ -1,5 +1,5 @@
-import type { Brand, Preset } from "@/domains/konsol-vergisi-hesaplayici/types.js";
-import { buildPageMeta } from "@/domains/konsol-vergisi-hesaplayici/utils/build-page-meta.js";
+import type { Brand, Preset } from "@/domains/konsol-vergisi/types.js";
+import { buildPageMeta } from "@/domains/konsol-vergisi/utils/build-page-meta.js";
 
 const DISCLAIMER_NOTE = "Bu ürün Türkiye'de resmi olarak satılmadığından, hangi vergi kategorisine gireceği kesin olarak bilinmemektedir. Bu sayfa yalnızca bilgi verme amacı taşır.";
 

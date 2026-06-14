@@ -1,10 +1,10 @@
 import type { CalculatorPage, Page } from "@/types/page-def.js";
-import type { Brand, Preset } from "@/domains/konsol-vergisi-hesaplayici/types.js";
-import { icon_konsolVergisiHesaplayici as icon } from "@/utils/icons.js";
+import type { Brand, Preset } from "@/domains/konsol-vergisi/types.js";
+import { icon_konsolVergisi as icon } from "@/utils/icons.js";
 import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
 import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
 
-export const KonsolVergisiHesaplayiciPageDef = (): CalculatorPage => {
+export const KonsolVergisiPageDef = (): CalculatorPage => {
     const homePage = AnaSayfaPageDef();
     const parentPage = HesaplayicilarPageDef();
 
@@ -12,7 +12,7 @@ export const KonsolVergisiHesaplayiciPageDef = (): CalculatorPage => {
     const title = "Konsol Vergisi Hesaplayıcı";
     const shortTitle = "Konsol";
     const url = siteUrl("/konsol-vergisi-hesaplayici");
-    const ogImageUrl = staticSiteUrl("/og/konsol-vergisi-hesaplayici.jpg");
+    const ogImageUrl = staticSiteUrl("/og/konsol-vergisi.jpg");
     const breadcrumbs = [
         ...parentPage.breadcrumbs,
         { title, url }
@@ -66,14 +66,14 @@ type Params = {
     preset: Preset;
     brand: Brand;
 };
-export const KonsolVergisiHesaplayiciPresetSlugPageDef = ({ preset, brand }: Params): Page<Params> => {
+export const KonsolVergisiPresetSlugPageDef = ({ preset, brand }: Params): Page<Params> => {
     const homePage = AnaSayfaPageDef();
-    const parentPage = KonsolVergisiHesaplayiciPageDef();
+    const parentPage = KonsolVergisiPageDef();
 
     const id = "hesaplayici-konsol-preset";
     const title = preset.pageTitle;
     const url = siteUrl(`/konsol-vergisi-hesaplayici/${preset.slug}`);
-    const ogImageUrl = staticSiteUrl(`/og/konsol-vergisi-hesaplayici-${preset.slug}.jpg`);
+    const ogImageUrl = staticSiteUrl(`/og/konsol-vergisi-${preset.slug}.jpg`);
     const breadcrumbs = [
         ...parentPage.breadcrumbs,
         { title: `${brand.title} ${preset.title}`, url }

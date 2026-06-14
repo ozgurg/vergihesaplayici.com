@@ -1,12 +1,12 @@
 // oxlint-disable import/no-namespace
 
-import type { Brand, Preset } from "@/domains/konsol-vergisi-hesaplayici/types.js";
+import type { Brand, Preset } from "@/domains/konsol-vergisi/types.js";
 import type { PageSlug } from "@/types/page-def.js";
-import * as Nintendo from "@/domains/konsol-vergisi-hesaplayici/db/nintendo.js";
-import * as Valve from "@/domains/konsol-vergisi-hesaplayici/db/valve.js";
-import * as Sony from "@/domains/konsol-vergisi-hesaplayici/db/sony.js";
-import * as Microsoft from "@/domains/konsol-vergisi-hesaplayici/db/microsoft.js";
-import * as Asus from "@/domains/konsol-vergisi-hesaplayici/db/asus.js";
+import * as Nintendo from "@/domains/konsol-vergisi/db/nintendo.js";
+import * as Valve from "@/domains/konsol-vergisi/db/valve.js";
+import * as Sony from "@/domains/konsol-vergisi/db/sony.js";
+import * as Microsoft from "@/domains/konsol-vergisi/db/microsoft.js";
+import * as Asus from "@/domains/konsol-vergisi/db/asus.js";
 
 const withBrandId = (
     presets: Omit<Preset, "brandId">[],

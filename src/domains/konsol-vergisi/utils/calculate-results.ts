@@ -5,11 +5,11 @@ import type {
     Form,
     ResultList,
     ScreenshotData
-} from "@/domains/konsol-vergisi-hesaplayici/types.js";
-import { Calculator } from "@/domains/konsol-vergisi-hesaplayici/calculator.js";
-import { buildResultList } from "@/domains/konsol-vergisi-hesaplayici/utils/build-result-list.js";
-import { buildScreenshotData } from "@/domains/konsol-vergisi-hesaplayici/utils/build-screenshot-data.js";
-import { buildChartData } from "@/domains/konsol-vergisi-hesaplayici/utils/build-chart-data.js";
+} from "@/domains/konsol-vergisi/types.js";
+import { Calculator } from "@/domains/konsol-vergisi/calculator.js";
+import { buildResultList } from "@/domains/konsol-vergisi/utils/build-result-list.js";
+import { buildScreenshotData } from "@/domains/konsol-vergisi/utils/build-screenshot-data.js";
+import { buildChartData } from "@/domains/konsol-vergisi/utils/build-chart-data.js";
 
 export const calculateResults = (params: {
     form: Form;

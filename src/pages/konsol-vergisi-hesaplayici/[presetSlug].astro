@@ -1,26 +1,26 @@
 ---
-import type { Preset, Brand } from "@/domains/konsol-vergisi-hesaplayici/types.js";
+import type { Preset, Brand } from "@/domains/konsol-vergisi/types.js";
 import AppLayout from "@/layouts/app-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
 import Container from "@/components/common/container.vue";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
 import Heading1 from "@/components/common/heading-1.vue";
-import KonsolVergisiHesaplayiciPreset
-    from "@/domains/konsol-vergisi-hesaplayici/components/konsol-vergisi-hesaplayici-preset.vue";
+import KonsolVergisiPreset
+    from "@/domains/konsol-vergisi/components/konsol-vergisi-preset.vue";
 import Heading2 from "@/components/common/heading-2.vue";
 import CalculatorPresetCarousel from "@/components/calculator-preset-carousel.astro";
 import { Image } from "astro:assets";
 
-import { getPresetsForAllBrands, getBrandById } from "@/domains/konsol-vergisi-hesaplayici/db.js";
+import { getPresetsForAllBrands, getBrandById } from "@/domains/konsol-vergisi/db.js";
 import {
-    KonsolVergisiHesaplayiciPageDef,
-    KonsolVergisiHesaplayiciPresetSlugPageDef
-} from "@/domains/konsol-vergisi-hesaplayici/page-def.js";
+    KonsolVergisiPageDef,
+    KonsolVergisiPresetSlugPageDef
+} from "@/domains/konsol-vergisi/page-def.js";
 import {
     mapPresetsForCalculatorPresetCarouselComponent
-} from "@/domains/konsol-vergisi-hesaplayici/utils/map-presets-for-calculator-preset-carousel-component.js";
-import { calculateResults } from "@/domains/konsol-vergisi-hesaplayici/utils/calculate-results.js";
-import { DEFAULT_PRESET_FORM } from "@/domains/konsol-vergisi-hesaplayici/config.js";
+} from "@/domains/konsol-vergisi/utils/map-presets-for-calculator-preset-carousel-component.js";
+import { calculateResults } from "@/domains/konsol-vergisi/utils/calculate-results.js";
+import { DEFAULT_PRESET_FORM } from "@/domains/konsol-vergisi/config.js";
 import { getThumbByFileName } from "@/utils/thumb-loader.js";
 
 export const getStaticPaths = (): object => {
@@ -41,8 +41,8 @@ type Props = {
 };
 const { preset, brand } = Astro.props;
 
-const konsolVergisiHesaplayiciPage = KonsolVergisiHesaplayiciPageDef();
-const konsolVergisiHesaplayiciPresetSlugPage = KonsolVergisiHesaplayiciPresetSlugPageDef({ preset, brand });
+const konsolVergisiPage = KonsolVergisiPageDef();
+const konsolVergisiPresetSlugPage = KonsolVergisiPresetSlugPageDef({ preset, brand });
 
 const EXCHANGE_RATES = getExchangeRates();
 const presets = getPresetsForAllBrands();
@@ -89,11 +89,11 @@ const presetHeroStyle = {
 };
 ---
 
-<AppLayout page={konsolVergisiHesaplayiciPresetSlugPage}>
+<AppLayout page={konsolVergisiPresetSlugPage}>
     <PageHeader>
         <Container>
             <Breadcrumbs
-                items={konsolVergisiHesaplayiciPresetSlugPage.breadcrumbs}
+                items={konsolVergisiPresetSlugPage.breadcrumbs}
                 client:load />
         </Container>
     </PageHeader>
@@ -119,10 +119,10 @@ const presetHeroStyle = {
         </Container>
     </header>
 
-    <KonsolVergisiHesaplayiciPreset
+    <KonsolVergisiPreset
         EXCHANGE_RATES={EXCHANGE_RATES}
-        calculatorPage={konsolVergisiHesaplayiciPage}
-        presetPage={konsolVergisiHesaplayiciPresetSlugPage}
+        calculatorPage={konsolVergisiPage}
+        presetPage={konsolVergisiPresetSlugPage}
         brand={brand}
         preset={preset}
         initial={initial}

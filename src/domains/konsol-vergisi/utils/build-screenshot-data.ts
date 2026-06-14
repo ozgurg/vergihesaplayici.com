@@ -1,5 +1,5 @@
-import type { Form, ResultList, ScreenshotData } from "@/domains/konsol-vergisi-hesaplayici/types.js";
-import { PRICE_LABEL_BY_MODE } from "@/domains/konsol-vergisi-hesaplayici/config.js";
+import type { Form, ResultList, ScreenshotData } from "@/domains/konsol-vergisi/types.js";
+import { PRICE_LABEL_BY_MODE } from "@/domains/konsol-vergisi/config.js";
 
 export const buildScreenshotData = (form: Form, results: ResultList): ScreenshotData => {
     return {

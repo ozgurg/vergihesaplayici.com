@@ -1,6 +1,6 @@
-import type { Form, Mode, Prices } from "@/domains/konsol-vergisi-hesaplayici/types.js";
+import type { Form, Mode, Prices } from "@/domains/konsol-vergisi/types.js";
 import { describe, expect, it } from "vitest";
-import { Calculator } from "@/domains/konsol-vergisi-hesaplayici/calculator.js";
+import { Calculator } from "@/domains/konsol-vergisi/calculator.js";
 
 type CalculateParams = {
     input: Omit<Form, "mode" | "currency">;
@@ -18,7 +18,7 @@ const calculate = ({ input, options, expectedOutput }: CalculateParams): void =>
     });
 };
 
-describe("domains/konsol-vergisi-hesaplayici/calculator.js", () => {
+describe("domains/konsol-vergisi/calculator.js", () => {
     calculate({
         input: {
             price: 300

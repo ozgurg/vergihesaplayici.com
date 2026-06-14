@@ -4,10 +4,10 @@ import logoSvgBase64 from "@/assets/img/logo.svg?inline";
 import {
     getPresetBySlug,
     getPresetsForAllBrands
-} from "@/domains/konsol-vergisi-hesaplayici/db.js";
-import { KonsolVergisiHesaplayiciPageDef } from "@/domains/konsol-vergisi-hesaplayici/page-def.js";
+} from "@/domains/konsol-vergisi/db.js";
+import { KonsolVergisiPageDef } from "@/domains/konsol-vergisi/page-def.js";
 
-const page = KonsolVergisiHesaplayiciPageDef();
+const page = KonsolVergisiPageDef();
 
 export const GET: APIRoute = async ({ params }): Promise<Response> => {
     const preset = getPresetBySlug(params.presetSlug as PageSlug);

@@ -1,4 +1,4 @@
-import type { CalculationResults, ChartData, Form } from "@/domains/konsol-vergisi-hesaplayici/types.js";
+import type { CalculationResults, ChartData, Form } from "@/domains/konsol-vergisi/types.js";
 
 export const buildChartData = (_: Form, results: CalculationResults): ChartData => {
     const { prices, taxFees } = results;

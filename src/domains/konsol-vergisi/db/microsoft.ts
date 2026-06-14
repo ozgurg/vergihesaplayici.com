@@ -1,5 +1,5 @@
-import type { Brand, Preset } from "@/domains/konsol-vergisi-hesaplayici/types.js";
-import { buildPageMeta } from "@/domains/konsol-vergisi-hesaplayici/utils/build-page-meta.js";
+import type { Brand, Preset } from "@/domains/konsol-vergisi/types.js";
+import { buildPageMeta } from "@/domains/konsol-vergisi/utils/build-page-meta.js";
 
 export const brand: Brand = {
     id: "microsoft",

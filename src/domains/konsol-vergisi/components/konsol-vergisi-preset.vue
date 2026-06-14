@@ -107,10 +107,10 @@ import type {
     Preset,
     ResultList,
     ScreenshotData
-} from "@/domains/konsol-vergisi-hesaplayici/types.js";
+} from "@/domains/konsol-vergisi/types.js";
 import type { ExchangeRates } from "@/types/common.js";
-import { calculateResults } from "@/domains/konsol-vergisi-hesaplayici/utils/calculate-results.js";
-import { LAST_UPDATE } from "@/domains/konsol-vergisi-hesaplayici/config.js";
+import { calculateResults } from "@/domains/konsol-vergisi/utils/calculate-results.js";
+import { LAST_UPDATE } from "@/domains/konsol-vergisi/config.js";
 
 export type Props = {
     EXCHANGE_RATES: ExchangeRates;
