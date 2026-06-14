@@ -3,7 +3,13 @@
         :aria-expanded="results ? 'true' : 'false'"
         class="calculator">
         <container>
-            <template v-if="preset.disclaimerNote">
+            <template v-if="preset.status === 'legacy'">
+                <alert>
+                    Bu ürünün satışı sona ermiştir. Aşağıdaki hesaplama, son bilinen satış fiyatlarını temel almaktadır.
+                </alert>
+                <hr />
+            </template>
+            <template v-else-if="preset.disclaimerNote">
                 <alert>
                     {{ preset.disclaimerNote }}
                 </alert>

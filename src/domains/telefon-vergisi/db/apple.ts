@@ -8,6 +8,7 @@ export const brand: Brand = {
 
 export const presets: Omit<Preset, "brandId">[] = [
     {
+        status: "placeholder",
         title: "Vision Pro",
         slug: "apple-vision-pro",
         releaseDate: new Date("2024-02-02"),
@@ -27,6 +28,7 @@ export const presets: Omit<Preset, "brandId">[] = [
     },
 
     {
+        status: "legacy",
         title: "iPhone SE 3",
         slug: "apple-iphone-se-3-2022",
         releaseDate: new Date("2022-03-18"),
@@ -58,6 +60,7 @@ export const presets: Omit<Preset, "brandId">[] = [
     },
 
     {
+        status: "legacy",
         title: "iPhone 12",
         slug: "apple-iphone-12",
         releaseDate: new Date("2020-10-23"),
@@ -89,6 +92,7 @@ export const presets: Omit<Preset, "brandId">[] = [
     },
 
     {
+        status: "legacy",
         title: "iPhone 13 mini",
         slug: "apple-iphone-13-mini",
         releaseDate: new Date("2021-09-24"),
@@ -119,6 +123,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "legacy",
         title: "iPhone 13",
         slug: "apple-iphone-13",
         releaseDate: new Date("2021-09-24"),
@@ -150,6 +155,7 @@ export const presets: Omit<Preset, "brandId">[] = [
     },
 
     {
+        status: "legacy",
         title: "iPhone 14 Pro",
         slug: "apple-iphone-14-pro",
         releaseDate: new Date("2022-09-16"),
@@ -187,6 +193,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "legacy",
         title: "iPhone 14 Pro Max",
         slug: "apple-iphone-14-pro-max",
         releaseDate: new Date("2022-09-16"),
@@ -224,6 +231,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "legacy",
         title: "iPhone 14",
         slug: "apple-iphone-14",
         releaseDate: new Date("2022-09-16"),
@@ -254,6 +262,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "legacy",
         title: "iPhone 14 Plus",
         slug: "apple-iphone-14-plus",
         releaseDate: new Date("2022-10-07"),
@@ -285,6 +294,7 @@ export const presets: Omit<Preset, "brandId">[] = [
     },
 
     {
+        status: "legacy",
         title: "iPhone 15 Pro",
         slug: "apple-iphone-15-pro",
         releaseDate: new Date("2023-09-22"),
@@ -322,6 +332,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "legacy",
         title: "iPhone 15 Pro Max",
         slug: "apple-iphone-15-pro-max",
         releaseDate: new Date("2023-09-22"),
@@ -352,6 +363,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "legacy",
         title: "iPhone 15",
         slug: "apple-iphone-15",
         releaseDate: new Date("2023-09-22"),
@@ -382,6 +394,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "legacy",
         title: "iPhone 15 Plus",
         slug: "apple-iphone-15-plus",
         releaseDate: new Date("2023-09-22"),
@@ -413,6 +426,7 @@ export const presets: Omit<Preset, "brandId">[] = [
     },
 
     {
+        status: "legacy",
         title: "iPhone 16 Pro",
         slug: "apple-iphone-16-pro",
         releaseDate: new Date("2024-09-20"),
@@ -450,6 +464,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "legacy",
         title: "iPhone 16 Pro Max",
         slug: "apple-iphone-16-pro-max",
         releaseDate: new Date("2024-09-20"),
@@ -519,6 +534,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "legacy",
         title: "iPhone 16e",
         slug: "apple-iphone-16e",
         releaseDate: new Date("2025-02-28"),

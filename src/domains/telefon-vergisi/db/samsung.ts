@@ -8,6 +8,7 @@ export const brand: Brand = {
 
 export const presets: Omit<Preset, "brandId">[] = [
     {
+        status: "legacy",
         title: "Galaxy Z Fold4",
         slug: "samsung-galaxy-z-fold4",
         releaseDate: new Date("2022-08-25"),
@@ -38,6 +39,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "legacy",
         title: "Galaxy Z Fold5",
         slug: "samsung-galaxy-z-fold5",
         releaseDate: new Date("2023-08-11"),
@@ -68,6 +70,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "legacy",
         title: "Galaxy Z Fold6",
         slug: "samsung-galaxy-z-fold6",
         releaseDate: new Date("2024-07-24"),
@@ -129,6 +132,7 @@ export const presets: Omit<Preset, "brandId">[] = [
     },
 
     {
+        status: "legacy",
         title: "Galaxy Z Flip4",
         slug: "samsung-galaxy-z-flip4",
         releaseDate: new Date("2022-08-25"),
@@ -159,6 +163,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "legacy",
         title: "Galaxy Z Flip5",
         slug: "samsung-galaxy-z-flip5",
         releaseDate: new Date("2023-08-11"),
@@ -182,6 +187,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "legacy",
         title: "Galaxy Z Flip6",
         slug: "samsung-galaxy-z-flip6",
         releaseDate: new Date("2024-07-24"),
@@ -229,6 +235,7 @@ export const presets: Omit<Preset, "brandId">[] = [
     },
 
     {
+        status: "legacy",
         title: "Galaxy S23",
         slug: "samsung-galaxy-s23",
         releaseDate: new Date("2023-02-17"),
@@ -252,6 +259,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "legacy",
         title: "Galaxy S23+",
         slug: "samsung-galaxy-s23-plus",
         releaseDate: new Date("2023-02-17"),
@@ -275,6 +283,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "legacy",
         title: "Galaxy S23 Ultra",
         slug: "samsung-galaxy-s23-ultra",
         releaseDate: new Date("2023-02-17"),
@@ -306,6 +315,7 @@ export const presets: Omit<Preset, "brandId">[] = [
     },
 
     {
+        status: "legacy",
         title: "Galaxy S24",
         slug: "samsung-galaxy-s24",
         releaseDate: new Date("2024-01-24"),
@@ -329,6 +339,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "legacy",
         title: "Galaxy S24+",
         slug: "samsung-galaxy-s24-plus",
         releaseDate: new Date("2024-01-24"),
@@ -352,6 +363,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "legacy",
         title: "Galaxy S24 Ultra",
         slug: "samsung-galaxy-s24-ultra",
         releaseDate: new Date("2024-01-24"),
