@@ -72,21 +72,17 @@ export const GET: APIRoute = async ({ params }): Promise<Response> => {
             }
 
             .thumb {
-                display: flex;
-                border-radius: 12px;
-                padding: 4px;
-                background: hsl(${thumb.color.hsl.h}deg, ${thumb.color.hsl.s}%, ${thumb.color.hsl.l}%);
-                width: 160px
+                display: flex
             }
 
             .thumb img {
                 object-fit: contain;
-                width: 100%
+                height: 150px
             }
 
             .title {
                 color: hsl(${thumb.color.hsl.h}deg, 100%, 94%);
-                font-family: "${fonts.interLatin700Normal.name}";
+                font-family: "${fonts.bold.name}";
                 text-wrap: balance;
                 margin-top: 24px;
                 font-size: 42px;
@@ -94,7 +90,7 @@ export const GET: APIRoute = async ({ params }): Promise<Response> => {
             }
 
             .calculator {
-                font-family: "${fonts.interLatin500Normal.name}";
+                font-family: "${fonts.normal.name}";
                 margin-top: 40px;
                 padding: 4px 16px;
                 font-weight: 500;
@@ -109,7 +105,7 @@ export const GET: APIRoute = async ({ params }): Promise<Response> => {
             <div class="debug"></div>
             <div class="og-image-body">
                 <div class="thumb">
-                    <img src="${await thumb.base64}" width="160" />
+                    <img src="${await thumb.base64}" />
                 </div>
                 <div class="title">${preset.pageTitle}</div>
                 <div class="calculator">${page.title}</div>

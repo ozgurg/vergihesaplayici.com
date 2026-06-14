@@ -3,7 +3,7 @@ import satori from "satori";
 import sharp from "sharp";
 import { html } from "satori-html";
 
-const INTER_FONT_VERSION = "5.2.8";
+const FONT_VERSION = "5.2.1";
 const OG_IMAGE_QUALITY = 75;
 const OG_IMAGE_WIDTH_IN_PIXELS = 1_200;
 const OG_IMAGE_HEIGHT_IN_PIXELS = 627;
@@ -53,16 +53,16 @@ type OgImageResult = {
         height: number;
     };
     fonts: {
-        interLatin500Normal: Font;
-        interLatin700Normal: Font;
+        normal: Font;
+        bold: Font;
     },
     build: (template: string) => Promise<Response>;
 };
 
 export const ogImage = async (): Promise<OgImageResult> => {
     const fonts = {
-        interLatin500Normal: await loadFont(`https://cdn.jsdelivr.net/fontsource/fonts/inter@${INTER_FONT_VERSION}/latin-500-normal.woff`, "Inter Latin 500 Normal"),
-        interLatin700Normal: await loadFont(`https://cdn.jsdelivr.net/fontsource/fonts/inter@${INTER_FONT_VERSION}/latin-700-normal.woff`, "Inter Latin 700 Normal")
+        normal: await loadFont(`https://cdn.jsdelivr.net/fontsource/fonts/google-sans@${FONT_VERSION}/latin-500-normal.woff`, "Normal"),
+        bold: await loadFont(`https://cdn.jsdelivr.net/fontsource/fonts/google-sans@${FONT_VERSION}/latin-700-normal.woff`, "Bold")
     };
 
     const satoriOptions = {
