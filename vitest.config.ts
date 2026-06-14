@@ -32,7 +32,7 @@ export default getViteConfig({
 
 
                 // No test needed to raw data
-                "src/domains/telefon-vergisi-hesaplayici/db/**.ts",
+                "src/domains/telefon-vergisi/db/**.ts",
                 "src/domains/konsol-vergisi/db/**.ts",
 
 
@@ -40,7 +40,7 @@ export default getViteConfig({
                 // No tests are needed for now.
                 // TypeScript enforces the types for us.
                 "src/domains/*/db.ts",
-                "src/domains/{telefon-vergisi-hesaplayici,konsol-vergisi}/utils/{build-page-meta,map-presets-for-calculator-preset-carousel-component}.ts",
+                "src/domains/{telefon-vergisi,konsol-vergisi}/utils/{build-page-meta,map-presets-for-calculator-preset-carousel-component}.ts",
                 "src/domains/*/utils/{build-result-list,build-screenshot-data,build-chart-data,calculate-results}.ts",
 
 

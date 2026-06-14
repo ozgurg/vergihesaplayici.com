@@ -1,26 +1,26 @@
 ---
-import type { Preset, Brand } from "@/domains/telefon-vergisi-hesaplayici/types.js";
+import type { Preset, Brand } from "@/domains/telefon-vergisi/types.js";
 import AppLayout from "@/layouts/app-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
 import Container from "@/components/common/container.vue";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
 import Heading1 from "@/components/common/heading-1.vue";
-import TelefonVergisiHesaplayiciPreset
-    from "@/domains/telefon-vergisi-hesaplayici/components/telefon-vergisi-hesaplayici-preset.vue";
+import TelefonVergisiPreset
+    from "@/domains/telefon-vergisi/components/telefon-vergisi-preset.vue";
 import Heading2 from "@/components/common/heading-2.vue";
 import CalculatorPresetCarousel from "@/components/calculator-preset-carousel.astro";
 import { Image } from "astro:assets";
 
-import { getPresetsForAllBrands, getBrandById } from "@/domains/telefon-vergisi-hesaplayici/db.js";
+import { getPresetsForAllBrands, getBrandById } from "@/domains/telefon-vergisi/db.js";
 import {
-    TelefonVergisiHesaplayiciPageDef,
-    TelefonVergisiHesaplayiciPresetSlugPageDef
-} from "@/domains/telefon-vergisi-hesaplayici/page-def.js";
+    TelefonVergisiPageDef,
+    TelefonVergisiPresetSlugPageDef
+} from "@/domains/telefon-vergisi/page-def.js";
 import {
     mapPresetsForCalculatorPresetCarouselComponent
-} from "@/domains/telefon-vergisi-hesaplayici/utils/map-presets-for-calculator-preset-carousel-component.js";
-import { calculateResults } from "@/domains/telefon-vergisi-hesaplayici/utils/calculate-results.js";
-import { DEFAULT_PRESET_FORM } from "@/domains/telefon-vergisi-hesaplayici/config.js";
+} from "@/domains/telefon-vergisi/utils/map-presets-for-calculator-preset-carousel-component.js";
+import { calculateResults } from "@/domains/telefon-vergisi/utils/calculate-results.js";
+import { DEFAULT_PRESET_FORM } from "@/domains/telefon-vergisi/config.js";
 import { getThumbByFileName } from "@/utils/thumb-loader.js";
 
 export const getStaticPaths = (): object => {
@@ -41,8 +41,8 @@ type Props = {
 };
 const { preset, brand } = Astro.props;
 
-const telefonVergisiHesaplayiciPage = TelefonVergisiHesaplayiciPageDef();
-const telefonVergisiHesaplayiciPresetSlugPage = TelefonVergisiHesaplayiciPresetSlugPageDef({ preset, brand });
+const telefonVergisiPage = TelefonVergisiPageDef();
+const telefonVergisiPresetSlugPage = TelefonVergisiPresetSlugPageDef({ preset, brand });
 
 const EXCHANGE_RATES = getExchangeRates();
 const presets = getPresetsForAllBrands();
@@ -89,11 +89,11 @@ const presetHeroStyle = {
 };
 ---
 
-<AppLayout page={telefonVergisiHesaplayiciPresetSlugPage}>
+<AppLayout page={telefonVergisiPresetSlugPage}>
     <PageHeader>
         <Container>
             <Breadcrumbs
-                items={telefonVergisiHesaplayiciPresetSlugPage.breadcrumbs}
+                items={telefonVergisiPresetSlugPage.breadcrumbs}
                 client:load />
         </Container>
     </PageHeader>
@@ -119,10 +119,10 @@ const presetHeroStyle = {
         </Container>
     </header>
 
-    <TelefonVergisiHesaplayiciPreset
+    <TelefonVergisiPreset
         EXCHANGE_RATES={EXCHANGE_RATES}
-        calculatorPage={telefonVergisiHesaplayiciPage}
-        presetPage={telefonVergisiHesaplayiciPresetSlugPage}
+        calculatorPage={telefonVergisiPage}
+        presetPage={telefonVergisiPresetSlugPage}
         brand={brand}
         preset={preset}
         initial={initial}

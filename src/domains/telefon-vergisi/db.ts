@@ -1,9 +1,9 @@
 // oxlint-disable import/no-namespace
 
-import type { Brand, Preset } from "@/domains/telefon-vergisi-hesaplayici/types.js";
+import type { Brand, Preset } from "@/domains/telefon-vergisi/types.js";
 import type { PageSlug } from "@/types/page-def.js";
-import * as Apple from "@/domains/telefon-vergisi-hesaplayici/db/apple.js";
-import * as Samsung from "@/domains/telefon-vergisi-hesaplayici/db/samsung.js";
+import * as Apple from "@/domains/telefon-vergisi/db/apple.js";
+import * as Samsung from "@/domains/telefon-vergisi/db/samsung.js";
 
 const withBrandId = (
     presets: Omit<Preset, "brandId">[],

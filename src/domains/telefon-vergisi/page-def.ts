@@ -1,10 +1,10 @@
 import type { CalculatorPage, Page } from "@/types/page-def.js";
-import type { Brand, Preset } from "@/domains/telefon-vergisi-hesaplayici/types.js";
-import { icon_telefonVergisiHesaplayici as icon } from "@/utils/icons.js";
+import type { Brand, Preset } from "@/domains/telefon-vergisi/types.js";
+import { icon_telefonVergisi as icon } from "@/utils/icons.js";
 import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
 import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
 
-export const TelefonVergisiHesaplayiciPageDef = (): CalculatorPage => {
+export const TelefonVergisiPageDef = (): CalculatorPage => {
     const homePage = AnaSayfaPageDef();
     const parentPage = HesaplayicilarPageDef();
 
@@ -12,7 +12,7 @@ export const TelefonVergisiHesaplayiciPageDef = (): CalculatorPage => {
     const title = "Telefon Vergisi Hesaplayıcı";
     const shortTitle = "Telefon";
     const url = siteUrl("/telefon-vergisi-hesaplayici");
-    const ogImageUrl = staticSiteUrl("/og/telefon-vergisi-hesaplayici.jpg");
+    const ogImageUrl = staticSiteUrl("/og/telefon-vergisi.jpg");
     const breadcrumbs = [
         ...parentPage.breadcrumbs,
         { title, url }
@@ -66,14 +66,14 @@ type Params = {
     preset: Preset;
     brand: Brand;
 };
-export const TelefonVergisiHesaplayiciPresetSlugPageDef = ({ preset, brand }: Params): Page<Params> => {
+export const TelefonVergisiPresetSlugPageDef = ({ preset, brand }: Params): Page<Params> => {
     const homePage = AnaSayfaPageDef();
-    const parentPage = TelefonVergisiHesaplayiciPageDef();
+    const parentPage = TelefonVergisiPageDef();
 
     const id = "hesaplayici-telefon-preset";
     const title = preset.pageTitle;
     const url = siteUrl(`/telefon-vergisi-hesaplayici/${preset.slug}`);
-    const ogImageUrl = staticSiteUrl(`/og/telefon-vergisi-hesaplayici-${preset.slug}.jpg`);
+    const ogImageUrl = staticSiteUrl(`/og/telefon-vergisi-${preset.slug}.jpg`);
     const breadcrumbs = [
         ...parentPage.breadcrumbs,
         { title: `${brand.title} ${preset.title}`, url }

@@ -1,5 +1,5 @@
-import type { Brand, Preset } from "@/domains/telefon-vergisi-hesaplayici/types.js";
-import { buildPageMeta } from "@/domains/telefon-vergisi-hesaplayici/utils/build-page-meta.js";
+import type { Brand, Preset } from "@/domains/telefon-vergisi/types.js";
+import { buildPageMeta } from "@/domains/telefon-vergisi/utils/build-page-meta.js";
 
 export const brand: Brand = {
     id: "samsung",

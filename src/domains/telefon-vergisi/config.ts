@@ -1,4 +1,4 @@
-import type { Form } from "@/domains/telefon-vergisi-hesaplayici/types.js";
+import type { Form } from "@/domains/telefon-vergisi/types.js";
 
 export const DEFAULT_FORM: Form = {
     mode: "tax-added-to-tax-free",

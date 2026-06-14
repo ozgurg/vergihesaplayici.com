@@ -22,7 +22,7 @@ export { default as icon_apps } from "remixicon/icons/System/apps-2-line.svg?raw
 export { default as icon_apple } from "remixicon/icons/Logos/apple-fill.svg?raw";
 export { default as icon_draggable } from "remixicon/icons/Editor/draggable.svg?raw";
 
-export { default as icon_telefonVergisiHesaplayici } from "remixicon/icons/Device/smartphone-line.svg?raw";
+export { default as icon_telefonVergisi } from "remixicon/icons/Device/smartphone-line.svg?raw";
 export { default as icon_konsolVergisi } from "remixicon/icons/Device/gamepad-line.svg?raw";
 export { default as icon_gumrukVergisi } from "remixicon/icons/Map/ship-2-line.svg?raw";
 export { default as icon_aracVergisi } from "remixicon/icons/Map/car-line.svg?raw";

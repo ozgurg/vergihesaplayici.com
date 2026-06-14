@@ -1,4 +1,4 @@
-import type { CalculationResults, ChartData, Form } from "@/domains/telefon-vergisi-hesaplayici/types.js";
+import type { CalculationResults, ChartData, Form } from "@/domains/telefon-vergisi/types.js";
 
 export const buildChartData = (form: Form, results: CalculationResults): ChartData => {
     const { prices, taxFees } = results;

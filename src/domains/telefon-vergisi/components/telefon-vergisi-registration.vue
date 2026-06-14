@@ -11,8 +11,8 @@ import type {
     Item as FormCheckProps,
     Props as FormCheckGroupProps
 } from "@/components/common/form/form-check-group.vue";
-import type { Registration } from "@/domains/telefon-vergisi-hesaplayici/types.js";
-import { REGISTRATION_LABEL_BY_REGISTRATION } from "@/domains/telefon-vergisi-hesaplayici/config.js";
+import type { Registration } from "@/domains/telefon-vergisi/types.js";
+import { REGISTRATION_LABEL_BY_REGISTRATION } from "@/domains/telefon-vergisi/config.js";
 
 export type Props = Partial<FormCheckGroupProps>;
 

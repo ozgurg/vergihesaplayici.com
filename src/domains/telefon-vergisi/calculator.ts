@@ -5,7 +5,7 @@ import type {
     Registration,
     TaxFees,
     TaxRates
-} from "@/domains/telefon-vergisi-hesaplayici/types.js";
+} from "@/domains/telefon-vergisi/types.js";
 
 export class Calculator {
     private taxFees: TaxFees = {

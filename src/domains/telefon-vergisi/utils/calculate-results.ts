@@ -5,11 +5,11 @@ import type {
     Form,
     ResultList,
     ScreenshotData
-} from "@/domains/telefon-vergisi-hesaplayici/types.js";
-import { Calculator } from "@/domains/telefon-vergisi-hesaplayici/calculator.js";
-import { buildResultList } from "@/domains/telefon-vergisi-hesaplayici/utils/build-result-list.js";
-import { buildScreenshotData } from "@/domains/telefon-vergisi-hesaplayici/utils/build-screenshot-data.js";
-import { buildChartData } from "@/domains/telefon-vergisi-hesaplayici/utils/build-chart-data.js";
+} from "@/domains/telefon-vergisi/types.js";
+import { Calculator } from "@/domains/telefon-vergisi/calculator.js";
+import { buildResultList } from "@/domains/telefon-vergisi/utils/build-result-list.js";
+import { buildScreenshotData } from "@/domains/telefon-vergisi/utils/build-screenshot-data.js";
+import { buildChartData } from "@/domains/telefon-vergisi/utils/build-chart-data.js";
 
 export const calculateResults = (params: {
     form: Form;

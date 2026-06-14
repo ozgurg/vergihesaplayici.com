@@ -1,6 +1,6 @@
-import type { Form, Mode, Prices } from "@/domains/telefon-vergisi-hesaplayici/types.js";
+import type { Form, Mode, Prices } from "@/domains/telefon-vergisi/types.js";
 import { describe, expect, it } from "vitest";
-import { Calculator } from "@/domains/telefon-vergisi-hesaplayici/calculator.js";
+import { Calculator } from "@/domains/telefon-vergisi/calculator.js";
 
 type CalculateParams = {
     input: Omit<Form, "mode" | "currency">;
@@ -21,7 +21,7 @@ const calculate = ({ input, options, expectedOutput }: CalculateParams): void =>
     });
 };
 
-describe("domains/telefon-vergisi-hesaplayici/calculator.js", () => {
+describe("domains/telefon-vergisi/calculator.js", () => {
     calculate({
         input: {
             price: 500,

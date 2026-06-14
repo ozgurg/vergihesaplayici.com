@@ -11,7 +11,7 @@
                         @submit.prevent="onSubmit()"
                         class="calculator-form">
                         <form-group label="Hesaplama modu">
-                            <telefon-vergisi-hesaplayici-mode v-model="form.mode" />
+                            <telefon-vergisi-mode v-model="form.mode" />
                         </form-group>
 
                         <div class="calculator-pricing-row">
@@ -35,7 +35,7 @@
                         </div>
 
                         <form-group label="Kayıt yolu">
-                            <telefon-vergisi-hesaplayici-registration
+                            <telefon-vergisi-registration
                                 v-model="form.registration"
                                 :required="true" />
                         </form-group>
@@ -119,10 +119,10 @@ import type {
     Form,
     ResultList,
     ScreenshotData
-} from "@/domains/telefon-vergisi-hesaplayici/types.js";
+} from "@/domains/telefon-vergisi/types.js";
 import type { ExchangeRates } from "@/types/common.js";
-import { calculateResults } from "@/domains/telefon-vergisi-hesaplayici/utils/calculate-results.js";
-import { DEFAULT_FORM, LAST_UPDATE, PRICE_LABEL_BY_MODE } from "@/domains/telefon-vergisi-hesaplayici/config.js";
+import { calculateResults } from "@/domains/telefon-vergisi/utils/calculate-results.js";
+import { DEFAULT_FORM, LAST_UPDATE, PRICE_LABEL_BY_MODE } from "@/domains/telefon-vergisi/config.js";
 
 export type Props = {
     EXCHANGE_RATES: ExchangeRates;

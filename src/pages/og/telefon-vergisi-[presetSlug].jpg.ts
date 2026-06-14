@@ -4,10 +4,10 @@ import logoSvgBase64 from "@/assets/img/logo.svg?inline";
 import {
     getPresetBySlug,
     getPresetsForAllBrands
-} from "@/domains/telefon-vergisi-hesaplayici/db.js";
-import { TelefonVergisiHesaplayiciPageDef } from "@/domains/telefon-vergisi-hesaplayici/page-def.js";
+} from "@/domains/telefon-vergisi/db.js";
+import { TelefonVergisiPageDef } from "@/domains/telefon-vergisi/page-def.js";
 
-const page = TelefonVergisiHesaplayiciPageDef();
+const page = TelefonVergisiPageDef();
 
 export const GET: APIRoute = async ({ params }): Promise<Response> => {
     const preset = getPresetBySlug(params.presetSlug as PageSlug);

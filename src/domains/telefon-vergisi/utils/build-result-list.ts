@@ -1,5 +1,5 @@
-import type { CalculationResults, Form, ResultList } from "@/domains/telefon-vergisi-hesaplayici/types.js";
-import { TAX_ADDED_LABEL_BY_MODE, TAX_FREE_LABEL_BY_MODE } from "@/domains/telefon-vergisi-hesaplayici/config.js";
+import type { CalculationResults, Form, ResultList } from "@/domains/telefon-vergisi/types.js";
+import { TAX_ADDED_LABEL_BY_MODE, TAX_FREE_LABEL_BY_MODE } from "@/domains/telefon-vergisi/config.js";
 
 export const buildResultList = (form: Form, results: CalculationResults): ResultList => {
     const { prices, taxFees, taxRates } = results;

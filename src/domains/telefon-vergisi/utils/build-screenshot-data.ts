@@ -1,8 +1,8 @@
-import type { Form, ResultList, ScreenshotData } from "@/domains/telefon-vergisi-hesaplayici/types.js";
+import type { Form, ResultList, ScreenshotData } from "@/domains/telefon-vergisi/types.js";
 import {
     REGISTRATION_LABEL_BY_REGISTRATION,
     PRICE_LABEL_BY_MODE
-} from "@/domains/telefon-vergisi-hesaplayici/config.js";
+} from "@/domains/telefon-vergisi/config.js";
 
 export const buildScreenshotData = (form: Form, results: ResultList): ScreenshotData => {
     return {
