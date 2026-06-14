@@ -22,7 +22,7 @@ export const HesaplayicilarPageDef = (
         breadcrumbs,
         head: {
             title: `${title} - Vergi Hesaplayıcı`,
-            description: "Telefon ve oyun konsolu gibi farklı ürün gruplarının yurt içi ve yurt dışı fiyatlarına Türkiye'de ne kadar vergi uygulandığını hesaplayın.",
+            description: "Telefon, oyun konsolu, araç, KDV ve gümrük gibi tüm vergi hesaplama araçlarımızı tek bir yerde bulun. En güncel vergi oranlarıyla hemen hesaplayın.",
             canonicalUrl: url,
             ogImageUrl: null,
             schema: {

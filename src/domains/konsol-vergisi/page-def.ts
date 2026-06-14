@@ -9,7 +9,7 @@ export const KonsolVergisiPageDef = (): CalculatorPage => {
     const parentPage = HesaplayicilarPageDef();
 
     const id = "hesaplayici-konsol";
-    const title = "Konsol Vergisi Hesaplayıcı";
+    const title = "Konsol Vergisi Hesaplama";
     const shortTitle = "Konsol";
     const url = siteUrl("/konsol-vergisi-hesaplayici");
     const ogImageUrl = staticSiteUrl("/og/konsol-vergisi.jpg");
@@ -27,7 +27,7 @@ export const KonsolVergisiPageDef = (): CalculatorPage => {
         icon,
         head: {
             title: `${title} - Vergi Hesaplayıcı`,
-            description: "Satın aldığınız bir oyun konsolunun yurt içi ve yurt dışı fiyatlarına ne kadar vergi uygulandığını hesaplayın.",
+            description: "PlayStation, Xbox ve Nintendo oyun konsollarının güncel ÖTV, gümrük vergisi ve KDV oranlarını hesaplayın. Yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
             canonicalUrl: url,
             ogImageUrl,
             schema: {

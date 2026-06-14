@@ -29,7 +29,7 @@ links. Yes, it makes the code a little bit verbose, but it's OK.
 
 ### Color Extraction for Thumbs
 
-"Telefon Vergisi Hesaplayıcı" and "Konsol Vergisi Hesaplayıcı" have presets with thumbs. Each thumb shows a colored card
+"Telefon Vergisi Hesaplama" and "Konsol Vergisi Hesaplama" have presets with thumbs. Each thumb shows a colored card
 with its dominant color. To automate this, I created an Astro integration called `extract-color-from-thumbs`. It loads
 the thumbs, extracts the main color using the `fast-average-color-node` library, and saves the result in a `.generated`
 folder.
@@ -40,7 +40,7 @@ final solution is a bit hacky, but it works for now.
 
 ### Presets
 
-"Telefon Vergisi Hesaplayıcı" and "Konsol Vergisi Hesaplayıcı" have presets. Every day, a new phone is announced.
+"Telefon Vergisi Hesaplama" and "Konsol Vergisi Hesaplama" have presets. Every day, a new phone is announced.
 Currently, I'm only adding flagship phones from Apple and Samsung. Apple is the main focus because, according to site
 analytics, none of this site's users really care about Samsung. I'll only add Samsung phones if I need to or if they
 voluntarily pay me to do it. 💀

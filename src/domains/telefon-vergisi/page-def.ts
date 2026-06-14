@@ -9,7 +9,7 @@ export const TelefonVergisiPageDef = (): CalculatorPage => {
     const parentPage = HesaplayicilarPageDef();
 
     const id = "hesaplayici-telefon";
-    const title = "Telefon Vergisi Hesaplayıcı";
+    const title = "Telefon Vergisi Hesaplama";
     const shortTitle = "Telefon";
     const url = siteUrl("/telefon-vergisi-hesaplayici");
     const ogImageUrl = staticSiteUrl("/og/telefon-vergisi.jpg");
@@ -27,7 +27,7 @@ export const TelefonVergisiPageDef = (): CalculatorPage => {
         icon,
         head: {
             title: `${title} - Vergi Hesaplayıcı`,
-            description: "Telefon Vergisi Hesaplayıcı ile ÖTV dahil tüm vergileri hesaplayın, vergisiz fiyatı görün ve yurt içi-yurt dışı fiyatları karşılaştırın.",
+            description: "Akıllı telefonların ÖTV, KDV, TRT payı ve Kültür Bakanlığı payı dahil tüm vergilerini hesaplayın. Vergisiz fiyat ve yurt dışı karşılaştırmalarını görün.",
             canonicalUrl: url,
             ogImageUrl,
             schema: {

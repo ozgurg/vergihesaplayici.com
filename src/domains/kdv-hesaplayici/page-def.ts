@@ -8,7 +8,7 @@ export const KdvHesaplayiciPageDef = (): CalculatorPage => {
     const parentPage = HesaplayicilarPageDef();
 
     const id = "hesaplayici-kdv";
-    const title = "KDV Hesaplayıcı";
+    const title = "KDV Hesaplama";
     const shortTitle = "KDV";
     const url = siteUrl("/kdv-hesaplayici");
     const ogImageUrl = staticSiteUrl("/og/kdv-hesaplayici.jpg");
@@ -26,7 +26,7 @@ export const KdvHesaplayiciPageDef = (): CalculatorPage => {
         icon,
         head: {
             title: `${title} - Vergi Hesaplayıcı`,
-            description: "Katma Değer Vergisi (KDV) Hesaplayıcı aracını KDV hariç fiyattan KDV dahil fiyatı veya KDV dahil fiyattan KDV hariç fiyatı hesaplamak için kullanabilirsiniz.",
+            description: "KDV dahil ve KDV hariç fiyat hesaplamalarını hızlıca yapın. %1, %10, %20 ve özel oranlarla KDV hesaplama ve tevkifat hesaplama aracı.",
             canonicalUrl: url,
             ogImageUrl,
             schema: {

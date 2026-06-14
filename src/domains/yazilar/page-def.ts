@@ -24,7 +24,7 @@ export const YazilarPageDef = (
         breadcrumbs,
         head: {
             title: `${title} - Vergi Hesaplayıcı`,
-            description: "Vergiler hakkında rehber ve güncel bilgiler için doğru adrestesiniz. Makalelerimiz ve ipuçlarımızla vergi yükümlülüklerinizi kolayca anlayın.",
+            description: "Türkiye'deki güncel vergi türleri, beyannameler, gümrük muafiyetleri ve finansal rehberler hakkında bilgilendirici makaleler, rehberler ve ipuçları.",
             canonicalUrl: url,
             ogImageUrl: null,
             schema: {
