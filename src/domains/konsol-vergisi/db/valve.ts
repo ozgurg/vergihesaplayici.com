@@ -10,6 +10,7 @@ export const brand: Brand = {
 
 export const presets: Omit<Preset, "brandId">[] = [
     {
+        status: "legacy",
         title: "Steam Deck",
         slug: "valve-steam-deck",
         releaseDate: new Date("2022-02-25"),
@@ -42,6 +43,7 @@ export const presets: Omit<Preset, "brandId">[] = [
     },
 
     {
+        status: "placeholder",
         title: "Steam Deck OLED",
         slug: "valve-steam-deck-oled",
         releaseDate: new Date("2023-11-16"),
@@ -67,6 +69,7 @@ export const presets: Omit<Preset, "brandId">[] = [
     },
 
     {
+        status: "placeholder",
         title: "Steam Machine",
         slug: "valve-steam-machine",
         releaseDate: new Date("2026-03-19"),

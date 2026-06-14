@@ -8,6 +8,7 @@ export const brand: Brand = {
 
 export const presets: Omit<Preset, "brandId">[] = [
     {
+        status: "placeholder",
         title: "ROG Xbox Ally",
         slug: "asus-rog-xbox-ally",
         releaseDate: new Date("2025-10-16"),
@@ -27,6 +28,7 @@ export const presets: Omit<Preset, "brandId">[] = [
     },
 
     {
+        status: "placeholder",
         title: "ROG Xbox Ally X",
         slug: "asus-rog-xbox-ally-x",
         releaseDate: new Date("2025-10-16"),

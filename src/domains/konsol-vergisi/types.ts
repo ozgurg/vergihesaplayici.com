@@ -33,6 +33,7 @@ export type Brand = {
 };
 
 export type Preset = {
+    status?: "active" | "legacy" | "placeholder",
     brandId: Brand["id"];
     title: string;
     slug: PageSlug;

@@ -34,8 +34,27 @@ export const Presets: Preset[] = [
     ...withBrandId(Asus.presets, Asus.brand.id)
 ] as const;
 
-const sortPresetsByReleaseDate = (presets: Preset[]): Preset[] => {
-    return presets.toSorted((_p1, _p2) => _p2.releaseDate.getTime() - _p1.releaseDate.getTime());
+const getStatusPriority = (status?: string): number => {
+    if (!status || status === "active") {
+        return 0;
+    }
+    if (status === "placeholder") {
+        return 1;
+    }
+    if (status === "legacy") {
+        return 2;
+    }
+    return 3;
+};
+
+const sortPresets = (presets: Preset[]): Preset[] => {
+    return presets.toSorted((_p1, _p2) => {
+        const statusDiff = getStatusPriority(_p1.status) - getStatusPriority(_p2.status);
+        if (statusDiff !== 0) {
+            return statusDiff;
+        }
+        return _p2.releaseDate.getTime() - _p1.releaseDate.getTime();
+    });
 };
 
 export const getPresetBySlug = (slug: PageSlug): Preset => {
@@ -51,7 +70,7 @@ export const getBrandById = (brandId: string): Brand => {
 };
 
 export const getPresetsForAllBrands = (): Preset[] => {
-    return sortPresetsByReleaseDate(
+    return sortPresets(
         Brands.flatMap(_brand => {
             return getPresetsByBrandId(_brand.id);
         })

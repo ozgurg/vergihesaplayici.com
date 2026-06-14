@@ -8,6 +8,7 @@ export const brand: Brand = {
 
 export const presets: Omit<Preset, "brandId">[] = [
     {
+        status: "legacy",
         title: "Switch",
         slug: "nintendo-switch",
         releaseDate: new Date("2017-03-03"),
@@ -25,6 +26,7 @@ export const presets: Omit<Preset, "brandId">[] = [
     },
 
     {
+        status: "legacy",
         title: "Switch Lite",
         slug: "nintendo-switch-lite",
         releaseDate: new Date("2019-09-20"),
@@ -42,6 +44,7 @@ export const presets: Omit<Preset, "brandId">[] = [
     },
 
     {
+        status: "legacy",
         title: "Switch OLED",
         slug: "nintendo-switch-oled",
         releaseDate: new Date("2021-10-08"),
