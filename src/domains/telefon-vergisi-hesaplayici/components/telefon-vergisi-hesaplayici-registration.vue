@@ -21,14 +21,14 @@ const props = defineProps<Props>();
 const ITEMS: FormCheckProps<Registration>[] = [
     {
         title: REGISTRATION_LABEL_BY_REGISTRATION["import"],
-        description: "İthalatçıların getirip sattığı ürünlerdir",
+        description: "İthalatçı tarafından satılan ürünler",
         input: {
             value: "import"
         }
     },
     {
         title: REGISTRATION_LABEL_BY_REGISTRATION["passport"],
-        description: "Yurt dışından kişinin getirdiği ürünlerdir",
+        description: "Yolcu beraberinde getirilen ürünler",
         input: {
             value: "passport"
         }
