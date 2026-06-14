@@ -62,7 +62,7 @@ export default defineConfig({
                     item.changefreq = EnumChangefreq.YEARLY;
                     item.lastmod = LAST_MODIFIED_DATE;
                     item.priority = .7;
-                } else if (/kdv-hesaplayici/u.test(item.url) || /vergini-olustur/u.test(item.url)) {
+                } else if (/kdv/u.test(item.url) || /vergini-olustur/u.test(item.url)) {
                     item.changefreq = EnumChangefreq.MONTHLY;
                     item.lastmod = LAST_MODIFIED_DATE;
                     item.priority = .8;

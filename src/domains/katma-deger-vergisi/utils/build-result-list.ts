@@ -1,4 +1,4 @@
-import type { CalculationResults, Form, ResultList } from "@/domains/kdv-hesaplayici/types.js";
+import type { CalculationResults, Form, ResultList } from "@/domains/katma-deger-vergisi/types.js";
 
 export const buildResultList = (_: Form, results: CalculationResults): ResultList => {
     const { prices, taxFees, taxRates } = results;

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import type { Form, Prices } from "@/domains/kdv-hesaplayici/types.js";
-import { Calculator } from "@/domains/kdv-hesaplayici/calculator.js";
+import type { Form, Prices } from "@/domains/katma-deger-vergisi/types.js";
+import { Calculator } from "@/domains/katma-deger-vergisi/calculator.js";
 
 type CalculateParams = {
     input: Form;
@@ -15,7 +15,7 @@ const calculate = ({ input, expectedOutput }: CalculateParams): void => {
     });
 };
 
-describe("domains/kdv-hesaplayici/calculator.js", () => {
+describe("domains/katma-deger-vergisi/calculator.js", () => {
     calculate({
         input: {
             mode: "tax-free-to-tax-added",

@@ -3,7 +3,7 @@ import { AracVergisiPageDef } from "@/domains/arac-vergisi/page-def.js";
 import { TelefonVergisiPageDef } from "@/domains/telefon-vergisi/page-def.js";
 import { KonsolVergisiPageDef } from "@/domains/konsol-vergisi/page-def.js";
 import { GumrukVergisiPageDef } from "@/domains/gumruk-vergisi/page-def.js";
-import { KdvHesaplayiciPageDef } from "@/domains/kdv-hesaplayici/page-def.js";
+import { KatmaDegerVergisiPageDef } from "@/domains/katma-deger-vergisi/page-def.js";
 import { VerginiOlusturPageDef } from "@/domains/vergini-olustur/page-def.js";
 
 export const getCalculatorPages = (): CalculatorPage[] => {
@@ -11,7 +11,7 @@ export const getCalculatorPages = (): CalculatorPage[] => {
         TelefonVergisiPageDef(),
         AracVergisiPageDef(),
         GumrukVergisiPageDef(),
-        KdvHesaplayiciPageDef(),
+        KatmaDegerVergisiPageDef(),
         KonsolVergisiPageDef(),
         VerginiOlusturPageDef()
     ];
@@ -22,7 +22,7 @@ export const getFeaturedCalculatorPages = (): CalculatorPage[] => {
         TelefonVergisiPageDef(),
         AracVergisiPageDef(),
         GumrukVergisiPageDef(),
-        KdvHesaplayiciPageDef(),
+        KatmaDegerVergisiPageDef(),
         KonsolVergisiPageDef()
     ] as const;
 };

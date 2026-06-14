@@ -1,17 +1,17 @@
 import type { CalculatorPage } from "@/types/page-def.js";
-import { icon_kdvHesaplayici as icon } from "@/utils/icons.js";
+import { icon_katmaDegerVergisi as icon } from "@/utils/icons.js";
 import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
 import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
 
-export const KdvHesaplayiciPageDef = (): CalculatorPage => {
+export const KatmaDegerVergisiPageDef = (): CalculatorPage => {
     const homePage = AnaSayfaPageDef();
     const parentPage = HesaplayicilarPageDef();
 
     const id = "hesaplayici-kdv";
     const title = "KDV Hesaplama";
     const shortTitle = "KDV";
-    const url = siteUrl("/kdv-hesaplayici");
-    const ogImageUrl = staticSiteUrl("/og/kdv-hesaplayici.jpg");
+    const url = siteUrl("/kdv");
+    const ogImageUrl = staticSiteUrl("/og/kdv.jpg");
     const breadcrumbs = [
         ...parentPage.breadcrumbs,
         { title, url }

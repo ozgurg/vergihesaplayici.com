@@ -1,7 +1,7 @@
-import type { CalculationResults, Form, ResultList, ScreenshotData } from "@/domains/kdv-hesaplayici/types.js";
-import { Calculator } from "@/domains/kdv-hesaplayici/calculator.js";
-import { buildResultList } from "@/domains/kdv-hesaplayici/utils/build-result-list.js";
-import { buildScreenshotData } from "@/domains/kdv-hesaplayici/utils/build-screenshot-data.js";
+import type { CalculationResults, Form, ResultList, ScreenshotData } from "@/domains/katma-deger-vergisi/types.js";
+import { Calculator } from "@/domains/katma-deger-vergisi/calculator.js";
+import { buildResultList } from "@/domains/katma-deger-vergisi/utils/build-result-list.js";
+import { buildScreenshotData } from "@/domains/katma-deger-vergisi/utils/build-screenshot-data.js";
 
 export const calculateResults = (params: {
     form: Form;

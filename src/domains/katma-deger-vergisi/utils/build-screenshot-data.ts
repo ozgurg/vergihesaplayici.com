@@ -1,4 +1,4 @@
-import type { ResultList, ScreenshotData } from "@/domains/kdv-hesaplayici/types.js";
+import type { ResultList, ScreenshotData } from "@/domains/katma-deger-vergisi/types.js";
 
 export const buildScreenshotData = (results: ResultList): ScreenshotData => {
     return {

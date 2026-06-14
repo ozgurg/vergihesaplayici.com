@@ -1,4 +1,4 @@
-import type { CalculationResults, Mode, Prices, TaxFees, TaxRates } from "@/domains/kdv-hesaplayici/types.js";
+import type { CalculationResults, Mode, Prices, TaxFees, TaxRates } from "@/domains/katma-deger-vergisi/types.js";
 
 export class Calculator {
     private taxFees: TaxFees = {

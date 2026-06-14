@@ -4,28 +4,28 @@ import PageHeader from "@/components/common/page-header.vue";
 import Container from "@/components/common/container.vue";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
 import Heading1 from "@/components/common/heading-1.vue";
-import KdvHesaplayici from "@/domains/kdv-hesaplayici/components/kdv-hesaplayici.vue";
+import KatmaDegerVergisi from "@/domains/katma-deger-vergisi/components/katma-deger-vergisi.vue";
 
-import { KdvHesaplayiciPageDef } from "@/domains/kdv-hesaplayici/page-def.js";
+import { KatmaDegerVergisiPageDef } from "@/domains/katma-deger-vergisi/page-def.js";
 
-const kdvHesaplayiciPage = KdvHesaplayiciPageDef();
+const katmaDegerVergisiPage = KatmaDegerVergisiPageDef();
 ---
 
-<AppLayout page={kdvHesaplayiciPage}>
+<AppLayout page={katmaDegerVergisiPage}>
     <PageHeader>
         <Container>
             <Breadcrumbs
-                items={kdvHesaplayiciPage.breadcrumbs}
+                items={katmaDegerVergisiPage.breadcrumbs}
                 client:load />
             <Heading1>
-                {kdvHesaplayiciPage.title}
+                {katmaDegerVergisiPage.title}
             </Heading1>
         </Container>
     </PageHeader>
 
     <section>
-        <KdvHesaplayici
-            calculatorPage={kdvHesaplayiciPage}
+        <KatmaDegerVergisi
+            calculatorPage={katmaDegerVergisiPage}
             client:load />
     </section>
 

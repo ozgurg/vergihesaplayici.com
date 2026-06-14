@@ -5,8 +5,8 @@ import { siteUrl } from "@/utils/url.js";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
 
 const MOCK_ACTIVE_ITEM = {
-    title: "KDV Hesaplayıcı",
-    url: siteUrl("/kdv-hesaplayici")
+    title: "KDV Hesaplama",
+    url: siteUrl("/katma-deger-vergisi")
 };
 
 const MOCK_ITEMS = [

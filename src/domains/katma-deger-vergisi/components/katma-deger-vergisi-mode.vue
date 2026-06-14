@@ -11,7 +11,7 @@ import type {
     Item as FormCheckProps,
     Props as FormCheckGroupProps
 } from "@/components/common/form/form-check-group.vue";
-import type { Mode } from "@/domains/kdv-hesaplayici/types.js";
+import type { Mode } from "@/domains/katma-deger-vergisi/types.js";
 
 export type Props = Partial<FormCheckGroupProps>;
 

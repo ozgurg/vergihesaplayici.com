@@ -11,7 +11,7 @@
                         @submit.prevent="onSubmit()"
                         class="calculator-form">
                         <form-group label="Hesaplama modu">
-                            <kdv-hesaplayici-mode
+                            <katma-deger-vergisi-mode
                                 v-model="form.mode"
                                 :required="true" />
                         </form-group>
@@ -31,7 +31,7 @@
                             <form-control-number
                                 v-model="form.rate"
                                 :required="true" />
-                            <kdv-hesaplayici-rate-presets
+                            <katma-deger-vergisi-rate-presets
                                 v-model="form.rate"
                                 scale="small" />
                         </form-group>
@@ -82,9 +82,9 @@
 
 <script lang="ts" setup>
 import type { CalculatorPage } from "@/types/page-def.js";
-import type { CalculationResults, Form, ResultList, ScreenshotData } from "@/domains/kdv-hesaplayici/types.js";
-import { calculateResults } from "@/domains/kdv-hesaplayici/utils/calculate-results.js";
-import { DEFAULT_FORM } from "@/domains/kdv-hesaplayici/config.js";
+import type { CalculationResults, Form, ResultList, ScreenshotData } from "@/domains/katma-deger-vergisi/types.js";
+import { calculateResults } from "@/domains/katma-deger-vergisi/utils/calculate-results.js";
+import { DEFAULT_FORM } from "@/domains/katma-deger-vergisi/config.js";
 
 export type Props = {
     calculatorPage: CalculatorPage;
