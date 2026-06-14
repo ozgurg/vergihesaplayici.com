@@ -179,17 +179,17 @@ const { Content } = await render(yazi.entry);
         padding: calc(var(--vh-spacer) * .75) var(--vh-spacer);
         overflow-x: auto;
         scrollbar-width: thin;
-        & > :first-child {
-            margin-inline-start: auto
-        }
-        & > :last-child {
-            margin-inline-end: auto
-        }
         @include vh-media-breakpoint-down(sm) {
             inline-size: calc(100% + (var(--container-padding-inline) * 2));
             margin-inline: calc(var(--container-padding-inline) * -1);
             border-inline: 0;
-            --border-radius: 0
+            --border-radius: 0;
+            & > :first-child {
+                margin-inline-start: auto
+            }
+            & > :last-child {
+                margin-inline-end: auto
+            }
         }
         &-item {
             display: flex;
