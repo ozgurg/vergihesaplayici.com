@@ -15,7 +15,7 @@
                 scale="small" />
         </form-group>
 
-        <div class="tax-item-second-row">
+        <div class="second-row">
             <form-group label="Oran">
                 <form-control-number
                     v-model="props.taxItem.rate"
@@ -45,7 +45,7 @@
             </div>
         </div>
 
-        <div class="tax-item-third-row">
+        <div class="third-row">
             <form-group label="Baz alınacak tutar">
                 <vergini-olustur-form-tax-item-base-amount-mode-selector
                     v-model="props.taxItem.baseAmountMode"
@@ -65,7 +65,7 @@
         <div
             data-sortable-hide-ghost=""
             aria-hidden="true"
-            class="tax-item-count">
+            class="count">
         </div>
     </div>
 </template>
@@ -114,7 +114,7 @@ const emit = defineEmits<Events>();
             background-color: hsla(var(--vh-clr-white-hsl), .02)
         }
     }
-    &-second-row {
+    .second-row {
         display: flex;
         flex-direction: row;
         gap: inherit;
@@ -122,14 +122,14 @@ const emit = defineEmits<Events>();
             flex: 1
         }
     }
-    &-third-row {
+    .third-row {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-end;
         gap: inherit
     }
-    &-count {
+    .count {
         position: absolute;
         background: hsla(var(--vh-clr-border-hsl), var(--vh-clr-border-alpha));
         display: flex;

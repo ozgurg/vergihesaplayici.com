@@ -8,7 +8,7 @@
         class="modal"
         role="dialog"
         tabindex="-1">
-        <div class="modal-content">
+        <div class="inner">
             <slot name="default" />
         </div>
     </dialog>
@@ -88,7 +88,7 @@ $_MAX_MODAL_HEADER_COUNT: 2;
         opacity: 0;
         padding-block: var(--vh-spacer)
     }
-    &-content {
+    .inner {
         position: relative;
         display: flex;
         overflow: hidden;

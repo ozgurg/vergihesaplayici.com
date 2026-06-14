@@ -3,25 +3,25 @@
         class="screenshot"
         role="presentation">
         <template v-if="props.brandTitle && props.presetTitle && props.optionTitle">
-            <div class="screenshot-title">
+            <div class="title">
                 {{ props.calculatorTitle }}
             </div>
-            <header class="screenshot-header">
+            <header class="header">
                 <b>{{ props.brandTitle }} {{ props.presetTitle }}</b>
                 <small>{{ props.optionTitle }}</small>
             </header>
         </template>
         <template v-else>
-            <div class="screenshot-title screenshot-title-primary">
+            <div class="title title--primary">
                 {{ props.calculatorTitle }}
             </div>
         </template>
 
         <main>
             <template v-if="props.screenshotData.input.length > 0">
-                <dl class="screenshot-list">
+                <dl class="list">
                     <template v-for="_item in props.screenshotData.input" :key="Math.random()">
-                        <div class="screenshot-list-item">
+                        <div class="list-item">
                             <dt>{{ _item.label }}</dt>
                             <dd
                                 v-html="_item.value"
@@ -31,12 +31,12 @@
                     </template>
                 </dl>
 
-                <div class="screenshot-subheader">Sonuçlar</div>
+                <div class="subheader">Sonuçlar</div>
             </template>
 
-            <dl class="screenshot-list">
+            <dl class="list">
                 <template v-for="_item in props.screenshotData.output" :key="Math.random()">
-                    <div class="screenshot-list-item">
+                    <div class="list-item">
                         <dt>{{ _item.label }}</dt>
                         <dd :class="{'text-number': _item.isNumeric || true}">
                             {{ _item.value }}
@@ -46,7 +46,7 @@
             </dl>
         </main>
 
-        <footer class="screenshot-footer">
+        <footer class="footer">
             <cached-svg :svg="logoSvg" />
         </footer>
     </div>
@@ -107,17 +107,17 @@ $_variants: (
     border: .125rem solid var(--vh-clr-white);
     border-radius: var(--vh-br-normal);
     background: var(--vh-clr-body-bg);
-    &-title {
+    .title {
         font-size: var(--vh-fs-sm);
         padding: calc(var(--vh-spacer) * .5) calc(var(--vh-spacer) * .5);
         text-align: center;
         background: var(--vh-clr-secondary);
-        &-primary {
+        &--primary {
             color: var(--vh-clr-secondary);
             background: var(--vh-clr-primary)
         }
     }
-    &-header {
+    .header {
         line-height: var(--vh-lh-sm);
         display: flex;
         flex-flow: column wrap;
@@ -130,7 +130,7 @@ $_variants: (
             font-weight: var(--vh-fw-bold)
         }
     }
-    &-list {
+    .list {
         display: flex;
         flex-flow: column wrap;
         &-item {
@@ -170,14 +170,14 @@ $_variants: (
             }
         }
     }
-    &-subheader {
+    .subheader {
         line-height: var(--vh-lh-sm);
         text-align: center;
         color: var(--vh-clr-white);
         background: hsla(var(--vh-clr-white-hsl), .12);
         padding-block: calc(var(--vh-spacer) * .5)
     }
-    &-footer {
+    .footer {
         text-align: center;
         border-block-start: .125rem solid var(--vh-clr-white);
         padding-block: calc(var(--vh-spacer) * .5);

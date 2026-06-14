@@ -23,7 +23,7 @@ const ITEMS_CONTAINER_ID = "calculator-preset-carousel-items";
         id={ITEMS_CONTAINER_ID}
         data-scroll-container=""
         aria-live="polite"
-        class="calculator-preset-carousel-items">
+        class="inner">
         {items.map((_item, _index) => (
             <>
                 <div
@@ -58,7 +58,7 @@ const ITEMS_CONTAINER_ID = "calculator-preset-carousel-items";
         // --_item-inline-size: round(up, calc((var(--_safe-inline-size-for-items)) / var(--_item-count)), 1px);
         position: relative;
         z-index: 1;
-        &-items {
+        .inner {
             display: flex;
             flex-flow: row nowrap;
             overflow-x: auto;

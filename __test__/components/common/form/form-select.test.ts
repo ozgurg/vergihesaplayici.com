@@ -63,7 +63,7 @@ describe("components/common/form/form-select.vue", () => {
                 scale: "small"
             }
         });
-        expect(wrapper.classes()).toContain("form-select-scale-small");
+        expect(wrapper.classes()).toContain("form-select--scale-small");
     });
 
     it("binds `v-model` correctly", async () => {

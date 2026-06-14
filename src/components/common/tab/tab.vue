@@ -10,7 +10,7 @@
         class="tab"
         role="tab"
         type="button">
-        <span class="tab-content">
+        <span class="inner">
             <slot name="default" />
         </span>
     </button>
@@ -136,7 +136,7 @@ onBeforeMount(() => {
         block-size: calc(var(--vh-spacer) * 1.25);
         inline-size: 1px
     }
-    &-content {
+    .inner {
         display: inline-flex;
         align-items: center;
         flex-flow: row wrap;

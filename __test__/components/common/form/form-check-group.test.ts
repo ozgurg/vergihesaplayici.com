@@ -76,7 +76,7 @@ describe("components/common/form/form-check-group.vue", () => {
         const wrapper = mount(FormCheckGroup, {
             props: { scale: "small" }
         });
-        expect(wrapper.classes()).toContain("form-check-group-scale-small");
+        expect(wrapper.classes()).toContain("form-check-group--scale-small");
     });
 
     it("renders the given items as `<form-check />` components", () => {
@@ -180,8 +180,8 @@ describe("components/common/form/form-check-group.vue", () => {
             const item = testItem[_index]!;
             const svgIcons = _formCheck.findAllComponents(SvgIcon as any);
             const customIcon = svgIcons.find(icon =>
-                !icon.classes().includes("checked-icon") &&
-                !icon.classes().includes("unchecked-icon")
+                !icon.classes().includes("icon--checked") &&
+                !icon.classes().includes("icon--unchecked")
             );
 
             expect(customIcon).toBeTruthy();
@@ -216,8 +216,8 @@ describe("components/common/form/form-check-group.vue", () => {
         for (const _formCheck of formChecks) {
             const svgIcons = _formCheck.findAllComponents(SvgIcon as any);
             const customIcon = svgIcons.find(icon =>
-                !icon.classes().includes("checked-icon") &&
-                !icon.classes().includes("unchecked-icon")
+                !icon.classes().includes("icon--checked") &&
+                !icon.classes().includes("icon--unchecked")
             );
             expect(customIcon).toBeFalsy();
         }

@@ -17,7 +17,7 @@ const props = defineProps<Props>();
 
 const CLASSES = [
     "alert",
-    `alert-color-${props.color}`
+    `alert--color-${props.color}`
 ];
 </script>
 
@@ -45,7 +45,7 @@ $_colors: (
     @include vh-squircle(var(--vh-br-normal));
     background: linear-gradient(to bottom, hsla(var(--_bg-hsl), .08), hsla(var(--_bg-hsl), .02));
     @each $__color, $__properties in $_colors {
-        &-color-#{$__color} {
+        &--color-#{$__color} {
             @include vh-map-to-properties($__properties)
         }
     }

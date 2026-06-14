@@ -55,7 +55,7 @@ describe("components/common/breadcrumbs.vue", () => {
             props: { items: MOCK_ITEMS }
         });
 
-        const dividers = wrapper.findAll(`li.breadcrumbs-divider[aria-hidden="true"]`);
+        const dividers = wrapper.findAll(`li.divider[aria-hidden="true"]`);
         expect(dividers).toHaveLength(MOCK_ITEMS.length - 1);
     });
 

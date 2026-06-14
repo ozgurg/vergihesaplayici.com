@@ -18,7 +18,7 @@
                 <template v-if="!isLastItem(_index)">
                     <li
                         aria-hidden="true"
-                        class="breadcrumbs-divider">
+                        class="divider">
                     </li>
                 </template>
             </template>
@@ -113,7 +113,7 @@ onBeforeMount(() => nextTick(() => {
             }
         }
     }
-    &-divider {
+    .divider {
         opacity: .5;
         margin-inline: calc(var(--vh-spacer) * .25);
         &::after {
