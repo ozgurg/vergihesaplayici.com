@@ -25,16 +25,21 @@ const ITEMS_CONTAINER_ID = "calculator-preset-carousel-items";
         aria-live="polite"
         class="calculator-preset-carousel-items">
         {items.map((_item, _index) => (
-            <div
-                class="item"
-                role="group"
-                aria-label={`${_index + 1}/${items.length}`}
-                aria-roledescription="slide">
-                <CalculatorPresetCarouselItem
-                    {..._item}
-                    titleTag={titleTag}
-                    loading={_index > 5 ? "lazy" : "eager"} />
-            </div>
+            <>
+                <div
+                    class="item"
+                    role="group"
+                    aria-label={`${_index + 1}/${items.length}`}
+                    aria-roledescription="slide">
+                    <CalculatorPresetCarouselItem
+                        {..._item}
+                        titleTag={titleTag}
+                        loading={_index > 5 ? "lazy" : "eager"} />
+                </div>
+                {_index < items.length - 1 && (
+                    <div class="divider"></div>
+                )}
+            </>
         ))}
     </div>
 
@@ -56,19 +61,18 @@ const ITEMS_CONTAINER_ID = "calculator-preset-carousel-items";
         &-items {
             display: flex;
             flex-flow: row nowrap;
-            gap: var(--_item-gap);
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
-            padding-block: calc(var(--vh-spacer) * .25);
-            margin-block: calc((var(--vh-spacer) * .25) * -1);
+            padding-block: calc(var(--vh-spacer) * .5);
+            margin-block: calc((var(--vh-spacer) * .5) * -1);
             scroll-padding-inline: var(--_container-padding-inline);
             padding-inline: var(--_container-padding-inline);
             @include vh-js-enabled {
                 @include vh-hide-scrollbar
             }
             @include vh-media-breakpoint-up(sm) {
-                scroll-padding-inline: calc(((100vw - var(--_container-actual-inline-size)) / 2) + (var(--_container-padding-inline) / 2));
-                padding-inline: calc(((100vw - var(--_container-actual-inline-size)) / 2) + (var(--_container-padding-inline) / 2))
+                scroll-padding-inline: calc((100% - var(--container-inline-size)) / 2);
+                padding-inline: calc((100% - var(--container-inline-size)) / 2)
             }
             @include vh-hover {
                 scroll-snap-type: x mandatory
@@ -79,9 +83,12 @@ const ITEMS_CONTAINER_ID = "calculator-preset-carousel-items";
             z-index: 1;
             flex-grow: 0;
             flex-shrink: 0;
-            min-inline-size: 160px;
+            scroll-margin-inline-start: calc(var(--vh-spacer) * -1.5);
             @include vh-media-breakpoint-up(md) {
-                min-inline-size: 199px
+                scroll-margin-inline-start: calc(var(--vh-spacer) * -2)
+            }
+            &:first-child {
+                scroll-margin-inline-start: 0
             }
             @include vh-hover {
                 scroll-snap-align: center;
@@ -105,6 +112,18 @@ const ITEMS_CONTAINER_ID = "calculator-preset-carousel-items";
                     }
                 }
             }
+            &:first-child > * {
+                padding-inline-start: 0
+            }
+            &:last-child > * {
+                padding-inline-end: 0
+            }
+        }
+        .divider {
+            align-self: stretch;
+            flex-shrink: 0;
+            width: var(--vh-border-inline-size);
+            background: hsla(var(--vh-clr-white-hsl), var(--vh-clr-border-alpha))
         }
     }
 </style>
@@ -118,7 +137,7 @@ const ITEMS_CONTAINER_ID = "calculator-preset-carousel-items";
     const ROOT_ID = "calculator-preset-carousel";
 
     const BUTTON_STATE_UPDATE_DEBOUNCE_TIMEOUT_IN_MS = 50;
-    const ITEM_PER_MOVE = 2;
+    const ITEM_PER_MOVE = 4;
 
     const carouselEl = document.querySelector(`#${ROOT_ID}`) as HTMLDivElement;
     const scrollContainerEl = carouselEl.querySelector("[data-scroll-container]") as HTMLDivElement;
@@ -126,13 +145,11 @@ const ITEMS_CONTAINER_ID = "calculator-preset-carousel-items";
     const nextButtonEl = carouselEl.querySelector("[data-next-button]") as HTMLButtonElement;
 
     // Every unit of measurement is in pixels
-    let gap = 0;
     let childWidth = 0;
     let maxScroll = 0;
 
     const calculateDimensions = (): void => {
-        gap = Number.parseInt(getComputedStyle(scrollContainerEl).gap, 10) || 0;
-        childWidth = (scrollContainerEl.firstElementChild as HTMLDivElement).offsetWidth + gap;
+        childWidth = (scrollContainerEl.firstElementChild as HTMLDivElement).offsetWidth;
         maxScroll = scrollContainerEl.scrollWidth - scrollContainerEl.clientWidth;
     };
 
