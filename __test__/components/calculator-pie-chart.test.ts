@@ -112,6 +112,23 @@ describe("components/calculator-pie-chart.vue", () => {
         expect(tooltip.attributes("style")).toContain("--y: 78px");
     });
 
+    it("does not update tooltip position on `mousemove` while hidden", async () => {
+        const wrapper = mountComponent();
+
+        const firstPath = wrapper.find("svg > path");
+
+        await firstPath.trigger("mouseenter", { clientX: 10, clientY: 10 });
+        await firstPath.trigger("mouseleave");
+
+        let tooltip = wrapper.find(".tooltip");
+        expect(tooltip.attributes("aria-hidden")).toBe("true");
+        const initialStyle = tooltip.attributes("style");
+
+        await firstPath.trigger("mousemove", { clientX: 50, clientY: 50 });
+        tooltip = wrapper.find(".tooltip");
+        expect(tooltip.attributes("style")).toBe(initialStyle);
+    });
+
     it("opens `<modal />` on click and shows selected item details", async () => {
         const wrapper = mountComponent();
 

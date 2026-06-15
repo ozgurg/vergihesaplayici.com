@@ -35,7 +35,7 @@ export class Calculator {
             this.prices.taxFree = this.price;
         } else if (this.mode === "tax-added-to-tax-free") {
             this.prices.taxAdded = this.price;
-        } else if (this.mode === "tax-to-tax-base") {
+        } else { // tax-to-tax-base
             this.taxFees.valueAddedTax = this.price;
         }
     }
@@ -70,7 +70,7 @@ export class Calculator {
             this.taxFees.valueAddedTax = calculateTaxFromTaxAddedPrice(this.price, this.taxRates.valueAddedTax);
             this.price -= this.taxFees.valueAddedTax;
             this.prices.taxFree = this.price;
-        } else if (this.mode === "tax-to-tax-base") {
+        } else { // tax-to-tax-base
             this.prices.taxFree = (this.taxFees.valueAddedTax * 100) / this.rate;
             this.prices.taxAdded = this.prices.taxFree + this.taxFees.valueAddedTax;
         }

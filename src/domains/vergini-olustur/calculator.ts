@@ -45,10 +45,10 @@ export class Calculator {
                 // oxlint-disable-next-line unicorn/prefer-ternary
                 if (_taxItem.baseAmountMode === "base-amount") {
                     amount += calculateTaxFromTaxFreePrice(this.basePrice, _taxItem.rate);
-                } else if (_taxItem.baseAmountMode === "previous-amount") {
+                } else { // previous-amount
                     amount += calculateTaxFromTaxFreePrice(currentPrice, _taxItem.rate);
                 }
-            } else if (_taxItem.rateType === "unit") {
+            } else { // unit
                 amount += _taxItem.rate * this.exchangeRates.rates[_taxItem.rateTypeUnitCurrency];
             }
 

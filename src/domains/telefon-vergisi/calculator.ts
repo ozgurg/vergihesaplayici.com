@@ -66,7 +66,7 @@ export class Calculator {
             this.calculateTax_trtImport();
             this.calculateTax_specialConsumptionTax();
             this.calculateTax_valueAddedTax();
-        } else if (this.registration === "passport") {
+        } else { // passport
             this.calculateTax_trtPassport();
             this.calculateTax_registration();
         }

@@ -424,4 +424,56 @@ describe("components/common/form/form-check-group.vue", () => {
         expect(formChecks).toHaveLength(1);
         expect(formChecks[0]!.find("b").text()).toBe("Item 1");
     });
+
+    it("applies transition-delay based on `startDelay` and `initialItemCount`", () => {
+        const testItems = [
+            { title: "Item 1", input: { value: "item-1" } },
+            { title: "Item 2", input: { value: "item-2" } },
+            { title: "Item 3", input: { value: "item-3" } }
+        ];
+
+        const wrapper = mount(FormCheckGroup, {
+            props: {
+                items: testItems,
+                type: "radio",
+                startDelay: 100,
+                initialItemCount: 2
+            }
+        });
+
+        const children = wrapper.findAll(".form-check-group > div");
+        expect(children).toHaveLength(3);
+        expect(children[0]!.attributes("style")).toContain("transition-delay: 100ms");
+        expect(children[1]!.attributes("style")).toContain("transition-delay: 175ms");
+        expect(children[2]!.attributes("style")).toContain("transition-delay: 0ms");
+    });
+
+    it("uses `_index` as `key` when `item.input.value` is `undefined`", () => {
+        const testItems = [
+            {
+                title: "Item without value",
+                input: {}
+            }
+        ];
+        const wrapper = mount(FormCheckGroup, {
+            props: {
+                items: testItems,
+                type: "checkbox"
+            }
+        });
+        const child = wrapper.find(".form-check-group > div");
+        expect(child.exists()).toBeTruthy();
+    });
+
+    it("handles `undefined` items or `initialItemCount` in transition delay calculation", () => {
+        const wrapper = mount(FormCheckGroup, {
+            props: {
+                items: undefined,
+                initialItemCount: undefined
+            }
+        });
+        const vm = wrapper.vm as any;
+        expect(vm.getTransitionDelay(0)).toBe("0ms");
+        expect(vm.getTransitionDelay(5)).toBe("375ms");
+    });
 });

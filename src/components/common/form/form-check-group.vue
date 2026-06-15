@@ -97,8 +97,8 @@ const NAME = props["name"] || `UNUSED-PLACEHOLDER-NAME-${useId()}`;
 
 // 🤮
 const getTransitionDelay = (index: number) => {
-    const itemCount = props.initialItemCount ?? props.items?.length ?? 0;
-    const startDelay = props.startDelay ?? 0;
+    const itemCount = props.initialItemCount || props.items?.length || 0;
+    const startDelay = props.startDelay || 0;
     const delay = index < itemCount
         ? startDelay + TRANSITION_DELAY_INCREMENT_IN_MS * index
         : TRANSITION_DELAY_INCREMENT_IN_MS * (index - (props.initialItemCount ?? 0));

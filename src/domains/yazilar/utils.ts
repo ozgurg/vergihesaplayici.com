@@ -2,8 +2,8 @@ export const parseTitleAsTaxInfo = (title: string): { name: string, code: string
     const pattern = /^(.*?)\s*\[([^\]\\]+)\]\s*$/u;
     const matchArray = title.match(pattern);
     if (matchArray) {
-        const name = matchArray[1]?.trim() ?? null;
-        const code = matchArray[2]?.trim() ?? null;
+        const name = matchArray[1]?.trim() || null;
+        const code = matchArray[2]?.trim() || null;
         if (name && code) {
             return { name, code };
         }
@@ -12,7 +12,7 @@ export const parseTitleAsTaxInfo = (title: string): { name: string, code: string
 };
 
 export const parseDate = (date: Date): { timeDateTimeAttr: string, readableDate: string } => {
-    const timeDateTimeAttr = date.toISOString().split("T")?.[0] ?? ""; // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time#valid_datetime_values
+    const timeDateTimeAttr = date.toISOString().split("T")[0]!; // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time#valid_datetime_values
     const readableDate = date.toLocaleDateString("tr-TR");
     return {
         timeDateTimeAttr,

@@ -277,4 +277,74 @@ describe("domains/arac-vergisi/calculator.js", () => {
             taxAdded: 606_000
         }
     });
+
+    it("throws error when no ÖTV configuration is found for a specific engine volume", () => {
+        const calculator = new Calculator({
+            price: 500_000,
+            vehicleType: "automobile",
+            vehicleEngineVolume: "automobile.invalid-volume" as any
+        }, {
+            mode: "tax-free-to-tax-added"
+        });
+        expect(() => calculator.calculate()).toThrow("No ÖTV configuration found for automobile with engine volume automobile.invalid-volume");
+    });
+
+    it("throws error when vehicle type requires engine volume but none is provided", () => {
+        const calculator = new Calculator({
+            price: 500_000,
+            vehicleType: "automobile",
+            vehicleEngineVolume: null
+        }, {
+            mode: "tax-free-to-tax-added"
+        });
+        expect(() => calculator.calculate()).toThrow("Could not determine ÖTV configuration for automobile");
+    });
+
+    it("throws error when ÖTV configuration rates is empty during calculation", () => {
+        const calculator = new Calculator({
+            price: 500_000,
+            vehicleType: "automobile",
+            vehicleEngineVolume: "automobile.0-1400"
+        }, {
+            mode: "tax-free-to-tax-added"
+        });
+        (calculator as any).getOtvConfig = () => ({ thresholds: [], rates: [] });
+        expect(() => calculator.calculate()).toThrow("Invalid ÖTV configuration");
+    });
+
+    it("throws error when ÖTV configuration rates is empty during reverse calculation", () => {
+        const calculator = new Calculator({
+            price: 500_000,
+            vehicleType: "automobile",
+            vehicleEngineVolume: "automobile.0-1400"
+        }, {
+            mode: "tax-added-to-tax-free"
+        });
+        (calculator as any).getOtvConfig = () => ({ thresholds: [], rates: [] });
+        expect(() => calculator.calculate()).toThrow("Invalid ÖTV configuration");
+    });
+
+    it("handles `undefined` rate in `otv_rate` when thresholds has more elements than rates", () => {
+        const calculator = new Calculator({
+            price: 500,
+            vehicleType: "automobile",
+            vehicleEngineVolume: "automobile.0-1400"
+        }, {
+            mode: "tax-free-to-tax-added"
+        });
+        (calculator as any).getOtvConfig = () => ({ thresholds: [1_000], rates: [] });
+        expect(() => calculator.calculate()).toThrow("Invalid ÖTV configuration");
+    });
+
+    it("handles `undefined` rate in `otv_reverseRateResolver` when thresholds has more elements than rates", () => {
+        const calculator = new Calculator({
+            price: 500,
+            vehicleType: "automobile",
+            vehicleEngineVolume: "automobile.0-1400"
+        }, {
+            mode: "tax-added-to-tax-free"
+        });
+        (calculator as any).getOtvConfig = () => ({ thresholds: [1_000], rates: [] });
+        expect(() => calculator.calculate()).toThrow("Invalid ÖTV configuration");
+    });
 });

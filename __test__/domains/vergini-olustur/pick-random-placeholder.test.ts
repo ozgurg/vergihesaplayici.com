@@ -46,5 +46,25 @@ describe("domains/vergini-olustur/utils/pick-random-placeholder.js", () => {
             const result = pickRandomPlaceholder();
             expect(PLACEHOLDERS).toContain(result);
         });
+
+        it("returns `PLACEHOLDERS[0]` if placeholder is `undefined`", () => {
+            const editablePlaceholders = PLACEHOLDERS as any;
+            const originalContent = [...editablePlaceholders];
+
+            editablePlaceholders.length = 0;
+            try {
+                // Call enough times to exhaust the remaining queue and trigger a new shuffle of the empty array
+                for (let i = 0; i < originalContent.length; i++) {
+                    pickRandomPlaceholder();
+                }
+                const result = pickRandomPlaceholder();
+                expect(result).toBeUndefined();
+            } finally {
+                editablePlaceholders.length = originalContent.length;
+                for (let i = 0; i < originalContent.length; i++) {
+                    editablePlaceholders[i] = originalContent[i];
+                }
+            }
+        });
     });
 });

@@ -20,6 +20,18 @@ describe("utils/color.js", () => {
         it("convert string to hue", () => {
             expect(stringToHue("özgür")).toBe(117);
         });
+
+        it("handles `undefined` `codePointAt`", () => {
+            const originalCodePointAt = String.prototype.codePointAt;
+            // oxlint-disable-next-line no-extend-native unicorn/no-useless-undefined
+            String.prototype.codePointAt = () => undefined;
+            try {
+                expect(stringToHue("abc")).toBe(0);
+            } finally {
+                // oxlint-disable-next-line no-extend-native
+                String.prototype.codePointAt = originalCodePointAt;
+            }
+        });
     });
 
     describe("stringToHSL", () => {
