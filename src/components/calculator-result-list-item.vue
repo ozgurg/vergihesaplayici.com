@@ -1,5 +1,7 @@
 <template>
-    <div :class="CLASSES">
+    <div
+        :class="CLASSES"
+        role="listitem">
         <div class="header">
             <span class="header-label">
                 <template v-if="doesLabelContainNumber">
@@ -30,7 +32,7 @@ const props = withDefaults(defineProps<Props>(), {
     isMuted: false
 });
 
-const doesLabelContainNumber = /\d/u.test(props.label);
+const doesLabelContainNumber = computed(() => /\d/u.test(props.label));
 
 const CLASSES = [
     "calculator-result-list-item",

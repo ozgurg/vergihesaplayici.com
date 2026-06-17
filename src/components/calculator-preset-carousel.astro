@@ -10,12 +10,11 @@ export type Props = {
 
 const { titleTag, items } = Astro.props;
 
-const ROOT_ID = "calculator-preset-carousel";
 const ITEMS_CONTAINER_ID = "calculator-preset-carousel-items";
 ---
 
 <section
-    id={ROOT_ID}
+    data-component="calculator-preset-carousel"
     aria-roledescription="carousel"
     aria-label="Hazır hesaplamalar"
     class="calculator-preset-carousel">
@@ -129,17 +128,10 @@ const ITEMS_CONTAINER_ID = "calculator-preset-carousel-items";
 </style>
 
 <script>
-    /**
-     * Since we cannot pass Astro's variables to bundled `<script />` tags,
-     * I need to update two different locations for the IDs
-     * https://docs.astro.build/en/reference/directives-reference/#definevars
-     */
-    const ROOT_ID = "calculator-preset-carousel";
-
     const BUTTON_STATE_UPDATE_DEBOUNCE_TIMEOUT_IN_MS = 50;
     const ITEM_PER_MOVE = 4;
 
-    const carouselEl = document.querySelector(`#${ROOT_ID}`) as HTMLDivElement;
+    const carouselEl = document.querySelector(`[data-component="calculator-preset-carousel"]`) as HTMLDivElement;
     const scrollContainerEl = carouselEl.querySelector("[data-scroll-container]") as HTMLDivElement;
     const prevButtonEl = carouselEl.querySelector("[data-prev-button]") as HTMLButtonElement;
     const nextButtonEl = carouselEl.querySelector("[data-next-button]") as HTMLButtonElement;
@@ -149,7 +141,8 @@ const ITEMS_CONTAINER_ID = "calculator-preset-carousel-items";
     let maxScroll = 0;
 
     const calculateDimensions = (): void => {
-        childWidth = (scrollContainerEl.firstElementChild as HTMLDivElement).offsetWidth;
+        const firstChild = scrollContainerEl.firstElementChild as HTMLDivElement | null;
+        childWidth = firstChild ? firstChild.offsetWidth : 0;
         maxScroll = scrollContainerEl.scrollWidth - scrollContainerEl.clientWidth;
     };
 

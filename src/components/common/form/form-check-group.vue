@@ -5,7 +5,7 @@
         :class="CLASSES"
         name="list-transition"
         tag="div"
-        role="radiogroup">
+        :role="props.type === 'radio' ? 'radiogroup' : (props.type === 'checkbox' ? 'group' : undefined)">
         <!--
         Using `<div v-for>` directly instead of `<template v-for>` inside
         `<transition-group>` to prevent Vue SSR hydration mismatches
@@ -15,7 +15,7 @@
         to the parent to prevent it from overriding the child's `transition delay`.
         -->
         <div
-            v-for="(_item, _index) in props.items" :key="_item.input.value"
+            v-for="(_item, _index) in props.items" :key="_item.input.value ?? _index"
             :style="{'transition-delay': getTransitionDelay(_index)}">
             <template v-if="props.items && props.type">
                 <form-check

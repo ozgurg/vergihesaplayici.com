@@ -2,24 +2,15 @@ import { describe, expect, it } from "vitest";
 import { mount } from "@vue/test-utils";
 import { testAttrPassingToRoot } from "@root/__test__/utils.js";
 import Alert from "@/components/common/alert.vue";
-import AffordabilityAlert from "@/components/affordability-alert.vue";
-
-const MOCK_MINIMUM_WAGE_GROSS_MONTHLY = 1_000;
+import AffordabilityAlert, { MINIMUM_WAGE_GROSS_MONTHLY } from "@/components/affordability-alert.vue";
 
 describe("components/affordability-alert.vue", () => {
-    const createWrapper = (props: any) => mount(AffordabilityAlert, {
-        props,
-        global: {
-            provide: {
-                MINIMUM_WAGE_GROSS_MONTHLY: MOCK_MINIMUM_WAGE_GROSS_MONTHLY
-            }
-        }
-    });
-
     testAttrPassingToRoot(AffordabilityAlert, { props: { price: 0 } });
 
     it("renders an `<alert />` with correct color", () => {
-        const wrapper = createWrapper({ price: 0 });
+        const wrapper = mount(AffordabilityAlert, {
+            props: { price: 0 }
+        });
 
         const alert = wrapper.findComponent(Alert as any);
         expect(alert.exists()).toBeTruthy();
@@ -27,30 +18,30 @@ describe("components/affordability-alert.vue", () => {
     });
 
     it("shows yearly duration for yearly minimum wage", () => {
-        const wrapper = createWrapper({
-            price: MOCK_MINIMUM_WAGE_GROSS_MONTHLY * 12
+        const wrapper = mount(AffordabilityAlert, {
+            props: { price: MINIMUM_WAGE_GROSS_MONTHLY * 12 }
         });
-        expect(wrapper.vm.wageDurationSummary).toContain("1 yıllık");
+        expect(wrapper.text()).toContain("1 yıllık");
     });
 
     it("shows monthly duration for monthly minimum wage", () => {
-        const wrapper = createWrapper({
-            price: MOCK_MINIMUM_WAGE_GROSS_MONTHLY
+        const wrapper = mount(AffordabilityAlert, {
+            props: { price: MINIMUM_WAGE_GROSS_MONTHLY }
         });
-        expect(wrapper.vm.wageDurationSummary).toContain("1 aylık");
+        expect(wrapper.text()).toContain("1 aylık");
     });
 
     it("shows daily duration for daily minimum wage", () => {
-        const wrapper = createWrapper({
-            price: MOCK_MINIMUM_WAGE_GROSS_MONTHLY / 30
+        const wrapper = mount(AffordabilityAlert, {
+            props: { price: MINIMUM_WAGE_GROSS_MONTHLY / 30 }
         });
-        expect(wrapper.vm.wageDurationSummary).toContain("1 günlük");
+        expect(wrapper.text()).toContain("1 günlük");
     });
 
     it("shows decimal places", () => {
-        const wrapper = createWrapper({
-            price: MOCK_MINIMUM_WAGE_GROSS_MONTHLY * 1.9
+        const wrapper = mount(AffordabilityAlert, {
+            props: { price: MINIMUM_WAGE_GROSS_MONTHLY * 1.9 }
         });
-        expect(wrapper.vm.wageDurationSummary).toContain("1.9 aylık");
+        expect(wrapper.text()).toContain("1.9 aylık");
     });
 });

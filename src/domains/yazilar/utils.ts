@@ -12,7 +12,7 @@ export const parseTitleAsTaxInfo = (title: string): { name: string, code: string
 };
 
 export const parseDate = (date: Date): { timeDateTimeAttr: string, readableDate: string } => {
-    const timeDateTimeAttr = date.toISOString().split("T")[0]!; // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time#valid_datetime_values
+    const timeDateTimeAttr = date.toISOString().split("T")[0] ?? ""; // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time#valid_datetime_values
     const readableDate = date.toLocaleDateString("tr-TR");
     return {
         timeDateTimeAttr,

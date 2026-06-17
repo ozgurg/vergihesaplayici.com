@@ -238,8 +238,7 @@ export class Calculator {
         }
 
         if (typeof configData === "object" && this.vehicleEngineVolume !== null) {
-            // oxlint-disable-next-line typescript/no-explicit-any
-            const engineConfig = (configData as any)[this.vehicleEngineVolume];
+            const engineConfig = (configData as { [key: string]: OtvConfig })[this.vehicleEngineVolume];
             if (!engineConfig) {
                 throw new Error(`No ÖTV configuration found for ${this.vehicleType} with engine volume ${this.vehicleEngineVolume}`);
             }

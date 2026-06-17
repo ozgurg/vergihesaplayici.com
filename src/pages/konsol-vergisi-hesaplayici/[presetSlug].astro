@@ -52,8 +52,10 @@ const presetsForCalculatorPresetCarousel = mapPresetsForCalculatorPresetCarousel
 
 const calculateServerSide = () => {
     const optionIndex = 0;
-    // oxlint-disable-next-line typescript/no-non-null-assertion
-    const option = preset.options[optionIndex]!;
+    const option = preset.options[optionIndex];
+    if (!option) {
+        throw new Error("Preset option not found");
+    }
 
     const form = {
         ...DEFAULT_PRESET_FORM,

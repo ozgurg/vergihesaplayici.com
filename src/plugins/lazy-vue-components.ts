@@ -42,8 +42,7 @@ const isTargetVueFile = (file: string, dirs: string[]): boolean => {
 };
 
 // Export the resolver so it can be easily used inside `autoImportVueComponentsPlugin` without boilerplate
-// oxlint-disable-next-line typescript/explicit-module-boundary-types
-export const lazyVueComponentsResolver = () => {
+export const lazyVueComponentsResolver = (): (name: string) => { name: string; from: string } | null => {
     return (name: string) => {
         return name.startsWith("Lazy") ?
             {

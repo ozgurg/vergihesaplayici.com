@@ -10,9 +10,12 @@ describe("components/common/form/form-check-group.vue", () => {
     testAttrPassingToRoot(FormCheckGroup);
     testRootClass(FormCheckGroup, "form-check-group");
 
-    it("has the correct `role` attr", () => {
-        const wrapper = mount(FormCheckGroup);
-        expect(wrapper.attributes("role")).toBe("radiogroup");
+    it("has the correct dynamic `role` attr", () => {
+        const wrapperRadio = mount(FormCheckGroup, { props: { type: "radio" } });
+        expect(wrapperRadio.attributes("role")).toBe("radiogroup");
+
+        const wrapperCheckbox = mount(FormCheckGroup, { props: { type: "checkbox" } });
+        expect(wrapperCheckbox.attributes("role")).toBe("group");
     });
 
     it("applies `aria-labelledby` if provided", () => {

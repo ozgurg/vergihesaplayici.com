@@ -114,7 +114,7 @@ $_scales: (
         border-color: var(--vh-clr-primary);
         box-shadow: 0 0 0 1px var(--vh-clr-primary)
     }
-    &:has(input:user-invalid) {
+    &:has(select:user-invalid) {
         border-color: var(--vh-clr-danger);
         box-shadow: 0 0 0 1px var(--vh-clr-danger)
     }

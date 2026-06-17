@@ -50,6 +50,9 @@ export const pickRandomPlaceholder = (): Placeholder => {
         queue = shuffleArray(PLACEHOLDERS);
         index = 0;
     }
-    // oxlint-disable-next-line typescript/no-non-null-assertion
-    return queue[index++]!;
+    const placeholder = queue[index++];
+    if (placeholder === undefined) {
+        return PLACEHOLDERS[0];
+    }
+    return placeholder;
 };

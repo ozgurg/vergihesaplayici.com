@@ -20,7 +20,7 @@
         <main>
             <template v-if="props.screenshotData.input.length > 0">
                 <dl class="list">
-                    <template v-for="_item in props.screenshotData.input" :key="Math.random()">
+                    <template v-for="(_item, _index) in props.screenshotData.input" :key="_item.label + '-' + _index">
                         <div class="list-item">
                             <dt>{{ _item.label }}</dt>
                             <dd
@@ -35,10 +35,10 @@
             </template>
 
             <dl class="list">
-                <template v-for="_item in props.screenshotData.output" :key="Math.random()">
+                <template v-for="(_item, _index) in props.screenshotData.output" :key="_item.label + '-' + _index">
                     <div class="list-item">
                         <dt>{{ _item.label }}</dt>
-                        <dd :class="{'text-number': _item.isNumeric || true}">
+                        <dd :class="{'text-number': _item.isNumeric || false}">
                             {{ _item.value }}
                         </dd>
                     </div>
@@ -84,21 +84,6 @@ const props = defineProps<Props>();
 </script>
 
 <style lang="scss" scoped>
-$_variants: (
-    "tax-free-price": (
-        --bg: vh-calculate-overlay-color($clr-body-bg, rgba(#fff, .04)),
-        --font-weight: var(--vh-fw-bold)
-    ),
-    "total-tax": (
-        --bg: vh-calculate-overlay-color($clr-body-bg, rgba($clr-primary, .04)),
-        --font-weight: var(--vh-fw-medium)
-    ),
-    "tax-added-price": (
-        --bg: vh-calculate-overlay-color($clr-body-bg, rgba($clr-primary, .16)),
-        --font-weight: var(--vh-fw-bold)
-    )
-);
-
 .screenshot {
     $parent: &;
     font-size: var(--vh-fs-sm);
@@ -134,15 +119,12 @@ $_variants: (
         display: flex;
         flex-flow: column wrap;
         &-item {
-            --_bg: var(--bg, 0);
-            --_font-weight: var(--font-weight, var(--vh-fw-normal));
-            font-weight: var(--_font-weight);
+            font-weight: var(--vh-fw-normal);
             display: flex;
             align-items: center;
             flex-flow: row wrap;
             justify-content: space-between;
             padding: calc(var(--vh-spacer) * .625) var(--vh-spacer);
-            background: var(--_bg);
             gap: var(--vh-spacer);
             &:first-child {
                 // Giving the `first-child` and `last-child` a bit more space looks better
@@ -152,13 +134,8 @@ $_variants: (
                 // Giving the `first-child` and `last-child` a bit more space looks better
                 padding-block-end: calc(var(--vh-spacer) * .875)
             }
-            @each $__variant, $__properties in $_variants {
-                &-variant-#{$__variant} {
-                    @include vh-map-to-properties($__properties)
-                }
-            }
-            & + & {
-                border-block-start: 1px solid hsla(var(--vh-clr-white-hsl), .12)
+            &:not(:last-child) {
+                border-block-end: 1px solid hsla(var(--vh-clr-white-hsl), .12)
             }
             dt {
                 text-align: start

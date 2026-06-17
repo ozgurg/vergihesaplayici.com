@@ -3,9 +3,10 @@
         :is="tagName"
         :aria-busy="loading ? 'true' : undefined"
         :aria-disabled="props.disabled ? 'true' : undefined"
+        :tabindex="props.disabled ? '-1' : undefined"
         :class="CLASSES"
         :disabled="props.disabled ? '' : undefined"
-        :href="props.href?.href ?? undefined">
+        :href="props.disabled ? undefined : props.href?.toString()">
         <transition name="fade-scale-transition" mode="out-in">
             <template v-if="loading">
                 <spinner />
@@ -41,7 +42,7 @@ export type Props = {
     variant?: Variant;
     color?: Color;
     scale?: Scale;
-    href?: URL;
+    href?: URL | string;
     loading?: boolean;
     disabled?: boolean;
 } & /* @vue-ignore */ Partial<HtmlAttrs_a | HtmlAttrs_button>;
@@ -113,14 +114,14 @@ $_scales: (
         --font-size: var(--vh-fs-sm),
         --font-weight: var(--vh-fw-normal),
         --border-radius: var(--vh-br-sm),
-        --icon-size: 1.625rem
+        --icon-size: 1.5rem
     ),
     "medium": (
         --block-size: 2.75rem,
         --font-size: var(--vh-fs-sm),
         --font-weight: var(--vh-fw-semibold),
         --border-radius: var(--vh-br-sm),
-        --icon-size: 1.375rem
+        --icon-size: 1.75rem
     ),
     "large": (
         --block-size: #{$_default-block-size},

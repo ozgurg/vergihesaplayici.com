@@ -17,7 +17,7 @@ describe("utils/exchange-rates.js", () => {
     it("returns exchange rates on successful fetch", async () => {
         mockFetch.mockResolvedValueOnce({
             ok: true,
-            json: async () => ({
+            json: () => ({
                 result: "success",
                 time_last_update_utc: "Tue, 16 Jun 2026 00:00:00 +0000",
                 rates: {
@@ -41,7 +41,7 @@ describe("utils/exchange-rates.js", () => {
     it("returns `0` for missing rates in success JSON", async () => {
         mockFetch.mockResolvedValueOnce({
             ok: true,
-            json: async () => ({
+            json: () => ({
                 result: "success",
                 time_last_update_utc: "Tue, 16 Jun 2026 00:00:00 +0000",
                 rates: {} as any
@@ -59,8 +59,7 @@ describe("utils/exchange-rates.js", () => {
     });
 
     it("returns fallback exchange rates when response is not ok", async () => {
-        const warnSpy = vi.spyOn(console, "warn").mockImplementation(() => {
-        });
+        const warnSpy = vi.spyOn(console, "warn").mockImplementation(() => {});
         mockFetch.mockResolvedValueOnce({
             ok: false,
             status: 500
@@ -77,7 +76,7 @@ describe("utils/exchange-rates.js", () => {
     it("throws error when API returns error status", async () => {
         mockFetch.mockResolvedValueOnce({
             ok: true,
-            json: async () => ({
+            json: () => ({
                 result: "error",
                 "error-type": "invalid-key"
             })
@@ -89,7 +88,7 @@ describe("utils/exchange-rates.js", () => {
     it("throws unknown error when API returns error status without error-type", async () => {
         mockFetch.mockResolvedValueOnce({
             ok: true,
-            json: async () => ({
+            json: () => ({
                 result: "error"
             })
         });
@@ -98,8 +97,7 @@ describe("utils/exchange-rates.js", () => {
     });
 
     it("returns fallback rates when fetch throws TypeError in development", async () => {
-        const warnSpy = vi.spyOn(console, "warn").mockImplementation(() => {
-        });
+        const warnSpy = vi.spyOn(console, "warn").mockImplementation(() => {});
         mockFetch.mockRejectedValueOnce(new TypeError("Failed to fetch"));
 
         const { getExchangeRates } = await import("@/utils/exchange-rates.js");
@@ -119,7 +117,7 @@ describe("utils/exchange-rates.js", () => {
     it("provides API provider credit", async () => {
         mockFetch.mockResolvedValueOnce({
             ok: true,
-            json: async () => ({
+            json: () => ({
                 result: "success",
                 time_last_update_utc: "Tue, 16 Jun 2026 00:00:00 +0000",
                 rates: { TRY: 1, USD: 1, EUR: 1, GBP: 1, INR: 1, CNY: 1 }

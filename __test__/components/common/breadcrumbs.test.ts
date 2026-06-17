@@ -37,7 +37,7 @@ describe("components/common/breadcrumbs.vue", () => {
             props: { items: MOCK_ITEMS }
         });
 
-        const breadcrumbItems = wrapper.findAll(`li[aria-current="false"] > a`);
+        const breadcrumbItems = wrapper.findAll("li > a");
         expect(breadcrumbItems).toHaveLength(MOCK_ITEMS.length - 1);
 
         for (const [_index, _breadcrumbItem] of breadcrumbItems.entries()) {

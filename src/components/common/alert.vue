@@ -1,7 +1,5 @@
 <template>
-    <rich-text
-        :class="CLASSES"
-        role="alert">
+    <rich-text :class="CLASSES">
         <slot name="default" />
     </rich-text>
 </template>

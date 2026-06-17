@@ -1,7 +1,7 @@
 <template>
     <transition-group
         name="list-transition"
-        tag="dl"
+        tag="div"
         aria-label="Hesaplama sonuçları"
         class="calculator-result-list">
         <template v-for="_item in props.items" :key="_item.key + _item.isMuted">

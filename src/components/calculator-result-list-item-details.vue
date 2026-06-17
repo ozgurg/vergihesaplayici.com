@@ -1,5 +1,7 @@
 <template>
-    <details :class="CLASSES">
+    <details
+        :class="CLASSES"
+        role="listitem">
         <summary class="header">
             <span class="header-label">
                 <template v-if="doesLabelContainNumber">
@@ -39,7 +41,7 @@ const props = withDefaults(defineProps<Props>(), {
     isMuted: false
 });
 
-const doesLabelContainNumber = /\d/u.test(props.label);
+const doesLabelContainNumber = computed(() => /\d/u.test(props.label));
 
 const CLASSES = [
     "calculator-result-list-item",
@@ -73,12 +75,12 @@ $_variants: (
     font-weight: var(--_font-weight);
     background: var(--_bg);
     @include vh-hover {
-        &:has(#{$self}-header:hover) {
+        &:has(.header:hover) {
             --border-alpha: .5
         }
     }
     @include vh-active {
-        &:has(#{$self}-header:active) {
+        &:has(.header:active) {
             --bg-alpha: .12;
             transform: scale(.985)
         }

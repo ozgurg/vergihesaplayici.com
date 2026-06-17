@@ -1,10 +1,11 @@
 <template>
     <nav
         ref="breadcrumbsEl"
+        aria-label="Sayfa konumu"
         class="breadcrumbs">
         <ol>
             <template v-for="(_item, _index) in items" :key="_index">
-                <li :aria-current="isLastItem(_index) ? 'page' : 'false'">
+                <li :aria-current="isLastItem(_index) ? 'page' : undefined">
                     <template v-if="isLastItem(_index)">
                         <span>{{ _item.title }}</span>
                     </template>
@@ -40,7 +41,7 @@ const breadcrumbsEl = useTemplateRef<HTMLOListElement>("breadcrumbsEl");
 
 const isLastItem = (index: number) => index === props.items.length - 1;
 
-onBeforeMount(() => nextTick(() => {
+onMounted(() => nextTick(() => {
     const el = breadcrumbsEl.value;
     el?.scrollTo({
         left: el.scrollWidth,

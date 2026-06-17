@@ -241,7 +241,7 @@ const { Content } = await render(yazi.entry);
         for (const _details of detailsList) {
             const question = _details.querySelector("summary")?.textContent.trim();
             const answer = _details.querySelector("div")?.textContent.trim();
-            if (question || !answer) {
+            if (question && answer) {
                 faqData.mainEntity.push({
                     "@type": "Question",
                     "name": question,
