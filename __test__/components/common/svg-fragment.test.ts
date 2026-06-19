@@ -50,11 +50,12 @@ describe("components/common/svg-fragment.vue", () => {
     });
 
     it("handles falsy `match[1]` in attr extraction", () => {
+        // oxlint-disable no-extend-native
         const originalExec = RegExp.prototype.exec;
         let count = 0;
-        RegExp.prototype.exec = function (string) {
+        RegExp.prototype.exec = function exec(string) {
             const res = originalExec.call(this, string);
-            if (res && this.source === "([\\w-]+)(?:=([\"'])(.*?)\\2)?") {
+            if (res && this.source === String.raw`([\w-]+)(?:=(["'])(.*?)\2)?`) {
                 count++;
                 if (count === 1) {
                     const fakeMatch = [...res];

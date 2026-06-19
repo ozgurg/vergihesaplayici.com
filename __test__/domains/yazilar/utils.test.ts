@@ -56,17 +56,11 @@ describe("domains/yazilar/utils/utils.js", () => {
 
         it("handles `undefined` from split in `parseDate`", () => {
             const date = new Date();
-            const originalSplit = String.prototype.split;
-            String.prototype.split = function (separator) {
-                if (separator === "T") return [];
-                return originalSplit.apply(this, arguments as any);
-            };
-            try {
-                const result = parseDate(date);
-                expect(result.timeDateTimeAttr).toBe("");
-            } finally {
-                String.prototype.split = originalSplit;
-            }
+            date.toISOString = () => ({
+                split: () => []
+            } as any);
+            const result = parseDate(date);
+            expect(result.timeDateTimeAttr).toBe("");
         });
     });
 

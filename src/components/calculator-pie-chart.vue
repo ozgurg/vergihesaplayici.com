@@ -147,7 +147,7 @@ const chartData = computed<ChartDataItem[]>(() => {
     const scale = 360 / totalAdjusted;
 
     return props.items.map((item, i) => {
-        const angle = adjustedAngles[i]! * scale;
+        const angle = (adjustedAngles[i] as number) * scale;
         const startAngle = currentAngle;
         const endAngle = currentAngle + angle;
         const pathData = _createArcPath({ centerX, centerY, radius, startAngle, endAngle });

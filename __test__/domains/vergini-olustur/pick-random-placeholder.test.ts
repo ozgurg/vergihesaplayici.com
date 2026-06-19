@@ -54,7 +54,7 @@ describe("domains/vergini-olustur/utils/pick-random-placeholder.js", () => {
             editablePlaceholders.length = 0;
             try {
                 // Call enough times to exhaust the remaining queue and trigger a new shuffle of the empty array
-                for (let i = 0; i < originalContent.length; i++) {
+                for (const _ of originalContent) {
                     pickRandomPlaceholder();
                 }
                 const result = pickRandomPlaceholder();

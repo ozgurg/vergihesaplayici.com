@@ -1,6 +1,6 @@
 import { mount } from "@vue/test-utils";
 import { nextTick } from "vue";
-import { beforeAll, describe, expect, it } from "vitest";
+import { beforeAll, describe, expect, it, vi } from "vitest";
 import Modal from "@/components/common/modal/modal.vue";
 import ModalCloseButton from "@/components/common/modal/modal-close-button.vue";
 import CalculatorPieChart from "@/components/calculator-pie-chart.vue";
@@ -208,5 +208,49 @@ describe("components/calculator-pie-chart.vue", () => {
 
         modal = wrapper.findComponent(Modal as any);
         expect((modal as any).props("modelValue")).toBe(false);
+    });
+
+    it("handles total items value of `0`", () => {
+        const wrapper = mount(CalculatorPieChart, {
+            props: {
+                title: "Empty Chart",
+                items: []
+            }
+        });
+        expect(wrapper.findAll("svg > g")).toHaveLength(0);
+    });
+
+    it("handles non-hover environment", async () => {
+        vi.resetModules();
+        const originalMatchMedia = window.matchMedia;
+        window.matchMedia = () => ({
+            matches: false,
+            media: "",
+            onchange: null,
+            addListener: () => {},
+            removeListener: () => {},
+            addEventListener: () => {},
+            removeEventListener: () => {},
+            dispatchEvent: () => false
+        });
+
+        try {
+            const { default: CalculatorPieChartNonHover } = await import("@/components/calculator-pie-chart.vue");
+            const wrapper = mount(CalculatorPieChartNonHover, {
+                props: {
+                    title: "Vergi dağılımı",
+                    items: TEST_ITEMS
+                }
+            });
+            const firstPath = wrapper.find("svg > g > path");
+            await firstPath.trigger("mouseenter");
+            const tooltip = wrapper.find(".tooltip");
+            expect(tooltip.exists()).toBeFalsy();
+
+            await firstPath.trigger("mouseleave");
+        } finally {
+            window.matchMedia = originalMatchMedia;
+            vi.resetModules();
+        }
     });
 });

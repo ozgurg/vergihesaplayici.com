@@ -22,15 +22,14 @@ describe("utils/color.js", () => {
         });
 
         it("handles `undefined` `codePointAt`", () => {
-            const originalCodePointAt = String.prototype.codePointAt;
-            // oxlint-disable-next-line no-extend-native unicorn/no-useless-undefined
-            String.prototype.codePointAt = () => undefined;
-            try {
-                expect(stringToHue("abc")).toBe(0);
-            } finally {
-                // oxlint-disable-next-line no-extend-native
-                String.prototype.codePointAt = originalCodePointAt;
-            }
+            const mockString = {
+                *[Symbol.iterator]() {
+                    yield {
+                        codePointAt: () => {}
+                    };
+                }
+            };
+            expect(stringToHue(mockString as any)).toBe(0);
         });
     });
 
