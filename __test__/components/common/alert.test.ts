@@ -12,13 +12,13 @@ describe("components/common/alert.vue", () => {
         const wrapper = mount(Alert, {
             props: { color: "warning" }
         });
-        expect(wrapper.classes()).toContain("alert-color-warning");
+        expect(wrapper.classes()).toContain("alert--color-warning");
     });
 
     it("applies correct `info` color class", () => {
         const wrapper = mount(Alert, {
             props: { color: "info" }
         });
-        expect(wrapper.classes()).toContain("alert-color-info");
+        expect(wrapper.classes()).toContain("alert--color-info");
     });
 });

@@ -1,0 +1,35 @@
+---
+import AppLayout from "@/layouts/app-layout.astro";
+import PageHeader from "@/components/common/page-header.vue";
+import Container from "@/components/common/container.vue";
+import Breadcrumbs from "@/components/common/breadcrumbs.vue";
+import Heading1 from "@/components/common/heading-1.vue";
+import KatmaDegerVergisi from "@/domains/katma-deger-vergisi/components/katma-deger-vergisi.vue";
+
+import { KatmaDegerVergisiPageDef } from "@/domains/katma-deger-vergisi/page-def.js";
+
+const katmaDegerVergisiPage = KatmaDegerVergisiPageDef();
+---
+
+<AppLayout page={katmaDegerVergisiPage}>
+    <PageHeader>
+        <Container>
+            <Breadcrumbs
+                items={katmaDegerVergisiPage.breadcrumbs}
+                client:load />
+            <Heading1>
+                {katmaDegerVergisiPage.title}
+            </Heading1>
+        </Container>
+    </PageHeader>
+
+    <section>
+        <KatmaDegerVergisi
+            calculatorPage={katmaDegerVergisiPage}
+            client:load />
+    </section>
+
+    <Container>
+        <div class="ta-ad-last" ta-ad-container=""></div>
+    </Container>
+</AppLayout>

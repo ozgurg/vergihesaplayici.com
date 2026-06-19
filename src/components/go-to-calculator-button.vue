@@ -49,8 +49,7 @@ const _updateObserverBasedOnResolution = (): void => {
 const _setupObservers = (): void => {
     intersectionObserver = new IntersectionObserver(
         ([entry]: IntersectionObserverEntry[]) => {
-            // oxlint-disable-next-line typescript/no-non-null-assertion
-            isVisible.value = entry!.intersectionRatio >= VISIBLE_THRESHOLD_RATIO;
+            isVisible.value = (entry?.intersectionRatio ?? 0) >= VISIBLE_THRESHOLD_RATIO;
         },
         { threshold: OBSERVER_THRESHOLDS }
     );

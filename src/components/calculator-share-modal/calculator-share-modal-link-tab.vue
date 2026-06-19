@@ -1,6 +1,6 @@
 <template>
     <div
-        class="buttons-container"
+        class="calculator-share-modal-link-tab"
         role="region">
         <form-button
             :href="facebookShareUrl"
@@ -76,7 +76,7 @@ const redditShareUrl = computed(() => createRedditShareUrl(props.url));
 </script>
 
 <style lang="scss" scoped>
-.buttons-container {
+.calculator-share-modal-link-tab {
     --_gap: calc(var(--vh-spacer) * .75);
     gap: var(--_gap);
     @include vh-media-breakpoint-down(md) {

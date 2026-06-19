@@ -12,10 +12,8 @@
             <template v-if="isCopied">
                 <svg-icon :icon="icon_check" />
             </template>
-            <template v-else>
-                <div>Kopyala</div>
-            </template>
         </transition>
+        <span>Kopyala</span>
     </form-button>
 </template>
 

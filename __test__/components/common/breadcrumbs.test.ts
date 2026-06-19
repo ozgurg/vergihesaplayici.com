@@ -5,8 +5,8 @@ import { siteUrl } from "@/utils/url.js";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
 
 const MOCK_ACTIVE_ITEM = {
-    title: "KDV Hesaplayıcı",
-    url: siteUrl("/kdv-hesaplayici")
+    title: "KDV Hesaplama",
+    url: siteUrl("/katma-deger-vergisi")
 };
 
 const MOCK_ITEMS = [
@@ -37,7 +37,7 @@ describe("components/common/breadcrumbs.vue", () => {
             props: { items: MOCK_ITEMS }
         });
 
-        const breadcrumbItems = wrapper.findAll(`li[aria-current="false"] > a`);
+        const breadcrumbItems = wrapper.findAll("li > a");
         expect(breadcrumbItems).toHaveLength(MOCK_ITEMS.length - 1);
 
         for (const [_index, _breadcrumbItem] of breadcrumbItems.entries()) {
@@ -55,7 +55,7 @@ describe("components/common/breadcrumbs.vue", () => {
             props: { items: MOCK_ITEMS }
         });
 
-        const dividers = wrapper.findAll(`li.breadcrumbs-divider[aria-hidden="true"]`);
+        const dividers = wrapper.findAll(`li.divider[aria-hidden="true"]`);
         expect(dividers).toHaveLength(MOCK_ITEMS.length - 1);
     });
 

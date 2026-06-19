@@ -1,7 +1,7 @@
 .calculator {
     $self: &;
-    $box-width: 1112px;
-    $box-width-breakpoint: $box-width + 20px;
+    $box-width: $_calculator-box-width-expanded;
+    $box-width-breakpoint: $_calculator-box-width-breakpoint;
     $left-width: 524px;
     $padding-block: $spacer * 2;
     $padding-inline: $spacer * 2;

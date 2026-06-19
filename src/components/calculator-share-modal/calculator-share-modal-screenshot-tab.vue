@@ -1,13 +1,5 @@
 <template>
     <div class="screenshot">
-        <div class="screenshot-overlay">
-            <div class="screenshot-buttons">
-                <calculator-share-modal-screenshot-tab-download-button />
-                <calculator-share-modal-screenshot-tab-share-button />
-                <calculator-share-modal-screenshot-tab-copy-button />
-            </div>
-        </div>
-
         <calculator-share-modal-screenshot-tab-screenshot
             ref="screenshotEl"
             :calculator-title="props.calculatorTitle"
@@ -15,7 +7,13 @@
             :brand-title="props.brandTitle"
             :preset-title="props.presetTitle"
             :screenshot-data="props.screenshotData"
-            class="screenshot-table" />
+            class="table" />
+
+        <div class="buttons">
+            <calculator-share-modal-screenshot-tab-download-button />
+            <calculator-share-modal-screenshot-tab-share-button />
+            <calculator-share-modal-screenshot-tab-copy-button />
+        </div>
     </div>
 </template>
 
@@ -46,24 +44,20 @@ provide<string>("screenshotFileName", SCREENSHOT_FILE_NAME);
     inline-size: max-content;
     max-inline-size: 20rem;
     margin-inline: auto;
-    &-table {
+    .table {
         position: relative;
-        z-index: 1
+        z-index: 1;
+        filter: brightness(.5)
     }
-    &-overlay {
+    .buttons {
         position: absolute;
         z-index: 2;
-        inset: 0;
-        display: flex;
-        background: hsla(var(--vh-clr-black-hsl), .5);
-        block-size: 100%;
-        inline-size: 100%
-    }
-    &-buttons {
+        inset-block-start: 50%;
+        inset-inline-start: 50%;
+        transform: translateX(-50%) translateY(-50%);
         @include vh-card();
         display: flex;
         flex-direction: column;
-        margin: auto;
         padding: var(--vh-spacer);
         border-radius: calc(var(--vh-br-normal) + var(--vh-spacer));
         background: var(--vh-clr-primary);

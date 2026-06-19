@@ -7,11 +7,11 @@
         :aria-controls="props.ariaControls"
         :disabled="true"
         aria-label="Önceki sayfa"
-        class="calculator-preset-carousel-nav calculator-preset-carousel-nav-prev"
+        class="calculator-preset-carousel-nav calculator-preset-carousel-nav--prev"
         data-prev-button=""
         tabindex="-1"
         type="button">
-        <span>
+        <span class="inner">
             <svg-icon :icon="icon_arrowLeft" />
         </span>
     </button>
@@ -19,11 +19,11 @@
     <button
         :aria-controls="props.ariaControls"
         aria-label="Sonraki sayfa"
-        class="calculator-preset-carousel-nav calculator-preset-carousel-nav-next"
+        class="calculator-preset-carousel-nav calculator-preset-carousel-nav--next"
         data-next-button=""
         tabindex="-1"
         type="button">
-        <span>
+        <span class="inner">
             <svg-icon :icon="icon_arrowRight" />
         </span>
     </button>
@@ -66,7 +66,33 @@ const props = defineProps<Props>();
     @include vh-js-disabled {
         display: none
     }
-    span {
+    &--prev {
+        @include vh-squircle(0 var(--vh-br-normal) var(--vh-br-normal) 0);
+        background: linear-gradient(to right, var(--vh-clr-body-bg), transparent);
+        inset-inline-start: 0;
+        &:disabled {
+            background: 0;
+            backdrop-filter: none;
+            .inner {
+                transform: translateX(calc(var(--vh-spacer) * -1));
+                opacity: 0
+            }
+        }
+    }
+    &--next {
+        @include vh-squircle(var(--vh-br-normal) 0 0 var(--vh-br-normal));
+        background: linear-gradient(to left, var(--vh-clr-body-bg), transparent);
+        inset-inline-end: 0;
+        &:disabled {
+            background: 0;
+            backdrop-filter: none;
+            .inner {
+                transform: translateX(var(--vh-spacer));
+                opacity: 0
+            }
+        }
+    }
+    .inner {
         display: inline-block;
         padding: calc(var(--vh-spacer) * .5);
         transition: vh-transition(opacity transform, var(--vh-duration-short));
@@ -74,32 +100,6 @@ const props = defineProps<Props>();
         border-radius: var(--vh-br-pill);
         background: #fff;
         box-shadow: 0 0 2rem var(--vh-clr-body-bg)
-    }
-    &-prev {
-        @include vh-squircle(0 var(--vh-br-normal) var(--vh-br-normal) 0);
-        background: linear-gradient(to right, var(--vh-clr-body-bg), transparent);
-        inset-inline-start: 0;
-        &:disabled {
-            background: 0;
-            backdrop-filter: none;
-            span {
-                transform: translateX(calc(var(--vh-spacer) * -1));
-                opacity: 0
-            }
-        }
-    }
-    &-next {
-        @include vh-squircle(var(--vh-br-normal) 0 0 var(--vh-br-normal));
-        background: linear-gradient(to left, var(--vh-clr-body-bg), transparent);
-        inset-inline-end: 0;
-        &:disabled {
-            background: 0;
-            backdrop-filter: none;
-            span {
-                transform: translateX(var(--vh-spacer));
-                opacity: 0
-            }
-        }
     }
 }
 </style>

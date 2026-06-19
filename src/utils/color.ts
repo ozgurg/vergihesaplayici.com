@@ -3,8 +3,7 @@ import type { HSLColor } from "@/types/common.js";
 export const stringToHue = (string: string): HSLColor["h"] => {
     let hue = 0;
     for (const char of string) {
-        // oxlint-disable-next-line typescript/no-non-null-assertion
-        hue = (hue + char.codePointAt(0)!) % 360;
+        hue = (hue + (char.codePointAt(0) ?? 0)) % 360;
     }
     return hue;
 };

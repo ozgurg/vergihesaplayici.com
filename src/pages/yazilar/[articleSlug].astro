@@ -69,42 +69,42 @@ const { Content } = await render(yazi.entry);
         <div class="ta-ad-first" ta-ad-container=""></div>
 
         <div class="meta">
-            <span class="meta-item">
-                <span class="meta-item-icon">
+            <span class="item">
+                <span class="item-icon">
                     <SvgIcon icon={icon_calendar} />
                 </span>
-                <span class="meta-item-content">
-                    <span class="meta-item-label">Yayınlanma</span>
-                    <time class="meta-item-value" datetime={createdDate.timeDateTimeAttr}>
+                <span class="item-content">
+                    <span class="item-label">Yayınlanma</span>
+                    <time class="item-value" datetime={createdDate.timeDateTimeAttr}>
                         {createdDate.readableDate}
                     </time>
                 </span>
             </span>
 
             {updatedDate && (
-                <span class="meta-separator" aria-hidden="true"></span>
-                <span class="meta-item">
-                    <span class="meta-item-icon">
+                <span class="divider" aria-hidden="true"></span>
+                <span class="item">
+                    <span class="item-icon">
                         <SvgIcon icon={icon_refresh} />
                     </span>
-                    <span class="meta-item-content">
-                        <span class="meta-item-label">Son güncelleme</span>
-                        <time class="meta-item-value" datetime={updatedDate.timeDateTimeAttr}>
+                    <span class="item-content">
+                        <span class="item-label">Son güncelleme</span>
+                        <time class="item-value" datetime={updatedDate.timeDateTimeAttr}>
                             {updatedDate.readableDate}
                         </time>
                     </span>
                 </span>
             )}
 
-            <span class="meta-separator" aria-hidden="true"></span>
+            <span class="divider" aria-hidden="true"></span>
 
-            <span class="meta-item">
-                <span class="meta-item-icon">
+            <span class="item">
+                <span class="item-icon">
                     <SvgIcon icon={icon_time} />
                 </span>
-                <span class="meta-item-content">
-                    <span class="meta-item-label">Okuma süresi</span>
-                    <span class="meta-item-value">Yaklaşık {readingTime} dk</span>
+                <span class="item-content">
+                    <span class="item-label">Okuma süresi</span>
+                    <span class="item-value">Yaklaşık {readingTime} dk</span>
                 </span>
             </span>
         </div>
@@ -179,19 +179,19 @@ const { Content } = await render(yazi.entry);
         padding: calc(var(--vh-spacer) * .75) var(--vh-spacer);
         overflow-x: auto;
         scrollbar-width: thin;
-        & > :first-child {
-            margin-inline-start: auto
-        }
-        & > :last-child {
-            margin-inline-end: auto
-        }
         @include vh-media-breakpoint-down(sm) {
             inline-size: calc(100% + (var(--container-padding-inline) * 2));
             margin-inline: calc(var(--container-padding-inline) * -1);
             border-inline: 0;
-            --border-radius: 0
+            --border-radius: 0;
+            & > :first-child {
+                margin-inline-start: auto
+            }
+            & > :last-child {
+                margin-inline-end: auto
+            }
         }
-        &-item {
+        .item {
             display: flex;
             align-items: center;
             gap: .75rem;
@@ -219,7 +219,7 @@ const { Content } = await render(yazi.entry);
                 font-weight: var(--vh-fw-bold)
             }
         }
-        .meta-separator {
+        .divider {
             flex-shrink: 0;
             inline-size: var(--vh-border-inline-size);
             background-color: hsla(var(--vh-clr-white-hsl), var(--vh-clr-border-alpha))
@@ -241,7 +241,7 @@ const { Content } = await render(yazi.entry);
         for (const _details of detailsList) {
             const question = _details.querySelector("summary")?.textContent.trim();
             const answer = _details.querySelector("div")?.textContent.trim();
-            if (question || !answer) {
+            if (question && answer) {
                 faqData.mainEntity.push({
                     "@type": "Question",
                     "name": question,

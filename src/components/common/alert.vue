@@ -1,7 +1,5 @@
 <template>
-    <rich-text
-        :class="CLASSES"
-        role="alert">
+    <rich-text :class="CLASSES">
         <slot name="default" />
     </rich-text>
 </template>
@@ -17,7 +15,7 @@ const props = defineProps<Props>();
 
 const CLASSES = [
     "alert",
-    `alert-color-${props.color}`
+    `alert--color-${props.color}`
 ];
 </script>
 
@@ -43,9 +41,9 @@ $_colors: (
     text-wrap: pretty;
     color: hsl(var(--_text-hsl));
     @include vh-squircle(var(--vh-br-normal));
-    background: linear-gradient(to top, hsla(var(--_bg-hsl), .08), hsla(var(--_bg-hsl), .12));
+    background: linear-gradient(to bottom, hsla(var(--_bg-hsl), .08), hsla(var(--_bg-hsl), .02));
     @each $__color, $__properties in $_colors {
-        &-color-#{$__color} {
+        &--color-#{$__color} {
             @include vh-map-to-properties($__properties)
         }
     }

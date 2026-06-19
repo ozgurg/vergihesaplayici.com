@@ -35,9 +35,8 @@ const TitleTag = props.titleTag as HTMLTag;
         src={props.thumb.metadata}
         alt={IMG_ALT}
         loading={props.loading}
-        height="96"
+        height="112"
         class="thumb"
-        densities={[1, 2]}
         decoding="async"
         aria-hidden="true"
         draggable="false" />
@@ -59,26 +58,38 @@ const TitleTag = props.titleTag as HTMLTag;
 
 <style lang="scss" is:global>
     .calculator-preset-carousel-item {
-        @include vh-card($hover: true, $active: true);
         --color-hsl: var(--_color-hsl);
-        --border-hsl: var(--_color-h), 100%, 96%;
-        --bg-alpha: .04;
-        --border-alpha: .12;
 
         --_color-h: var(--color-h);
         --_color-s: var(--color-s);
         --_color-l: var(--color-l);
         --_color-hsl: var(--_color-h), var(--_color-s), var(--_color-l);
         position: relative;
-        color: hsl(var(--_color-h), 100%, 96%);
+        color: hsl(var(--_color-h), 100%, 92%);
         display: flex;
         align-items: flex-start;
         flex-direction: column;
-        padding-block: calc(var(--vh-spacer) * 1.125);
-        padding-inline: calc(var(--vh-spacer) * .875);
+        transition: vh-transition(color transform, var(--vh-duration-short));
+        padding-inline: calc(var(--vh-spacer) * 1.5);
         @include vh-media-breakpoint-up(md) {
-            padding-block: calc(var(--vh-spacer) * 1.25);
-            padding-inline: calc(var(--vh-spacer) * 1.25)
+            padding-inline: calc(var(--vh-spacer) * 2)
+        }
+        @include vh-hover {
+            .thumb {
+                transition: vh-transition(translate scale, var(--vh-duration-short))
+            }
+            &:hover {
+                color: var(--vh-clr-primary);
+                .thumb {
+                    translate: 0 calc(var(--vh-spacer) * -.375);
+                    scale: 1.015
+                }
+            }
+        }
+        @include vh-active {
+            &:active {
+                transform: scale(.975)
+            }
         }
         &:has(a:focus-visible) {
             @include vh-focus-appearance()
@@ -87,8 +98,8 @@ const TitleTag = props.titleTag as HTMLTag;
             margin-block-end: var(--vh-spacer);
             object-fit: contain;
             inline-size: auto;
-            block-size: calc(var(--vh-spacer) * 6);
-            max-inline-size: calc(var(--vh-spacer) * 6)
+            block-size: calc(var(--vh-spacer) * 7);
+            max-inline-size: calc(var(--vh-spacer) * 7)
         }
         .title {
             --_icon-size: calc(var(--vh-spacer) * 1.25);

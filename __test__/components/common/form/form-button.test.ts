@@ -28,7 +28,7 @@ describe("components/common/form/form-button.vue", () => {
             props: { loading: true }
         });
         expect(wrapper.findComponent(Spinner as any).exists()).toBeTruthy();
-        expect(wrapper.find(".form-button-content").exists()).toBeFalsy();
+        expect(wrapper.find(".inner").exists()).toBeFalsy();
         expect(wrapper.attributes("aria-busy")).toBe("true");
     });
 
@@ -44,8 +44,8 @@ describe("components/common/form/form-button.vue", () => {
         const wrapper = mount(FormButton, {
             props: { variant: "outlined", color: "danger", scale: "small" }
         });
-        expect(wrapper.classes()).toContain("form-button-variant-outlined");
-        expect(wrapper.classes()).toContain("form-button-color-danger");
-        expect(wrapper.classes()).toContain("form-button-scale-small");
+        expect(wrapper.classes()).toContain("form-button--variant-outlined");
+        expect(wrapper.classes()).toContain("form-button--color-danger");
+        expect(wrapper.classes()).toContain("form-button--scale-small");
     });
 });

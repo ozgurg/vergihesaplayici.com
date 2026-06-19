@@ -1,9 +1,16 @@
 <template>
     <alert
         color="info"
-        class="text-center">Türkiye'de <u :aria-label="minimumWageFormatted" data-balloon-pos="up">asgari ücretli bir çalışan</u> yemeden içmeden bu ürünü <string-carousel class="tabular-nums" :text="wageDurationSummary" tag="b" /> maaşıyla satın alabilir.
+        class="text-center">Türkiye'de <u :aria-label="minimumWageFormatted" data-balloon-pos="up">asgari ücretli bir
+        çalışan</u> yemeden içmeden bu ürünü
+        <string-carousel class="tabular-nums" :text="wageDurationSummary" tag="b" />
+        maaşıyla satın alabilir.
     </alert>
 </template>
+
+<script lang="ts">
+export const MINIMUM_WAGE_GROSS_MONTHLY = 28_075;
+</script>
 
 <script lang="ts" setup>
 // Since it is only used in this component, it is imported here to reduce bundle size.
@@ -21,7 +28,6 @@ export type Props = {
 } & AlertProps;
 
 const props = defineProps<Props>();
-const MINIMUM_WAGE_GROSS_MONTHLY = inject("MINIMUM_WAGE_GROSS_MONTHLY", 28_075);
 
 const minimumWageFormatted = formatMoney(MINIMUM_WAGE_GROSS_MONTHLY, "TRY");
 

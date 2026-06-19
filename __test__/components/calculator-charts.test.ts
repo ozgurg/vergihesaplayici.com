@@ -37,7 +37,7 @@ describe("components/calculator-charts.vue", () => {
             }
         });
 
-        const items = wrapper.findAll(".calculator-charts-item");
+        const items = wrapper.findAll(".item");
         expect(items.length).toBe(TEST_CHARTS.length);
 
         const headings = wrapper.findAllComponents(Heading3 as any);

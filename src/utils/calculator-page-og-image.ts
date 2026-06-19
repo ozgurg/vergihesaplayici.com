@@ -75,7 +75,7 @@ export const calculatorPageOgImage = async (page: CalculatorPage): Promise<Respo
             }
 
             .title {
-                font-family: "${fonts.interLatin700Normal.name}";
+                font-family: "${fonts.bold.name}";
                 text-wrap: balance;
                 margin-top: 24px;
                 font-size: 56px;

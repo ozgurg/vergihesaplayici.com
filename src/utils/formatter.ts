@@ -14,15 +14,16 @@ export const _UNIT_TEST_ONLY_clearMoneyFormattersCache = (): void => {
 };
 
 export const formatMoney = (price: number, currency: string): string => {
-    if (!moneyFormattersCache.has(currency)) {
-        moneyFormattersCache.set(currency, new Intl.NumberFormat(NUMBER_FORMATTER_LOCALE, {
+    let formatter = moneyFormattersCache.get(currency);
+    if (!formatter) {
+        formatter = new Intl.NumberFormat(NUMBER_FORMATTER_LOCALE, {
             style: "currency",
             currency,
             minimumFractionDigits: 2
-        }));
+        });
+        moneyFormattersCache.set(currency, formatter);
     }
-    // oxlint-disable-next-line typescript/no-non-null-assertion
-    return moneyFormattersCache.get(currency)!.format(price);
+    return formatter.format(price);
 };
 
 

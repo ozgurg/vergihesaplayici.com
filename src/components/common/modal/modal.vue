@@ -1,14 +1,11 @@
 <template>
     <dialog
         ref="dialogEl"
-        :aria-hidden="modelValue ? 'false' : 'true'"
-        :aria-modal="modelValue ? 'true' : undefined"
+        closedby="any"
         @click="closeOnBackdropClick($event)"
         @close="close()"
-        class="modal"
-        role="dialog"
-        tabindex="-1">
-        <div class="modal-content">
+        class="modal">
+        <div class="inner">
             <slot name="default" />
         </div>
     </dialog>
@@ -42,11 +39,7 @@ const close = (): void => {
     modelValue.value = false;
 };
 
-watch(modelValue, _toggle);
-
-// Calling `_toggle` with an immediate watcher works functionally,
-// but I can't manage to test whether `_toggle` is called when the component is mounted.
-onMounted(_toggle);
+watchEffect(_toggle, { flush: "post" });
 </script>
 
 <style lang="scss" scoped>
@@ -88,7 +81,7 @@ $_MAX_MODAL_HEADER_COUNT: 2;
         opacity: 0;
         padding-block: var(--vh-spacer)
     }
-    &-content {
+    .inner {
         position: relative;
         display: flex;
         overflow: hidden;

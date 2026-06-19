@@ -4,19 +4,22 @@
             <svg
                 :aria-label="props.title"
                 viewBox="0 0 200 200">
-                <template v-for="(_item, _index) in chartData" :key="_index">
-                    <path
-                        :data-index="_index"
-                        :d="_item.pathData"
-                        :style="hslColorToCssVariables(_item.color.hsl)"
+                <template v-for="(_item, _index) in chartData" :key="_item.label">
+                    <g
                         role="button"
                         tabindex="0"
                         :aria-label="`Vergi detayını görüntüle: ${_item.label} (${_item.percentage}%)`"
                         @click="handlePathClick(_item)"
-                        @keydown.space.enter.prevent.stop="handlePathClick(_item)"
-                        @mouseenter="handlePathHoverStart(_item, $event)"
-                        @mouseleave="handlePathHoverEnd"
-                        @mousemove="handleMouseMove" />
+                        @keydown.space.enter.prevent.stop="handlePathClick(_item)">
+                        <title>{{ _item.label }} ({{ _item.percentage }}%)</title>
+                        <path
+                            :data-index="_index"
+                            :d="_item.pathData"
+                            :style="hslColorToCssVariables(_item.color.hsl)"
+                            @mouseenter="handlePathHoverStart(_item, $event)"
+                            @mouseleave="handlePathHoverEnd"
+                            @mousemove="handleMouseMove" />
+                    </g>
                 </template>
             </svg>
         </div>
@@ -129,6 +132,9 @@ const isDetailModalOpened = ref<boolean>(false);
 const total = computed<number>(() => props.items.reduce((sum, item) => sum + item.value, 0));
 
 const chartData = computed<ChartDataItem[]>(() => {
+    if (total.value === 0) {
+        return [];
+    }
     let currentAngle = 0;
     const centerX = 100;
     const centerY = 100;
@@ -141,8 +147,7 @@ const chartData = computed<ChartDataItem[]>(() => {
     const scale = 360 / totalAdjusted;
 
     return props.items.map((item, i) => {
-        // oxlint-disable-next-line typescript/no-non-null-assertion
-        const angle = adjustedAngles[i]! * scale;
+        const angle = (adjustedAngles[i] as number) * scale;
         const startAngle = currentAngle;
         const endAngle = currentAngle + angle;
         const pathData = _createArcPath({ centerX, centerY, radius, startAngle, endAngle });
@@ -198,7 +203,12 @@ const hslColorToCssVariables = (hsl: HSLColor) => ({
     "--color-l": `${hsl.l}%`
 });
 
+const isHover = typeof window !== "undefined" && window.matchMedia?.("(hover: hover)").matches;
+
 const handlePathHoverStart = (item: ChartDataItem, event: MouseEvent) => {
+    if (!isHover) {
+        return;
+    }
     activeChartDataItem.value = item;
     tooltip.value = {
         isVisible: true,
@@ -208,6 +218,9 @@ const handlePathHoverStart = (item: ChartDataItem, event: MouseEvent) => {
 };
 
 const handlePathHoverEnd = (): void => {
+    if (!isHover) {
+        return;
+    }
     tooltip.value.isVisible = false;
 };
 
@@ -273,9 +286,9 @@ $_MAX_CHART_ITEM_COUNT: 10;
     aspect-ratio: 1/1;
     display: inline-block;
     vertical-align: middle;
-    &:has(path:focus-visible) {
+    &:has(g:focus-visible) {
         @include vh-focus-appearance;
-        path:not(:focus-visible) {
+        g:not(:focus-visible) path {
             filter: grayscale(1)
         }
     }
@@ -308,6 +321,8 @@ $_MAX_CHART_ITEM_COUNT: 10;
                     opacity: .5
                 }
             }
+        }
+        g {
             &:focus-visible:not(:hover) {
                 filter: grayscale(0);
                 @include vh-clear-focus-appearance

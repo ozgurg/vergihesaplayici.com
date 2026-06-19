@@ -1,25 +1,27 @@
 ---
-import type { Preset, Brand } from "@/domains/konsol-vergisi-hesaplayici/types.js";
+import type { Preset, Brand } from "@/domains/konsol-vergisi/types.js";
 import AppLayout from "@/layouts/app-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
 import Container from "@/components/common/container.vue";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
 import Heading1 from "@/components/common/heading-1.vue";
-import KonsolVergisiHesaplayiciPreset
-    from "@/domains/konsol-vergisi-hesaplayici/components/konsol-vergisi-hesaplayici-preset.vue";
+import KonsolVergisiPreset
+    from "@/domains/konsol-vergisi/components/konsol-vergisi-preset.vue";
 import Heading2 from "@/components/common/heading-2.vue";
 import CalculatorPresetCarousel from "@/components/calculator-preset-carousel.astro";
+import { Image } from "astro:assets";
 
-import { getPresetsForAllBrands, getBrandById } from "@/domains/konsol-vergisi-hesaplayici/db.js";
+import { getPresetsForAllBrands, getBrandById } from "@/domains/konsol-vergisi/db.js";
 import {
-    KonsolVergisiHesaplayiciPageDef,
-    KonsolVergisiHesaplayiciPresetSlugPageDef
-} from "@/domains/konsol-vergisi-hesaplayici/page-def.js";
+    KonsolVergisiPageDef,
+    KonsolVergisiPresetSlugPageDef
+} from "@/domains/konsol-vergisi/page-def.js";
 import {
     mapPresetsForCalculatorPresetCarouselComponent
-} from "@/domains/konsol-vergisi-hesaplayici/utils/map-presets-for-calculator-preset-carousel-component.js";
-import { calculateResults } from "@/domains/konsol-vergisi-hesaplayici/utils/calculate-results.js";
-import { DEFAULT_PRESET_FORM } from "@/domains/konsol-vergisi-hesaplayici/config.js";
+} from "@/domains/konsol-vergisi/utils/map-presets-for-calculator-preset-carousel-component.js";
+import { calculateResults } from "@/domains/konsol-vergisi/utils/calculate-results.js";
+import { DEFAULT_PRESET_FORM } from "@/domains/konsol-vergisi/config.js";
+import { getThumbByFileName } from "@/utils/thumb-loader.js";
 
 export const getStaticPaths = (): object => {
     return getPresetsForAllBrands().map(_preset => ({
@@ -39,8 +41,8 @@ type Props = {
 };
 const { preset, brand } = Astro.props;
 
-const konsolVergisiHesaplayiciPage = KonsolVergisiHesaplayiciPageDef();
-const konsolVergisiHesaplayiciPresetSlugPage = KonsolVergisiHesaplayiciPresetSlugPageDef({ preset, brand });
+const konsolVergisiPage = KonsolVergisiPageDef();
+const konsolVergisiPresetSlugPage = KonsolVergisiPresetSlugPageDef({ preset, brand });
 
 const EXCHANGE_RATES = getExchangeRates();
 const presets = getPresetsForAllBrands();
@@ -50,8 +52,10 @@ const presetsForCalculatorPresetCarousel = mapPresetsForCalculatorPresetCarousel
 
 const calculateServerSide = () => {
     const optionIndex = 0;
-    // oxlint-disable-next-line typescript/no-non-null-assertion
-    const option = preset.options[optionIndex]!;
+    const option = preset.options[optionIndex];
+    if (!option) {
+        throw new Error("Preset option not found");
+    }
 
     const form = {
         ...DEFAULT_PRESET_FORM,
@@ -78,24 +82,49 @@ const calculateServerSide = () => {
 };
 
 const initial = calculateServerSide();
+const thumb = getThumbByFileName(preset.thumb);
+
+const presetHeroStyle = {
+    "--color-h": `${thumb.color.hsl.h}deg`,
+    "--color-s": `${thumb.color.hsl.s}%`,
+    "--color-l": `${thumb.color.hsl.l}%`
+};
 ---
 
-<AppLayout page={konsolVergisiHesaplayiciPresetSlugPage}>
+<AppLayout page={konsolVergisiPresetSlugPage}>
     <PageHeader>
         <Container>
             <Breadcrumbs
-                items={konsolVergisiHesaplayiciPresetSlugPage.breadcrumbs}
+                items={konsolVergisiPresetSlugPage.breadcrumbs}
                 client:load />
-            <Heading1>
-                {preset.pageTitle}
-            </Heading1>
         </Container>
     </PageHeader>
 
-    <KonsolVergisiHesaplayiciPreset
+    <header
+        style={presetHeroStyle}
+        class="preset-hero">
+        <Container>
+            <Image
+                src={thumb.metadata}
+                alt={`${brand.title} ${preset.title}`}
+                loading="eager"
+                height="112"
+                decoding="async"
+                aria-hidden="true"
+                draggable="false"
+                class="preset-hero__thumb" />
+            <div class="preset-hero__content">
+                <Heading1>
+                    {preset.pageTitle}
+                </Heading1>
+            </div>
+        </Container>
+    </header>
+
+    <KonsolVergisiPreset
         EXCHANGE_RATES={EXCHANGE_RATES}
-        calculatorPage={konsolVergisiHesaplayiciPage}
-        presetPage={konsolVergisiHesaplayiciPresetSlugPage}
+        calculatorPage={konsolVergisiPage}
+        presetPage={konsolVergisiPresetSlugPage}
         brand={brand}
         preset={preset}
         initial={initial}
@@ -119,3 +148,38 @@ const initial = calculateServerSide();
         <div class="ta-ad-last" ta-ad-container=""></div>
     </Container>
 </AppLayout>
+
+<style lang="scss" is:global>
+    .preset-hero {
+        --_color-h: var(--color-h);
+        --_color-s: var(--color-s);
+        --_color-l: var(--color-l);
+        --_color-hsl: var(--_color-h), var(--_color-s), var(--_color-l);
+        margin-block-end: calc(var(--vh-spacer) * 2);
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: calc(var(--vh-spacer) * 1.5);
+            @include vh-media-breakpoint-up(md) {
+                flex-direction: row;
+                gap: calc(var(--vh-spacer) * 2)
+            }
+        }
+        &__thumb {
+            flex-shrink: 0;
+            object-fit: contain;
+            inline-size: auto;
+            block-size: calc(var(--vh-spacer) * 7);
+            max-inline-size: calc(var(--vh-spacer) * 7)
+        }
+        &__content {
+            .heading-1 {
+                padding-block-end: 0
+            }
+        }
+        .heading-1 {
+            color: hsl(var(--_color-h), var(--_color-s), 92%)
+        }
+    }
+</style>

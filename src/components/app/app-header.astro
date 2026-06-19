@@ -145,7 +145,6 @@ const nav = getFeaturedCalculatorPages();
             z-index: var(--app-header-zindex);
             inset-block-start: env(safe-area-inset-top, 0);
             inline-size: 100%;
-            background: hsla(var(--vh-clr-primary-hsl), .04);
             @include blur;
             block-size: var(--app-header-up-md-collapsed-block-size);
             @supports (animation-timeline: scroll()) {
@@ -171,13 +170,30 @@ const nav = getFeaturedCalculatorPages();
                 flex-flow: row nowrap;
                 align-items: center;
                 justify-content: space-between;
-                @supports (animation-timeline: scroll()) {
-                    animation: app-header-container-border both;
-                    animation-timeline: scroll();
-                    animation-range: var(--app-header-up-md-collapsed-block-size) var(--app-header-up-md-collapsed-block-size);
-                    @keyframes app-header-container-border {
-                        to {
-                            @include border
+                &::after {
+                    --_width: var(--width, var(--container-inline-size));
+                    position: absolute;
+                    opacity: 0;
+                    inset-inline-start: 50%;
+                    inset-block-end: 0;
+                    transform: translateX(-50%);
+                    inline-size: calc(var(--_width) + (var(--container-padding-inline) * 2));
+                    block-size: var(--vh-border-inline-size);
+                    content: "";
+                    background: hsla(var(--vh-clr-border-hsl), var(--vh-clr-border-alpha));
+                    @supports (animation-timeline: scroll()) {
+                        animation: app-header-container-border both;
+                        animation-timeline: scroll();
+                        animation-range: var(--app-header-up-md-collapsed-block-size) var(--app-header-up-md-collapsed-block-size);
+                        @keyframes app-header-container-border {
+                            to {
+                                opacity: 1
+                            }
+                        }
+                    }
+                    @media(min-width: $_calculator-box-width-breakpoint) {
+                        html:has(.calculator[aria-expanded="true"]) & {
+                            --width: #{$_calculator-box-width-expanded}
                         }
                     }
                 }

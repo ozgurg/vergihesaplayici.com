@@ -15,7 +15,7 @@ export const AnaSayfaPageDef = (): Page => {
         breadcrumbs,
         head: {
             title: "Vergi Hesaplayıcı",
-            description: "vergihesaplayici.com, Telefon Vergisi, Konsol Vergisi ve KDV gibi vergi hesaplayıcıları barındıran bir vergi hesaplayıcıdır.",
+            description: "Türkiye'nin güncel vergi hesaplama platformu. Telefon, oyun konsolu, araba ÖTV, KDV ve gümrük vergilerini en güncel oranlarla kolayca hesaplayın.",
             canonicalUrl: url,
             ogImageUrl: null,
             schema: {

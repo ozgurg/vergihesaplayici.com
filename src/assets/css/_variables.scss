@@ -1,6 +1,6 @@
 // Font Family
-$ff-primary: "Inter Variable", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$ff-monospace: "Roboto Mono Variable", "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", monospace;
+$ff-primary: "Google Sans Variable", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$ff-monospace: "Google Sans Code Variable", "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", monospace;
 
 
 // Font Size
@@ -85,3 +85,6 @@ $_container-breakpoints: (
         breakpoint: 880px
     )
 );
+
+$_calculator-box-width-expanded: 1112px;
+$_calculator-box-width-breakpoint: $_calculator-box-width-expanded + 20px;

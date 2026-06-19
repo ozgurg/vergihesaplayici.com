@@ -44,7 +44,7 @@ const props = defineProps<Props>();
 .calculator-card-item {
     --_h: var(--h, var(--vh-clr-primary-h));
     --_s: var(--s, var(--vh-clr-primary-s));
-    --_l: var(--s, var(--vh-clr-primary-l));
+    --_l: var(--l, var(--vh-clr-primary-l));
     --_hsl: var(--_h), var(--_s), var(--_l);
     --_color: hsla(var(--_hsl), .12);
     position: relative;

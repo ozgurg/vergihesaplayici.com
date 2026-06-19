@@ -4,130 +4,93 @@ import type {
     Prices,
     TaxFees,
     TaxRates,
+    TaxStepId,
     VehicleEngineVolume,
     VehicleType
 } from "@/domains/arac-vergisi/types.js";
+import type { TaxStep } from "@/utils/tax-calculator.js";
 
-type OtvRate = {
-    maxBasePrice: number;
-    percent: number;
+type OtvConfig = {
+    thresholds: number[];
+    rates: number[];
 };
 
-type OtvRates = {
-    [vehicleType in VehicleType]: { [engineVolume in VehicleEngineVolume & `${vehicleType}.${string}`]?: OtvRate[] } | OtvRate;
+type OtvConfigs = {
+    [vehicleType in VehicleType]: { [engineVolume in VehicleEngineVolume & `${vehicleType}.${string}`]?: OtvConfig } | OtvConfig;
 };
 
-// Source: https://www.resmigazete.gov.tr/eskiler/2025/07/20250724-5.pdf
-// Source: https://www.mevzuat.gov.tr/mevzuatmetin/1.5.4760.pdf
-// Source: https://www.youtube.com/watch?v=qRaNnAdVnMc
-const OTV_RATES: OtvRates = {
+const OTV_CONFIGS: OtvConfigs = {
     "automobile": {
-        "automobile.0-1400": [
-            { maxBasePrice: 650_000, percent: 70 },
-            { maxBasePrice: 900_000, percent: 75 },
-            { maxBasePrice: 1_100_000, percent: 80 },
-            { maxBasePrice: Infinity, percent: 90 }
-        ],
-        "automobile.1401-1600": [
-            { maxBasePrice: 850_000, percent: 75 },
-            { maxBasePrice: 1_100_000, percent: 80 },
-            { maxBasePrice: 1_650_000, percent: 90 },
-            { maxBasePrice: Infinity, percent: 100 }
-        ],
-        "automobile.1601-2000": [
-            { maxBasePrice: 1_650_000, percent: 150 },
-            { maxBasePrice: Infinity, percent: 170 }
-        ],
-        "automobile.2001-up": [
-            { maxBasePrice: Infinity, percent: 220 }
-        ]
+        "automobile.0-1400": {
+            thresholds: [650_000, 900_000, 1_100_000],
+            rates: [70, 75, 80, 90]
+        },
+        "automobile.1401-1600": {
+            thresholds: [850_000, 1_100_000, 1_650_000],
+            rates: [75, 80, 90, 100]
+        },
+        "automobile.1601-2000": {
+            thresholds: [1_650_000],
+            rates: [150, 170]
+        },
+        "automobile.2001-up": {
+            thresholds: [],
+            rates: [220]
+        }
     },
 
     "electric-automobile": {
-        "electric-automobile.0-160": [
-            { maxBasePrice: 1_650_000, percent: 25 },
-            { maxBasePrice: Infinity, percent: 55 }
-        ],
-        "electric-automobile.161-up": [
-            { maxBasePrice: 1_650_000, percent: 65 },
-            { maxBasePrice: Infinity, percent: 75 }
-        ]
+        "electric-automobile.0-160": {
+            thresholds: [1_650_000],
+            rates: [25, 55]
+        },
+        "electric-automobile.161-up": {
+            thresholds: [1_650_000],
+            rates: [65, 75]
+        }
     },
 
     "hybrid-automobile": {
-        "hybrid-automobile.50-up.0-1800": [
-            { maxBasePrice: 1_250_000, percent: 70 },
-            { maxBasePrice: Infinity, percent: 80 }
-        ],
-        "hybrid-automobile.100-up.0-2500": [
-            { maxBasePrice: 1_650_000, percent: 150 },
-            { maxBasePrice: Infinity, percent: 170 }
-        ],
-        "hybrid-automobile.other": [
-            { maxBasePrice: Infinity, percent: 220 }
-        ]
+        "hybrid-automobile.50-up.0-1800": {
+            thresholds: [1_250_000],
+            rates: [70, 80]
+        },
+        "hybrid-automobile.100-up.0-2500": {
+            thresholds: [1_650_000],
+            rates: [150, 170]
+        },
+        "hybrid-automobile.other": {
+            thresholds: [],
+            rates: [220]
+        }
     },
 
     "motorcycle": {
-        "motorcycle.0-250": [
-            { maxBasePrice: Infinity, percent: 8 }
-        ],
-        "motorcycle.251-up": [
-            { maxBasePrice: Infinity, percent: 37 }
-        ]
+        "motorcycle.0-250": {
+            thresholds: [],
+            rates: [8]
+        },
+        "motorcycle.251-up": {
+            thresholds: [],
+            rates: [37]
+        }
     },
 
-    "bus": {
-        maxBasePrice: Infinity, percent: 1
-    },
-
-    "midibus": {
-        maxBasePrice: Infinity, percent: 4
-    },
-
-    "minibus": {
-        maxBasePrice: Infinity, percent: 9
-    },
-
-    "helicopter": {
-        maxBasePrice: Infinity, percent: .5
-    },
-    "plane": {
-        maxBasePrice: Infinity, percent: .5
-    },
-
-    "boat": {
-        maxBasePrice: Infinity, percent: 8
-    },
-    "yacht": {
-        maxBasePrice: Infinity, percent: 8
-    }
+    "bus": { thresholds: [], rates: [1] },
+    "midibus": { thresholds: [], rates: [4] },
+    "minibus": { thresholds: [], rates: [9] },
+    "helicopter": { thresholds: [], rates: [0.5] },
+    "plane": { thresholds: [], rates: [0.5] },
+    "boat": { thresholds: [], rates: [8] },
+    "yacht": { thresholds: [], rates: [8] }
 };
 
+/** @beta */
 export class Calculator {
-    private taxFees: TaxFees = {
-        total: 0,
-        trt: 0,
-        specialConsumptionTax: 0,
-        valueAddedTax: 0
-    };
-
-    private taxRates: TaxRates = {
-        total: 0,
-        trt: 0,
-        specialConsumptionTax: 0,
-        valueAddedTax: 0
-    };
-
-    private readonly prices: Prices = {
-        taxFree: 0,
-        taxAdded: 0
-    };
-
-    private price: number;
-    private vehicleType: VehicleType;
-    private vehicleEngineVolume: VehicleEngineVolume | null = null;
-    private readonly calculateFromTaxAddedPrice: boolean;
+    private readonly price: number;
+    private readonly vehicleType: VehicleType;
+    private readonly vehicleEngineVolume: VehicleEngineVolume | null = null;
+    private readonly mode: Mode;
 
     public constructor(
         params: {
@@ -142,97 +105,146 @@ export class Calculator {
         this.price = params.price;
         this.vehicleType = params.vehicleType;
         this.vehicleEngineVolume = params.vehicleEngineVolume;
-        this.calculateFromTaxAddedPrice = options.mode === "tax-added-to-tax-free";
-
-        if (this.calculateFromTaxAddedPrice) {
-            this.prices.taxAdded = params.price;
-        } else {
-            this.prices.taxFree = params.price;
-        }
+        this.mode = options.mode;
     }
 
     public calculate(): CalculationResults {
-        this.calculateTax_trt();
-        this.calculateTax_specialConsumptionTax();
-        this.calculateTax_valueAddedTax();
+        const taxSteps = this.buildTaxSteps();
+        const taxCalculator = new TaxCalculator<TaxStepId>({
+            price: this.price,
+            mode: this.mode,
+            taxSteps
+        });
 
+        const calculation = taxCalculator.calculate();
 
-        if (this.calculateFromTaxAddedPrice) {
-            this.prices.taxFree = this.price;
-        } else {
-            this.prices.taxAdded = this.price;
-        }
+        const trtStep = calculation.steps["trt"];
+        const otvStep = calculation.steps["specialConsumptionTax"];
+        const kdvStep = calculation.steps["valueAddedTax"];
 
-        this.taxFees.total = this.calculateTotalTaxFee();
-        this.taxRates.total = calculateTotalTaxRate(this.taxFees.total, this.prices.taxFree);
+        const taxFees: TaxFees = {
+            total: calculation.totalTax,
+            trt: trtStep.taxAmount,
+            specialConsumptionTax: otvStep.taxAmount,
+            valueAddedTax: kdvStep.taxAmount
+        };
+
+        const taxRates: TaxRates = {
+            total: calculation.totalTaxRate,
+            trt: trtStep.rate,
+            specialConsumptionTax: otvStep.rate,
+            valueAddedTax: kdvStep.rate
+        };
+
+        const prices: Prices = {
+            taxFree: calculation.taxFreePrice,
+            taxAdded: calculation.taxAddedPrice
+        };
 
         return normalizeCalculatorResults({
-            taxFees: this.taxFees,
-            taxRates: this.taxRates,
-            prices: this.prices
+            taxFees,
+            taxRates,
+            prices,
+            steps: calculation.steps
         });
     }
 
-    private calculatePrice(price: number): void {
-        if (this.calculateFromTaxAddedPrice) {
-            this.price -= price;
-        } else {
-            this.price += price;
-        }
-    }
+    private buildTaxSteps(): TaxStep<TaxStepId>[] {
+        const TRT_RATE = .8;
+        const KDV_RATE = 20;
 
-    private calculateTax(price: number, rate: number): number {
-        return this.calculateFromTaxAddedPrice ?
-            calculateTaxFromTaxAddedPrice(price, rate) :
-            calculateTaxFromTaxFreePrice(price, rate);
-    }
+        // TRT Bandrolü
+        const trt: TaxStep<"trt"> = {
+            id: "trt",
+            name: "TRT Bandrolü",
+            baseMode: "base-amount",
+            rate: TRT_RATE,
+            type: "percentage"
+        };
 
-    private calculateTotalTaxFee(): number {
-        return this.taxFees.trt +
-            this.taxFees.specialConsumptionTax +
-            this.taxFees.valueAddedTax;
-    }
+        // ÖTV
+        const otv_config = this.getOtvConfig();
 
-    private getOtvRate(): number | void {
-        const rateData = OTV_RATES[this.vehicleType];
-
-        // OtvRate
-        if ("percent" in rateData) {
-            return rateData.percent;
-        }
-
-        // OtvRate[]
-        if (this.vehicleEngineVolume !== null && this.vehicleEngineVolume in rateData) {
-            // oxlint-disable-next-line typescript/no-explicit-any
-            const rates = (rateData as any)[this.vehicleEngineVolume];
-            if (rates && Array.isArray(rates)) {
-                for (const _rate of rates) {
-                    if (this.price <= _rate.maxBasePrice) {
-                        return _rate.percent;
+        const otv_rate = (amount: number): number => {
+            for (let i = 0; i < otv_config.thresholds.length; i++) {
+                const threshold = otv_config.thresholds[i];
+                if (threshold !== undefined && amount <= threshold) {
+                    const rate = otv_config.rates[i];
+                    if (rate !== undefined) {
+                        return rate;
                     }
                 }
             }
+            const lastRate = otv_config.rates.at(-1);
+            if (lastRate !== undefined) {
+                return lastRate;
+            }
+            throw new Error("Invalid ÖTV configuration");
+        };
+
+        const otv_reverseRateResolver = (finalPrice: number): number => {
+            const beforeMultiplier = 1 + TRT_RATE / 100;
+            const afterMultiplier = 1 + KDV_RATE / 100;
+
+            for (let i = 0; i < otv_config.thresholds.length; i++) {
+                const matrahThreshold = otv_config.thresholds[i];
+                const rate = otv_config.rates[i];
+                if (matrahThreshold !== undefined && rate !== undefined) {
+                    const finalPriceThreshold = matrahThreshold * beforeMultiplier * (1 + rate / 100) * afterMultiplier;
+                    if (finalPrice <= finalPriceThreshold) {
+                        return rate;
+                    }
+                }
+            }
+            const lastRate = otv_config.rates.at(-1);
+            if (lastRate !== undefined) {
+                return lastRate;
+            }
+            throw new Error("Invalid ÖTV configuration");
+        };
+
+        const otv: TaxStep<"specialConsumptionTax"> = {
+            id: "specialConsumptionTax",
+            name: "Özel Tüketim Vergisi (ÖTV)",
+            baseMode: "previous-amount",
+            rateBaseMode: "tax-free-amount",
+            rate: otv_rate,
+            reverseRateResolver: otv_reverseRateResolver,
+            type: "percentage"
+        };
+
+        // KDV
+        const valueAddedTax: TaxStep<"valueAddedTax"> = {
+            id: "valueAddedTax",
+            name: "Katma Değer Vergisi (KDV)",
+            baseMode: "previous-amount",
+            rate: KDV_RATE,
+            type: "percentage"
+        };
+
+        const steps = {
+            trt,
+            specialConsumptionTax: otv,
+            valueAddedTax
+        } satisfies { [key in TaxStepId]: TaxStep<TaxStepId> };
+        return [steps.trt, steps.specialConsumptionTax, steps.valueAddedTax];
+    }
+
+    private getOtvConfig(): OtvConfig {
+        const configData = OTV_CONFIGS[this.vehicleType];
+
+        if ("rates" in configData) {
+            return configData as OtvConfig;
         }
-    }
 
-    // "TRT bandrolü" | TRY | "percent" | "base-amount"
-    private calculateTax_trt(): void {
-        this.taxRates.trt = .8; // Eight per thousand
-        this.taxFees.trt = this.calculateTax(this.price, this.taxRates.trt);
-        this.calculatePrice(this.taxFees.trt);
-    }
+        if (typeof configData === "object" && this.vehicleEngineVolume !== null) {
+            const engineConfig = (configData as { [key: string]: OtvConfig })[this.vehicleEngineVolume];
+            if (!engineConfig) {
+                throw new Error(`No ÖTV configuration found for ${this.vehicleType} with engine volume ${this.vehicleEngineVolume}`);
+            }
+            return engineConfig;
+        }
 
-    // "Özel Tüketim Vergisi (ÖTV)" | TRY | "percent" | "previous-amount"
-    private calculateTax_specialConsumptionTax(): void {
-        this.taxRates.specialConsumptionTax = this.getOtvRate() ?? 0;
-        this.taxFees.specialConsumptionTax = this.calculateTax(this.price, this.taxRates.specialConsumptionTax);
-        this.calculatePrice(this.taxFees.specialConsumptionTax);
-    }
-
-    // "Katma Değer Vergisi (KDV)" | TRY | "percent" | "previous-amount"
-    private calculateTax_valueAddedTax(): void {
-        this.taxRates.valueAddedTax = 20;
-        this.taxFees.valueAddedTax = this.calculateTax(this.price, this.taxRates.valueAddedTax);
-        this.calculatePrice(this.taxFees.valueAddedTax);
+        throw new Error(`Could not determine ÖTV configuration for ${this.vehicleType}`);
     }
 }

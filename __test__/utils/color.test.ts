@@ -20,6 +20,17 @@ describe("utils/color.js", () => {
         it("convert string to hue", () => {
             expect(stringToHue("özgür")).toBe(117);
         });
+
+        it("handles `undefined` `codePointAt`", () => {
+            const mockString = {
+                *[Symbol.iterator]() {
+                    yield {
+                        codePointAt: () => {}
+                    };
+                }
+            };
+            expect(stringToHue(mockString as any)).toBe(0);
+        });
     });
 
     describe("stringToHSL", () => {

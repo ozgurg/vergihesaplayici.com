@@ -24,7 +24,7 @@ describe("components/common/form/form-control.vue", () => {
         const wrapper = mount(FormControl, {
             props: { scale: "small" }
         });
-        expect(wrapper.classes()).toContain("form-control-scale-small");
+        expect(wrapper.classes()).toContain("form-control--scale-small");
     });
 
     it("binds `v-model` correctly", async () => {

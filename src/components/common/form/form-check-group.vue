@@ -5,7 +5,7 @@
         :class="CLASSES"
         name="list-transition"
         tag="div"
-        role="radiogroup">
+        :role="props.type === 'radio' ? 'radiogroup' : (props.type === 'checkbox' ? 'group' : undefined)">
         <!--
         Using `<div v-for>` directly instead of `<template v-for>` inside
         `<transition-group>` to prevent Vue SSR hydration mismatches
@@ -15,7 +15,7 @@
         to the parent to prevent it from overriding the child's `transition delay`.
         -->
         <div
-            v-for="(_item, _index) in props.items" :key="_item.input.value"
+            v-for="(_item, _index) in props.items" :key="_item.input.value ?? _index"
             :style="{'transition-delay': getTransitionDelay(_index)}">
             <template v-if="props.items && props.type">
                 <form-check
@@ -87,8 +87,8 @@ const ANCHOR_NAME = `--form-check-group-checked-indicator-${useId()}`;
 const ARIA_LABELLEDBY = attrs["aria-labelledby"] || formGroupId;
 const CLASSES = [
     "form-check-group",
-    `form-check-group-scale-${props.scale}`,
-    props.type ? `form-check-group-type-${props.type}` : undefined
+    `form-check-group--scale-${props.scale}`,
+    props.type ? `form-check-group--type-${props.type}` : undefined
 ];
 
 // A `name` is required for multiple radios to work properly;
@@ -97,8 +97,8 @@ const NAME = props["name"] || `UNUSED-PLACEHOLDER-NAME-${useId()}`;
 
 // 🤮
 const getTransitionDelay = (index: number) => {
-    const itemCount = props.initialItemCount ?? props.items?.length ?? 0;
-    const startDelay = props.startDelay ?? 0;
+    const itemCount = props.initialItemCount || props.items?.length || 0;
+    const startDelay = props.startDelay || 0;
     const delay = index < itemCount
         ? startDelay + TRANSITION_DELAY_INCREMENT_IN_MS * index
         : TRANSITION_DELAY_INCREMENT_IN_MS * (index - (props.initialItemCount ?? 0));
@@ -135,7 +135,7 @@ $_scales: (
     @each $__scale, $__properties in $_scales {
         // If scales change more properties than `border-radius`,
         // we probably need to update with `vh-map-to-properties` and keep `vh-squircle`
-        &-scale-#{$__scale} {
+        &--scale-#{$__scale} {
             @supports (anchor-name: var(--_anchor-name)) {
                 &::before {
                     @include vh-squircle(map.get($__properties, "border-radius"))
@@ -161,7 +161,7 @@ $_scales: (
         // we double its error border width to match that of `<form-check />`
         box-shadow: 0 0 0 calc(1px * 2) var(--vh-clr-danger)
     }
-    &-type-radio {
+    &--type-radio {
         // Since the checked indicator depends on the anchor name,
         // I manage the checked state styling of its child `<form-check-group-item />` here
         @supports (anchor-name: var(--_anchor-name)) {

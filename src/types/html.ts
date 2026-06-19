@@ -39,5 +39,6 @@ export type { HTMLAttributes as HtmlAttrs_i } from "vue";
 export type { HTMLAttributes as HtmlAttrs_dl } from "vue";
 export type { HTMLAttributes as HtmlAttrs_legend } from "vue";
 
+export type { DetailsHTMLAttributes as HtmlAttrs_details } from "vue";
 export type { VideoHTMLAttributes as HtmlAttrs_video } from "vue";
 export type { DialogHTMLAttributes as HtmlAttrs_dialog } from "vue";

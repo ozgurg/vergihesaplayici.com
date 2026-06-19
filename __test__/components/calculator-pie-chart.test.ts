@@ -1,9 +1,25 @@
 import { mount } from "@vue/test-utils";
 import { nextTick } from "vue";
-import { describe, expect, it } from "vitest";
+import { beforeAll, describe, expect, it, vi } from "vitest";
 import Modal from "@/components/common/modal/modal.vue";
 import ModalCloseButton from "@/components/common/modal/modal-close-button.vue";
 import CalculatorPieChart from "@/components/calculator-pie-chart.vue";
+
+// The component guards hover handlers with `window.matchMedia("(hover: hover)")`.
+// `jsdom/happy-dom` doesn't implement matchMedia, so we mock it to report hover support.
+beforeAll(() => {
+    window.matchMedia = (query: string) => ({
+        matches: query === "(hover: hover)",
+        media: query,
+        onchange: null,
+        addListener: () => {},
+        removeListener: () => {},
+        addEventListener: () => {},
+        removeEventListener: () => {},
+        dispatchEvent: () => false
+    });
+});
+
 
 const TEST_ITEMS = [
     { label: "ÖTV", value: 600 },
@@ -41,13 +57,15 @@ describe("components/calculator-pie-chart.vue", () => {
         expect(svg.exists()).toBeTruthy();
         expect(svg.attributes("aria-label")).toBe("Vergi dağılımı");
 
-        const paths = svg.findAll("path");
-        expect(paths).toHaveLength(TEST_ITEMS.length);
+        const groups = svg.findAll("g");
+        expect(groups).toHaveLength(TEST_ITEMS.length);
 
-        for (const [_index, _path] of paths.entries()) {
-            expect(_path.attributes("role")).toBe("button");
-            expect(_path.attributes("tabindex")).toBe("0");
-            expect(_path.attributes("data-index")).toBe(String(_index));
+        for (const [_index, _group] of groups.entries()) {
+            expect(_group.attributes("role")).toBe("button");
+            expect(_group.attributes("tabindex")).toBe("0");
+            const path = _group.find("path");
+            expect(path.exists()).toBeTruthy();
+            expect(path.attributes("data-index")).toBe(String(_index));
         }
     });
 
@@ -66,15 +84,15 @@ describe("components/calculator-pie-chart.vue", () => {
         }
     });
 
-    it("sets accessible `aria-label`s on each `<path />` with label and percentage", () => {
+    it("sets accessible `aria-label`s on each `<g />` with label and percentage", () => {
         const wrapper = mountComponent();
 
-        const svgPaths = wrapper.findAll("svg > path");
+        const svgGroups = wrapper.findAll("svg > g");
 
         const totalPercentage = TEST_ITEMS.reduce((s, i) => s + i.value, 0);
-        for (const [_index, _path] of svgPaths.entries()) {
+        for (const [_index, _group] of svgGroups.entries()) {
             const percentage = Number((TEST_ITEMS[_index]!.value / totalPercentage * 100).toFixed(2));
-            const ariaLabel = _path.attributes("aria-label");
+            const ariaLabel = _group.attributes("aria-label");
             expect(ariaLabel).toContain(TEST_ITEMS[_index]!.label);
             expect(ariaLabel).toContain(`${percentage}%)`);
         }
@@ -83,7 +101,7 @@ describe("components/calculator-pie-chart.vue", () => {
     it("sets tooltip visible on hover and hides on `mouseleave`", async () => {
         const wrapper = mountComponent();
 
-        const firstPath = wrapper.find("svg > path");
+        const firstPath = wrapper.find("svg > g > path");
 
         await firstPath.trigger("mouseenter", { clientX: 10, clientY: 10 });
         const tooltip = wrapper.find(".tooltip");
@@ -98,7 +116,7 @@ describe("components/calculator-pie-chart.vue", () => {
     it("updates tooltip position on `mousemove` while visible", async () => {
         const wrapper = mountComponent();
 
-        const firstPath = wrapper.find("svg > path");
+        const firstPath = wrapper.find("svg > g > path");
 
         await firstPath.trigger("mouseenter", { clientX: 12, clientY: 34 });
         let tooltip = wrapper.find(".tooltip");
@@ -112,12 +130,29 @@ describe("components/calculator-pie-chart.vue", () => {
         expect(tooltip.attributes("style")).toContain("--y: 78px");
     });
 
+    it("does not update tooltip position on `mousemove` while hidden", async () => {
+        const wrapper = mountComponent();
+
+        const firstPath = wrapper.find("svg > g > path");
+
+        await firstPath.trigger("mouseenter", { clientX: 10, clientY: 10 });
+        await firstPath.trigger("mouseleave");
+
+        let tooltip = wrapper.find(".tooltip");
+        expect(tooltip.attributes("aria-hidden")).toBe("true");
+        const initialStyle = tooltip.attributes("style");
+
+        await firstPath.trigger("mousemove", { clientX: 50, clientY: 50 });
+        tooltip = wrapper.find(".tooltip");
+        expect(tooltip.attributes("style")).toBe(initialStyle);
+    });
+
     it("opens `<modal />` on click and shows selected item details", async () => {
         const wrapper = mountComponent();
 
-        const secondPath = wrapper.findAll("svg > path")[1];
+        const secondGroup = wrapper.findAll("svg > g")[1];
 
-        await secondPath!.trigger("click");
+        await secondGroup!.trigger("click");
 
         const modal = wrapper.findComponent(Modal as any);
         expect(modal.exists()).toBeTruthy();
@@ -127,13 +162,13 @@ describe("components/calculator-pie-chart.vue", () => {
     it("opens `<modal />` on keyboard interaction (Enter or Space)", async () => {
         const wrapper = mountComponent();
 
-        const svgPath = wrapper.find("svg > path");
+        const svgGroup = wrapper.find("svg > g");
 
-        await svgPath.trigger("keydown", { key: "Enter" });
+        await svgGroup.trigger("keydown", { key: "Enter" });
 
         let modal = wrapper.findComponent(Modal as any);
         if (!modal.exists()) {
-            await svgPath.trigger("keydown", { key: " ", code: "Space" });
+            await svgGroup.trigger("keydown", { key: " ", code: "Space" });
             modal = wrapper.findComponent(Modal as any);
         }
         expect(modal.exists()).toBeTruthy();
@@ -142,8 +177,8 @@ describe("components/calculator-pie-chart.vue", () => {
     it("closes `<modal />` when close button is clicked", async () => {
         const wrapper = mountComponent();
 
-        const firstPath = wrapper.find("svg > path");
-        await firstPath.trigger("click");
+        const firstGroup = wrapper.find("svg > g");
+        await firstGroup.trigger("click");
 
         let modal = wrapper.findComponent(Modal as any);
         expect(modal.exists()).toBeTruthy();
@@ -161,8 +196,8 @@ describe("components/calculator-pie-chart.vue", () => {
     it("syncs `v-model` when `<modal />` emits `update:modelValue`", async () => {
         const wrapper = mountComponent();
 
-        const firstPath = wrapper.find("svg > path");
-        await firstPath.trigger("click");
+        const firstGroup = wrapper.find("svg > g");
+        await firstGroup.trigger("click");
 
         let modal = wrapper.findComponent(Modal as any);
         expect(modal.exists()).toBeTruthy();
@@ -173,5 +208,49 @@ describe("components/calculator-pie-chart.vue", () => {
 
         modal = wrapper.findComponent(Modal as any);
         expect((modal as any).props("modelValue")).toBe(false);
+    });
+
+    it("handles total items value of `0`", () => {
+        const wrapper = mount(CalculatorPieChart, {
+            props: {
+                title: "Empty Chart",
+                items: []
+            }
+        });
+        expect(wrapper.findAll("svg > g")).toHaveLength(0);
+    });
+
+    it("handles non-hover environment", async () => {
+        vi.resetModules();
+        const originalMatchMedia = window.matchMedia;
+        window.matchMedia = () => ({
+            matches: false,
+            media: "",
+            onchange: null,
+            addListener: () => {},
+            removeListener: () => {},
+            addEventListener: () => {},
+            removeEventListener: () => {},
+            dispatchEvent: () => false
+        });
+
+        try {
+            const { default: CalculatorPieChartNonHover } = await import("@/components/calculator-pie-chart.vue");
+            const wrapper = mount(CalculatorPieChartNonHover, {
+                props: {
+                    title: "Vergi dağılımı",
+                    items: TEST_ITEMS
+                }
+            });
+            const firstPath = wrapper.find("svg > g > path");
+            await firstPath.trigger("mouseenter");
+            const tooltip = wrapper.find(".tooltip");
+            expect(tooltip.exists()).toBeFalsy();
+
+            await firstPath.trigger("mouseleave");
+        } finally {
+            window.matchMedia = originalMatchMedia;
+            vi.resetModules();
+        }
     });
 });

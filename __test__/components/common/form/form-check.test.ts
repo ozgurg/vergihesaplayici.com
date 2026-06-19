@@ -12,7 +12,7 @@ describe("components/common/form/form-check.vue", () => {
         const wrapper = mount(FormCheck, {
             props: { type: "radio", value: "check", scale: "small" }
         });
-        expect(wrapper.classes()).toContain("form-check-scale-small");
+        expect(wrapper.classes()).toContain("form-check--scale-small");
     });
 
     it("uses the generated ID for both the `for` attr and the `<input />`'s `id` attr", () => {
@@ -210,8 +210,8 @@ describe("components/common/form/form-check.vue", () => {
             props: { type: "checkbox", value: "check" }
         });
 
-        const checkedIcon = wrapper.find(".checked-icon");
-        const uncheckedIcon = wrapper.find(".unchecked-icon");
+        const checkedIcon = wrapper.find(".icon--checked");
+        const uncheckedIcon = wrapper.find(".icon--unchecked");
 
         expect(checkedIcon.exists()).toBeTruthy();
         expect(uncheckedIcon.exists()).toBeTruthy();
@@ -222,8 +222,8 @@ describe("components/common/form/form-check.vue", () => {
             props: { type: "radio", value: "check" }
         });
 
-        const checkedIcon = wrapper.find(".checked-icon");
-        const uncheckedIcon = wrapper.find(".unchecked-icon");
+        const checkedIcon = wrapper.find(".icon--checked");
+        const uncheckedIcon = wrapper.find(".icon--unchecked");
 
         expect(checkedIcon.exists()).toBeTruthy();
         expect(uncheckedIcon.exists()).toBeTruthy();

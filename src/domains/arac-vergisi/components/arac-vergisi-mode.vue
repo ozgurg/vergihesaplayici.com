@@ -20,9 +20,7 @@ const props = defineProps<Props>();
 const ITEMS: FormCheckProps<Mode>[] = [
     {
         title: "Vergili fiyattan vergisiz fiyatı hesapla",
-        description: "Geçici olarak kullanılamıyor",
         input: {
-            disabled: true,
             value: "tax-added-to-tax-free"
         }
     },

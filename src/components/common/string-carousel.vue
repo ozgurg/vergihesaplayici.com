@@ -2,20 +2,20 @@
     <component
         :is="props.tag"
         class="string-carousel">
-        <div class="string-carousel-container">
+        <div class="inner">
             <transition-group
                 name="list-transition"
                 tag="div"
                 inert=""
                 aria-hidden="true"
-                class="string-carousel-wrapper">
+                class="wrapper">
                 <template v-for="(_char, _index) in chars" :key="Math.random()">
                     <span :style="{'--index': _index}">
                         {{ _char === " " ? "\u00A0" : _char }}
                     </span>
                 </template>
             </transition-group>
-            <div class="string-carousel-text-overlay">
+            <div class="text-overlay">
                 {{ props.text }}
             </div>
         </div>
@@ -44,11 +44,13 @@ const chars = computed<string[]>(() => [...String(props.text)]);
     --_block-size: 1.125em;
     --_duration: var(--duration, var(--vh-duration-longer));
     display: inline-flex;
-    &-container {
+    .inner {
         position: relative;
         display: inline-flex
     }
-    &-wrapper {
+    .wrapper {
+        position: relative;
+        z-index: 1;
         line-height: var(--_block-size);
         display: inline-flex;
         overflow: hidden;
@@ -61,8 +63,9 @@ const chars = computed<string[]>(() => [...String(props.text)]);
             user-select: none // Explicitly disable selection
         }
     }
-    &-text-overlay {
+    .text-overlay {
         position: absolute;
+        z-index: 2;
         inset: 0;
         block-size: 100%;
         inline-size: 100%;

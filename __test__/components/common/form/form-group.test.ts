@@ -22,7 +22,7 @@ describe("components/common/form/form-group.vue", () => {
         expect(formLabel.text()).toBe(testLabel);
     });
 
-    it("renders `default` slot inside `.form-group-content`", () => {
+    it("renders `default` slot inside `.content`", () => {
         const defaultSlot = "<div>Default Slot Content</div>";
         const wrapper = mount(FormGroup, {
             slots: {
@@ -30,8 +30,8 @@ describe("components/common/form/form-group.vue", () => {
             }
         });
 
-        expect(wrapper.find(".form-group-content").exists()).toBeTruthy();
-        expect(wrapper.find(".form-group-content div").text()).toBe("Default Slot Content");
+        expect(wrapper.find(".content").exists()).toBeTruthy();
+        expect(wrapper.find(".content div").text()).toBe("Default Slot Content");
     });
 
     it("renders `label` slot when `label` is not passed", () => {

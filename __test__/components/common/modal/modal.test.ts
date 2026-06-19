@@ -113,12 +113,12 @@ describe("components/common/modal/modal.vue", () => {
         });
 
         const dialog = wrapper.find("dialog") as DOMWrapper<HTMLDialogElement>;
-        const content = dialog.find(".modal-content");
+        const inner = dialog.find(".inner");
 
         // @ts-expect-error: FIXME
         const closeOnBackdropClickSpy = vi.spyOn(wrapper.vm, "closeOnBackdropClick");
 
-        await content.trigger("click");
+        await inner.trigger("click");
 
         expect(closeOnBackdropClickSpy).toHaveBeenCalled();
         expect(wrapper.emitted("update:modelValue")).toBeFalsy();

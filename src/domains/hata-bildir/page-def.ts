@@ -20,7 +20,7 @@ export const HataBildirPageDef = (): Page => {
         breadcrumbs,
         head: {
             title: `${title} - Vergi Hesaplayıcı`,
-            description: "vergihesaplayici.com'daki hesaplayıcılarda tespit ettiğiniz hataları bildirerek düzeltilmesine katkı sağlayın.",
+            description: "Vergi Hesaplayıcı platformundaki araçlarda karşılaştığınız hataları veya eksiklikleri bildirerek hesaplama araçlarımızın geliştirilmesine destek olun.",
             canonicalUrl: url,
             ogImageUrl: null,
             schema: {

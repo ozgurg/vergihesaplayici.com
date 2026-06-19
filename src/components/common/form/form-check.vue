@@ -4,10 +4,10 @@
         :class="CLASSES">
         <svg-icon
             :icon="checkedIcon"
-            class="form-check-icon checked-icon" />
+            class="icon icon--checked" />
         <svg-icon
             :icon="uncheckedIcon"
-            class="form-check-icon unchecked-icon" />
+            class="icon icon--unchecked" />
         <input
             v-bind="props.input"
             :id="ID"
@@ -18,7 +18,7 @@
             :disabled="props.disabled"
             :checked="isChecked"
             @change="onChange($event)"
-            class="form-check-icon" />
+            class="icon" />
         <slot name="default" />
     </label>
 </template>
@@ -48,7 +48,7 @@ const modelValue = defineModel<HtmlAttrs_input["value"] | HtmlAttrs_input["value
 const ID = `form-check-${useId()}`;
 const CLASSES = [
     "form-check",
-    `form-check-scale-${props.scale}`
+    `form-check--scale-${props.scale}`
 ];
 
 const checkedIcon = {
@@ -142,7 +142,7 @@ $_scales: (
     cursor: pointer;
     transition: vh-transition(color background-color border-color transform, var(--vh-duration-short));
     @each $__scale, $__properties in $_scales {
-        &-scale-#{$__scale} {
+        &--scale-#{$__scale} {
             @include vh-map-to-properties($__properties)
         }
     }
@@ -155,20 +155,20 @@ $_scales: (
             opacity: 1
         }
     }
-    &-icon {
+    .icon {
         --size: var(--_icon-size) !important; // FIXME
         position: absolute;
         transition: vh-transition(opacity transform, var(--vh-duration-long), var(--vh-timing-spring));
         inset-inline-end: calc(var(--vh-spacer) * .5);
-        inset-block-start: calc(50% - (var(--size) / 2))
-    }
-    .unchecked-icon {
-        @include icon-shown-state;
-        opacity: .5
-    }
-    .checked-icon {
-        @include icon-hidden-state;
-        opacity: 1
+        inset-block-start: calc(50% - (var(--size) / 2));
+        &--unchecked {
+            @include icon-shown-state;
+            opacity: .5
+        }
+        &--checked {
+            @include icon-hidden-state;
+            opacity: 1
+        }
     }
     input {
         // I prefer not to move the input to the outer screen to hide it,
@@ -184,10 +184,10 @@ $_scales: (
     }
     &:has(input:checked) {
         color: var(--vh-clr-primary);
-        .unchecked-icon {
+        .icon--unchecked {
             @include icon-hidden-state
         }
-        .checked-icon {
+        .icon--checked {
             @include icon-shown-state
         }
     }

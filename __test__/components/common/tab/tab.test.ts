@@ -237,6 +237,23 @@ describe("components/common/tab/tab.vue", () => {
         expect(tab3.attributes("aria-selected")).toBe("false");
     });
 
+    it("does not navigate when a non-navigation key is pressed", async () => {
+        const {
+            wrapper,
+            tab1,
+            tab2,
+            tab3
+        } = createTabsWrapper("tab-1");
+
+        expect(tab1.attributes("aria-selected")).toBe("true");
+
+        await tab1.trigger("keydown", { key: "ArrowUp" });
+        expect(wrapper.vm.value).toBe("tab-1");
+        expect(tab1.attributes("aria-selected")).toBe("true");
+        expect(tab2.attributes("aria-selected")).toBe("false");
+        expect(tab3.attributes("aria-selected")).toBe("false");
+    });
+
     it("throws error when not used within `<tab-list />`", () => {
         expect(() => mount(Tab, {
             props: { value: "tab-1" }

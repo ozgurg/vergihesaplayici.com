@@ -10,9 +10,12 @@ describe("components/common/form/form-check-group.vue", () => {
     testAttrPassingToRoot(FormCheckGroup);
     testRootClass(FormCheckGroup, "form-check-group");
 
-    it("has the correct `role` attr", () => {
-        const wrapper = mount(FormCheckGroup);
-        expect(wrapper.attributes("role")).toBe("radiogroup");
+    it("has the correct dynamic `role` attr", () => {
+        const wrapperRadio = mount(FormCheckGroup, { props: { type: "radio" } });
+        expect(wrapperRadio.attributes("role")).toBe("radiogroup");
+
+        const wrapperCheckbox = mount(FormCheckGroup, { props: { type: "checkbox" } });
+        expect(wrapperCheckbox.attributes("role")).toBe("group");
     });
 
     it("applies `aria-labelledby` if provided", () => {
@@ -76,7 +79,7 @@ describe("components/common/form/form-check-group.vue", () => {
         const wrapper = mount(FormCheckGroup, {
             props: { scale: "small" }
         });
-        expect(wrapper.classes()).toContain("form-check-group-scale-small");
+        expect(wrapper.classes()).toContain("form-check-group--scale-small");
     });
 
     it("renders the given items as `<form-check />` components", () => {
@@ -180,8 +183,8 @@ describe("components/common/form/form-check-group.vue", () => {
             const item = testItem[_index]!;
             const svgIcons = _formCheck.findAllComponents(SvgIcon as any);
             const customIcon = svgIcons.find(icon =>
-                !icon.classes().includes("checked-icon") &&
-                !icon.classes().includes("unchecked-icon")
+                !icon.classes().includes("icon--checked") &&
+                !icon.classes().includes("icon--unchecked")
             );
 
             expect(customIcon).toBeTruthy();
@@ -216,8 +219,8 @@ describe("components/common/form/form-check-group.vue", () => {
         for (const _formCheck of formChecks) {
             const svgIcons = _formCheck.findAllComponents(SvgIcon as any);
             const customIcon = svgIcons.find(icon =>
-                !icon.classes().includes("checked-icon") &&
-                !icon.classes().includes("unchecked-icon")
+                !icon.classes().includes("icon--checked") &&
+                !icon.classes().includes("icon--unchecked")
             );
             expect(customIcon).toBeFalsy();
         }
@@ -423,5 +426,57 @@ describe("components/common/form/form-check-group.vue", () => {
         const formChecks = wrapper.findAllComponents(FormCheck as any);
         expect(formChecks).toHaveLength(1);
         expect(formChecks[0]!.find("b").text()).toBe("Item 1");
+    });
+
+    it("applies transition-delay based on `startDelay` and `initialItemCount`", () => {
+        const testItems = [
+            { title: "Item 1", input: { value: "item-1" } },
+            { title: "Item 2", input: { value: "item-2" } },
+            { title: "Item 3", input: { value: "item-3" } }
+        ];
+
+        const wrapper = mount(FormCheckGroup, {
+            props: {
+                items: testItems,
+                type: "radio",
+                startDelay: 100,
+                initialItemCount: 2
+            }
+        });
+
+        const children = wrapper.findAll(".form-check-group > div");
+        expect(children).toHaveLength(3);
+        expect(children[0]!.attributes("style")).toContain("transition-delay: 100ms");
+        expect(children[1]!.attributes("style")).toContain("transition-delay: 175ms");
+        expect(children[2]!.attributes("style")).toContain("transition-delay: 0ms");
+    });
+
+    it("uses `_index` as `key` when `item.input.value` is `undefined`", () => {
+        const testItems = [
+            {
+                title: "Item without value",
+                input: {}
+            }
+        ];
+        const wrapper = mount(FormCheckGroup, {
+            props: {
+                items: testItems,
+                type: "checkbox"
+            }
+        });
+        const child = wrapper.find(".form-check-group > div");
+        expect(child.exists()).toBeTruthy();
+    });
+
+    it("handles `undefined` items or `initialItemCount` in transition delay calculation", () => {
+        const wrapper = mount(FormCheckGroup, {
+            props: {
+                items: undefined,
+                initialItemCount: undefined
+            }
+        });
+        const vm = wrapper.vm as any;
+        expect(vm.getTransitionDelay(0)).toBe("0ms");
+        expect(vm.getTransitionDelay(5)).toBe("375ms");
     });
 });

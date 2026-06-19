@@ -13,7 +13,7 @@ describe("components/common/string-carousel.vue", () => {
             props: { text: testText }
         });
 
-        const charElements = wrapper.findAll(".string-carousel-wrapper > span");
+        const charElements = wrapper.findAll(".wrapper > span");
 
         expect(charElements).toHaveLength(testText.length);
 
@@ -29,7 +29,7 @@ describe("components/common/string-carousel.vue", () => {
             props: { text: testText }
         });
 
-        const spans = wrapper.findAll(".string-carousel-wrapper > span");
+        const spans = wrapper.findAll(".wrapper > span");
         expect(spans).toHaveLength(testText.length);
         expect(spans[7]!.html()).toContain("&nbsp;");
     });

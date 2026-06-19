@@ -3,15 +3,16 @@
         :is="tagName"
         :aria-busy="loading ? 'true' : undefined"
         :aria-disabled="props.disabled ? 'true' : undefined"
+        :tabindex="props.disabled ? '-1' : undefined"
         :class="CLASSES"
         :disabled="props.disabled ? '' : undefined"
-        :href="props.href?.href ?? undefined">
+        :href="props.disabled ? undefined : props.href?.toString()">
         <transition name="fade-scale-transition" mode="out-in">
             <template v-if="loading">
                 <spinner />
             </template>
             <template v-else>
-                <div class="form-button-content">
+                <div class="inner">
                     <slot name="default" />
                 </div>
             </template>
@@ -41,7 +42,7 @@ export type Props = {
     variant?: Variant;
     color?: Color;
     scale?: Scale;
-    href?: URL;
+    href?: URL | string;
     loading?: boolean;
     disabled?: boolean;
 } & /* @vue-ignore */ Partial<HtmlAttrs_a | HtmlAttrs_button>;
@@ -56,9 +57,9 @@ const tagName = props.href ? "a" : "button";
 
 const CLASSES = [
     "form-button",
-    `form-button-variant-${props.variant}`,
-    `form-button-color-${props.color}`,
-    `form-button-scale-${props.scale}`
+    `form-button--variant-${props.variant}`,
+    `form-button--color-${props.color}`,
+    `form-button--scale-${props.scale}`
 ];
 </script>
 
@@ -120,14 +121,14 @@ $_scales: (
         --font-size: var(--vh-fs-sm),
         --font-weight: var(--vh-fw-semibold),
         --border-radius: var(--vh-br-sm),
-        --icon-size: 1.625rem
+        --icon-size: 1.75rem
     ),
     "large": (
         --block-size: #{$_default-block-size},
         --font-size: var(--vh-fs-base),
         --font-weight: var(--vh-fw-semibold),
         --border-radius: var(--vh-br-normal),
-        --icon-size: 1.875rem
+        --icon-size: 1.75rem
     )
 );
 
@@ -163,16 +164,16 @@ $_scales: (
         --_border-alpha: 1
     }
     @each $__color, $__properties in $_colors {
-        &-color-#{$__color} {
+        &--color-#{$__color} {
             @include vh-map-to-properties($__properties)
         }
     }
     @each $__scale, $__properties in $_scales {
-        &-scale-#{$__scale} {
+        &--scale-#{$__scale} {
             @include vh-map-to-properties($__properties)
         }
     }
-    &-variant-filled {
+    &--variant-filled {
         border: var(--vh-border-inline-size) solid hsla(var(--_border-hsl), var(--_border-alpha));
         background: hsl(var(--_bg-hsl), var(--_bg-alpha));
         transition: vh-transition(color background transform, var(--vh-duration-short));
@@ -190,16 +191,16 @@ $_scales: (
             }
         }
     }
-    &-variant-outlined {
+    &--variant-outlined {
         border: var(--vh-border-inline-size) solid hsla(var(--_border-hsl), var(--_border-alpha));
         --_border-alpha: var(--border-alpha, .36);
         --text-hsl: var(--bg-hsl);
         --border-hsl: var(--bg-hsl)
     }
-    &-variant-text {
+    &--variant-text {
         --text-hsl: var(--bg-hsl)
     }
-    &-variant-plain {
+    &--variant-plain {
         --_border-alpha: var(--border-alpha, .36);
         --text-hsl: var(--bg-hsl);
         --border-hsl: var(--bg-hsl);
@@ -217,8 +218,8 @@ $_scales: (
             }
         }
     }
-    &-variant-outlined,
-    &-variant-text {
+    &--variant-outlined,
+    &--variant-text {
         transition: vh-transition(background-color transform, var(--vh-duration-short));
         @include vh-hover {
             &:hover {
@@ -237,7 +238,7 @@ $_scales: (
         opacity: .5;
         border-color: transparent
     }
-    &-content {
+    .inner {
         display: flex;
         align-items: center;
         flex-flow: row nowrap;

@@ -28,7 +28,7 @@ const ARIA_LABELLEDBY = attrs["aria-labelledby"] || formGroupId;
 
 const CLASSES = [
     "form-control",
-    `form-control-scale-${props.scale}`
+    `form-control--scale-${props.scale}`
 ];
 </script>
 
@@ -61,7 +61,7 @@ $_scales: (
     transition: vh-transition(background-color box-shadow border-color, var(--vh-duration-short));
     block-size: var(--_block-size);
     @each $__scale, $__properties in $_scales {
-        &-scale-#{$__scale} {
+        &--scale-#{$__scale} {
             @include vh-map-to-properties($__properties)
         }
     }

@@ -1,6 +1,6 @@
 {
     "name": "vergihesaplayici.com",
-    "version": "9.52.1",
+    "version": "10.0.0",
     "type": "module",
     "license": "AGPL-3.0",
     "scripts": {
@@ -18,43 +18,43 @@
         "prepare": "husky"
     },
     "dependencies": {
-        "@fontsource-variable/inter": "5.2.8",
-        "@fontsource-variable/roboto-mono": "5.2.9",
-        "astro": "6.3.7",
+        "@fontsource-variable/google-sans": "5.2.1",
+        "@fontsource-variable/google-sans-code": "5.2.4",
+        "astro": "6.4.8",
         "balloon-css": "1.2.0",
-        "firebase": "12.13.0",
+        "firebase": "12.15.0",
         "html-to-image": "1.11.13",
         "remixicon": "4.9.1",
-        "vue": "3.5.34",
+        "vue": "3.5.38",
         "vue-draggable-plus": "0.6.1"
     },
     "devDependencies": {
         "@astrojs/check": "0.9.9",
-        "@astrojs/sitemap": "3.7.2",
+        "@astrojs/sitemap": "3.7.3",
         "@astrojs/vue": "6.0.1",
-        "@commitlint/cli": "21.0.1",
-        "@commitlint/config-conventional": "21.0.1",
+        "@commitlint/cli": "21.0.2",
+        "@commitlint/config-conventional": "21.0.2",
         "@vitejs/plugin-vue": "6.0.7",
-        "@vitest/coverage-istanbul": "4.1.7",
-        "@vue/test-utils": "2.4.10",
+        "@vitest/coverage-istanbul": "4.1.9",
+        "@vue/test-utils": "2.4.11",
         "astro-compress": "2.4.1",
         "fast-average-color-node": "3.2.0",
         "husky": "9.1.7",
         "jsdom": "29.1.1",
-        "lint-staged": "17.0.5",
-        "oxlint": "1.66.0",
-        "sass": "1.100.0",
+        "lint-staged": "17.0.7",
+        "oxlint": "1.70.0",
+        "sass": "1.101.0",
         "satori": "0.26.0",
         "satori-html": "0.3.2",
         "schema-dts": "2.0.0",
-        "sharp": "0.34.5",
+        "sharp": "0.35.2",
         "typescript": "6.0.3",
         "unplugin-auto-import": "21.0.0",
         "unplugin-vue-components": "32.1.0",
-        "vitest": "4.1.7"
+        "vitest": "4.1.9"
     },
     "peerDependencies": {
-        "firebase-tools": "15.18.0"
+        "firebase-tools": "15.22.0"
     },
     "engines": {
         "node": ">=22.0.0"

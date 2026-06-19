@@ -1,15 +1,25 @@
 <template>
     <transition-group
         name="list-transition"
-        tag="dl"
+        tag="div"
         aria-label="Hesaplama sonuçları"
         class="calculator-result-list">
         <template v-for="_item in props.items" :key="_item.key + _item.isMuted">
-            <calculator-result-list-item
-                :label="_item.label"
-                :value="_item.value"
-                :variant="KEY_VARIANT_MAP[_item.key]"
-                :is-muted="_item.isMuted" />
+            <template v-if="_item.details">
+                <calculator-result-list-item-details
+                    :label="_item.label"
+                    :value="_item.value"
+                    :variant="KEY_VARIANT_MAP[_item.key]"
+                    :is-muted="_item.isMuted"
+                    :details="_item.details" />
+            </template>
+            <template v-else>
+                <calculator-result-list-item
+                    :label="_item.label"
+                    :value="_item.value"
+                    :variant="KEY_VARIANT_MAP[_item.key]"
+                    :is-muted="_item.isMuted" />
+            </template>
         </template>
     </transition-group>
 </template>
@@ -17,8 +27,9 @@
 <script lang="ts" setup>
 import type { HtmlAttrs_dl } from "@/types/html.js";
 import type { Props as CalculatorResultListItemProps } from "@/components/calculator-result-list-item.vue";
+import type { Props as CalculatorResultListItemDetailsProps } from "@/components/calculator-result-list-item-details.vue";
 
-export type Item = CalculatorResultListItemProps & {
+export type Item = (CalculatorResultListItemProps & CalculatorResultListItemDetailsProps) & {
     key: string;
 };
 

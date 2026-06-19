@@ -1,8 +1,8 @@
 <template>
     <div class="calculator-charts">
-        <div class="calculator-charts-items">
+        <div class="inner">
             <template v-for="_chart in props.charts">
-                <div class="calculator-charts-item">
+                <div class="item">
                     <heading-3
                         tag="h3"
                         aria-hidden="true">
@@ -34,7 +34,7 @@ const props = defineProps<Props>();
 
 <style lang="scss" scoped>
 .calculator-charts {
-    &-items {
+    .inner {
         display: flex;
         flex-flow: row;
         flex-wrap: nowrap;
@@ -42,7 +42,7 @@ const props = defineProps<Props>();
         -webkit-overflow-scrolling: touch;
         gap: var(--container-padding-inline)
     }
-    &-item {
+    .item {
         @include vh-squircle(var(--vh-br-normal));
         padding: var(--vh-spacer);
         background: hsla(var(--vh-clr-white-hsl), .04);

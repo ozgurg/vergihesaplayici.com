@@ -13,7 +13,7 @@ describe("components/calculator-preset-carousel-nav.vue", () => {
             }
         });
 
-        const prevButton = wrapper.find(".calculator-preset-carousel-nav-prev") as DOMWrapper<HTMLButtonElement>;
+        const prevButton = wrapper.find(".calculator-preset-carousel-nav--prev") as DOMWrapper<HTMLButtonElement>;
         expect(prevButton.exists()).toBeTruthy();
         expect(prevButton.attributes("aria-controls")).toBe(TEST_CAROUSEL_ID);
         expect(prevButton.attributes("aria-label")).toBeTruthy();
@@ -28,7 +28,7 @@ describe("components/calculator-preset-carousel-nav.vue", () => {
             }
         });
 
-        const nextButton = wrapper.find(".calculator-preset-carousel-nav-next") as DOMWrapper<HTMLButtonElement>;
+        const nextButton = wrapper.find(".calculator-preset-carousel-nav--next") as DOMWrapper<HTMLButtonElement>;
         expect(nextButton.exists()).toBeTruthy();
         expect(nextButton.attributes("aria-controls")).toBe(TEST_CAROUSEL_ID);
         expect(nextButton.attributes("aria-label")).toBeTruthy();

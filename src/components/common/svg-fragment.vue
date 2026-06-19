@@ -37,9 +37,10 @@ const _extractAttrs = (htmlString: string): { [key: string]: string } => {
     return attrs;
 };
 
-const svgAttrs = _extractAttrs(props.html);
+const svgAttrs = computed(() => _extractAttrs(props.html));
 
-const content = props.html
+const content = computed(() => props.html
     .replace(/<([a-z]+)(?![^>]*\/>)[^>]*>/u, "")
-    .replace(/<\/([a-z]+)>$/u, "");
+    .replace(/<\/([a-z]+)>$/u, "")
+);
 </script>

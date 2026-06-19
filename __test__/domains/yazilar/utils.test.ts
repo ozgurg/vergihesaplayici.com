@@ -53,6 +53,15 @@ describe("domains/yazilar/utils/utils.js", () => {
             expect(result.timeDateTimeAttr).toBe(date.toISOString().split("T")[0]);
             expect(result.readableDate).toBe(date.toLocaleDateString("tr-TR"));
         });
+
+        it("handles `undefined` from split in `parseDate`", () => {
+            const date = new Date();
+            date.toISOString = () => ({
+                split: () => []
+            } as any);
+            const result = parseDate(date);
+            expect(result.timeDateTimeAttr).toBe("");
+        });
     });
 
     describe("getWordCount", () => {

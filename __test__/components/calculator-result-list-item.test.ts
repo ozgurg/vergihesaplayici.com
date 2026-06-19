@@ -27,13 +27,13 @@ describe("components/calculator-result-list-item.vue", () => {
             props: testProps
         });
 
-        const dtStringCarousel = wrapper.find("dt").findComponent(StringCarousel as any);
-        expect(dtStringCarousel.exists()).toBeTruthy();
-        expect((dtStringCarousel as any).props("text")).toBe(testProps.label);
+        const labelStringCarousel = wrapper.find(".header-label").findComponent(StringCarousel as any);
+        expect(labelStringCarousel.exists()).toBeTruthy();
+        expect((labelStringCarousel as any).props("text")).toBe(testProps.label);
 
-        const ddStringCarousel = wrapper.find("dd").findComponent(StringCarousel as any);
-        expect(ddStringCarousel.exists()).toBeTruthy();
-        expect((ddStringCarousel as any).props("text")).toBe(testProps.value);
+        const valueStringCarousel = wrapper.find(".header-value").findComponent(StringCarousel as any);
+        expect(valueStringCarousel.exists()).toBeTruthy();
+        expect((valueStringCarousel as any).props("text")).toBe(testProps.value);
     });
 
     it("renders label as it is if it does not contains any number", () => {
@@ -45,8 +45,8 @@ describe("components/calculator-result-list-item.vue", () => {
             props: testProps
         });
 
-        const dt = wrapper.find("dt");
-        expect(dt.text()).toBe(testProps.label);
+        const label = wrapper.find(".header-label");
+        expect(label.text()).toBe(testProps.label);
     });
 
     it("applies a `variant` class", () => {
@@ -60,7 +60,7 @@ describe("components/calculator-result-list-item.vue", () => {
             props: testProps
         });
 
-        expect(wrapper.classes()).toContain("calculator-result-list-item-variant-tax-free-price");
+        expect(wrapper.classes()).toContain("calculator-result-list-item--variant-tax-free-price");
     });
 
     it("does not apply any variant class when `variant` is not passed", () => {
@@ -82,7 +82,7 @@ describe("components/calculator-result-list-item.vue", () => {
                 variant: "tax-free-price"
             }
         });
-        expect(wrapper1.classes()).not.toContain("calculator-result-list-item-muted");
+        expect(wrapper1.classes()).not.toContain("calculator-result-list-item--muted");
 
         const wrapper2 = mount(CalculatorResultListItem, {
             props: {
@@ -92,7 +92,7 @@ describe("components/calculator-result-list-item.vue", () => {
                 isMuted: false
             }
         });
-        expect(wrapper2.classes()).not.toContain("calculator-result-list-item-muted");
+        expect(wrapper2.classes()).not.toContain("calculator-result-list-item--muted");
 
         const wrapper3 = mount(CalculatorResultListItem, {
             props: {
@@ -102,6 +102,6 @@ describe("components/calculator-result-list-item.vue", () => {
                 isMuted: true
             }
         });
-        expect(wrapper3.classes()).toContain("calculator-result-list-item-muted");
+        expect(wrapper3.classes()).toContain("calculator-result-list-item--muted");
     });
 });

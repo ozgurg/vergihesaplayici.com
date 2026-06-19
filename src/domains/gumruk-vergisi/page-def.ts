@@ -8,7 +8,7 @@ export const GumrukVergisiPageDef = (): CalculatorPage => {
     const parentPage = HesaplayicilarPageDef();
 
     const id = "hesaplayici-gumruk";
-    const title = "Gümrük Vergisi Hesaplayıcı";
+    const title = "Gümrük Vergisi Hesaplama";
     const shortTitle = "Gümrük";
     const url = siteUrl("/gumruk-vergisi");
     const ogImageUrl = staticSiteUrl("/og/gumruk-vergisi.jpg");
@@ -26,7 +26,7 @@ export const GumrukVergisiPageDef = (): CalculatorPage => {
         icon,
         head: {
             title: `${title} - Vergi Hesaplayıcı`,
-            description: "Yurt dışından gelen ürünler için ne kadar gümrük vergisi ödeyeceğinizi öğrenin. Gümrük Vergisi Hesaplayıcı ile hızlı ve kolay şekilde vergi tutarını hesaplayın.",
+            description: "Yurt dışından sipariş ettiğiniz ürünlerin gümrük vergisi ve limitlerini hesaplayın. Güncel gümrük vergisi hesaplama aracı ile net maliyeti öğrenin.",
             canonicalUrl: url,
             ogImageUrl,
             schema: {

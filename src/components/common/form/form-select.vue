@@ -61,7 +61,7 @@ const ARIA_LABELLEDBY = attrs["aria-labelledby"] || formGroupId;
 
 const CLASSES = [
     "form-select",
-    `form-select-scale-${props.scale}`
+    `form-select--scale-${props.scale}`
 ];
 </script>
 
@@ -101,7 +101,7 @@ $_scales: (
     gap: calc(var(--vh-spacer) * .5);
     block-size: var(--_block-size);
     @each $__scale, $__properties in $_scales {
-        &-scale-#{$__scale} {
+        &--scale-#{$__scale} {
             @include vh-map-to-properties($__properties)
         }
     }
@@ -114,7 +114,7 @@ $_scales: (
         border-color: var(--vh-clr-primary);
         box-shadow: 0 0 0 1px var(--vh-clr-primary)
     }
-    &:has(input:user-invalid) {
+    &:has(select:user-invalid) {
         border-color: var(--vh-clr-danger);
         box-shadow: 0 0 0 1px var(--vh-clr-danger)
     }

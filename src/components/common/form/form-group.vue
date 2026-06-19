@@ -9,7 +9,7 @@
             <slot name="label" />
         </template>
 
-        <div class="form-group-content">
+        <div class="content">
             <slot name="default" />
         </div>
     </fieldset>
@@ -35,7 +35,7 @@ provide("form-group.id", ID);
         min-block-size: 1lh;
         margin-block-end: calc(var(--vh-spacer) * .5)
     }
-    &-content {
+    .content {
         flex: 1
     }
 }

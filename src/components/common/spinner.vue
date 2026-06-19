@@ -8,8 +8,8 @@
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 45 45">
             <circle
-                cx="50%"
-                cy="50%"
+                cx="22.5"
+                cy="22.5"
                 r="20" />
         </svg>
     </div>

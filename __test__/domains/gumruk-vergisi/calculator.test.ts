@@ -177,4 +177,14 @@ describe("domains/gumruk-vergisi/calculator.js", () => {
             taxAdded: 2_154.4
         }
     });
+
+    calculate({
+        input: {
+            isPrintedOnly: true
+        },
+        expectedOutput: {
+            taxFree: 1_000,
+            taxAdded: 1_054.4
+        }
+    });
 });

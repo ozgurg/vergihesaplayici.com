@@ -15,6 +15,8 @@ interface ImportMetaEnv {
 
     readonly PUBLIC_TINYADZ_SITE_ID: string;
 
+    readonly PUBLIC_AHREFS_KEY: string;
+
     // `.env.(development|production|production|production.local)`
     readonly URL_BASE: string;
 }
