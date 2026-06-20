@@ -32,8 +32,12 @@ body {
     background: var(--vh-clr-primary)
 }
 
-*:focus-visible {
+:focus-visible {
     @include vh-focus-appearance
+}
+
+:focus {
+    @include vh-clear-focus-appearance
 }
 
 hr {
