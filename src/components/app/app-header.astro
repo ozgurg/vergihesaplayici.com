@@ -149,7 +149,9 @@ const nav = getFeaturedCalculatorPages();
             block-size: var(--app-header-up-md-collapsed-block-size);
             @supports (animation-timeline: scroll()) {
                 block-size: var(--app-header-up-md-expanded-block-size);
-                animation: app-header-shrink-block-size both;
+                // Using the `animation` shorthand causes Astro (7.0.0) to generate incorrect syntax during the build process
+                animation-fill-mode: both;
+                animation-name: app-header-shrink-block-size;
                 animation-timeline: scroll();
                 animation-range: 0 var(--app-header-up-md-expanded-block-size);
                 @keyframes app-header-shrink-block-size {
@@ -182,7 +184,9 @@ const nav = getFeaturedCalculatorPages();
                     content: "";
                     background: hsla(var(--vh-clr-border-hsl), var(--vh-clr-border-alpha));
                     @supports (animation-timeline: scroll()) {
-                        animation: app-header-container-border both;
+                        // Using the `animation` shorthand causes Astro (7.0.0) to generate incorrect syntax during the build process
+                        animation-fill-mode: both;
+                        animation-name: app-header-container-border;
                         animation-timeline: scroll();
                         animation-range: var(--app-header-up-md-collapsed-block-size) var(--app-header-up-md-collapsed-block-size);
                         @keyframes app-header-container-border {
