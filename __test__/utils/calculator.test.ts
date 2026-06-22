@@ -11,11 +11,11 @@ describe("utils/calculator.js", () => {
         it("normalizes all values in results object", () => {
             const result = normalizeCalculatorResults({
                 category1: {
-                    item1: 123.456_789,
-                    item2: 987.654_321
+                    item1: 123.456789,
+                    item2: 987.654321
                 },
                 category2: {
-                    item3: 456.789_123
+                    item3: 456.789123
                 }
             });
             expect(result).toEqual({
@@ -32,27 +32,27 @@ describe("utils/calculator.js", () => {
         it("handles complex nested structures with arrays and objects", () => {
             const result = normalizeCalculatorResults({
                 taxFees: {
-                    total: 123.456_789,
+                    total: 123.456789,
                     items: [
                         {
                             taxItem: {
                                 name: "Test Tax",
-                                rate: 10.123_456,
+                                rate: 10.123456,
                                 rateType: "percent",
                                 rateTypeUnitCurrency: "TRY",
                                 baseAmountMode: "base-amount"
                             },
-                            amount: 45.678_901
+                            amount: 45.678901
                         }
                     ]
                 },
                 taxRates: {
-                    total: 15.234_567,
-                    items: 8.901_234
+                    total: 15.234567,
+                    items: 8.901234
                 },
                 prices: {
-                    taxFree: 1_000.123_456,
-                    taxAdded: 1_123.456_789
+                    taxFree: 1_000.123456,
+                    taxAdded: 1_123.456789
                 }
             });
 

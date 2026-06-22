@@ -17,7 +17,7 @@ interface ImportMetaEnv {
 
     readonly PUBLIC_AHREFS_KEY: string;
 
-    // `.env.(development|production|production|production.local)`
+    // `.env.(development|production)`
     readonly URL_BASE: string;
 }
 
