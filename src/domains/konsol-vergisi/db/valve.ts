@@ -80,14 +80,14 @@ export const presets: Omit<Preset, "brandId">[] = [
             {
                 title: "512GB",
                 form: {
-                    price: 519,
+                    price: 1_049,
                     currency: "USD"
                 }
             },
             {
                 title: "2TB",
                 form: {
-                    price: 669,
+                    price: 1_349,
                     currency: "USD"
                 }
             }
