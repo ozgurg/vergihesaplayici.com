@@ -17,6 +17,7 @@
         "promise"
     ],
     "rules": {
+        "node/no-sync": "off",
         "node/no-process-env": "off",
 
         "import/no-nodejs-modules": "off",
@@ -28,9 +29,9 @@
         "import/max-dependencies": "off",
         "import/extensions": [
             "error",
-            [
-                "ignorePackages"
-            ]
+            {
+                "ignorePackages": true
+            }
         ],
 
         "typescript/explicit-function-return-type": "off",
@@ -88,6 +89,7 @@
             "multi-line"
         ],
 
+        "unicorn/prefer-number-coercion": "off",
         "unicorn/prefer-single-call": "off",
         "unicorn/no-immediate-mutation": "off",
         "unicorn/prefer-global-this": "off",

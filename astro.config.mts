@@ -88,7 +88,6 @@ export default defineConfig({
             rollupOptions: {
                 output: {
                     // TODO: If we can add the version to the URL, it would be better than adding a hash or version to the name.
-                    compact: true,
                     entryFileNames: `[name]-${packageJson.version}.js`,
                     chunkFileNames: `[name]-[hash]-${packageJson.version}.js`,
                     assetFileNames(assetInfo) {
