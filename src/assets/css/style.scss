@@ -8,6 +8,15 @@
 @import "./calculators.scss";
 @import "./content.scss";
 
+@view-transition {
+    navigation: auto
+}
+
+::selection {
+    color: var(--vh-clr-secondary);
+    background: var(--vh-clr-primary)
+}
+
 html {
     scroll-padding-block-start: calc(var(--app-header-down-md-block-size) + var(--vh-spacer));
     @include vh-media-breakpoint-up(md) {
@@ -27,24 +36,7 @@ body {
     flex-direction: column
 }
 
-::selection {
-    color: var(--vh-clr-secondary);
-    background: var(--vh-clr-primary)
-}
-
-:focus-visible {
-    @include vh-focus-appearance
-}
-
-:focus {
-    @include vh-clear-focus-appearance
-}
-
 hr {
     margin-block: calc(var(--vh-spacer) * 2);
     border-block-start: var(--vh-border-inline-size) solid hsla(var(--vh-clr-white-hsl), var(--vh-clr-border-alpha))
-}
-
-@view-transition {
-    navigation: auto
 }
