@@ -1,11 +1,11 @@
 @use "sass:meta";
 @use "sass:color";
-@use "./variables.scss" as vh;
+@use "./variables.scss" as variables;
 
 $_prefix: "vh";
 
 :root {
-    @each $__name, $__value in meta.module-variables(vh) {
+    @each $__name, $__value in meta.module-variables(variables) {
         $__name: #{$_prefix}-#{$__name};
 
         @if meta.type-of($__value) == "color" {
