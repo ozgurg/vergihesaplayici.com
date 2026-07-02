@@ -38,7 +38,9 @@ html {
 body {
     direction: ltr;
     overflow-x: hidden;
-    min-block-size: 100vh
+    min-block-size: 100%;
+    min-block-size: 100vh;
+    min-block-size: 100dvh
 }
 
 a {
