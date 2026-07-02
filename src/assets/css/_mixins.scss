@@ -47,6 +47,11 @@
     }
 }
 
+@mixin vh-prevent-selection {
+    user-select: none;
+    -webkit-user-select: none
+}
+
 
 @function vh-breakpoint-min($name) {
     $min: map.get($_container-breakpoints, $name, "breakpoint");

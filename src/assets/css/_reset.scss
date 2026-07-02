@@ -85,7 +85,7 @@ svg {
 button,
 [role="button"] {
     cursor: pointer;
-    user-select: none
+    @include vh-prevent-selection
 }
 
 input {

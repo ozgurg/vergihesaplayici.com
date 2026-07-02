@@ -88,7 +88,7 @@ const props = defineProps<Props>();
     $parent: &;
     font-size: var(--vh-fs-sm);
     overflow: hidden;
-    user-select: none;
+    @include vh-prevent-selection;
     border: .125rem solid var(--vh-clr-white);
     border-radius: var(--vh-br-normal);
     background: var(--vh-clr-body-bg);
