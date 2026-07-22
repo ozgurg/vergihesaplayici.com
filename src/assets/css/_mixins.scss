@@ -47,6 +47,11 @@
     }
 }
 
+@mixin vh-prevent-selection {
+    user-select: none;
+    -webkit-user-select: none
+}
+
 
 @function vh-breakpoint-min($name) {
     $min: map.get($_container-breakpoints, $name, "breakpoint");
@@ -154,8 +159,9 @@
 }
 
 @mixin vh-focus-appearance {
-    outline: .125rem dashed #000;
-    box-shadow: 0 0 0 .25rem #fff
+    // Use hardcoded colors to prevent theme variables from affecting the focus indicator
+    outline: .125rem dashed #000 !important;
+    box-shadow: 0 0 0 .25rem #fff !important
 }
 
 @mixin vh-clear-focus-appearance {

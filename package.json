@@ -1,6 +1,6 @@
 {
     "name": "vergihesaplayici.com",
-    "version": "10.1.1",
+    "version": "10.2.0",
     "type": "module",
     "license": "AGPL-3.0",
     "scripts": {
@@ -18,43 +18,43 @@
         "prepare": "husky"
     },
     "dependencies": {
-        "@fontsource-variable/google-sans": "5.2.1",
-        "@fontsource-variable/google-sans-code": "5.2.4",
-        "astro": "7.0.0",
+        "@fontsource-variable/google-sans": "5.3.0",
+        "@fontsource-variable/google-sans-code": "5.3.0",
+        "astro": "7.1.3",
         "balloon-css": "1.2.0",
-        "firebase": "12.15.0",
+        "firebase": "12.16.0",
         "html-to-image": "1.11.13",
         "remixicon": "4.9.1",
-        "vue": "3.5.38",
+        "vue": "3.5.40",
         "vue-draggable-plus": "0.6.1"
     },
     "devDependencies": {
         "@astrojs/check": "0.9.9",
         "@astrojs/sitemap": "3.7.3",
-        "@astrojs/vue": "7.0.0",
-        "@commitlint/cli": "21.0.2",
-        "@commitlint/config-conventional": "21.0.2",
-        "@vitejs/plugin-vue": "6.0.7",
-        "@vitest/coverage-istanbul": "4.1.9",
+        "@astrojs/vue": "7.0.1",
+        "@commitlint/cli": "21.2.1",
+        "@commitlint/config-conventional": "21.2.0",
+        "@vitejs/plugin-vue": "6.0.8",
+        "@vitest/coverage-istanbul": "4.1.10",
         "@vue/test-utils": "2.4.11",
         "astro-compress": "2.4.1",
         "fast-average-color-node": "3.2.0",
         "husky": "9.1.7",
         "jsdom": "29.1.1",
-        "lint-staged": "17.0.8",
-        "oxlint": "1.71.0",
-        "sass": "1.101.0",
-        "satori": "0.26.0",
+        "lint-staged": "17.1.1",
+        "oxlint": "1.75.0",
+        "sass": "1.101.3",
+        "satori": "0.28.2",
         "satori-html": "0.3.2",
         "schema-dts": "2.0.0",
-        "sharp": "0.35.2",
+        "sharp": "0.35.3",
         "typescript": "6.0.3",
         "unplugin-auto-import": "21.0.0",
         "unplugin-vue-components": "32.1.0",
-        "vitest": "4.1.9"
+        "vitest": "4.1.10"
     },
     "peerDependencies": {
-        "firebase-tools": "15.22.0"
+        "firebase-tools": "15.24.0"
     },
     "engines": {
         "node": ">=22.0.0"

@@ -57,10 +57,10 @@ const chars = computed<string[]>(() => [...String(props.text)]);
         flex-flow: row wrap;
         block-size: var(--_block-size);
         pointer-events: none; // Disable interaction with animated chars
-        user-select: none; // Prevent selection of individual `<span />`s
+        @include vh-prevent-selection; // Prevent selection of individual `<span />`s
         span {
             will-change: transform, opacity;
-            user-select: none // Explicitly disable selection
+            @include vh-prevent-selection // Explicitly disable selection
         }
     }
     .text-overlay {

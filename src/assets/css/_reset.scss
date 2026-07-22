@@ -13,6 +13,12 @@
             animation-iteration-count: 1 !important
         }
     }
+    &:focus {
+        @include vh-clear-focus-appearance
+    }
+    &:focus-visible {
+        @include vh-focus-appearance
+    }
 }
 
 :root {
@@ -38,7 +44,9 @@ html {
 body {
     direction: ltr;
     overflow-x: hidden;
-    min-block-size: 100vh
+    min-block-size: 100%;
+    min-block-size: 100vh;
+    min-block-size: 100dvh
 }
 
 a {
@@ -85,7 +93,7 @@ svg {
 button,
 [role="button"] {
     cursor: pointer;
-    user-select: none
+    @include vh-prevent-selection
 }
 
 input {
