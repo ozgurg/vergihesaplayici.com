@@ -130,6 +130,66 @@ export const presets: Omit<Preset, "brandId">[] = [
             }
         ]
     },
+    {
+        title: "Galaxy Z Fold8",
+        slug: "samsung-galaxy-z-fold8",
+        releaseDate: new Date("2026-07-22"),
+        thumb: "samsung-galaxy-z-fold8.webp",
+        ...buildPageMeta("Samsung Galaxy Z Fold8'in"),
+        options: [
+            {
+                title: "256GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-z-fold8/buy/galaxy-z-fold8-256gb-unlocked-sku-sm-f971ulvaxaa/
+                    price: 1_899.99,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "512GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-z-fold8/buy/galaxy-z-fold8-512gb-unlocked-sku-sm-f971ulvexaa/
+                    price: 2_099.99,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "1TB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-z-fold8/buy/galaxy-z-fold8-1tb-unlocked-sku-sm-f971ulvfxaa/
+                    price: 2_499.99,
+                    currency: "USD"
+                }
+            }
+        ]
+    },
+    {
+        title: "Galaxy Z Fold8 Ultra",
+        slug: "samsung-galaxy-z-fold8-ultra",
+        releaseDate: new Date("2026-07-22"),
+        thumb: "samsung-galaxy-z-fold8-ultra.webp",
+        ...buildPageMeta("Samsung Galaxy Z Fold8 Ultra'nın"),
+        options: [
+            {
+                title: "256GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-z-fold8-ultra/buy/galaxy-z-fold8-ultra-256gb-unlocked-sku-sm-f976uzvaxaa/
+                    price: 2_099.99,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "512GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-z-fold8-ultra/buy/galaxy-z-fold8-ultra-512gb-unlocked-sku-sm-f976uzvexaa/
+                    price: 2_299.99,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "1TB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-z-fold8-ultra/buy/galaxy-z-fold8-ultra-1tb-unlocked-sku-sm-f976uzvfxaa/
+                    price: 2_699.99,
+                    currency: "USD"
+                }
+            }
+        ]
+    },
 
     {
         status: "legacy",
@@ -228,6 +288,29 @@ export const presets: Omit<Preset, "brandId">[] = [
                 title: "512GB",
                 form: { // https://www.samsung.com/us/smartphones/galaxy-z-flip7/buy/galaxy-z-flip7-256gb-unlocked-sku-sm-f766uzkaxaa/
                     price: 1_219.99,
+                    currency: "USD"
+                }
+            }
+        ]
+    },
+    {
+        title: "Galaxy Z Flip8",
+        slug: "samsung-galaxy-z-flip8",
+        releaseDate: new Date("2026-07-22"),
+        thumb: "samsung-galaxy-z-flip8.webp",
+        ...buildPageMeta("Samsung Galaxy Z Flip8'in"),
+        options: [
+            {
+                title: "256GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-z-flip8/buy/galaxy-z-flip8-256gb-unlocked-sku-sm-f776uliaxaa/
+                    price: 1_199.99,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "512GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-z-flip8/buy/galaxy-z-flip8-512gb-unlocked-sku-sm-f776uliexaa/
+                    price: 1_399.99,
                     currency: "USD"
                 }
             }
