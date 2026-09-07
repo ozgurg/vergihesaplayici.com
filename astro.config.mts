@@ -53,7 +53,7 @@ export default defineConfig({
                 // TODO: It can be dynamic via `PageDef`
 
                 // https://developers.google.com/search/blog/2006/04/using-lastmod-attribute
-                const LAST_MODIFIED_DATE = new Date().toDateString();
+                const LAST_MODIFIED_DATE = new Date().toISOString();
 
                 if (/yazilar/u.test(item.url)) {
                     item.changefreq = EnumChangefreq.WEEKLY;
