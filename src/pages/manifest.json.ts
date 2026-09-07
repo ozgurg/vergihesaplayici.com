@@ -10,7 +10,7 @@ export const GET: APIRoute = (): Response => {
         orientation: "portrait",
 
         id: "?manifest=true",
-        start_url: `${anaSayfaPage.url.href}?manifest=true`,
+        start_url: `${anaSayfaPage.url.href}?utm_source=homescreen`,
 
         name: "Vergi Hesaplayıcı",
         short_name: "Vergi Hesaplayıcı",
