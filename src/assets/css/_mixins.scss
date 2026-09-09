@@ -160,8 +160,8 @@
 
 @mixin vh-focus-appearance {
     // Use hardcoded colors to prevent theme variables from affecting the focus indicator
-    outline: .125rem dashed #000 !important;
-    box-shadow: 0 0 0 .25rem #fff !important
+    outline: .125rem dashed #000;
+    box-shadow: 0 0 0 .25rem #fff
 }
 
 @mixin vh-clear-focus-appearance {
