@@ -8,6 +8,7 @@ export const brand: Brand = {
 
 export const presets: Omit<Preset, "brandId">[] = [
     {
+        status: "active",
         title: "Xbox Series X",
         slug: "microsoft-xbox-series-x",
         releaseDate: new Date("2020-11-10"),
@@ -39,6 +40,7 @@ export const presets: Omit<Preset, "brandId">[] = [
     },
 
     {
+        status: "active",
         title: "Xbox Series S",
         slug: "microsoft-xbox-series-s",
         releaseDate: new Date("2020-11-10"),
