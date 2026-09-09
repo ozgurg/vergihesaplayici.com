@@ -1,7 +1,8 @@
+import type { Article, DefinedTerm, DefinedTermSet, Thing } from "schema-dts";
 import type { Page } from "@/types/page-def.js";
 import type { Yazi } from "@/domains/yazilar/types.js";
 import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
-import { getWordCount } from "@/domains/yazilar/utils.js";
+import { getWordCount, parseTitleAsTaxInfo } from "@/domains/yazilar/utils.js";
 
 export const YazilarPageDef = (
     options?: { schema: { items?: Page[] } } | null
@@ -67,7 +68,9 @@ export const YazilarSlugPageDef = ({ yazi }: Params): Page<Params> => {
     const title = yazi.title;
     const url = siteUrl(`/yazilar/${yazi.slug}`);
 
+    const taxInfo = parseTitleAsTaxInfo(yazi.title);
     const isVergiTuru = /\[\d{4}\]$/u.test(yazi.title);
+    const isVergiTurleriIndex = yazi.slug === "vergi-turleri";
     const breadcrumbs = isVergiTuru ?
         [
             ...parentPage.breadcrumbs,
@@ -78,6 +81,66 @@ export const YazilarSlugPageDef = ({ yazi }: Params): Page<Params> => {
             ...parentPage.breadcrumbs,
             { title, url }
         ];
+
+    const articleSchema: Article = {
+        "@type": "Article",
+        "@id": `${url.href}#article`,
+        "url": url.href,
+        "headline": title,
+        "wordCount": getWordCount(yazi.entry.body || ""),
+        "description": yazi.description,
+        "abstract": yazi.description,
+        "isPartOf": { "@id": `${parentPage.url.href}#collectionpage` },
+        "publisher": { "@id": `${homePage.url.href}#organization` },
+        "inLanguage": "tr-TR",
+        "author": {
+            "@id": `${homePage.url.href}#organization`
+        },
+        "dateCreated": yazi.createdDate.toISOString(),
+        "datePublished": yazi.createdDate.toISOString(),
+        "dateModified": yazi.updatedDate ? yazi.updatedDate.toISOString() : yazi.createdDate.toISOString(),
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": url.href
+        },
+        ...(isVergiTuru ? {
+            "about": {
+                "@id": `${url.href}#definedterm`
+            }
+        } : {})
+    };
+
+    const graph: Thing[] = [articleSchema];
+
+    if (isVergiTuru && taxInfo) {
+        const definedTermSetUrl = siteUrl("/yazilar/vergi-turleri");
+        const definedTerm: DefinedTerm = {
+            "@type": "DefinedTerm",
+            "@id": `${url.href}#definedterm`,
+            "name": taxInfo.name,
+            "termCode": taxInfo.code,
+            "description": yazi.description,
+            "url": url.href,
+            "inDefinedTermSet": {
+                "@type": "DefinedTermSet",
+                "@id": `${definedTermSetUrl.href}#definedtermset`,
+                "name": "Türkiye Vergi Kodları Kataloğu",
+                "url": definedTermSetUrl.href
+            }
+        };
+        graph.push(definedTerm);
+    } else if (isVergiTurleriIndex) {
+        const definedTermSet: DefinedTermSet = {
+            "@type": "DefinedTermSet",
+            "@id": `${url.href}#definedtermset`,
+            "name": "Türkiye Vergi Kodları Kataloğu",
+            "description": yazi.description,
+            "url": url.href,
+            "inLanguage": "tr-TR",
+            "publisher": { "@id": `${homePage.url.href}#organization` }
+        };
+        graph.push(definedTermSet);
+    }
 
     return {
         id,
@@ -91,30 +154,7 @@ export const YazilarSlugPageDef = ({ yazi }: Params): Page<Params> => {
             ogImageUrl: null,
             schema: {
                 "@context": "https://schema.org",
-                "@graph": [
-                    {
-                        "@type": "Article",
-                        "@id": `${url.href}#article`,
-                        "url": url.href,
-                        "headline": title,
-                        "wordCount": getWordCount(yazi.entry.body || ""),
-                        "description": yazi.description,
-                        "abstract": yazi.description,
-                        "isPartOf": { "@id": `${parentPage.url.href}#collectionpage` },
-                        "publisher": { "@id": `${homePage.url.href}#organization` },
-                        "inLanguage": "tr-TR",
-                        "author": {
-                            "@id": `${homePage.url.href}#organization`
-                        },
-                        "dateCreated": yazi.createdDate.toISOString(),
-                        "datePublished": yazi.createdDate.toISOString(),
-                        "dateModified": yazi.updatedDate ? yazi.updatedDate.toISOString() : yazi.createdDate.toISOString(),
-                        "mainEntityOfPage": {
-                            "@type": "WebPage",
-                            "@id": url.href
-                        }
-                    }
-                ]
+                "@graph": graph
             }
         },
         yazi

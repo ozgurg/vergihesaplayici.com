@@ -28,7 +28,8 @@ export default {
                 "kdv",
                 "konsol",
                 "telefon",
-                "olustur"
+                "olustur",
+                "yazilar"
             ]
         ]
     }
