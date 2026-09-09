@@ -9,10 +9,9 @@ import {
     getPresetsForAllBrands as getConsolePresets
 } from "@/domains/konsol-vergisi/db.js";
 import { getYazilar } from "@/domains/yazilar/db.js";
-import { siteUrl, staticSiteUrl } from "@/utils/url.js";
-import { KonsolVergisiPresetSlugPageDef } from "@/domains/konsol-vergisi/page-def";
-import { TelefonVergisiPresetSlugPageDef } from "@/domains/telefon-vergisi/page-def";
-import { YazilarSlugPageDef } from "@/domains/yazilar/page-def";
+import { KonsolVergisiPresetSlugPageDef } from "@/domains/konsol-vergisi/page-def.js";
+import { TelefonVergisiPresetSlugPageDef } from "@/domains/telefon-vergisi/page-def.js";
+import { YazilarSlugPageDef } from "@/domains/yazilar/page-def.js";
 
 export const GET: APIRoute = async (): Promise<Response> => {
     const calculatorPages = getCalculatorPages();
@@ -74,8 +73,8 @@ export const GET: APIRoute = async (): Promise<Response> => {
     lines.push("");
     lines.push("## Ek Kaynaklar");
     lines.push("");
-    lines.push(`- [Tam Dokümantasyon](${staticSiteUrl("/llms-full.txt", false)}): Tüm hesaplayıcıların hesaplama motorları, matrah dilimleri, oranları ve detaylı rehberler.`);
     lines.push(`- [Site Haritası](${staticSiteUrl("/sitemap-index.xml", false)})`);
+    lines.push(`- [RSS Akışı](${staticSiteUrl("/rss.xml", false)})`);
 
     return new Response(lines.join("\n"), {
         headers: {
