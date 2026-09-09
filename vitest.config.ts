@@ -46,6 +46,7 @@ export default getViteConfig({
 
 
                 "src/pages/manifest.json.ts",
+                "src/pages/llms*.ts",
                 "src/pages/og/*.jpg.ts",
                 "src/domains/**/page-def.ts",
                 "src/domains/**/types.ts",
