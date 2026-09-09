@@ -10,7 +10,7 @@ export default getViteConfig({
         environment: "jsdom",
         globals: true,
         env: {
-            SITE: "https://vergihesaplayici.com" // It can be any URL, as it is only used in tests
+            SITE: "https://vergihesaplayici.com"
         },
         coverage: {
             provider: "istanbul",
@@ -60,4 +60,4 @@ export default getViteConfig({
             ]
         }
     }
-} as any);
+} as any, {site: "https://vergihesaplayici.com"});

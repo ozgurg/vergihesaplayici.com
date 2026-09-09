@@ -69,6 +69,7 @@
         "eslint/no-alert": "off",
         "eslint/capitalized-comments": "off",
         "eslint/no-inline-comments": "off",
+        "eslint/one-var": "off",
         "eslint/yoda": [
             "error",
             "never"
