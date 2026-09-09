@@ -495,6 +495,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "active",
         title: "iPhone 16",
         slug: "apple-iphone-16",
         releaseDate: new Date("2024-09-20"),
@@ -511,6 +512,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "active",
         title: "iPhone 16 Plus",
         slug: "apple-iphone-16-plus",
         releaseDate: new Date("2024-09-20"),
@@ -566,6 +568,7 @@ export const presets: Omit<Preset, "brandId">[] = [
     },
 
     {
+        status: "active",
         title: "iPhone 17",
         slug: "apple-iphone-17",
         releaseDate: new Date("2025-09-09"),
@@ -589,6 +592,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "active",
         title: "iPhone 17 Air",
         slug: "apple-iphone-17-air",
         releaseDate: new Date("2025-09-09"),
@@ -619,6 +623,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "active",
         title: "iPhone 17 Pro",
         slug: "apple-iphone-17-pro",
         releaseDate: new Date("2025-09-09"),
@@ -649,6 +654,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "active",
         title: "iPhone 17 Pro Max",
         slug: "apple-iphone-17-pro-max",
         releaseDate: new Date("2025-09-09"),
@@ -687,6 +693,7 @@ export const presets: Omit<Preset, "brandId">[] = [
     },
 
     {
+        status: "active",
         title: "iPhone 17e",
         slug: "apple-iphone-17e",
         releaseDate: new Date("2026-03-02"),
@@ -704,6 +711,122 @@ export const presets: Omit<Preset, "brandId">[] = [
                 title: "512GB",
                 form: {
                     price: 799, // https://www.apple.com//shop/buy-iphone/iphone-17e
+                    currency: "USD"
+                }
+            }
+        ]
+    },
+
+    {
+        status: "active",
+        title: "iPhone 18 Pro",
+        slug: "apple-iphone-18-pro",
+        releaseDate: new Date("2026-09-09"),
+        thumb: "apple-iphone-18-pro.webp",
+        ...buildPageMeta("Apple iPhone 18 Pro'nun"),
+        options: [
+            {
+                title: "256GB",
+                form: {
+                    price: 1_199, // https://www.apple.com/shop/buy-iphone/iphone-18-pro
+                    currency: "USD"
+                }
+            },
+            {
+                title: "512GB",
+                form: {
+                    price: 1_399, // https://www.apple.com/shop/buy-iphone/iphone-18-pro
+                    currency: "USD"
+                }
+            },
+            {
+                title: "1TB",
+                form: {
+                    price: 1_799, // https://www.apple.com/shop/buy-iphone/iphone-18-pro
+                    currency: "USD"
+                }
+            },
+            {
+                title: "2TB",
+                form: {
+                    price: 2_399, // https://www.apple.com/shop/buy-iphone/iphone-18-pro
+                    currency: "USD"
+                }
+            }
+        ]
+    },
+    {
+        status: "active",
+        title: "iPhone 18 Pro Max",
+        slug: "apple-iphone-18-pro-max",
+        releaseDate: new Date("2026-09-09"),
+        thumb: "apple-iphone-18-pro-max.webp",
+        ...buildPageMeta("Apple iPhone 18 Pro Max'in"),
+        options: [
+            {
+                title: "256GB",
+                form: {
+                    price: 1_299, // https://www.apple.com/shop/buy-iphone/iphone-18-pro
+                    currency: "USD"
+                }
+            },
+            {
+                title: "512GB",
+                form: {
+                    price: 1_499, // https://www.apple.com/shop/buy-iphone/iphone-18-pro
+                    currency: "USD"
+                }
+            },
+            {
+                title: "1TB",
+                form: {
+                    price: 1_899, // https://www.apple.com/shop/buy-iphone/iphone-18-pro
+                    currency: "USD"
+                }
+            },
+            {
+                title: "2TB",
+                form: {
+                    price: 2_499, // https://www.apple.com/shop/buy-iphone/iphone-18-pro
+                    currency: "USD"
+                }
+            }
+        ]
+    },
+
+    {
+        status: "active",
+        title: "iPhone Duo",
+        slug: "apple-iphone-duo",
+        releaseDate: new Date("2026-09-09"),
+        thumb: "apple-iphone-duo.webp",
+        ...buildPageMeta("Apple iPhone Duo'nun"),
+        options: [
+            {
+                title: "256GB",
+                form: {
+                    price: 1_999, // https://www.apple.com/shop/buy-iphone/iphone-duo
+                    currency: "USD"
+                }
+            },
+            {
+                title: "512GB",
+                form: {
+                    price: 2_199, // https://www.apple.com/shop/buy-iphone/iphone-duo
+                    currency: "USD"
+                }
+            },
+            {
+                title: "1TB",
+                form: {
+                    price: 2_599, // https://www.apple.com/shop/buy-iphone/iphone-duo
+                    currency: "USD"
+                }
+            },
+            {
+                title: "2TB",
+                form: {
+                    price: 3_199, // https://www.apple.com/shop/buy-iphone/iphone-duo
                     currency: "USD"
                 }
             }

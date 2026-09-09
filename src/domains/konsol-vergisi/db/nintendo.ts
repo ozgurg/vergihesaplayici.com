@@ -62,6 +62,7 @@ export const presets: Omit<Preset, "brandId">[] = [
     },
 
     {
+        status: "active",
         title: "Switch 2",
         slug: "nintendo-switch-2",
         releaseDate: new Date("2025-06-05"),
