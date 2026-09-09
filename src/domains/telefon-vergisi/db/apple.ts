@@ -495,6 +495,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "active",
         title: "iPhone 16",
         slug: "apple-iphone-16",
         releaseDate: new Date("2024-09-20"),
@@ -511,6 +512,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "active",
         title: "iPhone 16 Plus",
         slug: "apple-iphone-16-plus",
         releaseDate: new Date("2024-09-20"),
@@ -566,6 +568,7 @@ export const presets: Omit<Preset, "brandId">[] = [
     },
 
     {
+        status: "active",
         title: "iPhone 17",
         slug: "apple-iphone-17",
         releaseDate: new Date("2025-09-09"),
@@ -589,6 +592,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "active",
         title: "iPhone 17 Air",
         slug: "apple-iphone-17-air",
         releaseDate: new Date("2025-09-09"),
@@ -619,6 +623,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "active",
         title: "iPhone 17 Pro",
         slug: "apple-iphone-17-pro",
         releaseDate: new Date("2025-09-09"),
@@ -649,6 +654,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "active",
         title: "iPhone 17 Pro Max",
         slug: "apple-iphone-17-pro-max",
         releaseDate: new Date("2025-09-09"),
@@ -687,6 +693,7 @@ export const presets: Omit<Preset, "brandId">[] = [
     },
 
     {
+        status: "active",
         title: "iPhone 17e",
         slug: "apple-iphone-17e",
         releaseDate: new Date("2026-03-02"),

@@ -101,6 +101,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "active",
         title: "Galaxy Z Fold7",
         slug: "samsung-galaxy-z-fold7",
         releaseDate: new Date("2025-07-25"),
@@ -131,6 +132,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "active",
         title: "Galaxy Z Fold8",
         slug: "samsung-galaxy-z-fold8",
         releaseDate: new Date("2026-07-22"),
@@ -161,6 +163,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "active",
         title: "Galaxy Z Fold8 Ultra",
         slug: "samsung-galaxy-z-fold8-ultra",
         releaseDate: new Date("2026-07-22"),
@@ -271,6 +274,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "active",
         title: "Galaxy Z Flip7",
         slug: "samsung-galaxy-z-flip7",
         releaseDate: new Date("2025-07-25"),
@@ -294,6 +298,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "active",
         title: "Galaxy Z Flip8",
         slug: "samsung-galaxy-z-flip8",
         releaseDate: new Date("2026-07-22"),
@@ -478,6 +483,7 @@ export const presets: Omit<Preset, "brandId">[] = [
     },
 
     {
+        status: "active",
         title: "Galaxy S25",
         slug: "samsung-galaxy-s25",
         releaseDate: new Date("2025-02-03"),
@@ -501,6 +507,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "active",
         title: "Galaxy S25+",
         slug: "samsung-galaxy-s25-plus",
         releaseDate: new Date("2025-02-03"),
@@ -524,6 +531,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "active",
         title: "Galaxy S25 Ultra",
         slug: "samsung-galaxy-s25-ultra",
         releaseDate: new Date("2025-02-03"),
@@ -554,6 +562,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "active",
         title: "Galaxy S25 Edge",
         slug: "samsung-galaxy-s25-edge",
         releaseDate: new Date("2025-05-29"),
@@ -577,6 +586,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "active",
         title: "Galaxy S25 FE",
         slug: "samsung-galaxy-s25-fe",
         releaseDate: new Date("2025-09-04"),
@@ -601,6 +611,7 @@ export const presets: Omit<Preset, "brandId">[] = [
     },
 
     {
+        status: "active",
         title: "Galaxy S26",
         slug: "samsung-galaxy-s26",
         releaseDate: new Date("2026-02-26"),
@@ -624,6 +635,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "active",
         title: "Galaxy S26+",
         slug: "samsung-galaxy-s26-plus",
         releaseDate: new Date("2026-02-26"),
@@ -647,6 +659,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "active",
         title: "Galaxy S26 Ultra",
         slug: "samsung-galaxy-s26-ultra",
         releaseDate: new Date("2026-02-26"),
@@ -677,6 +690,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
+        status: "active",
         title: "Galaxy S26 FE",
         slug: "samsung-galaxy-s26-fe",
         releaseDate: new Date("2026-08-27"),
