@@ -676,4 +676,27 @@ export const presets: Omit<Preset, "brandId">[] = [
             }
         ]
     },
+    {
+        title: "Galaxy S26 FE",
+        slug: "samsung-galaxy-s26-fe",
+        releaseDate: new Date("2026-08-27"),
+        thumb: "samsung-galaxy-s26-fe.webp",
+        ...buildPageMeta("Samsung Galaxy S26 FE'nin"),
+        options: [
+            {
+                title: "128GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-s26-fe/buy/galaxy-s26-fe-128gb-unlocked-sku-sm-s741ulgaxaa/
+                    price: 699.99,
+                    currency: "USD"
+                }
+            },
+            {
+                title: "256GB",
+                form: { // https://www.samsung.com/us/smartphones/galaxy-s26-fe/buy/galaxy-s26-fe-256gb-unlocked-sku-sm-s741ulgexaa/
+                    price: 799.99,
+                    currency: "USD"
+                }
+            }
+        ]
+    },
 ];
