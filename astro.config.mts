@@ -98,6 +98,8 @@ export default defineConfig({
                         // build because the version is already appended to the URL in `src/utils/url.ts::staticUrl`
                         if (["jpg", "jpeg", "png", "svg", "webp", "ico", "gif"].includes(extension)) {
                             return `assets/[name][extname]`;
+                        } else if (["woff2"].includes(extension)) {
+                            return `assets/[name][extname]`;
                         }
                         return `assets/[name]-[hash]-${packageJson.version}[extname]`;
                     }
