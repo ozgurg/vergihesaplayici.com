@@ -623,7 +623,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
-        status: "active",
+        status: "legacy",
         title: "iPhone 17 Pro",
         slug: "apple-iphone-17-pro",
         releaseDate: new Date("2025-09-09"),
@@ -654,7 +654,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
-        status: "active",
+        status: "legacy",
         title: "iPhone 17 Pro Max",
         slug: "apple-iphone-17-pro-max",
         releaseDate: new Date("2025-09-09"),

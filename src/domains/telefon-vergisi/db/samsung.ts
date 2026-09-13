@@ -562,7 +562,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
-        status: "active",
+        status: "legacy",
         title: "Galaxy S25 Edge",
         slug: "samsung-galaxy-s25-edge",
         releaseDate: new Date("2025-05-29"),
