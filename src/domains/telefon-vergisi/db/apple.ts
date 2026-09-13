@@ -593,11 +593,11 @@ export const presets: Omit<Preset, "brandId">[] = [
     },
     {
         status: "active",
-        title: "iPhone 17 Air",
-        slug: "apple-iphone-17-air",
+        title: "iPhone Air",
+        slug: "apple-iphone-air",
         releaseDate: new Date("2025-09-09"),
-        thumb: "apple-iphone-17-air.webp",
-        ...buildPageMeta("Apple iPhone 17 Air'in"),
+        thumb: "apple-iphone-air.webp",
+        ...buildPageMeta("Apple iPhone Air'in"),
         options: [
             {
                 title: "256GB",
