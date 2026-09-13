@@ -1,0 +1,39 @@
+---
+import AppLayout from "@/layouts/app-layout.astro";
+import PageHeader from "@/components/common/page-header.vue";
+import Container from "@/components/common/container.vue";
+import Breadcrumbs from "@/components/common/breadcrumbs.vue";
+import Heading1 from "@/components/common/heading-1.vue";
+import IphoneUlkeFiyatlari from "@/domains/iphone-ulke-fiyatlari/components/iphone-ulke-fiyatlari.vue";
+
+import { IphoneUlkeFiyatlariPageDef } from "@/domains/iphone-ulke-fiyatlari/page-def.js";
+
+const page = IphoneUlkeFiyatlariPageDef();
+---
+
+<AppLayout page={page}>
+    <PageHeader>
+        <Container>
+            <Breadcrumbs
+                items={page.breadcrumbs}
+                client:load />
+            <Heading1>
+                {page.title}
+            </Heading1>
+        </Container>
+    </PageHeader>
+
+    <Container>
+        <div class="ta-ad-first" ta-ad-container=""></div>
+    </Container>
+
+    <section>
+        <IphoneUlkeFiyatlari
+            page={page}
+            client:load />
+    </section>
+
+    <Container>
+        <div class="ta-ad-last" ta-ad-container=""></div>
+    </Container>
+</AppLayout>

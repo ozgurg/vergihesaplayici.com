@@ -27,15 +27,17 @@
                     :scale="props.scale"
                     :required="props.required"
                     :name="NAME">
-                    <template v-if="_item.icon">
-                        <svg-icon :icon="_item.icon" />
-                    </template>
+                    <slot name="preset" :item="_item" :index="_index">
+                        <template v-if="_item.icon">
+                            <svg-icon :icon="_item.icon" />
+                        </template>
 
-                    <b v-html="_item.title"></b>
+                        <b v-html="_item.title"></b>
 
-                    <template v-if="_item.description">
-                        <small v-html="_item.description"></small>
-                    </template>
+                        <template v-if="_item.description">
+                            <small v-html="_item.description"></small>
+                        </template>
+                    </slot>
                 </form-check>
             </template>
         </div>
@@ -44,7 +46,7 @@
     </transition-group>
 </template>
 
-<script lang="ts" setup>
+<script lang="ts" setup generic="TItem extends Item<unknown> = Item">
 import type { HtmlAttrs_div, HtmlAttrs_input } from "@/types/html.js";
 import type { Props as FormCheckProps } from "@/components/common/form/form-check.vue";
 
@@ -59,8 +61,8 @@ export type Item<V = HtmlAttrs_input["value"]> = {
     }
 }
 
-export type Props = {
-    items?: Item[];
+export type Props<T extends Item<unknown> = Item> = {
+    items?: T[];
     type?: FormCheckProps["type"];
     scale?: FormCheckProps["scale"];
 
@@ -76,10 +78,10 @@ export type Props = {
 
 const TRANSITION_DELAY_INCREMENT_IN_MS = 75;
 
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props<TItem>>(), {
     scale: "large"
 });
-const attrs = useAttrs() as Props;
+const attrs = useAttrs() as Props<TItem>;
 const modelValue = defineModel<Item["input"]["value"]>();
 const formGroupId = inject("form-group.id", null);
 

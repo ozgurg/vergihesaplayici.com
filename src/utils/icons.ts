@@ -1,6 +1,7 @@
 export { default as icon_share } from "remixicon/icons/System/share-2-line.svg?raw";
 export { default as icon_close } from "remixicon/icons/System/close-line.svg?raw";
 export { default as icon_chevronDown } from "remixicon/icons/Arrows/arrow-down-s-line.svg?raw";
+export { default as icon_chevronUpDown } from "remixicon/icons/Arrows/expand-up-down-line.svg?raw";
 export { default as icon_chevronRight } from "remixicon/icons/Arrows/arrow-right-s-line.svg?raw";
 export { default as icon_arrowLeft } from "remixicon/icons/Arrows/arrow-left-line.svg?raw";
 export { default as icon_arrowRight } from "remixicon/icons/Arrows/arrow-right-line.svg?raw";
@@ -29,7 +30,11 @@ export { default as icon_aracVergisi } from "remixicon/icons/Map/car-line.svg?ra
 export { default as icon_katmaDegerVergisi } from "remixicon/icons/Finance/discount-percent-line.svg?raw";
 export { default as icon_verginiOlustur } from "remixicon/icons/Weather/sparkling-line.svg?raw";
 
+export { default as icon_utility_iphoneUlkeFiyatlari } from "remixicon/icons/Logos/apple-fill.svg?raw";
+
 export { default as icon_calendar } from "remixicon/icons/Business/calendar-line.svg?raw";
 export { default as icon_refresh } from "remixicon/icons/System/refresh-line.svg?raw";
 export { default as icon_time } from "remixicon/icons/System/time-line.svg?raw";
+export { default as icon_externalLink } from "remixicon/icons/System/external-link-line.svg?raw";
+
 

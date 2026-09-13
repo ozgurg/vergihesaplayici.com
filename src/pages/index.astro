@@ -7,19 +7,24 @@ import RichText from "@/components/common/rich-text.vue";
 import OsitaIhemeVideo from "@/components/osita-iheme-video.vue";
 import Heading2 from "@/components/common/heading-2.vue";
 import CalculatorsGrid from "@/components/calculators-grid.vue";
+import UtilitiesGrid from "@/components/utilities-grid.vue";
 import ArticlesGrid from "@/components/articles-grid.vue";
 
 import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
 import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
+import { AraclarPageDef } from "@/domains/araclar/page-def.js";
 import { YazilarPageDef } from "@/domains/yazilar/page-def.js";
 import { getYazilar } from "@/domains/yazilar/db.js";
 import { getCalculatorPages } from "@/domains/hesaplayicilar/db.js";
+import { getUtilityPages } from "@/domains/araclar/db.js";
 
 const anaSayfaPage = AnaSayfaPageDef();
 const hesaplayicilarPage = HesaplayicilarPageDef();
+const araclarPage = AraclarPageDef();
 const yazilarPage = YazilarPageDef();
 
 const calculatorPages = getCalculatorPages();
+const utilityPages = getUtilityPages();
 const yazilar = (await getYazilar()).slice(0, 8);
 ---
 
@@ -54,6 +59,19 @@ const yazilar = (await getYazilar()).slice(0, 8);
             </Heading2>
             <CalculatorsGrid
                 items={calculatorPages}
+                titleTag="h3" />
+        </section>
+
+        <div class="ta-ad-first ta-ad-last" ta-ad-container=""></div>
+
+        <section>
+            <Heading2 tag="h2">
+                <a href={araclarPage.url}>
+                    {araclarPage.title}
+                </a>
+            </Heading2>
+            <UtilitiesGrid
+                items={utilityPages}
                 titleTag="h3" />
         </section>
 

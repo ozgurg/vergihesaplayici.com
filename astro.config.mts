@@ -5,6 +5,7 @@ import { loadEnv } from "vite";
 import packageJson from "./package.json" with { type: "json" };
 
 import extractColorFromThumbsIntegration from "./src/integrations/extract-color-from-thumbs.js";
+import fetchApplePricesIntegration from "./src/integrations/fetch-apple-prices.js";
 import astroCompressIntegration from "astro-compress";
 import astroVueIntegration from "@astrojs/vue";
 import astroSitemapIntegration from "@astrojs/sitemap";
@@ -39,6 +40,7 @@ export default defineConfig({
     trailingSlash: "always",
     integrations: [
         extractColorFromThumbsIntegration(),
+        fetchApplePricesIntegration(),
         astroCompressIntegration({
             CSS: true,
             HTML: false, // Setting this to `true` somehow breaks the `.modal` `@starting-style` definition
@@ -67,7 +69,7 @@ export default defineConfig({
                     item.changefreq = EnumChangefreq.MONTHLY;
                     item.lastmod = LAST_MODIFIED_DATE;
                     item.priority = .8;
-                } else if (/telefon-vergisi-hesaplayici/u.test(item.url) || /konsol-vergisi-hesaplayici/u.test(item.url) || /gumruk-vergisi/u.test(item.url) || /arac-vergisi/u.test(item.url)) {
+                } else if (/telefon-vergisi-hesaplayici/u.test(item.url) || /iphone-ulke-fiyatlari/u.test(item.url) || /konsol-vergisi-hesaplayici/u.test(item.url) || /gumruk-vergisi/u.test(item.url) || /arac-vergisi/u.test(item.url)) {
                     item.changefreq = EnumChangefreq.DAILY;
                     item.lastmod = LAST_MODIFIED_DATE;
                     item.priority = .9;

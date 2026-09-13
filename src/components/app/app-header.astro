@@ -7,13 +7,13 @@ import AppDrawer from "@/components/app/app-drawer.vue";
 import { icon_apps, icon_close } from "@/utils/icons.js";
 import { getFeaturedCalculatorPages } from "@/domains/hesaplayicilar/db.js";
 import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
-import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
+import { AraclarPageDef } from "@/domains/araclar/page-def.js";
 
 const APP_DRAWER_TOGGLE_ID = "app-drawer-toggle";
 const APP_DRAWER_ID = "app-drawer";
 
 const anaSayfaPage = AnaSayfaPageDef();
-const hesaplayicilarPage = HesaplayicilarPageDef();
+const araclarPage = AraclarPageDef();
 
 const nav = getFeaturedCalculatorPages();
 ---
@@ -40,10 +40,10 @@ const nav = getFeaturedCalculatorPages();
                 ))}
                 <li>
                     <a
-                        href={hesaplayicilarPage.url}
-                        aria-current={ariaCurrentValue(Astro.url, hesaplayicilarPage.url)}>
+                        href={araclarPage.url}
+                        aria-current={ariaCurrentValue(Astro.url, araclarPage.url)}>
                         <SvgIcon icon={icon_apps} />
-                        <span>Tümü</span>
+                        <span>Araçlar</span>
                     </a>
                 </li>
             </ul>
