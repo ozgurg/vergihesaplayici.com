@@ -3,7 +3,6 @@ import AppLayout from "@/layouts/app-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
 import Container from "@/components/common/container.vue";
 import Heading1 from "@/components/common/heading-1.vue";
-import RichText from "@/components/common/rich-text.vue";
 import DwightSchruteVideo from "@/components/dwight-schrute-video.vue";
 
 import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
@@ -21,9 +20,8 @@ const anaSayfaPage = AnaSayfaPageDef();
     </PageHeader>
 
     <Container>
-        <RichText
-            tag="section"
-            class="text">
+        <section
+            class="rich-text text">
             <p>…ama bu aramızda kalabilir ¯\_(ツ)_/¯</p>
             <DwightSchruteVideo client:idle />
 
@@ -37,7 +35,7 @@ const anaSayfaPage = AnaSayfaPageDef();
             </ul>
 
             <div class="ta-ad-last" ta-ad-container=""></div>
-        </RichText>
+        </section>
     </Container>
 </AppLayout>
 

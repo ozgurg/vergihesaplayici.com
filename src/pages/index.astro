@@ -3,7 +3,6 @@ import AppLayout from "@/layouts/app-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
 import Container from "@/components/common/container.vue";
 import Heading1 from "@/components/common/heading-1.vue";
-import RichText from "@/components/common/rich-text.vue";
 import OsitaIhemeVideo from "@/components/osita-iheme-video.vue";
 import Heading2 from "@/components/common/heading-2.vue";
 import CalculatorsGrid from "@/components/calculators-grid.vue";
@@ -36,9 +35,9 @@ const yazilar = (await getYazilar()).slice(0, 8);
                     <Heading1>
                         Vergi Hesaplayıcı
                     </Heading1>
-                    <RichText>
+                    <div class="rich-text">
                         <p>vergihesaplayici.com, vergi hesaplar.</p>
-                    </RichText>
+                    </div>
                 </div>
                 <OsitaIhemeVideo client:idle />
             </Container>

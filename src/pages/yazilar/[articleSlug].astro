@@ -6,7 +6,6 @@ import Container from "@/components/common/container.vue";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
 import Heading1 from "@/components/common/heading-1.vue";
 import ArticleLegalDisclaimerAlert from "@/components/article-legal-disclaimer-alert.vue";
-import RichText from "@/components/common/rich-text.vue";
 import Heading2 from "@/components/common/heading-2.vue";
 import ArticlesGrid from "@/components/articles-grid.vue";
 import SvgIcon from "@/components/common/svg-icon.vue";
@@ -109,9 +108,8 @@ const { Content } = await render(yazi.entry);
             </span>
         </div>
 
-        <RichText
-            tag="section"
-            class="content">
+        <section
+            class="rich-text content">
             {taxInfo &&
                 <table>
                     <thead>
@@ -133,7 +131,7 @@ const { Content } = await render(yazi.entry);
                 <br />
             }
             <Content />
-        </RichText>
+        </section>
 
         <hr />
         <ArticleLegalDisclaimerAlert />
