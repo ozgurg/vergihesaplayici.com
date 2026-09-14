@@ -3,8 +3,12 @@
         name="list-transition"
         tag="div"
         class="country-price-bar-chart">
-        <template v-for="_item in displayedTopItems" :key="_item.country.code">
-            <country-price-bar-chart-item :item="_item" />
+        <template v-for="_processed in displayedTopItems" :key="_processed.item.country.code">
+            <country-price-bar-chart-item
+                :item="_processed.item"
+                :price-display="_processed.priceDisplay"
+                :currency-display="_processed.currencyDisplay"
+                :bar-percentage="_processed.barPercentage" />
         </template>
 
         <template v-if="canToggle && !isExpanded">
@@ -22,14 +26,22 @@
         </template>
 
         <template v-if="canToggle && isExpanded">
-            <template v-for="_item in middleItems" :key="_item.country.code">
-                <country-price-bar-chart-item :item="_item" />
+            <template v-for="_processed in middleItems" :key="_processed.item.country.code">
+                <country-price-bar-chart-item
+                    :item="_processed.item"
+                    :price-display="_processed.priceDisplay"
+                    :currency-display="_processed.currencyDisplay"
+                    :bar-percentage="_processed.barPercentage" />
             </template>
         </template>
 
         <template v-if="canToggle">
-            <template v-for="_item in bottomItems" :key="_item.country.code">
-                <country-price-bar-chart-item :item="_item" />
+            <template v-for="_processed in bottomItems" :key="_processed.item.country.code">
+                <country-price-bar-chart-item
+                    :item="_processed.item"
+                    :price-display="_processed.priceDisplay"
+                    :currency-display="_processed.currencyDisplay"
+                    :bar-percentage="_processed.barPercentage" />
             </template>
         </template>
     </transition-group>
@@ -40,37 +52,107 @@ import type { CountryComparisonItem } from "@/domains/iphone-ulke-fiyatlari/type
 import CountryPriceBarChartItem from "@/domains/iphone-ulke-fiyatlari/components/country-price-bar-chart-item.vue";
 import { icon_chevronUpDown } from "@/utils/icons.js";
 
-const SHOW_COUNT = 7;
+const SHOW_COUNT = 8;
+
+export type CurrencyMode = "USD" | "TRY" | "local";
 
 export type Props = {
     items: CountryComparisonItem[];
+    currencyMode: CurrencyMode;
+    usdRate: number;
 };
 
 const props = defineProps<Props>();
 
 const isExpanded = ref(false);
 
-const canToggle = computed(() => props.items.length > SHOW_COUNT * 2);
+type ProcessedItem = {
+    item: CountryComparisonItem;
+    priceDisplay: number;
+    currencyDisplay: string;
+    barPercentage: number;
+};
+
+const processedItems = computed<ProcessedItem[]>(() => {
+    if (props.currencyMode === "local") {
+        const sorted = props.items.toSorted((a, b) => b.priceUSD - a.priceUSD);
+        const maxPriceUSD = Math.max(...props.items.map(_item => _item.priceUSD), 1);
+        return sorted.map(_item => ({
+            item: _item,
+            priceDisplay: _item.priceLocal,
+            currencyDisplay: _item.currencyLocal,
+            barPercentage: maxPriceUSD > 0
+                ? Math.max(8, Math.round((_item.priceUSD / maxPriceUSD) * 100))
+                : 100
+        }));
+    }
+
+    if (props.currencyMode === "TRY") {
+        const withPrices = props.items
+            .map(_item => {
+                const priceDisplay = _item.country.code === "tr"
+                    ? _item.priceLocal
+                    : Math.round(_item.priceUSD * props.usdRate);
+                return {
+                    item: _item,
+                    priceDisplay,
+                    currencyDisplay: "TRY",
+                    barPercentage: 0
+                };
+            })
+            .toSorted((a, b) => b.priceDisplay - a.priceDisplay);
+
+        const maxPrice = withPrices[0]?.priceDisplay || 1;
+        for (const _entry of withPrices) {
+            _entry.barPercentage = maxPrice > 0
+                ? Math.max(8, Math.round((_entry.priceDisplay / maxPrice) * 100))
+                : 100;
+        }
+
+        return withPrices;
+    }
+
+    // Default: USD
+    const withPrices = props.items
+        .map(_item => ({
+            item: _item,
+            priceDisplay: _item.priceUSD,
+            currencyDisplay: "USD",
+            barPercentage: 0
+        }))
+        .toSorted((a, b) => b.priceDisplay - a.priceDisplay);
+
+    const maxPrice = withPrices[0]?.priceDisplay || 1;
+    for (const _entry of withPrices) {
+        _entry.barPercentage = maxPrice > 0
+            ? Math.max(8, Math.round((_entry.priceDisplay / maxPrice) * 100))
+            : 100;
+    }
+
+    return withPrices;
+});
+
+const canToggle = computed(() => processedItems.value.length > SHOW_COUNT * 2);
 
 const displayedTopItems = computed(() => {
     if (!canToggle.value) {
-        return props.items;
+        return processedItems.value;
     }
-    return props.items.slice(0, SHOW_COUNT);
+    return processedItems.value.slice(0, SHOW_COUNT);
 });
 
 const middleItems = computed(() => {
     if (!canToggle.value) {
         return [];
     }
-    return props.items.slice(SHOW_COUNT, -SHOW_COUNT);
+    return processedItems.value.slice(SHOW_COUNT, -SHOW_COUNT);
 });
 
 const bottomItems = computed(() => {
     if (!canToggle.value) {
         return [];
     }
-    return props.items.slice(-SHOW_COUNT);
+    return processedItems.value.slice(-SHOW_COUNT);
 });
 </script>
 

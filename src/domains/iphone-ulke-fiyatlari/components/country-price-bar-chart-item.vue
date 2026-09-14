@@ -1,6 +1,6 @@
 <template>
     <div
-        :style="{ '--value': `${props.item.barPercentage}%` }"
+        :style="{ '--value': `${props.barPercentage}%` }"
         :class="`country-price-bar-chart-item-country-${props.item.country.code}`"
         class="country-price-bar-chart-item">
         <a
@@ -18,7 +18,7 @@
         </a>
         <div class="bar"></div>
         <div class="price text-number">
-            <string-carousel :text="formatMoney(props.item.priceUSD, 'USD', {minimumFractionDigits: 0})" />
+            <string-carousel :text="formatMoney(props.priceDisplay, props.currencyDisplay, { minimumFractionDigits: 0 })" />
         </div>
     </div>
 </template>
@@ -30,6 +30,9 @@ import { icon_externalLink } from "@/utils/icons.js";
 
 export type Props = {
     item: CountryComparisonItem;
+    priceDisplay: number;
+    currencyDisplay: string;
+    barPercentage?: number;
 };
 
 const props = defineProps<Props>();
@@ -123,7 +126,7 @@ const props = defineProps<Props>();
     }
     .price {
         flex-shrink: 0;
-        inline-size: 5rem;
+        inline-size: 5.75rem;
         text-align: end;
         font-size: var(--vh-fs-sm);
         font-weight: var(--vh-fw-medium)

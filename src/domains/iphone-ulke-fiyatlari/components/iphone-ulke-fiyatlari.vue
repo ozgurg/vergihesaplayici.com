@@ -36,6 +36,16 @@
                                 </template>
                             </form-check-group>
                         </form-group>
+
+                        <form-group label="Para birimi">
+                            <form-check-group
+                                v-model="currencyMode"
+                                :items="CURRENCY_OPTIONS"
+                                :required="true"
+                                scale="small"
+                                type="radio"
+                                class="currency-options" />
+                        </form-group>
                     </form>
 
                     <hr />
@@ -62,7 +72,9 @@
                             </heading-3>
                             <div class="calculator-results">
                                 <country-price-bar-chart
-                                    :items="comparison.items" />
+                                    :items="comparison.items"
+                                    :currency-mode="currencyMode"
+                                    :usd-rate="usdRate" />
                             </div>
                         </div>
                     </transition>
@@ -74,6 +86,8 @@
 
 <script lang="ts" setup>
 import type { Page } from "@/types/page-def.js";
+import type { ExchangeRates } from "@/types/common.js";
+import type { Item as FormCheckGroupItem } from "@/components/common/form/form-check-group.vue";
 import { staticUrl } from "@/utils/url.js";
 import {
     getActiveIphonePresets,
@@ -83,8 +97,11 @@ import {
 import CountryPriceBarChart from "@/domains/iphone-ulke-fiyatlari/components/country-price-bar-chart.vue";
 import type { Preset } from "@/domains/telefon-vergisi/types.js";
 
+export type CurrencyMode = "USD" | "TRY" | "local";
+
 export type Props = {
     page: Page;
+    EXCHANGE_RATES: ExchangeRates;
 };
 
 const props = defineProps<Props>();
@@ -100,7 +117,33 @@ const PRESET_OPTIONS = activePresets.map(_preset => ({
     }
 }));
 
+const CURRENCY_OPTIONS: FormCheckGroupItem<CurrencyMode>[] = [
+    {
+        title: "USD",
+        input: {
+            value: "USD"
+        }
+    },
+    {
+        title: "TRY",
+        input: {
+            value: "TRY"
+        }
+    },
+    {
+        title: "Yerel",
+        input: {
+            value: "local"
+        }
+    }
+];
+
 const selectedSlug = ref<Preset["slug"]>(getDefaultModelSlug());
+const currencyMode = ref<CurrencyMode>("USD");
+
+const usdRate = computed<number>(() => {
+    return props.EXCHANGE_RATES?.rates?.USD ?? 1;
+});
 
 const comparison = computed(() => {
     return getComparisonBySlug(selectedSlug.value);
@@ -135,5 +178,9 @@ const comparison = computed(() => {
     :deep(small) {
         font-weight: var(--vh-fw-semibold)
     }
+}
+
+.currency-options {
+    grid-template-columns: repeat(3, 1fr)
 }
 </style>

@@ -10,9 +10,17 @@ export type Country<TCode extends Lowercase<string> = Lowercase<string>> = {
 
 export type CountriesMap<T extends { [K in keyof T]: Country<K & Lowercase<string>> }> = T;
 
+export type CountryPriceEntry = {
+    priceUSD: number;
+    priceLocal: number;
+    currencyLocal: string;
+};
+
 export type CountryComparisonItem = {
     country: Country;
     priceUSD: number;
+    priceLocal: number;
+    currencyLocal: string;
     barPercentage: number;
     storeUrl: URL;
 };
@@ -21,7 +29,7 @@ export type PricesDataset = {
     updatedAt: string;
     prices: {
         [slug: string]: {
-            [countryCode: string]: number;
+            [countryCode: string]: CountryPriceEntry;
         };
     };
 };

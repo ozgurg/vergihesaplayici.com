@@ -141,11 +141,15 @@ export const fetchAndGenerateApplePrices = async (): Promise<void> => {
             const scraped = await Promise.all(Object.values(COUNTRIES).map(_country => scrapeAppleCountry(appleStoreSlug, _country)));
             const validScraped = scraped.filter((_price): _price is NonNullable<typeof _price> => _price !== null);
 
-            const countryPrices: { [countryCode: string]: number } = {};
+            const countryPrices: { [countryCode: string]: { priceUSD: number; priceLocal: number; currencyLocal: string } } = {};
             for (const _realPrice of validScraped) {
                 const rateToUsd = rates[_realPrice.currency] || 1;
                 const priceUSD = _realPrice.currency === "USD" ? _realPrice.lowPrice : Math.round(_realPrice.lowPrice / rateToUsd);
-                countryPrices[_realPrice.country.code] = priceUSD;
+                countryPrices[_realPrice.country.code] = {
+                    priceUSD,
+                    priceLocal: _realPrice.lowPrice,
+                    currencyLocal: _realPrice.currency
+                };
             }
 
             return {
