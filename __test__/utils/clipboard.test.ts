@@ -6,21 +6,21 @@ describe("utils/clipboard.js", () => {
         const testUrl = new URL("https://vergihesaplayici.com");
 
         it("copies an URL to clipboard via Clipboard API", async () => {
-            vi.stubGlobal("window", {
-                navigator: {
-                    clipboard: {
-                        writeText: vi.fn()
-                    }
-                }
+            const writeText = vi.fn();
+            Object.defineProperty(window.navigator, "clipboard", {
+                value: { writeText },
+                writable: true,
+                configurable: true
             });
 
             await copyUrlToClipboard(testUrl);
 
-            expect(window.navigator.clipboard.writeText).toHaveBeenCalledWith(testUrl.href);
+            expect(writeText).toHaveBeenCalledWith(testUrl.href);
         });
 
         it("throws error if Clipboard API is not supported", () => {
-            vi.unstubAllGlobals();
+            // @ts-expect-error test unsupported clipboard API
+            delete window.navigator.clipboard;
             expect(() => {
                 copyUrlToClipboard(testUrl);
             }).toThrow("Clipboard API is not supported");
@@ -42,22 +42,26 @@ describe("utils/clipboard.js", () => {
                 }
             }
 
-            vi.stubGlobal("window", {
-                navigator: {
-                    clipboard: {
-                        write: vi.fn()
-                    }
-                },
-                ClipboardItem: MockClipboardItem
+            const write = vi.fn();
+            Object.defineProperty(window.navigator, "clipboard", {
+                value: { write },
+                writable: true,
+                configurable: true
+            });
+            Object.defineProperty(window, "ClipboardItem", {
+                value: MockClipboardItem,
+                writable: true,
+                configurable: true
             });
 
             await copyPngFileToClipboard(testBlob);
 
-            expect(window.navigator.clipboard.write).toHaveBeenCalledWith([mockClipboardItem]);
+            expect(write).toHaveBeenCalledWith([mockClipboardItem]);
         });
 
         it("throws error if Clipboard API is not supported", () => {
-            vi.unstubAllGlobals();
+            // @ts-expect-error test unsupported clipboard API
+            delete window.navigator.clipboard;
             expect(() => {
                 copyPngFileToClipboard(testBlob);
             }).toThrow("Clipboard API is not supported");

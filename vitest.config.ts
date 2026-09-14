@@ -8,6 +8,7 @@ process.env.TZ = "Europe/Istanbul";
 export default getViteConfig({
     test: {
         environment: "jsdom",
+        pool: "vmThreads",
         globals: true,
         env: {
             SITE: "https://vergihesaplayici.com"
@@ -61,4 +62,4 @@ export default getViteConfig({
             ]
         }
     }
-} as any, {site: "https://vergihesaplayici.com"});
+} as any, { site: "https://vergihesaplayici.com" });
