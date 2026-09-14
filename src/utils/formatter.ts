@@ -13,15 +13,25 @@ export const _UNIT_TEST_ONLY_clearMoneyFormattersCache = (): void => {
     moneyFormattersCache.clear();
 };
 
-export const formatMoney = (price: number, currency: string): string => {
-    let formatter = moneyFormattersCache.get(currency);
+export type FormatMoneyOptions = {
+    minimumFractionDigits?: number;
+};
+
+export const formatMoney = (
+    price: number,
+    currency: string,
+    options?: FormatMoneyOptions
+): string => {
+    const minimumFractionDigits = options?.minimumFractionDigits ?? 2;
+    const cacheKey = `${currency}:${minimumFractionDigits}`;
+    let formatter = moneyFormattersCache.get(cacheKey);
     if (!formatter) {
         formatter = new Intl.NumberFormat(NUMBER_FORMATTER_LOCALE, {
             style: "currency",
             currency,
-            minimumFractionDigits: 2
+            minimumFractionDigits
         });
-        moneyFormattersCache.set(currency, formatter);
+        moneyFormattersCache.set(cacheKey, formatter);
     }
     return formatter.format(price);
 };

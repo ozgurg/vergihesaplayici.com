@@ -4,7 +4,6 @@ import PageHeader from "@/components/common/page-header.vue";
 import Container from "@/components/common/container.vue";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
 import Heading1 from "@/components/common/heading-1.vue";
-import RichText from "@/components/common/rich-text.vue";
 import FormButton from "@/components/common/form/form-button.vue";
 
 import { HataBildirPageDef } from "@/domains/hata-bildir/page-def.js";
@@ -27,7 +26,7 @@ const PUBLIC_RECAPTCHA_V3_PUBLIC_KEY = import.meta.env.PUBLIC_RECAPTCHA_V3_PUBLI
     </PageHeader>
 
     <Container>
-        <RichText>
+        <div class="rich-text">
             <p>vergihesaplayici.com'daki hesaplayıcılar, olabildiğince güvenilir kaynaklardan derlediğim verilere
                 dayanıyor. Ancak bu kaynakların her zaman %100 doğru olduğunu garanti edemem. Ayrıca mevzuatlar sık
                 değiştiği için, bugün doğru olan bir bilgi yarın geçerliliğini yitirebilir. Yani mevzuat değişiklikleri
@@ -45,7 +44,7 @@ const PUBLIC_RECAPTCHA_V3_PUBLIC_KEY = import.meta.env.PUBLIC_RECAPTCHA_V3_PUBLI
             <div id="hidden-email-container">
                 <FormButton type="button" scale="medium">E-posta adresini göster</FormButton>
             </div>
-        </RichText>
+        </div>
 
         <div class="ta-ad-last" ta-ad-container=""></div>
     </Container>

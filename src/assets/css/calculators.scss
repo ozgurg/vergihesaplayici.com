@@ -34,7 +34,8 @@
                 padding: $padding-block $padding-inline;
                 flex: 1;
                 min-width: 0;
-                overflow: hidden
+                border-start-end-radius: calc(var(--vh-br-normal) - var(--vh-border-inline-size));
+                border-end-end-radius: calc(var(--vh-br-normal) - var(--vh-border-inline-size))
             }
         }
     }

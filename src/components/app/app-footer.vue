@@ -42,11 +42,11 @@
 
             <hr />
 
-            <rich-text>
+            <div class="rich-text">
                 <a href="https://github.com/ozgurg" target="_blank" rel="nofollow noopener noreferrer">@ozgurg</a> tarafından AGPL-3.0 lisansı altında <a href="https://github.com/ozgurg/vergihesaplayici.com" target="_blank" rel="nofollow noopener noreferrer">açık kaynaklı</a> olarak geliştirilmektedir
                 <br />
                 <a :href="hataBildirPage.url.href">{{ hataBildirPage.title }}</a> – v{{ VERSION }}
-            </rich-text>
+            </div>
         </container>
     </footer>
 </template>

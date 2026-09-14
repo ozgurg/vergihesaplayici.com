@@ -9,15 +9,16 @@ describe("utils/share.js", () => {
         };
 
         it("shares an URL via Web Share API", async () => {
-            vi.stubGlobal("window", {
-                navigator: {
-                    share: vi.fn()
-                }
+            const shareFn = vi.fn();
+            Object.defineProperty(window.navigator, "share", {
+                value: shareFn,
+                writable: true,
+                configurable: true
             });
 
             await shareUrl(testParams);
 
-            expect(window.navigator.share).toHaveBeenCalledWith({
+            expect(shareFn).toHaveBeenCalledWith({
                 text: testParams.text,
                 title: testParams.text,
                 url: testParams.url.href
@@ -25,7 +26,8 @@ describe("utils/share.js", () => {
         });
 
         it("throws error if Web Share API is not supported", () => {
-            vi.unstubAllGlobals();
+            // @ts-expect-error test unsupported share API
+            delete window.navigator.share;
             expect(() => {
                 shareUrl(testParams);
             }).toThrow("Web Share API is not supported");
@@ -41,15 +43,16 @@ describe("utils/share.js", () => {
         };
 
         it("shares a PNG file via Web Share API", async () => {
-            vi.stubGlobal("window", {
-                navigator: {
-                    share: vi.fn()
-                }
+            const shareFn = vi.fn();
+            Object.defineProperty(window.navigator, "share", {
+                value: shareFn,
+                writable: true,
+                configurable: true
             });
 
             await sharePngFile(testParams);
 
-            expect(window.navigator.share).toHaveBeenCalledWith({
+            expect(shareFn).toHaveBeenCalledWith({
                 title: testParams.text,
                 text: testParams.text,
                 files: [
@@ -66,7 +69,8 @@ describe("utils/share.js", () => {
         });
 
         it("throws error if Web Share API is not supported", () => {
-            vi.unstubAllGlobals();
+            // @ts-expect-error test unsupported share API
+            delete window.navigator.share;
             expect(() => {
                 sharePngFile(testParams);
             }).toThrow("Web Share API is not supported");

@@ -1,24 +1,3 @@
-<template>
-    <component
-        :is="props.tag"
-        class="rich-text">
-        <slot name="default" />
-    </component>
-</template>
-
-<script lang="ts" setup>
-import type { HtmlAttrs_div } from "@/types/html.js";
-
-export type Props = {
-    tag?: string;
-} & /* @vue-ignore */ Partial<HtmlAttrs_div>;
-
-const props = withDefaults(defineProps<Props>(), {
-    tag: "div"
-});
-</script>
-
-<style lang="scss" scoped>
 .rich-text {
     --_link-color: var(--link-color, var(--vh-clr-primary));
     --_line-height-p: var(--line-height-p, var(--vh-lh-lg));
@@ -26,7 +5,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 
     // Paragraph
-    :deep(p) {
+    p {
         line-height: var(--_line-height-p);
         margin-block-end: calc(var(--vh-spacer) * 1.25);
         &:last-child {
@@ -46,7 +25,7 @@ const props = withDefaults(defineProps<Props>(), {
             margin-block-start: calc(var(--vh-spacer) * 3)
         }
     }
-    :deep(table) {
+    table {
         margin-block-end: calc(var(--vh-spacer) * 1.25);
         &:last-child {
             margin-block-end: 0
@@ -66,19 +45,19 @@ const props = withDefaults(defineProps<Props>(), {
 
 
     // List
-    :deep(li > p:only-of-type) {
+    li > p:only-of-type {
         display: inline
     }
-    :deep(li + li) {
+    li + li {
         margin-block-start: calc(var(--vh-spacer) * .5)
     }
-    :deep(ul) {
+    ul {
         list-style: inside square;
         &:not(:last-child) {
             margin-block-end: calc(var(--vh-spacer) * 3)
         }
     }
-    :deep(ol) {
+    ol {
         list-style: inside decimal;
         &:not(:last-child) {
             margin-block-end: calc(var(--vh-spacer) * 3)
@@ -87,42 +66,42 @@ const props = withDefaults(defineProps<Props>(), {
 
 
     // Inline
-    :deep(b),
-    :deep(strong) {
+    b,
+    strong {
         font-weight: var(--vh-fw-bold)
     }
-    :deep(em),
-    :deep(i) {
+    em,
+    i {
         font-style: italic
     }
-    :deep(u) {
+    u {
         text-underline-offset: calc(var(--vh-spacer) * .25)
     }
-    :deep(a) {
+    a {
         color: var(--_link-color);
         @include vh-link
     }
 
 
     // Heading
-    :deep(h1),
-    :deep(h2),
-    :deep(h3),
-    :deep(h4),
-    :deep(h5),
-    :deep(h6) {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         margin-block-end: calc(var(--vh-spacer) * .75)
     }
-    :deep(h2) {
+    h2 {
         @include vh-heading-2
     }
-    :deep(h3) {
+    h3 {
         @include vh-heading-3
     }
 
 
     // Table
-    :deep(table) {
+    table {
         @mixin cell-padding {
             padding-inline: var(--container-padding-inline);
             padding-block: calc(var(--vh-spacer) * .75);
@@ -180,7 +159,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 
     // Various
-    :deep(blockquote) {
+    blockquote {
         position: relative;
         @include vh-squircle(var(--vh-br-normal));
         margin-block-end: calc(var(--vh-spacer) * 2);
@@ -199,7 +178,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 
     // Details
-    :deep(details) {
+    details {
         --_padding-inline: calc(var(--vh-spacer) * 1.25);
         border: var(--vh-border-inline-size) solid hsla(var(--vh-clr-border-hsl), var(--vh-clr-border-alpha));
         overflow: hidden;
@@ -293,4 +272,3 @@ const props = withDefaults(defineProps<Props>(), {
         }
     }
 }
-</style>

@@ -22,13 +22,15 @@ export default {
                 "design",
                 "content",
 
-                // Calculators
                 "arac",
                 "gumruk",
                 "kdv",
                 "konsol",
                 "telefon",
                 "olustur",
+
+                "araclar",
+
                 "yazilar"
             ]
         ]

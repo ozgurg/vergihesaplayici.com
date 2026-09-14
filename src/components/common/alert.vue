@@ -1,15 +1,17 @@
 <template>
-    <rich-text :class="CLASSES">
+    <div
+        :class="CLASSES"
+        class="rich-text">
         <slot name="default" />
-    </rich-text>
+    </div>
 </template>
 
 <script lang="ts" setup>
-import type { Props as RichTextProps } from "@/components/common/rich-text.vue";
+import type { HtmlAttrs_div } from "@/types/html.js";
 
 export type Props = {
     color?: "warning" | "info";
-} & RichTextProps;
+} & /* @vue-ignore */ Partial<HtmlAttrs_div>;
 
 const props = defineProps<Props>();
 

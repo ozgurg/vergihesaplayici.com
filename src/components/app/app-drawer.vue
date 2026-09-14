@@ -8,6 +8,14 @@
                     :page="_calculatorPage"
                     title-tag="div" />
             </template>
+
+            <hr />
+
+            <template v-for="_utilityPage in UTILITY_PAGES" :key="_utilityPage.url">
+                <utility-card-item
+                    :page="_utilityPage"
+                    title-tag="div" />
+            </template>
         </container>
     </dialog>
 </template>
@@ -15,8 +23,10 @@
 <script lang="ts" setup>
 import type { HtmlAttrs_dialog } from "@/types/html.js";
 import { getCalculatorPages } from "@/domains/hesaplayicilar/db.js";
+import { getUtilityPages } from "@/domains/araclar/db.js";
 
 const CALCULATOR_PAGES = getCalculatorPages();
+const UTILITY_PAGES = getUtilityPages();
 
 export type Props = {
     id: string;
@@ -52,8 +62,11 @@ const props = defineProps<Props>();
         padding-block-start: calc(var(--app-header-down-md-block-size) + (var(--_padding-block)));
         padding-block-end: max(env(safe-area-inset-bottom), var(--_padding-block))
     }
+    .calculator-card-item,
+    .utility-card-item {
+        flex-shrink: 0
+    }
     .calculator-card-item {
-        flex-shrink: 0;
         block-size: calc((100% - (var(--_gap) * (var(--_ideal-item-count) - 1))) / var(--_ideal-item-count));
         min-block-size: 192px;
         max-block-size: 192px;

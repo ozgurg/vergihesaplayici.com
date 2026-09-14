@@ -52,7 +52,7 @@ $_variants: (
         --font-weight: var(--vh-fw-medium)
     ),
     "tax-added-price": (
-        --bg: vh-calculate-overlay-color($clr-body-bg, rgba($clr-primary, .16)),
+        --bg: vh-calculate-overlay-color($clr-body-bg, rgba($clr-primary, .12)),
         --font-weight: var(--vh-fw-bold)
     )
 );
