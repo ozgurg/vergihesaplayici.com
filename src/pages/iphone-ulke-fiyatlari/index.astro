@@ -7,8 +7,10 @@ import Heading1 from "@/components/common/heading-1.vue";
 import IphoneUlkeFiyatlari from "@/domains/iphone-ulke-fiyatlari/components/iphone-ulke-fiyatlari.vue";
 
 import { IphoneUlkeFiyatlariPageDef } from "@/domains/iphone-ulke-fiyatlari/page-def.js";
+import { getExchangeRates } from "@/utils/exchange-rates.js";
 
 const page = IphoneUlkeFiyatlariPageDef();
+const EXCHANGE_RATES = getExchangeRates();
 ---
 
 <AppLayout page={page}>
@@ -29,6 +31,7 @@ const page = IphoneUlkeFiyatlariPageDef();
 
     <section>
         <IphoneUlkeFiyatlari
+            EXCHANGE_RATES={EXCHANGE_RATES}
             page={page}
             client:load />
     </section>

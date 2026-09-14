@@ -31,14 +31,16 @@ export const getComparisonBySlug = (modelSlug: Preset["slug"]): ComparisonResult
     const priceMap = dataset.prices?.[preset.slug] || {};
 
     const items: CountryComparisonItem[] = Object.entries(priceMap)
-        .map(([code, priceUSD]) => {
+        .map(([code, entry]) => {
             const country = COUNTRIES[code];
-            if (!country) {
+            if (!country || !entry) {
                 return null;
             }
             return {
                 country,
-                priceUSD,
+                priceUSD: entry.priceUSD,
+                priceLocal: entry.priceLocal,
+                currencyLocal: entry.currencyLocal,
                 barPercentage: 0,
                 storeUrl: getAppleStoreUrl(country.prefix, preset.slug)
             };
