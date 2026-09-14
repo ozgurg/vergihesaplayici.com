@@ -14,31 +14,23 @@ const GENERATED_FOLDER_NAME = ".generated";
 const GENERATED_JSON_NAME = "iphone-country-prices.json";
 const GENERATED_JSON_PATH = path.resolve(process.cwd(), path.join(GENERATED_FOLDER_NAME, GENERATED_JSON_NAME));
 
-export const getPricesJson = (): PricesDataset => {
-    if (fs.existsSync(GENERATED_JSON_PATH)) {
-        try {
-            return JSON.parse(fs.readFileSync(GENERATED_JSON_PATH, "utf8")) as PricesDataset;
-        } catch {
-            return { updatedAt: "", prices: {} };
-        }
-    }
-    return { updatedAt: "", prices: {} };
-};
-
 const getExchangeRates = async (): Promise<{ [currency: string]: number }> => {
     const response = await fetch("https://open.er-api.com/v6/latest/USD");
     const data = (await response.json()) as { rates: { [currency: string]: number } };
     return data.rates;
 };
 
-const tryExtractProductOffer = (
-    scriptContent: string | undefined,
-    country: Country
-): {
+type ScrapedProductOffer = {
+    name?: string;
     country: Country;
     currency: string;
     lowPrice: number;
-} | null => {
+};
+
+const tryExtractProductOffer = (
+    scriptContent: string | undefined,
+    country: Country
+): ScrapedProductOffer | null => {
     if (!scriptContent) {
         return null;
     }
@@ -47,6 +39,7 @@ const tryExtractProductOffer = (
         if (data?.["@type"] === "Product" && data?.offers) {
             const offer = Array.isArray(data.offers) ? data.offers[0] : data.offers;
             return {
+                name: typeof data.name === "string" ? data.name : undefined,
                 country,
                 currency: offer.priceCurrency,
                 lowPrice: Number.parseFloat(offer.lowPrice)
@@ -61,11 +54,7 @@ const tryExtractProductOffer = (
 const scrapeAppleCountry = async (
     slug: string,
     country: Country
-): Promise<{
-    country: Country;
-    currency: string;
-    lowPrice: number;
-} | null> => {
+): Promise<ScrapedProductOffer[]> => {
     const url = `https://www.apple.com${country.prefix}/shop/buy-iphone/${slug}`;
     try {
         const response = await fetch(url, {
@@ -77,12 +66,17 @@ const scrapeAppleCountry = async (
 
         const html = await response.text();
 
+        const offers: ScrapedProductOffer[] = [];
         const scriptMatches = html.matchAll(/<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/giu);
         for (const _match of scriptMatches) {
             const productOffer = tryExtractProductOffer(_match[1], country);
             if (productOffer) {
-                return productOffer;
+                offers.push(productOffer);
             }
+        }
+
+        if (offers.length > 0) {
+            return offers;
         }
 
         // Special handling for China / Baidu JSON-LD format
@@ -94,17 +88,49 @@ const scrapeAppleCountry = async (
 
             const minPrice = prices.length > 0 ? Math.min(...prices) : 0;
             if (minPrice > 2_000) {
-                return {
-                    country,
-                    currency: "CNY",
-                    lowPrice: minPrice
-                };
+                return [
+                    {
+                        name: undefined,
+                        country,
+                        currency: "CNY",
+                        lowPrice: minPrice
+                    }
+                ];
             }
         }
     } catch {
         // Ignore
     }
-    return null;
+    return [];
+};
+
+const normalizeModelName = (name: string): string => {
+    return name.toLowerCase().replace(/^apple\s+/iu, "").replaceAll(/[^a-z0-9]/giu, "");
+};
+
+const findMatchingOffer = (
+    offers: ScrapedProductOffer[],
+    preset: Omit<Preset, "brandId">
+): ScrapedProductOffer | null => {
+    if (offers.length === 0) {
+        return null;
+    }
+
+    const targetNorm = normalizeModelName(preset.title);
+
+    const exact = offers.find(_offer => _offer.name && normalizeModelName(_offer.name) === targetNorm);
+    if (exact) {
+        return exact;
+    }
+
+    const partial = offers.find(_offer => _offer.name && (
+        normalizeModelName(_offer.name).includes(targetNorm) || targetNorm.includes(normalizeModelName(_offer.name))
+    ));
+    if (partial) {
+        return partial;
+    }
+
+    return offers[0] || null;
 };
 
 export const fetchAndGenerateApplePrices = async (): Promise<void> => {
@@ -134,30 +160,58 @@ export const fetchAndGenerateApplePrices = async (): Promise<void> => {
         prices: {}
     };
 
-    const modelEntries = await Promise.all(
-        activePresets.map(async (_preset) => {
-            const appleStoreSlug = getAppleStoreSlug(_preset.slug);
+    const uniqueStoreSlugs = [...new Set(activePresets.map(_preset => getAppleStoreSlug(_preset.slug)))];
 
-            const scraped = await Promise.all(Object.values(COUNTRIES).map(_country => scrapeAppleCountry(appleStoreSlug, _country)));
-            const validScraped = scraped.filter((_price): _price is NonNullable<typeof _price> => _price !== null);
+    const storeSlugOffersMap: {
+        [slug: string]: {
+            [countryCode: string]: ScrapedProductOffer[];
+        };
+    } = {};
 
-            const countryPrices: { [countryCode: string]: { priceUSD: number; priceLocal: number; currencyLocal: string } } = {};
-            for (const _realPrice of validScraped) {
-                const rateToUsd = rates[_realPrice.currency] || 1;
-                const priceUSD = _realPrice.currency === "USD" ? _realPrice.lowPrice : Math.round(_realPrice.lowPrice / rateToUsd);
-                countryPrices[_realPrice.country.code] = {
-                    priceUSD,
-                    priceLocal: _realPrice.lowPrice,
-                    currencyLocal: _realPrice.currency
-                };
-            }
-
-            return {
-                slug: _preset.slug,
-                prices: countryPrices
-            };
+    await Promise.all(
+        uniqueStoreSlugs.map(async (_slug) => {
+            const countryOffers: { [countryCode: string]: ScrapedProductOffer[] } = {};
+            await Promise.all(
+                Object.values(COUNTRIES).map(async (_country) => {
+                    const offers = await scrapeAppleCountry(_slug, _country);
+                    if (offers.length > 0) {
+                        countryOffers[_country.code] = offers;
+                    }
+                })
+            );
+            storeSlugOffersMap[_slug] = countryOffers;
         })
     );
+
+    const modelEntries = activePresets.map(_preset => {
+        const appleStoreSlug = getAppleStoreSlug(_preset.slug);
+        const countryOffersMap = storeSlugOffersMap[appleStoreSlug] || {};
+
+        const countryPrices: {
+            [countryCode: string]: { priceUSD: number; priceLocal: number; currencyLocal: string };
+        } = {};
+
+        for (const [countryCode, offers] of Object.entries(countryOffersMap)) {
+            const matchedOffer = findMatchingOffer(offers, _preset);
+            if (matchedOffer) {
+                const rateToUsd = rates[matchedOffer.currency] || 1;
+                const priceUSD = matchedOffer.currency === "USD"
+                    ? matchedOffer.lowPrice
+                    : Math.round(matchedOffer.lowPrice / rateToUsd);
+
+                countryPrices[countryCode] = {
+                    priceUSD,
+                    priceLocal: matchedOffer.lowPrice,
+                    currencyLocal: matchedOffer.currency
+                };
+            }
+        }
+
+        return {
+            slug: _preset.slug,
+            prices: countryPrices
+        };
+    });
 
     for (const _entry of modelEntries) {
         dataset.prices[_entry.slug] = _entry.prices;

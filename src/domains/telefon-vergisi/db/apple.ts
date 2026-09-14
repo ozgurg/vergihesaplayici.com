@@ -512,7 +512,7 @@ export const presets: Omit<Preset, "brandId">[] = [
         ]
     },
     {
-        status: "active",
+        status: "legacy",
         title: "iPhone 16 Plus",
         slug: "apple-iphone-16-plus",
         releaseDate: new Date("2024-09-20"),
