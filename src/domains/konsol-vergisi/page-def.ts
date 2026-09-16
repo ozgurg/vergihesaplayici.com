@@ -3,6 +3,7 @@ import type { Brand, Preset } from "@/domains/konsol-vergisi/types.js";
 import { icon_konsolVergisi as icon } from "@/utils/icons.js";
 import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
 import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
+import { version as APP_VERSION } from "@root/package.json";
 
 export const KonsolVergisiPageDef = (): CalculatorPage => {
     const homePage = AnaSayfaPageDef();
@@ -13,6 +14,7 @@ export const KonsolVergisiPageDef = (): CalculatorPage => {
     const shortTitle = "Konsol";
     const url = siteUrl("/konsol-vergisi-hesaplayici");
     const ogImageUrl = staticSiteUrl("/og/konsol-vergisi.jpg");
+    const description = "PlayStation, Xbox ve Nintendo oyun konsollarının güncel ÖTV, gümrük vergisi ve KDV oranlarını hesaplayın. Yurt içi ve yurt dışı fiyatlarını karşılaştırın.";
     const breadcrumbs = [
         ...parentPage.breadcrumbs,
         { title, url }
@@ -27,7 +29,7 @@ export const KonsolVergisiPageDef = (): CalculatorPage => {
         icon,
         head: {
             title: `${title} - Vergi Hesaplayıcı`,
-            description: "PlayStation, Xbox ve Nintendo oyun konsollarının güncel ÖTV, gümrük vergisi ve KDV oranlarını hesaplayın. Yurt içi ve yurt dışı fiyatlarını karşılaştırın.",
+            description,
             canonicalUrl: url,
             ogImageUrl,
             schema: {
@@ -38,12 +40,21 @@ export const KonsolVergisiPageDef = (): CalculatorPage => {
                         "@id": `${url.href}#webapplication`,
                         "url": url.href,
                         "name": title,
+                        "description": description,
                         "isPartOf": { "@id": `${parentPage.url.href}#collectionpage` },
                         "about": { "@id": `${homePage.url.href}#organization` },
+                        "author": { "@id": `${homePage.url.href}#organization` },
                         "inLanguage": "tr-TR",
                         "applicationCategory": "FinanceApplication",
                         "operatingSystem": "All",
+                        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+                        "softwareVersion": APP_VERSION,
                         "screenshot": ogImageUrl,
+                        "featureList": [
+                            "Vergili fiyattan vergisiz fiyat hesaplama",
+                            "Vergisiz fiyattan vergili fiyat hesaplama",
+                            "PlayStation, Xbox ve Nintendo modelleri ön tanımlı fiyat listesi"
+                        ],
                         "offers": {
                             "@type": "Offer",
                             "price": "0",
@@ -97,11 +108,15 @@ export const KonsolVergisiPresetSlugPageDef = ({ preset, brand }: Params): Page<
                         "@id": `${url.href}#webapplication`,
                         "url": url.href,
                         "name": title,
+                        "description": preset.pageDescription,
                         "isPartOf": { "@id": `${parentPage.url.href}#webapplication` },
                         "about": { "@id": `${homePage.url.href}#organization` },
+                        "author": { "@id": `${homePage.url.href}#organization` },
                         "inLanguage": "tr-TR",
                         "applicationCategory": "FinanceApplication",
                         "operatingSystem": "All",
+                        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+                        "softwareVersion": APP_VERSION,
                         "screenshot": ogImageUrl,
                         "offers": {
                             "@type": "Offer",

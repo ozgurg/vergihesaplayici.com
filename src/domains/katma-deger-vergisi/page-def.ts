@@ -2,6 +2,7 @@ import type { CalculatorPage } from "@/types/page-def.js";
 import { icon_katmaDegerVergisi as icon } from "@/utils/icons.js";
 import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
 import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
+import { version as APP_VERSION } from "@root/package.json";
 
 export const KatmaDegerVergisiPageDef = (): CalculatorPage => {
     const homePage = AnaSayfaPageDef();
@@ -12,6 +13,7 @@ export const KatmaDegerVergisiPageDef = (): CalculatorPage => {
     const shortTitle = "KDV";
     const url = siteUrl("/kdv");
     const ogImageUrl = staticSiteUrl("/og/kdv.jpg");
+    const description = "KDV dahil ve KDV hariç fiyat hesaplamalarını hızlıca yapın. %1, %10, %20 ve özel oranlarla KDV hesaplama ve tevkifat hesaplama aracı.";
     const breadcrumbs = [
         ...parentPage.breadcrumbs,
         { title, url }
@@ -26,7 +28,7 @@ export const KatmaDegerVergisiPageDef = (): CalculatorPage => {
         icon,
         head: {
             title: `${title} - Vergi Hesaplayıcı`,
-            description: "KDV dahil ve KDV hariç fiyat hesaplamalarını hızlıca yapın. %1, %10, %20 ve özel oranlarla KDV hesaplama ve tevkifat hesaplama aracı.",
+            description,
             canonicalUrl: url,
             ogImageUrl,
             schema: {
@@ -37,12 +39,22 @@ export const KatmaDegerVergisiPageDef = (): CalculatorPage => {
                         "@id": `${url.href}#webapplication`,
                         "url": url.href,
                         "name": title,
+                        "description": description,
                         "isPartOf": { "@id": `${parentPage.url.href}#collectionpage` },
                         "about": { "@id": `${homePage.url.href}#organization` },
+                        "author": { "@id": `${homePage.url.href}#organization` },
                         "inLanguage": "tr-TR",
                         "applicationCategory": "FinanceApplication",
                         "operatingSystem": "All",
+                        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+                        "softwareVersion": APP_VERSION,
                         "screenshot": ogImageUrl,
+                        "featureList": [
+                            "KDV hariç tutardan KDV dahil tutar hesaplama",
+                            "KDV dahil tutardan KDV hariç tutar hesaplama",
+                            "KDV tutarından matrah (vergisiz tutar) hesaplama",
+                            "Standart ve özel KDV oranı desteği"
+                        ],
                         "offers": {
                             "@type": "Offer",
                             "price": "0",

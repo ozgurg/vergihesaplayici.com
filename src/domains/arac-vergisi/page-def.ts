@@ -2,6 +2,7 @@ import type { CalculatorPage } from "@/types/page-def.js";
 import { icon_aracVergisi as icon } from "@/utils/icons.js";
 import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
 import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
+import { version as APP_VERSION } from "@root/package.json";
 
 export const AracVergisiPageDef = (): CalculatorPage => {
     const homePage = AnaSayfaPageDef();
@@ -12,6 +13,7 @@ export const AracVergisiPageDef = (): CalculatorPage => {
     const shortTitle = "Araç";
     const url = siteUrl("/arac-vergisi");
     const ogImageUrl = staticSiteUrl("/og/arac-vergisi.jpg");
+    const description = "Sıfır araç fiyatına göre ÖTV ve KDV tutarını en güncel oranlarla hesaplayın. Yeni araç vergisi hesaplama aracıyla toplam maliyeti anında öğrenin.";
     const breadcrumbs = [
         ...parentPage.breadcrumbs,
         { title, url }
@@ -26,7 +28,7 @@ export const AracVergisiPageDef = (): CalculatorPage => {
         icon,
         head: {
             title: `${title} - Vergi Hesaplayıcı`,
-            description: "Sıfır araç fiyatına göre ÖTV ve KDV tutarını en güncel oranlarla hesaplayın. Yeni araç vergisi hesaplama aracıyla toplam maliyeti anında öğrenin.",
+            description,
             canonicalUrl: url,
             ogImageUrl,
             schema: {
@@ -37,12 +39,22 @@ export const AracVergisiPageDef = (): CalculatorPage => {
                         "@id": `${url.href}#webapplication`,
                         "url": url.href,
                         "name": title,
+                        "description": description,
                         "isPartOf": { "@id": `${parentPage.url.href}#collectionpage` },
                         "about": { "@id": `${homePage.url.href}#organization` },
+                        "author": { "@id": `${homePage.url.href}#organization` },
                         "inLanguage": "tr-TR",
                         "applicationCategory": "FinanceApplication",
                         "operatingSystem": "All",
+                        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+                        "softwareVersion": APP_VERSION,
                         "screenshot": ogImageUrl,
+                        "featureList": [
+                            "Vergili fiyattan vergisiz fiyat hesaplama",
+                            "Vergisiz fiyattan vergili fiyat hesaplama",
+                            "Otomobil, elektrikli, hibrit, motosiklet, otobüs, midibüs, minibüs, helikopter, uçak, gemi ve yat seçimi",
+                            "Motor silindir hacmine göre kademeli ÖTV matrahı hesabı"
+                        ],
                         "offers": {
                             "@type": "Offer",
                             "price": "0",
