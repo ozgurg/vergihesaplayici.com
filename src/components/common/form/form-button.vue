@@ -121,14 +121,14 @@ $_scales: (
         --font-size: var(--vh-fs-sm),
         --font-weight: var(--vh-fw-semibold),
         --border-radius: var(--vh-br-sm),
-        --icon-size: 1.75rem
+        --icon-size: 1.5rem
     ),
     "large": (
         --block-size: #{$_default-block-size},
         --font-size: var(--vh-fs-base),
         --font-weight: var(--vh-fw-semibold),
         --border-radius: var(--vh-br-normal),
-        --icon-size: 1.75rem
+        --icon-size: 1.5rem
     )
 );
 
@@ -268,6 +268,9 @@ $_scales: (
     }
     :deep(#{$_spinner-selector}) {
         --_size: calc(var(--_icon-size) * .875)
+    }
+    :deep(span) {
+        text-box: trim-both cap alphabetic
     }
 }
 </style>
