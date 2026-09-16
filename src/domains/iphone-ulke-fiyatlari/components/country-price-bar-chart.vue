@@ -3,46 +3,47 @@
         name="list-transition"
         tag="div"
         class="country-price-bar-chart">
-        <template v-for="_processed in displayedTopItems" :key="_processed.item.country.code">
+        <country-price-bar-chart-item
+            v-for="_processed in displayedTopItems"
+            :key="_processed.item.country.code"
+            :item="_processed.item"
+            :price-display="_processed.priceDisplay"
+            :currency-display="_processed.currencyDisplay"
+            :bar-percentage="_processed.barPercentage" />
+
+        <div
+            v-if="canToggle && !isExpanded"
+            key="toggle"
+            class="toggle">
+            <form-button
+                @click="isExpanded = true"
+                color="light"
+                scale="small"
+                variant="plain"
+                type="button">
+                <svg-icon :icon="icon_chevronUpDown" />
+                <span>Tümünü göster</span>
+            </form-button>
+        </div>
+
+        <template v-if="canToggle && isExpanded">
             <country-price-bar-chart-item
+                v-for="_processed in middleItems"
+                :key="_processed.item.country.code"
                 :item="_processed.item"
                 :price-display="_processed.priceDisplay"
                 :currency-display="_processed.currencyDisplay"
                 :bar-percentage="_processed.barPercentage" />
         </template>
 
-        <template v-if="canToggle && !isExpanded">
-            <div key="toggle" class="toggle">
-                <form-button
-                    @click="isExpanded = true"
-                    color="light"
-                    scale="small"
-                    variant="plain"
-                    type="button">
-                    <svg-icon :icon="icon_chevronUpDown" />
-                    <span>Tümünü göster</span>
-                </form-button>
-            </div>
-        </template>
-
-        <template v-if="canToggle && isExpanded">
-            <template v-for="_processed in middleItems" :key="_processed.item.country.code">
-                <country-price-bar-chart-item
-                    :item="_processed.item"
-                    :price-display="_processed.priceDisplay"
-                    :currency-display="_processed.currencyDisplay"
-                    :bar-percentage="_processed.barPercentage" />
-            </template>
-        </template>
-
         <template v-if="canToggle">
-            <template v-for="_processed in bottomItems" :key="_processed.item.country.code">
-                <country-price-bar-chart-item
-                    :item="_processed.item"
-                    :price-display="_processed.priceDisplay"
-                    :currency-display="_processed.currencyDisplay"
-                    :bar-percentage="_processed.barPercentage" />
-            </template>
+            <country-price-bar-chart-item
+                v-for="_processed in bottomItems"
+                :key="_processed.item.country.code"
+                :item="_processed.item"
+                :price-display="_processed.priceDisplay"
+                :currency-display="_processed.currencyDisplay"
+                :bar-percentage="_processed.barPercentage" />
         </template>
     </transition-group>
 </template>
@@ -183,7 +184,7 @@ const bottomItems = computed(() => {
 
 .list-transition {
     &-leave-active {
-        display: none
+        display: none !important
     }
     &-move,
     &-enter-active {
