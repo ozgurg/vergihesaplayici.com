@@ -2,14 +2,14 @@
     <div
         :aria-hidden="isVisible ? 'false' : 'true'"
         class="go-to-calculator-button">
-        <container>
+        <div class="container">
             <form-button
                 @click="scrollToForm()"
                 class="w-100"
                 scale="small">
                 Hesaplayıcıya dön
             </form-button>
-        </container>
+        </div>
     </div>
 </template>
 

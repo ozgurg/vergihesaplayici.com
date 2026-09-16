@@ -2,7 +2,7 @@
     <div
         aria-expanded="true"
         class="calculator">
-        <container>
+        <div class="container">
             <div class="calculator-box">
                 <div class="calculator-box-left">
                     <form
@@ -80,7 +80,7 @@
                     </transition>
                 </template>
             </div>
-        </container>
+        </div>
     </div>
 </template>
 

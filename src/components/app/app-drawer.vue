@@ -2,7 +2,7 @@
     <dialog
         :id="props.id"
         class="app-drawer">
-        <container>
+        <div class="container">
             <template v-for="_calculatorPage in CALCULATOR_PAGES" :key="_calculatorPage.url">
                 <calculator-card-item
                     :page="_calculatorPage"
@@ -16,7 +16,7 @@
                     :page="_utilityPage"
                     title-tag="div" />
             </template>
-        </container>
+        </div>
     </dialog>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
     <footer class="app-footer">
-        <container>
+        <div class="container">
             <div
                 class="exchange-rates"
                 role="region"
@@ -47,7 +47,7 @@
                 <br />
                 <a :href="hataBildirPage.url.href">{{ hataBildirPage.title }}</a> – v{{ VERSION }}
             </div>
-        </container>
+        </div>
     </footer>
 </template>
 

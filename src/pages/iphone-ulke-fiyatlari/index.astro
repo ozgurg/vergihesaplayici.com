@@ -1,7 +1,6 @@
 ---
 import AppLayout from "@/layouts/app-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
-import Container from "@/components/common/container.vue";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
 import Heading1 from "@/components/common/heading-1.vue";
 import IphoneUlkeFiyatlari from "@/domains/iphone-ulke-fiyatlari/components/iphone-ulke-fiyatlari.vue";
@@ -15,19 +14,19 @@ const EXCHANGE_RATES = getExchangeRates();
 
 <AppLayout page={page}>
     <PageHeader>
-        <Container>
+        <div class="container">
             <Breadcrumbs
                 items={page.breadcrumbs}
                 client:load />
             <Heading1>
                 {page.title}
             </Heading1>
-        </Container>
+        </div>
     </PageHeader>
 
-    <Container>
+    <div class="container">
         <div class="ta-ad-first" ta-ad-container=""></div>
-    </Container>
+    </div>
 
     <section>
         <IphoneUlkeFiyatlari
@@ -36,7 +35,7 @@ const EXCHANGE_RATES = getExchangeRates();
             client:load />
     </section>
 
-    <Container>
+    <div class="container">
         <div class="ta-ad-last" ta-ad-container=""></div>
-    </Container>
+    </div>
 </AppLayout>

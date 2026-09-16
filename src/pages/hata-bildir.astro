@@ -1,7 +1,6 @@
 ---
 import AppLayout from "@/layouts/app-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
-import Container from "@/components/common/container.vue";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
 import Heading1 from "@/components/common/heading-1.vue";
 import FormButton from "@/components/common/form/form-button.vue";
@@ -15,17 +14,17 @@ const PUBLIC_RECAPTCHA_V3_PUBLIC_KEY = import.meta.env.PUBLIC_RECAPTCHA_V3_PUBLI
 
 <AppLayout page={hataBildirPage}>
     <PageHeader>
-        <Container>
+        <div class="container">
             <Breadcrumbs
                 items={hataBildirPage.breadcrumbs}
                 client:load />
             <Heading1>
                 {hataBildirPage.title}
             </Heading1>
-        </Container>
+        </div>
     </PageHeader>
 
-    <Container>
+    <div class="container">
         <div class="rich-text">
             <p>vergihesaplayici.com'daki hesaplayıcılar, olabildiğince güvenilir kaynaklardan derlediğim verilere
                 dayanıyor. Ancak bu kaynakların her zaman %100 doğru olduğunu garanti edemem. Ayrıca mevzuatlar sık
@@ -47,7 +46,7 @@ const PUBLIC_RECAPTCHA_V3_PUBLIC_KEY = import.meta.env.PUBLIC_RECAPTCHA_V3_PUBLI
         </div>
 
         <div class="ta-ad-last" ta-ad-container=""></div>
-    </Container>
+    </div>
 </AppLayout>
 
 <script is:inline src={`https://www.google.com/recaptcha/api.js?render=${PUBLIC_RECAPTCHA_V3_PUBLIC_KEY}`}></script>

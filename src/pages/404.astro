@@ -1,7 +1,6 @@
 ---
 import AppLayout from "@/layouts/app-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
-import Container from "@/components/common/container.vue";
 import Heading1 from "@/components/common/heading-1.vue";
 import DwightSchruteVideo from "@/components/dwight-schrute-video.vue";
 
@@ -12,14 +11,14 @@ const anaSayfaPage = AnaSayfaPageDef();
 
 <AppLayout page={anaSayfaPage}>
     <PageHeader>
-        <Container>
+        <div class="container">
             <Heading1>
                 Hata falan mı oldu, bir şey oldu sanki…
             </Heading1>
-        </Container>
+        </div>
     </PageHeader>
 
-    <Container>
+    <div class="container">
         <section
             class="rich-text text">
             <p>…ama bu aramızda kalabilir ¯\_(ツ)_/¯</p>
@@ -36,7 +35,7 @@ const anaSayfaPage = AnaSayfaPageDef();
 
             <div class="ta-ad-last" ta-ad-container=""></div>
         </section>
-    </Container>
+    </div>
 </AppLayout>
 
 <style lang="scss">

@@ -1,5 +1,4 @@
 ---
-import Container from "@/components/common/container.vue";
 import CachedSvg from "@/components/common/cached-svg.vue";
 import logoSvg from "@/assets/img/logo.svg?raw";
 import SvgIcon from "@/components/common/svg-icon.vue";
@@ -19,7 +18,7 @@ const nav = getFeaturedCalculatorPages();
 ---
 
 <header class="app-header">
-    <Container>
+    <div class="container">
         <a
             href={anaSayfaPage.url}
             class="logo"
@@ -55,7 +54,7 @@ const nav = getFeaturedCalculatorPages();
             <SvgIcon class="open-icon" icon={icon_apps} />
             <SvgIcon class="close-icon" icon={icon_close} />
         </button>
-    </Container>
+    </div>
 </header>
 
 <AppDrawer id={APP_DRAWER_ID} />

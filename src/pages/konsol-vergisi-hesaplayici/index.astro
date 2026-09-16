@@ -1,7 +1,6 @@
 ---
 import AppLayout from "@/layouts/app-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
-import Container from "@/components/common/container.vue";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
 import Heading1 from "@/components/common/heading-1.vue";
 import Heading2 from "@/components/common/heading-2.vue";
@@ -23,45 +22,45 @@ const presetsForCalculatorPresetCarousel = mapPresetsForCalculatorPresetCarousel
 
 <AppLayout page={konsolVergisiPage}>
     <PageHeader>
-        <Container>
+        <div class="container">
             <Breadcrumbs
                 items={konsolVergisiPage.breadcrumbs}
                 client:load />
             <Heading1>
                 {konsolVergisiPage.title}
             </Heading1>
-        </Container>
+        </div>
     </PageHeader>
 
     <section>
-        <Container>
+        <div class="container">
             <Heading2 tag="h2">
                 Hazır hesaplamalar
             </Heading2>
-        </Container>
+        </div>
         <CalculatorPresetCarousel
             titleTag="h3"
             items={presetsForCalculatorPresetCarousel} />
     </section>
     <hr />
 
-    <Container>
+    <div class="container">
         <div class="ta-ad-first" ta-ad-container=""></div>
-    </Container>
+    </div>
 
     <section>
-        <Container>
+        <div class="container">
             <Heading2 tag="h2">
                 Kendiniz hesaplayın
             </Heading2>
-        </Container>
+        </div>
         <KonsolVergisi
             EXCHANGE_RATES={EXCHANGE_RATES}
             calculatorPage={konsolVergisiPage}
             client:load />
     </section>
 
-    <Container>
+    <div class="container">
         <div class="ta-ad-last" ta-ad-container=""></div>
-    </Container>
+    </div>
 </AppLayout>

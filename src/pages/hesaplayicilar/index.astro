@@ -1,7 +1,6 @@
 ---
 import AppLayout from "@/layouts/app-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
-import Container from "@/components/common/container.vue";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
 import Heading1 from "@/components/common/heading-1.vue";
 import CalculatorsGrid from "@/components/calculators-grid.vue";
@@ -20,17 +19,17 @@ const hesaplayicilarPage = HesaplayicilarPageDef({
 
 <AppLayout page={hesaplayicilarPage}>
     <PageHeader>
-        <Container>
+        <div class="container">
             <Breadcrumbs
                 items={hesaplayicilarPage.breadcrumbs}
                 client:load />
             <Heading1>
                 {hesaplayicilarPage.title}
             </Heading1>
-        </Container>
+        </div>
     </PageHeader>
 
-    <Container>
+    <div class="container">
         <div class="ta-ad-first" ta-ad-container=""></div>
 
         <CalculatorsGrid
@@ -38,5 +37,5 @@ const hesaplayicilarPage = HesaplayicilarPageDef({
             titleTag="h2" />
 
         <div class="ta-ad-last" ta-ad-container=""></div>
-    </Container>
+    </div>
 </AppLayout>
