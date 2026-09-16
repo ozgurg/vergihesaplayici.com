@@ -2,6 +2,7 @@
 title: "Kurumlar Vergisi Kurum Geçici Vergi [0053]"
 description: "Türkiye'de işletmelerin vergi sistemi kapsamlıdır; Kurumlar ve Kurum Geçici Vergisi vergi yükümlülüklerinde önemli rol oynar."
 createdDate: 2023-05-17
+updatedDate: 2026-09-16
 ---
 
 Türkiye'de işletmelerin vergi sistemi oldukça kapsamlıdır ve **Kurumlar Vergisi** ile Kurum Geçici Vergi,
@@ -16,10 +17,7 @@ vergidir. İşletmelerin ticari, zirai veya serbest meslek faaliyetleri sonucund
 Vergisi'ne tabi tutulur. Türkiye'de faaliyet gösteren yerli ve yabancı tüm şirketler, Kurumlar Vergisi ödemekle
 yükümlüdür.
 
-Kurumlar Vergisi oranı, Türkiye'deki vergi mevzuatı ve ekonomik koşullar çerçevesinde değişiklik gösterebilir. Son
-bilgilerime göre, 2021 itibarıyla genel Kurumlar Vergisi oranı %22'dir. Ancak, bazı sektörler veya belirli şartları
-yerine getiren işletmeler için vergi indirimleri veya istisnaları uygulanabilir. Örneğin, KOBİ'ler (Küçük ve Orta
-Büyüklükteki İşletmeler), belirli şartları sağladıklarında düşük oranlarda Kurumlar Vergisi ödeyebilirler.
+Kurumlar Vergisi oranı, Türkiye'deki vergi mevzuatı ve ekonomik koşullar çerçevesinde belirlenir. Güncel mevzuata göre genel Kurumlar Vergisi oranı %25'tir (finans ve bankacılık sektöründe %30, ihracatçı kurumlarda indirimli olarak %20 uygulanmaktadır). Ancak, bazı sektörler veya belirli şartları yerine getiren işletmeler için vergi indirimleri veya istisnaları uygulanabilir.
 
 Kurumlar Vergisi beyannamesi, işletmelerin her yıl vergi dönemi sonunda Maliye Bakanlığı'na sunmaları gereken bir
 bildirimdir. İşletmeler, kazançlarını ve vergi matrahını beyan ederken, vergi oranına göre hesapladıkları Kurumlar

@@ -2,6 +2,7 @@
 title: "MEP İştirakçisi Kurumlar Vergisi [0020]"
 description: "MEP İştirakçisi Kurumlar Vergisi, yabancı sermayeli şirketlerin Türkiye'deki ortaklık kazançlarından ödedikleri vergidir."
 createdDate: 2023-05-09
+updatedDate: 2026-09-16
 ---
 
 **MEP İştirakçisi Kurumlar Vergisi**, Türkiye'de faaliyet gösteren yabancı sermayeli şirketlerin, Türkiye'de
@@ -13,10 +14,7 @@ MEP İştirakçisi Kurumlar Vergisi'nin amacı, Türkiye'de faaliyet gösteren y
 şirketlerle ortaklık yaparak elde ettikleri kazançların vergilendirilmesidir. Bu vergi türü, Türkiye'deki
 şirketlerle ortaklık yaparak kar elde eden yabancı şirketlerin, Türkiye'de vergi ödemelerini sağlamaktadır.
 
-MEP İştirakçisi Kurumlar Vergisi oranı, Türkiye'deki diğer kurumlar vergisi oranıyla aynıdır. Bu vergi türü,
-Türkiye'deki yabancı sermayeli şirketlerin, Türkiye'de ortaklık yapısı içinde yer alarak elde ettikleri karın yüzde
-20'sini vergilendirmektedir. Vergi, elde edilen karın Türkiye'deki diğer kurumlar vergisi oranı olan yüzde 22 oranının
-altında kalmaması şartıyla yüzde 20 oranında uygulanmaktadır.
+MEP İştirakçisi Kurumlar Vergisi oranı, Türkiye'deki genel kurumlar vergisi oranı olan %25 ile paralel olarak uygulanmaktadır.
 
 MEP İştirakçisi Kurumlar Vergisi'nin ödeme süresi, Türkiye'de faaliyet gösteren diğer kurumlar vergisi ödemeleri
 gibi, her takvim yılı için 4 eşit taksitte ödenmektedir. Bu vergi, yabancı sermayeli şirketler tarafından

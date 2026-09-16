@@ -2,6 +2,7 @@
 title: "Kurumlar Vergisi [0010]"
 description: "Kurumlar Vergisi, Türkiye'deki tüm kurumların faaliyetlerinden elde ettikleri kazançların üzerinden ödediği bir vergidir."
 createdDate: 2023-05-08
+updatedDate: 2026-09-16
 ---
 
 **Kurumlar Vergisi**, Türkiye'deki tüm kurumların faaliyetlerinden elde ettikleri kazançların üzerinden ödediği bir
@@ -10,7 +11,7 @@ kamu iktisadi teşebbüsleri ve kamu kurumları gibi tüm kurumların faaliyetle
 Türkiye'de vergi sistemine dahil olan en önemli vergi türlerinden biridir.
 
 Kurumlar Vergisi, Türkiye'de kurumların faaliyetleri sonucu elde ettikleri kazançların vergilendirilmesi amacıyla
-uygulanır. Kurumlar Vergisi oranı, Türk Vergi Kanunu'na göre %22'dir. Ancak, bazı özel durumlarda oran farklılık
+uygulanır. Kurumlar Vergisi genel oranı, Kurumlar Vergisi Kanunu'na göre %25'tir (banka ve finansal kuruluşlarda %30, ihracat yapan kurumlarda indirimli olarak %20 uygulanmaktadır). Ancak, bazı özel durumlarda oran farklılık
 gösterebilir. Örneğin, yatırım yapan şirketlerin belirli bir süre boyunca %0 oranında Kurumlar Vergisi ödemeleri
 sağlanabilir.
 
@@ -31,7 +32,7 @@ Kurumlar Vergisi, Türkiye'deki tüm kurumların vergi yükümlülükleri arası
 beyannamelerini zamanında ve doğru bir şekilde hazırlamak ve ödemelerini zamanında yapmakla yükümlüdürler. Aksi
 takdirde, vergi cezaları ve faizleri gibi yaptırımlarla karşılaşabilirler. Sonuç olarak, Kurumlar Vergisi,
 Türkiye'deki tüm kurumların faaliyetleri sonucu elde ettikleri kazançların vergilendirilmesi amacıyla uygulanan önemli
-bir vergi türüdür. Kurumlar Vergisi oranı, Türkiye'de %22 olarak belirlenmiştir ve kurumların yıllık
+bir vergi türüdür. Kurumlar Vergisi genel oranı, Türkiye'de %25 olarak belirlenmiştir ve kurumların yıllık
 kazançlarına göre hesaplanır. Türkiye'deki tüm kurumlar, vergi yükümlülüklerini yerine getirmekle yükümlüdürler ve
 Kurumlar Vergisi, vergi beyannamelerinin zamanında ve doğru bir şekilde hazırlanması ve ödemelerinin zamanında
 yapılması gerekmektedir.

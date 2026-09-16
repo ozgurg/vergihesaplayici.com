@@ -2,7 +2,7 @@
 title: "Yıllık Gelir Vergisi [0001]"
 description: "Yıllık Gelir Vergisi (0001) nedir, kimleri kapsar, 2025 gelir vergisi oranları ve hesaplama yöntemleri nelerdir?"
 createdDate: 2023-05-06
-updatedDate: 2025-11-14
+updatedDate: 2026-09-16
 ---
 
 Gelir elde etmek güzel, ama kazancın bir kısmını devlete geri vermek zorunda olduğumuzu da unutmamak gerekir. Türkiye'de bireylerin kazançları üzerinden alınan **Yıllık Gelir Vergisi (0001)**, bu sistemin en temel direklerinden biridir. Bu yazıda, 0001 kodlu Yıllık Gelir Vergisi'nin ne olduğunu, kimleri kapsadığını, nasıl hesaplandığını ve 2025 yılı itibarıyla oranlarını detaylı şekilde öğreneceksiniz.
@@ -95,10 +95,10 @@ Gelir, kademeli dilimlere göre vergilendirilir:
 
 | Dilim           | Tutar (TL) | Oran | Hesaplanan Vergi |
 |-----------------|------------|------|------------------|
-| 0–110.000       | 110.000    | %15  | 16.500           |
-| 110.001–230.000 | 120.000    | %20  | 24.000           |
-| 230.001–550.000 | 320.000    | %27  | 86.400           |
-| **Toplam**      |            |      | **126.900 TL**   |
+| 0–158.000       | 158.000    | %15  | 23.700           |
+| 158.001–330.000 | 172.000    | %20  | 34.400           |
+| 330.001–550.000 | 220.000    | %27  | 59.400           |
+| **Toplam**      |            |      | **117.500 TL**   |
 
 ### 4. Kesinti ve Mahsubun Yapılması
 
