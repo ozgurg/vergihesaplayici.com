@@ -137,7 +137,7 @@ import type { ExchangeRates } from "@/types/common.js";
 import { calculateResults } from "@/domains/telefon-vergisi/utils/calculate-results.js";
 import { LAST_UPDATE } from "@/domains/telefon-vergisi/config.js";
 import { icon_apple } from "@/utils/icons.js";
-import { IphoneUlkeFiyatlariPageDef } from "@/domains/iphone-ulke-fiyatlari/page-def";
+import { IphoneUlkeFiyatlariPageDef } from "@/domains/iphone-ulke-fiyatlari/page-def.js";
 
 export type Props = {
     EXCHANGE_RATES: ExchangeRates;
