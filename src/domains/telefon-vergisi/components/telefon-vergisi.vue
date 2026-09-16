@@ -98,6 +98,18 @@
                                         calculatorTitle: props.calculatorPage.title,
                                         screenshotData: screenshotData!
                                     }" />
+
+                                <hr />
+
+                                <form-button
+                                    :href="iphoneUlkeFiyatlariPage.url.href"
+                                    variant="plain"
+                                    color="light"
+                                    scale="large"
+                                    class="w-100">
+                                    <svg-icon :icon="icon_apple" />
+                                    <span>iPhone ülke fiyatlarını gör</span>
+                                </form-button>
                             </div>
                         </div>
                     </transition>
@@ -123,6 +135,8 @@ import type {
 import type { ExchangeRates } from "@/types/common.js";
 import { calculateResults } from "@/domains/telefon-vergisi/utils/calculate-results.js";
 import { DEFAULT_FORM, LAST_UPDATE, PRICE_LABEL_BY_MODE } from "@/domains/telefon-vergisi/config.js";
+import { icon_apple } from "@/utils/icons.js";
+import { IphoneUlkeFiyatlariPageDef } from "@/domains/iphone-ulke-fiyatlari/page-def.js";
 
 export type Props = {
     EXCHANGE_RATES: ExchangeRates;
@@ -130,6 +144,8 @@ export type Props = {
 }
 
 const props = defineProps<Props>();
+
+const iphoneUlkeFiyatlariPage = IphoneUlkeFiyatlariPageDef();
 
 const formEl = useTemplateRef<HTMLFormElement>("formEl");
 const resultsEl = useTemplateRef<HTMLElement>("resultsEl");

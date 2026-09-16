@@ -148,6 +148,14 @@ const usdRate = computed<number>(() => {
 const comparison = computed(() => {
     return getComparisonBySlug(selectedSlug.value);
 });
+
+onMounted(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    const modelParam = searchParams.get("preset") as Preset["slug"];
+    if (modelParam && activePresets.some(_preset => _preset.slug === modelParam)) {
+        selectedSlug.value = modelParam;
+    }
+});
 </script>
 
 <style lang="scss" scoped>

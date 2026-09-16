@@ -8,6 +8,7 @@ import TelefonVergisiPreset
     from "@/domains/telefon-vergisi/components/telefon-vergisi-preset.vue";
 import Heading2 from "@/components/common/heading-2.vue";
 import CalculatorPresetCarousel from "@/components/calculator-preset-carousel.astro";
+import UtilitiesGrid from "@/components/utilities-grid.vue";
 import { Image } from "astro:assets";
 
 import { getPresetsForAllBrands, getBrandById } from "@/domains/telefon-vergisi/db.js";
@@ -15,6 +16,7 @@ import {
     TelefonVergisiPageDef,
     TelefonVergisiPresetSlugPageDef
 } from "@/domains/telefon-vergisi/page-def.js";
+import { IphoneUlkeFiyatlariPageDef } from "@/domains/iphone-ulke-fiyatlari/page-def.js";
 import {
     mapPresetsForCalculatorPresetCarouselComponent
 } from "@/domains/telefon-vergisi/utils/map-presets-for-calculator-preset-carousel-component.js";
@@ -42,6 +44,7 @@ const { preset, brand } = Astro.props;
 
 const telefonVergisiPage = TelefonVergisiPageDef();
 const telefonVergisiPresetSlugPage = TelefonVergisiPresetSlugPageDef({ preset, brand });
+const iphoneUlkeFiyatlariPage = IphoneUlkeFiyatlariPageDef();
 
 const EXCHANGE_RATES = getExchangeRates();
 const presets = getPresetsForAllBrands();
@@ -142,6 +145,19 @@ const presetHeroStyle = {
             titleTag="h3"
             items={presetsForCalculatorPresetCarousel} />
     }
+
+    <hr />
+
+    <section>
+        <div class="container">
+            <Heading2 tag="h2">
+                İlgili araçlar
+            </Heading2>
+            <UtilitiesGrid
+                items={[iphoneUlkeFiyatlariPage]}
+                titleTag="h3" />
+        </div>
+    </section>
 
     <div class="container">
         <div class="ta-ad-last" ta-ad-container=""></div>
