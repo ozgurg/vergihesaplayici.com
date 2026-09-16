@@ -2,6 +2,7 @@
 title: "Akaryakıt Fiyat İstikrar Payı [4046]"
 description: "Akaryakıt fiyat istikrar payı, Türkiye'de benzin ve motorin gibi akaryakıtların fiyatlarının belirlenmesinde uygulanan bir sistemdir."
 createdDate: 2023-06-06
+updatedDate: 2026-09-16
 ---
 
 Akaryakıt fiyat istikrar payı, Türkiye'de benzin ve motorin gibi akaryakıtların fiyatlarının belirlenmesinde uygulanan
@@ -31,3 +32,12 @@ daha iyi planlamalarını sağlar ve ekonomik istikrarın devamını destekler.
 Sonuç olarak, akaryakıt fiyat istikrar payı, Türkiye'de enerji sektöründe faaliyet gösteren şirketlerin
 maliyetlerini dengelemek ve kâr elde etmelerini sağlamak amacıyla uygulanan bir sistemdir. Bu sistem, enerji sektöründe
 istikrarı sağlamak, adil rekabeti desteklemek ve sektöre yatırımları teşvik etmek amacıyla önemli bir rol oynamaktadır.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Petrol ve Doğalgaz Ürünlerine İlişkin Özel Tüketim Vergisi [0071]](/yazilar/0071-petrol-ve-dogalgaz-urunlerine-iliskin-ozel-tuketim-vergisi/)
+* [Akaryakıt Tüketim Vergisi [0046]](/yazilar/0046-akaryakit-tuketim-vergisi/)
+* [ÖTV Nedir? (Özel Tüketim Vergisi Rehberi ve Oranlar)](/yazilar/otv-nedir/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

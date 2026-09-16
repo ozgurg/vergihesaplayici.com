@@ -2,6 +2,7 @@
 title: "Telgraf ve Telefon Kanunu 2. Madde İdari Para Cezası [9304]"
 description: "Telgraf ve Telefon Kanunu, Türkiye'de telekomünikasyon hizmetlerinin düzenlenmesini sağlayan önemli bir yasal düzenlemeyi temsil eder."
 createdDate: 2023-07-19
+updatedDate: 2026-09-16
 ---
 
 **Telgraf ve Telefon Kanunu**, Türkiye'de telekomünikasyon hizmetlerinin düzenlenmesini sağlayan önemli bir yasal
@@ -32,3 +33,12 @@ Sonuç olarak, Telgraf ve Telefon Kanunu'nun 2. Maddesi'nde yer alan idari para 
 hizmeti sunan işletmelerin belirli ihlalleri durumunda uygulanan yaptırımlardır. Bu cezalar, haksız rekabeti önlemek,
 hizmet kalitesini yükseltmek ve kullanıcıların haklarını korumak amacıyla var olan önemli bir düzenlemeyi temsil eder.
 İşletmelerin bu kanuna uymaları, sektörün gelişimi ve kullanıcı memnuniyeti açısından büyük önem taşır.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Telekomünikasyon Kurumu Tarafından Yatırılan Telgraf ve Telefon Kanunu İdari Para Cezaları [9118]](/yazilar/9118-telekomunikasyon-kurumu-tarafindan-yatirilan-telgraf-ve-telefon-kanunu-idari-para-cezalari/)
+* [Özel İletişim Vergisi [4080]](/yazilar/4080-ozel-iletisim-vergisi/)
+* [5326 Sayılı Kanun Uyarınca Cumhuriyet Savcılıklarınca Verilen İdari Para Cezası [9317]](/yazilar/9317-5326-sayili-kanun-uyarinca-cumhuriyet-savciliklarinca-verilen-idari-para-cezasi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

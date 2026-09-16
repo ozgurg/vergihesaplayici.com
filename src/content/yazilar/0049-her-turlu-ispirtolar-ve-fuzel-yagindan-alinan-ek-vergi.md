@@ -2,6 +2,7 @@
 title: "Her Türlü İspirtolar ve Füzel Yağından Alınan Ek Vergi [0049]"
 description: "Türkiye'de her türlü ispirtolar ve füzel yağı gibi akaryakıt türlerinden alınan ek vergiler, hükümetin vergi politikaları arasında yer almaktadır."
 createdDate: 2023-05-14
+updatedDate: 2026-09-16
 ---
 
 Türkiye'de her türlü **ispirtolar** ve füzel yağı gibi akaryakıt türlerinden alınan ek vergiler, hükümetin vergi
@@ -30,3 +31,12 @@ Sonuç olarak, Türkiye'de her türlü ispirtolar ve füzel yağı gibi akaryak�
 devletin vergi politikaları arasında yer almaktadır. Bu vergiler, devletin gelirini artırmak amacıyla
 uygulanmaktadır. Vergi oranları, ekonomik koşullara, devlet bütçesine ve vergi politikalarına bağlı olarak sürekli
 olarak değişebilir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Alkollü İçeceklere İlişkin Özel Tüketim Vergisi [0075]](/yazilar/0075-alkollu-iceceklere-iliskin-ozel-tuketim-vergisi/)
+* [Her Türlü Alkollü İçkilere İlişkin Ek Vergi [0092]](/yazilar/0092-her-turlu-alkollu-ickilere-iliskin-ek-vergi/)
+* [ÖTV Nedir? (Özel Tüketim Vergisi Rehberi ve Oranlar)](/yazilar/otv-nedir/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

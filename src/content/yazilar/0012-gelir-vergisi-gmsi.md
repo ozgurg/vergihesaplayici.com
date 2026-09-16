@@ -2,6 +2,7 @@
 title: "Gelir Vergisi (GMSI) [0012]"
 description: "Gelir vergisi, bir ülkenin vergi sistemine göre, kişilerin ya da şirketlerin elde ettikleri gelirlerden ödedikleri vergidir."
 createdDate: 2023-05-14
+updatedDate: 2026-09-16
 ---
 
 **Gelir vergisi**, bir ülkenin vergi sistemine göre, kişilerin ya da şirketlerin elde ettikleri gelirlerden ödedikleri
@@ -59,3 +60,12 @@ ettikleri gelirlerden ödedikleri vergi, ülkenin kamu hizmetlerine yatırım ya
 refahın artmasına yardımcı olur. Ayrıca, vergi sisteminin adaletli olmasını sağlayarak, vergi mükellefleri arasında adil
 bir dağılımı sağlar. Vergi mükellefleri, gelir vergisi beyannamelerini doğru bir şekilde hazırlamak ve vergi
 yükümlülüklerini zamanında ödemek zorundadırlar.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Yıllık Gelir Vergisi [0001]](/yazilar/0001-yillik-gelir-vergisi/)
+* [Vergi Dilimleri](/yazilar/vergi-dilimleri/)
+* [Gelir Vergisi Geçici Vergi [0027]](/yazilar/0027-gelir-vergisi-gecici-vergi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

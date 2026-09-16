@@ -28,3 +28,12 @@ Ayrıca, lüks tüketim mallarına uygulanan vergilerin ne kadar yüksek olması
 Sonuç olarak, lüks tüketimden daha fazla vergi alınması, kamu hizmetlerinin finansmanına katkıda bulunarak sosyal adaleti sağlamaya yardımcı olabilir. Ancak, bu tür malların vergi yükü tüketicilerin nihai maliyetlerini doğrudan etkiler.
 
 Türkiye'deki özel tüketim ve lüks ürün vergilerini hesaplamak için <a href="/konsol-vergisi-hesaplayici/">Konsol Vergisi Hesaplayıcı</a> ve <a href="/arac-vergisi/">Araç Vergisi Hesaplama</a> araçlarımızı inceleyebilirsiniz.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [ÖTV Nedir? (Özel Tüketim Vergisi Rehberi ve Oranlar)](/yazilar/otv-nedir/)
+* [Kaç Çeşit Vergi Vardır? (Türk Vergi Sisteminde Vergi Türleri)](/yazilar/kac-cesit-vergi-vardir/)
+* [Vergi Dilimleri](/yazilar/vergi-dilimleri/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

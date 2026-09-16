@@ -2,6 +2,7 @@
 title: "4915 ve 5035 Sayılı Kanuna Göre Ruhsat Harcı [9148]"
 description: "Ruhsat harcı, Türkiye'de faaliyet gösteren işletmelerin belirli ruhsat ve izinleri alabilmesi için ödemek zorunda olduğu bir tür vergidir."
 createdDate: 2023-07-19
+updatedDate: 2026-09-16
 ---
 
 **Ruhsat harcı**, Türkiye'de faaliyet gösteren işletmelerin belirli ruhsat ve izinleri alabilmesi için ödemek zorunda
@@ -27,3 +28,12 @@ denetlenebilmesine yardımcı olur.
 Sonuç olarak, 4915 ve 5035 sayılı Kanunlara göre ruhsat harçları, Türkiye'de işletmelerin faaliyetlerini
 yürütebilmeleri için ödemeleri gereken vergilerdir. Bu harçlar, inşaat faaliyetleri ve ticari işletmeler için ayrı ayrı
 düzenlenmiştir ve işletmelerin faaliyetlerini sürdürebilmeleri için önemli bir maliyet unsuru olarak karşımıza çıkar.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Vergi Yargı Harçları [1067]](/yazilar/1067-vergi-yargi-harclari/)
+* [5035 Sayılı Kanuna Göre Finansal Faaliyet Harcı [4049]](/yazilar/4049-5035-sayili-kanuna-gore-finansal-faaliyet-harci/)
+* [Kadastro Harçları [9162]](/yazilar/9162-kadastro-harclari/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

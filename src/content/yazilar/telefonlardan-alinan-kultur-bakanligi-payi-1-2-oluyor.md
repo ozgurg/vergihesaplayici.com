@@ -26,3 +26,13 @@ Kültür ve Turizm Bakanlığı payındaki %0.2'lik artış, tek başına küç�
 Farklı modeller için güncel vergi oranlarıyla hesaplama yapmak isterseniz <a href="/telefon-vergisi-hesaplayici/">Telefon Vergisi Hesaplama</a> aracımızı kullanabilir, dünya genelindeki fiyatları incelemek için <a href="/iphone-ulke-fiyatlari/">iPhone Ülke Fiyatları</a> sayfamıza göz atabilirsiniz.
 
 Kaynak: https://www.resmigazete.gov.tr/eskiler/2025/12/20251219-10.pdf
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Telefon Vergisi Hesaplayıcı](/telefon-vergisi-hesaplayici/)
+* [Vergideki Kültür Bakanlığı Payı Nedir?](/yazilar/vergideki-kultur-bakanligi-payi-nedir/)
+* [TRT Bandrolü Nedir? (3093 Sayılı Kanun ve Bandrol Oranları)](/yazilar/trt-bandrolu-nedir/)
+* [ÖTV Nedir? (Özel Tüketim Vergisi Rehberi ve Oranlar)](/yazilar/otv-nedir/)
+* [Verginin Vergisi Nasıl Hesaplanır?](/yazilar/verginin-vergisi-nasil-hesaplanir/)

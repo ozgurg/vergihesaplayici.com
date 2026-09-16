@@ -2,6 +2,7 @@
 title: "Kolalı Gazozlara İlişkin Özel Tüketim Vergisi [0077]"
 description: "Türkiye, geniş bir tüketim kültürüne sahip olan bir ülkedir ve gazoz gibi gazlı içecekler popüler bir seçenek olarak ön plana çıkmaktadır."
 createdDate: 2023-05-22
+updatedDate: 2026-09-16
 ---
 
 Türkiye, geniş bir tüketim kültürüne sahip olan bir ülkedir ve gazoz gibi gazlı içecekler popüler bir seçenek olarak ön
@@ -45,3 +46,12 @@ göz önünde bulundurarak uygulanan bir vergi türüdür. Bu vergi, hem halk sa
 devletin gelirini artırmayı hedeflemektedir. ÖTV oranları, şeker içeriği ve litre başına düşen vergi miktarı gibi
 faktörlere bağlı olarak düzenli olarak güncellenmektedir. Bu vergi, tüketim alışkanlıklarını değiştirmeyi ve daha
 sağlıklı içecek seçeneklerine yönlendirmeyi desteklemektedir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [ÖTV Nedir? (Özel Tüketim Vergisi Rehberi ve Oranlar)](/yazilar/otv-nedir/)
+* [Kolalı Gazoz, Alkollü İçecekler ve Tütün Mamüllerine İlişkin Özel Tüketim Vergisi [0073]](/yazilar/0073-kolali-gazoz-alkollu-icecekler-ve-tutun-mamullerine-iliskin-ozel-tuketim-vergisi/)
+* [Her Türlü Alkolsüz İçeceklerden Alınan Ek Vergi [0094]](/yazilar/0094-her-turlu-alkolsuz-iceceklerden-alinan-ek-vergi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

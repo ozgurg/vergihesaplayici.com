@@ -2,6 +2,7 @@
 title: "Eğitim, Gençlik, Spor ve Sağlık Hizmetleri Vergisi [1013]"
 description: "Türkiye'de EGSHV, eğitim, gençlik, spor ve sağlık hizmetlerini finanse ederek altyapıyı güçlendirir ve hizmet kalitesini artırır."
 createdDate: 2023-05-18
+updatedDate: 2026-09-16
 ---
 
 Türkiye, kamu hizmetlerini finanse etmek için çeşitli vergi türlerine başvurmaktadır. Bu vergiler arasında **eğitim**,
@@ -42,3 +43,13 @@ finansmanına katkıda bulunmayı hedefleyen önemli bir vergi türüdür. Bu ve
 yönlendirilmesini sağlayarak hizmet kalitesini artırmayı ve vatandaşların bu hizmetlerden daha iyi faydalanmasını
 amaçlar. EGSHV'nin sağladığı kaynaklarla Türkiye'de eğitim, gençlik, spor ve sağlık hizmetlerinin geliştirilmesi ve
 iyileştirilmesi hedeflenmektedir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Eğitime Katkı Payı [1042]](/yazilar/1042-egitime-katki-payi/)
+* [Özel İşlem Vergisi [1043]](/yazilar/1043-ozel-islem-vergisi/)
+* [5035 RTÜK Eğitime Katkı Payı [4042]](/yazilar/4042-5035-rtuk-egitime-katki-payi/)
+* [Kaldırılan Vergi Artıkları [9099]](/yazilar/9099-kaldirilan-vergi-artiklari/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

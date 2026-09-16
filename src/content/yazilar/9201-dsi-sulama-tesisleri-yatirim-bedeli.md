@@ -2,6 +2,7 @@
 title: "DSİ Sulama Tesisleri Yatırım Bedeli [9201]"
 description: "DSİ sulama tesisleri yatırım bedeli; projenin büyüklüğü, su kaynağı, teknik sistemler ve coğrafi koşullara göre değişen tarımsal bir yatırım maliyetidir."
 createdDate: 2023-07-19
+updatedDate: 2026-09-16
 ---
 
 **Tarım** sektörü Türkiye ekonomisi için hayati bir öneme sahiptir ve tarımsal faaliyetlerin verimli bir şekilde
@@ -33,3 +34,11 @@ Sonuç olarak, DSİ sulama tesislerinin yatırım bedeli çeşitli faktörlere b
 büyüklüğü, kullanılacak su kaynağı, teknik özellikler ve coğrafi konum gibi faktörler maliyeti etkileyen önemli
 unsurlardır. Tarımsal faaliyetlerin verimli bir şekilde sürdürülebilmesi için bu yatırımların yapılması ve sulama
 tesislerinin düzenli bakımının sağlanması büyük bir önem taşımaktadır.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [DSİ Sulama Tesisleri İşletme ve Bakım Ücreti [9200]](/yazilar/9200-dsi-sulama-tesisleri-isletme-ve-bakim-ucreti/)
+* [Zirai Kazanç Gelir Vergisi [0002] Nedir? (Çiftçi Vergilendirme Rehberi)](/yazilar/0002-zirai-kazanc-gelir-vergisi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

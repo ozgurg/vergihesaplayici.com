@@ -2,6 +2,7 @@
 title: "Petrol ve Doğalgaz Ürünlerine İlişkin Özel Tüketim Vergisi [0071]"
 description: "Petrol ve Doğalgaz Ürünlerine İlişkin Özel Tüketim Vergisi (ÖTV), Türkiye'de uygulanan bir vergi türüdür."
 createdDate: 2023-05-22
+updatedDate: 2026-09-16
 ---
 
 Petrol ve Doğalgaz Ürünlerine İlişkin Özel Tüketim Vergisi (ÖTV), Türkiye'de uygulanan bir vergi türüdür. ÖTV,
@@ -25,3 +26,14 @@ Sonuç olarak, Türkiye'de petrol ve doğalgaz ürünlerine uygulanan Özel Tük
 tüketimini düzenlemek ve çevresel etkileri azaltmak amacıyla kullanılan bir vergi türüdür. ÖTV'nin uygulanmasıyla,
 enerji politikaları doğrultusunda çevre dostu enerji kaynaklarının kullanımı teşvik edilmekte ve sürdürülebilir bir
 enerji sektörü hedeflenmektedir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Araç Vergisi ve ÖTV Hesaplama](/arac-vergisi/)
+* [ÖTV Nedir? (Özel Tüketim Vergisi Rehberi ve Oranlar)](/yazilar/otv-nedir/)
+* [Sorumlu Sıfatıyla Verilen ÖTV 1. Liste [9171]](/yazilar/9171-sorumlu-sifatiyla-verilen-otv-1-liste/)
+* [Akaryakıt Tüketim Vergisi [0046]](/yazilar/0046-akaryakit-tuketim-vergisi/)
+* [Akaryakıt Fiyat İstikrar Payı [4046]](/yazilar/4046-akaryakit-fiyat-istikrar-payi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

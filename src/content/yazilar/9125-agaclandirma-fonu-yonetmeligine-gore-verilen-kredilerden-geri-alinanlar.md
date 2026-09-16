@@ -2,6 +2,7 @@
 title: "Ağaçlandırma Fonu Yönetmeliğine Göre Verilen Kredilerden Geri Alınanlar [9125]"
 description: "Ağaçlandırma Fonu Yönetmeliği, Türkiye'de orman varlığının artırılması ve sürdürülebilir orman yönetimi için önemli bir mekanizma sağlar."
 createdDate: 2023-07-19
+updatedDate: 2026-09-16
 ---
 
 **Ağaçlandırma Fonu Yönetmeliği**, Türkiye'de orman varlığının artırılması ve sürdürülebilir orman yönetimi için önemli
@@ -32,3 +33,12 @@ Ağaçlandırma Fonu Yönetmeliği, verilen kredilerin geri alınmasıyla ilgili
 belirlemektedir. Bu süreçler, projelerin değerlendirilmesi, denetimlerin yapılması ve gerektiğinde geri ödeme
 taleplerinin yapılması gibi adımları içermektedir. Bu şekilde, ağaçlandırma projelerine destek verenlerin
 sorumluluklarının yerine getirilmesi ve fonun sürdürülebilirliğinin sağlanması amaçlanmaktadır.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Orköy Fonu Gelirleri [9111]](/yazilar/9111-orkoy-fonu-gelirleri/)
+* [Mera Fonu Para Cezası [9341]](/yazilar/9341-mera-fonu-para-cezasi/)
+* [Zirai Kazanç Gelir Vergisi [0002] Nedir? (Çiftçi Vergilendirme Rehberi)](/yazilar/0002-zirai-kazanc-gelir-vergisi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

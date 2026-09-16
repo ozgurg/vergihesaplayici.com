@@ -2,6 +2,7 @@
 title: "Telekomünikasyon Kurumu Tarafından Yatırılan Telgraf ve Telefon Kanunu İdari Para Cezaları [9118]"
 description: "Türkiye'de telekomünikasyon hizmetleri, BTK tarafından denetlenir. Kanunlara uymayan işletmelere idari para cezası verilir."
 createdDate: 2023-07-25
+updatedDate: 2026-09-16
 ---
 
 Telekomünikasyon alanında düzenlemeler, ülkemizde **önemli** bir yere sahiptir. Bu alanda hizmet veren kurumlar,
@@ -32,3 +33,11 @@ eder.
 Sonuç olarak, Türkiye'de telekomünikasyon alanında faaliyet gösteren işletmelerin, Telekomünikasyon Kurumu tarafından
 yatırılan idari para cezalarına karşı dikkatli olmaları ve kanun ve yönetmeliklere uyum sağlamaları büyük önem
 taşır. Bu sayede, tüketicilerin hakları korunurken, adil bir telekomünikasyon ortamı da sağlanmış olur.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Telgraf ve Telefon Kanunu 2. Madde İdari Para Cezası [9304]](/yazilar/9304-telgraf-ve-telefon-kanunu-2-madde-idari-para-cezasi/)
+* [Özel İletişim Vergisi [4080]](/yazilar/4080-ozel-iletisim-vergisi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

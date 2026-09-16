@@ -2,6 +2,7 @@
 title: "Hazine Zararının Geri Alınması [9116]"
 description: "Hazine Zararının Geri Alınması, kamu kayıplarını tespit edip sorumlulardan tahsil ederek mali şeffaflığı artırır."
 createdDate: 2025-10-25
+updatedDate: 2026-09-16
 ---
 
 **Hazine Zararının Geri Alınması**, kamu kaynaklarının etkin kullanılmasını sağlamak ve devletin mali kayıplarını
@@ -26,3 +27,11 @@ duyulan güven açısından büyük önem taşır.
 Sonuç olarak Hazine Zararının Geri Alınması, kamu kaynaklarının korunmasını ve devletin mali haklarının güvence
 altına alınmasını sağlayan önemli bir düzenlemedir. Bu sistem, mali şeffaflığı güçlendirir ve kamusal sorumluluk
 bilincini pekiştirir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [5736 Sayılı Kanun Uyarınca Tahsil Edilecek Ecrimisil Gelirleri [9153]](/yazilar/9153-5736-sayili-kanun-uyarinca-tahsil-edilecek-ecrimisil-gelirleri/)
+* [Gecikme Faizi [1084] Nedir? (VUK 112, Gecikme Zammı ve Hesaplama)](/yazilar/1084-gecikme-faizi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

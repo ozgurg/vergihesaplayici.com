@@ -2,6 +2,7 @@
 title: "Oyun Kağıtlarından Alınan Ek Vergi [0056]"
 description: "Türkiye'de oyun kağıtlarından alınan ek vergi, 4760 sayılı Özel Tüketim Vergisi Kanunu'nda düzenlenen bir vergidir."
 createdDate: 2023-05-14
+updatedDate: 2026-09-16
 ---
 
 **Türkiye'de oyun kağıtlarından alınan ek vergi**, 4760 sayılı Özel Tüketim Vergisi Kanunu'nda düzenlenen bir vergidir.
@@ -19,3 +20,12 @@ gelirleri de devlet bütçesine önemli bir katkı sağlamaktadır.
 Sonuç olarak, Türkiye'de oyun kağıtlarından alınan ek vergi, şans oyunlarına olan talebi azaltarak toplumun
 sağlığına ve refahına olumlu etkiler sağlamayı amaçlamaktadır. Bu vergi, şans oyunlarından elde edilen gelirlerin
 vergilendirilmesinde de önemli bir role sahiptir ve devlet bütçesine önemli bir katkı sağlamaktadır.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Dayanıklı Tüketim ve Diğer Mallara İlişikin Özel Tüketim Vergisi [0074]](/yazilar/0074-dayanikli-tuketim-ve-diger-mallara-ilisikin-ozel-tuketim-vergisi/)
+* [Şans Oyunları Vergisi [4048]](/yazilar/4048-sans-oyunlari-vergisi/)
+* [Kaldırılan Vergi Artıkları [9099]](/yazilar/9099-kaldirilan-vergi-artiklari/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

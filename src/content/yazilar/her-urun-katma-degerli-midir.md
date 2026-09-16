@@ -2,6 +2,7 @@
 title: "Her Ürün Katma Değerli Midir?"
 description: "Katma değer, bir ürünün üretim sürecinde eklenen artı değerle satış fiyatının yükselmesini sağlar; ancak her ürün bu değeri yaratmayabilir."
 createdDate: 2023-05-04
+updatedDate: 2026-09-16
 ---
 
 Katma değer, bir mal veya hizmetin üretiminde yaratılan **artı değer**dir. Bu artı değer, üretim aşamasında ürüne
@@ -26,3 +27,13 @@ Sonuç olarak, her ürün katma değerli değildir. Bir ürünün katma değerli
 yaratılması gerekir. Bu ek değer, ürünün fiyatını artırarak müşterilere sunulur. Ancak, bazı ürünler hammaddeleri ve
 üretim sürecinde kullanılan teknoloji veya ekipmanlar nedeniyle katma değer yaratmadan üretilir. Ayrıca, bazı lüks
 markalar, ürünlerinin prestij ve ününe dayalı olarak fiyatlarını yüksek tutabilirler.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [KDV Hesaplama Aracı](/kdv/)
+* [KDV Nedir? (Katma Değer Vergisi Oranları ve İşleyişi)](/yazilar/kdv-nedir/)
+* [KDV Nasıl Hesaplanır? (Dahil ve Hariç Formülleri, Örnekler)](/yazilar/kdv-nasil-hesaplanir/)
+* [Verginin Vergisi Nasıl Hesaplanır?](/yazilar/verginin-vergisi-nasil-hesaplanir/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

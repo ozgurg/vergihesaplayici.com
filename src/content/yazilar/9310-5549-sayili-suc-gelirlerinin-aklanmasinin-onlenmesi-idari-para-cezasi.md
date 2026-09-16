@@ -2,6 +2,7 @@
 title: "5549 Sayılı Suç Gelirlerinin Aklanmasının Önlenmesi İdari Para Cezası [9310]"
 description: "5549 sayılı Kanun'a göre uygulanan 9310 kodlu idari para cezası nedir, kimleri kapsar, nasıl hesaplanır ve ne zaman ödenir?"
 createdDate: 2025-12-25
+updatedDate: 2026-09-16
 ---
 
 Finansal sistemin güvenilirliği, yalnızca bankaların ya da büyük kurumların sorumluluğu değildir. Günlük ticari faaliyet yürüten işletmelerden serbest meslek erbabına kadar herkes belirli yükümlülükler taşır. Bu yükümlülüklerin başında, 5549 sayılı Kanun kapsamında getirilen kurallara uyum gelir. **5549 Sayılı Suç Gelirlerinin Aklanmasının Önlenmesi İdari Para Cezası [9310]**, bu kurallara uyulmaması halinde karşılaşılan en somut yaptırımlardan biridir. Vergi ve finans dünyasında etkisi giderek artan bu ceza türü, hem maliyet hem de itibar açısından ciddi sonuçlar doğurur.
@@ -132,3 +133,12 @@ Eğer yükümlü konumdaysanız, şu soruları kendinize sorun:
 * Belgeleri doğru süre boyunca saklıyor muyum?
 
 Bu sorulara net cevaplar veremiyorsanız, risk altındasınız demektir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [4054 Sayılı Rekabet Kanununun 55. Madde Kapsamında İdari Para Cezası [9316]](/yazilar/9316-4054-sayili-rekabet-kanununun-55-madde-kapsaminda-idari-para-cezasi/)
+* [5326 Sayılı Kanun Uyarınca Cumhuriyet Savcılıklarınca Verilen İdari Para Cezası [9317]](/yazilar/9317-5326-sayili-kanun-uyarinca-cumhuriyet-savciliklarinca-verilen-idari-para-cezasi/)
+* [5326 Sayılı Kanun Uyarınca Mahkemeler Tarafından Verilen İdari Para Cezası [9318]](/yazilar/9318-5326-sayili-kanun-uyarinca-mahkemeler-tarafindan-verilen-idari-para-cezasi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

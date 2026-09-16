@@ -2,6 +2,7 @@
 title: "Vergi Ziyaı Cezası [3080]"
 description: "Vergi ziyaı cezası, mükelleflerin vergi yükümlülüklerini eksik ya da yanlış yerine getirmesi durumunda karşılaştığı mali yaptırımdır."
 createdDate: 2025-08-02
+updatedDate: 2026-09-16
 ---
 
 **Vergi ziyaı**, bir verginin zamanında veya doğru şekilde tahakkuk ettirilmemesi sonucunda devletin vergi kaybına
@@ -45,3 +46,12 @@ Vergi mevzuatında yapılan değişiklikleri yakından takip etmek de bu riskin 
 
 Vergi ziyaı cezası, devletin vergi gelirlerini korumaya yönelik önemli bir yaptırımdır. Mükelleflerin cezai duruma
 düşmemek için şeffaf, doğru ve zamanında beyanlarda bulunması hem mali hem de hukuki açıdan önemlidir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Pişmanlık Zammı [1030]](/yazilar/1030-pismanlik-zammi/)
+* [Gecikme Faizi [1084] Nedir? (VUK 112, Gecikme Zammı ve Hesaplama)](/yazilar/1084-gecikme-faizi/)
+* [Erken Ödeme İndirimi [1087]](/yazilar/1087-erken-odeme-indirimi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

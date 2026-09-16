@@ -2,6 +2,7 @@
 title: "5254 Sayılı Kanuna Göre Muhtaç Çiftçilere Verilen Ödünç Tohumlukların Hazine Alacağına Dönüşenler [9126]"
 description: "5254 Sayılı Kanun ile Türkiye'de muhtaç çiftçilere verilen ödünç tohumluklar, tarımsal üretimi destekler ve borç ödenmezse hazine alacağına dönüşür."
 createdDate: 2023-07-19
+updatedDate: 2026-09-16
 ---
 
 **Türkiye'de tarım sektörü**, ekonomik kalkınmanın temel taşlarından biridir. Ülkemizde tarıma dayalı geçimini sürdüren
@@ -31,3 +32,12 @@ Sonuç olarak, 5254 Sayılı Kanun kapsamında muhtaç çiftçilere verilen öd�
 faaliyetlerini sürdürebilmeleri için önemli bir destek mekanizmasıdır. Ancak çiftçilerin borçlarını düzenli olarak
 ödememesi durumunda, bu ödünç tohumluklar hazine alacağına dönüşmektedir. Bu nedenle çiftçilerin, aldıkları
 destekleri sorumlulukla kullanmaları ve borçlarını zamanında ödemeleri büyük bir önem taşımaktadır.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [5254 Sayılı Kanuna Göre Muhtaç Çiftçilere Verilen Ödünç Tohumluklardan Hazine Alacağına Dönüşenler Ait Faiz [1026]](/yazilar/1026-5254-sayili-kanuna-gore-muhtac-ciftcilere-verilen-odunc-tohumluklardan-hazine-alacagina-donusenler-ait-faiz/)
+* [5335 Sayılı Kanuna Göre Hazine Alacağına Dönüşen Tohumluk Kredilerine Ait Geç Ödeme Zammı [1052]](/yazilar/1052-5335-sayili-kanuna-gore-hazine-alacagina-donusen-tohumluk-kredilerine-ait-gec-odeme-zammi/)
+* [Zirai Kazanç Gelir Vergisi [0002] Nedir? (Çiftçi Vergilendirme Rehberi)](/yazilar/0002-zirai-kazanc-gelir-vergisi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

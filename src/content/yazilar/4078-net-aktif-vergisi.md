@@ -2,6 +2,7 @@
 title: "Net Aktif Vergisi [4078]"
 description: "Vergi sistemi bir ülkenin ekonomik kaynaklarını finanse etmek ve kamu hizmetlerini sağlamak için önemli bir araçtır."
 createdDate: 2023-06-06
+updatedDate: 2026-09-16
 ---
 
 Vergi sistemi bir ülkenin ekonomik kaynaklarını finanse etmek ve kamu hizmetlerini sağlamak için önemli bir araçtır.
@@ -42,3 +43,12 @@ hem de gelir dağılımının adaletli bir şekilde sağlanması amacıyla hayat
 ekonomisinde önemli bir yer tutmaktadır. Ancak, verginin yatırım kararları üzerindeki etkileri de dikkate alınmalıdır.
 Vergi düzenlemelerinin sürekli gözden geçirilmesi ve ekonomik etkilerinin değerlendirilmesi, vergi sisteminin etkinliği
 ve adil bir şekilde işlemesine yardımcı olacaktır.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Kurumlar Vergisi [0010]](/yazilar/0010-kurumlar-vergisi/)
+* [Yıllık Gelir Vergisi [0001]](/yazilar/0001-yillik-gelir-vergisi/)
+* [Kaldırılan Vergi Artıkları [9099]](/yazilar/9099-kaldirilan-vergi-artiklari/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

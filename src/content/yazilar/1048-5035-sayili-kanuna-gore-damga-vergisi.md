@@ -2,6 +2,7 @@
 title: "5035 Sayılı Kanuna Göre Damga Vergisi [1048]"
 description: "5035 sayılı Kanun ile damga vergisinde kağıt tanımı, elektronik belgeler ve istisnalar güncellenmiştir."
 createdDate: 2025-07-26
+updatedDate: 2026-09-16
 ---
 
 5035 sayılı Kanun, 2004 yılında yürürlüğe girmiş ve birçok vergi kanununda olduğu gibi **Damga Vergisi Kanunu'nda** da
@@ -54,3 +55,12 @@ adımdır.
 
 Not: Uygulamada detaylar Gelir İdaresi Başkanlığı tarafından yayımlanan tebliğler ve özelgelerle netleşmektedir.
 Belirli bir belgenin vergiye tabi olup olmadığını değerlendirmeden önce güncel mevzuata başvurmanız önerilir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Damga Vergisi [1047]](/yazilar/1047-damga-vergisi/)
+* [Damga Vergisi (Beyannameli Damga Vergisi Mükellefi) [0040]](/yazilar/0040-damga-vergisi-beyannameli-damga-vergisi-mukellefi/)
+* [Tek Başına Alınabilen Damga Vergisi [4047]](/yazilar/4047-tek-basina-alinabilen-damga-vergisi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

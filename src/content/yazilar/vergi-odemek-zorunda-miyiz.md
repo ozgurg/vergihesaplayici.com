@@ -2,6 +2,7 @@
 title: "Vergi Ödemek Zorunda Mıyız?"
 description: "Vergi ödemek, kamu hizmetlerini finanse eden yasal bir yükümlülüktür. Vergi kaçırma suçtur; cezalar ve uygulama yöntemleri hakkında bilgi edinin."
 createdDate: 2023-05-04
+updatedDate: 2026-09-16
 ---
 
 Vergi ödemek, birçok ülkede vatandaşların yasal **yükümlülüklerinden** biridir. Vergi, ülkelerin vergi gelirlerini
@@ -28,3 +29,12 @@ Sonuç olarak, vergi ödemek bir yasal yükümlülüktür ve çoğu ülkede zoru
 finansmanını sağlar ve vatandaşların bu hizmetlere katkıda bulunmasını sağlar. Vergi kaçırmak suç teşkil eder
 ve cezai yaptırımlar gerektirir. Vergi ödemek için farklı yöntemler vardır ve vatandaşların yasal
 yükümlülüklerini yerine getirmesine yardımcı olur.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Kaç Çeşit Vergi Vardır? (Türk Vergi Sisteminde Vergi Türleri)](/yazilar/kac-cesit-vergi-vardir/)
+* [Vergiden Nasıl Kaçınılır?](/yazilar/vergiden-nasil-kacinilir/)
+* [Vergi Ne Zaman Ortaya Çıkmıştır?](/yazilar/vergi-ne-zaman-ortaya-cikmistir/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

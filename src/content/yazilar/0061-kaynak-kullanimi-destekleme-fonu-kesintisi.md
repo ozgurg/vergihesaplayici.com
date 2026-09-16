@@ -2,6 +2,7 @@
 title: "Kaynak Kullanımı Destekleme Fonu Kesintisi [0061]"
 description: "Türkiye'de KKDF ve KKDF kesintisi, enerji verimliliğini artırmak, yenilenebilir projeleri desteklemek ve sürdürülebilirliği sağlamak için uygulanır."
 createdDate: 2023-05-18
+updatedDate: 2026-09-16
 ---
 
 Türkiye'nin enerji sektörü, ekonomik büyüme ve kalkınma için hayati bir rol oynamaktadır. Ancak, enerji kaynaklarının
@@ -34,3 +35,13 @@ sürdürülebilirlik hedeflerine ulaşmayı amaçlayan önemli araçlardır. Bu 
 tasarruflu olmaya teşvik ederken, enerji verimliliği projelerine ve yenilenebilir enerji kaynaklarının geliştirilmesine
 finansal kaynak sağlamaktadır. Türkiye'nin enerji sektöründe daha sürdürülebilir bir gelecek için KKDF kesintisi
 gibi politikaların etkili bir şekilde uygulanması önem taşımaktadır.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Gümrük Vergisi Hesaplama](/gumruk-vergisi/)
+* [Banka Muameleleri Vergisi [0021]](/yazilar/0021-banka-muameleleri-vergisi/)
+* [Faiz Vergisi [4006] Nedir? (Mevduat Stopajı ve GVK Geçici 67)](/yazilar/4006-faiz-vergisi/)
+* [Gümrük Vergisi Nedir? (Yurt Dışı Kargo, İthalat ve Vergi Oranları)](/yazilar/gumruk-vergisi-nedir/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

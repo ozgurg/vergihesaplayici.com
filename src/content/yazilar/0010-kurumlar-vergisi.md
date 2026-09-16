@@ -53,3 +53,13 @@ vergilendirilmesi amacıyla uygulanan önemli bir vergi türüdür. Kurumlar, ve
 yükümlüdürler ve vergi beyannamelerinin zamanında ve doğru bir şekilde hazırlanması ve ödemelerinin zamanında yapılması
 gerekmektedir. Kurumlar Vergisi, Türkiye'nin ekonomik büyümesi ve kalkınması için önemli bir kaynak sağlar ve
 devletin kamu hizmetlerini finanse etmesine yardımcı olur.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Kurumlar Vergisi Stopajı (KVKM24) [0011]](/yazilar/0011-kurumlar-vergisi-stopaji-kvkm24/)
+* [Kurumlar Vergisi Kurum Geçici Vergi [0053]](/yazilar/0053-kurumlar-vergisi-kurum-gecici-vergi/)
+* [Dağıtılmayan Kar Stopajı [0007]](/yazilar/0007-dagitilmayan-kar-stopaji/)
+* [MEP İştirakçisi Kurumlar Vergisi [0020]](/yazilar/0020-mep-istirakcisi-kurumlar-vergisi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

@@ -2,6 +2,7 @@
 title: "Her Türlü Alkolsüz İçeceklerden Alınan Ek Vergi [0094]"
 description: "Türkiye'de alkolsüz içeceklerden alınan ek vergi, sağlık politikalarını destekler ve vergi gelirlerini artırırken tüketim ve fiyatları da etkiler."
 createdDate: 2023-05-17
+updatedDate: 2026-09-16
 ---
 
 Türkiye'de alkollü içeceklerden alınan vergiler uzun yıllardır mevcut olan bir konudur. Ancak son zamanlarda, alkolsüz
@@ -43,3 +44,12 @@ uygulanmaktadır. Bu verginin amaçları arasında sağlık sorunlarıyla mücad
 yer almaktadır. Ancak, verginin tüketici fiyatları, işletmelerin karlılığı ve sağlık etkileri üzerindeki
 etkileri dikkatlice değerlendirilmelidir. Daha fazla araştırma ve analiz, bu verginin etkilerini daha iyi
 anlamamızı sağlayacak ve daha dengeli bir yaklaşım geliştirmemize yardımcı olacaktır.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Kolalı Gazozlara İlişkin Özel Tüketim Vergisi [0077]](/yazilar/0077-kolali-gazozlara-iliskin-ozel-tuketim-vergisi/)
+* [ÖTV Nedir? (Özel Tüketim Vergisi Rehberi ve Oranlar)](/yazilar/otv-nedir/)
+* [Kaldırılan Vergi Artıkları [9099]](/yazilar/9099-kaldirilan-vergi-artiklari/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

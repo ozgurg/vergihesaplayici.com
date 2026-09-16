@@ -2,6 +2,7 @@
 title: "Gelir Vergisi Geçici Vergi [0027]"
 description: "Gelir Vergisi Geçici Vergi, Türkiye'deki işletmelerin yıllık gelir vergisi beyannameleri sonuçlarına göre ödemeleri gereken bir tür vergidir."
 createdDate: 2023-05-13
+updatedDate: 2026-09-16
 ---
 
 **Gelir Vergisi Geçici Vergi**, Türkiye'deki işletmelerin yıllık gelir vergisi beyannameleri sonuçlarına göre ödemeleri
@@ -27,3 +28,12 @@ Sonuç olarak, Geçici Vergi ödemeleri Türkiye'deki işletmelerin vergi yükü
 düzenlemelerine ve işletme faaliyetlerini sürdürmelerine yardımcı olur. İşletmelerin yıllık gelir vergisi
 beyannamelerini hazırlamalarını da kolaylaştırır. İşletmelerin vergi yükümlülüklerini doğru bir şekilde yerine
 getirmeleri, vergi uyumlarının artmasına ve ülke ekonomisine katkı sağlamasına yardımcı olur.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Yıllık Gelir Vergisi [0001]](/yazilar/0001-yillik-gelir-vergisi/)
+* [Gelir Geçici Vergi [0032]](/yazilar/0032-gelir-gecici-vergi/)
+* [Kurum Geçici Vergi [0033]](/yazilar/0033-kurum-gecici-vergi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

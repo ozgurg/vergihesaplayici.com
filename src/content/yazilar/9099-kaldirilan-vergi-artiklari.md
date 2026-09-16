@@ -2,6 +2,7 @@
 title: "Kaldırılan Vergi Artıkları [9099]"
 description: "Kaldırılan Vergi Artıkları nedir, hangi durumlarda tahsil edilir? Eski vergi borçlarının tahsilatı, zamanaşımı ve ödeme şartları hakkında bilmeniz gerekenler."
 createdDate: 2025-10-29
+updatedDate: 2026-09-16
 ---
 
 Kaldırılan vergi artıkları, yürürlükten kaldırılmış vergi kanunlarına göre doğmuş ancak henüz tahsil edilmemiş vergi borçlarını ifade eder. Türk vergi sistemi zaman içinde birçok değişiklik geçirmiş, bazı vergiler tamamen kaldırılmış ya da başka vergilerle birleştirilmiştir. Bu süreçte, kaldırılan vergilerden kaynaklanan ve henüz ödenmeyen tutarlar "kaldırılan vergi artıkları" olarak kayıtlarda görünmeye devam eder. **9099 vergi kodu** bu tür geçmiş borçların tahsili için kullanılır ve özellikle eski dönemlere ait vergi incelemelerinde veya yeniden değerleme işlemlerinde karşımıza çıkar.
@@ -13,3 +14,13 @@ Vergi artıklarının tahsil edilebilmesi için beş yıllık zamanaşımı sür
 Mükellefler açısından bu tür borçların varlığını öğrenmek bazen zor olabilir. Özellikle uzun yıllar önce tarh edilmiş ancak tebligat eksikliği nedeniyle mükellefi haberdar olmamış vergiler, şirket devri, unvan değişikliği veya vergi incelemesi gibi durumlarda ortaya çıkar. Bu nedenle işletme devralma, birleşme veya bölünme işlemlerinde vergi borç sorgulama belgesi alınması kritik öneme sahiptir. Ayrıca vergi dairelerinin düzenli olarak yaptığı borç yapılandırma dönemlerinde, kaldırılan vergi artıkları da yapılandırma kapsamına alınabilir ve gecikme faizi ile ceza tutarlarında önemli indirimlerden yararlanılabilir.
 
 Kaldırılan vergi artıklarıyla karşılaşıldığında öncelikle borcun doğruluğunu teyit etmek gerekir. Zaman aşımına uğramış borçlar için itiraz yoluna başvurulabilir. Mükelleflerin bu konudaki hakları, normal vergi borçlarında olduğu gibi dava açma ve uzlaşma imkanlarını da kapsar.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Mülga Maden Fonu [0060] Nedir? (Maden Kanunu ve Fon Tasfiyesi)](/yazilar/0060-mulga-maden-fonu/)
+* [Mülga Kooperatifçilik Tanıtma ve Eğitim Fonu [0062] Nedir?](/yazilar/0062-mulga-kooperatifcilik-tanitma-ve-egitim-fonu/)
+* [Eğitime Katkı Payı [1042]](/yazilar/1042-egitime-katki-payi/)
+* [Özel İşlem Vergisi [1043]](/yazilar/1043-ozel-islem-vergisi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

@@ -2,6 +2,7 @@
 title: "Basit Usulde Ticari Kazanç [0014]"
 description: "Ticaret hayatının önemli bir parçası olan basit usul, küçük çaplı işletmeler için uygulanan bir vergi sistemi olarak karşımıza çıkmaktadır."
 createdDate: 2023-05-10
+updatedDate: 2026-09-16
 ---
 
 Ticaret hayatının önemli bir parçası olan **basit usul**, küçük çaplı işletmeler için uygulanan bir vergi sistemi olarak
@@ -52,3 +53,12 @@ Sonuç olarak, basit usulde ticari kazanç, küçük çaplı işletmeler için u
 çıkmaktadır. Bu sistemde, işletmenin yaptığı faaliyetlerin gelir ve giderleri baz alınarak vergilendirilmesi
 sağlanmaktadır. İşletme sahiplerinin, beyanname verme süresi içerisinde doğru ve eksiksiz bir şekilde beyannameyi
 doldurmaları, vergi yükümlülüklerini zamanında yerine getirmeleri oldukça önemlidir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Gelir Götürü Ticari Kazanç [0004] Nedir? (Tarihçe ve Basit Usule Geçiş)](/yazilar/0004-gelir-goturu-ticari-kazanc/)
+* [Diğer Ücretler [0051] Nedir? (GVK 64 ve Yasal Değişiklikler)](/yazilar/0051-diger-ucretler/)
+* [Götürü Usulde Katma Değer Vergisi [0017] Nedir? (KDVK Mülga Düzenleme)](/yazilar/0017-goturu-usulde-katma-deger-vergisi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

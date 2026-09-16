@@ -2,6 +2,7 @@
 title: "Dağıtılmayan Kar Stopajı [0007]"
 description: "Dağıtılmayan kâr stopajı, Türkiye'de faaliyet gösteren anonim şirketlerin (A.Ş.) dağıtılmamış kârları üzerinden ödediği bir vergi türüdür."
 createdDate: 2023-05-08
+updatedDate: 2026-09-16
 ---
 
 **Dağıtılmayan kâr stopajı**, Türkiye'de faaliyet gösteren anonim şirketlerin (A.Ş.) dağıtılmamış kârları üzerinden
@@ -29,3 +30,12 @@ Sonuç olarak, dağıtılmayan kâr stopajı, Türkiye'deki anonim şirketlerin 
 sahiptir. Şirketlerin finansal yönetimleri açısından önemli bir araç olan dağıtılmayan kâr stopajı, şirketlerin
 büyüme potansiyellerini artırabilecekleri bir fırsat sunmaktadır. Ancak, şirketlerin kârlarını doğru bir şekilde
 yönetmeleri ve birikimlerini gelecekte yapacakları yatırımlar için uygun bir şekilde kullanmaları gerekmektedir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Kurumlar Vergisi [0010]](/yazilar/0010-kurumlar-vergisi/)
+* [Kurumlar Vergisi Stopajı (KVKM24) [0011]](/yazilar/0011-kurumlar-vergisi-stopaji-kvkm24/)
+* [Yıllık Gelir Vergisi [0001]](/yazilar/0001-yillik-gelir-vergisi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

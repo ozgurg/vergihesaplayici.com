@@ -2,6 +2,7 @@
 title: "Vergideki Kültür Bakanlığı Payı Nedir?"
 description: "Vergideki Kültür Bakanlığı Payı, kültür-sanat kuruluşlarının bütçesinden kesilen ve Bakanlığa aktarılan bir fondur."
 createdDate: 2023-05-04
+updatedDate: 2026-09-16
 ---
 
 Vergideki **Kültür Bakanlığı Payı**, Türkiye'de faaliyet gösteren ve kültür-sanat alanında çalışmalar yürüten
@@ -30,3 +31,13 @@ sıkılaştırılması gibi önlemler alınabilir.
 Sonuç olarak, Kültür Bakanlığı Payı fonu Türkiye'deki kültür-sanat faaliyetlerinin finansmanında önemli bir kaynak
 olarak kullanılmaktadır. Ancak, fonun daha etkin ve adil bir şekilde kullanılması için çeşitli önlemler alınması
 gerekmektedir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Telefon Vergisi Hesaplayıcı](/telefon-vergisi-hesaplayici/)
+* [Telefonlardan Alınan Kültür Bakanlığı Payı %1.2 Oluyor](/yazilar/telefonlardan-alinan-kultur-bakanligi-payi-1-2-oluyor/)
+* [TRT Bandrolü Nedir? (3093 Sayılı Kanun ve Bandrol Oranları)](/yazilar/trt-bandrolu-nedir/)
+* [ÖTV Nedir? (Özel Tüketim Vergisi Rehberi ve Oranlar)](/yazilar/otv-nedir/)
+* [Verginin Vergisi Nasıl Hesaplanır?](/yazilar/verginin-vergisi-nasil-hesaplanir/)

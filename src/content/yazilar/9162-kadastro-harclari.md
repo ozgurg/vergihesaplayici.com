@@ -2,6 +2,7 @@
 title: "Kadastro Harçları [9162]"
 description: "Kadastro harçları, Türkiye'de taşınmaz mal sahiplerinin kadastro işlemleri için ödediği ücretlerdir."
 createdDate: 2023-07-18
+updatedDate: 2026-09-16
 ---
 
 **Kadastro harçları**, Türkiye'de taşınmaz mal sahiplerinin kadastro işlemleri için ödediği ücretlerdir. Kadastro,
@@ -29,3 +30,12 @@ Kadastro işlemleri, taşınmazların niteliklerini belirlemek ve kaydetmek amac
 güncellenmesi ve mülkiyet haklarının belirlenmesi için önemlidir. Taşınmaz mal sahipleri, kadastro işlemleri
 sırasında belirli bir harç öderler, bu nedenle güncel tarifeyi kontrol etmek ve ödemeleri düzenli bir şekilde yapmak
 önemlidir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Vergi Yargı Harçları [1067]](/yazilar/1067-vergi-yargi-harclari/)
+* [Karar ve İlam Harcı [9166]](/yazilar/9166-karar-ve-ilam-harci/)
+* [4915 ve 5035 Sayılı Kanuna Göre Ruhsat Harcı [9148]](/yazilar/9148-4915-ve-5035-sayili-kanuna-gore-ruhsat-harci/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

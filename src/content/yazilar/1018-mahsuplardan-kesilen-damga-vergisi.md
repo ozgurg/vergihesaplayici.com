@@ -2,6 +2,7 @@
 title: "Mahsuplardan Kesilen Damga Vergisi [1018]"
 description: "Türkiye'de, çeşitli finansal işlemler ve belgeler damga vergisi adı verilen bir vergi ile yükümlendirilmektedir."
 createdDate: 2023-05-16
+updatedDate: 2026-09-16
 ---
 
 Türkiye'de, çeşitli finansal işlemler ve belgeler **damga vergisi** adı verilen bir vergi ile yükümlendirilmektedir.
@@ -66,3 +67,12 @@ Sonuç olarak, Türkiye'de mahsuplardan kesilen damga vergisi, finansal işlemle
 işlemlerine ilişkin belgeler üzerinde tahsil edilen bir vergidir. Bu vergi, devletin gelir kaynaklarından birini
 oluşturur ve belirli oranlarla hesaplanarak tahsil edilir. Mahsuplaşma işlemleriyle ilgili belgeler üzerinde damga
 vergisi ödemeleri düzenli olarak yapılmalı ve ilgili yasal düzenlemelere uyulmalıdır.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Damga Vergisi [1047]](/yazilar/1047-damga-vergisi/)
+* [Tevkifattan Alınan Damga Vergisi [1046]](/yazilar/1046-tevkifattan-alinan-damga-vergisi/)
+* [Damga Vergisi (Beyannameli Damga Vergisi Mükellefi) [0040]](/yazilar/0040-damga-vergisi-beyannameli-damga-vergisi-mukellefi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

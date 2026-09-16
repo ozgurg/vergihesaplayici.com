@@ -2,6 +2,7 @@
 title: "Kılavuzluk ve Römorkörcülük Hizmet Payı [9132]"
 description: "Kılavuzluk ve römorkörcülük, denizcilik sektöründe önemli hizmetlerden biridir ve Türkiye'de de büyük bir rol oynamaktadır."
 createdDate: 2023-07-19
+updatedDate: 2026-09-16
 ---
 
 **Kılavuzluk** ve römorkörcülük, denizcilik sektöründe önemli hizmetlerden biridir ve Türkiye'de de büyük bir rol
@@ -31,3 +32,11 @@ denizcilik sektörünün gelişimine katkıda bulunmak amacıyla tahsil edilir.
 Sonuç olarak, Türkiye'deki limanlarda kılavuzluk ve römorkörcülük hizmet payı, gemi sahipleri veya işletmecileri
 tarafından ödenen bir hizmet bedelidir. Bu pay, kılavuzluk ve römorkörcülük hizmetlerinin finansmanını sağlamak
 ve denizcilik sektörünün güvenli ve etkin bir şekilde işlemesini desteklemek amacıyla tahsil edilir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Mahalli İdarelerden Alınan Paylar [9133]](/yazilar/9133-mahalli-idarelerden-alinan-paylar/)
+* [Gümrük Vergisi Nedir? (Yurt Dışı Kargo, İthalat ve Vergi Oranları)](/yazilar/gumruk-vergisi-nedir/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

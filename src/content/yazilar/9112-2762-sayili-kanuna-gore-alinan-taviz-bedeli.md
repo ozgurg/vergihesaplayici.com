@@ -2,6 +2,7 @@
 title: "2762 Sayılı Kanuna Göre Alınan Taviz Bedeli [9112]"
 description: "Ticari hayatta işletmeler arasında yapılan anlaşmaların bazı durumlarda gerçek değerlerinin altında olabileceği bir gerçektir."
 createdDate: 2023-07-25
+updatedDate: 2026-09-16
 ---
 
 **Ticari** hayatta işletmeler arasında yapılan anlaşmaların bazı durumlarda gerçek değerlerinin altında olabileceği bir
@@ -43,3 +44,11 @@ amaçlayan önemli bir kavramdır. Taraflar arasında yapılan anlaşmalarda tav
 hesaplanması ve tarafların gerçek değerleri üzerinden adil bir anlaşma yapması, ticari ilişkilerin sağlam temeller
 üzerine oturmasını sağlar. Bu nedenle, işletmelerin taviz bedeli konusunda uygun önlemleri alması ve yasal
 düzenlemelere uygun hareket etmesi büyük önem taşır.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [5736 Sayılı Kanun Uyarınca Tahsil Edilecek Ecrimisil Gelirleri [9153]](/yazilar/9153-5736-sayili-kanun-uyarinca-tahsil-edilecek-ecrimisil-gelirleri/)
+* [Kadastro Harçları [9162]](/yazilar/9162-kadastro-harclari/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

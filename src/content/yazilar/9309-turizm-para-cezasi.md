@@ -2,6 +2,7 @@
 title: "Turizm Para Cezası [9309]"
 description: "Türkiye'de turizm para cezaları, sektörün düzenli ve sürdürülebilir yürütülmesini sağlar, çevre ve kültürel mirasın korunmasını destekler."
 createdDate: 2023-07-18
+updatedDate: 2026-09-16
 ---
 
 **Turizm** sektörü, Türkiye'nin ekonomik büyümesinde önemli bir role sahiptir. Ülkemiz, tarihi ve doğal
@@ -34,3 +35,12 @@ Sonuç olarak, Türkiye'de turizm para cezaları, turizm faaliyetlerinin düzenl
 için önemli bir araçtır. Turizm sektöründe faaliyet gösteren işletmelerin ve turistlerin, yasalara ve kurallara uyum
 sağlamaları, çevrenin ve kültürel mirasın korunmasına katkıda bulunmaları büyük önem taşır. Bu sayede, turizm sektörü
 daha sağlıklı bir şekilde gelişir ve ülkemiz turistik potansiyelini korur.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [3516 Sayılı Kanuna Göre Ölçü Ayar Para Cezası [9307]](/yazilar/9307-3516-sayili-kanuna-gore-olcu-ayar-para-cezasi/)
+* [Şeker Kanunu İdari Para Cezası [9315]](/yazilar/9315-seker-kanunu-idari-para-cezasi/)
+* [5326 Sayılı Kanun Uyarınca Cumhuriyet Savcılıklarınca Verilen İdari Para Cezası [9317]](/yazilar/9317-5326-sayili-kanun-uyarinca-cumhuriyet-savciliklarinca-verilen-idari-para-cezasi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

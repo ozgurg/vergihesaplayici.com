@@ -2,6 +2,7 @@
 title: "Veraset ve İntikal Vergisi (Sair İvazsız İntikaller) [9131]"
 description: "Türkiye'de miras yoluyla veya bağışlama suretiyle elde edilen bazı mal varlıklarına yönelik vergi türleri bulunmaktadır."
 createdDate: 2023-07-25
+updatedDate: 2026-09-16
 ---
 
 **Türkiye'de** miras yoluyla veya bağışlama suretiyle elde edilen bazı mal varlıklarına yönelik vergi türleri
@@ -29,3 +30,11 @@ veya bağışlanan kişilere intikali durumunda ödenen bir vergidir. Vergi oran
 belirlenir ve belirli bir istisna tutarı düşülerek hesaplanır. Vergi beyannamesinin süresinde ve doğru bir şekilde
 verilmesi önemlidir, aksi halde cezai yaptırımlarla karşılaşılabilir. Bu nedenle, Veraset ve İntikal Vergisi ile
 ilgili yasal düzenlemelerin takip edilmesi ve vergi danışmanlarından destek alınması tavsiye edilir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Şans Oyunları Vergisi [4048]](/yazilar/4048-sans-oyunlari-vergisi/)
+* [Kaç Çeşit Vergi Vardır? (Türk Vergi Sisteminde Vergi Türleri)](/yazilar/kac-cesit-vergi-vardir/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

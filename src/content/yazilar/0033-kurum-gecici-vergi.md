@@ -2,6 +2,7 @@
 title: "Kurum Geçici Vergi [0033]"
 description: "Kurum geçici vergisi, Türkiye'deki ticari şirketlerin ve kurumların yıllık gelirlerine bağlı olarak ödedikleri bir vergidir."
 createdDate: 2023-05-14
+updatedDate: 2026-09-16
 ---
 
 Kurum geçici vergisi, Türkiye'deki ticari şirketlerin ve kurumların yıllık gelirlerine bağlı olarak ödedikleri bir
@@ -28,3 +29,12 @@ yıl sonunda yapılacak kurumlar vergisi hesabını doğru bir şekilde tahmin e
 Sonuç olarak, kurum geçici vergisi, Türkiye'deki ticari şirketlerin yıl içinde elde ettikleri gelirlerin
 vergilendirilmesi amacıyla ödedikleri bir vergidir. Doğru bir şekilde hesaplanması ve ödenmesi, şirketlerin mali
 yönetimi açısından önemlidir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Kurumlar Vergisi Kurum Geçici Vergi [0053]](/yazilar/0053-kurumlar-vergisi-kurum-gecici-vergi/)
+* [Kurumlar Vergisi [0010]](/yazilar/0010-kurumlar-vergisi/)
+* [Gelir Vergisi Geçici Vergi [0027]](/yazilar/0027-gelir-vergisi-gecici-vergi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

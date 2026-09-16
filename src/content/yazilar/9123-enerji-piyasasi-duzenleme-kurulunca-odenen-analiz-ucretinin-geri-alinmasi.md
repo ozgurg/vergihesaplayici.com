@@ -2,6 +2,7 @@
 title: "Enerji Piyasası Düzenleme Kurulunca Ödenen Analiz Ücretinin Geri Alınması [9123]"
 description: "Enerji sektörü EPDK tarafından denetlenir; firmalardan analiz ve rapor hazırlığı için ücret alınır, hatalı veya gecikmeli raporlar için iade talep edilebilir."
 createdDate: 2023-07-25
+updatedDate: 2026-09-16
 ---
 
 Enerji sektörü, ülkemiz için **hayati öneme** sahip bir alan olarak öne çıkmaktadır. Bu sektördeki düzenlemeler ve
@@ -31,3 +32,10 @@ analiz ücretlerini ödemeleri önemlidir. Bu ücretler, enerji piyasasının d�
 ortamının sağlanması için gereklidir. Ancak, analizlerdeki hatalar veya gecikmeler gibi durumlarda, iade talepleri
 de söz konusu olabilir. EPDK'nın analiz ücreti iade politikasına uygun şekilde hareket edilmesi, sektördeki güvenin ve
 saygınlığın sürdürülmesi açısından kritik bir unsurdur.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Petrol ve Doğalgaz Ürünlerine İlişkin Özel Tüketim Vergisi [0071]](/yazilar/0071-petrol-ve-dogalgaz-urunlerine-iliskin-ozel-tuketim-vergisi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

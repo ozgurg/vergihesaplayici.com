@@ -2,6 +2,7 @@
 title: "Erken Ödeme İndirimi [1087]"
 description: "Erken ödeme indirimi, vergi mükelleflerine zamanında veya erken ödeme yapmaları durumunda sağlanan avantajdır."
 createdDate: 2025-08-02
+updatedDate: 2026-09-16
 ---
 
 Vergi sisteminde zamanında ödeme teşviklerini artırmak amacıyla uygulanan erken ödeme indirimi, mükelleflere belirli
@@ -38,3 +39,12 @@ Bu ödeme genellikle tahakkuk tarihinden itibaren belirli bir süre içinde yap�
 
 Erken ödeme indirimi, hem bireysel hem de kamusal fayda sağlayan bir uygulamadır. Vergi yükümlülüklerinizi hafifletmek
 ve gecikme cezalarından kaçınmak için bu tür avantajlardan yararlanmak önemlidir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Vergi Ziyaı Cezası [3080]](/yazilar/3080-vergi-ziyai-cezasi/)
+* [Gecikme Faizi [1084] Nedir? (VUK 112, Gecikme Zammı ve Hesaplama)](/yazilar/1084-gecikme-faizi/)
+* [Pişmanlık Zammı [1030]](/yazilar/1030-pismanlik-zammi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

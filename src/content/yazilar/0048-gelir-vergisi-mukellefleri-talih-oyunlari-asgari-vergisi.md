@@ -2,6 +2,7 @@
 title: "Gelir Vergisi Mükellefleri Talih Oyunları Asgari Vergisi [0048]"
 description: "Talih oyunlarında kazanılan tutar, Türkiye'de %20 asgari vergiye tabidir; bu vergi, kazançların vergilendirilmesini ve vergi uyumunu sağlar."
 createdDate: 2023-05-14
+updatedDate: 2026-09-16
 ---
 
 Talih oyunları, insanların şanslarını deneyerek para kazanma umuduyla katıldıkları oyunlardır. Bu oyunlar genellikle
@@ -24,3 +25,12 @@ Sonuç olarak, Türkiye'de talih oyunlarına katılan kişilerin ödemeleri gere
 kazanılan tutarın belirli bir oranını vergilendirir. Bu vergi, vergi toplama sürecini basitleştirir ve oyuncuların
 kazançlarından belirli bir oranda vergi ödemelerini sağlar. Oyuncuların kazançlarını doğru bir şekilde beyan etmeleri ve
 asgari vergiyi ödemeleri, vergi uyumunu arttırır ve vergi toplama sürecini kolaylaştırır.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Şans Oyunları Vergisi [4048]](/yazilar/4048-sans-oyunlari-vergisi/)
+* [Kurumlar Vergisi Mükellefleri Talih Oyunları Asgari Vergisi [0050]](/yazilar/0050-kurumlar-vergisi-mukellefleri-talih-oyunlari-asgari-vergisi/)
+* [Yıllık Gelir Vergisi [0001]](/yazilar/0001-yillik-gelir-vergisi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

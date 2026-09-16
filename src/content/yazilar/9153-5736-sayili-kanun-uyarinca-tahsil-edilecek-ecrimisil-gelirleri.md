@@ -2,6 +2,7 @@
 title: "5736 Sayılı Kanun Uyarınca Tahsil Edilecek Ecrimisil Gelirleri [9153]"
 description: "Türkiye'de gayrimenkul sahipleri için bazı vergi ve harçlar dışında, ilave olarak ödenmesi gereken bazı ödemeler bulunmaktadır."
 createdDate: 2023-07-19
+updatedDate: 2026-09-16
 ---
 
 Türkiye'de gayrimenkul sahipleri için bazı <a href="yazilar/1067-vergi-yargi-harclari/">vergi ve harçlar</a> dışında, ilave olarak ödenmesi gereken bazı **ödemeler**
@@ -29,3 +30,12 @@ Sonuç olarak, 5736 Sayılı Kanun uyarınca tahsil edilecek ecrimisil gelirleri
 hizmetlerinden kaynaklanan değer artışının bir karşılığı olarak ödenen kullanım bedelleridir. Bu ödemeler, taşınmazların
 kamu hizmetlerinden faydalanmasından dolayı ortaya çıkan ekonomik kazancın adil bir şekilde dağıtılmasını sağlamak
 amacıyla yürürlüğe konmuştur.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Hazine Zararının Geri Alınması [9116]](/yazilar/9116-hazine-zararinin-geri-alinmasi/)
+* [2762 Sayılı Kanuna Göre Alınan Taviz Bedeli [9112]](/yazilar/9112-2762-sayili-kanuna-gore-alinan-taviz-bedeli/)
+* [Kadastro Harçları [9162]](/yazilar/9162-kadastro-harclari/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

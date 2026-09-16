@@ -2,6 +2,7 @@
 title: "Tütün Mamüllerine İlişkin Özel Tüketim Vergisi [0076]"
 description: "Tütün mamülleri, sigara, pipo, puro gibi ürünleri kapsayan ve tütün içeren ürünlere verilen genel bir addır."
 createdDate: 2023-05-17
+updatedDate: 2026-09-16
 ---
 
 Tütün mamülleri, sigara, pipo, puro gibi ürünleri kapsayan ve tütün içeren ürünlere verilen genel bir addır. Türkiye'de
@@ -31,3 +32,13 @@ Sonuç olarak, Türkiye'de tütün mamüllerine ilişkin Özel Tüketim Vergisi,
 tütünle ilişkili riskleri azaltmak amacıyla uygulanan bir vergi türüdür. ÖTV oranları ürünün cinsine, türüne ve
 tüketiciye sunulan şekline bağlı olarak değişebilir. Bu önlem, toplum sağlığını koruma ve tütün mamüllerinin zararlı
 etkilerini azaltma çabalarının bir parçası olarak değerlendirilebilir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [ÖTV Nedir? (Özel Tüketim Vergisi Rehberi ve Oranlar)](/yazilar/otv-nedir/)
+* [Kolalı Gazoz, Alkollü İçecekler ve Tütün Mamüllerine İlişkin Özel Tüketim Vergisi [0073]](/yazilar/0073-kolali-gazoz-alkollu-icecekler-ve-tutun-mamullerine-iliskin-ozel-tuketim-vergisi/)
+* [Tütün Mamüllerine İlişkin Ek Vergi [0091]](/yazilar/0091-tutun-mamullerine-iliskin-ek-vergi/)
+* [Tekel Safi Hasılat [4050]](/yazilar/4050-tekel-safi-hasilat/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

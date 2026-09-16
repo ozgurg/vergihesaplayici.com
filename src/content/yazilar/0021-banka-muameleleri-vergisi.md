@@ -2,6 +2,7 @@
 title: "Banka Muameleleri Vergisi [0021]"
 description: "Banka Muameleleri Vergisi, Türkiye'de bankacılık işlemleri üzerinden alınan bir vergi türüdür ve hükümete bütçe geliri sağlar."
 createdDate: 2023-05-09
+updatedDate: 2026-09-16
 ---
 
 **Banka Muameleleri Vergisi**, Türkiye'de finansal işlemler üzerinden alınan bir vergidir. Bu vergi, 1984 yılında
@@ -27,3 +28,12 @@ isteklerini azaltabilir veya alternatif ödeme yöntemlerine yönelmelerine nede
 Sonuç olarak, Banka Muameleleri Vergisi, Türkiye'de finansal işlemlerden alınan bir vergi türüdür. Vergi, hükümetin
 bütçe açığını kapatmak veya kamu hizmetlerine daha fazla kaynak aktarmak için kullanılırken, müşterilerin bankalarla
 çalışma isteklerini azaltabileceği gibi bankaların da mali yükü artırır.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Sigorta Muameleleri Vergisi [0022] Nedir? (BSMV ve Sigorta Primleri)](/yazilar/0022-sigorta-muameleleri-vergisi/)
+* [Faiz Vergisi [4006] Nedir? (Mevduat Stopajı ve GVK Geçici 67)](/yazilar/4006-faiz-vergisi/)
+* [Kaynak Kullanımı Destekleme Fonu Kesintisi [0061]](/yazilar/0061-kaynak-kullanimi-destekleme-fonu-kesintisi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

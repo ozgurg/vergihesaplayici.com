@@ -2,6 +2,7 @@
 title: "Gelir Dahili Tevkifat [4008]"
 description: "Gelir dahili tevkifat, Türkiye'de vergi sistemi içerisinde önemli bir yere sahip olan bir uygulamadır."
 createdDate: 2023-07-17
+updatedDate: 2026-09-16
 ---
 
 **Gelir dahili tevkifat**, Türkiye'de vergi sistemi içerisinde önemli bir yere sahip olan bir uygulamadır. İşletmelerin,
@@ -27,3 +28,12 @@ Sonuç olarak, gelir dahili tevkifat Türkiye'de vergi toplama sürecinin etkinl
 yöntemdir. Belirli işlemlerle elde edilen gelirler üzerinden vergi tahsilatını hızlandırırken, vergi mükellefleri
 açısından bazı avantajlar ve dezavantajlar da beraberinde getirebilir. Bu uygulamanın amacı, adil ve etkin bir vergi
 sistemi oluşturmak ve vergi kayıplarını minimize etmektir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Gelir Vergisi Tevkifatı [9113]](/yazilar/9113-gelir-vergisi-tevkifati/)
+* [Gelir Vergisi Stopajı (Muhtasar Beyanname) [0003]](/yazilar/0003-gelir-vergisi-stopaji-muhtasar-beyanname/)
+* [Yıllık Gelir Vergisi [0001]](/yazilar/0001-yillik-gelir-vergisi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

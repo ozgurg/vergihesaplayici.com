@@ -2,6 +2,7 @@
 title: "Alkollü İçeceklere İlişkin Özel Tüketim Vergisi [0075]"
 description: "Özel tüketim vergisi (ÖTV), Türkiye'de alkollü içecekler gibi belirli ürünlere uygulanan bir vergi türüdür."
 createdDate: 2023-05-17
+updatedDate: 2026-09-16
 ---
 
 Özel tüketim vergisi (ÖTV), Türkiye'de alkollü içecekler gibi belirli ürünlere uygulanan bir vergi türüdür. Bu vergi,
@@ -30,3 +31,13 @@ Sonuç olarak, Türkiye'de alkollü içecekler ÖTV'ye tabi tutulan ürünler ar
 altına almak hem de devlet gelirlerini artırmak amacıyla uygulanır. Yüksek ÖTV oranları, alkollü içeceklerin
 fiyatını yükseltirken aynı zamanda halk sağlığını korumak amacıyla zararlı alkol tüketimini azaltmaya yönelik bir önlem
 olarak değerlendirilir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [ÖTV Nedir? (Özel Tüketim Vergisi Rehberi ve Oranlar)](/yazilar/otv-nedir/)
+* [Kolalı Gazoz, Alkollü İçecekler ve Tütün Mamüllerine İlişkin Özel Tüketim Vergisi [0073]](/yazilar/0073-kolali-gazoz-alkollu-icecekler-ve-tutun-mamullerine-iliskin-ozel-tuketim-vergisi/)
+* [Her Türlü Alkollü İçkilere İlişkin Ek Vergi [0092]](/yazilar/0092-her-turlu-alkollu-ickilere-iliskin-ek-vergi/)
+* [Sair Şarap ve Biralara İlişkin Ek Vergi [0093]](/yazilar/0093-sair-sarap-ve-biralara-iliskin-ek-vergi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

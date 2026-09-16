@@ -2,6 +2,7 @@
 title: "Damga Vergisi (Beyannameli Damga Vergisi Mükellefi) [0040]"
 description: "Damga vergisi, Türkiye'de sözleşme, fatura, senet ve benzeri belgeler üzerinden alınan bir vergi türüdür ve beyannameli mükellefler tarafından ödenir."
 createdDate: 2023-05-13
+updatedDate: 2026-09-16
 ---
 
 **Damga vergisi**, Türkiye'de hemen hemen her türlü belgeye uygulanan bir vergi türüdür. Bu belgeler arasında
@@ -25,3 +26,12 @@ belirlenen oranda ödenecek olan damga vergisi, belge üzerinde yer alan tutarı
 Sonuç olarak, damga vergisi Türkiye'de her türlü belgeye uygulanan bir vergi türüdür. Beyannameli damga vergisi
 mükellefi olan kişiler, beyannamelerinde yer alan belgeleri düzenlerken damga vergisi ödemekle yükümlüdürler. Vergi
 beyannameleri ve vergi ödemeleri belirli bir süre içinde vergi dairesine yapılmalıdır.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Damga Vergisi [1047]](/yazilar/1047-damga-vergisi/)
+* [Tevkifattan Alınan Damga Vergisi [1046]](/yazilar/1046-tevkifattan-alinan-damga-vergisi/)
+* [Tek Başına Alınabilen Damga Vergisi [4047]](/yazilar/4047-tek-basina-alinabilen-damga-vergisi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

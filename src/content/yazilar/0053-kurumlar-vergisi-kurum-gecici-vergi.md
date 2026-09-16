@@ -47,3 +47,12 @@ vergi iken, Kurum Geçici Vergi ise yıl içindeki geçici kazançlara yönelik 
 Türkiye'nin ekonomik düzeninin sürdürülmesi ve kamu harcamalarının finansmanı için önemli bir kaynak sağlamaktadır.
 İşletmeler, bu vergilere ilişkin yükümlülüklerini yerine getirmek ve mevzuata uygun olarak vergi beyannamelerini
 düzenlemekle sorumludur.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Kurumlar Vergisi [0010]](/yazilar/0010-kurumlar-vergisi/)
+* [Kurum Geçici Vergi [0033]](/yazilar/0033-kurum-gecici-vergi/)
+* [Gelir Vergisi Geçici Vergi [0027]](/yazilar/0027-gelir-vergisi-gecici-vergi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

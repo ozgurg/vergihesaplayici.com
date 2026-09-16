@@ -2,6 +2,7 @@
 title: "Verginin Vergisi Nasıl Hesaplanır?"
 description: "Verginin vergisi, Türkiye'de faaliyet gösteren tüzel kişilerin ödedikleri kurumlar vergisi üzerinden hesaplanan bir vergidir."
 createdDate: 2023-05-04
+updatedDate: 2026-09-16
 ---
 
 Verginin vergisi, Türkiye'de faaliyet gösteren tüzel kişilerin ödedikleri **kurumlar vergisi** üzerinden hesaplanan bir
@@ -28,3 +29,13 @@ kişilerin ödemesi gereken bir vergidir ve ödeme süresi de kurumlar vergisi �
 Sonuç olarak, verginin vergisi, kurumlar vergisi üzerinden hesaplanan bir vergidir ve tüzel kişilerin ödediği vergi
 yükünü artırır. Verginin vergisi oranı her yıl Bakanlar Kurulu tarafından belirlenir ve kurumlar vergisi beyannamesi
 üzerinden hesaplanarak ödenir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [ÖTV Nedir? (Özel Tüketim Vergisi Rehberi ve Oranlar)](/yazilar/otv-nedir/)
+* [KDV Nedir? (Katma Değer Vergisi Oranları ve İşleyişi)](/yazilar/kdv-nedir/)
+* [TRT Bandrolü Nedir? (3093 Sayılı Kanun ve Bandrol Oranları)](/yazilar/trt-bandrolu-nedir/)
+* [Vergideki Kültür Bakanlığı Payı Nedir?](/yazilar/vergideki-kultur-bakanligi-payi-nedir/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

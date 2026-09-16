@@ -2,6 +2,7 @@
 title: "Mera Fonu Para Cezası [9341]"
 description: "Mera fonu para cezası, Türkiye'de mera alanlarının korunmasını sağlamak amacıyla uygulanan bir düzenlemeye ilişkin cezai yaptırımdır."
 createdDate: 2023-07-17
+updatedDate: 2026-09-16
 ---
 
 Mera fonu para cezası, Türkiye'de **mera alanlarının korunmasını sağlamak** amacıyla uygulanan bir düzenlemeye ilişkin
@@ -27,3 +28,12 @@ bir şekilde kullanılmasına yönelik bir disiplin ve denetim mekanizması olar
 Sonuç olarak, mera fonu para cezası, meraların korunması ve sürdürülebilir kullanımının sağlanması amacıyla
 uygulanan bir yaptırımdır. Meraların ekosistem hizmetlerinin sürdürülebilir bir şekilde devam etmesi ve doğal
 kaynakların korunması için bu tür cezaların etkili bir şekilde uygulanması önemlidir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Orköy Fonu Gelirleri [9111]](/yazilar/9111-orkoy-fonu-gelirleri/)
+* [Ağaçlandırma Fonu Yönetmeliğine Göre Verilen Kredilerden Geri Alınanlar [9125]](/yazilar/9125-agaclandirma-fonu-yonetmeligine-gore-verilen-kredilerden-geri-alinanlar/)
+* [Zirai Kazanç Gelir Vergisi [0002] Nedir? (Çiftçi Vergilendirme Rehberi)](/yazilar/0002-zirai-kazanc-gelir-vergisi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

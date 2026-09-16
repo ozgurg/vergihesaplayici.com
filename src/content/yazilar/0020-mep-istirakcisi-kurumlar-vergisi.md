@@ -25,3 +25,11 @@ Sonuç olarak, MEP İştirakçisi Kurumlar Vergisi, Türkiye'deki yabancı serma
 yaptıkları ortaklık işlemleri sonrası elde ettikleri kazançların vergilendirilmesi için uygulanan bir vergi türüdür. Bu
 vergi, Türkiye'deki diğer kurumlar vergisi oranıyla aynıdır ve ödeme süresi de diğer vergiler gibi takvim yılı içinde 4
 eşit taksitte ödenmektedir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Kurumlar Vergisi [0010]](/yazilar/0010-kurumlar-vergisi/)
+* [Kurumlar Vergisi Kurum Geçici Vergi [0053]](/yazilar/0053-kurumlar-vergisi-kurum-gecici-vergi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

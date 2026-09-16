@@ -25,3 +25,13 @@ Gerçek Usulde KDV'yi uygulayan işletmelerin, KDV mükellefiyetleri devam etti�
 zamanında vermeleri ve KDV ödemelerini yapmaları gerekmektedir. Aksi takdirde, vergi cezaları ile karşılaşabilirler.
 
 Sonuç olarak, Gerçek Usulde KDV uygulaması Türkiye'deki işletmeler için temel vergi yöntemidir. Bu yöntem, işletmelerin satış ve alışlarını doğru bir şekilde takip etmelerine ve KDV ödemelerini hesaplamalarına yardımcı olur. Fatura ve işlemlerinizdeki hesaplamalar için <a href="/kdv/">KDV Hesaplama</a> aracımızdan yararlanabilirsiniz.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [KDV Hesaplama Aracı](/kdv/)
+* [KDV Nedir? (Katma Değer Vergisi Oranları ve İşleyişi)](/yazilar/kdv-nedir/)
+* [KDV Nasıl Hesaplanır? (Dahil ve Hariç Formülleri, Örnekler)](/yazilar/kdv-nasil-hesaplanir/)
+* [Götürü Usulde Katma Değer Vergisi [0017] Nedir? (KDVK Mülga Düzenleme)](/yazilar/0017-goturu-usulde-katma-deger-vergisi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

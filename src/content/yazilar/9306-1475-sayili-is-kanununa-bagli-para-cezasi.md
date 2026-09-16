@@ -2,6 +2,7 @@
 title: "1475 Sayılı İş Kanununa Bağlı Para Cezası [9306]"
 description: "İş hayatında, hem işverenlerin hem de çalışanların uyması gereken yasal ve etik kurallar, düzenli ve adil bir çalışma ortamının temelini oluşturur."
 createdDate: 2023-07-19
+updatedDate: 2026-09-16
 ---
 
 **İş hayatında**, işverenlerin ve çalışanların belirli kurallara uyması gerekmektedir. Türkiye'de, çalışan
@@ -28,3 +29,12 @@ Sonuç olarak, 1475 Sayılı İş Kanunu, işverenlerin çalışan haklarına ve
 için önemli bir düzenlemedir. Kanuna uymayan işverenler para cezalarıyla karşı karşıya kalabilir ve hatta işyeri
 kapatma gibi daha ciddi yaptırımlarla karşılaşabilirler. Bu nedenle, işverenlerin İş Kanunu'ndaki yükümlülüklerini tam
 olarak yerine getirmeleri ve çalışanların haklarını korumaları büyük önem taşımaktadır.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Diğer Ücretler [0051] Nedir? (GVK 64 ve Yasal Değişiklikler)](/yazilar/0051-diger-ucretler/)
+* [Gelir Götürü Ücret [0006]](/yazilar/0006-gelir-goturu-ucret/)
+* [5326 Sayılı Kanun Uyarınca Cumhuriyet Savcılıklarınca Verilen İdari Para Cezası [9317]](/yazilar/9317-5326-sayili-kanun-uyarinca-cumhuriyet-savciliklarinca-verilen-idari-para-cezasi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

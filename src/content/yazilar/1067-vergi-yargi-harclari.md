@@ -2,6 +2,7 @@
 title: "Vergi Yargı Harçları [1067]"
 description: "Türkiye'de vergi yasalarının uygulanması ve vergi davalarının çözümü için Vergi Mahkemeleri ve Danıştay gibi yargı organları bulunmaktadır."
 createdDate: 2023-05-16
+updatedDate: 2026-09-16
 ---
 
 Türkiye'de vergi yasalarının uygulanması ve vergi davalarının çözümü için **Vergi Mahkemeleri** ve Danıştay gibi
@@ -44,3 +45,12 @@ Türkiye'de vergi davalarının yargı organlarında etkin bir şekilde yürüt�
 yargı harçları önemli bir rol oynamaktadır. Bu harçlar, finansal kaynak sağlamakla kalmayıp aynı zamanda adaletin
 sağlanmasına ve istismarın önlenmesine de katkıda bulunur. Vergi yargı harçları, vergi davalarının adil, hızlı ve
 etkili bir şekilde sonuçlanmasını destekler ve vergi yargı sistemini güçlendirir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Karar ve İlam Harcı [9166]](/yazilar/9166-karar-ve-ilam-harci/)
+* [Karar ve İlam Harcı Nedir?](/yazilar/karar-ve-ilam-harci-nedir/)
+* [Kadastro Harçları [9162]](/yazilar/9162-kadastro-harclari/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

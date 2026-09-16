@@ -217,3 +217,13 @@ Ayrıca, e-Devlet üzerinden de geçmiş vergi borçları ve ödemeler görünt�
 Yıllık Gelir Vergisi (0001), kazancın sadece bir kısmını devlete aktarmak değil, ekonomik sistemin adil işleyişini desteklemek anlamına gelir. Doğru beyan, hem cezadan kaçınmanızı hem de yasal haklarınızı korumanızı sağlar.
 
 Vergi mevzuatındaki değişiklikleri düzenli olarak takip edin, elektronik sistemleri kullanın ve beyan dönemi geldiğinde işlemlerinizi geciktirmeyin.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Gelir Vergisi Stopajı (Muhtasar Beyanname) [0003]](/yazilar/0003-gelir-vergisi-stopaji-muhtasar-beyanname/)
+* [Gelir Vergisi Geçici Vergi [0027]](/yazilar/0027-gelir-vergisi-gecici-vergi/)
+* [Gelir Vergisi (GMSI) [0012]](/yazilar/0012-gelir-vergisi-gmsi/)
+* [Vergi Dilimleri](/yazilar/vergi-dilimleri/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

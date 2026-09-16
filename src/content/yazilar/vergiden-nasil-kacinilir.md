@@ -2,6 +2,7 @@
 title: "Vergiden Nasıl Kaçınılır?"
 description: "Meşru vergi planlaması, teşvikler, avantajlı yatırımlar ve doğru beyanla vergi yükünü azaltır; vergi kaçakçılığı yasa dışıdır, cezaları ağırdır."
 createdDate: 2023-04-27
+updatedDate: 2026-09-16
 ---
 
 Vergi, bir devletin bütçesini finanse etmek için topladığı **önemli bir gelir kaynağıdır**. Vergi kaçırmak, yasa dışı
@@ -27,3 +28,12 @@ yaptırımlarla karşı karşıya kalabilirler. Bu yasa dışı yöntemler aras�
 saklanması veya gizlenmesi, yasa dışı para transferleri, hileli beyanlar ve vergi kaçakçılığı yer alır. Bu yöntemlerden
 kaçınmak, vergi mükelleflerinin yasal sorumluluklarını yerine getirmeleri ve vergi mevzuatına uygun hareket etmeleri
 gerektiği anlamına gelir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Vergi Ödemek Zorunda Mıyız?](/yazilar/vergi-odemek-zorunda-miyiz/)
+* [Yıllık Gelir Vergisi [0001]](/yazilar/0001-yillik-gelir-vergisi/)
+* [Vergi Dilimleri](/yazilar/vergi-dilimleri/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

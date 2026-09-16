@@ -2,6 +2,7 @@
 title: "Pişmanlık Zammı [1030]"
 description: "Pişmanlık zamması, bir suçun işlenmesiyle ortaya çıkan pişmanlık duygusunu hafifletecek bir ceza indirimini ifade eder."
 createdDate: 2023-05-16
+updatedDate: 2026-09-16
 ---
 
 Pişmanlık zamması, bir suçun işlenmesiyle ortaya çıkan **pişmanlık duygusunu** hafifletecek bir ceza indirimini ifade
@@ -37,3 +38,12 @@ olmalarını sağlamak amacıyla uygulanan bir hukuki düzenlemedir. Pişmanlık
 entegrasyonunu sağlamak ve suçlarla mücadelede etkili bir araç olarak hizmet etmektedir. Ancak, pişmanlık zammının
 etkili bir şekilde uygulanabilmesi için yasal düzenlemelerin yanı sıra suçluların bu mekanizmadan haberdar olması ve
 işbirliği yapma iradesinin bulunması da önemlidir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Gecikme Faizi [1084] Nedir? (VUK 112, Gecikme Zammı ve Hesaplama)](/yazilar/1084-gecikme-faizi/)
+* [Vergi Ziyaı Cezası [3080]](/yazilar/3080-vergi-ziyai-cezasi/)
+* [Erken Ödeme İndirimi [1087]](/yazilar/1087-erken-odeme-indirimi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

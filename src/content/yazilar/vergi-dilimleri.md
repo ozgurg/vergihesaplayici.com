@@ -2,7 +2,7 @@
 title: "Vergi Dilimleri"
 description: "Türkiye gelir vergisi dilimleri, oranları ve geçmiş yıllara göre yaşanan değişimleri ayrıntılı şekilde ele alan, güncel bilgiler içeren kapsamlı bir rehber."
 createdDate: 2025-12-04
-updatedDate: 2025-12-31
+updatedDate: 2026-09-16
 ---
 
 Türkiye'de gelir vergisi dilimleri, her yıl milyonlarca çalışanı, işvereni ve serbest meslek sahibini etkileyen temel bir vergi unsurudur. Gelir vergisinin hangi oranda uygulanacağını belirleyen bu dilimler, yıllık kazanca göre değişir ve her yıl güncellenir. Bu nedenle Türkiye gelir vergisi dilimleri, bordro hesaplaması yapanlar, gelir vergisi mükellefleri ve vergi yükünü merak eden herkes tarafından yoğun şekilde araştırılan bir konudur. Bu yazıda, **Türkiye gelir vergisi dilimleri nedir, nasıl belirlenir ve yıllara göre nasıl değişmiştir** sorularına yanıt bulabilir; 2026'dan 2015'e kadar tüm güncel ve geçmiş yıllara ait vergi dilimlerini ayrılmış başlıklar ve tablolar halinde inceleyebilirsiniz.
@@ -182,3 +182,12 @@ Hesaplama süreci:
 
 Toplam vergi:
 16.500 + 24.000 + 5.400 = 45.900 TL
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Vergi Dilimi Nedir? (Gelir Vergisi Tarifesi ve Hesaplama Mantığı)](/yazilar/vergi-dilimi-nedir/)
+* [Kümülatif Vergi Matrahı Nedir?](/yazilar/kumulatif-vergi-matrahi-nedir/)
+* [Yıllık Gelir Vergisi [0001]](/yazilar/0001-yillik-gelir-vergisi/)
+* [Vergi Oranı Nasıl Hesaplanır?](/yazilar/vergi-orani-nasil-hesaplanir/)

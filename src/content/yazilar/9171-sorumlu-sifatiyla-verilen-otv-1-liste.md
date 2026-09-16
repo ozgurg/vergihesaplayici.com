@@ -2,6 +2,7 @@
 title: "Sorumlu Sıfatıyla Verilen ÖTV 1. Liste [9171]"
 description: "Bilindiği gibi, ÖTV (Özel Tüketim Vergisi), Türkiye'de tüketilen bazı ürünlerin vergilendirilmesi amacıyla uygulanan bir vergidir."
 createdDate: 2023-07-19
+updatedDate: 2026-09-16
 ---
 
 Bilindiği gibi, ÖTV (Özel Tüketim Vergisi), Türkiye'de tüketilen bazı ürünlerin vergilendirilmesi amacıyla uygulanan
@@ -26,3 +27,11 @@ Sonuç olarak, Sorumlu Sıfatıyla Verilen ÖTV 1. Liste, yüksek vergilendirme 
 kapsamaktadır. Bu vergilendirme politikası, tüketici davranışlarını etkileyerek hem sağlık hem de ekonomi açısından
 olumlu sonuçlar doğurmaktadır. Bu sayede, devlet hem gelir elde ederken hem de toplumun sağlığını koruma yolunda adımlar
 atmaktadır.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Petrol ve Doğalgaz Ürünlerine İlişkin Özel Tüketim Vergisi [0071]](/yazilar/0071-petrol-ve-dogalgaz-urunlerine-iliskin-ozel-tuketim-vergisi/)
+* [ÖTV Nedir? (Özel Tüketim Vergisi Rehberi ve Oranlar)](/yazilar/otv-nedir/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

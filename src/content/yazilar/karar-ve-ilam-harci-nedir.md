@@ -2,6 +2,7 @@
 title: "Karar ve İlam Harcı Nedir?"
 description: "Türkiye'de hukuki süreçlerin yürütülmesi ve mahkemelerde verilen kararların resmileştirilmesi için bazı harçlar ödenmektedir."
 createdDate: 2023-07-19
+updatedDate: 2026-09-16
 ---
 
 Türkiye'de hukuki süreçlerin yürütülmesi ve mahkemelerde verilen **kararların** resmileştirilmesi için bazı harçlar
@@ -36,3 +37,12 @@ Harcı ve İlam Harcı ödenir. Bu harçlar, dava değeri veya alacak tutarına 
 icra dairesi tarafından belirlenen tarifeye göre hesaplanır. Karar Harcı, mahkeme kararlarının resmiyet kazanması
 için ödenirken, İlam Harcı ise icra edilebilirlik kazanan belgelerin düzenlenmesi için ödenir. Bu harçlar, hukuki
 süreçlerin düzenli ve etkin bir şekilde yürütülmesi için önemlidir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Karar ve İlam Harcı [9166]](/yazilar/9166-karar-ve-ilam-harci/)
+* [Vergi Yargı Harçları [1067]](/yazilar/1067-vergi-yargi-harclari/)
+* [Kadastro Harçları [9162]](/yazilar/9162-kadastro-harclari/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

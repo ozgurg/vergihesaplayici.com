@@ -2,6 +2,7 @@
 title: "3516 Sayılı Kanuna Göre Ölçü Ayar Para Cezası [9307]"
 description: "Türkiye'de 3516 Sayılı Ölçüler ve Ayar Kanunu, ticari faaliyetlerde ölçü ve tartı aletlerinin doğru kullanımını sağlar."
 createdDate: 2023-07-19
+updatedDate: 2026-09-16
 ---
 
 **Türkiye'de 3516 Sayılı Ölçüler ve Ayar Kanunu**, ülkedeki ticari faaliyetlerde ölçü ve tartı aletlerinin doğru ve adil
@@ -26,3 +27,12 @@ Sonuç olarak, Türkiye'de 3516 Sayılı Kanuna göre ölçü ayar para cezası,
 sağlanması için önemli bir yaptırım olarak kullanılmaktadır. İşletmelerin bu yasal düzenlemelere uymaları, tüketicilerin
 haklarının korunmasını sağlamak ve adil bir ticaret ortamının oluşmasına katkıda bulunmak açısından büyük önem
 taşımaktadır.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Şeker Kanunu İdari Para Cezası [9315]](/yazilar/9315-seker-kanunu-idari-para-cezasi/)
+* [Turizm Para Cezası [9309]](/yazilar/9309-turizm-para-cezasi/)
+* [5326 Sayılı Kanun Uyarınca Cumhuriyet Savcılıklarınca Verilen İdari Para Cezası [9317]](/yazilar/9317-5326-sayili-kanun-uyarinca-cumhuriyet-savciliklarinca-verilen-idari-para-cezasi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

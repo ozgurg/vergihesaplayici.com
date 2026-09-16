@@ -2,6 +2,7 @@
 title: "Gelir Vergisi Tevkifatı [9113]"
 description: "Gelir vergisi tevkifatı, ödemeler sırasında verginin kesilip doğrudan vergi dairesine yatırılmasıyla vergi tahsilatını kolaylaştırır."
 createdDate: 2023-07-25
+updatedDate: 2026-09-16
 ---
 
 **Gelir vergisi tevkifatı**, Türkiye'de vergi mevzuatına göre belirli ödemelerin yapılması sırasında vergi tutarının
@@ -28,3 +29,12 @@ Sonuç olarak, gelir vergisi tevkifatı, Türkiye'de vergi toplama sürecini kol
 önlemeye yönelik önemli bir uygulamadır. Mükellefler, bu uygulamayı dikkate alarak ödemelerini yaparken ve
 beyanlarını yaparken gelir vergisi tevkifatının getirdiği yükümlülükleri göz önünde bulundurmalıdır. Bu sayede hem
 vergi sistemi daha düzenli işler hem de adil bir vergi yükümlülüğü sağlanmış olur.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Gelir Vergisi Stopajı (Muhtasar Beyanname) [0003]](/yazilar/0003-gelir-vergisi-stopaji-muhtasar-beyanname/)
+* [Yıllık Gelir Vergisi [0001]](/yazilar/0001-yillik-gelir-vergisi/)
+* [Gelir Dahili Tevkifat [4008]](/yazilar/4008-gelir-dahili-tevkifat/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

@@ -2,6 +2,7 @@
 title: "Adi Ortaklık Mükellefiyetsiz Mükellef Kaydı İçin Vergi Kodu [9901]"
 description: "Adi Ortaklık Mükellefiyetsiz Mükellef Kaydı, tüzel kişiliği olmayan ortaklıkların vergi işlemlerini izlemek için 9901 koduyla açılan özel kayıttır."
 createdDate: 2025-10-28
+updatedDate: 2026-09-16
 ---
 
 **Adi Ortaklık Mükellefiyetsiz Mükellef Kaydı**, vergi sisteminde ortaklık yapısına sahip ancak ayrı bir vergi
@@ -27,3 +28,12 @@ destekler.
 Sonuç olarak Adi Ortaklık Mükellefiyetsiz Mükellef Kaydı, Türk vergi sisteminde ortaklık yapılarının daha düzenli ve
 şeffaf bir biçimde izlenmesini sağlayan önemli bir araçtır. Bu kayıt türü, hem mükellefler hem de vergi idaresi
 açısından uyum, şeffaflık ve denetim kolaylığı sunar.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Yıllık Gelir Vergisi [0001]](/yazilar/0001-yillik-gelir-vergisi/)
+* [Gerçek Usulde Katma Değer Vergisi [0015]](/yazilar/0015-gercek-usulde-katma-deger-vergisi/)
+* [Gelir Vergisi Stopajı (Muhtasar Beyanname) [0003]](/yazilar/0003-gelir-vergisi-stopaji-muhtasar-beyanname/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

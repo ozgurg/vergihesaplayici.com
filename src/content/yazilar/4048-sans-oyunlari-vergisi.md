@@ -2,6 +2,7 @@
 title: "Şans Oyunları Vergisi [4048]"
 description: "Şans oyunları vergisi, Türkiye'de şans oyunu işletmecilerinin brüt gelirleri üzerinden alınan ve devlet gelirlerine katkı sağlayan bir vergi türüdür."
 createdDate: 2023-06-06
+updatedDate: 2026-09-16
 ---
 
 Şans oyunları, Türkiye'de popüler bir eğlence ve kazanç aracıdır. Ancak, bu oyunlardan elde edilen gelirler
@@ -27,3 +28,12 @@ olmaktadır.
 Sonuç olarak, şans oyunları vergisi Türkiye'de şans oyunu işletmecilerinin elde ettikleri gelirlerin
 vergilendirilmesini sağlayan bir düzenlemeyi ifade etmektedir. Bu vergi, devletin gelirlerine katkı sağlarken aynı
 zamanda yasadışı bahis ve oyun faaliyetlerinin önlenmesine de yardımcı olmaktadır.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Gelir Vergisi Mükellefleri Talih Oyunları Asgari Vergisi [0048]](/yazilar/0048-gelir-vergisi-mukellefleri-talih-oyunlari-asgari-vergisi/)
+* [Kurumlar Vergisi Mükellefleri Talih Oyunları Asgari Vergisi [0050]](/yazilar/0050-kurumlar-vergisi-mukellefleri-talih-oyunlari-asgari-vergisi/)
+* [Veraset ve İntikal Vergisi (Sair İvazsız İntikaller) [9131]](/yazilar/9131-veraset-ve-intikal-vergisi-sair-ivazsiz-intikaller/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

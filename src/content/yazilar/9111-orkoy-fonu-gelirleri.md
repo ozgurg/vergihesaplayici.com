@@ -2,6 +2,7 @@
 title: "Orköy Fonu Gelirleri [9111]"
 description: "Orköy Fonu Gelirleri nedir, kimler öder, nasıl hesaplanır? 2025 güncel oranları, beyan ve ödeme detaylarını hemen öğrenin."
 createdDate: 2025-11-04
+updatedDate: 2026-09-16
 ---
 
 **Orköy Fonu Gelirleri**, orman köylerinde yaşayan vatandaşların ekonomik kalkınmasını desteklemek için kurulan özel bir mali kaynaktır. Bu fon, ormanların korunması ve sürdürülebilir şekilde işletilmesini sağlarken köylülerin gelir düzeyini artırmayı hedefler. Orköy Fonu, orman ürünleri satışlarından, izin ve kira gelirlerinden alınan belirli oranlardaki kesintilerle oluşturulur. Gelirleri, Tarım ve Orman Bakanlığı'na bağlı Orman Genel Müdürlüğü tarafından yönetilir ve doğrudan kırsal kalkınma projelerine aktarılır. Bu yönüyle, hem çevresel sürdürülebilirliği hem de ekonomik canlılığı destekleyen önemli bir kamu finansman aracıdır.
@@ -11,3 +12,12 @@ Fonun hesaplanması ve aktarımı, 6831 sayılı Orman Kanunu ile düzenlenmişt
 Orköy Fonu Gelirleri'nin kullanım alanları arasında konut yapımı, hayvancılık, arıcılık, güneş enerjisi sistemleri ve küçük ölçekli işletme yatırımları yer alır. Fonun amacı, orman köylerinde yaşayan ailelerin geçim kaynaklarını çeşitlendirmek ve orman üzerindeki baskıyı azaltmaktır. Bu sayede hem gelir artışı sağlanır hem de ormanların sürdürülebilir kullanımı teşvik edilir. Muafiyet kapsamına giren gelir türleri bulunmamakla birlikte, fon kesintileri doğrudan idare tarafından yapıldığı için mükelleflerin ayrıca ödeme yükümlülüğü bulunmaz. Ancak kurumların muhasebe kayıtlarında bu kalemler doğru şekilde izlenmeli ve matrah hesaplamalarına dahil edilmemelidir.
 
 2025 yılı itibarıyla, fonun tahsilat yapısı ve izleme sistemi tamamen dijital hale getirilmiştir. Artık tüm tutar, oran ve tevkifat bilgileri elektronik ortamda kayıt altına alınmakta, denetimler merkezi olarak yürütülmektedir. Bu sayede, hem kamu kaynaklarının verimli kullanımı hem de orman köylerinin ekonomik gelişimi güvence altına alınmıştır. Orköy Fonu Gelirleri, sadece mali bir kalem değil, kırsal yaşamı güçlendiren uzun vadeli bir sosyal yatırım aracıdır.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Ağaçlandırma Fonu Yönetmeliğine Göre Verilen Kredilerden Geri Alınanlar [9125]](/yazilar/9125-agaclandirma-fonu-yonetmeligine-gore-verilen-kredilerden-geri-alinanlar/)
+* [Mera Fonu Para Cezası [9341]](/yazilar/9341-mera-fonu-para-cezasi/)
+* [Zirai Kazanç Gelir Vergisi [0002] Nedir? (Çiftçi Vergilendirme Rehberi)](/yazilar/0002-zirai-kazanc-gelir-vergisi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

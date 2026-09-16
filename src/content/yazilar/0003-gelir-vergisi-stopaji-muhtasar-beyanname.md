@@ -2,6 +2,7 @@
 title: "Gelir Vergisi Stopajı (Muhtasar Beyanname) [0003]"
 description: "Gelir Vergisi Stopaj Kesinti Listesi, Türkiye'de çalışanların brüt ücret ve diğer gelirlerinden kesilen gelir vergisinin beyan edildiği muhtasar beyannamedir."
 createdDate: 2023-05-13
+updatedDate: 2026-09-16
 ---
 
 **Gelir Vergisi Stopaj Kesinti Listesi**, kısaca Gelir Vergisi S. veya muhtasar olarak da bilinir, Türkiye'de gelir
@@ -33,3 +34,12 @@ zamanında göndermeyenler, vergi cezalarıyla karşı karşıya kalabilirler.
 Sonuç olarak, Gelir Vergisi Stopaj Kesinti Listesi, Türkiye'de çalışanların belirli bir dönem içinde elde ettikleri
 gelirler üzerinden alınan vergilerin beyan edilmesi için hazırlanan bir beyanname türüdür. Beyanname, doğru bir şekilde
 hazırlanması ve zamanında gönderilmesi gereken önemli bir belgedir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Yıllık Gelir Vergisi [0001]](/yazilar/0001-yillik-gelir-vergisi/)
+* [Gelir Vergisi Tevkifatı [9113]](/yazilar/9113-gelir-vergisi-tevkifati/)
+* [Zirai Kazanç Gelir Vergisi [0002] Nedir? (Çiftçi Vergilendirme Rehberi)](/yazilar/0002-zirai-kazanc-gelir-vergisi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

@@ -2,6 +2,7 @@
 title: "Trafik Muayene Ücreti Hazine Payı [4037]"
 description: "Türkiye'de araç sahiplerinin her yıl düzenli olarak yapmaları gereken işlemlerden biri, trafik muayenesidir."
 createdDate: 2023-07-12
+updatedDate: 2026-09-16
 ---
 
 Türkiye'de araç sahiplerinin her yıl düzenli olarak yapmaları gereken işlemlerden biri, **trafik muayenesi**dir. Trafik
@@ -30,3 +31,12 @@ yükünü hafifletmeyi amaçlar.
 
 Not: Türkiye'deki trafik muayene ücretleri ve Hazine Payı oranları, zaman içinde değişebilir. Bu nedenle güncel bilgiler
 için ilgili resmi kaynaklara başvurmanız önemlidir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Trafik Muayenesi Para Cezaları [1037]](/yazilar/1037-trafik-muayenesi-para-cezalari/)
+* [Motorlu Taşıtlar Vergisi [9034] Nedir? (MTV Hesaplama ve Ödeme)](/yazilar/9034-motorlu-tasitlar-vergisi/)
+* [Gecikme Faizi [1084] Nedir? (VUK 112, Gecikme Zammı ve Hesaplama)](/yazilar/1084-gecikme-faizi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

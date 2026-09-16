@@ -25,3 +25,13 @@ Vergi oranları, vergi tahsilatını düzenlemek ve ekonomiyi yönlendirmek içi
 vergi oranlarındaki değişiklikler, vergilerin yüksekliği ve vergi kaçakçılığı gibi nedenlerle vergi tahsilatında
 değişikliklere neden olabilir. Bu nedenle, vergi oranları belirlenirken, verginin toplandığı sektörlerin ve
 vatandaşların ekonomik durumları, verginin etkileri ve sosyal adalet gibi faktörler göz önünde bulundurulmalıdır.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Vergi Dilimi Nedir? (Gelir Vergisi Tarifesi ve Hesaplama Mantığı)](/yazilar/vergi-dilimi-nedir/)
+* [KDV Nasıl Hesaplanır? (Dahil ve Hariç Formülleri, Örnekler)](/yazilar/kdv-nasil-hesaplanir/)
+* [Verginin Vergisi Nasıl Hesaplanır?](/yazilar/verginin-vergisi-nasil-hesaplanir/)
+* [Vergi Dilimleri](/yazilar/vergi-dilimleri/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

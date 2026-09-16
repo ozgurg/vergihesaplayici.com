@@ -2,6 +2,7 @@
 title: "Vergi Ne Zaman Ortaya Çıkmıştır?"
 description: "Vergi, tarihin başlangıcından beri var olan bir olgudur ve insanların toplu olarak yaşamaya başlamalarıyla ortaya çıkmıştır."
 createdDate: 2023-04-27
+updatedDate: 2026-09-16
 ---
 
 Vergi, tarihin başlangıcından beri var olan bir olgudur ve insanların toplu olarak yaşamaya başlamalarıyla ortaya
@@ -23,3 +24,11 @@ karmaşık hale geldikçe, vergi sistemleri de giderek karmaşıklaşmıştır.
 Bugün dünya genelinde vergi toplama işlemi, ülkelerin kendi vergi mevzuatlarına göre yürütülmektedir. Her ülkenin kendi
 vergi yasaları, vergi oranları ve vergi toplama yöntemleri vardır. Vergi, günümüzde bir ülkenin ekonomisinde
 önemli bir rol oynamakta ve bir ülkenin bütçesinin büyük bir bölümünü finanse etmektedir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Kaç Çeşit Vergi Vardır? (Türk Vergi Sisteminde Vergi Türleri)](/yazilar/kac-cesit-vergi-vardir/)
+* [Vergi Ödemek Zorunda Mıyız?](/yazilar/vergi-odemek-zorunda-miyiz/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

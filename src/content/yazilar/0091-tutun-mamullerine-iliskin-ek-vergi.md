@@ -2,6 +2,7 @@
 title: "Tütün Mamüllerine İlişkin Ek Vergi [0091]"
 description: "Türkiye'de tütün ürünlerine uygulanan ek vergi, fiyatları artırarak tüketimi azaltmayı ve kamu sağlığını korumayı amaçlar."
 createdDate: 2023-05-22
+updatedDate: 2026-09-16
 ---
 
 Tütün mamülleri, dünya genelinde ve Türkiye'de **önemli bir sağlık sorunu** haline gelmiştir. Sigara içimi, ciddi
@@ -48,3 +49,12 @@ Bu vergi uygulaması, hükümetin sağlık politikalarının bir parçası olara
 mücadelesinde önemli bir adımdır. Tütün mamülleriyle mücadelede ek vergi politikalarının sürdürülmesi ve
 güçlendirilmesi, Türkiye'nin kamu sağlığını korumak ve sigara tüketimini azaltmak için önemli bir araç olmaya devam
 edecektir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Tütün Mamüllerine İlişkin Özel Tüketim Vergisi [0076]](/yazilar/0076-tutun-mamullerine-iliskin-ozel-tuketim-vergisi/)
+* [ÖTV Nedir? (Özel Tüketim Vergisi Rehberi ve Oranlar)](/yazilar/otv-nedir/)
+* [Kaldırılan Vergi Artıkları [9099]](/yazilar/9099-kaldirilan-vergi-artiklari/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

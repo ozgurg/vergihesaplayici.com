@@ -2,6 +2,7 @@
 title: "Özel İşlem Vergisi [1043]"
 description: "Türkiye'de her türlü mal ve hizmetin alım ve satım işlemlerinden dolayı alınan vergi türleri bulunmaktadır."
 createdDate: 2023-07-26
+updatedDate: 2026-09-16
 ---
 
 Türkiye'de her türlü mal ve **hizmetin** alım ve satım işlemlerinden dolayı alınan vergi türleri bulunmaktadır.
@@ -27,3 +28,13 @@ Sonuç olarak, Özel İşlem Vergisi, Türkiye'de tüketici davranışlarını d
 geçmemesi adına belirli ürünler üzerinden alınan bir tür tüketim vergisidir. Bu <a href="/yazilar/vergi-turleri/">vergi türü</a>, ekonomi politikalarının
 bir parçası olarak, kamu gelirlerinin artırılması ve tüketici alışkanlıklarının şekillendirilmesi amacıyla
 yürürlükte bulunmaktadır.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Eğitime Katkı Payı [1042]](/yazilar/1042-egitime-katki-payi/)
+* [Eğitim, Gençlik, Spor ve Sağlık Hizmetleri Vergisi [1013]](/yazilar/1013-egitim-genclik-spor-ve-saglik-hizmetleri-vergisi/)
+* [5035 RTÜK Eğitime Katkı Payı [4042]](/yazilar/4042-5035-rtuk-egitime-katki-payi/)
+* [Kaldırılan Vergi Artıkları [9099]](/yazilar/9099-kaldirilan-vergi-artiklari/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

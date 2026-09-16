@@ -2,6 +2,7 @@
 title: "Tekel Safi Hasılat [4050]"
 description: "Tekel safi hasılatı, Türkiye'de tekel ürünlerinin satışından elde edilen geliri ifade eder ve vergi politikalarıyla devlet bütçesine katkı sağlar."
 createdDate: 2023-06-06
+updatedDate: 2026-09-16
 ---
 
 Tekel safi hasılatı, Türkiye'de vergi sisteminde önemli bir kavramdır. Safi hasılat, Tekel İdaresi'ne bağlı olan ve
@@ -30,3 +31,12 @@ Sonuç olarak, tekel safi hasılatı Türkiye'de vergi sistemine dayalı bir kav
 satışından elde edilen geliri ifade eder. Bu gelirler, vergi politikalarıyla düzenlenir ve devlet bütçesine katkı
 sağlar. Vergilendirme ve yönetim politikaları, ekonomik istikrar ve gelir adaleti açısından dikkate alınması gereken
 konulardır.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Tütün Mamüllerine İlişkin Özel Tüketim Vergisi [0076]](/yazilar/0076-tutun-mamullerine-iliskin-ozel-tuketim-vergisi/)
+* [Alkollü İçeceklere İlişkin Özel Tüketim Vergisi [0075]](/yazilar/0075-alkollu-iceceklere-iliskin-ozel-tuketim-vergisi/)
+* [Kaldırılan Vergi Artıkları [9099]](/yazilar/9099-kaldirilan-vergi-artiklari/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

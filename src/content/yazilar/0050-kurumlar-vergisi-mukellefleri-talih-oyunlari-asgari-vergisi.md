@@ -2,6 +2,7 @@
 title: "Kurumlar Vergisi Mükellefleri Talih Oyunları Asgari Vergisi [0050]"
 description: "Kurumlar vergisi, Türkiye'de faaliyet gösteren tüm kurum ve şirketlerin elde ettikleri kazançlar üzerinden ödedikleri bir vergidir."
 createdDate: 2023-05-14
+updatedDate: 2026-09-16
 ---
 
 **Kurumlar vergisi**, Türkiye'de faaliyet gösteren tüm kurum ve şirketlerin elde ettikleri kazançlar üzerinden
@@ -48,3 +49,12 @@ Sonuç olarak, Türkiye'de M.Talih oyunları sektöründe faaliyet gösteren iş
 Kanunu'nun 81. maddesi uyarınca belirlenmektedir. İşletmeler, vergi yükümlülüklerini yerine getirmek için düzenli olarak
 vergi beyannameleri vermek ve ödemelerini zamanında yapmak zorundadırlar. Bu şekilde, hem işletmeler hem de devlet,
 vergi sisteminin düzgün çalışmasını sağlayarak, ekonomik istikrarı koruyabilir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Şans Oyunları Vergisi [4048]](/yazilar/4048-sans-oyunlari-vergisi/)
+* [Gelir Vergisi Mükellefleri Talih Oyunları Asgari Vergisi [0048]](/yazilar/0048-gelir-vergisi-mukellefleri-talih-oyunlari-asgari-vergisi/)
+* [Kurumlar Vergisi [0010]](/yazilar/0010-kurumlar-vergisi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

@@ -2,6 +2,7 @@
 title: "Sair Şarap ve Biralara İlişkin Ek Vergi [0093]"
 description: "Türkiye, tarih boyunca zengin kültürel mirasıyla ünlüdür ve bu mirasın bir parçası olarak şarap ve bira tüketimi de önemli bir yer tutar."
 createdDate: 2023-05-18
+updatedDate: 2026-09-16
 ---
 
 Türkiye, tarih boyunca zengin kültürel mirasıyla ünlüdür ve bu mirasın bir parçası olarak şarap ve bira tüketimi de
@@ -51,3 +52,12 @@ gelirlerinin etkin bir şekilde kullanılması ve halk sağlığına yönelik ö
 Türkiye'deki sair şarap ve bira üzerindeki ek vergi uygulaması, sürekli olarak gözden geçirilmesi gereken bir
 konudur. Sağlık, ekonomi ve sosyal etkiler gibi faktörler dikkate alınarak, vergi politikalarının etkinliği ve etkileri
 değerlendirilmelidir. Bu değerlendirme, daha iyi bir denge sağlamak ve toplumun genel refahını korumak için önemlidir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Alkollü İçeceklere İlişkin Özel Tüketim Vergisi [0075]](/yazilar/0075-alkollu-iceceklere-iliskin-ozel-tuketim-vergisi/)
+* [Her Türlü Alkollü İçkilere İlişkin Ek Vergi [0092]](/yazilar/0092-her-turlu-alkollu-ickilere-iliskin-ek-vergi/)
+* [ÖTV Nedir? (Özel Tüketim Vergisi Rehberi ve Oranlar)](/yazilar/otv-nedir/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

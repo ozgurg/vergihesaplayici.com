@@ -2,6 +2,7 @@
 title: "Gelir Geçici Vergi [0032]"
 description: "Gelir geçici vergi, işletme veya bireylerin vergi ödemelerini önceden yapmasını gerektiren bir vergidir."
 createdDate: 2023-05-13
+updatedDate: 2026-09-16
 ---
 
 **<a href="/yazilar/0027-gelir-vergisi-gecici-vergi/">Gelir geçici vergi</a>**, bir işletmenin veya bireysel bir kişinin, vergi beyannamelerini hazırlamak ve vergi ödemelerini
@@ -29,3 +30,12 @@ gerçek vergi borcunun hesaplanmasına yardımcı olmak için kullanılır.
 Sonuç olarak, gelir geçici vergisi, bir işletmenin veya bireysel bir kişinin yıl boyunca ödeyeceği vergi borcunun tahmin
 edilmesine yardımcı olan önemli bir vergi türüdür. Bu vergi, vergi beyannamelerinin doğru bir şekilde hazırlanmasına
 yardımcı olur ve vergi mükelleflerinin nakit akışlarını yönetmelerine yardımcı olur.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Gelir Vergisi Geçici Vergi [0027]](/yazilar/0027-gelir-vergisi-gecici-vergi/)
+* [Yıllık Gelir Vergisi [0001]](/yazilar/0001-yillik-gelir-vergisi/)
+* [Kurumlar Vergisi Kurum Geçici Vergi [0053]](/yazilar/0053-kurumlar-vergisi-kurum-gecici-vergi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)
