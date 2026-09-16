@@ -20,7 +20,7 @@ const nav = getFeaturedCalculatorPages();
 <header class="app-header">
     <div class="container">
         <a
-            href={anaSayfaPage.url}
+            href={anaSayfaPage.url.href}
             class="logo"
             title="Ana sayfaya git">
             <CachedSvg svg={logoSvg} />
@@ -30,7 +30,7 @@ const nav = getFeaturedCalculatorPages();
                 {nav.map(_navItem => (
                     <li>
                         <a
-                            href={_navItem.url}
+                            href={_navItem.url.href}
                             aria-current={ariaCurrentValue(Astro.url, _navItem.url)}>
                             <SvgIcon icon={_navItem.icon} />
                             <span>{_navItem.shortTitle}</span>
@@ -39,7 +39,7 @@ const nav = getFeaturedCalculatorPages();
                 ))}
                 <li>
                     <a
-                        href={araclarPage.url}
+                        href={araclarPage.url.href}
                         aria-current={ariaCurrentValue(Astro.url, araclarPage.url)}>
                         <SvgIcon icon={icon_apps} />
                         <span>Araçlar</span>

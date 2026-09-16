@@ -3,7 +3,7 @@
         class="calculator-share-modal-link-tab"
         role="region">
         <form-button
-            :href="facebookShareUrl"
+            :href="facebookShareUrl.href"
             aria-label="Hesaplayıcı bağlantısını Facebook'ta paylaş"
             color="brand-facebook"
             rel="nofollow noopener noreferrer"
@@ -13,7 +13,7 @@
             <svg-icon :icon="icon_facebook" />
         </form-button>
         <form-button
-            :href="xShareUrl"
+            :href="xShareUrl.href"
             aria-label="Hesaplayıcı bağlantısını X'te (Eski adıyla Twitter'da) paylaş"
             color="brand-x"
             rel="nofollow noopener noreferrer"
@@ -23,7 +23,7 @@
             <svg-icon :icon="icon_x" />
         </form-button>
         <form-button
-            :href="whatsAppShareUrl"
+            :href="whatsAppShareUrl.href"
             aria-label="Hesaplayıcı bağlantısını WhatsApp'ta paylaş"
             color="brand-whatsapp"
             rel="nofollow noopener noreferrer"
@@ -33,7 +33,7 @@
             <svg-icon :icon="icon_whatsapp" />
         </form-button>
         <form-button
-            :href="telegramShareUrl"
+            :href="telegramShareUrl.href"
             aria-label="Hesaplayıcı bağlantısını Telegram'da paylaş"
             color="brand-telegram"
             rel="nofollow noopener noreferrer"
@@ -43,7 +43,7 @@
             <svg-icon :icon="icon_telegram" />
         </form-button>
         <form-button
-            :href="redditShareUrl"
+            :href="redditShareUrl.href"
             aria-label="Hesaplayıcı bağlantısını Reddit'te paylaş"
             color="brand-reddit"
             rel="nofollow noopener noreferrer"

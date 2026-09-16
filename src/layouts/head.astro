@@ -99,10 +99,10 @@ const PAGE_SCHEMA = (() => {
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content={PAGE_TITLE} />
 
-<link rel="icon" type="image/png" href={staticUrl("/pwa/favicon-96x96.png")} sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href={staticUrl("/pwa/favicon.svg")} />
-<link rel="shortcut icon" href={staticUrl("/pwa/favicon.ico")} />
-<link rel="apple-touch-icon" sizes="180x180" href={staticUrl("/pwa/apple-touch-icon-180.png")} />
+<link rel="icon" type="image/png" href={staticUrl("/pwa/favicon-96x96.png").href} sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href={staticUrl("/pwa/favicon.svg").href} />
+<link rel="shortcut icon" href={staticUrl("/pwa/favicon.ico").href} />
+<link rel="apple-touch-icon" sizes="180x180" href={staticUrl("/pwa/apple-touch-icon-180.png").href} />
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href={staticSiteUrl("/sitemap-index.xml", false)} />
 <link rel="alternate" type="application/rss+xml" title="Vergi Hesaplayıcı" href={staticSiteUrl("/rss.xml", false)} />
