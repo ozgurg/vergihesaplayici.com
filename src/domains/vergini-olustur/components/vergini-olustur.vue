@@ -2,7 +2,7 @@
     <div
         :aria-expanded="results ? 'true' : 'false'"
         class="calculator">
-        <container>
+        <div class="container">
             <div class="calculator-box">
                 <div class="calculator-box-left">
                     <form
@@ -91,7 +91,7 @@
                     </transition>
                 </template>
             </div>
-        </container>
+        </div>
     </div>
 
     <go-to-calculator-button

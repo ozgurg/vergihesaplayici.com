@@ -2,7 +2,6 @@
 import type { Preset, Brand } from "@/domains/konsol-vergisi/types.js";
 import AppLayout from "@/layouts/app-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
-import Container from "@/components/common/container.vue";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
 import Heading1 from "@/components/common/heading-1.vue";
 import KonsolVergisiPreset
@@ -93,17 +92,17 @@ const presetHeroStyle = {
 
 <AppLayout page={konsolVergisiPresetSlugPage}>
     <PageHeader>
-        <Container>
+        <div class="container">
             <Breadcrumbs
                 items={konsolVergisiPresetSlugPage.breadcrumbs}
                 client:load />
-        </Container>
+        </div>
     </PageHeader>
 
     <header
         style={presetHeroStyle}
         class="preset-hero">
-        <Container>
+        <div class="container">
             <Image
                 src={thumb.metadata}
                 alt={`${brand.title} ${preset.title}`}
@@ -118,7 +117,7 @@ const presetHeroStyle = {
                     {preset.pageTitle}
                 </Heading1>
             </div>
-        </Container>
+        </div>
     </header>
 
     <KonsolVergisiPreset
@@ -132,21 +131,21 @@ const presetHeroStyle = {
 
     {presetsForCalculatorPresetCarousel.length > 0 &&
         <hr />
-        <Container>
+        <div class="container">
             <div class="ta-ad-first" ta-ad-container=""></div>
 
             <Heading2 tag="h2">
                 Diğer hazır hesaplamalar
             </Heading2>
-        </Container>
+        </div>
         <CalculatorPresetCarousel
             titleTag="h3"
             items={presetsForCalculatorPresetCarousel} />
     }
 
-    <Container>
+    <div class="container">
         <div class="ta-ad-last" ta-ad-container=""></div>
-    </Container>
+    </div>
 </AppLayout>
 
 <style lang="scss" is:global>

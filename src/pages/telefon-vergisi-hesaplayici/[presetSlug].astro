@@ -2,13 +2,13 @@
 import type { Preset, Brand } from "@/domains/telefon-vergisi/types.js";
 import AppLayout from "@/layouts/app-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
-import Container from "@/components/common/container.vue";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
 import Heading1 from "@/components/common/heading-1.vue";
 import TelefonVergisiPreset
     from "@/domains/telefon-vergisi/components/telefon-vergisi-preset.vue";
 import Heading2 from "@/components/common/heading-2.vue";
 import CalculatorPresetCarousel from "@/components/calculator-preset-carousel.astro";
+import UtilitiesGrid from "@/components/utilities-grid.vue";
 import { Image } from "astro:assets";
 
 import { getPresetsForAllBrands, getBrandById } from "@/domains/telefon-vergisi/db.js";
@@ -16,6 +16,7 @@ import {
     TelefonVergisiPageDef,
     TelefonVergisiPresetSlugPageDef
 } from "@/domains/telefon-vergisi/page-def.js";
+import { IphoneUlkeFiyatlariPageDef } from "@/domains/iphone-ulke-fiyatlari/page-def.js";
 import {
     mapPresetsForCalculatorPresetCarouselComponent
 } from "@/domains/telefon-vergisi/utils/map-presets-for-calculator-preset-carousel-component.js";
@@ -43,6 +44,7 @@ const { preset, brand } = Astro.props;
 
 const telefonVergisiPage = TelefonVergisiPageDef();
 const telefonVergisiPresetSlugPage = TelefonVergisiPresetSlugPageDef({ preset, brand });
+const iphoneUlkeFiyatlariPage = IphoneUlkeFiyatlariPageDef();
 
 const EXCHANGE_RATES = getExchangeRates();
 const presets = getPresetsForAllBrands();
@@ -93,17 +95,17 @@ const presetHeroStyle = {
 
 <AppLayout page={telefonVergisiPresetSlugPage}>
     <PageHeader>
-        <Container>
+        <div class="container">
             <Breadcrumbs
                 items={telefonVergisiPresetSlugPage.breadcrumbs}
                 client:load />
-        </Container>
+        </div>
     </PageHeader>
 
     <header
         style={presetHeroStyle}
         class="preset-hero">
-        <Container>
+        <div class="container">
             <Image
                 src={thumb.metadata}
                 alt={`${brand.title} ${preset.title}`}
@@ -118,7 +120,7 @@ const presetHeroStyle = {
                     {preset.pageTitle}
                 </Heading1>
             </div>
-        </Container>
+        </div>
     </header>
 
     <TelefonVergisiPreset
@@ -132,21 +134,34 @@ const presetHeroStyle = {
 
     {presetsForCalculatorPresetCarousel.length > 0 &&
         <hr />
-        <Container>
+        <div class="container">
             <div class="ta-ad-first" ta-ad-container=""></div>
 
             <Heading2 tag="h2">
                 Diğer hazır hesaplamalar
             </Heading2>
-        </Container>
+        </div>
         <CalculatorPresetCarousel
             titleTag="h3"
             items={presetsForCalculatorPresetCarousel} />
     }
 
-    <Container>
+    <hr />
+
+    <section>
+        <div class="container">
+            <Heading2 tag="h2">
+                İlgili araçlar
+            </Heading2>
+            <UtilitiesGrid
+                items={[iphoneUlkeFiyatlariPage]}
+                titleTag="h3" />
+        </div>
+    </section>
+
+    <div class="container">
         <div class="ta-ad-last" ta-ad-container=""></div>
-    </Container>
+    </div>
 </AppLayout>
 
 <style lang="scss" is:global>

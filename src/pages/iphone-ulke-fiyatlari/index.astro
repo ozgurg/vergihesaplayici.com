@@ -1,33 +1,42 @@
 ---
 import AppLayout from "@/layouts/app-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
-import Container from "@/components/common/container.vue";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
 import Heading1 from "@/components/common/heading-1.vue";
+import Heading2 from "@/components/common/heading-2.vue";
 import IphoneUlkeFiyatlari from "@/domains/iphone-ulke-fiyatlari/components/iphone-ulke-fiyatlari.vue";
+import CalculatorPresetCarousel from "@/components/calculator-preset-carousel.astro";
 
 import { IphoneUlkeFiyatlariPageDef } from "@/domains/iphone-ulke-fiyatlari/page-def.js";
+import { TelefonVergisiPageDef } from "@/domains/telefon-vergisi/page-def.js";
 import { getExchangeRates } from "@/utils/exchange-rates.js";
+import { getPresetsByBrandId } from "@/domains/telefon-vergisi/db.js";
+import {
+    mapPresetsForCalculatorPresetCarouselComponent
+} from "@/domains/telefon-vergisi/utils/map-presets-for-calculator-preset-carousel-component.js";
 
 const page = IphoneUlkeFiyatlariPageDef();
+const telefonVergisiPage = TelefonVergisiPageDef();
 const EXCHANGE_RATES = getExchangeRates();
+const applePresets = getPresetsByBrandId("apple");
+const presetsForCalculatorPresetCarousel = mapPresetsForCalculatorPresetCarouselComponent(applePresets);
 ---
 
 <AppLayout page={page}>
     <PageHeader>
-        <Container>
+        <div class="container">
             <Breadcrumbs
                 items={page.breadcrumbs}
                 client:load />
             <Heading1>
                 {page.title}
             </Heading1>
-        </Container>
+        </div>
     </PageHeader>
 
-    <Container>
+    <div class="container">
         <div class="ta-ad-first" ta-ad-container=""></div>
-    </Container>
+    </div>
 
     <section>
         <IphoneUlkeFiyatlari
@@ -36,7 +45,23 @@ const EXCHANGE_RATES = getExchangeRates();
             client:load />
     </section>
 
-    <Container>
+    {presetsForCalculatorPresetCarousel.length > 0 && (
+        <hr />
+        <section>
+            <div class="container">
+                <Heading2 tag="h2">
+                    <a href={telefonVergisiPage.url.href}>
+                        iPhone vergi hesaplamaları
+                    </a>
+                </Heading2>
+            </div>
+            <CalculatorPresetCarousel
+                titleTag="h3"
+                items={presetsForCalculatorPresetCarousel} />
+        </section>
+    )}
+
+    <div class="container">
         <div class="ta-ad-last" ta-ad-container=""></div>
-    </Container>
+    </div>
 </AppLayout>

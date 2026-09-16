@@ -1,21 +1,23 @@
 ---
 import AppLayout from "@/layouts/app-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
-import Container from "@/components/common/container.vue";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
 import Heading1 from "@/components/common/heading-1.vue";
 import Heading2 from "@/components/common/heading-2.vue";
 import CalculatorPresetCarousel from "@/components/calculator-preset-carousel.astro";
+import UtilitiesGrid from "@/components/utilities-grid.vue";
 import TelefonVergisi
     from "@/domains/telefon-vergisi/components/telefon-vergisi.vue";
 
 import { TelefonVergisiPageDef } from "@/domains/telefon-vergisi/page-def.js";
+import { IphoneUlkeFiyatlariPageDef } from "@/domains/iphone-ulke-fiyatlari/page-def.js";
 import { getPresetsForAllBrands } from "@/domains/telefon-vergisi/db.js";
 import {
     mapPresetsForCalculatorPresetCarouselComponent
 } from "@/domains/telefon-vergisi/utils/map-presets-for-calculator-preset-carousel-component.js";
 
 const telefonVergisiPage = TelefonVergisiPageDef();
+const iphoneUlkeFiyatlariPage = IphoneUlkeFiyatlariPageDef();
 
 const EXCHANGE_RATES = getExchangeRates();
 const presets = getPresetsForAllBrands();
@@ -24,45 +26,58 @@ const presetsForCalculatorPresetCarousel = mapPresetsForCalculatorPresetCarousel
 
 <AppLayout page={telefonVergisiPage}>
     <PageHeader>
-        <Container>
+        <div class="container">
             <Breadcrumbs
                 items={telefonVergisiPage.breadcrumbs}
                 client:load />
             <Heading1>
                 {telefonVergisiPage.title}
             </Heading1>
-        </Container>
+        </div>
     </PageHeader>
 
     <section>
-        <Container>
+        <div class="container">
             <Heading2 tag="h2">
                 Hazır hesaplamalar
             </Heading2>
-        </Container>
+        </div>
         <CalculatorPresetCarousel
             titleTag="h3"
             items={presetsForCalculatorPresetCarousel} />
     </section>
     <hr />
 
-    <Container>
+    <div class="container">
         <div class="ta-ad-first" ta-ad-container=""></div>
-    </Container>
+    </div>
 
     <section>
-        <Container>
+        <div class="container">
             <Heading2 tag="h2">
                 Kendiniz hesaplayın
             </Heading2>
-        </Container>
+        </div>
         <TelefonVergisi
             EXCHANGE_RATES={EXCHANGE_RATES}
             calculatorPage={telefonVergisiPage}
             client:load />
     </section>
 
-    <Container>
+    <hr />
+
+    <section>
+        <div class="container">
+            <Heading2 tag="h2">
+                İlgili araçlar
+            </Heading2>
+            <UtilitiesGrid
+                items={[iphoneUlkeFiyatlariPage]}
+                titleTag="h3" />
+        </div>
+    </section>
+
+    <div class="container">
         <div class="ta-ad-last" ta-ad-container=""></div>
-    </Container>
+    </div>
 </AppLayout>

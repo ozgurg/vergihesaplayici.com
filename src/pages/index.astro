@@ -1,7 +1,6 @@
 ---
 import AppLayout from "@/layouts/app-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
-import Container from "@/components/common/container.vue";
 import Heading1 from "@/components/common/heading-1.vue";
 import OsitaIhemeVideo from "@/components/osita-iheme-video.vue";
 import Heading2 from "@/components/common/heading-2.vue";
@@ -30,7 +29,7 @@ const yazilar = (await getYazilar()).slice(0, 8);
 <AppLayout page={anaSayfaPage}>
     <section class="hero">
         <PageHeader>
-            <Container>
+            <div class="container">
                 <div>
                     <Heading1>
                         Vergi Hesaplayıcı
@@ -40,19 +39,19 @@ const yazilar = (await getYazilar()).slice(0, 8);
                     </div>
                 </div>
                 <OsitaIhemeVideo client:idle />
-            </Container>
+            </div>
         </PageHeader>
     </section>
     <hr />
 
-    <Container>
+    <div class="container">
         <div class="ta-ad-first" ta-ad-container=""></div>
-    </Container>
+    </div>
 
-    <Container>
+    <div class="container">
         <section>
             <Heading2 tag="h2">
-                <a href={hesaplayicilarPage.url}>
+                <a href={hesaplayicilarPage.url.href}>
                     {hesaplayicilarPage.title}
                 </a>
             </Heading2>
@@ -65,7 +64,7 @@ const yazilar = (await getYazilar()).slice(0, 8);
 
         <section>
             <Heading2 tag="h2">
-                <a href={araclarPage.url}>
+                <a href={araclarPage.url.href}>
                     {araclarPage.title}
                 </a>
             </Heading2>
@@ -78,7 +77,7 @@ const yazilar = (await getYazilar()).slice(0, 8);
 
         <section>
             <Heading2 tag="h2">
-                <a href={yazilarPage.url}>
+                <a href={yazilarPage.url.href}>
                     {yazilarPage.title}
                 </a>
             </Heading2>
@@ -88,7 +87,7 @@ const yazilar = (await getYazilar()).slice(0, 8);
         </section>
 
         <div class="ta-ad-last" ta-ad-container=""></div>
-    </Container>
+    </div>
 </AppLayout>
 
 <style lang="scss">

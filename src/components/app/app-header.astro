@@ -1,5 +1,4 @@
 ---
-import Container from "@/components/common/container.vue";
 import CachedSvg from "@/components/common/cached-svg.vue";
 import logoSvg from "@/assets/img/logo.svg?raw";
 import SvgIcon from "@/components/common/svg-icon.vue";
@@ -19,9 +18,9 @@ const nav = getFeaturedCalculatorPages();
 ---
 
 <header class="app-header">
-    <Container>
+    <div class="container">
         <a
-            href={anaSayfaPage.url}
+            href={anaSayfaPage.url.href}
             class="logo"
             title="Ana sayfaya git">
             <CachedSvg svg={logoSvg} />
@@ -31,7 +30,7 @@ const nav = getFeaturedCalculatorPages();
                 {nav.map(_navItem => (
                     <li>
                         <a
-                            href={_navItem.url}
+                            href={_navItem.url.href}
                             aria-current={ariaCurrentValue(Astro.url, _navItem.url)}>
                             <SvgIcon icon={_navItem.icon} />
                             <span>{_navItem.shortTitle}</span>
@@ -40,7 +39,7 @@ const nav = getFeaturedCalculatorPages();
                 ))}
                 <li>
                     <a
-                        href={araclarPage.url}
+                        href={araclarPage.url.href}
                         aria-current={ariaCurrentValue(Astro.url, araclarPage.url)}>
                         <SvgIcon icon={icon_apps} />
                         <span>Araçlar</span>
@@ -55,7 +54,7 @@ const nav = getFeaturedCalculatorPages();
             <SvgIcon class="open-icon" icon={icon_apps} />
             <SvgIcon class="close-icon" icon={icon_close} />
         </button>
-    </Container>
+    </div>
 </header>
 
 <AppDrawer id={APP_DRAWER_ID} />

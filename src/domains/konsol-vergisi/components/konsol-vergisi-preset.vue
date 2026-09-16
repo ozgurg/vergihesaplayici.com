@@ -2,7 +2,7 @@
     <div
         :aria-expanded="results ? 'true' : 'false'"
         class="calculator">
-        <container>
+        <div class="container">
             <template v-if="preset.status === 'legacy'">
                 <alert>
                     Bu ürünün satışı sona ermiştir. Aşağıdaki hesaplama, son bilinen satış fiyatlarını temel almaktadır.
@@ -92,7 +92,7 @@
                     </transition>
                 </template>
             </div>
-        </container>
+        </div>
     </div>
 
     <template v-if="PRESET_OPTIONS.length > 1">

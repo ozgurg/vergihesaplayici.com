@@ -2,7 +2,6 @@
 import type { Yazi } from "@/domains/yazilar/types.js";
 import AppLayout from "@/layouts/app-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
-import Container from "@/components/common/container.vue";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
 import Heading1 from "@/components/common/heading-1.vue";
 import ArticleLegalDisclaimerAlert from "@/components/article-legal-disclaimer-alert.vue";
@@ -54,17 +53,17 @@ const { Content } = await render(yazi.entry);
 
 <AppLayout page={yazilarSlugPage}>
     <PageHeader>
-        <Container>
+        <div class="container">
             <Breadcrumbs
                 items={yazilarSlugPage.breadcrumbs}
                 client:load />
             <Heading1>
                 {yazi.title}
             </Heading1>
-        </Container>
+        </div>
     </PageHeader>
 
-    <Container>
+    <div class="container">
         <div class="ta-ad-first" ta-ad-container=""></div>
 
         <div class="meta">
@@ -137,15 +136,15 @@ const { Content } = await render(yazi.entry);
         <ArticleLegalDisclaimerAlert />
 
         <div class="ta-ad-last" ta-ad-container=""></div>
-    </Container>
+    </div>
 
     {otherYazilar.length > 0 &&
         <hr />
 
-        <Container>
+        <div class="container">
             <section>
                 <Heading2 tag="h2">
-                    <a href={yazilarPage.url}>
+                    <a href={yazilarPage.url.href}>
                         İlginizi çekebilecek diğer yazılar
                     </a>
                 </Heading2>
@@ -155,7 +154,7 @@ const { Content } = await render(yazi.entry);
 
                 <div class="ta-ad-last" ta-ad-container=""></div>
             </section>
-        </Container>
+        </div>
     }
 </AppLayout>
 

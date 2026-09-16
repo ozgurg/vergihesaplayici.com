@@ -42,7 +42,7 @@ const TitleTag = props.titleTag as HTMLTag;
         draggable="false" />
     <TitleTag class="title">
         <a
-            href={props.url}
+            href={props.url.href}
             aria-label={FULL_TITLE}
             class="stretched-link">
             <span hidden="">{props.brandTitle} </span><span>{props.title}</span>

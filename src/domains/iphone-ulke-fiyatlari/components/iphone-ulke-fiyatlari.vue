@@ -2,7 +2,7 @@
     <div
         aria-expanded="true"
         class="calculator">
-        <container>
+        <div class="container">
             <div class="calculator-box">
                 <div class="calculator-box-left">
                     <form
@@ -80,7 +80,7 @@
                     </transition>
                 </template>
             </div>
-        </container>
+        </div>
     </div>
 </template>
 
@@ -147,6 +147,14 @@ const usdRate = computed<number>(() => {
 
 const comparison = computed(() => {
     return getComparisonBySlug(selectedSlug.value);
+});
+
+onMounted(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    const modelParam = searchParams.get("preset") as Preset["slug"];
+    if (modelParam && activePresets.some(_preset => _preset.slug === modelParam)) {
+        selectedSlug.value = modelParam;
+    }
 });
 </script>
 

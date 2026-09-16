@@ -6,7 +6,7 @@
         <span :id="ARIA_LABELLEDBY">Paylaş</span>
         <div role="group">
             <form-button
-                :href="facebookShareUrl"
+                :href="facebookShareUrl.href"
                 aria-label="Hesaplayıcı bağlantısını Facebook'ta paylaş"
                 color="brand-facebook"
                 rel="nofollow noopener noreferrer"
@@ -16,7 +16,7 @@
                 <svg-icon :icon="icon_facebook" />
             </form-button>
             <form-button
-                :href="xShareUrl"
+                :href="xShareUrl.href"
                 aria-label="Hesaplayıcı bağlantısını X'te -eski adıyla Twitter'da- paylaş"
                 color="brand-x"
                 rel="nofollow noopener noreferrer"
@@ -26,7 +26,7 @@
                 <svg-icon :icon="icon_x" />
             </form-button>
             <form-button
-                :href="whatsAppShareUrl"
+                :href="whatsAppShareUrl.href"
                 aria-label="Hesaplayıcı bağlantısını WhatsApp'ta paylaş"
                 color="brand-whatsapp"
                 rel="nofollow noopener noreferrer"
