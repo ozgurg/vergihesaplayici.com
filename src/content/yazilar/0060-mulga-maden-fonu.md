@@ -1,44 +1,62 @@
 ---
-title: "Mülga Maden Fonu [0060]"
-description: "Mülga Maden Fonu, Türkiye'de 1980'li yıllarda uygulanan bir madencilik politikası sonucu oluşturulan bir fona verilen isimdir."
+title: "Mülga Maden Fonu [0060] Nedir? (Maden Kanunu ve Fon Tasfiyesi)"
+description: "0060 kodlu Mülga Maden Fonu nedir? 3213 sayılı Maden Kanunu eski fon sistemi, 4684 sayılı Kanun ile tasfiyesi ve güncel Maden Devlet Hakkı uygulaması."
 createdDate: 2023-05-13
+updatedDate: 2026-09-16
 ---
 
-**Mülga Maden Fonu**, Türkiye'de 1980'li yıllarda uygulanan bir madencilik politikası sonucu oluşturulan bir fona
-verilen isimdir. Bu fon, devlet tarafından Türkiye'nin farklı bölgelerindeki madenlerin işletilmesinden elde edilen
-gelirlerin bir kısmının biriktirilmesiyle oluştu.
+Gelir İdaresi Başkanlığı (GİB) vergi kodları listesinde **0060 koduyla** kayıtlı olan "Mülga Maden Fonu", geçmişte Türkiye'deki madencilik faaliyetlerinden alınan ve kanunla yürürlükten kaldırılmış bir mali yükümlülüktür.
 
-Madencilik sektörü Türkiye'nin ekonomik kalkınmasında önemli bir yere sahiptir. Türkiye'nin zengin maden
-yataklarına sahip olması, ülkenin ekonomisine önemli bir katkı sağlamaktadır. Ancak, 1980'li yıllarda Türkiye'nin
-madencilik sektörüne yönelik politikaları, özellikle çevre ve işçi sağlığı açısından sıkça eleştirilmiştir.
+Vergi dairelerinin tahakkuk ve borç döküm listelerinde karşılaşılan bu kodun ne anlama geldiğini, fonun tarihçesini ve günümüz madencilik sektöründeki vergisel karşılığını bu rehberde bulabilirsiniz.
 
-Mülga Maden Fonu, bu dönemdeki madencilik politikalarının bir sonucu olarak oluşturulmuştur. Bu fon, madenlerin
-işletilmesinden elde edilen gelirlerin bir kısmının biriktirilmesiyle oluşmuştur. Fonun amacı, madenlerin işletilmesi
-sırasında ortaya çıkan çevresel ve sosyal sorunların çözümüne yönelik projelere kaynak sağlamaktı.
+---
 
-Mülga Maden Fonu, çevresel ve sosyal sorunların çözümüne yönelik projelerin finansmanına kaynak sağlamıştır.
-Özellikle, madencilik sektörünün olumsuz etkilerini azaltmaya yönelik projeler fonun desteklediği alanlardan biri
-olmuştur. Bu projeler arasında, madencilik işletmelerinin çevre dostu teknolojilerle donatılması, işçi sağlığı ve
-güvenliği tedbirlerinin alınması, madencilik işletmelerinin çevresel etkilerinin azaltılması ve yerel halkın
-sosyal ve ekonomik koşullarının iyileştirilmesi gibi çalışmalar yer almaktadır.
+## "Mülga" Ne Anlama Gelir?
 
-Ancak, Mülga Maden Fonu'nun yönetimi ve kullanımı konusunda da eleştiriler yapılmıştır. Fonun kaynakları bazı
-dönemlerde başka amaçlarla kullanılmış veya yetersiz kalmıştır. Ayrıca, fonun yönetimindeki şeffaletsizlik ve
-denetimsizlik nedeniyle bazı idari yolsuzluklar yaşanmıştır.
+Hukuk terminolojisinde **mülga**, yürürlükte olan bir kanunun, kanun maddesinin veya fonun sonradan çıkarılan yeni bir yasa ile **yürürlükten kaldırıldığını** belirtir. 
 
-Sonuç olarak, Mülga Maden Fonu, Türkiye'nin madencilik sektöründeki politikalarının bir sonucu olarak oluşmuş bir
-fon olmakla birlikte, çevresel ve sosyal sorunların çözümüne yönelik projelerin finansmanına kaynak sağlamıştır. Ancak,
-fonun yönetimi ve kullanımı konusunda yaşanan sorunlar, fonun amacına tam olarak ulaşmasını engellemiştir. Bu nedenle,
-fonun daha şeffaf bir şekilde yönetilmesi, kaynakların etkili bir şekilde kullanılması ve fonun amacına uygun olarak
-kullanılması için gerekli reformların yapılması gerekmektedir.
+Dolayısıyla "Mülga Maden Fonu", günümüzde artık tahsilatı yapılmayan, geçmişte uygulanmış ve kapatılmış bir fon anlamına gelmektedir.
 
-Bununla birlikte, Mülga Maden Fonu gibi kaynaklar, doğal kaynakların ekonomik değerlendirilmesi sürecinde ortaya
-çıkan çevresel ve sosyal sorunların çözümüne yönelik projelerin finansmanı için önemli bir araç olabilir. Ancak, bu
-fonların etkili bir şekilde yönetilmesi ve kullanılması için şeffaflık, hesap verebilirlik ve katılımcılık
-gibi ilkelerin göz önünde bulundurulması gerekmektedir.
+---
 
-Sonuç olarak, Mülga Maden Fonu Türkiye'nin madencilik sektöründeki politikalarının bir sonucu olarak oluşmuş ve
-çevresel ve sosyal sorunların çözümüne yönelik projelerin finansmanına kaynak sağlamıştır. Ancak, fonun yönetimindeki
-sorunlar nedeniyle amacına tam olarak ulaşamamıştır. Bu nedenle, fonun daha şeffaf bir şekilde yönetilmesi,
-kaynakların etkili bir şekilde kullanılması ve fonun amacına uygun olarak kullanılması için gerekli reformların
-yapılması gerekmektedir.
+## Maden Fonu Neydi ve Nasıl İşliyordu?
+
+Maden Fonu, **3213 sayılı Maden Kanunu**'nun ilk dönemlerindeki yasal düzenlemeler uyarınca madencilik sektörünün finansmanı ve denetimi için kurulmuştu:
+
+* **Gelir Kaynağı:** Maden işletmelerinin çıkardığı madenlerin ocak başı satış tutarından ve maden ruhsat bedellerinden belirli yüzdeler fona aktarılıyordu.
+* **Kullanım Amacı:** Maden sahalarının altyapı ihtiyaçları, madencilik araştırmaları, sektörel projeler ve çevre düzenlemeleri için kaynak sağlamaktı.
+* **Uygulama:** Maden işletmecileri, belirlenen fon payını periyodik olarak ilgili idareye veya vergi dairelerine yatırmakla yükümlüydü.
+
+---
+
+## 4684 Sayılı Kanun (2001) ile Maden Fonu'nun Tasfiyesi
+
+2001 yılında kamu mali yönetiminde reform yapılması ve bütçe birliğinin sağlanması amacıyla **4684 sayılı Kanun** çıkarıldı. 
+
+Bu kanunla birlikte:
+
+1. Maden Fonu da dahil olmak üzere kamu bünyesindeki onlarca bütçe dışı fon **tasfiye edildi (mülga kılındı)**.
+2. Fon gelirleri doğrudan genel bütçeye gelir olarak kaydedilmeye başlandı.
+3. Madencilik faaliyetlerinden doğan kamu payları bütçe içi bir mekanizmaya dönüştürüldü.
+
+### 0060 Kodu Neden Hâlâ Görünüyor?
+
+0060 kodunun GİB sistemlerinde kalmasının sebebi; fonun yürürlükte olduğu yıllara ait gecikmiş ödemelerin, tahakkuk kayıtlarının ve arşiv alacaklarının maliye kayıtlarında doğru sınıflandırılmasını sağlamaktır. Günümüzde faaliyette olan maden işletmelerinden 0060 koduyla yeni bir fon tahsilatı yapılmaz.
+
+---
+
+## Günümüzde Madencilik Gelirleri Nasıl Alınıyor? (Devlet Hakkı)
+
+Maden Fonu'nun tasfiyesinden sonra madenlerin işletilmesinden doğan kamu payı **"Maden Devlet Hakkı"** sistemiyle yürütülmektedir:
+
+* **Yetkili İdare:** Maden ruhsatları ve mali yükümlülükler Enerji ve Tabii Kaynaklar Bakanlığı'na bağlı **MAPEG (Maden ve Petrol İşleri Genel Müdürlüğü)** tarafından denetlenir.
+* **Devlet Hakkı Oranları:** 3213 sayılı Maden Kanunu'nun 14. maddesi gereğince maden gruplarına göre (I. Grup madenlerden IV. ve V. Grup madenlere kadar) ocak başı satış tutarı üzerinden kademeli oranlarda Devlet Hakkı tahakkuk ettirilir.
+* **Gelir Dağılımı:** Tahsil edilen Devlet Hakkı; Genel Bütçe, İl Özel İdareleri, Büyükşehir Belediyeleri ve Köylere Hizmet Götürme Birlikleri arasında kanunda belirlenen oranlara göre paylaştırılır.
+
+---
+
+## İlgili Bağlantılar
+
+* [Vergi Türleri ve Kodları Listesi](/yazilar/vergi-turleri/)
+* [Mülga Kooperatifçilik Tanıtma ve Eğitim Fonu [0062]](/yazilar/0062-mulga-kooperatifcilik-tanitma-ve-egitim-fonu/)
+* [Kurumlar Vergisi [0010]](/yazilar/0010-kurumlar-vergisi/)
