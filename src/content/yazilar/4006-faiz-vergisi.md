@@ -1,26 +1,49 @@
 ---
-title: "Faiz Vergisi [4006]"
-description: "Faiz vergisi, Türkiye'de uygulanan bir vergi türüdür ve bankalar aracılığıyla gerçekleştirilen finansal işlemlerden alınır."
+title: "Faiz Vergisi [4006] Nedir? (Mevduat Stopajı ve GVK Geçici 67)"
+description: "4006 kodlu Faiz Vergisi nedir? Banka mevduat faizlerindeki stopaj oranları, 193 sayılı GVK Geçici 67 sistemi ve faiz gelirlerinin vergilendirilmesi rehberi."
 createdDate: 2023-07-17
+updatedDate: 2026-09-16
 ---
 
-**Faiz vergisi**, Türkiye'de uygulanan bir vergi türüdür ve bankalar aracılığıyla gerçekleştirilen finansal işlemlerden
-alınır. Bankalar, mevduat toplamak ve kredi sağlamak gibi faaliyetlerini sürdürürken faiz geliri elde ederler. Bu
-faiz geliri üzerinden belirli bir oranda vergi kesintisi yapılır ve devlete ödenir.
+Gelir İdaresi Başkanlığı (GİB) vergi kodları listesinde **4006 koduyla** yer alan "Faiz Vergisi", Türkiye'de bankalar ve finans kurumları aracılığıyla elde edilen faiz gelirlerinin vergilendirilmesinde kullanılan resmi bir vergi tarhiyat kodudur.
 
-Faiz vergisi, finansal sektörün düzenlenmesi ve ekonomik istikrarın sağlanması amacıyla uygulanır. Bankaların faiz
-geliri vergisi, genellikle Türkiye Cumhuriyet Merkez Bankası (TCMB) tarafından belirlenen bir oran üzerinden hesaplanır.
-Bu oran zaman zaman değişebilir ve ekonomik koşullara bağlı olarak ayarlanabilir.
+Günümüz Türk vergi sisteminde faiz gelirleri, **193 sayılı Gelir Vergisi Kanunu'nun (GVK) Geçici 67. maddesi** kapsamında doğrudan kaynakta kesinti (stopaj) usulüyle vergilendirilmektedir.
 
-Faiz vergisi, bankalardaki mevduat hesaplarından elde edilen faiz gelirleri üzerinden kesilir. Bir bireyin sahip
-olduğu mevduat hesabı üzerindeki faiz geliri, yıllık faiz geliri beyannamesiyle beyan edilir ve belirli bir oranda
-vergi kesintisi yapılır. Bankalar, müşterilerin hesaplarından doğrudan vergi kesintisi yaparak, bu vergiyi devlete öder.
+---
 
-Faiz vergisinin amacı, finansal piyasaların düzenini sağlamak ve gelir dağılımını etkilemektedir. Ayrıca, bankaların
-faiz gelirleri üzerinden alınan bu vergi, devletin gelir kaynaklarından biridir ve kamu harcamalarını finanse etmek için
-kullanılır.
+## Faiz Gelirlerinde Vergilendirme Mantığı (Kaynakta Stopaj)
 
-Özetlemek gerekirse, Türkiye'de faiz vergisi, bankaların faiz gelirleri üzerinden alınan bir vergi türüdür. Bankalar,
-mevduat faizi ve kredi faizi gibi faaliyetlerinden elde ettikleri gelirler üzerinden bu vergiyi öderler. Faiz vergisi,
-finansal sektörün düzenlenmesi, ekonomik istikrarın sağlanması ve devlet gelirlerinin artırılması amacıyla
-uygulanmaktadır.
+Bireysel müşterilerin bankalardaki vadeli Türk Lirası veya Döviz mevduat hesaplarından kazandıkları faizler için vergilendirme şu şekilde işler:
+
+1. **Otomatik Kesinti:** Banka, faiz getirisini müşterinin hesabına yatırırken yasal stopaj tutarını doğrudan keser ve Gelir İdaresi'ne aktarır.
+2. **Nihai Vergi:** Gerçek kişiler için banka tarafından kesilen bu stopaj nihai vergidir. Bireylerin elde ettikleri mevduat faizi gelirleri için ayrıca yıllık gelir vergisi beyannamesi verme zorunluluğu bulunmamaktadır.
+
+---
+
+## Mevduat Faizlerinde Güncel Stopaj Oranları
+
+Cumhurbaşkanı Kararları ile belirlenen mevduat stopaj oranları, para birimine ve vade süresine göre kademelendirilmiştir:
+
+### 1. Türk Lirası (TL) Vadeli Mevduat Hesapları
+TL tasarrufları ve uzun vadeli mevduatı teşvik etmek amacıyla vade uzadıkça stopaj oranı düşürülmektedir:
+* **6 aya kadar (6 ay dahil) vadeli hesaplar:** %15
+* **1 yıla kadar (1 yıl dahil) vadeli hesaplar:** %12
+* **1 yıldan uzun vadeli hesaplar:** %10
+
+### 2. Döviz Tevdiat Hesapları (DTH)
+Yabancı para (Dolar, Euro vb.) cinsinden açılan vadeli mevduat hesaplarında elde edilen faiz gelirleri üzerinden genel olarak **%25 oranında stopaj** kesilmektedir.
+
+---
+
+## 4006 Faiz Vergisi Kodu Neden Kullanılır?
+
+Geçmiş yıllarda 3505 sayılı Kanun gibi özel düzenlemelerle uygulanan faiz vergisi tarhiyatları ile günümüzde vergi incelemeleri sonucunda faiz gelirlerine ilişkin re'sen veya ikmalen yapılan tarhiyatların takibinde GİB sisteminde 4006 kodu kullanılmaktadır.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [GVK Geçici 67/11 İhtiyari Beyan [0067]](/yazilar/0067-gelir-vergisi-kanunu-gecici-67-11-maddesine-gore-yapilan-ihtiyari-beyan/)
+* [Banka Muameleleri Vergisi (BSMV) [0021]](/yazilar/0021-banka-muameleleri-vergisi/)
+* [Yıllık Gelir Vergisi [0001]](/yazilar/0001-yillik-gelir-vergisi/)
+* [Tüm Vergi Türleri ve Kodları Listesi](/yazilar/vergi-turleri/)
