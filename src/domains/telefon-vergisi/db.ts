@@ -52,12 +52,14 @@ export const getPresetBySlug = (slug: PageSlug): Preset => {
     return Presets.find(_preset => _preset.slug === slug) as Preset;
 };
 
-export const getPresetsByBrandId = (brandId: string): Preset[] => {
-    return Presets.filter(_preset => _preset.brandId === brandId);
-};
-
 export const getBrandById = (brandId: string): Brand => {
     return Brands.find(_brand => _brand.id === brandId) as Brand;
+};
+
+export const getPresetsByBrandId = (brandId: string): Preset[] => {
+    return sortPresets(
+        Presets.filter(_preset => _preset.brandId === brandId)
+    );
 };
 
 export const getPresetsForAllBrands = (): Preset[] => {
