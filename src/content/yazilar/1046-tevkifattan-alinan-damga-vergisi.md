@@ -12,8 +12,8 @@ güvenliğini artırmak ve tahsilatı garanti altına almak amacıyla uygulanır
 
 ## Tevkifat Neden Yapılır?
 
-Devlet, bazı vergilerin doğrudan mükelleften alınmasında zorluk yaşanabileceği durumlarda **tevkifat yoluyla vergi
-tahsilini** tercih eder. Damga vergisi de bu kapsamdaki vergilerden biridir. Böylece verginin düzenli ve zamanında
+Devlet, bazı vergilerin doğrudan mükelleften alınmasında zorluk yaşanabileceği durumlarda **tevkifat yoluyla vergi**
+tahsilini tercih eder. Damga vergisi de bu kapsamdaki vergilerden biridir. Böylece verginin düzenli ve zamanında
 ödenmesi sağlanır.
 
 ## Hangi Durumlarda Tevkifat Uygulanır?
@@ -30,12 +30,12 @@ vergi dairesine yatırır.
 ## Kim Sorumlu Olur?
 
 Damga Vergisi Kanunu'na göre normalde her iki taraf da vergiden müteselsilen sorumludur. Ancak tevkifat uygulandığında,
-verginin ödenmesinden **kesintiyi yapan taraf** (örneğin kamu kurumu) sorumlu hale gelir. Bu sayede diğer tarafın
+verginin ödenmesinden kesintiyi yapan taraf (örneğin kamu kurumu) sorumlu hale gelir. Bu sayede diğer tarafın
 beyanname vermesi ya da ödeme yapması gerekmez.
 
 ## Nasıl Hesaplanır?
 
-Damga vergisinin oranı, belgenin türüne göre değişir ve genellikle **binde oranlar** şeklinde belirlenir. Tevkifat
+Damga vergisinin oranı, belgenin türüne göre değişir ve genellikle binde oranlar şeklinde belirlenir. Tevkifat
 yapacak taraf, bu oran üzerinden hesaplama yaparak, karşı tarafa ödenecek tutardan damga vergisini keser ve bağlı
 bulunduğu vergi dairesine öder.
 
@@ -54,5 +54,5 @@ işlemlerinde sıklıkla karşımıza çıkar. Sözleşme tarafları açısında
 
 ---
 
-**Not:** Güncel oranlar ve uygulamalar için Gelir İdaresi Başkanlığı'nın (GİB) yayınladığı mevzuatları takip etmeniz
+Not: Güncel oranlar ve uygulamalar için Gelir İdaresi Başkanlığı'nın (GİB) yayınladığı mevzuatları takip etmeniz
 önerilir.

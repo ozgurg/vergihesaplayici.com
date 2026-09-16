@@ -10,7 +10,7 @@ verimliliğini artırmak ve su kaynaklarını etkin bir şekilde kullanmak için
 DSİ sulama tesisleri yatırım bedeli nedir?
 
 DSİ sulama tesislerinin yatırım bedeli, çeşitli faktörlere bağlı olarak değişiklik gösterebilir. Bu faktörler arasında
-**proje büyüklüğü**, kullanılacak **sulama yöntemi**, arazinin **eğimi** ve tarımsal faaliyetlerin **yoğunluğu** gibi
+proje büyüklüğü, kullanılacak sulama yöntemi, arazinin eğimi ve tarımsal faaliyetlerin yoğunluğu gibi
 etmenler yer almaktadır. Genel olarak, sulama tesisleri inşaatında dikkate alınması gereken maliyet unsurları şunlardır:
 
 1. **Altyapı Maliyetleri**: Sulama kanallarının yapımı, pompaların kurulumu, su depoları ve drenaj sistemleri gibi

@@ -5,7 +5,7 @@ createdDate: 2025-09-06
 ---
 
 Vergi barışı kapsamında yapılandırılan borçlar, belirli bir süre içinde ödenmediğinde gecikme zammına tabi tutulur. *
-*Vergi barışı geç ödeme zammı**, bu borçların vadesi geçtiğinde uygulanacak faiz veya zam tutarını ifade eder. Amaç,
+*Vergi barışı geç ödeme zammı**, bu borçların vadesi geçtiğinde uygulanacak faiz veya zam tutarını ifade eder. Amaç,**
 vergi mükelleflerini borçlarını zamanında ödemeye teşvik etmek ve devletin alacaklarını korumaktır.
 
 Bu zam, ilgili borcun türüne göre değişiklik gösterebilir ve genellikle borcun ödenmesi gereken son tarihten itibaren
@@ -15,5 +15,5 @@ Vergi barışı geç ödeme zammı, mükelleflerin yapılandırılmış borçlar
 Zamanında ödenmeyen borçlar, hem asıl borç hem de geç ödeme zammı ile birlikte tahsil edilir. Bu nedenle, yapılandırma
 süresinde borçların tamamının ödenmesi, gereksiz ek mali yükümlülüklerden kaçınmak için önemlidir.
 
-Özetle, **vergi barışı geç ödeme zammı**, yapılandırılmış borçların vadesinde ödenmemesi durumunda devlete ek olarak
+Özetle, vergi barışı geç ödeme zammı, yapılandırılmış borçların vadesinde ödenmemesi durumunda devlete ek olarak
 ödenmesi gereken tutardır ve vergi düzenlemeleri kapsamında yasal olarak uygulanır.

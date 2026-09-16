@@ -70,7 +70,7 @@ Kurula sunulan bilgi ve belgelerin gerçeği yansıtmaması da cezai yaptırım 
 
 Rekabet cezaları ciddi tutarlara ulaşabilir. 4054 sayılı Kanunda her ihlal türü için tavan oranlar yer alır. Bunların temel unsurları şöyledir:
 
-* Cezalar şirketin **Türkiye cirosu** üzerinden hesaplanır.
+* Cezalar şirketin Türkiye cirosu üzerinden hesaplanır.
 * İhlalin türü, süresi ve etkisinin büyüklüğü dikkate alınır.
 * Kartel cezası diğer ihlallere göre daha yüksek belirlenir.
 * İhlale katılan yönetici veya çalışanlara da bireysel cezalar verilebilir.
@@ -94,7 +94,7 @@ Rekabet Kurulu, kararı şirkete resmi yollarla tebliğ eder. Tebliğden sonra:
 
 ## Cezaya İtiraz Etme Süreci: Nasıl İşler?
 
-Tebliğden sonra işletmenin **60 gün içinde** idari yargıya başvurma hakkı vardır. Başvuru sıklıkla Ankara İdare Mahkemesi üzerinden yapılır.
+Tebliğden sonra işletmenin 60 gün içinde idari yargıya başvurma hakkı vardır. Başvuru sıklıkla Ankara İdare Mahkemesi üzerinden yapılır.
 
 İtiraz sürecinde dikkat edilmesi gerekenler:
 

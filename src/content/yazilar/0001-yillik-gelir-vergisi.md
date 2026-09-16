@@ -11,16 +11,16 @@ Gelir elde etmek güzel, ama kazancın bir kısmını devlete geri vermek zorund
 
 ## Yıllık Gelir Vergisi (0001) Nedir?
 
-**Yıllık Gelir Vergisi**, Türkiye'de gelir elde eden bireylerin (gerçek kişilerin) bir takvim yılı boyunca kazandıkları toplam gelir üzerinden ödedikleri vergidir. Gelir Vergisi Kanunu'na göre gelir; bir kişinin **bir takvim yılı içinde elde ettiği kazanç ve iratların safi tutarı** olarak tanımlanır.
+Yıllık Gelir Vergisi, Türkiye'de gelir elde eden bireylerin (gerçek kişilerin) bir takvim yılı boyunca kazandıkları toplam gelir üzerinden ödedikleri vergidir. Gelir Vergisi Kanunu'na göre gelir; bir kişinin bir takvim yılı içinde elde ettiği kazanç ve iratların safi tutarı olarak tanımlanır.
 
 Bu vergi, "0001" kodu ile beyanname türlerinde ve elektronik sistemlerde yer alır.
-Kısaca, **0001 kodu = Yıllık Gelir Vergisi Beyannamesi** anlamına gelir.
+Kısaca, 0001 kodu = Yıllık Gelir Vergisi Beyannamesi anlamına gelir.
 
 ---
 
 ## Kimler Yıllık Gelir Vergisi Öder?
 
-Yıllık Gelir Vergisi, **gelir elde eden tüm gerçek kişileri** kapsar. Ancak herkesin beyanname verme zorunluluğu yoktur. Gelirin türüne ve miktarına göre durum değişebilir.
+Yıllık Gelir Vergisi, gelir elde eden tüm gerçek kişileri kapsar. Ancak herkesin beyanname verme zorunluluğu yoktur. Gelirin türüne ve miktarına göre durum değişebilir.
 
 ### Beyanname Vermesi Gerekenler
 
@@ -35,7 +35,7 @@ Aşağıdaki gelir türlerinden belirli sınırların üzerinde kazanç elde ede
 
 ### Beyanname Vermeyenler
 
-Bazı gelirler ise **kaynakta stopaj (kesinti)** yoluyla vergilendirildiği için ayrıca beyan edilmez. Örneğin maaşlı çalışanlar, çoğu durumda gelir vergisini işveren aracılığıyla öder ve beyanname vermez.
+Bazı gelirler ise kaynakta stopaj (kesinti) yoluyla vergilendirildiği için ayrıca beyan edilmez. Örneğin maaşlı çalışanlar, çoğu durumda gelir vergisini işveren aracılığıyla öder ve beyanname vermez.
 
 ---
 
@@ -51,13 +51,13 @@ Gelir Vergisi Kanunu'na göre gelir 7 ana başlığa ayrılır:
 6. Menkul sermaye iratları (faiz, temettü, repo vb.)
 7. Diğer kazanç ve iratlar (örneğin değer artış kazançları)
 
-Bu gelirlerin toplamı, **yıllık beyan edilecek gelir** tutarını oluşturur. Ancak bazı istisnalar ve indirimler vardır; bunlara aşağıda değinilecektir.
+Bu gelirlerin toplamı, yıllık beyan edilecek gelir tutarını oluşturur. Ancak bazı istisnalar ve indirimler vardır; bunlara aşağıda değinilecektir.
 
 ---
 
 ## 2025 Yılı Gelir Vergisi Dilimleri
 
-Gelir vergisi dilimleri her yıl **Hazine ve Maliye Bakanlığı** tarafından güncellenir. 2025 yılı için geçerli olan vergi dilimleri aşağıdaki gibidir:
+Gelir vergisi dilimleri her yıl Hazine ve Maliye Bakanlığı tarafından güncellenir. 2025 yılı için geçerli olan vergi dilimleri aşağıdaki gibidir:
 
 | Gelir Tutarı (TL)     | Vergi Oranı |
 |-----------------------|-------------|
@@ -82,12 +82,12 @@ Bir takvim yılı içinde elde edilen tüm gelir türleri toplanır.
 
 - Serbest meslek kazancı: 450.000 TL
 - Kira geliri: 120.000 TL
-- Toplam: **570.000 TL**
+- Toplam: 570.000 TL
 
 ### 2. Gider ve İndirimlerin Düşülmesi
 
 Kanunen kabul edilen giderler, bağış ve yardımlar, sigorta primleri gibi indirimler düşülür.
-Örnek: 20.000 TL gider → **550.000 TL safi gelir**
+Örnek: 20.000 TL gider → 550.000 TL safi gelir
 
 ### 3. Vergi Dilimine Göre Hesaplama
 
@@ -108,12 +108,12 @@ Eğer yıl içinde maaş, stopaj veya geçici vergi ödemesi yapıldıysa, bu tu
 
 ## Beyanname Ne Zaman Verilir?
 
-Gelir vergisi beyannamesi, takip eden yılın **Mart ayında** verilir:
+Gelir vergisi beyannamesi, takip eden yılın Mart ayında verilir:
 
 - **Beyanname dönemi:** 1 Mart – 25 Mart
 - **Ödeme dönemi:** 1. taksit Mart, 2. taksit Temmuz
 
-Beyanname **İnteraktif Vergi Dairesi (ivd.gib.gov.tr)** üzerinden elektronik olarak doldurulabilir.
+Beyanname İnteraktif Vergi Dairesi (ivd.gib.gov.tr) üzerinden elektronik olarak doldurulabilir.
 
 ---
 
@@ -134,7 +134,7 @@ Vergi iki eşit taksit halinde ödenir:
 
 ## Yıllık Gelir Vergisinde İndirim ve İstisnalar
 
-Bazı durumlarda, gelir vergisinde **istisna** uygulanabilir veya **indirim hakkı** doğabilir.
+Bazı durumlarda, gelir vergisinde istisna uygulanabilir veya indirim hakkı doğabilir.
 
 ### Başlıca İstisnalar
 
@@ -155,11 +155,11 @@ Bu indirimler, beyannamede "indirilecek giderler" kısmında belirtilir.
 
 ## Örnek Yıllık Gelir Vergisi Hesaplaması
 
-**Senaryo:**
+Senaryo:
 Bir yazılım geliştiricisi 2025 yılında toplam 600.000 TL gelir elde ediyor. 30.000 TL gider düşebiliyor.
-Toplam safi gelir: **570.000 TL**
+Toplam safi gelir: 570.000 TL
 
-**Vergi hesaplaması:**
+Vergi hesaplaması:
 
 | Dilim            | Tutar (TL) | Oran | Vergi (TL)     |
 |------------------|------------|------|----------------|
@@ -169,7 +169,7 @@ Toplam safi gelir: **570.000 TL**
 | **Toplam Vergi** |            |      | **132.300 TL** |
 
 Eğer yıl boyunca 50.000 TL geçici vergi ödemesi yapılmışsa:
-**132.300 – 50.000 = 82.300 TL** yıl sonunda ödenir.
+132.300 – 50.000 = 82.300 TL yıl sonunda ödenir.
 
 ---
 
@@ -181,7 +181,7 @@ Eğer yıl boyunca 50.000 TL geçici vergi ödemesi yapılmışsa:
 - Gider belgelerini saklamamak
 - Bağış ve yardımları belgelememek
 
-Bu tür hatalar, **vergi ziyaı cezası** veya **gecikme faizi** ile sonuçlanabilir.
+Bu tür hatalar, vergi ziyaı cezası veya gecikme faizi ile sonuçlanabilir.
 
 ---
 
@@ -199,21 +199,21 @@ Bu tür hatalar, **vergi ziyaı cezası** veya **gecikme faizi** ile sonuçlanab
 ## Dijitalleşen Vergi Süreci: e-Beyanname ve e-Devlet Kolaylıkları
 
 Günümüzde tüm gelir vergisi süreçleri dijitalleşmiştir.
-Artık kağıt beyanname vermek yerine, **e-Beyanname** sistemi kullanılır.
+Artık kağıt beyanname vermek yerine, e-Beyanname sistemi kullanılır.
 
-**Avantajları:**
+Avantajları:
 
 - 7/24 erişim
 - Hata kontrolü
 - Otomatik vergi hesaplama
 - E-posta ile onay ve bilgilendirme
 
-Ayrıca, **e-Devlet** üzerinden de geçmiş vergi borçları ve ödemeler görüntülenebilir.
+Ayrıca, e-Devlet üzerinden de geçmiş vergi borçları ve ödemeler görüntülenebilir.
 
 ---
 
 ## Sonuç: Vergiyi Bilmek Güçtür
 
-Yıllık Gelir Vergisi (0001), kazancın sadece bir kısmını devlete aktarmak değil, **ekonomik sistemin adil işleyişini desteklemek** anlamına gelir. Doğru beyan, hem cezadan kaçınmanızı hem de yasal haklarınızı korumanızı sağlar.
+Yıllık Gelir Vergisi (0001), kazancın sadece bir kısmını devlete aktarmak değil, ekonomik sistemin adil işleyişini desteklemek anlamına gelir. Doğru beyan, hem cezadan kaçınmanızı hem de yasal haklarınızı korumanızı sağlar.
 
 Vergi mevzuatındaki değişiklikleri düzenli olarak takip edin, elektronik sistemleri kullanın ve beyan dönemi geldiğinde işlemlerinizi geciktirmeyin.

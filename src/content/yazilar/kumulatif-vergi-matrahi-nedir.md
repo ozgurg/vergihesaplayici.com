@@ -17,7 +17,7 @@ Bu kavramı bilmek, maaşınızın neden azaldığını veya hangi vergi dilimin
 - "Kümülatif" = birikmiş, toplam
 - "Matrah" = vergilendirilecek tutar
 
-**Kümülatif vergi matrahı**, yılın başından itibaren brüt kazançlardan yapılan yasal kesintiler sonrası kalan tutarların birikmiş halidir.
+Kümülatif vergi matrahı, yılın başından itibaren brüt kazançlardan yapılan yasal kesintiler sonrası kalan tutarların birikmiş halidir.
 Her ay eklenir, yıl sonunda toplamı vergi dilimini belirler.
 
 Özet:
@@ -144,22 +144,22 @@ Ocak maaşı bu yüzden genellikle daha yüksek görünür.
 
 ## 6. Pratik İpuçları
 
-✅ **Bordronuzu kontrol edin**<br />
+✅ Bordronuzu kontrol edin<br />
 Kümülatif matrah satırı görünmeli.
 
-✅ **Matrah değişimini izleyin**<br />
+✅ Matrah değişimini izleyin<br />
 Zam veya ikramiye sonrası kontrol edin.
 
-✅ **İş değiştirirken bildirin**<br />
+✅ İş değiştirirken bildirin<br />
 Yeni işverene önceki kümülatif matrahınızı iletin.
 
-✅ **Yıl sonunu planlayın**<br />
+✅ Yıl sonunu planlayın<br />
 Ek ödeme yapacaksanız dilim geçişine dikkat edin.
 
-✅ **Bordro yazılımı kullanın**<br />
+✅ Bordro yazılımı kullanın<br />
 Otomatik kümülatif hesaplama hataları önler.
 
-✅ **Net maaş azaldıysa kontrol edin**<br />
+✅ Net maaş azaldıysa kontrol edin<br />
 Sebebi çoğu zaman dilim artışıdır.
 
 ---
@@ -183,7 +183,7 @@ Sonuç: üst vergi dilimine geçiş.
 
 Eski işyeri matrahını bildirmezse yeni işveren sıfırdan başlatır.
 Fazla vergi kesilebilir.
-**Çözüm:** Eski işyerinden "kümülatif vergi matrahı belgesi" alın.
+Çözüm: Eski işyerinden "kümülatif vergi matrahı belgesi" alın.
 
 ---
 

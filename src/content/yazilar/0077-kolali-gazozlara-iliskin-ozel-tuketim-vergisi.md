@@ -18,7 +18,7 @@ seçeneklere yönlendirmektir.
 
 ## Kolalı Gazozlara Özel Tüketim Vergisi
 
-Türkiye'de kolalı gazozlar, **Özel Tüketim Vergisi** Kanunu kapsamında yer almaktadır. Bu vergi, gazozların içeriğinde
+Türkiye'de kolalı gazozlar, Özel Tüketim Vergisi Kanunu kapsamında yer almaktadır. Bu vergi, gazozların içeriğinde
 yer alan şeker ve diğer zararlı maddelerin sağlık üzerindeki olumsuz etkilerini azaltmak amacıyla uygulanmaktadır.
 Kolalı gazozlar, şeker içeriği ve üretim miktarına göre farklı vergi dilimlerine tabi tutulmaktadır.
 
@@ -28,7 +28,7 @@ gösterebilir. Bu oranlar, hükümet tarafından düzenli olarak gözden geçiri
 
 ## Verginin Amaçları
 
-Türkiye'de kolalı gazozlara yönelik **ÖTV'nin uygulanmasının birkaç amacı** vardır:
+Türkiye'de kolalı gazozlara yönelik ÖTV'nin uygulanmasının birkaç amacı vardır:
 
 1. Sağlık Faktörü: Kolalı gazozlar, yüksek miktarda şeker içerebilir ve aşırı tüketimi sağlık sorunlarına yol açabilir.
    ÖTV'nin uygulanmasıyla, bu tür içeceklerin tüketiminin azaltılması hedeflenir ve halk sağlığının korunması amaçlanır.
@@ -40,7 +40,7 @@ Türkiye'de kolalı gazozlara yönelik **ÖTV'nin uygulanmasının birkaç amac�
    teşvik edilir. Düşük veya sıfır kalorili içecekler, doğal meyve suları gibi daha sağlıklı alternatiflere
    yönlendirilmesi hedeflenir.
 
-Türkiye'de kolalı gazozlara ilişkin **Özel Tüketim Vergisi**, zararlı içerikleri ve sağlık üzerindeki olumsuz etkileri
+Türkiye'de kolalı gazozlara ilişkin Özel Tüketim Vergisi, zararlı içerikleri ve sağlık üzerindeki olumsuz etkileri
 göz önünde bulundurarak uygulanan bir vergi türüdür. Bu vergi, hem halk sağlığını koruma amacını taşırken hem de
 devletin gelirini artırmayı hedeflemektedir. ÖTV oranları, şeker içeriği ve litre başına düşen vergi miktarı gibi
 faktörlere bağlı olarak düzenli olarak güncellenmektedir. Bu vergi, tüketim alışkanlıklarını değiştirmeyi ve daha

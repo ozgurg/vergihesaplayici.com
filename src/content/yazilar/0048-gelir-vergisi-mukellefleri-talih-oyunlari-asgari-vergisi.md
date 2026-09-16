@@ -8,8 +8,8 @@ Talih oyunları, insanların şanslarını deneyerek para kazanma umuduyla katı
 kumarhanelerde, at yarışı pistlerinde veya bahis sitelerinde oynanır. Türkiye'de, talih oyunlarına katılan kişilerin
 ödemeleri gereken bir vergi türü olan **asgari vergi** bulunmaktadır.
 
-**Asgari vergi**, talih oyunlarında kazanılan tutarın belirli bir oranıdır ve kazancın brüt tutarına uygulanır.
-Türkiye'de, talih oyunlarında kazanılan tutarın **%20'si** asgari vergi olarak vergilendirilir. Yani, kazanılan tutarın
+Asgari vergi, talih oyunlarında kazanılan tutarın belirli bir oranıdır ve kazancın brüt tutarına uygulanır.
+Türkiye'de, talih oyunlarında kazanılan tutarın %20'si asgari vergi olarak vergilendirilir. Yani, kazanılan tutarın
 %20'si vergi olarak ödenir ve geri kalanı oyuncuya kalır.
 
 Bu vergi türü, talih oyunlarında kazanılan tutarların vergilendirilmesi için oluşturulmuştur. Asgari vergi, oyuncuların
@@ -20,7 +20,7 @@ Türkiye'de asgari vergi, talih oyunlarında kazanılan tutarın yanı sıra, di
 kazanç türleri için belirlenen asgari vergi oranı, talih oyunlarındaki orandan farklı olabilir. Ancak, tüm kazanç
 türleri için asgari vergi ödeme zorunluluğu bulunmaktadır.
 
-Sonuç olarak, Türkiye'de talih oyunlarına katılan kişilerin ödemeleri gereken bir vergi türü olan **asgari vergi**,
+Sonuç olarak, Türkiye'de talih oyunlarına katılan kişilerin ödemeleri gereken bir vergi türü olan asgari vergi,
 kazanılan tutarın belirli bir oranını vergilendirir. Bu vergi, vergi toplama sürecini basitleştirir ve oyuncuların
 kazançlarından belirli bir oranda vergi ödemelerini sağlar. Oyuncuların kazançlarını doğru bir şekilde beyan etmeleri ve
 asgari vergiyi ödemeleri, vergi uyumunu arttırır ve vergi toplama sürecini kolaylaştırır.

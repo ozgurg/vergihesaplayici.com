@@ -137,13 +137,13 @@ Türkiye'de gelir vergisi dilimleri, her yıl milyonlarca çalışanı, işveren
 
 ## Gelir Vergisi Nasıl Hesaplanır?
 
-Gelir vergisi, gerçek kişilerin bir takvim yılı içinde elde ettiği kazanç ve iratlar üzerinden alınan bir vergidir. Hesaplama, gelir tutarının ilgili yılın vergi dilimlerinde hangi aralıklara denk geldiğine göre yapılır. Türkiye'de gelir vergisi **artarak ilerleyen oranlı** bir sisteme sahiptir. Bu sistemde gelir arttıkça uygulanan vergi oranı da yükselir. Vergi hesaplamasında yalnızca üst dilim için yüksek oran uygulanmaz; gelir her dilime karşılık gelen oranla ayrı ayrı vergilendirilir.
+Gelir vergisi, gerçek kişilerin bir takvim yılı içinde elde ettiği kazanç ve iratlar üzerinden alınan bir vergidir. Hesaplama, gelir tutarının ilgili yılın vergi dilimlerinde hangi aralıklara denk geldiğine göre yapılır. Türkiye'de gelir vergisi artarak ilerleyen oranlı bir sisteme sahiptir. Bu sistemde gelir arttıkça uygulanan vergi oranı da yükselir. Vergi hesaplamasında yalnızca üst dilim için yüksek oran uygulanmaz; gelir her dilime karşılık gelen oranla ayrı ayrı vergilendirilir.
 
 Gelir vergisi hesaplama temel olarak üç adımda yapılır.
 
 ### 1. Yıllık Vergiye Tabi Gelirin Belirlenmesi
 
-Öncelikle kişinin bir yıl içinde elde ettiği gelir toplanır ve varsa gelirden düşülebilecek giderler, istisnalar veya indirimler çıkarılır. Elde edilen sonuç **vergiye tabi yıllık gelir** olur. Serbest meslek erbabı için gerçek usul veya götürü usul hükümleri, ücretliler için ücret istisnaları ve SGK kesintileri gibi unsurlar bu aşamada dikkate alınır.
+Öncelikle kişinin bir yıl içinde elde ettiği gelir toplanır ve varsa gelirden düşülebilecek giderler, istisnalar veya indirimler çıkarılır. Elde edilen sonuç vergiye tabi yıllık gelir olur. Serbest meslek erbabı için gerçek usul veya götürü usul hükümleri, ücretliler için ücret istisnaları ve SGK kesintileri gibi unsurlar bu aşamada dikkate alınır.
 
 ### 2. Gelirin Vergi Dilimlerine Göre Dağıtılması
 
@@ -181,4 +181,4 @@ Hesaplama süreci:
    20.000 × 0.27 = 5.400 TL
 
 Toplam vergi:
-16.500 + 24.000 + 5.400 = **45.900 TL**
+16.500 + 24.000 + 5.400 = 45.900 TL

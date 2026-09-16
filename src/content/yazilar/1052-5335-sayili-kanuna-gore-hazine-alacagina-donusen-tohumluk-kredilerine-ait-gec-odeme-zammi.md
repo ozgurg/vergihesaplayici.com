@@ -6,8 +6,8 @@ createdDate: 2025-09-06
 ---
 
 5335 sayılı Kanun kapsamında, çiftçilere destek amacıyla verilen bazı tohumluk kredileri zamanında ödenmediğinde
-**Hazine alacağına dönüşmektedir**. Bu durumda borcun vadesinde ödenmemesi halinde ek bir mali yükümlülük doğar ve **geç
-ödeme zammı** uygulanır. 1052 koduyla mevzuatta yer alan bu düzenleme, borcun gecikme süresine göre hesaplanan bir ek
+**Hazine alacağına dönüşmektedir**. Bu durumda borcun vadesinde ödenmemesi halinde ek bir mali yükümlülük doğar ve geç
+ödeme zammı uygulanır. 1052 koduyla mevzuatta yer alan bu düzenleme, borcun gecikme süresine göre hesaplanan bir ek
 tutarı ifade eder.
 
 Geç ödeme zammı, kredinin asıl borcuna eklenerek ödenmesi gereken toplam miktarı artırır. Bu uygulamanın amacı, kamu
