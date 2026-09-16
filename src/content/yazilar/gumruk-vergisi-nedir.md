@@ -2,6 +2,7 @@
 title: "Gümrük Vergisi Nedir?"
 description: "Gümrük vergisi, ithalat ve ihracatta uygulanan ve yerli üreticiyi koruyarak ticareti düzenleyen, malların değerine veya miktarına göre belirlenen vergidir."
 createdDate: 2023-04-27
+updatedDate: 2026-09-16
 ---
 
 **Gümrük vergisi**, bir ülkenin sınırları içine giren veya çıkan mallara uygulanan bir vergidir. Bu vergi, ülkeler
@@ -15,5 +16,6 @@ korumak, dışa bağımlılığı azaltmak ve yerel işgücünü desteklemek iç
 Bir ülkenin ihraç ettiği mallar da gümrük vergisine tabi olabilir. Ancak, birçok ülke ihracatı teşvik etmek için
 gümrük vergilerinden muafiyetler veya vergi iadeleri gibi teşvikler sunar.
 
-Gümrük vergileri, ülkeler arasındaki ticarete etki eden önemli bir faktördür ve uluslararası ticaret politikalarının
-temelini oluşturur.
+Gümrük vergileri, ülkeler arasındaki ticarete etki eden önemli bir faktördür ve uluslararası ticaret politikalarının temelini oluşturur.
+
+Yurt dışından satın aldığınız ürünlerin gümrük vergisi, ÖTV ve damga vergisi tutarlarını kolayca hesaplamak için <a href="/gumruk-vergisi/">Gümrük Vergisi Hesaplama</a> sayfamızı ziyaret edebilirsiniz.

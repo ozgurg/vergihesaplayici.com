@@ -13,3 +13,5 @@ hizmetin değeri arttıkça, katma değer oranına göre artar. Satıcılar, KDV
 dahil olarak belirtirler.
 
 Örneğin, Türkiye'de güncel KDV oranları %1, %10 ve %20 olarak uygulanmaktadır. Temel ihtiyaç maddeleri ve gıda ürünlerinde indirimli oranlar (%1 ve %10) uygulanırken, genel mal ve hizmet teslimleri için %20 oranı kullanılır.
+
+KDV dahil ve hariç tutarları hızlıca hesaplamak için <a href="/kdv/">KDV Hesaplama</a> sayfamızı inceleyebilirsiniz.

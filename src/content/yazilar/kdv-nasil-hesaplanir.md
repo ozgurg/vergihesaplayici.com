@@ -20,5 +20,6 @@ genellikle ürünün son kullanıcısına satıldığı zaman alınır. KDV'nin 
 Örneğin, KDV matrahı 100 TL olan bir malın KDV tutarı, %20'lik genel KDV oranıyla 100 TL x 0,20 = 20 TL olur.
 
 Bu hesaplama yöntemi, ürün veya hizmetlerin satış fiyatına KDV'nin eklenmesiyle son kullanıcıya yansıtılır. KDV,
-ürün veya hizmetin tedarik zinciri boyunca üretici, toptancı, perakendeci ve son kullanıcı tarafından ödenir. Son
-kullanıcı, KDV ödemesini yaptığı zaman, vergi dairesine beyan etmek ve ödemekle yükümlüdür.
+ürün veya hizmetin tedarik zinciri boyunca üretici, toptancı, perakendeci ve son kullanıcı tarafından ödenir.
+
+Farklı oranlarla hızlıca KDV dahil ve KDV hariç tutarları hesaplamak için <a href="/kdv/">KDV Hesaplama</a> sayfamızı kullanabilirsiniz.
