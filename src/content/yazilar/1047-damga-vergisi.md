@@ -2,6 +2,7 @@
 title: "Damga Vergisi [1047]"
 description: "Damga vergisi, Türkiye'de sözleşme, belge ve çeşitli finansal işlemler üzerinden alınan, hem ticari hem de hukuki işlemleri kapsayan bir vergi türüdür."
 createdDate: 2023-05-17
+updatedDate: 2026-09-16
 ---
 
 Damga vergisi, Türkiye'de finansal ve ticari işlemler üzerinde uygulanan bir vergi türüdür. İşlemlerin belgelenmesi
@@ -13,10 +14,10 @@ makbuzlar, taşıma belgeleri gibi birçok belge damga vergisine tabidir. Ayrıc
 ihale belgeleri gibi resmi belgeler de damga vergisi kapsamındadır.
 
 Damga vergisinin oranları belirli bir tutar üzerinden hesaplanır. Her belge ve işlem için farklı bir oran uygulanabilir.
-Örneğin, ticari senetlerde damga vergisi oranı belirli bir yüzde üzerinden hesaplanırken, kira sözleşmelerinde **sabit
-bir miktar** üzerinden tahsil edilir.
+Örneğin, ticari senetlerde damga vergisi oranı belirli bir yüzde üzerinden hesaplanırken, kira sözleşmelerinde sabit
+bir miktar üzerinden tahsil edilir.
 
-Damga vergisi, işlemlerin **hukuki geçerliliğini sağlama** amacıyla da kullanılır. Bir belgenin damgalanmamış olması
+Damga vergisi, işlemlerin hukuki geçerliliğini sağlama amacıyla da kullanılır. Bir belgenin damgalanmamış olması
 veya damga vergisi ödenmemesi, o belgenin hukuki olarak geçerli kabul edilmemesine ve delil olarak kullanılamamasına
 neden olabilir.
 
@@ -24,10 +25,19 @@ Damga vergisi, vergi daireleri veya yetkili bankalar aracılığıyla ödenir. �
 edilmesi sırasında damga vergisi tahsil edilir ve vergi mükellefi tarafından ödenir. Vergi mükellefi, belgelerin
 düzenlenmesi veya işlemlerin gerçekleştirilmesi sırasında damga vergisini hesaplamak ve ödemekle yükümlüdür.
 
-Damga vergisi, Türkiye'de vergi sisteminin **önemli bir unsuru** olarak yer alır. Devletin gelir kaynaklarından biri
+Damga vergisi, Türkiye'de vergi sisteminin önemli bir unsuru olarak yer alır. Devletin gelir kaynaklarından biri
 olan damga vergisi, işlemlerin kaydedilmesini ve hukuki güvence sağlanmasını amaçlar. Verginin oranları ve uygulama
 alanları yasalarla belirlenir ve değişebilir.
 
 Sonuç olarak, damga vergisi Türkiye'de çeşitli belgeler ve işlemler üzerinden tahsil edilen bir vergi türüdür.
-İşlemlerin resmiyet kazanması ve hukuki geçerliliğin sağlanması için **önemli bir role** sahiptir. Verginin ödenmesi,
+İşlemlerin resmiyet kazanması ve hukuki geçerliliğin sağlanması için önemli bir role sahiptir. Verginin ödenmesi,
 vergi mükelleflerinin sorumluluğundadır ve vergi daireleri veya yetkili bankalar aracılığıyla gerçekleştirilir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Damga Vergisi (Beyannameli Damga Vergisi Mükellefi) [0040]](/yazilar/0040-damga-vergisi-beyannameli-damga-vergisi-mukellefi/)
+* [Tevkifattan Alınan Damga Vergisi [1046]](/yazilar/1046-tevkifattan-alinan-damga-vergisi/)
+* [5035 Sayılı Kanuna Göre Damga Vergisi [1048]](/yazilar/1048-5035-sayili-kanuna-gore-damga-vergisi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

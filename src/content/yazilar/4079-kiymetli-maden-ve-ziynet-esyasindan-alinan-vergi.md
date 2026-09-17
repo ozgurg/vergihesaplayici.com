@@ -2,6 +2,7 @@
 title: "Kıymetli Maden ve Ziynet Eşyasından Alınan Vergi [4079]"
 description: "Türkiye'de kıymetli madenler ve ziynet eşyaları, vergi mevzuatı çerçevesinde belirli oranlarda vergilendirilmektedir."
 createdDate: 2023-06-06
+updatedDate: 2026-09-16
 ---
 
 Türkiye'de kıymetli madenler ve ziynet eşyaları, vergi mevzuatı çerçevesinde belirli oranlarda vergilendirilmektedir. Bu
@@ -13,7 +14,7 @@ vergilere dair bazı önemli noktalar:
    Kuyumculuk sektöründe faaliyet gösteren işletmeler, bu vergiyi satış anında tahsil ederek devlete ödemekle
    yükümlüdür.
 
-2. Ticari amaçla kıymetli maden ve ziynet eşyası ithalatında alınan **<a href="/yazilar/gumruk-vergisi-nedir/">Gümrük Vergisi</a>**: Kıymetli maden ve ziynet eşyası
+2. Ticari amaçla kıymetli maden ve ziynet eşyası ithalatında alınan <a href="/yazilar/gumruk-vergisi-nedir/">Gümrük Vergisi</a>: Kıymetli maden ve ziynet eşyası
    ithalatı yapılırken gümrük vergisi uygulanır. Bu vergi, ithalatçı tarafından ödenir ve gümrük beyannamesi üzerinden
    tahsil edilir. Gümrük vergisi oranları, Türkiye'nin uyguladığı ticaret politikalarına ve dünya ticaretine yönelik
    anlaşmalara bağlı olarak değişebilir.
@@ -31,3 +32,12 @@ Türkiye'de kıymetli maden ve ziynet eşyasından alınan vergiler, hem ticari 
 etkileyen önemli bir konudur. Vergi mevzuatına uyum sağlamak, vergi ödemelerini düzenli olarak gerçekleştirmek ve vergi
 mükellefi haklarına saygı göstermek önemlidir. Bu şekilde, ülke ekonomisine katkıda bulunurken vergi yükümlülüklerini de
 yerine getirmiş olunur.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Mülga Maden Fonu [0060] Nedir? (Maden Kanunu ve Fon Tasfiyesi)](/yazilar/0060-mulga-maden-fonu/)
+* [ÖTV Nedir? (Özel Tüketim Vergisi Rehberi ve Oranlar)](/yazilar/otv-nedir/)
+* [Kaç Çeşit Vergi Vardır? (Türk Vergi Sisteminde Vergi Türleri)](/yazilar/kac-cesit-vergi-vardir/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

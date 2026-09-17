@@ -1,258 +1,99 @@
 ---
-title: "Zirai Kazanç Gelir Vergisi [0002]"
-description: "Zirai Kazanç Gelir Vergisi (0002/9004) rehberi. Vergi yöntemleri, muafiyetler, stopaj ve gerçek usul esasları. Tarım gelirlerinin vergilendirilmesi."
+title: "Zirai Kazanç Gelir Vergisi [0002] Nedir? (Çiftçi Vergilendirme Rehberi)"
+description: "0002 kodlu Zirai Kazanç Gelir Vergisi nedir? Çiftçilerin vergilendirilmesi, gerçek usul, stopaj (müstahsil makbuzu) ve tarımsal destekleme istisnası rehberi."
 createdDate: 2023-05-06
-updatedDate: 2025-11-19
+updatedDate: 2026-09-16
 ---
 
-Zirai faaliyetlerden elde edilen gelirler, Türkiye'de Gelir Vergisi Kanunu kapsamında vergilendirilen önemli gelir türlerinden biridir. Tarım sektörü, ekonominin temel taşlarından biri olarak hem üretim hacmi hem de istihdam açısından kritik bir yere sahiptir. Bu nedenle çiftçilerin, üreticilerin ve tarımsal işletme sahiplerinin vergisel yükümlülüklerini doğru anlaması büyük önem taşır. "Zirai Kazanç Gelir Vergisi (0002)" olarak bilinen bu vergi türü, sistemde "9004" koduyla ifade edilir ve tarım gelirlerinin nasıl vergilendirileceğini düzenler.
+Gelir İdaresi Başkanlığı (GİB) sisteminde **0002 vergi koduyla** tanımlanan "Zirai Kazanç Gelir Vergisi", 193 sayılı Gelir Vergisi Kanunu'na (GVK) göre tarımsal ve hayvansal üretim faaliyetlerinden kazanç sağlayan çiftçilerin ve tarım işletmelerinin vergilendirilmesinde kullanılan resmi vergi türüdür.
 
-Bu kapsamlı rehber, çiftçilerin vergilendirme süreçlerini daha iyi anlamasına yardımcı olmak, kafa karışıklığını gidermek ve pratik uygulama örnekleriyle süreci olabildiğince netleştirmek amacıyla hazırlanmıştır.
+Türkiye'de tarım sektöründe faaliyet gösteren üreticilerin büyük bir kısmı stopaj (müstahsil makbuzu kesintisi) yoluyla vergilendirilirken, belirli büyüklük ölçülerini aşan işletmeler gerçek usulde defter tutarak 0002 kodu üzerinden yıllık beyanname vermektedir.
+
+Bu rehberde; zirai kazancın tanımı, gerçek usul ile tevkifat usulü arasındaki farklar, işletme büyüklüğü ölçüleri ve güncel tarımsal vergi istisnaları ayrıntılı olarak açıklanmıştır.
 
 ---
 
 ## Zirai Kazanç Nedir?
 
-Zirai kazanç, tarım faaliyetlerinden elde edilen gelirin genel adıdır. Kanuna göre bu faaliyetler, bitkisel üretimden hayvancılığa, balıkçılıktan seracılığa kadar geniş bir alanı kapsar. Temel şart, yapılan faaliyetin ticari amaç taşıması ve düzenli biçimde gerçekleştirilmesidir.
+Gelir Vergisi Kanunu'nun 52. maddesine göre zirai kazanç; toprakta, denizde, göllerde ve nehirlerde yapılan ekim, dikim, bakım, üretme, yetiştirme ve avlama yoluyla bitki, orman, hayvan ve su ürünleri elde edilmesinden sağlanan gelirdir.
 
-### Zirai faaliyet kapsamına giren alanlar
+### Zirai Faaliyet Kapsamına Giren Alanlar
 
-Aşağıdaki üretim türleri zirai faaliyet olarak kabul edilir:
-
-* Tarla bitkileri üretimi
-* Meyvecilik, bağcılık, zeytincilik
-* Büyükbaş ve küçükbaş hayvancılık
-* Kümes hayvancılığı
-* Arıcılık
-* Su ürünleri üretimi
-* Seracılık
-* Balık çiftlikleri
-* Fidan ve tohum üretimi
-* Çiçekçilik
-
-Bu faaliyetleri gerçekleştiren herkes, kazanç durumuna göre zirai kazanç mükellefi sayılabilir.
+* Tarla bitkileri, tahıl ve bakliyat üretimi
+* Meyvecilik, bağcılık, zeytincilik ve sera üretimi
+* Büyükbaş, küçükbaş ve kümes hayvancılığı
+* Arıcılık ve ipek böcekçiliği
+* Kültür balıkçılığı ve su ürünleri yetiştiriciliği
+* Fidan, fide ve tohumculuk
 
 ---
 
 ## Zirai Kazançta Vergilendirme Yöntemleri
 
-Türkiye'de zirai kazançların vergilendirilmesi iki temel yöntemle yapılır:
+Gelir Vergisi Kanunu'nda çiftçilerin vergilendirilmesi iki ana usule ayrılmıştır:
 
-1. **Gerçek usulde vergilendirme**
-2. **Stopaj yoluyla (tevkifat) vergilendirme**
+### 1. Stopaj (Tevkifat) Yoluyla Vergilendirme (Küçük Çiftçiler)
 
-Her çiftçi bu iki yöntemden yalnızca birine tabidir; ikisi birden uygulanmaz.
+Türkiye'deki çiftçilerin büyük çoğunluğu bu usule tabidir. GVK'nın 53 ve 54. maddelerinde belirtilen işletme büyüklüğü sınırlarını aşmayan küçük çiftçiler:
 
-Aşağıda bu yöntemler ayrıntılı biçimde açıklanmıştır.
+* Defter tutmazlar.
+* Yıllık gelir vergisi beyannamesi vermezler.
+* Ürünlerini tüccarlara, fabrikalara, kooperatiflere veya hallere sattıklarında alıcı tarafından **Müstahsil Makbuzu** düzenlenir.
+* Alıcı, GVK'nın 94/11. maddesi kapsamında ürün bedelinden stopaj keserek devlete öder. Bu kesinti çiftçinin nihai vergisi yerine geçer.
 
----
+#### Zirai Stopaj Oranları (GVK 94/11)
 
-## Gerçek Usulde Vergilendirme
-
-Gerçek usul, daha çok büyük ölçekli veya organizasyon yapısı gelişmiş tarımsal işletmeler için geçerli olan yöntemdir. Bu yöntemde çiftçi, ticari işletme sahibi gibi defter tutar, gelir ve giderlerini kayıt altına alır ve yıl sonunda beyanname verir.
-
-### Kimler gerçek usule tabi olur?
-
-Aşağıdaki kriterlerden bir veya birkaçına sahip olanlar gerçek usulde vergilendirilir:
-
-* Belirli satış veya üretim miktarlarının üzerinde olanlar (Bakanlıkça belirlenen sınırlar)
-* Tarım işletmesini bir şirket çatısı altında yürütenler
-* Çiftçilik faaliyetlerine ek olarak ticari faaliyetler yapanlar
-* Orta veya büyük ölçekli tarımsal işletme sahipleri
-
-### Gerçek usulde vergilendirilen çiftçi neleri bildirmek zorundadır?
-
-Gerçek usul mükellefleri:
-
-* İşletme hesabı defteri veya bilanço tutar,
-* Zirai kazançlarına ilişkin giderleri belgelemek zorundadır,
-* Yıl sonunda "Gelir Vergisi Beyannamesi" verir,
-* Gerekirse geçici vergi öder.
-
-Gelir vergisi tarifesi, diğer ticari kazançlarda olduğu gibi dilimli bir yapıdadır.
-
-### Gerçek usul mükellefleri için örnek hesaplama
-
-Bir çiftçinin yıl boyunca:
-
-* Gelir: 1.200.000 TL
-* Belgelendirilebilir giderler: 600.000 TL
-
-Net zirai kazanç:
-1.200.000 TL - 600.000 TL = 600.000 TL
-
-Bu tutar, ilgili yılın gelir vergisi tarifesine göre vergilendirilir.
+| Ürün ve İşlem Türü | Ticaret Borsasında Tescilli | Borsaya Tescil Edilmemiş |
+| :--- | :--- | :--- |
+| **Bitkisel Ürünler** | %1 | %2 |
+| **Hayvansal Ürünler** | %1 | %2 |
+| **Canlı Hayvan Satışları** | %1 | %2 |
+| **Orman ve Ağaç Ürünleri** | %2 | %4 |
+| **Diğer Zirai Ürünler** | %2 | %4 |
 
 ---
 
-## Stopaj Yoluyla Vergilendirme
+### 2. Gerçek Usulde Vergilendirme [0002]
 
-Stopaj usulü, küçük ve orta ölçekli çiftçilerin çoğunu kapsayan basit vergilendirme yöntemidir. Bu yöntemde çiftçi beyanname vermez. Üretici ürününü sattığında, ürünün alıcısı (hal, fabrika, tüccar veya kurum) belirli bir oranda vergi kesintisi yapar ve vergi dairesine yatırır.
+GVK'nın 54. maddesinde yer alan işletme büyüklüğü ölçülerini aşan veya 53. madde gereği belirli motorlu tarım araçlarına sahip olan çiftçiler **gerçek usulde** zirai kazanç mükellefi olurlar.
 
-### Stopaj hangi oranlarda uygulanır?
+#### Kimler Gerçek Usule Tabi Olmak Zorundadır?
 
-Stopaj oranları, ürünün niteliğine göre değişebilir. Genel olarak:
+1. **İşletme Büyüklüğü Ölçülerini Aşanlar:** Kanunda her ürün türü için belirlenen arazi büyüklüğü (örneğin tahıl ekiminde belirli dönüm sınırı, zeytin ağacı sayısı, büyükbaş veya küçükbaş hayvan adedi) sınırlarını geçenler.
+2. **Motorlu Araç Sahipleri:** Bir adet biçerdövere veya birden fazla traktöre sahip olan tarımsal işletmeler.
+3. **Kendi İsteğiyle Seçenler:** Büyüklük şartlarını taşımasa dahi yazılı olarak vergi dairesine başvurup gerçek usulü tercih eden çiftçiler.
 
-* Çiftçinin ziraat odası kaydı varsa: Genellikle daha düşük oranlar
-* Kayıt yoksa: Daha yüksek oranlar
+#### Gerçek Usul Mükelleflerinin Yükümlülükleri
 
-Örneğin:
-
-* Buğday, arpa, mısır gibi ürünlerde sabit kesinti oranları bulunur.
-* Süt, yumurta gibi ürünlerde farklı yüzdeler geçerlidir.
-* Hayvancılık ürünlerinde ayrıca nihai alıcı türü önemlidir.
-
-Kesinti oranları yıllara göre değişebildiği için güncel tebliğler takip edilmelidir.
-
-### Stopaj yolunda çiftçi ne yapar?
-
-Bu yöntemde çiftçi:
-
-* Defter tutmaz,
-* Beyanname vermez,
-* Vergiyi kendisi ödemez, yalnızca aldığı ürün bedeli içinden kesintiye razı olur.
-
-Bu yönüyle bürokratik yükü oldukça azdır.
+* **Defter Tutma:** Çiftçi İşletme Defteri veya Bilanço esasına göre defter tutarlar (Defter-Beyan Sistemi üzerinden).
+* **Fatura ve Belge Düzeni:** Satışlarında fatura düzenler, giderlerini fatura ve belgelerle tevsik ederler.
+* **Yıllık Beyanname:** Elde ettikleri safi zirai kazancı (Zirai Hasılat - Zirai Giderler) takip eden yılın Mart ayında Yıllık Gelir Vergisi Beyannamesi ile beyan ederler.
+* **Tahakkuk Kodu:** Bu beyan sonucunda vergi dairesi tarafından **0002 Zirai Kazanç Gelir Vergisi** kodu altında vergi tahakkuk ettirilir. Yıl içinde müstahsil makbuzuyla kesilen stopajlar beyanname üzerinden mahsup edilir.
 
 ---
 
-## Zirai Kazançta Muafiyetler ve İstisnalar
+## Tarımsal Destekleme Ödemelerinde Gelir Vergisi İstisnası (GVK Madde 20/C)
 
-Gelir Vergisi Kanunu bazı zirai faaliyetleri vergiden muaf tutabilir. Bu muafiyetler hem küçük üreticiyi korumak hem de tarım sektörünü desteklemek amacıyla geliştirilmiştir.
+7338 sayılı Kanun ile Türk vergi sistemine getirilen en önemli reformlardan biri tarımsal destekleme ödemelerine ilişkindir:
 
-### Kimler muaf olabilir?
-
-Aşağıdaki faaliyetler belirli şartlarda vergiden muaftır:
-
-* Köy sınırları içinde yapılan ve belirli büyüklükleri aşmayan hayvancılık faaliyetleri
-* Aile işletmesi ölçeğindeki üretimler
-* Arıcılık ve bal üretiminin bazı türleri
-* Küçük ölçekli sebze ve meyve yetiştiriciliği
-
-Ancak muafiyet her zaman otomatik değildir. Ziraat odası kayıtları ve diğer belgeler dikkate alınır.
+* Kamu kurum ve kuruluşları (Tarım ve Orman Bakanlığı vb.) tarafından çiftçilere yapılan doğrudan gelir desteği, mazot-gübre desteği, prim desteği ve hayvancılık destek ödemeleri **gelir vergisinden tamamen istisna** edilmiştir.
+* Bu destek ödemelerinden geçmişte yapılan vergi kesintileri durdurulmuş, haksız kesilen stopajlar çiftçilere başvuru üzerine iade edilmiştir.
 
 ---
 
-## Zirai Kazanç Gelir Vergisi Kodları: 0002 ve 9004 Neyi İfade Eder?
+## Zirai Kazançta İlgili Vergi Kodları
 
-Vergi tahakkuk sistemlerinde her vergi türünün ayrı bir kodu bulunur. Zirai kazanç için kullanılan kodlar:
-
-* **Vergi adı: Zirai Kazanç Gelir Vergisi**
-* **Eski kod: 0002**
-* **Yeni kod: 9004**
-
-Bu kodlar, tahakkuk fişlerinde, beyanname sistemlerinde ve mükellef işlemlerinde görünür. Üreticiler için bu kodlar genellikle ödeme ekranlarında karşılarına çıkar.
-
-Bu sayede vergilendirme işlemleri doğru vergi türüne yönlendirilir.
+| Kod | Vergi Türü Adı | Açıklama |
+| :--- | :--- | :--- |
+| **0002** | Zirai Kazanç Gelir Vergisi | Gerçek usulde zirai kazanç mükelleflerinin yıllık beyan vergisi |
+| **0001** | Yıllık Gelir Vergisi | Ticari, zirai ve mesleki kazançların toplandığı genel gelir vergisi kodu |
+| **0003** | Gelir Vergisi Stopajı (Muhtasar) | Çiftçiden alım yapanların kestiği zirai stopajın yatırıldığı kod |
 
 ---
 
-## Zirai Kazançta Giderler Nasıl Belgelendirilir?
+## İlgili Bağlantılar ve Rehberler
 
-Gerçek usulde vergilendirilen çiftçiler için gider belgelendirme önemli bir avantaj sağlar. Çünkü belge altına alınabilen her gider, vergi matrahını düşürür.
-
-### Belgelendirilebilir gider örnekleri
-
-* Tohum, fide, gübre, yem
-* Tarım ilaçları
-* Su ve elektrik giderleri
-* Mazot ve tarım makineleri giderleri
-* İşçilik ve işletme giderleri
-* Amortisman (traktör, ekipman vb.)
-
-Bu giderlerin faturalı olması zorunludur.
-
-### Gider belgelendirmenin avantajı
-
-Örneğin:
-
-Bir çiftçi 800.000 TL gelir elde etti ancak giderleri 500.000 TL olarak belgelendirilebiliyorsa, vergi yalnızca 300.000 TL üzerinden hesaplanır.
-
-Bu nedenle gider takibi, vergi yükünü ciddi ölçüde azaltır.
-
----
-
-## Zirai Kazançta Stopaj Kesintisinin Belgeye Yansıması
-
-Stopaj yoluyla çalışan çiftçilerin ürün sattıklarında aldıkları belgede stopaj tutarı açıkça gösterilir. Bu belge:
-
-* Müstahsil makbuzu veya
-* Alım belgesi
-
-olarak adlandırılır.
-
-Bu belgelerde:
-
-* Brüt satış tutarı
-* Kesilen stopaj
-* Net ödenecek tutar
-
-yer alır.
-
-Bu kesintiler yıl içinde çiftçi adına ödenmiş sayılır. Çiftçinin ekstra bir ödeme yapması gerekmez.
-
----
-
-## Zirai Kazanç Vergisinde KDV Uygulaması
-
-Tarımsal faaliyetlerde Katma Değer Vergisi (KDV) uygulaması ürün türüne göre değişir. Bazı ürünlerde düşük oranlar uygulanırken bazı durumlarda KDV istisnası vardır.
-
-Örneğin:
-
-* Süt ve yumurta gibi temel ürünlerde düşük KDV oranları bulunur.
-* Canlı hayvan satışında farklı oranlar uygulanır.
-* Bazı ürünlerde KDV tevkifatı söz konusudur.
-
-KDV mükellefi olmayan çiftçiler için alıcı tarafından ödenen KDV, çiftçiyi doğrudan etkilemez.
-
----
-
-## Gerçek Usul ile Stopaj Usulü Arasındaki Farklar
-
-Aşağıdaki tablo temel farkları özetler:
-
-| Özellik              | Gerçek Usul           | Stopaj Usulü             |
-|----------------------|-----------------------|--------------------------|
-| Defter tutma         | Zorunlu               | Yok                      |
-| Beyanname            | Verilir               | Verilmez                 |
-| Vergi ödeme          | Mükellef tarafından   | Alıcı tarafından kesinti |
-| Gider yazma          | Mümkün                | Mümkün değil             |
-| Uygun olduğu işletme | Orta ve büyük ölçekli | Küçük üreticiler         |
-
----
-
-## Zirai Kazançta Sık Yapılan Hatalar
-
-Çiftçilerin en çok karıştırdığı noktalar arasında kayıt zorunluluğu ve muafiyetler bulunur. Aşağıda sık yapılan hatalar özetlenmiştir:
-
-* Ziraat odası kaydı yapılmaması
-* Stopaj belgesinin saklanmaması
-* Gerçek usule tabi olduğu halde defter tutulmaması
-* Gelir-gider belgelerinin eksik kaydedilmesi
-* Muafiyet şartlarının yanlış anlaşılması
-
-Bu hatalar, ciddi vergi cezalarına neden olabilir.
-
----
-
-## Uygulamalı Örnek: Koyun Yetiştiriciliği Yapan Bir İşletme
-
-Örneğin:
-
-Ali Bey küçükbaş hayvancılık faaliyeti yürütmekte ve üretimini yerel bir süt fabrikasına satmaktadır. Ziraat odası kaydı vardır ve stopaj usulüne tabidir.
-
-Fabrika, her alımda:
-
-* Brüt tutarın %4'ü stopaj olarak keser,
-* Kesintiyi vergi dairesine yatırır,
-* Ali Bey'e net tutarı öder.
-
-Ali Bey'in ayrıca beyanname vermesine gerek yoktur.
-
-Ancak Ali Bey üretimini genişletip yıllık satış tutarını belirli sınırların üzerine çıkarırsa, gerçek usule geçmesi gerekebilir.
-
----
-
-Zirai kazançların vergilendirilmesi, çiftçiler için karmaşık görünse de doğru bilgiyle oldukça yönetilebilir bir süreçtir. "Zirai Kazanç Gelir Vergisi (0002/9004)" kapsamındaki yükümlülüklerin bilinmesi, hem cezai riskleri ortadan kaldırır hem de işletmenin daha düzenli çalışmasını sağlar.
-
-Gerçek usul ve stopaj usulü arasındaki farkların net anlaşılması, gider takibinin doğru yapılması ve belgelerin düzenli saklanması, çiftçilerin ekonomik gücünü artıran adımlardır.
+* [Tüm Vergi Türleri ve Kodları Listesi](/yazilar/vergi-turleri/)
+* [Yıllık Gelir Vergisi [0001]](/yazilar/0001-yillik-gelir-vergisi/)
+* [Gelir Vergisi Stopajı (Muhtasar) [0003]](/yazilar/0003-gelir-vergisi-stopaji-muhtasar-beyanname/)
+* [Gelir Vergisi Dilimleri ve Tarifesi](/yazilar/vergi-dilimleri/)

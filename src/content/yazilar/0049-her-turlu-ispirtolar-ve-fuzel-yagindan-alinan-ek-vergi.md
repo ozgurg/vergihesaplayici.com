@@ -2,31 +2,41 @@
 title: "Her Türlü İspirtolar ve Füzel Yağından Alınan Ek Vergi [0049]"
 description: "Türkiye'de her türlü ispirtolar ve füzel yağı gibi akaryakıt türlerinden alınan ek vergiler, hükümetin vergi politikaları arasında yer almaktadır."
 createdDate: 2023-05-14
+updatedDate: 2026-09-16
 ---
 
-Türkiye'de her türlü **ispirtolar** ve **füzel yağı** gibi akaryakıt türlerinden alınan **ek vergiler**, hükümetin vergi
+Türkiye'de her türlü **ispirtolar** ve füzel yağı gibi akaryakıt türlerinden alınan ek vergiler, hükümetin vergi
 politikaları arasında yer almaktadır. Bu vergiler, Türkiye'de devletin gelirini artırmak amacıyla uygulanmaktadır.
-**Ispirtolar** ve **füzel yağı** gibi akaryakıt türleri, yüksek vergi oranlarına sahip olduğundan, bu vergiler önemli bir
+Ispirtolar ve füzel yağı gibi akaryakıt türleri, yüksek vergi oranlarına sahip olduğundan, bu vergiler önemli bir
 vergi kaynağıdır.
 
-**Ispirtolar**, alkollü içkilerin hammaddelerinden biridir. Türkiye'de alkol satışına sıkı sıkıya kontrol edilmektedir.
-Bu sebeple, üretim aşamasında vergi uygulaması yapılmaktadır. **Ispirtoların** üretimi sırasında alkol oranına göre
-değişen oranlarda **özel tüketim vergisi (ÖTV)** alınmaktadır. Özellikle yüksek alkollü içkilerde ÖTV oranları daha
+Ispirtolar, alkollü içkilerin hammaddelerinden biridir. Türkiye'de alkol satışına sıkı sıkıya kontrol edilmektedir.
+Bu sebeple, üretim aşamasında vergi uygulaması yapılmaktadır. Ispirtoların üretimi sırasında alkol oranına göre
+değişen oranlarda özel tüketim vergisi (ÖTV) alınmaktadır. Özellikle yüksek alkollü içkilerde ÖTV oranları daha
 yüksek olmaktadır.
 
-**Füzel yağı** ise, genellikle endüstriyel amaçlar için kullanılan bir akaryakıt türüdür. Türkiye'de de özellikle
-denizcilik sektörü ve gemi yakıtlarında kullanılmaktadır. **Füzel yağına** uygulanan ek <a href="/yazilar/vergi-orani-nasil-hesaplanir/">vergi oranı</a>, diğer akaryakıtlara
+Füzel yağı ise, genellikle endüstriyel amaçlar için kullanılan bir akaryakıt türüdür. Türkiye'de de özellikle
+denizcilik sektörü ve gemi yakıtlarında kullanılmaktadır. Füzel yağına uygulanan ek <a href="/yazilar/vergi-orani-nasil-hesaplanir/">vergi oranı</a>, diğer akaryakıtlara
 uygulanan vergi oranlarından daha yüksektir.
 
-Türkiye'de akaryakıt türlerinden alınan vergiler, **ÖTV** ve **Özel İletişim Vergisi (ÖİV)** olarak iki ayrı kategoride
-incelenir. **ÖTV**, alkollü içkiler, tütün mamulleri, araçlar ve petrol ürünleri gibi ürünlere uygulanırken, **ÖİV** ise
+Türkiye'de akaryakıt türlerinden alınan vergiler, ÖTV ve Özel İletişim Vergisi (ÖİV) olarak iki ayrı kategoride
+incelenir. ÖTV, alkollü içkiler, tütün mamulleri, araçlar ve petrol ürünleri gibi ürünlere uygulanırken, ÖİV ise
 cep telefonu, internet ve benzeri iletişim hizmetlerine uygulanır.
 
 Üreticiler ve tüketiciler için vergi oranları sürekli olarak değişebilir. Bu vergi oranları, ekonomik koşullara, devlet
 bütçesine ve vergi politikalarına bağlı olarak düzenli olarak revize edilebilir. Vergi oranlarındaki değişimler, hem
 üreticilerin hem de tüketicilerin fiyatlandırma stratejilerinde değişiklik yapmasına neden olabilir.
 
-Sonuç olarak, Türkiye'de her türlü **ispirtolar** ve **füzel yağı** gibi **akaryakıt** türlerinden alınan **ek vergiler**,
+Sonuç olarak, Türkiye'de her türlü ispirtolar ve füzel yağı gibi akaryakıt türlerinden alınan ek vergiler,
 devletin vergi politikaları arasında yer almaktadır. Bu vergiler, devletin gelirini artırmak amacıyla
 uygulanmaktadır. Vergi oranları, ekonomik koşullara, devlet bütçesine ve vergi politikalarına bağlı olarak sürekli
 olarak değişebilir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Alkollü İçeceklere İlişkin Özel Tüketim Vergisi [0075]](/yazilar/0075-alkollu-iceceklere-iliskin-ozel-tuketim-vergisi/)
+* [Her Türlü Alkollü İçkilere İlişkin Ek Vergi [0092]](/yazilar/0092-her-turlu-alkollu-ickilere-iliskin-ek-vergi/)
+* [ÖTV Nedir? (Özel Tüketim Vergisi Rehberi ve Oranlar)](/yazilar/otv-nedir/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

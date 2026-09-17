@@ -2,29 +2,39 @@
 title: "1475 Sayılı İş Kanununa Bağlı Para Cezası [9306]"
 description: "İş hayatında, hem işverenlerin hem de çalışanların uyması gereken yasal ve etik kurallar, düzenli ve adil bir çalışma ortamının temelini oluşturur."
 createdDate: 2023-07-19
+updatedDate: 2026-09-16
 ---
 
-**İş hayatında**, **işverenlerin** ve **çalışanların** belirli kurallara uyması gerekmektedir. Türkiye'de, çalışan
-**haklarını** ve **iş güvenliğini** korumak amacıyla çeşitli **yasalar** ve **düzenlemeler** bulunmaktadır. Bu
-düzenlemelerden biri de **1475 Sayılı İş Kanunu**'dur. İş Kanunu, çalışanların korunmasını sağlamak için bir dizi
-**yükümlülük** getirmekte ve bu yükümlülüklere uymayanlara **para cezası** verilmesini öngörmektedir.
+**İş hayatında**, işverenlerin ve çalışanların belirli kurallara uyması gerekmektedir. Türkiye'de, çalışan
+haklarını ve iş güvenliğini korumak amacıyla çeşitli yasalar ve düzenlemeler bulunmaktadır. Bu
+düzenlemelerden biri de 1475 Sayılı İş Kanunu'dur. İş Kanunu, çalışanların korunmasını sağlamak için bir dizi
+yükümlülük getirmekte ve bu yükümlülüklere uymayanlara para cezası verilmesini öngörmektedir.
 
-İş Kanunu'na göre, işverenler çalışanlarına karşı bazı **temel sorumlulukları** yerine getirmekle yükümlüdür. Bunlar
-arasında **çalışma saatlerinin düzenlenmesi**, **ücretlerin zamanında ödenmesi**, **iş güvenliği önlemlerinin alınması**
-ve **çalışma koşullarının sağlanması** gibi konular bulunmaktadır. İşverenler, bu yükümlülükleri ihlal ederek
-çalışanların haklarını çiğnerlerse, İş Kanunu gereği **para cezası**yla karşı karşıya kalabilirler.
+İş Kanunu'na göre, işverenler çalışanlarına karşı bazı temel sorumlulukları yerine getirmekle yükümlüdür. Bunlar
+arasında çalışma saatlerinin düzenlenmesi, ücretlerin zamanında ödenmesi, iş güvenliği önlemlerinin alınması
+ve çalışma koşullarının sağlanması gibi konular bulunmaktadır. İşverenler, bu yükümlülükleri ihlal ederek
+çalışanların haklarını çiğnerlerse, İş Kanunu gereği para cezasıyla karşı karşıya kalabilirler.
 
-**1475 Sayılı İş Kanunu**, para cezalarını belirlemek için bir tablo sunmaktadır. Bu tablo, işverenlerin ihlal ettikleri
-maddelere göre cezaların miktarını belirlemektedir. Örneğin, işverenlerin işçilere **düşük ücret** ödemesi durumunda,
-belirli bir miktar ceza ödemeleri gerekmektedir. Aynı şekilde, iş güvenliği önlemlerini almayan işverenler de **cezai
-yaptırıma** tabi tutulmaktadır.
+1475 Sayılı İş Kanunu, para cezalarını belirlemek için bir tablo sunmaktadır. Bu tablo, işverenlerin ihlal ettikleri
+maddelere göre cezaların miktarını belirlemektedir. Örneğin, işverenlerin işçilere düşük ücret ödemesi durumunda,
+belirli bir miktar ceza ödemeleri gerekmektedir. Aynı şekilde, iş güvenliği önlemlerini almayan işverenler de cezai
+yaptırıma tabi tutulmaktadır.
 
-İş Kanunu'na göre, **para cezalarının** miktarı işverenin ihlalinin ciddiyetine göre değişebilir. İhlalin tekrarlanması
-durumunda cezalar artabilir ve hatta işyerinin geçici veya kalıcı olarak **kapatılması** gibi daha ciddi yaptırımlar
+İş Kanunu'na göre, para cezalarının miktarı işverenin ihlalinin ciddiyetine göre değişebilir. İhlalin tekrarlanması
+durumunda cezalar artabilir ve hatta işyerinin geçici veya kalıcı olarak kapatılması gibi daha ciddi yaptırımlar
 uygulanabilir. Bu cezaların amacı, işverenleri çalışan haklarına saygı göstermeye teşvik etmek ve iş güvenliğini
 sağlamak için gerekli önlemleri almaya zorlamaktır.
 
-Sonuç olarak, **1475 Sayılı İş Kanunu**, işverenlerin çalışan haklarına ve iş güvenliğine saygı göstermelerini sağlamak
-için önemli bir düzenlemedir. Kanuna uymayan işverenler **para cezalarıyla** karşı karşıya kalabilir ve hatta işyeri
+Sonuç olarak, 1475 Sayılı İş Kanunu, işverenlerin çalışan haklarına ve iş güvenliğine saygı göstermelerini sağlamak
+için önemli bir düzenlemedir. Kanuna uymayan işverenler para cezalarıyla karşı karşıya kalabilir ve hatta işyeri
 kapatma gibi daha ciddi yaptırımlarla karşılaşabilirler. Bu nedenle, işverenlerin İş Kanunu'ndaki yükümlülüklerini tam
 olarak yerine getirmeleri ve çalışanların haklarını korumaları büyük önem taşımaktadır.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Diğer Ücretler [0051] Nedir? (GVK 64 ve Yasal Değişiklikler)](/yazilar/0051-diger-ucretler/)
+* [Gelir Götürü Ücret [0006]](/yazilar/0006-gelir-goturu-ucret/)
+* [5326 Sayılı Kanun Uyarınca Cumhuriyet Savcılıklarınca Verilen İdari Para Cezası [9317]](/yazilar/9317-5326-sayili-kanun-uyarinca-cumhuriyet-savciliklarinca-verilen-idari-para-cezasi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

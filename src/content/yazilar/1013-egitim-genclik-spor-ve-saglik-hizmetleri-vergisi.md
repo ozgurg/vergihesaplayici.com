@@ -2,15 +2,16 @@
 title: "Eğitim, Gençlik, Spor ve Sağlık Hizmetleri Vergisi [1013]"
 description: "Türkiye'de EGSHV, eğitim, gençlik, spor ve sağlık hizmetlerini finanse ederek altyapıyı güçlendirir ve hizmet kalitesini artırır."
 createdDate: 2023-05-18
+updatedDate: 2026-09-16
 ---
 
 Türkiye, kamu hizmetlerini finanse etmek için çeşitli vergi türlerine başvurmaktadır. Bu vergiler arasında **eğitim**,
-**gençlik**, **spor** ve **sağlık hizmetleri**ni desteklemek amacıyla uygulanan özel bir vergi türü bulunmaktadır. Bu
-makalede, Türkiye'de **Eğitim, Gençlik, Spor ve Sağlık Hizmetleri Vergisi** hakkında detaylı bilgilere yer vereceğiz.
+gençlik, spor ve sağlık hizmetlerini desteklemek amacıyla uygulanan özel bir vergi türü bulunmaktadır. Bu
+makalede, Türkiye'de Eğitim, Gençlik, Spor ve Sağlık Hizmetleri Vergisi hakkında detaylı bilgilere yer vereceğiz.
 
 ## Eğitim, Gençlik, Spor ve Sağlık Hizmetleri Vergisi Nedir?
 
-**Eğitim**, **Gençlik**, **Spor** ve **Sağlık Hizmetleri Vergisi** (EGSHV), Türkiye'de 2002 yılında kabul edilen ve 4736
+Eğitim, Gençlik, Spor ve Sağlık Hizmetleri Vergisi (EGSHV), Türkiye'de 2002 yılında kabul edilen ve 4736
 sayılı Kanun ile yürürlüğe giren bir vergi türüdür. Bu vergi, eğitim, gençlik, spor ve sağlık hizmetlerinin finansmanına
 katkıda bulunmayı amaçlamaktadır. EGSHV, harçlar ve vergiler genel bütçesi dışında ayrı bir fondan yönetilmektedir.
 
@@ -20,11 +21,11 @@ verginin gelirleri, eğitim, gençlik, spor ve sağlık alanlarındaki projeleri
 
 ## EGSHV'nin Amacı ve Kapsamı
 
-**EGSHV'nin** temel amacı, eğitim, gençlik, spor ve sağlık hizmetlerinin geliştirilmesine ve iyileştirilmesine destek
+EGSHV'nin temel amacı, eğitim, gençlik, spor ve sağlık hizmetlerinin geliştirilmesine ve iyileştirilmesine destek
 sağlamaktır. Bu vergiyle elde edilen kaynaklar, bu alanlardaki ihtiyaçları karşılamak, altyapıyı güçlendirmek ve hizmet
 kalitesini artırmak için kullanılmaktadır.
 
-**EGSHV'nin** kapsamı oldukça geniştir. Eğitim alanında, okul öncesi eğitimden üniversiteye kadar olan tüm seviyelerdeki
+EGSHV'nin kapsamı oldukça geniştir. Eğitim alanında, okul öncesi eğitimden üniversiteye kadar olan tüm seviyelerdeki
 eğitim kurumları ve programlarını kapsamaktadır. Gençlik alanında, gençlik merkezleri, gençlik kampları, gençlik
 projeleri ve gençlik odaklı faaliyetleri içermektedir. Spor alanında, spor tesislerinin yapımı, spor kulüplerine maddi
 destek, sporcu yetiştirme projeleri gibi alanlarda kullanılmaktadır. Sağlık hizmetleri alanında ise hastaneler, sağlık
@@ -32,13 +33,23 @@ merkezleri, sağlık projeleri ve sağlık personeli eğitimi gibi konulara yön
 
 ## EGSHV'nin Önemi
 
-**EGSHV**, Türkiye'de eğitim, gençlik, spor ve sağlık hizmetlerinin geliştirilmesi için önemli bir finansman kaynağıdır.
+EGSHV, Türkiye'de eğitim, gençlik, spor ve sağlık hizmetlerinin geliştirilmesi için önemli bir finansman kaynağıdır.
 Bu vergi, kamu kaynaklarının bu alanlara yönlendirilmesini sağlayarak hizmet kalitesinin artırılmasına ve vatandaşların
-bu alanlardan daha iyi faydalanmasına katkıda bulunur. Ayrıca, **EGSHV**'nin sağladığı kaynaklarla altyapı ve tesislerin
+bu alanlardan daha iyi faydalanmasına katkıda bulunur. Ayrıca, EGSHV'nin sağladığı kaynaklarla altyapı ve tesislerin
 iyileştirilmesi, eğitim ve sağlık personelinin eğitimi gibi alanlarda ilerleme kaydedilmesi hedeflenmektedir.
 
-Türkiye'de **Eğitim, Gençlik, Spor ve Sağlık Hizmetleri Vergisi**, eğitim, gençlik, spor ve sağlık alanlarının
+Türkiye'de Eğitim, Gençlik, Spor ve Sağlık Hizmetleri Vergisi, eğitim, gençlik, spor ve sağlık alanlarının
 finansmanına katkıda bulunmayı hedefleyen önemli bir vergi türüdür. Bu vergi, kamu kaynaklarının bu alanlara
 yönlendirilmesini sağlayarak hizmet kalitesini artırmayı ve vatandaşların bu hizmetlerden daha iyi faydalanmasını
-amaçlar. **EGSHV**'nin sağladığı kaynaklarla Türkiye'de eğitim, gençlik, spor ve sağlık hizmetlerinin geliştirilmesi ve
+amaçlar. EGSHV'nin sağladığı kaynaklarla Türkiye'de eğitim, gençlik, spor ve sağlık hizmetlerinin geliştirilmesi ve
 iyileştirilmesi hedeflenmektedir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Eğitime Katkı Payı [1042]](/yazilar/1042-egitime-katki-payi/)
+* [Özel İşlem Vergisi [1043]](/yazilar/1043-ozel-islem-vergisi/)
+* [5035 RTÜK Eğitime Katkı Payı [4042]](/yazilar/4042-5035-rtuk-egitime-katki-payi/)
+* [Kaldırılan Vergi Artıkları [9099]](/yazilar/9099-kaldirilan-vergi-artiklari/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

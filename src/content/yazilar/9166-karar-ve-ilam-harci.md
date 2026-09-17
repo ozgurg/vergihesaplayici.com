@@ -2,6 +2,7 @@
 title: "Karar ve İlam Harcı [9166]"
 description: "Karar ve İlam Harcı 9166 kodunun kapsamını, yükümlülükleri, hesaplama yöntemlerini ve uygulamadaki örnekleri anlatan anlaşılır rehber."
 createdDate: 2025-11-21
+updatedDate: 2026-09-16
 ---
 
 ## Karar ve İlam Harcı Nedir?
@@ -273,3 +274,12 @@ Karar ve İlam Harcı [9166], mahkemeler tarafından verilen hükümlerin resmil
 Harcın zamanında ve doğru tutarda ödenmesi, kararın kesinleşmesi ve icra sürecinin başlatılması için zorunludur. Yanlış hesaplama, karışan harç türleri veya gecikmeler davanın ilerleyişini doğrudan etkiler. Gerek bireysel davalarda gerekse kurumsal süreçlerde, Karar ve İlam Harcı hakkında bilgi sahibi olmak, hukuki planlamayı ve bütçe yönetimini kolaylaştırır.
 
 Okuyucuların, Karar ve İlam Harcı'nı doğru şekilde anlayarak davalarını daha bilinçli yönetmesi mümkündür. Bu bilgileri kendi süreçlerine uyarlamak, olası mali riskleri azaltacak ve hukuki sürecin daha kontrollü şekilde yürütülmesine katkı sağlayacaktır.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Karar ve İlam Harcı Nedir?](/yazilar/karar-ve-ilam-harci-nedir/)
+* [Vergi Yargı Harçları [1067]](/yazilar/1067-vergi-yargi-harclari/)
+* [Kadastro Harçları [9162]](/yazilar/9162-kadastro-harclari/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

@@ -2,7 +2,7 @@
 title: "Vergi Dilimleri"
 description: "Türkiye gelir vergisi dilimleri, oranları ve geçmiş yıllara göre yaşanan değişimleri ayrıntılı şekilde ele alan, güncel bilgiler içeren kapsamlı bir rehber."
 createdDate: 2025-12-04
-updatedDate: 2025-12-31
+updatedDate: 2026-09-16
 ---
 
 Türkiye'de gelir vergisi dilimleri, her yıl milyonlarca çalışanı, işvereni ve serbest meslek sahibini etkileyen temel bir vergi unsurudur. Gelir vergisinin hangi oranda uygulanacağını belirleyen bu dilimler, yıllık kazanca göre değişir ve her yıl güncellenir. Bu nedenle Türkiye gelir vergisi dilimleri, bordro hesaplaması yapanlar, gelir vergisi mükellefleri ve vergi yükünü merak eden herkes tarafından yoğun şekilde araştırılan bir konudur. Bu yazıda, **Türkiye gelir vergisi dilimleri nedir, nasıl belirlenir ve yıllara göre nasıl değişmiştir** sorularına yanıt bulabilir; 2026'dan 2015'e kadar tüm güncel ve geçmiş yıllara ait vergi dilimlerini ayrılmış başlıklar ve tablolar halinde inceleyebilirsiniz.
@@ -137,13 +137,13 @@ Türkiye'de gelir vergisi dilimleri, her yıl milyonlarca çalışanı, işveren
 
 ## Gelir Vergisi Nasıl Hesaplanır?
 
-Gelir vergisi, gerçek kişilerin bir takvim yılı içinde elde ettiği kazanç ve iratlar üzerinden alınan bir vergidir. Hesaplama, gelir tutarının ilgili yılın vergi dilimlerinde hangi aralıklara denk geldiğine göre yapılır. Türkiye'de gelir vergisi **artarak ilerleyen oranlı** bir sisteme sahiptir. Bu sistemde gelir arttıkça uygulanan vergi oranı da yükselir. Vergi hesaplamasında yalnızca üst dilim için yüksek oran uygulanmaz; gelir her dilime karşılık gelen oranla ayrı ayrı vergilendirilir.
+Gelir vergisi, gerçek kişilerin bir takvim yılı içinde elde ettiği kazanç ve iratlar üzerinden alınan bir vergidir. Hesaplama, gelir tutarının ilgili yılın vergi dilimlerinde hangi aralıklara denk geldiğine göre yapılır. Türkiye'de gelir vergisi artarak ilerleyen oranlı bir sisteme sahiptir. Bu sistemde gelir arttıkça uygulanan vergi oranı da yükselir. Vergi hesaplamasında yalnızca üst dilim için yüksek oran uygulanmaz; gelir her dilime karşılık gelen oranla ayrı ayrı vergilendirilir.
 
 Gelir vergisi hesaplama temel olarak üç adımda yapılır.
 
 ### 1. Yıllık Vergiye Tabi Gelirin Belirlenmesi
 
-Öncelikle kişinin bir yıl içinde elde ettiği gelir toplanır ve varsa gelirden düşülebilecek giderler, istisnalar veya indirimler çıkarılır. Elde edilen sonuç **vergiye tabi yıllık gelir** olur. Serbest meslek erbabı için gerçek usul veya götürü usul hükümleri, ücretliler için ücret istisnaları ve SGK kesintileri gibi unsurlar bu aşamada dikkate alınır.
+Öncelikle kişinin bir yıl içinde elde ettiği gelir toplanır ve varsa gelirden düşülebilecek giderler, istisnalar veya indirimler çıkarılır. Elde edilen sonuç vergiye tabi yıllık gelir olur. Serbest meslek erbabı için gerçek usul veya götürü usul hükümleri, ücretliler için ücret istisnaları ve SGK kesintileri gibi unsurlar bu aşamada dikkate alınır.
 
 ### 2. Gelirin Vergi Dilimlerine Göre Dağıtılması
 
@@ -181,4 +181,13 @@ Hesaplama süreci:
    20.000 × 0.27 = 5.400 TL
 
 Toplam vergi:
-16.500 + 24.000 + 5.400 = **45.900 TL**
+16.500 + 24.000 + 5.400 = 45.900 TL
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Vergi Dilimi Nedir? (Gelir Vergisi Tarifesi ve Hesaplama Mantığı)](/yazilar/vergi-dilimi-nedir/)
+* [Kümülatif Vergi Matrahı Nedir?](/yazilar/kumulatif-vergi-matrahi-nedir/)
+* [Yıllık Gelir Vergisi [0001]](/yazilar/0001-yillik-gelir-vergisi/)
+* [Vergi Oranı Nasıl Hesaplanır?](/yazilar/vergi-orani-nasil-hesaplanir/)

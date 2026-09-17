@@ -3,6 +3,7 @@ import type { Brand, Preset } from "@/domains/telefon-vergisi/types.js";
 import { icon_telefonVergisi as icon } from "@/utils/icons.js";
 import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
 import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
+import { version as APP_VERSION } from "@root/package.json";
 
 export const TelefonVergisiPageDef = (): CalculatorPage => {
     const homePage = AnaSayfaPageDef();
@@ -13,6 +14,7 @@ export const TelefonVergisiPageDef = (): CalculatorPage => {
     const shortTitle = "Telefon";
     const url = siteUrl("/telefon-vergisi-hesaplayici");
     const ogImageUrl = staticSiteUrl("/og/telefon-vergisi.jpg");
+    const description = "Akıllı telefonların ÖTV, KDV, TRT payı ve Kültür Bakanlığı payı dahil tüm vergilerini hesaplayın. Vergisiz fiyat ve yurt dışı karşılaştırmalarını görün.";
     const breadcrumbs = [
         ...parentPage.breadcrumbs,
         { title, url }
@@ -27,7 +29,7 @@ export const TelefonVergisiPageDef = (): CalculatorPage => {
         icon,
         head: {
             title: `${title} - Vergi Hesaplayıcı`,
-            description: "Akıllı telefonların ÖTV, KDV, TRT payı ve Kültür Bakanlığı payı dahil tüm vergilerini hesaplayın. Vergisiz fiyat ve yurt dışı karşılaştırmalarını görün.",
+            description,
             canonicalUrl: url,
             ogImageUrl,
             schema: {
@@ -38,12 +40,23 @@ export const TelefonVergisiPageDef = (): CalculatorPage => {
                         "@id": `${url.href}#webapplication`,
                         "url": url.href,
                         "name": title,
+                        "description": description,
                         "isPartOf": { "@id": `${parentPage.url.href}#collectionpage` },
                         "about": { "@id": `${homePage.url.href}#organization` },
+                        "author": { "@id": `${homePage.url.href}#organization` },
                         "inLanguage": "tr-TR",
                         "applicationCategory": "FinanceApplication",
                         "operatingSystem": "All",
+                        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+                        "softwareVersion": APP_VERSION,
                         "screenshot": ogImageUrl,
+                        "featureList": [
+                            "Vergili fiyattan vergisiz fiyat hesaplama",
+                            "Vergisiz fiyattan vergili fiyat hesaplama",
+                            "Türkiye ithalat kaydı üzerinden vergi hesaplama",
+                            "Yolcu beraberi pasaport kaydı üzerinden harç hesaplama",
+                            "Apple iPhone ve popüler telefon modelleri ön tanımlı fiyat listesi"
+                        ],
                         "offers": {
                             "@type": "Offer",
                             "price": "0",
@@ -97,11 +110,15 @@ export const TelefonVergisiPresetSlugPageDef = ({ preset, brand }: Params): Page
                         "@id": `${url.href}#webapplication`,
                         "url": url.href,
                         "name": title,
+                        "description": preset.pageDescription,
                         "isPartOf": { "@id": `${parentPage.url.href}#webapplication` },
                         "about": { "@id": `${homePage.url.href}#organization` },
+                        "author": { "@id": `${homePage.url.href}#organization` },
                         "inLanguage": "tr-TR",
                         "applicationCategory": "FinanceApplication",
                         "operatingSystem": "All",
+                        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+                        "softwareVersion": APP_VERSION,
                         "screenshot": ogImageUrl,
                         "offers": {
                             "@type": "Offer",

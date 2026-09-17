@@ -2,6 +2,7 @@
 title: "Vergi Barışı Tefe Tutarı [1050]"
 description: "Türkiye'de vergi barışı tefe tutarı, vergi borçlarının ana miktarını ifade eder ve mükelleflere borçlarını ceza ve faiz ödemeden kapatma imkanı sunar."
 createdDate: 2023-05-17
+updatedDate: 2026-09-16
 ---
 
 Vergi barışı, vergi mükelleflerinin vergi borçlarından kurtulmalarını sağlayan bir düzenlemedir. Türkiye'de vergi
@@ -39,3 +40,12 @@ Sonuç olarak, vergi barışı tefe tutarı, vergi borçlarının ana miktarın�
 kolaylığı sağlayan bir kavramdır. Vergi barışı düzenlemeleri, vergi uyumunu artırmak ve mükelleflerin finansal
 yükümlülüklerini yerine getirmelerini teşvik etmek amacıyla yapılmaktadır. Mükellefler, tefe tutarını belirlenen süre
 içinde ödeyerek borçlarını tamamen kapatır ve cezalardan muaf tutulurlar.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Vergi Barışı Geç Ödeme Zammı [1051]](/yazilar/1051-vergi-barisi-gec-odeme-zammi/)
+* [Gecikme Faizi [1084] Nedir? (VUK 112, Gecikme Zammı ve Hesaplama)](/yazilar/1084-gecikme-faizi/)
+* [Kaldırılan Vergi Artıkları [9099]](/yazilar/9099-kaldirilan-vergi-artiklari/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

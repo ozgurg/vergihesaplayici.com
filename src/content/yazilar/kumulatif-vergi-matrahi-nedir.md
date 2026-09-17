@@ -2,6 +2,7 @@
 title: "Kümülatif Vergi Matrahı Nedir?"
 description: "Kümülatif vergi matrahı, yıl boyunca artan gelirinizin hangi vergi dilimine girdiğini belirler ve maaşınızdaki değişimi açıklar."
 createdDate: 2025-11-13
+updatedDate: 2026-09-16
 ---
 
 Geliriniz yıl boyunca arttıkça, vergide bir "geçiş süreci"yle karşılaşırsınız: başlangıçta düşük oranlar, sonra daha yüksek dilimler.
@@ -17,7 +18,7 @@ Bu kavramı bilmek, maaşınızın neden azaldığını veya hangi vergi dilimin
 - "Kümülatif" = birikmiş, toplam
 - "Matrah" = vergilendirilecek tutar
 
-**Kümülatif vergi matrahı**, yılın başından itibaren brüt kazançlardan yapılan yasal kesintiler sonrası kalan tutarların birikmiş halidir.
+Kümülatif vergi matrahı, yılın başından itibaren brüt kazançlardan yapılan yasal kesintiler sonrası kalan tutarların birikmiş halidir.
 Her ay eklenir, yıl sonunda toplamı vergi dilimini belirler.
 
 Özet:
@@ -144,22 +145,22 @@ Ocak maaşı bu yüzden genellikle daha yüksek görünür.
 
 ## 6. Pratik İpuçları
 
-✅ **Bordronuzu kontrol edin**<br />
+✅ Bordronuzu kontrol edin<br />
 Kümülatif matrah satırı görünmeli.
 
-✅ **Matrah değişimini izleyin**<br />
+✅ Matrah değişimini izleyin<br />
 Zam veya ikramiye sonrası kontrol edin.
 
-✅ **İş değiştirirken bildirin**<br />
+✅ İş değiştirirken bildirin<br />
 Yeni işverene önceki kümülatif matrahınızı iletin.
 
-✅ **Yıl sonunu planlayın**<br />
+✅ Yıl sonunu planlayın<br />
 Ek ödeme yapacaksanız dilim geçişine dikkat edin.
 
-✅ **Bordro yazılımı kullanın**<br />
+✅ Bordro yazılımı kullanın<br />
 Otomatik kümülatif hesaplama hataları önler.
 
-✅ **Net maaş azaldıysa kontrol edin**<br />
+✅ Net maaş azaldıysa kontrol edin<br />
 Sebebi çoğu zaman dilim artışıdır.
 
 ---
@@ -183,7 +184,7 @@ Sonuç: üst vergi dilimine geçiş.
 
 Eski işyeri matrahını bildirmezse yeni işveren sıfırdan başlatır.
 Fazla vergi kesilebilir.
-**Çözüm:** Eski işyerinden "kümülatif vergi matrahı belgesi" alın.
+Çözüm: Eski işyerinden "kümülatif vergi matrahı belgesi" alın.
 
 ---
 
@@ -215,3 +216,12 @@ Kümülatif vergi matrahı, maaş bordrolarının "gizli dili"dir.
 
 Onu anlamak, yıl boyunca maaş değişimlerini ve vergi yükünü doğru yorumlamanızı sağlar.
 İşverenler için yasal uyumun; çalışanlar için finansal farkındalığın temelidir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Vergi Dilimi Nedir? (Gelir Vergisi Tarifesi ve Hesaplama Mantığı)](/yazilar/vergi-dilimi-nedir/)
+* [Vergi Dilimleri](/yazilar/vergi-dilimleri/)
+* [Yıllık Gelir Vergisi [0001]](/yazilar/0001-yillik-gelir-vergisi/)
+* [Gelir Vergisi Stopajı (Muhtasar Beyanname) [0003]](/yazilar/0003-gelir-vergisi-stopaji-muhtasar-beyanname/)

@@ -2,6 +2,7 @@
 title: "4054 Sayılı Rekabet Kanununun 55. Madde Kapsamında İdari Para Cezası [9316]"
 description: "4054 Sayılı Rekabet Kanununun 55. maddesi ve idari para cezası [9316] hakkında kapsamlı, anlaşılır ve uygulamaya dönük bilgiler sunan detaylı bir rehber."
 createdDate: 2025-11-21
+updatedDate: 2026-09-16
 ---
 
 Türkiye'de rekabet hukukuna ilişkin düzenlemeler, piyasanın adil, şeffaf ve sürdürülebilir biçimde işlemesi için kritik öneme sahiptir. Özellikle 4054 sayılı Rekabetin Korunması Hakkında Kanun, işletmelerin rekabeti bozucu eylemlerini engellemeyi ve tüketici refahını korumayı amaçlayan temel yasal çerçevedir. Bu çerçevenin en çok tartışılan hükümlerinden biri 55. Madde ve bu madde kapsamında uygulanan **idari para cezası [9316]** türüdür.
@@ -70,7 +71,7 @@ Kurula sunulan bilgi ve belgelerin gerçeği yansıtmaması da cezai yaptırım 
 
 Rekabet cezaları ciddi tutarlara ulaşabilir. 4054 sayılı Kanunda her ihlal türü için tavan oranlar yer alır. Bunların temel unsurları şöyledir:
 
-* Cezalar şirketin **Türkiye cirosu** üzerinden hesaplanır.
+* Cezalar şirketin Türkiye cirosu üzerinden hesaplanır.
 * İhlalin türü, süresi ve etkisinin büyüklüğü dikkate alınır.
 * Kartel cezası diğer ihlallere göre daha yüksek belirlenir.
 * İhlale katılan yönetici veya çalışanlara da bireysel cezalar verilebilir.
@@ -94,7 +95,7 @@ Rekabet Kurulu, kararı şirkete resmi yollarla tebliğ eder. Tebliğden sonra:
 
 ## Cezaya İtiraz Etme Süreci: Nasıl İşler?
 
-Tebliğden sonra işletmenin **60 gün içinde** idari yargıya başvurma hakkı vardır. Başvuru sıklıkla Ankara İdare Mahkemesi üzerinden yapılır.
+Tebliğden sonra işletmenin 60 gün içinde idari yargıya başvurma hakkı vardır. Başvuru sıklıkla Ankara İdare Mahkemesi üzerinden yapılır.
 
 İtiraz sürecinde dikkat edilmesi gerekenler:
 
@@ -186,3 +187,11 @@ Muhasebe açısından bu ceza:
 * Rekabet Kurulu ile şeffaf iletişim kurması
 
 gerekir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [5549 Sayılı Suç Gelirlerinin Aklanmasının Önlenmesi İdari Para Cezası [9310]](/yazilar/9310-5549-sayili-suc-gelirlerinin-aklanmasinin-onlenmesi-idari-para-cezasi/)
+* [Şeker Kanunu İdari Para Cezası [9315]](/yazilar/9315-seker-kanunu-idari-para-cezasi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

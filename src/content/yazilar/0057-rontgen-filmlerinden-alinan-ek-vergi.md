@@ -2,6 +2,7 @@
 title: "Röntgen Filmlerinden Alınan Ek Vergi [0057]"
 description: "Türkiye'de röntgen filmlerinden ek vergi, tıbbi görüntüleme gelirlerinden alınır ve sağlık hizmetlerinin finansmanına katkı sağlar."
 createdDate: 2023-05-18
+updatedDate: 2026-09-16
 ---
 
 Vergiler, bir ülkenin mali yapısının temel taşlarından biridir. Devletler, kamu hizmetlerini finanse etmek, ekonomik
@@ -37,3 +38,12 @@ vergi türüdür. Bu vergi, tıbbi görüntüleme merkezlerinin elde ettiği gel
 geliştirilmesi için kullanılan kaynaklardan biridir. Verginin oranı, Sağlık Bakanlığı tarafından belirlenen tarifeye
 göre hesaplanır. Röntgen filmlerinden alınan ek vergi, sağlık sektörünün sürdürülebilirliğine ve vatandaşların sağlık
 hizmetlerine erişimine katkıda bulunan önemli bir mali kaynak olarak değerlendirilmektedir.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Dayanıklı Tüketim ve Diğer Mallara İlişikin Özel Tüketim Vergisi [0074]](/yazilar/0074-dayanikli-tuketim-ve-diger-mallara-ilisikin-ozel-tuketim-vergisi/)
+* [ÖTV Nedir? (Özel Tüketim Vergisi Rehberi ve Oranlar)](/yazilar/otv-nedir/)
+* [Kaldırılan Vergi Artıkları [9099]](/yazilar/9099-kaldirilan-vergi-artiklari/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

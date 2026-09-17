@@ -2,6 +2,7 @@
 title: "DSİ Sulama Tesisleri İşletme ve Bakım Ücreti [9200]"
 description: "DSİ sulama tesislerinin yatırım bedeli, proje büyüklüğü, sulama yöntemi ve arazi koşullarına göre milyonlarca liradan milyarlara kadar değişebilir."
 createdDate: 2023-07-19
+updatedDate: 2026-09-16
 ---
 
 Tarım sektörü, Türkiye'nin ekonomik büyümesinde ve gıda üretiminde kritik bir rol oynamaktadır. Tarım faaliyetlerinin
@@ -10,7 +11,7 @@ verimliliğini artırmak ve su kaynaklarını etkin bir şekilde kullanmak için
 DSİ sulama tesisleri yatırım bedeli nedir?
 
 DSİ sulama tesislerinin yatırım bedeli, çeşitli faktörlere bağlı olarak değişiklik gösterebilir. Bu faktörler arasında
-**proje büyüklüğü**, kullanılacak **sulama yöntemi**, arazinin **eğimi** ve tarımsal faaliyetlerin **yoğunluğu** gibi
+proje büyüklüğü, kullanılacak sulama yöntemi, arazinin eğimi ve tarımsal faaliyetlerin yoğunluğu gibi
 etmenler yer almaktadır. Genel olarak, sulama tesisleri inşaatında dikkate alınması gereken maliyet unsurları şunlardır:
 
 1. **Altyapı Maliyetleri**: Sulama kanallarının yapımı, pompaların kurulumu, su depoları ve drenaj sistemleri gibi
@@ -41,3 +42,11 @@ Sonuç olarak, DSİ sulama tesislerinin yatırım bedeli, birçok faktörün bir
 sürecini gerektirir. Proje planlamasında ve bütçelemede dikkatli bir çalışma yapılması önemlidir. Doğru ve etkin bir
 şekilde yapılan yatırımlar, tarım sektöründe verimliliği artırarak Türkiye'nin gıda güvenliği ve ekonomik kalkınmasına
 katkı sağlar.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [DSİ Sulama Tesisleri Yatırım Bedeli [9201]](/yazilar/9201-dsi-sulama-tesisleri-yatirim-bedeli/)
+* [Zirai Kazanç Gelir Vergisi [0002] Nedir? (Çiftçi Vergilendirme Rehberi)](/yazilar/0002-zirai-kazanc-gelir-vergisi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

@@ -2,6 +2,7 @@
 title: "Trafik Muayenesi Para Cezaları [1037]"
 description: "Trafik muayenesi, araçların güvenliğini kontrol eder. Muayene yaptırmayan veya eksik olanlara para cezası uygulanır."
 createdDate: 2023-05-18
+updatedDate: 2026-09-16
 ---
 
 Trafik güvenliği, toplumda yaşayan herkesin hayatını etkileyen önemli bir konudur. Trafikteki araçların güvenliği ve
@@ -43,3 +44,12 @@ uygulamadır. Trafik muayenesini yaptırmama veya muayene sonucunda uygunluğu t
 cezaları uygulanmaktadır. Bu cezalar, aracın cinsine, muayene süresine ve eksikliklerin düzeltilmesine bağlı olarak
 değişkenlik göstermektedir. Trafik muayenelerine düzenli olarak tabi tutularak araçların güvenliği sağlanmalı ve
 trafikteki risklerin azaltılmasına katkıda bulunulmalıdır.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Trafik Muayene Ücreti Hazine Payı [4037]](/yazilar/4037-trafik-muayene-ucreti-hazine-payi/)
+* [Motorlu Taşıtlar Vergisi [9034] Nedir? (MTV Hesaplama ve Ödeme)](/yazilar/9034-motorlu-tasitlar-vergisi/)
+* [Gecikme Faizi [1084] Nedir? (VUK 112, Gecikme Zammı ve Hesaplama)](/yazilar/1084-gecikme-faizi/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)

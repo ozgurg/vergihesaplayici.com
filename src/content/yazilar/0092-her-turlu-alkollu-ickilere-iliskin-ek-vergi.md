@@ -2,6 +2,7 @@
 title: "Her Türlü Alkollü İçkilere İlişkin Ek Vergi [0092]"
 description: "Türkiye'de alkollü içkilere uygulanan ek vergi, tüketimi azaltmayı, sağlık harcamalarını finanse etmeyi ve toplum sağlığını korumayı amaçlar."
 createdDate: 2023-06-06
+updatedDate: 2026-09-16
 ---
 
 1. Alkol tüketimini azaltma amacıyla Türkiye'de alkollü içkilere ek vergi uygulanmaktadır. Bu vergi, içki türlerine göre
@@ -39,3 +40,12 @@ createdDate: 2023-06-06
 10. Alkol tüketimine yönelik ek vergi politikaları, hem toplum sağlığı hem de mali kaynak sağlama açısından önemli bir
     araç olarak kullanılmaktadır. Bu nedenle, bu vergi politikalarının etkili bir şekilde uygulanması ve sonuçlarının
     izlenmesi büyük bir önem taşımaktadır.
+
+---
+
+## İlgili Bağlantılar ve Rehberler
+
+* [Alkollü İçeceklere İlişkin Özel Tüketim Vergisi [0075]](/yazilar/0075-alkollu-iceceklere-iliskin-ozel-tuketim-vergisi/)
+* [Her Türlü İspirtolar ve Füzel Yağından Alınan Ek Vergi [0049]](/yazilar/0049-her-turlu-ispirtolar-ve-fuzel-yagindan-alinan-ek-vergi/)
+* [ÖTV Nedir? (Özel Tüketim Vergisi Rehberi ve Oranlar)](/yazilar/otv-nedir/)
+* [Vergi Türleri](/yazilar/vergi-turleri/)
