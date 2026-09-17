@@ -63,8 +63,8 @@ describe("components/calculator-result-list.vue", () => {
 
         const detailsComponent = wrapper.findComponent(CalculatorResultListItemDetails as any);
         expect(detailsComponent.exists()).toBeTruthy();
-        expect(detailsComponent.props("label")).toBe("Tax Free Price");
-        expect(detailsComponent.props("value")).toBe("100");
-        expect(detailsComponent.props("details")).toEqual([{ key: "base", label: "Base", value: "100" }]);
+        expect((detailsComponent as any).props("label")).toBe("Tax Free Price");
+        expect((detailsComponent as any).props("value")).toBe("100");
+        expect((detailsComponent as any).props("details")).toEqual([{ key: "base", label: "Base", value: "100" }]);
     });
 });
