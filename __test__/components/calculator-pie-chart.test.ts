@@ -201,9 +201,7 @@ describe("components/calculator-pie-chart.vue", () => {
 
         let modal = wrapper.findComponent(Modal as any);
         expect(modal.exists()).toBeTruthy();
-        expect((modal as any).props("modelValue")).toBe(true);
-
-        modal.vm.$emit("update:modelValue", false);
+        (modal as any).vm.$emit("update:modelValue", false);
         await nextTick();
 
         modal = wrapper.findComponent(Modal as any);

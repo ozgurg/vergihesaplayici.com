@@ -40,7 +40,7 @@ export const TelefonVergisiPageDef = (): CalculatorPage => {
                         "@id": `${url.href}#webapplication`,
                         "url": url.href,
                         "name": title,
-                        "description": description,
+                        description,
                         "isPartOf": { "@id": `${parentPage.url.href}#collectionpage` },
                         "about": { "@id": `${homePage.url.href}#organization` },
                         "author": { "@id": `${homePage.url.href}#organization` },
