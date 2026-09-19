@@ -1,5 +1,5 @@
 ---
-title: "Mülga Maden Fonu [0060] Nedir? (Maden Kanunu ve Fon Tasfiyesi)"
+title: "Mülga Maden Fonu [0060]"
 description: "0060 kodlu Mülga Maden Fonu nedir? 3213 sayılı Maden Kanunu eski fon sistemi, 4684 sayılı Kanun ile tasfiyesi ve güncel Maden Devlet Hakkı uygulaması."
 createdDate: 2023-05-13
 updatedDate: 2026-09-16
@@ -13,7 +13,7 @@ Vergi dairelerinin tahakkuk ve borç döküm listelerinde karşılaşılan bu ko
 
 ## "Mülga" Ne Anlama Gelir?
 
-Hukuk terminolojisinde **mülga**, yürürlükte olan bir kanunun, kanun maddesinin veya fonun sonradan çıkarılan yeni bir yasa ile **yürürlükten kaldırıldığını** belirtir. 
+Hukuk terminolojisinde **mülga**, yürürlükte olan bir kanunun, kanun maddesinin veya fonun sonradan çıkarılan yeni bir yasa ile **yürürlükten kaldırıldığını** belirtir.
 
 Dolayısıyla "Mülga Maden Fonu", günümüzde artık tahsilatı yapılmayan, geçmişte uygulanmış ve kapatılmış bir fon anlamına gelmektedir.
 
@@ -31,7 +31,7 @@ Maden Fonu, **3213 sayılı Maden Kanunu**'nun ilk dönemlerindeki yasal düzenl
 
 ## 4684 Sayılı Kanun (2001) ile Maden Fonu'nun Tasfiyesi
 
-2001 yılında kamu mali yönetiminde reform yapılması ve bütçe birliğinin sağlanması amacıyla **4684 sayılı Kanun** çıkarıldı. 
+2001 yılında kamu mali yönetiminde reform yapılması ve bütçe birliğinin sağlanması amacıyla **4684 sayılı Kanun** çıkarıldı.
 
 Bu kanunla birlikte:
 

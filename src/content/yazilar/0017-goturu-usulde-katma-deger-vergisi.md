@@ -1,5 +1,5 @@
 ---
-title: "Götürü Usulde Katma Değer Vergisi [0017] Nedir? (KDVK Mülga Düzenleme)"
+title: "Götürü Usulde Katma Değer Vergisi [0017]"
 description: "0017 kodlu Götürü Usulde Katma Değer Vergisi nedir? 3065 sayılı KDVK mülga hükümleri, 4369 sayılı Kanun ve basit usul esnafın KDV istisnası rehberi."
 createdDate: 2023-05-10
 updatedDate: 2026-09-16

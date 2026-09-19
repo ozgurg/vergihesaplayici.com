@@ -1,5 +1,5 @@
 ---
-title: "Faiz Vergisi [4006] Nedir? (Mevduat Stopajı ve GVK Geçici 67)"
+title: "Faiz Vergisi [4006]"
 description: "4006 kodlu Faiz Vergisi nedir? Banka mevduat faizlerindeki stopaj oranları, 193 sayılı GVK Geçici 67 sistemi ve faiz gelirlerinin vergilendirilmesi rehberi."
 createdDate: 2023-07-17
 updatedDate: 2026-09-16

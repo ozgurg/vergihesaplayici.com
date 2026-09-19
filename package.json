@@ -1,6 +1,6 @@
 {
     "name": "vergihesaplayici.com",
-    "version": "10.7.1",
+    "version": "10.8.0",
     "type": "module",
     "license": "AGPL-3.0",
     "scripts": {
@@ -26,7 +26,7 @@
         "firebase": "12.19.0",
         "html-to-image": "1.11.13",
         "remixicon": "4.9.1",
-        "vue": "3.5.42",
+        "vue": "3.5.43",
         "vue-draggable-plus": "0.6.1"
     },
     "devDependencies": {
@@ -56,7 +56,7 @@
         "vitest": "5.0.1"
     },
     "peerDependencies": {
-        "firebase-tools": "15.30.1"
+        "firebase-tools": "15.30.2"
     },
     "engines": {
         "node": ">=22.0.0"

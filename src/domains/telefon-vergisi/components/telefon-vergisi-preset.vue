@@ -18,7 +18,7 @@
 
             <div class="calculator-box">
                 <div class="calculator-box-left">
-                    <template v-if="props.brand.id === 'apple'">
+                    <template v-if="isActiveIphonePreset">
                         <form-button
                             :href="`${iphoneUlkeFiyatlariPage.url.href}?preset=${props.preset.slug}`"
                             variant="plain"
@@ -26,7 +26,7 @@
                             scale="large"
                             class="w-100">
                             <svg-icon :icon="icon_apple" />
-                            <span>{{ props.preset.title }} ülke fiyatlarını gör</span>
+                            <span>{{ props.brand.title}} {{ props.preset.title }} ülke fiyatlarını gör</span>
                         </form-button>
                         <hr />
                     </template>
@@ -138,6 +138,7 @@ import { calculateResults } from "@/domains/telefon-vergisi/utils/calculate-resu
 import { LAST_UPDATE } from "@/domains/telefon-vergisi/config.js";
 import { icon_apple } from "@/utils/icons.js";
 import { IphoneUlkeFiyatlariPageDef } from "@/domains/iphone-ulke-fiyatlari/page-def.js";
+import { getActiveIphonePresets } from "@/domains/iphone-ulke-fiyatlari/db.js";
 
 export type Props = {
     EXCHANGE_RATES: ExchangeRates;
@@ -164,6 +165,8 @@ const PRESET_OPTIONS: FormCheckGroupItem[] = props.preset.options.map((_option, 
     }
 }));
 
+const activeIphonePresets = getActiveIphonePresets();
+const isActiveIphonePreset = computed<boolean>(() => activeIphonePresets.some(_preset => _preset.slug === props.preset.slug));
 const iphoneUlkeFiyatlariPage = IphoneUlkeFiyatlariPageDef();
 
 const formEl = useTemplateRef<HTMLFormElement>("formEl");

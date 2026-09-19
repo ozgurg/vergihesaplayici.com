@@ -1,5 +1,5 @@
 ---
-title: "Gecikme Faizi [1084] Nedir? (VUK 112, Gecikme Zammı ve Hesaplama)"
+title: "Gecikme Faizi [1084]"
 description: "1084 kodlu Gecikme Faizi nedir, nasıl hesaplanır? 213 sayılı VUK Madde 112, 6183 sayılı Kanun gecikme zammı farkı ve güncel faiz oranları rehberi."
 createdDate: 2023-07-12
 updatedDate: 2026-09-16
@@ -46,7 +46,7 @@ Gecikme faizi hesabında şu adımlar uygulanır:
 
 $$\text{Gecikme Faizi} = \text{Vergi Aslı} \times \left( \frac{\text{Aylık Faiz Oranı}}{100} \right) \times \left( \text{Geçen Ay Sayısı} + \frac{\text{Kalan Gün Sayısı}}{30} \right)$$
 
-> **Örnek:** 
+> **Örnek:**
 > Normal vadesi 26 Mart olan 50.000 TL'lik bir KDV tarhiyatı vergi incelemesi sonucu 26 Eylül tarihinde kesinleşmişse, arada geçen 6 aylık süre için yürürlükteki aylık gecikme faizi oranı üzerinden faiz hesaplanarak ana vergiye eklenir.
 
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Zirai Kazanç Gelir Vergisi [0002] Nedir? (Çiftçi Vergilendirme Rehberi)"
+title: "Zirai Kazanç Gelir Vergisi [0002]"
 description: "0002 kodlu Zirai Kazanç Gelir Vergisi nedir? Çiftçilerin vergilendirilmesi, gerçek usul, stopaj (müstahsil makbuzu) ve tarımsal destekleme istisnası rehberi."
 createdDate: 2023-05-06
 updatedDate: 2026-09-16

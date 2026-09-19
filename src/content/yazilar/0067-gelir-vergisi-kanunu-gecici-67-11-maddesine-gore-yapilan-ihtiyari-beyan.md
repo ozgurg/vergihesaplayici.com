@@ -1,5 +1,5 @@
 ---
-title: "GVK Geçici 67/11 İhtiyari Beyan [0067] Nedir? (Menkul Kıymet Kâr/Zarar Mahsubu)"
+title: "Gelir Vergisi Kanunu Geçici 67/11 Maddesine Göre Yapılan İhtiyari Beyan [0067]"
 description: "0067 kodlu GVK Geçici 67/11 ihtiyari beyan nedir? Menkul kıymet ve borsa alım-satım zararlarının mahsubu ve fazla kesilen stopajın iadesi rehberi."
 createdDate: 2023-05-22
 updatedDate: 2026-09-16

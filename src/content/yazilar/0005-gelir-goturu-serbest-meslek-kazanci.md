@@ -1,5 +1,5 @@
 ---
-title: "Gelir Götürü Serbest Meslek Kazancı [0005] Nedir? (Tarihçe ve Güncel Uygulama)"
+title: "Gelir Götürü Serbest Meslek Kazancı [0005]"
 description: "0005 kodlu Gelir Götürü Serbest Meslek Kazancı nedir? 193 sayılı GVK mülga götürü serbest meslek usulü, serbest meslek makbuzu ve güncel vergilendirme."
 createdDate: 2023-05-06
 updatedDate: 2026-09-16

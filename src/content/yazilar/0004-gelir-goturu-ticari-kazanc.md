@@ -1,5 +1,5 @@
 ---
-title: "Gelir Götürü Ticari Kazanç [0004] Nedir? (Tarihçe ve Basit Usule Geçiş)"
+title: "Gelir Götürü Ticari Kazanç [0004]"
 description: "0004 kodlu Gelir Götürü Ticari Kazanç vergisi nedir? 193 sayılı GVK mülga götürü usul sistemi, 4369 sayılı Kanun ile basit usule geçiş ve güncel mevzuat."
 createdDate: 2023-05-06
 updatedDate: 2026-09-16

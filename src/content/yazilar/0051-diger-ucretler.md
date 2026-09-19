@@ -1,11 +1,11 @@
 ---
-title: "Diğer Ücretler [0051] Nedir? (GVK 64 ve Yasal Değişiklikler)"
+title: "Diğer Ücretler [0051]"
 description: "0051 kodlu Diğer Ücretler vergisi nedir? Gelir Vergisi Kanunu mülga 64. madde, vergi karnesi uygulaması ve 7338 sayılı Kanun ile getirilen asgari ücret istisnası rehberi."
 createdDate: 2023-05-12
 updatedDate: 2026-09-16
 ---
 
-Gelir İdaresi Başkanlığı (GİB) vergi türü kodları listesinde **0051 koduyla** yer alan "Diğer Ücretler", 193 sayılı Gelir Vergisi Kanunu'nun (GVK) 64. maddesi kapsamında düzenlenen özel bir vergilendirme rejimidir. 
+Gelir İdaresi Başkanlığı (GİB) vergi türü kodları listesinde **0051 koduyla** yer alan "Diğer Ücretler", 193 sayılı Gelir Vergisi Kanunu'nun (GVK) 64. maddesi kapsamında düzenlenen özel bir vergilendirme rejimidir.
 
 Geçmişte basit usule tabi esnafın yanında çalışan işçilerden özel şoförlere kadar birçok çalışanı kapsayan bu vergi türü, 7338 sayılı Kanun ile yapılan köklü reformla 1 Ocak 2022 tarihinden itibaren **yürürlükten kaldırılmıştır (mülga olmuştur)**.
 
