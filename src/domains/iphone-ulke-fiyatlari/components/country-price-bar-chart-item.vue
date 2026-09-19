@@ -62,9 +62,13 @@ const props = defineProps<Props>();
         }
     }
     &-country-us {
+        position: sticky;
+        z-index: 2;
         background: #{vh-calculate-overlay-color($clr-body-bg, rgba(#fff, .04))};
+        inset-block-end: env(safe-area-inset-bottom, 0);
         @include vh-media-breakpoint-up(sm) {
-            @include vh-squircle(var(--vh-br-normal))
+            margin-inline: calc(var(--vh-spacer) * -1); // Self `padding-inline`
+            padding-inline: calc(var(--vh-spacer) * 2) // `.calculator-box-right` `padding-inline`
         }
     }
     .country {
