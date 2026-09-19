@@ -1,5 +1,5 @@
 ---
-title: "Mülga Kooperatifçilik Tanıtma ve Eğitim Fonu [0062] Nedir?"
+title: "Mülga Kooperatifçilik Tanıtma ve Eğitim Fonu [0062]"
 description: "0062 kodlu Mülga Kooperatifçilik Tanıtma ve Eğitim Fonu nedir? 1163 sayılı Kanun, 4684 sayılı Kanun ile fonların tasfiyesi ve güncel kooperatif mevzuatı."
 createdDate: 2023-05-22
 updatedDate: 2026-09-16
@@ -13,7 +13,7 @@ Vergi levhalarında, tahakkuk fişlerinde veya vergi türleri listesinde bu baş
 
 ## Hukukta "Mülga" Ne Demektir?
 
-Mevzuat dilinde **mülga**, bir kanunun, kanun maddesinin, tüzüğün veya idari düzenlemenin yeni bir kanunla **yürürlükten kaldırılmış (ilga edilmiş)** olduğunu ifade eder. 
+Mevzuat dilinde **mülga**, bir kanunun, kanun maddesinin, tüzüğün veya idari düzenlemenin yeni bir kanunla **yürürlükten kaldırılmış (ilga edilmiş)** olduğunu ifade eder.
 
 Dolayısıyla "Mülga Kooperatifçilik Tanıtma ve Eğitim Fonu" ifadesi, söz konusu fonun artık faal olmadığını, geçmişte uygulanan ancak kanunla kapatılmış bir fonu temsil ettiğini belirtir.
 
@@ -21,7 +21,7 @@ Dolayısıyla "Mülga Kooperatifçilik Tanıtma ve Eğitim Fonu" ifadesi, söz k
 
 ## Kooperatifçilik Tanıtma ve Eğitim Fonu'nun Amacı ve İşleyişi Neydi?
 
-Bu fon, **1163 sayılı Kooperatifler Kanunu**'nun mülga 94. maddesi kapsamında oluşturulmuştu. 
+Bu fon, **1163 sayılı Kooperatifler Kanunu**'nun mülga 94. maddesi kapsamında oluşturulmuştu.
 
 Fonun temel özellikleri şunlardı:
 
@@ -33,7 +33,7 @@ Fonun temel özellikleri şunlardı:
 
 ## 4684 Sayılı Kanun (2001) ve Fonların Tasfiyesi
 
-Türkiye'de 2000'li yılların başında kamu maliyesinde şeffaflığı ve bütçe birliğini sağlamak amacıyla köklü bir reform başlatıldı. 
+Türkiye'de 2000'li yılların başında kamu maliyesinde şeffaflığı ve bütçe birliğini sağlamak amacıyla köklü bir reform başlatıldı.
 
 2001 yılında kabul edilen **4684 sayılı Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun** ile bütçe dışı özel fonların büyük çoğunluğu kapatıldı. Bu kapsamda Kooperatifçilik Tanıtma ve Eğitim Fonu da tasfiye edildi ve gelirleri doğrudan genel bütçeye aktarılmaya başlandı.
 

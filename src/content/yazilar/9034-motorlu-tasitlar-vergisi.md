@@ -1,5 +1,5 @@
 ---
-title: "Motorlu Taşıtlar Vergisi [9034] Nedir? (MTV Hesaplama ve Ödeme)"
+title: "Motorlu Taşıtlar Vergisi [9034]"
 description: "9034 kodlu Motorlu Taşıtlar Vergisi (MTV) nedir? 197 sayılı Kanun, araç yaşı, motor hacmi ve değerine göre MTV hesaplama, taksit dönemleri ve elektrikli araçlar rehberi."
 createdDate: 2025-09-21
 updatedDate: 2026-09-16

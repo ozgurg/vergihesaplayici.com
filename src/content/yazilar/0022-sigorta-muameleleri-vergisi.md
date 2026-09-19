@@ -1,5 +1,5 @@
 ---
-title: "Sigorta Muameleleri Vergisi [0022] Nedir? (BSMV ve Sigorta Primleri)"
+title: "Sigorta Muameleleri Vergisi [0022]"
 description: "0022 kodlu Sigorta Muameleleri Vergisi nedir? 6802 sayılı Gider Vergileri Kanunu (BSMV), sigorta primlerindeki vergi oranları ve muafiyetler rehberi."
 createdDate: 2023-05-09
 updatedDate: 2026-09-16
