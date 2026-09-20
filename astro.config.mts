@@ -33,7 +33,8 @@ export default defineConfig({
         port: Number.parseInt(SERVER_PORT!, 10)
     },
     build: {
-        inlineStylesheets: "always"
+        assets: "assets",
+        inlineStylesheets: "never"
     },
     output: "static",
     site: URL_BASE,
@@ -86,22 +87,22 @@ export default defineConfig({
     ],
     vite: {
         build: {
+            cssCodeSplit: false,
             reportCompressedSize: false,
             rollupOptions: {
                 output: {
-                    // TODO: If we can add the version to the URL, it would be better than adding a hash or version to the name.
-                    entryFileNames: `[name]-${packageJson.version}.js`,
-                    chunkFileNames: `[name]-[hash]-${packageJson.version}.js`,
+                    entryFileNames: `assets/[name]-${packageJson.version}.js`,
+                    chunkFileNames: `assets/[name]-[hash]-${packageJson.version}.js`,
                     assetFileNames(assetInfo) {
                         const fileName = assetInfo.names?.[0] || "";
                         const extension = fileName.split(".").pop() || "";
 
-                        // The built output of image files doesn't need to be unique for each
-                        // build because the version is already appended to the URL in `src/utils/url.ts::staticUrl`
                         if (["jpg", "jpeg", "png", "svg", "webp", "ico", "gif"].includes(extension)) {
                             return `assets/[name][extname]`;
-                        } else if (["woff2"].includes(extension)) {
-                            return `assets/[name][extname]`;
+                        } else if (["woff2", "woff", "ttf", "otf", "eot"].includes(extension)) {
+                            return `assets/[name]-${packageJson.version}[extname]`;
+                        } else if (extension === "css") {
+                            return `assets/[name]-${packageJson.version}[extname]`;
                         }
                         return `assets/[name]-[hash]-${packageJson.version}[extname]`;
                     }
