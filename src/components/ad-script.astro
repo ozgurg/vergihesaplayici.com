@@ -1,12 +1,14 @@
 ---
 import TinyAdzScript from "@/components/third-party/tinyadz-script.astro";
+import OmnifetchScript from "@/components/third-party/omnifetch-script.astro";
 
-type Provider = "tinyadz";
+type Provider = "tinyadz" | "omnifetch";
 
 const PROVIDER = import.meta.env.PUBLIC_AD_PROVIDER as Provider;
 
 const PROVIDERS = {
-    tinyadz: TinyAdzScript
+    tinyadz: TinyAdzScript,
+    omnifetch: OmnifetchScript
 };
 
 const ProviderScript = PROVIDERS[PROVIDER];
