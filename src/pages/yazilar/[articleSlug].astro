@@ -8,7 +8,7 @@ import ArticleLegalDisclaimerAlert from "@/components/article-legal-disclaimer-a
 import Heading2 from "@/components/common/heading-2.vue";
 import ArticlesGrid from "@/components/articles-grid.vue";
 import SvgIcon from "@/components/common/svg-icon.vue";
-import TinyAdzBanner from "@/components/third-party/tinyadz-banner.astro";
+import BannerAd from "@/components/ad-banner.astro";
 
 import { icon_calendar, icon_refresh, icon_time } from "@/utils/icons.js";
 import { render } from "astro:content";
@@ -65,7 +65,7 @@ const { Content } = await render(yazi.entry);
     </PageHeader>
 
     <div class="container">
-        <TinyAdzBanner isFirst={true} />
+        <BannerAd isFirst={true} />
 
         <div class="meta">
             <span class="item">
@@ -136,7 +136,7 @@ const { Content } = await render(yazi.entry);
         <hr />
         <ArticleLegalDisclaimerAlert />
 
-        <TinyAdzBanner isLast={true} />
+        <BannerAd isLast={true} />
     </div>
 
     {otherYazilar.length > 0 &&
@@ -153,7 +153,7 @@ const { Content } = await render(yazi.entry);
                     titleTag="h3"
                     items={otherYazilar} />
 
-                <TinyAdzBanner isLast={true} />
+                <BannerAd isLast={true} />
             </section>
         </div>
     }

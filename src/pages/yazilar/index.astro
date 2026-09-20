@@ -5,7 +5,7 @@ import Breadcrumbs from "@/components/common/breadcrumbs.vue";
 import Heading1 from "@/components/common/heading-1.vue";
 import ArticleLegalDisclaimerAlert from "@/components/article-legal-disclaimer-alert.vue";
 import ArticlesGrid from "@/components/articles-grid.vue";
-import TinyAdzBanner from "@/components/third-party/tinyadz-banner.astro";
+import BannerAd from "@/components/ad-banner.astro";
 
 import { YazilarPageDef, YazilarSlugPageDef } from "@/domains/yazilar/page-def.js";
 import { getYazilar } from "@/domains/yazilar/db.js";
@@ -33,13 +33,13 @@ const yazilarPage = YazilarPageDef({
     </PageHeader>
 
     <div class="container">
-        <TinyAdzBanner isFirst={true} />
+        <BannerAd isFirst={true} />
 
         <ArticleLegalDisclaimerAlert />
         <ArticlesGrid
             titleTag="h2"
             items={yazilar} />
 
-        <TinyAdzBanner isLast={true} />
+        <BannerAd isLast={true} />
     </div>
 </AppLayout>

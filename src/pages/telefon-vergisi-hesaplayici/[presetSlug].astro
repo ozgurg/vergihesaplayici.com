@@ -9,7 +9,7 @@ import TelefonVergisiPreset
 import Heading2 from "@/components/common/heading-2.vue";
 import CalculatorPresetCarousel from "@/components/calculator-preset-carousel.astro";
 import UtilitiesGrid from "@/components/utilities-grid.vue";
-import TinyAdzBanner from "@/components/third-party/tinyadz-banner.astro";
+import BannerAd from "@/components/ad-banner.astro";
 import { Image } from "astro:assets";
 
 import { getPresetsForAllBrands, getBrandById } from "@/domains/telefon-vergisi/db.js";
@@ -136,7 +136,7 @@ const presetHeroStyle = {
     {presetsForCalculatorPresetCarousel.length > 0 &&
         <hr />
         <div class="container">
-            <TinyAdzBanner isFirst={true} />
+            <BannerAd isFirst={true} />
 
             <Heading2 tag="h2">
                 Diğer hazır hesaplamalar
@@ -160,7 +160,7 @@ const presetHeroStyle = {
         </div>
     </section>
 
-    <TinyAdzBanner inContainer={true} isLast={true} />
+    <BannerAd inContainer={true} isLast={true} />
 </AppLayout>
 
 <style lang="scss" is:global>

@@ -7,7 +7,7 @@ import Heading2 from "@/components/common/heading-2.vue";
 import CalculatorsGrid from "@/components/calculators-grid.vue";
 import UtilitiesGrid from "@/components/utilities-grid.vue";
 import ArticlesGrid from "@/components/articles-grid.vue";
-import TinyAdzBanner from "@/components/third-party/tinyadz-banner.astro";
+import BannerAd from "@/components/ad-banner.astro";
 
 import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
 import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
@@ -45,7 +45,7 @@ const yazilar = (await getYazilar()).slice(0, 8);
     </section>
     <hr />
 
-    <TinyAdzBanner inContainer={true} isFirst={true} />
+    <BannerAd inContainer={true} isFirst={true} />
 
     <div class="container">
         <section>
@@ -59,7 +59,7 @@ const yazilar = (await getYazilar()).slice(0, 8);
                 titleTag="h3" />
         </section>
 
-        <TinyAdzBanner isFirst={true} isLast={true} />
+        <BannerAd isFirst={true} isLast={true} />
 
         <section>
             <Heading2 tag="h2">
@@ -72,7 +72,7 @@ const yazilar = (await getYazilar()).slice(0, 8);
                 titleTag="h3" />
         </section>
 
-        <TinyAdzBanner isFirst={true} isLast={true} />
+        <BannerAd isFirst={true} isLast={true} />
 
         <section>
             <Heading2 tag="h2">
@@ -85,7 +85,7 @@ const yazilar = (await getYazilar()).slice(0, 8);
                 items={yazilar} />
         </section>
 
-        <TinyAdzBanner isLast={true} />
+        <BannerAd isLast={true} />
     </div>
 </AppLayout>
 

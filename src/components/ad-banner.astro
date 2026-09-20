@@ -1,0 +1,26 @@
+---
+import TinyAdzBanner from "@/components/third-party/tinyadz-banner.astro";
+
+export type BannerAdConfig = {
+    inContainer?: boolean;
+    isFirst?: boolean;
+    isLast?: boolean;
+    size?: "auto"
+}
+
+export type Props = BannerAdConfig;
+
+type Provider = "tinyadz";
+
+const props = Astro.props;
+
+const PROVIDER = import.meta.env.PUBLIC_AD_PROVIDER as Provider;
+
+const PROVIDERS = {
+    tinyadz: TinyAdzBanner
+};
+
+const ProviderBanner = PROVIDERS[PROVIDER];
+---
+
+{ProviderBanner && <ProviderBanner {...props} />}

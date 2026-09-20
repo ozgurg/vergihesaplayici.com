@@ -1,0 +1,15 @@
+---
+import TinyAdzScript from "@/components/third-party/tinyadz-script.astro";
+
+type Provider = "tinyadz";
+
+const PROVIDER = import.meta.env.PUBLIC_AD_PROVIDER as Provider;
+
+const PROVIDERS = {
+    tinyadz: TinyAdzScript
+};
+
+const ProviderScript = PROVIDERS[PROVIDER];
+---
+
+{ProviderScript && <ProviderScript />}

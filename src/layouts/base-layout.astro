@@ -5,7 +5,7 @@ import type { Props as HeadProps } from "@/layouts/head.astro";
 import Head from "@/layouts/head.astro";
 import FirebaseIntegration from "@/components/third-party/firebase-integration.astro";
 import AhrefsScript from "@/components/third-party/ahrefs-script.astro";
-import TinyAdzScript from "@/components/third-party/tinyadz-script.astro";
+import AdScript from "@/components/ad-script.astro";
 
 export type Props = HeadProps;
 const props = Astro.props;
@@ -15,7 +15,9 @@ const props = Astro.props;
     <head>
         <FirebaseIntegration />
         <AhrefsScript />
-        <TinyAdzScript />
+
+        <AdScript />
+
         <Head {...props} />
     </head>
     <body>

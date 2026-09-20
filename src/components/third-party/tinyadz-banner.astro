@@ -1,9 +1,7 @@
 ---
-export type Props = {
-    inContainer?: boolean;
-    isFirst?: boolean;
-    isLast?: boolean;
-}
+import type { BannerAdConfig } from "@/components/ad-banner.astro";
+
+export type Props = BannerAdConfig;
 
 const {
     inContainer = false,
