@@ -1,0 +1,33 @@
+<video
+    autoplay=""
+    loop=""
+    muted=""
+    playsinline=""
+    aria-hidden="true"
+    class="dwight-schrute-video"
+    width="455"
+    height="256"
+    preload="auto">
+    <source
+        src={staticUrl("/dwight-schrute.mp4").href}
+        type="video/mp4" />
+</video>
+
+<script>
+    const video = document.querySelector(".dwight-schrute-video") as HTMLVideoElement;
+    if (video && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        video.autoplay = false;
+        video.controls = true;
+        video.pause();
+    }
+</script>
+
+<style lang="scss" is:global>
+    .dwight-schrute-video {
+        display: inline-block;
+        overflow: hidden;
+        @include vh-squircle(var(--vh-br-normal));
+        background: hsla(var(--vh-clr-white-hsl), .08);
+        aspect-ratio: 455/256
+    }
+</style>
