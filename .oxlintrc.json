@@ -149,6 +149,14 @@
             "files": [
                 "src/integrations/**"
             ]
+        },
+        {
+            "files": [
+                "src/layouts/head.astro"
+            ],
+            "rules": {
+                "no-unused-expressions": "off"
+            }
         }
     ]
 }

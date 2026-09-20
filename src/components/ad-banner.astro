@@ -1,0 +1,66 @@
+---
+import TinyAdzBanner from "@/components/third-party/tinyadz-banner.astro";
+
+export type BannerAdConfig = {
+    size?: "auto"
+}
+
+export type Props = BannerAdConfig & {
+    inContainer?: boolean;
+    isFirst?: boolean;
+    isLast?: boolean;
+};
+
+type Provider = "tinyadz";
+
+const props = Astro.props;
+
+const PROVIDER = import.meta.env.PUBLIC_AD_PROVIDER as Provider;
+
+const PROVIDERS = {
+    tinyadz: TinyAdzBanner
+};
+
+const ProviderBanner = PROVIDERS[PROVIDER];
+---
+
+<div
+    class:list={[
+        "ee488d78971076fc44af18ccc1ebb009",
+        props.isFirst ? "ee488d78971076fc44af18ccc1ebb009-first" : null,
+        props.isLast ? "ee488d78971076fc44af18ccc1ebb009-last" : null
+    ]}>
+    {ProviderBanner && (
+        <>
+            {props.inContainer ? (
+                <div class="container">
+                    <ProviderBanner {...props} />
+                </div>
+            ) : (
+                <ProviderBanner {...props} />
+            )}
+        </>
+    )}
+</div>
+
+<style is:global lang="scss">
+    .ee488d78971076fc44af18ccc1ebb009 { // Try to make the ad blockers harder to detect
+        $self: &;
+        --_margin: calc(var(--vh-spacer) * 2);
+        @at-root {
+            #{$self}-first#{$self}-last {
+                min-height: var(--_margin)
+            }
+        }
+        &-first {
+            &:not(:empty) {
+                margin-block-end: var(--_margin)
+            }
+        }
+        &-last {
+            &:not(:empty) {
+                margin-block-start: var(--_margin)
+            }
+        }
+    }
+</style>

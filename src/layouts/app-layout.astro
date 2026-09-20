@@ -2,13 +2,11 @@
 import type { Props as BaseLayoutProps } from "@/layouts/base-layout.astro";
 import BaseLayout from "@/layouts/base-layout.astro";
 import AppHeader from "@/components/app/app-header.astro";
-import AppBody from "@/components/app/app-body.vue";
-import AppFooter from "@/components/app/app-footer.vue";
+import AppBody from "src/components/app/app-body.astro";
+import AppFooter from "@/components/app/app-footer.astro";
 
 type Props = BaseLayoutProps;
 const props = Astro.props;
-
-const EXCHANGE_RATES = getExchangeRates();
 ---
 
 <BaseLayout {...props}>
@@ -18,5 +16,5 @@ const EXCHANGE_RATES = getExchangeRates();
         <slot name="default" />
     </AppBody>
 
-    <AppFooter EXCHANGE_RATES={EXCHANGE_RATES} />
+    <AppFooter />
 </BaseLayout>

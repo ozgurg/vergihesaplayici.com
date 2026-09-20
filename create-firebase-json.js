@@ -46,7 +46,7 @@ const firebaseJson = {
                         value: "none"
                     }
 
-                    // Disabled for TinyAdz
+                    // Disabled for banner ads
                     /* {
                         key: "Cross-Origin-Embedder-Policy",
                         value: "require-corp"

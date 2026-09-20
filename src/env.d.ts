@@ -13,9 +13,7 @@ interface ImportMetaEnv {
     readonly PUBLIC_FIREBASE_MEASUREMENT_ID: string;
     readonly PUBLIC_RECAPTCHA_V3_PUBLIC_KEY: string;
 
-    readonly PUBLIC_TINYADZ_SITE_ID: string;
-
-    readonly PUBLIC_AHREFS_KEY: string;
+    readonly PUBLIC_AD_PROVIDER: string;
 
     // `.env.(development|production)`
     readonly URL_BASE: string;

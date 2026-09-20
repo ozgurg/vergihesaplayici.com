@@ -6,6 +6,7 @@ import Heading1 from "@/components/common/heading-1.vue";
 import Heading2 from "@/components/common/heading-2.vue";
 import IphoneUlkeFiyatlari from "@/domains/iphone-ulke-fiyatlari/components/iphone-ulke-fiyatlari.vue";
 import CalculatorPresetCarousel from "@/components/calculator-preset-carousel.astro";
+import BannerAd from "@/components/ad-banner.astro";
 
 import { IphoneUlkeFiyatlariPageDef } from "@/domains/iphone-ulke-fiyatlari/page-def.js";
 import { TelefonVergisiPageDef } from "@/domains/telefon-vergisi/page-def.js";
@@ -34,9 +35,7 @@ const presetsForCalculatorPresetCarousel = mapPresetsForCalculatorPresetCarousel
         </div>
     </PageHeader>
 
-    <div class="container">
-        <div class="ta-ad-first" ta-ad-container=""></div>
-    </div>
+    <BannerAd inContainer={true} isFirst={true} />
 
     <section>
         <IphoneUlkeFiyatlari
@@ -61,7 +60,5 @@ const presetsForCalculatorPresetCarousel = mapPresetsForCalculatorPresetCarousel
         </section>
     )}
 
-    <div class="container">
-        <div class="ta-ad-last" ta-ad-container=""></div>
-    </div>
+    <BannerAd inContainer={true} isLast={true} />
 </AppLayout>

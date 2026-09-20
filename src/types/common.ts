@@ -1,5 +1,7 @@
 import type { Graph, Thing, WithContext } from "schema-dts";
 
+export type AdProvider = "tinyadz";
+
 export type HtmlString = string;
 
 export type SvgFile = `${string}.svg`;

@@ -1,6 +1,6 @@
 {
     "name": "vergihesaplayici.com",
-    "version": "10.8.0",
+    "version": "10.9.0",
     "type": "module",
     "license": "AGPL-3.0",
     "scripts": {
@@ -20,7 +20,7 @@
     },
     "dependencies": {
         "@fontsource-variable/google-sans": "5.3.1",
-        "@fontsource-variable/google-sans-code": "5.3.0",
+        "@fontsource-variable/google-sans-code": "5.3.1",
         "astro": "7.3.3",
         "balloon-css": "1.2.0",
         "firebase": "12.19.0",
@@ -34,8 +34,8 @@
         "@astrojs/rss": "4.0.19",
         "@astrojs/sitemap": "3.7.4",
         "@astrojs/vue": "7.0.3",
-        "@commitlint/cli": "21.2.2",
-        "@commitlint/config-conventional": "21.2.2",
+        "@commitlint/cli": "21.2.3",
+        "@commitlint/config-conventional": "21.2.3",
         "@vitejs/plugin-vue": "6.0.9",
         "@vitest/coverage-istanbul": "5.0.1",
         "@vue/test-utils": "2.5.1",

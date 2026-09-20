@@ -1,0 +1,27 @@
+<div class="a5857edd4a61170bd2b1588275e7a484">
+    <div ta-ad-container=""></div>
+</div>
+
+<style is:global lang="scss">
+    .a5857edd4a61170bd2b1588275e7a484 { // Try to make the ad blockers harder to detect
+        [ta-ad-container] {
+            &:not(:empty) {
+                background: #323332; // Same color as the ad border
+                margin-inline: calc(var(--container-padding-inline) * -1);
+                inline-size: calc(100% + (var(--container-padding-inline) * 2));
+                padding-inline: var(--container-padding-inline);
+                @include vh-media-breakpoint-up(sm) {
+                    margin-inline: calc(var(--vh-spacer) * -1);
+                    inline-size: calc(100% + (var(--vh-spacer) * 2));
+                    padding-inline: var(--vh-spacer);
+                    @include vh-squircle(calc(var(--vh-br-normal) + var(--vh-spacer)))
+                }
+            }
+        }
+        iframe.inlined-ta-ad {
+            @include vh-squircle(var(--vh-br-normal));
+            overflow: hidden !important;
+            transition: none !important
+        }
+    }
+</style>

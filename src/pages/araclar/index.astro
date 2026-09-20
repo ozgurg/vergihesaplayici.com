@@ -4,6 +4,7 @@ import PageHeader from "@/components/common/page-header.vue";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
 import Heading1 from "@/components/common/heading-1.vue";
 import UtilitiesGrid from "@/components/utilities-grid.vue";
+import BannerAd from "@/components/ad-banner.astro";
 
 import { AraclarPageDef } from "@/domains/araclar/page-def.js";
 import { getUtilityPages } from "@/domains/araclar/db.js";
@@ -30,12 +31,12 @@ const araclarPage = AraclarPageDef({
     </PageHeader>
 
     <div class="container">
-        <div class="ta-ad-first" ta-ad-container=""></div>
+        <BannerAd isFirst={true} />
 
         <UtilitiesGrid
             items={utilityPages}
             titleTag="h2" />
 
-        <div class="ta-ad-last" ta-ad-container=""></div>
+        <BannerAd isLast={true} />
     </div>
 </AppLayout>

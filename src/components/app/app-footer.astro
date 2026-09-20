@@ -1,0 +1,129 @@
+---
+import { formatMoney } from "@/utils/formatter.js"; // It should be imported since it is used inside the template
+import { API_PROVIDER_CREDIT } from "@/utils/exchange-rates.js"; // It should be imported since it is used inside the template
+import { version as VERSION } from "@root/package.json";
+import { HataBildirPageDef } from "@/domains/hata-bildir/page-def.js";
+
+const PRIMARY_CURRENCY_CODE = "TRY";
+
+const EXCHANGE_RATES = getExchangeRates();
+
+const exchangeRates = Object.entries(EXCHANGE_RATES.rates).filter(([currencyCode]) => currencyCode !== PRIMARY_CURRENCY_CODE);
+const dateUpdated = new Date(EXCHANGE_RATES.dateUpdated);
+const hataBildirPage = HataBildirPageDef();
+---
+
+<footer class="app-footer">
+    <div class="container">
+        <div
+            class="exchange-rates"
+            role="region"
+            aria-label="Döviz kurları">
+            <ul class="exchange-rates-list">
+                {exchangeRates.map(([_currencyCode, _rate]) => (
+                    <li>
+                        <small>{_currencyCode}</small>
+                        <b class="text-number">
+                            {formatMoney(_rate, PRIMARY_CURRENCY_CODE)}
+                        </b>
+                    </li>
+                ))}
+            </ul>
+
+            <div class="exchange-rates-info">
+                <div>
+                    <small>Kur güncellenme tarihi</small>
+                    <b>
+                        <time datetime={dateUpdated.toISOString()}>
+                            {dateUpdated.toLocaleString("tr-TR")}
+                        </time>
+                    </b>
+                </div>
+                <div>
+                    <small>Döviz verisi sağlayıcı</small>
+                    <b>
+                        <a
+                            href={API_PROVIDER_CREDIT.url.href}
+                            class="link"
+                            target="_blank"
+                            rel="nofollow noopener noreferrer">
+                            {API_PROVIDER_CREDIT.title}
+                        </a>
+                    </b>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="rich-text">
+            <a href="https://github.com/ozgurg" target="_blank" rel="nofollow noopener noreferrer">@ozgurg</a> tarafından AGPL-3.0 lisansı altında <a href="https://github.com/ozgurg/vergihesaplayici.com" target="_blank" rel="nofollow noopener noreferrer">açık kaynaklı</a> olarak geliştirilmektedir
+            <br />
+            <a href={hataBildirPage.url.href}>{hataBildirPage.title}</a> – v{VERSION}
+        </div>
+    </div>
+</footer>
+
+<style lang="scss" is:global>
+    .app-footer {
+        --_padding-block: calc(var(--vh-spacer) * 2);
+        text-align: center;
+        margin-block-start: auto;
+        background: linear-gradient(to bottom, transparent, hsla(var(--vh-clr-primary-hsl), .02));
+        padding-block-start: var(--_padding-block);
+        padding-block-end: max(env(safe-area-inset-bottom), var(--_padding-block));
+        hr {
+            margin-block: var(--vh-spacer)
+        }
+        .exchange-rates {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            &-list {
+                display: inline-flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                gap: calc(var(--vh-spacer) * .5);
+                margin-block-end: calc(var(--vh-spacer) * .75);
+                li {
+                    padding-block: calc(var(--vh-spacer) * .75);
+                    min-inline-size: 5.625rem;
+                    background: hsla(var(--vh-clr-white-hsl), .06);
+                    @include vh-squircle(var(--vh-br-normal));
+                    display: flex;
+                    flex-direction: column;
+                    small {
+                        opacity: .875
+                    }
+                    b {
+                        font-weight: var(--vh-fw-bold)
+                    }
+                }
+            }
+            &-info {
+                display: inline-flex;
+                flex-direction: row;
+                gap: calc(var(--vh-spacer) * 1.25);
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    min-inline-size: 10rem;
+                    font-size: var(--vh-fs-sm);
+                    &:first-child {
+                        text-align: end
+                    }
+                    &:last-child {
+                        text-align: start
+                    }
+                    small {
+                        opacity: .75
+                    }
+                    b {
+                        opacity: .875;
+                        font-weight: var(--vh-fw-bold)
+                    }
+                }
+            }
+        }
+    }
+</style>

@@ -4,6 +4,7 @@ import PageHeader from "@/components/common/page-header.vue";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
 import Heading1 from "@/components/common/heading-1.vue";
 import CalculatorsGrid from "@/components/calculators-grid.vue";
+import BannerAd from "@/components/ad-banner.astro";
 
 import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
 import { getCalculatorPages } from "@/domains/hesaplayicilar/db.js";
@@ -30,12 +31,12 @@ const hesaplayicilarPage = HesaplayicilarPageDef({
     </PageHeader>
 
     <div class="container">
-        <div class="ta-ad-first" ta-ad-container=""></div>
+        <BannerAd isFirst={true} />
 
         <CalculatorsGrid
             items={calculatorPages}
             titleTag="h2" />
 
-        <div class="ta-ad-last" ta-ad-container=""></div>
+        <BannerAd isLast={true} />
     </div>
 </AppLayout>

@@ -2,11 +2,12 @@
 import AppLayout from "@/layouts/app-layout.astro";
 import PageHeader from "@/components/common/page-header.vue";
 import Heading1 from "@/components/common/heading-1.vue";
-import OsitaIhemeVideo from "@/components/osita-iheme-video.vue";
+import OsitaIhemeVideo from "@/components/osita-iheme-video.astro";
 import Heading2 from "@/components/common/heading-2.vue";
 import CalculatorsGrid from "@/components/calculators-grid.vue";
 import UtilitiesGrid from "@/components/utilities-grid.vue";
 import ArticlesGrid from "@/components/articles-grid.vue";
+import BannerAd from "@/components/ad-banner.astro";
 
 import { AnaSayfaPageDef } from "@/domains/ana-sayfa/page-def.js";
 import { HesaplayicilarPageDef } from "@/domains/hesaplayicilar/page-def.js";
@@ -38,15 +39,13 @@ const yazilar = (await getYazilar()).slice(0, 8);
                         <p>vergihesaplayici.com, vergi hesaplar.</p>
                     </div>
                 </div>
-                <OsitaIhemeVideo client:idle />
+                <OsitaIhemeVideo />
             </div>
         </PageHeader>
     </section>
     <hr />
 
-    <div class="container">
-        <div class="ta-ad-first" ta-ad-container=""></div>
-    </div>
+    <BannerAd inContainer={true} isFirst={true} />
 
     <div class="container">
         <section>
@@ -60,7 +59,7 @@ const yazilar = (await getYazilar()).slice(0, 8);
                 titleTag="h3" />
         </section>
 
-        <div class="ta-ad-first ta-ad-last" ta-ad-container=""></div>
+        <BannerAd isFirst={true} isLast={true} />
 
         <section>
             <Heading2 tag="h2">
@@ -73,7 +72,7 @@ const yazilar = (await getYazilar()).slice(0, 8);
                 titleTag="h3" />
         </section>
 
-        <div class="ta-ad-first ta-ad-last" ta-ad-container=""></div>
+        <BannerAd isFirst={true} isLast={true} />
 
         <section>
             <Heading2 tag="h2">
@@ -86,7 +85,7 @@ const yazilar = (await getYazilar()).slice(0, 8);
                 items={yazilar} />
         </section>
 
-        <div class="ta-ad-last" ta-ad-container=""></div>
+        <BannerAd isLast={true} />
     </div>
 </AppLayout>
 

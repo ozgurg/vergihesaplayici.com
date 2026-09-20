@@ -3,7 +3,9 @@
 import "@/assets/css/style.scss";
 import type { Props as HeadProps } from "@/layouts/head.astro";
 import Head from "@/layouts/head.astro";
-import TinyadzScript from "@/components/tinyadz-script.astro";
+import FirebaseIntegration from "@/components/third-party/firebase-integration.astro";
+import AhrefsScript from "@/components/third-party/ahrefs-script.astro";
+import AdScript from "@/components/ad-script.astro";
 
 export type Props = HeadProps;
 const props = Astro.props;
@@ -11,8 +13,12 @@ const props = Astro.props;
 
 <html lang="tr" dir="ltr">
     <head>
+        <FirebaseIntegration />
+        <AhrefsScript />
+
+        <AdScript />
+
         <Head {...props} />
-        <TinyadzScript />
     </head>
     <body>
         <slot name="default" />
