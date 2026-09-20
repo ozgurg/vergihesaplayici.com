@@ -4,6 +4,7 @@ import PageHeader from "@/components/common/page-header.vue";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
 import Heading1 from "@/components/common/heading-1.vue";
 import KatmaDegerVergisi from "@/domains/katma-deger-vergisi/components/katma-deger-vergisi.vue";
+import TinyAdzBanner from "@/components/third-party/tinyadz-banner.astro";
 
 import { KatmaDegerVergisiPageDef } from "@/domains/katma-deger-vergisi/page-def.js";
 
@@ -29,6 +30,6 @@ const katmaDegerVergisiPage = KatmaDegerVergisiPageDef();
     </section>
 
     <div class="container">
-        <div class="ta-ad-last" ta-ad-container=""></div>
+        <TinyAdzBanner class="ta-ad-last" />
     </div>
 </AppLayout>

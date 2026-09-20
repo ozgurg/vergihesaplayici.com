@@ -116,14 +116,6 @@ const PAGE_SCHEMA = (() => {
 <meta name="apple-mobile-web-app-title" content={PAGE_TITLE} />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
-{import.meta.env.PROD && <script is:inline src="https://analytics.ahrefs.com/analytics.js" data-key={import.meta.env.PUBLIC_AHREFS_KEY} async="" defer=""></script>}
-
 <script is:inline define:vars={{ SERVICE_WORKER_URL: staticSiteUrl("/sw.js", false) }}>"serviceWorker"in window.navigator&&window.addEventListener("load",()=>{window.navigator.serviceWorker.register(SERVICE_WORKER_URL)});</script>
 
 <script is:inline type="application/ld+json" set:html={JSON.stringify(PAGE_SCHEMA)}></script>
-
-<script>
-    if (import.meta.env.PROD) {
-        import("@/integrations/firebase.js");
-    }
-</script>

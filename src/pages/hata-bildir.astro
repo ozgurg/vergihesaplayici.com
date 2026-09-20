@@ -4,6 +4,7 @@ import PageHeader from "@/components/common/page-header.vue";
 import Breadcrumbs from "@/components/common/breadcrumbs.vue";
 import Heading1 from "@/components/common/heading-1.vue";
 import FormButton from "@/components/common/form/form-button.vue";
+import TinyAdzBanner from "@/components/third-party/tinyadz-banner.astro";
 
 import { HataBildirPageDef } from "@/domains/hata-bildir/page-def.js";
 
@@ -45,7 +46,7 @@ const PUBLIC_RECAPTCHA_V3_PUBLIC_KEY = import.meta.env.PUBLIC_RECAPTCHA_V3_PUBLI
             </div>
         </div>
 
-        <div class="ta-ad-last" ta-ad-container=""></div>
+        <TinyAdzBanner class="ta-ad-last" />
     </div>
 </AppLayout>
 

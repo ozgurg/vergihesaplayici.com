@@ -6,6 +6,7 @@ import Heading1 from "@/components/common/heading-1.vue";
 import Heading2 from "@/components/common/heading-2.vue";
 import CalculatorPresetCarousel from "@/components/calculator-preset-carousel.astro";
 import KonsolVergisi from "@/domains/konsol-vergisi/components/konsol-vergisi.vue";
+import TinyAdzBanner from "@/components/third-party/tinyadz-banner.astro";
 
 import { KonsolVergisiPageDef } from "@/domains/konsol-vergisi/page-def.js";
 import { getPresetsForAllBrands } from "@/domains/konsol-vergisi/db.js";
@@ -45,7 +46,7 @@ const presetsForCalculatorPresetCarousel = mapPresetsForCalculatorPresetCarousel
     <hr />
 
     <div class="container">
-        <div class="ta-ad-first" ta-ad-container=""></div>
+        <TinyAdzBanner class="ta-ad-first" />
     </div>
 
     <section>
@@ -61,6 +62,6 @@ const presetsForCalculatorPresetCarousel = mapPresetsForCalculatorPresetCarousel
     </section>
 
     <div class="container">
-        <div class="ta-ad-last" ta-ad-container=""></div>
+        <TinyAdzBanner class="ta-ad-last" />
     </div>
 </AppLayout>

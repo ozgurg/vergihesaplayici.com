@@ -8,6 +8,7 @@ import CalculatorPresetCarousel from "@/components/calculator-preset-carousel.as
 import UtilitiesGrid from "@/components/utilities-grid.vue";
 import TelefonVergisi
     from "@/domains/telefon-vergisi/components/telefon-vergisi.vue";
+import TinyAdzBanner from "@/components/third-party/tinyadz-banner.astro";
 
 import { TelefonVergisiPageDef } from "@/domains/telefon-vergisi/page-def.js";
 import { IphoneUlkeFiyatlariPageDef } from "@/domains/iphone-ulke-fiyatlari/page-def.js";
@@ -49,7 +50,7 @@ const presetsForCalculatorPresetCarousel = mapPresetsForCalculatorPresetCarousel
     <hr />
 
     <div class="container">
-        <div class="ta-ad-first" ta-ad-container=""></div>
+        <TinyAdzBanner class="ta-ad-first" />
     </div>
 
     <section>
@@ -78,6 +79,6 @@ const presetsForCalculatorPresetCarousel = mapPresetsForCalculatorPresetCarousel
     </section>
 
     <div class="container">
-        <div class="ta-ad-last" ta-ad-container=""></div>
+        <TinyAdzBanner class="ta-ad-last" />
     </div>
 </AppLayout>
