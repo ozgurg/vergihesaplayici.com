@@ -133,7 +133,7 @@ const presetHeroStyle = {
     {presetsForCalculatorPresetCarousel.length > 0 &&
         <hr />
         <div class="container">
-            <TinyAdzBanner class="ta-ad-first" />
+            <TinyAdzBanner isFirst={true} />
 
             <Heading2 tag="h2">
                 Diğer hazır hesaplamalar
@@ -144,9 +144,7 @@ const presetHeroStyle = {
             items={presetsForCalculatorPresetCarousel} />
     }
 
-    <div class="container">
-        <TinyAdzBanner class="ta-ad-last" />
-    </div>
+    <TinyAdzBanner inContainer={true} isLast={true} />
 </AppLayout>
 
 <style lang="scss" is:global>

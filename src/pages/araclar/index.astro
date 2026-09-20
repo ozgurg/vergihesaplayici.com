@@ -31,12 +31,12 @@ const araclarPage = AraclarPageDef({
     </PageHeader>
 
     <div class="container">
-        <TinyAdzBanner class="ta-ad-first" />
+        <TinyAdzBanner isFirst={true} />
 
         <UtilitiesGrid
             items={utilityPages}
             titleTag="h2" />
 
-        <TinyAdzBanner class="ta-ad-last" />
+        <TinyAdzBanner isLast={true} />
     </div>
 </AppLayout>

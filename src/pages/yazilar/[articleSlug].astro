@@ -65,7 +65,7 @@ const { Content } = await render(yazi.entry);
     </PageHeader>
 
     <div class="container">
-        <TinyAdzBanner class="ta-ad-first" />
+        <TinyAdzBanner isFirst={true} />
 
         <div class="meta">
             <span class="item">
@@ -136,7 +136,7 @@ const { Content } = await render(yazi.entry);
         <hr />
         <ArticleLegalDisclaimerAlert />
 
-        <TinyAdzBanner class="ta-ad-last" />
+        <TinyAdzBanner isLast={true} />
     </div>
 
     {otherYazilar.length > 0 &&
@@ -153,7 +153,7 @@ const { Content } = await render(yazi.entry);
                     titleTag="h3"
                     items={otherYazilar} />
 
-                <TinyAdzBanner class="ta-ad-last" />
+                <TinyAdzBanner isLast={true} />
             </section>
         </div>
     }

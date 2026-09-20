@@ -1,34 +1,69 @@
-<div {...Astro.props} ta-ad-container=""></div>
+---
+export type Props = {
+    inContainer?: boolean;
+    isFirst?: boolean;
+    isLast?: boolean;
+}
+
+const {
+    inContainer = false,
+    isFirst = false,
+    isLast = false
+} = Astro.props;
+---
+
+<div
+    class:list={[
+        "tinyadz-banner",
+        isFirst ? "tinyadz-banner-first" : null,
+        isLast ? "tinyadz-banner-last" : null
+    ]}>
+    {
+        inContainer ? (
+            <div class="container">
+                <div ta-ad-container=""></div>
+            </div>
+        ) : (
+            <div ta-ad-container=""></div>
+        )
+    }
+</div>
 
 <style is:global lang="scss">
-    [ta-ad-container] {
-        --_margin: calc(var(--vh-spacer) * 2);
-        &.ta-ad-first.ta-ad-last {
+    .tinyadz-banner {
+        $self: &;
+        @at-root #{$self}-first#{$self}-last [ta-ad-container] {
             min-height: var(--_margin)
         }
-        &:not(:empty) {
-            background: #323332; // Same color as the ad border
-            margin-inline: calc(var(--container-padding-inline) * -1);
-            inline-size: calc(100% + (var(--container-padding-inline) * 2));
-            padding-inline: var(--container-padding-inline);
-            @include vh-media-breakpoint-up(sm) {
-                margin-inline: calc(var(--vh-spacer) * -1);
-                inline-size: calc(100% + (var(--vh-spacer) * 2));
-                padding-inline: var(--vh-spacer);
-                @include vh-squircle(calc(var(--vh-br-normal) + var(--vh-spacer)))
-            }
-            &.ta-ad-first {
+        &-first {
+            [ta-ad-container]:not(:empty) {
                 margin-block-end: var(--_margin)
             }
-            &.ta-ad-last {
+        }
+        &-last {
+            [ta-ad-container]:not(:empty) {
                 margin-block-start: var(--_margin)
             }
         }
-    }
-
-    iframe.inlined-ta-ad {
-        @include vh-squircle(var(--vh-br-normal));
-        overflow: hidden !important;
-        transition: none !important
+        [ta-ad-container] {
+            --_margin: calc(var(--vh-spacer) * 2);
+            &:not(:empty) {
+                background: #323332; // Same color as the ad border
+                margin-inline: calc(var(--container-padding-inline) * -1);
+                inline-size: calc(100% + (var(--container-padding-inline) * 2));
+                padding-inline: var(--container-padding-inline);
+                @include vh-media-breakpoint-up(sm) {
+                    margin-inline: calc(var(--vh-spacer) * -1);
+                    inline-size: calc(100% + (var(--vh-spacer) * 2));
+                    padding-inline: var(--vh-spacer);
+                    @include vh-squircle(calc(var(--vh-br-normal) + var(--vh-spacer)))
+                }
+            }
+        }
+        iframe.inlined-ta-ad {
+            @include vh-squircle(var(--vh-br-normal));
+            overflow: hidden !important;
+            transition: none !important
+        }
     }
 </style>

@@ -33,13 +33,13 @@ const yazilarPage = YazilarPageDef({
     </PageHeader>
 
     <div class="container">
-        <TinyAdzBanner class="ta-ad-first" />
+        <TinyAdzBanner isFirst={true} />
 
         <ArticleLegalDisclaimerAlert />
         <ArticlesGrid
             titleTag="h2"
             items={yazilar} />
 
-        <TinyAdzBanner class="ta-ad-last" />
+        <TinyAdzBanner isLast={true} />
     </div>
 </AppLayout>

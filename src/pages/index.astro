@@ -45,9 +45,7 @@ const yazilar = (await getYazilar()).slice(0, 8);
     </section>
     <hr />
 
-    <div class="container">
-        <TinyAdzBanner class="ta-ad-first" />
-    </div>
+    <TinyAdzBanner inContainer={true} isFirst={true} />
 
     <div class="container">
         <section>
@@ -61,7 +59,7 @@ const yazilar = (await getYazilar()).slice(0, 8);
                 titleTag="h3" />
         </section>
 
-        <TinyAdzBanner class="ta-ad-first ta-ad-last" />
+        <TinyAdzBanner isFirst={true} isLast={true} />
 
         <section>
             <Heading2 tag="h2">
@@ -74,7 +72,7 @@ const yazilar = (await getYazilar()).slice(0, 8);
                 titleTag="h3" />
         </section>
 
-        <TinyAdzBanner class="ta-ad-first ta-ad-last" />
+        <TinyAdzBanner isFirst={true} isLast={true} />
 
         <section>
             <Heading2 tag="h2">
@@ -87,7 +85,7 @@ const yazilar = (await getYazilar()).slice(0, 8);
                 items={yazilar} />
         </section>
 
-        <TinyAdzBanner class="ta-ad-last" />
+        <TinyAdzBanner isLast={true} />
     </div>
 </AppLayout>
 
