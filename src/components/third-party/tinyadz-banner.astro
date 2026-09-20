@@ -1,50 +1,10 @@
----
-import type { BannerAdConfig } from "@/components/ad-banner.astro";
-
-export type Props = BannerAdConfig;
-
-const {
-    inContainer = false,
-    isFirst = false,
-    isLast = false
-} = Astro.props;
----
-
-<div
-    class:list={[
-        "tinyadz-banner",
-        isFirst ? "tinyadz-banner-first" : null,
-        isLast ? "tinyadz-banner-last" : null
-    ]}>
-    {
-        inContainer ? (
-            <div class="container">
-                <div ta-ad-container=""></div>
-            </div>
-        ) : (
-            <div ta-ad-container=""></div>
-        )
-    }
+<div class="a5857edd4a61170bd2b1588275e7a484">
+    <div ta-ad-container=""></div>
 </div>
 
 <style is:global lang="scss">
-    .tinyadz-banner {
-        $self: &;
-        @at-root #{$self}-first#{$self}-last [ta-ad-container] {
-            min-height: var(--_margin)
-        }
-        &-first {
-            [ta-ad-container]:not(:empty) {
-                margin-block-end: var(--_margin)
-            }
-        }
-        &-last {
-            [ta-ad-container]:not(:empty) {
-                margin-block-start: var(--_margin)
-            }
-        }
+    .a5857edd4a61170bd2b1588275e7a484 { // Try to make the ad blockers harder to detect
         [ta-ad-container] {
-            --_margin: calc(var(--vh-spacer) * 2);
             &:not(:empty) {
                 background: #323332; // Same color as the ad border
                 margin-inline: calc(var(--container-padding-inline) * -1);
