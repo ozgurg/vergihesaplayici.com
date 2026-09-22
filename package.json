@@ -1,6 +1,6 @@
 {
     "name": "vergihesaplayici.com",
-    "version": "10.9.0",
+    "version": "10.10.0",
     "type": "module",
     "license": "AGPL-3.0",
     "scripts": {
@@ -42,9 +42,9 @@
         "astro-compress": "2.4.3",
         "fast-average-color-node": "4.0.0",
         "husky": "9.1.7",
-        "jsdom": "30.1.0",
+        "jsdom": "30.1.1",
         "lint-staged": "17.5.1",
-        "oxlint": "1.83.0",
+        "oxlint": "1.85.0",
         "sass": "1.104.1",
         "satori": "0.33.4",
         "satori-html": "0.3.2",

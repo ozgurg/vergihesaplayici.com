@@ -1,0 +1,31 @@
+---
+import type { Props as UtilityCardProps } from "@/components/utility-card-item.astro";
+import type { UtilityPage } from "@/types/page-def.js";
+import UtilityCardItem from "@/components/utility-card-item.astro";
+
+export type Props = {
+    titleTag: UtilityCardProps["titleTag"]
+    items: UtilityPage[];
+};
+
+const props = Astro.props;
+---
+
+<div class="utilities">
+    {props.items.map(_utilityPage => (
+        <UtilityCardItem
+            titleTag={props.titleTag}
+            page={_utilityPage} />
+    ))}
+</div>
+
+<style lang="scss" is:global>
+    .utilities {
+        display: grid;
+        gap: var(--vh-spacer);
+        grid-template-columns: 1fr;
+        @include vh-media-breakpoint-up(md) {
+            grid-template-columns: 1fr 1fr
+        }
+    }
+</style>

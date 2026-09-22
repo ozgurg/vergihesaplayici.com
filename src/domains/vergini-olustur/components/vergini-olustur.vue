@@ -217,13 +217,13 @@ const onSubmit = (): void => {
     }
 };
 
-onMounted(() => {
-    const handleKeydown = (_event: KeyboardEvent): void => {
-        if (isDeleteMode.value && _event.code === "Escape") {
-            isDeleteMode.value = false;
-        }
-    };
+const handleKeydown = (_event: KeyboardEvent): void => {
+    if (isDeleteMode.value && _event.code === "Escape") {
+        isDeleteMode.value = false;
+    }
+};
 
+onMounted(() => {
     document.addEventListener("keydown", handleKeydown);
 
     onUnmounted(() => {
