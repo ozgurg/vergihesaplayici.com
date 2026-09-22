@@ -6,20 +6,20 @@ import TabPanel from "@/components/common/tab/tab-panel.vue";
 const PROVIDE_MODEL_VALUE = "test-tabs-modelValue";
 const PROVIDE_ID = "test-tabs-id";
 
-describe("components/common/tab/tab-panel.vue", () => {
-    const createWrapper = (props = {}) => mount(TabPanel, {
-        props: {
-            value: PROVIDE_MODEL_VALUE,
-            ...props
-        },
-        global: {
-            provide: {
-                "tabs.modelValue": { value: PROVIDE_MODEL_VALUE },
-                "tabs.id": PROVIDE_ID
-            }
+const createWrapper = (props = {}) => mount(TabPanel, {
+    props: {
+        value: PROVIDE_MODEL_VALUE,
+        ...props
+    },
+    global: {
+        provide: {
+            "tabs.modelValue": { value: PROVIDE_MODEL_VALUE },
+            "tabs.id": PROVIDE_ID
         }
-    });
+    }
+});
 
+describe("components/common/tab/tab-panel.vue", () => {
     testDefaultSlot(TabPanel, {
         props: { value: "PLACEHOLDER" },
         global: {
